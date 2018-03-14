@@ -1,0 +1,21 @@
+#!/usr/bin/env node
+
+const fs = require('fs');
+message_file = process.argv[2];
+
+const regex = /(feat|fix|chore|refactor)\([a-z-]+\):\s.+/;
+
+fs.readFile(message_file, function(err, data) {
+  if (err) {
+    console.log(err);
+    process.exit(1);
+  } else {
+    if (!regex.test(data)) {
+      console.log("[POLICY] Your message is not formatted correctly");
+      console.log("[STANDARD] Your message should be in the format: ‘feat|chore|refactor|fix(scope-of-change): commit message’");
+      console.log("[ENGINEERING PLAYBOOK] You can visit this url for better description of the commit message convention");
+      console.log("https://github.com/andela/engineering-playbook/blob/master/conventions.md#commit-message");
+      process.exit(1);
+    }
+  }  
+})
