@@ -16,9 +16,9 @@ Ensure you have [NodeJS](https://nodejs.org/en/) environment and [YARN](https://
 #### Running tests
 
 ### Built With
-[ReactJS](https://reactjs.org/) - The javascript client library.
-[NodeJs](https://nodejs.org/en/) - The run time environment.
-[SCSS](http://sass-lang.com/documentation/file.SCSS_FOR_SASS_USERS.html) -the CSS pre-processor
+..* [ReactJS](https://reactjs.org/) - The javascript client library.
+..* [NodeJs](https://nodejs.org/en/) - The run time environment.
+..* [SCSS](http://sass-lang.com/documentation/file.SCSS_FOR_SASS_USERS.html) -the CSS pre-processor
 
 
 ### Contributing
