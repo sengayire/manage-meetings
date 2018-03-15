@@ -23,6 +23,6 @@ Ensure you have [NodeJS](https://nodejs.org/en/) environment and [YARN](https://
 
 ### Contributing
 Contribtions must follow among other guidelines:
-1. [Airbnb style guide for react](https://github.com/airbnb/javascript/tree/master/react)
-2. [Andela Engineering playbook](https://github.com/andela/engineering-playbook)
-3. [Airbnb style guide for ES6/ES7](https://github.com/airbnb/javascript)
+- 1. [Airbnb style guide for react](https://github.com/airbnb/javascript/tree/master/react)
+- 2. [Andela Engineering playbook](https://github.com/andela/engineering-playbook)
+- 3. [Airbnb style guide for ES6/ES7](https://github.com/airbnb/javascript)
