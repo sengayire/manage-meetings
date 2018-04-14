@@ -13,11 +13,11 @@ Ensure you have [NodeJS](https://nodejs.org/en/) environment and [YARN](https://
 #### Installing
 
 #### Running the application
-1. Setting environment variables
+##### 1. Setting environment variables
 Create a .env file in the root folder of the application where you are to add your environment variables.
 Add ```NODE_ENV=development``` if you are running the application in development mode.
 
-2. Updating the ```etc/hosts``` file
+##### 2. Updating the ```etc/hosts``` file
 The application runs on mrm-dev.andela.com in development mode. This can be enabled by adding mrm-dev.andela.com to the etc/hosts file as decribed below.
 - On Mac OS using the vim editor.
 ```
@@ -35,7 +35,7 @@ sudo killall -HUP mDNSResponder
 ```
 Though you can as well do it manually by running the development server in the new terminal window.
 
-3. Run the development server by running the command below
+##### 3. Run the development server by running the command below
 ``` 
 yarn start 
 ```
