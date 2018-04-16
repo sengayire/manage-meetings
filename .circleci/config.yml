@@ -19,9 +19,7 @@ jobs:
           # Fallback to using the latest cache if no exact match is found
           - v1-dependencies-
 
-      - run: 
-        - yarn install
-        - npm i -g eslint
+      - run: yarn install
 
       - save_cache:
           paths:
