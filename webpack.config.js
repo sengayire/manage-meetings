@@ -1,5 +1,5 @@
-const developmentConfigs = require('./webpack.dev')
-const productionConfigs = require('./webpack.prod')
+const developmentConfigs = require('./config/webpack.dev')
+const productionConfigs = require('./config/webpack.prod')
 const dotenv = require('dotenv').config()
 
 const getConfigs = () => {
