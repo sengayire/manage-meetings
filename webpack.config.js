@@ -1,23 +1,14 @@
-var webpack = require('webpack');
-var path = require('path')
+const developmentConfigs = require('./config/webpack.dev')
+const productionConfigs = require('./config/webpack.prod')
+const dotenv = require('dotenv').config()
 
-module.exports = {
-  entry: path.resolve(__dirname, 'app'),
-  output: {
-  path: __dirname + '/dist',
-  publicPath: '/',
-  filename: 'bundle.js'
-  },
-
-  devServer: {
-    contentBase: path.resolve(__dirname, 'public')
-},
-
-module: {
-  loaders: [
-    {test: /\.js$/, exclude: /node_modules/, loaders: ['babel-loader']},
-    {test: /(\.css)$/, loaders: ['style-loader', 'css-loader']}
-]
+const getConfigs = () => {
+  if (process.env.NODE_ENV === 'production') {
+    return productionConfigs
+  }
+  return developmentConfigs
 }
 
-}
+const configs = getConfigs();
+
+module.exports = configs;
