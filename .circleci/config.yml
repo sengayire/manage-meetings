@@ -19,14 +19,19 @@ jobs:
           # Fallback to using the latest cache if no exact match is found
           - v1-dependencies-
 
-      - run: yarn install
+      - run:
+          name: Installing Packages
+          command: yarn install
 
       - save_cache:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
-        
-      # Run tests!
-      - run: yarn test
-      # Run code formatting
-      - run: eslint src/
+
+      - run:
+          name: Running Linter
+          command: yarn lint
+
+      - run:
+         name: Running Tests
+         command: yarn test

@@ -1,29 +1,31 @@
-import React from 'react'
-import '../assets/styles/index.scss'
-import '../assets/styles/styles.css'
+import React from 'react';
+import '../assets/styles/index.scss';
+import '../assets/styles/styles.css';
 
 class HelloWorld extends React.Component {
   static initialState = {
-    clicks: 0
+    clicks: 0,
   }
 
   state = HelloWorld.initialState
 
   incrementClicks = () => {
-    this.setState(({ clicks }) => ({ clicks: clicks + 1 }))
+    this.setState(({ clicks }) => ({ clicks: clicks + 1 }));
   }
 
   resetClicks = () => {
-    this.state.clicks > 0 && this.setState(HelloWorld.initialState)
+    if (this.state.clicks > 0) {
+      this.setState(HelloWorld.initialState);
+    }
   }
 
-  render () {
-    const { clicks } = this.state
+  render() {
+    const { clicks } = this.state;
     return (
-      <div className='hello-world'>
+      <div className="hello-world">
         <h1>Hello MRM</h1>
         <p>Meeting Room project starts here...</p>
-        <button className='hello' onClick={this.incrementClicks}>
+        <button className="hello" onClick={this.incrementClicks}>
           Clicked {clicks} times
         </button>
         <button
@@ -34,8 +36,8 @@ class HelloWorld extends React.Component {
           Reset Counts
         </button>
       </div>
-    )
+    );
   }
 }
 
-export default HelloWorld
+export default HelloWorld;
