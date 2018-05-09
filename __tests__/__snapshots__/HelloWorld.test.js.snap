@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HelloWorld component should render correctly in memory 1`] = `
+<div
+  className="hello-world"
+>
+  <h1>
+    Hello MRM
+  </h1>
+  <p>
+    Meeting Room project starts here...
+  </p>
+  <button
+    className="hello"
+    onClick={[Function]}
+  >
+    Clicked 
+    0
+     times
+  </button>
+  <button
+    disabled={true}
+    onClick={[Function]}
+    style={
+      Object {
+        "marginLeft": 10,
+      }
+    }
+  >
+    Reset Counts
+  </button>
+</div>
+`;

@@ -5,19 +5,19 @@ import '../assets/styles/styles.css';
 class HelloWorld extends React.Component {
   static initialState = {
     clicks: 0,
-  }
+  };
 
-  state = HelloWorld.initialState
+  state = HelloWorld.initialState;
 
   incrementClicks = () => {
     this.setState(({ clicks }) => ({ clicks: clicks + 1 }));
-  }
+  };
 
   resetClicks = () => {
     if (this.state.clicks > 0) {
       this.setState(HelloWorld.initialState);
     }
-  }
+  };
 
   render() {
     const { clicks } = this.state;

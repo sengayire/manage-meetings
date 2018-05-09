@@ -17,3 +17,6 @@ package-lock.json
 
 #environment variables
 .env
+
+# testing
+coverage/
