@@ -1,4 +1,7 @@
 import React, { Component, Fragment } from 'react';
+import PropTypes from 'prop-types';
+import { withRouter } from 'react-router-dom';
+import ROUTES from '../utils/routes';
 import '../assets/styles/login.scss';
 import darkTabletImage from '../assets/images/DarkTablet.png';
 import loginButton from '../assets/images/Button.png';
@@ -9,19 +12,30 @@ import loginButton from '../assets/images/Button.png';
  * @author [Dennis Jjagwe](https://github.com/dennisja)
  */
 
-export default class Login extends Component {
+class Login extends Component {
+  static propTypes = {
+    location: PropTypes.shape({ pathname: PropTypes.string.isRequired }),
+  };
+  componentDidMount() {
+    this.applyBodyStyles();
+  }
   /**
    * Logs in a user
    */
   loginUser = () => {
     // login logic here
   };
+  // Apply body styles on homepage only
+  applyBodyStyles = () => {
+    const { location } = this.props;
+    location.pathname === ROUTES.home && document.body.classList.add('home-bg');
+  };
 
   render() {
     return (
       <Fragment>
         <div>
-          <header>
+          <header className="home-header">
             <h1>CONVERGE</h1>
           </header>
 
@@ -45,3 +59,5 @@ export default class Login extends Component {
     );
   }
 }
+
+export default withRouter(Login);

@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Settings component renders correctly in memory 1`] = `
+<React.Fragment>
+  <NavBar />
+</React.Fragment>
+`;

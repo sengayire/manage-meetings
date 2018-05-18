@@ -1,9 +1,46 @@
 $custom-color:purple;
-
-h1 {
-    color: $custom-color
-}
-
 body{
-    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+h1 {
+  color: $custom-color;
+}
+form{
+  height: 100%;
+}
+.size-6-4 {
+  & div:first-child{
+    width: 40%;
+  }
+  & div:nth-child(2){
+    width: 60%;
+  }
+}
+.size-half{
+  width: 50%;
+}
+.size-quarter{
+  width: 25%;
+}
+.container{
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-flow: row;
+  height: 100%;
+  align-items: center;
+}
+.container-spaced > * {
+  padding: 10px;
+  flex: 1 100%;
+}
+.content-start{
+  justify-content: flex-start;
+}
+.content-end{
+  justify-content: flex-end;
+}
+.inline li{
+  display: inline-block;
 }

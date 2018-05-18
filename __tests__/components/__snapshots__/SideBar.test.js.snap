@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SideBar Component renders correctly in memory 1`] = `
+<div
+  className="side-bar"
+>
+  SideBar
+</div>
+`;

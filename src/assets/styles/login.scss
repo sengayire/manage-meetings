@@ -7,7 +7,7 @@
 
 /* body */
 
-body {
+body.home-bg {
     background-image: url('../images/LandingBackground.svg');
     background-repeat: no-repeat;
     background-size: 100%;
@@ -22,7 +22,7 @@ html {
 
 /* Converge Title */
 
-header>h1 {
+header.home-header>h1 {
     height: 46px;
     color: #FFFFFF;
     font-family: DINPro;
@@ -32,7 +32,7 @@ header>h1 {
     margin: 0;
 }
 
-header {
+header.home-header {
     margin-top: 11.3%;
     margin-bottom: 2%;
 }
@@ -76,7 +76,7 @@ header {
 
 // large desktops
 @media only screen and (min-width: 1441px) {
-    header {
+    header.home-header {
         margin-top: 11.5%;
         margin-bottom: 3%;
     }

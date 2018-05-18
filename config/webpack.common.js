@@ -1,16 +1,32 @@
 const path = require('path');
 
 module.exports = {
-  entry: path.resolve(__dirname, '../app.js'),
+  entry: path.resolve(__dirname, '../src/index.js'),
   output: {
     path: path.resolve(__dirname, '../dist'),
     filename: '../dist/bundle.js',
     chunkFilename: '[name].js',
+    publicPath: '/',
   },
   module: {
     rules: [
       { test: /\.js$/, exclude: /node_modules/, use: ['babel-loader'] },
-      { test: /(\.css)$/, use: ['style-loader', 'css-loader'] },
+      {
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true, // default is false
+              sourceMap: true,
+              importLoaders: 1,
+              localIdentName: '[name]--[local]--[hash:base64:8]',
+            },
+          },
+          'postcss-loader',
+        ],
+      },
       {
         test: /\.scss$/,
         use: [
@@ -28,5 +44,8 @@ module.exports = {
         use: ['file-loader'],
       },
     ],
+  },
+  devServer: {
+    historyApiFallback: true,
   },
 };

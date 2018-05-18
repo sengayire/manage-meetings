@@ -1,6 +1,5 @@
 import React from 'react';
 import '../assets/styles/index.scss';
-import '../assets/styles/styles.css';
 
 class HelloWorld extends React.Component {
   static initialState = {

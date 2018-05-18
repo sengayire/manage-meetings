@@ -4,12 +4,15 @@ module.exports = {
   parser: 'babel-eslint',
   env: {
     browser: true,
-    node: true
+    node: true,
+    jest: true
   },
   rules: {
     'react/prefer-stateless-function': 'off',
     'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
     'react/no-children-prop': 0,
-    'react/require-default-props': 0
+    'react/require-default-props': 0,
+    'no-unused-expressions': ["error", {"allowShortCircuit": true}]
+      
   }
 };
