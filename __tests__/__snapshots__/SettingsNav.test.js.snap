@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests for SettingsNavTabs renders correctly from memory 1`] = `
+<div
+  className="settings-tabs"
+>
+  <ul>
+    <li
+      className="active"
+    >
+      Offices
+    </li>
+    <li>
+      Room
+    </li>
+    <li>
+      Room Resources
+    </li>
+    <li>
+      People
+    </li>
+    <li>
+      Devices
+    </li>
+    <li>
+      Integrations
+    </li>
+  </ul>
+</div>
+`;

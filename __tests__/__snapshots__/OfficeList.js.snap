@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests for SettingOffices renders correctly from memory 1`] = `
+<div
+  className="settings-offices"
+>
+  <button
+    id="add-office-button"
+  >
+    Add Office
+  </button>
+  <div
+    className="settings-offices-table"
+  >
+    <table>
+      <thead>
+        <tr>
+          <th>
+            Office
+          </th>
+          <th>
+            Location
+          </th>
+          <th>
+            Time Zone
+          </th>
+          <th
+            colSpan="2"
+          >
+            Action
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <col
+          className="first-col"
+        />
+        <col />
+        <col />
+        <col
+          className="last-col"
+          span="2"
+        />
+        <Office
+          key="EPIC Tower"
+          office={
+            Object {
+              "location": "Nigeria",
+              "name": "EPIC Tower",
+              "timezone": "GMT +1",
+            }
+          }
+        />
+        <Office
+          key="Invisible Building"
+          office={
+            Object {
+              "location": "Kenya",
+              "name": "Invisible Building",
+              "timezone": "GMT -1",
+            }
+          }
+        />
+      </tbody>
+    </table>
+  </div>
+</div>
+`;

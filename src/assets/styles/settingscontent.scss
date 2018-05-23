@@ -1,0 +1,30 @@
+@font-face {
+  font-family: "DINPro-Regular";
+  font-style: normal;
+  src: url(../fonts/DINPro-Regular.woff);
+}
+
+.settings-vertical {
+  font-family: "DINPro-Regular", sans-serif;
+  display: flex;
+  margin: 1%;
+
+  @media screen and (max-width: 425px) {
+    font-size: 0.75em;
+  }
+}
+
+.settings-tabs {
+  width: 25%;
+  font-size: 97%;
+  @media screen and (max-width: 425px) {
+    width: 30%;
+  }
+}
+
+.settings-offices {
+  width: 75%;
+  @media screen and (max-width: 425px) {
+    width: 65%;
+  }
+}

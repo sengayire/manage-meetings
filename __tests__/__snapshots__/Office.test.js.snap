@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests for SettingOffices renders correctly from memory 1`] = `
+<tr>
+  <td>
+    EPIC Tower
+  </td>
+  <td>
+    Nigeria
+  </td>
+  <td>
+    GMT +1
+  </td>
+  <td>
+    Edit
+  </td>
+  <td>
+    Delete
+  </td>
+</tr>
+`;
