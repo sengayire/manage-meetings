@@ -1,3 +1,4 @@
+[![Coverage Status](https://coveralls.io/repos/github/andela/mrm_front/badge.svg)](https://coveralls.io/github/andela/mrm_front)
 
 ## MRM
 The Andela Meeting Room management solution
@@ -25,19 +26,19 @@ $ sudo vim /etc/hosts
 ```
 
 Then add this line to your file
-``` 
-127.0.0.1		mrm-dev.andela.com 
+```
+127.0.0.1		mrm-dev.andela.com
 ```
 
 You might need to flush your dns cache to reflect the changes in your etc/hosts file by running.
-``` 
-sudo killall -HUP mDNSResponder 
+```
+sudo killall -HUP mDNSResponder
 ```
 Though you can as well do it manually by running the development server in the new terminal window.
 
 ##### 3. Run the development server by running the command below
-``` 
-yarn start 
+```
+yarn start
 ```
 
 

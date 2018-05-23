@@ -35,3 +35,7 @@ jobs:
       - run:
          name: Running Tests
          command: yarn test-ci
+
+      - run:
+         name: Reporting Coverage
+         command: yarn test:coveralls

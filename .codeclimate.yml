@@ -1,0 +1,22 @@
+engines:
+  eslint:
+    enabled: true
+    config: .eslintrc.js
+  duplication:
+    enabled: true
+    config:
+      languages:
+      - javascript
+checks:
+  method-lines:
+    enabled: false
+ratings:
+  paths:
+  - "**.js"
+exclude_paths:
+  - node_modules
+  - dist/
+  - webpck.config.js
+  - config/
+  - coverage/
+  - hooks/
