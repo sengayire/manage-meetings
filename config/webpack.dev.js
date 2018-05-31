@@ -9,5 +9,6 @@ module.exports = merge(common, {
     compress: true,
     open: true,
     public: 'mrm-dev.andela.com:8080',
+    historyApiFallback: true,
   },
 });

@@ -1,4 +1,25 @@
 const path = require('path');
+const webpack = require('webpack');
+const dotenv = require('dotenv');
+
+/**
+ * Parses environment variables into a format acceptable by the webpack DefinePlugin
+ * @param {object} configs Object literal containing configuration variables to
+ * parse before sending them to react
+ */
+const parseConfigs = configs => Object.keys(configs || {}).reduce(
+  (acc, val) => ({ ...acc, [val]: JSON.stringify(configs[val]) }),
+  {},
+);
+
+// fetch system environment variables
+const systemEnvVariables = parseConfigs(process.env);
+
+// fetch environment variables from the dotenv file
+const { parsed: dotenvConfigs } = dotenv.config();
+
+// process the environment variables inorder to be able to pass them to react
+const processedDotenvConfigs = parseConfigs(dotenvConfigs);
 
 module.exports = {
   entry: path.resolve(__dirname, '../src/index.js'),
@@ -45,7 +66,9 @@ module.exports = {
       },
     ],
   },
-  devServer: {
-    historyApiFallback: true,
-  },
+  plugins: [
+    new webpack.DefinePlugin({
+      'process.env': { ...processedDotenvConfigs, ...systemEnvVariables },
+    }),
+  ],
 };
