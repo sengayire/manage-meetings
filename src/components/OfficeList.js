@@ -1,7 +1,7 @@
 import React from 'react';
 import Office from './Office';
 import offices from '../../fixtures/offices';
-
+import AddOffice from './AddOffice';
 
 class OfficeList extends React.Component {
   constructor(props) {
@@ -14,7 +14,7 @@ class OfficeList extends React.Component {
   render() {
     return (
       <div className="settings-offices">
-        <button id="add-office-button">Add Office</button>
+        <AddOffice />
         <div className="settings-offices-table">
           <table>
             <thead>

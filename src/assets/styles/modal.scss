@@ -1,0 +1,113 @@
+.modal-form {
+    text-align: left;
+    color: black;
+    margin-left:2em;
+    margin-right:2em;
+    font-family:  "DINPro-Regular";
+}
+
+.modal-form button {
+    color: white;
+    background-color: #3359db;
+    height: 44px;	
+    width: 130px;
+    margin-top: 25%;
+    float: right;
+    margin-right: -16.5em;
+
+}
+.modal-form .label2 {
+    float:left;
+    font-family: "DINPro-Regular";
+}
+
+.modal-form .label3 {
+    float:right;
+    padding-top: -8.7em;
+    font-family: "DINPro-Regular";
+}
+
+.input1 {
+    border-radius: 4px;
+    padding: 10px; 
+    width: 29.1em;
+    height: 1.4em; 
+    font-family:  "DINPro-Regular";
+    font-size: 1.1em;
+    border: 1px solid #D6DEE4;
+}
+
+.input2{
+    border-radius: 4px;
+    padding: 10px; 
+    width: 13.7em;
+    height: 1.4em; 
+    border-width:0.5px;
+    font-family:  "DINPro-Regular";
+    font-size: 1.1em;
+    border: 1px solid #D6DEE4;
+}
+
+.input3{
+border-radius: 4px 0 0 4px;
+padding: 10px; 
+width: 11.1em;
+height: 1.4em; 
+border-width:0.5px;
+font-family:  "DINPro-Regular";
+font-size: 1.1em;
+border: 1px solid #D6DEE4;
+
+}
+
+h2 {
+    color:#3359DB!important ;
+    display: block;
+    font-size: 22px;
+    -webkit-margin-before: 0.83em;
+    -webkit-margin-after: 0.83em;
+    -webkit-margin-start: 0em;
+    -webkit-margin-end: 0em;
+    font-weight: bold;
+    margin-left: 1.4em;
+}
+
+.modalClass {
+    height: 420px!important;
+    width: 600px!important;	
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    right: auto;
+    bottom: auto;
+    border: 1px solid rgb(204, 204, 204);
+    background-color: #FFFFFF;
+    overflow: auto;
+    border-radius: 4px;
+    outline: none;
+    padding: 20px;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 2px 40px 10px rgba(185, 180, 180, 0.2) !important;
+    font-family:  "DINPro-Regular";
+}
+
+.ReactModal__Overlay{
+    background-color: rgba(0,0,0,0.5) !important;
+}
+
+.dropdown-icon{
+    margin-top: -47px;
+    margin-left: 216px;
+    box-sizing: border-box;	
+    height: 47px;	
+    width: 46px;	
+    border: 1px solid #D6DEE4;	
+    border-radius: 0 4px 4px 0;	
+    background-color: rgba(244,247,249,0.4);
+}
+
+.modal-dropdown{
+    margin-top: 10px;
+    margin-left: 8px;
+}

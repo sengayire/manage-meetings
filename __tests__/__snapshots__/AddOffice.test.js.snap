@@ -1,0 +1,94 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddOffice Component renders properly 1`] = `
+<MrmModal
+  buttonText="Add Office"
+  closeModal={false}
+  handleCloseRequest={[Function]}
+  title="ADD OFFICE"
+>
+  <form
+    className="modal-form"
+    onSubmit={[Function]}
+  >
+    <div>
+      <label
+        htmlFor="buildingName"
+      >
+        Building Name
+        <br />
+        <br />
+        <input
+          className="input1"
+          id="buildingName"
+          name="buildingName"
+          onChange={[Function]}
+          placeholder="Enter the building's name"
+          type="text"
+          value=""
+        />
+      </label>
+    </div>
+    <br />
+    <br />
+    <div
+      className="label2"
+    >
+      <label
+        htmlFor="countryName"
+      >
+        Enter country
+        <br />
+        <br />
+        <input
+          className="input2"
+          id="countryName"
+          name="countryName"
+          onChange={[Function]}
+          type="text"
+          value=""
+        />
+      </label>
+    </div>
+    <div
+      className="label3"
+    >
+      <label
+        htmlFor="timeZone"
+      >
+        Select time zone
+        <br />
+        <br />
+        <div
+          className="modal-append"
+        >
+          <input
+            className="input3"
+            id="timeZone"
+            name="timeZone"
+            onChange={[Function]}
+            type="text"
+            value=""
+          />
+          <div
+            className="dropdown-icon"
+          >
+            <i
+              className="material-icons modal-dropdown"
+            >
+              arrow_drop_down
+            </i>
+          </div>
+        </div>
+      </label>
+      <br />
+      <br />
+    </div>
+    <button
+      type="submit"
+    >
+      ADD OFFICE
+    </button>
+  </form>
+</MrmModal>
+`;

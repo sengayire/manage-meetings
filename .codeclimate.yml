@@ -42,5 +42,5 @@ exclude_patterns:
   - "config/"
   - "coverage/"
   - "hooks/"
-  - "__test__/" #Confirm if this is appropraite
+  - "__tests__/" #Confirm if this is appropraite
   - "__mocks__/"

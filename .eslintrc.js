@@ -12,7 +12,7 @@ module.exports = {
     'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
     'react/no-children-prop': 0,
     'react/require-default-props': 0,
-    'no-unused-expressions': ["error", {"allowShortCircuit": true}]
-      
+    'no-unused-expressions': ["error", {"allowShortCircuit": true}],
+    'class-methods-use-this': ["error", {"exceptMethods": ['getSnapshotBeforeUpdate', 'render']}],
   }
 };
