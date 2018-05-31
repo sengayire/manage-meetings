@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server",
-    "test:coveralls": "npm run test-ci && cat ./coverage/lcov.info | coveralls",
+    "test:coveralls": "yarn test-ci && cat ./coverage/lcov.info | coveralls",
     "build": "webpack",
     "test": "jest --watch --config jest.config.js",
     "test-ci": "jest --config jest.config.js --coverage",
