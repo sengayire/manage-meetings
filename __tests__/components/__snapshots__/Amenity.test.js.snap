@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests for Amenity Component renders correctly from memory 1`] = `
+<tr>
+  <td>
+    AmenityName
+  </td>
+  <td>
+    8
+  </td>
+  <td>
+    Edit   Delete
+  </td>
+</tr>
+`;

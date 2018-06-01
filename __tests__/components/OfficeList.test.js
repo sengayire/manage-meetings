@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import SettingsOffices from '../src/components/OfficeList';
+import SettingsOffices from '../../src/components/OfficeList';
 
 describe('Tests for SettingOffices', () => {
   const shalloWrapper = shallow(<SettingsOffices />);

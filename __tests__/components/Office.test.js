@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import Office from '../src/components/Office';
+import Office from '../../src/components/Office';
 
 describe('Tests for SettingOffices', () => {
   const office = {

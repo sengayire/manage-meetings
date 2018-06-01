@@ -3,7 +3,6 @@
 exports[`Analytics component renders correctly in memory 1`] = `
 <React.Fragment>
   <NavBar />
-  <SideBar />
   <h1>
     Analytics
   </h1>

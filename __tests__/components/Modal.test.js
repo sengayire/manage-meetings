@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import MrmModal from '../src/components/commons/Modal';
+import MrmModal from '../../src/components/commons/Modal';
 
 describe('MrmModal Component', () => {
   const wrapper = mount(<MrmModal

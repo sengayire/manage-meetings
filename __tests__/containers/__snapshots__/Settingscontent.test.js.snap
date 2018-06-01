@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests for SettingsContent renders correctly in memory 1`] = `
+<div
+  className="settings-vertical"
+>
+  <SettingsNav />
+  <div
+    className="settings-tab-content"
+  >
+    <Switch>
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/settings/offices"
+      />
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/settings/rooms"
+      />
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/settings/room-resources"
+      />
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/settings/people"
+      />
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/settings/devices"
+      />
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/settings/integrations"
+      />
+      <Redirect
+        from="/settings"
+        push={false}
+        to="/settings/offices"
+      />
+    </Switch>
+  </div>
+</div>
+`;

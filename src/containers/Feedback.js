@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import { NavBar, SideBar } from '../components';
+import { NavBar } from '../components';
 import '../assets/styles/custom.scss';
 import '../assets/styles/topmenu.scss';
 
@@ -8,7 +8,6 @@ class Feedback extends Component {
     return (
       <Fragment>
         <NavBar />
-        <SideBar />
         <h1>Feedback</h1>
       </Fragment>
     );

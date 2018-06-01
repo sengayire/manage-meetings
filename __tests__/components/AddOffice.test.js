@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import AddOffice from '../src/components/AddOffice';
+import AddOffice from '../../src/components/AddOffice';
 
 describe('AddOffice Component', () => {
   const wrapper = shallow(<AddOffice />);
