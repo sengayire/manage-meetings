@@ -1,6 +1,10 @@
 const merge = require('webpack-merge');
-const common = require('./webpack.common.js');
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
+
+const common = require('./webpack.common.js');
+
 
 module.exports = merge(common, {
   mode: 'development',
@@ -11,4 +15,12 @@ module.exports = merge(common, {
     public: 'mrm-dev.andela.com:8080',
     historyApiFallback: true,
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      inject: true,
+      template: path.resolve(__dirname, '../public/index.html'),
+    }),
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoEmitOnErrorsPlugin(),
+  ],
 });
