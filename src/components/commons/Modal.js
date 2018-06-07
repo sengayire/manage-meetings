@@ -5,12 +5,21 @@ import '../../assets/styles/modal.scss';
 
 const customStyles = {
   content: {
+    fontFamily: 'DINPro-Regular',
+    position: 'absolute',
     top: '50%',
     left: '50%',
     right: 'auto',
     bottom: 'auto',
-    marginRight: '-50%',
     transform: 'translate(-50%, -50%)',
+    marginRight: '-50%',
+    padding: '20px',
+    border: '1px solid #CCCCCC',
+    borderRadius: '4px',
+    outline: 'none',
+    boxShadow: '0 2px 40px 10px rgba(185, 180, 180, 0.2)',
+    backgroundColor: '#ffffff',
+    overflow: 'auto',
   },
 };
 
@@ -21,7 +30,12 @@ class MrmModal extends React.Component {
     buttonText: PropTypes.string.isRequired,
     handleCloseRequest: PropTypes.func.isRequired,
     closeModal: PropTypes.bool.isRequired,
-  }
+    className: PropTypes.string,
+  };
+
+  static defaultProps = {
+    className: 'modalClass',
+  };
 
   state = {
     modalIsOpen: false,
@@ -32,41 +46,49 @@ class MrmModal extends React.Component {
       this.closeModal();
       this.props.handleCloseRequest();
     }
-  }
+  };
 
   getSnapshotBeforeUpdate(prevProps, prevState) {
-    if (!prevProps.closeModal && prevState.modalIsOpen && this.props.closeModal) { return true; }
+    if (!prevProps.closeModal && prevState.modalIsOpen && this.props.closeModal) {
+      return true;
+    }
     return null;
   }
 
   openModal = () => {
     this.setState({ modalIsOpen: true });
-  }
+  };
 
   afterOpenModal = () => {
     this.subtitle.style.color = '#f00';
-  }
+  };
 
   closeModal = () => {
     this.setState({ modalIsOpen: false });
-  }
-
+  };
 
   render() {
+    const {
+      buttonText, className, title, children,
+    } = this.props;
     return (
       <React.Fragment>
-        <button id="modal-button" onClick={this.openModal}>{this.props.buttonText}</button>
+        <button id="modal-button" onClick={this.openModal}>
+          {buttonText}
+        </button>
         <Modal
           isOpen={this.state.modalIsOpen}
           onAfterOpen={this.afterOpenModal}
           onRequestClose={this.closeModal}
           style={customStyles}
           contentLabel="Parent Modal"
-          className="modalClass"
+          className={className}
           ariaHideApp={false}
         >
-          <h2 ref={(subtitle) => { this.subtitle = subtitle; }}>{this.props.title}</h2>
-          {this.props.children}
+          <h2 ref={(subtitle) => { this.subtitle = subtitle; }}>
+            {title}
+          </h2>
+          {children}
         </Modal>
       </React.Fragment>
     );

@@ -1,5 +1,6 @@
 import React from 'react';
 import MrmModal from '../components/commons/Modal';
+import '../assets/styles/addoffice.scss';
 
 class AddOffice extends React.Component {
   state = {
@@ -7,27 +8,27 @@ class AddOffice extends React.Component {
     countryName: '',
     timeZone: '',
     closeModal: false,
-  }
+  };
 
   handleCloseModal = () => {
     this.setState({ closeModal: true });
-  }
+  };
 
   handleInputChange = (event) => {
     const { name, value } = event.target;
     this.setState({ [name]: value });
-  }
+  };
 
   handleModalStateChange = () => {
     if (this.state.closeModal) this.setState({ closeModal: false });
-  }
+  };
 
   handleAddOffice = (event) => {
     event.preventDefault();
     // submit logic here
     // after succesful submission closewthe modal
     this.handleCloseModal();
-  }
+  };
 
   render() {
     const {
@@ -40,10 +41,14 @@ class AddOffice extends React.Component {
         buttonText="Add Office"
         closeModal={closeModal}
         handleCloseRequest={this.handleModalStateChange}
+        className="add-office-modal"
       >
         <form className="modal-form" onSubmit={this.handleAddOffice}>
           <div>
-            <label htmlFor="buildingName">Building Name<br /><br />
+            <label htmlFor="buildingName">
+              Building Name
+              <br />
+              <br />
               <input
                 type="text"
                 className="input1"
@@ -54,9 +59,13 @@ class AddOffice extends React.Component {
                 onChange={this.handleInputChange}
               />
             </label>
-          </div><br /><br />
+          </div>
+          <br />
+          <br />
           <div className="label2">
-            <label htmlFor="countryName">Enter country<br /><br />
+            <label htmlFor="countryName">
+              Enter country<br />
+              <br />
               <input
                 type="text"
                 className="input2"
@@ -68,7 +77,9 @@ class AddOffice extends React.Component {
             </label>
           </div>
           <div className="label3">
-            <label htmlFor="timeZone">Select time zone<br /><br />
+            <label htmlFor="timeZone">
+              Select time zone<br />
+              <br />
               <div className="modal-append">
                 <input
                   type="text"
@@ -82,7 +93,9 @@ class AddOffice extends React.Component {
                   <i className="material-icons modal-dropdown">arrow_drop_down</i>
                 </div>
               </div>
-            </label><br /><br />
+            </label>
+            <br />
+            <br />
           </div>
           <button type="submit">ADD OFFICE</button>
         </form>

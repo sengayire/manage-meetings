@@ -3,6 +3,7 @@
 exports[`MrmModal Component renders properly 1`] = `
 <MrmModal
   buttonText="button"
+  className="modalClass"
   closeModal={true}
   handleCloseRequest={[MockFunction]}
   title="hello"
@@ -31,9 +32,18 @@ exports[`MrmModal Component renders properly 1`] = `
     style={
       Object {
         "content": Object {
+          "backgroundColor": "#ffffff",
+          "border": "1px solid #CCCCCC",
+          "borderRadius": "4px",
           "bottom": "auto",
+          "boxShadow": "0 2px 40px 10px rgba(185, 180, 180, 0.2)",
+          "fontFamily": "DINPro-Regular",
           "left": "50%",
           "marginRight": "-50%",
+          "outline": "none",
+          "overflow": "auto",
+          "padding": "20px",
+          "position": "absolute",
           "right": "auto",
           "top": "50%",
           "transform": "translate(-50%, -50%)",
@@ -85,9 +95,18 @@ exports[`MrmModal Component renders properly 1`] = `
       style={
         Object {
           "content": Object {
+            "backgroundColor": "#ffffff",
+            "border": "1px solid #CCCCCC",
+            "borderRadius": "4px",
             "bottom": "auto",
+            "boxShadow": "0 2px 40px 10px rgba(185, 180, 180, 0.2)",
+            "fontFamily": "DINPro-Regular",
             "left": "50%",
             "marginRight": "-50%",
+            "outline": "none",
+            "overflow": "auto",
+            "padding": "20px",
+            "position": "absolute",
             "right": "auto",
             "top": "50%",
             "transform": "translate(-50%, -50%)",

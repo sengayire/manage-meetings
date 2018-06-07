@@ -3,6 +3,7 @@
 exports[`AddOffice Component renders properly 1`] = `
 <MrmModal
   buttonText="Add Office"
+  className="add-office-modal"
   closeModal={false}
   handleCloseRequest={[Function]}
   title="ADD OFFICE"
