@@ -5,6 +5,8 @@ import { Settings, Analytics, Feedback } from './containers';
 import { Login } from './components';
 
 class App extends Component {
+  // this component is later statefull in the PR (https://github.com/andela/mrm_front/pull/22)
+  state = {};
   render() {
     return (
       <Router>

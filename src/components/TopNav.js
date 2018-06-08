@@ -14,19 +14,16 @@ const TopNav = () => (
     <AppBar className="nav-app-bar">
       <Navigation type="horizontal">
         <NavLink
-          exact
           to={ROUTES.analytics}
           label="Analytics"
           icon={<img src={IconAnalytics} alt="Analytics" />}
         />
         <NavLink
-          exact
           to={ROUTES.settings}
           label="Settings"
           icon={<img src={IconSettings} alt="Settings" />}
         />
         <NavLink
-          exact
           to={ROUTES.feedback}
           label="Room Feedback"
           icon={<img src={IconFeedback} alt="Room Feedback" />}

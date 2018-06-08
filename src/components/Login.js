@@ -14,7 +14,8 @@ import loginButton from '../assets/images/Button.png';
 
 class Login extends Component {
   static propTypes = {
-    location: PropTypes.shape({ pathname: PropTypes.string.isRequired }),
+    location: PropTypes.shape({ pathname: PropTypes.string.isRequired })
+      .isRequired,
   };
   componentDidMount() {
     this.applyBodyStyles();

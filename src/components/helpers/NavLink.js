@@ -37,4 +37,9 @@ NavLink.propTypes = {
   strict: PropTypes.bool,
 };
 
+NavLink.defaultProps = {
+  exact: false,
+  strict: false,
+};
+
 export default NavLink;

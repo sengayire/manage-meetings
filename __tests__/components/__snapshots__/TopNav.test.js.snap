@@ -21,7 +21,7 @@ exports[`TopNav Component renders correctly in memory 1`] = `
       type="horizontal"
     >
       <NavLink
-        exact={true}
+        exact={false}
         icon={
           <img
             alt="Analytics"
@@ -29,10 +29,11 @@ exports[`TopNav Component renders correctly in memory 1`] = `
           />
         }
         label="Analytics"
+        strict={false}
         to="/analytics"
       />
       <NavLink
-        exact={true}
+        exact={false}
         icon={
           <img
             alt="Settings"
@@ -40,10 +41,11 @@ exports[`TopNav Component renders correctly in memory 1`] = `
           />
         }
         label="Settings"
+        strict={false}
         to="/settings"
       />
       <NavLink
-        exact={true}
+        exact={false}
         icon={
           <img
             alt="Room Feedback"
@@ -51,6 +53,7 @@ exports[`TopNav Component renders correctly in memory 1`] = `
           />
         }
         label="Room Feedback"
+        strict={false}
         to="/feedback"
       />
     </ThemedNavigation>
