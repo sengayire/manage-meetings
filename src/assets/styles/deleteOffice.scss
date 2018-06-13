@@ -1,0 +1,61 @@
+@font-face {
+  font-family: 'SFNSDisplay';
+  font-style: normal;
+  src: url('../fonts/SFNSDisplay.ttf');
+}
+
+td {
+  #modal-button {
+    border: none;
+    color: #333e44;
+    font-family: 'DINPro-Light';
+    cursor: pointer;
+  }
+}
+
+.delete-modal {
+  height: 312px;
+  width: 614px;
+  border-radius: 4px;
+  background-color: #FFFFFF;
+  box-shadow: 0 2px 40px 10px rgba(0,0,0,0.2);
+}
+
+#confirm-msg {
+  font-family: 'SFNSDisplay';
+  font-size: 18px;
+  color: #6D6D6D;
+  line-height: 21px;
+  padding-top: 30px;
+  padding-bottom: 25px;
+}
+
+.delete-modal {
+  height: 280px;
+	width: 614px;
+}
+
+.delete-modal-content {
+  margin-left:2em;
+  margin-right:2em;
+}
+
+.modal-actions {
+
+  button {
+    cursor: pointer;
+    float: right;
+    height: 44px;
+    width: 130px;
+    border: 1px solid #3359DB;
+    border-radius: 0;
+    font-family: 'DINPro-Regular';
+  }
+
+  #cancel-btn {
+    background-color: #3359DB;
+    color: #FFFFFF;
+  }
+}
+
+

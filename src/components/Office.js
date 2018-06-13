@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import DeleteOffice from './DeleteOffice';
+import EditOffice from './EditOffice';
 
 
 const Office = ({ office: { name, location, timezone } }) => (
@@ -7,7 +9,10 @@ const Office = ({ office: { name, location, timezone } }) => (
     <td>{name}</td>
     <td>{location}</td>
     <td>{timezone}</td>
-    <td>Edit &emsp; Delete</td>
+    <td>
+      <EditOffice />
+      <DeleteOffice officeName={name} id="delete-modal" />
+    </td>
   </tr>
 );
 

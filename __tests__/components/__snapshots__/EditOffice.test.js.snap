@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EditOffice Test Suite renders as expected 1`] = `
+<MrmModal
+  buttonText="Edit"
+  className="modalClass"
+  closeModal={false}
+  handleCloseRequest={[Function]}
+  title="EDIT OFFICE"
+>
+  <span>
+    Edit office
+  </span>
+</MrmModal>
+`;
