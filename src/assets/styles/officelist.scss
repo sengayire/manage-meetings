@@ -54,7 +54,6 @@ button {
       padding: 1%;
       padding-left: 2%;
       font-size: 97%;
-      font-weight: 50;
     }
     td {
       background: #ffffff;
@@ -65,6 +64,7 @@ button {
     }
     td:nth-of-type(4) {
       width: auto;
+      padding: 0 25px 0 5px;
     }
     @media screen and (max-width: 425px) {
       width: 100%;

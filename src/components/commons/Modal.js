@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component, Fragment } from 'react';
 import Modal from 'react-modal';
 import PropTypes from 'prop-types';
 import '../../assets/styles/modal.scss';
@@ -23,11 +23,11 @@ const customStyles = {
   },
 };
 
-class MrmModal extends React.Component {
+class MrmModal extends Component {
   static propTypes = {
     children: PropTypes.node.isRequired,
     title: PropTypes.string.isRequired,
-    buttonText: PropTypes.string.isRequired,
+    buttonText: PropTypes.string,
     handleCloseRequest: PropTypes.func.isRequired,
     closeModal: PropTypes.bool.isRequired,
     className: PropTypes.string,
@@ -35,7 +35,13 @@ class MrmModal extends React.Component {
 
   static defaultProps = {
     className: 'modalClass',
+    buttonText: '',
   };
+
+  static getDerivedStateFromProps = (props, state) => {
+    if (props.openModal && !state.modalIsOpen) return { modalIsOpen: true };
+    return null;
+  }
 
   state = {
     modalIsOpen: false,
@@ -72,10 +78,10 @@ class MrmModal extends React.Component {
       buttonText, className, title, children,
     } = this.props;
     return (
-      <React.Fragment>
-        <button id="modal-button" onClick={this.openModal}>
-          {buttonText}
-        </button>
+      <Fragment>
+        {buttonText && (
+          <button id="modal-button" onClick={this.openModal}>{buttonText}</button>
+        )}
         <Modal
           isOpen={this.state.modalIsOpen}
           onAfterOpen={this.afterOpenModal}
@@ -85,12 +91,10 @@ class MrmModal extends React.Component {
           className={className}
           ariaHideApp={false}
         >
-          <h2 ref={(subtitle) => { this.subtitle = subtitle; }}>
-            {title}
-          </h2>
+          <h2 ref={(subtitle) => { this.subtitle = subtitle; }}>{title}</h2>
           {children}
         </Modal>
-      </React.Fragment>
+      </Fragment>
     );
   }
 }

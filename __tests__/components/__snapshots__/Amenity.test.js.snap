@@ -8,8 +8,34 @@ exports[`Tests for Amenity Component renders correctly from memory 1`] = `
   <td>
     8
   </td>
-  <td>
-    Edit   Delete
+  <td
+    className="action-buttons"
+  >
+    <ThemedThemed
+      composeTheme="deeply"
+      disabled={false}
+      flat={true}
+      label="Edit"
+      mapThemrProps={[Function]}
+      ripple={true}
+      rippleCentered={false}
+      rippleClassName=""
+      rippleMultiple={true}
+      rippleSpread={2}
+    />
+    <ThemedThemed
+      composeTheme="deeply"
+      disabled={false}
+      flat={true}
+      label="Delete"
+      mapThemrProps={[Function]}
+      onClick={[Function]}
+      ripple={true}
+      rippleCentered={false}
+      rippleClassName=""
+      rippleMultiple={true}
+      rippleSpread={2}
+    />
   </td>
 </tr>
 `;

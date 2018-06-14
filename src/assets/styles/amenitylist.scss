@@ -26,6 +26,7 @@
     tr {
       margin-bottom: 10%;
       border-bottom: 5px solid #f4f8f9;
+      height: 50px;
     }
     th {
       color: #999999;
@@ -34,12 +35,14 @@
       font-size: 97%;
       font-weight: 50;
     }
+    th {
+      padding-left: 4%;
+    }
     td {
       background: #ffffff;
       color: #333e44;
-      font-size: 95%;
+      font-size: 90%;
       font-family: 'DINPro-Light';
-      padding: 1.5%;
       padding-left: 4%;
     }
     @media screen and (max-width: 425px) {
@@ -48,6 +51,74 @@
     }
     @media screen and (min-width: 768) and (max-width: 1023px) {
       width: 95%;
+    }
+  }
+}
+.action-buttons {
+  padding-left: 2.5% !important;
+  button {
+    min-width: 50px;
+    font-family: 'DINPro-regular';
+    text-transform: capitalize;
+    font-size: 102%;
+    margin: 0;
+    padding: 0;
+  }
+  button:first-child{
+    float: left;
+  }
+  button:hover{
+    background: transparent !important;
+    color: #3359db !important;
+  }
+}
+.delete-resource-modal{
+  width: 614px;
+  height: 312px;
+  padding: 0 !important;
+  margin-right: 0 !important;
+  border: none !important;
+  box-shadow: none !important;
+  h2 {
+    margin-left: 50px;
+    margin-top: 45px;
+    text-transform: uppercase;
+  }
+  p{
+    font-family: DINPro-light;
+    font-size: 108%;
+    color: #6f6f6f;
+    -webkit-margin-before: 1px;
+    -webkit-margin-after: 1px;
+  }
+  button{
+    float: right;
+    width: 137px;
+    height: 44px;
+    text-transform: uppercase;
+    border-radius: unset;
+    margin: 0;
+  }
+  button:hover{
+    background: #3359db;
+    color: #fff;
+  }
+  .modal-content{
+    .modal-text {
+      margin-top: 3em;
+      margin-left: 50px;
+    }
+    .button-container {
+      position: absolute;
+      width: 100%;
+      right: 0;
+      bottom: 50px;
+      .modal-cancel{
+        margin-right: 50px;
+      }
+      .modal-submit{
+        margin-right: 10px;
+      }
     }
   }
 }

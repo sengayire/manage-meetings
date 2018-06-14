@@ -20,6 +20,7 @@ module.exports = {
     '!**/setupTests.js',
     '!**/jest.config.js',
   ],
+  testPathIgnorePatterns: ['__mocks__'],
   setupTestFrameworkScriptFile: '<rootDir>/setupTests.js',
   snapshotSerializers: ['enzyme-to-json/serializer'],
 };

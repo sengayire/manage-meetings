@@ -9,9 +9,9 @@ describe('Tests for Amenity Component', () => {
     rooms: 8,
   };
 
-  const shalloWrapper = shallow(<Amenity amenity={amenity} />);
+  const shallowWrapper = shallow(<Amenity amenity={amenity} doDelete={() => {}} />);
 
   it('renders correctly from memory', () => {
-    expect(shalloWrapper).toMatchSnapshot();
+    expect(shallowWrapper).toMatchSnapshot();
   });
 });

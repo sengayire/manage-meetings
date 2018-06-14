@@ -1,5 +1,6 @@
 import React from 'react';
 import Amenity from './Amenity';
+import DeleteResource from './DeleteResource';
 import '../assets/styles/amenitylist.scss';
 import amenitiesList from '../fixtures/amenities';
 
@@ -8,11 +9,30 @@ class AmenityList extends React.Component {
     super(props);
     this.state = {
       amenities: amenitiesList,
+      deleteModal: false,
     };
   }
+
+  deleteResource = (amenity) => {
+    this.setState({
+      deleteModal: true,
+      toDelete: amenity,
+    });
+  };
+
+  handleCloseModal = () => {
+    this.setState({ deleteModal: false });
+  }
+
   render() {
+    const { deleteModal, toDelete, amenities } = this.state;
     return (
       <div className="settings-amenity">
+        {deleteModal && (<DeleteResource
+          openModal={deleteModal}
+          toDelete={toDelete}
+          handleCloseModal={this.handleCloseModal}
+        />)}
         <button>Add Amenities</button>
         <div className="settings-amenity-list">
           <table>
@@ -29,8 +49,12 @@ class AmenityList extends React.Component {
               </tr>
             </thead>
             <tbody>
-              {this.state.amenities.map(amenity => (
-                <Amenity amenity={amenity} key={amenity.name} />
+              {amenities.map(amenity => (
+                <Amenity
+                  amenity={amenity}
+                  key={amenity.name}
+                  doDelete={() => this.deleteResource(amenity)}
+                />
               ))}
             </tbody>
           </table>

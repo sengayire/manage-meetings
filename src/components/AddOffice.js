@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { Component } from 'react';
 import MrmModal from '../components/commons/Modal';
 import '../assets/styles/addoffice.scss';
 
-class AddOffice extends React.Component {
+class AddOffice extends Component {
   state = {
     buildingName: '',
     countryName: '',
@@ -26,13 +26,17 @@ class AddOffice extends React.Component {
   handleAddOffice = (event) => {
     event.preventDefault();
     // submit logic here
-    // after succesful submission closewthe modal
+    // after succesful submission close the modal
     this.handleCloseModal();
   };
 
   render() {
     const {
-      buildingName, countryName, timeZone, closeModal,
+      buildingName,
+      countryName,
+      timeZone,
+      closeModal,
+      openModal,
     } = this.state;
 
     return (
@@ -40,6 +44,7 @@ class AddOffice extends React.Component {
         title="ADD OFFICE"
         buttonText="Add Office"
         closeModal={closeModal}
+        openModal={openModal}
         handleCloseRequest={this.handleModalStateChange}
         className="add-office-modal"
       >
@@ -90,7 +95,9 @@ class AddOffice extends React.Component {
                   onChange={this.handleInputChange}
                 />
                 <div className="dropdown-icon">
-                  <i className="material-icons modal-dropdown">arrow_drop_down</i>
+                  <i className="material-icons modal-dropdown">
+                    arrow_drop_down
+                  </i>
                 </div>
               </div>
             </label>
