@@ -1,7 +1,7 @@
 {
-  "name": "react-starter",
+  "name": "mrm-converge",
   "version": "1.0.0",
-  "description": "bootstrapping tool for react apps",
+  "description": "MRM is a tool aimed at managing meeting room availability to ensure optimized and beneficial use by and for all Andelans and capturing meeting room feedback and data in a timely manner to improve experience and track down issues",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --mode=development",
@@ -16,6 +16,7 @@
   "dependencies": {
     "apollo-cache-inmemory": "^1.2.1",
     "apollo-client": "^2.3.1",
+    "apollo-link-context": "^1.0.8",
     "apollo-link-http": "^1.5.4",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
@@ -35,6 +36,7 @@
     "graphql-tag": "^2.9.2",
     "history": "^4.7.2",
     "html-webpack-plugin": "^3.2.0",
+    "jwt-decode": "^2.2.0",
     "node-sass": "^4.8.3",
     "optimize-css-assets-webpack-plugin": "^4.0.2",
     "postcss": "^6.0.21",
@@ -50,6 +52,7 @@
     "react-router-dom": "^4.2.2",
     "react-toolbox": "^2.0.0-beta.12",
     "sass-loader": "^6.0.7",
+    "sinon": "^5.1.0",
     "style-loader": "^0.20.2",
     "uglifyjs-webpack-plugin": "^1.2.5",
     "webpack": "4.5.0",

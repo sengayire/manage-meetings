@@ -89,6 +89,15 @@ header.home-header {
     }
 }
 
+// classes to theme the snack bar
+.error{
+    background-color: red;
+}
+
+.button-error {
+    color: #FFFFFF!important;
+}
+
 // small and medium screens
 @media all and (max-width: 767px) {
     #dark-tablet {

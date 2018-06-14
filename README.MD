@@ -17,7 +17,8 @@ Ensure you have [NodeJS](https://nodejs.org/en/) environment and [YARN](https://
 #### Running the application
 ##### 1. Setting environment variables
 Create a .env file in the root folder of the application where you are to add your environment variables.
-Add ```NODE_ENV=development``` if you are running the application in development mode.
+The contents of the .env file are pinned on the `mrm-coverge` channel. Reach out to [@shemogumbe](https://github.com/shemogumbe) if you cant find them.
+> Remember some parts of the application won't run if you don't have them
 
 ##### 2. Updating the ```etc/hosts``` file
 The application runs on mrm-dev.andela.com in development mode. This can be enabled by adding mrm-dev.andela.com to the etc/hosts file as decribed below.

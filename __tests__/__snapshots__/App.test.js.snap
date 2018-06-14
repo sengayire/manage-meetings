@@ -1,0 +1,1396 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App component should not render Login if token is present but render Settings component 1`] = `
+<MemoryRouter
+  initialEntries={
+    Array [
+      "/",
+      "/settings",
+    ]
+  }
+  initialIndex={1}
+  keyLength={0}
+>
+  <Router
+    history={
+      Object {
+        "action": "REPLACE",
+        "block": [Function],
+        "canGo": [Function],
+        "createHref": [Function],
+        "entries": Array [
+          Object {
+            "hash": "",
+            "pathname": "/",
+            "search": "",
+            "state": undefined,
+          },
+          Object {
+            "hash": "",
+            "pathname": "/settings/offices",
+            "search": "",
+            "state": undefined,
+          },
+        ],
+        "go": [Function],
+        "goBack": [Function],
+        "goForward": [Function],
+        "index": 1,
+        "length": 2,
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "pathname": "/settings/offices",
+          "search": "",
+          "state": undefined,
+        },
+        "push": [Function],
+        "replace": [Function],
+      }
+    }
+  >
+    <withRouter(App)>
+      <Route
+        render={[Function]}
+      >
+        <App
+          history={
+            Object {
+              "action": "REPLACE",
+              "block": [Function],
+              "canGo": [Function],
+              "createHref": [Function],
+              "entries": Array [
+                Object {
+                  "hash": "",
+                  "pathname": "/",
+                  "search": "",
+                  "state": undefined,
+                },
+                Object {
+                  "hash": "",
+                  "pathname": "/settings/offices",
+                  "search": "",
+                  "state": undefined,
+                },
+              ],
+              "go": [Function],
+              "goBack": [Function],
+              "goForward": [Function],
+              "index": 1,
+              "length": 2,
+              "listen": [Function],
+              "location": Object {
+                "hash": "",
+                "pathname": "/settings/offices",
+                "search": "",
+                "state": undefined,
+              },
+              "push": [Function],
+              "replace": [Function],
+            }
+          }
+          location={
+            Object {
+              "hash": "",
+              "pathname": "/settings/offices",
+              "search": "",
+              "state": undefined,
+            }
+          }
+          match={
+            Object {
+              "isExact": false,
+              "params": Object {},
+              "path": "/",
+              "url": "/",
+            }
+          }
+        >
+          <Switch>
+            <Route
+              component={[Function]}
+              computedMatch={
+                Object {
+                  "isExact": false,
+                  "params": Object {},
+                  "path": "/settings",
+                  "url": "/settings",
+                }
+              }
+              location={
+                Object {
+                  "hash": "",
+                  "pathname": "/settings/offices",
+                  "search": "",
+                  "state": undefined,
+                }
+              }
+              path="/settings"
+            >
+              <Settings
+                history={
+                  Object {
+                    "action": "REPLACE",
+                    "block": [Function],
+                    "canGo": [Function],
+                    "createHref": [Function],
+                    "entries": Array [
+                      Object {
+                        "hash": "",
+                        "pathname": "/",
+                        "search": "",
+                        "state": undefined,
+                      },
+                      Object {
+                        "hash": "",
+                        "pathname": "/settings/offices",
+                        "search": "",
+                        "state": undefined,
+                      },
+                    ],
+                    "go": [Function],
+                    "goBack": [Function],
+                    "goForward": [Function],
+                    "index": 1,
+                    "length": 2,
+                    "listen": [Function],
+                    "location": Object {
+                      "hash": "",
+                      "pathname": "/settings/offices",
+                      "search": "",
+                      "state": undefined,
+                    },
+                    "push": [Function],
+                    "replace": [Function],
+                  }
+                }
+                location={
+                  Object {
+                    "hash": "",
+                    "pathname": "/settings/offices",
+                    "search": "",
+                    "state": undefined,
+                  }
+                }
+                match={
+                  Object {
+                    "isExact": false,
+                    "params": Object {},
+                    "path": "/settings",
+                    "url": "/settings",
+                  }
+                }
+              >
+                <NavBar>
+                  <TopMenu>
+                    <div
+                      className="top-menu"
+                    >
+                      <div
+                        className="container size-2-8 nav-menu"
+                      >
+                        <div
+                          className="container content-start nav-left"
+                        >
+                          <ul
+                            className="inline nav-brand"
+                          >
+                            <li
+                              className="logo"
+                            >
+                              <img
+                                alt="Logo"
+                                src="test-file-stub"
+                              />
+                            </li>
+                            <li
+                              className="logo-text"
+                            >
+                              <h1>
+                                CONVERGE
+                              </h1>
+                            </li>
+                          </ul>
+                        </div>
+                        <div
+                          className="container content-end nav-right"
+                        >
+                          <div
+                            className="search-box"
+                          >
+                            <form
+                              className="container"
+                            >
+                              <input
+                                className="search-bar"
+                                placeholder="Search"
+                                type="text"
+                              />
+                              <img
+                                alt="Search icon"
+                                className="search-icon"
+                                src="test-file-stub"
+                              />
+                            </form>
+                          </div>
+                          <div
+                            className="container side-nav"
+                          >
+                            <div
+                              className="notifications"
+                            >
+                              <img
+                                alt="Notification icon"
+                                src="test-file-stub"
+                              />
+                            </div>
+                            <div
+                              className="profile"
+                            >
+                              <img
+                                alt="Profile icon"
+                                style={
+                                  Object {
+                                    "borderRadius": "17px",
+                                    "height": "34px",
+                                    "width": "34px",
+                                  }
+                                }
+                              />
+                            </div>
+                            <div
+                              className="container"
+                            >
+                              <span
+                                className="username"
+                              >
+                                undefined undefined
+                              </span>
+                              <i
+                                className="material-icons dropdown"
+                              >
+                                arrow_drop_down
+                              </i>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </TopMenu>
+                  <TopNav>
+                    <div
+                      className="top-nav"
+                    >
+                      <ThemedAppBar
+                        className="nav-app-bar"
+                        composeTheme="deeply"
+                        fixed={false}
+                        flat={false}
+                        mapThemrProps={[Function]}
+                        scrollHide={false}
+                      >
+                        <AppBar
+                          className="nav-app-bar"
+                          fixed={false}
+                          flat={false}
+                          scrollHide={false}
+                          theme={Object {}}
+                        >
+                          <header
+                            className="nav-app-bar"
+                            data-react-toolbox="app-bar"
+                          >
+                            <div>
+                              <ThemedNavigation
+                                actions={Array []}
+                                className=""
+                                composeTheme="deeply"
+                                mapThemrProps={[Function]}
+                                routes={Array []}
+                                type="horizontal"
+                              >
+                                <Navigation
+                                  actions={Array []}
+                                  className=""
+                                  routes={Array []}
+                                  theme={Object {}}
+                                  type="horizontal"
+                                >
+                                  <nav
+                                    className=""
+                                    data-react-toolbox="navigation"
+                                  >
+                                    <NavLink
+                                      exact={false}
+                                      icon={
+                                        <img
+                                          alt="Analytics"
+                                          src="test-file-stub"
+                                        />
+                                      }
+                                      label="Analytics"
+                                      strict={false}
+                                      to="/analytics"
+                                    >
+                                      <Route
+                                        exact={false}
+                                        path="/analytics"
+                                        strict={false}
+                                      >
+                                        <ThemedLink
+                                          active={false}
+                                          className=""
+                                          composeTheme="deeply"
+                                          icon={
+                                            <img
+                                              alt="Analytics"
+                                              src="test-file-stub"
+                                            />
+                                          }
+                                          label="Analytics"
+                                          mapThemrProps={[Function]}
+                                          onClick={[Function]}
+                                        >
+                                          <Link
+                                            active={false}
+                                            className=""
+                                            icon={
+                                              <img
+                                                alt="Analytics"
+                                                src="test-file-stub"
+                                              />
+                                            }
+                                            label="Analytics"
+                                            onClick={[Function]}
+                                            theme={Object {}}
+                                          >
+                                            <a
+                                              className=""
+                                              data-react-toolbox="link"
+                                              onClick={[Function]}
+                                            >
+                                              <FontIcon
+                                                alt=""
+                                                className=""
+                                                value={
+                                                  <img
+                                                    alt="Analytics"
+                                                    src="test-file-stub"
+                                                  />
+                                                }
+                                              >
+                                                <span
+                                                  aria-label=""
+                                                  className=""
+                                                  data-react-toolbox="font-icon"
+                                                >
+                                                  <img
+                                                    alt="Analytics"
+                                                    src="test-file-stub"
+                                                  />
+                                                </span>
+                                              </FontIcon>
+                                              <abbr>
+                                                Analytics
+                                              </abbr>
+                                            </a>
+                                          </Link>
+                                        </ThemedLink>
+                                      </Route>
+                                    </NavLink>
+                                    <NavLink
+                                      exact={false}
+                                      icon={
+                                        <img
+                                          alt="Settings"
+                                          src="test-file-stub"
+                                        />
+                                      }
+                                      label="Settings"
+                                      strict={false}
+                                      to="/settings"
+                                    >
+                                      <Route
+                                        exact={false}
+                                        path="/settings"
+                                        strict={false}
+                                      >
+                                        <ThemedLink
+                                          active={true}
+                                          className=""
+                                          composeTheme="deeply"
+                                          icon={
+                                            <img
+                                              alt="Settings"
+                                              src="test-file-stub"
+                                            />
+                                          }
+                                          label="Settings"
+                                          mapThemrProps={[Function]}
+                                          onClick={[Function]}
+                                        >
+                                          <Link
+                                            active={true}
+                                            className=""
+                                            icon={
+                                              <img
+                                                alt="Settings"
+                                                src="test-file-stub"
+                                              />
+                                            }
+                                            label="Settings"
+                                            onClick={[Function]}
+                                            theme={Object {}}
+                                          >
+                                            <a
+                                              className="undefined"
+                                              data-react-toolbox="link"
+                                              onClick={[Function]}
+                                            >
+                                              <FontIcon
+                                                alt=""
+                                                className=""
+                                                value={
+                                                  <img
+                                                    alt="Settings"
+                                                    src="test-file-stub"
+                                                  />
+                                                }
+                                              >
+                                                <span
+                                                  aria-label=""
+                                                  className=""
+                                                  data-react-toolbox="font-icon"
+                                                >
+                                                  <img
+                                                    alt="Settings"
+                                                    src="test-file-stub"
+                                                  />
+                                                </span>
+                                              </FontIcon>
+                                              <abbr>
+                                                Settings
+                                              </abbr>
+                                            </a>
+                                          </Link>
+                                        </ThemedLink>
+                                      </Route>
+                                    </NavLink>
+                                    <NavLink
+                                      exact={false}
+                                      icon={
+                                        <img
+                                          alt="Room Feedback"
+                                          src="test-file-stub"
+                                        />
+                                      }
+                                      label="Room Feedback"
+                                      strict={false}
+                                      to="/feedback"
+                                    >
+                                      <Route
+                                        exact={false}
+                                        path="/feedback"
+                                        strict={false}
+                                      >
+                                        <ThemedLink
+                                          active={false}
+                                          className=""
+                                          composeTheme="deeply"
+                                          icon={
+                                            <img
+                                              alt="Room Feedback"
+                                              src="test-file-stub"
+                                            />
+                                          }
+                                          label="Room Feedback"
+                                          mapThemrProps={[Function]}
+                                          onClick={[Function]}
+                                        >
+                                          <Link
+                                            active={false}
+                                            className=""
+                                            icon={
+                                              <img
+                                                alt="Room Feedback"
+                                                src="test-file-stub"
+                                              />
+                                            }
+                                            label="Room Feedback"
+                                            onClick={[Function]}
+                                            theme={Object {}}
+                                          >
+                                            <a
+                                              className=""
+                                              data-react-toolbox="link"
+                                              onClick={[Function]}
+                                            >
+                                              <FontIcon
+                                                alt=""
+                                                className=""
+                                                value={
+                                                  <img
+                                                    alt="Room Feedback"
+                                                    src="test-file-stub"
+                                                  />
+                                                }
+                                              >
+                                                <span
+                                                  aria-label=""
+                                                  className=""
+                                                  data-react-toolbox="font-icon"
+                                                >
+                                                  <img
+                                                    alt="Room Feedback"
+                                                    src="test-file-stub"
+                                                  />
+                                                </span>
+                                              </FontIcon>
+                                              <abbr>
+                                                Room Feedback
+                                              </abbr>
+                                            </a>
+                                          </Link>
+                                        </ThemedLink>
+                                      </Route>
+                                    </NavLink>
+                                  </nav>
+                                </Navigation>
+                              </ThemedNavigation>
+                            </div>
+                          </header>
+                        </AppBar>
+                      </ThemedAppBar>
+                    </div>
+                  </TopNav>
+                </NavBar>
+                <SettingsContent>
+                  <div
+                    className="settings-vertical"
+                  >
+                    <SettingsNav>
+                      <div
+                        className="settings-tabs"
+                      >
+                        <ul>
+                          <li>
+                            <NavLink
+                              activeClassName="active"
+                              ariaCurrent="true"
+                              to="/settings/offices"
+                            >
+                              <Route
+                                path="/settings/offices"
+                              >
+                                <Link
+                                  aria-current="true"
+                                  className="active"
+                                  replace={false}
+                                  style={Object {}}
+                                  to="/settings/offices"
+                                >
+                                  <a
+                                    aria-current="true"
+                                    className="active"
+                                    href="/settings/offices"
+                                    onClick={[Function]}
+                                    style={Object {}}
+                                  >
+                                    Offices
+                                  </a>
+                                </Link>
+                              </Route>
+                            </NavLink>
+                          </li>
+                          <li>
+                            <NavLink
+                              activeClassName="active"
+                              ariaCurrent="true"
+                              to="/settings/rooms"
+                            >
+                              <Route
+                                path="/settings/rooms"
+                              >
+                                <Link
+                                  aria-current={false}
+                                  replace={false}
+                                  to="/settings/rooms"
+                                >
+                                  <a
+                                    aria-current={false}
+                                    href="/settings/rooms"
+                                    onClick={[Function]}
+                                  >
+                                    Room
+                                  </a>
+                                </Link>
+                              </Route>
+                            </NavLink>
+                          </li>
+                          <li>
+                            <NavLink
+                              activeClassName="active"
+                              ariaCurrent="true"
+                              to="/settings/room-resources"
+                            >
+                              <Route
+                                path="/settings/room-resources"
+                              >
+                                <Link
+                                  aria-current={false}
+                                  replace={false}
+                                  to="/settings/room-resources"
+                                >
+                                  <a
+                                    aria-current={false}
+                                    href="/settings/room-resources"
+                                    onClick={[Function]}
+                                  >
+                                    Room Resources
+                                  </a>
+                                </Link>
+                              </Route>
+                            </NavLink>
+                          </li>
+                          <li>
+                            <NavLink
+                              activeClassName="active"
+                              ariaCurrent="true"
+                              to="/settings/people"
+                            >
+                              <Route
+                                path="/settings/people"
+                              >
+                                <Link
+                                  aria-current={false}
+                                  replace={false}
+                                  to="/settings/people"
+                                >
+                                  <a
+                                    aria-current={false}
+                                    href="/settings/people"
+                                    onClick={[Function]}
+                                  >
+                                    People
+                                  </a>
+                                </Link>
+                              </Route>
+                            </NavLink>
+                          </li>
+                          <li>
+                            <NavLink
+                              activeClassName="active"
+                              ariaCurrent="true"
+                              to="/settings/devices"
+                            >
+                              <Route
+                                path="/settings/devices"
+                              >
+                                <Link
+                                  aria-current={false}
+                                  replace={false}
+                                  to="/settings/devices"
+                                >
+                                  <a
+                                    aria-current={false}
+                                    href="/settings/devices"
+                                    onClick={[Function]}
+                                  >
+                                    Devices
+                                  </a>
+                                </Link>
+                              </Route>
+                            </NavLink>
+                          </li>
+                          <li>
+                            <NavLink
+                              activeClassName="active"
+                              ariaCurrent="true"
+                              to="/settings/integrations"
+                            >
+                              <Route
+                                path="/settings/integrations"
+                              >
+                                <Link
+                                  aria-current={false}
+                                  replace={false}
+                                  to="/settings/integrations"
+                                >
+                                  <a
+                                    aria-current={false}
+                                    href="/settings/integrations"
+                                    onClick={[Function]}
+                                  >
+                                    Integrations
+                                  </a>
+                                </Link>
+                              </Route>
+                            </NavLink>
+                          </li>
+                        </ul>
+                      </div>
+                    </SettingsNav>
+                    <div
+                      className="settings-tab-content"
+                    >
+                      <Switch>
+                        <Route
+                          component={[Function]}
+                          computedMatch={
+                            Object {
+                              "isExact": true,
+                              "params": Object {},
+                              "path": "/settings/offices",
+                              "url": "/settings/offices",
+                            }
+                          }
+                          exact={true}
+                          location={
+                            Object {
+                              "hash": "",
+                              "pathname": "/settings/offices",
+                              "search": "",
+                              "state": undefined,
+                            }
+                          }
+                          path="/settings/offices"
+                        >
+                          <OfficeList
+                            history={
+                              Object {
+                                "action": "REPLACE",
+                                "block": [Function],
+                                "canGo": [Function],
+                                "createHref": [Function],
+                                "entries": Array [
+                                  Object {
+                                    "hash": "",
+                                    "pathname": "/",
+                                    "search": "",
+                                    "state": undefined,
+                                  },
+                                  Object {
+                                    "hash": "",
+                                    "pathname": "/settings/offices",
+                                    "search": "",
+                                    "state": undefined,
+                                  },
+                                ],
+                                "go": [Function],
+                                "goBack": [Function],
+                                "goForward": [Function],
+                                "index": 1,
+                                "length": 2,
+                                "listen": [Function],
+                                "location": Object {
+                                  "hash": "",
+                                  "pathname": "/settings/offices",
+                                  "search": "",
+                                  "state": undefined,
+                                },
+                                "push": [Function],
+                                "replace": [Function],
+                              }
+                            }
+                            location={
+                              Object {
+                                "hash": "",
+                                "pathname": "/settings/offices",
+                                "search": "",
+                                "state": undefined,
+                              }
+                            }
+                            match={
+                              Object {
+                                "isExact": true,
+                                "params": Object {},
+                                "path": "/settings/offices",
+                                "url": "/settings/offices",
+                              }
+                            }
+                          >
+                            <div
+                              className="settings-offices"
+                            >
+                              <AddOffice>
+                                <MrmModal
+                                  buttonText="Add Office"
+                                  className="add-office-modal"
+                                  closeModal={false}
+                                  handleCloseRequest={[Function]}
+                                  title="ADD OFFICE"
+                                >
+                                  <button
+                                    id="modal-button"
+                                    onClick={[Function]}
+                                  >
+                                    Add Office
+                                  </button>
+                                  <Modal
+                                    ariaHideApp={false}
+                                    bodyOpenClassName="ReactModal__Body--open"
+                                    className="add-office-modal"
+                                    closeTimeoutMS={0}
+                                    contentLabel="Parent Modal"
+                                    isOpen={false}
+                                    onAfterOpen={[Function]}
+                                    onRequestClose={[Function]}
+                                    parentSelector={[Function]}
+                                    portalClassName="ReactModalPortal"
+                                    shouldCloseOnEsc={true}
+                                    shouldCloseOnOverlayClick={true}
+                                    shouldFocusAfterRender={true}
+                                    shouldReturnFocusAfterClose={true}
+                                    style={
+                                      Object {
+                                        "content": Object {
+                                          "backgroundColor": "#ffffff",
+                                          "border": "1px solid #CCCCCC",
+                                          "borderRadius": "4px",
+                                          "bottom": "auto",
+                                          "boxShadow": "0 2px 40px 10px rgba(185, 180, 180, 0.2)",
+                                          "fontFamily": "DINPro-Regular",
+                                          "left": "50%",
+                                          "marginRight": "-50%",
+                                          "outline": "none",
+                                          "overflow": "auto",
+                                          "padding": "20px",
+                                          "position": "absolute",
+                                          "right": "auto",
+                                          "top": "50%",
+                                          "transform": "translate(-50%, -50%)",
+                                        },
+                                      }
+                                    }
+                                  >
+                                    <ModalPortal
+                                      ariaHideApp={false}
+                                      bodyOpenClassName="ReactModal__Body--open"
+                                      className="add-office-modal"
+                                      closeTimeoutMS={0}
+                                      contentLabel="Parent Modal"
+                                      defaultStyles={
+                                        Object {
+                                          "content": Object {
+                                            "WebkitOverflowScrolling": "touch",
+                                            "background": "#fff",
+                                            "border": "1px solid #ccc",
+                                            "borderRadius": "4px",
+                                            "bottom": "40px",
+                                            "left": "40px",
+                                            "outline": "none",
+                                            "overflow": "auto",
+                                            "padding": "20px",
+                                            "position": "absolute",
+                                            "right": "40px",
+                                            "top": "40px",
+                                          },
+                                          "overlay": Object {
+                                            "backgroundColor": "rgba(255, 255, 255, 0.75)",
+                                            "bottom": 0,
+                                            "left": 0,
+                                            "position": "fixed",
+                                            "right": 0,
+                                            "top": 0,
+                                          },
+                                        }
+                                      }
+                                      isOpen={false}
+                                      onAfterOpen={[Function]}
+                                      onRequestClose={[Function]}
+                                      parentSelector={[Function]}
+                                      portalClassName="ReactModalPortal"
+                                      shouldCloseOnEsc={true}
+                                      shouldCloseOnOverlayClick={true}
+                                      shouldFocusAfterRender={true}
+                                      shouldReturnFocusAfterClose={true}
+                                      style={
+                                        Object {
+                                          "content": Object {
+                                            "backgroundColor": "#ffffff",
+                                            "border": "1px solid #CCCCCC",
+                                            "borderRadius": "4px",
+                                            "bottom": "auto",
+                                            "boxShadow": "0 2px 40px 10px rgba(185, 180, 180, 0.2)",
+                                            "fontFamily": "DINPro-Regular",
+                                            "left": "50%",
+                                            "marginRight": "-50%",
+                                            "outline": "none",
+                                            "overflow": "auto",
+                                            "padding": "20px",
+                                            "position": "absolute",
+                                            "right": "auto",
+                                            "top": "50%",
+                                            "transform": "translate(-50%, -50%)",
+                                          },
+                                        }
+                                      }
+                                    />
+                                  </Modal>
+                                </MrmModal>
+                              </AddOffice>
+                              <div
+                                className="settings-offices-list"
+                              >
+                                <table>
+                                  <colgroup>
+                                    <col
+                                      className="first-col"
+                                    />
+                                    <col />
+                                    <col />
+                                    <col
+                                      className="last-col"
+                                    />
+                                  </colgroup>
+                                  <thead>
+                                    <tr>
+                                      <th>
+                                        Office
+                                      </th>
+                                      <th>
+                                        Location
+                                      </th>
+                                      <th>
+                                        Time Zone
+                                      </th>
+                                      <th>
+                                        Action
+                                      </th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <Office
+                                      key="EPIC Tower"
+                                      office={
+                                        Object {
+                                          "location": "Nigeria",
+                                          "name": "EPIC Tower",
+                                          "timezone": "GMT +1",
+                                        }
+                                      }
+                                    >
+                                      <tr>
+                                        <td>
+                                          EPIC Tower
+                                        </td>
+                                        <td>
+                                          Nigeria
+                                        </td>
+                                        <td>
+                                          GMT +1
+                                        </td>
+                                        <td>
+                                          Edit   Delete
+                                        </td>
+                                      </tr>
+                                    </Office>
+                                    <Office
+                                      key="Invisible Building"
+                                      office={
+                                        Object {
+                                          "location": "Kenya",
+                                          "name": "Invisible Building",
+                                          "timezone": "GMT -1",
+                                        }
+                                      }
+                                    >
+                                      <tr>
+                                        <td>
+                                          Invisible Building
+                                        </td>
+                                        <td>
+                                          Kenya
+                                        </td>
+                                        <td>
+                                          GMT -1
+                                        </td>
+                                        <td>
+                                          Edit   Delete
+                                        </td>
+                                      </tr>
+                                    </Office>
+                                  </tbody>
+                                </table>
+                              </div>
+                            </div>
+                          </OfficeList>
+                        </Route>
+                      </Switch>
+                    </div>
+                  </div>
+                </SettingsContent>
+              </Settings>
+            </Route>
+          </Switch>
+        </App>
+      </Route>
+    </withRouter(App)>
+  </Router>
+</MemoryRouter>
+`;
+
+exports[`App component should render properly in memory 1`] = `
+<MemoryRouter
+  initialEntries={
+    Array [
+      "/",
+      "/settings",
+    ]
+  }
+  initialIndex={1}
+  keyLength={0}
+>
+  <Router
+    history={
+      Object {
+        "action": "REPLACE",
+        "block": [Function],
+        "canGo": [Function],
+        "createHref": [Function],
+        "entries": Array [
+          Object {
+            "hash": "",
+            "pathname": "/",
+            "search": "",
+            "state": undefined,
+          },
+          Object {
+            "hash": "",
+            "pathname": "/",
+            "search": "",
+            "state": Object {
+              "errorMessage": "You need to be loggedin to access this page",
+            },
+          },
+        ],
+        "go": [Function],
+        "goBack": [Function],
+        "goForward": [Function],
+        "index": 1,
+        "length": 2,
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "pathname": "/",
+          "search": "",
+          "state": Object {
+            "errorMessage": "You need to be loggedin to access this page",
+          },
+        },
+        "push": [Function],
+        "replace": [Function],
+      }
+    }
+  >
+    <withRouter(App)>
+      <Route
+        render={[Function]}
+      >
+        <App
+          history={
+            Object {
+              "action": "REPLACE",
+              "block": [Function],
+              "canGo": [Function],
+              "createHref": [Function],
+              "entries": Array [
+                Object {
+                  "hash": "",
+                  "pathname": "/",
+                  "search": "",
+                  "state": undefined,
+                },
+                Object {
+                  "hash": "",
+                  "pathname": "/",
+                  "search": "",
+                  "state": Object {
+                    "errorMessage": "You need to be loggedin to access this page",
+                  },
+                },
+              ],
+              "go": [Function],
+              "goBack": [Function],
+              "goForward": [Function],
+              "index": 1,
+              "length": 2,
+              "listen": [Function],
+              "location": Object {
+                "hash": "",
+                "pathname": "/",
+                "search": "",
+                "state": Object {
+                  "errorMessage": "You need to be loggedin to access this page",
+                },
+              },
+              "push": [Function],
+              "replace": [Function],
+            }
+          }
+          location={
+            Object {
+              "hash": "",
+              "pathname": "/",
+              "search": "",
+              "state": Object {
+                "errorMessage": "You need to be loggedin to access this page",
+              },
+            }
+          }
+          match={
+            Object {
+              "isExact": true,
+              "params": Object {},
+              "path": "/",
+              "url": "/",
+            }
+          }
+        >
+          <Switch>
+            <Route
+              component={[Function]}
+              computedMatch={
+                Object {
+                  "isExact": true,
+                  "params": Object {},
+                  "path": "/",
+                  "url": "/",
+                }
+              }
+              exact={true}
+              location={
+                Object {
+                  "hash": "",
+                  "pathname": "/",
+                  "search": "",
+                  "state": Object {
+                    "errorMessage": "You need to be loggedin to access this page",
+                  },
+                }
+              }
+              path="/"
+            >
+              <withRouter(Login)
+                history={
+                  Object {
+                    "action": "REPLACE",
+                    "block": [Function],
+                    "canGo": [Function],
+                    "createHref": [Function],
+                    "entries": Array [
+                      Object {
+                        "hash": "",
+                        "pathname": "/",
+                        "search": "",
+                        "state": undefined,
+                      },
+                      Object {
+                        "hash": "",
+                        "pathname": "/",
+                        "search": "",
+                        "state": Object {
+                          "errorMessage": "You need to be loggedin to access this page",
+                        },
+                      },
+                    ],
+                    "go": [Function],
+                    "goBack": [Function],
+                    "goForward": [Function],
+                    "index": 1,
+                    "length": 2,
+                    "listen": [Function],
+                    "location": Object {
+                      "hash": "",
+                      "pathname": "/",
+                      "search": "",
+                      "state": Object {
+                        "errorMessage": "You need to be loggedin to access this page",
+                      },
+                    },
+                    "push": [Function],
+                    "replace": [Function],
+                  }
+                }
+                location={
+                  Object {
+                    "hash": "",
+                    "pathname": "/",
+                    "search": "",
+                    "state": Object {
+                      "errorMessage": "You need to be loggedin to access this page",
+                    },
+                  }
+                }
+                match={
+                  Object {
+                    "isExact": true,
+                    "params": Object {},
+                    "path": "/",
+                    "url": "/",
+                  }
+                }
+              >
+                <Route
+                  render={[Function]}
+                >
+                  <Login
+                    history={
+                      Object {
+                        "action": "REPLACE",
+                        "block": [Function],
+                        "canGo": [Function],
+                        "createHref": [Function],
+                        "entries": Array [
+                          Object {
+                            "hash": "",
+                            "pathname": "/",
+                            "search": "",
+                            "state": undefined,
+                          },
+                          Object {
+                            "hash": "",
+                            "pathname": "/",
+                            "search": "",
+                            "state": Object {
+                              "errorMessage": "You need to be loggedin to access this page",
+                            },
+                          },
+                        ],
+                        "go": [Function],
+                        "goBack": [Function],
+                        "goForward": [Function],
+                        "index": 1,
+                        "length": 2,
+                        "listen": [Function],
+                        "location": Object {
+                          "hash": "",
+                          "pathname": "/",
+                          "search": "",
+                          "state": Object {
+                            "errorMessage": "You need to be loggedin to access this page",
+                          },
+                        },
+                        "push": [Function],
+                        "replace": [Function],
+                      }
+                    }
+                    location={
+                      Object {
+                        "hash": "",
+                        "pathname": "/",
+                        "search": "",
+                        "state": Object {
+                          "errorMessage": "You need to be loggedin to access this page",
+                        },
+                      }
+                    }
+                    match={
+                      Object {
+                        "isExact": true,
+                        "params": Object {},
+                        "path": "/",
+                        "url": "/",
+                      }
+                    }
+                  >
+                    <header
+                      className="home-header"
+                    >
+                      <h1>
+                        CONVERGE
+                      </h1>
+                    </header>
+                    <Component>
+                      <div
+                        id="converge-intro"
+                      >
+                        Meet the Meeting Room App
+                        <br />
+                        that your meeting room app aspires to be.
+                      </div>
+                    </Component>
+                    <LoginButton>
+                      <a
+                        href="undefined=undefined"
+                      >
+                        <input
+                          alt="Login With Your Email"
+                          className="btn-signin"
+                          src="test-file-stub"
+                          type="image"
+                        />
+                      </a>
+                    </LoginButton>
+                    <img
+                      alt="Dark Tablet"
+                      id="dark-tablet"
+                      src="test-file-stub"
+                    />
+                    <ThemedActivableRenderer
+                      action="Dismiss"
+                      active={true}
+                      composeTheme="deeply"
+                      delay={500}
+                      label="You need to be loggedin to access this page"
+                      mapThemrProps={[Function]}
+                      onClick={[Function]}
+                      onTimeout={[Function]}
+                      theme={
+                        Object {
+                          "button": "button-error",
+                          "snackbar": "error",
+                        }
+                      }
+                      timeout={6000}
+                      type="cancel"
+                    >
+                      <ActivableRenderer
+                        action="Dismiss"
+                        active={true}
+                        delay={500}
+                        label="You need to be loggedin to access this page"
+                        onClick={[Function]}
+                        onTimeout={[Function]}
+                        theme={
+                          Object {
+                            "button": "button-error",
+                            "snackbar": "error",
+                          }
+                        }
+                        timeout={6000}
+                        type="cancel"
+                      >
+                        <Snackbar
+                          action="Dismiss"
+                          active={true}
+                          label="You need to be loggedin to access this page"
+                          onClick={[Function]}
+                          onTimeout={[Function]}
+                          theme={
+                            Object {
+                              "button": "button-error",
+                              "snackbar": "error",
+                            }
+                          }
+                          timeout={6000}
+                          type="cancel"
+                        >
+                          <Portal
+                            className=""
+                          />
+                        </Snackbar>
+                      </ActivableRenderer>
+                    </ThemedActivableRenderer>
+                  </Login>
+                </Route>
+              </withRouter(Login)>
+            </Route>
+          </Switch>
+        </App>
+      </Route>
+    </withRouter(App)>
+  </Router>
+</MemoryRouter>
+`;

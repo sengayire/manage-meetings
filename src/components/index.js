@@ -1,4 +1,4 @@
 import NavBar from './NavBar';
-import Login from './Login';
+import LoginPage from './Login';
 
-export { NavBar, Login };
+export { NavBar, LoginPage };

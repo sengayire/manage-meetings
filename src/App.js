@@ -1,24 +1,61 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { withRouter, Route, Switch, Redirect } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import ROUTES from './utils/routes';
 import { Settings, Analytics, Feedback } from './containers';
-import { Login } from './components';
+import { LoginPage } from './components';
+import { getItemFromLocalStorage } from './utils/Utilities';
+import Constants from './utils/Constants';
 
+// destruscture constants to be used
+const {
+  MRM_TOKEN,
+  MESSAGES: { authenticationError },
+} = Constants;
 class App extends Component {
-  // this component is later statefull in the PR (https://github.com/andela/mrm_front/pull/22)
-  state = {};
+  static propTypes = {
+    location: PropTypes.shape({
+      pathname: PropTypes.string,
+    }).isRequired,
+  };
+
+  state = {
+    loggedIn: false,
+  };
+
+  static getDerivedStateFromProps = () => {
+    const token = getItemFromLocalStorage(MRM_TOKEN);
+    if (!token) {
+      return { loggedIn: false };
+    }
+    return { loggedIn: true };
+  };
+
   render() {
+    const { loggedIn } = this.state;
+    const { location } = this.props;
+
+    if (!loggedIn && location.pathname !== ROUTES.home) {
+      // redirect to landing page if user isn't logged in
+      return (
+        <Redirect
+          to={{
+            pathname: ROUTES.home,
+            state: { errorMessage: authenticationError },
+          }}
+        />
+      );
+    }
+
     return (
-      <Router>
-        <Switch>
-          <Route exact path={ROUTES.home} component={Login} />
-          <Route path={ROUTES.settings} component={Settings} />
-          <Route path={ROUTES.analytics} component={Analytics} />
-          <Route path={ROUTES.feedback} component={Feedback} />
-        </Switch>
-      </Router>
+      <Switch>
+        <Route exact path={ROUTES.home} component={LoginPage} />
+        <Route path={ROUTES.settings} component={Settings} />
+        <Route path={ROUTES.analytics} component={Analytics} />
+        <Route path={ROUTES.feedback} component={Feedback} />
+      </Switch>
     );
   }
 }
 
-export default App;
+export default withRouter(App);
