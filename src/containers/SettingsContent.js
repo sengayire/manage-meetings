@@ -7,6 +7,7 @@ import AmenityList from '../components/AmenityList';
 import '../assets/styles/settingscontent.scss';
 import ROUTES from '../utils/routes';
 import PlaceHolder from '../components/Placeholder';
+import RoomsList from '../components/RoomsList';
 
 // replace the PlaceHolder component with appropriate component to be rendered
 const SettingsContent = () => (
@@ -15,7 +16,7 @@ const SettingsContent = () => (
     <div className="settings-tab-content">
       <Switch>
         <Route exact path={ROUTES.settingsOffices} component={OfficeList} />
-        <Route exact path={ROUTES.settingsRooms} component={PlaceHolder} />
+        <Route exact path={ROUTES.settingsRooms} component={RoomsList} />
         <Route exact path={ROUTES.settingsAmenities} component={AmenityList} />
         <Route exact path={ROUTES.settingsPeople} component={PlaceHolder} />
         <Route exact path={ROUTES.settingsDevices} component={PlaceHolder} />
