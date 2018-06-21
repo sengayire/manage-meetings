@@ -1,0 +1,314 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddResource Component renders properly 1`] = `
+<AddResource>
+  <MrmModal
+    buttonText="Add Amenities"
+    className="add-resource-modal"
+    closeModal={false}
+    handleCloseRequest={[Function]}
+    title="ADD AMENITIES"
+  >
+    <button
+      id="modal-button"
+      onClick={[Function]}
+    >
+      Add Amenities
+    </button>
+    <Modal
+      ariaHideApp={false}
+      bodyOpenClassName="ReactModal__Body--open"
+      className="add-resource-modal"
+      closeTimeoutMS={0}
+      contentLabel="Parent Modal"
+      isOpen={false}
+      onAfterOpen={[Function]}
+      onRequestClose={[Function]}
+      parentSelector={[Function]}
+      portalClassName="ReactModalPortal"
+      shouldCloseOnEsc={true}
+      shouldCloseOnOverlayClick={true}
+      shouldFocusAfterRender={true}
+      shouldReturnFocusAfterClose={true}
+      style={
+        Object {
+          "content": Object {
+            "backgroundColor": "#ffffff",
+            "border": "1px solid #CCCCCC",
+            "borderRadius": "4px",
+            "bottom": "auto",
+            "boxShadow": "0 2px 40px 10px rgba(185, 180, 180, 0.2)",
+            "fontFamily": "DINPro-Regular",
+            "left": "50%",
+            "marginRight": "-50%",
+            "outline": "none",
+            "overflow": "auto",
+            "position": "absolute",
+            "right": "auto",
+            "top": "50%",
+            "transform": "translate(-50%, -50%)",
+          },
+        }
+      }
+    >
+      <ModalPortal
+        ariaHideApp={false}
+        bodyOpenClassName="ReactModal__Body--open"
+        className="add-resource-modal"
+        closeTimeoutMS={0}
+        contentLabel="Parent Modal"
+        defaultStyles={
+          Object {
+            "content": Object {
+              "WebkitOverflowScrolling": "touch",
+              "background": "#fff",
+              "border": "1px solid #ccc",
+              "borderRadius": "4px",
+              "bottom": "40px",
+              "left": "40px",
+              "outline": "none",
+              "overflow": "auto",
+              "padding": "20px",
+              "position": "absolute",
+              "right": "40px",
+              "top": "40px",
+            },
+            "overlay": Object {
+              "backgroundColor": "rgba(255, 255, 255, 0.75)",
+              "bottom": 0,
+              "left": 0,
+              "position": "fixed",
+              "right": 0,
+              "top": 0,
+            },
+          }
+        }
+        isOpen={false}
+        onAfterOpen={[Function]}
+        onRequestClose={[Function]}
+        parentSelector={[Function]}
+        portalClassName="ReactModalPortal"
+        shouldCloseOnEsc={true}
+        shouldCloseOnOverlayClick={true}
+        shouldFocusAfterRender={true}
+        shouldReturnFocusAfterClose={true}
+        style={
+          Object {
+            "content": Object {
+              "backgroundColor": "#ffffff",
+              "border": "1px solid #CCCCCC",
+              "borderRadius": "4px",
+              "bottom": "auto",
+              "boxShadow": "0 2px 40px 10px rgba(185, 180, 180, 0.2)",
+              "fontFamily": "DINPro-Regular",
+              "left": "50%",
+              "marginRight": "-50%",
+              "outline": "none",
+              "overflow": "auto",
+              "position": "absolute",
+              "right": "auto",
+              "top": "50%",
+              "transform": "translate(-50%, -50%)",
+            },
+          }
+        }
+      />
+    </Modal>
+  </MrmModal>
+</AddResource>
+`;
+
+exports[`AddResource Component should pop-up a modal 1`] = `
+<AddResource>
+  <MrmModal
+    buttonText="Add Amenities"
+    className="add-resource-modal"
+    closeModal={false}
+    handleCloseRequest={[Function]}
+    title="ADD AMENITIES"
+  >
+    <button
+      id="modal-button"
+      onClick={[Function]}
+    >
+      Add Amenities
+    </button>
+    <Modal
+      ariaHideApp={false}
+      bodyOpenClassName="ReactModal__Body--open"
+      className="add-resource-modal"
+      closeTimeoutMS={0}
+      contentLabel="Parent Modal"
+      isOpen={true}
+      onAfterOpen={[Function]}
+      onRequestClose={[Function]}
+      parentSelector={[Function]}
+      portalClassName="ReactModalPortal"
+      shouldCloseOnEsc={true}
+      shouldCloseOnOverlayClick={true}
+      shouldFocusAfterRender={true}
+      shouldReturnFocusAfterClose={true}
+      style={
+        Object {
+          "content": Object {
+            "backgroundColor": "#ffffff",
+            "border": "1px solid #CCCCCC",
+            "borderRadius": "4px",
+            "bottom": "auto",
+            "boxShadow": "0 2px 40px 10px rgba(185, 180, 180, 0.2)",
+            "fontFamily": "DINPro-Regular",
+            "left": "50%",
+            "marginRight": "-50%",
+            "outline": "none",
+            "overflow": "auto",
+            "position": "absolute",
+            "right": "auto",
+            "top": "50%",
+            "transform": "translate(-50%, -50%)",
+          },
+        }
+      }
+    >
+      <ModalPortal
+        ariaHideApp={false}
+        bodyOpenClassName="ReactModal__Body--open"
+        className="add-resource-modal"
+        closeTimeoutMS={0}
+        contentLabel="Parent Modal"
+        defaultStyles={
+          Object {
+            "content": Object {
+              "WebkitOverflowScrolling": "touch",
+              "background": "#fff",
+              "border": "1px solid #ccc",
+              "borderRadius": "4px",
+              "bottom": "40px",
+              "left": "40px",
+              "outline": "none",
+              "overflow": "auto",
+              "padding": "20px",
+              "position": "absolute",
+              "right": "40px",
+              "top": "40px",
+            },
+            "overlay": Object {
+              "backgroundColor": "rgba(255, 255, 255, 0.75)",
+              "bottom": 0,
+              "left": 0,
+              "position": "fixed",
+              "right": 0,
+              "top": 0,
+            },
+          }
+        }
+        isOpen={true}
+        onAfterOpen={[Function]}
+        onRequestClose={[Function]}
+        parentSelector={[Function]}
+        portalClassName="ReactModalPortal"
+        shouldCloseOnEsc={true}
+        shouldCloseOnOverlayClick={true}
+        shouldFocusAfterRender={true}
+        shouldReturnFocusAfterClose={true}
+        style={
+          Object {
+            "content": Object {
+              "backgroundColor": "#ffffff",
+              "border": "1px solid #CCCCCC",
+              "borderRadius": "4px",
+              "bottom": "auto",
+              "boxShadow": "0 2px 40px 10px rgba(185, 180, 180, 0.2)",
+              "fontFamily": "DINPro-Regular",
+              "left": "50%",
+              "marginRight": "-50%",
+              "outline": "none",
+              "overflow": "auto",
+              "position": "absolute",
+              "right": "auto",
+              "top": "50%",
+              "transform": "translate(-50%, -50%)",
+            },
+          }
+        }
+      >
+        <div
+          aria-modal="true"
+          className="ReactModal__Overlay ReactModal__Overlay--after-open"
+          onClick={[Function]}
+          onMouseDown={[Function]}
+          style={
+            Object {
+              "backgroundColor": "rgba(255, 255, 255, 0.75)",
+              "bottom": 0,
+              "left": 0,
+              "position": "fixed",
+              "right": 0,
+              "top": 0,
+            }
+          }
+        >
+          <div
+            aria-label="Parent Modal"
+            className="ReactModal__Content ReactModal__Content--after-open add-resource-modal"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            onMouseDown={[Function]}
+            onMouseUp={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#ffffff",
+                "border": "1px solid #CCCCCC",
+                "borderRadius": "4px",
+                "bottom": "auto",
+                "boxShadow": "0 2px 40px 10px rgba(185, 180, 180, 0.2)",
+                "fontFamily": "DINPro-Regular",
+                "left": "50%",
+                "marginRight": "-50%",
+                "outline": "none",
+                "overflow": "auto",
+                "position": "absolute",
+                "right": "auto",
+                "top": "50%",
+                "transform": "translate(-50%, -50%)",
+              }
+            }
+            tabIndex="-1"
+          >
+            <h2>
+              ADD AMENITIES
+            </h2>
+            <form
+              className="amenity-form"
+              onSubmit={[Function]}
+            >
+              <div>
+                <label
+                  htmlFor="amenity"
+                >
+                  <br />
+                  Amenity
+                  <br />
+                  <br />
+                  <input
+                    id="amenity"
+                    name="amenity"
+                    onChange={[Function]}
+                    placeholder="Separate amenities with comma"
+                    type="text"
+                    value=""
+                  />
+                </label>
+                <button
+                  type="submit"
+                >
+                  ADD AMENITY
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </ModalPortal>
+    </Modal>
+  </MrmModal>
+</AddResource>
+`;

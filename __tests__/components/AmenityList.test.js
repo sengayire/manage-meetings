@@ -13,8 +13,8 @@ describe('Tests for AmenityList Component', () => {
     expect(wrapper).toMatchSnapshot();
   });
   it('should render `Add Amenities` button', () => {
-    expect(wrapper.find('.settings-amenity>button')).toHaveLength(1);
-    expect(wrapper.find('.settings-amenity>button').text()).toBe('Add Amenities');
+    expect(mountWrapper.find('#modal-button')).toHaveLength(1);
+    expect(mountWrapper.find('#modal-button').text()).toBe('Add Amenities');
   });
   it('should respond to delete click event', () => {
     wrapper.instance().deleteResource(data.amenity);

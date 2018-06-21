@@ -1,6 +1,7 @@
 import React from 'react';
 import Amenity from './Amenity';
 import DeleteResource from './DeleteResource';
+import AddResource from './AddResource';
 import '../assets/styles/amenitylist.scss';
 import amenitiesList from '../fixtures/amenities';
 
@@ -33,7 +34,7 @@ class AmenityList extends React.Component {
           toDelete={toDelete}
           handleCloseModal={this.handleCloseModal}
         />)}
-        <button>Add Amenities</button>
+        <AddResource />
         <div className="settings-amenity-list">
           <table>
             <colgroup>

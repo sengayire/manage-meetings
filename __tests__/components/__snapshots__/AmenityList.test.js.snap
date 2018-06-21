@@ -4,9 +4,7 @@ exports[`Tests for AmenityList Component renders correctly from memory 1`] = `
 <div
   className="settings-amenity"
 >
-  <button>
-    Add Amenities
-  </button>
+  <AddResource />
   <div
     className="settings-amenity-list"
   >
