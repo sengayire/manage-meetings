@@ -23,7 +23,7 @@ class DeleteResource extends Component {
     return (
       <div onKeyUp={this.handleKeyUp} role="presentation" className="delete-modal-container">
         <MrmModal
-          title="Delete Amenity"
+          title="Delete Resource"
           closeModal={closeModal}
           openModal={openModal}
           className="delete-resource-modal"

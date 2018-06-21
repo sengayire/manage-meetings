@@ -12,7 +12,7 @@ exports[`DeleteResource Component renders properly 1`] = `
     closeModal={false}
     handleCloseRequest={[Function]}
     openModal={true}
-    title="Delete Amenity"
+    title="Delete Resource"
   >
     <div
       className="modal-content"

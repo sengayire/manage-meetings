@@ -3,7 +3,7 @@ import { Route, Switch, Redirect } from 'react-router-dom';
 
 import SettingsNav from '../components/SettingsNav';
 import OfficeList from '../components/OfficeList';
-import AmenityList from '../components/AmenityList';
+import ResourceList from '../components/ResourceList';
 import '../assets/styles/settingscontent.scss';
 import ROUTES from '../utils/routes';
 import PlaceHolder from '../components/Placeholder';
@@ -17,7 +17,7 @@ const SettingsContent = () => (
       <Switch>
         <Route exact path={ROUTES.settingsOffices} component={OfficeList} />
         <Route exact path={ROUTES.settingsRooms} component={RoomsList} />
-        <Route exact path={ROUTES.settingsAmenities} component={AmenityList} />
+        <Route exact path={ROUTES.settingsAmenities} component={ResourceList} />
         <Route exact path={ROUTES.settingsPeople} component={PlaceHolder} />
         <Route exact path={ROUTES.settingsDevices} component={PlaceHolder} />
         <Route exact path={ROUTES.settingsIntegrations} component={PlaceHolder} />

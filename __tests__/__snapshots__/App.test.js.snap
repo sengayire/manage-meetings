@@ -632,22 +632,22 @@ exports[`App component should not render Login if token is present but render Se
                             <NavLink
                               activeClassName="active"
                               ariaCurrent="true"
-                              to="/settings/room-resources"
+                              to="/settings/resources"
                             >
                               <Route
-                                path="/settings/room-resources"
+                                path="/settings/resources"
                               >
                                 <Link
                                   aria-current={false}
                                   replace={false}
-                                  to="/settings/room-resources"
+                                  to="/settings/resources"
                                 >
                                   <a
                                     aria-current={false}
-                                    href="/settings/room-resources"
+                                    href="/settings/resources"
                                     onClick={[Function]}
                                   >
-                                    Room Resources
+                                    Resources
                                   </a>
                                 </Link>
                               </Route>

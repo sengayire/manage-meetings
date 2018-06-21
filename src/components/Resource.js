@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Button } from 'react-toolbox/lib/button';
 
-const Amenity = ({ amenity: { name, rooms }, doDelete }) => (
+const Amenity = ({ resource: { name, rooms }, doDelete }) => (
   <tr>
     <td>{name}</td>
     <td>{rooms}</td>
@@ -14,7 +14,7 @@ const Amenity = ({ amenity: { name, rooms }, doDelete }) => (
 );
 
 Amenity.propTypes = {
-  amenity: PropTypes.shape({
+  resource: PropTypes.shape({
     name: PropTypes.string.isRequired,
     rooms: PropTypes.number.isRequired,
   }).isRequired,

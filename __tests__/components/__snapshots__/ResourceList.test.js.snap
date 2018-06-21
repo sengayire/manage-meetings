@@ -1,13 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Tests for AmenityList Component renders correctly from memory 1`] = `
+exports[`Tests for ResourceList Component renders correctly from memory 1`] = `
 <div
-  className="settings-amenity"
+  className="settings-resource"
 >
-  <AddResource />
   <div
-    className="settings-amenity-list"
+    className="settings-resource-list"
   >
+    <AddResource />
     <table>
       <colgroup>
         <col
@@ -21,7 +21,7 @@ exports[`Tests for AmenityList Component renders correctly from memory 1`] = `
       <thead>
         <tr>
           <th>
-            Amenities
+            Resource
           </th>
           <th>
             Rooms
@@ -33,64 +33,64 @@ exports[`Tests for AmenityList Component renders correctly from memory 1`] = `
       </thead>
       <tbody>
         <Amenity
-          amenity={
+          doDelete={[Function]}
+          key="Apple TV"
+          resource={
             Object {
               "name": "Apple TV",
               "rooms": 18,
             }
           }
-          doDelete={[Function]}
-          key="Apple TV"
         />
         <Amenity
-          amenity={
+          doDelete={[Function]}
+          key="Jabra Speaker"
+          resource={
             Object {
               "name": "Jabra Speaker",
               "rooms": 26,
             }
           }
-          doDelete={[Function]}
-          key="Jabra Speaker"
         />
         <Amenity
-          amenity={
+          doDelete={[Function]}
+          key="White Board"
+          resource={
             Object {
               "name": "White Board",
               "rooms": 18,
             }
           }
-          doDelete={[Function]}
-          key="White Board"
         />
         <Amenity
-          amenity={
+          doDelete={[Function]}
+          key="Marker"
+          resource={
             Object {
               "name": "Marker",
               "rooms": 24,
             }
           }
-          doDelete={[Function]}
-          key="Marker"
         />
         <Amenity
-          amenity={
+          doDelete={[Function]}
+          key="Air Conditioner"
+          resource={
             Object {
               "name": "Air Conditioner",
               "rooms": 14,
             }
           }
-          doDelete={[Function]}
-          key="Air Conditioner"
         />
         <Amenity
-          amenity={
+          doDelete={[Function]}
+          key="Chair"
+          resource={
             Object {
               "name": "Chair",
               "rooms": 18,
             }
           }
-          doDelete={[Function]}
-          key="Chair"
         />
       </tbody>
     </table>

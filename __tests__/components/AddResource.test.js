@@ -15,7 +15,7 @@ describe('AddResource Component', () => {
   });
 
   it('includes buttonText prop', () => {
-    expect(wrapper.find('MrmModal').prop('buttonText')).toEqual('Add Amenities');
+    expect(wrapper.find('MrmModal').prop('buttonText')).toEqual('Add Resource');
   });
 
   it('should pop-up a modal', () => {
@@ -26,7 +26,7 @@ describe('AddResource Component', () => {
   it('includes title prop', () => {
     const resourceModal = wrapper.find('div.add-resource-modal h2');
 
-    expect(resourceModal.text()).toEqual('ADD AMENITIES');
+    expect(resourceModal.text()).toEqual('ADD RESOURCE');
   });
 
   it('should have a form', () => {

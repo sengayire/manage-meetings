@@ -8,7 +8,7 @@ const SettingsNav = () => (
     <ul>
       <li><NavLink to={ROUTES.settingsOffices} activeClassName="active">Offices</NavLink></li>
       <li><NavLink to={ROUTES.settingsRooms}>Room</NavLink></li>
-      <li><NavLink to={ROUTES.settingsAmenities}>Room Resources</NavLink></li>
+      <li><NavLink to={ROUTES.settingsAmenities}>Resources</NavLink></li>
       <li><NavLink to={ROUTES.settingsPeople}>People</NavLink></li>
       <li><NavLink to={ROUTES.settingsDevices}>Devices</NavLink></li>
       <li><NavLink to={ROUTES.settingsIntegrations}>Integrations</NavLink></li>

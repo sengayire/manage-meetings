@@ -3,17 +3,17 @@
 exports[`AddResource Component renders properly 1`] = `
 <AddResource>
   <MrmModal
-    buttonText="Add Amenities"
+    buttonText="Add Resource"
     className="add-resource-modal"
     closeModal={false}
     handleCloseRequest={[Function]}
-    title="ADD AMENITIES"
+    title="ADD RESOURCE"
   >
     <button
       id="modal-button"
       onClick={[Function]}
     >
-      Add Amenities
+      Add Resource
     </button>
     <Modal
       ariaHideApp={false}
@@ -121,17 +121,17 @@ exports[`AddResource Component renders properly 1`] = `
 exports[`AddResource Component should pop-up a modal 1`] = `
 <AddResource>
   <MrmModal
-    buttonText="Add Amenities"
+    buttonText="Add Resource"
     className="add-resource-modal"
     closeModal={false}
     handleCloseRequest={[Function]}
-    title="ADD AMENITIES"
+    title="ADD RESOURCE"
   >
     <button
       id="modal-button"
       onClick={[Function]}
     >
-      Add Amenities
+      Add Resource
     </button>
     <Modal
       ariaHideApp={false}
@@ -275,7 +275,7 @@ exports[`AddResource Component should pop-up a modal 1`] = `
             tabIndex="-1"
           >
             <h2>
-              ADD AMENITIES
+              ADD RESOURCE
             </h2>
             <form
               className="amenity-form"
@@ -301,7 +301,7 @@ exports[`AddResource Component should pop-up a modal 1`] = `
                 <button
                   type="submit"
                 >
-                  ADD AMENITY
+                  ADD RESOURCE
                 </button>
               </div>
             </form>

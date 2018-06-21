@@ -32,8 +32,8 @@ class AddResource extends React.Component {
 
     return (
       <MrmModal
-        title="ADD AMENITIES"
-        buttonText="Add Amenities"
+        title="ADD RESOURCE"
+        buttonText="Add Resource"
         closeModal={closeModal}
         handleCloseRequest={this.handleModalStateChange}
         className="add-resource-modal"
@@ -54,7 +54,7 @@ class AddResource extends React.Component {
                 placeholder="Separate amenities with comma"
               />
             </label>
-            <button type="submit">ADD AMENITY</button>
+            <button type="submit">ADD RESOURCE</button>
           </div>
         </form>
       </MrmModal>

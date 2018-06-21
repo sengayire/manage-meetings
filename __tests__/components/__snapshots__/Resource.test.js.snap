@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Tests for Amenity Component renders correctly from memory 1`] = `
+exports[`Tests for Resource Component renders correctly from memory 1`] = `
 <tr>
   <td>
-    AmenityName
+    ResourceName
   </td>
   <td>
     8

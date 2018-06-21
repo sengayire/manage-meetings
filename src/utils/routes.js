@@ -3,7 +3,7 @@ const ROUTES = {
   settings: '/settings',
   feedback: '/feedback',
   analytics: '/analytics',
-  settingsAmenities: '/settings/room-resources',
+  settingsAmenities: '/settings/resources',
   settingsOffices: '/settings/offices',
   settingsRooms: '/settings/rooms',
   settingsPeople: '/settings/people',

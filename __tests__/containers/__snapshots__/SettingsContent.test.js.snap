@@ -22,7 +22,7 @@ exports[`Tests for SettingsContent renders correctly in memory 1`] = `
       <Route
         component={[Function]}
         exact={true}
-        path="/settings/room-resources"
+        path="/settings/resources"
       />
       <Route
         component={[Function]}
