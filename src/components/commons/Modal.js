@@ -26,7 +26,7 @@ class MrmModal extends Component {
   static propTypes = {
     children: PropTypes.node.isRequired,
     title: PropTypes.string.isRequired,
-    buttonText: PropTypes.string,
+    buttonText: PropTypes.string.isRequired,
     handleCloseRequest: PropTypes.func.isRequired,
     closeModal: PropTypes.bool.isRequired,
     className: PropTypes.string,
@@ -34,13 +34,7 @@ class MrmModal extends Component {
 
   static defaultProps = {
     className: 'modalClass',
-    buttonText: '',
   };
-
-  static getDerivedStateFromProps = (props, state) => {
-    if (props.openModal && !state.modalIsOpen) return { modalIsOpen: true };
-    return null;
-  }
 
   state = {
     modalIsOpen: false,
@@ -78,9 +72,9 @@ class MrmModal extends Component {
     } = this.props;
     return (
       <Fragment>
-        {buttonText && (
-          <button id="modal-button" onClick={this.openModal}>{buttonText}</button>
-        )}
+        <button id="modal-button" onClick={this.openModal}>
+          {buttonText}
+        </button>
         <Modal
           isOpen={this.state.modalIsOpen}
           onAfterOpen={this.afterOpenModal}

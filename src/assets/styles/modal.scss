@@ -18,3 +18,8 @@ h2 {
   height: 55%;
   width: 45%;
 }
+
+.ReactModal__Body--open {
+  overflow-y: hidden;
+  overflow-x: hidden;
+}

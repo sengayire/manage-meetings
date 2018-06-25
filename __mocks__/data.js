@@ -4,9 +4,12 @@ const data = {
     location: 'Nigeria',
     timezone: 'GMT +1',
   },
-  amenity: {
+  resource: {
     name: 'Marker',
     rooms: 4,
+  },
+  routes: {
+    home: '/',
   },
 };
 

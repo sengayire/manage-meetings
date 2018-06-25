@@ -11,6 +11,9 @@ td {
     font-family: 'DINPro-Light';
     cursor: pointer;
   }
+  #modal-button:focus {
+    outline: 0;
+  }
 }
 
 .delete-modal {

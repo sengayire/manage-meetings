@@ -3,10 +3,10 @@
 exports[`Tests for Resource Component renders correctly from memory 1`] = `
 <tr>
   <td>
-    ResourceName
+    Marker
   </td>
   <td>
-    8
+    4
   </td>
   <td
     className="action-buttons"
@@ -23,18 +23,13 @@ exports[`Tests for Resource Component renders correctly from memory 1`] = `
       rippleMultiple={true}
       rippleSpread={2}
     />
-    <ThemedThemed
-      composeTheme="deeply"
-      disabled={false}
-      flat={true}
-      label="Delete"
-      mapThemrProps={[Function]}
-      onClick={[Function]}
-      ripple={true}
-      rippleCentered={false}
-      rippleClassName=""
-      rippleMultiple={true}
-      rippleSpread={2}
+    <DeleteResource
+      toDelete={
+        Object {
+          "name": "Marker",
+          "rooms": 4,
+        }
+      }
     />
   </td>
 </tr>

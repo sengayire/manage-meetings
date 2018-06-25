@@ -34,6 +34,9 @@ describe('DeleteOffice Test Suite', () => {
   });
 
   it('should handle state change', () => {
+    // Change the state of the modal to `Closed`
+    wrapper.instance().handleCloseModal();
+    // After a state change and expect state to toggle
     wrapper.instance().handleModalStateChange();
     expect(wrapper.state('closeModal')).toEqual(false);
   });

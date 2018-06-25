@@ -1,42 +1,21 @@
 import React from 'react';
 import Resource from './Resource';
-import DeleteResource from './DeleteResource';
-import resourcesList from '../fixtures/resources';
 import AddResource from './AddResource';
 import '../assets/styles/resourcelist.scss';
+import resourcesList from '../fixtures/resources';
 
 class ResourceList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       resources: resourcesList,
-      deleteModal: false,
     };
   }
 
-  deleteResource = (resource) => {
-    this.setState({
-      deleteModal: true,
-      toDelete: resource,
-    });
-  };
-
-  handleCloseModal = () => {
-    this.setState({ deleteModal: false });
-  };
-
   render() {
-    const { deleteModal, toDelete, resources } = this.state;
+    const { resources } = this.state;
     return (
       <div className="settings-resource">
-        {deleteModal && (
-          <DeleteResource
-            openModal={deleteModal}
-            toDelete={toDelete}
-            handleCloseModal={this.handleCloseModal}
-          />
-        )}
-
         <div className="settings-resource-list">
           <AddResource />
           <table>
@@ -57,7 +36,6 @@ class ResourceList extends React.Component {
                 <Resource
                   resource={resource}
                   key={resource.name}
-                  doDelete={() => this.deleteResource(resource)}
                 />
               ))}
             </tbody>

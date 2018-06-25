@@ -1,50 +1,43 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DeleteResource Component renders properly 1`] = `
-<div
-  className="delete-modal-container"
-  onKeyUp={[Function]}
-  role="presentation"
+<MrmModal
+  buttonText="Delete"
+  className="delete-resource-modal"
+  closeModal={false}
+  handleCloseRequest={[Function]}
+  title="Delete Amenity"
 >
-  <MrmModal
-    buttonText=""
-    className="delete-resource-modal"
-    closeModal={false}
-    handleCloseRequest={[Function]}
-    openModal={true}
-    title="Delete Resource"
+  <div
+    className="modal-content"
   >
     <div
-      className="modal-content"
+      className="modal-text"
     >
-      <div
-        className="modal-text"
-      >
-        <p>
-          Are you sure you want to delete " 
-          EPIC Tower
-           "?
-        </p>
-        <p>
-          This cannot be undone
-        </p>
-      </div>
-      <div
-        className="button-container"
-      >
-        <button
-          className="modal-cancel"
-          onClick={[Function]}
-        >
-          Cancel
-        </button>
-        <button
-          className="modal-submit"
-        >
-          Submit
-        </button>
-      </div>
+      <p>
+        Are you sure you want to delete " 
+        EPIC Tower
+         "?
+      </p>
+      <p>
+        This cannot be undone
+      </p>
     </div>
-  </MrmModal>
-</div>
+    <div
+      className="button-container"
+    >
+      <button
+        className="modal-cancel"
+        onClick={[Function]}
+      >
+        Cancel
+      </button>
+      <button
+        className="modal-submit"
+      >
+        Submit
+      </button>
+    </div>
+  </div>
+</MrmModal>
 `;

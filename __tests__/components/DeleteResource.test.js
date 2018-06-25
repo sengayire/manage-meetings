@@ -31,11 +31,10 @@ describe('DeleteResource Component', () => {
       .childAt(1)
       .text()).toBe('Submit');
   });
-  it('should close `ESC` key', () => {
-    wrapper.find('.delete-modal-container').simulate('keyUp', { keyCode: 27 });
-    expect(wrapper.state('closeModal')).toEqual(true);
-  });
   it('should accept `Modal` state changes', () => {
+    // Change the state of the modal to `Closed`
+    wrapper.instance().handleCloseModal();
+    // Perform a state change and expect it to toggle
     wrapper.instance().handleModalStateChange();
     expect(wrapper.state('closeModal')).toEqual(false);
   });

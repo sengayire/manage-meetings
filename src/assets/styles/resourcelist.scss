@@ -63,6 +63,7 @@
     font-size: 102%;
     margin: 0;
     padding: 0;
+    height: 43px;
   }
   button:first-child{
     float: left;
@@ -73,8 +74,9 @@
   }
 }
 .delete-resource-modal{
-  width: 614px;
+  max-width: 614px;
   height: 312px;
+  width: 83%;
   padding: 0 !important;
   margin-right: 0 !important;
   border: none !important;

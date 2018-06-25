@@ -1,24 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Button } from 'react-toolbox/lib/button';
+import DeleteResource from './DeleteResource';
 
-const Amenity = ({ resource: { name, rooms }, doDelete }) => (
+const Resource = ({ resource }) => (
   <tr>
-    <td>{name}</td>
-    <td>{rooms}</td>
+    <td>{resource.name}</td>
+    <td>{resource.rooms}</td>
     <td className="action-buttons">
       <Button label="Edit" flat />
-      <Button label="Delete" onClick={doDelete} flat />
+      <DeleteResource toDelete={resource} />
     </td>
   </tr>
 );
 
-Amenity.propTypes = {
+Resource.propTypes = {
   resource: PropTypes.shape({
     name: PropTypes.string.isRequired,
     rooms: PropTypes.number.isRequired,
   }).isRequired,
-  doDelete: PropTypes.func.isRequired,
 };
 
-export default Amenity;
+export default Resource;
