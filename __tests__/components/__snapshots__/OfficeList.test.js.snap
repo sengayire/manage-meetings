@@ -9,32 +9,19 @@ exports[`Tests for SettingOffices renders correctly from memory 1`] = `
     className="settings-offices-list"
   >
     <table>
-      <colgroup>
-        <col
-          className="first-col"
-        />
-        <col />
-        <col />
-        <col
-          className="last-col"
-        />
-      </colgroup>
-      <thead>
-        <tr>
-          <th>
-            Office
-          </th>
-          <th>
-            Location
-          </th>
-          <th>
-            Time Zone
-          </th>
-          <th>
-            Action
-          </th>
-        </tr>
-      </thead>
+      <ColGroup
+        numberOfMiddleColumns={2}
+      />
+      <TableHead
+        titles={
+          Array [
+            "Office",
+            "Location",
+            "Timezone",
+            "Action",
+          ]
+        }
+      />
       <tbody>
         <Office
           key="EPIC Tower"

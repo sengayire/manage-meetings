@@ -932,32 +932,59 @@ exports[`App component should not render Login if token is present but render Se
                                 className="settings-offices-list"
                               >
                                 <table>
-                                  <colgroup>
-                                    <col
-                                      className="first-col"
-                                    />
-                                    <col />
-                                    <col />
-                                    <col
-                                      className="last-col"
-                                    />
-                                  </colgroup>
-                                  <thead>
-                                    <tr>
-                                      <th>
-                                        Office
-                                      </th>
-                                      <th>
-                                        Location
-                                      </th>
-                                      <th>
-                                        Time Zone
-                                      </th>
-                                      <th>
-                                        Action
-                                      </th>
-                                    </tr>
-                                  </thead>
+                                  <ColGroup
+                                    numberOfMiddleColumns={2}
+                                  >
+                                    <colgroup>
+                                      <col
+                                        className="first-col"
+                                      />
+                                      <col
+                                        key="col0"
+                                      />
+                                      <col
+                                        key="col1"
+                                      />
+                                      <col
+                                        className="last-col"
+                                      />
+                                    </colgroup>
+                                  </ColGroup>
+                                  <TableHead
+                                    titles={
+                                      Array [
+                                        "Office",
+                                        "Location",
+                                        "Timezone",
+                                        "Action",
+                                      ]
+                                    }
+                                  >
+                                    <thead>
+                                      <tr>
+                                        <th
+                                          key="Office"
+                                        >
+                                          Office
+                                        </th>
+                                        <th
+                                          key="Location"
+                                        >
+                                          Location
+                                        </th>
+                                        <th
+                                          key="Timezone"
+                                        >
+                                          Timezone
+                                        </th>
+                                        <th
+                                          key="Action"
+                                        >
+                                          Action
+                                        </th>
+                                      </tr>
+                                    </thead>
+                                  </TableHead>
                                   <tbody>
                                     <Office
                                       key="EPIC Tower"

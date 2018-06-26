@@ -3,6 +3,8 @@ import Office from './Office';
 import AddOffice from './AddOffice';
 import officeList from '../fixtures/offices';
 import '../assets/styles/officelist.scss';
+import ColGroup from './helpers/ColGroup';
+import TableHead from './helpers/TableHead';
 
 class OfficeList extends React.Component {
   constructor(props) {
@@ -18,22 +20,12 @@ class OfficeList extends React.Component {
         <AddOffice />
         <div className="settings-offices-list">
           <table>
-            <colgroup>
-              <col className="first-col" />
-              <col />
-              <col />
-              <col className="last-col" />
-            </colgroup>
-            <thead>
-              <tr>
-                <th>Office</th>
-                <th>Location</th>
-                <th>Time Zone</th>
-                <th>Action</th>
-              </tr>
-            </thead>
+            <ColGroup />
+            <TableHead titles={['Office', 'Location', 'Timezone', 'Action']} />
             <tbody>
-              {this.state.offices.map(office => <Office office={office} key={office.name} />)}
+              {this.state.offices.map(office => (
+                <Office office={office} key={office.name} />
+              ))}
             </tbody>
           </table>
         </div>

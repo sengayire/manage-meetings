@@ -1,5 +1,5 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import Room from '../../src/components/Room';
 
 describe('Room Component', () => {
@@ -8,10 +8,9 @@ describe('Room Component', () => {
     location: 'Kampala',
     office: 'The Oak',
   };
-  const roomWrapper = mount(<Room room={room} />);
-  it('renders without crashing', () => {
-    expect(mount.bind(null, <Room room={room} />)).not.toThrow();
-  });
+
+  const roomWrapper = shallow(<Room room={room} />);
+
   it('renders the correct content', () => {
     const td = roomWrapper.find('td');
     const rm = ['Kampala', 'Kampala', 'The Oak', 'Edit   Delete'];

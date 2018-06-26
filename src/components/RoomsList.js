@@ -1,42 +1,44 @@
 import React from 'react';
-import roomsList from '../fixtures/rooms';
+import { graphql } from 'react-apollo';
+import PropTypes from 'prop-types';
 import Room from './Room';
 import '../assets/styles/roomlist.scss';
+import { GET_ROOMS_QUERY } from '../graphql/queries/Rooms';
+import { formatRoomData } from '../graphql/mappers/Rooms';
+import ColGroup from './helpers/ColGroup';
+import TableHead from './helpers/TableHead';
 
-class RoomsList extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      rooms: roomsList,
-    };
-  }
+const RoomsList = (props) => {
+  const { allRooms, loading, error } = props.data;
 
-  render() {
-    return (
-      <div className="settings-rooms">
-        <button>Add Room</button>
-        <div className="settings-rooms-list">
-          <table>
-            <colgroup>
-              <col className="first-col" />
-              <col />
-              <col />
-              <col className="last-col" />
-            </colgroup>
-            <thead>
-              <tr>
-                <th>Room</th>
-                <th>Location</th>
-                <th>Office</th>
-                <th>Action</th>
-              </tr>
-            </thead>
-            <tbody>{this.state.rooms.map(room => <Room room={room} key={room.name} />)}</tbody>
-          </table>
-        </div>
+  if (loading) return <div>Loading...</div>;
+
+  if (error) return <div>{error.message}</div>;
+
+  return (
+    <div className="settings-rooms">
+      <button>Add Room</button>
+      <div className="settings-rooms-list">
+        <table>
+          <ColGroup />
+          <TableHead titles={['Room', 'Location', 'Office', 'Action']} />
+          <tbody>
+            {allRooms.map(room => (
+              <Room room={formatRoomData(room)} key={room.id} />
+              ))}
+          </tbody>
+        </table>
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
 
-export default RoomsList;
+RoomsList.propTypes = {
+  data: PropTypes.shape({
+    allRooms: PropTypes.array,
+    loading: PropTypes.bool,
+    error: PropTypes.object,
+  }).isRequired,
+};
+
+export default graphql(GET_ROOMS_QUERY, { name: 'data' })(RoomsList);

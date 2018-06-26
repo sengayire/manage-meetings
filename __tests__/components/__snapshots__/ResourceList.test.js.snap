@@ -9,28 +9,18 @@ exports[`Tests for ResourceList Component renders correctly from memory 1`] = `
   >
     <AddResource />
     <table>
-      <colgroup>
-        <col
-          className="first-col"
-        />
-        <col />
-        <col
-          className="last-col"
-        />
-      </colgroup>
-      <thead>
-        <tr>
-          <th>
-            Resource
-          </th>
-          <th>
-            Rooms
-          </th>
-          <th>
-            Action
-          </th>
-        </tr>
-      </thead>
+      <ColGroup
+        numberOfMiddleColumns={1}
+      />
+      <TableHead
+        titles={
+          Array [
+            "Resource",
+            "Rooms",
+            "Action",
+          ]
+        }
+      />
       <tbody>
         <Resource
           key="Apple TV"

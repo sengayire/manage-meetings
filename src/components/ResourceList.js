@@ -2,6 +2,8 @@ import React from 'react';
 import Resource from './Resource';
 import AddResource from './AddResource';
 import '../assets/styles/resourcelist.scss';
+import ColGroup from './helpers/ColGroup';
+import TableHead from './helpers/TableHead';
 import resourcesList from '../fixtures/resources';
 
 class ResourceList extends React.Component {
@@ -19,18 +21,8 @@ class ResourceList extends React.Component {
         <div className="settings-resource-list">
           <AddResource />
           <table>
-            <colgroup>
-              <col className="first-col" />
-              <col />
-              <col className="last-col" />
-            </colgroup>
-            <thead>
-              <tr>
-                <th>Resource</th>
-                <th>Rooms</th>
-                <th>Action</th>
-              </tr>
-            </thead>
+            <ColGroup numberOfMiddleColumns={1} />
+            <TableHead titles={['Resource', 'Rooms', 'Action']} />
             <tbody>
               {resources.map(resource => (
                 <Resource
