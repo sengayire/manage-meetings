@@ -1,0 +1,151 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavLink should render correctly 1`] = `
+<MemoryRouter
+  keyLength={0}
+>
+  <Router
+    history={
+      Object {
+        "action": "POP",
+        "block": [Function],
+        "canGo": [Function],
+        "createHref": [Function],
+        "entries": Array [
+          Object {
+            "hash": "",
+            "pathname": "/",
+            "search": "",
+            "state": undefined,
+          },
+        ],
+        "go": [Function],
+        "goBack": [Function],
+        "goForward": [Function],
+        "index": 0,
+        "length": 1,
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "pathname": "/",
+          "search": "",
+          "state": undefined,
+        },
+        "push": [Function],
+        "replace": [Function],
+      }
+    }
+  >
+    <NavLink
+      exact={true}
+      strict={true}
+      to="/"
+    >
+      <Route
+        exact={true}
+        path="/"
+        strict={true}
+      >
+        <ThemedLink
+          active={true}
+          className=""
+          composeTheme="deeply"
+          mapThemrProps={[Function]}
+          onClick={[Function]}
+        >
+          <Link
+            active={true}
+            className=""
+            onClick={[Function]}
+            theme={Object {}}
+          >
+            <a
+              className="undefined"
+              data-react-toolbox="link"
+              onClick={[Function]}
+            />
+          </Link>
+        </ThemedLink>
+      </Route>
+    </NavLink>
+  </Router>
+</MemoryRouter>
+`;
+
+exports[`NavLink should respond to click events properly 1`] = `
+<MemoryRouter
+  keyLength={0}
+>
+  <Router
+    history={
+      Object {
+        "action": "PUSH",
+        "block": [Function],
+        "canGo": [Function],
+        "createHref": [Function],
+        "entries": Array [
+          Object {
+            "hash": "",
+            "pathname": "/",
+            "search": "",
+            "state": undefined,
+          },
+          Object {
+            "hash": "",
+            "pathname": "/",
+            "search": "",
+            "state": undefined,
+          },
+        ],
+        "go": [Function],
+        "goBack": [Function],
+        "goForward": [Function],
+        "index": 1,
+        "length": 2,
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "pathname": "/",
+          "search": "",
+          "state": undefined,
+        },
+        "push": [Function],
+        "replace": [Function],
+      }
+    }
+  >
+    <NavLink
+      exact={true}
+      strict={true}
+      to="/"
+    >
+      <Route
+        exact={true}
+        path="/"
+        strict={true}
+      >
+        <ThemedLink
+          active={true}
+          className=""
+          composeTheme="deeply"
+          mapThemrProps={[Function]}
+          onClick={[Function]}
+        >
+          <Link
+            active={true}
+            className=""
+            onClick={[Function]}
+            theme={Object {}}
+          >
+            <a
+              className="undefined"
+              data-react-toolbox="link"
+              onClick={[Function]}
+            />
+          </Link>
+        </ThemedLink>
+      </Route>
+    </NavLink>
+  </Router>
+</MemoryRouter>
+`;

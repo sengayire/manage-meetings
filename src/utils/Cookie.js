@@ -33,20 +33,11 @@ const getToken = (cookiesString = document.cookie) =>
  * Decodes a token and returns an object containing user data and expiry date
  * @param {object} cookiesObject Returns an object containing user data
  */
-const decodeTokenAndGetUserData = () => {
-  const token = getToken();
+const decodeTokenAndGetUserData = (userToken = null) => {
+  const token = getToken() || userToken;
   if (!token) return null;
 
   return jwtDecode(token);
 };
 
-/**
- * Deletes a cookie
- * @param {string} name The name of the cookie property to delete
- * @param {string} value The value to assign to the property
- */
-const deleteCookie = (name = 'jwt-token', value = '') => {
-  document.cookie = `${name}=${encodeURIComponent(value)}; expires=-1`;
-};
-
-export { deleteCookie, decodeTokenAndGetUserData, getToken, parseCookie };
+export { decodeTokenAndGetUserData, getToken, parseCookie };

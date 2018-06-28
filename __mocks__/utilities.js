@@ -1,0 +1,16 @@
+const mockToken =
+  'eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.' +
+  'eyJVc2VySW5mbyI6eyJpZCI6Ii1LeU1odzBZR1FXRkhtTXNJdDV5IiwiZmlyc3RfbmFtZSI6IkRlbm5pcyIsImxhc3R' +
+  'fbmFtZSI6IkpqYWd3ZSIsImZpcnN0TmFtZSI6IkRlbm5pcyIsImxhc' +
+  '3ROYW1lIjoiSmphZ3dlIiwiZW1haWwiOiJkZW5uaXMuamphZ3dlQGFuZGVsYS5jb' +
+  '20iLCJuYW1lIjoiRGVubmlzIEpqYWd3ZSIsInBpY3R1cmUiOiJodHRwczovL2xoMy5n' +
+  'b29nbGV1c2VyY29udGVudC5jb20vLW5aODR3ZHQtbW9FL0FBQUFBQUFBQ' +
+  'UFJL0FBQUFBQUFBQUFjLzVOU3h6d1lrZk5RL3Bob3RvLmpwZz9zej01MCIsI' +
+  'nJvbGVzIjp7IkZlbGxvdyI6Ii1LWEd5MUVCMW9pbWpRZ0ZpbTZDIiwiQW5kZWx' +
+  'hbiI6Ii1LaWloZlpvc2VRZXFDNmJXVGF1In19LCJpYXQiOjE1Mjk3NzQ1NTcsImV4' +
+  'cCI6MTUzMjM2NjU1NywiYXVkIjoiYW5kZWxhLmNvbSIsImlzcyI6ImFjY291bnRzLmF' +
+  'uZGVsYS5jb20ifQ.hYKR4rKH9ibNduf6VWLgwDALW7kV_TpzNAU3MoDZXHW7MvWmnaX1x' +
+  'qbAEEL-eDzPkTo38RwGj73k_DYCCfc5n_0CyBrcdclJRQLQ3URG1ObUaZrMwuuZj2K0Z06Wx' +
+  'n7bDZV_cWMrW1xHB8j3uXWo0FAkW9PrBZF0IBMqwglvcfw';
+
+export { mockToken as default, mockToken };

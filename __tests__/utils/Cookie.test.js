@@ -1,8 +1,8 @@
 import {
   decodeTokenAndGetUserData,
   parseCookie,
-  deleteCookie,
 } from '../../src/utils/Cookie';
+import { mockToken } from '../../__mocks__/utilities';
 
 describe('Cookie file methods', () => {
   it('pasrseCookie should parse a cookie string and return a cookie object', () => {
@@ -17,9 +17,9 @@ describe('Cookie file methods', () => {
     expect(userData).toBe(null);
   });
 
-  it('deleteCookie should delete the specified key in the cookie', () => {
-    document.cookie = 'name=mrm%20dev; id=12';
-    deleteCookie('name');
-    expect(parseCookie(document.cookie)).toEqual({ name: '' });
+  it('decodeTokenAndGetUserData should return user if a valid token is used', () => {
+    const data = decodeTokenAndGetUserData(mockToken);
+    expect(data).toBeTruthy();
+    expect(Object.keys(data)).toEqual(['UserInfo', 'iat', 'exp', 'aud', 'iss']);
   });
 });

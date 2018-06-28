@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Route } from 'react-router-dom';
 import Link from 'react-toolbox/lib/link';
 
-const handleClick = (event, history, to) => {
+export const handleClick = (event, history, to) => {
   event.preventDefault();
 
   history.push(typeof to === 'object' ? to.pathname : to);

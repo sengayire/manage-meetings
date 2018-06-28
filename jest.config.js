@@ -19,6 +19,7 @@ module.exports = {
     '!**/postcss.config.js',
     '!**/setupTests.js',
     '!**/jest.config.js',
+    '!**/src/utils/ApolloClient.js',
   ],
   testPathIgnorePatterns: ['__mocks__'],
   setupTestFrameworkScriptFile: '<rootDir>/setupTests.js',
