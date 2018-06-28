@@ -1,15 +1,76 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`EditOffice Test Suite renders as expected 1`] = `
+exports[`EditOffice Component renders properly 1`] = `
 <MrmModal
   buttonText="Edit"
-  className="modalClass"
+  className="edit-office-modal"
   closeModal={false}
   handleCloseRequest={[Function]}
+  modalButtonClassName="edit-button"
   title="EDIT OFFICE"
 >
-  <span>
-    Edit office
-  </span>
+  <form
+    className="modal-form"
+    onSubmit={[Function]}
+  >
+    <Input
+      id="officeName"
+      inputClass="input1"
+      labelClass="label1"
+      labelName="Office Name"
+      name="officeName"
+      onChange={[Function]}
+      value="Epic"
+    />
+    <div
+      className="label2"
+    >
+      <label
+        htmlFor="location"
+      >
+        Select location
+        <ThemedDropdown
+          allowBlank={true}
+          auto={true}
+          className=""
+          composeTheme="deeply"
+          disabled={false}
+          labelKey="label"
+          mapThemrProps={[Function]}
+          onChange={[Function]}
+          required={false}
+          source={
+            Array [
+              Object {
+                "label": "Nigeria",
+                "value": "Nigeria",
+              },
+              Object {
+                "label": "Kenya",
+                "value": "Kenya",
+              },
+            ]
+          }
+          value="Lagos"
+          valueKey="value"
+        />
+      </label>
+    </div>
+    <div
+      className="edit-buttons"
+    >
+      <button
+        className="cancel-button"
+      >
+        CANCEL
+      </button>
+      <button
+        className="update-button"
+        type="submit"
+      >
+        SAVE CHANGES
+      </button>
+    </div>
+  </form>
 </MrmModal>
 `;

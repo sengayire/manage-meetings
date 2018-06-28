@@ -6,6 +6,7 @@ exports[`DeleteResource Component renders properly 1`] = `
   className="delete-resource-modal"
   closeModal={false}
   handleCloseRequest={[Function]}
+  modalButtonClassName="button"
   title="Delete Amenity"
 >
   <div

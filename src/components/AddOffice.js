@@ -20,7 +20,7 @@ class AddOffice extends Component {
   };
 
   handleModalStateChange = () => {
-    if (this.state.closeModal) this.setState({ closeModal: false });
+    this.state.closeModal && this.setState({ closeModal: false });
   };
 
   handleAddOffice = (event) => {
@@ -47,6 +47,7 @@ class AddOffice extends Component {
         openModal={openModal}
         handleCloseRequest={this.handleModalStateChange}
         className="add-office-modal"
+        modalButton="add-button"
       >
         <form className="modal-form" onSubmit={this.handleAddOffice}>
           <div>
@@ -104,7 +105,7 @@ class AddOffice extends Component {
             <br />
             <br />
           </div>
-          <button type="submit">ADD OFFICE</button>
+          <button className="primary-button" type="submit">ADD OFFICE</button>
         </form>
       </MrmModal>
     );

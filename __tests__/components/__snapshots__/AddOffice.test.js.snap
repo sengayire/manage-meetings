@@ -6,6 +6,8 @@ exports[`AddOffice Component renders properly 1`] = `
   className="add-office-modal"
   closeModal={false}
   handleCloseRequest={[Function]}
+  modalButton="add-button"
+  modalButtonClassName="button"
   title="ADD OFFICE"
 >
   <form
@@ -86,6 +88,7 @@ exports[`AddOffice Component renders properly 1`] = `
       <br />
     </div>
     <button
+      className="primary-button"
       type="submit"
     >
       ADD OFFICE

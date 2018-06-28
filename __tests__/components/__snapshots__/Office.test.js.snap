@@ -12,7 +12,10 @@ exports[`Tests for SettingOffices renders correctly from memory 1`] = `
     GMT +1
   </td>
   <td>
-    <EditOffice />
+    <EditOffice
+      location="Nigeria"
+      officeName="EPIC Tower"
+    />
     <DeleteOffice
       id="delete-modal"
       officeName="EPIC Tower"

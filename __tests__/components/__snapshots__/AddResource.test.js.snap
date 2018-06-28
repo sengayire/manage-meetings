@@ -7,9 +7,11 @@ exports[`AddResource Component renders properly 1`] = `
     className="add-resource-modal"
     closeModal={false}
     handleCloseRequest={[Function]}
+    modalButtonClassName="button"
     title="ADD RESOURCE"
   >
     <button
+      className="button"
       id="modal-button"
       onClick={[Function]}
     >
@@ -125,9 +127,11 @@ exports[`AddResource Component should pop-up a modal 1`] = `
     className="add-resource-modal"
     closeModal={false}
     handleCloseRequest={[Function]}
+    modalButtonClassName="button"
     title="ADD RESOURCE"
   >
     <button
+      className="button"
       id="modal-button"
       onClick={[Function]}
     >

@@ -6,9 +6,11 @@ exports[`MrmModal Component renders properly 1`] = `
   className="modalClass"
   closeModal={true}
   handleCloseRequest={[MockFunction]}
+  modalButtonClassName="button"
   title="hello"
 >
   <button
+    className="button"
     id="modal-button"
     onClick={[Function]}
   >

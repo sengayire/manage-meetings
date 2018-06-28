@@ -30,10 +30,12 @@ class MrmModal extends Component {
     handleCloseRequest: PropTypes.func.isRequired,
     closeModal: PropTypes.bool.isRequired,
     className: PropTypes.string,
+    modalButtonClassName: PropTypes.string,
   };
 
   static defaultProps = {
     className: 'modalClass',
+    modalButtonClassName: 'button',
   };
 
   state = {
@@ -68,11 +70,11 @@ class MrmModal extends Component {
 
   render() {
     const {
-      buttonText, className, title, children,
+      buttonText, className, title, children, modalButtonClassName,
     } = this.props;
     return (
       <Fragment>
-        <button id="modal-button" onClick={this.openModal}>
+        <button id="modal-button" className={modalButtonClassName} onClick={this.openModal}>
           {buttonText}
         </button>
         <Modal

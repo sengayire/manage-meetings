@@ -6,6 +6,7 @@ exports[`DeleteOffice Test Suite renders as expected 1`] = `
   className="delete-modal"
   closeModal={false}
   handleCloseRequest={[Function]}
+  modalButtonClassName="button"
   title="DELETE OFFICE"
 >
   <div

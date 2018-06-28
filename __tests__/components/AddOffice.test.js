@@ -45,21 +45,23 @@ describe('AddOffice Component', () => {
     expect(modalForm).toHaveLength(1);
   });
 
-  it('inputs should trespond to state chnages', () => {
+  it('inputs should respond to state changes', () => {
     wrapper.find('#buildingName').simulate('change', { target: { name: 'buildingName', value: 'epic' } });
     expect(wrapper.find('#buildingName').props().value).toBe('epic');
   });
 
-
   it('handles handleCloseModal()', () => {
-    expect(wrapper.instance().handleCloseModal());
+    wrapper.instance().handleCloseModal();
+    expect(wrapper.state('closeModal')).toEqual(true);
   });
 
   it('handles handleModalStateChange()', () => {
-    expect(wrapper.instance().handleModalStateChange());
+    wrapper.instance().handleModalStateChange();
+    expect(wrapper.state('closeModal')).toEqual(false);
   });
 
   it('handles handleAddOffice()', () => {
-    expect(wrapper.instance().handleAddOffice({ preventDefault }));
+    wrapper.instance().handleAddOffice({ preventDefault });
+    expect(wrapper.state('closeModal')).toEqual(true);
   });
 });

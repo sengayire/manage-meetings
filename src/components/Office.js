@@ -1,16 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import DeleteOffice from './DeleteOffice';
-import EditOffice from './EditOffice';
-
+import { EditOffice } from './EditOffice';
 
 const Office = ({ office: { name, location, timezone } }) => (
   <tr>
     <td>{name}</td>
     <td>{location}</td>
     <td>{timezone}</td>
-    <td>
-      <EditOffice />
+    <td><EditOffice
+      officeName={name}
+      location={location}
+    />
       <DeleteOffice officeName={name} id="delete-modal" />
     </td>
   </tr>

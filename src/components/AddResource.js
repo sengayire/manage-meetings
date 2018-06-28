@@ -18,7 +18,7 @@ class AddResource extends React.Component {
   };
 
   handleModalStateChange = () => {
-    if (this.state.closeModal) this.setState({ closeModal: false });
+    this.state.closeModal && this.setState({ closeModal: false });
   };
 
   handleAddAmenity = (event) => {

@@ -14,7 +14,7 @@ class DeleteOffice extends React.Component {
   }
 
   handleModalStateChange = () => {
-    if (this.state.closeModal) this.setState({ closeModal: false });
+    this.state.closeModal && this.setState({ closeModal: false });
   }
 
   handleDeleteOffice = () => {

@@ -819,9 +819,12 @@ exports[`App component should not render Login if token is present but render Se
                                   className="add-office-modal"
                                   closeModal={false}
                                   handleCloseRequest={[Function]}
+                                  modalButton="add-button"
+                                  modalButtonClassName="button"
                                   title="ADD OFFICE"
                                 >
                                   <button
+                                    className="button"
                                     id="modal-button"
                                     onClick={[Function]}
                                   >
@@ -1007,15 +1010,20 @@ exports[`App component should not render Login if token is present but render Se
                                           GMT +1
                                         </td>
                                         <td>
-                                          <EditOffice>
+                                          <EditOffice
+                                            location="Nigeria"
+                                            officeName="EPIC Tower"
+                                          >
                                             <MrmModal
                                               buttonText="Edit"
-                                              className="modalClass"
+                                              className="edit-office-modal"
                                               closeModal={false}
                                               handleCloseRequest={[Function]}
+                                              modalButtonClassName="edit-button"
                                               title="EDIT OFFICE"
                                             >
                                               <button
+                                                className="edit-button"
                                                 id="modal-button"
                                                 onClick={[Function]}
                                               >
@@ -1024,7 +1032,7 @@ exports[`App component should not render Login if token is present but render Se
                                               <Modal
                                                 ariaHideApp={false}
                                                 bodyOpenClassName="ReactModal__Body--open"
-                                                className="modalClass"
+                                                className="edit-office-modal"
                                                 closeTimeoutMS={0}
                                                 contentLabel="Parent Modal"
                                                 isOpen={false}
@@ -1060,7 +1068,7 @@ exports[`App component should not render Login if token is present but render Se
                                                 <ModalPortal
                                                   ariaHideApp={false}
                                                   bodyOpenClassName="ReactModal__Body--open"
-                                                  className="modalClass"
+                                                  className="edit-office-modal"
                                                   closeTimeoutMS={0}
                                                   contentLabel="Parent Modal"
                                                   defaultStyles={
@@ -1131,9 +1139,11 @@ exports[`App component should not render Login if token is present but render Se
                                               className="delete-modal"
                                               closeModal={false}
                                               handleCloseRequest={[Function]}
+                                              modalButtonClassName="button"
                                               title="DELETE OFFICE"
                                             >
                                               <button
+                                                className="button"
                                                 id="modal-button"
                                                 onClick={[Function]}
                                               >
@@ -1264,15 +1274,20 @@ exports[`App component should not render Login if token is present but render Se
                                           GMT -1
                                         </td>
                                         <td>
-                                          <EditOffice>
+                                          <EditOffice
+                                            location="Kenya"
+                                            officeName="Invisible Building"
+                                          >
                                             <MrmModal
                                               buttonText="Edit"
-                                              className="modalClass"
+                                              className="edit-office-modal"
                                               closeModal={false}
                                               handleCloseRequest={[Function]}
+                                              modalButtonClassName="edit-button"
                                               title="EDIT OFFICE"
                                             >
                                               <button
+                                                className="edit-button"
                                                 id="modal-button"
                                                 onClick={[Function]}
                                               >
@@ -1281,7 +1296,7 @@ exports[`App component should not render Login if token is present but render Se
                                               <Modal
                                                 ariaHideApp={false}
                                                 bodyOpenClassName="ReactModal__Body--open"
-                                                className="modalClass"
+                                                className="edit-office-modal"
                                                 closeTimeoutMS={0}
                                                 contentLabel="Parent Modal"
                                                 isOpen={false}
@@ -1317,7 +1332,7 @@ exports[`App component should not render Login if token is present but render Se
                                                 <ModalPortal
                                                   ariaHideApp={false}
                                                   bodyOpenClassName="ReactModal__Body--open"
-                                                  className="modalClass"
+                                                  className="edit-office-modal"
                                                   closeTimeoutMS={0}
                                                   contentLabel="Parent Modal"
                                                   defaultStyles={
@@ -1388,9 +1403,11 @@ exports[`App component should not render Login if token is present but render Se
                                               className="delete-modal"
                                               closeModal={false}
                                               handleCloseRequest={[Function]}
+                                              modalButtonClassName="button"
                                               title="DELETE OFFICE"
                                             >
                                               <button
+                                                className="button"
                                                 id="modal-button"
                                                 onClick={[Function]}
                                               >
