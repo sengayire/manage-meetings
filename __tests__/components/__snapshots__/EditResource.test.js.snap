@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EditResource Component renders properly 1`] = `
+<MrmModal
+  buttonText="Edit"
+  className="edit-resource-modal"
+  closeModal={false}
+  handleCloseRequest={[Function]}
+  modalButtonClassName="edit-button"
+  title="EDIT RESOURCE"
+>
+  <form
+    className="modal-form"
+    onSubmit={[Function]}
+  >
+    <Input
+      id="resourceName"
+      labelName="Rename Resource"
+      name="resourceName"
+      onChange={[Function]}
+      value="Jabra Speaker"
+    />
+    <div
+      className="edit-buttons"
+    >
+      <button
+        className="update-button"
+        type="submit"
+      >
+        UPDATE
+      </button>
+    </div>
+  </form>
+</MrmModal>
+`;

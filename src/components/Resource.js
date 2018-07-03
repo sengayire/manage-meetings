@@ -1,14 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Button } from 'react-toolbox/lib/button';
 import DeleteResource from './DeleteResource';
+import EditResource from './EditResource';
 
 const Resource = ({ resource }) => (
   <tr>
     <td>{resource.name}</td>
     <td>{resource.rooms}</td>
     <td className="action-buttons">
-      <Button label="Edit" flat />
+      <EditResource resourceName={resource.name} />
       <DeleteResource toDelete={resource} />
     </td>
   </tr>

@@ -72,15 +72,13 @@ export class EditOffice extends React.Component {
             id="officeName"
             onChange={this.handleNameChange}
           />
-          <div className="label2">
-            <label htmlFor="location">Select location
-              <Dropdown
-                source={this.locations}
-                onChange={this.handleLocationChange}
-                value={location}
-              />
-            </label>
-          </div>
+          <label htmlFor="location">Select location
+            <Dropdown
+              source={this.locations}
+              onChange={this.handleLocationChange}
+              value={location}
+            />
+          </label>
           <div className="edit-buttons">
             <button className="cancel-button">CANCEL</button>
             <button className="update-button" type="submit">SAVE CHANGES</button>

@@ -11,17 +11,8 @@ exports[`Tests for Resource Component renders correctly from memory 1`] = `
   <td
     className="action-buttons"
   >
-    <ThemedThemed
-      composeTheme="deeply"
-      disabled={false}
-      flat={true}
-      label="Edit"
-      mapThemrProps={[Function]}
-      ripple={true}
-      rippleCentered={false}
-      rippleClassName=""
-      rippleMultiple={true}
-      rippleSpread={2}
+    <EditResource
+      resourceName="Marker"
     />
     <DeleteResource
       toDelete={

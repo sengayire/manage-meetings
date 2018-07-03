@@ -23,40 +23,36 @@ exports[`EditOffice Component renders properly 1`] = `
       type="text"
       value="Epic"
     />
-    <div
-      className="label2"
+    <label
+      htmlFor="location"
     >
-      <label
-        htmlFor="location"
-      >
-        Select location
-        <ThemedDropdown
-          allowBlank={true}
-          auto={true}
-          className=""
-          composeTheme="deeply"
-          disabled={false}
-          labelKey="label"
-          mapThemrProps={[Function]}
-          onChange={[Function]}
-          required={false}
-          source={
-            Array [
-              Object {
-                "label": "Nigeria",
-                "value": "Nigeria",
-              },
-              Object {
-                "label": "Kenya",
-                "value": "Kenya",
-              },
-            ]
-          }
-          value="Lagos"
-          valueKey="value"
-        />
-      </label>
-    </div>
+      Select location
+      <ThemedDropdown
+        allowBlank={true}
+        auto={true}
+        className=""
+        composeTheme="deeply"
+        disabled={false}
+        labelKey="label"
+        mapThemrProps={[Function]}
+        onChange={[Function]}
+        required={false}
+        source={
+          Array [
+            Object {
+              "label": "Nigeria",
+              "value": "Nigeria",
+            },
+            Object {
+              "label": "Kenya",
+              "value": "Kenya",
+            },
+          ]
+        }
+        value="Lagos"
+        valueKey="value"
+      />
+    </label>
     <div
       className="edit-buttons"
     >
