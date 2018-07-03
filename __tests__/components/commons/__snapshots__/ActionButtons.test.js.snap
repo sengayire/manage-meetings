@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ActionButton component should not display cancel button if withCancel is false 1`] = `
+<div
+  className="form-action-buttons"
+>
+  <button
+    className="action-button"
+    type="submit"
+  >
+    SAVE CHANGES
+  </button>
+</div>
+`;
+
+exports[`ActionButton component should render correctly 1`] = `
+<div
+  className="form-action-buttons"
+>
+  <button
+    className="cancel-button"
+    onClick={[MockFunction]}
+  >
+    CANCEL
+  </button>
+  <button
+    className="action-button"
+    type="submit"
+  >
+    SAVE CHANGES
+  </button>
+</div>
+`;

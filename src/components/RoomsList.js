@@ -7,6 +7,7 @@ import { GET_ROOMS_QUERY } from '../graphql/queries/Rooms';
 import { formatRoomData } from '../graphql/mappers/Rooms';
 import ColGroup from './helpers/ColGroup';
 import TableHead from './helpers/TableHead';
+import AddRoom from './rooms/AddRoom';
 
 const RoomsList = (props) => {
   const { allRooms, loading, error } = props.data;
@@ -17,7 +18,7 @@ const RoomsList = (props) => {
 
   return (
     <div className="settings-rooms">
-      <button>Add Room</button>
+      <AddRoom />
       <div className="settings-rooms-list">
         <table>
           <ColGroup />

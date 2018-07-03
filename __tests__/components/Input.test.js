@@ -10,6 +10,7 @@ describe('Input Component', () => {
     id: '',
     labelName: '',
     labelClass: '',
+    onChange: jest.fn(),
   };
   const wrapper = shallow(<Input {...props} />);
 

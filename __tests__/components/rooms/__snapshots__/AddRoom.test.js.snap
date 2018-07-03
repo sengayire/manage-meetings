@@ -1,0 +1,418 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddRoom should pop up a modal when modal button is clicked 1`] = `
+<AddRoom>
+  <MrmModal
+    buttonText="Add Room"
+    className="modal"
+    closeModal={false}
+    handleCloseRequest={[Function]}
+    modalButtonClassName="button"
+    title="ADD ROOM"
+  >
+    <button
+      className="button"
+      id="modal-button"
+      onClick={[Function]}
+    >
+      Add Room
+    </button>
+    <Modal
+      ariaHideApp={false}
+      bodyOpenClassName="ReactModal__Body--open"
+      className="modal"
+      closeTimeoutMS={0}
+      contentLabel="Parent Modal"
+      isOpen={true}
+      onAfterOpen={[Function]}
+      onRequestClose={[Function]}
+      parentSelector={[Function]}
+      portalClassName="ReactModalPortal"
+      shouldCloseOnEsc={true}
+      shouldCloseOnOverlayClick={true}
+      shouldFocusAfterRender={true}
+      shouldReturnFocusAfterClose={true}
+      style={
+        Object {
+          "content": Object {
+            "backgroundColor": "#ffffff",
+            "border": "1px solid #CCCCCC",
+            "borderRadius": "4px",
+            "bottom": "auto",
+            "boxShadow": "0 2px 40px 10px rgba(185, 180, 180, 0.2)",
+            "fontFamily": "DINPro-Regular",
+            "left": "50%",
+            "marginRight": "-50%",
+            "outline": "none",
+            "overflow": "auto",
+            "position": "absolute",
+            "right": "auto",
+            "top": "50%",
+            "transform": "translate(-50%, -50%)",
+          },
+        }
+      }
+    >
+      <ModalPortal
+        ariaHideApp={false}
+        bodyOpenClassName="ReactModal__Body--open"
+        className="modal"
+        closeTimeoutMS={0}
+        contentLabel="Parent Modal"
+        defaultStyles={
+          Object {
+            "content": Object {
+              "WebkitOverflowScrolling": "touch",
+              "background": "#fff",
+              "border": "1px solid #ccc",
+              "borderRadius": "4px",
+              "bottom": "40px",
+              "left": "40px",
+              "outline": "none",
+              "overflow": "auto",
+              "padding": "20px",
+              "position": "absolute",
+              "right": "40px",
+              "top": "40px",
+            },
+            "overlay": Object {
+              "backgroundColor": "rgba(255, 255, 255, 0.75)",
+              "bottom": 0,
+              "left": 0,
+              "position": "fixed",
+              "right": 0,
+              "top": 0,
+            },
+          }
+        }
+        isOpen={true}
+        onAfterOpen={[Function]}
+        onRequestClose={[Function]}
+        parentSelector={[Function]}
+        portalClassName="ReactModalPortal"
+        shouldCloseOnEsc={true}
+        shouldCloseOnOverlayClick={true}
+        shouldFocusAfterRender={true}
+        shouldReturnFocusAfterClose={true}
+        style={
+          Object {
+            "content": Object {
+              "backgroundColor": "#ffffff",
+              "border": "1px solid #CCCCCC",
+              "borderRadius": "4px",
+              "bottom": "auto",
+              "boxShadow": "0 2px 40px 10px rgba(185, 180, 180, 0.2)",
+              "fontFamily": "DINPro-Regular",
+              "left": "50%",
+              "marginRight": "-50%",
+              "outline": "none",
+              "overflow": "auto",
+              "position": "absolute",
+              "right": "auto",
+              "top": "50%",
+              "transform": "translate(-50%, -50%)",
+            },
+          }
+        }
+      >
+        <div
+          aria-modal="true"
+          className="ReactModal__Overlay ReactModal__Overlay--after-open"
+          onClick={[Function]}
+          onMouseDown={[Function]}
+          style={
+            Object {
+              "backgroundColor": "rgba(255, 255, 255, 0.75)",
+              "bottom": 0,
+              "left": 0,
+              "position": "fixed",
+              "right": 0,
+              "top": 0,
+            }
+          }
+        >
+          <div
+            aria-label="Parent Modal"
+            className="ReactModal__Content ReactModal__Content--after-open modal"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            onMouseDown={[Function]}
+            onMouseUp={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#ffffff",
+                "border": "1px solid #CCCCCC",
+                "borderRadius": "4px",
+                "bottom": "auto",
+                "boxShadow": "0 2px 40px 10px rgba(185, 180, 180, 0.2)",
+                "fontFamily": "DINPro-Regular",
+                "left": "50%",
+                "marginRight": "-50%",
+                "outline": "none",
+                "overflow": "auto",
+                "position": "absolute",
+                "right": "auto",
+                "top": "50%",
+                "transform": "translate(-50%, -50%)",
+              }
+            }
+            tabIndex="-1"
+          >
+            <h2>
+              ADD ROOM
+            </h2>
+            <form
+              onSubmit={[Function]}
+            >
+              <Input
+                id="roomName"
+                inputClass="mrm-input"
+                labelClass="input-wrapper"
+                labelName="Room Name"
+                name="roomName"
+                onChange={[Function]}
+                placeholder="Enter room name"
+                required={true}
+                type="text"
+                value=""
+              >
+                <div
+                  className="input-wrapper"
+                >
+                  <label
+                    htmlFor="roomName"
+                  >
+                    Room Name
+                    <input
+                      className="mrm-input"
+                      defaultValue=""
+                      id="roomName"
+                      name="roomName"
+                      onChange={[Function]}
+                      placeholder="Enter room name"
+                      required={true}
+                      type="text"
+                    />
+                  </label>
+                </div>
+              </Input>
+              <SelectInput
+                id="roomLocation"
+                labelText="Select Room Location"
+                name="roomLocation"
+                onChange={[Function]}
+                options={
+                  Array [
+                    Object {
+                      "displayText": "Lagos ",
+                      "value": 1,
+                    },
+                    Object {
+                      "displayText": "Kampala",
+                      "value": 2,
+                    },
+                    Object {
+                      "displayText": "Nairobi",
+                      "value": 3,
+                    },
+                  ]
+                }
+                placeholder="Select room location"
+                selectInputClassName="default-select"
+                value=""
+                wrapperClassName="input-wrapper"
+              >
+                <div
+                  className="input-wrapper"
+                >
+                  <label
+                    htmlFor="roomLocation"
+                  >
+                    Select Room Location
+                    <select
+                      className="default-select"
+                      id="roomLocation"
+                      name="roomLocation"
+                      onChange={[Function]}
+                      value=""
+                    >
+                      <option
+                        value=""
+                      >
+                        Select room location
+                      </option>
+                      <option
+                        key="1"
+                        value={1}
+                      >
+                        Lagos 
+                      </option>
+                      <option
+                        key="2"
+                        value={2}
+                      >
+                        Kampala
+                      </option>
+                      <option
+                        key="3"
+                        value={3}
+                      >
+                        Nairobi
+                      </option>
+                    </select>
+                  </label>
+                </div>
+              </SelectInput>
+              <ActionButtons
+                actionButtonClassName="action-button"
+                actionButtonText="ADD ROOM"
+                cancelButtonClassName="cancel-button"
+                cancelButtonText="CANCEL"
+                onClickCancel={[Function]}
+                withCancel={true}
+              >
+                <div
+                  className="form-action-buttons"
+                >
+                  <button
+                    className="cancel-button"
+                    onClick={[Function]}
+                  >
+                    CANCEL
+                  </button>
+                  <button
+                    className="action-button"
+                    type="submit"
+                  >
+                    ADD ROOM
+                  </button>
+                </div>
+              </ActionButtons>
+            </form>
+          </div>
+        </div>
+      </ModalPortal>
+    </Modal>
+  </MrmModal>
+</AddRoom>
+`;
+
+exports[`AddRoom should render properly 1`] = `
+<AddRoom>
+  <MrmModal
+    buttonText="Add Room"
+    className="modal"
+    closeModal={false}
+    handleCloseRequest={[Function]}
+    modalButtonClassName="button"
+    title="ADD ROOM"
+  >
+    <button
+      className="button"
+      id="modal-button"
+      onClick={[Function]}
+    >
+      Add Room
+    </button>
+    <Modal
+      ariaHideApp={false}
+      bodyOpenClassName="ReactModal__Body--open"
+      className="modal"
+      closeTimeoutMS={0}
+      contentLabel="Parent Modal"
+      isOpen={false}
+      onAfterOpen={[Function]}
+      onRequestClose={[Function]}
+      parentSelector={[Function]}
+      portalClassName="ReactModalPortal"
+      shouldCloseOnEsc={true}
+      shouldCloseOnOverlayClick={true}
+      shouldFocusAfterRender={true}
+      shouldReturnFocusAfterClose={true}
+      style={
+        Object {
+          "content": Object {
+            "backgroundColor": "#ffffff",
+            "border": "1px solid #CCCCCC",
+            "borderRadius": "4px",
+            "bottom": "auto",
+            "boxShadow": "0 2px 40px 10px rgba(185, 180, 180, 0.2)",
+            "fontFamily": "DINPro-Regular",
+            "left": "50%",
+            "marginRight": "-50%",
+            "outline": "none",
+            "overflow": "auto",
+            "position": "absolute",
+            "right": "auto",
+            "top": "50%",
+            "transform": "translate(-50%, -50%)",
+          },
+        }
+      }
+    >
+      <ModalPortal
+        ariaHideApp={false}
+        bodyOpenClassName="ReactModal__Body--open"
+        className="modal"
+        closeTimeoutMS={0}
+        contentLabel="Parent Modal"
+        defaultStyles={
+          Object {
+            "content": Object {
+              "WebkitOverflowScrolling": "touch",
+              "background": "#fff",
+              "border": "1px solid #ccc",
+              "borderRadius": "4px",
+              "bottom": "40px",
+              "left": "40px",
+              "outline": "none",
+              "overflow": "auto",
+              "padding": "20px",
+              "position": "absolute",
+              "right": "40px",
+              "top": "40px",
+            },
+            "overlay": Object {
+              "backgroundColor": "rgba(255, 255, 255, 0.75)",
+              "bottom": 0,
+              "left": 0,
+              "position": "fixed",
+              "right": 0,
+              "top": 0,
+            },
+          }
+        }
+        isOpen={false}
+        onAfterOpen={[Function]}
+        onRequestClose={[Function]}
+        parentSelector={[Function]}
+        portalClassName="ReactModalPortal"
+        shouldCloseOnEsc={true}
+        shouldCloseOnOverlayClick={true}
+        shouldFocusAfterRender={true}
+        shouldReturnFocusAfterClose={true}
+        style={
+          Object {
+            "content": Object {
+              "backgroundColor": "#ffffff",
+              "border": "1px solid #CCCCCC",
+              "borderRadius": "4px",
+              "bottom": "auto",
+              "boxShadow": "0 2px 40px 10px rgba(185, 180, 180, 0.2)",
+              "fontFamily": "DINPro-Regular",
+              "left": "50%",
+              "marginRight": "-50%",
+              "outline": "none",
+              "overflow": "auto",
+              "position": "absolute",
+              "right": "auto",
+              "top": "50%",
+              "transform": "translate(-50%, -50%)",
+            },
+          }
+        }
+      />
+    </Modal>
+  </MrmModal>
+</AddRoom>
+`;

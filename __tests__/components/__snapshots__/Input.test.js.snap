@@ -12,6 +12,7 @@ exports[`Input Component renders properly 1`] = `
       defaultValue=""
       id=""
       name=""
+      onChange={[MockFunction]}
       type="text"
     />
   </label>

@@ -1,0 +1,35 @@
+$actionColor:#3359DB;
+$cancelColor:white;
+.form-action-buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    
+    button{
+        margin: 0;
+        display: inline-flex;
+        width: fit-content;
+        justify-content: center;
+        letter-spacing: 0.3px;	
+        line-height: 20px;
+        padding: 2% 4%;
+        text-transform: uppercase;
+        border-radius: 0;
+    }
+
+    button:last-child{
+        margin-left: 4%;
+    }
+
+    .action-button{
+        background-color: $actionColor;
+        color: $cancelColor;
+    }
+
+    .cancel-button{
+        color: $actionColor;
+        background-color: $cancelColor;
+        border: 1px solid $actionColor;
+    }
+
+}

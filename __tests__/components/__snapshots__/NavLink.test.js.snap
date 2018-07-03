@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`Tests for SettingOffices renders correctly from memory 1`] = `
-<Route
-  exact={false}
-  path="/"
-  strict={false}
-/>
-`;

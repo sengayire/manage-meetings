@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 import '../../assets/styles/input.scss';
 
 export const Input = ({
-  name, value, inputClass, labelName, labelClass, id, onChange, ...otherProps
+  name, value, inputClass, type, labelName, labelClass, id, onChange, ...otherProps
 }) => (
   <div className={labelClass}>
     <label htmlFor={name}>{labelName}
       <input
-        type="text"
+        type={type}
         className={inputClass}
         name={name}
         defaultValue={value}
@@ -23,11 +23,18 @@ export const Input = ({
 Input.propTypes = {
   name: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
-  inputClass: PropTypes.string.isRequired,
+  inputClass: PropTypes.string,
   id: PropTypes.string.isRequired,
   labelName: PropTypes.string.isRequired,
-  labelClass: PropTypes.string.isRequired,
+  labelClass: PropTypes.string,
   onChange: PropTypes.func.isRequired,
+  type: PropTypes.string,
+};
+
+Input.defaultProps = {
+  type: 'text',
+  inputClass: 'mrm-input',
+  labelClass: 'input1',
 };
 
 export default Input;
