@@ -9,6 +9,8 @@ import ROUTES from '../utils/routes';
 import PlaceHolder from '../components/Placeholder';
 import RoomsList from '../components/RoomsList';
 
+import DeviceList from '../components/DeviceList';
+
 // replace the PlaceHolder component with appropriate component to be rendered
 const SettingsContent = () => (
   <div className="settings-vertical">
@@ -19,7 +21,7 @@ const SettingsContent = () => (
         <Route exact path={ROUTES.settingsRooms} component={RoomsList} />
         <Route exact path={ROUTES.settingsAmenities} component={ResourceList} />
         <Route exact path={ROUTES.settingsPeople} component={PlaceHolder} />
-        <Route exact path={ROUTES.settingsDevices} component={PlaceHolder} />
+        <Route exact path={ROUTES.settingsDevices} component={DeviceList} />
         <Route exact path={ROUTES.settingsIntegrations} component={PlaceHolder} />
         <Redirect from="/settings" to="/settings/offices" />
       </Switch>
