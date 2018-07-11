@@ -6,7 +6,6 @@ import EditResource from './EditResource';
 const Resource = ({ resource }) => (
   <tr>
     <td>{resource.name}</td>
-    <td>{resource.rooms}</td>
     <td className="action-buttons">
       <EditResource resourceName={resource.name} />
       <DeleteResource toDelete={resource} />
@@ -17,7 +16,6 @@ const Resource = ({ resource }) => (
 Resource.propTypes = {
   resource: PropTypes.shape({
     name: PropTypes.string.isRequired,
-    rooms: PropTypes.number.isRequired,
   }).isRequired,
 };
 

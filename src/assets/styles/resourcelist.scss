@@ -1,8 +1,8 @@
 .settings-resource-list {
   table {
-    width: 90%;
+    width: 97.129%;
     clear: left;
-    table-layout: fixed;
+    table-layout: inherit;
     border-collapse: collapse;
     text-align: left;
 
@@ -27,6 +27,9 @@
       margin-bottom: 10%;
       border-bottom: 5px solid #f4f8f9;
       height: 50px;
+      td:nth-child(2) {
+        width: 13.2%;
+      }
     }
     th {
       color: #999999;
