@@ -15,7 +15,7 @@ describe('Room Component', () => {
 
   it('renders the correct content', () => {
     const td = roomWrapper.find('td');
-    const rm = ['Kampala', 'Kampala', 'The Oak', '<EditRoom /> \xa0 Delete'];
+    const rm = ['Kampala', 'Kampala', 'The Oak', 'Edit', 'Delete'];
     let i = 0;
     expect(td).toHaveLength(4);
     td.forEach((node) => {

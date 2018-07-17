@@ -4,7 +4,7 @@ import MrmModal from '../components/commons/Modal';
 
 import '../assets/styles/deleteModal.scss';
 
-class DeleteOffice extends React.Component {
+class DeleteRoom extends React.Component {
   state = {
     closeModal: false,
   }
@@ -17,7 +17,7 @@ class DeleteOffice extends React.Component {
     this.state.closeModal && this.setState({ closeModal: false });
   }
 
-  handleDeleteOffice = () => {
+  handleDeleteRoom = () => {
     this.handleCloseModal();
   }
 
@@ -29,19 +29,19 @@ class DeleteOffice extends React.Component {
     return (
       <MrmModal
         className="delete-modal"
-        title="DELETE OFFICE"
+        title="DELETE ROOM"
         buttonText="Delete"
         closeModal={closeModal}
         handleCloseRequest={this.handleModalStateChange}
       >
         <div className="delete-modal-content">
           <p id="confirm-msg">
-            Are you sure you want to delete the {`'${this.props.officeName}'`} office?
-            This cannot be undone & all data will be lost
+            Are you sure you want to delete {`"${this.props.roomName}"`}? <br />
+            This cannot be undone
           </p>
           <div className="modal-actions" >
             <button id="cancel-btn" onClick={this.handleCloseModal}>CANCEL</button>
-            <button id="delete-btn" onClick={this.handleDeleteOffice}>DELETE</button>
+            <button id="delete-btn" onClick={this.handleDeleteRoom}>DELETE</button>
           </div>
         </div>
       </MrmModal>
@@ -49,8 +49,8 @@ class DeleteOffice extends React.Component {
   }
 }
 
-DeleteOffice.propTypes = {
-  officeName: PropTypes.string.isRequired,
+DeleteRoom.propTypes = {
+  roomName: PropTypes.string.isRequired,
 };
 
-export default DeleteOffice;
+export default DeleteRoom;

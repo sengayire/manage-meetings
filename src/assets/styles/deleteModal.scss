@@ -17,26 +17,24 @@ td {
 }
 
 .delete-modal {
-  height: 312px;
+  padding: 25px 15px;;
+  max-height: 312px;
   width: 614px;
+  border: none !important;
   border-radius: 4px;
   background-color: #FFFFFF;
-  box-shadow: 0 2px 40px 10px rgba(0,0,0,0.2);
 }
 
 #confirm-msg {
-  font-family: 'SFNSDisplay';
+  font-family: 'DINPro-Light';
   font-size: 18px;
   color: #6D6D6D;
   line-height: 21px;
   padding-top: 30px;
+
   padding-bottom: 25px;
 }
 
-.delete-modal {
-  height: 280px;
-	width: 614px;
-}
 
 .delete-modal-content {
   margin-left:2em;

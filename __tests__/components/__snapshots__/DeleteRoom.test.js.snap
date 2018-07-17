@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DeleteOffice Test Suite renders as expected 1`] = `
+<MrmModal
+  buttonText="Delete"
+  className="delete-modal"
+  closeModal={false}
+  handleCloseRequest={[Function]}
+  modalButtonClassName="button"
+  title="DELETE ROOM"
+>
+  <div
+    className="delete-modal-content"
+  >
+    <p
+      id="confirm-msg"
+    >
+      Are you sure you want to delete 
+      "Rabat"
+      ? 
+      <br />
+      This cannot be undone
+    </p>
+    <div
+      className="modal-actions"
+    >
+      <button
+        id="cancel-btn"
+        onClick={[Function]}
+      >
+        CANCEL
+      </button>
+      <button
+        id="delete-btn"
+        onClick={[Function]}
+      >
+        DELETE
+      </button>
+    </div>
+  </div>
+</MrmModal>
+`;
