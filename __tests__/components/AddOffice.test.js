@@ -12,9 +12,8 @@ describe('AddOffice Component', () => {
   });
 
   it('should have initial state', () => {
-    expect(wrapper.state().buildingName).toEqual('');
-    expect(wrapper.state().countryName).toEqual('');
-    expect(wrapper.state().timeZone).toEqual('');
+    expect(wrapper.state().officeName).toEqual('');
+    expect(wrapper.state().officeLocation).toEqual('');
   });
 
   it('includes title prop', () => {
@@ -30,24 +29,9 @@ describe('AddOffice Component', () => {
     expect(modalForm).toHaveLength(1);
   });
 
-  it('should have three labels', () => {
-    const modalForm = wrapper.find('label');
-    expect(modalForm).toHaveLength(3);
-  });
-
-  it('should have three inputs', () => {
-    const modalForm = wrapper.find('input');
-    expect(modalForm).toHaveLength(3);
-  });
-
-  it('should have one button', () => {
-    const modalForm = wrapper.find('button');
-    expect(modalForm).toHaveLength(1);
-  });
-
   it('inputs should respond to state changes', () => {
-    wrapper.find('#buildingName').simulate('change', { target: { name: 'buildingName', value: 'epic' } });
-    expect(wrapper.find('#buildingName').props().value).toBe('epic');
+    wrapper.find('#officeName').simulate('change', { target: { name: 'officeName', value: 'epic' } });
+    expect(wrapper.find('#officeName').props().value).toBe('epic');
   });
 
   it('handles handleCloseModal()', () => {

@@ -15,9 +15,12 @@ exports[`EditResource Component renders properly 1`] = `
   >
     <Input
       id="resourceName"
+      inputClass="mrm-input"
+      labelClass="input1"
       labelName="Rename Resource"
       name="resourceName"
       onChange={[Function]}
+      type="text"
       value="Jabra Speaker"
     />
     <div
