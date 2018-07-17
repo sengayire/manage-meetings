@@ -1,0 +1,159 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RoomForm should render properly 1`] = `
+<RoomForm
+  formRole="add"
+  locations={
+    Array [
+      Object {
+        "__typename": "Location",
+        "id": "1",
+        "name": "Kampala",
+      },
+      Object {
+        "__typename": "Location",
+        "id": "2",
+        "name": "Lagos",
+      },
+      Object {
+        "__typename": "Location",
+        "id": "3",
+        "name": "Nairobi",
+      },
+    ]
+  }
+  onCloseModalRequest={[MockFunction]}
+  onSubmit={[MockFunction]}
+  roomLocation=""
+  roomName=""
+>
+  <form
+    onSubmit={[Function]}
+  >
+    <Input
+      id="roomName"
+      inputClass="mrm-input"
+      labelClass="input-wrapper"
+      labelName="Room Name"
+      name="roomName"
+      onChange={[Function]}
+      placeholder="Enter room name"
+      required={true}
+      type="text"
+      value=""
+    >
+      <div
+        className="input-wrapper"
+      >
+        <label
+          htmlFor="roomName"
+        >
+          Room Name
+          <input
+            className="mrm-input"
+            defaultValue=""
+            id="roomName"
+            name="roomName"
+            onChange={[Function]}
+            placeholder="Enter room name"
+            required={true}
+            type="text"
+          />
+        </label>
+      </div>
+    </Input>
+    <SelectInput
+      id="roomLocation"
+      labelText="Select Room Location"
+      name="roomLocation"
+      onChange={[Function]}
+      options={
+        Array [
+          Object {
+            "displayText": "Kampala",
+            "value": "1",
+          },
+          Object {
+            "displayText": "Lagos",
+            "value": "2",
+          },
+          Object {
+            "displayText": "Nairobi",
+            "value": "3",
+          },
+        ]
+      }
+      placeholder="Select room location"
+      selectInputClassName="default-select"
+      value=""
+      wrapperClassName="input-wrapper"
+    >
+      <div
+        className="input-wrapper"
+      >
+        <label
+          htmlFor="roomLocation"
+        >
+          Select Room Location
+          <select
+            className="default-select"
+            id="roomLocation"
+            name="roomLocation"
+            onChange={[Function]}
+            value=""
+          >
+            <option
+              value=""
+            >
+              Select room location
+            </option>
+            <option
+              key="1"
+              value="1"
+            >
+              Kampala
+            </option>
+            <option
+              key="2"
+              value="2"
+            >
+              Lagos
+            </option>
+            <option
+              key="3"
+              value="3"
+            >
+              Nairobi
+            </option>
+          </select>
+        </label>
+      </div>
+    </SelectInput>
+    <ActionButtons
+      actionButtonClassName="action-button"
+      actionButtonText="Add Room"
+      cancelButtonClassName="cancel-button"
+      cancelButtonText="CANCEL"
+      onClickCancel={[MockFunction]}
+      withCancel={true}
+    >
+      <div
+        className="form-action-buttons"
+      >
+        <button
+          className="cancel-button"
+          onClick={[MockFunction]}
+        >
+          CANCEL
+        </button>
+        <button
+          className="action-button"
+          type="submit"
+        >
+          Add Room
+        </button>
+      </div>
+    </ActionButtons>
+  </form>
+</RoomForm>
+`;

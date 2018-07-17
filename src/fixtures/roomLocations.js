@@ -1,10 +1,10 @@
 export default [
   {
-    value: 1,
+    value: 2,
     displayText: 'Lagos ',
   },
   {
-    value: 2,
+    value: 1,
     displayText: 'Kampala',
   },
   {

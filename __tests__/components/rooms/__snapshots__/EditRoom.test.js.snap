@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AddRoom should pop up a modal when modal button is clicked 1`] = `
-<AddRoom
+exports[`EditRoom should pop up a modal when modal button is clicked 1`] = `
+<EditRoom
   locations={
     Array [
       Object {
@@ -21,21 +21,23 @@ exports[`AddRoom should pop up a modal when modal button is clicked 1`] = `
       },
     ]
   }
+  roomLocation={1}
+  roomName="Aqua"
 >
   <MrmModal
-    buttonText="Add Room"
+    buttonText="Edit"
     className="modal"
     closeModal={false}
     handleCloseRequest={[Function]}
     modalButtonClassName="button"
-    title="ADD ROOM"
+    title="EDIT ROOM"
   >
     <button
       className="button"
       id="modal-button"
       onClick={[Function]}
     >
-      Add Room
+      Edit
     </button>
     <Modal
       ariaHideApp={false}
@@ -179,10 +181,10 @@ exports[`AddRoom should pop up a modal when modal button is clicked 1`] = `
             tabIndex="-1"
           >
             <h2>
-              ADD ROOM
+              EDIT ROOM
             </h2>
             <RoomForm
-              formRole="add"
+              formRole="edit"
               locations={
                 Array [
                   Object {
@@ -204,8 +206,8 @@ exports[`AddRoom should pop up a modal when modal button is clicked 1`] = `
               }
               onCloseModalRequest={[Function]}
               onSubmit={[Function]}
-              roomLocation=""
-              roomName=""
+              roomLocation={1}
+              roomName="Aqua"
             >
               <form
                 onSubmit={[Function]}
@@ -220,7 +222,7 @@ exports[`AddRoom should pop up a modal when modal button is clicked 1`] = `
                   placeholder="Enter room name"
                   required={true}
                   type="text"
-                  value=""
+                  value="Aqua"
                 >
                   <div
                     className="input-wrapper"
@@ -231,7 +233,7 @@ exports[`AddRoom should pop up a modal when modal button is clicked 1`] = `
                       Room Name
                       <input
                         className="mrm-input"
-                        defaultValue=""
+                        defaultValue="Aqua"
                         id="roomName"
                         name="roomName"
                         onChange={[Function]}
@@ -265,7 +267,7 @@ exports[`AddRoom should pop up a modal when modal button is clicked 1`] = `
                   }
                   placeholder="Select room location"
                   selectInputClassName="default-select"
-                  value=""
+                  value={1}
                   wrapperClassName="input-wrapper"
                 >
                   <div
@@ -280,7 +282,7 @@ exports[`AddRoom should pop up a modal when modal button is clicked 1`] = `
                         id="roomLocation"
                         name="roomLocation"
                         onChange={[Function]}
-                        value=""
+                        value={1}
                       >
                         <option
                           value=""
@@ -311,7 +313,7 @@ exports[`AddRoom should pop up a modal when modal button is clicked 1`] = `
                 </SelectInput>
                 <ActionButtons
                   actionButtonClassName="action-button"
-                  actionButtonText="Add Room"
+                  actionButtonText="Save Changes"
                   cancelButtonClassName="cancel-button"
                   cancelButtonText="CANCEL"
                   onClickCancel={[Function]}
@@ -330,7 +332,7 @@ exports[`AddRoom should pop up a modal when modal button is clicked 1`] = `
                       className="action-button"
                       type="submit"
                     >
-                      Add Room
+                      Save Changes
                     </button>
                   </div>
                 </ActionButtons>
@@ -341,11 +343,11 @@ exports[`AddRoom should pop up a modal when modal button is clicked 1`] = `
       </ModalPortal>
     </Modal>
   </MrmModal>
-</AddRoom>
+</EditRoom>
 `;
 
-exports[`AddRoom should render properly 1`] = `
-<AddRoom
+exports[`EditRoom should render properly 1`] = `
+<EditRoom
   locations={
     Array [
       Object {
@@ -365,21 +367,23 @@ exports[`AddRoom should render properly 1`] = `
       },
     ]
   }
+  roomLocation={1}
+  roomName="Aqua"
 >
   <MrmModal
-    buttonText="Add Room"
+    buttonText="Edit"
     className="modal"
     closeModal={false}
     handleCloseRequest={[Function]}
     modalButtonClassName="button"
-    title="ADD ROOM"
+    title="EDIT ROOM"
   >
     <button
       className="button"
       id="modal-button"
       onClick={[Function]}
     >
-      Add Room
+      Edit
     </button>
     <Modal
       ariaHideApp={false}
@@ -481,5 +485,5 @@ exports[`AddRoom should render properly 1`] = `
       />
     </Modal>
   </MrmModal>
-</AddRoom>
+</EditRoom>
 `;

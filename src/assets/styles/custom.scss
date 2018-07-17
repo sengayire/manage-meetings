@@ -2,6 +2,12 @@
 body {
   background-color: #F4F8F9;
 }
+
+/* Remove un desired blue outline on all elements when focussed */
+*:focus{
+ outline: none;
+}
+
 .tn-app-bar {
   background: #fff;
   box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0), 0 1px 10px 0 rgba(0, 0, 0, 0),

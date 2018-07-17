@@ -1,11 +1,11 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
+import EditRoom from '../../../src/components/rooms/EditRoom';
 import { roomLocations } from '../../../__mocks__/rooms/Rooms';
-import AddRoom from '../../../src/components/rooms/AddRoom';
 
-describe('AddRoom', () => {
-  const wrapper = mount(<AddRoom locations={roomLocations} />);
+describe('EditRoom', () => {
+  const wrapper = mount(<EditRoom roomLocation={1} roomName="Aqua" locations={roomLocations} />);
 
   it('should render properly', () => {
     expect(wrapper).toMatchSnapshot();
@@ -28,6 +28,11 @@ describe('AddRoom', () => {
   it('should have one select and one text input element', () => {
     expect(wrapper.find('Input').length).toBe(1);
     expect(wrapper.find('SelectInput').length).toBe(1);
+  });
+
+  it('should have room details of the room to edit', () => {
+    expect(wrapper.find('input#roomName').prop('defaultValue')).toEqual('Aqua');
+    expect(wrapper.find('select#roomLocation').prop('value')).toEqual(1);
   });
 
 

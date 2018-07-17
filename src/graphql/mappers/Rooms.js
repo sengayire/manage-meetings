@@ -15,9 +15,12 @@
 export const formatRoomData = room => ({
   id: room.id,
   name: room.name,
-  location: room.floor.block.name,
-  office: room.floor.block.location.name,
+  office: room.floor.block.name,
+  location: room.floor.block.location.name,
+  locationId: room.floor.block.location.id,
 });
 
-export { formatRoomData as default };
+const mapLocationsToSelectInputs = locations => (
+  locations.map(({ id, name }) => ({ value: id, displayText: name })));
 
+export { formatRoomData as default, mapLocationsToSelectInputs };

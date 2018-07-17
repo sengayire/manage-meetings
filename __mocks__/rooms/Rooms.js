@@ -9,6 +9,7 @@ const allRoomsReturnData = {
             name: 'EPIC Center',
             location: {
               name: 'Kampala',
+              id: 1,
               __typename: 'Location',
             },
             __typename: 'Block',
@@ -25,6 +26,7 @@ const allRoomsReturnData = {
             name: 'EPIC Center',
             location: {
               name: 'Kampala',
+              id: 1,
               __typename: 'Location',
             },
             __typename: 'Block',
@@ -41,6 +43,7 @@ const allRoomsReturnData = {
             name: 'EPIC Center',
             location: {
               name: 'Kampala',
+              id: 1,
               __typename: 'Location',
             },
             __typename: 'Block',
@@ -57,6 +60,7 @@ const allRoomsReturnData = {
             name: 'EPIC Center',
             location: {
               name: 'Kampala',
+              id: 1,
               __typename: 'Location',
             },
             __typename: 'Block',
@@ -73,6 +77,7 @@ const allRoomsReturnData = {
             name: 'EPIC Center',
             location: {
               name: 'Kampala',
+              id: 1,
               __typename: 'Location',
             },
             __typename: 'Block',
@@ -89,6 +94,7 @@ const allRoomsReturnData = {
             name: 'EPIC Center',
             location: {
               name: 'Kampala',
+              id: 1,
               __typename: 'Location',
             },
             __typename: 'Block',
@@ -105,6 +111,7 @@ const allRoomsReturnData = {
             name: 'EPIC TOWER',
             location: {
               name: 'Lagos',
+              id: 2,
               __typename: 'Location',
             },
             __typename: 'Block',
@@ -121,6 +128,7 @@ const allRoomsReturnData = {
             name: 'EPIC TOWER',
             location: {
               name: 'Lagos',
+              id: 2,
               __typename: 'Location',
             },
             __typename: 'Block',
@@ -137,6 +145,7 @@ const allRoomsReturnData = {
             name: 'EPIC TOWER',
             location: {
               name: 'Lagos',
+              id: 2,
               __typename: 'Location',
             },
             __typename: 'Block',
@@ -153,6 +162,7 @@ const allRoomsReturnData = {
             name: 'EPIC TOWER',
             location: {
               name: 'Lagos',
+              id: 2,
               __typename: 'Location',
             },
             __typename: 'Block',
@@ -169,6 +179,7 @@ const allRoomsReturnData = {
             name: 'EPIC TOWER',
             location: {
               name: 'Lagos',
+              id: 2,
               __typename: 'Location',
             },
             __typename: 'Block',
@@ -181,5 +192,23 @@ const allRoomsReturnData = {
   },
 };
 
-export { allRoomsReturnData as default };
+const roomLocations = [
+  {
+    id: '1',
+    name: 'Kampala',
+    __typename: 'Location',
+  },
+  {
+    id: '2',
+    name: 'Lagos',
+    __typename: 'Location',
+  },
+  {
+    id: '3',
+    name: 'Nairobi',
+    __typename: 'Location',
+  },
+];
+
+export { allRoomsReturnData as default, roomLocations };
 

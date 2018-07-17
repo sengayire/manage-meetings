@@ -108,6 +108,17 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                                               "kind": "Field",
                                               "name": Object {
                                                 "kind": "Name",
+                                                "value": "id",
+                                              },
+                                              "selectionSet": undefined,
+                                            },
+                                            Object {
+                                              "alias": undefined,
+                                              "arguments": Array [],
+                                              "directives": Array [],
+                                              "kind": "Field",
+                                              "name": Object {
+                                                "kind": "Name",
                                                 "value": "name",
                                               },
                                               "selectionSet": undefined,
@@ -131,7 +142,7 @@ exports[`RoomList Component renders correctly from memory 1`] = `
             ],
             "kind": "Document",
             "loc": Object {
-              "end": 175,
+              "end": 190,
               "start": 0,
             },
           },
@@ -147,6 +158,7 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                     "__typename": "Block",
                     "location": Object {
                       "__typename": "Location",
+                      "id": 1,
                       "name": "Kampala",
                     },
                     "name": "EPIC Center",
@@ -163,6 +175,7 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                     "__typename": "Block",
                     "location": Object {
                       "__typename": "Location",
+                      "id": 1,
                       "name": "Kampala",
                     },
                     "name": "EPIC Center",
@@ -179,6 +192,7 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                     "__typename": "Block",
                     "location": Object {
                       "__typename": "Location",
+                      "id": 1,
                       "name": "Kampala",
                     },
                     "name": "EPIC Center",
@@ -195,6 +209,7 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                     "__typename": "Block",
                     "location": Object {
                       "__typename": "Location",
+                      "id": 1,
                       "name": "Kampala",
                     },
                     "name": "EPIC Center",
@@ -211,6 +226,7 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                     "__typename": "Block",
                     "location": Object {
                       "__typename": "Location",
+                      "id": 1,
                       "name": "Kampala",
                     },
                     "name": "EPIC Center",
@@ -227,6 +243,7 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                     "__typename": "Block",
                     "location": Object {
                       "__typename": "Location",
+                      "id": 1,
                       "name": "Kampala",
                     },
                     "name": "EPIC Center",
@@ -243,6 +260,7 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                     "__typename": "Block",
                     "location": Object {
                       "__typename": "Location",
+                      "id": 2,
                       "name": "Lagos",
                     },
                     "name": "EPIC TOWER",
@@ -259,6 +277,7 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                     "__typename": "Block",
                     "location": Object {
                       "__typename": "Location",
+                      "id": 2,
                       "name": "Lagos",
                     },
                     "name": "EPIC TOWER",
@@ -275,6 +294,7 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                     "__typename": "Block",
                     "location": Object {
                       "__typename": "Location",
+                      "id": 2,
                       "name": "Lagos",
                     },
                     "name": "EPIC TOWER",
@@ -291,6 +311,7 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                     "__typename": "Block",
                     "location": Object {
                       "__typename": "Location",
+                      "id": 2,
                       "name": "Lagos",
                     },
                     "name": "EPIC TOWER",
@@ -307,6 +328,7 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                     "__typename": "Block",
                     "location": Object {
                       "__typename": "Location",
+                      "id": 2,
                       "name": "Lagos",
                     },
                     "name": "EPIC TOWER",
@@ -314,6 +336,92 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                 },
                 "id": "14",
                 "name": "Empire State",
+              },
+            ],
+          },
+        },
+      },
+      Object {
+        "request": Object {
+          "query": Object {
+            "definitions": Array [
+              Object {
+                "directives": Array [],
+                "kind": "OperationDefinition",
+                "name": Object {
+                  "kind": "Name",
+                  "value": "locations",
+                },
+                "operation": "query",
+                "selectionSet": Object {
+                  "kind": "SelectionSet",
+                  "selections": Array [
+                    Object {
+                      "alias": undefined,
+                      "arguments": Array [],
+                      "directives": Array [],
+                      "kind": "Field",
+                      "name": Object {
+                        "kind": "Name",
+                        "value": "allLocations",
+                      },
+                      "selectionSet": Object {
+                        "kind": "SelectionSet",
+                        "selections": Array [
+                          Object {
+                            "alias": undefined,
+                            "arguments": Array [],
+                            "directives": Array [],
+                            "kind": "Field",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "id",
+                            },
+                            "selectionSet": undefined,
+                          },
+                          Object {
+                            "alias": undefined,
+                            "arguments": Array [],
+                            "directives": Array [],
+                            "kind": "Field",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "name",
+                            },
+                            "selectionSet": undefined,
+                          },
+                        ],
+                      },
+                    },
+                  ],
+                },
+                "variableDefinitions": Array [],
+              },
+            ],
+            "kind": "Document",
+            "loc": Object {
+              "end": 57,
+              "start": 0,
+            },
+          },
+        },
+        "result": Object {
+          "data": Object {
+            "allLocations": Array [
+              Object {
+                "__typename": "Location",
+                "id": "1",
+                "name": "Kampala",
+              },
+              Object {
+                "__typename": "Location",
+                "id": "2",
+                "name": "Lagos",
+              },
+              Object {
+                "__typename": "Location",
+                "id": "3",
+                "name": "Nairobi",
               },
             ],
           },
@@ -428,6 +536,17 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                                                 "kind": "Field",
                                                 "name": Object {
                                                   "kind": "Name",
+                                                  "value": "id",
+                                                },
+                                                "selectionSet": undefined,
+                                              },
+                                              Object {
+                                                "alias": undefined,
+                                                "arguments": Array [],
+                                                "directives": Array [],
+                                                "kind": "Field",
+                                                "name": Object {
+                                                  "kind": "Name",
                                                   "value": "name",
                                                 },
                                                 "selectionSet": undefined,
@@ -451,7 +570,71 @@ exports[`RoomList Component renders correctly from memory 1`] = `
               ],
               "kind": "Document",
               "loc": Object {
-                "end": 175,
+                "end": 190,
+                "start": 0,
+              },
+            },
+            "variables": undefined,
+          },
+          "locations" => Object {
+            "query": Object {
+              "definitions": Array [
+                Object {
+                  "directives": Array [],
+                  "kind": "OperationDefinition",
+                  "name": Object {
+                    "kind": "Name",
+                    "value": "locations",
+                  },
+                  "operation": "query",
+                  "selectionSet": Object {
+                    "kind": "SelectionSet",
+                    "selections": Array [
+                      Object {
+                        "alias": undefined,
+                        "arguments": Array [],
+                        "directives": Array [],
+                        "kind": "Field",
+                        "name": Object {
+                          "kind": "Name",
+                          "value": "allLocations",
+                        },
+                        "selectionSet": Object {
+                          "kind": "SelectionSet",
+                          "selections": Array [
+                            Object {
+                              "alias": undefined,
+                              "arguments": Array [],
+                              "directives": Array [],
+                              "kind": "Field",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "id",
+                              },
+                              "selectionSet": undefined,
+                            },
+                            Object {
+                              "alias": undefined,
+                              "arguments": Array [],
+                              "directives": Array [],
+                              "kind": "Field",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "name",
+                              },
+                              "selectionSet": undefined,
+                            },
+                          ],
+                        },
+                      },
+                    ],
+                  },
+                  "variableDefinitions": Array [],
+                },
+              ],
+              "kind": "Document",
+              "loc": Object {
+                "end": 57,
                 "start": 0,
               },
             },
@@ -472,6 +655,94 @@ exports[`RoomList Component renders correctly from memory 1`] = `
           "optimistic": Array [],
           "silenceBroadcast": false,
           "watches": Array [
+            Object {
+              "callback": [Function],
+              "optimistic": true,
+              "previousResult": [Function],
+              "query": Object {
+                "definitions": Array [
+                  Object {
+                    "directives": Array [],
+                    "kind": "OperationDefinition",
+                    "name": Object {
+                      "kind": "Name",
+                      "value": "locations",
+                    },
+                    "operation": "query",
+                    "selectionSet": Object {
+                      "kind": "SelectionSet",
+                      "selections": Array [
+                        Object {
+                          "alias": undefined,
+                          "arguments": Array [],
+                          "directives": Array [],
+                          "kind": "Field",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "allLocations",
+                          },
+                          "selectionSet": Object {
+                            "kind": "SelectionSet",
+                            "selections": Array [
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "id",
+                                },
+                                "selectionSet": undefined,
+                              },
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "name",
+                                },
+                                "selectionSet": undefined,
+                              },
+                              Object {
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "__typename",
+                                },
+                              },
+                            ],
+                          },
+                        },
+                      ],
+                    },
+                    "variableDefinitions": Array [],
+                  },
+                ],
+                "kind": "Document",
+                "loc": Object {
+                  "end": 57,
+                  "source": Object {
+                    "body": "
+query locations {
+  allLocations {
+    id
+    name
+  }
+}",
+                    "locationOffset": Object {
+                      "column": 1,
+                      "line": 1,
+                    },
+                    "name": "GraphQL request",
+                  },
+                  "start": 0,
+                },
+              },
+              "variables": undefined,
+            },
             Object {
               "callback": [Function],
               "optimistic": true,
@@ -577,6 +848,17 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                                                   "kind": "Field",
                                                   "name": Object {
                                                     "kind": "Name",
+                                                    "value": "id",
+                                                  },
+                                                  "selectionSet": undefined,
+                                                },
+                                                Object {
+                                                  "alias": undefined,
+                                                  "arguments": Array [],
+                                                  "directives": Array [],
+                                                  "kind": "Field",
+                                                  "name": Object {
+                                                    "kind": "Name",
                                                     "value": "name",
                                                   },
                                                   "selectionSet": undefined,
@@ -628,7 +910,7 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                 ],
                 "kind": "Document",
                 "loc": Object {
-                  "end": 175,
+                  "end": 190,
                   "source": Object {
                     "body": "
   query rooms {
@@ -639,6 +921,7 @@ exports[`RoomList Component renders correctly from memory 1`] = `
         block {
           name
           location {
+            id
             name
           }
         }
@@ -683,6 +966,94 @@ exports[`RoomList Component renders correctly from memory 1`] = `
               "optimistic": Array [],
               "silenceBroadcast": false,
               "watches": Array [
+                Object {
+                  "callback": [Function],
+                  "optimistic": true,
+                  "previousResult": [Function],
+                  "query": Object {
+                    "definitions": Array [
+                      Object {
+                        "directives": Array [],
+                        "kind": "OperationDefinition",
+                        "name": Object {
+                          "kind": "Name",
+                          "value": "locations",
+                        },
+                        "operation": "query",
+                        "selectionSet": Object {
+                          "kind": "SelectionSet",
+                          "selections": Array [
+                            Object {
+                              "alias": undefined,
+                              "arguments": Array [],
+                              "directives": Array [],
+                              "kind": "Field",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "allLocations",
+                              },
+                              "selectionSet": Object {
+                                "kind": "SelectionSet",
+                                "selections": Array [
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "id",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "name",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
+                                  Object {
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "__typename",
+                                    },
+                                  },
+                                ],
+                              },
+                            },
+                          ],
+                        },
+                        "variableDefinitions": Array [],
+                      },
+                    ],
+                    "kind": "Document",
+                    "loc": Object {
+                      "end": 57,
+                      "source": Object {
+                        "body": "
+query locations {
+  allLocations {
+    id
+    name
+  }
+}",
+                        "locationOffset": Object {
+                          "column": 1,
+                          "line": 1,
+                        },
+                        "name": "GraphQL request",
+                      },
+                      "start": 0,
+                    },
+                  },
+                  "variables": undefined,
+                },
                 Object {
                   "callback": [Function],
                   "optimistic": true,
@@ -788,6 +1159,17 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                                                       "kind": "Field",
                                                       "name": Object {
                                                         "kind": "Name",
+                                                        "value": "id",
+                                                      },
+                                                      "selectionSet": undefined,
+                                                    },
+                                                    Object {
+                                                      "alias": undefined,
+                                                      "arguments": Array [],
+                                                      "directives": Array [],
+                                                      "kind": "Field",
+                                                      "name": Object {
+                                                        "kind": "Name",
                                                         "value": "name",
                                                       },
                                                       "selectionSet": undefined,
@@ -839,7 +1221,7 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                     ],
                     "kind": "Document",
                     "loc": Object {
-                      "end": 175,
+                      "end": 190,
                       "source": Object {
                         "body": "
   query rooms {
@@ -850,6 +1232,7 @@ exports[`RoomList Component renders correctly from memory 1`] = `
         block {
           name
           location {
+            id
             name
           }
         }
@@ -875,12 +1258,16 @@ exports[`RoomList Component renders correctly from memory 1`] = `
             "request": [Function],
           },
           "fetchQueryPromises": Map {
-            "2" => Object {
+            "3" => Object {
+              "reject": [Function],
+              "resolve": [Function],
+            },
+            "4" => Object {
               "reject": [Function],
               "resolve": [Function],
             },
           },
-          "idCounter": 3,
+          "idCounter": 5,
           "link": ApolloLink {
             "request": [Function],
           },
@@ -889,6 +1276,211 @@ exports[`RoomList Component renders correctly from memory 1`] = `
           },
           "onBroadcast": [Function],
           "queries": Map {
+            "2" => Object {
+              "cancel": [Function],
+              "document": Object {
+                "definitions": Array [
+                  Object {
+                    "directives": Array [],
+                    "kind": "OperationDefinition",
+                    "name": Object {
+                      "kind": "Name",
+                      "value": "locations",
+                    },
+                    "operation": "query",
+                    "selectionSet": Object {
+                      "kind": "SelectionSet",
+                      "selections": Array [
+                        Object {
+                          "alias": undefined,
+                          "arguments": Array [],
+                          "directives": Array [],
+                          "kind": "Field",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "allLocations",
+                          },
+                          "selectionSet": Object {
+                            "kind": "SelectionSet",
+                            "selections": Array [
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "id",
+                                },
+                                "selectionSet": undefined,
+                              },
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "name",
+                                },
+                                "selectionSet": undefined,
+                              },
+                              Object {
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "__typename",
+                                },
+                              },
+                            ],
+                          },
+                        },
+                      ],
+                    },
+                    "variableDefinitions": Array [],
+                  },
+                ],
+                "kind": "Document",
+                "loc": Object {
+                  "end": 57,
+                  "source": Object {
+                    "body": "
+query locations {
+  allLocations {
+    id
+    name
+  }
+}",
+                    "locationOffset": Object {
+                      "column": 1,
+                      "line": 1,
+                    },
+                    "name": "GraphQL request",
+                  },
+                  "start": 0,
+                },
+              },
+              "invalidate": false,
+              "invalidated": false,
+              "lastRequestId": 3,
+              "listeners": Array [
+                [Function],
+              ],
+              "newData": null,
+              "observableQuery": ObservableQuery {
+                "_subscriber": [Function],
+                "isCurrentlyPolling": false,
+                "isTornDown": false,
+                "observers": Array [
+                  SubscriptionObserver {
+                    "_subscription": Subscription {
+                      "_cleanup": [Function],
+                      "_observer": Object {
+                        "error": [Function],
+                        "next": [Function],
+                      },
+                      "_queue": undefined,
+                      "_state": "ready",
+                    },
+                  },
+                ],
+                "options": Object {
+                  "context": Object {},
+                  "metadata": Object {
+                    "reactComponent": Object {
+                      "displayName": "Apollo(RoomsList)",
+                    },
+                  },
+                  "notifyOnNetworkStatusChange": false,
+                  "query": Object {
+                    "definitions": Array [
+                      Object {
+                        "directives": Array [],
+                        "kind": "OperationDefinition",
+                        "name": Object {
+                          "kind": "Name",
+                          "value": "locations",
+                        },
+                        "operation": "query",
+                        "selectionSet": Object {
+                          "kind": "SelectionSet",
+                          "selections": Array [
+                            Object {
+                              "alias": undefined,
+                              "arguments": Array [],
+                              "directives": Array [],
+                              "kind": "Field",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "allLocations",
+                              },
+                              "selectionSet": Object {
+                                "kind": "SelectionSet",
+                                "selections": Array [
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "id",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "name",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
+                                ],
+                              },
+                            },
+                          ],
+                        },
+                        "variableDefinitions": Array [],
+                      },
+                    ],
+                    "kind": "Document",
+                    "loc": Object {
+                      "end": 57,
+                      "start": 0,
+                    },
+                  },
+                },
+                "queryId": "2",
+                "queryManager": [Circular],
+                "scheduler": QueryScheduler {
+                  "inFlightQueries": Object {},
+                  "intervalQueries": Object {},
+                  "pollingTimers": Object {},
+                  "queryManager": [Circular],
+                  "registeredQueries": Object {},
+                  "ssrMode": false,
+                },
+                "shouldSubscribe": true,
+                "subscriptionHandles": Array [],
+                "variables": Object {},
+              },
+              "subscriptions": Array [
+                Subscription {
+                  "_cleanup": [Function],
+                  "_observer": Object {
+                    "complete": [Function],
+                    "error": [Function],
+                    "next": [Function],
+                  },
+                  "_queue": undefined,
+                  "_state": "ready",
+                },
+              ],
+            },
             "1" => Object {
               "cancel": [Function],
               "document": Object {
@@ -992,6 +1584,17 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                                                   "kind": "Field",
                                                   "name": Object {
                                                     "kind": "Name",
+                                                    "value": "id",
+                                                  },
+                                                  "selectionSet": undefined,
+                                                },
+                                                Object {
+                                                  "alias": undefined,
+                                                  "arguments": Array [],
+                                                  "directives": Array [],
+                                                  "kind": "Field",
+                                                  "name": Object {
+                                                    "kind": "Name",
                                                     "value": "name",
                                                   },
                                                   "selectionSet": undefined,
@@ -1043,7 +1646,7 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                 ],
                 "kind": "Document",
                 "loc": Object {
-                  "end": 175,
+                  "end": 190,
                   "source": Object {
                     "body": "
   query rooms {
@@ -1054,6 +1657,7 @@ exports[`RoomList Component renders correctly from memory 1`] = `
         block {
           name
           location {
+            id
             name
           }
         }
@@ -1072,7 +1676,7 @@ exports[`RoomList Component renders correctly from memory 1`] = `
               },
               "invalidate": false,
               "invalidated": false,
-              "lastRequestId": 2,
+              "lastRequestId": 4,
               "listeners": Array [
                 [Function],
               ],
@@ -1098,7 +1702,7 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                   "context": Object {},
                   "metadata": Object {
                     "reactComponent": Object {
-                      "displayName": "Apollo(RoomsList)",
+                      "displayName": "Apollo(Apollo(RoomsList))",
                     },
                   },
                   "notifyOnNetworkStatusChange": false,
@@ -1203,6 +1807,17 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                                                       "kind": "Field",
                                                       "name": Object {
                                                         "kind": "Name",
+                                                        "value": "id",
+                                                      },
+                                                      "selectionSet": undefined,
+                                                    },
+                                                    Object {
+                                                      "alias": undefined,
+                                                      "arguments": Array [],
+                                                      "directives": Array [],
+                                                      "kind": "Field",
+                                                      "name": Object {
+                                                        "kind": "Name",
                                                         "value": "name",
                                                       },
                                                       "selectionSet": undefined,
@@ -1226,7 +1841,7 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                     ],
                     "kind": "Document",
                     "loc": Object {
-                      "end": 175,
+                      "end": 190,
                       "start": 0,
                     },
                   },
@@ -1261,6 +1876,9 @@ exports[`RoomList Component renders correctly from memory 1`] = `
           },
           "queryDeduplication": true,
           "queryIdsByName": Object {
+            "locations": Array [
+              "2",
+            ],
             "rooms": Array [
               "1",
             ],
@@ -1369,6 +1987,17 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                                                     "kind": "Field",
                                                     "name": Object {
                                                       "kind": "Name",
+                                                      "value": "id",
+                                                    },
+                                                    "selectionSet": undefined,
+                                                  },
+                                                  Object {
+                                                    "alias": undefined,
+                                                    "arguments": Array [],
+                                                    "directives": Array [],
+                                                    "kind": "Field",
+                                                    "name": Object {
+                                                      "kind": "Name",
                                                       "value": "name",
                                                     },
                                                     "selectionSet": undefined,
@@ -1420,7 +2049,7 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                   ],
                   "kind": "Document",
                   "loc": Object {
-                    "end": 175,
+                    "end": 190,
                     "source": Object {
                       "body": "
   query rooms {
@@ -1431,6 +2060,7 @@ exports[`RoomList Component renders correctly from memory 1`] = `
         block {
           name
           location {
+            id
             name
           }
         }
@@ -1438,6 +2068,100 @@ exports[`RoomList Component renders correctly from memory 1`] = `
     }
   }
 ",
+                      "locationOffset": Object {
+                        "column": 1,
+                        "line": 1,
+                      },
+                      "name": "GraphQL request",
+                    },
+                    "start": 0,
+                  },
+                },
+                "graphQLErrors": Array [],
+                "metadata": Object {
+                  "reactComponent": Object {
+                    "displayName": "Apollo(Apollo(RoomsList))",
+                  },
+                },
+                "networkError": null,
+                "networkStatus": 1,
+                "previousVariables": null,
+                "variables": Object {},
+              },
+              "2": Object {
+                "document": Object {
+                  "definitions": Array [
+                    Object {
+                      "directives": Array [],
+                      "kind": "OperationDefinition",
+                      "name": Object {
+                        "kind": "Name",
+                        "value": "locations",
+                      },
+                      "operation": "query",
+                      "selectionSet": Object {
+                        "kind": "SelectionSet",
+                        "selections": Array [
+                          Object {
+                            "alias": undefined,
+                            "arguments": Array [],
+                            "directives": Array [],
+                            "kind": "Field",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "allLocations",
+                            },
+                            "selectionSet": Object {
+                              "kind": "SelectionSet",
+                              "selections": Array [
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "id",
+                                  },
+                                  "selectionSet": undefined,
+                                },
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "name",
+                                  },
+                                  "selectionSet": undefined,
+                                },
+                                Object {
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "__typename",
+                                  },
+                                },
+                              ],
+                            },
+                          },
+                        ],
+                      },
+                      "variableDefinitions": Array [],
+                    },
+                  ],
+                  "kind": "Document",
+                  "loc": Object {
+                    "end": 57,
+                    "source": Object {
+                      "body": "
+query locations {
+  allLocations {
+    id
+    name
+  }
+}",
                       "locationOffset": Object {
                         "column": 1,
                         "line": 1,
@@ -1488,6 +2212,94 @@ exports[`RoomList Component renders correctly from memory 1`] = `
             "optimistic": Array [],
             "silenceBroadcast": false,
             "watches": Array [
+              Object {
+                "callback": [Function],
+                "optimistic": true,
+                "previousResult": [Function],
+                "query": Object {
+                  "definitions": Array [
+                    Object {
+                      "directives": Array [],
+                      "kind": "OperationDefinition",
+                      "name": Object {
+                        "kind": "Name",
+                        "value": "locations",
+                      },
+                      "operation": "query",
+                      "selectionSet": Object {
+                        "kind": "SelectionSet",
+                        "selections": Array [
+                          Object {
+                            "alias": undefined,
+                            "arguments": Array [],
+                            "directives": Array [],
+                            "kind": "Field",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "allLocations",
+                            },
+                            "selectionSet": Object {
+                              "kind": "SelectionSet",
+                              "selections": Array [
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "id",
+                                  },
+                                  "selectionSet": undefined,
+                                },
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "name",
+                                  },
+                                  "selectionSet": undefined,
+                                },
+                                Object {
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "__typename",
+                                  },
+                                },
+                              ],
+                            },
+                          },
+                        ],
+                      },
+                      "variableDefinitions": Array [],
+                    },
+                  ],
+                  "kind": "Document",
+                  "loc": Object {
+                    "end": 57,
+                    "source": Object {
+                      "body": "
+query locations {
+  allLocations {
+    id
+    name
+  }
+}",
+                      "locationOffset": Object {
+                        "column": 1,
+                        "line": 1,
+                      },
+                      "name": "GraphQL request",
+                    },
+                    "start": 0,
+                  },
+                },
+                "variables": undefined,
+              },
               Object {
                 "callback": [Function],
                 "optimistic": true,
@@ -1593,6 +2405,17 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                                                     "kind": "Field",
                                                     "name": Object {
                                                       "kind": "Name",
+                                                      "value": "id",
+                                                    },
+                                                    "selectionSet": undefined,
+                                                  },
+                                                  Object {
+                                                    "alias": undefined,
+                                                    "arguments": Array [],
+                                                    "directives": Array [],
+                                                    "kind": "Field",
+                                                    "name": Object {
+                                                      "kind": "Name",
                                                       "value": "name",
                                                     },
                                                     "selectionSet": undefined,
@@ -1644,7 +2467,7 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                   ],
                   "kind": "Document",
                   "loc": Object {
-                    "end": 175,
+                    "end": 190,
                     "source": Object {
                       "body": "
   query rooms {
@@ -1655,6 +2478,7 @@ exports[`RoomList Component renders correctly from memory 1`] = `
         block {
           name
           location {
+            id
             name
           }
         }
@@ -1681,9 +2505,9 @@ exports[`RoomList Component renders correctly from memory 1`] = `
       }
     }
   >
-    <Apollo(RoomsList)>
+    <Apollo(Apollo(RoomsList))>
       <Query
-        displayName="Apollo(RoomsList)"
+        displayName="Apollo(Apollo(RoomsList))"
         query={
           Object {
             "definitions": Array [
@@ -1786,6 +2610,17 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                                               "kind": "Field",
                                               "name": Object {
                                                 "kind": "Name",
+                                                "value": "id",
+                                              },
+                                              "selectionSet": undefined,
+                                            },
+                                            Object {
+                                              "alias": undefined,
+                                              "arguments": Array [],
+                                              "directives": Array [],
+                                              "kind": "Field",
+                                              "name": Object {
+                                                "kind": "Name",
                                                 "value": "name",
                                               },
                                               "selectionSet": undefined,
@@ -1809,7 +2644,7 @@ exports[`RoomList Component renders correctly from memory 1`] = `
             ],
             "kind": "Document",
             "loc": Object {
-              "end": 175,
+              "end": 190,
               "start": 0,
             },
           }
@@ -1817,7 +2652,7 @@ exports[`RoomList Component renders correctly from memory 1`] = `
         skip={false}
         warnUnhandledError={true}
       >
-        <RoomsList
+        <Apollo(RoomsList)
           data={
             Object {
               "error": undefined,
@@ -1833,12 +2668,112 @@ exports[`RoomList Component renders correctly from memory 1`] = `
             }
           }
         >
-          <div>
-            Loading...
-          </div>
-        </RoomsList>
+          <Query
+            displayName="Apollo(RoomsList)"
+            query={
+              Object {
+                "definitions": Array [
+                  Object {
+                    "directives": Array [],
+                    "kind": "OperationDefinition",
+                    "name": Object {
+                      "kind": "Name",
+                      "value": "locations",
+                    },
+                    "operation": "query",
+                    "selectionSet": Object {
+                      "kind": "SelectionSet",
+                      "selections": Array [
+                        Object {
+                          "alias": undefined,
+                          "arguments": Array [],
+                          "directives": Array [],
+                          "kind": "Field",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "allLocations",
+                          },
+                          "selectionSet": Object {
+                            "kind": "SelectionSet",
+                            "selections": Array [
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "id",
+                                },
+                                "selectionSet": undefined,
+                              },
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "name",
+                                },
+                                "selectionSet": undefined,
+                              },
+                            ],
+                          },
+                        },
+                      ],
+                    },
+                    "variableDefinitions": Array [],
+                  },
+                ],
+                "kind": "Document",
+                "loc": Object {
+                  "end": 57,
+                  "start": 0,
+                },
+              }
+            }
+            skip={false}
+            warnUnhandledError={true}
+          >
+            <RoomsList
+              data={
+                Object {
+                  "error": undefined,
+                  "fetchMore": [Function],
+                  "loading": true,
+                  "networkStatus": 1,
+                  "refetch": [Function],
+                  "startPolling": [Function],
+                  "stopPolling": [Function],
+                  "subscribeToMore": [Function],
+                  "updateQuery": [Function],
+                  "variables": Object {},
+                }
+              }
+              locations={
+                Object {
+                  "error": undefined,
+                  "fetchMore": [Function],
+                  "loading": true,
+                  "networkStatus": 1,
+                  "refetch": [Function],
+                  "startPolling": [Function],
+                  "stopPolling": [Function],
+                  "subscribeToMore": [Function],
+                  "updateQuery": [Function],
+                  "variables": Object {},
+                }
+              }
+            >
+              <div>
+                Loading...
+              </div>
+            </RoomsList>
+          </Query>
+        </Apollo(RoomsList)>
       </Query>
-    </Apollo(RoomsList)>
+    </Apollo(Apollo(RoomsList))>
   </ApolloProvider>
 </MockedProvider>
 `;
