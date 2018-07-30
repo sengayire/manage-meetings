@@ -2,7 +2,7 @@ import React from 'react';
 import { mount } from 'enzyme';
 
 import { roomLocations } from '../../../__mocks__/rooms/Rooms';
-import AddRoom from '../../../src/components/rooms/AddRoom';
+import AddRoom from '../../../src/components/rooms/AddRoomToKampala';
 
 describe('AddRoom', () => {
   const wrapper = mount(<AddRoom locations={roomLocations} />);
@@ -27,16 +27,16 @@ describe('AddRoom', () => {
 
   it('should have one select and one text input element', () => {
     expect(wrapper.find('Input').length).toBe(1);
-    expect(wrapper.find('SelectInput').length).toBe(1);
+    expect(wrapper.find('SelectInput').length).toBe(2);
   });
 
 
   it('should respond to on change events of the input and selects', () => {
     wrapper.find('input#roomName').simulate('change', { target: { name: 'roomName', value: 'HighLan' } });
-    wrapper.find('select#roomLocation').simulate('change', { target: { name: 'roomLocation', value: 'Kampala' } });
+    wrapper.find('select#roomFloor').simulate('change', { target: { name: 'roomFloor', value: 'First Floor' } });
     wrapper.update();
     expect(wrapper.find('input#roomName').prop('defaultValue')).toEqual('HighLan');
-    expect(wrapper.find('select#roomLocation').prop('value')).toEqual('Kampala');
+    expect(wrapper.find('select#roomFloor').prop('value')).toEqual('First Floor');
   });
 
 

@@ -1,0 +1,79 @@
+.add-room-modal {
+    $primary-color:  #3359db;
+    font-family: 'DINPro-Light';
+    padding: 3%;
+
+    h2 {
+        margin-left: 0;
+    }
+      
+    .mrm-input {
+        width: 28em;
+        margin-top: 0.7em;
+        margin-bottom: 0.7em; 
+    }
+
+    .upload-content{
+        float: left;
+        width: calc(50% - 10px);
+        margin-bottom: 2.5em;
+    }
+
+    .border{
+        height: 140px;
+        border: 1px solid #E0E0E0;	
+        border-radius: 2px;	
+        background-color: #F8F8F8;
+    }
+
+    .upload-content + .upload-content{
+        margin-left: 20px;
+        margin-top: 36px;
+    }
+
+    .clearfix {
+        clear: both;
+    }
+
+    .select-input {
+        float: left;
+        width: calc(50% - 10px);
+    }
+    
+    .select-input + .select-input {
+        margin-left: 20px;
+    }
+
+    button[id="selectImage"] {
+        border-radius: 2px;
+        color: white;
+        background-color: #3359db;
+        font-family: 'DINPro-Light';
+    }
+
+    .floor-wrapper {
+        margin-top: 5%;
+        margin-bottom: 4%;
+        width: 14em!important;
+    }
+
+    .capacity-wrapper {
+        margin-top: 5%;
+        margin-bottom: 14%;
+        width: 14em !important;
+    }  
+    
+    .upload-btn-wrapper {
+        position: relative;
+        overflow: hidden;
+        display: inline-block;
+    }
+    
+    .upload-btn-wrapper input[type=file] {
+        font-size: 100px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        opacity: 0;
+    }
+  }

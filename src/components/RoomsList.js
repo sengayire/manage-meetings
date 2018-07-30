@@ -8,7 +8,7 @@ import { GET_ROOMS_QUERY, GET_LOCATIONS_QUERY } from '../graphql/queries/Rooms';
 import { formatRoomData } from '../graphql/mappers/Rooms';
 import ColGroup from './helpers/ColGroup';
 import TableHead from './helpers/TableHead';
-import AddRoom from './rooms/AddRoom';
+import AddRoom from './rooms/AddRoomToKampala';
 
 const RoomsList = (props) => {
   const { allRooms, loading, error } = props.data;

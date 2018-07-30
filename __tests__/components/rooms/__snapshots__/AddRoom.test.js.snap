@@ -24,7 +24,7 @@ exports[`AddRoom should pop up a modal when modal button is clicked 1`] = `
 >
   <MrmModal
     buttonText="Add Room"
-    className="modal"
+    className="add-room-modal"
     closeModal={false}
     handleCloseRequest={[Function]}
     modalButtonClassName="button"
@@ -40,7 +40,7 @@ exports[`AddRoom should pop up a modal when modal button is clicked 1`] = `
     <Modal
       ariaHideApp={false}
       bodyOpenClassName="ReactModal__Body--open"
-      className="modal"
+      className="add-room-modal"
       closeTimeoutMS={0}
       contentLabel="Parent Modal"
       isOpen={true}
@@ -76,7 +76,7 @@ exports[`AddRoom should pop up a modal when modal button is clicked 1`] = `
       <ModalPortal
         ariaHideApp={false}
         bodyOpenClassName="ReactModal__Body--open"
-        className="modal"
+        className="add-room-modal"
         closeTimeoutMS={0}
         contentLabel="Parent Modal"
         defaultStyles={
@@ -153,7 +153,7 @@ exports[`AddRoom should pop up a modal when modal button is clicked 1`] = `
         >
           <div
             aria-label="Parent Modal"
-            className="ReactModal__Content ReactModal__Content--after-open modal"
+            className="ReactModal__Content ReactModal__Content--after-open add-room-modal"
             onClick={[Function]}
             onKeyDown={[Function]}
             onMouseDown={[Function]}
@@ -181,161 +181,173 @@ exports[`AddRoom should pop up a modal when modal button is clicked 1`] = `
             <h2>
               ADD ROOM
             </h2>
-            <RoomForm
-              formRole="add"
-              locations={
-                Array [
-                  Object {
-                    "__typename": "Location",
-                    "id": "1",
-                    "name": "Kampala",
-                  },
-                  Object {
-                    "__typename": "Location",
-                    "id": "2",
-                    "name": "Lagos",
-                  },
-                  Object {
-                    "__typename": "Location",
-                    "id": "3",
-                    "name": "Nairobi",
-                  },
-                ]
-              }
-              onCloseModalRequest={[Function]}
+            <form
+              className="modal-form"
               onSubmit={[Function]}
-              roomLocation=""
-              roomName=""
             >
-              <form
-                onSubmit={[Function]}
+              <div
+                className="upload-content"
               >
-                <Input
-                  id="roomName"
-                  inputClass="mrm-input"
-                  labelClass="input-wrapper"
-                  labelName="Room Name"
-                  name="roomName"
-                  onChange={[Function]}
-                  placeholder="Enter room name"
-                  required={true}
-                  type="text"
-                  value=""
+                <div
+                  className="border"
+                />
+              </div>
+              <div
+                className="upload-btn-wrapper upload-content"
+              >
+                Upload a room thumbnail
+                <button
+                  id="selectImage"
                 >
-                  <div
-                    className="input-wrapper"
+                  Select Image
+                </button>
+                <input
+                  name="myfile"
+                  type="file"
+                />
+              </div>
+              <div
+                className="clearfix"
+              />
+              <Input
+                id="roomName"
+                inputClass="mrm-input"
+                labelClass="input1"
+                labelName="Room Name"
+                name="roomName"
+                onChange={[Function]}
+                placeholder="Enter room name"
+                required={true}
+                type="text"
+                value=""
+              >
+                <div
+                  className="input1"
+                >
+                  <label
+                    htmlFor="roomName"
                   >
-                    <label
-                      htmlFor="roomName"
-                    >
-                      Room Name
-                      <input
-                        className="mrm-input"
-                        defaultValue=""
-                        id="roomName"
-                        name="roomName"
-                        onChange={[Function]}
-                        placeholder="Enter room name"
-                        required={true}
-                        type="text"
-                      />
-                    </label>
-                  </div>
-                </Input>
+                    Room Name
+                    <input
+                      className="mrm-input"
+                      defaultValue=""
+                      id="roomName"
+                      name="roomName"
+                      onChange={[Function]}
+                      placeholder="Enter room name"
+                      required={true}
+                      type="text"
+                    />
+                  </label>
+                </div>
+              </Input>
+              <div
+                className="select-input"
+              >
                 <SelectInput
-                  id="roomLocation"
-                  labelText="Select Room Location"
-                  name="roomLocation"
+                  id="roomFloor"
+                  labelText="Select Floor"
+                  name="roomFloor"
                   onChange={[Function]}
-                  options={
-                    Array [
-                      Object {
-                        "displayText": "Kampala",
-                        "value": "1",
-                      },
-                      Object {
-                        "displayText": "Lagos",
-                        "value": "2",
-                      },
-                      Object {
-                        "displayText": "Nairobi",
-                        "value": "3",
-                      },
-                    ]
-                  }
-                  placeholder="Select room location"
-                  selectInputClassName="default-select"
+                  options={null}
+                  placeholder="Select floor"
+                  selectInputClassName="floor-wrapper default-select"
                   value=""
-                  wrapperClassName="input-wrapper"
+                  wrapperClassName="floor-wrapper"
                 >
                   <div
-                    className="input-wrapper"
+                    className="floor-wrapper"
                   >
                     <label
-                      htmlFor="roomLocation"
+                      htmlFor="roomFloor"
                     >
-                      Select Room Location
+                      Select Floor
                       <select
-                        className="default-select"
-                        id="roomLocation"
-                        name="roomLocation"
+                        className="floor-wrapper default-select"
+                        id="roomFloor"
+                        name="roomFloor"
                         onChange={[Function]}
                         value=""
                       >
                         <option
                           value=""
                         >
-                          Select room location
+                          Select floor
                         </option>
-                        <option
-                          key="1"
-                          value="1"
-                        >
-                          Kampala
-                        </option>
-                        <option
-                          key="2"
-                          value="2"
-                        >
-                          Lagos
-                        </option>
-                        <option
-                          key="3"
-                          value="3"
-                        >
-                          Nairobi
-                        </option>
+                        You need to provide atleast children or options to the select element
                       </select>
                     </label>
                   </div>
                 </SelectInput>
-                <ActionButtons
-                  actionButtonClassName="action-button"
-                  actionButtonText="Add Room"
-                  cancelButtonClassName="cancel-button"
-                  cancelButtonText="CANCEL"
-                  onClickCancel={[Function]}
-                  withCancel={true}
+              </div>
+              <div
+                className="select-input"
+              >
+                <SelectInput
+                  id="roomCapacity"
+                  labelText="Room Capacity"
+                  name="roomCapacity"
+                  onChange={[Function]}
+                  options={null}
+                  placeholder="0"
+                  selectInputClassName="capacity-wrapper default-select"
+                  value=""
+                  wrapperClassName="capacity-wrapper"
                 >
                   <div
-                    className="form-action-buttons"
+                    className="capacity-wrapper"
                   >
-                    <button
-                      className="cancel-button"
-                      onClick={[Function]}
+                    <label
+                      htmlFor="roomCapacity"
                     >
-                      CANCEL
-                    </button>
-                    <button
-                      className="action-button"
-                      type="submit"
-                    >
-                      Add Room
-                    </button>
+                      Room Capacity
+                      <select
+                        className="capacity-wrapper default-select"
+                        id="roomCapacity"
+                        name="roomCapacity"
+                        onChange={[Function]}
+                        value=""
+                      >
+                        <option
+                          value=""
+                        >
+                          0
+                        </option>
+                        You need to provide atleast children or options to the select element
+                      </select>
+                    </label>
                   </div>
-                </ActionButtons>
-              </form>
-            </RoomForm>
+                </SelectInput>
+              </div>
+              <div
+                className="clearfix"
+              />
+              <ActionButtons
+                actionButtonClassName="action-button"
+                actionButtonText="ADD ROOM"
+                cancelButtonClassName="cancel-button"
+                cancelButtonText="CANCEL"
+                onClickCancel={[Function]}
+                withCancel={true}
+              >
+                <div
+                  className="form-action-buttons"
+                >
+                  <button
+                    className="cancel-button"
+                    onClick={[Function]}
+                  >
+                    CANCEL
+                  </button>
+                  <button
+                    className="action-button"
+                    type="submit"
+                  >
+                    ADD ROOM
+                  </button>
+                </div>
+              </ActionButtons>
+            </form>
           </div>
         </div>
       </ModalPortal>
@@ -368,7 +380,7 @@ exports[`AddRoom should render properly 1`] = `
 >
   <MrmModal
     buttonText="Add Room"
-    className="modal"
+    className="add-room-modal"
     closeModal={false}
     handleCloseRequest={[Function]}
     modalButtonClassName="button"
@@ -384,7 +396,7 @@ exports[`AddRoom should render properly 1`] = `
     <Modal
       ariaHideApp={false}
       bodyOpenClassName="ReactModal__Body--open"
-      className="modal"
+      className="add-room-modal"
       closeTimeoutMS={0}
       contentLabel="Parent Modal"
       isOpen={false}
@@ -420,7 +432,7 @@ exports[`AddRoom should render properly 1`] = `
       <ModalPortal
         ariaHideApp={false}
         bodyOpenClassName="ReactModal__Body--open"
-        className="modal"
+        className="add-room-modal"
         closeTimeoutMS={0}
         contentLabel="Parent Modal"
         defaultStyles={

@@ -34,11 +34,11 @@ exports[`AddOffice Component renders properly 1`] = `
         Array [
           Object {
             "displayText": "Lagos ",
-            "value": 1,
+            "value": 2,
           },
           Object {
             "displayText": "Kampala",
-            "value": 2,
+            "value": 1,
           },
           Object {
             "displayText": "Nairobi",
