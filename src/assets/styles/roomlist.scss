@@ -12,7 +12,6 @@
       width: 85%;
       border-collapse: collapse;
       text-align: left;
-
       .first-col {
         width: 35%;
         @media screen and (max-width: 425px) {
@@ -36,14 +35,12 @@
         padding-left: 25px;
         border-bottom: 10px solid #f4f8f9;
         font-weight: 50;
-
         th {
           color: #999999;
           padding: 1%;
           padding-left: 2%;
           font-size: 97%;
           text-align: left;
-
           &:first-child {
             padding-left: 6%;
           }
@@ -54,16 +51,13 @@
           color: #333e44;
           font-size: 95%;
           font-family: 'DINPro-Light';
-
           &:first-child {
             padding-left: 6%;
           }
-
-          button{
+          button {
             padding: 0;
           }
-
-          button:nth-child(2){
+          button:nth-child(2) {
             margin-left: 10px;
           }
         }
@@ -75,6 +69,37 @@
       @media screen and (min-width: 768) and (max-width: 1023px) {
         width: 100%;
       }
+    }
+  }
+  .settings-rooms-control {
+    width: 85%;
+    text-align: right;
+    .button {
+      float: none;
+      margin-right: 0;
+      margin-left: 20px;
+      padding: 7px 15px;
+      height: 37px;
+    }
+    .filterBtn {
+      border: 1px solid #FFAF30;
+      border-radius: 2px;
+      background-color: #FFAF30;
+      color: #FFFFFF;
+    }
+    .filterBtn:after {
+      content: url(../images/filter_icon.svg);
+      height: 16px;
+      width: 18px;
+      margin-left: 10px;
+      vertical-align: sub;
+    }
+    .addRoomBtn:after {
+      content: url(../images/caret_icon.svg);
+      height: 16px;
+      width: 18px;
+      margin-left: 10px;
+      vertical-align: top;
     }
   }
 }

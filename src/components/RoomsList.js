@@ -8,7 +8,6 @@ import { GET_ROOMS_QUERY, GET_LOCATIONS_QUERY } from '../graphql/queries/Rooms';
 import { formatRoomData } from '../graphql/mappers/Rooms';
 import ColGroup from './helpers/ColGroup';
 import TableHead from './helpers/TableHead';
-import AddRoom from './rooms/AddRoomToKampala';
 
 const RoomsList = (props) => {
   const { allRooms, loading, error } = props.data;
@@ -26,7 +25,14 @@ const RoomsList = (props) => {
 
   return (
     <div className="settings-rooms">
-      <AddRoom locations={locations} />
+      <div className="settings-rooms-control">
+        <button id="modal-button" className="button filterBtn">
+          {'Filter'}
+        </button>
+        <button id="modal-button" className="button addRoomBtn">
+          {'Add Room'}
+        </button>
+      </div>
       <div className="settings-rooms-list">
         <table>
           <ColGroup />
