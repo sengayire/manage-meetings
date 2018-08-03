@@ -10,13 +10,19 @@ exports[`AddResource Component renders properly 1`] = `
     modalButtonClassName="button"
     title="ADD RESOURCE"
   >
-    <button
-      className="button"
-      id="modal-button"
-      onClick={[Function]}
+    <IconButtons
+      buttonText="Add Resource"
+      modalButtonClassName="button"
+      openModal={[Function]}
     >
-      Add Resource
-    </button>
+      <button
+        className="button"
+        id="modal-button"
+        onClick={[Function]}
+      >
+        Add Resource
+      </button>
+    </IconButtons>
     <Modal
       ariaHideApp={false}
       bodyOpenClassName="ReactModal__Body--open"
@@ -130,13 +136,19 @@ exports[`AddResource Component should pop-up a modal 1`] = `
     modalButtonClassName="button"
     title="ADD RESOURCE"
   >
-    <button
-      className="button"
-      id="modal-button"
-      onClick={[Function]}
+    <IconButtons
+      buttonText="Add Resource"
+      modalButtonClassName="button"
+      openModal={[Function]}
     >
-      Add Resource
-    </button>
+      <button
+        className="button"
+        id="modal-button"
+        onClick={[Function]}
+      >
+        Add Resource
+      </button>
+    </IconButtons>
     <Modal
       ariaHideApp={false}
       bodyOpenClassName="ReactModal__Body--open"

@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react';
 import Modal from 'react-modal';
 import PropTypes from 'prop-types';
 import '../../assets/styles/modal.scss';
+import IconButton from './IconButtons';
 
 const customStyles = {
   content: {
@@ -26,11 +27,11 @@ class MrmModal extends Component {
   static propTypes = {
     children: PropTypes.node.isRequired,
     title: PropTypes.string.isRequired,
-    buttonText: PropTypes.string.isRequired,
     handleCloseRequest: PropTypes.func.isRequired,
     closeModal: PropTypes.bool.isRequired,
     className: PropTypes.string,
     modalButtonClassName: PropTypes.string,
+    buttonText: PropTypes.string.isRequired,
   };
 
   static defaultProps = {
@@ -74,9 +75,11 @@ class MrmModal extends Component {
     } = this.props;
     return (
       <Fragment>
-        <button id="modal-button" className={modalButtonClassName} onClick={this.openModal}>
-          {buttonText}
-        </button>
+        <IconButton
+          buttonText={buttonText}
+          modalButtonClassName={modalButtonClassName}
+          openModal={this.openModal}
+        />
         <Modal
           isOpen={this.state.modalIsOpen}
           onAfterOpen={this.afterOpenModal}

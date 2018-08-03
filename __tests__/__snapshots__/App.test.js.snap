@@ -823,13 +823,19 @@ exports[`App component should not render Login if token is present but render Se
                                   modalButtonClassName="button"
                                   title="ADD OFFICE"
                                 >
-                                  <button
-                                    className="button"
-                                    id="modal-button"
-                                    onClick={[Function]}
+                                  <IconButtons
+                                    buttonText="Add Office"
+                                    modalButtonClassName="button"
+                                    openModal={[Function]}
                                   >
-                                    Add Office
-                                  </button>
+                                    <button
+                                      className="button"
+                                      id="modal-button"
+                                      onClick={[Function]}
+                                    >
+                                      Add Office
+                                    </button>
+                                  </IconButtons>
                                   <Modal
                                     ariaHideApp={false}
                                     bodyOpenClassName="ReactModal__Body--open"
@@ -1022,13 +1028,22 @@ exports[`App component should not render Login if token is present but render Se
                                               modalButtonClassName="edit-button"
                                               title="EDIT OFFICE"
                                             >
-                                              <button
-                                                className="edit-button"
-                                                id="modal-button"
-                                                onClick={[Function]}
+                                              <IconButtons
+                                                buttonText="Edit"
+                                                modalButtonClassName="edit-button"
+                                                openModal={[Function]}
                                               >
-                                                Edit
-                                              </button>
+                                                <button
+                                                  className="edit-button"
+                                                  id="modal-button"
+                                                  onClick={[Function]}
+                                                >
+                                                  <img
+                                                    alt="Edit"
+                                                    src="test-file-stub"
+                                                  />
+                                                </button>
+                                              </IconButtons>
                                               <Modal
                                                 ariaHideApp={false}
                                                 bodyOpenClassName="ReactModal__Body--open"
@@ -1142,13 +1157,22 @@ exports[`App component should not render Login if token is present but render Se
                                               modalButtonClassName="button"
                                               title="DELETE OFFICE"
                                             >
-                                              <button
-                                                className="button"
-                                                id="modal-button"
-                                                onClick={[Function]}
+                                              <IconButtons
+                                                buttonText="Delete"
+                                                modalButtonClassName="button"
+                                                openModal={[Function]}
                                               >
-                                                Delete
-                                              </button>
+                                                <button
+                                                  className="button"
+                                                  id="modal-button"
+                                                  onClick={[Function]}
+                                                >
+                                                  <img
+                                                    alt="Delete"
+                                                    src="test-file-stub"
+                                                  />
+                                                </button>
+                                              </IconButtons>
                                               <Modal
                                                 ariaHideApp={false}
                                                 bodyOpenClassName="ReactModal__Body--open"
@@ -1286,13 +1310,22 @@ exports[`App component should not render Login if token is present but render Se
                                               modalButtonClassName="edit-button"
                                               title="EDIT OFFICE"
                                             >
-                                              <button
-                                                className="edit-button"
-                                                id="modal-button"
-                                                onClick={[Function]}
+                                              <IconButtons
+                                                buttonText="Edit"
+                                                modalButtonClassName="edit-button"
+                                                openModal={[Function]}
                                               >
-                                                Edit
-                                              </button>
+                                                <button
+                                                  className="edit-button"
+                                                  id="modal-button"
+                                                  onClick={[Function]}
+                                                >
+                                                  <img
+                                                    alt="Edit"
+                                                    src="test-file-stub"
+                                                  />
+                                                </button>
+                                              </IconButtons>
                                               <Modal
                                                 ariaHideApp={false}
                                                 bodyOpenClassName="ReactModal__Body--open"
@@ -1406,13 +1439,22 @@ exports[`App component should not render Login if token is present but render Se
                                               modalButtonClassName="button"
                                               title="DELETE OFFICE"
                                             >
-                                              <button
-                                                className="button"
-                                                id="modal-button"
-                                                onClick={[Function]}
+                                              <IconButtons
+                                                buttonText="Delete"
+                                                modalButtonClassName="button"
+                                                openModal={[Function]}
                                               >
-                                                Delete
-                                              </button>
+                                                <button
+                                                  className="button"
+                                                  id="modal-button"
+                                                  onClick={[Function]}
+                                                >
+                                                  <img
+                                                    alt="Delete"
+                                                    src="test-file-stub"
+                                                  />
+                                                </button>
+                                              </IconButtons>
                                               <Modal
                                                 ariaHideApp={false}
                                                 bodyOpenClassName="ReactModal__Body--open"
@@ -1819,7 +1861,7 @@ exports[`App component should render properly in memory 1`] = `
                     </Component>
                     <LoginButton>
                       <a
-                        href="undefined=undefined"
+                        href="https://api-staging.andela.com/login?redirect_url=http://mrm-dev.andela.com:8080"
                       >
                         <input
                           alt="Login With Your Email"

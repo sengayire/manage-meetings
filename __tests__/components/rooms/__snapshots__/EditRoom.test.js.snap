@@ -32,13 +32,22 @@ exports[`EditRoom should pop up a modal when modal button is clicked 1`] = `
     modalButtonClassName="button"
     title="EDIT ROOM"
   >
-    <button
-      className="button"
-      id="modal-button"
-      onClick={[Function]}
+    <IconButtons
+      buttonText="Edit"
+      modalButtonClassName="button"
+      openModal={[Function]}
     >
-      Edit
-    </button>
+      <button
+        className="button"
+        id="modal-button"
+        onClick={[Function]}
+      >
+        <img
+          alt="Edit"
+          src="test-file-stub"
+        />
+      </button>
+    </IconButtons>
     <Modal
       ariaHideApp={false}
       bodyOpenClassName="ReactModal__Body--open"
@@ -378,13 +387,22 @@ exports[`EditRoom should render properly 1`] = `
     modalButtonClassName="button"
     title="EDIT ROOM"
   >
-    <button
-      className="button"
-      id="modal-button"
-      onClick={[Function]}
+    <IconButtons
+      buttonText="Edit"
+      modalButtonClassName="button"
+      openModal={[Function]}
     >
-      Edit
-    </button>
+      <button
+        className="button"
+        id="modal-button"
+        onClick={[Function]}
+      >
+        <img
+          alt="Edit"
+          src="test-file-stub"
+        />
+      </button>
+    </IconButtons>
     <Modal
       ariaHideApp={false}
       bodyOpenClassName="ReactModal__Body--open"

@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`IconButtons Component renders properly 1`] = `
+<IconButtons
+  buttonText="button"
+  modalButtonClassName="button"
+  openModal={[MockFunction]}
+>
+  <button
+    className="button"
+    id="modal-button"
+    onClick={[MockFunction]}
+  >
+    button
+  </button>
+</IconButtons>
+`;

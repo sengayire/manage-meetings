@@ -9,13 +9,19 @@ exports[`MrmModal Component renders properly 1`] = `
   modalButtonClassName="button"
   title="hello"
 >
-  <button
-    className="button"
-    id="modal-button"
-    onClick={[Function]}
+  <IconButtons
+    buttonText="button"
+    modalButtonClassName="button"
+    openModal={[Function]}
   >
-    button
-  </button>
+    <button
+      className="button"
+      id="modal-button"
+      onClick={[Function]}
+    >
+      button
+    </button>
+  </IconButtons>
   <Modal
     ariaHideApp={false}
     bodyOpenClassName="ReactModal__Body--open"

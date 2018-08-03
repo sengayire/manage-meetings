@@ -30,13 +30,19 @@ exports[`AddRoom should pop up a modal when modal button is clicked 1`] = `
     modalButtonClassName="button"
     title="ADD ROOM"
   >
-    <button
-      className="button"
-      id="modal-button"
-      onClick={[Function]}
+    <IconButtons
+      buttonText="Add Room"
+      modalButtonClassName="button"
+      openModal={[Function]}
     >
-      Add Room
-    </button>
+      <button
+        className="button"
+        id="modal-button"
+        onClick={[Function]}
+      >
+        Add Room
+      </button>
+    </IconButtons>
     <Modal
       ariaHideApp={false}
       bodyOpenClassName="ReactModal__Body--open"
@@ -386,13 +392,19 @@ exports[`AddRoom should render properly 1`] = `
     modalButtonClassName="button"
     title="ADD ROOM"
   >
-    <button
-      className="button"
-      id="modal-button"
-      onClick={[Function]}
+    <IconButtons
+      buttonText="Add Room"
+      modalButtonClassName="button"
+      openModal={[Function]}
     >
-      Add Room
-    </button>
+      <button
+        className="button"
+        id="modal-button"
+        onClick={[Function]}
+      >
+        Add Room
+      </button>
+    </IconButtons>
     <Modal
       ariaHideApp={false}
       bodyOpenClassName="ReactModal__Body--open"
