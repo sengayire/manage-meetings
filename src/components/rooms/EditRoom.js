@@ -26,10 +26,10 @@ class EditRoom extends Component {
     this.state.closeModal && this.setState({ closeModal: false });
   };
 
-  handleEditRoom = (roomDetails) => {
+  handleEditRoom = () => {
     // add room logic here
     // the console statement is here to supress the eslint error of no-unused-vars
-    console.log(roomDetails);
+    // console.log(roomDetails);
     // close modal after add room
     this.handleCloseModal();
   };

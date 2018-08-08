@@ -8,6 +8,7 @@ import { GET_ROOMS_QUERY, GET_LOCATIONS_QUERY } from '../graphql/queries/Rooms';
 import { formatRoomData } from '../graphql/mappers/Rooms';
 import ColGroup from './helpers/ColGroup';
 import TableHead from './helpers/TableHead';
+import AddRoomToEpicTower from './rooms/AddRoomToEpicTower';
 
 const RoomsList = (props) => {
   const { allRooms, loading, error } = props.data;
@@ -29,9 +30,7 @@ const RoomsList = (props) => {
         <button id="modal-button" className="button filterBtn">
           {'Filter'}
         </button>
-        <button id="modal-button" className="button addRoomBtn">
-          {'Add Room'}
-        </button>
+        <AddRoomToEpicTower locations={locations} />
       </div>
       <div className="settings-rooms-list">
         <table>
