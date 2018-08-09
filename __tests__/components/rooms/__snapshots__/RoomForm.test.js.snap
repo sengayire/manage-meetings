@@ -32,7 +32,7 @@ exports[`RoomForm should render properly 1`] = `
   >
     <Input
       id="roomName"
-      inputClass="mrm-input"
+      inputClass="mrm-input default-input"
       labelClass="input-wrapper"
       labelName="Room Name"
       name="roomName"
@@ -50,7 +50,7 @@ exports[`RoomForm should render properly 1`] = `
         >
           Room Name
           <input
-            className="mrm-input"
+            className="mrm-input default-input"
             defaultValue=""
             id="roomName"
             name="roomName"

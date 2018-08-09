@@ -30,13 +30,19 @@ exports[`AddRoom should pop up a modal when modal button is clicked 1`] = `
     modalButtonClassName="button"
     title="ADD ROOM"
   >
-    <button
-      className="button"
-      id="modal-button"
-      onClick={[Function]}
+    <IconButtons
+      buttonText="Add Room"
+      modalButtonClassName="button"
+      openModal={[Function]}
     >
-      Add Room
-    </button>
+      <button
+        className="button"
+        id="modal-button"
+        onClick={[Function]}
+      >
+        Add Room
+      </button>
+    </IconButtons>
     <Modal
       ariaHideApp={false}
       bodyOpenClassName="ReactModal__Body--open"
@@ -193,7 +199,16 @@ exports[`AddRoom should pop up a modal when modal button is clicked 1`] = `
                 >
                   <div
                     className="image-box"
-                  />
+                  >
+                    <div
+                      className="placeholder"
+                    >
+                      <img
+                        alt=""
+                        src="test-file-stub"
+                      />
+                    </div>
+                  </div>
                 </div>
                 <div
                   className="upload-description upload-btn-wrapper"
@@ -214,7 +229,7 @@ exports[`AddRoom should pop up a modal when modal button is clicked 1`] = `
               </div>
               <EpicTowerInputs
                 handleInputChange={[Function]}
-                roomCapacity=""
+                roomCapacity={1}
                 roomFloor=""
                 roomName=""
                 roomWing=""
@@ -254,16 +269,17 @@ exports[`AddRoom should pop up a modal when modal button is clicked 1`] = `
                       </label>
                     </div>
                   </Input>
-                  <SelectInput
+                  <Input
                     id="roomCapacity"
-                    labelText="Room Capacity"
+                    inputClass="mrm-input epic-tower-input"
+                    labelClass="capacity-label"
+                    labelName="Room Capacity"
                     name="roomCapacity"
                     onChange={[Function]}
-                    options={null}
-                    placeholder="0"
-                    selectInputClassName="capacity-wrapper default-select"
-                    value=""
-                    wrapperClassName="capacity-label"
+                    placeholder="1"
+                    required={true}
+                    type="number"
+                    value={1}
                   >
                     <div
                       className="capacity-label"
@@ -272,23 +288,49 @@ exports[`AddRoom should pop up a modal when modal button is clicked 1`] = `
                         htmlFor="roomCapacity"
                       >
                         Room Capacity
-                        <select
-                          className="capacity-wrapper default-select"
+                        <input
+                          className="mrm-input epic-tower-input"
+                          defaultValue={1}
                           id="roomCapacity"
                           name="roomCapacity"
                           onChange={[Function]}
-                          value=""
+                          placeholder="1"
+                          required={true}
+                          type="number"
+                        />
+                        <Controls
+                          handleIncrement={[Function]}
                         >
-                          <option
-                            value=""
+                          <div
+                            className="controls"
                           >
-                            0
-                          </option>
-                          You need to provide atleast children or options to the select element
-                        </select>
+                            <button
+                              className="control up"
+                              name="up"
+                              onClick={[Function]}
+                            >
+                              <img
+                                alt="up"
+                                name="up"
+                                src="test-file-stub"
+                              />
+                            </button>
+                            <button
+                              className="control down"
+                              name="down"
+                              onClick={[Function]}
+                            >
+                              <img
+                                alt="down"
+                                name="down"
+                                src="test-file-stub"
+                              />
+                            </button>
+                          </div>
+                        </Controls>
                       </label>
                     </div>
-                  </SelectInput>
+                  </Input>
                   <SelectInput
                     id="roomFloor"
                     labelText="Select Floor"
@@ -425,13 +467,19 @@ exports[`AddRoom should render properly 1`] = `
     modalButtonClassName="button"
     title="ADD ROOM"
   >
-    <button
-      className="button"
-      id="modal-button"
-      onClick={[Function]}
+    <IconButtons
+      buttonText="Add Room"
+      modalButtonClassName="button"
+      openModal={[Function]}
     >
-      Add Room
-    </button>
+      <button
+        className="button"
+        id="modal-button"
+        onClick={[Function]}
+      >
+        Add Room
+      </button>
+    </IconButtons>
     <Modal
       ariaHideApp={false}
       bodyOpenClassName="ReactModal__Body--open"

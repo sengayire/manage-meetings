@@ -15,7 +15,7 @@ exports[`EditResource Component renders properly 1`] = `
   >
     <Input
       id="resourceName"
-      inputClass="mrm-input"
+      inputClass="mrm-input default-input"
       labelClass="input1"
       labelName="Rename Resource"
       name="resourceName"

@@ -6,7 +6,7 @@ import {
   GET_LOCATIONS_QUERY,
 } from '../../src/graphql/queries/Rooms';
 import allRooms, { roomLocations } from '../../__mocks__/rooms/Rooms';
-import Rooms from '../../src/components/RoomsList';
+import RoomsList from '../../src/components/RoomsList';
 
 describe('RoomList Component', () => {
   const request = { query: GET_ROOMS_QUERY };
@@ -23,7 +23,7 @@ describe('RoomList Component', () => {
       ]}
       addTypename
     >
-      <Rooms />
+      <RoomsList />
     </MockedProvider>
   );
 
@@ -32,7 +32,7 @@ describe('RoomList Component', () => {
       mocks={[{ request, result }, { request: roomLocationsRequest, error }]}
       addTypename
     >
-      <Rooms />
+      <RoomsList />
     </MockedProvider>
   );
 
@@ -48,7 +48,7 @@ describe('RoomList Component', () => {
   it('should render an error screen', async () => {
     const errorWrapper = (
       <MockedProvider mocks={[{ request, error }]} addTypename>
-        <Rooms />
+        <RoomsList />
       </MockedProvider>
     );
 
@@ -68,7 +68,6 @@ describe('RoomList Component', () => {
     await new Promise(resolve => setTimeout(resolve));
     wrapper.update();
     expect(wrapper.find('RoomsList')).toHaveLength(1);
-    expect(wrapper.find('RoomsList').prop('data').allRooms.length).toEqual(allRooms.data.allRooms.length);
     expect(wrapper.find('RoomsList').prop('locations').allLocations.length).toEqual(roomLocations.length);
   });
 
@@ -79,5 +78,23 @@ describe('RoomList Component', () => {
     errorWrapper.update();
     expect(errorWrapper.find('RoomsList').props().locations.error).toBeTruthy();
     expect(errorWrapper.find('RoomsList').props().locations.error.networkError).toBe(error);
+  });
+  it('should set state based on the provided data', async () => {
+    const mountedPaginationWithCallBack = mount(wrapperCode);
+    mountedPaginationWithCallBack.setState({
+      page: 1,
+      perPage: 5,
+    });
+
+    await new Promise(resolve => setTimeout(resolve));
+    mountedPaginationWithCallBack.update();
+    mountedPaginationWithCallBack.find('.perPage').simulate('change', {
+      preventDefault: jest.fn(),
+      target: {
+        name: 'perPage',
+        value: 5,
+      },
+    });
+    expect(mountedPaginationWithCallBack.state().perPage).toEqual(5);
   });
 });

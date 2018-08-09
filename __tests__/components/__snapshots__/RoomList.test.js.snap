@@ -85,18 +85,7 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                                         "kind": "Field",
                                         "name": Object {
                                           "kind": "Name",
-                                          "value": "name",
-                                        },
-                                        "selectionSet": undefined,
-                                      },
-                                      Object {
-                                        "alias": undefined,
-                                        "arguments": Array [],
-                                        "directives": Array [],
-                                        "kind": "Field",
-                                        "name": Object {
-                                          "kind": "Name",
-                                          "value": "location",
+                                          "value": "offices",
                                         },
                                         "selectionSet": Object {
                                           "kind": "SelectionSet",
@@ -119,9 +108,35 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                                               "kind": "Field",
                                               "name": Object {
                                                 "kind": "Name",
-                                                "value": "id",
+                                                "value": "location",
                                               },
-                                              "selectionSet": undefined,
+                                              "selectionSet": Object {
+                                                "kind": "SelectionSet",
+                                                "selections": Array [
+                                                  Object {
+                                                    "alias": undefined,
+                                                    "arguments": Array [],
+                                                    "directives": Array [],
+                                                    "kind": "Field",
+                                                    "name": Object {
+                                                      "kind": "Name",
+                                                      "value": "name",
+                                                    },
+                                                    "selectionSet": undefined,
+                                                  },
+                                                  Object {
+                                                    "alias": undefined,
+                                                    "arguments": Array [],
+                                                    "directives": Array [],
+                                                    "kind": "Field",
+                                                    "name": Object {
+                                                      "kind": "Name",
+                                                      "value": "id",
+                                                    },
+                                                    "selectionSet": undefined,
+                                                  },
+                                                ],
+                                              },
                                             },
                                           ],
                                         },
@@ -142,7 +157,7 @@ exports[`RoomList Component renders correctly from memory 1`] = `
             ],
             "kind": "Document",
             "loc": Object {
-              "end": 201,
+              "end": 198,
               "start": 0,
             },
           },
@@ -513,18 +528,7 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                                           "kind": "Field",
                                           "name": Object {
                                             "kind": "Name",
-                                            "value": "name",
-                                          },
-                                          "selectionSet": undefined,
-                                        },
-                                        Object {
-                                          "alias": undefined,
-                                          "arguments": Array [],
-                                          "directives": Array [],
-                                          "kind": "Field",
-                                          "name": Object {
-                                            "kind": "Name",
-                                            "value": "location",
+                                            "value": "offices",
                                           },
                                           "selectionSet": Object {
                                             "kind": "SelectionSet",
@@ -547,9 +551,35 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                                                 "kind": "Field",
                                                 "name": Object {
                                                   "kind": "Name",
-                                                  "value": "id",
+                                                  "value": "location",
                                                 },
-                                                "selectionSet": undefined,
+                                                "selectionSet": Object {
+                                                  "kind": "SelectionSet",
+                                                  "selections": Array [
+                                                    Object {
+                                                      "alias": undefined,
+                                                      "arguments": Array [],
+                                                      "directives": Array [],
+                                                      "kind": "Field",
+                                                      "name": Object {
+                                                        "kind": "Name",
+                                                        "value": "name",
+                                                      },
+                                                      "selectionSet": undefined,
+                                                    },
+                                                    Object {
+                                                      "alias": undefined,
+                                                      "arguments": Array [],
+                                                      "directives": Array [],
+                                                      "kind": "Field",
+                                                      "name": Object {
+                                                        "kind": "Name",
+                                                        "value": "id",
+                                                      },
+                                                      "selectionSet": undefined,
+                                                    },
+                                                  ],
+                                                },
                                               },
                                             ],
                                           },
@@ -570,7 +600,7 @@ exports[`RoomList Component renders correctly from memory 1`] = `
               ],
               "kind": "Document",
               "loc": Object {
-                "end": 201,
+                "end": 198,
                 "start": 0,
               },
             },
@@ -825,18 +855,7 @@ query locations {
                                             "kind": "Field",
                                             "name": Object {
                                               "kind": "Name",
-                                              "value": "name",
-                                            },
-                                            "selectionSet": undefined,
-                                          },
-                                          Object {
-                                            "alias": undefined,
-                                            "arguments": Array [],
-                                            "directives": Array [],
-                                            "kind": "Field",
-                                            "name": Object {
-                                              "kind": "Name",
-                                              "value": "location",
+                                              "value": "offices",
                                             },
                                             "selectionSet": Object {
                                               "kind": "SelectionSet",
@@ -859,9 +878,42 @@ query locations {
                                                   "kind": "Field",
                                                   "name": Object {
                                                     "kind": "Name",
-                                                    "value": "id",
+                                                    "value": "location",
                                                   },
-                                                  "selectionSet": undefined,
+                                                  "selectionSet": Object {
+                                                    "kind": "SelectionSet",
+                                                    "selections": Array [
+                                                      Object {
+                                                        "alias": undefined,
+                                                        "arguments": Array [],
+                                                        "directives": Array [],
+                                                        "kind": "Field",
+                                                        "name": Object {
+                                                          "kind": "Name",
+                                                          "value": "name",
+                                                        },
+                                                        "selectionSet": undefined,
+                                                      },
+                                                      Object {
+                                                        "alias": undefined,
+                                                        "arguments": Array [],
+                                                        "directives": Array [],
+                                                        "kind": "Field",
+                                                        "name": Object {
+                                                          "kind": "Name",
+                                                          "value": "id",
+                                                        },
+                                                        "selectionSet": undefined,
+                                                      },
+                                                      Object {
+                                                        "kind": "Field",
+                                                        "name": Object {
+                                                          "kind": "Name",
+                                                          "value": "__typename",
+                                                        },
+                                                      },
+                                                    ],
+                                                  },
                                                 },
                                                 Object {
                                                   "kind": "Field",
@@ -910,25 +962,26 @@ query locations {
                 ],
                 "kind": "Document",
                 "loc": Object {
-                  "end": 201,
+                  "end": 198,
                   "source": Object {
                     "body": "
-  query rooms {
-    allRooms {
-      id
-      name
-      floor {
-        block {
-            name
-            location {
-               name
-              id
-            }
+query rooms {
+  allRooms {
+    id
+    name
+    floor {
+      block {
+        offices {
+          name
+          location {
+             name
+            id
+          }
         }
       }
     }
   }
-",
+}",
                     "locationOffset": Object {
                       "column": 1,
                       "line": 1,
@@ -1136,18 +1189,7 @@ query locations {
                                                 "kind": "Field",
                                                 "name": Object {
                                                   "kind": "Name",
-                                                  "value": "name",
-                                                },
-                                                "selectionSet": undefined,
-                                              },
-                                              Object {
-                                                "alias": undefined,
-                                                "arguments": Array [],
-                                                "directives": Array [],
-                                                "kind": "Field",
-                                                "name": Object {
-                                                  "kind": "Name",
-                                                  "value": "location",
+                                                  "value": "offices",
                                                 },
                                                 "selectionSet": Object {
                                                   "kind": "SelectionSet",
@@ -1170,9 +1212,42 @@ query locations {
                                                       "kind": "Field",
                                                       "name": Object {
                                                         "kind": "Name",
-                                                        "value": "id",
+                                                        "value": "location",
                                                       },
-                                                      "selectionSet": undefined,
+                                                      "selectionSet": Object {
+                                                        "kind": "SelectionSet",
+                                                        "selections": Array [
+                                                          Object {
+                                                            "alias": undefined,
+                                                            "arguments": Array [],
+                                                            "directives": Array [],
+                                                            "kind": "Field",
+                                                            "name": Object {
+                                                              "kind": "Name",
+                                                              "value": "name",
+                                                            },
+                                                            "selectionSet": undefined,
+                                                          },
+                                                          Object {
+                                                            "alias": undefined,
+                                                            "arguments": Array [],
+                                                            "directives": Array [],
+                                                            "kind": "Field",
+                                                            "name": Object {
+                                                              "kind": "Name",
+                                                              "value": "id",
+                                                            },
+                                                            "selectionSet": undefined,
+                                                          },
+                                                          Object {
+                                                            "kind": "Field",
+                                                            "name": Object {
+                                                              "kind": "Name",
+                                                              "value": "__typename",
+                                                            },
+                                                          },
+                                                        ],
+                                                      },
                                                     },
                                                     Object {
                                                       "kind": "Field",
@@ -1221,25 +1296,26 @@ query locations {
                     ],
                     "kind": "Document",
                     "loc": Object {
-                      "end": 201,
+                      "end": 198,
                       "source": Object {
                         "body": "
-  query rooms {
-    allRooms {
-      id
-      name
-      floor {
-        block {
-            name
-            location {
-               name
-              id
-            }
+query rooms {
+  allRooms {
+    id
+    name
+    floor {
+      block {
+        offices {
+          name
+          location {
+             name
+            id
+          }
         }
       }
     }
   }
-",
+}",
                         "locationOffset": Object {
                           "column": 1,
                           "line": 1,
@@ -1561,18 +1637,7 @@ query locations {
                                             "kind": "Field",
                                             "name": Object {
                                               "kind": "Name",
-                                              "value": "name",
-                                            },
-                                            "selectionSet": undefined,
-                                          },
-                                          Object {
-                                            "alias": undefined,
-                                            "arguments": Array [],
-                                            "directives": Array [],
-                                            "kind": "Field",
-                                            "name": Object {
-                                              "kind": "Name",
-                                              "value": "location",
+                                              "value": "offices",
                                             },
                                             "selectionSet": Object {
                                               "kind": "SelectionSet",
@@ -1595,9 +1660,42 @@ query locations {
                                                   "kind": "Field",
                                                   "name": Object {
                                                     "kind": "Name",
-                                                    "value": "id",
+                                                    "value": "location",
                                                   },
-                                                  "selectionSet": undefined,
+                                                  "selectionSet": Object {
+                                                    "kind": "SelectionSet",
+                                                    "selections": Array [
+                                                      Object {
+                                                        "alias": undefined,
+                                                        "arguments": Array [],
+                                                        "directives": Array [],
+                                                        "kind": "Field",
+                                                        "name": Object {
+                                                          "kind": "Name",
+                                                          "value": "name",
+                                                        },
+                                                        "selectionSet": undefined,
+                                                      },
+                                                      Object {
+                                                        "alias": undefined,
+                                                        "arguments": Array [],
+                                                        "directives": Array [],
+                                                        "kind": "Field",
+                                                        "name": Object {
+                                                          "kind": "Name",
+                                                          "value": "id",
+                                                        },
+                                                        "selectionSet": undefined,
+                                                      },
+                                                      Object {
+                                                        "kind": "Field",
+                                                        "name": Object {
+                                                          "kind": "Name",
+                                                          "value": "__typename",
+                                                        },
+                                                      },
+                                                    ],
+                                                  },
                                                 },
                                                 Object {
                                                   "kind": "Field",
@@ -1646,25 +1744,26 @@ query locations {
                 ],
                 "kind": "Document",
                 "loc": Object {
-                  "end": 201,
+                  "end": 198,
                   "source": Object {
                     "body": "
-  query rooms {
-    allRooms {
-      id
-      name
-      floor {
-        block {
-            name
-            location {
-               name
-              id
-            }
+query rooms {
+  allRooms {
+    id
+    name
+    floor {
+      block {
+        offices {
+          name
+          location {
+             name
+            id
+          }
         }
       }
     }
   }
-",
+}",
                     "locationOffset": Object {
                       "column": 1,
                       "line": 1,
@@ -1784,18 +1883,7 @@ query locations {
                                                 "kind": "Field",
                                                 "name": Object {
                                                   "kind": "Name",
-                                                  "value": "name",
-                                                },
-                                                "selectionSet": undefined,
-                                              },
-                                              Object {
-                                                "alias": undefined,
-                                                "arguments": Array [],
-                                                "directives": Array [],
-                                                "kind": "Field",
-                                                "name": Object {
-                                                  "kind": "Name",
-                                                  "value": "location",
+                                                  "value": "offices",
                                                 },
                                                 "selectionSet": Object {
                                                   "kind": "SelectionSet",
@@ -1818,9 +1906,36 @@ query locations {
                                                       "kind": "Field",
                                                       "name": Object {
                                                         "kind": "Name",
-                                                        "value": "id",
+                                                        "value": "location",
                                                       },
-                                                      "selectionSet": undefined,
+                                                      "selectionSet": Object {
+                                                        "kind": "SelectionSet",
+                                                        "selections": Array [
+                                                          Object {
+                                                            "alias": undefined,
+                                                            "arguments": Array [],
+                                                            "directives": Array [],
+                                                            "kind": "Field",
+                                                            "name": Object {
+                                                              "kind": "Name",
+                                                              "value": "name",
+                                                            },
+                                                            "selectionSet": undefined,
+                                                          },
+                                                          Object {
+                                                            "alias": undefined,
+                                                            "arguments": Array [],
+                                                            "directives": Array [],
+                                                            "kind": "Field",
+                                                            "name": Object {
+                                                              "kind": "Name",
+                                                              "value": "id",
+                                                            },
+                                                            "selectionSet": undefined,
+                                                          },
+                                                        ],
+
+                                                      },
                                                     },
                                                   ],
                                                 },
@@ -1841,7 +1956,7 @@ query locations {
                     ],
                     "kind": "Document",
                     "loc": Object {
-                      "end": 201,
+                      "end": 198,
                       "start": 0,
                     },
                   },
@@ -1964,18 +2079,7 @@ query locations {
                                               "kind": "Field",
                                               "name": Object {
                                                 "kind": "Name",
-                                                "value": "name",
-                                              },
-                                              "selectionSet": undefined,
-                                            },
-                                            Object {
-                                              "alias": undefined,
-                                              "arguments": Array [],
-                                              "directives": Array [],
-                                              "kind": "Field",
-                                              "name": Object {
-                                                "kind": "Name",
-                                                "value": "location",
+                                                "value": "offices",
                                               },
                                               "selectionSet": Object {
                                                 "kind": "SelectionSet",
@@ -1998,9 +2102,42 @@ query locations {
                                                     "kind": "Field",
                                                     "name": Object {
                                                       "kind": "Name",
-                                                      "value": "id",
+                                                      "value": "location",
                                                     },
-                                                    "selectionSet": undefined,
+                                                    "selectionSet": Object {
+                                                      "kind": "SelectionSet",
+                                                      "selections": Array [
+                                                        Object {
+                                                          "alias": undefined,
+                                                          "arguments": Array [],
+                                                          "directives": Array [],
+                                                          "kind": "Field",
+                                                          "name": Object {
+                                                            "kind": "Name",
+                                                            "value": "name",
+                                                          },
+                                                          "selectionSet": undefined,
+                                                        },
+                                                        Object {
+                                                          "alias": undefined,
+                                                          "arguments": Array [],
+                                                          "directives": Array [],
+                                                          "kind": "Field",
+                                                          "name": Object {
+                                                            "kind": "Name",
+                                                            "value": "id",
+                                                          },
+                                                          "selectionSet": undefined,
+                                                        },
+                                                        Object {
+                                                          "kind": "Field",
+                                                          "name": Object {
+                                                            "kind": "Name",
+                                                            "value": "__typename",
+                                                          },
+                                                        },
+                                                      ],
+                                                    },
                                                   },
                                                   Object {
                                                     "kind": "Field",
@@ -2049,25 +2186,26 @@ query locations {
                   ],
                   "kind": "Document",
                   "loc": Object {
-                    "end": 201,
+                    "end": 198,
                     "source": Object {
                       "body": "
-  query rooms {
-    allRooms {
-      id
-      name
-      floor {
-        block {
-            name
-            location {
-               name
-              id
-            }
+query rooms {
+  allRooms {
+    id
+    name
+    floor {
+      block {
+        offices {
+          name
+          location {
+             name
+            id
+          }
         }
       }
     }
   }
-",
+}",
                       "locationOffset": Object {
                         "column": 1,
                         "line": 1,
@@ -2382,18 +2520,7 @@ query locations {
                                               "kind": "Field",
                                               "name": Object {
                                                 "kind": "Name",
-                                                "value": "name",
-                                              },
-                                              "selectionSet": undefined,
-                                            },
-                                            Object {
-                                              "alias": undefined,
-                                              "arguments": Array [],
-                                              "directives": Array [],
-                                              "kind": "Field",
-                                              "name": Object {
-                                                "kind": "Name",
-                                                "value": "location",
+                                                "value": "offices",
                                               },
                                               "selectionSet": Object {
                                                 "kind": "SelectionSet",
@@ -2416,9 +2543,42 @@ query locations {
                                                     "kind": "Field",
                                                     "name": Object {
                                                       "kind": "Name",
-                                                      "value": "id",
+                                                      "value": "location",
                                                     },
-                                                    "selectionSet": undefined,
+                                                    "selectionSet": Object {
+                                                      "kind": "SelectionSet",
+                                                      "selections": Array [
+                                                        Object {
+                                                          "alias": undefined,
+                                                          "arguments": Array [],
+                                                          "directives": Array [],
+                                                          "kind": "Field",
+                                                          "name": Object {
+                                                            "kind": "Name",
+                                                            "value": "name",
+                                                          },
+                                                          "selectionSet": undefined,
+                                                        },
+                                                        Object {
+                                                          "alias": undefined,
+                                                          "arguments": Array [],
+                                                          "directives": Array [],
+                                                          "kind": "Field",
+                                                          "name": Object {
+                                                            "kind": "Name",
+                                                            "value": "id",
+                                                          },
+                                                          "selectionSet": undefined,
+                                                        },
+                                                        Object {
+                                                          "kind": "Field",
+                                                          "name": Object {
+                                                            "kind": "Name",
+                                                            "value": "__typename",
+                                                          },
+                                                        },
+                                                      ],
+                                                    },
                                                   },
                                                   Object {
                                                     "kind": "Field",
@@ -2467,25 +2627,26 @@ query locations {
                   ],
                   "kind": "Document",
                   "loc": Object {
-                    "end": 201,
+                    "end": 198,
                     "source": Object {
                       "body": "
-  query rooms {
-    allRooms {
-      id
-      name
-      floor {
-        block {
-            name
-            location {
-               name
-              id
-            }
+query rooms {
+  allRooms {
+    id
+    name
+    floor {
+      block {
+        offices {
+          name
+          location {
+             name
+            id
+          }
         }
       }
     }
   }
-",
+}",
                       "locationOffset": Object {
                         "column": 1,
                         "line": 1,
@@ -2587,18 +2748,7 @@ query locations {
                                         "kind": "Field",
                                         "name": Object {
                                           "kind": "Name",
-                                          "value": "name",
-                                        },
-                                        "selectionSet": undefined,
-                                      },
-                                      Object {
-                                        "alias": undefined,
-                                        "arguments": Array [],
-                                        "directives": Array [],
-                                        "kind": "Field",
-                                        "name": Object {
-                                          "kind": "Name",
-                                          "value": "location",
+                                          "value": "offices",
                                         },
                                         "selectionSet": Object {
                                           "kind": "SelectionSet",
@@ -2621,9 +2771,35 @@ query locations {
                                               "kind": "Field",
                                               "name": Object {
                                                 "kind": "Name",
-                                                "value": "id",
+                                                "value": "location",
                                               },
-                                              "selectionSet": undefined,
+                                              "selectionSet": Object {
+                                                "kind": "SelectionSet",
+                                                "selections": Array [
+                                                  Object {
+                                                    "alias": undefined,
+                                                    "arguments": Array [],
+                                                    "directives": Array [],
+                                                    "kind": "Field",
+                                                    "name": Object {
+                                                      "kind": "Name",
+                                                      "value": "name",
+                                                    },
+                                                    "selectionSet": undefined,
+                                                  },
+                                                  Object {
+                                                    "alias": undefined,
+                                                    "arguments": Array [],
+                                                    "directives": Array [],
+                                                    "kind": "Field",
+                                                    "name": Object {
+                                                      "kind": "Name",
+                                                      "value": "id",
+                                                    },
+                                                    "selectionSet": undefined,
+                                                  },
+                                                ],
+                                              },
                                             },
                                           ],
                                         },
@@ -2644,7 +2820,7 @@ query locations {
             ],
             "kind": "Document",
             "loc": Object {
-              "end": 201,
+              "end": 198,
               "start": 0,
             },
           }

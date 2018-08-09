@@ -223,7 +223,7 @@ exports[`EditRoom should pop up a modal when modal button is clicked 1`] = `
               >
                 <Input
                   id="roomName"
-                  inputClass="mrm-input"
+                  inputClass="mrm-input default-input"
                   labelClass="input-wrapper"
                   labelName="Room Name"
                   name="roomName"
@@ -241,7 +241,7 @@ exports[`EditRoom should pop up a modal when modal button is clicked 1`] = `
                     >
                       Room Name
                       <input
-                        className="mrm-input"
+                        className="mrm-input default-input"
                         defaultValue="Aqua"
                         id="roomName"
                         name="roomName"

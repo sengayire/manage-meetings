@@ -16,7 +16,7 @@ exports[`AddOffice Component renders properly 1`] = `
   >
     <Input
       id="officeName"
-      inputClass="mrm-input"
+      inputClass="mrm-input default-input"
       labelClass="input1"
       labelName="Office Name"
       name="officeName"

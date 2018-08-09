@@ -1,55 +1,85 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { graphql, compose } from 'react-apollo';
 import PropTypes from 'prop-types';
 
-import Room from './Room';
 import '../assets/styles/roomlist.scss';
 import { GET_ROOMS_QUERY, GET_LOCATIONS_QUERY } from '../graphql/queries/Rooms';
-import { formatRoomData } from '../graphql/mappers/Rooms';
 import ColGroup from './helpers/ColGroup';
 import TableHead from './helpers/TableHead';
+import TableBody from './helpers/TableBody';
+import Pagination from './commons/Pagination';
+import AddRoom from './rooms/AddRoomToKampala';
 import AddRoomToEpicTower from './rooms/AddRoomToEpicTower';
 
-const RoomsList = (props) => {
-  const { allRooms, loading, error } = props.data;
-  const {
-    allLocations: locations,
-    loading: loadingLocations,
-    error: locationsError,
-  } = props.locations;
+const paginator = (data, perPage, page) => {
+  const newList = Object.assign([], data);
+  const start = perPage * (page - 1);
+  const end = perPage * page;
+  return ({
+    rooms: newList.slice(start, end),
+    size: 15,
+  });
+};
 
-  if (loading || loadingLocations) return <div>Loading...</div>;
+const getTotalPages = (totalResults, perPage) => (
+  Math.ceil((totalResults) / perPage)
+);
 
-  if (error || locationsError) {
-    return <div>{error ? error.message : locationsError.message}</div>;
+class RoomsList extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      perPage: 5,
+      page: 1,
+    };
+    this.setPage = this.setPage.bind(this);
   }
 
-  return (
-    <div className="settings-rooms">
-      <div className="settings-rooms-control">
-        <button id="modal-button" className="button filterBtn">
-          {'Filter'}
-        </button>
-        <AddRoomToEpicTower locations={locations} />
+  setPage = (perPage, page) => {
+    this.setState({ perPage, page });
+  };
+
+  render() {
+    const { allRooms, loading, error } = this.props.data;
+    const {
+      allLocations: locations,
+      loading: loadingLocations,
+      error: locationsError,
+    } = this.props.locations;
+    const { page, perPage } = this.state;
+
+    const paginatedRooms = paginator(allRooms, perPage, page);
+
+    if (loading || loadingLocations) return <div>Loading...</div>;
+
+    if (error || locationsError) {
+      return <div>{error ? error.message : locationsError.message}</div>;
+    }
+
+    return (
+      <div className="settings-rooms">
+        <AddRoom locations={locations} />
+        <div className="settings-rooms-control">
+          <button id="modal-button" className="button filterBtn">
+            {'Filter'}
+          </button>
+          <AddRoomToEpicTower locations={locations} />
+        </div>
+        <div className="settings-rooms-list">
+          <table>
+            <ColGroup />
+            <TableHead titles={['Room', 'Location', 'Office', 'Action']} />
+            <TableBody content={paginatedRooms} location={locations} />
+          </table>
+        </div>
+        <Pagination
+          setPage={this.setPage}
+          totalPages={getTotalPages(paginatedRooms.size, this.state.perPage)}
+        />
       </div>
-      <div className="settings-rooms-list">
-        <table>
-          <ColGroup />
-          <TableHead titles={['Room', 'Location', 'Office', 'Action']} />
-          <tbody>
-            {allRooms.map(room => (
-              <Room
-                room={formatRoomData(room)}
-                key={room.id}
-                locations={locations}
-              />
-            ))}
-          </tbody>
-        </table>
-      </div>
-    </div>
-  );
-};
+    );
+  }
+}
 
 RoomsList.propTypes = {
   data: PropTypes.shape({

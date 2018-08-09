@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pagination Component renders without crashing 1`] = `
+<tbody>
+  <Room
+    key="3"
+    locations={Array []}
+    room={
+      Object {
+        "id": "3",
+        "location": "Kampala",
+        "locationId": "1",
+        "name": "Gulu",
+        "office": "The Crest",
+      }
+    }
+  />
+</tbody>
+`;
