@@ -1,0 +1,655 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddRoomNairobi should pop up a modal when modal button is clicked 1`] = `
+<AddRoomNairobi
+  locations={
+    Array [
+      Object {
+        "__typename": "Location",
+        "id": "1",
+        "name": "Kampala",
+      },
+      Object {
+        "__typename": "Location",
+        "id": "2",
+        "name": "Lagos",
+      },
+      Object {
+        "__typename": "Location",
+        "id": "3",
+        "name": "Nairobi",
+      },
+    ]
+  }
+>
+  <MrmModal
+    buttonText="Add Room"
+    className="add-room-modal button addRoomBtn"
+    closeModal={false}
+    handleCloseRequest={[Function]}
+    modalButtonClassName="button"
+    title="ADD ROOM"
+  >
+    <IconButtons
+      buttonText="Add Room"
+      modalButtonClassName="button"
+      openModal={[Function]}
+    >
+      <button
+        className="button"
+        id="modal-button"
+        onClick={[Function]}
+      >
+        Add Room
+      </button>
+    </IconButtons>
+    <Modal
+      ariaHideApp={false}
+      bodyOpenClassName="ReactModal__Body--open"
+      className="add-room-modal button addRoomBtn"
+      closeTimeoutMS={0}
+      contentLabel="Parent Modal"
+      isOpen={true}
+      onAfterOpen={[Function]}
+      onRequestClose={[Function]}
+      parentSelector={[Function]}
+      portalClassName="ReactModalPortal"
+      shouldCloseOnEsc={true}
+      shouldCloseOnOverlayClick={true}
+      shouldFocusAfterRender={true}
+      shouldReturnFocusAfterClose={true}
+      style={
+        Object {
+          "content": Object {
+            "backgroundColor": "#ffffff",
+            "border": "1px solid #CCCCCC",
+            "borderRadius": "4px",
+            "bottom": "auto",
+            "boxShadow": "0 2px 40px 10px rgba(185, 180, 180, 0.2)",
+            "fontFamily": "DINPro-Regular",
+            "left": "50%",
+            "marginRight": "-50%",
+            "outline": "none",
+            "overflow": "auto",
+            "position": "absolute",
+            "right": "auto",
+            "top": "50%",
+            "transform": "translate(-50%, -50%)",
+          },
+        }
+      }
+    >
+      <ModalPortal
+        ariaHideApp={false}
+        bodyOpenClassName="ReactModal__Body--open"
+        className="add-room-modal button addRoomBtn"
+        closeTimeoutMS={0}
+        contentLabel="Parent Modal"
+        defaultStyles={
+          Object {
+            "content": Object {
+              "WebkitOverflowScrolling": "touch",
+              "background": "#fff",
+              "border": "1px solid #ccc",
+              "borderRadius": "4px",
+              "bottom": "40px",
+              "left": "40px",
+              "outline": "none",
+              "overflow": "auto",
+              "padding": "20px",
+              "position": "absolute",
+              "right": "40px",
+              "top": "40px",
+            },
+            "overlay": Object {
+              "backgroundColor": "rgba(255, 255, 255, 0.75)",
+              "bottom": 0,
+              "left": 0,
+              "position": "fixed",
+              "right": 0,
+              "top": 0,
+            },
+          }
+        }
+        isOpen={true}
+        onAfterOpen={[Function]}
+        onRequestClose={[Function]}
+        parentSelector={[Function]}
+        portalClassName="ReactModalPortal"
+        shouldCloseOnEsc={true}
+        shouldCloseOnOverlayClick={true}
+        shouldFocusAfterRender={true}
+        shouldReturnFocusAfterClose={true}
+        style={
+          Object {
+            "content": Object {
+              "backgroundColor": "#ffffff",
+              "border": "1px solid #CCCCCC",
+              "borderRadius": "4px",
+              "bottom": "auto",
+              "boxShadow": "0 2px 40px 10px rgba(185, 180, 180, 0.2)",
+              "fontFamily": "DINPro-Regular",
+              "left": "50%",
+              "marginRight": "-50%",
+              "outline": "none",
+              "overflow": "auto",
+              "position": "absolute",
+              "right": "auto",
+              "top": "50%",
+              "transform": "translate(-50%, -50%)",
+            },
+          }
+        }
+      >
+        <div
+          aria-modal="true"
+          className="ReactModal__Overlay ReactModal__Overlay--after-open"
+          onClick={[Function]}
+          onMouseDown={[Function]}
+          style={
+            Object {
+              "backgroundColor": "rgba(255, 255, 255, 0.75)",
+              "bottom": 0,
+              "left": 0,
+              "position": "fixed",
+              "right": 0,
+              "top": 0,
+            }
+          }
+        >
+          <div
+            aria-label="Parent Modal"
+            className="ReactModal__Content ReactModal__Content--after-open add-room-modal button addRoomBtn"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            onMouseDown={[Function]}
+            onMouseUp={[Function]}
+            style={
+              Object {
+                "backgroundColor": "#ffffff",
+                "border": "1px solid #CCCCCC",
+                "borderRadius": "4px",
+                "bottom": "auto",
+                "boxShadow": "0 2px 40px 10px rgba(185, 180, 180, 0.2)",
+                "fontFamily": "DINPro-Regular",
+                "left": "50%",
+                "marginRight": "-50%",
+                "outline": "none",
+                "overflow": "auto",
+                "position": "absolute",
+                "right": "auto",
+                "top": "50%",
+                "transform": "translate(-50%, -50%)",
+              }
+            }
+            tabIndex="-1"
+          >
+            <h2>
+              ADD ROOM
+            </h2>
+            <form
+              className="modal-form"
+              onSubmit={[Function]}
+            >
+              <SelectImage>
+                <div
+                  className="image-select"
+                >
+                  <div
+                    className="thumbnail"
+                  >
+                    <div
+                      className="placeholder"
+                    >
+                      <img
+                        alt="Room Thumbnail"
+                        src="test-file-stub"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    className="select-button"
+                  >
+                    <span>
+                      Upload a room thumbnail
+                    </span>
+                    <ThemedThemed
+                      composeTheme="deeply"
+                      disabled={false}
+                      label="Select Image"
+                      mapThemrProps={[Function]}
+                      ripple={true}
+                      rippleCentered={false}
+                      rippleClassName=""
+                      rippleMultiple={true}
+                      rippleSpread={2}
+                    >
+                      <ThemedRippledComponent
+                        composeTheme="deeply"
+                        disabled={false}
+                        label="Select Image"
+                        mapThemrProps={[Function]}
+                        ripple={true}
+                        rippleCentered={false}
+                        rippleClassName=""
+                        rippleMultiple={true}
+                        rippleSpread={2}
+                        theme={Object {}}
+                      >
+                        <RippledComponent
+                          disabled={false}
+                          label="Select Image"
+                          ripple={true}
+                          rippleCentered={false}
+                          rippleClassName=""
+                          rippleMultiple={true}
+                          rippleSpread={2}
+                          theme={Object {}}
+                        >
+                          <Button
+                            accent={false}
+                            className=""
+                            disabled={false}
+                            flat={false}
+                            floating={false}
+                            label="Select Image"
+                            mini={false}
+                            neutral={true}
+                            onMouseDown={[Function]}
+                            onTouchStart={[Function]}
+                            primary={false}
+                            raised={false}
+                            theme={Object {}}
+                            type="button"
+                          >
+                            <button
+                              className=""
+                              data-react-toolbox="button"
+                              disabled={false}
+                              onMouseDown={[Function]}
+                              onMouseLeave={[Function]}
+                              onMouseUp={[Function]}
+                              onTouchStart={[Function]}
+                              type="button"
+                            >
+                              Select Image
+                            </button>
+                          </Button>
+                        </RippledComponent>
+                      </ThemedRippledComponent>
+                    </ThemedThemed>
+                  </div>
+                </div>
+              </SelectImage>
+              <NairobiRoomInputs
+                handleInputChange={[Function]}
+                officeBlock=""
+                officeFloor=""
+                roomCapacity={0}
+                roomName=""
+              >
+                <div
+                  className="form-inputs"
+                >
+                  <Input
+                    id="roomName"
+                    inputClass="mrm-input"
+                    labelClass="input1"
+                    labelName="Room Name"
+                    name="roomName"
+                    onChange={[Function]}
+                    placeholder="Enter room name"
+                    type="text"
+                    value=""
+                  >
+                    <div
+                      className="input1"
+                    >
+                      <label
+                        htmlFor="roomName"
+                      >
+                        Room Name
+                        <input
+                          className="mrm-input"
+                          defaultValue=""
+                          id="roomName"
+                          name="roomName"
+                          onChange={[Function]}
+                          placeholder="Enter room name"
+                          type="text"
+                        />
+                      </label>
+                    </div>
+                  </Input>
+                  <Input
+                    id="roomCapacity"
+                    inputClass="mrm-input"
+                    labelClass="input1"
+                    labelName="Room Capacity"
+                    min="1"
+                    name="roomCapacity"
+                    onChange={[Function]}
+                    placeholder={1}
+                    type="number"
+                    value={0}
+                  >
+                    <div
+                      className="input1"
+                    >
+                      <label
+                        htmlFor="roomCapacity"
+                      >
+                        Room Capacity
+                        <input
+                          className="mrm-input"
+                          defaultValue={0}
+                          id="roomCapacity"
+                          min="1"
+                          name="roomCapacity"
+                          onChange={[Function]}
+                          placeholder={1}
+                          type="number"
+                        />
+                      </label>
+                    </div>
+                  </Input>
+                  <SelectInput
+                    id="officeBlock"
+                    labelText="Select Block"
+                    name="officeBlock"
+                    onChange={[Function]}
+                    options={
+                      Array [
+                        Object {
+                          "value": "A",
+                        },
+                        Object {
+                          "value": "B",
+                        },
+                      ]
+                    }
+                    placeholder="Select block"
+                    selectInputClassName="default-select"
+                    value=""
+                    wrapperClassName="input-wrapper"
+                  >
+                    <div
+                      className="input-wrapper"
+                    >
+                      <label
+                        htmlFor="officeBlock"
+                      >
+                        Select Block
+                        <select
+                          className="default-select"
+                          id="officeBlock"
+                          name="officeBlock"
+                          onChange={[Function]}
+                          value=""
+                        >
+                          <option
+                            value=""
+                          >
+                            Select block
+                          </option>
+                          <option
+                            key="A"
+                            value="A"
+                          >
+                            A
+                          </option>
+                          <option
+                            key="B"
+                            value="B"
+                          >
+                            B
+                          </option>
+                        </select>
+                      </label>
+                    </div>
+                  </SelectInput>
+                  <SelectInput
+                    id="officeFloor"
+                    labelText="Select Floor"
+                    name="officeFloor"
+                    onChange={[Function]}
+                    options={
+                      Array [
+                        Object {
+                          "value": 1,
+                        },
+                        Object {
+                          "value": 2,
+                        },
+                        Object {
+                          "value": 3,
+                        },
+                      ]
+                    }
+                    placeholder="Select floor"
+                    selectInputClassName="default-select"
+                    value=""
+                    wrapperClassName="input-wrapper"
+                  >
+                    <div
+                      className="input-wrapper"
+                    >
+                      <label
+                        htmlFor="officeFloor"
+                      >
+                        Select Floor
+                        <select
+                          className="default-select"
+                          id="officeFloor"
+                          name="officeFloor"
+                          onChange={[Function]}
+                          value=""
+                        >
+                          <option
+                            value=""
+                          >
+                            Select floor
+                          </option>
+                          <option
+                            key="1"
+                            value={1}
+                          >
+                            1
+                          </option>
+                          <option
+                            key="2"
+                            value={2}
+                          >
+                            2
+                          </option>
+                          <option
+                            key="3"
+                            value={3}
+                          >
+                            3
+                          </option>
+                        </select>
+                      </label>
+                    </div>
+                  </SelectInput>
+                </div>
+              </NairobiRoomInputs>
+              <ActionButtons
+                actionButtonClassName="action-button"
+                actionButtonText="ADD ROOM"
+                cancelButtonClassName="cancel-button"
+                cancelButtonText="CANCEL"
+                onClickCancel={[Function]}
+                withCancel={true}
+              >
+                <div
+                  className="form-action-buttons"
+                >
+                  <button
+                    className="cancel-button"
+                    onClick={[Function]}
+                  >
+                    CANCEL
+                  </button>
+                  <button
+                    className="action-button"
+                    type="submit"
+                  >
+                    ADD ROOM
+                  </button>
+                </div>
+              </ActionButtons>
+            </form>
+          </div>
+        </div>
+      </ModalPortal>
+    </Modal>
+  </MrmModal>
+</AddRoomNairobi>
+`;
+
+exports[`AddRoomNairobi should render properly 1`] = `
+<AddRoomNairobi
+  locations={
+    Array [
+      Object {
+        "__typename": "Location",
+        "id": "1",
+        "name": "Kampala",
+      },
+      Object {
+        "__typename": "Location",
+        "id": "2",
+        "name": "Lagos",
+      },
+      Object {
+        "__typename": "Location",
+        "id": "3",
+        "name": "Nairobi",
+      },
+    ]
+  }
+>
+  <MrmModal
+    buttonText="Add Room"
+    className="add-room-modal button addRoomBtn"
+    closeModal={false}
+    handleCloseRequest={[Function]}
+    modalButtonClassName="button"
+    title="ADD ROOM"
+  >
+    <IconButtons
+      buttonText="Add Room"
+      modalButtonClassName="button"
+      openModal={[Function]}
+    >
+      <button
+        className="button"
+        id="modal-button"
+        onClick={[Function]}
+      >
+        Add Room
+      </button>
+    </IconButtons>
+    <Modal
+      ariaHideApp={false}
+      bodyOpenClassName="ReactModal__Body--open"
+      className="add-room-modal button addRoomBtn"
+      closeTimeoutMS={0}
+      contentLabel="Parent Modal"
+      isOpen={false}
+      onAfterOpen={[Function]}
+      onRequestClose={[Function]}
+      parentSelector={[Function]}
+      portalClassName="ReactModalPortal"
+      shouldCloseOnEsc={true}
+      shouldCloseOnOverlayClick={true}
+      shouldFocusAfterRender={true}
+      shouldReturnFocusAfterClose={true}
+      style={
+        Object {
+          "content": Object {
+            "backgroundColor": "#ffffff",
+            "border": "1px solid #CCCCCC",
+            "borderRadius": "4px",
+            "bottom": "auto",
+            "boxShadow": "0 2px 40px 10px rgba(185, 180, 180, 0.2)",
+            "fontFamily": "DINPro-Regular",
+            "left": "50%",
+            "marginRight": "-50%",
+            "outline": "none",
+            "overflow": "auto",
+            "position": "absolute",
+            "right": "auto",
+            "top": "50%",
+            "transform": "translate(-50%, -50%)",
+          },
+        }
+      }
+    >
+      <ModalPortal
+        ariaHideApp={false}
+        bodyOpenClassName="ReactModal__Body--open"
+        className="add-room-modal button addRoomBtn"
+        closeTimeoutMS={0}
+        contentLabel="Parent Modal"
+        defaultStyles={
+          Object {
+            "content": Object {
+              "WebkitOverflowScrolling": "touch",
+              "background": "#fff",
+              "border": "1px solid #ccc",
+              "borderRadius": "4px",
+              "bottom": "40px",
+              "left": "40px",
+              "outline": "none",
+              "overflow": "auto",
+              "padding": "20px",
+              "position": "absolute",
+              "right": "40px",
+              "top": "40px",
+            },
+            "overlay": Object {
+              "backgroundColor": "rgba(255, 255, 255, 0.75)",
+              "bottom": 0,
+              "left": 0,
+              "position": "fixed",
+              "right": 0,
+              "top": 0,
+            },
+          }
+        }
+        isOpen={false}
+        onAfterOpen={[Function]}
+        onRequestClose={[Function]}
+        parentSelector={[Function]}
+        portalClassName="ReactModalPortal"
+        shouldCloseOnEsc={true}
+        shouldCloseOnOverlayClick={true}
+        shouldFocusAfterRender={true}
+        shouldReturnFocusAfterClose={true}
+        style={
+          Object {
+            "content": Object {
+              "backgroundColor": "#ffffff",
+              "border": "1px solid #CCCCCC",
+              "borderRadius": "4px",
+              "bottom": "auto",
+              "boxShadow": "0 2px 40px 10px rgba(185, 180, 180, 0.2)",
+              "fontFamily": "DINPro-Regular",
+              "left": "50%",
+              "marginRight": "-50%",
+              "outline": "none",
+              "overflow": "auto",
+              "position": "absolute",
+              "right": "auto",
+              "top": "50%",
+              "transform": "translate(-50%, -50%)",
+            },
+          }
+        }
+      />
+    </Modal>
+  </MrmModal>
+</AddRoomNairobi>
+`;

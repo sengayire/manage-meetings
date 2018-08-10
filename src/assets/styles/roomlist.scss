@@ -6,6 +6,7 @@
 
 .settings-rooms {
   .settings-rooms-list {
+
     table {
       clear: left;
       table-layout: fixed;
@@ -80,6 +81,7 @@
       margin-left: 20px;
       padding: 7px 15px;
       height: 37px;
+      cursor: pointer;
     }
     .filterBtn {
       border: 1px solid #FFAF30;

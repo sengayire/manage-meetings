@@ -8,8 +8,6 @@ import ColGroup from './helpers/ColGroup';
 import TableHead from './helpers/TableHead';
 import TableBody from './helpers/TableBody';
 import Pagination from './commons/Pagination';
-import AddRoom from './rooms/AddRoomToKampala';
-import AddRoomToEpicTower from './rooms/AddRoomToEpicTower';
 
 const paginator = (data, perPage, page) => {
   const newList = Object.assign([], data);
@@ -58,12 +56,10 @@ class RoomsList extends Component {
 
     return (
       <div className="settings-rooms">
-        <AddRoom locations={locations} />
         <div className="settings-rooms-control">
           <button id="modal-button" className="button filterBtn">
             {'Filter'}
           </button>
-          <AddRoomToEpicTower locations={locations} />
         </div>
         <div className="settings-rooms-list">
           <table>

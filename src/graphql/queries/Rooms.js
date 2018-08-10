@@ -2,16 +2,18 @@ import gql from 'graphql-tag';
 
 export const GET_ROOMS_QUERY = gql`
 query rooms {
-  allRooms {
-    id
-    name
-    floor {
-      block {
-        offices {
-          name
-          location {
-             name
-            id
+  allRooms{
+    rooms{
+      name
+      id
+      floor{
+        block{
+          offices{
+            name
+            location{
+              name
+              id
+            }
           }
         }
       }
