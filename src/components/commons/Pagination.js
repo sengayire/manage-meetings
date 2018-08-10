@@ -20,21 +20,13 @@ class Pagination extends Component {
   handleChange = (e) => {
     e.preventDefault();
     const { name, value } = e.target;
-    const { setPage } = this.props;
 
     if (name === 'perPage') {
-      this.setState(
-        {
-          perPage: value,
-          page: 1,
-        },
-        () => setPage(this.state.perPage, this.state.page),
-      );
+      this.setState({ perPage: value, page: 1 });
     } else {
-      this.setState({ page: value }, () => setPage(this.state.perPage, this.state.page));
+      this.setState({ page: value });
     }
   }
-
 
   render() {
     const { page, perPage } = this.state;
@@ -67,8 +59,7 @@ class Pagination extends Component {
 
 Pagination.propTypes = {
   itemsPerPage: PropTypes.arrayOf(PropTypes.number),
-  setPage: PropTypes.func.isRequired,
-  totalPages: PropTypes.func.isRequired,
+  totalPages: PropTypes.number.isRequired,
 };
 
 Pagination.defaultProps = {

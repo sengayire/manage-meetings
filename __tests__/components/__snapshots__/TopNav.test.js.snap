@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TopNav Component renders correctly in memory 1`] = `
+<div
+  className="top-nav"
+>
+  <ThemedAppBar
+    className="nav-app-bar"
+    composeTheme="deeply"
+    fixed={false}
+    flat={false}
+    mapThemrProps={[Function]}
+    scrollHide={false}
+  >
+    <ThemedNavigation
+      actions={Array []}
+      className=""
+      composeTheme="deeply"
+      mapThemrProps={[Function]}
+      routes={Array []}
+      type="horizontal"
+    >
+      <NavLink
+        exact={false}
+        icon={
+          <img
+            alt="Analytics"
+            src="test-file-stub"
+          />
+        }
+        label="Analytics"
+        strict={false}
+        to="/analytics"
+      />
+      <NavLink
+        exact={false}
+        icon={
+          <img
+            alt="Settings"
+            src="test-file-stub"
+          />
+        }
+        label="Settings"
+        strict={false}
+        to="/settings"
+      />
+      <NavLink
+        exact={false}
+        icon={
+          <img
+            alt="Room Feedback"
+            src="test-file-stub"
+          />
+        }
+        label="Room Feedback"
+        strict={false}
+        to="/feedback"
+      />
+    </ThemedNavigation>
+  </ThemedAppBar>
+</div>
+`;

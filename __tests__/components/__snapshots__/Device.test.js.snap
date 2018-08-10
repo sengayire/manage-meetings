@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Device Component renders without crashing 1`] = `
+<tr>
+  <td>
+    Samsung Galaxy
+  </td>
+  <td>
+    Internal Display
+  </td>
+  <td>
+    14 Aug 2018
+  </td>
+  <td>
+    16 Feb 2018
+  </td>
+  <td>
+    Nairobi
+  </td>
+</tr>
+`;

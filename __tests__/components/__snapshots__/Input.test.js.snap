@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input Component renders properly 1`] = `
+<div
+  className=""
+>
+  <label
+    htmlFor=""
+  >
+    <input
+      className=""
+      defaultValue=""
+      id=""
+      name=""
+      onChange={[MockFunction]}
+      type="text"
+    />
+  </label>
+</div>
+`;

@@ -10,7 +10,7 @@ import RoomsList from '../../src/components/RoomsList';
 
 describe('RoomList Component', () => {
   const request = { query: GET_ROOMS_QUERY };
-  const result = { ...allRooms };
+  const result = { ...allRooms.rooms };
   const roomLocationsRequest = { query: GET_LOCATIONS_QUERY };
   const locationsResult = { data: { allLocations: [...roomLocations] } };
   const error = 'Something Went Wrong';
@@ -78,23 +78,5 @@ describe('RoomList Component', () => {
     errorWrapper.update();
     expect(errorWrapper.find('RoomsList').props().locations.error).toBeTruthy();
     expect(errorWrapper.find('RoomsList').props().locations.error.networkError).toBe(error);
-  });
-  it('should set state based on the provided data', async () => {
-    const mountedPaginationWithCallBack = mount(wrapperCode);
-    mountedPaginationWithCallBack.setState({
-      page: 1,
-      perPage: 5,
-    });
-
-    await new Promise(resolve => setTimeout(resolve));
-    mountedPaginationWithCallBack.update();
-    mountedPaginationWithCallBack.find('.perPage').simulate('change', {
-      preventDefault: jest.fn(),
-      target: {
-        name: 'perPage',
-        value: 5,
-      },
-    });
-    expect(mountedPaginationWithCallBack.state().perPage).toEqual(5);
   });
 });

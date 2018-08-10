@@ -1,0 +1,342 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Login component renders correctly 1`] = `
+<MemoryRouter
+  keyLength={0}
+>
+  <Router
+    history={
+      Object {
+        "action": "POP",
+        "block": [Function],
+        "canGo": [Function],
+        "createHref": [Function],
+        "entries": Array [
+          Object {
+            "hash": "",
+            "pathname": "/",
+            "search": "",
+            "state": undefined,
+          },
+        ],
+        "go": [Function],
+        "goBack": [Function],
+        "goForward": [Function],
+        "index": 0,
+        "length": 1,
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "pathname": "/",
+          "search": "",
+          "state": undefined,
+        },
+        "push": [Function],
+        "replace": [Function],
+      }
+    }
+  >
+    <withRouter(Login)>
+      <Route
+        render={[Function]}
+      >
+        <Login
+          history={
+            Object {
+              "action": "POP",
+              "block": [Function],
+              "canGo": [Function],
+              "createHref": [Function],
+              "entries": Array [
+                Object {
+                  "hash": "",
+                  "pathname": "/",
+                  "search": "",
+                  "state": undefined,
+                },
+              ],
+              "go": [Function],
+              "goBack": [Function],
+              "goForward": [Function],
+              "index": 0,
+              "length": 1,
+              "listen": [Function],
+              "location": Object {
+                "hash": "",
+                "pathname": "/",
+                "search": "",
+                "state": undefined,
+              },
+              "push": [Function],
+              "replace": [Function],
+            }
+          }
+          location={
+            Object {
+              "hash": "",
+              "pathname": "/",
+              "search": "",
+              "state": undefined,
+            }
+          }
+          match={
+            Object {
+              "isExact": true,
+              "params": Object {},
+              "path": "/",
+              "url": "/",
+            }
+          }
+        >
+          <header
+            className="home-header"
+          >
+            <h1>
+              CONVERGE
+            </h1>
+          </header>
+          <Component>
+            <div
+              id="converge-intro"
+            >
+              Meet the Meeting Room App
+              <br />
+              that your meeting room app aspires to be.
+            </div>
+          </Component>
+          <LoginButton>
+            <a
+              href="undefined=undefined"
+            >
+              <input
+                alt="Login With Your Email"
+                className="btn-signin"
+                src="test-file-stub"
+                type="image"
+              />
+            </a>
+          </LoginButton>
+          <img
+            alt="Dark Tablet"
+            id="dark-tablet"
+            src="test-file-stub"
+          />
+        </Login>
+      </Route>
+    </withRouter(Login)>
+  </Router>
+</MemoryRouter>
+`;
+
+exports[`Login component should call componentWillUnmount when unmounted 1`] = `
+<Login
+  history={
+    Object {
+      "push": [MockFunction],
+    }
+  }
+  location={
+    Object {
+      "pathname": "/",
+      "state": Object {
+        "errorMesage": "Something Went Wrong",
+      },
+    }
+  }
+>
+  <header
+    className="home-header"
+  >
+    <h1>
+      CONVERGE
+    </h1>
+  </header>
+  <Component>
+    <div
+      id="converge-intro"
+    >
+      Meet the Meeting Room App
+      <br />
+      that your meeting room app aspires to be.
+    </div>
+  </Component>
+  <LoginButton>
+    <a
+      href="undefined=undefined"
+    >
+      <input
+        alt="Login With Your Email"
+        className="btn-signin"
+        src="test-file-stub"
+        type="image"
+      />
+    </a>
+  </LoginButton>
+  <img
+    alt="Dark Tablet"
+    id="dark-tablet"
+    src="test-file-stub"
+  />
+</Login>
+`;
+
+exports[`Login component should display an error when login error occurs and close snackbar on time out 1`] = `
+<Login
+  history={
+    Object {
+      "push": [MockFunction],
+    }
+  }
+  location={
+    Object {
+      "pathname": "/",
+      "search": "?error=Something%20Went%20Wrong",
+    }
+  }
+>
+  <header
+    className="home-header"
+  >
+    <h1>
+      CONVERGE
+    </h1>
+  </header>
+  <Component>
+    <div
+      id="converge-intro"
+    >
+      Meet the Meeting Room App
+      <br />
+      that your meeting room app aspires to be.
+    </div>
+  </Component>
+  <LoginButton>
+    <a
+      href="undefined=undefined"
+    >
+      <input
+        alt="Login With Your Email"
+        className="btn-signin"
+        src="test-file-stub"
+        type="image"
+      />
+    </a>
+  </LoginButton>
+  <img
+    alt="Dark Tablet"
+    id="dark-tablet"
+    src="test-file-stub"
+  />
+  <ThemedActivableRenderer
+    action="Dismiss"
+    active={true}
+    composeTheme="deeply"
+    delay={500}
+    label="Please Login With Your Andela Email"
+    mapThemrProps={[Function]}
+    onClick={[Function]}
+    onTimeout={[Function]}
+    theme={
+      Object {
+        "button": "button-error",
+        "snackbar": "error",
+      }
+    }
+    timeout={6000}
+    type="cancel"
+  >
+    <ActivableRenderer
+      action="Dismiss"
+      active={true}
+      delay={500}
+      label="Please Login With Your Andela Email"
+      onClick={[Function]}
+      onTimeout={[Function]}
+      theme={
+        Object {
+          "button": "button-error",
+          "snackbar": "error",
+        }
+      }
+      timeout={6000}
+      type="cancel"
+    >
+      <Snackbar
+        action="Dismiss"
+        active={true}
+        label="Please Login With Your Andela Email"
+        onClick={[Function]}
+        onTimeout={[Function]}
+        theme={
+          Object {
+            "button": "button-error",
+            "snackbar": "error",
+          }
+        }
+        timeout={6000}
+        type="cancel"
+      >
+        <Portal
+          className=""
+        />
+      </Snackbar>
+    </ActivableRenderer>
+  </ThemedActivableRenderer>
+</Login>
+`;
+
+exports[`Login component should display an error when login error occurs and close snackbar on time out 2`] = `
+<Login
+  history={
+    Object {
+      "push": [MockFunction] {
+        "calls": Array [
+          Array [
+            "/",
+          ],
+        ],
+      },
+    }
+  }
+  location={
+    Object {
+      "pathname": "/",
+      "search": "?error=Something%20Went%20Wrong",
+    }
+  }
+>
+  <header
+    className="home-header"
+  >
+    <h1>
+      CONVERGE
+    </h1>
+  </header>
+  <Component>
+    <div
+      id="converge-intro"
+    >
+      Meet the Meeting Room App
+      <br />
+      that your meeting room app aspires to be.
+    </div>
+  </Component>
+  <LoginButton>
+    <a
+      href="undefined=undefined"
+    >
+      <input
+        alt="Login With Your Email"
+        className="btn-signin"
+        src="test-file-stub"
+        type="image"
+      />
+    </a>
+  </LoginButton>
+  <img
+    alt="Dark Tablet"
+    id="dark-tablet"
+    src="test-file-stub"
+  />
+</Login>
+`;

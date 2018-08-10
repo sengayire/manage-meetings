@@ -16,7 +16,9 @@ const TableBody = props => (
 );
 
 TableBody.propTypes = {
-  content: PropTypes.arrayOf(PropTypes.string).isRequired,
+  content: PropTypes.shape({
+    rooms: PropTypes.array,
+  }).isRequired,
   location: PropTypes.string.isRequired,
 };
 

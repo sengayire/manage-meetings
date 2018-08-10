@@ -2,7 +2,7 @@ import gql from 'graphql-tag';
 
 export const GET_ROOMS_QUERY = gql`
 query rooms {
-  allRooms{
+  allRooms (page:1, perPage:5){
     rooms{
       name
       id
@@ -18,6 +18,9 @@ query rooms {
         }
       }
     }
+    pages
+    hasNext
+    hasPrevious
   }
 }`;
 
