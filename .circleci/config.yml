@@ -69,7 +69,7 @@ jobs:
             gcloud --quiet config set compute/zone ${GOOGLE_COMPUTE_ZONE}
       - run:
           name: Deploy to gcloud
-          command: gcloud beta compute instance-groups managed rolling-action replace mrm-frontend-instance-group --region europe-west1
+          command: gcloud beta compute instance-groups managed rolling-action replace mrm-staging-frontend-instance-group --region europe-west1
 
 workflows:
   version: 2
