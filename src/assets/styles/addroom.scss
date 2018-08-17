@@ -2,9 +2,14 @@
     $primary-color:  #3359db;
     font-family: 'DINPro-Light';
     padding: 3%;
+    padding-right: 0;
+    border: none !important;
+
 
     h2 {
         margin-left: 0;
+        margin-top: 0;
+        margin-bottom: 40px !important;
     }
 
     .mrm-input {
@@ -13,22 +18,13 @@
         margin-bottom: 0.7em;
     }
 
-    .upload-content{
-        float: left;
-        width: calc(50% - 10px);
-        margin-bottom: 2.5em;
-    }
-
-    .border{
-        height: 140px;
-        border: 1px solid #E0E0E0;
-        border-radius: 2px;
-        background-color: #F8F8F8;
-    }
-
-    .upload-content + .upload-content{
-        margin-left: 20px;
-        margin-top: 36px;
+    .kla-form{
+      #roomName{
+        width: 31em;
+      }
+      .form-action-buttons{
+        padding-right: 50px;
+      }
     }
 
     .clearfix {
@@ -55,7 +51,7 @@
     .floor-wrapper {
         margin-top: 5%;
         margin-bottom: 4%;
-        width: 14em!important;
+        width: 15.5em!important;
     }
 
     .capacity-wrapper {
@@ -66,7 +62,7 @@
     .wing-wrapper {
         margin-top: 5%;
         margin-bottom: 4%;
-        width: 14em !important;
+        width: 15.5em !important;
     }
 
     .upload-btn-wrapper {
@@ -88,9 +84,13 @@
         display: flex;
         flex-wrap: wrap;
         flex-direction: column;
-        max-width: 32rem;
+        max-width: 34.5rem;
         box-sizing: border-box;
-        padding-right: 1%;
+        padding-right: 2% !important;
+
+        .form-action-buttons{
+          padding-right: 33px;
+        }
 
         .upload-content{
             display: inherit;
@@ -163,7 +163,7 @@
     align-self: center;
     img{
         height: 30px;
-        padding-left: 27px;
+        padding-left: 26px;
         padding-top: 30px;
     }
 }

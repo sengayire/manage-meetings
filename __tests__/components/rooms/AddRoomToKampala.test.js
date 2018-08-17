@@ -2,10 +2,10 @@ import React from 'react';
 import { mount } from 'enzyme';
 
 import { roomLocations } from '../../../__mocks__/rooms/Rooms';
-import AddRoom from '../../../src/components/rooms/AddRoomToKampala';
+import AddRoomToKampala from '../../../src/components/rooms/AddRoomToKampala';
 
-describe('AddRoom', () => {
-  const wrapper = mount(<AddRoom locations={roomLocations} />);
+describe('AddRoomToKampala', () => {
+  const wrapper = mount(<AddRoomToKampala locations={roomLocations} />);
 
   it('should render properly', () => {
     expect(wrapper).toMatchSnapshot();

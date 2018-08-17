@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AddRoom should pop up a modal when modal button is clicked 1`] = `
+exports[`AddRoomToKampala should pop up a modal when modal button is clicked 1`] = `
 <AddRoom
   locations={
     Array [
@@ -23,7 +23,7 @@ exports[`AddRoom should pop up a modal when modal button is clicked 1`] = `
   }
 >
   <MrmModal
-    buttonText="Add Room"
+    buttonText="The Crest"
     className="add-room-modal"
     closeModal={false}
     handleCloseRequest={[Function]}
@@ -31,7 +31,7 @@ exports[`AddRoom should pop up a modal when modal button is clicked 1`] = `
     title="ADD ROOM"
   >
     <IconButtons
-      buttonText="Add Room"
+      buttonText="The Crest"
       modalButtonClassName="button"
       openModal={[Function]}
     >
@@ -40,7 +40,7 @@ exports[`AddRoom should pop up a modal when modal button is clicked 1`] = `
         id="modal-button"
         onClick={[Function]}
       >
-        Add Room
+        The Crest
       </button>
     </IconButtons>
     <Modal
@@ -188,33 +188,99 @@ exports[`AddRoom should pop up a modal when modal button is clicked 1`] = `
               ADD ROOM
             </h2>
             <form
-              className="modal-form"
+              className="modal-form kla-form"
               onSubmit={[Function]}
             >
-              <div
-                className="upload-content"
-              >
+              <SelectImage>
                 <div
-                  className="border"
-                />
-              </div>
-              <div
-                className="upload-btn-wrapper upload-content"
-              >
-                Upload a room thumbnail
-                <button
-                  id="selectImage"
+                  className="image-select"
                 >
-                  Select Image
-                </button>
-                <input
-                  name="myfile"
-                  type="file"
-                />
-              </div>
-              <div
-                className="clearfix"
-              />
+                  <div
+                    className="thumbnail"
+                  >
+                    <div
+                      className="placeholder"
+                    >
+                      <img
+                        alt="Room Thumbnail"
+                        src="test-file-stub"
+                      />
+                    </div>
+                  </div>
+                  <div
+                    className="select-button"
+                  >
+                    <span>
+                      Upload a room thumbnail
+                    </span>
+                    <ThemedThemed
+                      composeTheme="deeply"
+                      disabled={false}
+                      label="Select Image"
+                      mapThemrProps={[Function]}
+                      ripple={true}
+                      rippleCentered={false}
+                      rippleClassName=""
+                      rippleMultiple={true}
+                      rippleSpread={2}
+                    >
+                      <ThemedRippledComponent
+                        composeTheme="deeply"
+                        disabled={false}
+                        label="Select Image"
+                        mapThemrProps={[Function]}
+                        ripple={true}
+                        rippleCentered={false}
+                        rippleClassName=""
+                        rippleMultiple={true}
+                        rippleSpread={2}
+                        theme={Object {}}
+                      >
+                        <RippledComponent
+                          disabled={false}
+                          label="Select Image"
+                          ripple={true}
+                          rippleCentered={false}
+                          rippleClassName=""
+                          rippleMultiple={true}
+                          rippleSpread={2}
+                          theme={Object {}}
+                        >
+                          <Button
+                            accent={false}
+                            className=""
+                            disabled={false}
+                            flat={false}
+                            floating={false}
+                            label="Select Image"
+                            mini={false}
+                            neutral={true}
+                            onMouseDown={[Function]}
+                            onTouchStart={[Function]}
+                            primary={false}
+                            raised={false}
+                            theme={Object {}}
+                            type="button"
+                          >
+                            <button
+                              className=""
+                              data-react-toolbox="button"
+                              disabled={false}
+                              onMouseDown={[Function]}
+                              onMouseLeave={[Function]}
+                              onMouseUp={[Function]}
+                              onTouchStart={[Function]}
+                              type="button"
+                            >
+                              Select Image
+                            </button>
+                          </Button>
+                        </RippledComponent>
+                      </ThemedRippledComponent>
+                    </ThemedThemed>
+                  </div>
+                </div>
+              </SelectImage>
               <Input
                 id="roomName"
                 inputClass="mrm-input default-input"
@@ -362,7 +428,7 @@ exports[`AddRoom should pop up a modal when modal button is clicked 1`] = `
 </AddRoom>
 `;
 
-exports[`AddRoom should render properly 1`] = `
+exports[`AddRoomToKampala should render properly 1`] = `
 <AddRoom
   locations={
     Array [
@@ -385,7 +451,7 @@ exports[`AddRoom should render properly 1`] = `
   }
 >
   <MrmModal
-    buttonText="Add Room"
+    buttonText="The Crest"
     className="add-room-modal"
     closeModal={false}
     handleCloseRequest={[Function]}
@@ -393,7 +459,7 @@ exports[`AddRoom should render properly 1`] = `
     title="ADD ROOM"
   >
     <IconButtons
-      buttonText="Add Room"
+      buttonText="The Crest"
       modalButtonClassName="button"
       openModal={[Function]}
     >
@@ -402,7 +468,7 @@ exports[`AddRoom should render properly 1`] = `
         id="modal-button"
         onClick={[Function]}
       >
-        Add Room
+        The Crest
       </button>
     </IconButtons>
     <Modal

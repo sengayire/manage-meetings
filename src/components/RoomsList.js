@@ -9,8 +9,7 @@ import TableHead from './helpers/TableHead';
 import TableBody from './helpers/TableBody';
 import Pagination from './commons/Pagination';
 
-import AddRoom from './rooms/AddRoomToKampala';
-import AddRoomToEpicTower from './rooms/AddRoomToEpicTower';
+import AddRoomMenu from './rooms/AddRoomMenu';
 
 const RoomsList = (props) => {
   const { allRooms, loading, error } = props.data;
@@ -28,12 +27,11 @@ const RoomsList = (props) => {
 
   return (
     <div className="settings-rooms">
-      <AddRoom locations={locations} />
       <div className="settings-rooms-control">
         <button id="modal-button" className="button filterBtn">
           {'Filter'}
         </button>
-        <AddRoomToEpicTower locations={locations} />
+        <AddRoomMenu />
       </div>
       <div className="settings-rooms-list">
         <table>

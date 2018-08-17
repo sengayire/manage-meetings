@@ -41,7 +41,7 @@ class AddRoomNairobi extends Component {
     return (
       <Modal
         title="ADD ROOM"
-        buttonText="Add Room"
+        buttonText="St. Catherines"
         closeModal={closeModal}
         handleCloseRequest={this.handleModalStateChange}
         className="nbo-add-room-modal button addRoomBtn"

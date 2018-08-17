@@ -1,12 +1,12 @@
 select,
 select:focus {
     background-color: white;
-    color: rgba(50,60,71,0.4);
+    color: rgba(50,60,71,0.4) !important;
     border: 1px solid #d6dee4;
     border-radius: 4px;
     line-height: 1.4em;
     font-family: 'DINPro-Regular';
-    font-size: 1.1em;
+    font-size: 16px;
     margin-top: 0.6em;
     width: 32.3rem !important;
     display: block;
@@ -17,6 +17,8 @@ select:focus {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
+
+
 
     @media screen and (min-width: 1072px) {
         width: 36rem;

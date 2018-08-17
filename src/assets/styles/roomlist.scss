@@ -5,6 +5,10 @@
 }
 
 .settings-rooms {
+  button{
+    cursor: pointer;
+  }
+
   .settings-rooms-list {
 
     table {
@@ -75,6 +79,7 @@
   .settings-rooms-control {
     width: 85%;
     text-align: right;
+
     .button {
       float: none;
       margin-right: 0;
@@ -86,22 +91,31 @@
     .filterBtn {
       border: 1px solid #FFAF30;
       border-radius: 2px;
-      background-color: #FFAF30;
-      color: #FFFFFF;
-    }
-    .filterBtn:after {
-      content: url(../images/filter_icon.svg);
-      height: 16px;
-      width: 18px;
-      margin-left: 10px;
-      vertical-align: sub;
-    }
-    .addRoomBtn:after {
-      content: url(../images/caret_icon.svg);
-      height: 16px;
-      width: 18px;
-      margin-left: 10px;
-      vertical-align: top;
+      border: 1px solid #FFAF30;
+      background-color: #FFFFFF;
+      color: #FFAF30;
+
+      &:after {
+        content: url('../images/filter_yellow.svg');
+        height: 16px;
+        width: 18px;
+        margin-left: 10px;
+        vertical-align: sub;
+      }
+
+      &:hover{
+        color: #FFFFFF;
+        background-color: #FFAF30;
+        transition-duration: 0.15s;
+
+        &:after {
+          content: url('../images/filter_white.svg');
+          height: 16px;
+          width: 18px;
+          margin-left: 10px;
+          vertical-align: sub;
+        }
+      }
     }
   }
 }

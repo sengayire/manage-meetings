@@ -23,7 +23,7 @@ exports[`AddRoom should pop up a modal when modal button is clicked 1`] = `
   }
 >
   <MrmModal
-    buttonText="Add Room"
+    buttonText="Epic Tower"
     className="add-room-modal"
     closeModal={false}
     handleCloseRequest={[Function]}
@@ -31,7 +31,7 @@ exports[`AddRoom should pop up a modal when modal button is clicked 1`] = `
     title="ADD ROOM"
   >
     <IconButtons
-      buttonText="Add Room"
+      buttonText="Epic Tower"
       modalButtonClassName="button"
       openModal={[Function]}
     >
@@ -40,7 +40,7 @@ exports[`AddRoom should pop up a modal when modal button is clicked 1`] = `
         id="modal-button"
         onClick={[Function]}
       >
-        Add Room
+        Epic Tower
       </button>
     </IconButtons>
     <Modal
@@ -191,42 +191,96 @@ exports[`AddRoom should pop up a modal when modal button is clicked 1`] = `
               className="modal-form epic-tower-form"
               onSubmit={[Function]}
             >
-              <div
-                className="upload-content"
-              >
+              <SelectImage>
                 <div
-                  className="upload-box"
+                  className="image-select"
                 >
                   <div
-                    className="image-box"
+                    className="thumbnail"
                   >
                     <div
                       className="placeholder"
                     >
                       <img
-                        alt=""
+                        alt="Room Thumbnail"
                         src="test-file-stub"
                       />
                     </div>
                   </div>
-                </div>
-                <div
-                  className="upload-description upload-btn-wrapper"
-                >
-                  <p>
-                    Upload a room thumbnail
-                  </p>
-                  <button
-                    id="selectImage"
+                  <div
+                    className="select-button"
                   >
-                    Select Image
-                  </button>
-                  <input
-                    name="myfile"
-                    type="file"
-                  />
+                    <span>
+                      Upload a room thumbnail
+                    </span>
+                    <ThemedThemed
+                      composeTheme="deeply"
+                      disabled={false}
+                      label="Select Image"
+                      mapThemrProps={[Function]}
+                      ripple={true}
+                      rippleCentered={false}
+                      rippleClassName=""
+                      rippleMultiple={true}
+                      rippleSpread={2}
+                    >
+                      <ThemedRippledComponent
+                        composeTheme="deeply"
+                        disabled={false}
+                        label="Select Image"
+                        mapThemrProps={[Function]}
+                        ripple={true}
+                        rippleCentered={false}
+                        rippleClassName=""
+                        rippleMultiple={true}
+                        rippleSpread={2}
+                        theme={Object {}}
+                      >
+                        <RippledComponent
+                          disabled={false}
+                          label="Select Image"
+                          ripple={true}
+                          rippleCentered={false}
+                          rippleClassName=""
+                          rippleMultiple={true}
+                          rippleSpread={2}
+                          theme={Object {}}
+                        >
+                          <Button
+                            accent={false}
+                            className=""
+                            disabled={false}
+                            flat={false}
+                            floating={false}
+                            label="Select Image"
+                            mini={false}
+                            neutral={true}
+                            onMouseDown={[Function]}
+                            onTouchStart={[Function]}
+                            primary={false}
+                            raised={false}
+                            theme={Object {}}
+                            type="button"
+                          >
+                            <button
+                              className=""
+                              data-react-toolbox="button"
+                              disabled={false}
+                              onMouseDown={[Function]}
+                              onMouseLeave={[Function]}
+                              onMouseUp={[Function]}
+                              onTouchStart={[Function]}
+                              type="button"
+                            >
+                              Select Image
+                            </button>
+                          </Button>
+                        </RippledComponent>
+                      </ThemedRippledComponent>
+                    </ThemedThemed>
+                  </div>
                 </div>
-              </div>
+              </SelectImage>
               <EpicTowerInputs
                 handleInputChange={[Function]}
                 roomCapacity={1}
@@ -460,7 +514,7 @@ exports[`AddRoom should render properly 1`] = `
   }
 >
   <MrmModal
-    buttonText="Add Room"
+    buttonText="Epic Tower"
     className="add-room-modal"
     closeModal={false}
     handleCloseRequest={[Function]}
@@ -468,7 +522,7 @@ exports[`AddRoom should render properly 1`] = `
     title="ADD ROOM"
   >
     <IconButtons
-      buttonText="Add Room"
+      buttonText="Epic Tower"
       modalButtonClassName="button"
       openModal={[Function]}
     >
@@ -477,7 +531,7 @@ exports[`AddRoom should render properly 1`] = `
         id="modal-button"
         onClick={[Function]}
       >
-        Add Room
+        Epic Tower
       </button>
     </IconButtons>
     <Modal

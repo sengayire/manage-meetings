@@ -23,15 +23,15 @@ exports[`AddRoomNairobi should pop up a modal when modal button is clicked 1`] =
   }
 >
   <MrmModal
-    buttonText="Add Room"
-    className="add-room-modal button addRoomBtn"
+    buttonText="St. Catherines"
+    className="nbo-add-room-modal button addRoomBtn"
     closeModal={false}
     handleCloseRequest={[Function]}
     modalButtonClassName="button"
     title="ADD ROOM"
   >
     <IconButtons
-      buttonText="Add Room"
+      buttonText="St. Catherines"
       modalButtonClassName="button"
       openModal={[Function]}
     >
@@ -40,13 +40,13 @@ exports[`AddRoomNairobi should pop up a modal when modal button is clicked 1`] =
         id="modal-button"
         onClick={[Function]}
       >
-        Add Room
+        St. Catherines
       </button>
     </IconButtons>
     <Modal
       ariaHideApp={false}
       bodyOpenClassName="ReactModal__Body--open"
-      className="add-room-modal button addRoomBtn"
+      className="nbo-add-room-modal button addRoomBtn"
       closeTimeoutMS={0}
       contentLabel="Parent Modal"
       isOpen={true}
@@ -82,7 +82,7 @@ exports[`AddRoomNairobi should pop up a modal when modal button is clicked 1`] =
       <ModalPortal
         ariaHideApp={false}
         bodyOpenClassName="ReactModal__Body--open"
-        className="add-room-modal button addRoomBtn"
+        className="nbo-add-room-modal button addRoomBtn"
         closeTimeoutMS={0}
         contentLabel="Parent Modal"
         defaultStyles={
@@ -159,7 +159,7 @@ exports[`AddRoomNairobi should pop up a modal when modal button is clicked 1`] =
         >
           <div
             aria-label="Parent Modal"
-            className="ReactModal__Content ReactModal__Content--after-open add-room-modal button addRoomBtn"
+            className="ReactModal__Content ReactModal__Content--after-open nbo-add-room-modal button addRoomBtn"
             onClick={[Function]}
             onKeyDown={[Function]}
             onMouseDown={[Function]}
@@ -293,7 +293,7 @@ exports[`AddRoomNairobi should pop up a modal when modal button is clicked 1`] =
                 >
                   <Input
                     id="roomName"
-                    inputClass="mrm-input"
+                    inputClass="mrm-input default-input"
                     labelClass="input1"
                     labelName="Room Name"
                     name="roomName"
@@ -310,7 +310,7 @@ exports[`AddRoomNairobi should pop up a modal when modal button is clicked 1`] =
                       >
                         Room Name
                         <input
-                          className="mrm-input"
+                          className="mrm-input default-input"
                           defaultValue=""
                           id="roomName"
                           name="roomName"
@@ -323,7 +323,7 @@ exports[`AddRoomNairobi should pop up a modal when modal button is clicked 1`] =
                   </Input>
                   <Input
                     id="roomCapacity"
-                    inputClass="mrm-input"
+                    inputClass="mrm-input default-input"
                     labelClass="input1"
                     labelName="Room Capacity"
                     min="1"
@@ -341,7 +341,7 @@ exports[`AddRoomNairobi should pop up a modal when modal button is clicked 1`] =
                       >
                         Room Capacity
                         <input
-                          className="mrm-input"
+                          className="mrm-input default-input"
                           defaultValue={0}
                           id="roomCapacity"
                           min="1"
@@ -350,6 +350,36 @@ exports[`AddRoomNairobi should pop up a modal when modal button is clicked 1`] =
                           placeholder={1}
                           type="number"
                         />
+                        <Controls
+                          handleIncrement={[Function]}
+                        >
+                          <div
+                            className="controls"
+                          >
+                            <button
+                              className="control up"
+                              name="up"
+                              onClick={[Function]}
+                            >
+                              <img
+                                alt="up"
+                                name="up"
+                                src="test-file-stub"
+                              />
+                            </button>
+                            <button
+                              className="control down"
+                              name="down"
+                              onClick={[Function]}
+                            >
+                              <img
+                                alt="down"
+                                name="down"
+                                src="test-file-stub"
+                              />
+                            </button>
+                          </div>
+                        </Controls>
                       </label>
                     </div>
                   </Input>
@@ -531,15 +561,15 @@ exports[`AddRoomNairobi should render properly 1`] = `
   }
 >
   <MrmModal
-    buttonText="Add Room"
-    className="add-room-modal button addRoomBtn"
+    buttonText="St. Catherines"
+    className="nbo-add-room-modal button addRoomBtn"
     closeModal={false}
     handleCloseRequest={[Function]}
     modalButtonClassName="button"
     title="ADD ROOM"
   >
     <IconButtons
-      buttonText="Add Room"
+      buttonText="St. Catherines"
       modalButtonClassName="button"
       openModal={[Function]}
     >
@@ -548,13 +578,13 @@ exports[`AddRoomNairobi should render properly 1`] = `
         id="modal-button"
         onClick={[Function]}
       >
-        Add Room
+        St. Catherines
       </button>
     </IconButtons>
     <Modal
       ariaHideApp={false}
       bodyOpenClassName="ReactModal__Body--open"
-      className="add-room-modal button addRoomBtn"
+      className="nbo-add-room-modal button addRoomBtn"
       closeTimeoutMS={0}
       contentLabel="Parent Modal"
       isOpen={false}
@@ -590,7 +620,7 @@ exports[`AddRoomNairobi should render properly 1`] = `
       <ModalPortal
         ariaHideApp={false}
         bodyOpenClassName="ReactModal__Body--open"
-        className="add-room-modal button addRoomBtn"
+        className="nbo-add-room-modal button addRoomBtn"
         closeTimeoutMS={0}
         contentLabel="Parent Modal"
         defaultStyles={

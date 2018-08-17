@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddRoomMenu should render properly 1`] = `
+<ThemedIconMenu
+  className="add-room-menu"
+  composeTheme="deeply"
+  icon={
+    <div
+      className="addRoomBtn"
+    >
+      <span>
+        Add Room
+      </span>
+    </div>
+  }
+  iconRipple={true}
+  mapThemrProps={[Function]}
+  menuRipple={true}
+  position="auto"
+  selectable={false}
+>
+  <ThemedThemed
+    caption="Select Office"
+    composeTheme="deeply"
+    disabled={true}
+    mapThemrProps={[Function]}
+    ripple={true}
+    rippleCentered={false}
+    rippleClassName=""
+    rippleMultiple={true}
+    rippleSpread={2}
+  />
+  <ThemedMenuDivider
+    composeTheme="deeply"
+    mapThemrProps={[Function]}
+  />
+  <ThemedThemed
+    composeTheme="deeply"
+    disabled={false}
+    mapThemrProps={[Function]}
+    ripple={true}
+    rippleCentered={false}
+    rippleClassName=""
+    rippleMultiple={true}
+    rippleSpread={2}
+  >
+    <AddRoomToEpicTower />
+  </ThemedThemed>
+  <ThemedThemed
+    composeTheme="deeply"
+    disabled={false}
+    mapThemrProps={[Function]}
+    ripple={true}
+    rippleCentered={false}
+    rippleClassName=""
+    rippleMultiple={true}
+    rippleSpread={2}
+  >
+    <AddRoomNairobi />
+  </ThemedThemed>
+  <ThemedThemed
+    composeTheme="deeply"
+    disabled={false}
+    mapThemrProps={[Function]}
+    ripple={true}
+    rippleCentered={false}
+    rippleClassName=""
+    rippleMultiple={true}
+    rippleSpread={2}
+  >
+    <AddRoom />
+  </ThemedThemed>
+  <ThemedThemed
+    caption="New York"
+    composeTheme="deeply"
+    disabled={false}
+    mapThemrProps={[Function]}
+    ripple={true}
+    rippleCentered={false}
+    rippleClassName=""
+    rippleMultiple={true}
+    rippleSpread={2}
+  />
+</ThemedIconMenu>
+`;

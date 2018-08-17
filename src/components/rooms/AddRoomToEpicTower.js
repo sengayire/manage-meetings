@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Modal from '../commons/Modal';
 import { ActionButtons } from '../commons';
 import '../../assets/styles/addroom.scss';
-import placeholder from '../../assets/images/placeholder.svg';
+import SelectImage from '../commons/SelectImage';
 import EpicTowerInputs from '../commons/EpicTowerInputs';
 
 class AddRoomToEpicTower extends Component {
@@ -41,26 +41,13 @@ class AddRoomToEpicTower extends Component {
     return (
       <Modal
         title="ADD ROOM"
-        buttonText="Add Room"
+        buttonText="Epic Tower"
         closeModal={closeModal}
         handleCloseRequest={this.handleModalStateChange}
         className="add-room-modal"
       >
         <form className="modal-form epic-tower-form" onSubmit={this.handleAddRoom}>
-          <div className="upload-content">
-            <div className="upload-box">
-              <div className="image-box" >
-                <div className="placeholder">
-                  <img src={placeholder} alt="" />
-                </div>
-              </div>
-            </div>
-            <div className="upload-description upload-btn-wrapper">
-              <p>Upload a room thumbnail</p>
-              <button id="selectImage">Select Image</button>
-              <input type="file" name="myfile" />
-            </div>
-          </div>
+          <SelectImage />
           <EpicTowerInputs
             roomName={roomName}
             roomWing={roomWing}

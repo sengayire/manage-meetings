@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Modal from '../commons/Modal';
 import { Input, SelectInput as Select, ActionButtons } from '../commons';
+import SelectImage from '../commons/SelectImage';
 import '../../assets/styles/addroom.scss';
 
 
@@ -39,21 +40,13 @@ class AddRoom extends Component {
     return (
       <Modal
         title="ADD ROOM"
-        buttonText="Add Room"
+        buttonText="The Crest"
         closeModal={closeModal}
         handleCloseRequest={this.handleModalStateChange}
         className="add-room-modal"
       >
-        <form className="modal-form" onSubmit={this.handleAddRoom}>
-          <div className="upload-content">
-            <div className="border" />
-          </div>
-          <div className="upload-btn-wrapper upload-content">
-            Upload a room thumbnail
-            <button id="selectImage">Select Image</button>
-            <input type="file" name="myfile" />
-          </div>
-          <div className="clearfix" />
+        <form className="modal-form kla-form" onSubmit={this.handleAddRoom}>
+          <SelectImage />
           <Input
             id="roomName"
             name="roomName"
