@@ -1,0 +1,229 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PeopleList Component renders properly 1`] = `
+<PeopleList>
+  <div
+    className="settings-people-list"
+  >
+    <div
+      className="action-menu"
+    >
+      <p
+        className="sort-by"
+      >
+        Sort by: 
+        <span
+          className="location"
+        >
+          Location
+        </span>
+      </p>
+    </div>
+    <table>
+      <ColGroup
+        numberOfMiddleColumns={2}
+      >
+        <colgroup>
+          <col
+            className="first-col"
+          />
+          <col
+            key="col0"
+          />
+          <col
+            key="col1"
+          />
+          <col
+            className="last-col"
+          />
+        </colgroup>
+      </ColGroup>
+      <TableHead
+        titles={
+          Array [
+            "Name",
+            "Location",
+            "Access Level",
+            "Action",
+          ]
+        }
+      >
+        <thead>
+          <tr>
+            <th
+              key="Name"
+            >
+              Name
+            </th>
+            <th
+              key="Location"
+            >
+              Location
+            </th>
+            <th
+              key="Access Level"
+            >
+              Access Level
+            </th>
+            <th
+              key="Action"
+            >
+              Action
+            </th>
+          </tr>
+        </thead>
+      </TableHead>
+      <tbody>
+        <People
+          key="Edward Barton"
+          people={
+            Object {
+              "accessLevel": "Administrator",
+              "location": "Nairobi",
+              "name": "Edward Barton",
+            }
+          }
+        >
+          <tr>
+            <td>
+              <img
+                alt="profilePicture"
+                className="profilePic"
+                src="test-file-stub"
+              />
+              Edward Barton
+            </td>
+            <td>
+              Nairobi
+            </td>
+            <td>
+              Administrator
+            </td>
+            <td>
+              <img
+                alt="Edit"
+                src="test-file-stub"
+              />
+              <img
+                alt="Delete"
+                src="test-file-stub"
+              />
+            </td>
+          </tr>
+        </People>
+        <People
+          key="Bertha Adkins"
+          people={
+            Object {
+              "accessLevel": "Default User",
+              "location": "Nairobi",
+              "name": "Bertha Adkins",
+            }
+          }
+        >
+          <tr>
+            <td>
+              <img
+                alt="profilePicture"
+                className="profilePic"
+                src="test-file-stub"
+              />
+              Bertha Adkins
+            </td>
+            <td>
+              Nairobi
+            </td>
+            <td>
+              Default User
+            </td>
+            <td>
+              <img
+                alt="Edit"
+                src="test-file-stub"
+              />
+              <img
+                alt="Delete"
+                src="test-file-stub"
+              />
+            </td>
+          </tr>
+        </People>
+        <People
+          key="Lucas Phelps"
+          people={
+            Object {
+              "accessLevel": "Default User",
+              "location": "Nairobi",
+              "name": "Lucas Phelps",
+            }
+          }
+        >
+          <tr>
+            <td>
+              <img
+                alt="profilePicture"
+                className="profilePic"
+                src="test-file-stub"
+              />
+              Lucas Phelps
+            </td>
+            <td>
+              Nairobi
+            </td>
+            <td>
+              Default User
+            </td>
+            <td>
+              <img
+                alt="Edit"
+                src="test-file-stub"
+              />
+              <img
+                alt="Delete"
+                src="test-file-stub"
+              />
+            </td>
+          </tr>
+        </People>
+        <People
+          key="Fred Owens"
+          people={
+            Object {
+              "accessLevel": "Default User",
+              "location": "Nairobi",
+              "name": "Fred Owens",
+            }
+          }
+        >
+          <tr>
+            <td>
+              <img
+                alt="profilePicture"
+                className="profilePic"
+                src="test-file-stub"
+              />
+              Fred Owens
+            </td>
+            <td>
+              Nairobi
+            </td>
+            <td>
+              Default User
+            </td>
+            <td>
+              <img
+                alt="Edit"
+                src="test-file-stub"
+              />
+              <img
+                alt="Delete"
+                src="test-file-stub"
+              />
+            </td>
+          </tr>
+        </People>
+      </tbody>
+    </table>
+  </div>
+</PeopleList>
+`;
