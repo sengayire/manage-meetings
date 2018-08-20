@@ -37,7 +37,7 @@ const RoomsList = (props) => {
         <table>
           <ColGroup />
           <TableHead titles={['Room', 'Location', 'Office', 'Action']} />
-          <TableBody content={allRooms} location={locations} />
+          <TableBody rooms={allRooms.rooms} location={locations} />
         </table>
       </div>
       <Pagination
@@ -51,6 +51,7 @@ RoomsList.propTypes = {
   data: PropTypes.shape({
     allRooms: PropTypes.shape({
       rooms: PropTypes.array,
+      pages: PropTypes.number,
     }),
     loading: PropTypes.bool,
     error: PropTypes.object,

@@ -4,8 +4,8 @@ import TableBody from '../../src/components/helpers/TableBody';
 
 describe('Pagination Component', () => {
   const props = {
-    content: {
-      rooms: [{
+    rooms: [
+      {
         id: '3',
         name: 'Gulu',
         floor: {
@@ -19,8 +19,8 @@ describe('Pagination Component', () => {
             },
           },
         },
-      }],
-    },
+      },
+    ],
     location: [],
   };
   const bodyWrapper = shallow(<TableBody {...props} />);

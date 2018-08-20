@@ -5,7 +5,7 @@ import Room from '../../components/Room';
 
 const TableBody = props => (
   <tbody>
-    {props.content.rooms.map(room => (
+    {props.rooms.map(room => (
       <Room
         room={formatRoomData(room)}
         key={room.id}
@@ -16,10 +16,8 @@ const TableBody = props => (
 );
 
 TableBody.propTypes = {
-  content: PropTypes.shape({
-    rooms: PropTypes.array,
-  }).isRequired,
-  location: PropTypes.string.isRequired,
+  rooms: PropTypes.arrayOf(PropTypes.object).isRequired,
+  location: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
 export default TableBody;

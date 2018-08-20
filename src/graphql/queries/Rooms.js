@@ -4,8 +4,8 @@ export const GET_ROOMS_QUERY = gql`
 query rooms {
   allRooms (page:1, perPage:5){
     rooms{
-      name
       id
+      name
       floor{
         block{
           offices{
@@ -19,8 +19,6 @@ query rooms {
       }
     }
     pages
-    hasNext
-    hasPrevious
   }
 }`;
 

@@ -10,7 +10,7 @@ import RoomsList from '../../src/components/RoomsList';
 
 describe('RoomList Component', () => {
   const request = { query: GET_ROOMS_QUERY };
-  const result = { ...allRooms.rooms };
+  const result = { ...allRooms };
   const roomLocationsRequest = { query: GET_LOCATIONS_QUERY };
   const locationsResult = { data: { allLocations: [...roomLocations] } };
   const error = 'Something Went Wrong';

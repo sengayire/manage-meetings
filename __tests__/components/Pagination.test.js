@@ -4,23 +4,12 @@ import Pagination from '../../src/components/commons/Pagination';
 
 describe('Pagination Component', () => {
   const props = {
-    setPage: jest.fn(),
-    totalPages: jest.fn(),
+    totalPages: 4,
   };
   const paginationWrapper = shallow(<Pagination {...props} />);
 
   it('renders without crashing', () => {
     expect(paginationWrapper).toMatchSnapshot();
-  });
-
-  it('has two select fields', () => {
-    const select = paginationWrapper.find('select');
-    expect(select).toHaveLength(2);
-  });
-
-  it('has five option fields', () => {
-    const option = paginationWrapper.find('option');
-    expect(option).toHaveLength(5);
   });
 
   it('updates page state on input change', () => {

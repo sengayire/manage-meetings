@@ -3,6 +3,7 @@ import gql from 'graphql-tag';
 export const GET_RESOURCES_QUERY = gql`
   query resources {
     allResources {
+      resources {
       id
       name
       quantity
@@ -10,6 +11,7 @@ export const GET_RESOURCES_QUERY = gql`
       room {
         id
         name
+      }
       }
     }
   }

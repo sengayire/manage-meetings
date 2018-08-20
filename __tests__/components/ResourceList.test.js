@@ -39,6 +39,6 @@ describe('Tests for ResourceList Component', () => {
     await new Promise(resolve => setTimeout(resolve));
     mountWrapper.update();
     expect(mountWrapper.find('ResourceList')).toHaveLength(1);
-    expect(mountWrapper.find('ResourceList').prop('data').allResources.length).toEqual(allResources.data.allResources.length);
+    expect(mountWrapper.find('ResourceList').prop('data').allResources.resources.length).toEqual(allResources.data.allResources.resources.length);
   });
 });

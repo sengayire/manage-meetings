@@ -7,11 +7,14 @@ const allRoomsReturnData = {
           name: 'Gulu',
           floor: {
             block: {
-              name: 'EPIC Center',
-              location: {
-                name: 'Kampala',
-                id: 1,
-                __typename: 'Location',
+              offices: {
+                name: 'EPIC Center',
+                location: {
+                  name: 'Kampala',
+                  id: 1,
+                  __typename: 'Location',
+                },
+                __typename: 'Offices',
               },
               __typename: 'Block',
             },
@@ -24,11 +27,14 @@ const allRoomsReturnData = {
           name: 'Entebbe',
           floor: {
             block: {
-              name: 'EPIC Center',
-              location: {
-                name: 'Kampala',
-                id: 1,
-                __typename: 'Location',
+              offices: {
+                name: 'EPIC Center',
+                location: {
+                  name: 'Kampala',
+                  id: 1,
+                  __typename: 'Location',
+                },
+                __typename: 'Offices',
               },
               __typename: 'Block',
             },
@@ -41,11 +47,14 @@ const allRoomsReturnData = {
           name: 'Mbarara',
           floor: {
             block: {
-              name: 'EPIC Center',
-              location: {
-                name: 'Kampala',
-                id: 1,
-                __typename: 'Location',
+              offices: {
+                name: 'EPIC Center',
+                location: {
+                  name: 'Kampala',
+                  id: 1,
+                  __typename: 'Location',
+                },
+                __typename: 'Offices',
               },
               __typename: 'Block',
             },
@@ -58,11 +67,14 @@ const allRoomsReturnData = {
           name: 'Mbale',
           floor: {
             block: {
-              name: 'EPIC Center',
-              location: {
-                name: 'Kampala',
-                id: 1,
-                __typename: 'Location',
+              offices: {
+                name: 'EPIC Center',
+                location: {
+                  name: 'Kampala',
+                  id: 1,
+                  __typename: 'Location',
+                },
+                __typename: 'Offices',
               },
               __typename: 'Block',
             },
@@ -75,11 +87,14 @@ const allRoomsReturnData = {
           name: 'Ocul',
           floor: {
             block: {
-              name: 'EPIC Center',
-              location: {
-                name: 'Kampala',
-                id: 1,
-                __typename: 'Location',
+              offices: {
+                name: 'EPIC Center',
+                location: {
+                  name: 'Kampala',
+                  id: 1,
+                  __typename: 'Location',
+                },
+                __typename: 'Offices',
               },
               __typename: 'Block',
             },
@@ -89,14 +104,17 @@ const allRoomsReturnData = {
         },
         {
           id: '9',
-          name: 'kampale',
+          name: 'Kampale',
           floor: {
             block: {
-              name: 'EPIC Center',
-              location: {
-                name: 'Kampala',
-                id: 1,
-                __typename: 'Location',
+              offices: {
+                name: 'EPIC Center',
+                location: {
+                  name: 'Kampala',
+                  id: 1,
+                  __typename: 'Location',
+                },
+                __typename: 'Offices',
               },
               __typename: 'Block',
             },
@@ -109,11 +127,14 @@ const allRoomsReturnData = {
           name: 'Charley',
           floor: {
             block: {
-              name: 'EPIC TOWER',
-              location: {
-                name: 'Lagos',
-                id: 2,
-                __typename: 'Location',
+              offices: {
+                name: 'EPIC Center',
+                location: {
+                  name: 'Lagos',
+                  id: 1,
+                  __typename: 'Location',
+                },
+                __typename: 'Offices',
               },
               __typename: 'Block',
             },
@@ -126,11 +147,14 @@ const allRoomsReturnData = {
           name: 'Akwaaba',
           floor: {
             block: {
-              name: 'EPIC TOWER',
-              location: {
-                name: 'Lagos',
-                id: 2,
-                __typename: 'Location',
+              offices: {
+                name: 'EPIC Center',
+                location: {
+                  name: 'Lagos',
+                  id: 1,
+                  __typename: 'Location',
+                },
+                __typename: 'Offices',
               },
               __typename: 'Block',
             },
@@ -143,11 +167,14 @@ const allRoomsReturnData = {
           name: 'Charley',
           floor: {
             block: {
-              name: 'EPIC TOWER',
-              location: {
-                name: 'Lagos',
-                id: 2,
-                __typename: 'Location',
+              offices: {
+                name: 'EPIC Center',
+                location: {
+                  name: 'Lagos',
+                  id: 1,
+                  __typename: 'Location',
+                },
+                __typename: 'Offices',
               },
               __typename: 'Block',
             },
@@ -160,11 +187,14 @@ const allRoomsReturnData = {
           name: 'Ojuelegba',
           floor: {
             block: {
-              name: 'EPIC TOWER',
-              location: {
-                name: 'Lagos',
-                id: 2,
-                __typename: 'Location',
+              offices: {
+                name: 'EPIC Center',
+                location: {
+                  name: 'Lagos',
+                  id: 1,
+                  __typename: 'Location',
+                },
+                __typename: 'Offices',
               },
               __typename: 'Block',
             },
@@ -173,15 +203,18 @@ const allRoomsReturnData = {
           __typename: 'Room',
         },
         {
-          id: '14',
+          id: '24',
           name: 'Empire State',
           floor: {
             block: {
-              name: 'EPIC TOWER',
-              location: {
-                name: 'Lagos',
-                id: 2,
-                __typename: 'Location',
+              offices: {
+                name: 'EPIC Center',
+                location: {
+                  name: 'Lagos',
+                  id: 1,
+                  __typename: 'Location',
+                },
+                __typename: 'Offices',
               },
               __typename: 'Block',
             },
@@ -191,6 +224,7 @@ const allRoomsReturnData = {
         },
       ],
       pages: 2,
+      __typename: 'Rooms',
     },
   },
 };

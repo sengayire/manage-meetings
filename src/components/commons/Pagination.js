@@ -4,7 +4,7 @@ import '../../assets/styles/pagination.scss';
 
 const options = array => (
   array.map(item =>
-    <option key={item}>{item}</option>)
+    <option key={item + 1}>{item}</option>)
 );
 
 class Pagination extends Component {
@@ -44,8 +44,8 @@ class Pagination extends Component {
           <li className="disabled">Previous</li>
           <li>Showing Page</li>
           <select name="page" value={page} onChange={this.handleChange}>
-            {[...Array(totalPages)].map((n, item) => (
-              <option key={n}>{item + 1}</option>
+            {[...Array(totalPages)].map((item, index) => (
+              <option key={Math.floor(Math.random() * 10)}>{index + 1}</option>
                     ))}
           </select>
           <li>of</li>

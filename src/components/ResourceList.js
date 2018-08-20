@@ -24,7 +24,7 @@ const ResourceList = (props) => {
           <ColGroup />
           <TableHead titles={['Resource', 'Action']} />
           <tbody>
-            {allResources.map(resource => (
+            {allResources.resources.map(resource => (
               <Resource
                 resource={formatResourceData(resource)}
                 key={resource.id}
@@ -40,7 +40,9 @@ const ResourceList = (props) => {
 
 ResourceList.propTypes = {
   data: PropTypes.shape({
-    allResources: PropTypes.array,
+    allResources: PropTypes.shape({
+      resources: PropTypes.array,
+    }),
     loading: PropTypes.bool,
     error: PropTypes.object,
   }).isRequired,

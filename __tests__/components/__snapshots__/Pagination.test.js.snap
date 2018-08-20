@@ -14,22 +14,22 @@ exports[`Pagination Component renders without crashing 1`] = `
       value={5}
     >
       <option
-        key="5"
+        key="6"
       >
         5
       </option>
       <option
-        key="10"
+        key="11"
       >
         10
       </option>
       <option
-        key="20"
+        key="21"
       >
         20
       </option>
       <option
-        key="50"
+        key="51"
       >
         50
       </option>
@@ -55,11 +55,24 @@ exports[`Pagination Component renders without crashing 1`] = `
       value={1}
     >
       <option
-        key="function () {
-        return fn.apply(this, arguments);
-      }"
+        key="9"
       >
         1
+      </option>
+      <option
+        key="5"
+      >
+        2
+      </option>
+      <option
+        key="0"
+      >
+        3
+      </option>
+      <option
+        key="1"
+      >
+        4
       </option>
     </select>
     <li>
@@ -67,7 +80,9 @@ exports[`Pagination Component renders without crashing 1`] = `
     </li>
     <li
       className="pageNum"
-    />
+    >
+      4
+    </li>
     <li
       className="disabled"
     >
