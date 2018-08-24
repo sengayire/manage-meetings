@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EditUser Component renders properly 1`] = `
+<MrmModal
+  buttonText={
+    <img
+      alt="Edit"
+      src="test-file-stub"
+    />
+  }
+  className="edit-user-modal"
+  closeModal={false}
+  handleCloseRequest={[Function]}
+  modalButtonClassName="edit-button"
+  title="EDIT USER"
+>
+  <form
+    className="modal-form"
+    onSubmit={[Function]}
+  >
+    <Input
+      id="userName"
+      inputClass="mrm-input default-input"
+      labelClass="input1"
+      labelName="Name"
+      name="userName"
+      onChange={[Function]}
+      type="text"
+      value="name"
+    />
+    <SelectInput
+      id="userLocation"
+      labelText="Location"
+      name="userLocation"
+      onChange={[Function]}
+      options={null}
+      placeholder="Nairobi"
+      selectInputClassName="default-select"
+      value="location"
+      wrapperClassName="input-wrapper"
+    />
+    <SelectInput
+      id="accessLevel"
+      labelText="Access Level"
+      name="accessLevel"
+      onChange={[Function]}
+      options={null}
+      placeholder="Administrator"
+      selectInputClassName="default-select"
+      value="accessLevel"
+      wrapperClassName="input-wrapper"
+    />
+    <ActionButtons
+      actionButtonClassName="action-button"
+      actionButtonText="SAVE CHANGES"
+      cancelButtonClassName="cancel-button"
+      cancelButtonText="CANCEL"
+      onClickCancel={[Function]}
+      withCancel={true}
+    />
+  </form>
+</MrmModal>
+`;

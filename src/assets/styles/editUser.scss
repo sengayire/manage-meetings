@@ -1,0 +1,48 @@
+@font-face {
+  font-family: 'DINPro-Light';
+  font-style: normal;
+  src: url('../fonts/DINPro-Light.otf');
+}
+
+.edit-user-modal{
+  padding: 0 10px;
+  border: none !important;
+
+  h2{
+    margin-top: 43px;
+    margin-bottom: 10px;
+    padding-left: 6px;
+    font-size: 22px;
+  }
+
+  form{
+    padding: 15px 33px;
+    margin-bottom: 40px;
+
+    .input1, .input-wrapper{
+      margin-bottom: 10px;
+
+      label{
+        margin-left: 3px;
+      }
+
+      input{
+        margin-top: 10px;
+        height: 27px;
+        width: 458px !important;
+        color: rgba(50, 60, 71, 0.4) !important;
+        font-size: 16px;
+        padding-left: 17px;
+      }
+
+      select{
+        width: 488px !important;
+        height: 46px;
+        padding-left: 17px;
+      }
+    }
+    .form-action-buttons{
+      padding-top: 20px;
+    }
+  }
+}

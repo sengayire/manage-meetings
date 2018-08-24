@@ -17,14 +17,17 @@ exports[`People Component renders properly 1`] = `
     Administrator
   </td>
   <td>
-    <img
-      alt="Edit"
-      src="test-file-stub"
+    <EditUser
+      accessLevel="Administrator"
+      userLocation="Nairobi"
+      userName="Edward Barton"
     />
-    <img
-      alt="Delete"
-      src="test-file-stub"
-    />
+    <button>
+      <img
+        alt="Delete"
+        src="test-file-stub"
+      />
+    </button>
   </td>
 </tr>
 `;

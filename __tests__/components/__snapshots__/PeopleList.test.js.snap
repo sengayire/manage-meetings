@@ -100,14 +100,152 @@ exports[`PeopleList Component renders properly 1`] = `
               Administrator
             </td>
             <td>
-              <img
-                alt="Edit"
-                src="test-file-stub"
-              />
-              <img
-                alt="Delete"
-                src="test-file-stub"
-              />
+              <EditUser
+                accessLevel="Administrator"
+                userLocation="Nairobi"
+                userName="Edward Barton"
+              >
+                <MrmModal
+                  buttonText={
+                    <img
+                      alt="Edit"
+                      src="test-file-stub"
+                    />
+                  }
+                  className="edit-user-modal"
+                  closeModal={false}
+                  handleCloseRequest={[Function]}
+                  modalButtonClassName="edit-button"
+                  title="EDIT USER"
+                >
+                  <IconButtons
+                    buttonText={
+                      <img
+                        alt="Edit"
+                        src="test-file-stub"
+                      />
+                    }
+                    modalButtonClassName="edit-button"
+                    openModal={[Function]}
+                  >
+                    <button
+                      className="edit-button"
+                      id="modal-button"
+                      onClick={[Function]}
+                    >
+                      <img
+                        alt="Edit"
+                        src="test-file-stub"
+                      />
+                    </button>
+                  </IconButtons>
+                  <Modal
+                    ariaHideApp={false}
+                    bodyOpenClassName="ReactModal__Body--open"
+                    className="edit-user-modal"
+                    closeTimeoutMS={0}
+                    contentLabel="Parent Modal"
+                    isOpen={false}
+                    onAfterOpen={[Function]}
+                    onRequestClose={[Function]}
+                    parentSelector={[Function]}
+                    portalClassName="ReactModalPortal"
+                    shouldCloseOnEsc={true}
+                    shouldCloseOnOverlayClick={true}
+                    shouldFocusAfterRender={true}
+                    shouldReturnFocusAfterClose={true}
+                    style={
+                      Object {
+                        "content": Object {
+                          "backgroundColor": "#ffffff",
+                          "border": "1px solid #CCCCCC",
+                          "borderRadius": "4px",
+                          "bottom": "auto",
+                          "boxShadow": "0 2px 40px 10px rgba(185, 180, 180, 0.2)",
+                          "fontFamily": "DINPro-Regular",
+                          "left": "50%",
+                          "marginRight": "-50%",
+                          "outline": "none",
+                          "overflow": "auto",
+                          "position": "absolute",
+                          "right": "auto",
+                          "top": "50%",
+                          "transform": "translate(-50%, -50%)",
+                        },
+                      }
+                    }
+                  >
+                    <ModalPortal
+                      ariaHideApp={false}
+                      bodyOpenClassName="ReactModal__Body--open"
+                      className="edit-user-modal"
+                      closeTimeoutMS={0}
+                      contentLabel="Parent Modal"
+                      defaultStyles={
+                        Object {
+                          "content": Object {
+                            "WebkitOverflowScrolling": "touch",
+                            "background": "#fff",
+                            "border": "1px solid #ccc",
+                            "borderRadius": "4px",
+                            "bottom": "40px",
+                            "left": "40px",
+                            "outline": "none",
+                            "overflow": "auto",
+                            "padding": "20px",
+                            "position": "absolute",
+                            "right": "40px",
+                            "top": "40px",
+                          },
+                          "overlay": Object {
+                            "backgroundColor": "rgba(255, 255, 255, 0.75)",
+                            "bottom": 0,
+                            "left": 0,
+                            "position": "fixed",
+                            "right": 0,
+                            "top": 0,
+                          },
+                        }
+                      }
+                      isOpen={false}
+                      onAfterOpen={[Function]}
+                      onRequestClose={[Function]}
+                      parentSelector={[Function]}
+                      portalClassName="ReactModalPortal"
+                      shouldCloseOnEsc={true}
+                      shouldCloseOnOverlayClick={true}
+                      shouldFocusAfterRender={true}
+                      shouldReturnFocusAfterClose={true}
+                      style={
+                        Object {
+                          "content": Object {
+                            "backgroundColor": "#ffffff",
+                            "border": "1px solid #CCCCCC",
+                            "borderRadius": "4px",
+                            "bottom": "auto",
+                            "boxShadow": "0 2px 40px 10px rgba(185, 180, 180, 0.2)",
+                            "fontFamily": "DINPro-Regular",
+                            "left": "50%",
+                            "marginRight": "-50%",
+                            "outline": "none",
+                            "overflow": "auto",
+                            "position": "absolute",
+                            "right": "auto",
+                            "top": "50%",
+                            "transform": "translate(-50%, -50%)",
+                          },
+                        }
+                      }
+                    />
+                  </Modal>
+                </MrmModal>
+              </EditUser>
+              <button>
+                <img
+                  alt="Delete"
+                  src="test-file-stub"
+                />
+              </button>
             </td>
           </tr>
         </People>
@@ -137,14 +275,152 @@ exports[`PeopleList Component renders properly 1`] = `
               Default User
             </td>
             <td>
-              <img
-                alt="Edit"
-                src="test-file-stub"
-              />
-              <img
-                alt="Delete"
-                src="test-file-stub"
-              />
+              <EditUser
+                accessLevel="Default User"
+                userLocation="Nairobi"
+                userName="Bertha Adkins"
+              >
+                <MrmModal
+                  buttonText={
+                    <img
+                      alt="Edit"
+                      src="test-file-stub"
+                    />
+                  }
+                  className="edit-user-modal"
+                  closeModal={false}
+                  handleCloseRequest={[Function]}
+                  modalButtonClassName="edit-button"
+                  title="EDIT USER"
+                >
+                  <IconButtons
+                    buttonText={
+                      <img
+                        alt="Edit"
+                        src="test-file-stub"
+                      />
+                    }
+                    modalButtonClassName="edit-button"
+                    openModal={[Function]}
+                  >
+                    <button
+                      className="edit-button"
+                      id="modal-button"
+                      onClick={[Function]}
+                    >
+                      <img
+                        alt="Edit"
+                        src="test-file-stub"
+                      />
+                    </button>
+                  </IconButtons>
+                  <Modal
+                    ariaHideApp={false}
+                    bodyOpenClassName="ReactModal__Body--open"
+                    className="edit-user-modal"
+                    closeTimeoutMS={0}
+                    contentLabel="Parent Modal"
+                    isOpen={false}
+                    onAfterOpen={[Function]}
+                    onRequestClose={[Function]}
+                    parentSelector={[Function]}
+                    portalClassName="ReactModalPortal"
+                    shouldCloseOnEsc={true}
+                    shouldCloseOnOverlayClick={true}
+                    shouldFocusAfterRender={true}
+                    shouldReturnFocusAfterClose={true}
+                    style={
+                      Object {
+                        "content": Object {
+                          "backgroundColor": "#ffffff",
+                          "border": "1px solid #CCCCCC",
+                          "borderRadius": "4px",
+                          "bottom": "auto",
+                          "boxShadow": "0 2px 40px 10px rgba(185, 180, 180, 0.2)",
+                          "fontFamily": "DINPro-Regular",
+                          "left": "50%",
+                          "marginRight": "-50%",
+                          "outline": "none",
+                          "overflow": "auto",
+                          "position": "absolute",
+                          "right": "auto",
+                          "top": "50%",
+                          "transform": "translate(-50%, -50%)",
+                        },
+                      }
+                    }
+                  >
+                    <ModalPortal
+                      ariaHideApp={false}
+                      bodyOpenClassName="ReactModal__Body--open"
+                      className="edit-user-modal"
+                      closeTimeoutMS={0}
+                      contentLabel="Parent Modal"
+                      defaultStyles={
+                        Object {
+                          "content": Object {
+                            "WebkitOverflowScrolling": "touch",
+                            "background": "#fff",
+                            "border": "1px solid #ccc",
+                            "borderRadius": "4px",
+                            "bottom": "40px",
+                            "left": "40px",
+                            "outline": "none",
+                            "overflow": "auto",
+                            "padding": "20px",
+                            "position": "absolute",
+                            "right": "40px",
+                            "top": "40px",
+                          },
+                          "overlay": Object {
+                            "backgroundColor": "rgba(255, 255, 255, 0.75)",
+                            "bottom": 0,
+                            "left": 0,
+                            "position": "fixed",
+                            "right": 0,
+                            "top": 0,
+                          },
+                        }
+                      }
+                      isOpen={false}
+                      onAfterOpen={[Function]}
+                      onRequestClose={[Function]}
+                      parentSelector={[Function]}
+                      portalClassName="ReactModalPortal"
+                      shouldCloseOnEsc={true}
+                      shouldCloseOnOverlayClick={true}
+                      shouldFocusAfterRender={true}
+                      shouldReturnFocusAfterClose={true}
+                      style={
+                        Object {
+                          "content": Object {
+                            "backgroundColor": "#ffffff",
+                            "border": "1px solid #CCCCCC",
+                            "borderRadius": "4px",
+                            "bottom": "auto",
+                            "boxShadow": "0 2px 40px 10px rgba(185, 180, 180, 0.2)",
+                            "fontFamily": "DINPro-Regular",
+                            "left": "50%",
+                            "marginRight": "-50%",
+                            "outline": "none",
+                            "overflow": "auto",
+                            "position": "absolute",
+                            "right": "auto",
+                            "top": "50%",
+                            "transform": "translate(-50%, -50%)",
+                          },
+                        }
+                      }
+                    />
+                  </Modal>
+                </MrmModal>
+              </EditUser>
+              <button>
+                <img
+                  alt="Delete"
+                  src="test-file-stub"
+                />
+              </button>
             </td>
           </tr>
         </People>
@@ -174,14 +450,152 @@ exports[`PeopleList Component renders properly 1`] = `
               Default User
             </td>
             <td>
-              <img
-                alt="Edit"
-                src="test-file-stub"
-              />
-              <img
-                alt="Delete"
-                src="test-file-stub"
-              />
+              <EditUser
+                accessLevel="Default User"
+                userLocation="Nairobi"
+                userName="Lucas Phelps"
+              >
+                <MrmModal
+                  buttonText={
+                    <img
+                      alt="Edit"
+                      src="test-file-stub"
+                    />
+                  }
+                  className="edit-user-modal"
+                  closeModal={false}
+                  handleCloseRequest={[Function]}
+                  modalButtonClassName="edit-button"
+                  title="EDIT USER"
+                >
+                  <IconButtons
+                    buttonText={
+                      <img
+                        alt="Edit"
+                        src="test-file-stub"
+                      />
+                    }
+                    modalButtonClassName="edit-button"
+                    openModal={[Function]}
+                  >
+                    <button
+                      className="edit-button"
+                      id="modal-button"
+                      onClick={[Function]}
+                    >
+                      <img
+                        alt="Edit"
+                        src="test-file-stub"
+                      />
+                    </button>
+                  </IconButtons>
+                  <Modal
+                    ariaHideApp={false}
+                    bodyOpenClassName="ReactModal__Body--open"
+                    className="edit-user-modal"
+                    closeTimeoutMS={0}
+                    contentLabel="Parent Modal"
+                    isOpen={false}
+                    onAfterOpen={[Function]}
+                    onRequestClose={[Function]}
+                    parentSelector={[Function]}
+                    portalClassName="ReactModalPortal"
+                    shouldCloseOnEsc={true}
+                    shouldCloseOnOverlayClick={true}
+                    shouldFocusAfterRender={true}
+                    shouldReturnFocusAfterClose={true}
+                    style={
+                      Object {
+                        "content": Object {
+                          "backgroundColor": "#ffffff",
+                          "border": "1px solid #CCCCCC",
+                          "borderRadius": "4px",
+                          "bottom": "auto",
+                          "boxShadow": "0 2px 40px 10px rgba(185, 180, 180, 0.2)",
+                          "fontFamily": "DINPro-Regular",
+                          "left": "50%",
+                          "marginRight": "-50%",
+                          "outline": "none",
+                          "overflow": "auto",
+                          "position": "absolute",
+                          "right": "auto",
+                          "top": "50%",
+                          "transform": "translate(-50%, -50%)",
+                        },
+                      }
+                    }
+                  >
+                    <ModalPortal
+                      ariaHideApp={false}
+                      bodyOpenClassName="ReactModal__Body--open"
+                      className="edit-user-modal"
+                      closeTimeoutMS={0}
+                      contentLabel="Parent Modal"
+                      defaultStyles={
+                        Object {
+                          "content": Object {
+                            "WebkitOverflowScrolling": "touch",
+                            "background": "#fff",
+                            "border": "1px solid #ccc",
+                            "borderRadius": "4px",
+                            "bottom": "40px",
+                            "left": "40px",
+                            "outline": "none",
+                            "overflow": "auto",
+                            "padding": "20px",
+                            "position": "absolute",
+                            "right": "40px",
+                            "top": "40px",
+                          },
+                          "overlay": Object {
+                            "backgroundColor": "rgba(255, 255, 255, 0.75)",
+                            "bottom": 0,
+                            "left": 0,
+                            "position": "fixed",
+                            "right": 0,
+                            "top": 0,
+                          },
+                        }
+                      }
+                      isOpen={false}
+                      onAfterOpen={[Function]}
+                      onRequestClose={[Function]}
+                      parentSelector={[Function]}
+                      portalClassName="ReactModalPortal"
+                      shouldCloseOnEsc={true}
+                      shouldCloseOnOverlayClick={true}
+                      shouldFocusAfterRender={true}
+                      shouldReturnFocusAfterClose={true}
+                      style={
+                        Object {
+                          "content": Object {
+                            "backgroundColor": "#ffffff",
+                            "border": "1px solid #CCCCCC",
+                            "borderRadius": "4px",
+                            "bottom": "auto",
+                            "boxShadow": "0 2px 40px 10px rgba(185, 180, 180, 0.2)",
+                            "fontFamily": "DINPro-Regular",
+                            "left": "50%",
+                            "marginRight": "-50%",
+                            "outline": "none",
+                            "overflow": "auto",
+                            "position": "absolute",
+                            "right": "auto",
+                            "top": "50%",
+                            "transform": "translate(-50%, -50%)",
+                          },
+                        }
+                      }
+                    />
+                  </Modal>
+                </MrmModal>
+              </EditUser>
+              <button>
+                <img
+                  alt="Delete"
+                  src="test-file-stub"
+                />
+              </button>
             </td>
           </tr>
         </People>
@@ -211,14 +625,152 @@ exports[`PeopleList Component renders properly 1`] = `
               Default User
             </td>
             <td>
-              <img
-                alt="Edit"
-                src="test-file-stub"
-              />
-              <img
-                alt="Delete"
-                src="test-file-stub"
-              />
+              <EditUser
+                accessLevel="Default User"
+                userLocation="Nairobi"
+                userName="Fred Owens"
+              >
+                <MrmModal
+                  buttonText={
+                    <img
+                      alt="Edit"
+                      src="test-file-stub"
+                    />
+                  }
+                  className="edit-user-modal"
+                  closeModal={false}
+                  handleCloseRequest={[Function]}
+                  modalButtonClassName="edit-button"
+                  title="EDIT USER"
+                >
+                  <IconButtons
+                    buttonText={
+                      <img
+                        alt="Edit"
+                        src="test-file-stub"
+                      />
+                    }
+                    modalButtonClassName="edit-button"
+                    openModal={[Function]}
+                  >
+                    <button
+                      className="edit-button"
+                      id="modal-button"
+                      onClick={[Function]}
+                    >
+                      <img
+                        alt="Edit"
+                        src="test-file-stub"
+                      />
+                    </button>
+                  </IconButtons>
+                  <Modal
+                    ariaHideApp={false}
+                    bodyOpenClassName="ReactModal__Body--open"
+                    className="edit-user-modal"
+                    closeTimeoutMS={0}
+                    contentLabel="Parent Modal"
+                    isOpen={false}
+                    onAfterOpen={[Function]}
+                    onRequestClose={[Function]}
+                    parentSelector={[Function]}
+                    portalClassName="ReactModalPortal"
+                    shouldCloseOnEsc={true}
+                    shouldCloseOnOverlayClick={true}
+                    shouldFocusAfterRender={true}
+                    shouldReturnFocusAfterClose={true}
+                    style={
+                      Object {
+                        "content": Object {
+                          "backgroundColor": "#ffffff",
+                          "border": "1px solid #CCCCCC",
+                          "borderRadius": "4px",
+                          "bottom": "auto",
+                          "boxShadow": "0 2px 40px 10px rgba(185, 180, 180, 0.2)",
+                          "fontFamily": "DINPro-Regular",
+                          "left": "50%",
+                          "marginRight": "-50%",
+                          "outline": "none",
+                          "overflow": "auto",
+                          "position": "absolute",
+                          "right": "auto",
+                          "top": "50%",
+                          "transform": "translate(-50%, -50%)",
+                        },
+                      }
+                    }
+                  >
+                    <ModalPortal
+                      ariaHideApp={false}
+                      bodyOpenClassName="ReactModal__Body--open"
+                      className="edit-user-modal"
+                      closeTimeoutMS={0}
+                      contentLabel="Parent Modal"
+                      defaultStyles={
+                        Object {
+                          "content": Object {
+                            "WebkitOverflowScrolling": "touch",
+                            "background": "#fff",
+                            "border": "1px solid #ccc",
+                            "borderRadius": "4px",
+                            "bottom": "40px",
+                            "left": "40px",
+                            "outline": "none",
+                            "overflow": "auto",
+                            "padding": "20px",
+                            "position": "absolute",
+                            "right": "40px",
+                            "top": "40px",
+                          },
+                          "overlay": Object {
+                            "backgroundColor": "rgba(255, 255, 255, 0.75)",
+                            "bottom": 0,
+                            "left": 0,
+                            "position": "fixed",
+                            "right": 0,
+                            "top": 0,
+                          },
+                        }
+                      }
+                      isOpen={false}
+                      onAfterOpen={[Function]}
+                      onRequestClose={[Function]}
+                      parentSelector={[Function]}
+                      portalClassName="ReactModalPortal"
+                      shouldCloseOnEsc={true}
+                      shouldCloseOnOverlayClick={true}
+                      shouldFocusAfterRender={true}
+                      shouldReturnFocusAfterClose={true}
+                      style={
+                        Object {
+                          "content": Object {
+                            "backgroundColor": "#ffffff",
+                            "border": "1px solid #CCCCCC",
+                            "borderRadius": "4px",
+                            "bottom": "auto",
+                            "boxShadow": "0 2px 40px 10px rgba(185, 180, 180, 0.2)",
+                            "fontFamily": "DINPro-Regular",
+                            "left": "50%",
+                            "marginRight": "-50%",
+                            "outline": "none",
+                            "overflow": "auto",
+                            "position": "absolute",
+                            "right": "auto",
+                            "top": "50%",
+                            "transform": "translate(-50%, -50%)",
+                          },
+                        }
+                      }
+                    />
+                  </Modal>
+                </MrmModal>
+              </EditUser>
+              <button>
+                <img
+                  alt="Delete"
+                  src="test-file-stub"
+                />
+              </button>
             </td>
           </tr>
         </People>

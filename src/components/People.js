@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import EditButton from '../assets/images/edit.svg';
+import EditUser from './EditUser';
 import DeleteButton from '../assets/images/delete.svg';
 import ProfileImg from '../assets/images/profile_icon.svg';
 
@@ -14,8 +14,12 @@ const People = ({
     <td>{location}</td>
     <td>{accessLevel}</td>
     <td>
-      <img src={EditButton} alt="Edit" />
-      <img src={DeleteButton} alt="Delete" />
+      <EditUser
+        userName={name}
+        userLocation={location}
+        accessLevel={accessLevel}
+      />
+      <button><img src={DeleteButton} alt="Delete" /></button>
     </td>
   </tr>
 );

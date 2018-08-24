@@ -21,7 +21,7 @@
         font-weight: 500;
         line-height: 23px;
         &:after {
-          content: url(../images/caret_icon.svg);
+          content: url('../images/caret_white.svg');
           height: 8px;
           width: 14.4px;
           margin-left: 6px;
@@ -68,11 +68,16 @@
         color: #D8D8D8;
       }
       &:nth-child(4) {
-        img {
+        button{
+          border: none;
+          cursor: pointer;
           height: 13.5px;
           width: 13.46px;
           &:nth-child(1) {
             margin-right: 25px;
+          }
+          &:nth-child(2) {
+            margin-top: 7px;
           }
         }
       }

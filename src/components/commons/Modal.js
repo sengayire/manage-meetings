@@ -31,12 +31,15 @@ class MrmModal extends Component {
     closeModal: PropTypes.bool.isRequired,
     className: PropTypes.string,
     modalButtonClassName: PropTypes.string,
-    buttonText: PropTypes.string.isRequired,
+    buttonText: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.object]),
   };
 
   static defaultProps = {
     className: 'modalClass',
     modalButtonClassName: 'button',
+    buttonText: '',
   };
 
   state = {
