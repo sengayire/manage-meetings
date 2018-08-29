@@ -6,6 +6,7 @@ import { Settings, Analytics, Feedback } from './containers';
 import { LoginPage } from './components';
 import { getItemFromLocalStorage } from './utils/Utilities';
 import Constants from './utils/Constants';
+import '../src/assets/styles/toastr.scss';
 
 // destruscture constants to be used
 const {

@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
+import toastr from 'toastr';
 import MrmModal from '../components/commons/Modal';
 import { Input, SelectInput as Select } from './commons';
 
 import '../assets/styles/addoffice.scss';
 import roomLocations from '../fixtures/roomLocations';
 import ActionButtons from './commons/ActionButtons';
+import notification from '../utils/notification';
 
 class AddOffice extends Component {
   state = {
@@ -30,6 +32,8 @@ class AddOffice extends Component {
     event.preventDefault();
     // submit logic here
     // after succesful submission close the modal
+    const notify = notification(toastr, 'success', '‘Apple TV’ resource has been deleted');
+    notify();
     this.handleCloseModal();
   };
 

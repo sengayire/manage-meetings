@@ -23,7 +23,7 @@ exports[`AddRoomNairobi should pop up a modal when modal button is clicked 1`] =
   }
 >
   <MrmModal
-    buttonText="Add Room"
+    buttonText="St. Catherines"
     className="nbo-add-room-modal button addRoomBtn"
     closeModal={false}
     handleCloseRequest={[Function]}
@@ -561,7 +561,7 @@ exports[`AddRoomNairobi should render properly 1`] = `
   }
 >
   <MrmModal
-    buttonText="Add Room"
+    buttonText="St. Catherines"
     className="nbo-add-room-modal button addRoomBtn"
     closeModal={false}
     handleCloseRequest={[Function]}
