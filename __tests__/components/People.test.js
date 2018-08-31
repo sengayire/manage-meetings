@@ -7,6 +7,7 @@ describe('People Component', () => {
     name: 'Edward Barton',
     location: 'Nairobi',
     accessLevel: 'Administrator',
+    picture: 'http://no-url',
   };
   const wrapper = shallow(<People people={person} />);
   it('renders properly', () => {

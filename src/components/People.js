@@ -2,15 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import EditUser from './EditUser';
 import DeleteButton from '../assets/images/delete.svg';
-import ProfileImg from '../assets/images/profile_icon.svg';
 
 const People = ({
   people: {
-    name, accessLevel, location,
+    name, accessLevel, location, picture,
   },
 }) => (
   <tr>
-    <td><img className="profilePic" src={ProfileImg} alt="profilePicture" />{name}</td>
+    <td><img className="profilePic" src={picture} alt="profilePicture" />{name}</td>
     <td>{location}</td>
     <td>{accessLevel}</td>
     <td>
@@ -28,6 +27,7 @@ People.propTypes = {
     name: PropTypes.string.isRequired,
     location: PropTypes.string.isRequired,
     accessLevel: PropTypes.string.isRequired,
+    picture: PropTypes.string.isRequired,
   }).isRequired,
 };
 export default People;

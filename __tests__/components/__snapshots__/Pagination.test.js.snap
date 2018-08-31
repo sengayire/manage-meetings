@@ -55,22 +55,22 @@ exports[`Pagination Component renders without crashing 1`] = `
       value={1}
     >
       <option
-        key="8"
+        key="2"
       >
         1
       </option>
       <option
-        key="0"
+        key="4"
       >
         2
       </option>
       <option
-        key="3"
+        key="0"
       >
         3
       </option>
       <option
-        key="9"
+        key="5"
       >
         4
       </option>

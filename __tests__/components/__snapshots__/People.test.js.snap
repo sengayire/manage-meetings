@@ -6,7 +6,7 @@ exports[`People Component renders properly 1`] = `
     <img
       alt="profilePicture"
       className="profilePic"
-      src="test-file-stub"
+      src="http://no-url"
     />
     Edward Barton
   </td>
