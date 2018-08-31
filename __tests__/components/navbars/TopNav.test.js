@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import TopNav from '../../src/components/TopNav';
+import TopNav from '../../../src/components/navbars/TopNav';
 
 describe('TopNav Component', () => {
   const wrapper = shallow(<TopNav />);

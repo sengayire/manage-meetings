@@ -1,10 +1,10 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import TopMenu from '../../src/components/TopMenu';
-import ProfileIcon from '../../src/assets/images/profile_icon.svg';
+import TopMenu from '../../../src/components/navbars/TopMenu';
+import ProfileIcon from '../../../src/assets/images/profile_icon.svg';
 // mocking the decodeTokenAndGetUserData method to return something in the TopMenu component
-jest.mock('../../src/utils/Cookie');
-const cookieFunctions = require('../../src/utils/Cookie');
+jest.mock('../../../src/utils/Cookie');
+const cookieFunctions = require('../../../src/utils/Cookie');
 
 // creating mock names to use
 const mockFirstName = 'MockFirstName';

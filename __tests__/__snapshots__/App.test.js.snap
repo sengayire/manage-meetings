@@ -260,18 +260,229 @@ exports[`App component should not render Login if token is present but render Se
                               />
                             </div>
                             <div
-                              className="container"
+                              className="profile-name"
                             >
                               <span
                                 className="username"
                               >
                                 undefined undefined
                               </span>
-                              <i
-                                className="material-icons dropdown"
-                              >
-                                arrow_drop_down
-                              </i>
+                              <ProfileMenu>
+                                <ThemedIconMenu
+                                  className="material-icons profile-dropdown"
+                                  composeTheme="deeply"
+                                  icon="arrow_drop_down"
+                                  iconRipple={true}
+                                  mapThemrProps={[Function]}
+                                  menuRipple={true}
+                                  position="auto"
+                                  selectable={false}
+                                >
+                                  <IconMenu
+                                    className="material-icons profile-dropdown"
+                                    icon="arrow_drop_down"
+                                    iconRipple={true}
+                                    menuRipple={true}
+                                    position="auto"
+                                    selectable={false}
+                                    theme={Object {}}
+                                  >
+                                    <div
+                                      className="material-icons profile-dropdown"
+                                    >
+                                      <ThemedThemed
+                                        composeTheme="deeply"
+                                        disabled={false}
+                                        icon="arrow_drop_down"
+                                        mapThemrProps={[Function]}
+                                        onClick={[Function]}
+                                        ripple={true}
+                                        rippleCentered={true}
+                                        rippleClassName=""
+                                        rippleMultiple={true}
+                                        rippleSpread={2}
+                                      >
+                                        <ThemedRippledComponent
+                                          composeTheme="deeply"
+                                          disabled={false}
+                                          icon="arrow_drop_down"
+                                          mapThemrProps={[Function]}
+                                          onClick={[Function]}
+                                          ripple={true}
+                                          rippleCentered={true}
+                                          rippleClassName=""
+                                          rippleMultiple={true}
+                                          rippleSpread={2}
+                                          theme={Object {}}
+                                        >
+                                          <RippledComponent
+                                            disabled={false}
+                                            icon="arrow_drop_down"
+                                            onClick={[Function]}
+                                            ripple={true}
+                                            rippleCentered={true}
+                                            rippleClassName=""
+                                            rippleMultiple={true}
+                                            rippleSpread={2}
+                                            theme={Object {}}
+                                          >
+                                            <IconButton
+                                              accent={false}
+                                              className=""
+                                              disabled={false}
+                                              icon="arrow_drop_down"
+                                              neutral={true}
+                                              onClick={[Function]}
+                                              onMouseDown={[Function]}
+                                              onTouchStart={[Function]}
+                                              primary={false}
+                                              theme={Object {}}
+                                              type="button"
+                                            >
+                                              <button
+                                                className=""
+                                                data-react-toolbox="button"
+                                                disabled={false}
+                                                onClick={[Function]}
+                                                onMouseDown={[Function]}
+                                                onMouseLeave={[Function]}
+                                                onMouseUp={[Function]}
+                                                onTouchStart={[Function]}
+                                                type="button"
+                                              >
+                                                <FontIcon
+                                                  alt=""
+                                                  className=""
+                                                  value="arrow_drop_down"
+                                                >
+                                                  <span
+                                                    aria-label=""
+                                                    className="material-icons"
+                                                    data-react-toolbox="font-icon"
+                                                  >
+                                                    arrow_drop_down
+                                                  </span>
+                                                </FontIcon>
+                                              </button>
+                                            </IconButton>
+                                          </RippledComponent>
+                                        </ThemedRippledComponent>
+                                      </ThemedThemed>
+                                      <ThemedMenu
+                                        active={false}
+                                        composeTheme="deeply"
+                                        mapThemrProps={[Function]}
+                                        onHide={[Function]}
+                                        outline={true}
+                                        position="auto"
+                                        ripple={true}
+                                        selectable={false}
+                                        theme={Object {}}
+                                      >
+                                        <Menu
+                                          active={false}
+                                          onHide={[Function]}
+                                          outline={true}
+                                          position="auto"
+                                          ripple={true}
+                                          selectable={false}
+                                          theme={Object {}}
+                                        >
+                                          <div
+                                            className=""
+                                            data-react-toolbox="menu"
+                                            style={
+                                              Object {
+                                                "height": undefined,
+                                                "width": undefined,
+                                              }
+                                            }
+                                          >
+                                            <div
+                                              style={
+                                                Object {
+                                                  "height": undefined,
+                                                  "width": undefined,
+                                                }
+                                              }
+                                            />
+                                            <ul>
+                                              <ThemedThemed
+                                                caption="LOGOUT"
+                                                className="profile-menu"
+                                                composeTheme="deeply"
+                                                disabled={false}
+                                                key=".0"
+                                                mapThemrProps={[Function]}
+                                                onClick={[Function]}
+                                                ripple={true}
+                                                rippleCentered={false}
+                                                rippleClassName=""
+                                                rippleMultiple={true}
+                                                rippleSpread={2}
+                                                selected={false}
+                                              >
+                                                <ThemedRippledComponent
+                                                  caption="LOGOUT"
+                                                  className="profile-menu"
+                                                  composeTheme="deeply"
+                                                  disabled={false}
+                                                  mapThemrProps={[Function]}
+                                                  onClick={[Function]}
+                                                  ripple={true}
+                                                  rippleCentered={false}
+                                                  rippleClassName=""
+                                                  rippleMultiple={true}
+                                                  rippleSpread={2}
+                                                  selected={false}
+                                                  theme={Object {}}
+                                                >
+                                                  <RippledComponent
+                                                    caption="LOGOUT"
+                                                    className="profile-menu"
+                                                    disabled={false}
+                                                    onClick={[Function]}
+                                                    ripple={true}
+                                                    rippleCentered={false}
+                                                    rippleClassName=""
+                                                    rippleMultiple={true}
+                                                    rippleSpread={2}
+                                                    selected={false}
+                                                    theme={Object {}}
+                                                  >
+                                                    <MenuItem
+                                                      caption="LOGOUT"
+                                                      className="profile-menu"
+                                                      disabled={false}
+                                                      onClick={[Function]}
+                                                      onMouseDown={[Function]}
+                                                      onTouchStart={[Function]}
+                                                      selected={false}
+                                                      theme={Object {}}
+                                                    >
+                                                      <li
+                                                        className="profile-menu"
+                                                        data-react-toolbox="menu-item"
+                                                        onClick={[Function]}
+                                                        onMouseDown={[Function]}
+                                                        onTouchStart={[Function]}
+                                                      >
+                                                        <span>
+                                                          LOGOUT
+                                                        </span>
+                                                      </li>
+                                                    </MenuItem>
+                                                  </RippledComponent>
+                                                </ThemedRippledComponent>
+                                              </ThemedThemed>
+                                            </ul>
+                                          </div>
+                                        </Menu>
+                                      </ThemedMenu>
+                                    </div>
+                                  </IconMenu>
+                                </ThemedIconMenu>
+                              </ProfileMenu>
                             </div>
                           </div>
                         </div>

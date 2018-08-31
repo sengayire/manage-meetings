@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=IBM+Plex+Sans+Condensed");
+
 @font-face {
   font-family: DINPro;
   src: url(../fonts/DINPro.ttf);
@@ -14,6 +15,7 @@
   background: #e4e4e4;
   color: #fff;
 }
+
 .nav-menu {
   background: #fff;
   box-shadow: none !important;
@@ -21,43 +23,53 @@
   margin-right: 50px;
   height: 68px !important;
 }
+
 .nav-menu nav {
   position: absolute;
   right: 0;
 }
+
 .nav-right {
   width: 80%;
   min-width: 400px;
 }
+
 .nav-left {
   width: 20%;
   min-width: 200px;
 }
+
 .nav-menu button.theme--button--2AgdxWh4 {
   height: 32px;
   width: 32px;
 }
+
 .nav-brand {
   height: 68px;
   margin: 0;
   -webkit-padding-start: 60px;
 }
+
 .side-nav {
   width: 317px !important;
 }
+
 .search-icon {
   position: relative;
   right: 23px;
 }
+
 .logo {
   position: absolute;
   height: 68px;
   vertical-align: middle;
   line-height: 68px;
 }
+
 .logo img {
   vertical-align: middle;
 }
+
 .logo-text {
   position: absolute;
   top: 0;
@@ -65,6 +77,7 @@
   line-height: 68px;
   margin-left: 44px;
 }
+
 .logo-text h1 {
   color: #3458dc;
   font-family: "IBM Plex Sans Condensed", sans-serif;
@@ -73,12 +86,15 @@
   margin: 0;
   font-size: 120%;
 }
+
 .search-box {
   height: 100%;
 }
+
 .search-box form {
   line-height: 68px;
 }
+
 .search-bar {
   border-style: solid;
   border-radius: 17px;
@@ -90,54 +106,104 @@
   border-width: 1px;
   border-color: rgba(0, 0, 0, 0.12);
 }
+
 .search-bar:focus {
   border-color: rgba(0, 0, 0, 0.2);
 }
+
 .input-append:focus,
 .search-bar:focus {
   outline: 0;
 }
+
 .notifications {
   width: 84px !important;
   text-align: center;
 }
+
 .notifications span {
   padding: 0 1.8em;
   margin-left: auto;
   margin-right: auto;
 }
+
 .profile {
   margin-top: 3px;
   width: 34px !important;
 }
+
 .username {
   font-family: DINPro;
   font-size: 105%;
   color: #8d8d8d;
-  margin-top: 10px;
   padding-left: 0.5em;
-  height: 58px;
-  line-height: 58px;
-  vertical-align: middle;
 }
-.dropdown {
-  color: #b2bcc6;
+
+.profile-dropdown {
+  vertical-align: middle;
   margin-top: 1px;
   padding-left: 1em;
+
+  .material-icons {
+    font-size: 2em;
+    color: #8d8d8d;
+  }
+
+  button {
+    span {
+      line-height: normal !important;
+      vertical-align: top !important;
+    }
+  }
+
+  .theme--menu--1gvr5Gvn {
+    margin-top: 35px;
+    margin-right: 10px;
+
+    ul {
+      height: 40px;
+      width: 140px;
+      border-radius: 4px;
+      background-color: #FFFFFF;
+      padding: 0;
+      text-align: center;
+      box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+
+      li {
+        color: #999999;
+        text-align: center;
+      }
+
+      &:hover {
+        background-color: #F8F8F8;
+      }
+
+      span {
+        font-size: 18px;
+        font-family: DINPro;
+        line-height: 20px;
+        padding: 10px 0;
+      }
+    }
+  }
 }
+
 .topmenu-right {
   position: absolute !important;
   width: 37% !important;
   right: 0;
 }
+
 @media only screen and (max-width: 798px) {
-  .username{
+  .username {
     display: none;
   }
-  .dropdown{
+
+  .dropdown {
     padding-left: unset;
   }
-  .nav-brand{
+
+  .nav-brand {
     -webkit-padding-start: 20px;
   }
 }

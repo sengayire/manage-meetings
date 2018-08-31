@@ -30,6 +30,20 @@ const getToken = (cookiesString = document.cookie) =>
   parseCookie(cookiesString)['jwt-token'] || null;
 
 /**
+ * Clear cookie
+ * @param {string} cookiesString Cookies string
+ */
+const clearCookies = () => {
+  document.cookie
+    .split(';')
+    .forEach((item) => {
+      const key = item.split('=')[0];
+      document.cookie = `${key}=; expires=Thu, 01 Jan 1970 00:00:00 GMT; domain=.andela.com; path=/;`;
+    });
+  return true;
+};
+
+/**
  * Decodes a token and returns an object containing user data and expiry date
  * @param {object} cookiesObject Returns an object containing user data
  */
@@ -40,4 +54,9 @@ const decodeTokenAndGetUserData = (userToken = null) => {
   return jwtDecode(token);
 };
 
-export { decodeTokenAndGetUserData, getToken, parseCookie };
+export {
+  decodeTokenAndGetUserData,
+  getToken,
+  parseCookie,
+  clearCookies,
+};

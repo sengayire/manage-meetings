@@ -1,9 +1,10 @@
 import React from 'react';
-import '../assets/styles/topmenu.scss';
-import Logo from '../assets/images/converge_logo.svg';
-import IconSearch from '../assets/images/search_icon.svg';
-import IconNotifications from '../assets/images/notifications_icon.svg';
-import { decodeTokenAndGetUserData } from '../utils/Cookie';
+import '../../assets/styles/topmenu.scss';
+import ProfileMenu from './ProfileMenu';
+import Logo from '../../assets/images/converge_logo.svg';
+import IconSearch from '../../assets/images/search_icon.svg';
+import IconNotifications from '../../assets/images/notifications_icon.svg';
+import { decodeTokenAndGetUserData } from '../../utils/Cookie';
 
 const TopMenu = () => {
   // get loggedin user data
@@ -37,9 +38,10 @@ const TopMenu = () => {
             <div className="profile">
               <img src={picture} style={{ height: '34px', width: '34px', borderRadius: '17px' }} alt="Profile icon" />
             </div>
-            <div className="container">
-              <span className="username">{`${firstName} ${lastName}`}</span>
-              <i className="material-icons dropdown">arrow_drop_down</i>
+            <div className="profile-name">
+              <span className="username">{`${firstName} ${lastName}`}
+              </span>
+              <ProfileMenu />
             </div>
           </div>
         </div>

@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
-import TopNav from './TopNav';
-import TopMenu from './TopMenu';
+import TopNav from '../components/navbars/TopNav';
+import TopMenu from '../components/navbars/TopMenu';
 
 const NavBar = () => (
   <Fragment>

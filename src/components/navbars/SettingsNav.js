@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-import ROUTES from '../utils/routes';
+import ROUTES from '../../utils/routes';
 
 const SettingsNav = () => (
   <div className="settings-tabs">

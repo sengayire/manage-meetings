@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
 
-import SettingsNav from '../components/SettingsNav';
+import SettingsNav from '../components/navbars/SettingsNav';
 import OfficeList from '../components/OfficeList';
 import ResourceList from '../components/ResourceList';
 import '../assets/styles/settingscontent.scss';

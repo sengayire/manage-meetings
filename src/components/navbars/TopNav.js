@@ -1,13 +1,13 @@
 import React from 'react';
 import AppBar from 'react-toolbox/lib/app_bar';
 import Navigation from 'react-toolbox/lib/navigation';
-import ROUTES from '../utils/routes';
-import '../assets/styles/topnav.scss';
-import IconAnalytics from '../assets/images/analytics_icon.svg';
-import IconFeedback from '../assets/images/feedback_icon.svg';
-import IconSettings from '../assets/images/settings_icon.svg';
+import ROUTES from '../../utils/routes';
+import '../../assets/styles/topnav.scss';
+import IconAnalytics from '../../assets/images/analytics_icon.svg';
+import IconFeedback from '../../assets/images/feedback_icon.svg';
+import IconSettings from '../../assets/images/settings_icon.svg';
 
-import NavLink from './helpers/NavLink';
+import NavLink from '../helpers/NavLink';
 
 const TopNav = () => (
   <div className="top-nav">

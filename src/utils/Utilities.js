@@ -29,6 +29,19 @@ const getItemFromLocalStorage = (itemKey) => {
 };
 
 /**
+ * Remove the value of a particular key from localStorage
+ * @param {string} itemKey The key of the item to remove from local storage
+ */
+const removeItemFromLocalStorage = (itemKey) => {
+  try {
+    localStorage.removeItem(itemKey);
+    return true;
+  } catch (e) {
+    return null;
+  }
+};
+
+/**
  * Stores a an item in the local storage
  * @param {string} key The Key of the item in local storage
  * @param {any} value The value of the item to be store in local storage
@@ -42,5 +55,10 @@ const saveItemInLocalStorage = (key, value) => {
   }
 };
 
-export { parseQueryString, getItemFromLocalStorage, saveItemInLocalStorage };
+export {
+  parseQueryString,
+  getItemFromLocalStorage,
+  saveItemInLocalStorage,
+  removeItemFromLocalStorage,
+};
 

@@ -78,18 +78,14 @@ exports[`TopMenu Component renders correctly in memory 1`] = `
           />
         </div>
         <div
-          className="container"
+          className="profile-name"
         >
           <span
             className="username"
           >
             MockFirstName MockLastName
           </span>
-          <i
-            className="material-icons dropdown"
-          >
-            arrow_drop_down
-          </i>
+          <ProfileMenu />
         </div>
       </div>
     </div>

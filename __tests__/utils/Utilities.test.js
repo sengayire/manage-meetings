@@ -2,6 +2,7 @@ import {
   parseQueryString,
   getItemFromLocalStorage,
   saveItemInLocalStorage,
+  removeItemFromLocalStorage,
 } from '../../src/utils/Utilities';
 
 describe('parseQueryString Method', () => {
@@ -39,6 +40,17 @@ describe('saveItemInLocalStorage(', () => {
   it('should set items to local storage', () => {
     global.localStorage = { setItem: jest.fn() };
     expect(saveItemInLocalStorage('key', 'value')).toBe(true);
+  });
+});
+
+describe('removeItemInLocalStorage(', () => {
+  it('should raise an exception when user has no access to localstorage', () => {
+    global.localStorage = undefined;
+    expect(removeItemFromLocalStorage('key')).toBe(null);
+  });
+  it('should remove items to local storage', () => {
+    global.localStorage = { removeItem: jest.fn() };
+    expect(removeItemFromLocalStorage('key')).toBe(true);
   });
 });
 
