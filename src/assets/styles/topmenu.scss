@@ -50,10 +50,6 @@
   -webkit-padding-start: 60px;
 }
 
-.side-nav {
-  width: 317px !important;
-}
-
 .search-icon {
   position: relative;
   right: 23px;
@@ -142,7 +138,7 @@
 .profile-dropdown {
   vertical-align: middle;
   margin-top: 1px;
-  padding-left: 1em;
+  padding-left: 0px;
 
   .material-icons {
     font-size: 2em;

@@ -23,7 +23,6 @@
   ul {
     width: 70%;
     margin: auto;
-    color: #6d6d6d;
     padding: 0;
     padding-top: 2.75%;
     @media screen and (max-width: 425px) {
@@ -47,6 +46,7 @@
     a {
       text-decoration: none;
       word-break: break-word;
+      color: #6d6d6d;
       &:visited {
         text-decoration: none;
       }
