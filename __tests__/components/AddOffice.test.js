@@ -1,9 +1,9 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import AddOffice from '../../src/components/AddOffice';
+import { AddOffice } from '../../src/components/AddOffice';
 
 describe('AddOffice Component', () => {
-  const wrapper = shallow(<AddOffice />);
+  let wrapper = shallow(<AddOffice />);
   const preventDefault = jest.fn();
 
 
@@ -44,8 +44,60 @@ describe('AddOffice Component', () => {
     expect(wrapper.state('closeModal')).toEqual(false);
   });
 
-  it('handles handleAddOffice()', () => {
+  it('hanlde handleAddOffice when officeName is required', () => {
+    wrapper.instance().handleAddOffice({ preventDefault });
+    wrapper.setState({ officeLocation: '1', officeName: '' });
+    wrapper.instance().handleAddOffice({ preventDefault });
+  });
+
+  it('handles handleAddOffice() when addOffice is rejected', () => {
+    const props = {
+      addOffice: jest.fn(() => Promise.reject()),
+    };
+    wrapper = shallow(<AddOffice {...props} />);
+
+    wrapper.setState({
+      officeLocation: 1,
+      officeName: 'Epic Tower',
+    });
+
+    const variables = {
+      locationId: 1,
+      name: 'Epic Tower',
+    };
+
     wrapper.instance().handleAddOffice({ preventDefault });
     expect(wrapper.state('closeModal')).toEqual(true);
+    expect(props.addOffice).toHaveBeenCalledWith({ variables });
+  });
+
+  it('handles handleAddOffice() when addOffice is resolved', () => {
+    const mockOffice = {
+      data: {
+        createOffice: {
+          office: {
+            name: 'Epic Towers',
+          },
+        },
+      },
+    };
+    const props = {
+      addOffice: jest.fn(() => Promise.resolve(mockOffice)),
+    };
+    wrapper = shallow(<AddOffice {...props} />);
+
+    wrapper.setState({
+      officeLocation: 1,
+      officeName: 'Epic Tower',
+    });
+
+    const variables = {
+      locationId: 1,
+      name: 'Epic Tower',
+    };
+
+    wrapper.instance().handleAddOffice({ preventDefault });
+    expect(wrapper.state('closeModal')).toEqual(true);
+    expect(props.addOffice).toHaveBeenCalledWith({ variables });
   });
 });

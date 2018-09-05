@@ -76,7 +76,7 @@ describe('SelectInput component', () => {
     const newOptions = [{ value: 1 }, { value: 2 }];
     optionsWrapper.setProps({ options: newOptions });
     optionsWrapper.update();
-    const options = optionsWrapper.find('option');
+    const options = optionsWrapper.find('options');
     options.map((option, index) => (
       expect(option.props().children).toEqual(newOptions[index].value)
     ));

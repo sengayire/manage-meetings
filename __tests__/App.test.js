@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { StaticRouter, MemoryRouter } from 'react-router-dom';
 import { mount } from 'enzyme';
+import { MockedProvider } from 'react-apollo/test-utils';
+
 import App from '../src/App';
 import ROUTES from '../src/utils/routes';
 
@@ -10,9 +12,11 @@ const utilityFUnctions = require('../src/utils/Utilities');
 
 const routes = [ROUTES.home, ROUTES.settings];
 const wrapperCode = (
-  <MemoryRouter initialEntries={routes} initialIndex={1} keyLength={0}>
-    <App />
-  </MemoryRouter>
+  <MockedProvider>
+    <MemoryRouter initialEntries={routes} initialIndex={1} keyLength={0}>
+      <App />
+    </MemoryRouter>
+  </MockedProvider>
 );
 
 describe('App component', () => {

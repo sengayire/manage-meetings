@@ -1,6 +1,6 @@
 import React from 'react';
 import Office from './Office';
-import AddOffice from './AddOffice';
+import AddOffice from './AddOffice'; // eslint-disable-line
 import officeList from '../fixtures/offices';
 import '../assets/styles/officelist.scss';
 import ColGroup from './helpers/ColGroup';

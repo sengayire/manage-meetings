@@ -4,7 +4,7 @@ exports[`Tests for SettingOffices renders correctly from memory 1`] = `
 <div
   className="settings-offices"
 >
-  <AddOffice />
+  <Apollo(Apollo(AddOffice)) />
   <div
     className="settings-offices-list"
   >

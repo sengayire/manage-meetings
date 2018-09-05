@@ -1,14 +1,28 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { graphql, compose } from 'react-apollo';
 import toastr from 'toastr';
 import MrmModal from '../components/commons/Modal';
 import { Input, SelectInput as Select } from './commons';
 
 import '../assets/styles/addoffice.scss';
-import roomLocations from '../fixtures/roomLocations';
 import ActionButtons from './commons/ActionButtons';
+import { GET_LOCATIONS_QUERY } from '../graphql/queries/Rooms';
+import ADD_OFFICE_MUTATION from '../graphql/mutations/offices';
 import notification from '../utils/notification';
 
-class AddOffice extends Component {
+export class AddOffice extends Component {
+  static propTypes = {
+    locations: PropTypes.shape({
+      allLocations: PropTypes.array,
+    }),
+    addOffice: PropTypes.func,
+  }
+
+  static defaultProps = {
+    locations: {},
+    addOffice: () => {},
+  }
   state = {
     officeName: '',
     officeLocation: '',
@@ -30,15 +44,30 @@ class AddOffice extends Component {
 
   handleAddOffice = (event) => {
     event.preventDefault();
-    // submit logic here
-    // after succesful submission close the modal
-    const notify = notification(toastr, 'success', '‘Apple TV’ resource has been deleted');
-    notify();
-    this.handleCloseModal();
+    const { officeLocation, officeName } = this.state;
+    if (!officeName) {
+      notification(toastr, 'error', 'Office name is required')();
+    } else if (!officeLocation) {
+      notification(toastr, 'error', 'Office location is required')();
+    } else {
+      this.props.addOffice({
+        variables: {
+          locationId: officeLocation,
+          name: officeName,
+        },
+      }).then((office) => {
+        const { name } = office.data.createOffice.office;
+        notification(toastr, 'success', `${name} office has been added successfully`)();
+      }).catch(() => {
+        notification(toastr, 'error', 'Failed to add office')();
+      });
+      this.handleCloseModal();
+    }
   };
 
   render() {
     const { officeName, officeLocation, closeModal } = this.state;
+    const { allLocations } = this.props.locations;
 
     return (
       <MrmModal
@@ -66,7 +95,7 @@ class AddOffice extends Component {
             onChange={this.handleInputChange}
             wrapperClassName="input-wrapper"
             placeholder="Select office location"
-            options={roomLocations}
+            options={allLocations}
           />
           <ActionButtons
             withCancel
@@ -79,4 +108,7 @@ class AddOffice extends Component {
   }
 }
 
-export default AddOffice;
+export default compose(
+  graphql(GET_LOCATIONS_QUERY, { name: 'locations' }),
+  graphql(ADD_OFFICE_MUTATION, { name: 'addOffice' }),
+)(AddOffice);

@@ -2,12 +2,7 @@
 
 exports[`EditUser Component renders properly 1`] = `
 <MrmModal
-  buttonText={
-    <img
-      alt="Edit"
-      src="test-file-stub"
-    />
-  }
+  buttonText="Edit"
   className="edit-user-modal"
   closeModal={false}
   handleCloseRequest={[Function]}

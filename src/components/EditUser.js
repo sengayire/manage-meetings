@@ -4,7 +4,7 @@ import { Input } from './commons/Input';
 import Select from './commons/SelectInput';
 import MrmModal from './commons/Modal';
 import ActionButtons from './commons/ActionButtons';
-import EditButton from '../assets/images/edit.svg';
+// import EditButton from '../assets/images/edit.svg';
 import '../assets/styles/editUser.scss';
 
 class EditUser extends React.Component {
@@ -48,12 +48,12 @@ class EditUser extends React.Component {
       userName, userLocation, accessLevel, closeModal,
     } = this.state;
 
-    const edit = () => (<img src={EditButton} alt="Edit" />);
+    // const edit = () => (<img src={EditButton} alt="Edit" />);
 
     return (
       <MrmModal
         title="EDIT USER"
-        buttonText={edit()}
+        buttonText="Edit"
         closeModal={closeModal}
         handleCloseRequest={this.handleModalStateChange}
         className="edit-user-modal"

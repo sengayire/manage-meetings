@@ -30,22 +30,7 @@ exports[`AddOffice Component renders properly 1`] = `
       labelText="Select Office Location"
       name="officeLocation"
       onChange={[Function]}
-      options={
-        Array [
-          Object {
-            "displayText": "Lagos ",
-            "value": 2,
-          },
-          Object {
-            "displayText": "Kampala",
-            "value": 1,
-          },
-          Object {
-            "displayText": "Nairobi",
-            "value": 3,
-          },
-        ]
-      }
+      options={null}
       placeholder="Select office location"
       selectInputClassName="default-select"
       value=""
