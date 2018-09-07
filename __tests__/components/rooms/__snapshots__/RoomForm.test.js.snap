@@ -70,16 +70,16 @@ exports[`RoomForm should render properly 1`] = `
       options={
         Array [
           Object {
-            "displayText": "Kampala",
-            "value": "1",
+            "id": "1",
+            "name": "Kampala",
           },
           Object {
-            "displayText": "Lagos",
-            "value": "2",
+            "id": "2",
+            "name": "Lagos",
           },
           Object {
-            "displayText": "Nairobi",
-            "value": "3",
+            "id": "3",
+            "name": "Nairobi",
           },
         ]
       }

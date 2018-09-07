@@ -21,6 +21,6 @@ export const formatRoomData = room => ({
 });
 
 const mapLocationsToSelectInputs = locations => (
-  locations.map(({ id, name }) => ({ value: id, displayText: name })));
+  locations.map(({ id, name }) => ({ id, name })));
 
 export { formatRoomData as default, mapLocationsToSelectInputs };

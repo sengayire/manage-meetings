@@ -422,18 +422,8 @@ exports[`AddRoomNairobi should pop up a modal when modal button is clicked 1`] =
                           >
                             Select block
                           </option>
-                          <option
-                            key="A"
-                            value="A"
-                          >
-                            A
-                          </option>
-                          <option
-                            key="B"
-                            value="B"
-                          >
-                            B
-                          </option>
+                          <option />
+                          <option />
                         </select>
                       </label>
                     </div>
@@ -480,24 +470,9 @@ exports[`AddRoomNairobi should pop up a modal when modal button is clicked 1`] =
                           >
                             Select floor
                           </option>
-                          <option
-                            key="1"
-                            value={1}
-                          >
-                            1
-                          </option>
-                          <option
-                            key="2"
-                            value={2}
-                          >
-                            2
-                          </option>
-                          <option
-                            key="3"
-                            value={3}
-                          >
-                            3
-                          </option>
+                          <option />
+                          <option />
+                          <option />
                         </select>
                       </label>
                     </div>

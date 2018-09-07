@@ -16,12 +16,11 @@ export class AddOffice extends Component {
     locations: PropTypes.shape({
       allLocations: PropTypes.array,
     }),
-    addOffice: PropTypes.func,
+    addOffice: PropTypes.func.isRequired,
   }
 
   static defaultProps = {
     locations: {},
-    addOffice: () => {},
   }
   state = {
     officeName: '',

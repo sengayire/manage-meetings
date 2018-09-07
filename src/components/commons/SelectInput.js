@@ -36,8 +36,8 @@ const SelectInput = ({
         {options &&
           options.length &&
           options.map(option => (
-            <option value={option.value} key={option.value}>
-              {option.displayText || option.value}
+            <option value={option.id} key={option.id}>
+              {option.name}
             </option>
           ))}
 
@@ -66,13 +66,12 @@ SelectInput.propTypes = {
   selectInputClassName: PropTypes.string,
   wrapperClassName: PropTypes.string,
   labelText: PropTypes.string.isRequired,
-  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   onChange: PropTypes.func.isRequired,
   placeholder: PropTypes.string,
   options: PropTypes.arrayOf(PropTypes.shape({
-    value: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
-      .isRequired,
-    displayText: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    name: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   })),
   children: PropTypes.node,
 };
@@ -83,6 +82,7 @@ SelectInput.defaultProps = {
   placeholder: '',
   options: null,
   children: null,
+  value: '',
 };
 
 export default SelectInput;
