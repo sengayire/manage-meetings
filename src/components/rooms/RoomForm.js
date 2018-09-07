@@ -5,48 +5,38 @@ import { mapLocationsToSelectInputs } from '../../graphql/mappers/Rooms';
 
 import '../../assets/styles/roomform.scss';
 
-class RoomForm extends Component {
+export class RoomForm extends Component {
   static propTypes = {
-    roomName: PropTypes.string,
     roomLocation: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     onSubmit: PropTypes.func.isRequired,
+    handleInputChange: PropTypes.func.isRequired,
     onCloseModalRequest: PropTypes.func.isRequired,
-    formRole: PropTypes.string,
-    locations: PropTypes.arrayOf(PropTypes.shape({
-      id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-      name: PropTypes.string,
-    })).isRequired,
+    formDetails: PropTypes.oneOfType([
+      PropTypes.arrayOf(PropTypes.shape({
+        id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+        name: PropTypes.string,
+      })),
+      PropTypes.object,
+    ]).isRequired,
+    locations: PropTypes.arrayOf(PropTypes.object).isRequired,
   };
 
   static defaultProps = {
-    roomName: '',
     roomLocation: '',
-    formRole: 'add',
-  };
-
-  constructor(props) {
-    super(props);
-    // constructor used to set the roomName and roomLocation state values befor the component mounts
-    this.state = {
-      roomName: props.roomName,
-      roomLocation: props.roomLocation,
-    };
   }
 
-  handleInputChange = ({ target: { name, value } }) => {
-    this.setState({ [name]: value });
+  handleSubmit = (event) => {
+    event.preventDefault();
+    this.props.onSubmit();
   };
-
-  handleSubmit = (e) => {
-    e.preventDefault();
-    const { roomName, roomLocation } = this.state;
-    this.props.onSubmit({ roomName, roomLocation });
-  };
-
   render() {
-    const { roomName, roomLocation } = this.state;
-    const { onCloseModalRequest, formRole, locations } = this.props;
-
+    const {
+      onCloseModalRequest,
+      locations,
+      formDetails,
+      roomLocation,
+      handleInputChange,
+    } = this.props;
     return (
       <form onSubmit={this.handleSubmit}>
         <Input
@@ -54,9 +44,9 @@ class RoomForm extends Component {
           type="text"
           name="roomName"
           placeholder="Enter room name"
-          value={roomName}
+          value={formDetails.roomName}
           labelName="Room Name"
-          onChange={this.handleInputChange}
+          onChange={handleInputChange}
           labelClass="input-wrapper"
           required
         />
@@ -65,15 +55,17 @@ class RoomForm extends Component {
           name="roomLocation"
           id="roomLocation"
           value={roomLocation}
-          onChange={this.handleInputChange}
+          onChange={handleInputChange}
+          key={roomLocation || ''}
           wrapperClassName="input-wrapper"
           placeholder="Select room location"
           options={mapLocationsToSelectInputs(locations)}
+          disabled
         />
         <ActionButtons
           withCancel
           onClickCancel={onCloseModalRequest}
-          actionButtonText={formRole === 'add' ? 'Add Room' : 'Save Changes'}
+          actionButtonText="Save Changes"
         />
       </form>
     );

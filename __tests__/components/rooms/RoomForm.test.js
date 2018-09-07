@@ -1,18 +1,35 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
-import RoomForm from '../../../src/components/rooms/RoomForm';
-import { roomLocations } from '../../../__mocks__/rooms/Rooms';
+import { RoomForm } from '../../../src/components/rooms/RoomForm';
+import { roomLocations, formDetails } from '../../../__mocks__/rooms/Rooms';
 
 describe('RoomForm', () => {
-  const handleSubmit = jest.fn();
+  let handleSubmit = jest.fn();
   const handleCloseModal = jest.fn();
-
   const wrapper = mount(<RoomForm
     onCloseModalRequest={handleCloseModal}
     onSubmit={handleSubmit}
-    locations={roomLocations}
+    handleInputChange={jest.fn()}
+    locations={roomLocations || ''}
+    formDetails={formDetails}
   />);
+
+  const event = {
+    preventDefault: jest.fn(),
+    target: {
+      name: '',
+      value: '',
+    },
+  };
+
+  const wrapperValue = wrapper.find('RoomForm');
+  it('should call handleSubmit', () => {
+    const action = wrapperValue.instance();
+    handleSubmit = jest.spyOn(wrapperValue.instance(), 'handleSubmit');
+    action.handleSubmit(event);
+    expect(handleSubmit).toBeCalled();
+  });
 
   it('should render properly', () => {
     expect(wrapper).toMatchSnapshot();
@@ -21,19 +38,6 @@ describe('RoomForm', () => {
   it('should have one select and one text input element', () => {
     expect(wrapper.find('Input').length).toBe(1);
     expect(wrapper.find('SelectInput').length).toBe(1);
-  });
-
-  it('should respond to on change events of the input and selects', () => {
-    wrapper
-      .find('input#roomName')
-      .simulate('change', { target: { name: 'roomName', value: 'HighLan' } });
-    wrapper
-      .find('select#roomLocation')
-      .simulate('change', {
-        target: { name: 'roomLocation', value: 'Kampala' },
-      });
-    wrapper.update();
-    expect(wrapper.state().roomName).toEqual('HighLan');
-    expect(wrapper.state().roomLocation).toEqual('Kampala');
+    expect(wrapper.find('ActionButtons').length).toBe(1);
   });
 });

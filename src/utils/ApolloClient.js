@@ -17,7 +17,6 @@ const httpLink = createHttpLink({
 const authHttpLink = setContext((_, { headers }) => {
   // read token from localStorage
   const token = getItemFromLocalStorage(Constants.MRM_TOKEN);
-
   // send token on each request
   return {
     headers: {

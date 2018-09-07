@@ -122,5 +122,49 @@ const roomLocations = [
   },
 ];
 
-export { allRoomsReturnData as default, roomLocations };
+const formDetails = {
+  roomId: '1',
+  name: 'HighLan',
+};
+
+const locationData = {
+  data: {
+    allLocations: [
+      {
+        id: '2',
+        name: 'Kampala',
+      },
+      {
+        id: '3',
+        name: 'Nairobi',
+      },
+      {
+        id: '1',
+        name: 'Lagos',
+      },
+    ],
+  },
+};
+
+
+// const formDetails = [
+//   {
+//     id: '1',
+//     roomName: 'HighLan',
+//     __typename: 'Room',
+//   },
+//   {
+//     id: '2',
+//     roomName: 'Lagos',
+//     __typename: 'Room',
+//   },
+//   {
+//     id: '3',
+//     roomName: 'Nairobi',
+//     __typename: 'Room',
+//   },
+// ];
+
+
+export { allRoomsReturnData as default, roomLocations, formDetails, locationData };
 

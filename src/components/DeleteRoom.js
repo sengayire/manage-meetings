@@ -4,7 +4,7 @@ import { graphql, compose } from 'react-apollo';
 import toastr from 'toastr';
 
 import MrmModal from '../components/commons/Modal';
-import DELETE_ROOM from '../graphql/mutations/Rooms';
+import { DELETE_ROOM } from '../graphql/mutations/Rooms';
 import { GET_ROOMS_QUERY } from '../graphql/queries/Rooms';
 import notification from '../utils/notification';
 import '../assets/styles/deleteModal.scss';

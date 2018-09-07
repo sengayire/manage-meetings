@@ -11,13 +11,13 @@ const TableBody = props => (
         key={room.id}
         locations={props.location}
       />
-                ))}
+      ))}
   </tbody>
 );
-
 TableBody.propTypes = {
   rooms: PropTypes.arrayOf(PropTypes.object).isRequired,
   location: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
 export default TableBody;
+

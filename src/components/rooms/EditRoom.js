@@ -1,21 +1,38 @@
 import React, { Component } from 'react';
+import toastr from 'toastr';
 import PropTypes from 'prop-types';
+import { graphql, compose } from 'react-apollo';
 import Modal from '../commons/Modal';
-import EditRoomForm from './RoomForm';
+import notification from '../../utils/notification';
+import RoomFormInput from './RoomForm';
 
-class EditRoom extends Component {
+
+import { GET_LOCATIONS_QUERY, GET_ROOMS_QUERY } from '../../graphql/queries/Rooms';
+import { EDIT_ROOM_DETAILS_MUTATION } from '../../graphql/mutations/Rooms';
+
+export class EditRoom extends Component {
   static propTypes = {
     roomName: PropTypes.string.isRequired,
-    roomLocation: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
-      .isRequired,
-    locations: PropTypes.arrayOf(PropTypes.shape({
-      id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-      name: PropTypes.string,
-    })).isRequired,
+    editRoom: PropTypes.func,
+    roomId: PropTypes.string.isRequired,
+    roomLocation: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+    locations: PropTypes.oneOfType([
+      PropTypes.arrayOf(PropTypes.shape({
+        id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+        name: PropTypes.string,
+      })),
+      PropTypes.object,
+    ]).isRequired,
   };
+
+  static defaultProps = {
+    editRoom: PropTypes.func,
+  }
 
   state = {
     closeModal: false,
+    roomId: this.props.roomId,
+    roomName: this.props.roomName,
   };
 
   handleCloseModal = () => {
@@ -26,17 +43,32 @@ class EditRoom extends Component {
     this.state.closeModal && this.setState({ closeModal: false });
   };
 
+  handleInputChange = ({ target: { name, value } }) => {
+    this.setState({ [name]: value });
+  };
+
   handleEditRoom = () => {
-    // add room logic here
-    // the console statement is here to supress the eslint error of no-unused-vars
-    // console.log(roomDetails);
-    // close modal after add room
+    const { roomId, roomName } = this.state;
+
+    this.props.editRoom({
+      variables: {
+        roomId,
+        name: roomName,
+      },
+      refetchQueries: [{ query: GET_ROOMS_QUERY }],
+    }).then(() => {
+      notification(toastr, 'success', `Room name editted successfully to ${roomName}`)();
+    }).catch((err) => {
+      notification(toastr, 'error', err.graphQLErrors[0].message)();
+    });
     this.handleCloseModal();
   };
 
+
   render() {
     const { closeModal } = this.state;
-    const { roomName, roomLocation, locations } = this.props;
+    const { roomLocation } = this.props;
+    const { allLocations } = this.props.locations;
 
     return (
       <Modal
@@ -46,17 +78,31 @@ class EditRoom extends Component {
         handleCloseRequest={this.handleModalStateChange}
         className="modal"
       >
-        <EditRoomForm
+        <RoomFormInput
           onSubmit={this.handleEditRoom}
           onCloseModalRequest={this.handleCloseModal}
-          roomName={roomName}
           roomLocation={roomLocation}
           formRole="edit"
-          locations={locations}
+          locations={allLocations || []}
+          handleInputChange={this.handleInputChange}
+          formDetails={this.state}
         />
       </Modal>
     );
   }
 }
 
-export default EditRoom;
+
+export default compose(
+  graphql(GET_LOCATIONS_QUERY, { name: 'locations' }),
+  graphql(GET_ROOMS_QUERY, {
+    name: 'getRoomsQuery',
+    options: () => ({
+      variables: {
+        page: 1,
+        perPage: 5,
+      },
+    }),
+  }),
+  graphql(EDIT_ROOM_DETAILS_MUTATION, { name: 'editRoom' }),
+)(EditRoom);

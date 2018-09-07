@@ -36,6 +36,7 @@ const NairobiRoomInputs = ({
       name="officeBlock"
       id="officeBlock"
       value={officeBlock}
+      key={officeBlock}
       onChange={handleInputChange}
       wrapperClassName="input-wrapper"
       placeholder="Select block"

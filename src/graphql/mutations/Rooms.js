@@ -1,14 +1,24 @@
 import gql from 'graphql-tag';
 
-const DELETE_ROOM = gql`
-   mutation DeleteRoom($roomId: Int!) {
-    deleteRoom(roomId: $roomId) {
-      room {
-        id
-        name
-        }
-      }
-    }
+const EDIT_ROOM_DETAILS_MUTATION = gql`
+   mutation updateRoom($roomId: Int!, $name: String!){
+       updateRoom(roomId: $roomId,  name: $name){
+               room{
+                   name
+               }
+           }
+       }
 `;
 
-export { DELETE_ROOM as default };
+const DELETE_ROOM = gql`
+  mutation DeleteRoom($roomId: Int!) {
+   deleteRoom(roomId: $roomId) {
+     room {
+       id
+       name
+       }
+     }
+   }
+`;
+
+export { EDIT_ROOM_DETAILS_MUTATION, DELETE_ROOM };

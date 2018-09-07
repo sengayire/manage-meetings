@@ -2,7 +2,13 @@
 
 exports[`RoomForm should render properly 1`] = `
 <RoomForm
-  formRole="add"
+  formDetails={
+    Object {
+      "name": "HighLan",
+      "roomId": "1",
+    }
+  }
+  handleInputChange={[MockFunction]}
   locations={
     Array [
       Object {
@@ -23,9 +29,14 @@ exports[`RoomForm should render properly 1`] = `
     ]
   }
   onCloseModalRequest={[MockFunction]}
-  onSubmit={[MockFunction]}
+  onSubmit={
+    [MockFunction] {
+      "calls": Array [
+        Array [],
+      ],
+    }
+  }
   roomLocation=""
-  roomName=""
 >
   <form
     onSubmit={[Function]}
@@ -37,11 +48,11 @@ exports[`RoomForm should render properly 1`] = `
       labelClass="input-wrapper"
       labelName="Room Name"
       name="roomName"
-      onChange={[Function]}
+      onChange={[MockFunction]}
       placeholder="Enter room name"
       required={true}
       type="text"
-      value=""
+      value="text"
     >
       <div
         className="input-wrapper"
@@ -52,10 +63,10 @@ exports[`RoomForm should render properly 1`] = `
           Room Name
           <input
             className="mrm-input default-input"
-            defaultValue=""
+            defaultValue="text"
             id="roomName"
             name="roomName"
-            onChange={[Function]}
+            onChange={[MockFunction]}
             placeholder="Enter room name"
             required={true}
             type="text"
@@ -64,10 +75,11 @@ exports[`RoomForm should render properly 1`] = `
       </div>
     </Input>
     <SelectInput
+      disabled={true}
       id="roomLocation"
       labelText="Select Room Location"
       name="roomLocation"
-      onChange={[Function]}
+      onChange={[MockFunction]}
       options={
         Array [
           Object {
@@ -100,9 +112,10 @@ exports[`RoomForm should render properly 1`] = `
           Select Room Location
           <select
             className="default-select"
+            disabled={true}
             id="roomLocation"
             name="roomLocation"
-            onChange={[Function]}
+            onChange={[MockFunction]}
             required={false}
             value=""
           >
@@ -135,7 +148,7 @@ exports[`RoomForm should render properly 1`] = `
     </SelectInput>
     <ActionButtons
       actionButtonClassName="action-button"
-      actionButtonText="Add Room"
+      actionButtonText="Save Changes"
       cancelButtonClassName="cancel-button"
       cancelButtonText="CANCEL"
       onClickCancel={[MockFunction]}
@@ -154,7 +167,7 @@ exports[`RoomForm should render properly 1`] = `
           className="action-button"
           type="submit"
         >
-          Add Room
+          Save Changes
         </button>
       </div>
     </ActionButtons>

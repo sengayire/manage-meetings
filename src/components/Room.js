@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import EditRoom from './rooms/EditRoom';
+import EditRoomFunc from './rooms/EditRoom';
 import DeleteRoomComponent from './DeleteRoom';
 
 const Room = ({
@@ -13,8 +13,17 @@ const Room = ({
     <td>{location}</td>
     <td>{office}</td>
     <td>
-      <EditRoom roomName={name} roomLocation={locationId} locations={locations} /> &nbsp;
-      <DeleteRoomComponent roomName={name} id="delete-modal" roomId={id} />
+      <EditRoomFunc
+        roomName={name}
+        roomLocation={locationId}
+        locations={locations}
+        roomId={id}
+      /> &nbsp;
+      <DeleteRoomComponent
+        roomName={name}
+        id="delete-modal"
+        roomId={id}
+      />
     </td>
   </tr>
 );

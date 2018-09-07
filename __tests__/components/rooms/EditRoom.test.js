@@ -1,57 +1,149 @@
 import React from 'react';
-import { mount } from 'enzyme';
-
-import EditRoom from '../../../src/components/rooms/EditRoom';
-import { roomLocations } from '../../../__mocks__/rooms/Rooms';
+import { mount, shallow } from 'enzyme';
+import { MockedProvider } from 'react-apollo/test-utils';
+import WrappedEditRoom, { EditRoom } from '../../../src/components/rooms/EditRoom';
+import allRoomsReturnData, { locationData } from '../../../__mocks__/rooms/Rooms';
+import { GET_LOCATIONS_QUERY, GET_ROOMS_QUERY } from '../../../src/graphql/queries/Rooms';
+import EDIT_ROOM_DETAILS_MUTATION from '../../../src/graphql/mutations/Rooms';
 
 describe('EditRoom', () => {
-  const wrapper = mount(<EditRoom roomLocation={1} roomName="Aqua" locations={roomLocations} />);
+  const mutationResult = {
+    data: {
+      updateRoom: {
+        room: {
+          name: 'HighLan',
+        },
+      },
+    },
+  };
 
-  it('should render properly', () => {
-    expect(wrapper).toMatchSnapshot();
-  });
+  const getRoomsResult = {
+    data: {
+      allRooms: {
+        rooms: allRoomsReturnData.data.allRooms.rooms,
+      },
+    },
+  };
 
-  it('should not have a form before modal pops up', () => {
-    expect(wrapper.find('form')).toHaveLength(0);
-  });
-
-
-  it('should pop up a modal when modal button is clicked', () => {
-    const modalButton = wrapper.find('#modal-button');
-    expect(modalButton).toHaveLength(1);
-
-    modalButton.simulate('click');
-    wrapper.update();
-    expect(wrapper).toMatchSnapshot();
-  });
-
-  it('should have one select and one text input element', () => {
-    expect(wrapper.find('Input').length).toBe(1);
-    expect(wrapper.find('SelectInput').length).toBe(1);
-  });
-
-  it('should have room details of the room to edit', () => {
-    expect(wrapper.find('input#roomName').prop('defaultValue')).toEqual('Aqua');
-    expect(wrapper.find('select#roomLocation').prop('value')).toEqual(1);
-  });
+  const getLocationsQuery = [{
+    allLocations: locationData.data.allLocations,
+    name: 'Douglas',
+    data: {
+      allLocations: locationData.data.allLocations,
+      name: 'Douglas',
+    },
+  }];
 
 
-  it('should respond to on change events of the input and selects', () => {
-    wrapper.find('input#roomName').simulate('change', { target: { name: 'roomName', value: 'HighLan' } });
-    wrapper.find('select#roomLocation').simulate('change', { target: { name: 'roomLocation', value: 'Kampala' } });
-    wrapper.update();
-    expect(wrapper.find('input#roomName').prop('defaultValue')).toEqual('HighLan');
-    expect(wrapper.find('select#roomLocation').prop('value')).toEqual('Kampala');
-  });
+  const mocks = [
+    {
+      request: {
+        query: GET_ROOMS_QUERY,
+      },
+      result: getRoomsResult,
+    },
+    {
+      request: {
+        query: GET_LOCATIONS_QUERY,
+      },
+      result: getLocationsQuery,
+    },
+    {
+      request: {
+        query: EDIT_ROOM_DETAILS_MUTATION,
+        variables: {
+          roomId: '1',
+          name: 'HighLan',
+        },
+      },
+      result: mutationResult,
+    },
+  ];
+
+  const props = {
+    editRoom: jest.fn(Promise.resolve(mutationResult)),
+    getRoomsQuery: jest.fn(Promise.resolve(getRoomsResult)),
+    locations: getLocationsQuery,
+  };
 
 
-  it('should  have form and close the modal when the form is submitted', () => {
-    const preventDefault = jest.fn();
-    const form = wrapper.find('form');
-    expect(form).toHaveLength(1);
+  describe('Wrapped component', () => {
+    const setup =
+      (
+        <MockedProvider
+          mocks={mocks}
+          addTypename={false}
+        >
+          <WrappedEditRoom
+            {...props}
+            roomLocation={1}
+            roomName="HighLan"
+            roomId="1"
+          />
+        </MockedProvider>);
+    const wrapperForFunctionality = mount(setup);
 
-    form.simulate('submit', { preventDefault });
-    expect(preventDefault).toHaveBeenCalled();
-    expect(wrapper.find('form')).toHaveLength(0);
+
+    const event = {
+      preventDefault: jest.fn(),
+      target: {
+        name: '',
+        value: '',
+      },
+    };
+
+    const wrapperValue = wrapperForFunctionality.find('EditRoom');
+
+    it('should return an error notification if an error was encountered', () => {
+      const errorProps = {
+        roomLocation: 1,
+        roomName: 'HighLan',
+        roomId: '1',
+        locations: locationData.data,
+        editRoom: jest.fn(() => Promise.reject(new Error('Please supply a valid room name'))),
+      };
+      const newWrapper = shallow(<EditRoom {...errorProps} />);
+      newWrapper.instance().handleEditRoom();
+      expect(errorProps.editRoom).toHaveBeenCalled();
+    });
+
+    it('should return a notification when a room is edited succesfully', () => {
+      const newProps = {
+        roomLocation: 1,
+        roomName: 'HighLan',
+        roomId: '1',
+        locations: locationData.data,
+        editRoom: jest.fn(() => Promise.resolve(mutationResult)),
+      };
+      const newWrapper = shallow(<EditRoom {...newProps} />);
+      const newState = {
+        roomName: 'HighLan',
+        roomId: '1',
+      };
+      newWrapper.setState({ ...newState });
+      newWrapper.instance().handleEditRoom();
+      expect(newProps.editRoom).toBeCalled();
+    });
+
+    it('should call handleInputChange', () => {
+      const action = wrapperValue.instance();
+      const handleInputChange = jest.spyOn(wrapperValue.instance(), 'handleInputChange');
+      action.handleInputChange(event);
+      expect(handleInputChange).toBeCalled();
+    });
+
+    it('should call handleCloseModal', () => {
+      const action = wrapperValue.instance();
+      const handleCloseModal = jest.spyOn(wrapperValue.instance(), 'handleCloseModal');
+      action.handleCloseModal();
+      expect(handleCloseModal).toBeCalled();
+    });
+
+    it('should call handleModalStateChange', () => {
+      const action = wrapperValue.instance();
+      const handleModalStateChange = jest.spyOn(wrapperValue.instance(), 'handleModalStateChange');
+      action.handleModalStateChange();
+      expect(handleModalStateChange).toBeCalled();
+    });
   });
 });
