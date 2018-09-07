@@ -1,638 +1,2964 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AddRoom should pop up a modal when modal button is clicked 1`] = `
-<AddRoomToEpicTower
-  locations={
+exports[`AddRoomEpicTower should render properly 1`] = `
+<MockedProvider
+  addTypename={false}
+  mocks={
     Array [
       Object {
-        "__typename": "Location",
-        "id": "1",
-        "name": "Kampala",
+        "request": Object {
+          "query": Object {
+            "definitions": Array [
+              Object {
+                "directives": Array [],
+                "kind": "OperationDefinition",
+                "name": Object {
+                  "kind": "Name",
+                  "value": "CreateRoom",
+                },
+                "operation": "mutation",
+                "selectionSet": Object {
+                  "kind": "SelectionSet",
+                  "selections": Array [
+                    Object {
+                      "alias": undefined,
+                      "arguments": Array [
+                        Object {
+                          "kind": "Argument",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "roomType",
+                          },
+                          "value": Object {
+                            "kind": "Variable",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "roomType",
+                            },
+                          },
+                        },
+                        Object {
+                          "kind": "Argument",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "wingId",
+                          },
+                          "value": Object {
+                            "kind": "Variable",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "roomWingId",
+                            },
+                          },
+                        },
+                        Object {
+                          "kind": "Argument",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "name",
+                          },
+                          "value": Object {
+                            "kind": "Variable",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "roomName",
+                            },
+                          },
+                        },
+                        Object {
+                          "kind": "Argument",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "floorId",
+                          },
+                          "value": Object {
+                            "kind": "Variable",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "roomFloorId",
+                            },
+                          },
+                        },
+                        Object {
+                          "kind": "Argument",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "capacity",
+                          },
+                          "value": Object {
+                            "kind": "Variable",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "roomCapacity",
+                            },
+                          },
+                        },
+                        Object {
+                          "kind": "Argument",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "calendarId",
+                          },
+                          "value": Object {
+                            "kind": "Variable",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "roomCalendar",
+                            },
+                          },
+                        },
+                        Object {
+                          "kind": "Argument",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "imageUrl",
+                          },
+                          "value": Object {
+                            "kind": "Variable",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "roomImageUrl",
+                            },
+                          },
+                        },
+                        Object {
+                          "kind": "Argument",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "officeId",
+                          },
+                          "value": Object {
+                            "kind": "Variable",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "office_id",
+                            },
+                          },
+                        },
+                      ],
+                      "directives": Array [],
+                      "kind": "Field",
+                      "name": Object {
+                        "kind": "Name",
+                        "value": "createRoom",
+                      },
+                      "selectionSet": Object {
+                        "kind": "SelectionSet",
+                        "selections": Array [
+                          Object {
+                            "alias": undefined,
+                            "arguments": Array [],
+                            "directives": Array [],
+                            "kind": "Field",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "room",
+                            },
+                            "selectionSet": Object {
+                              "kind": "SelectionSet",
+                              "selections": Array [
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "id",
+                                  },
+                                  "selectionSet": undefined,
+                                },
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "name",
+                                  },
+                                  "selectionSet": undefined,
+                                },
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "roomType",
+                                  },
+                                  "selectionSet": undefined,
+                                },
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "capacity",
+                                  },
+                                  "selectionSet": undefined,
+                                },
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "imageUrl",
+                                  },
+                                  "selectionSet": undefined,
+                                },
+                              ],
+                            },
+                          },
+                        ],
+                      },
+                    },
+                  ],
+                },
+                "variableDefinitions": Array [
+                  Object {
+                    "defaultValue": undefined,
+                    "kind": "VariableDefinition",
+                    "type": Object {
+                      "kind": "NonNullType",
+                      "type": Object {
+                        "kind": "NamedType",
+                        "name": Object {
+                          "kind": "Name",
+                          "value": "String",
+                        },
+                      },
+                    },
+                    "variable": Object {
+                      "kind": "Variable",
+                      "name": Object {
+                        "kind": "Name",
+                        "value": "roomType",
+                      },
+                    },
+                  },
+                  Object {
+                    "defaultValue": undefined,
+                    "kind": "VariableDefinition",
+                    "type": Object {
+                      "kind": "NamedType",
+                      "name": Object {
+                        "kind": "Name",
+                        "value": "Int",
+                      },
+                    },
+                    "variable": Object {
+                      "kind": "Variable",
+                      "name": Object {
+                        "kind": "Name",
+                        "value": "roomWingId",
+                      },
+                    },
+                  },
+                  Object {
+                    "defaultValue": undefined,
+                    "kind": "VariableDefinition",
+                    "type": Object {
+                      "kind": "NonNullType",
+                      "type": Object {
+                        "kind": "NamedType",
+                        "name": Object {
+                          "kind": "Name",
+                          "value": "String",
+                        },
+                      },
+                    },
+                    "variable": Object {
+                      "kind": "Variable",
+                      "name": Object {
+                        "kind": "Name",
+                        "value": "roomName",
+                      },
+                    },
+                  },
+                  Object {
+                    "defaultValue": undefined,
+                    "kind": "VariableDefinition",
+                    "type": Object {
+                      "kind": "NonNullType",
+                      "type": Object {
+                        "kind": "NamedType",
+                        "name": Object {
+                          "kind": "Name",
+                          "value": "Int",
+                        },
+                      },
+                    },
+                    "variable": Object {
+                      "kind": "Variable",
+                      "name": Object {
+                        "kind": "Name",
+                        "value": "roomFloorId",
+                      },
+                    },
+                  },
+                  Object {
+                    "defaultValue": undefined,
+                    "kind": "VariableDefinition",
+                    "type": Object {
+                      "kind": "NonNullType",
+                      "type": Object {
+                        "kind": "NamedType",
+                        "name": Object {
+                          "kind": "Name",
+                          "value": "Int",
+                        },
+                      },
+                    },
+                    "variable": Object {
+                      "kind": "Variable",
+                      "name": Object {
+                        "kind": "Name",
+                        "value": "roomCapacity",
+                      },
+                    },
+                  },
+                  Object {
+                    "defaultValue": undefined,
+                    "kind": "VariableDefinition",
+                    "type": Object {
+                      "kind": "NonNullType",
+                      "type": Object {
+                        "kind": "NamedType",
+                        "name": Object {
+                          "kind": "Name",
+                          "value": "String",
+                        },
+                      },
+                    },
+                    "variable": Object {
+                      "kind": "Variable",
+                      "name": Object {
+                        "kind": "Name",
+                        "value": "roomCalendar",
+                      },
+                    },
+                  },
+                  Object {
+                    "defaultValue": undefined,
+                    "kind": "VariableDefinition",
+                    "type": Object {
+                      "kind": "NonNullType",
+                      "type": Object {
+                        "kind": "NamedType",
+                        "name": Object {
+                          "kind": "Name",
+                          "value": "Int",
+                        },
+                      },
+                    },
+                    "variable": Object {
+                      "kind": "Variable",
+                      "name": Object {
+                        "kind": "Name",
+                        "value": "office_id",
+                      },
+                    },
+                  },
+                  Object {
+                    "defaultValue": undefined,
+                    "kind": "VariableDefinition",
+                    "type": Object {
+                      "kind": "NamedType",
+                      "name": Object {
+                        "kind": "Name",
+                        "value": "String",
+                      },
+                    },
+                    "variable": Object {
+                      "kind": "Variable",
+                      "name": Object {
+                        "kind": "Name",
+                        "value": "roomImageUrl",
+                      },
+                    },
+                  },
+                ],
+              },
+            ],
+            "kind": "Document",
+            "loc": Object {
+              "end": 471,
+              "start": 0,
+            },
+          },
+          "variables": Object {
+            "office_id": 1,
+            "roomCalendar": "andela.com1",
+            "roomCapacity": 10,
+            "roomFloorId": 1,
+            "roomImageUrl": "path/to/image.jpg",
+            "roomName": "Room 1",
+            "roomType": "meeting",
+            "roomWingId": 1,
+          },
+        },
+        "result": Object {
+          "data": Object {
+            "createRoom": Object {
+              "room": Object {
+                "capacity": 10,
+                "id": "1",
+                "imageUrl": "path/to/image.jpg",
+                "name": "Room 1",
+                "roomType": 1,
+              },
+            },
+          },
+        },
       },
       Object {
-        "__typename": "Location",
-        "id": "2",
-        "name": "Lagos",
-      },
-      Object {
-        "__typename": "Location",
-        "id": "3",
-        "name": "Nairobi",
+        "request": Object {
+          "query": Object {
+            "definitions": Array [
+              Object {
+                "directives": Array [],
+                "kind": "OperationDefinition",
+                "name": Object {
+                  "kind": "Name",
+                  "value": "officeDetails",
+                },
+                "operation": "query",
+                "selectionSet": Object {
+                  "kind": "SelectionSet",
+                  "selections": Array [
+                    Object {
+                      "alias": undefined,
+                      "arguments": Array [
+                        Object {
+                          "kind": "Argument",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "name",
+                          },
+                          "value": Object {
+                            "block": false,
+                            "kind": "StringValue",
+                            "value": "Epic tower",
+                          },
+                        },
+                      ],
+                      "directives": Array [],
+                      "kind": "Field",
+                      "name": Object {
+                        "kind": "Name",
+                        "value": "getOfficeByName",
+                      },
+                      "selectionSet": Object {
+                        "kind": "SelectionSet",
+                        "selections": Array [
+                          Object {
+                            "alias": undefined,
+                            "arguments": Array [],
+                            "directives": Array [],
+                            "kind": "Field",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "id",
+                            },
+                            "selectionSet": undefined,
+                          },
+                          Object {
+                            "alias": undefined,
+                            "arguments": Array [],
+                            "directives": Array [],
+                            "kind": "Field",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "blocks",
+                            },
+                            "selectionSet": Object {
+                              "kind": "SelectionSet",
+                              "selections": Array [
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "id",
+                                  },
+                                  "selectionSet": undefined,
+                                },
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "floors",
+                                  },
+                                  "selectionSet": Object {
+                                    "kind": "SelectionSet",
+                                    "selections": Array [
+                                      Object {
+                                        "alias": undefined,
+                                        "arguments": Array [],
+                                        "directives": Array [],
+                                        "kind": "Field",
+                                        "name": Object {
+                                          "kind": "Name",
+                                          "value": "id",
+                                        },
+                                        "selectionSet": undefined,
+                                      },
+                                      Object {
+                                        "alias": undefined,
+                                        "arguments": Array [],
+                                        "directives": Array [],
+                                        "kind": "Field",
+                                        "name": Object {
+                                          "kind": "Name",
+                                          "value": "name",
+                                        },
+                                        "selectionSet": undefined,
+                                      },
+                                      Object {
+                                        "alias": undefined,
+                                        "arguments": Array [],
+                                        "directives": Array [],
+                                        "kind": "Field",
+                                        "name": Object {
+                                          "kind": "Name",
+                                          "value": "wings",
+                                        },
+                                        "selectionSet": Object {
+                                          "kind": "SelectionSet",
+                                          "selections": Array [
+                                            Object {
+                                              "alias": undefined,
+                                              "arguments": Array [],
+                                              "directives": Array [],
+                                              "kind": "Field",
+                                              "name": Object {
+                                                "kind": "Name",
+                                                "value": "id",
+                                              },
+                                              "selectionSet": undefined,
+                                            },
+                                            Object {
+                                              "alias": undefined,
+                                              "arguments": Array [],
+                                              "directives": Array [],
+                                              "kind": "Field",
+                                              "name": Object {
+                                                "kind": "Name",
+                                                "value": "name",
+                                              },
+                                              "selectionSet": undefined,
+                                            },
+                                          ],
+                                        },
+                                      },
+                                    ],
+                                  },
+                                },
+                              ],
+                            },
+                          },
+                        ],
+                      },
+                    },
+                  ],
+                },
+                "variableDefinitions": Array [],
+              },
+            ],
+            "kind": "Document",
+            "loc": Object {
+              "end": 175,
+              "start": 0,
+            },
+          },
+        },
+        "result": Object {
+          "data": Object {
+            "getOfficeByName": Array [
+              Object {
+                "blocks": Array [
+                  Object {
+                    "floors": Array [
+                      Object {
+                        "id": "1",
+                        "name": "fourth floor",
+                        "wings": Array [
+                          Object {
+                            "id": "1",
+                            "name": "Big Apple",
+                          },
+                        ],
+                      },
+                    ],
+                    "id": "1",
+                  },
+                ],
+                "id": "1",
+              },
+            ],
+          },
+        },
       },
     ]
   }
 >
-  <MrmModal
-    buttonText="Epic Tower"
-    className="add-room-modal"
-    closeModal={false}
-    handleCloseRequest={[Function]}
-    modalButtonClassName="button"
-    title="ADD ROOM"
-  >
-    <IconButtons
-      buttonText="Epic Tower"
-      modalButtonClassName="button"
-      openModal={[Function]}
-    >
-      <button
-        className="button"
-        id="modal-button"
-        onClick={[Function]}
-      >
-        Epic Tower
-      </button>
-    </IconButtons>
-    <Modal
-      ariaHideApp={false}
-      bodyOpenClassName="ReactModal__Body--open"
-      className="add-room-modal"
-      closeTimeoutMS={0}
-      contentLabel="Parent Modal"
-      isOpen={true}
-      onAfterOpen={[Function]}
-      onRequestClose={[Function]}
-      parentSelector={[Function]}
-      portalClassName="ReactModalPortal"
-      shouldCloseOnEsc={true}
-      shouldCloseOnOverlayClick={true}
-      shouldFocusAfterRender={true}
-      shouldReturnFocusAfterClose={true}
-      style={
-        Object {
-          "content": Object {
-            "backgroundColor": "#ffffff",
-            "border": "1px solid #CCCCCC",
-            "borderRadius": "4px",
-            "bottom": "auto",
-            "boxShadow": "0 2px 40px 10px rgba(185, 180, 180, 0.2)",
-            "fontFamily": "DINPro-Regular",
-            "left": "50%",
-            "marginRight": "-50%",
-            "outline": "none",
-            "overflow": "auto",
-            "position": "absolute",
-            "right": "auto",
-            "top": "50%",
-            "transform": "translate(-50%, -50%)",
+  <ApolloProvider
+    client={
+      ApolloClient {
+        "__operations_cache__": Map {
+          "officeDetails" => Object {
+            "query": Object {
+              "definitions": Array [
+                Object {
+                  "directives": Array [],
+                  "kind": "OperationDefinition",
+                  "name": Object {
+                    "kind": "Name",
+                    "value": "officeDetails",
+                  },
+                  "operation": "query",
+                  "selectionSet": Object {
+                    "kind": "SelectionSet",
+                    "selections": Array [
+                      Object {
+                        "alias": undefined,
+                        "arguments": Array [
+                          Object {
+                            "kind": "Argument",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "name",
+                            },
+                            "value": Object {
+                              "block": false,
+                              "kind": "StringValue",
+                              "value": "Epic tower",
+                            },
+                          },
+                        ],
+                        "directives": Array [],
+                        "kind": "Field",
+                        "name": Object {
+                          "kind": "Name",
+                          "value": "getOfficeByName",
+                        },
+                        "selectionSet": Object {
+                          "kind": "SelectionSet",
+                          "selections": Array [
+                            Object {
+                              "alias": undefined,
+                              "arguments": Array [],
+                              "directives": Array [],
+                              "kind": "Field",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "id",
+                              },
+                              "selectionSet": undefined,
+                            },
+                            Object {
+                              "alias": undefined,
+                              "arguments": Array [],
+                              "directives": Array [],
+                              "kind": "Field",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "blocks",
+                              },
+                              "selectionSet": Object {
+                                "kind": "SelectionSet",
+                                "selections": Array [
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "id",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "floors",
+                                    },
+                                    "selectionSet": Object {
+                                      "kind": "SelectionSet",
+                                      "selections": Array [
+                                        Object {
+                                          "alias": undefined,
+                                          "arguments": Array [],
+                                          "directives": Array [],
+                                          "kind": "Field",
+                                          "name": Object {
+                                            "kind": "Name",
+                                            "value": "id",
+                                          },
+                                          "selectionSet": undefined,
+                                        },
+                                        Object {
+                                          "alias": undefined,
+                                          "arguments": Array [],
+                                          "directives": Array [],
+                                          "kind": "Field",
+                                          "name": Object {
+                                            "kind": "Name",
+                                            "value": "name",
+                                          },
+                                          "selectionSet": undefined,
+                                        },
+                                        Object {
+                                          "alias": undefined,
+                                          "arguments": Array [],
+                                          "directives": Array [],
+                                          "kind": "Field",
+                                          "name": Object {
+                                            "kind": "Name",
+                                            "value": "wings",
+                                          },
+                                          "selectionSet": Object {
+                                            "kind": "SelectionSet",
+                                            "selections": Array [
+                                              Object {
+                                                "alias": undefined,
+                                                "arguments": Array [],
+                                                "directives": Array [],
+                                                "kind": "Field",
+                                                "name": Object {
+                                                  "kind": "Name",
+                                                  "value": "id",
+                                                },
+                                                "selectionSet": undefined,
+                                              },
+                                              Object {
+                                                "alias": undefined,
+                                                "arguments": Array [],
+                                                "directives": Array [],
+                                                "kind": "Field",
+                                                "name": Object {
+                                                  "kind": "Name",
+                                                  "value": "name",
+                                                },
+                                                "selectionSet": undefined,
+                                              },
+                                            ],
+                                          },
+                                        },
+                                      ],
+                                    },
+                                  },
+                                ],
+                              },
+                            },
+                          ],
+                        },
+                      },
+                    ],
+                  },
+                  "variableDefinitions": Array [],
+                },
+              ],
+              "kind": "Document",
+              "loc": Object {
+                "end": 175,
+                "start": 0,
+              },
+            },
+            "variables": undefined,
           },
-        }
+        },
+        "cache": InMemoryCache {
+          "addTypename": false,
+          "config": Object {
+            "addTypename": false,
+            "dataIdFromObject": [Function],
+            "fragmentMatcher": HeuristicFragmentMatcher {},
+            "storeFactory": [Function],
+          },
+          "data": ObjectCache {
+            "data": Object {
+              "ROOT_QUERY": Object {
+                "getOfficeByName({\\"name\\":\\"Epic tower\\"})": Array [
+                  Object {
+                    "generated": true,
+                    "id": "ROOT_QUERY.getOfficeByName({\\"name\\":\\"Epic tower\\"}).0",
+                    "type": "id",
+                    "typename": undefined,
+                  },
+                ],
+              },
+              "ROOT_QUERY.getOfficeByName({\\"name\\":\\"Epic tower\\"}).0": Object {
+                "blocks": Array [
+                  Object {
+                    "generated": true,
+                    "id": "ROOT_QUERY.getOfficeByName({\\"name\\":\\"Epic tower\\"}).0.blocks.0",
+                    "type": "id",
+                    "typename": undefined,
+                  },
+                ],
+                "id": "1",
+              },
+              "ROOT_QUERY.getOfficeByName({\\"name\\":\\"Epic tower\\"}).0.blocks.0": Object {
+                "floors": Array [
+                  Object {
+                    "generated": true,
+                    "id": "ROOT_QUERY.getOfficeByName({\\"name\\":\\"Epic tower\\"}).0.blocks.0.floors.0",
+                    "type": "id",
+                    "typename": undefined,
+                  },
+                ],
+                "id": "1",
+              },
+              "ROOT_QUERY.getOfficeByName({\\"name\\":\\"Epic tower\\"}).0.blocks.0.floors.0": Object {
+                "id": "1",
+                "name": "fourth floor",
+                "wings": Array [
+                  Object {
+                    "generated": true,
+                    "id": "ROOT_QUERY.getOfficeByName({\\"name\\":\\"Epic tower\\"}).0.blocks.0.floors.0.wings.0",
+                    "type": "id",
+                    "typename": undefined,
+                  },
+                ],
+              },
+              "ROOT_QUERY.getOfficeByName({\\"name\\":\\"Epic tower\\"}).0.blocks.0.floors.0.wings.0": Object {
+                "id": "1",
+                "name": "Big Apple",
+              },
+            },
+          },
+          "optimistic": Array [],
+          "silenceBroadcast": false,
+          "watches": Array [
+            Object {
+              "callback": [Function],
+              "optimistic": true,
+              "previousResult": [Function],
+              "query": Object {
+                "definitions": Array [
+                  Object {
+                    "directives": Array [],
+                    "kind": "OperationDefinition",
+                    "name": Object {
+                      "kind": "Name",
+                      "value": "officeDetails",
+                    },
+                    "operation": "query",
+                    "selectionSet": Object {
+                      "kind": "SelectionSet",
+                      "selections": Array [
+                        Object {
+                          "alias": undefined,
+                          "arguments": Array [
+                            Object {
+                              "kind": "Argument",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "name",
+                              },
+                              "value": Object {
+                                "block": false,
+                                "kind": "StringValue",
+                                "value": "Epic tower",
+                              },
+                            },
+                          ],
+                          "directives": Array [],
+                          "kind": "Field",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "getOfficeByName",
+                          },
+                          "selectionSet": Object {
+                            "kind": "SelectionSet",
+                            "selections": Array [
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "id",
+                                },
+                                "selectionSet": undefined,
+                              },
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "blocks",
+                                },
+                                "selectionSet": Object {
+                                  "kind": "SelectionSet",
+                                  "selections": Array [
+                                    Object {
+                                      "alias": undefined,
+                                      "arguments": Array [],
+                                      "directives": Array [],
+                                      "kind": "Field",
+                                      "name": Object {
+                                        "kind": "Name",
+                                        "value": "id",
+                                      },
+                                      "selectionSet": undefined,
+                                    },
+                                    Object {
+                                      "alias": undefined,
+                                      "arguments": Array [],
+                                      "directives": Array [],
+                                      "kind": "Field",
+                                      "name": Object {
+                                        "kind": "Name",
+                                        "value": "floors",
+                                      },
+                                      "selectionSet": Object {
+                                        "kind": "SelectionSet",
+                                        "selections": Array [
+                                          Object {
+                                            "alias": undefined,
+                                            "arguments": Array [],
+                                            "directives": Array [],
+                                            "kind": "Field",
+                                            "name": Object {
+                                              "kind": "Name",
+                                              "value": "id",
+                                            },
+                                            "selectionSet": undefined,
+                                          },
+                                          Object {
+                                            "alias": undefined,
+                                            "arguments": Array [],
+                                            "directives": Array [],
+                                            "kind": "Field",
+                                            "name": Object {
+                                              "kind": "Name",
+                                              "value": "name",
+                                            },
+                                            "selectionSet": undefined,
+                                          },
+                                          Object {
+                                            "alias": undefined,
+                                            "arguments": Array [],
+                                            "directives": Array [],
+                                            "kind": "Field",
+                                            "name": Object {
+                                              "kind": "Name",
+                                              "value": "wings",
+                                            },
+                                            "selectionSet": Object {
+                                              "kind": "SelectionSet",
+                                              "selections": Array [
+                                                Object {
+                                                  "alias": undefined,
+                                                  "arguments": Array [],
+                                                  "directives": Array [],
+                                                  "kind": "Field",
+                                                  "name": Object {
+                                                    "kind": "Name",
+                                                    "value": "id",
+                                                  },
+                                                  "selectionSet": undefined,
+                                                },
+                                                Object {
+                                                  "alias": undefined,
+                                                  "arguments": Array [],
+                                                  "directives": Array [],
+                                                  "kind": "Field",
+                                                  "name": Object {
+                                                    "kind": "Name",
+                                                    "value": "name",
+                                                  },
+                                                  "selectionSet": undefined,
+                                                },
+                                              ],
+                                            },
+                                          },
+                                        ],
+                                      },
+                                    },
+                                  ],
+                                },
+                              },
+                            ],
+                          },
+                        },
+                      ],
+                    },
+                    "variableDefinitions": Array [],
+                  },
+                ],
+                "kind": "Document",
+                "loc": Object {
+                  "end": 175,
+                  "start": 0,
+                },
+              },
+              "variables": undefined,
+            },
+          ],
+        },
+        "defaultOptions": Object {},
+        "disableNetworkFetches": false,
+        "link": ApolloLink {
+          "request": [Function],
+        },
+        "mutate": [Function],
+        "query": [Function],
+        "queryDeduplication": true,
+        "queryManager": QueryManager {
+          "dataStore": DataStore {
+            "cache": InMemoryCache {
+              "addTypename": false,
+              "config": Object {
+                "addTypename": false,
+                "dataIdFromObject": [Function],
+                "fragmentMatcher": HeuristicFragmentMatcher {},
+                "storeFactory": [Function],
+              },
+              "data": ObjectCache {
+                "data": Object {
+                  "ROOT_QUERY": Object {
+                    "getOfficeByName({\\"name\\":\\"Epic tower\\"})": Array [
+                      Object {
+                        "generated": true,
+                        "id": "ROOT_QUERY.getOfficeByName({\\"name\\":\\"Epic tower\\"}).0",
+                        "type": "id",
+                        "typename": undefined,
+                      },
+                    ],
+                  },
+                  "ROOT_QUERY.getOfficeByName({\\"name\\":\\"Epic tower\\"}).0": Object {
+                    "blocks": Array [
+                      Object {
+                        "generated": true,
+                        "id": "ROOT_QUERY.getOfficeByName({\\"name\\":\\"Epic tower\\"}).0.blocks.0",
+                        "type": "id",
+                        "typename": undefined,
+                      },
+                    ],
+                    "id": "1",
+                  },
+                  "ROOT_QUERY.getOfficeByName({\\"name\\":\\"Epic tower\\"}).0.blocks.0": Object {
+                    "floors": Array [
+                      Object {
+                        "generated": true,
+                        "id": "ROOT_QUERY.getOfficeByName({\\"name\\":\\"Epic tower\\"}).0.blocks.0.floors.0",
+                        "type": "id",
+                        "typename": undefined,
+                      },
+                    ],
+                    "id": "1",
+                  },
+                  "ROOT_QUERY.getOfficeByName({\\"name\\":\\"Epic tower\\"}).0.blocks.0.floors.0": Object {
+                    "id": "1",
+                    "name": "fourth floor",
+                    "wings": Array [
+                      Object {
+                        "generated": true,
+                        "id": "ROOT_QUERY.getOfficeByName({\\"name\\":\\"Epic tower\\"}).0.blocks.0.floors.0.wings.0",
+                        "type": "id",
+                        "typename": undefined,
+                      },
+                    ],
+                  },
+                  "ROOT_QUERY.getOfficeByName({\\"name\\":\\"Epic tower\\"}).0.blocks.0.floors.0.wings.0": Object {
+                    "id": "1",
+                    "name": "Big Apple",
+                  },
+                },
+              },
+              "optimistic": Array [],
+              "silenceBroadcast": false,
+              "watches": Array [
+                Object {
+                  "callback": [Function],
+                  "optimistic": true,
+                  "previousResult": [Function],
+                  "query": Object {
+                    "definitions": Array [
+                      Object {
+                        "directives": Array [],
+                        "kind": "OperationDefinition",
+                        "name": Object {
+                          "kind": "Name",
+                          "value": "officeDetails",
+                        },
+                        "operation": "query",
+                        "selectionSet": Object {
+                          "kind": "SelectionSet",
+                          "selections": Array [
+                            Object {
+                              "alias": undefined,
+                              "arguments": Array [
+                                Object {
+                                  "kind": "Argument",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "name",
+                                  },
+                                  "value": Object {
+                                    "block": false,
+                                    "kind": "StringValue",
+                                    "value": "Epic tower",
+                                  },
+                                },
+                              ],
+                              "directives": Array [],
+                              "kind": "Field",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "getOfficeByName",
+                              },
+                              "selectionSet": Object {
+                                "kind": "SelectionSet",
+                                "selections": Array [
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "id",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "blocks",
+                                    },
+                                    "selectionSet": Object {
+                                      "kind": "SelectionSet",
+                                      "selections": Array [
+                                        Object {
+                                          "alias": undefined,
+                                          "arguments": Array [],
+                                          "directives": Array [],
+                                          "kind": "Field",
+                                          "name": Object {
+                                            "kind": "Name",
+                                            "value": "id",
+                                          },
+                                          "selectionSet": undefined,
+                                        },
+                                        Object {
+                                          "alias": undefined,
+                                          "arguments": Array [],
+                                          "directives": Array [],
+                                          "kind": "Field",
+                                          "name": Object {
+                                            "kind": "Name",
+                                            "value": "floors",
+                                          },
+                                          "selectionSet": Object {
+                                            "kind": "SelectionSet",
+                                            "selections": Array [
+                                              Object {
+                                                "alias": undefined,
+                                                "arguments": Array [],
+                                                "directives": Array [],
+                                                "kind": "Field",
+                                                "name": Object {
+                                                  "kind": "Name",
+                                                  "value": "id",
+                                                },
+                                                "selectionSet": undefined,
+                                              },
+                                              Object {
+                                                "alias": undefined,
+                                                "arguments": Array [],
+                                                "directives": Array [],
+                                                "kind": "Field",
+                                                "name": Object {
+                                                  "kind": "Name",
+                                                  "value": "name",
+                                                },
+                                                "selectionSet": undefined,
+                                              },
+                                              Object {
+                                                "alias": undefined,
+                                                "arguments": Array [],
+                                                "directives": Array [],
+                                                "kind": "Field",
+                                                "name": Object {
+                                                  "kind": "Name",
+                                                  "value": "wings",
+                                                },
+                                                "selectionSet": Object {
+                                                  "kind": "SelectionSet",
+                                                  "selections": Array [
+                                                    Object {
+                                                      "alias": undefined,
+                                                      "arguments": Array [],
+                                                      "directives": Array [],
+                                                      "kind": "Field",
+                                                      "name": Object {
+                                                        "kind": "Name",
+                                                        "value": "id",
+                                                      },
+                                                      "selectionSet": undefined,
+                                                    },
+                                                    Object {
+                                                      "alias": undefined,
+                                                      "arguments": Array [],
+                                                      "directives": Array [],
+                                                      "kind": "Field",
+                                                      "name": Object {
+                                                        "kind": "Name",
+                                                        "value": "name",
+                                                      },
+                                                      "selectionSet": undefined,
+                                                    },
+                                                  ],
+                                                },
+                                              },
+                                            ],
+                                          },
+                                        },
+                                      ],
+                                    },
+                                  },
+                                ],
+                              },
+                            },
+                          ],
+                        },
+                        "variableDefinitions": Array [],
+                      },
+                    ],
+                    "kind": "Document",
+                    "loc": Object {
+                      "end": 175,
+                      "start": 0,
+                    },
+                  },
+                  "variables": undefined,
+                },
+              ],
+            },
+          },
+          "deduplicator": ApolloLink {
+            "request": [Function],
+          },
+          "fetchQueryPromises": Map {},
+          "idCounter": 3,
+          "link": ApolloLink {
+            "request": [Function],
+          },
+          "mutationStore": MutationStore {
+            "store": Object {},
+          },
+          "onBroadcast": [Function],
+          "queries": Map {
+            "1" => Object {
+              "cancel": [Function],
+              "document": Object {
+                "definitions": Array [
+                  Object {
+                    "directives": Array [],
+                    "kind": "OperationDefinition",
+                    "name": Object {
+                      "kind": "Name",
+                      "value": "officeDetails",
+                    },
+                    "operation": "query",
+                    "selectionSet": Object {
+                      "kind": "SelectionSet",
+                      "selections": Array [
+                        Object {
+                          "alias": undefined,
+                          "arguments": Array [
+                            Object {
+                              "kind": "Argument",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "name",
+                              },
+                              "value": Object {
+                                "block": false,
+                                "kind": "StringValue",
+                                "value": "Epic tower",
+                              },
+                            },
+                          ],
+                          "directives": Array [],
+                          "kind": "Field",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "getOfficeByName",
+                          },
+                          "selectionSet": Object {
+                            "kind": "SelectionSet",
+                            "selections": Array [
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "id",
+                                },
+                                "selectionSet": undefined,
+                              },
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "blocks",
+                                },
+                                "selectionSet": Object {
+                                  "kind": "SelectionSet",
+                                  "selections": Array [
+                                    Object {
+                                      "alias": undefined,
+                                      "arguments": Array [],
+                                      "directives": Array [],
+                                      "kind": "Field",
+                                      "name": Object {
+                                        "kind": "Name",
+                                        "value": "id",
+                                      },
+                                      "selectionSet": undefined,
+                                    },
+                                    Object {
+                                      "alias": undefined,
+                                      "arguments": Array [],
+                                      "directives": Array [],
+                                      "kind": "Field",
+                                      "name": Object {
+                                        "kind": "Name",
+                                        "value": "floors",
+                                      },
+                                      "selectionSet": Object {
+                                        "kind": "SelectionSet",
+                                        "selections": Array [
+                                          Object {
+                                            "alias": undefined,
+                                            "arguments": Array [],
+                                            "directives": Array [],
+                                            "kind": "Field",
+                                            "name": Object {
+                                              "kind": "Name",
+                                              "value": "id",
+                                            },
+                                            "selectionSet": undefined,
+                                          },
+                                          Object {
+                                            "alias": undefined,
+                                            "arguments": Array [],
+                                            "directives": Array [],
+                                            "kind": "Field",
+                                            "name": Object {
+                                              "kind": "Name",
+                                              "value": "name",
+                                            },
+                                            "selectionSet": undefined,
+                                          },
+                                          Object {
+                                            "alias": undefined,
+                                            "arguments": Array [],
+                                            "directives": Array [],
+                                            "kind": "Field",
+                                            "name": Object {
+                                              "kind": "Name",
+                                              "value": "wings",
+                                            },
+                                            "selectionSet": Object {
+                                              "kind": "SelectionSet",
+                                              "selections": Array [
+                                                Object {
+                                                  "alias": undefined,
+                                                  "arguments": Array [],
+                                                  "directives": Array [],
+                                                  "kind": "Field",
+                                                  "name": Object {
+                                                    "kind": "Name",
+                                                    "value": "id",
+                                                  },
+                                                  "selectionSet": undefined,
+                                                },
+                                                Object {
+                                                  "alias": undefined,
+                                                  "arguments": Array [],
+                                                  "directives": Array [],
+                                                  "kind": "Field",
+                                                  "name": Object {
+                                                    "kind": "Name",
+                                                    "value": "name",
+                                                  },
+                                                  "selectionSet": undefined,
+                                                },
+                                              ],
+                                            },
+                                          },
+                                        ],
+                                      },
+                                    },
+                                  ],
+                                },
+                              },
+                            ],
+                          },
+                        },
+                      ],
+                    },
+                    "variableDefinitions": Array [],
+                  },
+                ],
+                "kind": "Document",
+                "loc": Object {
+                  "end": 175,
+                  "start": 0,
+                },
+              },
+              "invalidate": false,
+              "invalidated": false,
+              "lastRequestId": 2,
+              "listeners": Array [
+                [Function],
+              ],
+              "newData": null,
+              "observableQuery": ObservableQuery {
+                "_subscriber": [Function],
+                "isCurrentlyPolling": false,
+                "isTornDown": false,
+                "lastResult": Object {
+                  "data": Object {
+                    "getOfficeByName": Array [
+                      Object {
+                        "blocks": Array [
+                          Object {
+                            "floors": Array [
+                              Object {
+                                "id": "1",
+                                "name": "fourth floor",
+                                "wings": Array [
+                                  Object {
+                                    "id": "1",
+                                    "name": "Big Apple",
+                                    Symbol(id): "ROOT_QUERY.getOfficeByName({\\"name\\":\\"Epic tower\\"}).0.blocks.0.floors.0.wings.0",
+                                  },
+                                ],
+                                Symbol(id): "ROOT_QUERY.getOfficeByName({\\"name\\":\\"Epic tower\\"}).0.blocks.0.floors.0",
+                              },
+                            ],
+                            "id": "1",
+                            Symbol(id): "ROOT_QUERY.getOfficeByName({\\"name\\":\\"Epic tower\\"}).0.blocks.0",
+                          },
+                        ],
+                        "id": "1",
+                        Symbol(id): "ROOT_QUERY.getOfficeByName({\\"name\\":\\"Epic tower\\"}).0",
+                      },
+                    ],
+                    Symbol(id): "ROOT_QUERY",
+                  },
+                  "loading": false,
+                  "networkStatus": 7,
+                  "stale": false,
+                },
+                "observers": Array [
+                  SubscriptionObserver {
+                    "_subscription": Subscription {
+                      "_cleanup": [Function],
+                      "_observer": Object {
+                        "error": [Function],
+                        "next": [Function],
+                      },
+                      "_queue": undefined,
+                      "_state": "ready",
+                    },
+                  },
+                ],
+                "options": Object {
+                  "context": Object {},
+                  "metadata": Object {
+                    "reactComponent": Object {
+                      "displayName": "Apollo(Apollo(AddRoomToEpicTower))",
+                    },
+                  },
+                  "notifyOnNetworkStatusChange": false,
+                  "query": Object {
+                    "definitions": Array [
+                      Object {
+                        "directives": Array [],
+                        "kind": "OperationDefinition",
+                        "name": Object {
+                          "kind": "Name",
+                          "value": "officeDetails",
+                        },
+                        "operation": "query",
+                        "selectionSet": Object {
+                          "kind": "SelectionSet",
+                          "selections": Array [
+                            Object {
+                              "alias": undefined,
+                              "arguments": Array [
+                                Object {
+                                  "kind": "Argument",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "name",
+                                  },
+                                  "value": Object {
+                                    "block": false,
+                                    "kind": "StringValue",
+                                    "value": "Epic tower",
+                                  },
+                                },
+                              ],
+                              "directives": Array [],
+                              "kind": "Field",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "getOfficeByName",
+                              },
+                              "selectionSet": Object {
+                                "kind": "SelectionSet",
+                                "selections": Array [
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "id",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "blocks",
+                                    },
+                                    "selectionSet": Object {
+                                      "kind": "SelectionSet",
+                                      "selections": Array [
+                                        Object {
+                                          "alias": undefined,
+                                          "arguments": Array [],
+                                          "directives": Array [],
+                                          "kind": "Field",
+                                          "name": Object {
+                                            "kind": "Name",
+                                            "value": "id",
+                                          },
+                                          "selectionSet": undefined,
+                                        },
+                                        Object {
+                                          "alias": undefined,
+                                          "arguments": Array [],
+                                          "directives": Array [],
+                                          "kind": "Field",
+                                          "name": Object {
+                                            "kind": "Name",
+                                            "value": "floors",
+                                          },
+                                          "selectionSet": Object {
+                                            "kind": "SelectionSet",
+                                            "selections": Array [
+                                              Object {
+                                                "alias": undefined,
+                                                "arguments": Array [],
+                                                "directives": Array [],
+                                                "kind": "Field",
+                                                "name": Object {
+                                                  "kind": "Name",
+                                                  "value": "id",
+                                                },
+                                                "selectionSet": undefined,
+                                              },
+                                              Object {
+                                                "alias": undefined,
+                                                "arguments": Array [],
+                                                "directives": Array [],
+                                                "kind": "Field",
+                                                "name": Object {
+                                                  "kind": "Name",
+                                                  "value": "name",
+                                                },
+                                                "selectionSet": undefined,
+                                              },
+                                              Object {
+                                                "alias": undefined,
+                                                "arguments": Array [],
+                                                "directives": Array [],
+                                                "kind": "Field",
+                                                "name": Object {
+                                                  "kind": "Name",
+                                                  "value": "wings",
+                                                },
+                                                "selectionSet": Object {
+                                                  "kind": "SelectionSet",
+                                                  "selections": Array [
+                                                    Object {
+                                                      "alias": undefined,
+                                                      "arguments": Array [],
+                                                      "directives": Array [],
+                                                      "kind": "Field",
+                                                      "name": Object {
+                                                        "kind": "Name",
+                                                        "value": "id",
+                                                      },
+                                                      "selectionSet": undefined,
+                                                    },
+                                                    Object {
+                                                      "alias": undefined,
+                                                      "arguments": Array [],
+                                                      "directives": Array [],
+                                                      "kind": "Field",
+                                                      "name": Object {
+                                                        "kind": "Name",
+                                                        "value": "name",
+                                                      },
+                                                      "selectionSet": undefined,
+                                                    },
+                                                  ],
+                                                },
+                                              },
+                                            ],
+                                          },
+                                        },
+                                      ],
+                                    },
+                                  },
+                                ],
+                              },
+                            },
+                          ],
+                        },
+                        "variableDefinitions": Array [],
+                      },
+                    ],
+                    "kind": "Document",
+                    "loc": Object {
+                      "end": 175,
+                      "start": 0,
+                    },
+                  },
+                },
+                "queryId": "1",
+                "queryManager": [Circular],
+                "scheduler": QueryScheduler {
+                  "inFlightQueries": Object {},
+                  "intervalQueries": Object {},
+                  "pollingTimers": Object {},
+                  "queryManager": [Circular],
+                  "registeredQueries": Object {},
+                  "ssrMode": false,
+                },
+                "shouldSubscribe": true,
+                "subscriptionHandles": Array [],
+                "variables": Object {},
+              },
+              "subscriptions": Array [],
+            },
+          },
+          "queryDeduplication": true,
+          "queryIdsByName": Object {
+            "officeDetails": Array [
+              "1",
+            ],
+          },
+          "queryStore": QueryStore {
+            "store": Object {
+              "1": Object {
+                "document": Object {
+                  "definitions": Array [
+                    Object {
+                      "directives": Array [],
+                      "kind": "OperationDefinition",
+                      "name": Object {
+                        "kind": "Name",
+                        "value": "officeDetails",
+                      },
+                      "operation": "query",
+                      "selectionSet": Object {
+                        "kind": "SelectionSet",
+                        "selections": Array [
+                          Object {
+                            "alias": undefined,
+                            "arguments": Array [
+                              Object {
+                                "kind": "Argument",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "name",
+                                },
+                                "value": Object {
+                                  "block": false,
+                                  "kind": "StringValue",
+                                  "value": "Epic tower",
+                                },
+                              },
+                            ],
+                            "directives": Array [],
+                            "kind": "Field",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "getOfficeByName",
+                            },
+                            "selectionSet": Object {
+                              "kind": "SelectionSet",
+                              "selections": Array [
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "id",
+                                  },
+                                  "selectionSet": undefined,
+                                },
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "blocks",
+                                  },
+                                  "selectionSet": Object {
+                                    "kind": "SelectionSet",
+                                    "selections": Array [
+                                      Object {
+                                        "alias": undefined,
+                                        "arguments": Array [],
+                                        "directives": Array [],
+                                        "kind": "Field",
+                                        "name": Object {
+                                          "kind": "Name",
+                                          "value": "id",
+                                        },
+                                        "selectionSet": undefined,
+                                      },
+                                      Object {
+                                        "alias": undefined,
+                                        "arguments": Array [],
+                                        "directives": Array [],
+                                        "kind": "Field",
+                                        "name": Object {
+                                          "kind": "Name",
+                                          "value": "floors",
+                                        },
+                                        "selectionSet": Object {
+                                          "kind": "SelectionSet",
+                                          "selections": Array [
+                                            Object {
+                                              "alias": undefined,
+                                              "arguments": Array [],
+                                              "directives": Array [],
+                                              "kind": "Field",
+                                              "name": Object {
+                                                "kind": "Name",
+                                                "value": "id",
+                                              },
+                                              "selectionSet": undefined,
+                                            },
+                                            Object {
+                                              "alias": undefined,
+                                              "arguments": Array [],
+                                              "directives": Array [],
+                                              "kind": "Field",
+                                              "name": Object {
+                                                "kind": "Name",
+                                                "value": "name",
+                                              },
+                                              "selectionSet": undefined,
+                                            },
+                                            Object {
+                                              "alias": undefined,
+                                              "arguments": Array [],
+                                              "directives": Array [],
+                                              "kind": "Field",
+                                              "name": Object {
+                                                "kind": "Name",
+                                                "value": "wings",
+                                              },
+                                              "selectionSet": Object {
+                                                "kind": "SelectionSet",
+                                                "selections": Array [
+                                                  Object {
+                                                    "alias": undefined,
+                                                    "arguments": Array [],
+                                                    "directives": Array [],
+                                                    "kind": "Field",
+                                                    "name": Object {
+                                                      "kind": "Name",
+                                                      "value": "id",
+                                                    },
+                                                    "selectionSet": undefined,
+                                                  },
+                                                  Object {
+                                                    "alias": undefined,
+                                                    "arguments": Array [],
+                                                    "directives": Array [],
+                                                    "kind": "Field",
+                                                    "name": Object {
+                                                      "kind": "Name",
+                                                      "value": "name",
+                                                    },
+                                                    "selectionSet": undefined,
+                                                  },
+                                                ],
+                                              },
+                                            },
+                                          ],
+                                        },
+                                      },
+                                    ],
+                                  },
+                                },
+                              ],
+                            },
+                          },
+                        ],
+                      },
+                      "variableDefinitions": Array [],
+                    },
+                  ],
+                  "kind": "Document",
+                  "loc": Object {
+                    "end": 175,
+                    "start": 0,
+                  },
+                },
+                "graphQLErrors": Array [],
+                "metadata": Object {
+                  "reactComponent": Object {
+                    "displayName": "Apollo(Apollo(AddRoomToEpicTower))",
+                  },
+                },
+                "networkError": null,
+                "networkStatus": 7,
+                "previousVariables": null,
+                "variables": Object {},
+              },
+            },
+          },
+          "scheduler": QueryScheduler {
+            "inFlightQueries": Object {},
+            "intervalQueries": Object {},
+            "pollingTimers": Object {},
+            "queryManager": [Circular],
+            "registeredQueries": Object {},
+            "ssrMode": false,
+          },
+        },
+        "reFetchObservableQueries": [Function],
+        "resetStore": [Function],
+        "resetStoreCallbacks": Array [],
+        "ssrMode": false,
+        "store": DataStore {
+          "cache": InMemoryCache {
+            "addTypename": false,
+            "config": Object {
+              "addTypename": false,
+              "dataIdFromObject": [Function],
+              "fragmentMatcher": HeuristicFragmentMatcher {},
+              "storeFactory": [Function],
+            },
+            "data": ObjectCache {
+              "data": Object {
+                "ROOT_QUERY": Object {
+                  "getOfficeByName({\\"name\\":\\"Epic tower\\"})": Array [
+                    Object {
+                      "generated": true,
+                      "id": "ROOT_QUERY.getOfficeByName({\\"name\\":\\"Epic tower\\"}).0",
+                      "type": "id",
+                      "typename": undefined,
+                    },
+                  ],
+                },
+                "ROOT_QUERY.getOfficeByName({\\"name\\":\\"Epic tower\\"}).0": Object {
+                  "blocks": Array [
+                    Object {
+                      "generated": true,
+                      "id": "ROOT_QUERY.getOfficeByName({\\"name\\":\\"Epic tower\\"}).0.blocks.0",
+                      "type": "id",
+                      "typename": undefined,
+                    },
+                  ],
+                  "id": "1",
+                },
+                "ROOT_QUERY.getOfficeByName({\\"name\\":\\"Epic tower\\"}).0.blocks.0": Object {
+                  "floors": Array [
+                    Object {
+                      "generated": true,
+                      "id": "ROOT_QUERY.getOfficeByName({\\"name\\":\\"Epic tower\\"}).0.blocks.0.floors.0",
+                      "type": "id",
+                      "typename": undefined,
+                    },
+                  ],
+                  "id": "1",
+                },
+                "ROOT_QUERY.getOfficeByName({\\"name\\":\\"Epic tower\\"}).0.blocks.0.floors.0": Object {
+                  "id": "1",
+                  "name": "fourth floor",
+                  "wings": Array [
+                    Object {
+                      "generated": true,
+                      "id": "ROOT_QUERY.getOfficeByName({\\"name\\":\\"Epic tower\\"}).0.blocks.0.floors.0.wings.0",
+                      "type": "id",
+                      "typename": undefined,
+                    },
+                  ],
+                },
+                "ROOT_QUERY.getOfficeByName({\\"name\\":\\"Epic tower\\"}).0.blocks.0.floors.0.wings.0": Object {
+                  "id": "1",
+                  "name": "Big Apple",
+                },
+              },
+            },
+            "optimistic": Array [],
+            "silenceBroadcast": false,
+            "watches": Array [
+              Object {
+                "callback": [Function],
+                "optimistic": true,
+                "previousResult": [Function],
+                "query": Object {
+                  "definitions": Array [
+                    Object {
+                      "directives": Array [],
+                      "kind": "OperationDefinition",
+                      "name": Object {
+                        "kind": "Name",
+                        "value": "officeDetails",
+                      },
+                      "operation": "query",
+                      "selectionSet": Object {
+                        "kind": "SelectionSet",
+                        "selections": Array [
+                          Object {
+                            "alias": undefined,
+                            "arguments": Array [
+                              Object {
+                                "kind": "Argument",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "name",
+                                },
+                                "value": Object {
+                                  "block": false,
+                                  "kind": "StringValue",
+                                  "value": "Epic tower",
+                                },
+                              },
+                            ],
+                            "directives": Array [],
+                            "kind": "Field",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "getOfficeByName",
+                            },
+                            "selectionSet": Object {
+                              "kind": "SelectionSet",
+                              "selections": Array [
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "id",
+                                  },
+                                  "selectionSet": undefined,
+                                },
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "blocks",
+                                  },
+                                  "selectionSet": Object {
+                                    "kind": "SelectionSet",
+                                    "selections": Array [
+                                      Object {
+                                        "alias": undefined,
+                                        "arguments": Array [],
+                                        "directives": Array [],
+                                        "kind": "Field",
+                                        "name": Object {
+                                          "kind": "Name",
+                                          "value": "id",
+                                        },
+                                        "selectionSet": undefined,
+                                      },
+                                      Object {
+                                        "alias": undefined,
+                                        "arguments": Array [],
+                                        "directives": Array [],
+                                        "kind": "Field",
+                                        "name": Object {
+                                          "kind": "Name",
+                                          "value": "floors",
+                                        },
+                                        "selectionSet": Object {
+                                          "kind": "SelectionSet",
+                                          "selections": Array [
+                                            Object {
+                                              "alias": undefined,
+                                              "arguments": Array [],
+                                              "directives": Array [],
+                                              "kind": "Field",
+                                              "name": Object {
+                                                "kind": "Name",
+                                                "value": "id",
+                                              },
+                                              "selectionSet": undefined,
+                                            },
+                                            Object {
+                                              "alias": undefined,
+                                              "arguments": Array [],
+                                              "directives": Array [],
+                                              "kind": "Field",
+                                              "name": Object {
+                                                "kind": "Name",
+                                                "value": "name",
+                                              },
+                                              "selectionSet": undefined,
+                                            },
+                                            Object {
+                                              "alias": undefined,
+                                              "arguments": Array [],
+                                              "directives": Array [],
+                                              "kind": "Field",
+                                              "name": Object {
+                                                "kind": "Name",
+                                                "value": "wings",
+                                              },
+                                              "selectionSet": Object {
+                                                "kind": "SelectionSet",
+                                                "selections": Array [
+                                                  Object {
+                                                    "alias": undefined,
+                                                    "arguments": Array [],
+                                                    "directives": Array [],
+                                                    "kind": "Field",
+                                                    "name": Object {
+                                                      "kind": "Name",
+                                                      "value": "id",
+                                                    },
+                                                    "selectionSet": undefined,
+                                                  },
+                                                  Object {
+                                                    "alias": undefined,
+                                                    "arguments": Array [],
+                                                    "directives": Array [],
+                                                    "kind": "Field",
+                                                    "name": Object {
+                                                      "kind": "Name",
+                                                      "value": "name",
+                                                    },
+                                                    "selectionSet": undefined,
+                                                  },
+                                                ],
+                                              },
+                                            },
+                                          ],
+                                        },
+                                      },
+                                    ],
+                                  },
+                                },
+                              ],
+                            },
+                          },
+                        ],
+                      },
+                      "variableDefinitions": Array [],
+                    },
+                  ],
+                  "kind": "Document",
+                  "loc": Object {
+                    "end": 175,
+                    "start": 0,
+                  },
+                },
+                "variables": undefined,
+              },
+            ],
+          },
+        },
+        "version": "2.3.1",
+        "watchQuery": [Function],
+      }
+    }
+  >
+    <Apollo(Apollo(AddRoomToEpicTower))
+      locations={
+        Array [
+          Object {
+            "__typename": "Location",
+            "id": "1",
+            "name": "Kampala",
+          },
+          Object {
+            "__typename": "Location",
+            "id": "2",
+            "name": "Lagos",
+          },
+          Object {
+            "__typename": "Location",
+            "id": "3",
+            "name": "Nairobi",
+          },
+        ]
       }
     >
-      <ModalPortal
-        ariaHideApp={false}
-        bodyOpenClassName="ReactModal__Body--open"
-        className="add-room-modal"
-        closeTimeoutMS={0}
-        contentLabel="Parent Modal"
-        defaultStyles={
+      <Query
+        displayName="Apollo(Apollo(AddRoomToEpicTower))"
+        query={
           Object {
-            "content": Object {
-              "WebkitOverflowScrolling": "touch",
-              "background": "#fff",
-              "border": "1px solid #ccc",
-              "borderRadius": "4px",
-              "bottom": "40px",
-              "left": "40px",
-              "outline": "none",
-              "overflow": "auto",
-              "padding": "20px",
-              "position": "absolute",
-              "right": "40px",
-              "top": "40px",
-            },
-            "overlay": Object {
-              "backgroundColor": "rgba(255, 255, 255, 0.75)",
-              "bottom": 0,
-              "left": 0,
-              "position": "fixed",
-              "right": 0,
-              "top": 0,
+            "definitions": Array [
+              Object {
+                "directives": Array [],
+                "kind": "OperationDefinition",
+                "name": Object {
+                  "kind": "Name",
+                  "value": "officeDetails",
+                },
+                "operation": "query",
+                "selectionSet": Object {
+                  "kind": "SelectionSet",
+                  "selections": Array [
+                    Object {
+                      "alias": undefined,
+                      "arguments": Array [
+                        Object {
+                          "kind": "Argument",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "name",
+                          },
+                          "value": Object {
+                            "block": false,
+                            "kind": "StringValue",
+                            "value": "Epic tower",
+                          },
+                        },
+                      ],
+                      "directives": Array [],
+                      "kind": "Field",
+                      "name": Object {
+                        "kind": "Name",
+                        "value": "getOfficeByName",
+                      },
+                      "selectionSet": Object {
+                        "kind": "SelectionSet",
+                        "selections": Array [
+                          Object {
+                            "alias": undefined,
+                            "arguments": Array [],
+                            "directives": Array [],
+                            "kind": "Field",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "id",
+                            },
+                            "selectionSet": undefined,
+                          },
+                          Object {
+                            "alias": undefined,
+                            "arguments": Array [],
+                            "directives": Array [],
+                            "kind": "Field",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "blocks",
+                            },
+                            "selectionSet": Object {
+                              "kind": "SelectionSet",
+                              "selections": Array [
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "id",
+                                  },
+                                  "selectionSet": undefined,
+                                },
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "floors",
+                                  },
+                                  "selectionSet": Object {
+                                    "kind": "SelectionSet",
+                                    "selections": Array [
+                                      Object {
+                                        "alias": undefined,
+                                        "arguments": Array [],
+                                        "directives": Array [],
+                                        "kind": "Field",
+                                        "name": Object {
+                                          "kind": "Name",
+                                          "value": "id",
+                                        },
+                                        "selectionSet": undefined,
+                                      },
+                                      Object {
+                                        "alias": undefined,
+                                        "arguments": Array [],
+                                        "directives": Array [],
+                                        "kind": "Field",
+                                        "name": Object {
+                                          "kind": "Name",
+                                          "value": "name",
+                                        },
+                                        "selectionSet": undefined,
+                                      },
+                                      Object {
+                                        "alias": undefined,
+                                        "arguments": Array [],
+                                        "directives": Array [],
+                                        "kind": "Field",
+                                        "name": Object {
+                                          "kind": "Name",
+                                          "value": "wings",
+                                        },
+                                        "selectionSet": Object {
+                                          "kind": "SelectionSet",
+                                          "selections": Array [
+                                            Object {
+                                              "alias": undefined,
+                                              "arguments": Array [],
+                                              "directives": Array [],
+                                              "kind": "Field",
+                                              "name": Object {
+                                                "kind": "Name",
+                                                "value": "id",
+                                              },
+                                              "selectionSet": undefined,
+                                            },
+                                            Object {
+                                              "alias": undefined,
+                                              "arguments": Array [],
+                                              "directives": Array [],
+                                              "kind": "Field",
+                                              "name": Object {
+                                                "kind": "Name",
+                                                "value": "name",
+                                              },
+                                              "selectionSet": undefined,
+                                            },
+                                          ],
+                                        },
+                                      },
+                                    ],
+                                  },
+                                },
+                              ],
+                            },
+                          },
+                        ],
+                      },
+                    },
+                  ],
+                },
+                "variableDefinitions": Array [],
+              },
+            ],
+            "kind": "Document",
+            "loc": Object {
+              "end": 175,
+              "start": 0,
             },
           }
         }
-        isOpen={true}
-        onAfterOpen={[Function]}
-        onRequestClose={[Function]}
-        parentSelector={[Function]}
-        portalClassName="ReactModalPortal"
-        shouldCloseOnEsc={true}
-        shouldCloseOnOverlayClick={true}
-        shouldFocusAfterRender={true}
-        shouldReturnFocusAfterClose={true}
-        style={
-          Object {
-            "content": Object {
-              "backgroundColor": "#ffffff",
-              "border": "1px solid #CCCCCC",
-              "borderRadius": "4px",
-              "bottom": "auto",
-              "boxShadow": "0 2px 40px 10px rgba(185, 180, 180, 0.2)",
-              "fontFamily": "DINPro-Regular",
-              "left": "50%",
-              "marginRight": "-50%",
-              "outline": "none",
-              "overflow": "auto",
-              "position": "absolute",
-              "right": "auto",
-              "top": "50%",
-              "transform": "translate(-50%, -50%)",
-            },
-          }
-        }
+        skip={false}
+        warnUnhandledError={true}
       >
-        <div
-          aria-modal="true"
-          className="ReactModal__Overlay ReactModal__Overlay--after-open"
-          onClick={[Function]}
-          onMouseDown={[Function]}
-          style={
+        <Apollo(AddRoomToEpicTower)
+          locations={
+            Array [
+              Object {
+                "__typename": "Location",
+                "id": "1",
+                "name": "Kampala",
+              },
+              Object {
+                "__typename": "Location",
+                "id": "2",
+                "name": "Lagos",
+              },
+              Object {
+                "__typename": "Location",
+                "id": "3",
+                "name": "Nairobi",
+              },
+            ]
+          }
+          officeDetails={
             Object {
-              "backgroundColor": "rgba(255, 255, 255, 0.75)",
-              "bottom": 0,
-              "left": 0,
-              "position": "fixed",
-              "right": 0,
-              "top": 0,
+              "error": undefined,
+              "fetchMore": [Function],
+              "getOfficeByName": Array [
+                Object {
+                  "blocks": Array [
+                    Object {
+                      "floors": Array [
+                        Object {
+                          "id": "1",
+                          "name": "fourth floor",
+                          "wings": Array [
+                            Object {
+                              "id": "1",
+                              "name": "Big Apple",
+                              Symbol(id): "ROOT_QUERY.getOfficeByName({\\"name\\":\\"Epic tower\\"}).0.blocks.0.floors.0.wings.0",
+                            },
+                          ],
+                          Symbol(id): "ROOT_QUERY.getOfficeByName({\\"name\\":\\"Epic tower\\"}).0.blocks.0.floors.0",
+                        },
+                      ],
+                      "id": "1",
+                      Symbol(id): "ROOT_QUERY.getOfficeByName({\\"name\\":\\"Epic tower\\"}).0.blocks.0",
+                    },
+                  ],
+                  "id": "1",
+                  Symbol(id): "ROOT_QUERY.getOfficeByName({\\"name\\":\\"Epic tower\\"}).0",
+                },
+              ],
+              "loading": false,
+              "networkStatus": 7,
+              "refetch": [Function],
+              "startPolling": [Function],
+              "stopPolling": [Function],
+              "subscribeToMore": [Function],
+              "updateQuery": [Function],
+              "variables": Object {},
+              Symbol(id): "ROOT_QUERY",
             }
           }
         >
-          <div
-            aria-label="Parent Modal"
-            className="ReactModal__Content ReactModal__Content--after-open add-room-modal"
-            onClick={[Function]}
-            onKeyDown={[Function]}
-            onMouseDown={[Function]}
-            onMouseUp={[Function]}
-            style={
+          <Mutation
+            ignoreResults={true}
+            mutation={
               Object {
-                "backgroundColor": "#ffffff",
-                "border": "1px solid #CCCCCC",
-                "borderRadius": "4px",
-                "bottom": "auto",
-                "boxShadow": "0 2px 40px 10px rgba(185, 180, 180, 0.2)",
-                "fontFamily": "DINPro-Regular",
-                "left": "50%",
-                "marginRight": "-50%",
-                "outline": "none",
-                "overflow": "auto",
-                "position": "absolute",
-                "right": "auto",
-                "top": "50%",
-                "transform": "translate(-50%, -50%)",
+                "definitions": Array [
+                  Object {
+                    "directives": Array [],
+                    "kind": "OperationDefinition",
+                    "name": Object {
+                      "kind": "Name",
+                      "value": "CreateRoom",
+                    },
+                    "operation": "mutation",
+                    "selectionSet": Object {
+                      "kind": "SelectionSet",
+                      "selections": Array [
+                        Object {
+                          "alias": undefined,
+                          "arguments": Array [
+                            Object {
+                              "kind": "Argument",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "roomType",
+                              },
+                              "value": Object {
+                                "kind": "Variable",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "roomType",
+                                },
+                              },
+                            },
+                            Object {
+                              "kind": "Argument",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "wingId",
+                              },
+                              "value": Object {
+                                "kind": "Variable",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "roomWingId",
+                                },
+                              },
+                            },
+                            Object {
+                              "kind": "Argument",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "name",
+                              },
+                              "value": Object {
+                                "kind": "Variable",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "roomName",
+                                },
+                              },
+                            },
+                            Object {
+                              "kind": "Argument",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "floorId",
+                              },
+                              "value": Object {
+                                "kind": "Variable",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "roomFloorId",
+                                },
+                              },
+                            },
+                            Object {
+                              "kind": "Argument",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "capacity",
+                              },
+                              "value": Object {
+                                "kind": "Variable",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "roomCapacity",
+                                },
+                              },
+                            },
+                            Object {
+                              "kind": "Argument",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "calendarId",
+                              },
+                              "value": Object {
+                                "kind": "Variable",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "roomCalendar",
+                                },
+                              },
+                            },
+                            Object {
+                              "kind": "Argument",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "imageUrl",
+                              },
+                              "value": Object {
+                                "kind": "Variable",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "roomImageUrl",
+                                },
+                              },
+                            },
+                            Object {
+                              "kind": "Argument",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "officeId",
+                              },
+                              "value": Object {
+                                "kind": "Variable",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "office_id",
+                                },
+                              },
+                            },
+                          ],
+                          "directives": Array [],
+                          "kind": "Field",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "createRoom",
+                          },
+                          "selectionSet": Object {
+                            "kind": "SelectionSet",
+                            "selections": Array [
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "room",
+                                },
+                                "selectionSet": Object {
+                                  "kind": "SelectionSet",
+                                  "selections": Array [
+                                    Object {
+                                      "alias": undefined,
+                                      "arguments": Array [],
+                                      "directives": Array [],
+                                      "kind": "Field",
+                                      "name": Object {
+                                        "kind": "Name",
+                                        "value": "id",
+                                      },
+                                      "selectionSet": undefined,
+                                    },
+                                    Object {
+                                      "alias": undefined,
+                                      "arguments": Array [],
+                                      "directives": Array [],
+                                      "kind": "Field",
+                                      "name": Object {
+                                        "kind": "Name",
+                                        "value": "name",
+                                      },
+                                      "selectionSet": undefined,
+                                    },
+                                    Object {
+                                      "alias": undefined,
+                                      "arguments": Array [],
+                                      "directives": Array [],
+                                      "kind": "Field",
+                                      "name": Object {
+                                        "kind": "Name",
+                                        "value": "roomType",
+                                      },
+                                      "selectionSet": undefined,
+                                    },
+                                    Object {
+                                      "alias": undefined,
+                                      "arguments": Array [],
+                                      "directives": Array [],
+                                      "kind": "Field",
+                                      "name": Object {
+                                        "kind": "Name",
+                                        "value": "capacity",
+                                      },
+                                      "selectionSet": undefined,
+                                    },
+                                    Object {
+                                      "alias": undefined,
+                                      "arguments": Array [],
+                                      "directives": Array [],
+                                      "kind": "Field",
+                                      "name": Object {
+                                        "kind": "Name",
+                                        "value": "imageUrl",
+                                      },
+                                      "selectionSet": undefined,
+                                    },
+                                  ],
+                                },
+                              },
+                            ],
+                          },
+                        },
+                      ],
+                    },
+                    "variableDefinitions": Array [
+                      Object {
+                        "defaultValue": undefined,
+                        "kind": "VariableDefinition",
+                        "type": Object {
+                          "kind": "NonNullType",
+                          "type": Object {
+                            "kind": "NamedType",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "String",
+                            },
+                          },
+                        },
+                        "variable": Object {
+                          "kind": "Variable",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "roomType",
+                          },
+                        },
+                      },
+                      Object {
+                        "defaultValue": undefined,
+                        "kind": "VariableDefinition",
+                        "type": Object {
+                          "kind": "NamedType",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "Int",
+                          },
+                        },
+                        "variable": Object {
+                          "kind": "Variable",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "roomWingId",
+                          },
+                        },
+                      },
+                      Object {
+                        "defaultValue": undefined,
+                        "kind": "VariableDefinition",
+                        "type": Object {
+                          "kind": "NonNullType",
+                          "type": Object {
+                            "kind": "NamedType",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "String",
+                            },
+                          },
+                        },
+                        "variable": Object {
+                          "kind": "Variable",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "roomName",
+                          },
+                        },
+                      },
+                      Object {
+                        "defaultValue": undefined,
+                        "kind": "VariableDefinition",
+                        "type": Object {
+                          "kind": "NonNullType",
+                          "type": Object {
+                            "kind": "NamedType",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "Int",
+                            },
+                          },
+                        },
+                        "variable": Object {
+                          "kind": "Variable",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "roomFloorId",
+                          },
+                        },
+                      },
+                      Object {
+                        "defaultValue": undefined,
+                        "kind": "VariableDefinition",
+                        "type": Object {
+                          "kind": "NonNullType",
+                          "type": Object {
+                            "kind": "NamedType",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "Int",
+                            },
+                          },
+                        },
+                        "variable": Object {
+                          "kind": "Variable",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "roomCapacity",
+                          },
+                        },
+                      },
+                      Object {
+                        "defaultValue": undefined,
+                        "kind": "VariableDefinition",
+                        "type": Object {
+                          "kind": "NonNullType",
+                          "type": Object {
+                            "kind": "NamedType",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "String",
+                            },
+                          },
+                        },
+                        "variable": Object {
+                          "kind": "Variable",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "roomCalendar",
+                          },
+                        },
+                      },
+                      Object {
+                        "defaultValue": undefined,
+                        "kind": "VariableDefinition",
+                        "type": Object {
+                          "kind": "NonNullType",
+                          "type": Object {
+                            "kind": "NamedType",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "Int",
+                            },
+                          },
+                        },
+                        "variable": Object {
+                          "kind": "Variable",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "office_id",
+                          },
+                        },
+                      },
+                      Object {
+                        "defaultValue": undefined,
+                        "kind": "VariableDefinition",
+                        "type": Object {
+                          "kind": "NamedType",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "String",
+                          },
+                        },
+                        "variable": Object {
+                          "kind": "Variable",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "roomImageUrl",
+                          },
+                        },
+                      },
+                    ],
+                  },
+                ],
+                "kind": "Document",
+                "loc": Object {
+                  "end": 471,
+                  "start": 0,
+                },
               }
             }
-            tabIndex="-1"
           >
-            <h2>
-              ADD ROOM
-            </h2>
-            <form
-              className="modal-form epic-tower-form"
-              onSubmit={[Function]}
+            <AddRoomToEpicTower
+              epicTowerMutation={[Function]}
+              locations={
+                Array [
+                  Object {
+                    "__typename": "Location",
+                    "id": "1",
+                    "name": "Kampala",
+                  },
+                  Object {
+                    "__typename": "Location",
+                    "id": "2",
+                    "name": "Lagos",
+                  },
+                  Object {
+                    "__typename": "Location",
+                    "id": "3",
+                    "name": "Nairobi",
+                  },
+                ]
+              }
+              officeDetails={
+                Object {
+                  "error": undefined,
+                  "fetchMore": [Function],
+                  "getOfficeByName": Array [
+                    Object {
+                      "blocks": Array [
+                        Object {
+                          "floors": Array [
+                            Object {
+                              "id": "1",
+                              "name": "fourth floor",
+                              "wings": Array [
+                                Object {
+                                  "id": "1",
+                                  "name": "Big Apple",
+                                  Symbol(id): "ROOT_QUERY.getOfficeByName({\\"name\\":\\"Epic tower\\"}).0.blocks.0.floors.0.wings.0",
+                                },
+                              ],
+                              Symbol(id): "ROOT_QUERY.getOfficeByName({\\"name\\":\\"Epic tower\\"}).0.blocks.0.floors.0",
+                            },
+                          ],
+                          "id": "1",
+                          Symbol(id): "ROOT_QUERY.getOfficeByName({\\"name\\":\\"Epic tower\\"}).0.blocks.0",
+                        },
+                      ],
+                      "id": "1",
+                      Symbol(id): "ROOT_QUERY.getOfficeByName({\\"name\\":\\"Epic tower\\"}).0",
+                    },
+                  ],
+                  "loading": false,
+                  "networkStatus": 7,
+                  "refetch": [Function],
+                  "startPolling": [Function],
+                  "stopPolling": [Function],
+                  "subscribeToMore": [Function],
+                  "updateQuery": [Function],
+                  "variables": Object {},
+                  Symbol(id): "ROOT_QUERY",
+                }
+              }
             >
-              <SelectImage>
-                <div
-                  className="image-select"
-                >
-                  <div
-                    className="thumbnail"
-                  >
-                    <div
-                      className="placeholder"
-                    >
-                      <img
-                        alt="Room Thumbnail"
-                        src="test-file-stub"
-                      />
-                    </div>
-                  </div>
-                  <div
-                    className="select-button"
-                  >
-                    <span>
-                      Upload a room thumbnail
-                    </span>
-                    <ThemedThemed
-                      composeTheme="deeply"
-                      disabled={false}
-                      label="Select Image"
-                      mapThemrProps={[Function]}
-                      ripple={true}
-                      rippleCentered={false}
-                      rippleClassName=""
-                      rippleMultiple={true}
-                      rippleSpread={2}
-                    >
-                      <ThemedRippledComponent
-                        composeTheme="deeply"
-                        disabled={false}
-                        label="Select Image"
-                        mapThemrProps={[Function]}
-                        ripple={true}
-                        rippleCentered={false}
-                        rippleClassName=""
-                        rippleMultiple={true}
-                        rippleSpread={2}
-                        theme={Object {}}
-                      >
-                        <RippledComponent
-                          disabled={false}
-                          label="Select Image"
-                          ripple={true}
-                          rippleCentered={false}
-                          rippleClassName=""
-                          rippleMultiple={true}
-                          rippleSpread={2}
-                          theme={Object {}}
-                        >
-                          <Button
-                            accent={false}
-                            className=""
-                            disabled={false}
-                            flat={false}
-                            floating={false}
-                            label="Select Image"
-                            mini={false}
-                            neutral={true}
-                            onMouseDown={[Function]}
-                            onTouchStart={[Function]}
-                            primary={false}
-                            raised={false}
-                            theme={Object {}}
-                            type="button"
-                          >
-                            <button
-                              className=""
-                              data-react-toolbox="button"
-                              disabled={false}
-                              onMouseDown={[Function]}
-                              onMouseLeave={[Function]}
-                              onMouseUp={[Function]}
-                              onTouchStart={[Function]}
-                              type="button"
-                            >
-                              Select Image
-                            </button>
-                          </Button>
-                        </RippledComponent>
-                      </ThemedRippledComponent>
-                    </ThemedThemed>
-                  </div>
-                </div>
-              </SelectImage>
-              <EpicTowerInputs
-                handleInputChange={[Function]}
-                roomCapacity={1}
-                roomFloor=""
-                roomName=""
-                roomWing=""
+              <MrmModal
+                buttonText="Epic Tower"
+                className="add-room-modal"
+                closeModal={false}
+                handleCloseRequest={[Function]}
+                modalButtonClassName="button"
+                title="ADD ROOM"
               >
-                <div
-                  className="epic-tower-inputs"
-                >
-                  <Input
-                    id="roomName"
-                    inputClass="mrm-input epic-tower-input"
-                    labelClass="input1"
-                    labelName="Room Name"
-                    name="roomName"
-                    onChange={[Function]}
-                    placeholder="Enter room name"
-                    required={true}
-                    type="text"
-                    value=""
-                  >
-                    <div
-                      className="input1"
-                    >
-                      <label
-                        htmlFor="roomName"
-                      >
-                        Room Name
-                        <input
-                          className="mrm-input epic-tower-input"
-                          defaultValue=""
-                          id="roomName"
-                          name="roomName"
-                          onChange={[Function]}
-                          placeholder="Enter room name"
-                          required={true}
-                          type="text"
-                        />
-                      </label>
-                    </div>
-                  </Input>
-                  <Input
-                    id="roomCapacity"
-                    inputClass="mrm-input epic-tower-input"
-                    labelClass="capacity-label"
-                    labelName="Room Capacity"
-                    name="roomCapacity"
-                    onChange={[Function]}
-                    placeholder="1"
-                    required={true}
-                    type="number"
-                    value={1}
-                  >
-                    <div
-                      className="capacity-label"
-                    >
-                      <label
-                        htmlFor="roomCapacity"
-                      >
-                        Room Capacity
-                        <input
-                          className="mrm-input epic-tower-input"
-                          defaultValue={1}
-                          id="roomCapacity"
-                          name="roomCapacity"
-                          onChange={[Function]}
-                          placeholder="1"
-                          required={true}
-                          type="number"
-                        />
-                        <Controls
-                          handleIncrement={[Function]}
-                        >
-                          <div
-                            className="controls"
-                          >
-                            <button
-                              className="control up"
-                              name="up"
-                              onClick={[Function]}
-                            >
-                              <img
-                                alt="up"
-                                name="up"
-                                src="test-file-stub"
-                              />
-                            </button>
-                            <button
-                              className="control down"
-                              name="down"
-                              onClick={[Function]}
-                            >
-                              <img
-                                alt="down"
-                                name="down"
-                                src="test-file-stub"
-                              />
-                            </button>
-                          </div>
-                        </Controls>
-                      </label>
-                    </div>
-                  </Input>
-                  <SelectInput
-                    id="roomFloor"
-                    labelText="Select Floor"
-                    name="roomFloor"
-                    onChange={[Function]}
-                    options={null}
-                    placeholder="Select floor"
-                    selectInputClassName="floor-wrapper default-select"
-                    value=""
-                    wrapperClassName="floor-label"
-                  >
-                    <div
-                      className="floor-label"
-                    >
-                      <label
-                        htmlFor="roomFloor"
-                      >
-                        Select Floor
-                        <select
-                          className="floor-wrapper default-select"
-                          id="roomFloor"
-                          name="roomFloor"
-                          onChange={[Function]}
-                          value=""
-                        >
-                          <option
-                            value=""
-                          >
-                            Select floor
-                          </option>
-                          You need to provide atleast children or options to the select element
-                        </select>
-                      </label>
-                    </div>
-                  </SelectInput>
-                  <SelectInput
-                    id="roomWing"
-                    labelText="Select Wing"
-                    name="roomWing"
-                    onChange={[Function]}
-                    options={null}
-                    placeholder="Select Wing"
-                    selectInputClassName="wing-wrapper default-select"
-                    value=""
-                    wrapperClassName="wing-label"
-                  >
-                    <div
-                      className="wing-label"
-                    >
-                      <label
-                        htmlFor="roomWing"
-                      >
-                        Select Wing
-                        <select
-                          className="wing-wrapper default-select"
-                          id="roomWing"
-                          name="roomWing"
-                          onChange={[Function]}
-                          value=""
-                        >
-                          <option
-                            value=""
-                          >
-                            Select Wing
-                          </option>
-                          You need to provide atleast children or options to the select element
-                        </select>
-                      </label>
-                    </div>
-                  </SelectInput>
-                </div>
-              </EpicTowerInputs>
-              <ActionButtons
-                actionButtonClassName="action-button"
-                actionButtonText="ADD ROOM"
-                cancelButtonClassName="cancel-button"
-                cancelButtonText="CANCEL"
-                onClickCancel={[Function]}
-                withCancel={true}
-              >
-                <div
-                  className="form-action-buttons"
+                <IconButtons
+                  buttonText="Epic Tower"
+                  modalButtonClassName="button"
+                  openModal={[Function]}
                 >
                   <button
-                    className="cancel-button"
+                    className="button"
+                    id="modal-button"
                     onClick={[Function]}
                   >
-                    CANCEL
+                    Epic Tower
                   </button>
-                  <button
-                    className="action-button"
-                    type="submit"
-                  >
-                    ADD ROOM
-                  </button>
-                </div>
-              </ActionButtons>
-            </form>
-          </div>
-        </div>
-      </ModalPortal>
-    </Modal>
-  </MrmModal>
-</AddRoomToEpicTower>
-`;
-
-exports[`AddRoom should render properly 1`] = `
-<AddRoomToEpicTower
-  locations={
-    Array [
-      Object {
-        "__typename": "Location",
-        "id": "1",
-        "name": "Kampala",
-      },
-      Object {
-        "__typename": "Location",
-        "id": "2",
-        "name": "Lagos",
-      },
-      Object {
-        "__typename": "Location",
-        "id": "3",
-        "name": "Nairobi",
-      },
-    ]
-  }
->
-  <MrmModal
-    buttonText="Epic Tower"
-    className="add-room-modal"
-    closeModal={false}
-    handleCloseRequest={[Function]}
-    modalButtonClassName="button"
-    title="ADD ROOM"
-  >
-    <IconButtons
-      buttonText="Epic Tower"
-      modalButtonClassName="button"
-      openModal={[Function]}
-    >
-      <button
-        className="button"
-        id="modal-button"
-        onClick={[Function]}
-      >
-        Epic Tower
-      </button>
-    </IconButtons>
-    <Modal
-      ariaHideApp={false}
-      bodyOpenClassName="ReactModal__Body--open"
-      className="add-room-modal"
-      closeTimeoutMS={0}
-      contentLabel="Parent Modal"
-      isOpen={false}
-      onAfterOpen={[Function]}
-      onRequestClose={[Function]}
-      parentSelector={[Function]}
-      portalClassName="ReactModalPortal"
-      shouldCloseOnEsc={true}
-      shouldCloseOnOverlayClick={true}
-      shouldFocusAfterRender={true}
-      shouldReturnFocusAfterClose={true}
-      style={
-        Object {
-          "content": Object {
-            "backgroundColor": "#ffffff",
-            "border": "1px solid #CCCCCC",
-            "borderRadius": "4px",
-            "bottom": "auto",
-            "boxShadow": "0 2px 40px 10px rgba(185, 180, 180, 0.2)",
-            "fontFamily": "DINPro-Regular",
-            "left": "50%",
-            "marginRight": "-50%",
-            "outline": "none",
-            "overflow": "auto",
-            "position": "absolute",
-            "right": "auto",
-            "top": "50%",
-            "transform": "translate(-50%, -50%)",
-          },
-        }
-      }
-    >
-      <ModalPortal
-        ariaHideApp={false}
-        bodyOpenClassName="ReactModal__Body--open"
-        className="add-room-modal"
-        closeTimeoutMS={0}
-        contentLabel="Parent Modal"
-        defaultStyles={
-          Object {
-            "content": Object {
-              "WebkitOverflowScrolling": "touch",
-              "background": "#fff",
-              "border": "1px solid #ccc",
-              "borderRadius": "4px",
-              "bottom": "40px",
-              "left": "40px",
-              "outline": "none",
-              "overflow": "auto",
-              "padding": "20px",
-              "position": "absolute",
-              "right": "40px",
-              "top": "40px",
-            },
-            "overlay": Object {
-              "backgroundColor": "rgba(255, 255, 255, 0.75)",
-              "bottom": 0,
-              "left": 0,
-              "position": "fixed",
-              "right": 0,
-              "top": 0,
-            },
-          }
-        }
-        isOpen={false}
-        onAfterOpen={[Function]}
-        onRequestClose={[Function]}
-        parentSelector={[Function]}
-        portalClassName="ReactModalPortal"
-        shouldCloseOnEsc={true}
-        shouldCloseOnOverlayClick={true}
-        shouldFocusAfterRender={true}
-        shouldReturnFocusAfterClose={true}
-        style={
-          Object {
-            "content": Object {
-              "backgroundColor": "#ffffff",
-              "border": "1px solid #CCCCCC",
-              "borderRadius": "4px",
-              "bottom": "auto",
-              "boxShadow": "0 2px 40px 10px rgba(185, 180, 180, 0.2)",
-              "fontFamily": "DINPro-Regular",
-              "left": "50%",
-              "marginRight": "-50%",
-              "outline": "none",
-              "overflow": "auto",
-              "position": "absolute",
-              "right": "auto",
-              "top": "50%",
-              "transform": "translate(-50%, -50%)",
-            },
-          }
-        }
-      />
-    </Modal>
-  </MrmModal>
-</AddRoomToEpicTower>
+                </IconButtons>
+                <Modal
+                  ariaHideApp={false}
+                  bodyOpenClassName="ReactModal__Body--open"
+                  className="add-room-modal"
+                  closeTimeoutMS={0}
+                  contentLabel="Parent Modal"
+                  isOpen={false}
+                  onAfterOpen={[Function]}
+                  onRequestClose={[Function]}
+                  parentSelector={[Function]}
+                  portalClassName="ReactModalPortal"
+                  shouldCloseOnEsc={true}
+                  shouldCloseOnOverlayClick={true}
+                  shouldFocusAfterRender={true}
+                  shouldReturnFocusAfterClose={true}
+                  style={
+                    Object {
+                      "content": Object {
+                        "backgroundColor": "#ffffff",
+                        "border": "1px solid #CCCCCC",
+                        "borderRadius": "4px",
+                        "bottom": "auto",
+                        "boxShadow": "0 2px 40px 10px rgba(185, 180, 180, 0.2)",
+                        "fontFamily": "DINPro-Regular",
+                        "left": "50%",
+                        "marginRight": "-50%",
+                        "outline": "none",
+                        "overflow": "auto",
+                        "position": "absolute",
+                        "right": "auto",
+                        "top": "50%",
+                        "transform": "translate(-50%, -50%)",
+                      },
+                    }
+                  }
+                >
+                  <ModalPortal
+                    ariaHideApp={false}
+                    bodyOpenClassName="ReactModal__Body--open"
+                    className="add-room-modal"
+                    closeTimeoutMS={0}
+                    contentLabel="Parent Modal"
+                    defaultStyles={
+                      Object {
+                        "content": Object {
+                          "WebkitOverflowScrolling": "touch",
+                          "background": "#fff",
+                          "border": "1px solid #ccc",
+                          "borderRadius": "4px",
+                          "bottom": "40px",
+                          "left": "40px",
+                          "outline": "none",
+                          "overflow": "auto",
+                          "padding": "20px",
+                          "position": "absolute",
+                          "right": "40px",
+                          "top": "40px",
+                        },
+                        "overlay": Object {
+                          "backgroundColor": "rgba(255, 255, 255, 0.75)",
+                          "bottom": 0,
+                          "left": 0,
+                          "position": "fixed",
+                          "right": 0,
+                          "top": 0,
+                        },
+                      }
+                    }
+                    isOpen={false}
+                    onAfterOpen={[Function]}
+                    onRequestClose={[Function]}
+                    parentSelector={[Function]}
+                    portalClassName="ReactModalPortal"
+                    shouldCloseOnEsc={true}
+                    shouldCloseOnOverlayClick={true}
+                    shouldFocusAfterRender={true}
+                    shouldReturnFocusAfterClose={true}
+                    style={
+                      Object {
+                        "content": Object {
+                          "backgroundColor": "#ffffff",
+                          "border": "1px solid #CCCCCC",
+                          "borderRadius": "4px",
+                          "bottom": "auto",
+                          "boxShadow": "0 2px 40px 10px rgba(185, 180, 180, 0.2)",
+                          "fontFamily": "DINPro-Regular",
+                          "left": "50%",
+                          "marginRight": "-50%",
+                          "outline": "none",
+                          "overflow": "auto",
+                          "position": "absolute",
+                          "right": "auto",
+                          "top": "50%",
+                          "transform": "translate(-50%, -50%)",
+                        },
+                      }
+                    }
+                  />
+                </Modal>
+              </MrmModal>
+            </AddRoomToEpicTower>
+          </Mutation>
+        </Apollo(AddRoomToEpicTower)>
+      </Query>
+    </Apollo(Apollo(AddRoomToEpicTower))>
+  </ApolloProvider>
+</MockedProvider>
 `;

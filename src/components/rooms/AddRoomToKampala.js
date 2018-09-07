@@ -46,7 +46,7 @@ class AddRoom extends Component {
         className="add-room-modal"
       >
         <form className="modal-form kla-form" onSubmit={this.handleAddRoom}>
-          <SelectImage />
+          <SelectImage onChange={this.handleInputChange} />
           <Input
             id="roomName"
             name="roomName"

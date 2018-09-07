@@ -1,0 +1,220 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Select Image should render properly 1`] = `
+<SelectImage
+  imageUrl=""
+  onChange={[MockFunction]}
+  thumbnailName="Upload a thumbnail"
+>
+  <div
+    className="image-select"
+  >
+    <div
+      className="thumbnail"
+    >
+      <div
+        className="placeholder"
+      >
+        <img
+          alt="Placeholder"
+          src="test-file-stub"
+        />
+      </div>
+    </div>
+    <div
+      className="select-button"
+    >
+      <span>
+        Upload a thumbnail
+      </span>
+      <ThemedThemed
+        composeTheme="deeply"
+        disabled={false}
+        id="upload_widget_opener"
+        label="Select Image"
+        mapThemrProps={[Function]}
+        ripple={true}
+        rippleCentered={false}
+        rippleClassName=""
+        rippleMultiple={true}
+        rippleSpread={2}
+      >
+        <ThemedRippledComponent
+          composeTheme="deeply"
+          disabled={false}
+          id="upload_widget_opener"
+          label="Select Image"
+          mapThemrProps={[Function]}
+          ripple={true}
+          rippleCentered={false}
+          rippleClassName=""
+          rippleMultiple={true}
+          rippleSpread={2}
+          theme={Object {}}
+        >
+          <RippledComponent
+            disabled={false}
+            id="upload_widget_opener"
+            label="Select Image"
+            ripple={true}
+            rippleCentered={false}
+            rippleClassName=""
+            rippleMultiple={true}
+            rippleSpread={2}
+            theme={Object {}}
+          >
+            <Button
+              accent={false}
+              className=""
+              disabled={false}
+              flat={false}
+              floating={false}
+              id="upload_widget_opener"
+              label="Select Image"
+              mini={false}
+              neutral={true}
+              onMouseDown={[Function]}
+              onTouchStart={[Function]}
+              primary={false}
+              raised={false}
+              theme={Object {}}
+              type="button"
+            >
+              <button
+                className=""
+                data-react-toolbox="button"
+                disabled={false}
+                id="upload_widget_opener"
+                onMouseDown={[Function]}
+                onMouseLeave={[Function]}
+                onMouseUp={[Function]}
+                onTouchStart={[Function]}
+                type="button"
+              >
+                Select Image
+              </button>
+            </Button>
+          </RippledComponent>
+        </ThemedRippledComponent>
+      </ThemedThemed>
+      <div
+        className="invisible-input"
+      >
+        <input
+          name="selectImage"
+          onChange={[MockFunction]}
+          type="file"
+        />
+      </div>
+    </div>
+  </div>
+</SelectImage>
+`;
+
+exports[`Select Image should render properly 2`] = `
+<SelectImage
+  imageUrl="path/to/image.jpg"
+  onChange={[MockFunction]}
+  thumbnailName="Upload a thumbnail"
+>
+  <div
+    className="image-select"
+  >
+    <div
+      className="thumbnail"
+    >
+      <img
+        alt="Room Thumbnail"
+        className="uploaded"
+        src="path/to/image.jpg"
+      />
+    </div>
+    <div
+      className="select-button"
+    >
+      <span>
+        Upload a thumbnail
+      </span>
+      <ThemedThemed
+        composeTheme="deeply"
+        disabled={false}
+        id="upload_widget_opener"
+        label="Select Image"
+        mapThemrProps={[Function]}
+        ripple={true}
+        rippleCentered={false}
+        rippleClassName=""
+        rippleMultiple={true}
+        rippleSpread={2}
+      >
+        <ThemedRippledComponent
+          composeTheme="deeply"
+          disabled={false}
+          id="upload_widget_opener"
+          label="Select Image"
+          mapThemrProps={[Function]}
+          ripple={true}
+          rippleCentered={false}
+          rippleClassName=""
+          rippleMultiple={true}
+          rippleSpread={2}
+          theme={Object {}}
+        >
+          <RippledComponent
+            disabled={false}
+            id="upload_widget_opener"
+            label="Select Image"
+            ripple={true}
+            rippleCentered={false}
+            rippleClassName=""
+            rippleMultiple={true}
+            rippleSpread={2}
+            theme={Object {}}
+          >
+            <Button
+              accent={false}
+              className=""
+              disabled={false}
+              flat={false}
+              floating={false}
+              id="upload_widget_opener"
+              label="Select Image"
+              mini={false}
+              neutral={true}
+              onMouseDown={[Function]}
+              onTouchStart={[Function]}
+              primary={false}
+              raised={false}
+              theme={Object {}}
+              type="button"
+            >
+              <button
+                className=""
+                data-react-toolbox="button"
+                disabled={false}
+                id="upload_widget_opener"
+                onMouseDown={[Function]}
+                onMouseLeave={[Function]}
+                onMouseUp={[Function]}
+                onTouchStart={[Function]}
+                type="button"
+              >
+                Select Image
+              </button>
+            </Button>
+          </RippledComponent>
+        </ThemedRippledComponent>
+      </ThemedThemed>
+      <div
+        className="invisible-input"
+      >
+        <input
+          name="selectImage"
+          onChange={[MockFunction]}
+          type="file"
+        />
+      </div>
+    </div>
+  </div>
+</SelectImage>
+`;

@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ActionButton component should render correctly 1`] = `
+<div
+  className="epic-tower-inputs"
+>
+  <Input
+    id="roomName"
+    inputClass="mrm-input epic-tower-input"
+    labelClass="input1"
+    labelName="Room Name"
+    name="roomName"
+    onChange={[MockFunction]}
+    placeholder="Enter room name"
+    required={true}
+    type="text"
+    value=""
+  />
+  <Input
+    id="roomCapacity"
+    inputClass="mrm-input epic-tower-input"
+    labelClass="capacity-label"
+    labelName="Room Capacity"
+    name="roomCapacity"
+    onChange={[MockFunction]}
+    placeholder="1"
+    required={true}
+    title="Please add numbers only"
+    type="number"
+    value={0}
+  />
+  <SelectInput
+    id="roomFloor"
+    labelText="Select Floor"
+    name="roomFloor"
+    onChange={[MockFunction]}
+    options={Array []}
+    placeholder="Select floor"
+    placeholderValue={0}
+    selectInputClassName="floor-wrapper default-select"
+    value={0}
+    wrapperClassName="floor-label"
+  />
+  <SelectInput
+    id="roomWing"
+    labelText="Select Wing"
+    name="roomWing"
+    onChange={[MockFunction]}
+    options={Array []}
+    placeholder="Select Wing"
+    placeholderValue={0}
+    selectInputClassName="wing-wrapper default-select"
+    value={0}
+    wrapperClassName="wing-label"
+  />
+</div>
+`;

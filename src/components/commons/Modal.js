@@ -84,6 +84,7 @@ class MrmModal extends Component {
           openModal={this.openModal}
         />
         <Modal
+          shouldCloseOnOverlayClick={false}
           isOpen={this.state.modalIsOpen}
           onAfterOpen={this.afterOpenModal}
           onRequestClose={this.closeModal}

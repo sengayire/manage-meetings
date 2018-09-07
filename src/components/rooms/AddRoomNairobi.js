@@ -47,7 +47,7 @@ class AddRoomNairobi extends Component {
         className="nbo-add-room-modal button addRoomBtn"
       >
         <form className="modal-form" onSubmit={this.handleAddRoom}>
-          <SelectImage />
+          <SelectImage onChange={this.handleInputChange} />
           <NairobiRoomInputs
             roomName={roomName}
             roomCapacity={roomCapacity}

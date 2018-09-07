@@ -191,7 +191,11 @@ exports[`AddRoomToKampala should pop up a modal when modal button is clicked 1`]
               className="modal-form kla-form"
               onSubmit={[Function]}
             >
-              <SelectImage>
+              <SelectImage
+                imageUrl=""
+                onChange={[Function]}
+                thumbnailName="Upload a thumbnail"
+              >
                 <div
                   className="image-select"
                 >
@@ -202,7 +206,7 @@ exports[`AddRoomToKampala should pop up a modal when modal button is clicked 1`]
                       className="placeholder"
                     >
                       <img
-                        alt="Room Thumbnail"
+                        alt="Placeholder"
                         src="test-file-stub"
                       />
                     </div>
@@ -211,11 +215,12 @@ exports[`AddRoomToKampala should pop up a modal when modal button is clicked 1`]
                     className="select-button"
                   >
                     <span>
-                      Upload a room thumbnail
+                      Upload a thumbnail
                     </span>
                     <ThemedThemed
                       composeTheme="deeply"
                       disabled={false}
+                      id="upload_widget_opener"
                       label="Select Image"
                       mapThemrProps={[Function]}
                       ripple={true}
@@ -227,6 +232,7 @@ exports[`AddRoomToKampala should pop up a modal when modal button is clicked 1`]
                       <ThemedRippledComponent
                         composeTheme="deeply"
                         disabled={false}
+                        id="upload_widget_opener"
                         label="Select Image"
                         mapThemrProps={[Function]}
                         ripple={true}
@@ -238,6 +244,7 @@ exports[`AddRoomToKampala should pop up a modal when modal button is clicked 1`]
                       >
                         <RippledComponent
                           disabled={false}
+                          id="upload_widget_opener"
                           label="Select Image"
                           ripple={true}
                           rippleCentered={false}
@@ -252,6 +259,7 @@ exports[`AddRoomToKampala should pop up a modal when modal button is clicked 1`]
                             disabled={false}
                             flat={false}
                             floating={false}
+                            id="upload_widget_opener"
                             label="Select Image"
                             mini={false}
                             neutral={true}
@@ -266,6 +274,7 @@ exports[`AddRoomToKampala should pop up a modal when modal button is clicked 1`]
                               className=""
                               data-react-toolbox="button"
                               disabled={false}
+                              id="upload_widget_opener"
                               onMouseDown={[Function]}
                               onMouseLeave={[Function]}
                               onMouseUp={[Function]}
@@ -278,6 +287,15 @@ exports[`AddRoomToKampala should pop up a modal when modal button is clicked 1`]
                         </RippledComponent>
                       </ThemedRippledComponent>
                     </ThemedThemed>
+                    <div
+                      className="invisible-input"
+                    >
+                      <input
+                        name="selectImage"
+                        onChange={[Function]}
+                        type="file"
+                      />
+                    </div>
                   </div>
                 </div>
               </SelectImage>
@@ -323,6 +341,7 @@ exports[`AddRoomToKampala should pop up a modal when modal button is clicked 1`]
                   onChange={[Function]}
                   options={null}
                   placeholder="Select floor"
+                  placeholderValue=""
                   selectInputClassName="floor-wrapper default-select"
                   value=""
                   wrapperClassName="floor-wrapper"
@@ -362,6 +381,7 @@ exports[`AddRoomToKampala should pop up a modal when modal button is clicked 1`]
                   onChange={[Function]}
                   options={null}
                   placeholder="0"
+                  placeholderValue=""
                   selectInputClassName="capacity-wrapper default-select"
                   value=""
                   wrapperClassName="capacity-wrapper"

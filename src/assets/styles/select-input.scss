@@ -1,7 +1,12 @@
+select{
+    color: #000 !important;
+    &:invalid{
+        color: rgba(50,60,71,0.4) !important;
+    }
+}
 select,
 select:focus {
     background-color: white;
-    color: rgba(50,60,71,0.4) !important;
     border: 1px solid #d6dee4;
     border-radius: 4px;
     line-height: 1.4em;
@@ -17,7 +22,6 @@ select:focus {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-
 
 
     @media screen and (min-width: 1072px) {

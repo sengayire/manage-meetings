@@ -14,6 +14,8 @@ const SelectInput = ({
   placeholder,
   options,
   children,
+  placeholderValue,
+  required,
   ...otherProps
 }) => (
   <div className={wrapperClassName}>
@@ -26,9 +28,10 @@ const SelectInput = ({
         value={value}
         onChange={onChange}
         {...otherProps}
+        required={required}
       >
         {/* render place holder in case its provided */}
-        {placeholder && <option value="">{placeholder}</option>}
+        {placeholder && <option value={placeholderValue}>{placeholder}</option>}
 
         {/* Render the array options if provided.
          If you provide both options and children, details in the options will be rendered
@@ -69,6 +72,8 @@ SelectInput.propTypes = {
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   onChange: PropTypes.func.isRequired,
   placeholder: PropTypes.string,
+  placeholderValue: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  required: PropTypes.bool,
   options: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     name: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
@@ -80,9 +85,11 @@ SelectInput.defaultProps = {
   selectInputClassName: 'default-select',
   wrapperClassName: 'input1',
   placeholder: '',
+  placeholderValue: '',
   options: null,
   children: null,
   value: '',
+  required: false,
 };
 
 export default SelectInput;

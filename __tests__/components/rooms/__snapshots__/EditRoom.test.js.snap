@@ -275,6 +275,7 @@ exports[`EditRoom should pop up a modal when modal button is clicked 1`] = `
                     ]
                   }
                   placeholder="Select room location"
+                  placeholderValue=""
                   selectInputClassName="default-select"
                   value={1}
                   wrapperClassName="input-wrapper"

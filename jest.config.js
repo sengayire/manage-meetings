@@ -20,6 +20,7 @@ module.exports = {
     '!**/setupTests.js',
     '!**/jest.config.js',
     '!**/src/utils/ApolloClient.js',
+    '!**/src/utils/FirebaseConfig.js',
   ],
   testPathIgnorePatterns: ['__mocks__'],
   setupTestFrameworkScriptFile: '<rootDir>/setupTests.js',

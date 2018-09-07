@@ -7,12 +7,20 @@
   .thumbnail {
     min-height: 140px;
     min-width: 240px;
+    width: 240px;
+    height: 140px;
     margin-right: 30px;
     border: 1px solid #E0E0E0;
     background-color: #F8F8F8;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .uploaded{
+      width: 100%;
+    }
     .placeholder{
-      margin-top: 11%;
-      margin-left: 32%;
       height: 88px;
       width: 88px;
       border-radius: 50%;
@@ -36,6 +44,17 @@
       &:hover {
         background-color: #3359DB !important;
         color: #fff !important;
+      }
+    }
+    .invisible-input {
+      position: relative;
+      input[type=file] {
+        width: 7rem;
+        height: 2.4rem;
+        position: absolute;
+        left:0;
+        top: 0.5rem;
+        opacity: 0;
       }
     }
   }
