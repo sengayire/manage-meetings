@@ -27,7 +27,7 @@ const TopMenu = () => {
         <div className="container content-end nav-right">
           <div className="search-box">
             <form className="container">
-              <input className="search-bar" type="text" placeholder="Search" />
+              <input className="search-bar" type="text" />
               <img className="search-icon" src={IconSearch} alt="Search icon" />
             </form>
           </div>

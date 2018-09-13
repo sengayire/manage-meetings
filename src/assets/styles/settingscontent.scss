@@ -7,7 +7,8 @@
 .settings-vertical {
   font-family: 'DINPro-Regular', sans-serif;
   display: flex;
-  margin: 1%;
+  margin-top: 2.0%;
+  margin-left: 50px;
 
   @media screen and (max-width: 425px) {
     font-size: 0.8em;
@@ -18,11 +19,11 @@
 }
 
 .settings-tabs {
-  width: 25%;
+  width: 20%;
   font-size: 97%;
   ul {
     width: 70%;
-    margin: auto;
+    margin: 4%;
     padding: 0;
     padding-top: 2.75%;
     @media screen and (max-width: 425px) {
@@ -35,8 +36,7 @@
 
   li {
     list-style: none;
-    margin: 8%;
-    padding: 3% 6%;
+    margin: 3%;
     padding-right: 0;
     text-align: left;
     font-size: 115%;
@@ -47,6 +47,8 @@
       text-decoration: none;
       word-break: break-word;
       color: #6d6d6d;
+      padding: 5%;
+      display: block;
       &:visited {
         text-decoration: none;
       }
@@ -56,10 +58,10 @@
   .active {
     color: white;
     background-color: #3359db;
-    padding: 5%;
-    padding-right: 12.5%;
+    width: 130px;
     border-radius: 2px;
-    text-align: center;
+    text-align: left;
+
     @media screen and (max-width: 425px) {
       padding: 5%;
       padding-top: 1%;
@@ -72,7 +74,10 @@
 }
 
 .settings-tab-content {
-  width: 75%;
+  width: 80%;
+  button{
+    cursor: pointer;
+  }
   @media screen and (max-width: 425px) {
     width: 65%;
   }

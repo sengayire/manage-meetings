@@ -1,40 +1,69 @@
 import React from 'react';
-import { shallow } from 'enzyme';
-import DeleteRoom from '../../src/components/DeleteRoom';
+import { mount, shallow } from 'enzyme';
+import { MockedProvider } from 'react-apollo/test-utils';
+import DeleteRoomComponent, { DeleteRoom } from '../../src/components/DeleteRoom';
+import DELETE_ROOM from '../../src/graphql/mutations/Rooms';
 
 describe('DeleteOffice Test Suite', () => {
-  const wrapper = shallow(<DeleteRoom roomName="Rabat" />);
+  const request = {
+    query: DELETE_ROOM,
+    variables: { roomId: 1 },
+  };
+  const deleteRoom = { name: 'Rabat', id: 1 };
+  const result = { data: { deleteRoom } };
+
+  const wrapperCode = (
+    <MockedProvider
+      mocks={[{ request, result }]}
+      addTypename={false}
+    >
+      <DeleteRoomComponent roomName="Rabat" roomId="1" />
+    </MockedProvider>
+  );
+  const wrapper = mount(wrapperCode);
+  const deleteComponent = wrapper.find('DeleteRoom');
 
   it('renders as expected', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('should have initial state', () => {
-    expect(wrapper.state().closeModal).toEqual(false);
+  it('should pop up a modal when delete button is clicked', () => {
+    const modalButton = wrapper.find('#modal-button');
+
+    modalButton.simulate('click');
+    wrapper.update();
+    expect(wrapper).toMatchSnapshot();
   });
 
-  it('should have a title prop', () => {
-    expect(wrapper.prop('title')).toEqual('DELETE ROOM');
+  it('should change modal state', () => {
+    deleteComponent.instance().state = {
+      closeModal: true,
+    };
+    deleteComponent.instance().handleCloseModal();
+    expect(deleteComponent.instance().state.closeModal).toBeFalsy();
   });
 
-  it('should have a buttonText prop', () => {
-    expect(wrapper.prop('buttonText')).toEqual('Delete');
+  it('should delete room succesfully', () => {
+    const preventDefault = jest.fn();
+    const newProps = {
+      deleteRoom: jest.fn(() => Promise.resolve(result)),
+    };
+    const newWrapper = shallow(<DeleteRoom roomName="Rabat" roomId="1" {...newProps} />);
+
+    newWrapper.setState({ closeModal: false });
+    newWrapper.instance().handleDeleteRoom({ preventDefault });
+    expect(newProps.deleteRoom).toHaveBeenCalled();
   });
 
-  it('closes the modal after delete', () => {
-    const deleteButton = wrapper.find('#delete-btn');
-    deleteButton.simulate('click', { preventDefault() { } });
-    expect(wrapper.state('closeModal')).toEqual(true);
-  });
+  it('should return an error when deleting room', () => {
+    const preventDefault = jest.fn();
+    const newProps = {
+      deleteRoom: jest.fn(() =>
+        Promise.reject(new Error('You are not authorized to perform this action'))),
+    };
+    const newWrapper = shallow(<DeleteRoom roomName="Rabat" roomId="1" {...newProps} />);
 
-  it('should close the modal on cancelling', () => {
-    const cancelButton = wrapper.find('#cancel-btn');
-    cancelButton.simulate('click', { preventDefault() { } });
-    expect(wrapper.state('closeModal')).toEqual(true);
-  });
-
-  it('should handle state change', () => {
-    wrapper.instance().handleModalStateChange();
-    expect(wrapper.state('closeModal')).toEqual(false);
+    newWrapper.instance().handleDeleteRoom({ preventDefault });
+    expect(newProps.deleteRoom).toHaveBeenCalled();
   });
 });

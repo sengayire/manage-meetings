@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css?family=IBM+Plex+Sans+Condensed");
 
 @font-face {
-  font-family: DINPro;
-  src: url(../fonts/DINPro.ttf);
+  font-family: 'DINPro-Light';
+  src: url(../fonts/DINPro-Light.otf);
 }
 
 .top-menu::after {
@@ -30,7 +30,7 @@
 }
 
 .nav-right {
-  width: 80%;
+  width: 77%;
   min-width: 400px;
 }
 
@@ -117,19 +117,13 @@
   text-align: center;
 }
 
-.notifications span {
-  padding: 0 1.8em;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 .profile {
   margin-top: 3px;
   width: 34px !important;
 }
 
 .username {
-  font-family: DINPro;
+  font-family: 'DINPro-Light';
   font-size: 105%;
   color: #8d8d8d;
   padding-left: 0.5em;

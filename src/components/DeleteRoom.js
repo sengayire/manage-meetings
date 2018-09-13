@@ -1,10 +1,16 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import MrmModal from '../components/commons/Modal';
+import { graphql, compose } from 'react-apollo';
+import toastr from 'toastr';
 
+import MrmModal from '../components/commons/Modal';
+import DELETE_ROOM from '../graphql/mutations/Rooms';
+import { GET_ROOMS_QUERY } from '../graphql/queries/Rooms';
+import notification from '../utils/notification';
 import '../assets/styles/deleteModal.scss';
 
-class DeleteRoom extends React.Component {
+
+export class DeleteRoom extends Component {
   state = {
     closeModal: false,
   }
@@ -17,7 +23,18 @@ class DeleteRoom extends React.Component {
     this.state.closeModal && this.setState({ closeModal: false });
   }
 
-  handleDeleteRoom = () => {
+  handleDeleteRoom = (event) => {
+    event.preventDefault();
+    const variables = { variables: { roomId: this.props.roomId } };
+    this.props
+      .deleteRoom(variables)
+      .then(() => {
+        notification(
+          toastr, 'error',
+          `'${this.props.roomName}' has been deleted successfully`,
+        )();
+      })
+      .catch(err => notification(toastr, 'error', err)());
     this.handleCloseModal();
   }
 
@@ -51,6 +68,11 @@ class DeleteRoom extends React.Component {
 
 DeleteRoom.propTypes = {
   roomName: PropTypes.string.isRequired,
+  roomId: PropTypes.string.isRequired,
+  deleteRoom: PropTypes.func.isRequired,
 };
 
-export default DeleteRoom;
+export default compose(graphql(DELETE_ROOM, {
+  name: 'deleteRoom', options: { refetchQueries: [{ query: GET_ROOMS_QUERY }] },
+}))(DeleteRoom);
+
