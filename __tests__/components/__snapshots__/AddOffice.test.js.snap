@@ -33,6 +33,7 @@ exports[`AddOffice Component renders properly 1`] = `
       options={null}
       placeholder="Select office location"
       placeholderValue=""
+      required={false}
       selectInputClassName="default-select"
       value=""
       wrapperClassName="input-wrapper"

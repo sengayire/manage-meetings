@@ -44,8 +44,8 @@ class Pagination extends Component {
           <li className="disabled">Previous</li>
           <li>Showing Page</li>
           <select name="page" value={page} onChange={this.handleChange}>
-            {[...Array(totalPages)].map((item, index) => (
-              <option key={Math.floor(Math.random() * 10)}>{index + 1}</option>
+            {[...Array(totalPages).keys()].map(item => (
+              <option key={item}>{ item + 1 }</option>
                     ))}
           </select>
           <li>of</li>

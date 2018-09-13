@@ -13,6 +13,7 @@ import mapOfficeDetails from '../../graphql/mappers/Offices';
 import notification from '../../utils/notification';
 import getImageUrl from '../helpers/ImageUpload';
 import hasInvalidInputs from '../helpers/InputValidators';
+import getThumbnailName from '../helpers/thumbnailName';
 
 export class AddRoomToEpicTower extends Component {
   constructor(props) {
@@ -70,8 +71,7 @@ export class AddRoomToEpicTower extends Component {
     switch (name) {
       case 'selectImage':
         /* Shorten the length of the thumbnail name in case its too long */
-        thumbnailName =
-        files[0].name.length < 25 ? files[0].name : `${files[0].name.substring(0, 22)}...`;
+        thumbnailName = getThumbnailName(files);
         this.setState(
           { thumbnailName, uploading: true },
           () => {

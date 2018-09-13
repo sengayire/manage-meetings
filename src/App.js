@@ -20,16 +20,16 @@ class App extends Component {
     }).isRequired,
   };
 
+  state = {
+    loggedIn: false,
+  };
+
   static getDerivedStateFromProps = () => {
     const token = getItemFromLocalStorage(MRM_TOKEN);
     if (!token) {
       return { loggedIn: false };
     }
     return { loggedIn: true };
-  };
-
-  state = {
-    loggedIn: false,
   };
 
   render() {

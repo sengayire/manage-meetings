@@ -38,6 +38,10 @@ export class Login extends Component {
     }).isRequired,
   };
 
+  state = {
+    loginError: null,
+  };
+
   static getDerivedStateFromProps = (props) => {
     const { push } = props.history;
     const token = getItemFromLocalStorage(MRM_TOKEN);
@@ -50,10 +54,6 @@ export class Login extends Component {
     }
     // returning null since no state updates
     return null;
-  };
-
-  state = {
-    loginError: null,
   };
 
   componentDidMount = () => {

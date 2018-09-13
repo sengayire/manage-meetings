@@ -56,7 +56,7 @@ exports[`AddRoomMenu should render properly 1`] = `
     rippleMultiple={true}
     rippleSpread={2}
   >
-    <AddRoomNairobi />
+    <Apollo(Apollo(AddRoomNairobi)) />
   </ThemedThemed>
   <ThemedThemed
     composeTheme="deeply"

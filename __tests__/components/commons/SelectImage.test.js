@@ -7,7 +7,6 @@ describe('Select Image', () => {
     const wrapper = mount(<SelectImage imageUrl="" onChange={jest.fn()} />);
     expect(wrapper).toMatchSnapshot();
   });
-
   it('should render properly', () => {
     const wrapper = mount(<SelectImage imageUrl="path/to/image.jpg" onChange={jest.fn()} />);
     expect(wrapper).toMatchSnapshot();

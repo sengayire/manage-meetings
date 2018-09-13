@@ -1,11 +1,34 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { mount, shallow } from 'enzyme';
+import { MockedProvider } from 'react-apollo/test-utils';
+import { AddRoomNairobi } from '../../../src/components/rooms/AddRoomNairobi';
+import ADD_ROOM_ST_CATHERINE from '../../../src/graphql/mutations/rooms/AddRoomStCatherine';
+import { addRoom, variables } from '../../../__mocks__/rooms/AddRoomNairobi';
 
-import { roomLocations } from '../../../__mocks__/rooms/Rooms';
-import AddRoomNairobi from '../../../src/components/rooms/AddRoomNairobi';
 
 describe('AddRoomNairobi', () => {
-  const wrapper = mount(<AddRoomNairobi locations={roomLocations} />);
+  const request = {
+    query: ADD_ROOM_ST_CATHERINE,
+    variables: { ...variables },
+  };
+  const result = { ...addRoom };
+
+  const props = {
+    createRoom: jest.fn(() => Promise.resolve(result)),
+    validate: jest.fn(() => Promise.resolve('valid')),
+  };
+
+  const wrapperCode = (
+    <MockedProvider
+      mocks={[
+        { request, result },
+      ]}
+      addTypename={false}
+    >
+      <AddRoomNairobi {...props} />
+    </MockedProvider>
+  );
+  const wrapper = mount(wrapperCode);
 
   it('should render properly', () => {
     expect(wrapper).toMatchSnapshot();
@@ -45,11 +68,18 @@ describe('AddRoomNairobi', () => {
     expect(wrapper.find('input#roomCapacity').prop('defaultValue')).toEqual(2);
   });
 
-  it('should handle change in officeBlock', () => {
+  it('should handle change when office Block A is selected', () => {
     wrapper.find('select#officeBlock')
       .simulate('change', { target: { name: 'officeBlock', value: 'A' } });
     wrapper.update();
     expect(wrapper.find('select#officeBlock').prop('value')).toEqual('A');
+  });
+
+  it('should handle change when office Block B is selected', () => {
+    wrapper.find('select#officeBlock')
+      .simulate('change', { target: { name: 'officeBlock', value: 'B' } });
+    wrapper.update();
+    expect(wrapper.find('select#officeBlock').prop('value')).toEqual('B');
   });
 
   it('should handle change in officeFloor', () => {
@@ -68,5 +98,73 @@ describe('AddRoomNairobi', () => {
     form.simulate('submit', { preventDefault });
     expect(preventDefault).toHaveBeenCalled();
     expect(wrapper.find('form')).toHaveLength(0);
+  });
+
+  it('should return a notification when a room is added succesfully', () => {
+    const preventDefault = jest.fn();
+    const newProps = {
+      createRoom: jest.fn(() => Promise.resolve(result)),
+    };
+    const newWrapper = shallow(<AddRoomNairobi {...newProps} />);
+    const newState = {
+      roomName: 'Test room 1',
+      roomCapacity: '3',
+      officeFloor: 2,
+      officeBlock: 2,
+      imageUrl: 'test/image',
+    };
+
+    newWrapper.setState({ ...newState });
+    newWrapper.instance().handleAddRoom({ preventDefault });
+    expect(newProps.createRoom).toHaveBeenCalledWith({ variables });
+  });
+
+  it('should return an error notification if an error was encountered', () => {
+    const preventDefault = jest.fn();
+    const errorProps = { createRoom: jest.fn(() => Promise.reject(new Error('Please supply a valid room name'))) };
+    const newWrapper = shallow(<AddRoomNairobi {...errorProps} />);
+
+    newWrapper.instance().handleAddRoom({ preventDefault });
+    expect(props.createRoom).toHaveBeenCalled();
+  });
+
+  it('should upload an image', () => {
+    const newWrapper = shallow(<AddRoomNairobi />);
+    const images = [{
+      name: 'image-name',
+      type: 'image/jpeg',
+      size: 1024,
+      webKitRelativePath: '',
+    }];
+
+    newWrapper.instance().handleInputChange({ target: { name: 'selectImage', files: images } });
+    expect(newWrapper.instance().state.thumbnailName).toEqual('image-name');
+  });
+
+  it('should display error on failure to upload image', () => {
+    const newWrapper = shallow(<AddRoomNairobi />);
+    const imageFiles = [
+      {
+        name: 'fail',
+        type: 'image/jpeg',
+        size: 1024,
+        webKitRelativePath: '',
+      },
+    ];
+    newWrapper.instance().handleInputChange({ target: { name: 'selectImage', files: imageFiles } });
+    expect(newWrapper.instance().state.thumbnailName).toEqual('fail');
+  });
+
+  it('should trim image name if it is too long', () => {
+    const newWrapper = shallow(<AddRoomNairobi />);
+    const images = [{
+      name: 'image-name-is-very-long-to-be-included',
+      type: 'image/jpeg',
+      size: 1024,
+      webKitRelativePath: '',
+    }];
+
+    newWrapper.instance().handleInputChange({ target: { name: 'selectImage', files: images } });
+    expect(newWrapper.instance().state.thumbnailName).toEqual('image-name-is-very-lon...');
   });
 });

@@ -1,24 +1,71 @@
 import React, { Component } from 'react';
+import { graphql, compose } from 'react-apollo';
+import PropTypes from 'prop-types';
+import toastr from 'toastr';
 import Modal from '../commons/Modal';
 import { ActionButtons } from '../commons';
 import NairobiRoomInputs from './NairobiRoomInputs';
 import '../../assets/styles/addRoomNairobi.scss';
 import SelectImage from '../commons/SelectImage';
+import ADD_ROOM_ST_CATHERINE from '../../graphql/mutations/rooms/AddRoomStCatherine';
+import { GET_NAIROBI_QUERY } from '../../graphql/queries/locations';
+import { GET_ROOMS_QUERY } from '../../graphql/queries/Rooms';
+import notification from '../../utils/notification';
+import floor from '../../fixtures/nairobiFloors';
+import { formatData } from '../../graphql/mappers/Rooms';
+import getImageUrl from '../helpers/ImageUpload';
+import getThumbnailName from '../helpers/thumbnailName';
 
-class AddRoomNairobi extends Component {
+export class AddRoomNairobi extends Component {
   state = {
     roomName: '',
-    roomCapacity: 0,
+    roomCapacity: 1,
     officeBlock: '',
     officeFloor: '',
     closeModal: false,
+    floors: [],
+    thumbnailName: 'Upload a thumbnail',
+    imageUrl: '',
   };
 
   handleCloseModal = () => {
-    this.setState({ closeModal: true });
+    this.setState({
+      roomName: '',
+      roomCapacity: '',
+      officeBlock: '',
+      officeFloor: '',
+      closeModal: true,
+      floors: [],
+      thumbnailName: 'Upload a thumbnail',
+      imageUrl: '',
+    });
   };
 
-  handleInputChange = ({ target: { name, value } }) => {
+  handleInputChange = ({ target: { name, value, files } }) => {
+    if (value === 'A') {
+      this.setState({
+        officeBlock: 2,
+        floors: floor.blockA,
+      });
+    }
+    if (value === 'B') {
+      this.setState({
+        officeBlock: 2,
+        floors: floor.blockB,
+      });
+    }
+    if (name === 'selectImage') {
+      const folderName = 'upload/';
+      const imageFile = files[0];
+      const thumbnailName = getThumbnailName(files);
+
+      this.setState({ thumbnailName }, () => {
+        getImageUrl(folderName, imageFile)
+          .then((imageUrl) => {
+            this.setState({ imageUrl });
+          });
+      });
+    }
     this.setState({ [name]: value });
   };
 
@@ -28,14 +75,34 @@ class AddRoomNairobi extends Component {
 
   handleAddRoom = (event) => {
     event.preventDefault();
-    // add room logic here
-    // close modal after add room
+
+    const {
+      roomName, roomCapacity, officeBlock, officeFloor, imageUrl,
+    } = this.state;
+
+    const payload = formatData(
+      roomName,
+      roomCapacity,
+      officeBlock,
+      officeFloor,
+      imageUrl,
+    );
+
+    this.props.createRoom({
+      variables: payload,
+    }).then((res) => {
+      const message = res.data.createRoom.room.name;
+      notification(toastr, 'success', `'${message}' has been added successfully`)();
+    }).catch((error) => {
+      notification(toastr, 'error', `${error}`)();
+    });
     this.handleCloseModal();
   };
 
   render() {
     const {
-      roomName, roomCapacity, officeBlock, officeFloor, closeModal,
+      roomName, roomCapacity, officeBlock, officeFloor, closeModal, floors,
+      thumbnailName, imageUrl,
     } = this.state;
 
     return (
@@ -47,13 +114,18 @@ class AddRoomNairobi extends Component {
         className="nbo-add-room-modal button addRoomBtn"
       >
         <form className="modal-form" onSubmit={this.handleAddRoom}>
-          <SelectImage onChange={this.handleInputChange} />
+          <SelectImage
+            onChange={this.handleInputChange}
+            thumbnailName={thumbnailName}
+            imageUrl={imageUrl}
+          />
           <NairobiRoomInputs
             roomName={roomName}
             roomCapacity={roomCapacity}
             officeBlock={officeBlock}
             officeFloor={officeFloor}
             handleInputChange={this.handleInputChange}
+            floors={floors}
           />
           <ActionButtons
             withCancel
@@ -66,4 +138,11 @@ class AddRoomNairobi extends Component {
   }
 }
 
-export default AddRoomNairobi;
+AddRoomNairobi.propTypes = {
+  createRoom: PropTypes.func.isRequired,
+};
+
+export default compose(
+  graphql(ADD_ROOM_ST_CATHERINE, { name: 'createRoom', options: { refetchQueries: [{ query: GET_ROOMS_QUERY }] } }),
+  graphql(GET_NAIROBI_QUERY, { name: 'officeName' }),
+)(AddRoomNairobi);

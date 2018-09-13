@@ -55,7 +55,7 @@ exports[`AddRoomToKampala should pop up a modal when modal button is clicked 1`]
       parentSelector={[Function]}
       portalClassName="ReactModalPortal"
       shouldCloseOnEsc={true}
-      shouldCloseOnOverlayClick={true}
+      shouldCloseOnOverlayClick={false}
       shouldFocusAfterRender={true}
       shouldReturnFocusAfterClose={true}
       style={
@@ -117,7 +117,7 @@ exports[`AddRoomToKampala should pop up a modal when modal button is clicked 1`]
         parentSelector={[Function]}
         portalClassName="ReactModalPortal"
         shouldCloseOnEsc={true}
-        shouldCloseOnOverlayClick={true}
+        shouldCloseOnOverlayClick={false}
         shouldFocusAfterRender={true}
         shouldReturnFocusAfterClose={true}
         style={
@@ -342,6 +342,7 @@ exports[`AddRoomToKampala should pop up a modal when modal button is clicked 1`]
                   options={null}
                   placeholder="Select floor"
                   placeholderValue=""
+                  required={false}
                   selectInputClassName="floor-wrapper default-select"
                   value=""
                   wrapperClassName="floor-wrapper"
@@ -358,6 +359,7 @@ exports[`AddRoomToKampala should pop up a modal when modal button is clicked 1`]
                         id="roomFloor"
                         name="roomFloor"
                         onChange={[Function]}
+                        required={false}
                         value=""
                       >
                         <option
@@ -382,6 +384,7 @@ exports[`AddRoomToKampala should pop up a modal when modal button is clicked 1`]
                   options={null}
                   placeholder="0"
                   placeholderValue=""
+                  required={false}
                   selectInputClassName="capacity-wrapper default-select"
                   value=""
                   wrapperClassName="capacity-wrapper"
@@ -398,6 +401,7 @@ exports[`AddRoomToKampala should pop up a modal when modal button is clicked 1`]
                         id="roomCapacity"
                         name="roomCapacity"
                         onChange={[Function]}
+                        required={false}
                         value=""
                       >
                         <option
@@ -503,7 +507,7 @@ exports[`AddRoomToKampala should render properly 1`] = `
       parentSelector={[Function]}
       portalClassName="ReactModalPortal"
       shouldCloseOnEsc={true}
-      shouldCloseOnOverlayClick={true}
+      shouldCloseOnOverlayClick={false}
       shouldFocusAfterRender={true}
       shouldReturnFocusAfterClose={true}
       style={
@@ -565,7 +569,7 @@ exports[`AddRoomToKampala should render properly 1`] = `
         parentSelector={[Function]}
         portalClassName="ReactModalPortal"
         shouldCloseOnEsc={true}
-        shouldCloseOnOverlayClick={true}
+        shouldCloseOnOverlayClick={false}
         shouldFocusAfterRender={true}
         shouldReturnFocusAfterClose={true}
         style={

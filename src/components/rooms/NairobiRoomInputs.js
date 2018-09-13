@@ -14,6 +14,9 @@ const NairobiRoomInputs = ({
       placeholder="Enter room name"
       id="roomName"
       onChange={handleInputChange}
+      required
+      pattern="^[a-zA-Z]+(([' .-][a-zA-Z ])?[a-zA-Z]*)*$"
+      title="Name cannot be numbers or any special characters"
     />
 
     <Input
@@ -25,6 +28,7 @@ const NairobiRoomInputs = ({
       onChange={handleInputChange}
       value={roomCapacity}
       placeholder={1}
+      required
     />
 
     <Select
@@ -35,7 +39,8 @@ const NairobiRoomInputs = ({
       onChange={handleInputChange}
       wrapperClassName="input-wrapper"
       placeholder="Select block"
-      options={[{ value: 'A' }, { value: 'B' }]}
+      options={[{ id: 2, name: 'A' }]}
+      required
     />
 
     <Select
@@ -46,7 +51,8 @@ const NairobiRoomInputs = ({
       onChange={handleInputChange}
       wrapperClassName="input-wrapper"
       placeholder="Select floor"
-      options={[{ value: 1 }, { value: 2 }, { value: 3 }]}
+      options={[{ id: 2, name: 2 }]}
+      required
     />
   </div>
 

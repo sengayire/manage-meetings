@@ -1,171 +1,452 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`AddRoomNairobi should pop up a modal when modal button is clicked 1`] = `
-<AddRoomNairobi
-  locations={
+<MockedProvider
+  addTypename={false}
+  mocks={
     Array [
       Object {
-        "__typename": "Location",
-        "id": "1",
-        "name": "Kampala",
-      },
-      Object {
-        "__typename": "Location",
-        "id": "2",
-        "name": "Lagos",
-      },
-      Object {
-        "__typename": "Location",
-        "id": "3",
-        "name": "Nairobi",
+        "request": Object {
+          "query": Object {
+            "definitions": Array [
+              Object {
+                "directives": Array [],
+                "kind": "OperationDefinition",
+                "name": undefined,
+                "operation": "mutation",
+                "selectionSet": Object {
+                  "kind": "SelectionSet",
+                  "selections": Array [
+                    Object {
+                      "alias": undefined,
+                      "arguments": Array [
+                        Object {
+                          "kind": "Argument",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "capacity",
+                          },
+                          "value": Object {
+                            "kind": "Variable",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "capacity",
+                            },
+                          },
+                        },
+                        Object {
+                          "kind": "Argument",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "name",
+                          },
+                          "value": Object {
+                            "kind": "Variable",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "name",
+                            },
+                          },
+                        },
+                        Object {
+                          "kind": "Argument",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "floorId",
+                          },
+                          "value": Object {
+                            "kind": "Variable",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "floorId",
+                            },
+                          },
+                        },
+                        Object {
+                          "kind": "Argument",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "officeId",
+                          },
+                          "value": Object {
+                            "kind": "Variable",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "officeId",
+                            },
+                          },
+                        },
+                        Object {
+                          "kind": "Argument",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "roomType",
+                          },
+                          "value": Object {
+                            "kind": "Variable",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "roomType",
+                            },
+                          },
+                        },
+                        Object {
+                          "kind": "Argument",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "calendarId",
+                          },
+                          "value": Object {
+                            "kind": "Variable",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "calendarId",
+                            },
+                          },
+                        },
+                        Object {
+                          "kind": "Argument",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "imageUrl",
+                          },
+                          "value": Object {
+                            "kind": "Variable",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "imageUrl",
+                            },
+                          },
+                        },
+                      ],
+                      "directives": Array [],
+                      "kind": "Field",
+                      "name": Object {
+                        "kind": "Name",
+                        "value": "createRoom",
+                      },
+                      "selectionSet": Object {
+                        "kind": "SelectionSet",
+                        "selections": Array [
+                          Object {
+                            "alias": undefined,
+                            "arguments": Array [],
+                            "directives": Array [],
+                            "kind": "Field",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "room",
+                            },
+                            "selectionSet": Object {
+                              "kind": "SelectionSet",
+                              "selections": Array [
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "name",
+                                  },
+                                  "selectionSet": undefined,
+                                },
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "floorId",
+                                  },
+                                  "selectionSet": undefined,
+                                },
+                              ],
+                            },
+                          },
+                        ],
+                      },
+                    },
+                  ],
+                },
+                "variableDefinitions": Array [
+                  Object {
+                    "defaultValue": undefined,
+                    "kind": "VariableDefinition",
+                    "type": Object {
+                      "kind": "NonNullType",
+                      "type": Object {
+                        "kind": "NamedType",
+                        "name": Object {
+                          "kind": "Name",
+                          "value": "Int",
+                        },
+                      },
+                    },
+                    "variable": Object {
+                      "kind": "Variable",
+                      "name": Object {
+                        "kind": "Name",
+                        "value": "capacity",
+                      },
+                    },
+                  },
+                  Object {
+                    "defaultValue": undefined,
+                    "kind": "VariableDefinition",
+                    "type": Object {
+                      "kind": "NonNullType",
+                      "type": Object {
+                        "kind": "NamedType",
+                        "name": Object {
+                          "kind": "Name",
+                          "value": "String",
+                        },
+                      },
+                    },
+                    "variable": Object {
+                      "kind": "Variable",
+                      "name": Object {
+                        "kind": "Name",
+                        "value": "name",
+                      },
+                    },
+                  },
+                  Object {
+                    "defaultValue": undefined,
+                    "kind": "VariableDefinition",
+                    "type": Object {
+                      "kind": "NonNullType",
+                      "type": Object {
+                        "kind": "NamedType",
+                        "name": Object {
+                          "kind": "Name",
+                          "value": "Int",
+                        },
+                      },
+                    },
+                    "variable": Object {
+                      "kind": "Variable",
+                      "name": Object {
+                        "kind": "Name",
+                        "value": "floorId",
+                      },
+                    },
+                  },
+                  Object {
+                    "defaultValue": undefined,
+                    "kind": "VariableDefinition",
+                    "type": Object {
+                      "kind": "NonNullType",
+                      "type": Object {
+                        "kind": "NamedType",
+                        "name": Object {
+                          "kind": "Name",
+                          "value": "String",
+                        },
+                      },
+                    },
+                    "variable": Object {
+                      "kind": "Variable",
+                      "name": Object {
+                        "kind": "Name",
+                        "value": "roomType",
+                      },
+                    },
+                  },
+                  Object {
+                    "defaultValue": undefined,
+                    "kind": "VariableDefinition",
+                    "type": Object {
+                      "kind": "NonNullType",
+                      "type": Object {
+                        "kind": "NamedType",
+                        "name": Object {
+                          "kind": "Name",
+                          "value": "String",
+                        },
+                      },
+                    },
+                    "variable": Object {
+                      "kind": "Variable",
+                      "name": Object {
+                        "kind": "Name",
+                        "value": "calendarId",
+                      },
+                    },
+                  },
+                  Object {
+                    "defaultValue": undefined,
+                    "kind": "VariableDefinition",
+                    "type": Object {
+                      "kind": "NonNullType",
+                      "type": Object {
+                        "kind": "NamedType",
+                        "name": Object {
+                          "kind": "Name",
+                          "value": "Int",
+                        },
+                      },
+                    },
+                    "variable": Object {
+                      "kind": "Variable",
+                      "name": Object {
+                        "kind": "Name",
+                        "value": "officeId",
+                      },
+                    },
+                  },
+                  Object {
+                    "defaultValue": undefined,
+                    "kind": "VariableDefinition",
+                    "type": Object {
+                      "kind": "NonNullType",
+                      "type": Object {
+                        "kind": "NamedType",
+                        "name": Object {
+                          "kind": "Name",
+                          "value": "String",
+                        },
+                      },
+                    },
+                    "variable": Object {
+                      "kind": "Variable",
+                      "name": Object {
+                        "kind": "Name",
+                        "value": "imageUrl",
+                      },
+                    },
+                  },
+                ],
+              },
+            ],
+            "kind": "Document",
+            "loc": Object {
+              "end": 563,
+              "start": 0,
+            },
+          },
+          "variables": Object {
+            "calendarId": "andela.com",
+            "capacity": 3,
+            "floorId": 2,
+            "imageUrl": "test/image",
+            "name": "Test room 1",
+            "officeId": 2,
+            "roomType": "meeting room",
+          },
+        },
+        "result": Object {
+          "data": Object {
+            "createRoom": Object {
+              "room": Object {
+                "floorId": 2,
+                "name": "Test room 4",
+              },
+            },
+          },
+        },
       },
     ]
   }
 >
-  <MrmModal
-    buttonText="St. Catherines"
-    className="nbo-add-room-modal button addRoomBtn"
-    closeModal={false}
-    handleCloseRequest={[Function]}
-    modalButtonClassName="button"
-    title="ADD ROOM"
-  >
-    <IconButtons
-      buttonText="St. Catherines"
-      modalButtonClassName="button"
-      openModal={[Function]}
-    >
-      <button
-        className="button"
-        id="modal-button"
-        onClick={[Function]}
-      >
-        St. Catherines
-      </button>
-    </IconButtons>
-    <Modal
-      ariaHideApp={false}
-      bodyOpenClassName="ReactModal__Body--open"
-      className="nbo-add-room-modal button addRoomBtn"
-      closeTimeoutMS={0}
-      contentLabel="Parent Modal"
-      isOpen={true}
-      onAfterOpen={[Function]}
-      onRequestClose={[Function]}
-      parentSelector={[Function]}
-      portalClassName="ReactModalPortal"
-      shouldCloseOnEsc={true}
-      shouldCloseOnOverlayClick={true}
-      shouldFocusAfterRender={true}
-      shouldReturnFocusAfterClose={true}
-      style={
-        Object {
-          "content": Object {
-            "backgroundColor": "#ffffff",
-            "border": "1px solid #CCCCCC",
-            "borderRadius": "4px",
-            "bottom": "auto",
-            "boxShadow": "0 2px 40px 10px rgba(185, 180, 180, 0.2)",
-            "fontFamily": "DINPro-Regular",
-            "left": "50%",
-            "marginRight": "-50%",
-            "outline": "none",
-            "overflow": "auto",
-            "position": "absolute",
-            "right": "auto",
-            "top": "50%",
-            "transform": "translate(-50%, -50%)",
+  <ApolloProvider
+    client={
+      ApolloClient {
+        "__operations_cache__": Map {},
+        "cache": InMemoryCache {
+          "addTypename": false,
+          "config": Object {
+            "addTypename": false,
+            "dataIdFromObject": [Function],
+            "fragmentMatcher": HeuristicFragmentMatcher {},
+            "storeFactory": [Function],
           },
-        }
+          "data": ObjectCache {
+            "data": Object {},
+          },
+          "optimistic": Array [],
+          "silenceBroadcast": false,
+          "watches": Array [],
+        },
+        "defaultOptions": Object {},
+        "disableNetworkFetches": false,
+        "link": ApolloLink {
+          "request": [Function],
+        },
+        "mutate": [Function],
+        "query": [Function],
+        "queryDeduplication": true,
+        "reFetchObservableQueries": [Function],
+        "resetStore": [Function],
+        "resetStoreCallbacks": Array [],
+        "ssrMode": false,
+        "store": DataStore {
+          "cache": InMemoryCache {
+            "addTypename": false,
+            "config": Object {
+              "addTypename": false,
+              "dataIdFromObject": [Function],
+              "fragmentMatcher": HeuristicFragmentMatcher {},
+              "storeFactory": [Function],
+            },
+            "data": ObjectCache {
+              "data": Object {},
+            },
+            "optimistic": Array [],
+            "silenceBroadcast": false,
+            "watches": Array [],
+          },
+        },
+        "version": "2.3.1",
+        "watchQuery": [Function],
       }
+    }
+  >
+    <AddRoomNairobi
+      createRoom={[MockFunction]}
+      validate={[MockFunction]}
     >
-      <ModalPortal
-        ariaHideApp={false}
-        bodyOpenClassName="ReactModal__Body--open"
+      <MrmModal
+        buttonText="St. Catherines"
         className="nbo-add-room-modal button addRoomBtn"
-        closeTimeoutMS={0}
-        contentLabel="Parent Modal"
-        defaultStyles={
-          Object {
-            "content": Object {
-              "WebkitOverflowScrolling": "touch",
-              "background": "#fff",
-              "border": "1px solid #ccc",
-              "borderRadius": "4px",
-              "bottom": "40px",
-              "left": "40px",
-              "outline": "none",
-              "overflow": "auto",
-              "padding": "20px",
-              "position": "absolute",
-              "right": "40px",
-              "top": "40px",
-            },
-            "overlay": Object {
-              "backgroundColor": "rgba(255, 255, 255, 0.75)",
-              "bottom": 0,
-              "left": 0,
-              "position": "fixed",
-              "right": 0,
-              "top": 0,
-            },
-          }
-        }
-        isOpen={true}
-        onAfterOpen={[Function]}
-        onRequestClose={[Function]}
-        parentSelector={[Function]}
-        portalClassName="ReactModalPortal"
-        shouldCloseOnEsc={true}
-        shouldCloseOnOverlayClick={true}
-        shouldFocusAfterRender={true}
-        shouldReturnFocusAfterClose={true}
-        style={
-          Object {
-            "content": Object {
-              "backgroundColor": "#ffffff",
-              "border": "1px solid #CCCCCC",
-              "borderRadius": "4px",
-              "bottom": "auto",
-              "boxShadow": "0 2px 40px 10px rgba(185, 180, 180, 0.2)",
-              "fontFamily": "DINPro-Regular",
-              "left": "50%",
-              "marginRight": "-50%",
-              "outline": "none",
-              "overflow": "auto",
-              "position": "absolute",
-              "right": "auto",
-              "top": "50%",
-              "transform": "translate(-50%, -50%)",
-            },
-          }
-        }
+        closeModal={false}
+        handleCloseRequest={[Function]}
+        modalButtonClassName="button"
+        title="ADD ROOM"
       >
-        <div
-          aria-modal="true"
-          className="ReactModal__Overlay ReactModal__Overlay--after-open"
-          onClick={[Function]}
-          onMouseDown={[Function]}
+        <IconButtons
+          buttonText="St. Catherines"
+          modalButtonClassName="button"
+          openModal={[Function]}
+        >
+          <button
+            className="button"
+            id="modal-button"
+            onClick={[Function]}
+          >
+            St. Catherines
+          </button>
+        </IconButtons>
+        <Modal
+          ariaHideApp={false}
+          bodyOpenClassName="ReactModal__Body--open"
+          className="nbo-add-room-modal button addRoomBtn"
+          closeTimeoutMS={0}
+          contentLabel="Parent Modal"
+          isOpen={true}
+          onAfterOpen={[Function]}
+          onRequestClose={[Function]}
+          parentSelector={[Function]}
+          portalClassName="ReactModalPortal"
+          shouldCloseOnEsc={true}
+          shouldCloseOnOverlayClick={false}
+          shouldFocusAfterRender={true}
+          shouldReturnFocusAfterClose={true}
           style={
             Object {
-              "backgroundColor": "rgba(255, 255, 255, 0.75)",
-              "bottom": 0,
-              "left": 0,
-              "position": "fixed",
-              "right": 0,
-              "top": 0,
-            }
-          }
-        >
-          <div
-            aria-label="Parent Modal"
-            className="ReactModal__Content ReactModal__Content--after-open nbo-add-room-modal button addRoomBtn"
-            onClick={[Function]}
-            onKeyDown={[Function]}
-            onMouseDown={[Function]}
-            onMouseUp={[Function]}
-            style={
-              Object {
+              "content": Object {
                 "backgroundColor": "#ffffff",
                 "border": "1px solid #CCCCCC",
                 "borderRadius": "4px",
@@ -180,501 +461,1009 @@ exports[`AddRoomNairobi should pop up a modal when modal button is clicked 1`] =
                 "right": "auto",
                 "top": "50%",
                 "transform": "translate(-50%, -50%)",
+              },
+            }
+          }
+        >
+          <ModalPortal
+            ariaHideApp={false}
+            bodyOpenClassName="ReactModal__Body--open"
+            className="nbo-add-room-modal button addRoomBtn"
+            closeTimeoutMS={0}
+            contentLabel="Parent Modal"
+            defaultStyles={
+              Object {
+                "content": Object {
+                  "WebkitOverflowScrolling": "touch",
+                  "background": "#fff",
+                  "border": "1px solid #ccc",
+                  "borderRadius": "4px",
+                  "bottom": "40px",
+                  "left": "40px",
+                  "outline": "none",
+                  "overflow": "auto",
+                  "padding": "20px",
+                  "position": "absolute",
+                  "right": "40px",
+                  "top": "40px",
+                },
+                "overlay": Object {
+                  "backgroundColor": "rgba(255, 255, 255, 0.75)",
+                  "bottom": 0,
+                  "left": 0,
+                  "position": "fixed",
+                  "right": 0,
+                  "top": 0,
+                },
               }
             }
-            tabIndex="-1"
+            isOpen={true}
+            onAfterOpen={[Function]}
+            onRequestClose={[Function]}
+            parentSelector={[Function]}
+            portalClassName="ReactModalPortal"
+            shouldCloseOnEsc={true}
+            shouldCloseOnOverlayClick={false}
+            shouldFocusAfterRender={true}
+            shouldReturnFocusAfterClose={true}
+            style={
+              Object {
+                "content": Object {
+                  "backgroundColor": "#ffffff",
+                  "border": "1px solid #CCCCCC",
+                  "borderRadius": "4px",
+                  "bottom": "auto",
+                  "boxShadow": "0 2px 40px 10px rgba(185, 180, 180, 0.2)",
+                  "fontFamily": "DINPro-Regular",
+                  "left": "50%",
+                  "marginRight": "-50%",
+                  "outline": "none",
+                  "overflow": "auto",
+                  "position": "absolute",
+                  "right": "auto",
+                  "top": "50%",
+                  "transform": "translate(-50%, -50%)",
+                },
+              }
+            }
           >
-            <h2>
-              ADD ROOM
-            </h2>
-            <form
-              className="modal-form"
-              onSubmit={[Function]}
+            <div
+              aria-modal="true"
+              className="ReactModal__Overlay ReactModal__Overlay--after-open"
+              onClick={[Function]}
+              onMouseDown={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "rgba(255, 255, 255, 0.75)",
+                  "bottom": 0,
+                  "left": 0,
+                  "position": "fixed",
+                  "right": 0,
+                  "top": 0,
+                }
+              }
             >
-              <SelectImage
-                imageUrl=""
-                onChange={[Function]}
-                thumbnailName="Upload a thumbnail"
+              <div
+                aria-label="Parent Modal"
+                className="ReactModal__Content ReactModal__Content--after-open nbo-add-room-modal button addRoomBtn"
+                onClick={[Function]}
+                onKeyDown={[Function]}
+                onMouseDown={[Function]}
+                onMouseUp={[Function]}
+                style={
+                  Object {
+                    "backgroundColor": "#ffffff",
+                    "border": "1px solid #CCCCCC",
+                    "borderRadius": "4px",
+                    "bottom": "auto",
+                    "boxShadow": "0 2px 40px 10px rgba(185, 180, 180, 0.2)",
+                    "fontFamily": "DINPro-Regular",
+                    "left": "50%",
+                    "marginRight": "-50%",
+                    "outline": "none",
+                    "overflow": "auto",
+                    "position": "absolute",
+                    "right": "auto",
+                    "top": "50%",
+                    "transform": "translate(-50%, -50%)",
+                  }
+                }
+                tabIndex="-1"
               >
-                <div
-                  className="image-select"
+                <h2>
+                  ADD ROOM
+                </h2>
+                <form
+                  className="modal-form"
+                  onSubmit={[Function]}
                 >
-                  <div
-                    className="thumbnail"
+                  <SelectImage
+                    imageUrl=""
+                    onChange={[Function]}
+                    thumbnailName="Upload a thumbnail"
                   >
                     <div
-                      className="placeholder"
+                      className="image-select"
                     >
-                      <img
-                        alt="Placeholder"
-                        src="test-file-stub"
-                      />
-                    </div>
-                  </div>
-                  <div
-                    className="select-button"
-                  >
-                    <span>
-                      Upload a thumbnail
-                    </span>
-                    <ThemedThemed
-                      composeTheme="deeply"
-                      disabled={false}
-                      id="upload_widget_opener"
-                      label="Select Image"
-                      mapThemrProps={[Function]}
-                      ripple={true}
-                      rippleCentered={false}
-                      rippleClassName=""
-                      rippleMultiple={true}
-                      rippleSpread={2}
-                    >
-                      <ThemedRippledComponent
-                        composeTheme="deeply"
-                        disabled={false}
-                        id="upload_widget_opener"
-                        label="Select Image"
-                        mapThemrProps={[Function]}
-                        ripple={true}
-                        rippleCentered={false}
-                        rippleClassName=""
-                        rippleMultiple={true}
-                        rippleSpread={2}
-                        theme={Object {}}
+                      <div
+                        className="thumbnail"
                       >
-                        <RippledComponent
+                        <div
+                          className="placeholder"
+                        >
+                          <img
+                            alt="Placeholder"
+                            src="test-file-stub"
+                          />
+                        </div>
+                      </div>
+                      <div
+                        className="select-button"
+                      >
+                        <span>
+                          Upload a thumbnail
+                        </span>
+                        <ThemedThemed
+                          composeTheme="deeply"
                           disabled={false}
                           id="upload_widget_opener"
                           label="Select Image"
+                          mapThemrProps={[Function]}
                           ripple={true}
                           rippleCentered={false}
                           rippleClassName=""
                           rippleMultiple={true}
                           rippleSpread={2}
-                          theme={Object {}}
                         >
-                          <Button
-                            accent={false}
-                            className=""
+                          <ThemedRippledComponent
+                            composeTheme="deeply"
                             disabled={false}
-                            flat={false}
-                            floating={false}
                             id="upload_widget_opener"
                             label="Select Image"
-                            mini={false}
-                            neutral={true}
-                            onMouseDown={[Function]}
-                            onTouchStart={[Function]}
-                            primary={false}
-                            raised={false}
+                            mapThemrProps={[Function]}
+                            ripple={true}
+                            rippleCentered={false}
+                            rippleClassName=""
+                            rippleMultiple={true}
+                            rippleSpread={2}
                             theme={Object {}}
-                            type="button"
                           >
-                            <button
-                              className=""
-                              data-react-toolbox="button"
+                            <RippledComponent
                               disabled={false}
                               id="upload_widget_opener"
-                              onMouseDown={[Function]}
-                              onMouseLeave={[Function]}
-                              onMouseUp={[Function]}
-                              onTouchStart={[Function]}
-                              type="button"
+                              label="Select Image"
+                              ripple={true}
+                              rippleCentered={false}
+                              rippleClassName=""
+                              rippleMultiple={true}
+                              rippleSpread={2}
+                              theme={Object {}}
                             >
-                              Select Image
-                            </button>
-                          </Button>
-                        </RippledComponent>
-                      </ThemedRippledComponent>
-                    </ThemedThemed>
+                              <Button
+                                accent={false}
+                                className=""
+                                disabled={false}
+                                flat={false}
+                                floating={false}
+                                id="upload_widget_opener"
+                                label="Select Image"
+                                mini={false}
+                                neutral={true}
+                                onMouseDown={[Function]}
+                                onTouchStart={[Function]}
+                                primary={false}
+                                raised={false}
+                                theme={Object {}}
+                                type="button"
+                              >
+                                <button
+                                  className=""
+                                  data-react-toolbox="button"
+                                  disabled={false}
+                                  id="upload_widget_opener"
+                                  onMouseDown={[Function]}
+                                  onMouseLeave={[Function]}
+                                  onMouseUp={[Function]}
+                                  onTouchStart={[Function]}
+                                  type="button"
+                                >
+                                  Select Image
+                                </button>
+                              </Button>
+                            </RippledComponent>
+                          </ThemedRippledComponent>
+                        </ThemedThemed>
+                        <div
+                          className="invisible-input"
+                        >
+                          <input
+                            name="selectImage"
+                            onChange={[Function]}
+                            type="file"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </SelectImage>
+                  <NairobiRoomInputs
+                    floors={Array []}
+                    handleInputChange={[Function]}
+                    officeBlock=""
+                    officeFloor=""
+                    roomCapacity={1}
+                    roomName=""
+                  >
                     <div
-                      className="invisible-input"
+                      className="form-inputs"
                     >
-                      <input
-                        name="selectImage"
+                      <Input
+                        id="roomName"
+                        inputClass="mrm-input default-input"
+                        labelClass="input1"
+                        labelName="Room Name"
+                        name="roomName"
                         onChange={[Function]}
-                        type="file"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </SelectImage>
-              <NairobiRoomInputs
-                handleInputChange={[Function]}
-                officeBlock=""
-                officeFloor=""
-                roomCapacity={0}
-                roomName=""
-              >
-                <div
-                  className="form-inputs"
-                >
-                  <Input
-                    id="roomName"
-                    inputClass="mrm-input default-input"
-                    labelClass="input1"
-                    labelName="Room Name"
-                    name="roomName"
-                    onChange={[Function]}
-                    placeholder="Enter room name"
-                    type="text"
-                    value=""
-                  >
-                    <div
-                      className="input1"
-                    >
-                      <label
-                        htmlFor="roomName"
+                        pattern="^[a-zA-Z]+(([' .-][a-zA-Z ])?[a-zA-Z]*)*$"
+                        placeholder="Enter room name"
+                        required={true}
+                        title="Name cannot be numbers or any special characters"
+                        type="text"
+                        value=""
                       >
-                        Room Name
-                        <input
-                          className="mrm-input default-input"
-                          defaultValue=""
-                          id="roomName"
-                          name="roomName"
-                          onChange={[Function]}
-                          placeholder="Enter room name"
-                          type="text"
-                        />
-                      </label>
-                    </div>
-                  </Input>
-                  <Input
-                    id="roomCapacity"
-                    inputClass="mrm-input default-input"
-                    labelClass="input1"
-                    labelName="Room Capacity"
-                    min="1"
-                    name="roomCapacity"
-                    onChange={[Function]}
-                    placeholder={1}
-                    type="number"
-                    value={0}
-                  >
-                    <div
-                      className="input1"
-                    >
-                      <label
-                        htmlFor="roomCapacity"
-                      >
-                        Room Capacity
-                        <input
-                          className="mrm-input default-input"
-                          defaultValue={0}
-                          id="roomCapacity"
-                          min="1"
-                          name="roomCapacity"
-                          onChange={[Function]}
-                          placeholder={1}
-                          type="number"
-                        />
-                        <Controls
-                          handleIncrement={[Function]}
+                        <div
+                          className="input1"
                         >
-                          <div
-                            className="controls"
+                          <label
+                            htmlFor="roomName"
                           >
-                            <button
-                              className="control up"
-                              name="up"
-                              onClick={[Function]}
+                            Room Name
+                            <input
+                              className="mrm-input default-input"
+                              defaultValue=""
+                              id="roomName"
+                              name="roomName"
+                              onChange={[Function]}
+                              pattern="^[a-zA-Z]+(([' .-][a-zA-Z ])?[a-zA-Z]*)*$"
+                              placeholder="Enter room name"
+                              required={true}
+                              title="Name cannot be numbers or any special characters"
+                              type="text"
+                            />
+                          </label>
+                        </div>
+                      </Input>
+                      <Input
+                        id="roomCapacity"
+                        inputClass="mrm-input default-input"
+                        labelClass="input1"
+                        labelName="Room Capacity"
+                        min="1"
+                        name="roomCapacity"
+                        onChange={[Function]}
+                        placeholder={1}
+                        required={true}
+                        type="number"
+                        value={1}
+                      >
+                        <div
+                          className="input1"
+                        >
+                          <label
+                            htmlFor="roomCapacity"
+                          >
+                            Room Capacity
+                            <input
+                              className="mrm-input default-input"
+                              defaultValue={1}
+                              id="roomCapacity"
+                              min="1"
+                              name="roomCapacity"
+                              onChange={[Function]}
+                              placeholder={1}
+                              required={true}
+                              type="number"
+                            />
+                            <Controls
+                              handleIncrement={[Function]}
                             >
-                              <img
-                                alt="up"
-                                name="up"
-                                src="test-file-stub"
-                              />
-                            </button>
-                            <button
-                              className="control down"
-                              name="down"
-                              onClick={[Function]}
+                              <div
+                                className="controls"
+                              >
+                                <button
+                                  className="control up"
+                                  name="up"
+                                  onClick={[Function]}
+                                >
+                                  <img
+                                    alt="up"
+                                    name="up"
+                                    src="test-file-stub"
+                                  />
+                                </button>
+                                <button
+                                  className="control down"
+                                  name="down"
+                                  onClick={[Function]}
+                                >
+                                  <img
+                                    alt="down"
+                                    name="down"
+                                    src="test-file-stub"
+                                  />
+                                </button>
+                              </div>
+                            </Controls>
+                          </label>
+                        </div>
+                      </Input>
+                      <SelectInput
+                        id="officeBlock"
+                        labelText="Select Block"
+                        name="officeBlock"
+                        onChange={[Function]}
+                        options={
+                          Array [
+                            Object {
+                              "id": 2,
+                              "name": "A",
+                            },
+                          ]
+                        }
+                        placeholder="Select block"
+                        placeholderValue=""
+                        required={true}
+                        selectInputClassName="default-select"
+                        value=""
+                        wrapperClassName="input-wrapper"
+                      >
+                        <div
+                          className="input-wrapper"
+                        >
+                          <label
+                            htmlFor="officeBlock"
+                          >
+                            Select Block
+                            <select
+                              className="default-select"
+                              id="officeBlock"
+                              name="officeBlock"
+                              onChange={[Function]}
+                              required={true}
+                              value=""
                             >
-                              <img
-                                alt="down"
-                                name="down"
-                                src="test-file-stub"
-                              />
-                            </button>
-                          </div>
-                        </Controls>
-                      </label>
+                              <option
+                                value=""
+                              >
+                                Select block
+                              </option>
+                              <option
+                                key="2"
+                                value={2}
+                              >
+                                A
+                              </option>
+                            </select>
+                          </label>
+                        </div>
+                      </SelectInput>
+                      <SelectInput
+                        id="officeFloor"
+                        labelText="Select Floor"
+                        name="officeFloor"
+                        onChange={[Function]}
+                        options={
+                          Array [
+                            Object {
+                              "id": 2,
+                              "name": 2,
+                            },
+                          ]
+                        }
+                        placeholder="Select floor"
+                        placeholderValue=""
+                        required={true}
+                        selectInputClassName="default-select"
+                        value=""
+                        wrapperClassName="input-wrapper"
+                      >
+                        <div
+                          className="input-wrapper"
+                        >
+                          <label
+                            htmlFor="officeFloor"
+                          >
+                            Select Floor
+                            <select
+                              className="default-select"
+                              id="officeFloor"
+                              name="officeFloor"
+                              onChange={[Function]}
+                              required={true}
+                              value=""
+                            >
+                              <option
+                                value=""
+                              >
+                                Select floor
+                              </option>
+                              <option
+                                key="2"
+                                value={2}
+                              >
+                                2
+                              </option>
+                            </select>
+                          </label>
+                        </div>
+                      </SelectInput>
                     </div>
-                  </Input>
-                  <SelectInput
-                    id="officeBlock"
-                    labelText="Select Block"
-                    name="officeBlock"
-                    onChange={[Function]}
-                    options={
-                      Array [
-                        Object {
-                          "value": "A",
-                        },
-                        Object {
-                          "value": "B",
-                        },
-                      ]
-                    }
-                    placeholder="Select block"
-                    placeholderValue=""
-                    selectInputClassName="default-select"
-                    value=""
-                    wrapperClassName="input-wrapper"
+                  </NairobiRoomInputs>
+                  <ActionButtons
+                    actionButtonClassName="action-button"
+                    actionButtonText="ADD ROOM"
+                    cancelButtonClassName="cancel-button"
+                    cancelButtonText="CANCEL"
+                    onClickCancel={[Function]}
+                    withCancel={true}
                   >
                     <div
-                      className="input-wrapper"
+                      className="form-action-buttons"
                     >
-                      <label
-                        htmlFor="officeBlock"
+                      <button
+                        className="cancel-button"
+                        onClick={[Function]}
                       >
-                        Select Block
-                        <select
-                          className="default-select"
-                          id="officeBlock"
-                          name="officeBlock"
-                          onChange={[Function]}
-                          value=""
-                        >
-                          <option
-                            value=""
-                          >
-                            Select block
-                          </option>
-                          <option />
-                          <option />
-                        </select>
-                      </label>
-                    </div>
-                  </SelectInput>
-                  <SelectInput
-                    id="officeFloor"
-                    labelText="Select Floor"
-                    name="officeFloor"
-                    onChange={[Function]}
-                    options={
-                      Array [
-                        Object {
-                          "value": 1,
-                        },
-                        Object {
-                          "value": 2,
-                        },
-                        Object {
-                          "value": 3,
-                        },
-                      ]
-                    }
-                    placeholder="Select floor"
-                    placeholderValue=""
-                    selectInputClassName="default-select"
-                    value=""
-                    wrapperClassName="input-wrapper"
-                  >
-                    <div
-                      className="input-wrapper"
-                    >
-                      <label
-                        htmlFor="officeFloor"
+                        CANCEL
+                      </button>
+                      <button
+                        className="action-button"
+                        type="submit"
                       >
-                        Select Floor
-                        <select
-                          className="default-select"
-                          id="officeFloor"
-                          name="officeFloor"
-                          onChange={[Function]}
-                          value=""
-                        >
-                          <option
-                            value=""
-                          >
-                            Select floor
-                          </option>
-                          <option />
-                          <option />
-                          <option />
-                        </select>
-                      </label>
+                        ADD ROOM
+                      </button>
                     </div>
-                  </SelectInput>
-                </div>
-              </NairobiRoomInputs>
-              <ActionButtons
-                actionButtonClassName="action-button"
-                actionButtonText="ADD ROOM"
-                cancelButtonClassName="cancel-button"
-                cancelButtonText="CANCEL"
-                onClickCancel={[Function]}
-                withCancel={true}
-              >
-                <div
-                  className="form-action-buttons"
-                >
-                  <button
-                    className="cancel-button"
-                    onClick={[Function]}
-                  >
-                    CANCEL
-                  </button>
-                  <button
-                    className="action-button"
-                    type="submit"
-                  >
-                    ADD ROOM
-                  </button>
-                </div>
-              </ActionButtons>
-            </form>
-          </div>
-        </div>
-      </ModalPortal>
-    </Modal>
-  </MrmModal>
-</AddRoomNairobi>
+                  </ActionButtons>
+                </form>
+              </div>
+            </div>
+          </ModalPortal>
+        </Modal>
+      </MrmModal>
+    </AddRoomNairobi>
+  </ApolloProvider>
+</MockedProvider>
 `;
 
 exports[`AddRoomNairobi should render properly 1`] = `
-<AddRoomNairobi
-  locations={
+<MockedProvider
+  addTypename={false}
+  mocks={
     Array [
       Object {
-        "__typename": "Location",
-        "id": "1",
-        "name": "Kampala",
-      },
-      Object {
-        "__typename": "Location",
-        "id": "2",
-        "name": "Lagos",
-      },
-      Object {
-        "__typename": "Location",
-        "id": "3",
-        "name": "Nairobi",
+        "request": Object {
+          "query": Object {
+            "definitions": Array [
+              Object {
+                "directives": Array [],
+                "kind": "OperationDefinition",
+                "name": undefined,
+                "operation": "mutation",
+                "selectionSet": Object {
+                  "kind": "SelectionSet",
+                  "selections": Array [
+                    Object {
+                      "alias": undefined,
+                      "arguments": Array [
+                        Object {
+                          "kind": "Argument",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "capacity",
+                          },
+                          "value": Object {
+                            "kind": "Variable",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "capacity",
+                            },
+                          },
+                        },
+                        Object {
+                          "kind": "Argument",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "name",
+                          },
+                          "value": Object {
+                            "kind": "Variable",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "name",
+                            },
+                          },
+                        },
+                        Object {
+                          "kind": "Argument",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "floorId",
+                          },
+                          "value": Object {
+                            "kind": "Variable",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "floorId",
+                            },
+                          },
+                        },
+                        Object {
+                          "kind": "Argument",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "officeId",
+                          },
+                          "value": Object {
+                            "kind": "Variable",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "officeId",
+                            },
+                          },
+                        },
+                        Object {
+                          "kind": "Argument",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "roomType",
+                          },
+                          "value": Object {
+                            "kind": "Variable",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "roomType",
+                            },
+                          },
+                        },
+                        Object {
+                          "kind": "Argument",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "calendarId",
+                          },
+                          "value": Object {
+                            "kind": "Variable",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "calendarId",
+                            },
+                          },
+                        },
+                        Object {
+                          "kind": "Argument",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "imageUrl",
+                          },
+                          "value": Object {
+                            "kind": "Variable",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "imageUrl",
+                            },
+                          },
+                        },
+                      ],
+                      "directives": Array [],
+                      "kind": "Field",
+                      "name": Object {
+                        "kind": "Name",
+                        "value": "createRoom",
+                      },
+                      "selectionSet": Object {
+                        "kind": "SelectionSet",
+                        "selections": Array [
+                          Object {
+                            "alias": undefined,
+                            "arguments": Array [],
+                            "directives": Array [],
+                            "kind": "Field",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "room",
+                            },
+                            "selectionSet": Object {
+                              "kind": "SelectionSet",
+                              "selections": Array [
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "name",
+                                  },
+                                  "selectionSet": undefined,
+                                },
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "floorId",
+                                  },
+                                  "selectionSet": undefined,
+                                },
+                              ],
+                            },
+                          },
+                        ],
+                      },
+                    },
+                  ],
+                },
+                "variableDefinitions": Array [
+                  Object {
+                    "defaultValue": undefined,
+                    "kind": "VariableDefinition",
+                    "type": Object {
+                      "kind": "NonNullType",
+                      "type": Object {
+                        "kind": "NamedType",
+                        "name": Object {
+                          "kind": "Name",
+                          "value": "Int",
+                        },
+                      },
+                    },
+                    "variable": Object {
+                      "kind": "Variable",
+                      "name": Object {
+                        "kind": "Name",
+                        "value": "capacity",
+                      },
+                    },
+                  },
+                  Object {
+                    "defaultValue": undefined,
+                    "kind": "VariableDefinition",
+                    "type": Object {
+                      "kind": "NonNullType",
+                      "type": Object {
+                        "kind": "NamedType",
+                        "name": Object {
+                          "kind": "Name",
+                          "value": "String",
+                        },
+                      },
+                    },
+                    "variable": Object {
+                      "kind": "Variable",
+                      "name": Object {
+                        "kind": "Name",
+                        "value": "name",
+                      },
+                    },
+                  },
+                  Object {
+                    "defaultValue": undefined,
+                    "kind": "VariableDefinition",
+                    "type": Object {
+                      "kind": "NonNullType",
+                      "type": Object {
+                        "kind": "NamedType",
+                        "name": Object {
+                          "kind": "Name",
+                          "value": "Int",
+                        },
+                      },
+                    },
+                    "variable": Object {
+                      "kind": "Variable",
+                      "name": Object {
+                        "kind": "Name",
+                        "value": "floorId",
+                      },
+                    },
+                  },
+                  Object {
+                    "defaultValue": undefined,
+                    "kind": "VariableDefinition",
+                    "type": Object {
+                      "kind": "NonNullType",
+                      "type": Object {
+                        "kind": "NamedType",
+                        "name": Object {
+                          "kind": "Name",
+                          "value": "String",
+                        },
+                      },
+                    },
+                    "variable": Object {
+                      "kind": "Variable",
+                      "name": Object {
+                        "kind": "Name",
+                        "value": "roomType",
+                      },
+                    },
+                  },
+                  Object {
+                    "defaultValue": undefined,
+                    "kind": "VariableDefinition",
+                    "type": Object {
+                      "kind": "NonNullType",
+                      "type": Object {
+                        "kind": "NamedType",
+                        "name": Object {
+                          "kind": "Name",
+                          "value": "String",
+                        },
+                      },
+                    },
+                    "variable": Object {
+                      "kind": "Variable",
+                      "name": Object {
+                        "kind": "Name",
+                        "value": "calendarId",
+                      },
+                    },
+                  },
+                  Object {
+                    "defaultValue": undefined,
+                    "kind": "VariableDefinition",
+                    "type": Object {
+                      "kind": "NonNullType",
+                      "type": Object {
+                        "kind": "NamedType",
+                        "name": Object {
+                          "kind": "Name",
+                          "value": "Int",
+                        },
+                      },
+                    },
+                    "variable": Object {
+                      "kind": "Variable",
+                      "name": Object {
+                        "kind": "Name",
+                        "value": "officeId",
+                      },
+                    },
+                  },
+                  Object {
+                    "defaultValue": undefined,
+                    "kind": "VariableDefinition",
+                    "type": Object {
+                      "kind": "NonNullType",
+                      "type": Object {
+                        "kind": "NamedType",
+                        "name": Object {
+                          "kind": "Name",
+                          "value": "String",
+                        },
+                      },
+                    },
+                    "variable": Object {
+                      "kind": "Variable",
+                      "name": Object {
+                        "kind": "Name",
+                        "value": "imageUrl",
+                      },
+                    },
+                  },
+                ],
+              },
+            ],
+            "kind": "Document",
+            "loc": Object {
+              "end": 563,
+              "start": 0,
+            },
+          },
+          "variables": Object {
+            "calendarId": "andela.com",
+            "capacity": 3,
+            "floorId": 2,
+            "imageUrl": "test/image",
+            "name": "Test room 1",
+            "officeId": 2,
+            "roomType": "meeting room",
+          },
+        },
+        "result": Object {
+          "data": Object {
+            "createRoom": Object {
+              "room": Object {
+                "floorId": 2,
+                "name": "Test room 4",
+              },
+            },
+          },
+        },
       },
     ]
   }
 >
-  <MrmModal
-    buttonText="St. Catherines"
-    className="nbo-add-room-modal button addRoomBtn"
-    closeModal={false}
-    handleCloseRequest={[Function]}
-    modalButtonClassName="button"
-    title="ADD ROOM"
-  >
-    <IconButtons
-      buttonText="St. Catherines"
-      modalButtonClassName="button"
-      openModal={[Function]}
-    >
-      <button
-        className="button"
-        id="modal-button"
-        onClick={[Function]}
-      >
-        St. Catherines
-      </button>
-    </IconButtons>
-    <Modal
-      ariaHideApp={false}
-      bodyOpenClassName="ReactModal__Body--open"
-      className="nbo-add-room-modal button addRoomBtn"
-      closeTimeoutMS={0}
-      contentLabel="Parent Modal"
-      isOpen={false}
-      onAfterOpen={[Function]}
-      onRequestClose={[Function]}
-      parentSelector={[Function]}
-      portalClassName="ReactModalPortal"
-      shouldCloseOnEsc={true}
-      shouldCloseOnOverlayClick={true}
-      shouldFocusAfterRender={true}
-      shouldReturnFocusAfterClose={true}
-      style={
-        Object {
-          "content": Object {
-            "backgroundColor": "#ffffff",
-            "border": "1px solid #CCCCCC",
-            "borderRadius": "4px",
-            "bottom": "auto",
-            "boxShadow": "0 2px 40px 10px rgba(185, 180, 180, 0.2)",
-            "fontFamily": "DINPro-Regular",
-            "left": "50%",
-            "marginRight": "-50%",
-            "outline": "none",
-            "overflow": "auto",
-            "position": "absolute",
-            "right": "auto",
-            "top": "50%",
-            "transform": "translate(-50%, -50%)",
+  <ApolloProvider
+    client={
+      ApolloClient {
+        "__operations_cache__": Map {},
+        "cache": InMemoryCache {
+          "addTypename": false,
+          "config": Object {
+            "addTypename": false,
+            "dataIdFromObject": [Function],
+            "fragmentMatcher": HeuristicFragmentMatcher {},
+            "storeFactory": [Function],
           },
-        }
+          "data": ObjectCache {
+            "data": Object {},
+          },
+          "optimistic": Array [],
+          "silenceBroadcast": false,
+          "watches": Array [],
+        },
+        "defaultOptions": Object {},
+        "disableNetworkFetches": false,
+        "link": ApolloLink {
+          "request": [Function],
+        },
+        "mutate": [Function],
+        "query": [Function],
+        "queryDeduplication": true,
+        "reFetchObservableQueries": [Function],
+        "resetStore": [Function],
+        "resetStoreCallbacks": Array [],
+        "ssrMode": false,
+        "store": DataStore {
+          "cache": InMemoryCache {
+            "addTypename": false,
+            "config": Object {
+              "addTypename": false,
+              "dataIdFromObject": [Function],
+              "fragmentMatcher": HeuristicFragmentMatcher {},
+              "storeFactory": [Function],
+            },
+            "data": ObjectCache {
+              "data": Object {},
+            },
+            "optimistic": Array [],
+            "silenceBroadcast": false,
+            "watches": Array [],
+          },
+        },
+        "version": "2.3.1",
+        "watchQuery": [Function],
       }
+    }
+  >
+    <AddRoomNairobi
+      createRoom={[MockFunction]}
+      validate={[MockFunction]}
     >
-      <ModalPortal
-        ariaHideApp={false}
-        bodyOpenClassName="ReactModal__Body--open"
+      <MrmModal
+        buttonText="St. Catherines"
         className="nbo-add-room-modal button addRoomBtn"
-        closeTimeoutMS={0}
-        contentLabel="Parent Modal"
-        defaultStyles={
-          Object {
-            "content": Object {
-              "WebkitOverflowScrolling": "touch",
-              "background": "#fff",
-              "border": "1px solid #ccc",
-              "borderRadius": "4px",
-              "bottom": "40px",
-              "left": "40px",
-              "outline": "none",
-              "overflow": "auto",
-              "padding": "20px",
-              "position": "absolute",
-              "right": "40px",
-              "top": "40px",
-            },
-            "overlay": Object {
-              "backgroundColor": "rgba(255, 255, 255, 0.75)",
-              "bottom": 0,
-              "left": 0,
-              "position": "fixed",
-              "right": 0,
-              "top": 0,
-            },
+        closeModal={false}
+        handleCloseRequest={[Function]}
+        modalButtonClassName="button"
+        title="ADD ROOM"
+      >
+        <IconButtons
+          buttonText="St. Catherines"
+          modalButtonClassName="button"
+          openModal={[Function]}
+        >
+          <button
+            className="button"
+            id="modal-button"
+            onClick={[Function]}
+          >
+            St. Catherines
+          </button>
+        </IconButtons>
+        <Modal
+          ariaHideApp={false}
+          bodyOpenClassName="ReactModal__Body--open"
+          className="nbo-add-room-modal button addRoomBtn"
+          closeTimeoutMS={0}
+          contentLabel="Parent Modal"
+          isOpen={false}
+          onAfterOpen={[Function]}
+          onRequestClose={[Function]}
+          parentSelector={[Function]}
+          portalClassName="ReactModalPortal"
+          shouldCloseOnEsc={true}
+          shouldCloseOnOverlayClick={false}
+          shouldFocusAfterRender={true}
+          shouldReturnFocusAfterClose={true}
+          style={
+            Object {
+              "content": Object {
+                "backgroundColor": "#ffffff",
+                "border": "1px solid #CCCCCC",
+                "borderRadius": "4px",
+                "bottom": "auto",
+                "boxShadow": "0 2px 40px 10px rgba(185, 180, 180, 0.2)",
+                "fontFamily": "DINPro-Regular",
+                "left": "50%",
+                "marginRight": "-50%",
+                "outline": "none",
+                "overflow": "auto",
+                "position": "absolute",
+                "right": "auto",
+                "top": "50%",
+                "transform": "translate(-50%, -50%)",
+              },
+            }
           }
-        }
-        isOpen={false}
-        onAfterOpen={[Function]}
-        onRequestClose={[Function]}
-        parentSelector={[Function]}
-        portalClassName="ReactModalPortal"
-        shouldCloseOnEsc={true}
-        shouldCloseOnOverlayClick={true}
-        shouldFocusAfterRender={true}
-        shouldReturnFocusAfterClose={true}
-        style={
-          Object {
-            "content": Object {
-              "backgroundColor": "#ffffff",
-              "border": "1px solid #CCCCCC",
-              "borderRadius": "4px",
-              "bottom": "auto",
-              "boxShadow": "0 2px 40px 10px rgba(185, 180, 180, 0.2)",
-              "fontFamily": "DINPro-Regular",
-              "left": "50%",
-              "marginRight": "-50%",
-              "outline": "none",
-              "overflow": "auto",
-              "position": "absolute",
-              "right": "auto",
-              "top": "50%",
-              "transform": "translate(-50%, -50%)",
-            },
-          }
-        }
-      />
-    </Modal>
-  </MrmModal>
-</AddRoomNairobi>
+        >
+          <ModalPortal
+            ariaHideApp={false}
+            bodyOpenClassName="ReactModal__Body--open"
+            className="nbo-add-room-modal button addRoomBtn"
+            closeTimeoutMS={0}
+            contentLabel="Parent Modal"
+            defaultStyles={
+              Object {
+                "content": Object {
+                  "WebkitOverflowScrolling": "touch",
+                  "background": "#fff",
+                  "border": "1px solid #ccc",
+                  "borderRadius": "4px",
+                  "bottom": "40px",
+                  "left": "40px",
+                  "outline": "none",
+                  "overflow": "auto",
+                  "padding": "20px",
+                  "position": "absolute",
+                  "right": "40px",
+                  "top": "40px",
+                },
+                "overlay": Object {
+                  "backgroundColor": "rgba(255, 255, 255, 0.75)",
+                  "bottom": 0,
+                  "left": 0,
+                  "position": "fixed",
+                  "right": 0,
+                  "top": 0,
+                },
+              }
+            }
+            isOpen={false}
+            onAfterOpen={[Function]}
+            onRequestClose={[Function]}
+            parentSelector={[Function]}
+            portalClassName="ReactModalPortal"
+            shouldCloseOnEsc={true}
+            shouldCloseOnOverlayClick={false}
+            shouldFocusAfterRender={true}
+            shouldReturnFocusAfterClose={true}
+            style={
+              Object {
+                "content": Object {
+                  "backgroundColor": "#ffffff",
+                  "border": "1px solid #CCCCCC",
+                  "borderRadius": "4px",
+                  "bottom": "auto",
+                  "boxShadow": "0 2px 40px 10px rgba(185, 180, 180, 0.2)",
+                  "fontFamily": "DINPro-Regular",
+                  "left": "50%",
+                  "marginRight": "-50%",
+                  "outline": "none",
+                  "overflow": "auto",
+                  "position": "absolute",
+                  "right": "auto",
+                  "top": "50%",
+                  "transform": "translate(-50%, -50%)",
+                },
+              }
+            }
+          />
+        </Modal>
+      </MrmModal>
+    </AddRoomNairobi>
+  </ApolloProvider>
+</MockedProvider>
 `;
