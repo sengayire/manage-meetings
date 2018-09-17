@@ -108,9 +108,9 @@ describe('AddRoomNairobi', () => {
     const newWrapper = shallow(<AddRoomNairobi {...newProps} />);
     const newState = {
       roomName: 'Test room 1',
-      roomCapacity: '3',
-      officeFloor: 2,
-      officeBlock: 2,
+      roomCapacity: 3,
+      officeFloor: '2',
+      officeBlock: '2',
       imageUrl: 'test/image',
     };
 
@@ -129,7 +129,7 @@ describe('AddRoomNairobi', () => {
   });
 
   it('should upload an image', () => {
-    const newWrapper = shallow(<AddRoomNairobi />);
+    const newWrapper = shallow(<AddRoomNairobi {...props} />);
     const images = [{
       name: 'image-name',
       type: 'image/jpeg',
@@ -142,7 +142,7 @@ describe('AddRoomNairobi', () => {
   });
 
   it('should display error on failure to upload image', () => {
-    const newWrapper = shallow(<AddRoomNairobi />);
+    const newWrapper = shallow(<AddRoomNairobi {...props} />);
     const imageFiles = [
       {
         name: 'fail',
@@ -156,7 +156,7 @@ describe('AddRoomNairobi', () => {
   });
 
   it('should trim image name if it is too long', () => {
-    const newWrapper = shallow(<AddRoomNairobi />);
+    const newWrapper = shallow(<AddRoomNairobi {...props} />);
     const images = [{
       name: 'image-name-is-very-long-to-be-included',
       type: 'image/jpeg',

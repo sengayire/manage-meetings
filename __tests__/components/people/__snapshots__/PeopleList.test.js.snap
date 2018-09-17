@@ -2,7 +2,7 @@
 
 exports[`PeopleList Component renders correctly from memory 1`] = `
 <MockedProvider
-  addTypename={true}
+  addTypename={false}
   mocks={
     Array [
       Object {
@@ -244,6 +244,168 @@ exports[`PeopleList Component renders correctly from memory 1`] = `
           },
         },
       },
+      Object {
+        "request": Object {
+          "query": Object {
+            "definitions": Array [
+              Object {
+                "directives": Array [],
+                "kind": "OperationDefinition",
+                "name": Object {
+                  "kind": "Name",
+                  "value": "roles",
+                },
+                "operation": "query",
+                "selectionSet": Object {
+                  "kind": "SelectionSet",
+                  "selections": Array [
+                    Object {
+                      "alias": undefined,
+                      "arguments": Array [],
+                      "directives": Array [],
+                      "kind": "Field",
+                      "name": Object {
+                        "kind": "Name",
+                        "value": "roles",
+                      },
+                      "selectionSet": Object {
+                        "kind": "SelectionSet",
+                        "selections": Array [
+                          Object {
+                            "alias": undefined,
+                            "arguments": Array [],
+                            "directives": Array [],
+                            "kind": "Field",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "id",
+                            },
+                            "selectionSet": undefined,
+                          },
+                          Object {
+                            "alias": undefined,
+                            "arguments": Array [],
+                            "directives": Array [],
+                            "kind": "Field",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "role",
+                            },
+                            "selectionSet": undefined,
+                          },
+                        ],
+                      },
+                    },
+                  ],
+                },
+                "variableDefinitions": Array [],
+              },
+            ],
+            "kind": "Document",
+            "loc": Object {
+              "end": 46,
+              "start": 0,
+            },
+          },
+        },
+        "result": Object {
+          "data": Object {
+            "roles": Array [
+              Object {
+                "id": "1",
+                "role": "Default User",
+              },
+              Object {
+                "id": "2",
+                "role": "Admin",
+              },
+            ],
+          },
+        },
+      },
+      Object {
+        "request": Object {
+          "query": Object {
+            "definitions": Array [
+              Object {
+                "directives": Array [],
+                "kind": "OperationDefinition",
+                "name": Object {
+                  "kind": "Name",
+                  "value": "locations",
+                },
+                "operation": "query",
+                "selectionSet": Object {
+                  "kind": "SelectionSet",
+                  "selections": Array [
+                    Object {
+                      "alias": undefined,
+                      "arguments": Array [],
+                      "directives": Array [],
+                      "kind": "Field",
+                      "name": Object {
+                        "kind": "Name",
+                        "value": "allLocations",
+                      },
+                      "selectionSet": Object {
+                        "kind": "SelectionSet",
+                        "selections": Array [
+                          Object {
+                            "alias": undefined,
+                            "arguments": Array [],
+                            "directives": Array [],
+                            "kind": "Field",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "id",
+                            },
+                            "selectionSet": undefined,
+                          },
+                          Object {
+                            "alias": undefined,
+                            "arguments": Array [],
+                            "directives": Array [],
+                            "kind": "Field",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "name",
+                            },
+                            "selectionSet": undefined,
+                          },
+                        ],
+                      },
+                    },
+                  ],
+                },
+                "variableDefinitions": Array [],
+              },
+            ],
+            "kind": "Document",
+            "loc": Object {
+              "end": 57,
+              "start": 0,
+            },
+          },
+        },
+        "result": Object {
+          "data": Object {
+            "allLocations": Array [
+              Object {
+                "id": "2",
+                "name": "Kampala",
+              },
+              Object {
+                "id": "3",
+                "name": "Nairobi",
+              },
+              Object {
+                "id": "1",
+                "name": "Lagos",
+              },
+            ],
+          },
+        },
+      },
     ]
   }
 >
@@ -434,11 +596,139 @@ exports[`PeopleList Component renders correctly from memory 1`] = `
             },
             "variables": undefined,
           },
+          "roles" => Object {
+            "query": Object {
+              "definitions": Array [
+                Object {
+                  "directives": Array [],
+                  "kind": "OperationDefinition",
+                  "name": Object {
+                    "kind": "Name",
+                    "value": "roles",
+                  },
+                  "operation": "query",
+                  "selectionSet": Object {
+                    "kind": "SelectionSet",
+                    "selections": Array [
+                      Object {
+                        "alias": undefined,
+                        "arguments": Array [],
+                        "directives": Array [],
+                        "kind": "Field",
+                        "name": Object {
+                          "kind": "Name",
+                          "value": "roles",
+                        },
+                        "selectionSet": Object {
+                          "kind": "SelectionSet",
+                          "selections": Array [
+                            Object {
+                              "alias": undefined,
+                              "arguments": Array [],
+                              "directives": Array [],
+                              "kind": "Field",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "id",
+                              },
+                              "selectionSet": undefined,
+                            },
+                            Object {
+                              "alias": undefined,
+                              "arguments": Array [],
+                              "directives": Array [],
+                              "kind": "Field",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "role",
+                              },
+                              "selectionSet": undefined,
+                            },
+                          ],
+                        },
+                      },
+                    ],
+                  },
+                  "variableDefinitions": Array [],
+                },
+              ],
+              "kind": "Document",
+              "loc": Object {
+                "end": 46,
+                "start": 0,
+              },
+            },
+            "variables": undefined,
+          },
+          "locations" => Object {
+            "query": Object {
+              "definitions": Array [
+                Object {
+                  "directives": Array [],
+                  "kind": "OperationDefinition",
+                  "name": Object {
+                    "kind": "Name",
+                    "value": "locations",
+                  },
+                  "operation": "query",
+                  "selectionSet": Object {
+                    "kind": "SelectionSet",
+                    "selections": Array [
+                      Object {
+                        "alias": undefined,
+                        "arguments": Array [],
+                        "directives": Array [],
+                        "kind": "Field",
+                        "name": Object {
+                          "kind": "Name",
+                          "value": "allLocations",
+                        },
+                        "selectionSet": Object {
+                          "kind": "SelectionSet",
+                          "selections": Array [
+                            Object {
+                              "alias": undefined,
+                              "arguments": Array [],
+                              "directives": Array [],
+                              "kind": "Field",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "id",
+                              },
+                              "selectionSet": undefined,
+                            },
+                            Object {
+                              "alias": undefined,
+                              "arguments": Array [],
+                              "directives": Array [],
+                              "kind": "Field",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "name",
+                              },
+                              "selectionSet": undefined,
+                            },
+                          ],
+                        },
+                      },
+                    ],
+                  },
+                  "variableDefinitions": Array [],
+                },
+              ],
+              "kind": "Document",
+              "loc": Object {
+                "end": 57,
+                "start": 0,
+              },
+            },
+            "variables": undefined,
+          },
         },
         "cache": InMemoryCache {
-          "addTypename": true,
+          "addTypename": false,
           "config": Object {
-            "addTypename": true,
+            "addTypename": false,
             "dataIdFromObject": [Function],
             "fragmentMatcher": HeuristicFragmentMatcher {},
             "storeFactory": [Function],
@@ -449,6 +739,140 @@ exports[`PeopleList Component renders correctly from memory 1`] = `
           "optimistic": Array [],
           "silenceBroadcast": false,
           "watches": Array [
+            Object {
+              "callback": [Function],
+              "optimistic": true,
+              "previousResult": [Function],
+              "query": Object {
+                "definitions": Array [
+                  Object {
+                    "directives": Array [],
+                    "kind": "OperationDefinition",
+                    "name": Object {
+                      "kind": "Name",
+                      "value": "locations",
+                    },
+                    "operation": "query",
+                    "selectionSet": Object {
+                      "kind": "SelectionSet",
+                      "selections": Array [
+                        Object {
+                          "alias": undefined,
+                          "arguments": Array [],
+                          "directives": Array [],
+                          "kind": "Field",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "allLocations",
+                          },
+                          "selectionSet": Object {
+                            "kind": "SelectionSet",
+                            "selections": Array [
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "id",
+                                },
+                                "selectionSet": undefined,
+                              },
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "name",
+                                },
+                                "selectionSet": undefined,
+                              },
+                            ],
+                          },
+                        },
+                      ],
+                    },
+                    "variableDefinitions": Array [],
+                  },
+                ],
+                "kind": "Document",
+                "loc": Object {
+                  "end": 57,
+                  "start": 0,
+                },
+              },
+              "variables": undefined,
+            },
+            Object {
+              "callback": [Function],
+              "optimistic": true,
+              "previousResult": [Function],
+              "query": Object {
+                "definitions": Array [
+                  Object {
+                    "directives": Array [],
+                    "kind": "OperationDefinition",
+                    "name": Object {
+                      "kind": "Name",
+                      "value": "roles",
+                    },
+                    "operation": "query",
+                    "selectionSet": Object {
+                      "kind": "SelectionSet",
+                      "selections": Array [
+                        Object {
+                          "alias": undefined,
+                          "arguments": Array [],
+                          "directives": Array [],
+                          "kind": "Field",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "roles",
+                          },
+                          "selectionSet": Object {
+                            "kind": "SelectionSet",
+                            "selections": Array [
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "id",
+                                },
+                                "selectionSet": undefined,
+                              },
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "role",
+                                },
+                                "selectionSet": undefined,
+                              },
+                            ],
+                          },
+                        },
+                      ],
+                    },
+                    "variableDefinitions": Array [],
+                  },
+                ],
+                "kind": "Document",
+                "loc": Object {
+                  "end": 46,
+                  "start": 0,
+                },
+              },
+              "variables": undefined,
+            },
             Object {
               "callback": [Function],
               "optimistic": true,
@@ -602,21 +1026,7 @@ exports[`PeopleList Component renders correctly from memory 1`] = `
                                             },
                                             "selectionSet": undefined,
                                           },
-                                          Object {
-                                            "kind": "Field",
-                                            "name": Object {
-                                              "kind": "Name",
-                                              "value": "__typename",
-                                            },
-                                          },
                                         ],
-                                      },
-                                    },
-                                    Object {
-                                      "kind": "Field",
-                                      "name": Object {
-                                        "kind": "Name",
-                                        "value": "__typename",
                                       },
                                     },
                                   ],
@@ -633,13 +1043,6 @@ exports[`PeopleList Component renders correctly from memory 1`] = `
                                 },
                                 "selectionSet": undefined,
                               },
-                              Object {
-                                "kind": "Field",
-                                "name": Object {
-                                  "kind": "Name",
-                                  "value": "__typename",
-                                },
-                              },
                             ],
                           },
                         },
@@ -651,31 +1054,6 @@ exports[`PeopleList Component renders correctly from memory 1`] = `
                 "kind": "Document",
                 "loc": Object {
                   "end": 192,
-                  "source": Object {
-                    "body": "
-query allUsers{
-  users(page: 1, perPage:10){
-    users{      
-      email
-      name
-      picture
-      location
-      id
-      roles{
-        role
-        id
-      }
-    }
-    pages
-  }
-}
-",
-                    "locationOffset": Object {
-                      "column": 1,
-                      "line": 1,
-                    },
-                    "name": "GraphQL request",
-                  },
                   "start": 0,
                 },
               },
@@ -694,9 +1072,9 @@ query allUsers{
         "queryManager": QueryManager {
           "dataStore": DataStore {
             "cache": InMemoryCache {
-              "addTypename": true,
+              "addTypename": false,
               "config": Object {
-                "addTypename": true,
+                "addTypename": false,
                 "dataIdFromObject": [Function],
                 "fragmentMatcher": HeuristicFragmentMatcher {},
                 "storeFactory": [Function],
@@ -707,6 +1085,140 @@ query allUsers{
               "optimistic": Array [],
               "silenceBroadcast": false,
               "watches": Array [
+                Object {
+                  "callback": [Function],
+                  "optimistic": true,
+                  "previousResult": [Function],
+                  "query": Object {
+                    "definitions": Array [
+                      Object {
+                        "directives": Array [],
+                        "kind": "OperationDefinition",
+                        "name": Object {
+                          "kind": "Name",
+                          "value": "locations",
+                        },
+                        "operation": "query",
+                        "selectionSet": Object {
+                          "kind": "SelectionSet",
+                          "selections": Array [
+                            Object {
+                              "alias": undefined,
+                              "arguments": Array [],
+                              "directives": Array [],
+                              "kind": "Field",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "allLocations",
+                              },
+                              "selectionSet": Object {
+                                "kind": "SelectionSet",
+                                "selections": Array [
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "id",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "name",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
+                                ],
+                              },
+                            },
+                          ],
+                        },
+                        "variableDefinitions": Array [],
+                      },
+                    ],
+                    "kind": "Document",
+                    "loc": Object {
+                      "end": 57,
+                      "start": 0,
+                    },
+                  },
+                  "variables": undefined,
+                },
+                Object {
+                  "callback": [Function],
+                  "optimistic": true,
+                  "previousResult": [Function],
+                  "query": Object {
+                    "definitions": Array [
+                      Object {
+                        "directives": Array [],
+                        "kind": "OperationDefinition",
+                        "name": Object {
+                          "kind": "Name",
+                          "value": "roles",
+                        },
+                        "operation": "query",
+                        "selectionSet": Object {
+                          "kind": "SelectionSet",
+                          "selections": Array [
+                            Object {
+                              "alias": undefined,
+                              "arguments": Array [],
+                              "directives": Array [],
+                              "kind": "Field",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "roles",
+                              },
+                              "selectionSet": Object {
+                                "kind": "SelectionSet",
+                                "selections": Array [
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "id",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "role",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
+                                ],
+                              },
+                            },
+                          ],
+                        },
+                        "variableDefinitions": Array [],
+                      },
+                    ],
+                    "kind": "Document",
+                    "loc": Object {
+                      "end": 46,
+                      "start": 0,
+                    },
+                  },
+                  "variables": undefined,
+                },
                 Object {
                   "callback": [Function],
                   "optimistic": true,
@@ -860,21 +1372,7 @@ query allUsers{
                                                 },
                                                 "selectionSet": undefined,
                                               },
-                                              Object {
-                                                "kind": "Field",
-                                                "name": Object {
-                                                  "kind": "Name",
-                                                  "value": "__typename",
-                                                },
-                                              },
                                             ],
-                                          },
-                                        },
-                                        Object {
-                                          "kind": "Field",
-                                          "name": Object {
-                                            "kind": "Name",
-                                            "value": "__typename",
                                           },
                                         },
                                       ],
@@ -891,13 +1389,6 @@ query allUsers{
                                     },
                                     "selectionSet": undefined,
                                   },
-                                  Object {
-                                    "kind": "Field",
-                                    "name": Object {
-                                      "kind": "Name",
-                                      "value": "__typename",
-                                    },
-                                  },
                                 ],
                               },
                             },
@@ -909,31 +1400,6 @@ query allUsers{
                     "kind": "Document",
                     "loc": Object {
                       "end": 192,
-                      "source": Object {
-                        "body": "
-query allUsers{
-  users(page: 1, perPage:10){
-    users{      
-      email
-      name
-      picture
-      location
-      id
-      roles{
-        role
-        id
-      }
-    }
-    pages
-  }
-}
-",
-                        "locationOffset": Object {
-                          "column": 1,
-                          "line": 1,
-                        },
-                        "name": "GraphQL request",
-                      },
                       "start": 0,
                     },
                   },
@@ -946,12 +1412,20 @@ query allUsers{
             "request": [Function],
           },
           "fetchQueryPromises": Map {
-            "2" => Object {
+            "4" => Object {
+              "reject": [Function],
+              "resolve": [Function],
+            },
+            "5" => Object {
+              "reject": [Function],
+              "resolve": [Function],
+            },
+            "6" => Object {
               "reject": [Function],
               "resolve": [Function],
             },
           },
-          "idCounter": 3,
+          "idCounter": 7,
           "link": ApolloLink {
             "request": [Function],
           },
@@ -960,6 +1434,374 @@ query allUsers{
           },
           "onBroadcast": [Function],
           "queries": Map {
+            "3" => Object {
+              "cancel": [Function],
+              "document": Object {
+                "definitions": Array [
+                  Object {
+                    "directives": Array [],
+                    "kind": "OperationDefinition",
+                    "name": Object {
+                      "kind": "Name",
+                      "value": "locations",
+                    },
+                    "operation": "query",
+                    "selectionSet": Object {
+                      "kind": "SelectionSet",
+                      "selections": Array [
+                        Object {
+                          "alias": undefined,
+                          "arguments": Array [],
+                          "directives": Array [],
+                          "kind": "Field",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "allLocations",
+                          },
+                          "selectionSet": Object {
+                            "kind": "SelectionSet",
+                            "selections": Array [
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "id",
+                                },
+                                "selectionSet": undefined,
+                              },
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "name",
+                                },
+                                "selectionSet": undefined,
+                              },
+                            ],
+                          },
+                        },
+                      ],
+                    },
+                    "variableDefinitions": Array [],
+                  },
+                ],
+                "kind": "Document",
+                "loc": Object {
+                  "end": 57,
+                  "start": 0,
+                },
+              },
+              "invalidate": false,
+              "invalidated": false,
+              "lastRequestId": 4,
+              "listeners": Array [
+                [Function],
+              ],
+              "newData": null,
+              "observableQuery": ObservableQuery {
+                "_subscriber": [Function],
+                "isCurrentlyPolling": false,
+                "isTornDown": false,
+                "observers": Array [
+                  SubscriptionObserver {
+                    "_subscription": Subscription {
+                      "_cleanup": [Function],
+                      "_observer": Object {
+                        "error": [Function],
+                        "next": [Function],
+                      },
+                      "_queue": undefined,
+                      "_state": "ready",
+                    },
+                  },
+                ],
+                "options": Object {
+                  "context": Object {},
+                  "metadata": Object {
+                    "reactComponent": Object {
+                      "displayName": "Apollo(PeopleList)",
+                    },
+                  },
+                  "notifyOnNetworkStatusChange": false,
+                  "query": Object {
+                    "definitions": Array [
+                      Object {
+                        "directives": Array [],
+                        "kind": "OperationDefinition",
+                        "name": Object {
+                          "kind": "Name",
+                          "value": "locations",
+                        },
+                        "operation": "query",
+                        "selectionSet": Object {
+                          "kind": "SelectionSet",
+                          "selections": Array [
+                            Object {
+                              "alias": undefined,
+                              "arguments": Array [],
+                              "directives": Array [],
+                              "kind": "Field",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "allLocations",
+                              },
+                              "selectionSet": Object {
+                                "kind": "SelectionSet",
+                                "selections": Array [
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "id",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "name",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
+                                ],
+                              },
+                            },
+                          ],
+                        },
+                        "variableDefinitions": Array [],
+                      },
+                    ],
+                    "kind": "Document",
+                    "loc": Object {
+                      "end": 57,
+                      "start": 0,
+                    },
+                  },
+                },
+                "queryId": "3",
+                "queryManager": [Circular],
+                "scheduler": QueryScheduler {
+                  "inFlightQueries": Object {},
+                  "intervalQueries": Object {},
+                  "pollingTimers": Object {},
+                  "queryManager": [Circular],
+                  "registeredQueries": Object {},
+                  "ssrMode": false,
+                },
+                "shouldSubscribe": true,
+                "subscriptionHandles": Array [],
+                "variables": Object {},
+              },
+              "subscriptions": Array [
+                Subscription {
+                  "_cleanup": [Function],
+                  "_observer": Object {
+                    "complete": [Function],
+                    "error": [Function],
+                    "next": [Function],
+                  },
+                  "_queue": undefined,
+                  "_state": "ready",
+                },
+              ],
+            },
+            "2" => Object {
+              "cancel": [Function],
+              "document": Object {
+                "definitions": Array [
+                  Object {
+                    "directives": Array [],
+                    "kind": "OperationDefinition",
+                    "name": Object {
+                      "kind": "Name",
+                      "value": "roles",
+                    },
+                    "operation": "query",
+                    "selectionSet": Object {
+                      "kind": "SelectionSet",
+                      "selections": Array [
+                        Object {
+                          "alias": undefined,
+                          "arguments": Array [],
+                          "directives": Array [],
+                          "kind": "Field",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "roles",
+                          },
+                          "selectionSet": Object {
+                            "kind": "SelectionSet",
+                            "selections": Array [
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "id",
+                                },
+                                "selectionSet": undefined,
+                              },
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "role",
+                                },
+                                "selectionSet": undefined,
+                              },
+                            ],
+                          },
+                        },
+                      ],
+                    },
+                    "variableDefinitions": Array [],
+                  },
+                ],
+                "kind": "Document",
+                "loc": Object {
+                  "end": 46,
+                  "start": 0,
+                },
+              },
+              "invalidate": false,
+              "invalidated": false,
+              "lastRequestId": 5,
+              "listeners": Array [
+                [Function],
+              ],
+              "newData": null,
+              "observableQuery": ObservableQuery {
+                "_subscriber": [Function],
+                "isCurrentlyPolling": false,
+                "isTornDown": false,
+                "observers": Array [
+                  SubscriptionObserver {
+                    "_subscription": Subscription {
+                      "_cleanup": [Function],
+                      "_observer": Object {
+                        "error": [Function],
+                        "next": [Function],
+                      },
+                      "_queue": undefined,
+                      "_state": "ready",
+                    },
+                  },
+                ],
+                "options": Object {
+                  "context": Object {},
+                  "metadata": Object {
+                    "reactComponent": Object {
+                      "displayName": "Apollo(Apollo(PeopleList))",
+                    },
+                  },
+                  "notifyOnNetworkStatusChange": false,
+                  "query": Object {
+                    "definitions": Array [
+                      Object {
+                        "directives": Array [],
+                        "kind": "OperationDefinition",
+                        "name": Object {
+                          "kind": "Name",
+                          "value": "roles",
+                        },
+                        "operation": "query",
+                        "selectionSet": Object {
+                          "kind": "SelectionSet",
+                          "selections": Array [
+                            Object {
+                              "alias": undefined,
+                              "arguments": Array [],
+                              "directives": Array [],
+                              "kind": "Field",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "roles",
+                              },
+                              "selectionSet": Object {
+                                "kind": "SelectionSet",
+                                "selections": Array [
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "id",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "role",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
+                                ],
+                              },
+                            },
+                          ],
+                        },
+                        "variableDefinitions": Array [],
+                      },
+                    ],
+                    "kind": "Document",
+                    "loc": Object {
+                      "end": 46,
+                      "start": 0,
+                    },
+                  },
+                },
+                "queryId": "2",
+                "queryManager": [Circular],
+                "scheduler": QueryScheduler {
+                  "inFlightQueries": Object {},
+                  "intervalQueries": Object {},
+                  "pollingTimers": Object {},
+                  "queryManager": [Circular],
+                  "registeredQueries": Object {},
+                  "ssrMode": false,
+                },
+                "shouldSubscribe": true,
+                "subscriptionHandles": Array [],
+                "variables": Object {},
+              },
+              "subscriptions": Array [
+                Subscription {
+                  "_cleanup": [Function],
+                  "_observer": Object {
+                    "complete": [Function],
+                    "error": [Function],
+                    "next": [Function],
+                  },
+                  "_queue": undefined,
+                  "_state": "ready",
+                },
+              ],
+            },
             "1" => Object {
               "cancel": [Function],
               "document": Object {
@@ -1111,21 +1953,7 @@ query allUsers{
                                             },
                                             "selectionSet": undefined,
                                           },
-                                          Object {
-                                            "kind": "Field",
-                                            "name": Object {
-                                              "kind": "Name",
-                                              "value": "__typename",
-                                            },
-                                          },
                                         ],
-                                      },
-                                    },
-                                    Object {
-                                      "kind": "Field",
-                                      "name": Object {
-                                        "kind": "Name",
-                                        "value": "__typename",
                                       },
                                     },
                                   ],
@@ -1142,13 +1970,6 @@ query allUsers{
                                 },
                                 "selectionSet": undefined,
                               },
-                              Object {
-                                "kind": "Field",
-                                "name": Object {
-                                  "kind": "Name",
-                                  "value": "__typename",
-                                },
-                              },
                             ],
                           },
                         },
@@ -1160,37 +1981,12 @@ query allUsers{
                 "kind": "Document",
                 "loc": Object {
                   "end": 192,
-                  "source": Object {
-                    "body": "
-query allUsers{
-  users(page: 1, perPage:10){
-    users{      
-      email
-      name
-      picture
-      location
-      id
-      roles{
-        role
-        id
-      }
-    }
-    pages
-  }
-}
-",
-                    "locationOffset": Object {
-                      "column": 1,
-                      "line": 1,
-                    },
-                    "name": "GraphQL request",
-                  },
                   "start": 0,
                 },
               },
               "invalidate": false,
               "invalidated": false,
-              "lastRequestId": 2,
+              "lastRequestId": 6,
               "listeners": Array [
                 [Function],
               ],
@@ -1216,7 +2012,7 @@ query allUsers{
                   "context": Object {},
                   "metadata": Object {
                     "reactComponent": Object {
-                      "displayName": "Apollo(PeopleList)",
+                      "displayName": "Apollo(Apollo(Apollo(PeopleList)))",
                     },
                   },
                   "notifyOnNetworkStatusChange": false,
@@ -1434,6 +2230,12 @@ query allUsers{
             "allUsers": Array [
               "1",
             ],
+            "locations": Array [
+              "3",
+            ],
+            "roles": Array [
+              "2",
+            ],
           },
           "queryStore": QueryStore {
             "store": Object {
@@ -1587,21 +2389,7 @@ query allUsers{
                                               },
                                               "selectionSet": undefined,
                                             },
-                                            Object {
-                                              "kind": "Field",
-                                              "name": Object {
-                                                "kind": "Name",
-                                                "value": "__typename",
-                                              },
-                                            },
                                           ],
-                                        },
-                                      },
-                                      Object {
-                                        "kind": "Field",
-                                        "name": Object {
-                                          "kind": "Name",
-                                          "value": "__typename",
                                         },
                                       },
                                     ],
@@ -1618,13 +2406,6 @@ query allUsers{
                                   },
                                   "selectionSet": undefined,
                                 },
-                                Object {
-                                  "kind": "Field",
-                                  "name": Object {
-                                    "kind": "Name",
-                                    "value": "__typename",
-                                  },
-                                },
                               ],
                             },
                           },
@@ -1636,31 +2417,152 @@ query allUsers{
                   "kind": "Document",
                   "loc": Object {
                     "end": 192,
-                    "source": Object {
-                      "body": "
-query allUsers{
-  users(page: 1, perPage:10){
-    users{      
-      email
-      name
-      picture
-      location
-      id
-      roles{
-        role
-        id
-      }
-    }
-    pages
-  }
-}
-",
-                      "locationOffset": Object {
-                        "column": 1,
-                        "line": 1,
+                    "start": 0,
+                  },
+                },
+                "graphQLErrors": Array [],
+                "metadata": Object {
+                  "reactComponent": Object {
+                    "displayName": "Apollo(Apollo(Apollo(PeopleList)))",
+                  },
+                },
+                "networkError": null,
+                "networkStatus": 1,
+                "previousVariables": null,
+                "variables": Object {},
+              },
+              "2": Object {
+                "document": Object {
+                  "definitions": Array [
+                    Object {
+                      "directives": Array [],
+                      "kind": "OperationDefinition",
+                      "name": Object {
+                        "kind": "Name",
+                        "value": "roles",
                       },
-                      "name": "GraphQL request",
+                      "operation": "query",
+                      "selectionSet": Object {
+                        "kind": "SelectionSet",
+                        "selections": Array [
+                          Object {
+                            "alias": undefined,
+                            "arguments": Array [],
+                            "directives": Array [],
+                            "kind": "Field",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "roles",
+                            },
+                            "selectionSet": Object {
+                              "kind": "SelectionSet",
+                              "selections": Array [
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "id",
+                                  },
+                                  "selectionSet": undefined,
+                                },
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "role",
+                                  },
+                                  "selectionSet": undefined,
+                                },
+                              ],
+                            },
+                          },
+                        ],
+                      },
+                      "variableDefinitions": Array [],
                     },
+                  ],
+                  "kind": "Document",
+                  "loc": Object {
+                    "end": 46,
+                    "start": 0,
+                  },
+                },
+                "graphQLErrors": Array [],
+                "metadata": Object {
+                  "reactComponent": Object {
+                    "displayName": "Apollo(Apollo(PeopleList))",
+                  },
+                },
+                "networkError": null,
+                "networkStatus": 1,
+                "previousVariables": null,
+                "variables": Object {},
+              },
+              "3": Object {
+                "document": Object {
+                  "definitions": Array [
+                    Object {
+                      "directives": Array [],
+                      "kind": "OperationDefinition",
+                      "name": Object {
+                        "kind": "Name",
+                        "value": "locations",
+                      },
+                      "operation": "query",
+                      "selectionSet": Object {
+                        "kind": "SelectionSet",
+                        "selections": Array [
+                          Object {
+                            "alias": undefined,
+                            "arguments": Array [],
+                            "directives": Array [],
+                            "kind": "Field",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "allLocations",
+                            },
+                            "selectionSet": Object {
+                              "kind": "SelectionSet",
+                              "selections": Array [
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "id",
+                                  },
+                                  "selectionSet": undefined,
+                                },
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "name",
+                                  },
+                                  "selectionSet": undefined,
+                                },
+                              ],
+                            },
+                          },
+                        ],
+                      },
+                      "variableDefinitions": Array [],
+                    },
+                  ],
+                  "kind": "Document",
+                  "loc": Object {
+                    "end": 57,
                     "start": 0,
                   },
                 },
@@ -1692,9 +2594,9 @@ query allUsers{
         "ssrMode": false,
         "store": DataStore {
           "cache": InMemoryCache {
-            "addTypename": true,
+            "addTypename": false,
             "config": Object {
-              "addTypename": true,
+              "addTypename": false,
               "dataIdFromObject": [Function],
               "fragmentMatcher": HeuristicFragmentMatcher {},
               "storeFactory": [Function],
@@ -1705,6 +2607,140 @@ query allUsers{
             "optimistic": Array [],
             "silenceBroadcast": false,
             "watches": Array [
+              Object {
+                "callback": [Function],
+                "optimistic": true,
+                "previousResult": [Function],
+                "query": Object {
+                  "definitions": Array [
+                    Object {
+                      "directives": Array [],
+                      "kind": "OperationDefinition",
+                      "name": Object {
+                        "kind": "Name",
+                        "value": "locations",
+                      },
+                      "operation": "query",
+                      "selectionSet": Object {
+                        "kind": "SelectionSet",
+                        "selections": Array [
+                          Object {
+                            "alias": undefined,
+                            "arguments": Array [],
+                            "directives": Array [],
+                            "kind": "Field",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "allLocations",
+                            },
+                            "selectionSet": Object {
+                              "kind": "SelectionSet",
+                              "selections": Array [
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "id",
+                                  },
+                                  "selectionSet": undefined,
+                                },
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "name",
+                                  },
+                                  "selectionSet": undefined,
+                                },
+                              ],
+                            },
+                          },
+                        ],
+                      },
+                      "variableDefinitions": Array [],
+                    },
+                  ],
+                  "kind": "Document",
+                  "loc": Object {
+                    "end": 57,
+                    "start": 0,
+                  },
+                },
+                "variables": undefined,
+              },
+              Object {
+                "callback": [Function],
+                "optimistic": true,
+                "previousResult": [Function],
+                "query": Object {
+                  "definitions": Array [
+                    Object {
+                      "directives": Array [],
+                      "kind": "OperationDefinition",
+                      "name": Object {
+                        "kind": "Name",
+                        "value": "roles",
+                      },
+                      "operation": "query",
+                      "selectionSet": Object {
+                        "kind": "SelectionSet",
+                        "selections": Array [
+                          Object {
+                            "alias": undefined,
+                            "arguments": Array [],
+                            "directives": Array [],
+                            "kind": "Field",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "roles",
+                            },
+                            "selectionSet": Object {
+                              "kind": "SelectionSet",
+                              "selections": Array [
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "id",
+                                  },
+                                  "selectionSet": undefined,
+                                },
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "role",
+                                  },
+                                  "selectionSet": undefined,
+                                },
+                              ],
+                            },
+                          },
+                        ],
+                      },
+                      "variableDefinitions": Array [],
+                    },
+                  ],
+                  "kind": "Document",
+                  "loc": Object {
+                    "end": 46,
+                    "start": 0,
+                  },
+                },
+                "variables": undefined,
+              },
               Object {
                 "callback": [Function],
                 "optimistic": true,
@@ -1858,21 +2894,7 @@ query allUsers{
                                               },
                                               "selectionSet": undefined,
                                             },
-                                            Object {
-                                              "kind": "Field",
-                                              "name": Object {
-                                                "kind": "Name",
-                                                "value": "__typename",
-                                              },
-                                            },
                                           ],
-                                        },
-                                      },
-                                      Object {
-                                        "kind": "Field",
-                                        "name": Object {
-                                          "kind": "Name",
-                                          "value": "__typename",
                                         },
                                       },
                                     ],
@@ -1889,13 +2911,6 @@ query allUsers{
                                   },
                                   "selectionSet": undefined,
                                 },
-                                Object {
-                                  "kind": "Field",
-                                  "name": Object {
-                                    "kind": "Name",
-                                    "value": "__typename",
-                                  },
-                                },
                               ],
                             },
                           },
@@ -1907,31 +2922,6 @@ query allUsers{
                   "kind": "Document",
                   "loc": Object {
                     "end": 192,
-                    "source": Object {
-                      "body": "
-query allUsers{
-  users(page: 1, perPage:10){
-    users{      
-      email
-      name
-      picture
-      location
-      id
-      roles{
-        role
-        id
-      }
-    }
-    pages
-  }
-}
-",
-                      "locationOffset": Object {
-                        "column": 1,
-                        "line": 1,
-                      },
-                      "name": "GraphQL request",
-                    },
                     "start": 0,
                   },
                 },
@@ -1945,9 +2935,9 @@ query allUsers{
       }
     }
   >
-    <Apollo(PeopleList)>
+    <Apollo(Apollo(Apollo(PeopleList)))>
       <Query
-        displayName="Apollo(PeopleList)"
+        displayName="Apollo(Apollo(Apollo(PeopleList)))"
         query={
           Object {
             "definitions": Array [
@@ -2133,7 +3123,7 @@ query allUsers{
         skip={false}
         warnUnhandledError={true}
       >
-        <PeopleList
+        <Apollo(Apollo(PeopleList))
           data={
             Object {
               "error": undefined,
@@ -2149,12 +3139,226 @@ query allUsers{
             }
           }
         >
-          <div>
-            Loading...
-          </div>
-        </PeopleList>
+          <Query
+            displayName="Apollo(Apollo(PeopleList))"
+            query={
+              Object {
+                "definitions": Array [
+                  Object {
+                    "directives": Array [],
+                    "kind": "OperationDefinition",
+                    "name": Object {
+                      "kind": "Name",
+                      "value": "roles",
+                    },
+                    "operation": "query",
+                    "selectionSet": Object {
+                      "kind": "SelectionSet",
+                      "selections": Array [
+                        Object {
+                          "alias": undefined,
+                          "arguments": Array [],
+                          "directives": Array [],
+                          "kind": "Field",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "roles",
+                          },
+                          "selectionSet": Object {
+                            "kind": "SelectionSet",
+                            "selections": Array [
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "id",
+                                },
+                                "selectionSet": undefined,
+                              },
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "role",
+                                },
+                                "selectionSet": undefined,
+                              },
+                            ],
+                          },
+                        },
+                      ],
+                    },
+                    "variableDefinitions": Array [],
+                  },
+                ],
+                "kind": "Document",
+                "loc": Object {
+                  "end": 46,
+                  "start": 0,
+                },
+              }
+            }
+            skip={false}
+            warnUnhandledError={true}
+          >
+            <Apollo(PeopleList)
+              data={
+                Object {
+                  "error": undefined,
+                  "fetchMore": [Function],
+                  "loading": true,
+                  "networkStatus": 1,
+                  "refetch": [Function],
+                  "startPolling": [Function],
+                  "stopPolling": [Function],
+                  "subscribeToMore": [Function],
+                  "updateQuery": [Function],
+                  "variables": Object {},
+                }
+              }
+              roles={
+                Object {
+                  "error": undefined,
+                  "fetchMore": [Function],
+                  "loading": true,
+                  "networkStatus": 1,
+                  "refetch": [Function],
+                  "startPolling": [Function],
+                  "stopPolling": [Function],
+                  "subscribeToMore": [Function],
+                  "updateQuery": [Function],
+                  "variables": Object {},
+                }
+              }
+            >
+              <Query
+                displayName="Apollo(PeopleList)"
+                query={
+                  Object {
+                    "definitions": Array [
+                      Object {
+                        "directives": Array [],
+                        "kind": "OperationDefinition",
+                        "name": Object {
+                          "kind": "Name",
+                          "value": "locations",
+                        },
+                        "operation": "query",
+                        "selectionSet": Object {
+                          "kind": "SelectionSet",
+                          "selections": Array [
+                            Object {
+                              "alias": undefined,
+                              "arguments": Array [],
+                              "directives": Array [],
+                              "kind": "Field",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "allLocations",
+                              },
+                              "selectionSet": Object {
+                                "kind": "SelectionSet",
+                                "selections": Array [
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "id",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "name",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
+                                ],
+                              },
+                            },
+                          ],
+                        },
+                        "variableDefinitions": Array [],
+                      },
+                    ],
+                    "kind": "Document",
+                    "loc": Object {
+                      "end": 57,
+                      "start": 0,
+                    },
+                  }
+                }
+                skip={false}
+                warnUnhandledError={true}
+              >
+                <PeopleList
+                  data={
+                    Object {
+                      "error": undefined,
+                      "fetchMore": [Function],
+                      "loading": true,
+                      "networkStatus": 1,
+                      "refetch": [Function],
+                      "startPolling": [Function],
+                      "stopPolling": [Function],
+                      "subscribeToMore": [Function],
+                      "updateQuery": [Function],
+                      "variables": Object {},
+                    }
+                  }
+                  locations={
+                    Object {
+                      "error": undefined,
+                      "fetchMore": [Function],
+                      "loading": true,
+                      "networkStatus": 1,
+                      "refetch": [Function],
+                      "startPolling": [Function],
+                      "stopPolling": [Function],
+                      "subscribeToMore": [Function],
+                      "updateQuery": [Function],
+                      "variables": Object {},
+                    }
+                  }
+                  roles={
+                    Object {
+                      "error": undefined,
+                      "fetchMore": [Function],
+                      "loading": true,
+                      "networkStatus": 1,
+                      "refetch": [Function],
+                      "startPolling": [Function],
+                      "stopPolling": [Function],
+                      "subscribeToMore": [Function],
+                      "updateQuery": [Function],
+                      "variables": Object {},
+                    }
+                  }
+                >
+                  <div>
+                    Loading...
+                  </div>
+                </PeopleList>
+              </Query>
+            </Apollo(PeopleList)>
+          </Query>
+        </Apollo(Apollo(PeopleList))>
       </Query>
-    </Apollo(PeopleList)>
+    </Apollo(Apollo(Apollo(PeopleList)))>
   </ApolloProvider>
 </MockedProvider>
 `;

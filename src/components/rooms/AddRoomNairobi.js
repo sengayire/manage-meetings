@@ -31,7 +31,7 @@ export class AddRoomNairobi extends Component {
   handleCloseModal = () => {
     this.setState({
       roomName: '',
-      roomCapacity: '',
+      roomCapacity: 1,
       officeBlock: '',
       officeFloor: '',
       closeModal: true,
@@ -62,7 +62,11 @@ export class AddRoomNairobi extends Component {
       this.setState({ thumbnailName }, () => {
         getImageUrl(folderName, imageFile)
           .then((imageUrl) => {
-            this.setState({ imageUrl });
+            if (typeof (imageUrl) === 'string') {
+              this.setState({
+                imageUrl,
+              });
+            }
           });
       });
     }

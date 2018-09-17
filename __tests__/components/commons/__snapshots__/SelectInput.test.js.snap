@@ -38,8 +38,14 @@ exports[`SelectInput component should display value if displayText isn't given i
       required={false}
       value="1"
     >
-      <option />
-      <option />
+      <option
+        key="4"
+        value={4}
+      />
+      <option
+        key="5"
+        value={5}
+      />
     </select>
   </label>
 </div>
@@ -88,8 +94,18 @@ exports[`SelectInput component should render properly when given children 1`] = 
       required={false}
       value="1"
     >
-      <option />
-      <option />
+      <option
+        key="1"
+        value={1}
+      >
+        1
+      </option>
+      <option
+        key="2"
+        value={2}
+      >
+        2
+      </option>
     </select>
   </label>
 </div>
@@ -111,14 +127,10 @@ exports[`SelectInput component should render properly when given options prop 1`
       required={false}
       value="1"
     >
-      <option
-        value={1}
-      >
+      <option>
         hello
       </option>
-      <option
-        value={2}
-      >
+      <option>
         how are you
       </option>
     </select>

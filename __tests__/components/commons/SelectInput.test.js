@@ -4,8 +4,8 @@ import { SelectInput } from '../../../src/components/commons';
 
 describe('SelectInput component', () => {
   const sampleOptions = [
-    { value: 1, displayText: 'hello' },
-    { value: 2, displayText: 'how are you' },
+    { id: 1, name: 1, displayText: 'hello' },
+    { id: 2, name: 2, displayText: 'how are you' },
   ];
   const handleOptionsSelectChange = jest.fn();
   const handleChildrenSelectChange = jest.fn();
@@ -73,7 +73,7 @@ describe('SelectInput component', () => {
   });
 
   it('should display value if displayText isn\'t given in options', () => {
-    const newOptions = [{ value: 1 }, { value: 2 }];
+    const newOptions = [{ id: 4 }, { id: 5 }];
     optionsWrapper.setProps({ options: newOptions });
     optionsWrapper.update();
     const options = optionsWrapper.find('options');

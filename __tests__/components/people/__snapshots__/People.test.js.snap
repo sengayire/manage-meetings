@@ -1,0 +1,74 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`People Component renders properly 1`] = `
+<tr>
+  <td>
+    <img
+      alt="profilePicture"
+      className="profilePic"
+      src="http://no-url"
+    />
+    Edward Barton
+  </td>
+  <td>
+    Nairobi
+  </td>
+  <td>
+    Admin
+    <ThemedIconMenu
+      className="people-access-dropdown"
+      composeTheme="deeply"
+      icon={
+        <span
+          className="access-by-caret"
+        />
+      }
+      iconRipple={true}
+      mapThemrProps={[Function]}
+      menuRipple={true}
+      position="topRight"
+      selectable={false}
+    >
+      <ThemedThemed
+        caption="Admin"
+        className="access-menu selected"
+        composeTheme="deeply"
+        disabled={false}
+        key="1"
+        mapThemrProps={[Function]}
+        ripple={true}
+        rippleCentered={false}
+        rippleClassName=""
+        rippleMultiple={true}
+        rippleSpread={2}
+      />
+      <ThemedThemed
+        caption="Default User"
+        className="access-menu "
+        composeTheme="deeply"
+        disabled={false}
+        key="2"
+        mapThemrProps={[Function]}
+        ripple={true}
+        rippleCentered={false}
+        rippleClassName=""
+        rippleMultiple={true}
+        rippleSpread={2}
+      />
+    </ThemedIconMenu>
+  </td>
+  <td>
+    <EditUser
+      accessLevel="Admin"
+      userLocation="Nairobi"
+      userName="Edward Barton"
+    />
+    <button>
+      <img
+        alt="Delete"
+        src="test-file-stub"
+      />
+    </button>
+  </td>
+</tr>
+`;

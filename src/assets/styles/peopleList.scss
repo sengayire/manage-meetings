@@ -3,15 +3,18 @@
   font-style: normal;
   src: url('../fonts/DINPro-Light.otf');
 }
- .settings-people-list {
+
+.settings-people-list {
   .action-menu {
     padding-top: 4%;
+
     .sort-by {
       color: #999999;
       font-family: "DINPro-Light";
       font-size: 18px;
       line-height: 23px;
       display: inline;
+
       .location {
         height: 23px;
         width: 70px;
@@ -20,25 +23,69 @@
         font-size: 18px;
         font-weight: 500;
         line-height: 23px;
-        &:after {
+      }
+
+      .theme--button--2AgdxWh4 {
+        height: auto;
+        line-height: normal;
+        color: transparent;
+      }
+
+      .people-sort-dropdown {
+        .theme--menu--1gvr5Gvn {
+          margin-top: 25px;
+
+          ul {
+            width: 140px;
+            border-radius: 4px;
+            background-color: #FFFFFF;
+            padding: 10px 0;
+            text-align: left;
+            box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+
+            hr {
+              margin: 0;
+            }
+
+            li {
+              color: #3359DB;
+              text-align: left;
+              line-height: 27px;
+              height: auto;
+
+              &.theme--disabled--zGTpAm-p {
+                color: #999999;
+              }
+            }
+
+            span {
+              font-size: 14px;
+            }
+          }
+        }
+
+        .sort-by-caret {
           content: url('../images/caret_blue.svg');
-          height: 8px;
           width: 14.4px;
           margin-left: 6px;
-          vertical-align: top;
+          display: inline-block;
+          vertical-align: bottom;
         }
       }
+
       .caret {
         height: 8px;
         width: 14.4px;
       }
     }
   }
+
   table {
     clear: left;
     width: calc(100% - 100px);
     border-collapse: collapse;
     text-align: left;
+
     tr {
       border-bottom: 5px solid #f4f8f9;
       height: 21px;
@@ -48,6 +95,7 @@
       font-size: 16px;
       line-height: 21px;
     }
+
     th {
       color: #999999;
       padding: 1%;
@@ -55,33 +103,103 @@
       font-size: 97%;
       padding-top: 4%;
     }
+
     td {
       background: #ffffff;
       color: #333e44;
       font-size: 95%;
       font-family: 'DINPro-Light';
       padding: 15px 40px;
-      &:nth-child(3):after {
-        content: '•••';
-        letter-spacing: 2px;
-        padding-left: 10px;
-        color: #D8D8D8;
+
+      .access-by-caret {
+        content: url('../images/three-dots.svg');
+        width: 14.4px;
+        display: inline-block;
+        vertical-align: top;
       }
+
+      .people-access-dropdown {
+        display: inline-flex;
+        height: 15px;
+        vertical-align: middle;
+
+          &.active button {
+            // height: 12px;
+            // width: 23px;
+            border: 0.5px solid #EBEBEB;
+            border-radius: 2px;
+          }
+        button {
+          height: auto;
+          margin: 0;
+          margin-left: 6px;
+
+        }
+
+
+        .theme--button--2AgdxWh4 {
+          color: transparent;
+        }
+
+        .theme--menu--1gvr5Gvn {
+          margin-top: 21px;
+
+          ul {
+            width: auto;
+            border-radius: 4px;
+            background-color: #FFFFFF;
+            padding: 10px 0;
+            text-align: left;
+            box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+
+            li {
+              color: #3359DB;
+              text-align: left;
+              line-height: 27px;
+              height: auto;
+
+              &.theme--disabled--zGTpAm-p {
+                color: #999999;
+              }
+
+              &.access-menu {
+                &:before {
+                  content: '';
+                  width: 10px;
+                }
+
+                &.selected:before {
+                  content: url('../images/blue_tick.svg');
+                }
+              }
+            }
+
+            span {
+              margin-left: 12px;
+              font-size: 14px;
+            }
+          }
+        }
+      }
+
       &:nth-child(4) {
-        button{
+        button {
           border: none;
           cursor: pointer;
           height: 13.5px;
           width: 13.46px;
+
           &:nth-child(1) {
             margin-right: 25px;
           }
+
           &:nth-child(2) {
             margin-top: 7px;
           }
         }
       }
-      .profilePic{
+
+      .profilePic {
         height: 30px;
         width: 30px;
         vertical-align: middle;
@@ -89,10 +207,12 @@
         margin-right: 20px;
       }
     }
+
     @media screen and (max-width: 425px) {
       width: 100%;
       margin-right: 0;
     }
+
     @media screen and (min-width: 768) and (max-width: 1023px) {
       width: 100%;
     }

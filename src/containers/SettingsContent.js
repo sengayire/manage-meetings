@@ -8,7 +8,7 @@ import '../assets/styles/settingscontent.scss';
 import ROUTES from '../utils/routes';
 import PlaceHolder from '../components/Placeholder';
 import RoomsList from '../components/RoomsList';
-import PeopleList from '../components/PeopleList';
+import PeopleList from '../components/people/PeopleList';
 import DeviceList from '../components/DeviceList';
 
 // replace the PlaceHolder component with appropriate component to be rendered

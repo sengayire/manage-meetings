@@ -3,7 +3,10 @@ import { shallow } from 'enzyme';
 import { AddOffice } from '../../src/components/AddOffice';
 
 describe('AddOffice Component', () => {
-  let wrapper = shallow(<AddOffice />);
+  const initProps = {
+    addOffice: jest.fn(),
+  };
+  let wrapper = shallow(<AddOffice {...initProps} />);
   const preventDefault = jest.fn();
 
 

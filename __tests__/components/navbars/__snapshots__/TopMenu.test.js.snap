@@ -41,7 +41,6 @@ exports[`TopMenu Component renders correctly in memory 1`] = `
         >
           <input
             className="search-bar"
-            placeholder="Search"
             type="text"
           />
           <img

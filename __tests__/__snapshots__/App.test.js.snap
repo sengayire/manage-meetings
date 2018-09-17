@@ -965,7 +965,6 @@ query locations {
                                 >
                                   <input
                                     className="search-bar"
-                                    placeholder="Search"
                                     type="text"
                                   />
                                   <img
@@ -1574,7 +1573,7 @@ query locations {
                                         href="/settings/rooms"
                                         onClick={[Function]}
                                       >
-                                        Room
+                                        Rooms
                                       </a>
                                     </Link>
                                   </Route>
