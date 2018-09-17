@@ -11,75 +11,17 @@
         margin-top: 0;
         margin-bottom: 40px !important;
     }
+    .wing-wrapper {
+        margin-top: 5%;
+        margin-bottom: 4%;
+        width: 15.5em!important;
+    }
 
     .mrm-input {
         width: 28em;
         margin-top: 0.7em;
         margin-bottom: 0.7em;
     }
-
-    .kla-form{
-      #roomName{
-        width: 31em;
-      }
-      .form-action-buttons{
-        padding-right: 50px;
-      }
-    }
-
-    .clearfix {
-        clear: both;
-    }
-
-    .select-input {
-        float: left;
-        width: calc(50% - 10px);
-    }
-
-    .select-input + .select-input {
-        margin-left: 20px;
-    }
-
-    button[id="selectImage"] {
-        border-radius: 2px;
-        color: white;
-        padding: 2% 6% 3% 6%;
-        background-color: #3359db;
-        font-family: 'DINPro-Light';
-    }
-
-    .floor-wrapper {
-        margin-top: 5%;
-        margin-bottom: 4%;
-        width: 15.5em!important;
-    }
-
-    .capacity-wrapper {
-        margin-top: 5%;
-        margin-bottom: 14%;
-        width: 14em !important;
-    }
-    .wing-wrapper {
-        margin-top: 5%;
-        margin-bottom: 4%;
-        width: 15.5em !important;
-    }
-
-    .upload-btn-wrapper {
-        position: relative;
-        overflow: hidden;
-        display: inline-block;
-    }
-
-    .upload-btn-wrapper input[type=file] {
-        font-size: 100px;
-        width: 7rem;
-        position: absolute;
-        left: 0;
-        top: 0;
-        opacity: 0;
-    }
-
     .epic-tower-form{
         display: flex;
         flex-wrap: wrap;
@@ -91,39 +33,6 @@
         .form-action-buttons{
           padding-right: 33px;
         }
-
-        .upload-content{
-            display: inherit;
-            margin-bottom: 2rem;
-            height: 140px;
-            width: 100%;
-
-            .upload-box{
-                width: 50%;
-                flex-grow: 1;
-
-                .image-box{
-                display: flex;
-                flex-basis: 14em;
-                height: 100%;
-                border: 1px solid #E0E0E0;
-                border-radius: 2px;
-                background-color: #F8F8F8;
-                }
-            }
-
-            .upload-description{
-                margin-left: 1rem;
-                width: 50%;
-                flex-grow: 1;
-                justify-content: center;
-
-                p{
-                    margin: 2rem 0 0 0;
-                }
-
-            }
-          }
         .epic-tower-inputs{
             display: flex;
             flex-wrap: wrap;
@@ -152,18 +61,5 @@
                 width: 12rem;
             }
         }
-    }
-}
-.placeholder{
-    background-color: white;
-    border-radius: 50%;
-    width: 90px;
-    height: 90px;
-    margin: 0 auto;
-    align-self: center;
-    img{
-        height: 30px;
-        padding-left: 26px;
-        padding-top: 30px;
     }
 }

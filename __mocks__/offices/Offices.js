@@ -25,4 +25,25 @@ const officeDetailsData = {
   },
 };
 
-export { officeDetailsData as default };
+const crestOfficeDetails = {
+  data: {
+    loading: false,
+    getOfficeByName: [
+      {
+        id: '1',
+        blocks: [
+          {
+            id: '1',
+            floors: [
+              {
+                id: '1',
+                name: 'fourth floor',
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+};
+export { officeDetailsData as default, crestOfficeDetails };

@@ -18,4 +18,19 @@ query officeDetails {
 }
 }`;
 
-export { GET_EPIC_TOWER_DETAILS_QUERY as default };
+
+const GET_CREST_DETAILS = gql`
+query officeDetails {
+ getOfficeByName(name: "The Crest"){
+  id
+  blocks {
+    id
+    floors {
+      id
+      name
+    }
+  }
+}
+}`;
+
+export { GET_EPIC_TOWER_DETAILS_QUERY as default, GET_CREST_DETAILS };

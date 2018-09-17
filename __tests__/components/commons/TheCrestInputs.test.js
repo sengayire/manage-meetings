@@ -1,16 +1,14 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import EpicTowerInputs from '../../../src/components/commons/EpicTowerInputs';
+import TheCrestInputs from '../../../src/components/commons/TheCrestInputs';
 
-describe('EpicTowerInputs component', () => {
+describe('TheCrestInputs component', () => {
   const onChange = jest.fn();
-  const wrapper = shallow(<EpicTowerInputs
+  const wrapper = shallow(<TheCrestInputs
     roomName=""
     roomFloor={0}
-    floorOptions={[]}
-    roomCapacity={0}
-    roomWing={0}
-    wingOptions={[]}
+    floorOptionsList={[]}
+    roomCapacity={1}
     handleInputChange={onChange}
   />);
   it('should render correctly', () => {

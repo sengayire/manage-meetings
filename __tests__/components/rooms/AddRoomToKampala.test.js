@@ -1,52 +1,166 @@
 import React from 'react';
-import { mount } from 'enzyme';
-
-import { roomLocations } from '../../../__mocks__/rooms/Rooms';
-import AddRoomToKampala from '../../../src/components/rooms/AddRoomToKampala';
+import { mount, shallow } from 'enzyme';
+import { MockedProvider } from 'react-apollo/test-utils';
+import AddRoomToKampala, { AddRoomToTheCrest } from '../../../src/components/rooms/AddRoomToKampala';
+import { GET_CREST_DETAILS } from '../../../src/graphql/queries/Offices';
+import { ADD_ROOM_TO_CREST } from '../../../src/graphql/mutations/AddRoomToCrest';
+import { crestOfficeDetails } from '../../../__mocks__/offices/Offices';
+import AddRoomToCrest, { variables } from '../../../__mocks__/rooms/AddRoomToCrest';
 
 describe('AddRoomToKampala', () => {
-  const wrapper = mount(<AddRoomToKampala locations={roomLocations} />);
+  const MockedCrest = (
+    <MockedProvider
+      mocks={[
+        {
+          request: {
+            query: ADD_ROOM_TO_CREST,
+            variables: { ...variables },
+          },
+          result: {
+            ...AddRoomToCrest,
+          },
+      },
+      {
+        request: {
+          query: GET_CREST_DETAILS,
+        },
+        result: crestOfficeDetails,
+    },
+      ]}
+      addTypename={false}
+    >
+      <AddRoomToKampala />
+    </MockedProvider>);
+
+  const wrapper = mount(MockedCrest);
+  // const theCrest = wrapper.find('AddRoomToTheCrest');
+  let response;
+  const mockProps = {
+    officeDetails: {},
+    crestMutation: jest.fn(() => Promise.resolve(response)),
+  };
+  const crestShallowWrapper = shallow(<AddRoomToTheCrest {...mockProps} />);
+
+  beforeEach(() => {
+    crestShallowWrapper.setState({
+      imageUrl: '',
+      roomName: '',
+      roomFloor: 0,
+      roomType: 'meeting',
+      roomCalendar: 'andela.com1',
+      floorOptions: [],
+      roomCapacity: 0,
+      closeModal: false,
+      thumbnailName: 'Upload a thumbnail',
+      officeId: 1,
+    });
+    mockProps.crestMutation.mockClear();
+  });
 
   it('should render properly', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('should not have a form before modal pops up', () => {
-    expect(wrapper.find('form')).toHaveLength(0);
+  it('should add room name to state', () => {
+    crestShallowWrapper.instance().handleInputChange({ target: { name: 'roomName', value: 'room1' } });
+    expect(crestShallowWrapper.state().roomName).toEqual('room1');
   });
-
-
-  it('should pop up a modal when modal button is clicked', () => {
-    const modalButton = wrapper.find('#modal-button');
-    expect(modalButton).toHaveLength(1);
-
-    modalButton.simulate('click');
-    wrapper.update();
-    expect(wrapper).toMatchSnapshot();
+  it('should add room floor to state', () => {
+    crestShallowWrapper.instance().handleInputChange({ target: { name: 'roomFloor', value: '1' } });
+    expect(crestShallowWrapper.state().roomFloor).toEqual(1);
+    expect(crestShallowWrapper.state().roomFloor).not.toEqual('1');
   });
-
-  it('should have one select and one text input element', () => {
-    expect(wrapper.find('Input').length).toBe(1);
-    expect(wrapper.find('SelectInput').length).toBe(2);
+  it('should close modal', () => {
+    crestShallowWrapper.instance().handleModalStateChange();
+    expect(crestShallowWrapper.state().closeModal).toBeFalsy();
   });
-
-
-  it('should respond to on change events of the input and selects', () => {
-    wrapper.find('input#roomName').simulate('change', { target: { name: 'roomName', value: 'HighLan' } });
-    wrapper.find('select#roomFloor').simulate('change', { target: { name: 'roomFloor', value: 'First Floor' } });
-    wrapper.update();
-    expect(wrapper.find('input#roomName').prop('defaultValue')).toEqual('HighLan');
-    expect(wrapper.find('select#roomFloor').prop('value')).toEqual('First Floor');
+  it('should close modal', () => {
+    crestShallowWrapper.setState({
+      closeModal: true,
+    });
+    crestShallowWrapper.instance().handleModalStateChange();
+    expect(crestShallowWrapper.state().closeModal).toBeFalsy();
   });
-
-
-  it('should  have form and close the modal when the form is submitted', () => {
+  it('should add room capacity to state', () => {
+    crestShallowWrapper.instance().handleInputChange({ target: { name: 'roomCapacity', value: '10' } });
+    expect(crestShallowWrapper.state().roomCapacity).toEqual(10);
+    expect(crestShallowWrapper.state().roomCapacity).not.toEqual('10');
+  });
+  it('should increment room capacity to state', () => {
+    crestShallowWrapper.instance().handleInputChange({ target: { name: 'up' } }, 12);
+    expect(crestShallowWrapper.state().roomCapacity).toEqual(12);
+    expect(crestShallowWrapper.state().roomCapacity).not.toEqual('12');
+  });
+  it('should not increment room capacity when num value is undefined', () => {
+    crestShallowWrapper.instance().handleInputChange({ target: { name: 'up' } }, undefined);
+    expect(crestShallowWrapper.state().roomCapacity).toEqual(0);
+  });
+  it('should add room capacity to state', () => {
+    crestShallowWrapper.instance().handleInputChange({ target: { name: 'roomCapacity', value: '' } });
+    expect(crestShallowWrapper.state().roomCapacity).toEqual(0);
+  });
+  it('should add image to state', async () => {
+    const files = [
+      {
+        name: 'image-name',
+        type: 'image/jpeg',
+        size: 1024,
+        webKitRelativePath: '',
+      },
+    ];
+    await crestShallowWrapper.instance().handleInputChange({ target: { name: 'selectImage', files } });
+    await new Promise(resolve => setTimeout(resolve));
+    expect(crestShallowWrapper.state().thumbnailName).toEqual('image-name');
+    expect(crestShallowWrapper.state().imageUrl).toEqual('upload/image-name');
+  });
+  it('should catch image upload error', async () => {
+    const files = [
+      {
+        name: 'fail',
+        type: 'image/jpeg',
+        size: 1024,
+        webKitRelativePath: '',
+      },
+    ];
+    await crestShallowWrapper.instance().handleInputChange({ target: { name: 'selectImage', files } });
+    await new Promise(resolve => setTimeout(resolve));
+    expect(crestShallowWrapper.state().imageUrl).toEqual('');
+  });
+  it('should reduce image name length and add it to state', async () => {
+    const files = [
+      {
+        name: 'a-very-very-very-very-very-very-very-long-image-name',
+        type: 'image/jpeg',
+        size: 1024,
+        webKitRelativePath: '',
+      },
+    ];
+    await crestShallowWrapper.instance().handleInputChange({ target: { name: 'selectImage', files } });
+    await new Promise(resolve => setTimeout(resolve));
+    expect(crestShallowWrapper.state().thumbnailName).toEqual('a-very-very-very-very-...');
+  });
+  it('should create room', async () => {
     const preventDefault = jest.fn();
-    const form = wrapper.find('form');
-    expect(form).toHaveLength(1);
-
-    form.simulate('submit', { preventDefault });
-    expect(preventDefault).toHaveBeenCalled();
-    expect(wrapper.find('form')).toHaveLength(0);
+    crestShallowWrapper.setState({
+      imageUrl: 'path/to/image.jpg',
+      roomName: 'room1',
+      roomFloor: 1,
+      roomCapacity: 10,
+    });
+    await crestShallowWrapper.instance().handleAddRoom({ preventDefault });
+    await new Promise(resolve => setTimeout(resolve));
+    wrapper.update();
+    expect(mockProps.crestMutation).toHaveBeenCalled();
+  });
+  it('should not create room when some inputs are missing', async () => {
+    const preventDefault = jest.fn();
+    crestShallowWrapper.setState({
+      imageUrl: 'path/to/image.jpg',
+      roomName: 'room1',
+    });
+    await crestShallowWrapper.instance().handleAddRoom({ preventDefault });
+    await new Promise(resolve => setTimeout(resolve));
+    wrapper.update();
+    expect(mockProps.crestMutation).not.toHaveBeenCalled();
   });
 });

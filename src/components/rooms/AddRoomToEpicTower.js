@@ -58,7 +58,6 @@ export class AddRoomToEpicTower extends Component {
       roomCapacity: 0,
       thumbnailName: 'Upload a thumbnail',
     });
-    this.setState({ closeModal: true });
   };
 
   handleInputChange = (event, num) => {
@@ -168,7 +167,7 @@ export class AddRoomToEpicTower extends Component {
     const { officeDetails } = this.props;
 
     if (officeDetails.loading) {
-      floorOptionsList = [{ vlaue: 0, displayText: 'Loading FLoors' }];
+      floorOptionsList = [{ id: 0, name: 'Loading FLoors' }];
     }
 
     return (

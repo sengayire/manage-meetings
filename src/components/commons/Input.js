@@ -29,7 +29,8 @@ export class Input extends Component {
 
   render() {
     const {
-      name, value, inputClass, type, labelName, labelClass, id, onChange, ...otherProps
+      name, value, inputClass, type, labelName, labelClass, id, onChange,
+      controlsClass, ...otherProps
     } = this.props;
 
     return (
@@ -47,6 +48,7 @@ export class Input extends Component {
           />
           { type === 'number' ?
             <Controls
+              controlsClass={controlsClass}
               handleIncrement={this.handleIncrement}
             />
             : null }
@@ -63,6 +65,7 @@ Input.propTypes = {
     PropTypes.number,
   ]),
   inputClass: PropTypes.string,
+  controlsClass: PropTypes.string,
   id: PropTypes.string.isRequired,
   labelName: PropTypes.string.isRequired,
   labelClass: PropTypes.string,
@@ -75,6 +78,7 @@ Input.defaultProps = {
   type: 'text',
   inputClass: 'mrm-input default-input',
   labelClass: 'input1',
+  controlsClass: '',
 };
 
 export default Input;
