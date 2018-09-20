@@ -8,6 +8,7 @@ import TableHead from '../helpers/TableHead';
 import People from './People';
 import Pagination from '../commons/Pagination';
 import { GET_LOCATIONS_QUERY } from '../../graphql/queries/Rooms';
+import UPDATE_ROLES_MUTATION from '../../graphql/mutations/People';
 import { GET_PEOPLE_QUERY, GET_ROLES_QUERY } from '../../graphql/queries/People';
 import { formatPeopleData } from '../../graphql/mappers/People';
 
@@ -22,6 +23,7 @@ const handleErrorMessage = (...errors) => {
 };
 
 const PeopleList = (props) => {
+  const { editRole } = props;
   const { users, loading, error } = props.data;
   const {
     allLocations,
@@ -62,7 +64,12 @@ const PeopleList = (props) => {
           <tbody>
             {
             users.users.map(person => (
-              <People people={formatPeopleData(person)} allRoles={roles} key={person.id} />
+              <People
+                people={formatPeopleData(person)}
+                allRoles={roles}
+                key={person.id}
+                editRole={editRole}
+              />
             ))
           }
           </tbody>
@@ -98,10 +105,14 @@ PeopleList.propTypes = {
     })),
     PropTypes.object,
   ]).isRequired,
+  editRole: PropTypes.func.isRequired,
 };
 
 export default compose(
   graphql(GET_PEOPLE_QUERY, { name: 'data' }),
   graphql(GET_ROLES_QUERY, { name: 'roles' }),
   graphql(GET_LOCATIONS_QUERY, { name: 'locations' }),
+  graphql(UPDATE_ROLES_MUTATION, {
+    name: 'editRole', options: { refetchQueries: [{ query: GET_PEOPLE_QUERY }] },
+  }),
 )(PeopleList);

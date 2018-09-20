@@ -14,6 +14,7 @@ exports[`EditResource Component renders properly 1`] = `
     onSubmit={[Function]}
   >
     <Input
+      controlsClass=""
       id="resourceName"
       inputClass="mrm-input default-input"
       labelClass="input1"

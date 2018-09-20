@@ -15,6 +15,7 @@ exports[`AddOffice Component renders properly 1`] = `
     onSubmit={[Function]}
   >
     <Input
+      controlsClass=""
       id="officeName"
       inputClass="mrm-input default-input"
       labelClass="input1"

@@ -68,7 +68,7 @@ exports[`AddRoomMenu should render properly 1`] = `
     rippleMultiple={true}
     rippleSpread={2}
   >
-    <AddRoom />
+    <Apollo(Apollo(AddRoomToTheCrest)) />
   </ThemedThemed>
   <ThemedThemed
     caption="New York"

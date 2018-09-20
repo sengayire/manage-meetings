@@ -31,6 +31,7 @@ exports[`RoomForm should render properly 1`] = `
     onSubmit={[Function]}
   >
     <Input
+      controlsClass=""
       id="roomName"
       inputClass="mrm-input default-input"
       labelClass="input-wrapper"

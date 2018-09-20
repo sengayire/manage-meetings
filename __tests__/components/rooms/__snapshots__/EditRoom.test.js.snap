@@ -222,6 +222,7 @@ exports[`EditRoom should pop up a modal when modal button is clicked 1`] = `
                 onSubmit={[Function]}
               >
                 <Input
+                  controlsClass=""
                   id="roomName"
                   inputClass="mrm-input default-input"
                   labelClass="input-wrapper"

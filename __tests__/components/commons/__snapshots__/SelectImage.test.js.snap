@@ -14,12 +14,7 @@ exports[`Select Image should render properly 1`] = `
     >
       <div
         className="placeholder"
-      >
-        <img
-          alt="Placeholder"
-          src="test-file-stub"
-        />
-      </div>
+      />
     </div>
     <div
       className="select-button"

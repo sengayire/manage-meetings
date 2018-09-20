@@ -590,12 +590,7 @@ exports[`AddRoomNairobi should pop up a modal when modal button is clicked 1`] =
                       >
                         <div
                           className="placeholder"
-                        >
-                          <img
-                            alt="Placeholder"
-                            src="test-file-stub"
-                          />
-                        </div>
+                        />
                       </div>
                       <div
                         className="select-button"
@@ -697,6 +692,7 @@ exports[`AddRoomNairobi should pop up a modal when modal button is clicked 1`] =
                       className="form-inputs"
                     >
                       <Input
+                        controlsClass=""
                         id="roomName"
                         inputClass="mrm-input default-input"
                         labelClass="input1"
@@ -733,6 +729,7 @@ exports[`AddRoomNairobi should pop up a modal when modal button is clicked 1`] =
                         </div>
                       </Input>
                       <Input
+                        controlsClass=""
                         id="roomCapacity"
                         inputClass="mrm-input default-input"
                         labelClass="input1"
@@ -764,10 +761,11 @@ exports[`AddRoomNairobi should pop up a modal when modal button is clicked 1`] =
                               type="number"
                             />
                             <Controls
+                              controlsClass=""
                               handleIncrement={[Function]}
                             >
                               <div
-                                className="controls"
+                                className="controls "
                               >
                                 <button
                                   className="control up"

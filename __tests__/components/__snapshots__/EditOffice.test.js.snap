@@ -14,6 +14,7 @@ exports[`EditOffice Component renders properly 1`] = `
     onSubmit={[Function]}
   >
     <Input
+      controlsClass=""
       id="officeName"
       inputClass="input1"
       labelClass="label1"

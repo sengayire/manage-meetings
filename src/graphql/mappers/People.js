@@ -15,6 +15,7 @@
 export const formatPeopleData = person => ({
   id: person.id,
   name: person.name,
+  email: person.email,
   location: person.location,
   accessLevel: person.roles[0].role,
   picture: person.picture,

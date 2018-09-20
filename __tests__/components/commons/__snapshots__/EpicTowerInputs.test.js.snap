@@ -1,10 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ActionButton component should render correctly 1`] = `
+exports[`EpicTowerInputs component should render correctly 1`] = `
 <div
   className="epic-tower-inputs"
 >
   <Input
+    controlsClass=""
     id="roomName"
     inputClass="mrm-input epic-tower-input"
     labelClass="input1"
@@ -17,6 +18,7 @@ exports[`ActionButton component should render correctly 1`] = `
     value=""
   />
   <Input
+    controlsClass=""
     id="roomCapacity"
     inputClass="mrm-input epic-tower-input"
     labelClass="capacity-label"
