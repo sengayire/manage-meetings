@@ -8,6 +8,7 @@ import ColGroup from './helpers/ColGroup';
 import TableHead from './helpers/TableHead';
 import TableBody from './helpers/TableBody';
 import Pagination from './commons/Pagination';
+import FilterRoomMenu from './rooms/FilterRoomMenu';
 
 import AddRoomMenu from './rooms/AddRoomMenu';
 
@@ -28,9 +29,7 @@ const RoomsList = (props) => {
   return (
     <div className="settings-rooms">
       <div className="settings-rooms-control">
-        <button id="modal-button" className="button filterBtn">
-          {'Filter'}
-        </button>
+        <FilterRoomMenu />
         <AddRoomMenu />
       </div>
       <div className="settings-rooms-list">
