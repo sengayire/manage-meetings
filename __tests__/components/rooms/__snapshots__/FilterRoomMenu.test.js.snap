@@ -1,0 +1,98 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddRoomMenu should render properly 1`] = `
+<ThemedIconMenu
+  className="filter-dropdown"
+  composeTheme="deeply"
+  icon={
+    <div
+      className="filterBtn"
+    >
+      <span>
+        Filter
+      </span>
+    </div>
+  }
+  iconRipple={true}
+  mapThemrProps={[Function]}
+  menuRipple={true}
+  position="auto"
+  selectable={false}
+>
+  <div
+    className="filter-search"
+  >
+    <Input
+      controlsClass=""
+      id="filterSearch"
+      inputClass="mrm-input filter-search-input"
+      labelClass="input1"
+      labelName=""
+      name="filterSearch"
+      onChange={[Function]}
+      placeholder="Search"
+      required={true}
+      type="text"
+      value=""
+    />
+  </div>
+  <div
+    className="other-filters"
+  >
+    <SelectInput
+      id="location-filter"
+      labelText="Location"
+      name="locationFilter"
+      onChange={[Function]}
+      options={Array []}
+      placeholder="Select location"
+      placeholderValue=""
+      required={true}
+      selectInputClassName="location-input default-select"
+      value=""
+      wrapperClassName="location-wrapper"
+    />
+    <SelectInput
+      id="office-filter"
+      labelText="Office"
+      name="OfficeFilter"
+      onChange={[Function]}
+      options={Array []}
+      placeholder="Select office"
+      placeholderValue=""
+      required={true}
+      selectInputClassName="office-input default-select"
+      value=""
+      wrapperClassName="office-wrapper"
+    />
+    <Input
+      controlsClass="filter-controls"
+      id="roomCapacity"
+      inputClass="mrm-input"
+      labelClass="capacity-label"
+      labelName="Room Capacity"
+      name="roomCapacity"
+      onChange={[Function]}
+      placeholder="0"
+      required={true}
+      title="Please add numbers only"
+      type="number"
+      value={0}
+    />
+  </div>
+  <div
+    className="filter-footer"
+  >
+    <button
+      className="footer-btns"
+    >
+      Clear Filters
+    </button>
+    <button
+      className="footer-btns close"
+    >
+      Close
+    </button>
+  </div>
+</ThemedIconMenu>
+`;

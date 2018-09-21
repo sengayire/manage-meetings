@@ -16,6 +16,7 @@ exports[`Tests for SettingOffices renders correctly from memory 1`] = `
       location="Nigeria"
       officeName="EPIC Tower"
     />
+      
     <DeleteOffice
       id="delete-modal"
       officeName="EPIC Tower"

@@ -6,8 +6,8 @@ import EditResource from './EditResource';
 const Resource = ({ resource }) => (
   <tr>
     <td>{resource.name}</td>
-    <td className="action-buttons">
-      <EditResource resourceName={resource.name} />
+    <td>
+      <EditResource resourceName={resource.name} /> &nbsp;
       <DeleteResource toDelete={resource} />
     </td>
   </tr>

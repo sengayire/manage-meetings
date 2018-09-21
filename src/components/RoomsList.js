@@ -35,7 +35,7 @@ const RoomsList = (props) => {
       <div className="settings-rooms-list">
         <table>
           <ColGroup />
-          <TableHead titles={['Room', 'Location', 'Office', 'Action']} />
+          <TableHead titles={['Room', 'Location', 'Office', 'Actions']} />
           <TableBody rooms={allRooms.rooms} location={locations} />
         </table>
       </div>

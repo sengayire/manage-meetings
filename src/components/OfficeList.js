@@ -17,11 +17,13 @@ class OfficeList extends React.Component {
   render() {
     return (
       <div className="settings-offices">
-        <AddOffice />
+        <div className="settings-offices-control">
+          <AddOffice />
+        </div>
         <div className="settings-offices-list">
           <table>
             <ColGroup />
-            <TableHead titles={['Office', 'Location', 'Timezone', 'Action']} />
+            <TableHead titles={['Office', 'Location', 'Timezone', 'Actions']} />
             <tbody>
               {this.state.offices.map(office => (
                 <Office office={office} key={office.name} />

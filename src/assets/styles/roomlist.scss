@@ -4,90 +4,88 @@
   src: url('../fonts/DINPro-Light.otf');
 }
 
-.settings-rooms {
-  button{
+.settings-rooms-control {
+  height: 80px;
+  width: 85%;
+  text-align: right;
+  margin-top: 2%;
+
+  .button {
+    margin-right: 0;
+    margin-left: 20px;
+    padding: 7px 15px;
+    height: 37px;
     cursor: pointer;
   }
+}
 
-  .settings-rooms-list {
+.settings-rooms-list {
+  table {
+    clear: left;
+    table-layout: fixed;
+    width: 85%;
+    border-collapse: collapse;
+    text-align: left;
 
-    table {
-      clear: left;
-      table-layout: fixed;
-      width: 85%;
-      border-collapse: collapse;
-      text-align: left;
-      .first-col {
-        width: 35%;
-        @media screen and (max-width: 425px) {
-          width: 30%;
-        }
-        @media screen and (min-width: 500px) and (max-width: 1023px) {
-          width: 35%;
-        }
-      }
-      .last-col {
-        width: 30%;
-        @media screen and (max-width: 425px) {
-          width: 28%;
-        }
-        @media screen and (min-width: 500px) and (max-width: 1023px) {
-          width: 33%;
-        }
-      }
-      tr {
-        padding: 1%;
-        padding-left: 25px;
-        border-bottom: 10px solid #f4f8f9;
-        font-weight: 50;
-        th {
-          color: #999999;
-          padding: 1%;
-          padding-left: 2%;
-          font-size: 97%;
-          text-align: left;
-          &:first-child {
-            padding-left: 6%;
-          }
-        }
-        td {
-          background: #ffffff;
-          padding: 2%;
-          color: #333e44;
-          font-size: 95%;
-          font-family: 'DINPro-Light';
-          &:first-child {
-            padding-left: 6%;
-          }
-          button {
-            padding: 0;
-          }
-          button:nth-child(2) {
-            margin-left: 10px;
-          }
-        }
-      }
+    .first-col {
+      width: 50%;
+
       @media screen and (max-width: 425px) {
-        width: 100%;
-        margin-right: 0;
+        width: 24%;
       }
-      @media screen and (min-width: 768) and (max-width: 1023px) {
-        width: 100%;
+
+      @media screen and (min-width: 500px) and (max-width: 1023px) {
+        width: 35%;
       }
     }
-  }
-  .settings-rooms-control {
-    width: 85%;
-    margin-bottom: 40px;
-    text-align: right;
 
-    .button {
-      float: none;
+    .last-col {
+      @media screen and (max-width: 425px) {
+        width: 30%;
+      }
+
+      @media screen and (min-width: 500px) and (max-width: 1023px) {
+        width: 33%;
+      }
+    }
+
+    tr {
+      padding: 1%;
+      border-bottom: 10px solid #f4f8f9;
+      font-weight: 50;
+    }
+
+    th {
+      color: #999999;
+      padding: 1%;
+      padding-left: 2%;
+      font-weight: inherit;
+
+      &:first-child {
+        height: 20px !important;
+      }
+    }
+
+    td {
+      background: #ffffff;
+      padding: 2%;
+      color: #333e44;
+      font-size: 95%;
+      font-family: 'DINPro-Light';
+    }
+
+    td:nth-of-type(4) {
+      width: auto;
+      padding: 0 25px 0 5px;
+    }
+
+    @media screen and (max-width: 425px) {
+      width: 100%;
       margin-right: 0;
-      margin-left: 20px;
-      padding: 7px 15px;
-      height: 37px;
-      cursor: pointer;
+    }
+
+    @media screen and (min-width: 768) and (max-width: 1023px) {
+      width: 100%;
     }
   }
 }

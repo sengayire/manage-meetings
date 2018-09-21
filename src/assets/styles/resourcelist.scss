@@ -1,81 +1,82 @@
+.settings-resource-control {
+  height: 100px;
+  width: 85%;
+  text-align: right;
+}
 .settings-resource-list {
   table {
-    width: 97.129%;
+    width: 85%;;
     clear: left;
-    table-layout: inherit;
     border-collapse: collapse;
     text-align: left;
 
     .first-col {
       width: 60%;
+
       @media screen and (max-width: 425px) {
         width: 35%;
       }
+
       @media screen and (min-width: 500px) and (max-width: 1023px) {
         width: 45%;
       }
     }
+
     .last-col {
       @media screen and (max-width: 425px) {
         width: 38%;
       }
+
       @media screen and (min-width: 500px) and (max-width: 1023px) {
         width: 33%;
       }
     }
+
     tr {
-      margin-bottom: 10%;
-      border-bottom: 5px solid #f4f8f9;
-      height: 50px;
+      font-weight: 50;
+      border-bottom: 10px solid #f4f8f9;
       td:nth-child(2) {
         width: 13.2%;
       }
     }
+
     th {
       color: #999999;
-      padding: 1%;
-      padding-left: 4%;
       font-size: 97%;
-      font-weight: 50;
+      font-weight: inherit;
+      
+      &:first-child {
+        padding-left: 4%;
+      }
     }
-    th {
-      padding-left: 4%;
-    }
+   
     td {
       background: #ffffff;
       color: #333e44;
-      font-size: 90%;
+      font-size: 95%;
+      height: 52px;
       font-family: 'DINPro-Light';
+      #modal-button {
+        margin-left: -2px;
+      }
+    }
+
+    td:nth-of-type(1) {
+      width: auto;
       padding-left: 4%;
     }
+
     @media screen and (max-width: 425px) {
       width: 100%;
       margin-right: 0;
     }
+
     @media screen and (min-width: 768) and (max-width: 1023px) {
       width: 95%;
     }
   }
 }
-.action-buttons {
-  padding-left: 2.5% !important;
-  button {
-    min-width: 50px;
-    font-family: 'DINPro-regular';
-    text-transform: capitalize;
-    font-size: 102%;
-    margin: 0;
-    padding: 0;
-    height: 43px;
-  }
-  button:first-child{
-    float: left;
-  }
-  button:hover{
-    background: transparent !important;
-    color: #3359db !important;
-  }
-}
+
 .delete-resource-modal{
   max-width: 614px;
   height: 312px;
@@ -84,11 +85,13 @@
   margin-right: 0 !important;
   border: none !important;
   box-shadow: none !important;
+
   h2 {
     margin-left: 50px;
     margin-top: 45px;
     text-transform: uppercase;
   }
+
   p{
     font-family: DINPro-light;
     font-size: 108%;
@@ -96,6 +99,7 @@
     -webkit-margin-before: 1px;
     -webkit-margin-after: 1px;
   }
+
   button{
     float: right;
     width: 137px;
@@ -104,23 +108,33 @@
     border-radius: unset;
     margin: 0;
   }
+
   button:hover{
     background: #3359db;
     color: #fff;
   }
+
+  .delete-resource {
+    background: #3359db;
+    color: #fff;
+  }
+
   .modal-content{
     .modal-text {
       margin-top: 3em;
       margin-left: 50px;
     }
+
     .button-container {
       position: absolute;
       width: 100%;
       right: 0;
       bottom: 50px;
+
       .modal-cancel{
         margin-right: 50px;
       }
+
       .modal-submit{
         margin-right: 10px;
       }

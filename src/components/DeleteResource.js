@@ -33,7 +33,7 @@ class DeleteResource extends Component {
           </div>
           <div className="button-container">
             <button className="modal-cancel" onClick={this.handleCloseModal}>Cancel</button>
-            <button className="modal-submit">Submit</button>
+            <button className="modal-submit delete-resource">Submit</button>
           </div>
         </div>
       </MrmModal>

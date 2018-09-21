@@ -1,40 +1,42 @@
 @font-face {
-    font-family: 'DINPro-Light';
-    font-style: normal;
-    src: url('../fonts/DINPro-Light.otf');
-  }
-  .settings-devices-list {
-    table {
-      clear: left;
+  font-family: 'DINPro-Light';
+  font-style: normal;
+  src: url('../fonts/DINPro-Light.otf');
+}
+
+.settings-devices-list {
+  table {
+    clear: left;
+    width: 85%;
+    border-collapse: collapse;
+    text-align: left;
+
+    tr {
+      border-bottom: 10px solid #f4f8f9;
+    height: 64px;
+    }
+    th {
+      color: #999999;
+      padding: 1%;
+      padding-left: 2%;
+      font-size: 97%;
+      padding-top: 6%;
+      font-weight: inherit;
+    }
+    td {
+      background: #ffffff;
+      padding: 1.37% 1.37% 1.35% 2%;
+      color: #333e44;
+      font-size: 95%;
+      font-family: 'DINPro-Light';
+    }
+
+    @media screen and (max-width: 425px) {
       width: 100%;
-      border-collapse: collapse;
-      text-align: left;
-      margin-left: -5%;
-
-      tr {
-        border-bottom: 5px solid #f4f8f9;
-      }
-      th {
-        color: #999999;
-        padding: 1%;
-        padding-left: 2%;
-        font-size: 97%;
-        padding-top: 4%;
-      }
-      td {
-        background: #ffffff;
-        padding: 1.37% 1.37% 1.35% 2%;
-        color: #333e44;
-        font-size: 95%;
-        font-family: 'DINPro-Light';
-      }
-
-      @media screen and (max-width: 425px) {
-        width: 100%;
-        margin-right: 0;
-      }
-      @media screen and (min-width: 768) and (max-width: 1023px) {
-        width: 100%;
-      }
+      margin-right: 0;
+    }
+    @media screen and (min-width: 768) and (max-width: 1023px) {
+      width: 100%;
     }
   }
+}

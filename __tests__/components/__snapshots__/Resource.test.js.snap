@@ -5,12 +5,11 @@ exports[`Tests for Resource Component renders correctly from memory 1`] = `
   <td>
     Marker
   </td>
-  <td
-    className="action-buttons"
-  >
+  <td>
     <EditResource
       resourceName="Marker"
     />
+      
     <DeleteResource
       toDelete={
         Object {

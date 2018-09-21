@@ -60,7 +60,7 @@ const PeopleList = (props) => {
         </div>
         <table>
           <ColGroup />
-          <TableHead titles={['Name', 'Location', 'Access Level', 'Action']} />
+          <TableHead titles={['Name', 'Location', 'Access Level', 'Actions']} />
           <tbody>
             {
             users.users.map(person => (

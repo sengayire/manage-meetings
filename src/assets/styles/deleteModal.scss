@@ -10,8 +10,9 @@ td {
     color: #333e44;
     font-family: 'DINPro-Light';
     cursor: pointer;
-    margin-left: 5px;
+    margin-left: 6px;
   }
+
   #modal-button:focus {
     outline: 0;
   }
@@ -32,7 +33,6 @@ td {
   color: #6D6D6D;
   line-height: 21px;
   padding-top: 30px;
-
   padding-bottom: 25px;
 }
 
@@ -43,7 +43,6 @@ td {
 }
 
 .modal-actions {
-
   button {
     cursor: pointer;
     float: right;
@@ -52,6 +51,10 @@ td {
     border: 1px solid #3359DB;
     border-radius: 0;
     font-family: 'DINPro-Regular';
+  }
+
+  #delete-btn {
+    margin-right: 4%;
   }
 
   #cancel-btn {

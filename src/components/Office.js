@@ -11,7 +11,7 @@ const Office = ({ office: { name, location, timezone } }) => (
     <td><EditOffice
       officeName={name}
       location={location}
-    />
+    /> &nbsp;
       <DeleteOffice officeName={name} id="delete-modal" />
     </td>
   </tr>

@@ -19,10 +19,12 @@ const ResourceList = (props) => {
   return (
     <div className="settings-resource">
       <div className="settings-resource-list">
-        <AddResource />
+        <div className="settings-resource-control">
+          <AddResource />
+        </div>
         <table>
           <ColGroup />
-          <TableHead titles={['Resource', 'Action']} />
+          <TableHead titles={['Resource', 'Actions']} />
           <tbody>
             {allResources.resources.map(resource => (
               <Resource

@@ -33,6 +33,8 @@
 
   .select-button {
     padding-top: 39px;
+    display: flex;
+    flex-direction: column;
     button {
       background-color: #3359DB;
       border-radius: 2px;
@@ -48,14 +50,18 @@
         color: #fff !important;
       }
     }
+
+    #upload_widget_opener {
+      margin-top: 7%;
+    }
     .invisible-input {
       position: relative;
       input[type=file] {
-        width: 7rem;
-        height: 2.4rem;
+        width: 9rem;
+        height: 3rem;
         position: absolute;
         left:0;
-        top: 0.5rem;
+        top: -1.6rem;
         opacity: 0;
         &:hover{
           cursor: pointer;

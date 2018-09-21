@@ -16,13 +16,14 @@ const SelectImage = (props) => {
           }
       </div>
       <div className="select-button">
-        <span>{thumbnailName}</span>
+        <div>{thumbnailName}</div>
         <Button label="Select Image" id="upload_widget_opener" />
         <div className="invisible-input">
           <input
             type="file"
             name="selectImage"
             onChange={onChange}
+            // hidden
           />
         </div>
       </div>

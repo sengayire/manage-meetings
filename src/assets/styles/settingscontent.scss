@@ -51,12 +51,14 @@
       display: block;
       &:visited {
         text-decoration: none;
+        color: #6D6D6D;
       }
+     
     }
   }
 
   .active {
-    color: white;
+    color: white !important;
     background-color: #3359db;
     width: 130px;
     border-radius: 2px;
