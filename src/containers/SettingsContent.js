@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
 
 import SettingsNav from '../components/navbars/SettingsNav';
-import OfficeList from '../components/OfficeList';
+import OfficeList from '../components/OfficeList'; //eslint-disable-line
 import ResourceList from '../components/ResourceList';
 import '../assets/styles/settingscontent.scss';
 import ROUTES from '../utils/routes';

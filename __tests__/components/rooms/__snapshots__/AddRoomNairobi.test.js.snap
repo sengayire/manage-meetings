@@ -595,9 +595,9 @@ exports[`AddRoomNairobi should pop up a modal when modal button is clicked 1`] =
                       <div
                         className="select-button"
                       >
-                        <span>
+                        <div>
                           Upload a thumbnail
-                        </span>
+                        </div>
                         <ThemedThemed
                           composeTheme="deeply"
                           disabled={false}

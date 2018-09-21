@@ -5,20 +5,43 @@ exports[`Tests for SettingOffices renders correctly from memory 1`] = `
   <td>
     EPIC Tower
   </td>
+  <td />
   <td>
-    Nigeria
+    GMT -1
   </td>
+  <td>
+    <EditOffice
+      location=""
+      officeName="EPIC Tower"
+    />
+     
+    <Apollo(Apollo(DeleteOffice))
+      id="delete-modal"
+      officeId="11"
+      officeName="EPIC Tower"
+    />
+  </td>
+</tr>
+`;
+
+exports[`Tests for SettingOffices renders correctly from memory 2`] = `
+<tr>
+  <td>
+    EPIC Tower
+  </td>
+  <td />
   <td>
     GMT +1
   </td>
   <td>
     <EditOffice
-      location="Nigeria"
+      location=""
       officeName="EPIC Tower"
     />
-      
-    <DeleteOffice
+     
+    <Apollo(Apollo(DeleteOffice))
       id="delete-modal"
+      officeId="11"
       officeName="EPIC Tower"
     />
   </td>

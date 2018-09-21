@@ -11,4 +11,14 @@ const ADD_OFFICE_MUTATION = gql`
   }
 `;
 
-export { ADD_OFFICE_MUTATION as default };
+const DELETE_OFFICE_MUTATION = gql`
+  mutation deleteOffice($officeId: Int!){
+    deleteOffice(officeId: $officeId){
+      office{
+        id
+        name
+      }
+    }
+  }
+`;
+export { ADD_OFFICE_MUTATION as default, DELETE_OFFICE_MUTATION };

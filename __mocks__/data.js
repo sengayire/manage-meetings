@@ -1,8 +1,19 @@
 const data = {
   office: {
+    id: '11',
     name: 'EPIC Tower',
-    location: 'Nigeria',
     timezone: 'GMT +1',
+    location: {
+      timeZone: 'EAST_AFRICA',
+    },
+  },
+  officeII: {
+    id: '11',
+    name: 'EPIC Tower',
+    timezone: 'GMT +1',
+    location: {
+      timeZone: 'WEST_AFRICA',
+    },
   },
   resource: {
     name: 'Marker',
@@ -12,5 +23,4 @@ const data = {
     home: '/',
   },
 };
-
 module.exports = data;

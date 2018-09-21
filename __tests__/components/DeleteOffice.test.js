@@ -1,9 +1,16 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import DeleteOffice from '../../src/components/DeleteOffice';
+import { DeleteOffice } from '../../src/components/DeleteOffice';
+import { AddOffice } from '../../src/components/AddOffice'; //eslint-disable-line
 
 describe('DeleteOffice Test Suite', () => {
-  const wrapper = shallow(<DeleteOffice officeName="EPIC Tower" />);
+  const initProps = {
+    deleteOffice: jest.fn(),
+    officeName: 'EPIC TOWER',
+    id: 'delete-modal',
+    officeId: '11',
+  };
+  let wrapper = shallow(<DeleteOffice {...initProps} />);
 
   it('renders as expected', () => {
     expect(wrapper).toMatchSnapshot();
@@ -21,12 +28,6 @@ describe('DeleteOffice Test Suite', () => {
     expect(wrapper.prop('buttonText')).toEqual('Delete');
   });
 
-  it('closes the modal after delete', () => {
-    const deleteButton = wrapper.find('#delete-btn');
-    deleteButton.simulate('click', { preventDefault() {} });
-    expect(wrapper.state('closeModal')).toEqual(true);
-  });
-
   it('should close the modal on cancelling', () => {
     const cancelButton = wrapper.find('#cancel-btn');
     cancelButton.simulate('click', { preventDefault() { } });
@@ -39,5 +40,42 @@ describe('DeleteOffice Test Suite', () => {
     // After a state change and expect state to toggle
     wrapper.instance().handleModalStateChange();
     expect(wrapper.state('closeModal')).toEqual(false);
+  });
+
+  it('should handle handleDeleteOffice() when deleteOffice is rejected', () => {
+    const props = {
+      deleteOffice: jest.fn(() => Promise.reject()),
+      notification: jest.fn(),
+      officeName: 'EPIC TOWER',
+      id: 'delete-modal',
+      officeId: '11',
+    };
+    wrapper = shallow(<DeleteOffice {...props} />);
+
+    wrapper.instance().handleDeleteOffice();
+    expect(props.deleteOffice).toBeCalled();
+  });
+
+  it('should handle handleDeleteOffice() when deleteOffice is resolved', () => {
+    const office = {
+      data: {
+        deleteOffice: {
+          office: {
+            name: 'Epic Tower',
+          },
+        },
+      },
+    };
+    const props = {
+      deleteOffice: jest.fn(() => Promise.resolve(office)),
+      notification: jest.fn(),
+      officeName: 'EPIC TOWER',
+      id: 'delete-modal',
+      officeId: '11',
+    };
+    wrapper = shallow(<DeleteOffice {...props} />);
+
+    wrapper.instance().handleDeleteOffice();
+    expect(props.deleteOffice).toBeCalled();
   });
 });

@@ -19,9 +19,9 @@ exports[`Select Image should render properly 1`] = `
     <div
       className="select-button"
     >
-      <span>
+      <div>
         Upload a thumbnail
-      </span>
+      </div>
       <ThemedThemed
         composeTheme="deeply"
         disabled={false}
@@ -127,9 +127,9 @@ exports[`Select Image should render properly 2`] = `
     <div
       className="select-button"
     >
-      <span>
+      <div>
         Upload a thumbnail
-      </span>
+      </div>
       <ThemedThemed
         composeTheme="deeply"
         disabled={false}

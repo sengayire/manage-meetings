@@ -8,8 +8,12 @@ import '../assets/styles/editoffice.scss';
 export class EditOffice extends React.Component {
   static propTypes = {
     officeName: PropTypes.string.isRequired,
-    location: PropTypes.string.isRequired,
+    location: PropTypes.string,
   };
+
+  static defaultProps = {
+    location: '',
+  }
 
   constructor(props) {
     super(props);

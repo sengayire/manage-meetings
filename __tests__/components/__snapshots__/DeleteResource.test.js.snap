@@ -34,7 +34,7 @@ exports[`DeleteResource Component renders properly 1`] = `
         Cancel
       </button>
       <button
-        className="modal-submit"
+        className="modal-submit delete-resource"
       >
         Submit
       </button>
