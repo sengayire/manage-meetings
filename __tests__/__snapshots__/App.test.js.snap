@@ -2963,7 +2963,7 @@ exports[`App component should render properly in memory 1`] = `
                         </Component>
                         <LoginButton>
                           <a
-                            href="undefined=undefined"
+                            href="https://api-staging.andela.com/login?redirect_url=http://mrm-dev.andela.com:8080"
                           >
                             <input
                               alt="Login With Your Email"
