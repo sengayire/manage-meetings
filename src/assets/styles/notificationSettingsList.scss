@@ -1,0 +1,97 @@
+// color variables
+$andela-blue: #3358db;
+$andela-grey: #bcbcbc;
+
+@font-face {
+    font-family: 'DINPro-Light';
+    font-style: normal;
+    src: url('../fonts/DINPro-Light.otf');
+}
+
+@font-face{
+    font-family: 'DIN Pro';
+    font-style: normal;
+    font-weight: 500;
+    src: url('../fonts/DINPro.ttf') format('truetype');
+}
+
+// styles the whole notification settings content
+.notification-container{
+      display: flex;
+      background-color: #FFFFFF;
+      margin-bottom: 0.625em;
+      border-radius: 0.400em;
+      padding: 1.250em 0 1.250em 1.250em;
+
+      .notification-content{
+         flex: 4 0 0;
+
+         p{
+             font-size: 0.938em;
+             color: #6D6D6D;
+         }
+
+         h2, p{
+             margin: 0;
+         }
+      }
+
+      .notification-switch {
+          align-self: center;
+          padding-right: 3.125em;
+
+          .switch-component{
+              margin: auto;
+          }
+      }
+  }
+
+  .preference-main{
+      h1{
+          font-family: 'DIN Pro';
+          font-size: 1.313em;
+          font-weight: normal;
+          color: #6D6D6D;
+          margin-top: 3.750em;
+      }
+  }
+
+  .notification-title{
+    color: #333E44 !important;
+    font-family: 'DINPro';
+    font-size: 1em;
+    padding-bottom: 0.375em;
+    padding-top: 0.625em;
+  }
+
+  // slider background color when deactivated
+.theme--off--25ui_VhR{
+    background-color: $andela-grey;
+}
+// slider background color when activated
+.theme--on--p92Ype4U{
+    background-color: $andela-blue;
+}
+
+// slider bar size
+.theme--off--25ui_VhR, .theme--on--p92Ype4U{
+    width: 36px;
+    height: 20px;
+}
+
+// slider circle color
+.theme--on--p92Ype4U .theme--thumb--1pMry4dA{
+    background: #fafafa;
+}
+
+// slider circle size and position
+.theme--thumb--1pMry4dA{
+    height: 15px;
+    width: 15px;
+    top: 2px;
+}
+
+// slider circle start position
+.theme--off--25ui_VhR .theme--thumb--1pMry4dA{
+    left: 5px;
+}

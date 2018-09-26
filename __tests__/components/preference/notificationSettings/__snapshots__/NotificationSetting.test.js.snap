@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NotificationSetting Component should render without crashing 1`] = `
+<div
+  className="notification-container"
+>
+  <section
+    className="notification-content"
+  >
+    <h2
+      className="notification-title"
+    >
+      Title
+    </h2>
+    <p>
+      paragraph
+    </p>
+  </section>
+  <section
+    className="notification-switch"
+  >
+    <ThemedSwitch
+      checked={false}
+      className="switch-component"
+      composeTheme="deeply"
+      disabled={false}
+      mapThemrProps={[Function]}
+      onChange={[Function]}
+    />
+  </section>
+</div>
+`;
