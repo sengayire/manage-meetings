@@ -139,25 +139,17 @@ button {
     background: #3359db;
     color: #fff;
   }
-  
+
   .delete-resource:hover {
     cursor: pointer;
   }
 
-<<<<<<< HEAD
 .modal-content{
   .modal-text {
     margin-top: 3em;
     margin-left: 50px;
   }
   }
-=======
-  .modal-content {
-    .modal-text {
-      margin-top: 3em;
-      margin-left: 50px;
-    }
->>>>>>> chore(delete user): Admin should not be able to delete users (#80)
 
     .button-container {
       position: absolute;
@@ -166,23 +158,11 @@ button {
       bottom: 50px;
 
       .modal-cancel {
-<<<<<<< HEAD
-        margin-right: 10px;
-      }
-
-      .modal-cancel:hover {
-        cursor: pointer;
-      }
-
-      .modal-submit {
-        margin-right: 50px;
-=======
         margin-right: 50px;
       }
 
       .modal-submit {
         margin-right: 10px;
->>>>>>> chore(delete user): Admin should not be able to delete users (#80)
       }
     }
   }
