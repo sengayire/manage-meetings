@@ -4,7 +4,6 @@ import toastr from 'toastr';
 import { IconMenu, MenuItem } from 'react-toolbox/lib/menu';
 import EditUser from '../EditUser';
 import notification from '../../utils/notification';
-import DeleteButton from '../../assets/images/delete.svg';
 
 const accessMenuCaret = () => (
   <span className="access-by-caret" />
@@ -57,7 +56,6 @@ const People = ({
           userLocation={location}
           accessLevel={accessLevel}
         />
-        <button><img src={DeleteButton} alt="Delete" /></button>
       </td>
     </tr>
   );

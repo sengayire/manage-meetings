@@ -48,8 +48,6 @@ class EditUser extends React.Component {
       userName, userLocation, accessLevel, closeModal,
     } = this.state;
 
-    // const edit = () => (<img src={EditButton} alt="Edit" />);
-
     return (
       <MrmModal
         title="EDIT USER"

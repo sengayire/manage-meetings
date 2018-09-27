@@ -2602,12 +2602,632 @@ exports[`App component should not render Login if token is present but render Se
                                       }
                                     }
                                   >
-                                    <h2>
-                                      Loading...
-                                    </h2>
-                                  </OfficeList>
-                                </Query>
-                              </Apollo(OfficeList)>
+                                    <table>
+                                      <ColGroup
+                                        numberOfMiddleColumns={2}
+                                      >
+                                        <colgroup>
+                                          <col
+                                            className="first-col"
+                                          />
+                                          <col
+                                            key="col0"
+                                          />
+                                          <col
+                                            key="col1"
+                                          />
+                                          <col
+                                            className="last-col"
+                                          />
+                                        </colgroup>
+                                      </ColGroup>
+                                      <TableHead
+                                        titles={
+                                          Array [
+                                            "Office",
+                                            "Location",
+                                            "Timezone",
+                                            "Actions",
+                                          ]
+                                        }
+                                      >
+                                        <thead>
+                                          <tr>
+                                            <th
+                                              key="Office"
+                                            >
+                                              Office
+                                            </th>
+                                            <th
+                                              key="Location"
+                                            >
+                                              Location
+                                            </th>
+                                            <th
+                                              key="Timezone"
+                                            >
+                                              Timezone
+                                            </th>
+                                            <th
+                                              key="Actions"
+                                            >
+                                              Actions
+                                            </th>
+                                          </tr>
+                                        </thead>
+                                      </TableHead>
+                                      <tbody>
+                                        <Office
+                                          key="EPIC Tower"
+                                          office={
+                                            Object {
+                                              "location": "Nigeria",
+                                              "name": "EPIC Tower",
+                                              "timezone": "GMT +1",
+                                            }
+                                          }
+                                        >
+                                          <tr>
+                                            <td>
+                                              EPIC Tower
+                                            </td>
+                                            <td>
+                                              Nigeria
+                                            </td>
+                                            <td>
+                                              GMT +1
+                                            </td>
+                                            <td>
+                                              <EditOffice
+                                                location="Nigeria"
+                                                officeName="EPIC Tower"
+                                              >
+                                                <MrmModal
+                                                  buttonText="Edit"
+                                                  className="edit-office-modal"
+                                                  closeModal={false}
+                                                  handleCloseRequest={[Function]}
+                                                  modalButtonClassName="edit-button"
+                                                  title="EDIT OFFICE"
+                                                >
+                                                  <IconButtons
+                                                    buttonText="Edit"
+                                                    modalButtonClassName="edit-button"
+                                                    openModal={[Function]}
+                                                  >
+                                                    <button
+                                                      className="edit-button"
+                                                      id="modal-button"
+                                                      onClick={[Function]}
+                                                    >
+                                                      <img
+                                                        alt="Edit"
+                                                        src="test-file-stub"
+                                                      />
+                                                    </button>
+                                                  </IconButtons>
+                                                  <Modal
+                                                    ariaHideApp={false}
+                                                    bodyOpenClassName="ReactModal__Body--open"
+                                                    className="edit-office-modal"
+                                                    closeTimeoutMS={0}
+                                                    contentLabel="Parent Modal"
+                                                    isOpen={false}
+                                                    onAfterOpen={[Function]}
+                                                    onRequestClose={[Function]}
+                                                    parentSelector={[Function]}
+                                                    portalClassName="ReactModalPortal"
+                                                    shouldCloseOnEsc={true}
+                                                    shouldCloseOnOverlayClick={false}
+                                                    shouldFocusAfterRender={true}
+                                                    shouldReturnFocusAfterClose={true}
+                                                    style={
+                                                      Object {
+                                                        "content": Object {
+                                                          "backgroundColor": "#ffffff",
+                                                          "border": "1px solid #CCCCCC",
+                                                          "borderRadius": "4px",
+                                                          "bottom": "auto",
+                                                          "boxShadow": "0 2px 40px 10px rgba(185, 180, 180, 0.2)",
+                                                          "fontFamily": "DINPro-Regular",
+                                                          "left": "50%",
+                                                          "marginRight": "-50%",
+                                                          "outline": "none",
+                                                          "overflow": "auto",
+                                                          "position": "absolute",
+                                                          "right": "auto",
+                                                          "top": "50%",
+                                                          "transform": "translate(-50%, -50%)",
+                                                        },
+                                                      }
+                                                    }
+                                                  >
+                                                    <ModalPortal
+                                                      ariaHideApp={false}
+                                                      bodyOpenClassName="ReactModal__Body--open"
+                                                      className="edit-office-modal"
+                                                      closeTimeoutMS={0}
+                                                      contentLabel="Parent Modal"
+                                                      defaultStyles={
+                                                        Object {
+                                                          "content": Object {
+                                                            "WebkitOverflowScrolling": "touch",
+                                                            "background": "#fff",
+                                                            "border": "1px solid #ccc",
+                                                            "borderRadius": "4px",
+                                                            "bottom": "40px",
+                                                            "left": "40px",
+                                                            "outline": "none",
+                                                            "overflow": "auto",
+                                                            "padding": "20px",
+                                                            "position": "absolute",
+                                                            "right": "40px",
+                                                            "top": "40px",
+                                                          },
+                                                          "overlay": Object {
+                                                            "backgroundColor": "rgba(255, 255, 255, 0.75)",
+                                                            "bottom": 0,
+                                                            "left": 0,
+                                                            "position": "fixed",
+                                                            "right": 0,
+                                                            "top": 0,
+                                                          },
+                                                        }
+                                                      }
+                                                      isOpen={false}
+                                                      onAfterOpen={[Function]}
+                                                      onRequestClose={[Function]}
+                                                      parentSelector={[Function]}
+                                                      portalClassName="ReactModalPortal"
+                                                      shouldCloseOnEsc={true}
+                                                      shouldCloseOnOverlayClick={false}
+                                                      shouldFocusAfterRender={true}
+                                                      shouldReturnFocusAfterClose={true}
+                                                      style={
+                                                        Object {
+                                                          "content": Object {
+                                                            "backgroundColor": "#ffffff",
+                                                            "border": "1px solid #CCCCCC",
+                                                            "borderRadius": "4px",
+                                                            "bottom": "auto",
+                                                            "boxShadow": "0 2px 40px 10px rgba(185, 180, 180, 0.2)",
+                                                            "fontFamily": "DINPro-Regular",
+                                                            "left": "50%",
+                                                            "marginRight": "-50%",
+                                                            "outline": "none",
+                                                            "overflow": "auto",
+                                                            "position": "absolute",
+                                                            "right": "auto",
+                                                            "top": "50%",
+                                                            "transform": "translate(-50%, -50%)",
+                                                          },
+                                                        }
+                                                      }
+                                                    />
+                                                  </Modal>
+                                                </MrmModal>
+                                              </EditOffice>
+                                                
+                                              <DeleteOffice
+                                                id="delete-modal"
+                                                officeName="EPIC Tower"
+                                              >
+                                                <MrmModal
+                                                  buttonText="Delete"
+                                                  className="delete-modal"
+                                                  closeModal={false}
+                                                  handleCloseRequest={[Function]}
+                                                  modalButtonClassName="button"
+                                                  title="DELETE OFFICE"
+                                                >
+                                                  <IconButtons
+                                                    buttonText="Delete"
+                                                    modalButtonClassName="button"
+                                                    openModal={[Function]}
+                                                  >
+                                                    <button
+                                                      className="button"
+                                                      id="modal-button"
+                                                      onClick={[Function]}
+                                                    >
+                                                      <img
+                                                        alt="Delete"
+                                                        src="test-file-stub"
+                                                      />
+                                                    </button>
+                                                  </IconButtons>
+                                                  <Modal
+                                                    ariaHideApp={false}
+                                                    bodyOpenClassName="ReactModal__Body--open"
+                                                    className="delete-modal"
+                                                    closeTimeoutMS={0}
+                                                    contentLabel="Parent Modal"
+                                                    isOpen={false}
+                                                    onAfterOpen={[Function]}
+                                                    onRequestClose={[Function]}
+                                                    parentSelector={[Function]}
+                                                    portalClassName="ReactModalPortal"
+                                                    shouldCloseOnEsc={true}
+                                                    shouldCloseOnOverlayClick={false}
+                                                    shouldFocusAfterRender={true}
+                                                    shouldReturnFocusAfterClose={true}
+                                                    style={
+                                                      Object {
+                                                        "content": Object {
+                                                          "backgroundColor": "#ffffff",
+                                                          "border": "1px solid #CCCCCC",
+                                                          "borderRadius": "4px",
+                                                          "bottom": "auto",
+                                                          "boxShadow": "0 2px 40px 10px rgba(185, 180, 180, 0.2)",
+                                                          "fontFamily": "DINPro-Regular",
+                                                          "left": "50%",
+                                                          "marginRight": "-50%",
+                                                          "outline": "none",
+                                                          "overflow": "auto",
+                                                          "position": "absolute",
+                                                          "right": "auto",
+                                                          "top": "50%",
+                                                          "transform": "translate(-50%, -50%)",
+                                                        },
+                                                      }
+                                                    }
+                                                  >
+                                                    <ModalPortal
+                                                      ariaHideApp={false}
+                                                      bodyOpenClassName="ReactModal__Body--open"
+                                                      className="delete-modal"
+                                                      closeTimeoutMS={0}
+                                                      contentLabel="Parent Modal"
+                                                      defaultStyles={
+                                                        Object {
+                                                          "content": Object {
+                                                            "WebkitOverflowScrolling": "touch",
+                                                            "background": "#fff",
+                                                            "border": "1px solid #ccc",
+                                                            "borderRadius": "4px",
+                                                            "bottom": "40px",
+                                                            "left": "40px",
+                                                            "outline": "none",
+                                                            "overflow": "auto",
+                                                            "padding": "20px",
+                                                            "position": "absolute",
+                                                            "right": "40px",
+                                                            "top": "40px",
+                                                          },
+                                                          "overlay": Object {
+                                                            "backgroundColor": "rgba(255, 255, 255, 0.75)",
+                                                            "bottom": 0,
+                                                            "left": 0,
+                                                            "position": "fixed",
+                                                            "right": 0,
+                                                            "top": 0,
+                                                          },
+                                                        }
+                                                      }
+                                                      isOpen={false}
+                                                      onAfterOpen={[Function]}
+                                                      onRequestClose={[Function]}
+                                                      parentSelector={[Function]}
+                                                      portalClassName="ReactModalPortal"
+                                                      shouldCloseOnEsc={true}
+                                                      shouldCloseOnOverlayClick={false}
+                                                      shouldFocusAfterRender={true}
+                                                      shouldReturnFocusAfterClose={true}
+                                                      style={
+                                                        Object {
+                                                          "content": Object {
+                                                            "backgroundColor": "#ffffff",
+                                                            "border": "1px solid #CCCCCC",
+                                                            "borderRadius": "4px",
+                                                            "bottom": "auto",
+                                                            "boxShadow": "0 2px 40px 10px rgba(185, 180, 180, 0.2)",
+                                                            "fontFamily": "DINPro-Regular",
+                                                            "left": "50%",
+                                                            "marginRight": "-50%",
+                                                            "outline": "none",
+                                                            "overflow": "auto",
+                                                            "position": "absolute",
+                                                            "right": "auto",
+                                                            "top": "50%",
+                                                            "transform": "translate(-50%, -50%)",
+                                                          },
+                                                        }
+                                                      }
+                                                    />
+                                                  </Modal>
+                                                </MrmModal>
+                                              </DeleteOffice>
+                                            </td>
+                                          </tr>
+                                        </Office>
+                                        <Office
+                                          key="Invisible Building"
+                                          office={
+                                            Object {
+                                              "location": "Kenya",
+                                              "name": "Invisible Building",
+                                              "timezone": "GMT -1",
+                                            }
+                                          }
+                                        >
+                                          <tr>
+                                            <td>
+                                              Invisible Building
+                                            </td>
+                                            <td>
+                                              Kenya
+                                            </td>
+                                            <td>
+                                              GMT -1
+                                            </td>
+                                            <td>
+                                              <EditOffice
+                                                location="Kenya"
+                                                officeName="Invisible Building"
+                                              >
+                                                <MrmModal
+                                                  buttonText="Edit"
+                                                  className="edit-office-modal"
+                                                  closeModal={false}
+                                                  handleCloseRequest={[Function]}
+                                                  modalButtonClassName="edit-button"
+                                                  title="EDIT OFFICE"
+                                                >
+                                                  <IconButtons
+                                                    buttonText="Edit"
+                                                    modalButtonClassName="edit-button"
+                                                    openModal={[Function]}
+                                                  >
+                                                    <button
+                                                      className="edit-button"
+                                                      id="modal-button"
+                                                      onClick={[Function]}
+                                                    >
+                                                      <img
+                                                        alt="Edit"
+                                                        src="test-file-stub"
+                                                      />
+                                                    </button>
+                                                  </IconButtons>
+                                                  <Modal
+                                                    ariaHideApp={false}
+                                                    bodyOpenClassName="ReactModal__Body--open"
+                                                    className="edit-office-modal"
+                                                    closeTimeoutMS={0}
+                                                    contentLabel="Parent Modal"
+                                                    isOpen={false}
+                                                    onAfterOpen={[Function]}
+                                                    onRequestClose={[Function]}
+                                                    parentSelector={[Function]}
+                                                    portalClassName="ReactModalPortal"
+                                                    shouldCloseOnEsc={true}
+                                                    shouldCloseOnOverlayClick={false}
+                                                    shouldFocusAfterRender={true}
+                                                    shouldReturnFocusAfterClose={true}
+                                                    style={
+                                                      Object {
+                                                        "content": Object {
+                                                          "backgroundColor": "#ffffff",
+                                                          "border": "1px solid #CCCCCC",
+                                                          "borderRadius": "4px",
+                                                          "bottom": "auto",
+                                                          "boxShadow": "0 2px 40px 10px rgba(185, 180, 180, 0.2)",
+                                                          "fontFamily": "DINPro-Regular",
+                                                          "left": "50%",
+                                                          "marginRight": "-50%",
+                                                          "outline": "none",
+                                                          "overflow": "auto",
+                                                          "position": "absolute",
+                                                          "right": "auto",
+                                                          "top": "50%",
+                                                          "transform": "translate(-50%, -50%)",
+                                                        },
+                                                      }
+                                                    }
+                                                  >
+                                                    <ModalPortal
+                                                      ariaHideApp={false}
+                                                      bodyOpenClassName="ReactModal__Body--open"
+                                                      className="edit-office-modal"
+                                                      closeTimeoutMS={0}
+                                                      contentLabel="Parent Modal"
+                                                      defaultStyles={
+                                                        Object {
+                                                          "content": Object {
+                                                            "WebkitOverflowScrolling": "touch",
+                                                            "background": "#fff",
+                                                            "border": "1px solid #ccc",
+                                                            "borderRadius": "4px",
+                                                            "bottom": "40px",
+                                                            "left": "40px",
+                                                            "outline": "none",
+                                                            "overflow": "auto",
+                                                            "padding": "20px",
+                                                            "position": "absolute",
+                                                            "right": "40px",
+                                                            "top": "40px",
+                                                          },
+                                                          "overlay": Object {
+                                                            "backgroundColor": "rgba(255, 255, 255, 0.75)",
+                                                            "bottom": 0,
+                                                            "left": 0,
+                                                            "position": "fixed",
+                                                            "right": 0,
+                                                            "top": 0,
+                                                          },
+                                                        }
+                                                      }
+                                                      isOpen={false}
+                                                      onAfterOpen={[Function]}
+                                                      onRequestClose={[Function]}
+                                                      parentSelector={[Function]}
+                                                      portalClassName="ReactModalPortal"
+                                                      shouldCloseOnEsc={true}
+                                                      shouldCloseOnOverlayClick={false}
+                                                      shouldFocusAfterRender={true}
+                                                      shouldReturnFocusAfterClose={true}
+                                                      style={
+                                                        Object {
+                                                          "content": Object {
+                                                            "backgroundColor": "#ffffff",
+                                                            "border": "1px solid #CCCCCC",
+                                                            "borderRadius": "4px",
+                                                            "bottom": "auto",
+                                                            "boxShadow": "0 2px 40px 10px rgba(185, 180, 180, 0.2)",
+                                                            "fontFamily": "DINPro-Regular",
+                                                            "left": "50%",
+                                                            "marginRight": "-50%",
+                                                            "outline": "none",
+                                                            "overflow": "auto",
+                                                            "position": "absolute",
+                                                            "right": "auto",
+                                                            "top": "50%",
+                                                            "transform": "translate(-50%, -50%)",
+                                                          },
+                                                        }
+                                                      }
+                                                    />
+                                                  </Modal>
+                                                </MrmModal>
+                                              </EditOffice>
+                                                
+                                              <DeleteOffice
+                                                id="delete-modal"
+                                                officeName="Invisible Building"
+                                              >
+                                                <MrmModal
+                                                  buttonText="Delete"
+                                                  className="delete-modal"
+                                                  closeModal={false}
+                                                  handleCloseRequest={[Function]}
+                                                  modalButtonClassName="button"
+                                                  title="DELETE OFFICE"
+                                                >
+                                                  <IconButtons
+                                                    buttonText="Delete"
+                                                    modalButtonClassName="button"
+                                                    openModal={[Function]}
+                                                  >
+                                                    <button
+                                                      className="button"
+                                                      id="modal-button"
+                                                      onClick={[Function]}
+                                                    >
+                                                      <img
+                                                        alt="Delete"
+                                                        src="test-file-stub"
+                                                      />
+                                                    </button>
+                                                  </IconButtons>
+                                                  <Modal
+                                                    ariaHideApp={false}
+                                                    bodyOpenClassName="ReactModal__Body--open"
+                                                    className="delete-modal"
+                                                    closeTimeoutMS={0}
+                                                    contentLabel="Parent Modal"
+                                                    isOpen={false}
+                                                    onAfterOpen={[Function]}
+                                                    onRequestClose={[Function]}
+                                                    parentSelector={[Function]}
+                                                    portalClassName="ReactModalPortal"
+                                                    shouldCloseOnEsc={true}
+                                                    shouldCloseOnOverlayClick={false}
+                                                    shouldFocusAfterRender={true}
+                                                    shouldReturnFocusAfterClose={true}
+                                                    style={
+                                                      Object {
+                                                        "content": Object {
+                                                          "backgroundColor": "#ffffff",
+                                                          "border": "1px solid #CCCCCC",
+                                                          "borderRadius": "4px",
+                                                          "bottom": "auto",
+                                                          "boxShadow": "0 2px 40px 10px rgba(185, 180, 180, 0.2)",
+                                                          "fontFamily": "DINPro-Regular",
+                                                          "left": "50%",
+                                                          "marginRight": "-50%",
+                                                          "outline": "none",
+                                                          "overflow": "auto",
+                                                          "position": "absolute",
+                                                          "right": "auto",
+                                                          "top": "50%",
+                                                          "transform": "translate(-50%, -50%)",
+                                                        },
+                                                      }
+                                                    }
+                                                  >
+                                                    <ModalPortal
+                                                      ariaHideApp={false}
+                                                      bodyOpenClassName="ReactModal__Body--open"
+                                                      className="delete-modal"
+                                                      closeTimeoutMS={0}
+                                                      contentLabel="Parent Modal"
+                                                      defaultStyles={
+                                                        Object {
+                                                          "content": Object {
+                                                            "WebkitOverflowScrolling": "touch",
+                                                            "background": "#fff",
+                                                            "border": "1px solid #ccc",
+                                                            "borderRadius": "4px",
+                                                            "bottom": "40px",
+                                                            "left": "40px",
+                                                            "outline": "none",
+                                                            "overflow": "auto",
+                                                            "padding": "20px",
+                                                            "position": "absolute",
+                                                            "right": "40px",
+                                                            "top": "40px",
+                                                          },
+                                                          "overlay": Object {
+                                                            "backgroundColor": "rgba(255, 255, 255, 0.75)",
+                                                            "bottom": 0,
+                                                            "left": 0,
+                                                            "position": "fixed",
+                                                            "right": 0,
+                                                            "top": 0,
+                                                          },
+                                                        }
+                                                      }
+                                                      isOpen={false}
+                                                      onAfterOpen={[Function]}
+                                                      onRequestClose={[Function]}
+                                                      parentSelector={[Function]}
+                                                      portalClassName="ReactModalPortal"
+                                                      shouldCloseOnEsc={true}
+                                                      shouldCloseOnOverlayClick={false}
+                                                      shouldFocusAfterRender={true}
+                                                      shouldReturnFocusAfterClose={true}
+                                                      style={
+                                                        Object {
+                                                          "content": Object {
+                                                            "backgroundColor": "#ffffff",
+                                                            "border": "1px solid #CCCCCC",
+                                                            "borderRadius": "4px",
+                                                            "bottom": "auto",
+                                                            "boxShadow": "0 2px 40px 10px rgba(185, 180, 180, 0.2)",
+                                                            "fontFamily": "DINPro-Regular",
+                                                            "left": "50%",
+                                                            "marginRight": "-50%",
+                                                            "outline": "none",
+                                                            "overflow": "auto",
+                                                            "position": "absolute",
+                                                            "right": "auto",
+                                                            "top": "50%",
+                                                            "transform": "translate(-50%, -50%)",
+                                                          },
+                                                        }
+                                                      }
+                                                    />
+                                                  </Modal>
+                                                </MrmModal>
+                                              </DeleteOffice>
+                                            </td>
+                                          </tr>
+                                        </Office>
+                                      </tbody>
+                                    </table>
+                                  </div>
+                                </div>
+                              </OfficeList>
                             </Route>
                           </Switch>
                         </div>

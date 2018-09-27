@@ -67,12 +67,6 @@ exports[`People Component renders properly 1`] = `
       userLocation="Nairobi"
       userName="Edward Barton"
     />
-    <button>
-      <img
-        alt="Delete"
-        src="test-file-stub"
-      />
-    </button>
   </td>
 </tr>
 `;
