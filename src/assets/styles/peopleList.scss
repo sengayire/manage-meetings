@@ -3,6 +3,7 @@
   font-style: normal;
   src: url('../fonts/DINPro-Light.otf');
 }
+<<<<<<< HEAD
 .settings-people {
   width: 85%;
 
@@ -16,6 +17,31 @@
         color: #999999;
         font-family: 'DINPro-Light';
         font-size: 18px;
+=======
+
+.settings-people-list {
+  width: calc(100% - 100px);
+  
+  .action-menu {
+    height: 70px;
+    padding-top: 4%;
+    text-align: right; 
+
+    .sort-by {
+      color: #999999;
+      font-family: "DINPro-Light";
+      font-size: 18px;
+      line-height: 23px;
+      display: inline;
+
+      .location {
+        height: 23px;
+        width: 70px;
+        color: #3359DB;
+        font-family: "DINPro";
+        font-size: 18px;
+        font-weight: 700;
+>>>>>>> chore(delete user): Admin should not be able to delete users (#80)
         line-height: 23px;
         display: inline;
 
@@ -84,6 +110,7 @@
       }
     }
 
+<<<<<<< HEAD
     table {
       clear: left;
       width: 100%;
@@ -96,6 +123,21 @@
         border-bottom: 10px solid #f4f8f9;
         font-weight: 50;
       }
+=======
+  table {
+    clear: left;
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+
+    tr {
+      height: 40px;
+      padding: 1%;
+      border-bottom: 10px solid #f4f8f9;
+      font-weight: 50;
+      
+    }
+>>>>>>> chore(delete user): Admin should not be able to delete users (#80)
       th:nth-child(4) {
         padding-left: 48px;
       }
@@ -188,9 +230,15 @@
             height: 13.5px;
             width: 13.46px;
 
+<<<<<<< HEAD
             &:nth-child(1) {
               margin-left: 25px !important;
             }
+=======
+          &:nth-child(1) {
+            margin-left: 25px !important;
+          }
+>>>>>>> chore(delete user): Admin should not be able to delete users (#80)
 
             &:nth-child(2) {
               margin-top: 7px;

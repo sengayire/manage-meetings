@@ -16,6 +16,7 @@ describe('RoomList Component', () => {
       perPage: 5,
     },
   };
+<<<<<<< HEAD
   const props = {
     data: {
       fetchMore: jest.fn(),
@@ -53,6 +54,8 @@ describe('RoomList Component', () => {
     loading: false,
     error: undefined,
   };
+=======
+>>>>>>> chore(delete user): Admin should not be able to delete users (#80)
   const result = { ...allRooms };
   const roomLocationsRequest = { query: GET_LOCATIONS_QUERY };
   const locationsResult = { data: { allLocations: [...roomLocations] } };

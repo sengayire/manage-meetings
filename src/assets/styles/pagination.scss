@@ -25,11 +25,18 @@
     text-decoration: none;
     color:#3358db;
 }
+<<<<<<< HEAD
 .pagination > select.page-select {
     height: 32px;
     max-width: 62px;
+=======
+
+.pagination > select {
+    height: 32px;
+    max-width: 38px;
+>>>>>>> chore(delete user): Admin should not be able to delete users (#80)
     padding-top: 4px;
-    font-size: 15px;
+    font-size: 14px;
     padding-left: 12px
 }
 .pagination > select.totalPage {
@@ -50,6 +57,10 @@ select {
 }
 .enabled{
     color: #3358db!important;
+<<<<<<< HEAD
+=======
+    margin: 0!important;
+>>>>>>> chore(delete user): Admin should not be able to delete users (#80)
     padding: 0!important;
     border: none!important;
     border-radius: none!important;
@@ -59,6 +70,10 @@ select {
     color: #BCBCBC!important;
     cursor: not-allowed;
     pointer-events: none;
+<<<<<<< HEAD
+=======
+    margin: 0!important;
+>>>>>>> chore(delete user): Admin should not be able to delete users (#80)
     padding: 0!important;
     border: none!important;
     border-radius: none!important;
@@ -69,10 +84,16 @@ select {
 }
 .page-select{
     color: #3358db!important;
+<<<<<<< HEAD
+=======
+    border-bottom-right-radius: 0!important;
+    border-top-right-radius: 0!important;
+>>>>>>> chore(delete user): Admin should not be able to delete users (#80)
 }
 .totalPage{
     color: #3358db!important;
 }
+<<<<<<< HEAD
 .page-select, .totalPage:hover{
     cursor: pointer;
 }
@@ -125,4 +146,25 @@ select {
 
 .totalPage:focus {
     padding-left: 14px;
+=======
+.arrowDown{
+    background: linear-gradient(
+        rgba(244, 248, 249, 0.45),
+        rgba(244, 248, 249, 0.45)
+      ),
+      url("../images/down-arrow.png") no-repeat center;
+    background-size: 15px 18px;
+    background-position-y: 38%;
+    height: 30px;
+    width: 20px;
+    border: 1px solid #D6DEE4;
+    position: relative;
+    top: 11.75px;
+    border-left: none;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+}
+.arrowDown, .page-select, .totalPage:hover{
+    cursor: pointer;
+>>>>>>> chore(delete user): Admin should not be able to delete users (#80)
 }

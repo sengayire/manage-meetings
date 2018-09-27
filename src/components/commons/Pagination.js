@@ -17,9 +17,15 @@ class Pagination extends Component {
     const { perPage } = this.state;
     const { handleData } = this.props;
 
+
     if (name === 'perPage') {
       this.setState({ perPage: parseFloat(value), page: 1 }, () => {
         handleData(value, 1);
+      });
+    }
+    if (name === 'page') {
+      this.setState({ page: parseFloat(value), perPage }, () => {
+        handleData(perPage, value);
       });
     }
     if (name === 'page') {
@@ -44,6 +50,22 @@ class Pagination extends Component {
       page: page - 1,
     });
   };
+
+  handleNext = () => {
+    const { page, perPage } = this.state;
+    this.props.handleData(perPage, page + 1);
+    this.setState({
+      page: page + 1,
+    });
+  }
+
+  handlePrevious = () => {
+    const { page, perPage } = this.state;
+    this.props.handleData(perPage, page - 1);
+    this.setState({
+      page: page - 1,
+    });
+  }
 
   render() {
     const { page, perPage } = this.state;
@@ -81,7 +103,10 @@ class Pagination extends Component {
             name="page"
             value={page}
             onChange={this.handleChange}
-          >
+          />
+          <button id="previous" onClick={this.handlePrevious} className={hasPrevious ? 'enabled' : 'disabled'}>Previous</button>
+          <li>Showing page</li>
+          <select className="totalPage" name="page" value={page} onChange={this.handleChange}>
             {[...Array(totalPages).keys()].map(item => (
               <option key={item}>{item + 1}</option>
             ))}
