@@ -1,39 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Dropdown from 'react-toolbox/lib/dropdown';
-import { Input } from '../components/commons/Input';
+import toastr from 'toastr';
+import { graphql } from 'react-apollo';
 import MrmModal from '../components/commons/Modal';
+import ActionButtons from './commons/ActionButtons';
+import { Input, SelectInput as Select } from '../components/commons';
 import '../assets/styles/editoffice.scss';
+import notification from '../utils/notification';
+import { GET_ALL_OFFICES } from '../graphql/queries/Offices';
+import { EDIT_OFFICE_MUTATION } from '../graphql/mutations/offices';
 
 export class EditOffice extends React.Component {
-  static propTypes = {
-    officeName: PropTypes.string.isRequired,
-    location: PropTypes.string,
+  state = {
+    officeName: this.props.officeName,
+    officeLocation: this.props.officeLocation,
+    officeId: this.props.officeId,
+    closeModal: false,
   };
 
-  static defaultProps = {
-    location: '',
-  }
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      officeName: props.officeName,
-      location: props.location,
-      closeModal: false,
-    };
-  }
-
-  locations = [
-    { value: 'Nigeria', label: 'Nigeria' },
-    { value: 'Kenya', label: 'Kenya' },
-  ];
-
-  handleLocationChange = (value) => {
-    this.setState({ location: value });
-  }
-
-  handleNameChange = ({ target: { name, value } }) => {
+  handleInputChange = ({ target: { name, value } }) => {
     this.setState({ [name]: value });
   }
 
@@ -47,14 +32,26 @@ export class EditOffice extends React.Component {
 
   handleEditOffice = (event) => {
     event.preventDefault();
-    // submit logic here
-    // after succesful submission close the modal
+    const { officeId, officeName } = this.state;
+    this.props.editOffice({
+      variables: {
+        officeId,
+        name: officeName,
+      },
+    }).then(() => {
+      notification(toastr, 'success', `${officeName} office has been updated successfully`)();
+    }).catch((err) => {
+      this.setState({
+        officeName: this.props.officeName,
+      });
+      notification(toastr, 'error', err.graphQLErrors[0].message)();
+    });
     this.handleCloseModal();
   }
 
   render() {
     const {
-      officeName, location, closeModal,
+      officeName, officeLocation, closeModal,
     } = this.state;
 
     return (
@@ -74,23 +71,38 @@ export class EditOffice extends React.Component {
             name="officeName"
             value={officeName}
             id="officeName"
-            onChange={this.handleNameChange}
+            onChange={this.handleInputChange}
+            required
           />
-          <label htmlFor="location">Select location
-            <Dropdown
-              source={this.locations}
-              onChange={this.handleLocationChange}
-              value={location}
-            />
-          </label>
-          <div className="edit-buttons">
-            <button className="cancel-button">CANCEL</button>
-            <button className="update-button" type="submit">SAVE CHANGES</button>
-          </div>
+          <Select
+            labelText="Select location"
+            name="officeLocation"
+            id="officeLocation"
+            value={officeLocation}
+            onChange={this.handleInputChange}
+            options={[]}
+            wrapperClassName="edit-office-select"
+            placeholder={officeLocation}
+            placeholderValue=""
+            disabled
+            selectInputClassName="edit-office-location default-select"
+          />
+          <ActionButtons
+            withCancel
+            onClickCancel={this.handleCloseModal}
+            actionButtonText="SAVE CHANGES"
+          />
         </form>
       </MrmModal>
     );
   }
 }
 
-export default EditOffice;
+EditOffice.propTypes = {
+  editOffice: PropTypes.func.isRequired,
+  officeName: PropTypes.string.isRequired,
+  officeId: PropTypes.string.isRequired,
+  officeLocation: PropTypes.string.isRequired,
+};
+
+export default graphql(EDIT_OFFICE_MUTATION, { name: 'editOffice', options: { refetchQueries: [{ query: GET_ALL_OFFICES }] } })(EditOffice);

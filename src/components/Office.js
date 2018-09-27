@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import DeleteOffice from './DeleteOffice'; //eslint-disable-line
-import { EditOffice } from './EditOffice';
+import EditOffice from './EditOffice'; //eslint-disable-line
 
 const Office = ({ office: { id, location, name } }) => {
   let gmt = '';
@@ -16,7 +16,7 @@ const Office = ({ office: { id, location, name } }) => {
       <td>{location.name}</td>
       <td>{gmt}</td>
       <td>
-        <EditOffice officeName={name} location={location.name} />&nbsp;
+        <EditOffice id="edit-modal" officeName={name} officeId={id} officeLocation={location.name} />&nbsp;
         <DeleteOffice officeName={name} id="delete-modal" officeId={id} />
       </td>
     </tr>

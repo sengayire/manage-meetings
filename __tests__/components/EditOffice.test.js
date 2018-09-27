@@ -4,11 +4,19 @@ import { EditOffice } from '../../src/components/EditOffice';
 
 describe('EditOffice Component', () => {
   const props = {
+    editOffice: jest.fn(),
     officeName: 'Epic',
-    location: 'Lagos',
+    officeId: '1',
+    officeLocation: 'Lagos',
   };
-  const wrapper = shallow(<EditOffice {...props} />);
-  const preventDefault = jest.fn();
+  let wrapper = shallow(<EditOffice {...props} />);
+  const event = {
+    preventDefault: jest.fn(),
+    target: {
+      name: '',
+      value: '',
+    },
+  };
 
   it('renders properly', () => {
     expect(wrapper).toMatchSnapshot();
@@ -17,16 +25,6 @@ describe('EditOffice Component', () => {
   it('should have a form', () => {
     const modalForm = wrapper.find('form');
     expect(modalForm).toHaveLength(1);
-  });
-
-  it('should have one label', () => {
-    const modalForm = wrapper.find('label');
-    expect(modalForm).toHaveLength(1);
-  });
-
-  it('should have two buttons', () => {
-    const modalForm = wrapper.find('button');
-    expect(modalForm).toHaveLength(2);
   });
 
   it('handles handleCloseModal()', () => {
@@ -39,19 +37,35 @@ describe('EditOffice Component', () => {
     expect(wrapper.state('closeModal')).toEqual(false);
   });
 
-  it('handles handleEditOffice()', () => {
-    wrapper.instance().handleEditOffice({ preventDefault });
+  it('inputs should respond to state changes', () => {
+    wrapper.find('#officeName').simulate('change', { target: { name: 'officeName', value: 'Epic building' } });
+    expect(wrapper.find('#officeName').props().value).toBe('Epic building');
+    expect(wrapper.state('officeName')).toEqual('Epic building');
+  });
+
+  it('should handle handleEditOffice() when editOffice is rejected', () => {
+    wrapper.setProps({
+      editOffice: jest.fn(() => Promise.reject()),
+    });
+    wrapper.setState({
+      officeName: 'Epic Tower',
+    });
+    wrapper.update();
+    wrapper.instance().handleEditOffice(event);
     expect(wrapper.state('closeModal')).toEqual(true);
   });
 
-  it('inputs should respond to state changes', () => {
-    wrapper.find('#officeName').simulate('change', { target: { name: 'officeName', value: 'Epic' } });
-    expect(wrapper.find('#officeName').props().value).toBe('Epic');
-    expect(wrapper.state('officeName')).toEqual('Epic');
-  });
+  it('should handle handleEditOffice() when editOffice is resolved', () => {
+    const newProps = {
+      editOffice: jest.fn(() => Promise.resolve()),
+      officeName: 'Epic',
+      officeId: '1',
+      officeLocation: 'Lagos',
+    };
+    wrapper = shallow(<EditOffice {...newProps} />);
 
-  it('handles handleLocationChange()', () => {
-    wrapper.instance().handleLocationChange('Nairobi');
-    expect(wrapper.state('location')).toEqual('Nairobi');
+    wrapper.instance().handleEditOffice(event);
+    expect(newProps.editOffice).toBeCalled();
+    expect(wrapper.state('closeModal')).toEqual(true);
   });
 });

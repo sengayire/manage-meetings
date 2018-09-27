@@ -21,54 +21,32 @@ exports[`EditOffice Component renders properly 1`] = `
       labelName="Office Name"
       name="officeName"
       onChange={[Function]}
+      required={true}
       type="text"
       value="Epic"
     />
-    <label
-      htmlFor="location"
-    >
-      Select location
-      <ThemedDropdown
-        allowBlank={true}
-        auto={true}
-        className=""
-        composeTheme="deeply"
-        disabled={false}
-        labelKey="label"
-        mapThemrProps={[Function]}
-        onChange={[Function]}
-        required={false}
-        source={
-          Array [
-            Object {
-              "label": "Nigeria",
-              "value": "Nigeria",
-            },
-            Object {
-              "label": "Kenya",
-              "value": "Kenya",
-            },
-          ]
-        }
-        value="Lagos"
-        valueKey="value"
-      />
-    </label>
-    <div
-      className="edit-buttons"
-    >
-      <button
-        className="cancel-button"
-      >
-        CANCEL
-      </button>
-      <button
-        className="update-button"
-        type="submit"
-      >
-        SAVE CHANGES
-      </button>
-    </div>
+    <SelectInput
+      disabled={true}
+      id="officeLocation"
+      labelText="Select location"
+      name="officeLocation"
+      onChange={[Function]}
+      options={Array []}
+      placeholder="Lagos"
+      placeholderValue=""
+      required={false}
+      selectInputClassName="edit-office-location default-select"
+      value="Lagos"
+      wrapperClassName="edit-office-select"
+    />
+    <ActionButtons
+      actionButtonClassName="action-button"
+      actionButtonText="SAVE CHANGES"
+      cancelButtonClassName="cancel-button"
+      cancelButtonText="CANCEL"
+      onClickCancel={[Function]}
+      withCancel={true}
+    />
   </form>
 </MrmModal>
 `;

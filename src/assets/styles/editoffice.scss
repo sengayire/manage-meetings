@@ -1,7 +1,8 @@
 .edit-office-modal{
     $primary-color:  #3359db;
+    $text-color: #6d6d6d;
     $font: 'DINPro-Light';
-    padding: 1em;
+    padding: 1em 1em 2.5em 1em;
 
     .modal-form {
         text-align: left;
@@ -54,6 +55,7 @@
         width: 28.1em;
         height: 1.4em;
         font-family: $font;
+        color: $text-color;
         font-size: 1.1em;
         border: 1px solid #d6dee4;
         margin-top: 1em;
@@ -78,5 +80,12 @@
         margin-top: -8px;
         width: 76%;
         margin-bottom: 1em;
+    }
+    .edit-office-select{
+        margin-bottom: 8%;
+    }
+    .edit-office-location.default-select{
+        color: #6d6d6d !important;
+        font-family: "DINPro-Light";
     }
 }

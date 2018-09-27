@@ -21,4 +21,16 @@ const DELETE_OFFICE_MUTATION = gql`
     }
   }
 `;
-export { ADD_OFFICE_MUTATION as default, DELETE_OFFICE_MUTATION };
+
+const EDIT_OFFICE_MUTATION = gql`
+  mutation updateOffice($officeId: Int!, $name: String!) {
+    updateOffice(officeId: $officeId, name: $name){
+      office{
+        id
+        name
+      }
+    }
+  }
+`;
+
+export { ADD_OFFICE_MUTATION as default, DELETE_OFFICE_MUTATION, EDIT_OFFICE_MUTATION };
