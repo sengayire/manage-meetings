@@ -64,6 +64,7 @@ class EditUser extends React.Component {
             value={userName}
             id="userName"
             onChange={this.handleInputChange}
+            disabled
           />
           <Select
             labelText="Location"
