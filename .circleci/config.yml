@@ -70,6 +70,43 @@ jobs:
       - run:
           name: Deploy to gcloud
           command: gcloud beta compute instance-groups managed rolling-action replace mrm-staging-frontend-instance-group --zone europe-west1-b
+      - run:
+          name: Register deployment status (succeeded)
+          when: on_success
+          command: |
+                bash ~/project/.circleci/gcloud_bucket.sh succeeded
+      - run:
+            name: Register deployment status (failed)
+            when: on_fail
+            command: |
+                bash ~/project/.circleci/gcloud_bucket.sh failed
+
+  deployement-report:
+    docker:
+      - image: google/cloud-sdk
+        environment:
+          GOOGLE_APPLICATION_CREDENTIALS: ${HOME}/gcloud-service-key.json
+          GOOGLE_PROJECT_ID: ${GOOGLE_PROJECT_ID}
+          GOOGLE_COMPUTE_ZONE: ${GOOGLE_COMPUTE_ZONE}
+    steps:
+      - checkout
+      - run:
+          name: Store Service Account Key into file
+          command: echo $GCLOUD_SERVICE_KEY > ${HOME}/gcloud-service-key.json
+      - run:
+          name: Authenticate on gcloud
+          command: |
+            gcloud auth activate-service-account --key-file ${HOME}/gcloud-service-key.json
+            gcloud --quiet config set project ${GOOGLE_PROJECT_ID}
+            gcloud --quiet config set compute/zone ${GOOGLE_COMPUTE_ZONE}
+      - run:
+          name: Install querycsv depencency
+          command: |
+              pip install querycsv
+      - run:
+          name: Get deployment report
+          command: |
+              bash ~/project/.circleci/deployment_report.sh
 
 workflows:
   version: 2
@@ -82,3 +119,13 @@ workflows:
           filters:
             branches:
               only: develop
+    #cron job set to run e very friday on 15:00
+  schedule-workflow:
+    triggers:
+      - schedule:
+          cron: "0 15 * * 5"
+          filters:
+            branches:
+              only: develop
+    jobs:
+      - deployement-report
