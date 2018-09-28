@@ -15,6 +15,7 @@ exports[`EditUser Component renders properly 1`] = `
   >
     <Input
       controlsClass=""
+      disabled={true}
       id="userName"
       inputClass="mrm-input default-input"
       labelClass="input1"
