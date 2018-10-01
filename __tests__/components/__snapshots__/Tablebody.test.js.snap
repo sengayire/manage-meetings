@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Pagination Component renders without crashing 1`] = `
-<tbody>
+<tbody
+  className="bundle"
+>
   <Room
     key="3"
     locations={Array []}

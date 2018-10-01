@@ -49,7 +49,10 @@ const allPeopleReturnData = {
         },
       ],
       __typename: 'Users',
-      pages: 1,
+      pages: 2,
+      queryTotal: 11,
+      hasNext: true,
+      hasPrevious: false,
     },
   },
 };

@@ -1,8 +1,8 @@
 import gql from 'graphql-tag';
 
 export const GET_ROOMS_QUERY = gql`
-query rooms {
-  allRooms (page:1, perPage:5){
+query rooms ($page: Int!, $perPage: Int!) {
+  allRooms (page: $page, perPage:$perPage){
     rooms{
       id
       name
@@ -19,6 +19,9 @@ query rooms {
       }
     }
     pages
+    queryTotal
+    hasNext
+    hasPrevious
   }
 }`;
 

@@ -22,7 +22,36 @@ exports[`Tests for ResourceList Component renders correctly from memory 1`] = `
                   "selections": Array [
                     Object {
                       "alias": undefined,
-                      "arguments": Array [],
+                      "arguments": Array [
+                        Object {
+                          "kind": "Argument",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "page",
+                          },
+                          "value": Object {
+                            "kind": "Variable",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "page",
+                            },
+                          },
+                        },
+                        Object {
+                          "kind": "Argument",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "perPage",
+                          },
+                          "value": Object {
+                            "kind": "Variable",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "perPage",
+                            },
+                          },
+                        },
+                      ],
                       "directives": Array [],
                       "kind": "Field",
                       "name": Object {
@@ -128,25 +157,120 @@ exports[`Tests for ResourceList Component renders correctly from memory 1`] = `
                               ],
                             },
                           },
+                          Object {
+                            "alias": undefined,
+                            "arguments": Array [],
+                            "directives": Array [],
+                            "kind": "Field",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "pages",
+                            },
+                            "selectionSet": undefined,
+                          },
+                          Object {
+                            "alias": undefined,
+                            "arguments": Array [],
+                            "directives": Array [],
+                            "kind": "Field",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "hasNext",
+                            },
+                            "selectionSet": undefined,
+                          },
+                          Object {
+                            "alias": undefined,
+                            "arguments": Array [],
+                            "directives": Array [],
+                            "kind": "Field",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "hasPrevious",
+                            },
+                            "selectionSet": undefined,
+                          },
+                          Object {
+                            "alias": undefined,
+                            "arguments": Array [],
+                            "directives": Array [],
+                            "kind": "Field",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "queryTotal",
+                            },
+                            "selectionSet": undefined,
+                          },
                         ],
                       },
                     },
                   ],
                 },
-                "variableDefinitions": Array [],
+                "variableDefinitions": Array [
+                  Object {
+                    "defaultValue": undefined,
+                    "kind": "VariableDefinition",
+                    "type": Object {
+                      "kind": "NonNullType",
+                      "type": Object {
+                        "kind": "NamedType",
+                        "name": Object {
+                          "kind": "Name",
+                          "value": "Int",
+                        },
+                      },
+                    },
+                    "variable": Object {
+                      "kind": "Variable",
+                      "name": Object {
+                        "kind": "Name",
+                        "value": "page",
+                      },
+                    },
+                  },
+                  Object {
+                    "defaultValue": undefined,
+                    "kind": "VariableDefinition",
+                    "type": Object {
+                      "kind": "NonNullType",
+                      "type": Object {
+                        "kind": "NamedType",
+                        "name": Object {
+                          "kind": "Name",
+                          "value": "Int",
+                        },
+                      },
+                    },
+                    "variable": Object {
+                      "kind": "Variable",
+                      "name": Object {
+                        "kind": "Name",
+                        "value": "perPage",
+                      },
+                    },
+                  },
+                ],
               },
             ],
             "kind": "Document",
             "loc": Object {
-              "end": 169,
+              "end": 261,
               "start": 0,
             },
+          },
+          "variables": Object {
+            "page": 1,
+            "perPage": 5,
           },
         },
         "result": Object {
           "data": Object {
             "allResources": Object {
               "__typename": "Resources",
+              "hasNext": true,
+              "hasPrevious": false,
+              "pages": 2,
+              "queryTotal": 11,
               "resources": Array [
                 Object {
                   "__typename": "Resource",
@@ -200,7 +324,36 @@ exports[`Tests for ResourceList Component renders correctly from memory 1`] = `
                     "selections": Array [
                       Object {
                         "alias": undefined,
-                        "arguments": Array [],
+                        "arguments": Array [
+                          Object {
+                            "kind": "Argument",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "page",
+                            },
+                            "value": Object {
+                              "kind": "Variable",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "page",
+                              },
+                            },
+                          },
+                          Object {
+                            "kind": "Argument",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "perPage",
+                            },
+                            "value": Object {
+                              "kind": "Variable",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "perPage",
+                              },
+                            },
+                          },
+                        ],
                         "directives": Array [],
                         "kind": "Field",
                         "name": Object {
@@ -306,21 +459,111 @@ exports[`Tests for ResourceList Component renders correctly from memory 1`] = `
                                 ],
                               },
                             },
+                            Object {
+                              "alias": undefined,
+                              "arguments": Array [],
+                              "directives": Array [],
+                              "kind": "Field",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "pages",
+                              },
+                              "selectionSet": undefined,
+                            },
+                            Object {
+                              "alias": undefined,
+                              "arguments": Array [],
+                              "directives": Array [],
+                              "kind": "Field",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "hasNext",
+                              },
+                              "selectionSet": undefined,
+                            },
+                            Object {
+                              "alias": undefined,
+                              "arguments": Array [],
+                              "directives": Array [],
+                              "kind": "Field",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "hasPrevious",
+                              },
+                              "selectionSet": undefined,
+                            },
+                            Object {
+                              "alias": undefined,
+                              "arguments": Array [],
+                              "directives": Array [],
+                              "kind": "Field",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "queryTotal",
+                              },
+                              "selectionSet": undefined,
+                            },
                           ],
                         },
                       },
                     ],
                   },
-                  "variableDefinitions": Array [],
+                  "variableDefinitions": Array [
+                    Object {
+                      "defaultValue": undefined,
+                      "kind": "VariableDefinition",
+                      "type": Object {
+                        "kind": "NonNullType",
+                        "type": Object {
+                          "kind": "NamedType",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "Int",
+                          },
+                        },
+                      },
+                      "variable": Object {
+                        "kind": "Variable",
+                        "name": Object {
+                          "kind": "Name",
+                          "value": "page",
+                        },
+                      },
+                    },
+                    Object {
+                      "defaultValue": undefined,
+                      "kind": "VariableDefinition",
+                      "type": Object {
+                        "kind": "NonNullType",
+                        "type": Object {
+                          "kind": "NamedType",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "Int",
+                          },
+                        },
+                      },
+                      "variable": Object {
+                        "kind": "Variable",
+                        "name": Object {
+                          "kind": "Name",
+                          "value": "perPage",
+                        },
+                      },
+                    },
+                  ],
                 },
               ],
               "kind": "Document",
               "loc": Object {
-                "end": 169,
+                "end": 261,
                 "start": 0,
               },
             },
-            "variables": undefined,
+            "variables": Object {
+              "page": 1,
+              "perPage": 5,
+            },
           },
         },
         "cache": InMemoryCache {
@@ -356,7 +599,36 @@ exports[`Tests for ResourceList Component renders correctly from memory 1`] = `
                       "selections": Array [
                         Object {
                           "alias": undefined,
-                          "arguments": Array [],
+                          "arguments": Array [
+                            Object {
+                              "kind": "Argument",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "page",
+                              },
+                              "value": Object {
+                                "kind": "Variable",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "page",
+                                },
+                              },
+                            },
+                            Object {
+                              "kind": "Argument",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "perPage",
+                              },
+                              "value": Object {
+                                "kind": "Variable",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "perPage",
+                                },
+                              },
+                            },
+                          ],
                           "directives": Array [],
                           "kind": "Field",
                           "name": Object {
@@ -477,6 +749,50 @@ exports[`Tests for ResourceList Component renders correctly from memory 1`] = `
                                 },
                               },
                               Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "pages",
+                                },
+                                "selectionSet": undefined,
+                              },
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "hasNext",
+                                },
+                                "selectionSet": undefined,
+                              },
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "hasPrevious",
+                                },
+                                "selectionSet": undefined,
+                              },
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "queryTotal",
+                                },
+                                "selectionSet": undefined,
+                              },
+                              Object {
                                 "kind": "Field",
                                 "name": Object {
                                   "kind": "Name",
@@ -488,28 +804,78 @@ exports[`Tests for ResourceList Component renders correctly from memory 1`] = `
                         },
                       ],
                     },
-                    "variableDefinitions": Array [],
+                    "variableDefinitions": Array [
+                      Object {
+                        "defaultValue": undefined,
+                        "kind": "VariableDefinition",
+                        "type": Object {
+                          "kind": "NonNullType",
+                          "type": Object {
+                            "kind": "NamedType",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "Int",
+                            },
+                          },
+                        },
+                        "variable": Object {
+                          "kind": "Variable",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "page",
+                          },
+                        },
+                      },
+                      Object {
+                        "defaultValue": undefined,
+                        "kind": "VariableDefinition",
+                        "type": Object {
+                          "kind": "NonNullType",
+                          "type": Object {
+                            "kind": "NamedType",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "Int",
+                            },
+                          },
+                        },
+                        "variable": Object {
+                          "kind": "Variable",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "perPage",
+                          },
+                        },
+                      },
+                    ],
                   },
                 ],
                 "kind": "Document",
                 "loc": Object {
-                  "end": 169,
+                  "end": 261,
                   "source": Object {
                     "body": "
-  query resources {
-    allResources {
-      resources {
+query resources ($page: Int!, $perPage: Int!) {
+  allResources(
+    page: $page,
+    perPage: $perPage
+  ) {
+    resources{
+      id
+    name
+    quantity
+    roomId
+    room {
       id
       name
-      quantity
-      roomId
-      room {
-        id
-        name
-      }
-      }
     }
+    }
+  pages
+  hasNext
+  hasPrevious
+  queryTotal
   }
+}
 ",
                     "locationOffset": Object {
                       "column": 1,
@@ -520,7 +886,10 @@ exports[`Tests for ResourceList Component renders correctly from memory 1`] = `
                   "start": 0,
                 },
               },
-              "variables": undefined,
+              "variables": Object {
+                "page": 1,
+                "perPage": 5,
+              },
             },
           ],
         },
@@ -567,7 +936,36 @@ exports[`Tests for ResourceList Component renders correctly from memory 1`] = `
                           "selections": Array [
                             Object {
                               "alias": undefined,
-                              "arguments": Array [],
+                              "arguments": Array [
+                                Object {
+                                  "kind": "Argument",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "page",
+                                  },
+                                  "value": Object {
+                                    "kind": "Variable",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "page",
+                                    },
+                                  },
+                                },
+                                Object {
+                                  "kind": "Argument",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "perPage",
+                                  },
+                                  "value": Object {
+                                    "kind": "Variable",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "perPage",
+                                    },
+                                  },
+                                },
+                              ],
                               "directives": Array [],
                               "kind": "Field",
                               "name": Object {
@@ -688,6 +1086,50 @@ exports[`Tests for ResourceList Component renders correctly from memory 1`] = `
                                     },
                                   },
                                   Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "pages",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "hasNext",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "hasPrevious",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "queryTotal",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
+                                  Object {
                                     "kind": "Field",
                                     "name": Object {
                                       "kind": "Name",
@@ -699,28 +1141,78 @@ exports[`Tests for ResourceList Component renders correctly from memory 1`] = `
                             },
                           ],
                         },
-                        "variableDefinitions": Array [],
+                        "variableDefinitions": Array [
+                          Object {
+                            "defaultValue": undefined,
+                            "kind": "VariableDefinition",
+                            "type": Object {
+                              "kind": "NonNullType",
+                              "type": Object {
+                                "kind": "NamedType",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "Int",
+                                },
+                              },
+                            },
+                            "variable": Object {
+                              "kind": "Variable",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "page",
+                              },
+                            },
+                          },
+                          Object {
+                            "defaultValue": undefined,
+                            "kind": "VariableDefinition",
+                            "type": Object {
+                              "kind": "NonNullType",
+                              "type": Object {
+                                "kind": "NamedType",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "Int",
+                                },
+                              },
+                            },
+                            "variable": Object {
+                              "kind": "Variable",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "perPage",
+                              },
+                            },
+                          },
+                        ],
                       },
                     ],
                     "kind": "Document",
                     "loc": Object {
-                      "end": 169,
+                      "end": 261,
                       "source": Object {
                         "body": "
-  query resources {
-    allResources {
-      resources {
+query resources ($page: Int!, $perPage: Int!) {
+  allResources(
+    page: $page,
+    perPage: $perPage
+  ) {
+    resources{
+      id
+    name
+    quantity
+    roomId
+    room {
       id
       name
-      quantity
-      roomId
-      room {
-        id
-        name
-      }
-      }
     }
+    }
+  pages
+  hasNext
+  hasPrevious
+  queryTotal
   }
+}
 ",
                         "locationOffset": Object {
                           "column": 1,
@@ -731,7 +1223,10 @@ exports[`Tests for ResourceList Component renders correctly from memory 1`] = `
                       "start": 0,
                     },
                   },
-                  "variables": undefined,
+                  "variables": Object {
+                    "page": 1,
+                    "perPage": 5,
+                  },
                 },
               ],
             },
@@ -771,7 +1266,36 @@ exports[`Tests for ResourceList Component renders correctly from memory 1`] = `
                       "selections": Array [
                         Object {
                           "alias": undefined,
-                          "arguments": Array [],
+                          "arguments": Array [
+                            Object {
+                              "kind": "Argument",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "page",
+                              },
+                              "value": Object {
+                                "kind": "Variable",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "page",
+                                },
+                              },
+                            },
+                            Object {
+                              "kind": "Argument",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "perPage",
+                              },
+                              "value": Object {
+                                "kind": "Variable",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "perPage",
+                                },
+                              },
+                            },
+                          ],
                           "directives": Array [],
                           "kind": "Field",
                           "name": Object {
@@ -892,6 +1416,50 @@ exports[`Tests for ResourceList Component renders correctly from memory 1`] = `
                                 },
                               },
                               Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "pages",
+                                },
+                                "selectionSet": undefined,
+                              },
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "hasNext",
+                                },
+                                "selectionSet": undefined,
+                              },
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "hasPrevious",
+                                },
+                                "selectionSet": undefined,
+                              },
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "queryTotal",
+                                },
+                                "selectionSet": undefined,
+                              },
+                              Object {
                                 "kind": "Field",
                                 "name": Object {
                                   "kind": "Name",
@@ -903,28 +1471,78 @@ exports[`Tests for ResourceList Component renders correctly from memory 1`] = `
                         },
                       ],
                     },
-                    "variableDefinitions": Array [],
+                    "variableDefinitions": Array [
+                      Object {
+                        "defaultValue": undefined,
+                        "kind": "VariableDefinition",
+                        "type": Object {
+                          "kind": "NonNullType",
+                          "type": Object {
+                            "kind": "NamedType",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "Int",
+                            },
+                          },
+                        },
+                        "variable": Object {
+                          "kind": "Variable",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "page",
+                          },
+                        },
+                      },
+                      Object {
+                        "defaultValue": undefined,
+                        "kind": "VariableDefinition",
+                        "type": Object {
+                          "kind": "NonNullType",
+                          "type": Object {
+                            "kind": "NamedType",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "Int",
+                            },
+                          },
+                        },
+                        "variable": Object {
+                          "kind": "Variable",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "perPage",
+                          },
+                        },
+                      },
+                    ],
                   },
                 ],
                 "kind": "Document",
                 "loc": Object {
-                  "end": 169,
+                  "end": 261,
                   "source": Object {
                     "body": "
-  query resources {
-    allResources {
-      resources {
+query resources ($page: Int!, $perPage: Int!) {
+  allResources(
+    page: $page,
+    perPage: $perPage
+  ) {
+    resources{
+      id
+    name
+    quantity
+    roomId
+    room {
       id
       name
-      quantity
-      roomId
-      room {
-        id
-        name
-      }
-      }
     }
+    }
+  pages
+  hasNext
+  hasPrevious
+  queryTotal
   }
+}
 ",
                     "locationOffset": Object {
                       "column": 1,
@@ -982,7 +1600,36 @@ exports[`Tests for ResourceList Component renders correctly from memory 1`] = `
                           "selections": Array [
                             Object {
                               "alias": undefined,
-                              "arguments": Array [],
+                              "arguments": Array [
+                                Object {
+                                  "kind": "Argument",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "page",
+                                  },
+                                  "value": Object {
+                                    "kind": "Variable",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "page",
+                                    },
+                                  },
+                                },
+                                Object {
+                                  "kind": "Argument",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "perPage",
+                                  },
+                                  "value": Object {
+                                    "kind": "Variable",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "perPage",
+                                    },
+                                  },
+                                },
+                              ],
                               "directives": Array [],
                               "kind": "Field",
                               "name": Object {
@@ -1088,19 +1735,110 @@ exports[`Tests for ResourceList Component renders correctly from memory 1`] = `
                                       ],
                                     },
                                   },
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "pages",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "hasNext",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "hasPrevious",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "queryTotal",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
                                 ],
                               },
                             },
                           ],
                         },
-                        "variableDefinitions": Array [],
+                        "variableDefinitions": Array [
+                          Object {
+                            "defaultValue": undefined,
+                            "kind": "VariableDefinition",
+                            "type": Object {
+                              "kind": "NonNullType",
+                              "type": Object {
+                                "kind": "NamedType",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "Int",
+                                },
+                              },
+                            },
+                            "variable": Object {
+                              "kind": "Variable",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "page",
+                              },
+                            },
+                          },
+                          Object {
+                            "defaultValue": undefined,
+                            "kind": "VariableDefinition",
+                            "type": Object {
+                              "kind": "NonNullType",
+                              "type": Object {
+                                "kind": "NamedType",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "Int",
+                                },
+                              },
+                            },
+                            "variable": Object {
+                              "kind": "Variable",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "perPage",
+                              },
+                            },
+                          },
+                        ],
                       },
                     ],
                     "kind": "Document",
                     "loc": Object {
-                      "end": 169,
+                      "end": 261,
                       "start": 0,
                     },
+                  },
+                  "variables": Object {
+                    "page": 1,
+                    "perPage": 5,
                   },
                 },
                 "queryId": "1",
@@ -1115,7 +1853,10 @@ exports[`Tests for ResourceList Component renders correctly from memory 1`] = `
                 },
                 "shouldSubscribe": true,
                 "subscriptionHandles": Array [],
-                "variables": Object {},
+                "variables": Object {
+                  "page": 1,
+                  "perPage": 5,
+                },
               },
               "subscriptions": Array [
                 Subscription {
@@ -1155,7 +1896,36 @@ exports[`Tests for ResourceList Component renders correctly from memory 1`] = `
                         "selections": Array [
                           Object {
                             "alias": undefined,
-                            "arguments": Array [],
+                            "arguments": Array [
+                              Object {
+                                "kind": "Argument",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "page",
+                                },
+                                "value": Object {
+                                  "kind": "Variable",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "page",
+                                  },
+                                },
+                              },
+                              Object {
+                                "kind": "Argument",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "perPage",
+                                },
+                                "value": Object {
+                                  "kind": "Variable",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "perPage",
+                                  },
+                                },
+                              },
+                            ],
                             "directives": Array [],
                             "kind": "Field",
                             "name": Object {
@@ -1276,6 +2046,50 @@ exports[`Tests for ResourceList Component renders correctly from memory 1`] = `
                                   },
                                 },
                                 Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "pages",
+                                  },
+                                  "selectionSet": undefined,
+                                },
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "hasNext",
+                                  },
+                                  "selectionSet": undefined,
+                                },
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "hasPrevious",
+                                  },
+                                  "selectionSet": undefined,
+                                },
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "queryTotal",
+                                  },
+                                  "selectionSet": undefined,
+                                },
+                                Object {
                                   "kind": "Field",
                                   "name": Object {
                                     "kind": "Name",
@@ -1287,28 +2101,78 @@ exports[`Tests for ResourceList Component renders correctly from memory 1`] = `
                           },
                         ],
                       },
-                      "variableDefinitions": Array [],
+                      "variableDefinitions": Array [
+                        Object {
+                          "defaultValue": undefined,
+                          "kind": "VariableDefinition",
+                          "type": Object {
+                            "kind": "NonNullType",
+                            "type": Object {
+                              "kind": "NamedType",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "Int",
+                              },
+                            },
+                          },
+                          "variable": Object {
+                            "kind": "Variable",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "page",
+                            },
+                          },
+                        },
+                        Object {
+                          "defaultValue": undefined,
+                          "kind": "VariableDefinition",
+                          "type": Object {
+                            "kind": "NonNullType",
+                            "type": Object {
+                              "kind": "NamedType",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "Int",
+                              },
+                            },
+                          },
+                          "variable": Object {
+                            "kind": "Variable",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "perPage",
+                            },
+                          },
+                        },
+                      ],
                     },
                   ],
                   "kind": "Document",
                   "loc": Object {
-                    "end": 169,
+                    "end": 261,
                     "source": Object {
                       "body": "
-  query resources {
-    allResources {
-      resources {
+query resources ($page: Int!, $perPage: Int!) {
+  allResources(
+    page: $page,
+    perPage: $perPage
+  ) {
+    resources{
+      id
+    name
+    quantity
+    roomId
+    room {
       id
       name
-      quantity
-      roomId
-      room {
-        id
-        name
-      }
-      }
     }
+    }
+  pages
+  hasNext
+  hasPrevious
+  queryTotal
   }
+}
 ",
                       "locationOffset": Object {
                         "column": 1,
@@ -1328,7 +2192,10 @@ exports[`Tests for ResourceList Component renders correctly from memory 1`] = `
                 "networkError": null,
                 "networkStatus": 1,
                 "previousVariables": null,
-                "variables": Object {},
+                "variables": Object {
+                  "page": 1,
+                  "perPage": 5,
+                },
               },
             },
           },
@@ -1379,7 +2246,36 @@ exports[`Tests for ResourceList Component renders correctly from memory 1`] = `
                         "selections": Array [
                           Object {
                             "alias": undefined,
-                            "arguments": Array [],
+                            "arguments": Array [
+                              Object {
+                                "kind": "Argument",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "page",
+                                },
+                                "value": Object {
+                                  "kind": "Variable",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "page",
+                                  },
+                                },
+                              },
+                              Object {
+                                "kind": "Argument",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "perPage",
+                                },
+                                "value": Object {
+                                  "kind": "Variable",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "perPage",
+                                  },
+                                },
+                              },
+                            ],
                             "directives": Array [],
                             "kind": "Field",
                             "name": Object {
@@ -1500,6 +2396,50 @@ exports[`Tests for ResourceList Component renders correctly from memory 1`] = `
                                   },
                                 },
                                 Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "pages",
+                                  },
+                                  "selectionSet": undefined,
+                                },
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "hasNext",
+                                  },
+                                  "selectionSet": undefined,
+                                },
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "hasPrevious",
+                                  },
+                                  "selectionSet": undefined,
+                                },
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "queryTotal",
+                                  },
+                                  "selectionSet": undefined,
+                                },
+                                Object {
                                   "kind": "Field",
                                   "name": Object {
                                     "kind": "Name",
@@ -1511,28 +2451,78 @@ exports[`Tests for ResourceList Component renders correctly from memory 1`] = `
                           },
                         ],
                       },
-                      "variableDefinitions": Array [],
+                      "variableDefinitions": Array [
+                        Object {
+                          "defaultValue": undefined,
+                          "kind": "VariableDefinition",
+                          "type": Object {
+                            "kind": "NonNullType",
+                            "type": Object {
+                              "kind": "NamedType",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "Int",
+                              },
+                            },
+                          },
+                          "variable": Object {
+                            "kind": "Variable",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "page",
+                            },
+                          },
+                        },
+                        Object {
+                          "defaultValue": undefined,
+                          "kind": "VariableDefinition",
+                          "type": Object {
+                            "kind": "NonNullType",
+                            "type": Object {
+                              "kind": "NamedType",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "Int",
+                              },
+                            },
+                          },
+                          "variable": Object {
+                            "kind": "Variable",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "perPage",
+                            },
+                          },
+                        },
+                      ],
                     },
                   ],
                   "kind": "Document",
                   "loc": Object {
-                    "end": 169,
+                    "end": 261,
                     "source": Object {
                       "body": "
-  query resources {
-    allResources {
-      resources {
+query resources ($page: Int!, $perPage: Int!) {
+  allResources(
+    page: $page,
+    perPage: $perPage
+  ) {
+    resources{
+      id
+    name
+    quantity
+    roomId
+    room {
       id
       name
-      quantity
-      roomId
-      room {
-        id
-        name
-      }
-      }
     }
+    }
+  pages
+  hasNext
+  hasPrevious
+  queryTotal
   }
+}
 ",
                       "locationOffset": Object {
                         "column": 1,
@@ -1543,7 +2533,10 @@ exports[`Tests for ResourceList Component renders correctly from memory 1`] = `
                     "start": 0,
                   },
                 },
-                "variables": undefined,
+                "variables": Object {
+                  "page": 1,
+                  "perPage": 5,
+                },
               },
             ],
           },
@@ -1572,7 +2565,36 @@ exports[`Tests for ResourceList Component renders correctly from memory 1`] = `
                   "selections": Array [
                     Object {
                       "alias": undefined,
-                      "arguments": Array [],
+                      "arguments": Array [
+                        Object {
+                          "kind": "Argument",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "page",
+                          },
+                          "value": Object {
+                            "kind": "Variable",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "page",
+                            },
+                          },
+                        },
+                        Object {
+                          "kind": "Argument",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "perPage",
+                          },
+                          "value": Object {
+                            "kind": "Variable",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "perPage",
+                            },
+                          },
+                        },
+                      ],
                       "directives": Array [],
                       "kind": "Field",
                       "name": Object {
@@ -1678,22 +2700,115 @@ exports[`Tests for ResourceList Component renders correctly from memory 1`] = `
                               ],
                             },
                           },
+                          Object {
+                            "alias": undefined,
+                            "arguments": Array [],
+                            "directives": Array [],
+                            "kind": "Field",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "pages",
+                            },
+                            "selectionSet": undefined,
+                          },
+                          Object {
+                            "alias": undefined,
+                            "arguments": Array [],
+                            "directives": Array [],
+                            "kind": "Field",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "hasNext",
+                            },
+                            "selectionSet": undefined,
+                          },
+                          Object {
+                            "alias": undefined,
+                            "arguments": Array [],
+                            "directives": Array [],
+                            "kind": "Field",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "hasPrevious",
+                            },
+                            "selectionSet": undefined,
+                          },
+                          Object {
+                            "alias": undefined,
+                            "arguments": Array [],
+                            "directives": Array [],
+                            "kind": "Field",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "queryTotal",
+                            },
+                            "selectionSet": undefined,
+                          },
                         ],
                       },
                     },
                   ],
                 },
-                "variableDefinitions": Array [],
+                "variableDefinitions": Array [
+                  Object {
+                    "defaultValue": undefined,
+                    "kind": "VariableDefinition",
+                    "type": Object {
+                      "kind": "NonNullType",
+                      "type": Object {
+                        "kind": "NamedType",
+                        "name": Object {
+                          "kind": "Name",
+                          "value": "Int",
+                        },
+                      },
+                    },
+                    "variable": Object {
+                      "kind": "Variable",
+                      "name": Object {
+                        "kind": "Name",
+                        "value": "page",
+                      },
+                    },
+                  },
+                  Object {
+                    "defaultValue": undefined,
+                    "kind": "VariableDefinition",
+                    "type": Object {
+                      "kind": "NonNullType",
+                      "type": Object {
+                        "kind": "NamedType",
+                        "name": Object {
+                          "kind": "Name",
+                          "value": "Int",
+                        },
+                      },
+                    },
+                    "variable": Object {
+                      "kind": "Variable",
+                      "name": Object {
+                        "kind": "Name",
+                        "value": "perPage",
+                      },
+                    },
+                  },
+                ],
               },
             ],
             "kind": "Document",
             "loc": Object {
-              "end": 169,
+              "end": 261,
               "start": 0,
             },
           }
         }
         skip={false}
+        variables={
+          Object {
+            "page": 1,
+            "perPage": 5,
+          }
+        }
         warnUnhandledError={true}
       >
         <ResourceList
@@ -1708,7 +2823,10 @@ exports[`Tests for ResourceList Component renders correctly from memory 1`] = `
               "stopPolling": [Function],
               "subscribeToMore": [Function],
               "updateQuery": [Function],
-              "variables": Object {},
+              "variables": Object {
+                "page": 1,
+                "perPage": 5,
+              },
             }
           }
         >

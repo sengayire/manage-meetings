@@ -6,7 +6,13 @@ import { GET_RESOURCES_QUERY } from '../../src/graphql/queries/Resources';
 import allResources from '../../__mocks__/resources/Resources';
 
 describe('Tests for ResourceList Component', () => {
-  const request = { query: GET_RESOURCES_QUERY };
+  const request = {
+    query: GET_RESOURCES_QUERY,
+    variables: {
+      page: 1,
+      perPage: 5,
+    },
+  };
   const result = { ...allResources };
   const error = 'Something Went Wrong';
   const wrapper = (

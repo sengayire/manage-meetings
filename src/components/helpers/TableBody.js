@@ -4,7 +4,7 @@ import { formatRoomData } from '../../graphql/mappers/Rooms';
 import Room from '../../components/Room';
 
 const TableBody = props => (
-  <tbody>
+  <tbody className="bundle">
     {props.rooms.map(room => (
       <Room
         room={formatRoomData(room)}

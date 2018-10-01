@@ -22,47 +22,79 @@ const handleErrorMessage = (...errors) => {
   return errorMessage;
 };
 
-const PeopleList = (props) => {
-  const { editRole } = props;
-  const { users, loading, error } = props.data;
-  const {
-    allLocations,
-    loading: loadingLocations,
-    error: locationsError,
-  } = props.locations;
-  const {
-    roles,
-    loading: loadingRoles,
-    error: rolesError,
-  } = props.roles;
-  if (loading || loadingLocations || loadingRoles) return <div>Loading...</div>;
-  if (error || locationsError || rolesError) {
-    const errorMessage = handleErrorMessage(error, locationsError, rolesError);
-    return <div>{errorMessage}</div>;
+class PeopleList extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      users: { ...props.data.users },
+    };
   }
-  return (
-    <div className="settings-people">
-      <div className="settings-people-list">
-        <div className="action-menu">
-          <span className="sort-by">
+
+  componentWillReceiveProps(props) {
+    const { users } = props.data;
+    this.setState({
+      users,
+    });
+  }
+
+  handleData = (perPage, page) => {
+    /* istanbul ignore next */
+    /* Reasoning: find explicit way of testing configuration options */
+    this.props.data.fetchMore({
+      variables: {
+        page,
+        perPage,
+      },
+      updateQuery: (prev, { fetchMoreResult }) => {
+        this.setState({
+          users: fetchMoreResult.users,
+        });
+      },
+    });
+  }
+
+  render() {
+    const { editRole } = this.props;
+    const { loading, error } = this.props.data;
+    const { users } = this.state;
+    const {
+      allLocations,
+      loading: loadingLocations,
+      error: locationsError,
+    } = this.props.locations;
+    const {
+      roles,
+      loading: loadingRoles,
+      error: rolesError,
+    } = this.props.roles;
+    if (loading || loadingLocations || loadingRoles) return <div>Loading...</div>;
+    if (error || locationsError || rolesError) {
+      const errorMessage = handleErrorMessage(error, locationsError, rolesError);
+      return <div>{errorMessage}</div>;
+    }
+    return (
+      <div className="settings-people">
+        <div className="settings-people-list">
+          <div className="action-menu">
+            <span className="sort-by">
           Sort by: <span className="location">Location</span>
-            <IconMenu position="topRight" className="people-sort-dropdown" icon={locationMenuCaret()}>
-              <MenuItem caption="Location" disabled />
-              <MenuDivider />
-              <MenuItem className="profile-menu" caption="All" />
-              {
+              <IconMenu position="topRight" className="people-sort-dropdown" icon={locationMenuCaret()}>
+                <MenuItem caption="Location" disabled />
+                <MenuDivider />
+                <MenuItem className="profile-menu" caption="All" />
+                {
                 allLocations.map(location => (
                   <MenuItem className="profile-menu" key={location.id} caption={location.name} />
               ))
             }
-            </IconMenu>
-          </span>
-        </div>
-        <table>
-          <ColGroup />
-          <TableHead titles={['Name', 'Location', 'Access Level', 'Actions']} />
-          <tbody>
-            {
+              </IconMenu>
+            </span>
+          </div>
+          <table>
+            <ColGroup />
+            <TableHead titles={['Name', 'Location', 'Access Level', 'Action']} />
+            <tbody>
+              {
             users.users.map(person => (
               <People
                 people={formatPeopleData(person)}
@@ -72,15 +104,19 @@ const PeopleList = (props) => {
               />
             ))
           }
-          </tbody>
-        </table>
+            </tbody>
+          </table>
+        </div>
+        <Pagination
+          totalPages={users.pages}
+          hasNext={users.hasNext}
+          hasPrevious={users.hasPrevious}
+          handleData={this.handleData}
+        />
       </div>
-      <Pagination
-        totalPages={users.pages}
-      />
-    </div>
-  );
-};
+    );
+  }
+}
 
 PeopleList.propTypes = {
   data: PropTypes.shape({
@@ -90,6 +126,7 @@ PeopleList.propTypes = {
     }),
     loading: PropTypes.bool,
     error: PropTypes.object,
+    fetchMore: PropTypes.func,
   }).isRequired,
   locations: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.shape({
@@ -109,7 +146,16 @@ PeopleList.propTypes = {
 };
 
 export default compose(
-  graphql(GET_PEOPLE_QUERY, { name: 'data' }),
+  graphql(GET_PEOPLE_QUERY, {
+    options: () => ({
+      /* istanbul ignore next */
+      /* Reasoning: no explicit way of testing configuration options */
+      variables: {
+        page: 1,
+        perPage: 5,
+      },
+    }),
+  }),
   graphql(GET_ROLES_QUERY, { name: 'roles' }),
   graphql(GET_LOCATIONS_QUERY, { name: 'locations' }),
   graphql(UPDATE_ROLES_MUTATION, {

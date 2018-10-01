@@ -1,9 +1,9 @@
 import gql from 'graphql-tag';
 
 export const GET_PEOPLE_QUERY = gql`
-query allUsers{
-  users(page: 1, perPage:5){
-    users{      
+query allUsers ($page: Int!, $perPage: Int!) {
+  users(page: $page , perPage: $perPage){
+    users{
       email
       name
       picture
@@ -15,6 +15,9 @@ query allUsers{
       }
     }
     pages
+    hasNext
+    hasPrevious
+    queryTotal
   }
 }
 `;

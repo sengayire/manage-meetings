@@ -11,7 +11,16 @@ import PeopleList from '../../../src/components/people/PeopleList';
 describe('PeopleList Component', () => {
   const error = new Error('Something Went Wrong');
   const mocks = [
-    { request: { query: GET_PEOPLE_QUERY }, result: { ...allPeople } },
+    {
+      request: {
+        query: GET_PEOPLE_QUERY,
+        variables: {
+          page: 1,
+          perPage: 5,
+        },
+      },
+      result: { ...allPeople },
+    },
     { request: { query: GET_ROLES_QUERY }, result: { ...allRoles } },
     { request: { query: GET_LOCATIONS_QUERY }, result: { ...allLocations } },
   ];
@@ -39,7 +48,13 @@ describe('PeopleList Component', () => {
   it('should render an error screen on failed querying people', async () => {
     const errorMocks = [
       {
-        request: { query: GET_PEOPLE_QUERY },
+        request: {
+          query: GET_PEOPLE_QUERY,
+          variables: {
+            page: 1,
+            perPage: 5,
+          },
+        },
         error,
       },
       {
@@ -73,7 +88,13 @@ describe('PeopleList Component', () => {
   it('should render an error screen on failed querying roles', async () => {
     const errorMocks = [
       {
-        request: { query: GET_PEOPLE_QUERY },
+        request: {
+          query: GET_PEOPLE_QUERY,
+          variables: {
+            page: 1,
+            perPage: 5,
+          },
+        },
         result: { ...allPeople },
       },
       {
@@ -108,7 +129,13 @@ describe('PeopleList Component', () => {
   it('should render an error screen on failed querying locations', async () => {
     const errorMocks = [
       {
-        request: { query: GET_PEOPLE_QUERY },
+        request: {
+          query: GET_PEOPLE_QUERY,
+          variables: {
+            page: 1,
+            perPage: 5,
+          },
+        },
         result: { ...allPeople },
       },
       {

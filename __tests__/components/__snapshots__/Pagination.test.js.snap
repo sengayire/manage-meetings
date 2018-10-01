@@ -4,52 +4,60 @@ exports[`Pagination Component renders without crashing 1`] = `
 <nav
   className="page-navigation"
 >
-  <ul
-    className="pagination"
-  >
-    <select
-      className="perPage"
-      name="perPage"
-      onChange={[Function]}
-      value={5}
+  <div>
+    <ul
+      className="pagination"
     >
-      <option
-        key="6"
+      <select
+        className="perPage page-select"
+        name="perPage"
+        onChange={[Function]}
+        value={5}
       >
-        5
-      </option>
-      <option
-        key="11"
-      >
-        10
-      </option>
-      <option
-        key="21"
-      >
-        20
-      </option>
-      <option
-        key="51"
-      >
-        50
-      </option>
-    </select>
-    <li>
-      Items per page
-    </li>
-  </ul>
+        <option
+          key="6"
+        >
+          5
+        </option>
+        <option
+          key="11"
+        >
+          10
+        </option>
+        <option
+          key="21"
+        >
+          20
+        </option>
+        <option
+          key="51"
+        >
+          50
+        </option>
+      </select>
+      <span
+        className="arrowDown"
+      />
+      <li>
+        Items per page
+      </li>
+    </ul>
+  </div>
   <ul
     className="pagination"
   >
-    <li
+    <button
       className="disabled"
+      id="previous"
+      onClick={[Function]}
     >
       Previous
-    </li>
+    </button>
     <li>
-      Showing Page
+      Showing page
     </li>
     <select
+      className="totalPage"
       name="page"
       onChange={[Function]}
       value={1}
@@ -83,11 +91,13 @@ exports[`Pagination Component renders without crashing 1`] = `
     >
       4
     </li>
-    <li
-      className="disabled"
+    <button
+      className="enabled"
+      id="next"
+      onClick={[Function]}
     >
       Next
-    </li>
+    </button>
   </ul>
 </nav>
 `;

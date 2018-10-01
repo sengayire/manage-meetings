@@ -8,49 +8,75 @@ const options = array => (
 );
 
 class Pagination extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      perPage: 5,
-      page: 1,
-    };
-    this.handleChange = this.handleChange.bind(this);
-  }
+  state = {
+    perPage: 5,
+    page: 1,
+  };
 
   handleChange = (e) => {
     e.preventDefault();
     const { name, value } = e.target;
+    const { perPage } = this.state;
+    const { handleData } = this.props;
+
 
     if (name === 'perPage') {
-      this.setState({ perPage: value, page: 1 });
-    } else {
-      this.setState({ page: value });
+      this.setState({ perPage: parseFloat(value), page: 1 }, () => {
+        handleData(value, 1);
+      });
     }
+    if (name === 'page') {
+      this.setState({ page: parseFloat(value), perPage }, () => {
+        handleData(perPage, value);
+      });
+    }
+  }
+
+  handleNext = () => {
+    const { page, perPage } = this.state;
+    this.props.handleData(perPage, page + 1);
+    this.setState({
+      page: page + 1,
+    });
+  }
+
+  handlePrevious = () => {
+    const { page, perPage } = this.state;
+    this.props.handleData(perPage, page - 1);
+    this.setState({
+      page: page - 1,
+    });
   }
 
   render() {
     const { page, perPage } = this.state;
-    const { itemsPerPage, totalPages } = this.props;
+    const {
+      itemsPerPage, totalPages, hasNext, hasPrevious,
+    } = this.props;
 
     return (
       <nav className="page-navigation">
+        <div>
+          <ul className="pagination">
+            <select className="perPage page-select" name="perPage" value={perPage} onChange={this.handleChange}>
+              {options(itemsPerPage)}
+            </select>
+            <span className="arrowDown" />
+            <li>Items per page</li>
+          </ul>
+        </div>
+
         <ul className="pagination">
-          <select className="perPage" name="perPage" value={perPage} onChange={this.handleChange}>
-            {options(itemsPerPage)}
-          </select>
-          <li>Items per page</li>
-        </ul>
-        <ul className="pagination">
-          <li className="disabled">Previous</li>
-          <li>Showing Page</li>
-          <select name="page" value={page} onChange={this.handleChange}>
+          <button id="previous" onClick={this.handlePrevious} className={hasPrevious ? 'enabled' : 'disabled'}>Previous</button>
+          <li>Showing page</li>
+          <select className="totalPage" name="page" value={page} onChange={this.handleChange}>
             {[...Array(totalPages).keys()].map(item => (
               <option key={item}>{ item + 1 }</option>
                     ))}
           </select>
           <li>of</li>
           <li className="pageNum">{totalPages}</li>
-          <li className="disabled">Next</li>
+          <button id="next" onClick={this.handleNext} className={hasNext ? 'enabled' : 'disabled'}>Next</button>
         </ul>
       </nav>
     );
@@ -59,7 +85,10 @@ class Pagination extends Component {
 
 Pagination.propTypes = {
   itemsPerPage: PropTypes.arrayOf(PropTypes.number),
+  hasNext: PropTypes.bool.isRequired,
+  hasPrevious: PropTypes.bool.isRequired,
   totalPages: PropTypes.number.isRequired,
+  handleData: PropTypes.func.isRequired,
 };
 
 Pagination.defaultProps = {
