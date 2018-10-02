@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { withRouter, Route, Switch, Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import ROUTES from './utils/routes';
-import { Settings, Analytics, Feedback } from './containers';
+import { Settings, Analytics, Feedback, Preference } from './containers';
 import { LoginPage } from './components';
 import { getItemFromLocalStorage } from './utils/Utilities';
 import Constants from './utils/Constants';
@@ -54,6 +54,7 @@ class App extends Component {
         <Route path={ROUTES.settings} component={Settings} />
         <Route path={ROUTES.analytics} component={Analytics} />
         <Route path={ROUTES.feedback} component={Feedback} />
+        <Route path={ROUTES.preference} component={Preference} />
       </Switch>
     );
   }

@@ -134,6 +134,10 @@
   margin-top: 1px;
   padding-left: 0px;
 
+  a{
+    text-decoration:none
+  }
+
   .material-icons {
     font-size: 2em;
     color: #8d8d8d;
@@ -151,8 +155,6 @@
     margin-right: 10px;
 
     ul {
-      height: 40px;
-      width: 140px;
       border-radius: 4px;
       background-color: #FFFFFF;
       padding: 0;

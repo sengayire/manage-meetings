@@ -1777,12 +1777,95 @@ exports[`App component should not render Login if token is present but render Se
                                                   }
                                                 />
                                                 <ul>
+                                                  <NavLink
+                                                    activeClassName="active"
+                                                    ariaCurrent="true"
+                                                    key=".0"
+                                                    to="/preference"
+                                                  >
+                                                    <Route
+                                                      path="/preference"
+                                                    >
+                                                      <Link
+                                                        aria-current={false}
+                                                        replace={false}
+                                                        to="/preference"
+                                                      >
+                                                        <a
+                                                          aria-current={false}
+                                                          href="/preference"
+                                                          onClick={[Function]}
+                                                        >
+                                                          <ThemedThemed
+                                                            caption="Preference"
+                                                            className="profile-menu"
+                                                            composeTheme="deeply"
+                                                            disabled={false}
+                                                            mapThemrProps={[Function]}
+                                                            ripple={true}
+                                                            rippleCentered={false}
+                                                            rippleClassName=""
+                                                            rippleMultiple={true}
+                                                            rippleSpread={2}
+                                                          >
+                                                            <ThemedRippledComponent
+                                                              caption="Preference"
+                                                              className="profile-menu"
+                                                              composeTheme="deeply"
+                                                              disabled={false}
+                                                              mapThemrProps={[Function]}
+                                                              ripple={true}
+                                                              rippleCentered={false}
+                                                              rippleClassName=""
+                                                              rippleMultiple={true}
+                                                              rippleSpread={2}
+                                                              theme={Object {}}
+                                                            >
+                                                              <RippledComponent
+                                                                caption="Preference"
+                                                                className="profile-menu"
+                                                                disabled={false}
+                                                                ripple={true}
+                                                                rippleCentered={false}
+                                                                rippleClassName=""
+                                                                rippleMultiple={true}
+                                                                rippleSpread={2}
+                                                                theme={Object {}}
+                                                              >
+                                                                <MenuItem
+                                                                  caption="Preference"
+                                                                  className="profile-menu"
+                                                                  disabled={false}
+                                                                  onMouseDown={[Function]}
+                                                                  onTouchStart={[Function]}
+                                                                  selected={false}
+                                                                  theme={Object {}}
+                                                                >
+                                                                  <li
+                                                                    className="profile-menu"
+                                                                    data-react-toolbox="menu-item"
+                                                                    onClick={[Function]}
+                                                                    onMouseDown={[Function]}
+                                                                    onTouchStart={[Function]}
+                                                                  >
+                                                                    <span>
+                                                                      Preference
+                                                                    </span>
+                                                                  </li>
+                                                                </MenuItem>
+                                                              </RippledComponent>
+                                                            </ThemedRippledComponent>
+                                                          </ThemedThemed>
+                                                        </a>
+                                                      </Link>
+                                                    </Route>
+                                                  </NavLink>
                                                   <ThemedThemed
                                                     caption="LOGOUT"
                                                     className="profile-menu"
                                                     composeTheme="deeply"
                                                     disabled={false}
-                                                    key=".0"
+                                                    key=".1"
                                                     mapThemrProps={[Function]}
                                                     onClick={[Function]}
                                                     ripple={true}

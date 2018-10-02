@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import { IconMenu, MenuItem } from 'react-toolbox/lib/menu';
 import '../../assets/styles/topmenu.scss';
 import { removeItemFromLocalStorage } from '../../utils/Utilities';
@@ -18,8 +19,12 @@ const ProfileMenu = () => {
     // refresh page
     window.location.reload();
   };
+
   return (
     <IconMenu className="material-icons profile-dropdown" icon="arrow_drop_down">
+      <NavLink to="/preference">
+        <MenuItem className="profile-menu" caption="Preference" />
+      </NavLink>
       <MenuItem className="profile-menu" caption="LOGOUT" onClick={() => { onLogOut(); }} />
     </IconMenu>
   );

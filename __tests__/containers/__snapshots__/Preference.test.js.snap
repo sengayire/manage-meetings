@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Preference Component should render properly 1`] = `
+<React.Fragment>
+  <NavBar />
+  <div
+    className="preference-container"
+  >
+    <NotificationSettingsList />
+  </div>
+</React.Fragment>
+`;
