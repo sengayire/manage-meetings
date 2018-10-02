@@ -21,7 +21,7 @@ $andela-grey: #bcbcbc;
       background-color: #FFFFFF;
       margin-bottom: 0.625em;
       border-radius: 0.400em;
-      padding: 1.250em 0 1.250em 1.250em;
+      padding: 1.250em;
 
       .notification-content{
          flex: 4 0 0;
@@ -38,7 +38,7 @@ $andela-grey: #bcbcbc;
 
       .notification-switch {
           align-self: center;
-          padding-right: 3.125em;
+          padding-right: 4.083em;
 
           .switch-component{
               margin: auto;
