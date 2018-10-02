@@ -11,6 +11,7 @@ import { GET_LOCATIONS_QUERY } from '../../graphql/queries/Rooms';
 import UPDATE_ROLES_MUTATION from '../../graphql/mutations/People';
 import { GET_PEOPLE_QUERY, GET_ROLES_QUERY } from '../../graphql/queries/People';
 import { formatPeopleData } from '../../graphql/mappers/People';
+import MenuTitle from '../MenuTitle';
 
 
 const locationMenuCaret = () => (
@@ -76,6 +77,7 @@ class PeopleList extends React.Component {
       <div className="settings-people">
         <div className="settings-people-list">
           <div className="action-menu">
+            <MenuTitle title="People" />
             <span className="sort-by">
           Sort by: <span className="location">Location</span>
               <IconMenu position="topRight" className="people-sort-dropdown" icon={locationMenuCaret()}>

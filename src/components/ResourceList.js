@@ -9,6 +9,7 @@ import { formatResourceData } from '../graphql/mappers/Resources';
 import ColGroup from './helpers/ColGroup';
 import TableHead from './helpers/TableHead';
 import Pagination from './commons/Pagination';
+import MenuTitle from './MenuTitle';
 
 class ResourceList extends React.Component {
   constructor(props) {
@@ -53,6 +54,7 @@ class ResourceList extends React.Component {
       <div className="settings-resource">
         <div className="settings-resource-list">
           <div className="settings-resource-control">
+            <MenuTitle title="Resources" />
             <AddResource />
           </div>
           <table>

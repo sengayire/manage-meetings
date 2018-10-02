@@ -4,6 +4,13 @@ exports[`DeviceList Component renders correctly from memory 1`] = `
 <div
   className="settings-devices-list"
 >
+  <div
+    className="settings-devices-control"
+  >
+    <MenuTitle
+      title="Devices"
+    />
+  </div>
   <table>
     <ColGroup
       numberOfMiddleColumns={2}

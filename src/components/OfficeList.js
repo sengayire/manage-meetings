@@ -8,6 +8,7 @@ import ColGroup from './helpers/ColGroup';
 import TableHead from './helpers/TableHead';
 
 import { GET_ALL_OFFICES } from '../graphql/queries/Offices';
+import MenuTitle from './MenuTitle';
 
 export const OfficeList = (props) => {
   const { allOffices: { offices } = {}, loading } = props.allOffices;
@@ -15,6 +16,7 @@ export const OfficeList = (props) => {
     loading ? <h2>Loading...</h2> :
     <div className="settings-offices">
       <div className="settings-offices-control">
+        <MenuTitle title="Offices" />
         <AddOffice />
       </div>
       <div className="settings-offices-list">

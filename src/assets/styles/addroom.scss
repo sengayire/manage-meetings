@@ -32,6 +32,9 @@
 
         .form-action-buttons{
           padding-right: 33px;
+          button{
+              line-height: 10px;
+          }
         }
         .epic-tower-inputs{
             display: flex;

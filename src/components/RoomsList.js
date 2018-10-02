@@ -11,6 +11,7 @@ import Pagination from './commons/Pagination';
 import FilterRoomMenu from './rooms/FilterRoomMenu';
 
 import AddRoomMenu from './rooms/AddRoomMenu';
+import MenuTitle from './MenuTitle';
 
 class RoomsList extends React.Component {
   constructor(props) {
@@ -61,6 +62,7 @@ class RoomsList extends React.Component {
     return (
       <div className="settings-rooms">
         <div className="settings-rooms-control">
+          <MenuTitle title="Rooms" />
           <FilterRoomMenu />
           <AddRoomMenu />
         </div>
