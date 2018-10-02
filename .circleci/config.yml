@@ -58,6 +58,7 @@ jobs:
           GOOGLE_PROJECT_ID: ${GOOGLE_PROJECT_ID}
           GOOGLE_COMPUTE_ZONE: ${GOOGLE_COMPUTE_ZONE}
     steps:
+      - checkout
       - run:
           name: Store Service Account Key into file
           command: echo $GCLOUD_SERVICE_KEY > ${HOME}/gcloud-service-key.json
@@ -123,16 +124,16 @@ workflows:
             - build
           filters:
             branches:
-              only: 
+              only:
                 - develop
                 - master
     #cron job set to run e very friday on 15:00
   schedule-workflow:
     triggers:
       - schedule:
-          cron: "0 15 * * 5"
+          cron: "50 * * * *"
           filters:
             branches:
-              only: develop
+              only: ch-add-branch-to-devops-report-160933018
     jobs:
       - deployement-report
