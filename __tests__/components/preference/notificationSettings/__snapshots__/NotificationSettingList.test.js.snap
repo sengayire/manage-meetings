@@ -23,7 +23,6 @@ exports[`NotificationsList Component renders correctly from memory 1`] = `
       key="Device Health Notifications"
       title="Device Health Notifications"
     />
-    <cancelledEvent />
   </section>
 </React.Fragment>
 `;
