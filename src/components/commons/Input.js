@@ -12,15 +12,26 @@ export class Input extends Component {
   handleIncrement = (event) => {
     const { onChange } = this.props;
     event.preventDefault();
-    // Logic for increasing and decreasing numeric input value
-    // should be placed here.
+
+    /* Logic for increasing and decreasing numeric input value
+     * should be placed here.
+     */
+
     const num = parseInt(this.inputRef.current.value, 10);
     if (event.target.name === 'up') {
+      /* The button up event and Incremented number is passed
+       * to the onChange function when the up button is
+       * pressed.
+       */
       onChange(event, num + 1);
       this.inputRef.current.value = num + 1;
     }
     if (event.target.name === 'down') {
       if (num > 1) {
+        /* The button down event and Decremented number is passed
+         * to the onChange function when the down button is
+         * pressed.
+         */
         onChange(event, num - 1);
         this.inputRef.current.value = num - 1;
       }

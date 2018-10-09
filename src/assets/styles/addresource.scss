@@ -12,8 +12,9 @@
   .amenity-form {
     font-size: 105%;
     input {
-      color: rgba(50, 60, 71, 0.4);
+      color: rgba(50, 60, 71, 1);
       border-radius: 5px;
+      right: 3%;
       padding: 2.5%;
       width: 95%;
       border: 0.5px solid #d6dee4;
@@ -24,11 +25,10 @@
     }
 
     button {
+      cursor: pointer;
       color: white;
-      background-color: #3359db;
-      position: absolute;
-      right: 3%;
       bottom: 4%;
+      right: 4%;
       padding: 2% 1.5%;
       @media screen and (min-width: 640px) and (max-width: 1023px) and (orientation: landscape) {
         right: 0%;
@@ -40,16 +40,54 @@
         right: 1.5%;
       }
     }
+
+    .button-container {
+      position: absolute;
+      width: 100%;
+      right: 0;
+      margin-bottom: 30px;
+      margin-top: 30px;
+
+      
+      .add-resource {
+        text-transform: uppercase;
+        background-color: #3359db;
+        height: 44px;      
+        float: right;
+        margin-right: 7%;
+        @media screen and (max-width: 867px) {
+          margin-right: 5%;
+        }
+      }
+      
+      .modal-cancel {
+        color: #3359DB;
+        border: 1px solid #3359DB;
+        background-color: #FFFFFF;
+        text-transform: uppercase;
+        height: 44px;
+        float: right;
+        width: 137px;
+        margin-right: 5%;
+      }
+
+      .modal-cancel:hover {
+        background-color: #3359DB;
+        color: #FFFFFF;
+      }
+    }
+  
+  
+}
     
-  }
 
   @media screen and (max-width: 639px) {
     height: 33%;
     width: 78%;
   }
   @media screen and (min-width: 640px) and (max-width: 1023px) and (orientation: landscape) {
-    height: 68%;
-    width: 78%;
+    max-height: 68%;
+    width: 60%;
   }
   @media screen and (min-width: 768px)  and (orientation: portrait) {
     height: 20%;

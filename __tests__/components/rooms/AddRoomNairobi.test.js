@@ -30,6 +30,21 @@ describe('AddRoomNairobi', () => {
   );
   const wrapper = mount(wrapperCode);
 
+  const shallowWrapper = shallow(<AddRoomNairobi {...props} />);
+
+  beforeEach(() => {
+    shallowWrapper.setState({
+      roomName: '',
+      roomCapacity: 1,
+      officeBlock: '',
+      officeFloor: '',
+      closeModal: true,
+      floors: [],
+      thumbnailName: 'Upload a thumbnail',
+      imageUrl: '',
+    });
+  });
+
   it('should render properly', () => {
     expect(wrapper).toMatchSnapshot();
   });
@@ -66,6 +81,15 @@ describe('AddRoomNairobi', () => {
       .simulate('change', { target: { name: 'roomCapacity', value: 2 } });
     wrapper.update();
     expect(wrapper.find('input#roomCapacity').prop('defaultValue')).toEqual(2);
+  });
+  it('should handle increment in roomCapacity', () => {
+    shallowWrapper.instance().handleInputChange({ target: { name: 'up' } }, 12);
+    expect(shallowWrapper.state().roomCapacity).toEqual(12);
+  });
+
+  it('should not increment roomCapacity when num is undefined', () => {
+    shallowWrapper.instance().handleInputChange({ target: { name: 'up' } }, undefined);
+    expect(shallowWrapper.state().roomCapacity).toEqual(1);
   });
 
   it('should handle change when office Block A is selected', () => {

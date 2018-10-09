@@ -20,7 +20,7 @@ class DeleteResource extends Component {
     const { toDelete } = this.props;
     return (
       <MrmModal
-        title="Delete Amenity"
+        title="Delete Resources"
         closeModal={closeModal}
         buttonText="Delete"
         className="delete-resource-modal"
@@ -32,8 +32,8 @@ class DeleteResource extends Component {
             <p>This cannot be undone</p>
           </div>
           <div className="button-container">
+            <button className="modal-submit delete-resource">Delete</button>
             <button className="modal-cancel" onClick={this.handleCloseModal}>Cancel</button>
-            <button className="modal-submit delete-resource">Submit</button>
           </div>
         </div>
       </MrmModal>

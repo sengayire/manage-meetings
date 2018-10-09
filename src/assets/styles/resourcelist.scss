@@ -139,6 +139,10 @@ button {
     background: #3359db;
     color: #fff;
   }
+  
+  .delete-resource:hover {
+    cursor: pointer;
+  }
 
 .modal-content{
   .modal-text {
@@ -154,11 +158,15 @@ button {
       bottom: 50px;
 
       .modal-cancel {
-        margin-right: 50px;
+        margin-right: 10px;
+      }
+
+      .modal-cancel:hover {
+        cursor: pointer;
       }
 
       .modal-submit {
-        margin-right: 10px;
+        margin-right: 50px;
       }
     }
   }

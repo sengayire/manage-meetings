@@ -302,7 +302,7 @@ exports[`AddResource Component should pop-up a modal 1`] = `
                   htmlFor="amenity"
                 >
                   <br />
-                  Amenity
+                  Resource Name
                   <br />
                   <br />
                   <input
@@ -314,11 +314,22 @@ exports[`AddResource Component should pop-up a modal 1`] = `
                     value=""
                   />
                 </label>
-                <button
-                  type="submit"
+                <div
+                  className="button-container "
                 >
-                  ADD RESOURCE
-                </button>
+                  <button
+                    className="add-resource"
+                    type="submit"
+                  >
+                    ADD RESOURCE
+                  </button>
+                  <button
+                    className="modal-cancel"
+                    onClick={[Function]}
+                  >
+                    CANCEL
+                  </button>
+                </div>
               </div>
             </form>
           </div>

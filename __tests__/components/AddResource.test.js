@@ -44,9 +44,9 @@ describe('AddResource Component', () => {
     expect(modalForm).toHaveLength(1);
   });
 
-  it('modal should have one button', () => {
+  it('modal should have two button', () => {
     const modalButton = wrapper.find('div.add-resource-modal button');
-    expect(modalButton).toHaveLength(1);
+    expect(modalButton).toHaveLength(2);
   });
 
   it('inputs should respond to state changes', () => {

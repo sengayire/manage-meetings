@@ -2,6 +2,8 @@
 
 exports[`Notification Settings Component should render properly 1`] = `
 <React.Fragment>
+<<<<<<< HEAD
+<<<<<<< HEAD
   <section
     className="preference-main"
   >
@@ -24,5 +26,11 @@ exports[`Notification Settings Component should render properly 1`] = `
       title="Device Health Notifications"
     />
   </section>
+=======
+  <cancelledEvent />
+>>>>>>> ft(notification): cancelled event notification (#89)
+=======
+  <cancelledEvent />
+>>>>>>> #160951599 Fix Room Capacity button functionality on Nairobi  office (#93)
 </React.Fragment>
 `;

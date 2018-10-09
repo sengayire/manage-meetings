@@ -41,7 +41,7 @@ export class AddRoomNairobi extends Component {
     });
   };
 
-  handleInputChange = ({ target: { name, value, files } }) => {
+  handleInputChange = ({ target: { name, value, files } }, num) => {
     if (value === 'A') {
       this.setState({
         officeBlock: 2,
@@ -71,6 +71,9 @@ export class AddRoomNairobi extends Component {
       });
     }
     this.setState({ [name]: value });
+    if (num !== undefined) {
+      this.setState({ roomCapacity: num });
+    }
   };
 
   handleModalStateChange = () => {

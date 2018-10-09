@@ -30,7 +30,6 @@ const TheCrestInputs = ({
       />
       <div className="num-inputs">
         <Input
-          labelText="Room Capacity"
           labelName="Room Capacity"
           name="roomCapacity"
           id="roomCapacity"

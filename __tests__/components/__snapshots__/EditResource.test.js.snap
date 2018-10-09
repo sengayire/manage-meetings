@@ -25,13 +25,19 @@ exports[`EditResource Component renders properly 1`] = `
       value="Jabra Speaker"
     />
     <div
-      className="edit-buttons"
+      className="buttons-cover"
     >
+      <button
+        className="modal-cancel-button"
+        onClick={[Function]}
+      >
+        CANCEL
+      </button>
       <button
         className="update-button"
         type="submit"
       >
-        UPDATE
+        SAVE CHANGES
       </button>
     </div>
   </form>

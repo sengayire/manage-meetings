@@ -42,7 +42,6 @@ exports[`TheCrestInputs component should render correctly 1`] = `
         inputClass="mrm-input capacity-wrapper"
         labelClass="kla-label"
         labelName="Room Capacity"
-        labelText="Room Capacity"
         name="roomCapacity"
         onChange={[MockFunction]}
         placeholder="1"

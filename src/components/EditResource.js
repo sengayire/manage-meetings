@@ -58,8 +58,9 @@ class EditResource extends React.Component {
             id="resourceName"
             onChange={this.handleNameChange}
           />
-          <div className="edit-buttons">
-            <button className="update-button" type="submit">UPDATE</button>
+          <div className="buttons-cover">
+            <button className="modal-cancel-button" onClick={this.handleCloseModal}>CANCEL</button>
+            <button className="update-button" type="submit">SAVE CHANGES</button>
           </div>
         </form>
       </MrmModal>

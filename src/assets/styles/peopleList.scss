@@ -3,219 +3,218 @@
   font-style: normal;
   src: url('../fonts/DINPro-Light.otf');
 }
+.settings-people {
+  width: 85%;
 
-.settings-people-list {
-  width: calc(100% - 100px);
-  
-  .action-menu {
-    height: 70px;
-    padding-top: 4%;
-    text-align: right; 
+  .settings-people-list {
+    .action-menu {
+      height: 70px;
+      padding-top: 4%;
+      text-align: right;
 
-    .sort-by {
-      color: #999999;
-      font-family: "DINPro-Light";
-      font-size: 18px;
-      line-height: 23px;
-      display: inline;
-
-      .location {
-        height: 23px;
-        width: 70px;
-        color: #3359DB;
-        font-family: "DINPro";
+      .sort-by {
+        color: #999999;
+        font-family: 'DINPro-Light';
         font-size: 18px;
-        font-weight: 700;
         line-height: 23px;
-      }
+        display: inline;
 
-      .theme--button--2AgdxWh4 {
-        height: auto;
-        line-height: 10px;
-        color: transparent;
-      }
+        .location {
+          height: 23px;
+          width: 70px;
+          color: #3359db;
+          font-family: 'DINPro';
+          font-size: 18px;
+          font-weight: 700;
+          line-height: 23px;
+        }
 
-      .people-sort-dropdown {
-        .theme--menu--1gvr5Gvn {
-          margin-top: 25px;
+        .theme--button--2AgdxWh4 {
+          height: auto;
+          line-height: 10px;
+          color: transparent;
+        }
 
-          ul {
-            width: 140px;
-            border-radius: 4px;
-            background-color: #FFFFFF;
-            padding: 10px 0;
-            text-align: left;
-            box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+        .people-sort-dropdown {
+          .theme--menu--1gvr5Gvn {
+            margin-top: 25px;
 
-            hr {
-              margin: 0;
-            }
-
-            li {
-              color: #3359DB;
+            ul {
+              width: 140px;
+              border-radius: 4px;
+              background-color: #ffffff;
+              padding: 10px 0;
               text-align: left;
-              line-height: 27px;
-              height: auto;
+              box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
 
-              &.theme--disabled--zGTpAm-p {
-                color: #999999;
+              hr {
+                margin: 0;
+              }
+
+              li {
+                color: #3359db;
+                text-align: left;
+                line-height: 27px;
+                height: auto;
+
+                &.theme--disabled--zGTpAm-p {
+                  color: #999999;
+                }
+              }
+
+              span {
+                font-size: 14px;
               }
             }
+          }
 
-            span {
-              font-size: 14px;
-            }
+          .sort-by-caret {
+            content: url('../images/caret_blue.svg');
+            width: 14.4px;
+            margin-left: 6px;
+            display: inline-block;
+            vertical-align: bottom;
           }
         }
 
-        .sort-by-caret {
-          content: url('../images/caret_blue.svg');
+        .caret {
+          height: 8px;
           width: 14.4px;
-          margin-left: 6px;
-          display: inline-block;
-          vertical-align: bottom;
         }
       }
-
-    .caret {
-      height: 8px;
-      width: 14.4px;
     }
-  }
-}
 
-  table {
-    clear: left;
-    width: 100%;
-    border-collapse: collapse;
-    text-align: left;
+    table {
+      clear: left;
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
 
-    tr {
-      height: 40px;
-      padding: 1%;
-      border-bottom: 10px solid #f4f8f9;
-      font-weight: 50;
-      
-    }
+      tr {
+        height: 40px;
+        padding: 1%;
+        border-bottom: 10px solid #f4f8f9;
+        font-weight: 50;
+      }
       th:nth-child(4) {
         padding-left: 48px;
       }
 
-    th {
-      color: #999999;
-      font-weight: 50;
-      padding-left: 4%;
-      font-size: 97%;
-    }
-
-    td {
-      background: #ffffff;
-      color: #333e44;
-      font-size: 95%;
-      font-family: 'DINPro-Light';
-      padding: 15px 40px;
-
-      .access-by-caret {
-        content: url('../images/three-dots.svg');
-        width: 14.4px;
-        display: inline-block;
-        vertical-align: top;
+      th {
+        color: #999999;
+        font-weight: 50;
+        padding-left: 4%;
+        font-size: 97%;
       }
 
-      .people-access-dropdown {
-        display: inline-flex;
-        height: 15px;
-        vertical-align: middle;
+      td {
+        background: #ffffff;
+        color: #333e44;
+        font-size: 95%;
+        font-family: 'DINPro-Light';
+        padding: 15px 40px;
+
+        .access-by-caret {
+          content: url('../images/three-dots.svg');
+          width: 14.4px;
+          display: inline-block;
+          vertical-align: top;
+        }
+
+        .people-access-dropdown {
+          display: inline-flex;
+          height: 15px;
+          vertical-align: middle;
 
           &.active button {
-            border: 0.5px solid #EBEBEB;
+            border: 0.5px solid #ebebeb;
             border-radius: 2px;
           }
-        button {
-          height: auto;
-          margin: 0;
-          margin-left: 6px;
+          button {
+            height: auto;
+            margin: 0;
+            margin-left: 6px;
+          }
 
-        }
+          .theme--button--2AgdxWh4 {
+            color: transparent;
+          }
 
-        .theme--button--2AgdxWh4 {
-          color: transparent;
-        }
+          .theme--menu--1gvr5Gvn {
+            margin-top: 21px;
 
-        .theme--menu--1gvr5Gvn {
-          margin-top: 21px;
-
-          ul {
-            width: auto;
-            border-radius: 4px;
-            background-color: #FFFFFF;
-            padding: 10px 0;
-            text-align: left;
-            box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
-
-            li {
-              color: #3359DB;
+            ul {
+              width: auto;
+              border-radius: 4px;
+              background-color: #ffffff;
+              padding: 10px 0;
               text-align: left;
-              line-height: 27px;
-              height: auto;
+              box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
 
-              &.theme--disabled--zGTpAm-p {
-                color: #999999;
-              }
+              li {
+                color: #3359db;
+                text-align: left;
+                line-height: 27px;
+                height: auto;
 
-              &.access-menu {
-                &:before {
-                  content: '';
-                  width: 10px;
+                &.theme--disabled--zGTpAm-p {
+                  color: #999999;
                 }
 
-                &.selected:before {
-                  content: url('../images/blue_tick.svg');
+                &.access-menu {
+                  &:before {
+                    content: '';
+                    width: 10px;
+                  }
+
+                  &.selected:before {
+                    content: url('../images/blue_tick.svg');
+                  }
                 }
               }
-            }
 
-            span {
-              margin-left: 12px;
-              font-size: 14px;
+              span {
+                margin-left: 12px;
+                font-size: 14px;
+              }
             }
           }
         }
-      }
 
-      &:nth-child(4) {
-        button {
-          border: none;
-          cursor: pointer;
-          height: 13.5px;
-          width: 13.46px;
+        &:nth-child(4) {
+          button {
+            border: none;
+            cursor: pointer;
+            height: 13.5px;
+            width: 13.46px;
 
-          &:nth-child(1) {
-            margin-left: 25px !important;
+            &:nth-child(1) {
+              margin-left: 25px !important;
+            }
+
+            &:nth-child(2) {
+              margin-top: 7px;
+            }
           }
+        }
 
-          &:nth-child(2) {
-            margin-top: 7px;
-          }
+        .profilePic {
+          height: 30px;
+          width: 30px;
+          vertical-align: middle;
+          border-radius: 50%;
+          margin-right: 20px;
         }
       }
 
-      .profilePic {
-        height: 30px;
-        width: 30px;
-        vertical-align: middle;
-        border-radius: 50%;
-        margin-right: 20px;
+      @media screen and (max-width: 425px) {
+        width: 100%;
+        margin-right: 0;
       }
-    }
 
-    @media screen and (max-width: 425px) {
-      width: 100%;
-      margin-right: 0;
-    }
-    
-    @media screen and (min-width: 768) and (max-width: 1023px) {
-      width: 100%;
+      @media screen and (min-width: 768) and (max-width: 1023px) {
+        width: 100%;
+      }
     }
   }
 }

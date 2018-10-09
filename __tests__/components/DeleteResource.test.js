@@ -19,17 +19,17 @@ describe('DeleteResource Component', () => {
   it('contains two paragraphs', () => {
     expect(wrapper.find('p')).toHaveLength(2);
   });
-  it('should have a `Cancel` button', () => {
+  it('should have a `Delete` button', () => {
     expect(wrapper
       .find('.button-container')
       .childAt(0)
-      .text()).toBe('Cancel');
+      .text()).toBe('Delete');
   });
-  it('should have a `Submit` button', () => {
+  it('should have a `Cancel` button', () => {
     expect(wrapper
       .find('.button-container')
       .childAt(1)
-      .text()).toBe('Submit');
+      .text()).toBe('Cancel');
   });
   it('should accept `Modal` state changes', () => {
     // Change the state of the modal to `Closed`

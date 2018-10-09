@@ -18,9 +18,9 @@ describe('EditResource Component', () => {
     expect(modalForm).toHaveLength(1);
   });
 
-  it('should have one button', () => {
+  it('should have two button', () => {
     const modalForm = wrapper.find('button');
-    expect(modalForm).toHaveLength(1);
+    expect(modalForm).toHaveLength(2);
   });
 
   it('handles handleCloseModal()', () => {

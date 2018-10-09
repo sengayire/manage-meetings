@@ -7,7 +7,7 @@ exports[`DeleteResource Component renders properly 1`] = `
   closeModal={false}
   handleCloseRequest={[Function]}
   modalButtonClassName="button"
-  title="Delete Amenity"
+  title="Delete Resources"
 >
   <div
     className="modal-content"
@@ -28,15 +28,15 @@ exports[`DeleteResource Component renders properly 1`] = `
       className="button-container"
     >
       <button
+        className="modal-submit delete-resource"
+      >
+        Delete
+      </button>
+      <button
         className="modal-cancel"
         onClick={[Function]}
       >
         Cancel
-      </button>
-      <button
-        className="modal-submit delete-resource"
-      >
-        Submit
       </button>
     </div>
   </div>

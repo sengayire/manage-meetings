@@ -20,6 +20,7 @@ const customStyles = {
     boxShadow: '0 2px 40px 10px rgba(185, 180, 180, 0.2)',
     backgroundColor: '#ffffff',
     overflow: 'auto',
+    // width: '614px',
   },
 };
 
