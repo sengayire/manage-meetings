@@ -131,9 +131,11 @@ workflows:
   schedule-workflow:
     triggers:
       - schedule:
-          cron: "50 * * * *"
+          cron: "15 15 * * 5"
           filters:
             branches:
-              only: ch-add-branch-to-devops-report-160933018
+              only:
+                - develop
+                - master
     jobs:
       - deployement-report

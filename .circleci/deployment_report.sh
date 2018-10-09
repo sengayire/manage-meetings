@@ -6,14 +6,13 @@ ENDDATE=$(date '+%Y-%m-%d %H:%M:%S')
 
 run_query() {
   BRANCH=$1
-
   QUERY="select COALESCE(sum(status = 'failed'),0)\
   as failed, COALESCE(sum(status = 'succeeded'),0)\
-  as succeeded from deployment_report_test\
+  as succeeded from deployment_report_frontend\
   where (branch = '${BRANCH}') and (time between '${STARTDATE}' and '${ENDDATE}')"
 
   # run SQL query on csv to and send output into a csv file
-  querycsv.py -i ~/project/.circleci/deployment_report_test.csv -o ~/project/.circleci/result.csv ${QUERY}
+  querycsv.py -i ~/project/.circleci/deployment_report_frontend.csv -o ~/project/.circleci/result.csv ${QUERY}
 
   # retrieve query output from csv
   MESSAGE=$(python ~/project/.circleci/csv_parser.py ~/project/.circleci/result.csv $BRANCH)
@@ -23,7 +22,7 @@ run_query() {
 
 get_report() {
   # retrieve csv from bucket
-  gsutil cp gs://deployment_report/deployment_report_test.csv ~/project/.circleci/deployment_report_test.csv
+  gsutil cp gs://deployment_report/deployment_report_frontend.csv ~/project/.circleci/deployment_report_frontend.csv
 
   # generate report for each branch
   DEVELOP_REPORT=$(run_query develop)

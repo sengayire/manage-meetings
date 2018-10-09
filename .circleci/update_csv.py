@@ -2,10 +2,10 @@ import csv
 import sys
 import datetime
 
-with open('deployment_report_test.csv', 'a') as csv_file:
+with open('deployment_report_frontend.csv', 'a') as csv_file:
     # Get current date and time
     deployment_time = datetime.datetime.now()
-    # assign python script argument as varables
+    # assign python script arguments as varables
     branch_name = sys.argv[1]
     deployment_status = sys.argv[2]
 
