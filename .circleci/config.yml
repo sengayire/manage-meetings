@@ -69,7 +69,12 @@ jobs:
             gcloud --quiet config set compute/zone ${GOOGLE_COMPUTE_ZONE}
       - run:
           name: Deploy to gcloud
-          command: gcloud beta compute instance-groups managed rolling-action replace mrm-staging-frontend-instance-group --zone europe-west1-b
+          command: |
+            if [[ ${CIRCLE_BRANCH} == 'develop' ]]; then
+              gcloud beta compute instance-groups managed rolling-action replace mrm-prod-frontend-instance-group-staging --zone europe-west1-b
+            elif [[ ${CIRCLE_BRANCH} == 'master' ]]; then
+              gcloud beta compute instance-groups managed rolling-action replace mrm-prod-frontend-instance-group-prod --zone europe-west1-b
+            fi
       - run:
           name: Register deployment status (succeeded)
           when: on_success
@@ -118,7 +123,9 @@ workflows:
             - build
           filters:
             branches:
-              only: develop
+              only: 
+                - develop
+                - master
     #cron job set to run e very friday on 15:00
   schedule-workflow:
     triggers:
