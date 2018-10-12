@@ -38,6 +38,7 @@ export class AddRoomToEpicTower extends Component {
   componentWillReceiveProps = (props) => {
     const { officeDetails } = props;
 
+    /* istanbul ignore next */
     if (officeDetails.getOfficeByName) {
       const { floorOptions, wingsObject, officeId } = mapOfficeDetails(officeDetails);
       this.setState({

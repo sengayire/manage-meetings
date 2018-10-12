@@ -3,14 +3,13 @@ import { Route, Switch, Redirect } from 'react-router-dom';
 
 import SettingsNav from '../components/navbars/SettingsNav';
 import OfficeList from '../components/OfficeList'; //eslint-disable-line
-import ResourceList from '../components/ResourceList';
+import ResourceList from '../components/ResourceList'; //eslint-disable-line
 import '../assets/styles/settingscontent.scss';
 import ROUTES from '../utils/routes';
 import PlaceHolder from '../components/Placeholder';
-import RoomsList from '../components/RoomsList';
-import PeopleList from '../components/people/PeopleList';
+import RoomsList from '../components/RoomsList'; //eslint-disable-line
+import PeopleList from '../components/people/PeopleList'; //eslint-disable-line
 import DeviceList from '../components/DeviceList';
-
 // replace the PlaceHolder component with appropriate component to be rendered
 const SettingsContent = () => (
   <div className="settings-vertical">

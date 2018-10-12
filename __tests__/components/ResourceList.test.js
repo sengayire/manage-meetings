@@ -1,7 +1,7 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 import { MockedProvider } from 'react-apollo/test-utils';
-import ResourceList from '../../src/components/ResourceList';
+import ResourceLists, { ResourceList } from '../../src/components/ResourceList';
 import { GET_RESOURCES_QUERY } from '../../src/graphql/queries/Resources';
 import allResources from '../../__mocks__/resources/Resources';
 
@@ -17,7 +17,7 @@ describe('Tests for ResourceList Component', () => {
   const error = 'Something Went Wrong';
   const wrapper = (
     <MockedProvider mocks={[{ request, result }]} addTypename>
-      <ResourceList />
+      <ResourceLists />
     </MockedProvider>);
   const mountWrapper = mount(wrapper);
 
@@ -30,7 +30,7 @@ describe('Tests for ResourceList Component', () => {
   it('should render an error screen', async () => {
     const errorWrapper = (
       <MockedProvider mocks={[{ request, error }]} addTypename>
-        <ResourceList />
+        <ResourceLists />
       </MockedProvider>);
     const mountErrorWrapper = mount(errorWrapper);
     // check whether there is no error when loading
@@ -46,5 +46,19 @@ describe('Tests for ResourceList Component', () => {
     mountWrapper.update();
     expect(mountWrapper.find('ResourceList')).toHaveLength(1);
     expect(mountWrapper.find('ResourceList').prop('data').allResources.resources.length).toEqual(allResources.data.allResources.resources.length);
+  });
+  it('should handle handleData function', () => {
+    const props = {
+      data: {
+        allResources: {
+          resources: [],
+        },
+        fetchMore: jest.fn(),
+      },
+      loading: false,
+      error: {},
+    };
+    const wrapperCode = shallow(<ResourceList {...props} />);
+    expect(wrapperCode.instance().handleData(5, 1));
   });
 });

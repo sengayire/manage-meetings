@@ -23,7 +23,7 @@ const handleErrorMessage = (...errors) => {
   return errorMessage;
 };
 
-class PeopleList extends React.Component {
+export class PeopleList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {

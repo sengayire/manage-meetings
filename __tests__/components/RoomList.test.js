@@ -1,12 +1,12 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 import { MockedProvider } from 'react-apollo/test-utils';
 import {
   GET_ROOMS_QUERY,
   GET_LOCATIONS_QUERY,
 } from '../../src/graphql/queries/Rooms';
 import allRooms, { roomLocations } from '../../__mocks__/rooms/Rooms';
-import RoomsList from '../../src/components/RoomsList';
+import RoomsLists, { RoomsList } from '../../src/components/RoomsList';
 
 describe('RoomList Component', () => {
   const request = {
@@ -15,6 +15,43 @@ describe('RoomList Component', () => {
       page: 1,
       perPage: 5,
     },
+  };
+  const props = {
+    data: {
+      fetchMore: jest.fn(),
+      allRooms: {
+        rooms: [],
+      },
+    },
+    locations: {
+      allLocations: [{
+        id: 2,
+        name: 'Kampala',
+      }],
+      error: {
+        locationError: {
+          message: 'error',
+        },
+      },
+    },
+    loading: false,
+    error: undefined,
+  };
+  const initProps = {
+    data: {
+      fetchMore: jest.fn(),
+      allRooms: {
+        rooms: [],
+      },
+    },
+    locations: {
+      allLocations: [{
+        id: 2,
+        name: 'Kampala',
+      }],
+    },
+    loading: false,
+    error: undefined,
   };
   const result = { ...allRooms };
   const roomLocationsRequest = { query: GET_LOCATIONS_QUERY };
@@ -29,21 +66,48 @@ describe('RoomList Component', () => {
       ]}
       addTypename={false}
     >
-      <RoomsList />
+      <RoomsLists />
     </MockedProvider>
   );
+
 
   const locationErrorWrapper = (
     <MockedProvider
       mocks={[{ request, result }, { request: roomLocationsRequest, error }]}
       addTypename
     >
-      <RoomsList />
+      <RoomsLists />
     </MockedProvider>
   );
 
   it('renders correctly from memory', () => {
     expect(mount(wrapperCode)).toMatchSnapshot();
+  });
+
+  it('handles handleNoResource functions', () => {
+    const wrapper = shallow(<RoomsList {...initProps} />);
+    wrapper.setState({
+      allRooms: {
+        rooms: [],
+      },
+      noResoure: false,
+    });
+
+    expect(wrapper.instance().handleData(5, 1));
+    expect(wrapper.instance().handleNoResource());
+  });
+  it('handles handleResource function', () => {
+    const wrapper = shallow(<RoomsList {...initProps} />);
+    wrapper.setState({
+      allRooms: {
+        rooms: [],
+      },
+      noResoure: true,
+    });
+
+    expect(wrapper.instance().handleResource());
+    expect(wrapper.instance().handleSetState('Kampala', 0, 'Lagos'));
+    expect(wrapper.instance().handleResetState());
   });
 
   it('should render loading screen', () => {
@@ -54,7 +118,7 @@ describe('RoomList Component', () => {
   it('should render an error screen', async () => {
     const errorWrapper = (
       <MockedProvider mocks={[{ request, error }]} addTypename>
-        <RoomsList />
+        <RoomsLists />
       </MockedProvider>
     );
 
@@ -84,5 +148,16 @@ describe('RoomList Component', () => {
     errorWrapper.update();
     expect(errorWrapper.find('RoomsList').props().locations.error).toBeTruthy();
     expect(errorWrapper.find('RoomsList').props().locations.error.networkError).toBe(error);
+  });
+
+  it('handles the error in component', () => {
+    const wrapper = shallow(<RoomsList {...props} />);
+    wrapper.setState({
+      allRooms: {
+        rooms: [],
+      },
+      noResoure: false,
+    });
+    expect(wrapper.instance().handleNoResource());
   });
 });

@@ -22,6 +22,7 @@ exports[`TheCrestInputs component should render correctly 1`] = `
   >
     <SelectInput
       id="roomFloor"
+      isValue={false}
       labelText="Select Floor"
       name="roomFloor"
       onChange={[MockFunction]}

@@ -23,10 +23,27 @@ describe('Pagination Component', () => {
     ],
     location: [],
   };
+  const props2 = {
+    rooms: [
+      {
+        id: '3',
+        name: 'Gulu',
+        floor: {
+          block: { },
+        },
+      },
+    ],
+    location: [],
+  };
+
   const bodyWrapper = shallow(<TableBody {...props} />);
+  const bodyWrapper2 = shallow(<TableBody {...props2} />);
 
   it('renders without crashing', () => {
     expect(bodyWrapper).toMatchSnapshot();
+  });
+  it('renders without crashing', () => {
+    expect(bodyWrapper2).toMatchSnapshot();
   });
 });
 

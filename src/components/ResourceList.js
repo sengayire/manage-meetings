@@ -11,7 +11,7 @@ import TableHead from './helpers/TableHead';
 import Pagination from './commons/Pagination';
 import MenuTitle from './MenuTitle';
 
-class ResourceList extends React.Component {
+export class ResourceList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {

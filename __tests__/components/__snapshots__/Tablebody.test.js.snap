@@ -19,3 +19,23 @@ exports[`Pagination Component renders without crashing 1`] = `
   />
 </tbody>
 `;
+
+exports[`Pagination Component renders without crashing 2`] = `
+<tbody
+  className="bundle"
+>
+  <Room
+    key="3"
+    locations={Array []}
+    room={
+      Object {
+        "id": "3",
+        "location": "",
+        "locationId": "",
+        "name": "Gulu",
+        "office": "",
+      }
+    }
+  />
+</tbody>
+`;

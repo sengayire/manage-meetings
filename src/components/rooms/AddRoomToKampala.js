@@ -32,6 +32,7 @@ export class AddRoomToTheCrest extends Component {
   componentWillReceiveProps = (props) => {
     const { officeDetails } = props;
 
+    /* istanbul ignore next */
     if (officeDetails.getOfficeByName) {
       const { getOfficeByName: [{ id, blocks: [{ floors }] }] } = officeDetails;
       const floorOptions = floors;

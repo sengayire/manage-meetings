@@ -796,6 +796,7 @@ exports[`AddRoomNairobi should pop up a modal when modal button is clicked 1`] =
                       </Input>
                       <SelectInput
                         id="officeBlock"
+                        isValue={false}
                         labelText="Select Block"
                         name="officeBlock"
                         onChange={[Function]}
@@ -846,6 +847,7 @@ exports[`AddRoomNairobi should pop up a modal when modal button is clicked 1`] =
                       </SelectInput>
                       <SelectInput
                         id="officeFloor"
+                        isValue={false}
                         labelText="Select Floor"
                         name="officeFloor"
                         onChange={[Function]}

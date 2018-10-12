@@ -48,8 +48,24 @@ const GET_ALL_OFFICES = gql`
   }
 `;
 
+const GET_OFFICES = gql`
+  query allOffices {
+    allOffices{
+      offices{
+        id,
+        name,
+        location{
+          name,
+          timeZone
+        }
+      }
+    }
+  }
+`;
+
 export {
   GET_EPIC_TOWER_DETAILS_QUERY as default,
   GET_CREST_DETAILS,
   GET_ALL_OFFICES,
+  GET_OFFICES,
 };

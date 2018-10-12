@@ -54,6 +54,7 @@ describe('Input mount', () => {
   });
 
   it('should increase on button up click', () => {
+    wrapper.instance().clear();
     const spy = jest.spyOn(wrapper.instance(), 'handleIncrement');
     wrapper.instance().forceUpdate();
     wrapper.find('button.up').simulate('click', { target: { name: 'up' } });

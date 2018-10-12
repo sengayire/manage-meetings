@@ -46,4 +46,25 @@ const crestOfficeDetails = {
     ],
   },
 };
-export { officeDetailsData as default, crestOfficeDetails };
+
+const officeDetails = {
+  data: {
+    allOffices: {
+      offices: [
+        {
+          id: '3',
+          name: 'The Crest',
+          location: {
+            name: 'Kampala',
+            timeZone: 'TimeZoneType.EAST_AFRICA_TIME',
+            __typename: 'Location',
+          },
+          __typename: 'Office',
+        },
+      ],
+      __typename: 'PaginateOffices',
+    },
+  },
+
+};
+export { officeDetailsData as default, crestOfficeDetails, officeDetails };

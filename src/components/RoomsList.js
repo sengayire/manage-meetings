@@ -11,13 +11,16 @@ import Pagination from './commons/Pagination';
 import FilterRoomMenu from './rooms/FilterRoomMenu';
 
 import AddRoomMenu from './rooms/AddRoomMenu';
-import MenuTitle from './MenuTitle';
 
-class RoomsList extends React.Component {
+export class RoomsList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       allRooms: { ...props.data.allRooms },
+      noResource: true,
+      capacity: 0,
+      location: '',
+      office: '',
     };
   }
 
@@ -28,13 +31,45 @@ class RoomsList extends React.Component {
     });
   }
 
+  handleNoResource = () => {
+    this.setState({
+      noResource: false,
+    });
+  };
+
+  handleResource = () => {
+    this.setState({
+      noResource: true,
+    });
+  };
+
+  handleSetState = (location, capacity, office) => {
+    this.setState({
+      capacity,
+      location,
+      office,
+    });
+  };
+
+  handleResetState = () => {
+    this.setState({
+      capacity: '',
+      location: '',
+      office: '',
+    });
+  }
+
   handleData = (perPage, page) => {
+    const { location, capacity, office } = this.state;
     /* istanbul ignore next */
     /* Reasoning: find explicit way of testing configuration options */
     this.props.data.fetchMore({
       variables: {
         page,
         perPage,
+        location,
+        capacity,
+        office,
       },
       updateQuery: (prev, { fetchMoreResult }) => {
         this.setState({
@@ -42,10 +77,10 @@ class RoomsList extends React.Component {
         });
       },
     });
-  }
+  };
 
   render() {
-    const { allRooms } = this.state;
+    const { allRooms, noResource } = this.state;
     const { loading, error } = this.props.data;
     const {
       allLocations: locations,
@@ -62,17 +97,25 @@ class RoomsList extends React.Component {
     return (
       <div className="settings-rooms">
         <div className="settings-rooms-control">
-          <MenuTitle title="Rooms" />
-          <FilterRoomMenu />
+          <FilterRoomMenu
+            isNoResource={this.handleNoResource}
+            isResource={this.handleResource}
+            handleSetState={this.handleSetState}
+            handleResetState={this.handleResetState}
+          />
           <AddRoomMenu />
         </div>
-        <div className="settings-rooms-list">
-          <table>
-            <ColGroup />
-            <TableHead titles={['Room', 'Location', 'Office', 'Action']} />
-            <TableBody rooms={allRooms.rooms} location={locations} />
-          </table>
-        </div>
+        {noResource ? (
+          <div className="settings-rooms-list">
+            <table>
+              <ColGroup />
+              <TableHead titles={['Room', 'Location', 'Office', 'Action']} />
+              <TableBody rooms={allRooms.rooms} location={locations} />
+            </table>
+          </div>
+        ) : (
+          <h2 style={{ marginLeft: '0' }}>No Resource Found</h2>
+        )}
         <Pagination
           totalPages={allRooms.pages}
           hasNext={allRooms.hasNext}
@@ -105,10 +148,14 @@ RoomsList.propTypes = {
 
 export default compose(
   graphql(GET_ROOMS_QUERY, {
+    name: 'data',
     options: () => ({
       variables: {
         page: 1,
         perPage: 5,
+        capacity: 0,
+        location: '',
+        office: '',
       },
     }),
   }),

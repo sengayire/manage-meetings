@@ -1,12 +1,12 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 import { MockedProvider } from 'react-apollo/test-utils';
 import { GET_PEOPLE_QUERY, GET_ROLES_QUERY } from '../../../src/graphql/queries/People';
 import { GET_LOCATIONS_QUERY } from '../../../src/graphql/queries/Rooms';
 import allPeople from '../../../__mocks__/people/People';
 import allRoles from '../../../__mocks__/people/Roles';
 import allLocations from '../../../__mocks__/offices/Locations';
-import PeopleList from '../../../src/components/people/PeopleList';
+import PeopleLists, { PeopleList } from '../../../src/components/people/PeopleList';
 
 describe('PeopleList Component', () => {
   const error = new Error('Something Went Wrong');
@@ -29,7 +29,7 @@ describe('PeopleList Component', () => {
       mocks={mocks}
       addTypename={false}
     >
-      <PeopleList />
+      <PeopleLists />
     </MockedProvider>
   );
 
@@ -71,7 +71,7 @@ describe('PeopleList Component', () => {
         mocks={errorMocks}
         addTypename={false}
       >
-        <PeopleList />
+        <PeopleLists />
       </MockedProvider>
     );
     const mountErrorWrapper = mount(errorWrapper);
@@ -111,7 +111,7 @@ describe('PeopleList Component', () => {
         mocks={errorMocks}
         addTypename={false}
       >
-        <PeopleList />
+        <PeopleLists />
       </MockedProvider>
     );
     const mountErrorWrapper = mount(errorWrapper);
@@ -152,7 +152,7 @@ describe('PeopleList Component', () => {
         mocks={errorMocks}
         addTypename={false}
       >
-        <PeopleList />
+        <PeopleLists />
       </MockedProvider>
     );
     const mountErrorWrapper = mount(errorWrapper);
@@ -173,7 +173,7 @@ describe('PeopleList Component', () => {
         mocks={mocks}
         addTypename={false}
       >
-        <PeopleList />
+        <PeopleLists />
       </MockedProvider>
     );
     const mountResolveWrapper = mount(resolvedWrapper);
@@ -184,5 +184,25 @@ describe('PeopleList Component', () => {
     expect(mountResolveWrapper.find('PeopleList').prop('data').users.users.length).toEqual(allPeople.data.users.users.length);
     expect(mountResolveWrapper.find('PeopleList').prop('locations').allLocations.length).toEqual(allLocations.data.allLocations.length);
     expect(mountResolveWrapper.find('PeopleList').prop('roles').roles.length).toEqual(allRoles.data.roles.length);
+  });
+  it('should handle the handleData function', () => {
+    const props = {
+      data: {
+        users: {
+          users: [],
+          pages: 1,
+        },
+        fetchMore: jest.fn(),
+      },
+      loading: false,
+      error: {},
+      locations: {},
+      roles: {
+        loading: {},
+      },
+      editRole: jest.fn(),
+    };
+    const wrapperCode = shallow(<PeopleList {...props} />);
+    expect(wrapperCode.instance().handleData(5, 1));
   });
 });

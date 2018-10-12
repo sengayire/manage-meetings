@@ -28,6 +28,7 @@ exports[`AddOffice Component renders properly 1`] = `
     />
     <SelectInput
       id="officeLocation"
+      isValue={false}
       labelText="Select Office Location"
       name="officeLocation"
       onChange={[Function]}

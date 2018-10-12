@@ -11,7 +11,7 @@ const TableBody = props => (
         key={room.id}
         locations={props.location}
       />
-      ))}
+    ))}
   </tbody>
 );
 TableBody.propTypes = {

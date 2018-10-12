@@ -8,6 +8,7 @@ const SelectInput = ({
   id,
   labelText,
   name,
+  isValue,
   selectInputClassName,
   value,
   onChange,
@@ -39,7 +40,7 @@ const SelectInput = ({
         {options &&
           options.length &&
           options.map(option => (
-            <option value={option.id} key={option.id}>
+            <option value={isValue ? option.name : option.id} key={option.id}>
               {option.name}
             </option>
           ))}
@@ -65,6 +66,7 @@ const SelectInput = ({
 
 SelectInput.propTypes = {
   name: PropTypes.string.isRequired,
+  isValue: PropTypes.bool,
   id: PropTypes.string.isRequired,
   selectInputClassName: PropTypes.string,
   wrapperClassName: PropTypes.string,
@@ -82,6 +84,7 @@ SelectInput.propTypes = {
 };
 
 SelectInput.defaultProps = {
+  isValue: false,
   selectInputClassName: 'default-select',
   wrapperClassName: 'input1',
   placeholder: '',

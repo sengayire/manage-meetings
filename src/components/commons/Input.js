@@ -9,6 +9,10 @@ export class Input extends Component {
     this.inputRef = React.createRef();
   }
 
+  clear = () => {
+    this.inputRef.current.value = 0;
+  }
+
   handleIncrement = (event) => {
     const { onChange } = this.props;
     event.preventDefault();
@@ -27,11 +31,7 @@ export class Input extends Component {
       this.inputRef.current.value = num + 1;
     }
     if (event.target.name === 'down') {
-      if (num > 1) {
-        /* The button down event and Decremented number is passed
-         * to the onChange function when the down button is
-         * pressed.
-         */
+      if (num >= 1) {
         onChange(event, num - 1);
         this.inputRef.current.value = num - 1;
       }

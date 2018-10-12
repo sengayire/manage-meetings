@@ -1,40 +1,120 @@
 import React, { Component } from 'react';
+import { graphql, compose } from 'react-apollo';
+import PropTypes from 'prop-types';
 import { IconMenu } from 'react-toolbox/lib/menu';
 import { Input, SelectInput as Select } from '../commons';
 import '../../assets/styles/filterbutton.scss';
+import { GET_ROOMS_QUERY, GET_LOCATIONS_QUERY } from '../../graphql/queries/Rooms';
+import { GET_OFFICES } from '../../graphql/queries/Offices';
 
-class FilterButton extends Component {
+export class FilterButton extends Component {
+  // #region PropTypes
+  static propTypes = {
+    isResource: PropTypes.func.isRequired,
+    isNoResource: PropTypes.func.isRequired,
+    handleSetState: PropTypes.func.isRequired,
+    handleResetState: PropTypes.func.isRequired,
+    locations: PropTypes.shape({
+      allLocations: PropTypes.array,
+    }),
+    offices: PropTypes.shape({
+      allOffices: PropTypes.object,
+    }).isRequired,
+    data: PropTypes.shape({
+      fetchMore: PropTypes.func.isRequired,
+    }).isRequired,
+  };
+  static defaultProps = {
+    locations: {},
+  };
+  // #endregion
+
   state = {
     roomCapacity: 0,
-    officeList: [],
     office: '',
     location: '',
-    locationList: [],
+    search: '',
   };
-  handleInputChange = (e) => {
-    e.preventDefault();
-    // logic goes here
+  roomCapacity = React.createRef();
+
+  handleClear = () => {
+    this.roomCapacity.current.clear();
+    this.setState(
+      {
+        roomCapacity: 0,
+        office: '',
+        location: '',
+        search: '',
+      },
+      () => {
+        this.props.isResource();
+        this.props.handleResetState();
+      },
+    );
+    /* istanbul ignore next */
+    /* Reasoning: find explicit way of testing configuration options */
+    this.props.data.fetchMore({
+      variables: {
+        page: 1,
+        perPage: 5,
+      },
+      updateQuery: (prev, { fetchMoreResult }) => ({
+        ...fetchMoreResult,
+      }),
+    });
+  };
+
+  handleInputChange = (e, capacity = 0) => {
+    const { name, value } = e.target;
+    this.setState({ [name]: value, roomCapacity: capacity }, () => {
+      const { location, office, roomCapacity } = this.state;
+      /* istanbul ignore next */
+      /* Reasoning: find explicit way of testing configuration options */
+      this.props.data
+        .fetchMore({
+          variables: {
+            page: 1,
+            perPage: 5,
+            capacity: roomCapacity,
+            location,
+            office,
+          },
+          updateQuery: (prev, { fetchMoreResult }) => ({ ...fetchMoreResult }),
+        })
+        .then((result) => {
+          if (result.data) {
+            this.props.isResource();
+            this.props.handleSetState(location, roomCapacity, office);
+          }
+        })
+        .catch(() => {
+          this.props.isNoResource();
+          this.props.handleResetState();
+        });
+    });
   };
   render() {
     const {
-      roomCapacity, officeList, office, location, locationList,
+      roomCapacity, office, location, search,
     } = this.state;
+    const { allLocations } = this.props.locations;
+    const { allOffices: { offices } = {} } = this.props.offices;
+    const selectedOffices =
+      offices &&
+      offices.filter(selectedOffice => selectedOffice.location.name === this.state.location);
     const filterIcon = () => (
       <div className="filterBtn">
         <span>Filter</span>
       </div>
     );
     return (
-      <IconMenu
-        className="filter-dropdown"
-        icon={filterIcon()}
-      >
+      <IconMenu className="filter-dropdown" icon={filterIcon()} >
         <div className="filter-search">
           <Input
             id="filterSearch"
-            name="filterSearch"
+            name="search"
             type="text"
-            value=""
+            value={search}
             labelName=""
             inputClass="mrm-input filter-search-input"
             placeholder="Search"
@@ -45,10 +125,11 @@ class FilterButton extends Component {
         <div className="other-filters">
           <Select
             labelText="Location"
-            name="locationFilter"
+            isValue
+            name="location"
             id="location-filter"
             value={location}
-            options={locationList}
+            options={allLocations}
             onChange={this.handleInputChange}
             wrapperClassName="location-wrapper"
             placeholder="Select location"
@@ -57,10 +138,11 @@ class FilterButton extends Component {
           />
           <Select
             labelText="Office"
-            name="OfficeFilter"
+            name="office"
+            isValue
             id="office-filter"
             value={office}
-            options={officeList}
+            options={selectedOffices}
             onChange={this.handleInputChange}
             wrapperClassName="office-wrapper"
             placeholder="Select office"
@@ -68,6 +150,7 @@ class FilterButton extends Component {
             required
           />
           <Input
+            ref={this.roomCapacity}
             id="roomCapacity"
             name="roomCapacity"
             type="number"
@@ -83,11 +166,30 @@ class FilterButton extends Component {
           />
         </div>
         <div className="filter-footer">
-          <button className="footer-btns" onClick={this.handleClear} >Clear Filters</button>
-          <button className="footer-btns close" onClick={this.handleClose} >Close</button>
+          <button className="footer-btns" onClick={this.handleClear}>
+            Clear Filters
+          </button>
+          <button className="footer-btns close" onClick={this.handleClose}>
+            Close
+          </button>
         </div>
       </IconMenu>
     );
   }
 }
-export default FilterButton;
+export default compose(
+  graphql(GET_ROOMS_QUERY, {
+    name: 'data',
+    options: () => ({
+      variables: {
+        page: 1,
+        perPage: 5,
+        capacity: 0,
+        location: '',
+        office: '',
+      },
+    }),
+  }),
+  graphql(GET_LOCATIONS_QUERY, { name: 'locations' }),
+  graphql(GET_OFFICES, { name: 'offices' }),
+)(FilterButton);

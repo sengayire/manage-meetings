@@ -71,8 +71,8 @@ class Pagination extends Component {
           <li>Showing page</li>
           <select className="totalPage" name="page" value={page} onChange={this.handleChange}>
             {[...Array(totalPages).keys()].map(item => (
-              <option key={item}>{ item + 1 }</option>
-                    ))}
+              <option key={item}>{item + 1}</option>
+            ))}
           </select>
           <li>of</li>
           <li className="pageNum">{totalPages}</li>
@@ -85,14 +85,17 @@ class Pagination extends Component {
 
 Pagination.propTypes = {
   itemsPerPage: PropTypes.arrayOf(PropTypes.number),
-  hasNext: PropTypes.bool.isRequired,
-  hasPrevious: PropTypes.bool.isRequired,
-  totalPages: PropTypes.number.isRequired,
+  hasNext: PropTypes.bool,
+  hasPrevious: PropTypes.bool,
+  totalPages: PropTypes.number,
   handleData: PropTypes.func.isRequired,
 };
 
 Pagination.defaultProps = {
   itemsPerPage: [5, 10, 20, 50],
+  totalPages: 4,
+  hasNext: true,
+  hasPrevious: false,
 };
 
 export default Pagination;

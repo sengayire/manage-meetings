@@ -33,6 +33,7 @@ exports[`EpicTowerInputs component should render correctly 1`] = `
   />
   <SelectInput
     id="roomFloor"
+    isValue={false}
     labelText="Select Floor"
     name="roomFloor"
     onChange={[MockFunction]}
@@ -46,6 +47,7 @@ exports[`EpicTowerInputs component should render correctly 1`] = `
   />
   <SelectInput
     id="roomWing"
+    isValue={false}
     labelText="Select Wing"
     name="roomWing"
     onChange={[MockFunction]}
