@@ -9,7 +9,7 @@ exports[`Pagination Component renders without crashing 1`] = `
       className="pagination"
     >
       <select
-        className="perPage page-select"
+        className="page-select"
         name="perPage"
         onChange={[Function]}
         value={5}
@@ -35,9 +35,6 @@ exports[`Pagination Component renders without crashing 1`] = `
           50
         </option>
       </select>
-      <span
-        className="arrowDown"
-      />
       <li>
         Items per page
       </li>
@@ -53,7 +50,9 @@ exports[`Pagination Component renders without crashing 1`] = `
     >
       Previous
     </button>
-    <li>
+    <li
+      id="show"
+    >
       Showing page
     </li>
     <select
