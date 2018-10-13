@@ -3,8 +3,10 @@
 exports[`Analytics component renders correctly in memory 1`] = `
 <React.Fragment>
   <NavBar />
-  <h1>
-    Analytics
-  </h1>
+  <div
+    className="analytics-container"
+  >
+    <AnalyticsOverview />
+  </div>
 </React.Fragment>
 `;

@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Average Pie Chart Component renders correctly from memory 1`] = `
+<div
+  className="pie-chart-container"
+>
+  <MeetingDurationPieChart />
+  <RoomCapacityPieChart />
+  <AttendeesPieChart />
+</div>
+`;

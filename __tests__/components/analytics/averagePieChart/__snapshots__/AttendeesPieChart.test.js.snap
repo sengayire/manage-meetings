@@ -1,0 +1,168 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Attendees Pie Chart Component renders correctly from memory 1`] = `
+<article
+  className="pie-chart"
+>
+  <section
+    className="chart-header"
+  >
+    <p
+      className="chart-title"
+    >
+      Average No. of Attendees/ Meeting
+    </p>
+    <img
+      alt="help icon"
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      src="test-file-stub"
+    />
+  </section>
+  <section
+    className="chart-content"
+  >
+    <img
+      alt="average meeting chart"
+      src="test-file-stub"
+    />
+    <section
+      className="chart-details"
+    >
+      <p
+        className="attendees-first-circle"
+      >
+        <span />
+        130 (Yes)
+      </p>
+      <p
+        className="attendees-second-circle"
+      >
+        <span />
+        20 (Maybe)
+      </p>
+      <p
+        className="attendees-third-circle"
+      >
+        <span />
+        6 (No)
+      </p>
+    </section>
+  </section>
+</article>
+`;
+
+exports[`Attendees Pie Chart Component should be able to hover 1`] = `
+<article
+  className="pie-chart"
+>
+  <section
+    className="chart-header"
+  >
+    <div
+      className="chart-hover-info"
+      style={
+        Object {
+          "left": "300px",
+          "top": "250px",
+        }
+      }
+    >
+      Attendee hover info here!
+    </div>
+    <p
+      className="chart-title"
+    >
+      Average No. of Attendees/ Meeting
+    </p>
+    <img
+      alt="help icon"
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      src="test-file-stub"
+    />
+  </section>
+  <section
+    className="chart-content"
+  >
+    <img
+      alt="average meeting chart"
+      src="test-file-stub"
+    />
+    <section
+      className="chart-details"
+    >
+      <p
+        className="attendees-first-circle"
+      >
+        <span />
+        130 (Yes)
+      </p>
+      <p
+        className="attendees-second-circle"
+      >
+        <span />
+        20 (Maybe)
+      </p>
+      <p
+        className="attendees-third-circle"
+      >
+        <span />
+        6 (No)
+      </p>
+    </section>
+  </section>
+</article>
+`;
+
+exports[`Attendees Pie Chart Component should be able to hover 2`] = `
+<article
+  className="pie-chart"
+>
+  <section
+    className="chart-header"
+  >
+    <p
+      className="chart-title"
+    >
+      Average No. of Attendees/ Meeting
+    </p>
+    <img
+      alt="help icon"
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      src="test-file-stub"
+    />
+  </section>
+  <section
+    className="chart-content"
+  >
+    <img
+      alt="average meeting chart"
+      src="test-file-stub"
+    />
+    <section
+      className="chart-details"
+    >
+      <p
+        className="attendees-first-circle"
+      >
+        <span />
+        130 (Yes)
+      </p>
+      <p
+        className="attendees-second-circle"
+      >
+        <span />
+        20 (Maybe)
+      </p>
+      <p
+        className="attendees-third-circle"
+      >
+        <span />
+        6 (No)
+      </p>
+    </section>
+  </section>
+</article>
+`;

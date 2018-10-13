@@ -1,0 +1,168 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Meeting Duration Pie Chart Component renders correctly from memory 1`] = `
+<article
+  className="pie-chart"
+>
+  <section
+    className="chart-header"
+  >
+    <p
+      className="chart-title"
+    >
+      Average Meeting Duration
+    </p>
+    <img
+      alt="help icon"
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      src="test-file-stub"
+    />
+  </section>
+  <section
+    className="chart-content"
+  >
+    <img
+      alt="average meeting chart"
+      src="test-file-stub"
+    />
+    <section
+      className="chart-details"
+    >
+      <p
+        className="duration-first-circle"
+      >
+        <span />
+        60 Minutes
+      </p>
+      <p
+        className="duration-second-circle"
+      >
+        <span />
+        45 Minutes
+      </p>
+      <p
+        className="duration-third-circle"
+      >
+        <span />
+        30 Minutes
+      </p>
+    </section>
+  </section>
+</article>
+`;
+
+exports[`Meeting Duration Pie Chart Component should be able to hover 1`] = `
+<article
+  className="pie-chart"
+>
+  <section
+    className="chart-header"
+  >
+    <div
+      className="chart-hover-info"
+      style={
+        Object {
+          "left": "300px",
+          "top": "250px",
+        }
+      }
+    >
+      Meeting duration info here!
+    </div>
+    <p
+      className="chart-title"
+    >
+      Average Meeting Duration
+    </p>
+    <img
+      alt="help icon"
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      src="test-file-stub"
+    />
+  </section>
+  <section
+    className="chart-content"
+  >
+    <img
+      alt="average meeting chart"
+      src="test-file-stub"
+    />
+    <section
+      className="chart-details"
+    >
+      <p
+        className="duration-first-circle"
+      >
+        <span />
+        60 Minutes
+      </p>
+      <p
+        className="duration-second-circle"
+      >
+        <span />
+        45 Minutes
+      </p>
+      <p
+        className="duration-third-circle"
+      >
+        <span />
+        30 Minutes
+      </p>
+    </section>
+  </section>
+</article>
+`;
+
+exports[`Meeting Duration Pie Chart Component should be able to hover 2`] = `
+<article
+  className="pie-chart"
+>
+  <section
+    className="chart-header"
+  >
+    <p
+      className="chart-title"
+    >
+      Average Meeting Duration
+    </p>
+    <img
+      alt="help icon"
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      src="test-file-stub"
+    />
+  </section>
+  <section
+    className="chart-content"
+  >
+    <img
+      alt="average meeting chart"
+      src="test-file-stub"
+    />
+    <section
+      className="chart-details"
+    >
+      <p
+        className="duration-first-circle"
+      >
+        <span />
+        60 Minutes
+      </p>
+      <p
+        className="duration-second-circle"
+      >
+        <span />
+        45 Minutes
+      </p>
+      <p
+        className="duration-third-circle"
+      >
+        <span />
+        30 Minutes
+      </p>
+    </section>
+  </section>
+</article>
+`;

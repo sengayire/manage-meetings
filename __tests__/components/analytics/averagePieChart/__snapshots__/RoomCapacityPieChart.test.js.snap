@@ -1,0 +1,168 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Room Capacity Pie Chart Component renders correctly from memory 1`] = `
+<article
+  className="pie-chart"
+>
+  <section
+    className="chart-header"
+  >
+    <p
+      className="chart-title"
+    >
+      Average Room Capacity
+    </p>
+    <img
+      alt="help icon"
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      src="test-file-stub"
+    />
+  </section>
+  <section
+    className="chart-content"
+  >
+    <img
+      alt="average meeting chart"
+      src="test-file-stub"
+    />
+    <section
+      className="chart-details"
+    >
+      <p
+        className="room-capacity-first-circle"
+      >
+        <span />
+        Less than 10
+      </p>
+      <p
+        className="room-capacity-second-circle"
+      >
+        <span />
+        10 - 20
+      </p>
+      <p
+        className="room-capacity-third-circle"
+      >
+        <span />
+        More than 20
+      </p>
+    </section>
+  </section>
+</article>
+`;
+
+exports[`Room Capacity Pie Chart Component should be able to hover 1`] = `
+<article
+  className="pie-chart"
+>
+  <section
+    className="chart-header"
+  >
+    <div
+      className="chart-hover-info"
+      style={
+        Object {
+          "left": "300px",
+          "top": "250px",
+        }
+      }
+    >
+      Room capacity info here!
+    </div>
+    <p
+      className="chart-title"
+    >
+      Average Room Capacity
+    </p>
+    <img
+      alt="help icon"
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      src="test-file-stub"
+    />
+  </section>
+  <section
+    className="chart-content"
+  >
+    <img
+      alt="average meeting chart"
+      src="test-file-stub"
+    />
+    <section
+      className="chart-details"
+    >
+      <p
+        className="room-capacity-first-circle"
+      >
+        <span />
+        Less than 10
+      </p>
+      <p
+        className="room-capacity-second-circle"
+      >
+        <span />
+        10 - 20
+      </p>
+      <p
+        className="room-capacity-third-circle"
+      >
+        <span />
+        More than 20
+      </p>
+    </section>
+  </section>
+</article>
+`;
+
+exports[`Room Capacity Pie Chart Component should be able to hover 2`] = `
+<article
+  className="pie-chart"
+>
+  <section
+    className="chart-header"
+  >
+    <p
+      className="chart-title"
+    >
+      Average Room Capacity
+    </p>
+    <img
+      alt="help icon"
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      src="test-file-stub"
+    />
+  </section>
+  <section
+    className="chart-content"
+  >
+    <img
+      alt="average meeting chart"
+      src="test-file-stub"
+    />
+    <section
+      className="chart-details"
+    >
+      <p
+        className="room-capacity-first-circle"
+      >
+        <span />
+        Less than 10
+      </p>
+      <p
+        className="room-capacity-second-circle"
+      >
+        <span />
+        10 - 20
+      </p>
+      <p
+        className="room-capacity-third-circle"
+      >
+        <span />
+        More than 20
+      </p>
+    </section>
+  </section>
+</article>
+`;
