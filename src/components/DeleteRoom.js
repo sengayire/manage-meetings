@@ -9,19 +9,18 @@ import { GET_ROOMS_QUERY } from '../graphql/queries/Rooms';
 import notification from '../utils/notification';
 import '../assets/styles/deleteModal.scss';
 
-
 export class DeleteRoom extends Component {
   state = {
     closeModal: false,
-  }
+  };
 
   handleCloseModal = () => {
     this.setState({ closeModal: true });
-  }
+  };
 
   handleModalStateChange = () => {
     this.state.closeModal && this.setState({ closeModal: false });
-  }
+  };
 
   handleDeleteRoom = (event) => {
     event.preventDefault();
@@ -30,18 +29,19 @@ export class DeleteRoom extends Component {
       .deleteRoom(variables)
       .then(() => {
         notification(
-          toastr, 'error',
+          toastr,
+          'error',
           `'${this.props.roomName}' has been deleted successfully`,
         )();
       })
-      .catch(err => notification(toastr, 'error', err)());
+      .catch((err) => {
+        notification(toastr, 'error', err.graphQLErrors[0].message)();
+      });
     this.handleCloseModal();
-  }
+  };
 
   render() {
-    const {
-      closeModal,
-    } = this.state;
+    const { closeModal } = this.state;
 
     return (
       <MrmModal
@@ -56,9 +56,13 @@ export class DeleteRoom extends Component {
             Are you sure you want to delete {`"${this.props.roomName}"`}? <br />
             This cannot be undone
           </p>
-          <div className="modal-actions" >
-            <button id="cancel-btn" onClick={this.handleCloseModal}>CANCEL</button>
-            <button id="delete-btn" onClick={this.handleDeleteRoom}>DELETE</button>
+          <div className="modal-actions">
+            <button id="cancel-btn" onClick={this.handleCloseModal}>
+              CANCEL
+            </button>
+            <button id="delete-btn" onClick={this.handleDeleteRoom}>
+              DELETE
+            </button>
           </div>
         </div>
       </MrmModal>
@@ -73,6 +77,6 @@ DeleteRoom.propTypes = {
 };
 
 export default compose(graphql(DELETE_ROOM, {
-  name: 'deleteRoom', options: { refetchQueries: [{ query: GET_ROOMS_QUERY }] },
+  name: 'deleteRoom',
+  options: { refetchQueries: [{ query: GET_ROOMS_QUERY }] },
 }))(DeleteRoom);
-

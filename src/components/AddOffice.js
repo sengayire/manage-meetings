@@ -17,11 +17,11 @@ export class AddOffice extends Component {
       allLocations: PropTypes.array,
     }),
     addOffice: PropTypes.func.isRequired,
-  }
+  };
 
   static defaultProps = {
     locations: {},
-  }
+  };
   state = {
     officeName: '',
     officeLocation: '',
@@ -49,17 +49,24 @@ export class AddOffice extends Component {
     } else if (!officeLocation) {
       notification(toastr, 'error', 'Office location is required')();
     } else {
-      this.props.addOffice({
-        variables: {
-          locationId: officeLocation,
-          name: officeName,
-        },
-      }).then((office) => {
-        const { name } = office.data.createOffice.office;
-        notification(toastr, 'success', `${name} office has been added successfully`)();
-      }).catch(() => {
-        notification(toastr, 'error', 'Failed to add office')();
-      });
+      this.props
+        .addOffice({
+          variables: {
+            locationId: officeLocation,
+            name: officeName,
+          },
+        })
+        .then((office) => {
+          const { name } = office.data.createOffice.office;
+          notification(
+            toastr,
+            'success',
+            `${name} office has been added successfully`,
+          )();
+        })
+        .catch((err) => {
+          notification(toastr, 'error', err.graphQLErrors[0].message)();
+        });
       this.handleCloseModal();
     }
   };

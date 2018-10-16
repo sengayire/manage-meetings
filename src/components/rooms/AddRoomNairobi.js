@@ -60,14 +60,13 @@ export class AddRoomNairobi extends Component {
       const thumbnailName = getThumbnailName(files);
 
       this.setState({ thumbnailName }, () => {
-        getImageUrl(folderName, imageFile)
-          .then((imageUrl) => {
-            if (typeof (imageUrl) === 'string') {
-              this.setState({
-                imageUrl,
-              });
-            }
-          });
+        getImageUrl(folderName, imageFile).then((imageUrl) => {
+          if (typeof imageUrl === 'string') {
+            this.setState({
+              imageUrl,
+            });
+          }
+        });
       });
     }
     this.setState({ [name]: value });
@@ -84,7 +83,11 @@ export class AddRoomNairobi extends Component {
     event.preventDefault();
 
     const {
-      roomName, roomCapacity, officeBlock, officeFloor, imageUrl,
+      roomName,
+      roomCapacity,
+      officeBlock,
+      officeFloor,
+      imageUrl,
     } = this.state;
 
     const payload = formatData(
@@ -95,21 +98,34 @@ export class AddRoomNairobi extends Component {
       imageUrl,
     );
 
-    this.props.createRoom({
-      variables: payload,
-    }).then((res) => {
-      const message = res.data.createRoom.room.name;
-      notification(toastr, 'success', `'${message}' has been added successfully`)();
-    }).catch((error) => {
-      notification(toastr, 'error', `${error}`)();
-    });
+    this.props
+      .createRoom({
+        variables: payload,
+      })
+      .then((res) => {
+        const message = res.data.createRoom.room.name;
+        notification(
+          toastr,
+          'success',
+          `'${message}' has been added successfully`,
+        )();
+      })
+      .catch((error) => {
+        notification(toastr, 'error', `${error.graphQLErrors[0].message}`)();
+      });
     this.handleCloseModal();
   };
 
   render() {
     const {
-      roomName, roomCapacity, officeBlock, officeFloor, closeModal, floors,
-      thumbnailName, imageUrl,
+      roomName,
+      roomCapacity,
+      officeBlock,
+      officeFloor,
+      closeModal,
+      floors,
+      thumbnailName,
+      imageUrl,
     } = this.state;
 
     return (
@@ -150,6 +166,9 @@ AddRoomNairobi.propTypes = {
 };
 
 export default compose(
-  graphql(ADD_ROOM_ST_CATHERINE, { name: 'createRoom', options: { refetchQueries: [{ query: GET_ROOMS_QUERY }] } }),
+  graphql(ADD_ROOM_ST_CATHERINE, {
+    name: 'createRoom',
+    options: { refetchQueries: [{ query: GET_ROOMS_QUERY }] },
+  }),
   graphql(GET_NAIROBI_QUERY, { name: 'officeName' }),
 )(AddRoomNairobi);

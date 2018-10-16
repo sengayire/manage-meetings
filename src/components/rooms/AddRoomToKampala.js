@@ -14,7 +14,6 @@ import getImageUrl from '../helpers/ImageUpload';
 import getThumbnailName from '../helpers/thumbnailName';
 import hasInvalidInputs from '../helpers/InputValidators';
 
-
 export class AddRoomToTheCrest extends Component {
   state = {
     roomType: 'meeting',
@@ -34,7 +33,14 @@ export class AddRoomToTheCrest extends Component {
 
     /* istanbul ignore next */
     if (officeDetails.getOfficeByName) {
-      const { getOfficeByName: [{ id, blocks: [{ floors }] }] } = officeDetails;
+      const {
+        getOfficeByName: [
+          {
+            id,
+            blocks: [{ floors }],
+          },
+        ],
+      } = officeDetails;
       const floorOptions = floors;
       const officeId = id;
       this.setState({
@@ -42,7 +48,7 @@ export class AddRoomToTheCrest extends Component {
         officeId,
       });
     }
-  }
+  };
 
   handleCloseModal = () => {
     this.setState({
@@ -64,20 +70,17 @@ export class AddRoomToTheCrest extends Component {
       case 'selectImage':
         /* Shorten the length of the thumbnail name in case its too long */
         thumbnailName = getThumbnailName(files);
-        this.setState(
-          { thumbnailName, uploading: true },
-          () => {
-            getImageUrl('upload/', files[0]).then((url) => {
-              imageUrl = url;
-              if (typeof (imageUrl) === 'string') {
-                this.setState({
-                  imageUrl,
-                  uploading: false,
-                });
-              }
-            });
-          },
-        );
+        this.setState({ thumbnailName, uploading: true }, () => {
+          getImageUrl('upload/', files[0]).then((url) => {
+            imageUrl = url;
+            if (typeof imageUrl === 'string') {
+              this.setState({
+                imageUrl,
+                uploading: false,
+              });
+            }
+          });
+        });
         break;
 
       case 'roomName':
@@ -109,37 +112,54 @@ export class AddRoomToTheCrest extends Component {
   handleAddRoom = (event) => {
     event.preventDefault();
     const {
-      roomType, roomName, roomFloor, roomCapacity,
-      roomCalendar, officeId, imageUrl,
+      roomType,
+      roomName,
+      roomFloor,
+      roomCapacity,
+      roomCalendar,
+      officeId,
+      imageUrl,
     } = this.state;
 
     if (!hasInvalidInputs(this.state)) {
-      this.props.crestMutation({
-        variables: {
-          roomType,
-          roomName,
-          roomFloorId: roomFloor,
-          roomCapacity,
-          roomCalendar,
-          roomImageUrl: imageUrl,
-          office_id: officeId,
-        },
-      }).then((res) => {
-        this.handleCloseModal();
-        /** Notify user of sucess of adding of room */
-        notification(toastr, 'success', `${res.data.createRoom.room.name} Sucessfully added`)();
-        /** Clear the state and restore default values */
-      })
+      this.props
+        .crestMutation({
+          variables: {
+            roomType,
+            roomName,
+            roomFloorId: roomFloor,
+            roomCapacity,
+            roomCalendar,
+            roomImageUrl: imageUrl,
+            office_id: officeId,
+          },
+        })
+        .then((res) => {
+          this.handleCloseModal();
+          /** Notify user of sucess of adding of room */
+          notification(
+            toastr,
+            'success',
+            `${res.data.createRoom.room.name} Sucessfully added`,
+          )();
+          /** Clear the state and restore default values */
+        })
         .catch((err) => {
           /** Notify user on failure to add room */
 
           notification(toastr, 'error', err.message)();
         });
     }
-  }
+  };
   render() {
     const {
-      roomName, roomFloor, roomCapacity, closeModal, imageUrl, thumbnailName, floorOptions,
+      roomName,
+      roomFloor,
+      roomCapacity,
+      closeModal,
+      imageUrl,
+      thumbnailName,
+      floorOptions,
     } = this.state;
 
     let floorOptionsList = floorOptions;

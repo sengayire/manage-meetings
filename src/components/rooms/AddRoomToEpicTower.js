@@ -47,7 +47,7 @@ export class AddRoomToEpicTower extends Component {
         officeId,
       });
     }
-  }
+  };
 
   handleCloseModal = () => {
     this.setState({
@@ -62,7 +62,9 @@ export class AddRoomToEpicTower extends Component {
   };
 
   handleInputChange = (event, num) => {
-    const { target: { name, value, files } } = event;
+    const {
+      target: { name, value, files },
+    } = event;
     let thumbnailName;
     let intValue;
     let imageUrl;
@@ -72,23 +74,20 @@ export class AddRoomToEpicTower extends Component {
       case 'selectImage':
         /* Shorten the length of the thumbnail name in case its too long */
         thumbnailName = getThumbnailName(files);
-        this.setState(
-          { thumbnailName, uploading: true },
-          () => {
+        this.setState({ thumbnailName, uploading: true }, () => {
           /** pass a folder name and the file object to the getImageUrl function
            *  and expect a url to be returned from firebase
            */
-            getImageUrl('upload/', files[0]).then((url) => {
-              imageUrl = url;
-              if (typeof (imageUrl) === 'string') {
-                this.setState({
-                  imageUrl,
-                  uploading: false,
-                });
-              }
-            });
-          },
-        );
+          getImageUrl('upload/', files[0]).then((url) => {
+            imageUrl = url;
+            if (typeof imageUrl === 'string') {
+              this.setState({
+                imageUrl,
+                uploading: false,
+              });
+            }
+          });
+        });
         break;
 
       case 'roomName':
@@ -97,11 +96,14 @@ export class AddRoomToEpicTower extends Component {
 
       case 'roomFloor':
         intValue = parseInt(value, 10);
-        this.setState({ [name]: intValue, roomWing: 0, wingOptions: [] }, () => {
-          this.setState({
-            wingOptions: wingsObject[intValue],
-          });
-        });
+        this.setState(
+          { [name]: intValue, roomWing: 0, wingOptions: [] },
+          () => {
+            this.setState({
+              wingOptions: wingsObject[intValue],
+            });
+          },
+        );
         break;
       case 'roomCapacity':
         intValue = value === '' ? 0 : value;
@@ -130,27 +132,39 @@ export class AddRoomToEpicTower extends Component {
   handleAddRoom = (event) => {
     event.preventDefault();
     const {
-      roomType, roomWing, roomName, roomFloor, roomCapacity,
-      roomCalendar, officeId, imageUrl,
+      roomType,
+      roomWing,
+      roomName,
+      roomFloor,
+      roomCapacity,
+      roomCalendar,
+      officeId,
+      imageUrl,
     } = this.state;
     if (!hasInvalidInputs(this.state)) {
-      this.props.epicTowerMutation({
-        variables: {
-          roomType,
-          roomWingId: roomWing,
-          roomName,
-          roomFloorId: roomFloor,
-          roomCapacity,
-          roomCalendar,
-          roomImageUrl: imageUrl,
-          office_id: officeId,
-        },
-      }).then((res) => {
-        this.handleCloseModal();
-        /** Notify user of sucess of adding of room */
-        notification(toastr, 'success', `${res.data.createRoom.room.name} Sucessfully added`)();
-        /** Clear the state and restore default values */
-      })
+      this.props
+        .epicTowerMutation({
+          variables: {
+            roomType,
+            roomWingId: roomWing,
+            roomName,
+            roomFloorId: roomFloor,
+            roomCapacity,
+            roomCalendar,
+            roomImageUrl: imageUrl,
+            office_id: officeId,
+          },
+        })
+        .then((res) => {
+          this.handleCloseModal();
+          /** Notify user of sucess of adding of room */
+          notification(
+            toastr,
+            'success',
+            `${res.data.createRoom.room.name} Sucessfully added`,
+          )();
+          /** Clear the state and restore default values */
+        })
         .catch((err) => {
           /** Notify user on failure to add room */
 
@@ -161,8 +175,15 @@ export class AddRoomToEpicTower extends Component {
 
   render() {
     const {
-      roomName, roomWing, wingOptions, roomFloor, floorOptions, roomCapacity, closeModal,
-      thumbnailName, imageUrl,
+      roomName,
+      roomWing,
+      wingOptions,
+      roomFloor,
+      floorOptions,
+      roomCapacity,
+      closeModal,
+      thumbnailName,
+      imageUrl,
     } = this.state;
     let floorOptionsList = floorOptions;
     const { officeDetails } = this.props;
@@ -179,7 +200,10 @@ export class AddRoomToEpicTower extends Component {
         handleCloseRequest={this.handleModalStateChange}
         className="add-room-modal"
       >
-        <form className="modal-form epic-tower-form" onSubmit={this.handleAddRoom}>
+        <form
+          className="modal-form epic-tower-form"
+          onSubmit={this.handleAddRoom}
+        >
           <SelectImage
             onChange={this.handleInputChange}
             thumbnailName={thumbnailName}

@@ -2,9 +2,8 @@ import gql from 'graphql-tag';
 
 const ADD_OFFICE_MUTATION = gql`
   mutation createOffice($locationId: Int!, $name: String!) {
-    createOffice(locationId: $locationId, name: $name){
-      office{
-        id
+    createOffice(locationId: $locationId, name: $name) {
+      office {
         name
       }
     }
@@ -12,9 +11,9 @@ const ADD_OFFICE_MUTATION = gql`
 `;
 
 const DELETE_OFFICE_MUTATION = gql`
-  mutation deleteOffice($officeId: Int!){
-    deleteOffice(officeId: $officeId){
-      office{
+  mutation deleteOffice($officeId: Int!) {
+    deleteOffice(officeId: $officeId) {
+      office {
         id
         name
       }
@@ -24,8 +23,8 @@ const DELETE_OFFICE_MUTATION = gql`
 
 const EDIT_OFFICE_MUTATION = gql`
   mutation updateOffice($officeId: Int!, $name: String!) {
-    updateOffice(officeId: $officeId, name: $name){
-      office{
+    updateOffice(officeId: $officeId, name: $name) {
+      office {
         id
         name
       }
@@ -33,4 +32,8 @@ const EDIT_OFFICE_MUTATION = gql`
   }
 `;
 
-export { ADD_OFFICE_MUTATION as default, DELETE_OFFICE_MUTATION, EDIT_OFFICE_MUTATION };
+export {
+  ADD_OFFICE_MUTATION as default,
+  DELETE_OFFICE_MUTATION,
+  EDIT_OFFICE_MUTATION,
+};
