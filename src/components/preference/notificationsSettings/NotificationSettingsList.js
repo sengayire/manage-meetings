@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import notificationSettings from '../../../fixtures/notificationSettings';
 import NotificationSetting from './NotificationSetting';
 import '../../../assets/styles/notificationSettingsList.scss';
-import CancelledEvent from '../emailTemplates/CancelledEvent';
+// import CancelledEvent from '../emailTemplates/CancelledEvent';
 
 const notificationComponent = notificationSettings.map(notification => (
   <NotificationSetting
@@ -21,7 +21,7 @@ const NotificationSettingsList = () => (
       <h1>Notification Settings</h1>
       {notificationComponent}
     </section>
-    <CancelledEvent />
+    {/* <CancelledEvent /> */}
   </Fragment>
 );
 

@@ -43,7 +43,7 @@ exports[`Login component should redirect to another page when a token is present
   </Component>
   <LoginButton>
     <a
-      href="https://api-staging.andela.com/login?redirect_url=http://mrm-dev.andela.com:8080"
+      href="undefined=undefined"
     >
       <input
         alt="Login With Your Email"
@@ -98,7 +98,7 @@ exports[`Login component should redirect to another page when a user successfull
   </Component>
   <LoginButton>
     <a
-      href="https://api-staging.andela.com/login?redirect_url=http://mrm-dev.andela.com:8080"
+      href="undefined=undefined"
     >
       <input
         alt="Login With Your Email"
