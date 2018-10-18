@@ -2,8 +2,10 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import AnalyticsOverview from '../../src/containers/AnalyticsOverview';
 
-describe('Analytics Overview Component', () => {
-  it('renders correctly from memory', () => {
-    expect(shallow(<AnalyticsOverview />)).toMatchSnapshot();
+describe('Analytics component', () => {
+  const wrapper = shallow(<AnalyticsOverview />);
+
+  it('renders correctly in memory', () => {
+    expect(wrapper).toMatchSnapshot();
   });
 });

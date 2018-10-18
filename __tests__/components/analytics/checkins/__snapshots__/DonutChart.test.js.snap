@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Checkins component should render properly 1`] = `
+<div
+  className="donut-chart"
+>
+  <div
+    className="chart-header"
+  >
+    <p>
+      Pie Chart
+    </p>
+    <div
+      className="hint"
+    >
+      <img
+        alt="help icon"
+        src="test-file-stub"
+      />
+      <div
+        className="hint-text"
+      >
+        <p>
+          Pie Chart
+        </p>
+      </div>
+    </div>
+  </div>
+  <div
+    className="chart-content"
+  >
+    <div
+      className="chart diagram"
+    >
+      <img
+        alt="chart-svg"
+        src=""
+      />
+      <p>
+        0
+        %
+      </p>
+    </div>
+    <div
+      className="chart text"
+    >
+      <p>
+        0
+        /
+        10
+      </p>
+      <p>
+        Meeting
+      </p>
+    </div>
+  </div>
+</div>
+`;

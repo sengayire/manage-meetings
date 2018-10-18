@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Checkins component should render properly 1`] = `
+<div
+  className="checkins"
+>
+  <DonutChart
+    chartSvg="test-file-stub"
+    chartTitle="% of Checkins"
+    entries={15}
+    hasInfo={true}
+    hintText="% of Checkins pie chart"
+    percentage={75}
+    total={20}
+  />
+  <DonutChart
+    chartSvg="test-file-stub"
+    chartTitle="% of App Bookings"
+    entries={4}
+    hasInfo={true}
+    hintText="% of App Bookings pie chart"
+    percentage={20}
+    total={20}
+  />
+  <DonutChart
+    chartSvg="test-file-stub"
+    chartTitle="Average Room Utilisation"
+    entries={16}
+    hasInfo={false}
+    hintText="Average Room Utilisation pie chart"
+    percentage={80}
+    total={20}
+  />
+</div>
+`;

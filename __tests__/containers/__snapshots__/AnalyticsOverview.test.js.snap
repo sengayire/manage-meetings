@@ -1,7 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Analytics Overview Component renders correctly from memory 1`] = `
+exports[`Analytics component renders correctly in memory 1`] = `
 <React.Fragment>
   <AveragePieChartList />
+  <Checkins />
 </React.Fragment>
 `;

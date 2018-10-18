@@ -1,0 +1,100 @@
+.donut-chart {
+	height: 270px;
+    min-width: 400px;
+    width: 412px;
+    max-width: 600px;
+	border-radius: 4px;
+	background-color: #FFFFFF;
+    box-shadow: 0 1px 5px 0 rgba(0,0,0,0.1);
+    box-sizing: border-box;
+    padding: 25px 30px;
+    margin: 0 0.9375em;
+    flex-grow: 1;
+    &:first-child{
+        margin-left: 0px;
+    }
+    &:last-child{
+        margin-right: 0px;
+    }
+
+    .chart-header{
+        display: flex;
+        justify-content: space-between;
+
+        p{
+            font-size: 1rem;
+            display: inline-block;
+            color: #333E44;
+        }
+        .hint{
+            position: relative;
+            display: inline-block;
+            .hint-text{
+                display: none;
+                position: absolute;
+                top: 25px;
+                padding: 0 12px;
+                box-sizing: border-box;
+                min-width: 100px;
+                border-radius: 4px;
+                background-color: #FFFFFF;
+                box-shadow: 0 2px 5px 0 rgba(0,0,0,0.1);
+                p{
+                    line-height: 1rem;
+                    font-size: 12px;
+                    color: #4F4F4F;
+                }
+            }
+            img{
+                display: inline;
+                &:hover {
+                    & + .hint-text {
+                        display: block;
+                    }
+                }
+            }
+        }
+        
+    }
+    .chart-content{
+        display: flex;
+        justify-content: center;
+        padding-top: 14px;
+        .chart{
+            margin-left: 20px;
+            width: 160px;
+            height: 160px;
+        }
+        .diagram{
+            position: relative;
+            img{
+                height: 160px; width: 160px;
+            }
+            p{
+                position: absolute;
+                top: calc(50% - 1rem);
+                left: calc(50% - 1rem);
+                font-size: 1.5rem;
+                font-weight: bold;
+                color: #333E44;
+            }
+        }
+        .text{
+            display: flex;
+            justify-content: center;
+            align-items: left;
+            flex-flow: column;
+            
+            p{
+                font-size: 18px;
+                margin-left: 40px;
+                margin-bottom: 8px;
+                color: #6D6D6D;
+            }
+            p:first-child{
+                font-size: 1.5rem;
+                font-weight: bold;
+            }
+        }
+    }
+}
