@@ -1,0 +1,139 @@
+@font-face {
+  font-family: 'DINPro-Light';
+  src: url(../fonts/DINPro-Light.otf);
+}
+
+.average-meeting {
+  background: #ffffff;
+  margin: 30px 0 60px;
+
+  .average-meeting-control {
+    border-bottom: 1px solid #E4E4E4;
+    height: 66px;
+
+    .header-title {
+      margin: 0;
+      padding: 26px 32px 19px;
+      color: #333E44;
+      font-family: 'DINPro';
+      font-size: 16px;
+      float: left;
+
+      &:before {
+        content: url('../images/timer_blue.svg');
+        display: inline-block;
+        vertical-align: middle;
+        line-height: normal;
+        padding-right: 10px;
+      }
+    }
+
+    .moreVerticalIcon {
+      float: right;
+      padding: 26px 32px 19px;
+      color: #333E44;
+      font-family: 'DINPro';
+      font-size: 16px;
+
+      &:after {
+        content: url('../images/more_vert.svg');
+      }
+    }
+  }
+
+  .average-meeting-list {
+
+    padding: 0 32px;
+
+    table {
+      padding: 0 32px;
+      width: 100%;
+      border-collapse: collapse;
+
+      thead {
+        tr {
+          th {
+            padding: 15px 0;
+            font-weight: 900;
+            text-align: left;
+            color: #333E44;
+            font-family: 'DINPro-Regular', sans-serif;
+            font-size: 15px;
+
+            &:first-child {
+              width: 50%;
+
+              @media screen and (max-width: 425px) {
+                width: 24%;
+              }
+
+              @media screen and (min-width: 500px) and (max-width: 1023px) {
+                width: 35%;
+              }
+            }
+
+            &:last-child {
+              @media screen and (max-width: 425px) {
+                width: 30%;
+              }
+
+              @media screen and (min-width: 500px) and (max-width: 1023px) {
+                width: 33%;
+              }
+            }
+          }
+        }
+      }
+
+      tbody {
+        tr {
+          border-bottom: 1px solid #E4E4E4;
+
+          &:last-child {
+            border: none;
+          }
+
+          td {
+            padding: 20px 0;
+            color: #6D6D6D;
+            font-family: 'DINPro-Regular', sans-serif;
+            font-size: 15px;
+          }
+        }
+      }
+
+    }
+  }
+
+  .average-meeting-pagination {
+    border-top: 1px solid #E4E4E4;
+    padding: 0 32px;
+
+    .perPageBlock {
+      display: none;
+    }
+
+    .showingBlock {
+      width: 100%;
+
+      .pagination {
+        justify-content: space-between;
+
+        .pageNum.reverse {
+          color: #999999;
+          padding: 0;
+          margin-left: 0;
+        }
+
+        li {
+          padding: 0;
+          margin: 0;
+        }
+
+        .results {
+          display: flex;
+        }
+      }
+    }
+  }
+}

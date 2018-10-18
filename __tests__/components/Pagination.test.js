@@ -45,6 +45,7 @@ describe('Pagination Component', () => {
       hasNext: true,
       hasPrevious: true,
       handleData: jest.fn(),
+      reverse: true,
     };
     const newPaginationWrapper = shallow(<Pagination {...newProps} />);
     expect(newPaginationWrapper.instance().props.hasPrevious).toEqual(true);

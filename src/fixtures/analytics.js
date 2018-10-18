@@ -1,0 +1,73 @@
+const avaerageMeetings = [{
+  id: 1,
+  name: 'Accra',
+  meetingsCount: 22,
+  attendees: 5,
+  duration: '50 Minutes',
+},
+{
+  id: 2,
+  name: 'Antananarivo',
+  meetingsCount: 101,
+  attendees: 3,
+  duration: '1 Hour 15 Minutes',
+},
+{
+  id: 3,
+  name: 'Asmara',
+  meetingsCount: 14,
+  attendees: 3,
+  duration: '60 Minutes',
+},
+{
+  id: 4,
+  name: 'Brazzaville',
+  meetingsCount: 73,
+  attendees: 2,
+  duration: '45 Minutes',
+},
+{
+  id: 5,
+  name: 'Cairo',
+  meetingsCount: 14,
+  attendees: 1,
+  duration: '1 Hour',
+},
+{
+  id: 6,
+  name: 'Ol Karia',
+  meetingsCount: 50,
+  attendees: 2,
+  duration: '1 Hour',
+},
+{
+  id: 7,
+  name: 'Cairo',
+  meetingsCount: 120,
+  attendees: 3,
+  duration: '1 Hour',
+},
+{
+  id: 8,
+  name: 'Dakar',
+  meetingsCount: 13,
+  attendees: 13,
+  duration: '1 Hour',
+},
+{
+  id: 9,
+  name: 'Addis',
+  meetingsCount: 43,
+  attendees: 11,
+  duration: '1 Hour',
+},
+{
+  id: 10,
+  name: 'Asmara',
+  meetingsCount: 13,
+  attendees: 13,
+  duration: '1 Hour',
+},
+];
+
+export default avaerageMeetings;

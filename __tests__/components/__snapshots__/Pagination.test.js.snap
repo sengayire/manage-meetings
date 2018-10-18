@@ -4,7 +4,9 @@ exports[`Pagination Component renders without crashing 1`] = `
 <nav
   className="page-navigation"
 >
-  <div>
+  <div
+    className="perPageBlock"
+  >
     <ul
       className="pagination"
     >
@@ -40,63 +42,74 @@ exports[`Pagination Component renders without crashing 1`] = `
       </li>
     </ul>
   </div>
-  <ul
-    className="pagination"
+  <div
+    className="showingBlock"
   >
-    <button
-      className="disabled"
-      id="previous"
-      onClick={[Function]}
+    <ul
+      className="pagination"
     >
-      Previous
-    </button>
-    <li
-      id="show"
-    >
-      Showing page
-    </li>
-    <select
-      className="totalPage"
-      name="page"
-      onChange={[Function]}
-      value={1}
-    >
-      <option
-        key="0"
+      <li>
+        <button
+          className="disabled"
+          id="previous"
+          onClick={[Function]}
+        >
+          Previous
+        </button>
+      </li>
+      <li
+        className="results"
       >
-        1
-      </option>
-      <option
-        key="1"
-      >
-        2
-      </option>
-      <option
-        key="2"
-      >
-        3
-      </option>
-      <option
-        key="3"
-      >
-        4
-      </option>
-    </select>
-    <li>
-      of
-    </li>
-    <li
-      className="pageNum"
-    >
-      4
-    </li>
-    <button
-      className="enabled"
-      id="next"
-      onClick={[Function]}
-    >
-      Next
-    </button>
-  </ul>
+        <ul>
+          <span>
+            Showing 
+            page
+          </span>
+          <select
+            className="totalPage"
+            name="page"
+            onChange={[Function]}
+            value={1}
+          >
+            <option
+              key="0"
+            >
+              1
+            </option>
+            <option
+              key="1"
+            >
+              2
+            </option>
+            <option
+              key="2"
+            >
+              3
+            </option>
+            <option
+              key="3"
+            >
+              4
+            </option>
+          </select>
+          <span
+            className="pageNum"
+          >
+             of 
+            4
+          </span>
+        </ul>
+      </li>
+      <li>
+        <button
+          className="enabled"
+          id="next"
+          onClick={[Function]}
+        >
+          Next
+        </button>
+      </li>
+    </ul>
+  </div>
 </nav>
 `;

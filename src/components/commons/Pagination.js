@@ -48,12 +48,12 @@ class Pagination extends Component {
   render() {
     const { page, perPage } = this.state;
     const {
-      itemsPerPage, totalPages, hasNext, hasPrevious,
+      itemsPerPage, totalPages, hasNext, hasPrevious, reverse,
     } = this.props;
 
     return (
       <nav className="page-navigation">
-        <div>
+        <div className="perPageBlock">
           <ul className="pagination">
             <select
               className="page-select"
@@ -66,36 +66,28 @@ class Pagination extends Component {
             <li>Items per page</li>
           </ul>
         </div>
-
-        <ul className="pagination">
-          <button
-            id="previous"
-            onClick={this.handlePrevious}
-            className={hasPrevious ? 'enabled' : 'disabled'}
-          >
-            Previous
-          </button>
-          <li id="show">Showing page</li>
-          <select
-            className="totalPage"
-            name="page"
-            value={page}
-            onChange={this.handleChange}
-          >
-            {[...Array(totalPages).keys()].map(item => (
-              <option key={item}>{item + 1}</option>
-            ))}
-          </select>
-          <li>of</li>
-          <li className="pageNum">{totalPages}</li>
-          <button
-            id="next"
-            onClick={this.handleNext}
-            className={hasNext ? 'enabled' : 'disabled'}
-          >
-            Next
-          </button>
-        </ul>
+        <div className="showingBlock">
+          <ul className="pagination">
+            <li>
+              <button id="previous" onClick={this.handlePrevious} className={hasPrevious ? 'enabled' : 'disabled'}>Previous</button>
+            </li>
+            <li className="results">
+              <ul>
+                <span>Showing {reverse ? '' : 'page'}</span>
+                <select className="totalPage" name="page" value={page} onChange={this.handleChange}>
+                  {[...Array(totalPages).keys()].map(item => (
+                    <option key={item}>{ item + 1 }</option>
+                ))}
+                </select>
+                {!reverse && <span className="pageNum"> of {totalPages}</span>}
+                {reverse && <span className="pageNum reverse"> of {totalPages} Results</span>}
+              </ul>
+            </li>
+            <li>
+              <button id="next" onClick={this.handleNext} className={hasNext ? 'enabled' : 'disabled'}>Next</button>
+            </li>
+          </ul>
+        </div>
       </nav>
     );
   }
@@ -107,6 +99,7 @@ Pagination.propTypes = {
   hasPrevious: PropTypes.bool,
   totalPages: PropTypes.number,
   handleData: PropTypes.func.isRequired,
+  reverse: PropTypes.bool,
 };
 
 Pagination.defaultProps = {
@@ -114,6 +107,7 @@ Pagination.defaultProps = {
   totalPages: 4,
   hasNext: true,
   hasPrevious: false,
+  reverse: false,
 };
 
 export default Pagination;
