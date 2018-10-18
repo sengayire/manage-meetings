@@ -4486,11 +4486,7 @@ exports[`RoomList Component renders correctly from memory 1`] = `
             ],
             "kind": "Document",
             "loc": Object {
-<<<<<<< HEAD
               "end": 464,
-=======
-              "end": 350,
->>>>>>> chore(delete user): Admin should not be able to delete users (#80)
               "start": 0,
             },
           }

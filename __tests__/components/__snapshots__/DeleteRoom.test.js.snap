@@ -1515,9 +1515,9 @@ exports[`DeleteOffice Test Suite should pop up a modal when delete button is cli
                       <p
                         id="confirm-msg"
                       >
-                        Are you sure you want to delete
+                        Are you sure you want to delete 
                         "Rabat"
-                        ?
+                        ? 
                         <br />
                         This cannot be undone
                       </p>

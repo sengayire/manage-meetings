@@ -4,5 +4,6 @@ exports[`Analytics component renders correctly in memory 1`] = `
 <React.Fragment>
   <AveragePieChartList />
   <Checkins />
+  <ComposedBookedRooms />
 </React.Fragment>
 `;

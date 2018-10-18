@@ -1,0 +1,109 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BookedRooms component should render correctly 1`] = `
+<div
+  className="wrap-booked-room"
+>
+  <div
+    className="booked-room-header"
+  >
+    <img
+      alt="Pull"
+      src=""
+    />
+    <h4 />
+    <img
+      alt="More"
+      className=""
+      src=""
+    />
+  </div>
+  <div
+    className="booked-room-list"
+  >
+    <table>
+      <TableHead
+        titles={
+          Array [
+            "Room",
+            "Meetings",
+            "% Share of All Meetings",
+          ]
+        }
+      />
+      <tbody>
+        <tr
+          id="booked-room-body"
+          key="1"
+        >
+          <td>
+            Accra
+          </td>
+          <td>
+            22
+          </td>
+          <td>
+            20%
+          </td>
+        </tr>
+        <tr
+          id="booked-room-body"
+          key="2"
+        >
+          <td>
+            Antananarivo
+          </td>
+          <td>
+            18
+          </td>
+          <td>
+            13%
+          </td>
+        </tr>
+        <tr
+          id="booked-room-body"
+          key="3"
+        >
+          <td>
+            Asmara
+          </td>
+          <td>
+            14
+          </td>
+          <td>
+            11%
+          </td>
+        </tr>
+        <tr
+          id="booked-room-body"
+          key="4"
+        >
+          <td>
+            Brazzaville
+          </td>
+          <td>
+            13
+          </td>
+          <td>
+            9%
+          </td>
+        </tr>
+        <tr
+          id="booked-room-body"
+          key="5"
+        >
+          <td>
+            Cairo
+          </td>
+          <td>
+            13
+          </td>
+          <td>
+            9
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+`;

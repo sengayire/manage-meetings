@@ -1,0 +1,100 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BookedRoomsHOC Component should renders correctly 1`] = `
+<BookedRooms
+  bookedRoomText="Most Booked Rooms"
+  bookedRoomsList={
+    Array [
+      Object {
+        "id": 1,
+        "meeting": 22,
+        "name": "Accra",
+        "shareOfAllMeeting": "20%",
+      },
+      Object {
+        "id": 2,
+        "meeting": 18,
+        "name": "Antananarivo",
+        "shareOfAllMeeting": "13%",
+      },
+      Object {
+        "id": 3,
+        "meeting": 14,
+        "name": "Asmara",
+        "shareOfAllMeeting": "11%",
+      },
+      Object {
+        "id": 4,
+        "meeting": 13,
+        "name": "Brazzaville",
+        "shareOfAllMeeting": "9%",
+      },
+      Object {
+        "id": 5,
+        "meeting": 13,
+        "name": "Cairo",
+        "shareOfAllMeeting": "9",
+      },
+    ]
+  }
+  moreIcon="test-file-stub"
+  pollIcon="test-file-stub"
+/>
+`;
+
+exports[`BookedRoomsHOC Component should renders correctly 2`] = `
+<BookedRooms
+  bookedRoomText="Least Booked Rooms"
+  bookedRoomsList={
+    Array [
+      Object {
+        "id": 1,
+        "meeting": 1,
+        "name": "Accra",
+        "shareOfAllMeeting": "0.5%",
+      },
+      Object {
+        "id": 2,
+        "meeting": 1,
+        "name": "Antananarivo",
+        "shareOfAllMeeting": "1%",
+      },
+      Object {
+        "id": 3,
+        "meeting": 2,
+        "name": "Asmara",
+        "shareOfAllMeeting": "1%",
+      },
+      Object {
+        "id": 4,
+        "meeting": 13,
+        "name": "Brazzaville",
+        "shareOfAllMeeting": "9%",
+      },
+      Object {
+        "id": 5,
+        "meeting": 13,
+        "name": "Cairo",
+        "shareOfAllMeeting": "9%",
+      },
+    ]
+  }
+  moreIcon="test-file-stub"
+  pollIcon="test-file-stub"
+/>
+`;
+
+exports[`BookedRoomsHOC Component should renders correctly 3`] = `
+<div
+  className="wrap-composed-rooms"
+>
+  <div>
+    <Component />
+  </div>
+  <div
+    id="booked-room-margin"
+  >
+    <Component />
+  </div>
+</div>
+`;
