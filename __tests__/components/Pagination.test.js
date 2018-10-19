@@ -61,3 +61,4 @@ describe('Pagination Component', () => {
     expect(newPaginationWrapper.instance().props.hasNext).toEqual(false);
   });
 });
+

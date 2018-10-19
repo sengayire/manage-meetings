@@ -114,14 +114,14 @@ export class RoomsList extends React.Component {
             </table>
           </div>
         ) : (
-          <h2 style={{ marginLeft: '0' }}>No Resource Found</h2>
+          <h2 style={{ marginLeft: '0' }}>No Rooms Found</h2>
         )}
-        <Pagination
+        { noResource ? (<Pagination
           totalPages={allRooms.pages}
           hasNext={allRooms.hasNext}
           hasPrevious={allRooms.hasPrevious}
           handleData={this.handleData}
-        />
+        />) : null }
       </div>
     );
   }
