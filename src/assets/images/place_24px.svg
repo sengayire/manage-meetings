@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="14px" height="20px" viewBox="0 0 14 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 52.1 (67048) - http://www.bohemiancoding.com/sketch -->
+    <title>AB26792B-0FFB-4130-B7F3-683440E7F643</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <path d="M135,10 C131.13,10 128,13.13 128,17 C128,21.17 132.42,26.92 134.24,29.11 C134.64,29.59 135.37,29.59 135.77,29.11 C137.58,26.92 142,21.17 142,17 C142,13.13 138.87,10 135,10 Z M135,19.5 C133.62,19.5 132.5,18.38 132.5,17 C132.5,15.62 133.62,14.5 135,14.5 C136.38,14.5 137.5,15.62 137.5,17 C137.5,18.38 136.38,19.5 135,19.5 Z" id="path-1"></path>
+    </defs>
+    <g id="Web" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Analytics-&gt;-Calendar-Options" transform="translate(-1088.000000, -204.000000)">
+            <g id="Location-picker" transform="translate(960.000000, 194.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <use id="icon/maps/place_24px" fill="#FFAF30" fill-rule="nonzero" xlink:href="#path-1"></use>
+            </g>
+        </g>
+    </g>
+</svg>
