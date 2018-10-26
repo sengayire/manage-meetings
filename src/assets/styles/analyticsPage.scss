@@ -12,7 +12,6 @@
         margin: 21px 29.5px 0 0;
         width: 180px !important;
         height: 50px !important;
-        // padding-top: 15px !important; 
     }
     
     .btn-left .btn-color {
@@ -52,6 +51,7 @@
 
 
         .overViewBtn{
+            margin-top: -3px;
             z-index: -2px;
             margin-right: 29px;
             &:before {
@@ -76,7 +76,9 @@
             }
         }
 
+
         .overViewBtnToggle{
+            margin-top: -3px;
             z-index: -2px;
             margin-right: 29px;
             &:before {
@@ -104,11 +106,11 @@
             &:before {
                 content: url('../images/calendar_today_grey_24px.svg');
                 margin-left: 15.5px;
-                padding-top: 15px;
+                padding-top: 40px !important;
                 height: 12px;
                 width: 22px;
-                position: auto;
-                
+                position: auto; 
+                vertical-align: sub;    
             }        
             span{
                 color: #4F4F4F!important;
@@ -131,6 +133,7 @@
                 height: 12px;
                 width: 22px;
                 position: auto;
+                vertical-align: sub;
                 
             }        
             span{
@@ -147,13 +150,13 @@
 
         .locationIconBtn{
             width: 161px;
-            height: 41px;
             margin-right: 29px;
             &:after {
                 content: url('../images/place_24px.svg');
                 margin-left: 59px;
                 margin-right: 15px;
                 position: auto;
+                vertical-align: sub !important; 
             }        
             span{
                 color: #6D6D6D!important;
@@ -163,7 +166,6 @@
                 margin-left: 0px!important;
                 margin-bottom: 35px;
                 height: 42px;
-                vertical-align: bottom !important;
                 width: 21px;
             }
         }
@@ -177,16 +179,15 @@
                 margin-left: 59px;
                 margin-right: 15px;
                 position: auto;
+                vertical-align: sub; 
             }        
             span{
                 color: #6D6D6D!important;
-                // font-weight: bold;
                 font-size: 15px;
                 text-transform: none !important;
                 margin-left: 0px!important;
                 margin-bottom: 35px;
                 height: 42px;
-                vertical-align: bottom !important;
                 width: 21px;
             }
         }
@@ -195,7 +196,6 @@
                 font-family: 'DINPro';
                 width: 161px;
                 height: 41px;
-                // padding-top: 11.5px;
                 vertical-align: middle;
                 box-shadow: 0 0 0 0 rgba(0,0,0,0.1);
             }
@@ -257,6 +257,7 @@
             position: relative;
             margin: 2px 0 2px 12px;
             vertical-align: bottom;
+            padding: 8px 0 11px 0
         }
         .theme--field--36UDgxsw:hover {
             background-color: #F8F8F8;
@@ -335,7 +336,7 @@
             height: 180px;
             box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
             z-index: 1;
-            margin-top: 3px;
+            margin-top: 16px;
         }
 
         .dropdown-content-null {
@@ -344,10 +345,10 @@
         
         .dropdown-content a {
             color: #3359DB;
-            padding: 16px 16px 5px 16px;;
+            padding: 20px 16px 5px 16px;;
             text-decoration: none;
             display: block;
-            height: 21px;
+            height: 8px;
             width: 150px;
         }
 
@@ -356,6 +357,7 @@
             cursor: default !important;
             height: 18px;
             margin-top: 10px;
+            border-bottom: 1px solid #EBEBEB;
         }
 
         .dropdown-content .download-dropdown-label:hover {
@@ -380,7 +382,7 @@
         }
 
     #location-btn {
-        padding-top: 5px !important;
+        padding-top: 8px !important;
     }
 
     #calendar-btn {
@@ -389,6 +391,7 @@
 
     #calendar-btn .theme--toggle--hC5Z2BVI {
         border-radius: none !important;
-        top: -5px;
+        bottom: 11px;
+        padding-top: 10px;
      }
     }
