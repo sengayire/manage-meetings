@@ -6,15 +6,17 @@
 .average-meeting {
   background: #ffffff;
   margin: 30px 0 60px;
+  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
 
   .average-meeting-control {
-    border-bottom: 1px solid #E4E4E4;
+    border-bottom: 1px solid #e4e4e4;
     height: 66px;
 
     .header-title {
       margin: 0;
       padding: 26px 32px 19px;
-      color: #333E44;
+      color: #333e44;
       font-family: 'DINPro';
       font-size: 16px;
       float: left;
@@ -31,7 +33,7 @@
     .moreVerticalIcon {
       float: right;
       padding: 26px 32px 19px;
-      color: #333E44;
+      color: #333e44;
       font-family: 'DINPro';
       font-size: 16px;
 
@@ -42,7 +44,6 @@
   }
 
   .average-meeting-list {
-
     padding: 0 32px;
 
     table {
@@ -56,7 +57,7 @@
             padding: 15px 0;
             font-weight: 900;
             text-align: left;
-            color: #333E44;
+            color: #333e44;
             font-family: 'DINPro-Regular', sans-serif;
             font-size: 15px;
 
@@ -87,7 +88,7 @@
 
       tbody {
         tr {
-          border-bottom: 1px solid #E4E4E4;
+          border-bottom: 1px solid #e4e4e4;
 
           &:last-child {
             border: none;
@@ -95,18 +96,17 @@
 
           td {
             padding: 20px 0;
-            color: #6D6D6D;
+            color: #6d6d6d;
             font-family: 'DINPro-Regular', sans-serif;
             font-size: 15px;
           }
         }
       }
-
     }
   }
 
   .average-meeting-pagination {
-    border-top: 1px solid #E4E4E4;
+    border-top: 1px solid #e4e4e4;
     padding: 0 32px;
 
     .perPageBlock {
