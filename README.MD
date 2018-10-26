@@ -5,14 +5,17 @@
 The Andela Meeting Room management solution
 
 ### Product Road Map
-check the product scope and roadmap [Link]#()
+check the product scope and roadmap [here](https://docs.google.com/spreadsheets/d/1Uc5q1sCm4n-71K5iyiu7t5_uRKgRCqNl1nh1BZp15s4/edit#gid=0)
 
 ### Getting started
 
 #### Prerquisites
-Ensure you have [NodeJS](https://nodejs.org/en/) environment and [YARN](https://github.com/airbnb/javascript) package manager globally installed on your system.
+Ensure you have [NodeJS](https://nodejs.org/en/) environment and [YARN](https://yarnpkg.com/en/) package manager globally installed on your system.
 
 #### Installing
+    $ git clone https://github.com/andela/mrm_front.git
+    $ cd mrm_front
+    $ yarn install
 
 #### Running the application
 ##### 1. Setting environment variables
@@ -45,6 +48,7 @@ yarn start
 
 
 #### Running tests
+`yarn test --coverage`
 
 ### Built With
 * [ReactJS](https://reactjs.org/) - The javascript client library.
