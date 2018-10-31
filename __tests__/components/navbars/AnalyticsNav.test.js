@@ -4,15 +4,11 @@ import AnalyticsNav from '../../../src/components/navbars/AnalyticsNav';
 
 describe('AnalyticsNav Component', () => {
   const toggleMenu = jest.fn();
-  const wrapper = mount(<AnalyticsNav
-    onClick={toggleMenu}
-    onBlur={toggleMenu}
-  />);
+  const wrapper = mount(<AnalyticsNav onClick={toggleMenu} onBlur={toggleMenu} />);
 
   const event = {
     preventDefault: jest.fn(),
   };
-
 
   it('renders properly', () => {
     expect(wrapper).toMatchSnapshot();
@@ -20,7 +16,7 @@ describe('AnalyticsNav Component', () => {
 
   it('should have a div', () => {
     const div = wrapper.find('div');
-    expect(div).toHaveLength(20);
+    expect(div).toHaveLength(100);
   });
   it('should have a IconMenu', () => {
     const IconMenu = wrapper.find('IconMenu');
@@ -38,7 +34,6 @@ describe('AnalyticsNav Component', () => {
     const button = wrapper.find('button');
     expect(button).toHaveLength(5);
   });
-
 
   it('should have a button', () => {
     wrapper.setState({
@@ -58,7 +53,6 @@ describe('AnalyticsNav Component', () => {
     expect(wrapper.state().view).toEqual('activity');
   });
 
-
   it('should call handleChange', () => {
     const action = wrapper.instance();
     const handleChange = jest.spyOn(wrapper.instance(), 'handleChange');
@@ -67,7 +61,10 @@ describe('AnalyticsNav Component', () => {
   });
   it('should call handleStateChange', () => {
     const action = wrapper.instance();
-    const handleStateChange = jest.spyOn(wrapper.instance(), 'handleStateChange');
+    const handleStateChange = jest.spyOn(
+      wrapper.instance(),
+      'handleStateChange',
+    );
     action.handleStateChange(event);
     expect(handleStateChange).toBeCalled();
   });

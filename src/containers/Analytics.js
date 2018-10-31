@@ -14,5 +14,4 @@ const Analytics = () => (
   </Fragment>
 );
 
-
 export default Analytics;
