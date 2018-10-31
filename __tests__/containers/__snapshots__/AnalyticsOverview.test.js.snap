@@ -5,6 +5,8 @@ exports[`AnalyticsOverview Component renders properly 1`] = `
   <AveragePieChartList />
   <ComposedBookedRooms />
   <Checkins />
-  <AvarageMeetingList />
+  <AverageMeetingList
+    dateValue="Today"
+  />
 </React.Fragment>
 `;

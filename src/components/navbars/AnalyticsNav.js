@@ -13,6 +13,7 @@ export class AnalyticsActivity extends Component {
   state = {
     view: 'activity',
     menuOpen: false,
+    value: 'Today',
   };
 
   handleStateChange = (event) => {
@@ -76,7 +77,7 @@ export class AnalyticsActivity extends Component {
     );
     const calendarIcon = () => (
       <div className="calendarIconBtn">
-        <span>Today</span>
+        <span>{this.state.value}</span>
       </div>
     );
 
@@ -113,9 +114,9 @@ export class AnalyticsActivity extends Component {
                 <div className="date-label">Date options</div>
                 <RadioButton value="Today" label="Today" />
                 <RadioButton value="Tomorrow" label="Tomorrow" />
-                <RadioButton value="thisWeek" label="This week" className="radioGroup-test1" />
-                <RadioButton value="thisMonth" label="This month" />
-                <RadioButton value="pickDate" label="Pick a Date" />
+                <RadioButton value="This Week" label="This week" className="radioGroup-test1" />
+                <RadioButton value="This Month" label="This month" />
+                <RadioButton value="Pick a Date" label="Pick a Date" />
               </RadioGroup>
             </IconMenu>
 
@@ -142,7 +143,7 @@ export class AnalyticsActivity extends Component {
           </div>
         </div>
 
-        {view === 'overview' && <AnalyticsOverview />}
+        {view === 'overview' && <AnalyticsOverview dateValue={this.state.value} />}
         {view === 'activity' && <AnalyticsAct />}
       </div>
     );

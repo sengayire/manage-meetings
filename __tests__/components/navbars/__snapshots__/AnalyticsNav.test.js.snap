@@ -611,12 +611,14 @@ exports[`AnalyticsNav Component renders properly 1`] = `
                         key=".0"
                         mapThemrProps={[Function]}
                         onChange={[Function]}
+                        value="Today"
                       >
                         <RadioGroup
                           className="radio-wrapper"
                           disabled={false}
                           onChange={[Function]}
                           theme={Object {}}
+                          value="Today"
                         >
                           <div
                             className="radio-wrapper"
@@ -629,7 +631,7 @@ exports[`AnalyticsNav Component renders properly 1`] = `
                               Date options
                             </div>
                             <ThemedRadioButton
-                              checked={false}
+                              checked={true}
                               className=""
                               composeTheme="deeply"
                               disabled={false}
@@ -640,7 +642,7 @@ exports[`AnalyticsNav Component renders properly 1`] = `
                               value="Today"
                             >
                               <RadioButton
-                                checked={false}
+                                checked={true}
                                 className=""
                                 disabled={false}
                                 label="Today"
@@ -653,7 +655,7 @@ exports[`AnalyticsNav Component renders properly 1`] = `
                                   data-react-toolbox="radio-button"
                                 >
                                   <input
-                                    checked={false}
+                                    checked={true}
                                     disabled={false}
                                     onChange={[Function]}
                                     onClick={[Function]}
@@ -661,7 +663,7 @@ exports[`AnalyticsNav Component renders properly 1`] = `
                                     value="Today"
                                   />
                                   <ThemedRippledComponent
-                                    checked={false}
+                                    checked={true}
                                     composeTheme="deeply"
                                     disabled={false}
                                     mapThemrProps={[Function]}
@@ -673,7 +675,7 @@ exports[`AnalyticsNav Component renders properly 1`] = `
                                     theme={Object {}}
                                   >
                                     <RippledComponent
-                                      checked={false}
+                                      checked={true}
                                       disabled={false}
                                       ripple={true}
                                       rippleCentered={true}
@@ -683,7 +685,7 @@ exports[`AnalyticsNav Component renders properly 1`] = `
                                       theme={Object {}}
                                     >
                                       <Radio
-                                        checked={false}
+                                        checked={true}
                                         disabled={false}
                                         onMouseDown={[Function]}
                                         onTouchStart={[Function]}
@@ -789,7 +791,7 @@ exports[`AnalyticsNav Component renders properly 1`] = `
                               label="This week"
                               mapThemrProps={[Function]}
                               onChange={[Function]}
-                              value="thisWeek"
+                              value="This Week"
                             >
                               <RadioButton
                                 checked={false}
@@ -798,7 +800,7 @@ exports[`AnalyticsNav Component renders properly 1`] = `
                                 label="This week"
                                 onChange={[Function]}
                                 theme={Object {}}
-                                value="thisWeek"
+                                value="This Week"
                               >
                                 <label
                                   className="radioGroup-test1"
@@ -810,7 +812,7 @@ exports[`AnalyticsNav Component renders properly 1`] = `
                                     onChange={[Function]}
                                     onClick={[Function]}
                                     type="radio"
-                                    value="thisWeek"
+                                    value="This Week"
                                   />
                                   <ThemedRippledComponent
                                     checked={false}
@@ -865,7 +867,7 @@ exports[`AnalyticsNav Component renders properly 1`] = `
                               label="This month"
                               mapThemrProps={[Function]}
                               onChange={[Function]}
-                              value="thisMonth"
+                              value="This Month"
                             >
                               <RadioButton
                                 checked={false}
@@ -874,7 +876,7 @@ exports[`AnalyticsNav Component renders properly 1`] = `
                                 label="This month"
                                 onChange={[Function]}
                                 theme={Object {}}
-                                value="thisMonth"
+                                value="This Month"
                               >
                                 <label
                                   className=""
@@ -886,7 +888,7 @@ exports[`AnalyticsNav Component renders properly 1`] = `
                                     onChange={[Function]}
                                     onClick={[Function]}
                                     type="radio"
-                                    value="thisMonth"
+                                    value="This Month"
                                   />
                                   <ThemedRippledComponent
                                     checked={false}
@@ -941,7 +943,7 @@ exports[`AnalyticsNav Component renders properly 1`] = `
                               label="Pick a Date"
                               mapThemrProps={[Function]}
                               onChange={[Function]}
-                              value="pickDate"
+                              value="Pick a Date"
                             >
                               <RadioButton
                                 checked={false}
@@ -950,7 +952,7 @@ exports[`AnalyticsNav Component renders properly 1`] = `
                                 label="Pick a Date"
                                 onChange={[Function]}
                                 theme={Object {}}
-                                value="pickDate"
+                                value="Pick a Date"
                               >
                                 <label
                                   className=""
@@ -962,7 +964,7 @@ exports[`AnalyticsNav Component renders properly 1`] = `
                                     onChange={[Function]}
                                     onClick={[Function]}
                                     type="radio"
-                                    value="pickDate"
+                                    value="Pick a Date"
                                   />
                                   <ThemedRippledComponent
                                     checked={false}
