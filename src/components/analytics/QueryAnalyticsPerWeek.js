@@ -2,11 +2,11 @@ import React from 'react';
 import { Query } from 'react-apollo';
 import ProgressBar from 'react-toolbox/lib/progress_bar';
 import Pagination from '../commons/Pagination';
-import { ANALYTICS_MEETING_ROOM_PER_MONTH } from '../../graphql/queries/analytics';
+import { ANALYTICS_MEETING_ROOM_PER_WEEK } from '../../graphql/queries/analytics';
 import timeConvert from '../helpers/timeConverter';
 
-const QueryAnalyticsPerMonth = () => (
-  <Query query={ANALYTICS_MEETING_ROOM_PER_MONTH}>
+const QueryAnalyticsPerWeek = () => (
+  <Query query={ANALYTICS_MEETING_ROOM_PER_WEEK}>
     {({ loading, error, data }) => {
       if (loading) {
         return (
@@ -25,7 +25,7 @@ const QueryAnalyticsPerMonth = () => (
         );
       }
 
-      const { MeetingsDurationaAnalytics } = data.monthlyDurationsOfMeetings;
+      const { MeetingsDurationaAnalytics } = data.weeklyDurationsOfMeetings;
 
       return MeetingsDurationaAnalytics.map(({ roomName, count, totalDuration }) => (
         <tr key={roomName}>
@@ -38,8 +38,8 @@ const QueryAnalyticsPerMonth = () => (
   </Query>
 );
 
-export const QueryAnalyticsPerMonthPagination = () => (
+export const QueryAnalyticsPerWeekPagination = () => (
   <Pagination totalPages={50} hasNext hasPrevious={false} handleData={() => {}} reverse />
 );
 
-export default QueryAnalyticsPerMonth;
+export default QueryAnalyticsPerWeek;

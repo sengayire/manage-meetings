@@ -1,4 +1,4 @@
-import ANALYTICS_MEETING_ROOM_PER_MONTH from '../../src/graphql/queries/analytics';
+import { ANALYTICS_MEETING_ROOM_PER_MONTH } from '../../src/graphql/queries/analytics';
 
 const queryPerMonthData = [
   {

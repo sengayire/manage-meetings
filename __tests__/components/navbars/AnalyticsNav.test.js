@@ -53,10 +53,20 @@ describe('AnalyticsNav Component', () => {
     expect(wrapper.state().view).toEqual('activity');
   });
 
+  it('should have a button', () => {
+    wrapper.setState({
+      value: 'Today',
+    });
+    const action = wrapper.instance();
+    action.showActivityView();
+    expect(wrapper.state().value).toEqual('Today');
+  });
+
+
   it('should call handleChange', () => {
     const action = wrapper.instance();
     const handleChange = jest.spyOn(wrapper.instance(), 'handleChange');
-    action.handleChange();
+    action.handleChange('Today');
     expect(handleChange).toBeCalled();
   });
   it('should call handleStateChange', () => {

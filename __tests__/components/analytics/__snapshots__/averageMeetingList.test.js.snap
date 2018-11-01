@@ -1,0 +1,3381 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AverageMeetingList component should render correctly 1`] = `
+<MockedProvider
+  addTypename={false}
+  mocks={
+    Array [
+      Object {
+        "request": Object {
+          "definitions": Array [
+            Object {
+              "directives": Array [],
+              "kind": "OperationDefinition",
+              "name": undefined,
+              "operation": "query",
+              "selectionSet": Object {
+                "kind": "SelectionSet",
+                "selections": Array [
+                  Object {
+                    "alias": undefined,
+                    "arguments": Array [
+                      Object {
+                        "kind": "Argument",
+                        "name": Object {
+                          "kind": "Name",
+                          "value": "month",
+                        },
+                        "value": Object {
+                          "block": false,
+                          "kind": "StringValue",
+                          "value": "Oct",
+                        },
+                      },
+                      Object {
+                        "kind": "Argument",
+                        "name": Object {
+                          "kind": "Name",
+                          "value": "year",
+                        },
+                        "value": Object {
+                          "kind": "IntValue",
+                          "value": "2018",
+                        },
+                      },
+                    ],
+                    "directives": Array [],
+                    "kind": "Field",
+                    "name": Object {
+                      "kind": "Name",
+                      "value": "monthlyDurationsOfMeetings",
+                    },
+                    "selectionSet": Object {
+                      "kind": "SelectionSet",
+                      "selections": Array [
+                        Object {
+                          "alias": undefined,
+                          "arguments": Array [],
+                          "directives": Array [],
+                          "kind": "Field",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "MeetingsDurationaAnalytics",
+                          },
+                          "selectionSet": Object {
+                            "kind": "SelectionSet",
+                            "selections": Array [
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "roomName",
+                                },
+                                "selectionSet": undefined,
+                              },
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "count",
+                                },
+                                "selectionSet": undefined,
+                              },
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "totalDuration",
+                                },
+                                "selectionSet": undefined,
+                              },
+                            ],
+                          },
+                        },
+                      ],
+                    },
+                  },
+                ],
+              },
+              "variableDefinitions": Array [],
+            },
+          ],
+          "kind": "Document",
+          "loc": Object {
+            "end": 238,
+            "start": 0,
+          },
+        },
+        "result": Object {
+          "data": Object {
+            "monthlyDurationsOfMeetings": Object {
+              "MeetingsDurationaAnalytics": Array [
+                Object {
+                  "count": 78,
+                  "roomName": "Tortuga",
+                  "totalDuration": 5547,
+                },
+                Object {
+                  "count": 73,
+                  "roomName": "Accra",
+                  "totalDuration": 3313,
+                },
+              ],
+            },
+          },
+        },
+      },
+    ]
+  }
+>
+  <ApolloProvider
+    client={
+      ApolloClient {
+        "__operations_cache__": Map {
+          "data" => Object {
+            "query": Object {
+              "definitions": Array [
+                Object {
+                  "directives": Array [],
+                  "kind": "OperationDefinition",
+                  "name": undefined,
+                  "operation": "query",
+                  "selectionSet": Object {
+                    "kind": "SelectionSet",
+                    "selections": Array [
+                      Object {
+                        "alias": undefined,
+                        "arguments": Array [
+                          Object {
+                            "kind": "Argument",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "month",
+                            },
+                            "value": Object {
+                              "block": false,
+                              "kind": "StringValue",
+                              "value": "Oct",
+                            },
+                          },
+                          Object {
+                            "kind": "Argument",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "year",
+                            },
+                            "value": Object {
+                              "kind": "IntValue",
+                              "value": "2018",
+                            },
+                          },
+                        ],
+                        "directives": Array [],
+                        "kind": "Field",
+                        "name": Object {
+                          "kind": "Name",
+                          "value": "monthlyDurationsOfMeetings",
+                        },
+                        "selectionSet": Object {
+                          "kind": "SelectionSet",
+                          "selections": Array [
+                            Object {
+                              "alias": undefined,
+                              "arguments": Array [],
+                              "directives": Array [],
+                              "kind": "Field",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "MeetingsDurationaAnalytics",
+                              },
+                              "selectionSet": Object {
+                                "kind": "SelectionSet",
+                                "selections": Array [
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "roomName",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "count",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "totalDuration",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
+                                ],
+                              },
+                            },
+                          ],
+                        },
+                      },
+                    ],
+                  },
+                  "variableDefinitions": Array [],
+                },
+              ],
+              "kind": "Document",
+              "loc": Object {
+                "end": 238,
+                "start": 0,
+              },
+            },
+            "variables": undefined,
+          },
+        },
+        "cache": InMemoryCache {
+          "addTypename": false,
+          "config": Object {
+            "addTypename": false,
+            "dataIdFromObject": [Function],
+            "fragmentMatcher": HeuristicFragmentMatcher {},
+            "storeFactory": [Function],
+          },
+          "data": ObjectCache {
+            "data": Object {},
+          },
+          "optimistic": Array [],
+          "silenceBroadcast": false,
+          "watches": Array [
+            Object {
+              "callback": [Function],
+              "optimistic": true,
+              "previousResult": [Function],
+              "query": Object {
+                "definitions": Array [
+                  Object {
+                    "directives": Array [],
+                    "kind": "OperationDefinition",
+                    "name": undefined,
+                    "operation": "query",
+                    "selectionSet": Object {
+                      "kind": "SelectionSet",
+                      "selections": Array [
+                        Object {
+                          "alias": undefined,
+                          "arguments": Array [
+                            Object {
+                              "kind": "Argument",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "month",
+                              },
+                              "value": Object {
+                                "block": false,
+                                "kind": "StringValue",
+                                "value": "Oct",
+                              },
+                            },
+                            Object {
+                              "kind": "Argument",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "year",
+                              },
+                              "value": Object {
+                                "kind": "IntValue",
+                                "value": "2018",
+                              },
+                            },
+                          ],
+                          "directives": Array [],
+                          "kind": "Field",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "monthlyDurationsOfMeetings",
+                          },
+                          "selectionSet": Object {
+                            "kind": "SelectionSet",
+                            "selections": Array [
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "MeetingsDurationaAnalytics",
+                                },
+                                "selectionSet": Object {
+                                  "kind": "SelectionSet",
+                                  "selections": Array [
+                                    Object {
+                                      "alias": undefined,
+                                      "arguments": Array [],
+                                      "directives": Array [],
+                                      "kind": "Field",
+                                      "name": Object {
+                                        "kind": "Name",
+                                        "value": "roomName",
+                                      },
+                                      "selectionSet": undefined,
+                                    },
+                                    Object {
+                                      "alias": undefined,
+                                      "arguments": Array [],
+                                      "directives": Array [],
+                                      "kind": "Field",
+                                      "name": Object {
+                                        "kind": "Name",
+                                        "value": "count",
+                                      },
+                                      "selectionSet": undefined,
+                                    },
+                                    Object {
+                                      "alias": undefined,
+                                      "arguments": Array [],
+                                      "directives": Array [],
+                                      "kind": "Field",
+                                      "name": Object {
+                                        "kind": "Name",
+                                        "value": "totalDuration",
+                                      },
+                                      "selectionSet": undefined,
+                                    },
+                                  ],
+                                },
+                              },
+                            ],
+                          },
+                        },
+                      ],
+                    },
+                    "variableDefinitions": Array [],
+                  },
+                ],
+                "kind": "Document",
+                "loc": Object {
+                  "end": 238,
+                  "start": 0,
+                },
+              },
+              "variables": undefined,
+            },
+          ],
+        },
+        "defaultOptions": Object {},
+        "disableNetworkFetches": false,
+        "link": ApolloLink {
+          "request": [Function],
+        },
+        "mutate": [Function],
+        "query": [Function],
+        "queryDeduplication": true,
+        "queryManager": QueryManager {
+          "dataStore": DataStore {
+            "cache": InMemoryCache {
+              "addTypename": false,
+              "config": Object {
+                "addTypename": false,
+                "dataIdFromObject": [Function],
+                "fragmentMatcher": HeuristicFragmentMatcher {},
+                "storeFactory": [Function],
+              },
+              "data": ObjectCache {
+                "data": Object {},
+              },
+              "optimistic": Array [],
+              "silenceBroadcast": false,
+              "watches": Array [
+                Object {
+                  "callback": [Function],
+                  "optimistic": true,
+                  "previousResult": [Function],
+                  "query": Object {
+                    "definitions": Array [
+                      Object {
+                        "directives": Array [],
+                        "kind": "OperationDefinition",
+                        "name": undefined,
+                        "operation": "query",
+                        "selectionSet": Object {
+                          "kind": "SelectionSet",
+                          "selections": Array [
+                            Object {
+                              "alias": undefined,
+                              "arguments": Array [
+                                Object {
+                                  "kind": "Argument",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "month",
+                                  },
+                                  "value": Object {
+                                    "block": false,
+                                    "kind": "StringValue",
+                                    "value": "Oct",
+                                  },
+                                },
+                                Object {
+                                  "kind": "Argument",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "year",
+                                  },
+                                  "value": Object {
+                                    "kind": "IntValue",
+                                    "value": "2018",
+                                  },
+                                },
+                              ],
+                              "directives": Array [],
+                              "kind": "Field",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "monthlyDurationsOfMeetings",
+                              },
+                              "selectionSet": Object {
+                                "kind": "SelectionSet",
+                                "selections": Array [
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "MeetingsDurationaAnalytics",
+                                    },
+                                    "selectionSet": Object {
+                                      "kind": "SelectionSet",
+                                      "selections": Array [
+                                        Object {
+                                          "alias": undefined,
+                                          "arguments": Array [],
+                                          "directives": Array [],
+                                          "kind": "Field",
+                                          "name": Object {
+                                            "kind": "Name",
+                                            "value": "roomName",
+                                          },
+                                          "selectionSet": undefined,
+                                        },
+                                        Object {
+                                          "alias": undefined,
+                                          "arguments": Array [],
+                                          "directives": Array [],
+                                          "kind": "Field",
+                                          "name": Object {
+                                            "kind": "Name",
+                                            "value": "count",
+                                          },
+                                          "selectionSet": undefined,
+                                        },
+                                        Object {
+                                          "alias": undefined,
+                                          "arguments": Array [],
+                                          "directives": Array [],
+                                          "kind": "Field",
+                                          "name": Object {
+                                            "kind": "Name",
+                                            "value": "totalDuration",
+                                          },
+                                          "selectionSet": undefined,
+                                        },
+                                      ],
+                                    },
+                                  },
+                                ],
+                              },
+                            },
+                          ],
+                        },
+                        "variableDefinitions": Array [],
+                      },
+                    ],
+                    "kind": "Document",
+                    "loc": Object {
+                      "end": 238,
+                      "start": 0,
+                    },
+                  },
+                  "variables": undefined,
+                },
+              ],
+            },
+          },
+          "deduplicator": ApolloLink {
+            "request": [Function],
+          },
+          "fetchQueryPromises": Map {},
+          "idCounter": 3,
+          "link": ApolloLink {
+            "request": [Function],
+          },
+          "mutationStore": MutationStore {
+            "store": Object {},
+          },
+          "onBroadcast": [Function],
+          "queries": Map {
+            "1" => Object {
+              "cancel": [Function],
+              "document": Object {
+                "definitions": Array [
+                  Object {
+                    "directives": Array [],
+                    "kind": "OperationDefinition",
+                    "name": undefined,
+                    "operation": "query",
+                    "selectionSet": Object {
+                      "kind": "SelectionSet",
+                      "selections": Array [
+                        Object {
+                          "alias": undefined,
+                          "arguments": Array [
+                            Object {
+                              "kind": "Argument",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "month",
+                              },
+                              "value": Object {
+                                "block": false,
+                                "kind": "StringValue",
+                                "value": "Oct",
+                              },
+                            },
+                            Object {
+                              "kind": "Argument",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "year",
+                              },
+                              "value": Object {
+                                "kind": "IntValue",
+                                "value": "2018",
+                              },
+                            },
+                          ],
+                          "directives": Array [],
+                          "kind": "Field",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "monthlyDurationsOfMeetings",
+                          },
+                          "selectionSet": Object {
+                            "kind": "SelectionSet",
+                            "selections": Array [
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "MeetingsDurationaAnalytics",
+                                },
+                                "selectionSet": Object {
+                                  "kind": "SelectionSet",
+                                  "selections": Array [
+                                    Object {
+                                      "alias": undefined,
+                                      "arguments": Array [],
+                                      "directives": Array [],
+                                      "kind": "Field",
+                                      "name": Object {
+                                        "kind": "Name",
+                                        "value": "roomName",
+                                      },
+                                      "selectionSet": undefined,
+                                    },
+                                    Object {
+                                      "alias": undefined,
+                                      "arguments": Array [],
+                                      "directives": Array [],
+                                      "kind": "Field",
+                                      "name": Object {
+                                        "kind": "Name",
+                                        "value": "count",
+                                      },
+                                      "selectionSet": undefined,
+                                    },
+                                    Object {
+                                      "alias": undefined,
+                                      "arguments": Array [],
+                                      "directives": Array [],
+                                      "kind": "Field",
+                                      "name": Object {
+                                        "kind": "Name",
+                                        "value": "totalDuration",
+                                      },
+                                      "selectionSet": undefined,
+                                    },
+                                  ],
+                                },
+                              },
+                            ],
+                          },
+                        },
+                      ],
+                    },
+                    "variableDefinitions": Array [],
+                  },
+                ],
+                "kind": "Document",
+                "loc": Object {
+                  "end": 238,
+                  "start": 0,
+                },
+              },
+              "invalidate": false,
+              "invalidated": false,
+              "lastRequestId": 2,
+              "listeners": Array [
+                [Function],
+              ],
+              "newData": null,
+              "observableQuery": ObservableQuery {
+                "_subscriber": [Function],
+                "isCurrentlyPolling": false,
+                "isTornDown": false,
+                "lastError": [Error: Network error: No more mocked responses for the query: {
+  monthlyDurationsOfMeetings(month: "Oct", year: 2018) {
+    MeetingsDurationaAnalytics {
+      roomName
+      count
+      totalDuration
+    }
+  }
+}
+, variables: {}],
+                "lastResult": undefined,
+                "observers": Array [
+                  SubscriptionObserver {
+                    "_subscription": Subscription {
+                      "_cleanup": [Function],
+                      "_observer": Object {
+                        "error": [Function],
+                        "next": [Function],
+                      },
+                      "_queue": undefined,
+                      "_state": "ready",
+                    },
+                  },
+                ],
+                "options": Object {
+                  "context": Object {},
+                  "metadata": Object {
+                    "reactComponent": Object {
+                      "displayName": "Query",
+                    },
+                  },
+                  "notifyOnNetworkStatusChange": false,
+                  "query": Object {
+                    "definitions": Array [
+                      Object {
+                        "directives": Array [],
+                        "kind": "OperationDefinition",
+                        "name": undefined,
+                        "operation": "query",
+                        "selectionSet": Object {
+                          "kind": "SelectionSet",
+                          "selections": Array [
+                            Object {
+                              "alias": undefined,
+                              "arguments": Array [
+                                Object {
+                                  "kind": "Argument",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "month",
+                                  },
+                                  "value": Object {
+                                    "block": false,
+                                    "kind": "StringValue",
+                                    "value": "Oct",
+                                  },
+                                },
+                                Object {
+                                  "kind": "Argument",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "year",
+                                  },
+                                  "value": Object {
+                                    "kind": "IntValue",
+                                    "value": "2018",
+                                  },
+                                },
+                              ],
+                              "directives": Array [],
+                              "kind": "Field",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "monthlyDurationsOfMeetings",
+                              },
+                              "selectionSet": Object {
+                                "kind": "SelectionSet",
+                                "selections": Array [
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "MeetingsDurationaAnalytics",
+                                    },
+                                    "selectionSet": Object {
+                                      "kind": "SelectionSet",
+                                      "selections": Array [
+                                        Object {
+                                          "alias": undefined,
+                                          "arguments": Array [],
+                                          "directives": Array [],
+                                          "kind": "Field",
+                                          "name": Object {
+                                            "kind": "Name",
+                                            "value": "roomName",
+                                          },
+                                          "selectionSet": undefined,
+                                        },
+                                        Object {
+                                          "alias": undefined,
+                                          "arguments": Array [],
+                                          "directives": Array [],
+                                          "kind": "Field",
+                                          "name": Object {
+                                            "kind": "Name",
+                                            "value": "count",
+                                          },
+                                          "selectionSet": undefined,
+                                        },
+                                        Object {
+                                          "alias": undefined,
+                                          "arguments": Array [],
+                                          "directives": Array [],
+                                          "kind": "Field",
+                                          "name": Object {
+                                            "kind": "Name",
+                                            "value": "totalDuration",
+                                          },
+                                          "selectionSet": undefined,
+                                        },
+                                      ],
+                                    },
+                                  },
+                                ],
+                              },
+                            },
+                          ],
+                        },
+                        "variableDefinitions": Array [],
+                      },
+                    ],
+                    "kind": "Document",
+                    "loc": Object {
+                      "end": 238,
+                      "start": 0,
+                    },
+                  },
+                },
+                "queryId": "1",
+                "queryManager": [Circular],
+                "scheduler": QueryScheduler {
+                  "inFlightQueries": Object {},
+                  "intervalQueries": Object {},
+                  "pollingTimers": Object {},
+                  "queryManager": [Circular],
+                  "registeredQueries": Object {},
+                  "ssrMode": false,
+                },
+                "shouldSubscribe": true,
+                "subscriptionHandles": Array [],
+                "variables": Object {},
+              },
+              "subscriptions": Array [],
+            },
+          },
+          "queryDeduplication": true,
+          "queryIdsByName": Object {},
+          "queryStore": QueryStore {
+            "store": Object {
+              "1": Object {
+                "document": Object {
+                  "definitions": Array [
+                    Object {
+                      "directives": Array [],
+                      "kind": "OperationDefinition",
+                      "name": undefined,
+                      "operation": "query",
+                      "selectionSet": Object {
+                        "kind": "SelectionSet",
+                        "selections": Array [
+                          Object {
+                            "alias": undefined,
+                            "arguments": Array [
+                              Object {
+                                "kind": "Argument",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "month",
+                                },
+                                "value": Object {
+                                  "block": false,
+                                  "kind": "StringValue",
+                                  "value": "Oct",
+                                },
+                              },
+                              Object {
+                                "kind": "Argument",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "year",
+                                },
+                                "value": Object {
+                                  "kind": "IntValue",
+                                  "value": "2018",
+                                },
+                              },
+                            ],
+                            "directives": Array [],
+                            "kind": "Field",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "monthlyDurationsOfMeetings",
+                            },
+                            "selectionSet": Object {
+                              "kind": "SelectionSet",
+                              "selections": Array [
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "MeetingsDurationaAnalytics",
+                                  },
+                                  "selectionSet": Object {
+                                    "kind": "SelectionSet",
+                                    "selections": Array [
+                                      Object {
+                                        "alias": undefined,
+                                        "arguments": Array [],
+                                        "directives": Array [],
+                                        "kind": "Field",
+                                        "name": Object {
+                                          "kind": "Name",
+                                          "value": "roomName",
+                                        },
+                                        "selectionSet": undefined,
+                                      },
+                                      Object {
+                                        "alias": undefined,
+                                        "arguments": Array [],
+                                        "directives": Array [],
+                                        "kind": "Field",
+                                        "name": Object {
+                                          "kind": "Name",
+                                          "value": "count",
+                                        },
+                                        "selectionSet": undefined,
+                                      },
+                                      Object {
+                                        "alias": undefined,
+                                        "arguments": Array [],
+                                        "directives": Array [],
+                                        "kind": "Field",
+                                        "name": Object {
+                                          "kind": "Name",
+                                          "value": "totalDuration",
+                                        },
+                                        "selectionSet": undefined,
+                                      },
+                                    ],
+                                  },
+                                },
+                              ],
+                            },
+                          },
+                        ],
+                      },
+                      "variableDefinitions": Array [],
+                    },
+                  ],
+                  "kind": "Document",
+                  "loc": Object {
+                    "end": 238,
+                    "start": 0,
+                  },
+                },
+                "graphQLErrors": Array [],
+                "metadata": Object {
+                  "reactComponent": Object {
+                    "displayName": "Query",
+                  },
+                },
+                "networkError": [Error: No more mocked responses for the query: {
+  monthlyDurationsOfMeetings(month: "Oct", year: 2018) {
+    MeetingsDurationaAnalytics {
+      roomName
+      count
+      totalDuration
+    }
+  }
+}
+, variables: {}],
+                "networkStatus": 8,
+                "previousVariables": null,
+                "variables": Object {},
+              },
+            },
+          },
+          "scheduler": QueryScheduler {
+            "inFlightQueries": Object {},
+            "intervalQueries": Object {},
+            "pollingTimers": Object {},
+            "queryManager": [Circular],
+            "registeredQueries": Object {},
+            "ssrMode": false,
+          },
+        },
+        "reFetchObservableQueries": [Function],
+        "resetStore": [Function],
+        "resetStoreCallbacks": Array [],
+        "ssrMode": false,
+        "store": DataStore {
+          "cache": InMemoryCache {
+            "addTypename": false,
+            "config": Object {
+              "addTypename": false,
+              "dataIdFromObject": [Function],
+              "fragmentMatcher": HeuristicFragmentMatcher {},
+              "storeFactory": [Function],
+            },
+            "data": ObjectCache {
+              "data": Object {},
+            },
+            "optimistic": Array [],
+            "silenceBroadcast": false,
+            "watches": Array [
+              Object {
+                "callback": [Function],
+                "optimistic": true,
+                "previousResult": [Function],
+                "query": Object {
+                  "definitions": Array [
+                    Object {
+                      "directives": Array [],
+                      "kind": "OperationDefinition",
+                      "name": undefined,
+                      "operation": "query",
+                      "selectionSet": Object {
+                        "kind": "SelectionSet",
+                        "selections": Array [
+                          Object {
+                            "alias": undefined,
+                            "arguments": Array [
+                              Object {
+                                "kind": "Argument",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "month",
+                                },
+                                "value": Object {
+                                  "block": false,
+                                  "kind": "StringValue",
+                                  "value": "Oct",
+                                },
+                              },
+                              Object {
+                                "kind": "Argument",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "year",
+                                },
+                                "value": Object {
+                                  "kind": "IntValue",
+                                  "value": "2018",
+                                },
+                              },
+                            ],
+                            "directives": Array [],
+                            "kind": "Field",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "monthlyDurationsOfMeetings",
+                            },
+                            "selectionSet": Object {
+                              "kind": "SelectionSet",
+                              "selections": Array [
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "MeetingsDurationaAnalytics",
+                                  },
+                                  "selectionSet": Object {
+                                    "kind": "SelectionSet",
+                                    "selections": Array [
+                                      Object {
+                                        "alias": undefined,
+                                        "arguments": Array [],
+                                        "directives": Array [],
+                                        "kind": "Field",
+                                        "name": Object {
+                                          "kind": "Name",
+                                          "value": "roomName",
+                                        },
+                                        "selectionSet": undefined,
+                                      },
+                                      Object {
+                                        "alias": undefined,
+                                        "arguments": Array [],
+                                        "directives": Array [],
+                                        "kind": "Field",
+                                        "name": Object {
+                                          "kind": "Name",
+                                          "value": "count",
+                                        },
+                                        "selectionSet": undefined,
+                                      },
+                                      Object {
+                                        "alias": undefined,
+                                        "arguments": Array [],
+                                        "directives": Array [],
+                                        "kind": "Field",
+                                        "name": Object {
+                                          "kind": "Name",
+                                          "value": "totalDuration",
+                                        },
+                                        "selectionSet": undefined,
+                                      },
+                                    ],
+                                  },
+                                },
+                              ],
+                            },
+                          },
+                        ],
+                      },
+                      "variableDefinitions": Array [],
+                    },
+                  ],
+                  "kind": "Document",
+                  "loc": Object {
+                    "end": 238,
+                    "start": 0,
+                  },
+                },
+                "variables": undefined,
+              },
+            ],
+          },
+        },
+        "version": "2.3.1",
+        "watchQuery": [Function],
+      }
+    }
+  >
+    <AverageMeetingList
+      dateValue="This Month"
+    >
+      <div
+        className="average-meeting"
+      >
+        <div
+          className="average-meeting-control"
+        >
+          <h4
+            className="header-title"
+          >
+            Average time spent/Meeting Room
+          </h4>
+          <span
+            className="moreVerticalIcon"
+          />
+        </div>
+        <div
+          className="average-meeting-list"
+        >
+          <table>
+            <TableHead
+              titles={
+                Array [
+                  "Room",
+                  "No. of meetings",
+                  "Average Meeting Duration",
+                ]
+              }
+            >
+              <thead>
+                <tr>
+                  <th
+                    key="Room"
+                  >
+                    Room
+                  </th>
+                  <th
+                    key="No. of meetings"
+                  >
+                    No. of meetings
+                  </th>
+                  <th
+                    key="Average Meeting Duration"
+                  >
+                    Average Meeting Duration
+                  </th>
+                </tr>
+              </thead>
+            </TableHead>
+            <tbody>
+              <QueryAnalyticsPerMonth>
+                <Query
+                  query={
+                    Object {
+                      "definitions": Array [
+                        Object {
+                          "directives": Array [],
+                          "kind": "OperationDefinition",
+                          "name": undefined,
+                          "operation": "query",
+                          "selectionSet": Object {
+                            "kind": "SelectionSet",
+                            "selections": Array [
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [
+                                  Object {
+                                    "kind": "Argument",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "month",
+                                    },
+                                    "value": Object {
+                                      "block": false,
+                                      "kind": "StringValue",
+                                      "value": "Oct",
+                                    },
+                                  },
+                                  Object {
+                                    "kind": "Argument",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "year",
+                                    },
+                                    "value": Object {
+                                      "kind": "IntValue",
+                                      "value": "2018",
+                                    },
+                                  },
+                                ],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "monthlyDurationsOfMeetings",
+                                },
+                                "selectionSet": Object {
+                                  "kind": "SelectionSet",
+                                  "selections": Array [
+                                    Object {
+                                      "alias": undefined,
+                                      "arguments": Array [],
+                                      "directives": Array [],
+                                      "kind": "Field",
+                                      "name": Object {
+                                        "kind": "Name",
+                                        "value": "MeetingsDurationaAnalytics",
+                                      },
+                                      "selectionSet": Object {
+                                        "kind": "SelectionSet",
+                                        "selections": Array [
+                                          Object {
+                                            "alias": undefined,
+                                            "arguments": Array [],
+                                            "directives": Array [],
+                                            "kind": "Field",
+                                            "name": Object {
+                                              "kind": "Name",
+                                              "value": "roomName",
+                                            },
+                                            "selectionSet": undefined,
+                                          },
+                                          Object {
+                                            "alias": undefined,
+                                            "arguments": Array [],
+                                            "directives": Array [],
+                                            "kind": "Field",
+                                            "name": Object {
+                                              "kind": "Name",
+                                              "value": "count",
+                                            },
+                                            "selectionSet": undefined,
+                                          },
+                                          Object {
+                                            "alias": undefined,
+                                            "arguments": Array [],
+                                            "directives": Array [],
+                                            "kind": "Field",
+                                            "name": Object {
+                                              "kind": "Name",
+                                              "value": "totalDuration",
+                                            },
+                                            "selectionSet": undefined,
+                                          },
+                                        ],
+                                      },
+                                    },
+                                  ],
+                                },
+                              },
+                            ],
+                          },
+                          "variableDefinitions": Array [],
+                        },
+                      ],
+                      "kind": "Document",
+                      "loc": Object {
+                        "end": 238,
+                        "start": 0,
+                      },
+                    }
+                  }
+                >
+                  <tr>
+                    <th
+                      colSpan="3"
+                    >
+                      <ThemedProgressBar
+                        buffer={0}
+                        className=""
+                        composeTheme="deeply"
+                        mapThemrProps={[Function]}
+                        max={100}
+                        min={0}
+                        mode="indeterminate"
+                        multicolor={false}
+                        type="linear"
+                        value={0}
+                      >
+                        <ProgressBar
+                          buffer={0}
+                          className=""
+                          max={100}
+                          min={0}
+                          mode="indeterminate"
+                          multicolor={false}
+                          theme={Object {}}
+                          type="linear"
+                          value={0}
+                        >
+                          <div
+                            aria-valuemax={100}
+                            aria-valuemin={0}
+                            aria-valuenow={0}
+                            className=""
+                            data-react-toolbox="progress-bar"
+                          >
+                            <div>
+                              <span
+                                data-ref="buffer"
+                              />
+                              <span
+                                data-ref="value"
+                              />
+                            </div>
+                          </div>
+                        </ProgressBar>
+                      </ThemedProgressBar>
+                    </th>
+                  </tr>
+                </Query>
+              </QueryAnalyticsPerMonth>
+            </tbody>
+          </table>
+        </div>
+        <div
+          className="average-meeting-pagination"
+        >
+          <QueryAnalyticsPerMonthPagination>
+            <Pagination
+              handleData={[Function]}
+              hasNext={true}
+              hasPrevious={false}
+              itemsPerPage={
+                Array [
+                  5,
+                  10,
+                  20,
+                  50,
+                ]
+              }
+              reverse={true}
+              totalPages={50}
+            >
+              <nav
+                className="page-navigation"
+              >
+                <div
+                  className="perPageBlock"
+                >
+                  <ul
+                    className="pagination"
+                  >
+                    <select
+                      className="page-select"
+                      name="perPage"
+                      onChange={[Function]}
+                      value={5}
+                    >
+                      <option
+                        key="6"
+                      >
+                        5
+                      </option>
+                      <option
+                        key="11"
+                      >
+                        10
+                      </option>
+                      <option
+                        key="21"
+                      >
+                        20
+                      </option>
+                      <option
+                        key="51"
+                      >
+                        50
+                      </option>
+                    </select>
+                    <li>
+                      Items per page
+                    </li>
+                  </ul>
+                </div>
+                <div
+                  className="showingBlock"
+                >
+                  <ul
+                    className="pagination"
+                  >
+                    <li>
+                      <button
+                        className="disabled"
+                        id="previous"
+                        onClick={[Function]}
+                      >
+                        Previous
+                      </button>
+                    </li>
+                    <li
+                      className="results"
+                    >
+                      <ul>
+                        <span>
+                          Showing 
+                        </span>
+                        <select
+                          className="totalPage"
+                          name="page"
+                          onChange={[Function]}
+                          value={1}
+                        >
+                          <option
+                            key="0"
+                          >
+                            1
+                          </option>
+                          <option
+                            key="1"
+                          >
+                            2
+                          </option>
+                          <option
+                            key="2"
+                          >
+                            3
+                          </option>
+                          <option
+                            key="3"
+                          >
+                            4
+                          </option>
+                          <option
+                            key="4"
+                          >
+                            5
+                          </option>
+                          <option
+                            key="5"
+                          >
+                            6
+                          </option>
+                          <option
+                            key="6"
+                          >
+                            7
+                          </option>
+                          <option
+                            key="7"
+                          >
+                            8
+                          </option>
+                          <option
+                            key="8"
+                          >
+                            9
+                          </option>
+                          <option
+                            key="9"
+                          >
+                            10
+                          </option>
+                          <option
+                            key="10"
+                          >
+                            11
+                          </option>
+                          <option
+                            key="11"
+                          >
+                            12
+                          </option>
+                          <option
+                            key="12"
+                          >
+                            13
+                          </option>
+                          <option
+                            key="13"
+                          >
+                            14
+                          </option>
+                          <option
+                            key="14"
+                          >
+                            15
+                          </option>
+                          <option
+                            key="15"
+                          >
+                            16
+                          </option>
+                          <option
+                            key="16"
+                          >
+                            17
+                          </option>
+                          <option
+                            key="17"
+                          >
+                            18
+                          </option>
+                          <option
+                            key="18"
+                          >
+                            19
+                          </option>
+                          <option
+                            key="19"
+                          >
+                            20
+                          </option>
+                          <option
+                            key="20"
+                          >
+                            21
+                          </option>
+                          <option
+                            key="21"
+                          >
+                            22
+                          </option>
+                          <option
+                            key="22"
+                          >
+                            23
+                          </option>
+                          <option
+                            key="23"
+                          >
+                            24
+                          </option>
+                          <option
+                            key="24"
+                          >
+                            25
+                          </option>
+                          <option
+                            key="25"
+                          >
+                            26
+                          </option>
+                          <option
+                            key="26"
+                          >
+                            27
+                          </option>
+                          <option
+                            key="27"
+                          >
+                            28
+                          </option>
+                          <option
+                            key="28"
+                          >
+                            29
+                          </option>
+                          <option
+                            key="29"
+                          >
+                            30
+                          </option>
+                          <option
+                            key="30"
+                          >
+                            31
+                          </option>
+                          <option
+                            key="31"
+                          >
+                            32
+                          </option>
+                          <option
+                            key="32"
+                          >
+                            33
+                          </option>
+                          <option
+                            key="33"
+                          >
+                            34
+                          </option>
+                          <option
+                            key="34"
+                          >
+                            35
+                          </option>
+                          <option
+                            key="35"
+                          >
+                            36
+                          </option>
+                          <option
+                            key="36"
+                          >
+                            37
+                          </option>
+                          <option
+                            key="37"
+                          >
+                            38
+                          </option>
+                          <option
+                            key="38"
+                          >
+                            39
+                          </option>
+                          <option
+                            key="39"
+                          >
+                            40
+                          </option>
+                          <option
+                            key="40"
+                          >
+                            41
+                          </option>
+                          <option
+                            key="41"
+                          >
+                            42
+                          </option>
+                          <option
+                            key="42"
+                          >
+                            43
+                          </option>
+                          <option
+                            key="43"
+                          >
+                            44
+                          </option>
+                          <option
+                            key="44"
+                          >
+                            45
+                          </option>
+                          <option
+                            key="45"
+                          >
+                            46
+                          </option>
+                          <option
+                            key="46"
+                          >
+                            47
+                          </option>
+                          <option
+                            key="47"
+                          >
+                            48
+                          </option>
+                          <option
+                            key="48"
+                          >
+                            49
+                          </option>
+                          <option
+                            key="49"
+                          >
+                            50
+                          </option>
+                        </select>
+                        <span
+                          className="pageNum reverse"
+                        >
+                           of 
+                          50
+                           Results
+                        </span>
+                      </ul>
+                    </li>
+                    <li>
+                      <button
+                        className="enabled"
+                        id="next"
+                        onClick={[Function]}
+                      >
+                        Next
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+              </nav>
+            </Pagination>
+          </QueryAnalyticsPerMonthPagination>
+        </div>
+      </div>
+    </AverageMeetingList>
+  </ApolloProvider>
+</MockedProvider>
+`;
+
+exports[`AverageMeetingList component should render correctly 2`] = `
+<MockedProvider
+  addTypename={false}
+  mocks={
+    Array [
+      Object {
+        "request": Object {
+          "definitions": Array [
+            Object {
+              "directives": Array [],
+              "kind": "OperationDefinition",
+              "name": undefined,
+              "operation": "query",
+              "selectionSet": Object {
+                "kind": "SelectionSet",
+                "selections": Array [
+                  Object {
+                    "alias": undefined,
+                    "arguments": Array [
+                      Object {
+                        "kind": "Argument",
+                        "name": Object {
+                          "kind": "Name",
+                          "value": "month",
+                        },
+                        "value": Object {
+                          "block": false,
+                          "kind": "StringValue",
+                          "value": "Oct",
+                        },
+                      },
+                      Object {
+                        "kind": "Argument",
+                        "name": Object {
+                          "kind": "Name",
+                          "value": "year",
+                        },
+                        "value": Object {
+                          "kind": "IntValue",
+                          "value": "2018",
+                        },
+                      },
+                    ],
+                    "directives": Array [],
+                    "kind": "Field",
+                    "name": Object {
+                      "kind": "Name",
+                      "value": "monthlyDurationsOfMeetings",
+                    },
+                    "selectionSet": Object {
+                      "kind": "SelectionSet",
+                      "selections": Array [
+                        Object {
+                          "alias": undefined,
+                          "arguments": Array [],
+                          "directives": Array [],
+                          "kind": "Field",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "MeetingsDurationaAnalytics",
+                          },
+                          "selectionSet": Object {
+                            "kind": "SelectionSet",
+                            "selections": Array [
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "roomName",
+                                },
+                                "selectionSet": undefined,
+                              },
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "count",
+                                },
+                                "selectionSet": undefined,
+                              },
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "totalDuration",
+                                },
+                                "selectionSet": undefined,
+                              },
+                            ],
+                          },
+                        },
+                      ],
+                    },
+                  },
+                ],
+              },
+              "variableDefinitions": Array [],
+            },
+          ],
+          "kind": "Document",
+          "loc": Object {
+            "end": 238,
+            "start": 0,
+          },
+        },
+        "result": Object {
+          "data": Object {
+            "monthlyDurationsOfMeetings": Object {
+              "MeetingsDurationaAnalytics": Array [
+                Object {
+                  "count": 78,
+                  "roomName": "Tortuga",
+                  "totalDuration": 5547,
+                },
+                Object {
+                  "count": 73,
+                  "roomName": "Accra",
+                  "totalDuration": 3313,
+                },
+              ],
+            },
+          },
+        },
+      },
+    ]
+  }
+>
+  <ApolloProvider
+    client={
+      ApolloClient {
+        "__operations_cache__": Map {
+          "data" => Object {
+            "query": Object {
+              "definitions": Array [
+                Object {
+                  "directives": Array [],
+                  "kind": "OperationDefinition",
+                  "name": undefined,
+                  "operation": "query",
+                  "selectionSet": Object {
+                    "kind": "SelectionSet",
+                    "selections": Array [
+                      Object {
+                        "alias": undefined,
+                        "arguments": Array [
+                          Object {
+                            "kind": "Argument",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "weekStart",
+                            },
+                            "value": Object {
+                              "block": false,
+                              "kind": "StringValue",
+                              "value": "Oct 29 2018",
+                            },
+                          },
+                          Object {
+                            "kind": "Argument",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "weekEnd",
+                            },
+                            "value": Object {
+                              "block": false,
+                              "kind": "StringValue",
+                              "value": "Nov 02 2018",
+                            },
+                          },
+                        ],
+                        "directives": Array [],
+                        "kind": "Field",
+                        "name": Object {
+                          "kind": "Name",
+                          "value": "weeklyDurationsOfMeetings",
+                        },
+                        "selectionSet": Object {
+                          "kind": "SelectionSet",
+                          "selections": Array [
+                            Object {
+                              "alias": undefined,
+                              "arguments": Array [],
+                              "directives": Array [],
+                              "kind": "Field",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "MeetingsDurationaAnalytics",
+                              },
+                              "selectionSet": Object {
+                                "kind": "SelectionSet",
+                                "selections": Array [
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "roomName",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "count",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "totalDuration",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
+                                ],
+                              },
+                            },
+                          ],
+                        },
+                      },
+                    ],
+                  },
+                  "variableDefinitions": Array [],
+                },
+              ],
+              "kind": "Document",
+              "loc": Object {
+                "end": 199,
+                "start": 0,
+              },
+            },
+            "variables": undefined,
+          },
+        },
+        "cache": InMemoryCache {
+          "addTypename": false,
+          "config": Object {
+            "addTypename": false,
+            "dataIdFromObject": [Function],
+            "fragmentMatcher": HeuristicFragmentMatcher {},
+            "storeFactory": [Function],
+          },
+          "data": ObjectCache {
+            "data": Object {},
+          },
+          "optimistic": Array [],
+          "silenceBroadcast": false,
+          "watches": Array [
+            Object {
+              "callback": [Function],
+              "optimistic": true,
+              "previousResult": [Function],
+              "query": Object {
+                "definitions": Array [
+                  Object {
+                    "directives": Array [],
+                    "kind": "OperationDefinition",
+                    "name": undefined,
+                    "operation": "query",
+                    "selectionSet": Object {
+                      "kind": "SelectionSet",
+                      "selections": Array [
+                        Object {
+                          "alias": undefined,
+                          "arguments": Array [
+                            Object {
+                              "kind": "Argument",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "weekStart",
+                              },
+                              "value": Object {
+                                "block": false,
+                                "kind": "StringValue",
+                                "value": "Oct 29 2018",
+                              },
+                            },
+                            Object {
+                              "kind": "Argument",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "weekEnd",
+                              },
+                              "value": Object {
+                                "block": false,
+                                "kind": "StringValue",
+                                "value": "Nov 02 2018",
+                              },
+                            },
+                          ],
+                          "directives": Array [],
+                          "kind": "Field",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "weeklyDurationsOfMeetings",
+                          },
+                          "selectionSet": Object {
+                            "kind": "SelectionSet",
+                            "selections": Array [
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "MeetingsDurationaAnalytics",
+                                },
+                                "selectionSet": Object {
+                                  "kind": "SelectionSet",
+                                  "selections": Array [
+                                    Object {
+                                      "alias": undefined,
+                                      "arguments": Array [],
+                                      "directives": Array [],
+                                      "kind": "Field",
+                                      "name": Object {
+                                        "kind": "Name",
+                                        "value": "roomName",
+                                      },
+                                      "selectionSet": undefined,
+                                    },
+                                    Object {
+                                      "alias": undefined,
+                                      "arguments": Array [],
+                                      "directives": Array [],
+                                      "kind": "Field",
+                                      "name": Object {
+                                        "kind": "Name",
+                                        "value": "count",
+                                      },
+                                      "selectionSet": undefined,
+                                    },
+                                    Object {
+                                      "alias": undefined,
+                                      "arguments": Array [],
+                                      "directives": Array [],
+                                      "kind": "Field",
+                                      "name": Object {
+                                        "kind": "Name",
+                                        "value": "totalDuration",
+                                      },
+                                      "selectionSet": undefined,
+                                    },
+                                  ],
+                                },
+                              },
+                            ],
+                          },
+                        },
+                      ],
+                    },
+                    "variableDefinitions": Array [],
+                  },
+                ],
+                "kind": "Document",
+                "loc": Object {
+                  "end": 199,
+                  "start": 0,
+                },
+              },
+              "variables": undefined,
+            },
+          ],
+        },
+        "defaultOptions": Object {},
+        "disableNetworkFetches": false,
+        "link": ApolloLink {
+          "request": [Function],
+        },
+        "mutate": [Function],
+        "query": [Function],
+        "queryDeduplication": true,
+        "queryManager": QueryManager {
+          "dataStore": DataStore {
+            "cache": InMemoryCache {
+              "addTypename": false,
+              "config": Object {
+                "addTypename": false,
+                "dataIdFromObject": [Function],
+                "fragmentMatcher": HeuristicFragmentMatcher {},
+                "storeFactory": [Function],
+              },
+              "data": ObjectCache {
+                "data": Object {},
+              },
+              "optimistic": Array [],
+              "silenceBroadcast": false,
+              "watches": Array [
+                Object {
+                  "callback": [Function],
+                  "optimistic": true,
+                  "previousResult": [Function],
+                  "query": Object {
+                    "definitions": Array [
+                      Object {
+                        "directives": Array [],
+                        "kind": "OperationDefinition",
+                        "name": undefined,
+                        "operation": "query",
+                        "selectionSet": Object {
+                          "kind": "SelectionSet",
+                          "selections": Array [
+                            Object {
+                              "alias": undefined,
+                              "arguments": Array [
+                                Object {
+                                  "kind": "Argument",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "weekStart",
+                                  },
+                                  "value": Object {
+                                    "block": false,
+                                    "kind": "StringValue",
+                                    "value": "Oct 29 2018",
+                                  },
+                                },
+                                Object {
+                                  "kind": "Argument",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "weekEnd",
+                                  },
+                                  "value": Object {
+                                    "block": false,
+                                    "kind": "StringValue",
+                                    "value": "Nov 02 2018",
+                                  },
+                                },
+                              ],
+                              "directives": Array [],
+                              "kind": "Field",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "weeklyDurationsOfMeetings",
+                              },
+                              "selectionSet": Object {
+                                "kind": "SelectionSet",
+                                "selections": Array [
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "MeetingsDurationaAnalytics",
+                                    },
+                                    "selectionSet": Object {
+                                      "kind": "SelectionSet",
+                                      "selections": Array [
+                                        Object {
+                                          "alias": undefined,
+                                          "arguments": Array [],
+                                          "directives": Array [],
+                                          "kind": "Field",
+                                          "name": Object {
+                                            "kind": "Name",
+                                            "value": "roomName",
+                                          },
+                                          "selectionSet": undefined,
+                                        },
+                                        Object {
+                                          "alias": undefined,
+                                          "arguments": Array [],
+                                          "directives": Array [],
+                                          "kind": "Field",
+                                          "name": Object {
+                                            "kind": "Name",
+                                            "value": "count",
+                                          },
+                                          "selectionSet": undefined,
+                                        },
+                                        Object {
+                                          "alias": undefined,
+                                          "arguments": Array [],
+                                          "directives": Array [],
+                                          "kind": "Field",
+                                          "name": Object {
+                                            "kind": "Name",
+                                            "value": "totalDuration",
+                                          },
+                                          "selectionSet": undefined,
+                                        },
+                                      ],
+                                    },
+                                  },
+                                ],
+                              },
+                            },
+                          ],
+                        },
+                        "variableDefinitions": Array [],
+                      },
+                    ],
+                    "kind": "Document",
+                    "loc": Object {
+                      "end": 199,
+                      "start": 0,
+                    },
+                  },
+                  "variables": undefined,
+                },
+              ],
+            },
+          },
+          "deduplicator": ApolloLink {
+            "request": [Function],
+          },
+          "fetchQueryPromises": Map {},
+          "idCounter": 3,
+          "link": ApolloLink {
+            "request": [Function],
+          },
+          "mutationStore": MutationStore {
+            "store": Object {},
+          },
+          "onBroadcast": [Function],
+          "queries": Map {
+            "1" => Object {
+              "cancel": [Function],
+              "document": Object {
+                "definitions": Array [
+                  Object {
+                    "directives": Array [],
+                    "kind": "OperationDefinition",
+                    "name": undefined,
+                    "operation": "query",
+                    "selectionSet": Object {
+                      "kind": "SelectionSet",
+                      "selections": Array [
+                        Object {
+                          "alias": undefined,
+                          "arguments": Array [
+                            Object {
+                              "kind": "Argument",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "weekStart",
+                              },
+                              "value": Object {
+                                "block": false,
+                                "kind": "StringValue",
+                                "value": "Oct 29 2018",
+                              },
+                            },
+                            Object {
+                              "kind": "Argument",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "weekEnd",
+                              },
+                              "value": Object {
+                                "block": false,
+                                "kind": "StringValue",
+                                "value": "Nov 02 2018",
+                              },
+                            },
+                          ],
+                          "directives": Array [],
+                          "kind": "Field",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "weeklyDurationsOfMeetings",
+                          },
+                          "selectionSet": Object {
+                            "kind": "SelectionSet",
+                            "selections": Array [
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "MeetingsDurationaAnalytics",
+                                },
+                                "selectionSet": Object {
+                                  "kind": "SelectionSet",
+                                  "selections": Array [
+                                    Object {
+                                      "alias": undefined,
+                                      "arguments": Array [],
+                                      "directives": Array [],
+                                      "kind": "Field",
+                                      "name": Object {
+                                        "kind": "Name",
+                                        "value": "roomName",
+                                      },
+                                      "selectionSet": undefined,
+                                    },
+                                    Object {
+                                      "alias": undefined,
+                                      "arguments": Array [],
+                                      "directives": Array [],
+                                      "kind": "Field",
+                                      "name": Object {
+                                        "kind": "Name",
+                                        "value": "count",
+                                      },
+                                      "selectionSet": undefined,
+                                    },
+                                    Object {
+                                      "alias": undefined,
+                                      "arguments": Array [],
+                                      "directives": Array [],
+                                      "kind": "Field",
+                                      "name": Object {
+                                        "kind": "Name",
+                                        "value": "totalDuration",
+                                      },
+                                      "selectionSet": undefined,
+                                    },
+                                  ],
+                                },
+                              },
+                            ],
+                          },
+                        },
+                      ],
+                    },
+                    "variableDefinitions": Array [],
+                  },
+                ],
+                "kind": "Document",
+                "loc": Object {
+                  "end": 199,
+                  "start": 0,
+                },
+              },
+              "invalidate": false,
+              "invalidated": false,
+              "lastRequestId": 2,
+              "listeners": Array [
+                [Function],
+              ],
+              "newData": null,
+              "observableQuery": ObservableQuery {
+                "_subscriber": [Function],
+                "isCurrentlyPolling": false,
+                "isTornDown": false,
+                "lastError": [Error: Network error: No more mocked responses for the query: {
+  weeklyDurationsOfMeetings(weekStart: "Oct 29 2018", weekEnd: "Nov 02 2018") {
+    MeetingsDurationaAnalytics {
+      roomName
+      count
+      totalDuration
+    }
+  }
+}
+, variables: {}],
+                "lastResult": undefined,
+                "observers": Array [
+                  SubscriptionObserver {
+                    "_subscription": Subscription {
+                      "_cleanup": [Function],
+                      "_observer": Object {
+                        "error": [Function],
+                        "next": [Function],
+                      },
+                      "_queue": undefined,
+                      "_state": "ready",
+                    },
+                  },
+                ],
+                "options": Object {
+                  "context": Object {},
+                  "metadata": Object {
+                    "reactComponent": Object {
+                      "displayName": "Query",
+                    },
+                  },
+                  "notifyOnNetworkStatusChange": false,
+                  "query": Object {
+                    "definitions": Array [
+                      Object {
+                        "directives": Array [],
+                        "kind": "OperationDefinition",
+                        "name": undefined,
+                        "operation": "query",
+                        "selectionSet": Object {
+                          "kind": "SelectionSet",
+                          "selections": Array [
+                            Object {
+                              "alias": undefined,
+                              "arguments": Array [
+                                Object {
+                                  "kind": "Argument",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "weekStart",
+                                  },
+                                  "value": Object {
+                                    "block": false,
+                                    "kind": "StringValue",
+                                    "value": "Oct 29 2018",
+                                  },
+                                },
+                                Object {
+                                  "kind": "Argument",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "weekEnd",
+                                  },
+                                  "value": Object {
+                                    "block": false,
+                                    "kind": "StringValue",
+                                    "value": "Nov 02 2018",
+                                  },
+                                },
+                              ],
+                              "directives": Array [],
+                              "kind": "Field",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "weeklyDurationsOfMeetings",
+                              },
+                              "selectionSet": Object {
+                                "kind": "SelectionSet",
+                                "selections": Array [
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "MeetingsDurationaAnalytics",
+                                    },
+                                    "selectionSet": Object {
+                                      "kind": "SelectionSet",
+                                      "selections": Array [
+                                        Object {
+                                          "alias": undefined,
+                                          "arguments": Array [],
+                                          "directives": Array [],
+                                          "kind": "Field",
+                                          "name": Object {
+                                            "kind": "Name",
+                                            "value": "roomName",
+                                          },
+                                          "selectionSet": undefined,
+                                        },
+                                        Object {
+                                          "alias": undefined,
+                                          "arguments": Array [],
+                                          "directives": Array [],
+                                          "kind": "Field",
+                                          "name": Object {
+                                            "kind": "Name",
+                                            "value": "count",
+                                          },
+                                          "selectionSet": undefined,
+                                        },
+                                        Object {
+                                          "alias": undefined,
+                                          "arguments": Array [],
+                                          "directives": Array [],
+                                          "kind": "Field",
+                                          "name": Object {
+                                            "kind": "Name",
+                                            "value": "totalDuration",
+                                          },
+                                          "selectionSet": undefined,
+                                        },
+                                      ],
+                                    },
+                                  },
+                                ],
+                              },
+                            },
+                          ],
+                        },
+                        "variableDefinitions": Array [],
+                      },
+                    ],
+                    "kind": "Document",
+                    "loc": Object {
+                      "end": 199,
+                      "start": 0,
+                    },
+                  },
+                },
+                "queryId": "1",
+                "queryManager": [Circular],
+                "scheduler": QueryScheduler {
+                  "inFlightQueries": Object {},
+                  "intervalQueries": Object {},
+                  "pollingTimers": Object {},
+                  "queryManager": [Circular],
+                  "registeredQueries": Object {},
+                  "ssrMode": false,
+                },
+                "shouldSubscribe": true,
+                "subscriptionHandles": Array [],
+                "variables": Object {},
+              },
+              "subscriptions": Array [],
+            },
+          },
+          "queryDeduplication": true,
+          "queryIdsByName": Object {},
+          "queryStore": QueryStore {
+            "store": Object {
+              "1": Object {
+                "document": Object {
+                  "definitions": Array [
+                    Object {
+                      "directives": Array [],
+                      "kind": "OperationDefinition",
+                      "name": undefined,
+                      "operation": "query",
+                      "selectionSet": Object {
+                        "kind": "SelectionSet",
+                        "selections": Array [
+                          Object {
+                            "alias": undefined,
+                            "arguments": Array [
+                              Object {
+                                "kind": "Argument",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "weekStart",
+                                },
+                                "value": Object {
+                                  "block": false,
+                                  "kind": "StringValue",
+                                  "value": "Oct 29 2018",
+                                },
+                              },
+                              Object {
+                                "kind": "Argument",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "weekEnd",
+                                },
+                                "value": Object {
+                                  "block": false,
+                                  "kind": "StringValue",
+                                  "value": "Nov 02 2018",
+                                },
+                              },
+                            ],
+                            "directives": Array [],
+                            "kind": "Field",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "weeklyDurationsOfMeetings",
+                            },
+                            "selectionSet": Object {
+                              "kind": "SelectionSet",
+                              "selections": Array [
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "MeetingsDurationaAnalytics",
+                                  },
+                                  "selectionSet": Object {
+                                    "kind": "SelectionSet",
+                                    "selections": Array [
+                                      Object {
+                                        "alias": undefined,
+                                        "arguments": Array [],
+                                        "directives": Array [],
+                                        "kind": "Field",
+                                        "name": Object {
+                                          "kind": "Name",
+                                          "value": "roomName",
+                                        },
+                                        "selectionSet": undefined,
+                                      },
+                                      Object {
+                                        "alias": undefined,
+                                        "arguments": Array [],
+                                        "directives": Array [],
+                                        "kind": "Field",
+                                        "name": Object {
+                                          "kind": "Name",
+                                          "value": "count",
+                                        },
+                                        "selectionSet": undefined,
+                                      },
+                                      Object {
+                                        "alias": undefined,
+                                        "arguments": Array [],
+                                        "directives": Array [],
+                                        "kind": "Field",
+                                        "name": Object {
+                                          "kind": "Name",
+                                          "value": "totalDuration",
+                                        },
+                                        "selectionSet": undefined,
+                                      },
+                                    ],
+                                  },
+                                },
+                              ],
+                            },
+                          },
+                        ],
+                      },
+                      "variableDefinitions": Array [],
+                    },
+                  ],
+                  "kind": "Document",
+                  "loc": Object {
+                    "end": 199,
+                    "start": 0,
+                  },
+                },
+                "graphQLErrors": Array [],
+                "metadata": Object {
+                  "reactComponent": Object {
+                    "displayName": "Query",
+                  },
+                },
+                "networkError": [Error: No more mocked responses for the query: {
+  weeklyDurationsOfMeetings(weekStart: "Oct 29 2018", weekEnd: "Nov 02 2018") {
+    MeetingsDurationaAnalytics {
+      roomName
+      count
+      totalDuration
+    }
+  }
+}
+, variables: {}],
+                "networkStatus": 8,
+                "previousVariables": null,
+                "variables": Object {},
+              },
+            },
+          },
+          "scheduler": QueryScheduler {
+            "inFlightQueries": Object {},
+            "intervalQueries": Object {},
+            "pollingTimers": Object {},
+            "queryManager": [Circular],
+            "registeredQueries": Object {},
+            "ssrMode": false,
+          },
+        },
+        "reFetchObservableQueries": [Function],
+        "resetStore": [Function],
+        "resetStoreCallbacks": Array [],
+        "ssrMode": false,
+        "store": DataStore {
+          "cache": InMemoryCache {
+            "addTypename": false,
+            "config": Object {
+              "addTypename": false,
+              "dataIdFromObject": [Function],
+              "fragmentMatcher": HeuristicFragmentMatcher {},
+              "storeFactory": [Function],
+            },
+            "data": ObjectCache {
+              "data": Object {},
+            },
+            "optimistic": Array [],
+            "silenceBroadcast": false,
+            "watches": Array [
+              Object {
+                "callback": [Function],
+                "optimistic": true,
+                "previousResult": [Function],
+                "query": Object {
+                  "definitions": Array [
+                    Object {
+                      "directives": Array [],
+                      "kind": "OperationDefinition",
+                      "name": undefined,
+                      "operation": "query",
+                      "selectionSet": Object {
+                        "kind": "SelectionSet",
+                        "selections": Array [
+                          Object {
+                            "alias": undefined,
+                            "arguments": Array [
+                              Object {
+                                "kind": "Argument",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "weekStart",
+                                },
+                                "value": Object {
+                                  "block": false,
+                                  "kind": "StringValue",
+                                  "value": "Oct 29 2018",
+                                },
+                              },
+                              Object {
+                                "kind": "Argument",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "weekEnd",
+                                },
+                                "value": Object {
+                                  "block": false,
+                                  "kind": "StringValue",
+                                  "value": "Nov 02 2018",
+                                },
+                              },
+                            ],
+                            "directives": Array [],
+                            "kind": "Field",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "weeklyDurationsOfMeetings",
+                            },
+                            "selectionSet": Object {
+                              "kind": "SelectionSet",
+                              "selections": Array [
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "MeetingsDurationaAnalytics",
+                                  },
+                                  "selectionSet": Object {
+                                    "kind": "SelectionSet",
+                                    "selections": Array [
+                                      Object {
+                                        "alias": undefined,
+                                        "arguments": Array [],
+                                        "directives": Array [],
+                                        "kind": "Field",
+                                        "name": Object {
+                                          "kind": "Name",
+                                          "value": "roomName",
+                                        },
+                                        "selectionSet": undefined,
+                                      },
+                                      Object {
+                                        "alias": undefined,
+                                        "arguments": Array [],
+                                        "directives": Array [],
+                                        "kind": "Field",
+                                        "name": Object {
+                                          "kind": "Name",
+                                          "value": "count",
+                                        },
+                                        "selectionSet": undefined,
+                                      },
+                                      Object {
+                                        "alias": undefined,
+                                        "arguments": Array [],
+                                        "directives": Array [],
+                                        "kind": "Field",
+                                        "name": Object {
+                                          "kind": "Name",
+                                          "value": "totalDuration",
+                                        },
+                                        "selectionSet": undefined,
+                                      },
+                                    ],
+                                  },
+                                },
+                              ],
+                            },
+                          },
+                        ],
+                      },
+                      "variableDefinitions": Array [],
+                    },
+                  ],
+                  "kind": "Document",
+                  "loc": Object {
+                    "end": 199,
+                    "start": 0,
+                  },
+                },
+                "variables": undefined,
+              },
+            ],
+          },
+        },
+        "version": "2.3.1",
+        "watchQuery": [Function],
+      }
+    }
+  >
+    <AverageMeetingList
+      dateValue="This Week"
+    >
+      <div
+        className="average-meeting"
+      >
+        <div
+          className="average-meeting-control"
+        >
+          <h4
+            className="header-title"
+          >
+            Average time spent/Meeting Room
+          </h4>
+          <span
+            className="moreVerticalIcon"
+          />
+        </div>
+        <div
+          className="average-meeting-list"
+        >
+          <table>
+            <TableHead
+              titles={
+                Array [
+                  "Room",
+                  "No. of meetings",
+                  "Average Meeting Duration",
+                ]
+              }
+            >
+              <thead>
+                <tr>
+                  <th
+                    key="Room"
+                  >
+                    Room
+                  </th>
+                  <th
+                    key="No. of meetings"
+                  >
+                    No. of meetings
+                  </th>
+                  <th
+                    key="Average Meeting Duration"
+                  >
+                    Average Meeting Duration
+                  </th>
+                </tr>
+              </thead>
+            </TableHead>
+            <tbody>
+              <QueryAnalyticsPerWeek>
+                <Query
+                  query={
+                    Object {
+                      "definitions": Array [
+                        Object {
+                          "directives": Array [],
+                          "kind": "OperationDefinition",
+                          "name": undefined,
+                          "operation": "query",
+                          "selectionSet": Object {
+                            "kind": "SelectionSet",
+                            "selections": Array [
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [
+                                  Object {
+                                    "kind": "Argument",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "weekStart",
+                                    },
+                                    "value": Object {
+                                      "block": false,
+                                      "kind": "StringValue",
+                                      "value": "Oct 29 2018",
+                                    },
+                                  },
+                                  Object {
+                                    "kind": "Argument",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "weekEnd",
+                                    },
+                                    "value": Object {
+                                      "block": false,
+                                      "kind": "StringValue",
+                                      "value": "Nov 02 2018",
+                                    },
+                                  },
+                                ],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "weeklyDurationsOfMeetings",
+                                },
+                                "selectionSet": Object {
+                                  "kind": "SelectionSet",
+                                  "selections": Array [
+                                    Object {
+                                      "alias": undefined,
+                                      "arguments": Array [],
+                                      "directives": Array [],
+                                      "kind": "Field",
+                                      "name": Object {
+                                        "kind": "Name",
+                                        "value": "MeetingsDurationaAnalytics",
+                                      },
+                                      "selectionSet": Object {
+                                        "kind": "SelectionSet",
+                                        "selections": Array [
+                                          Object {
+                                            "alias": undefined,
+                                            "arguments": Array [],
+                                            "directives": Array [],
+                                            "kind": "Field",
+                                            "name": Object {
+                                              "kind": "Name",
+                                              "value": "roomName",
+                                            },
+                                            "selectionSet": undefined,
+                                          },
+                                          Object {
+                                            "alias": undefined,
+                                            "arguments": Array [],
+                                            "directives": Array [],
+                                            "kind": "Field",
+                                            "name": Object {
+                                              "kind": "Name",
+                                              "value": "count",
+                                            },
+                                            "selectionSet": undefined,
+                                          },
+                                          Object {
+                                            "alias": undefined,
+                                            "arguments": Array [],
+                                            "directives": Array [],
+                                            "kind": "Field",
+                                            "name": Object {
+                                              "kind": "Name",
+                                              "value": "totalDuration",
+                                            },
+                                            "selectionSet": undefined,
+                                          },
+                                        ],
+                                      },
+                                    },
+                                  ],
+                                },
+                              },
+                            ],
+                          },
+                          "variableDefinitions": Array [],
+                        },
+                      ],
+                      "kind": "Document",
+                      "loc": Object {
+                        "end": 199,
+                        "start": 0,
+                      },
+                    }
+                  }
+                >
+                  <tr>
+                    <th
+                      colSpan="3"
+                    >
+                      <ThemedProgressBar
+                        buffer={0}
+                        className=""
+                        composeTheme="deeply"
+                        mapThemrProps={[Function]}
+                        max={100}
+                        min={0}
+                        mode="indeterminate"
+                        multicolor={false}
+                        type="linear"
+                        value={0}
+                      >
+                        <ProgressBar
+                          buffer={0}
+                          className=""
+                          max={100}
+                          min={0}
+                          mode="indeterminate"
+                          multicolor={false}
+                          theme={Object {}}
+                          type="linear"
+                          value={0}
+                        >
+                          <div
+                            aria-valuemax={100}
+                            aria-valuemin={0}
+                            aria-valuenow={0}
+                            className=""
+                            data-react-toolbox="progress-bar"
+                          >
+                            <div>
+                              <span
+                                data-ref="buffer"
+                              />
+                              <span
+                                data-ref="value"
+                              />
+                            </div>
+                          </div>
+                        </ProgressBar>
+                      </ThemedProgressBar>
+                    </th>
+                  </tr>
+                </Query>
+              </QueryAnalyticsPerWeek>
+            </tbody>
+          </table>
+        </div>
+        <div
+          className="average-meeting-pagination"
+        >
+          <QueryAnalyticsPerWeekPagination>
+            <Pagination
+              handleData={[Function]}
+              hasNext={true}
+              hasPrevious={false}
+              itemsPerPage={
+                Array [
+                  5,
+                  10,
+                  20,
+                  50,
+                ]
+              }
+              reverse={true}
+              totalPages={50}
+            >
+              <nav
+                className="page-navigation"
+              >
+                <div
+                  className="perPageBlock"
+                >
+                  <ul
+                    className="pagination"
+                  >
+                    <select
+                      className="page-select"
+                      name="perPage"
+                      onChange={[Function]}
+                      value={5}
+                    >
+                      <option
+                        key="6"
+                      >
+                        5
+                      </option>
+                      <option
+                        key="11"
+                      >
+                        10
+                      </option>
+                      <option
+                        key="21"
+                      >
+                        20
+                      </option>
+                      <option
+                        key="51"
+                      >
+                        50
+                      </option>
+                    </select>
+                    <li>
+                      Items per page
+                    </li>
+                  </ul>
+                </div>
+                <div
+                  className="showingBlock"
+                >
+                  <ul
+                    className="pagination"
+                  >
+                    <li>
+                      <button
+                        className="disabled"
+                        id="previous"
+                        onClick={[Function]}
+                      >
+                        Previous
+                      </button>
+                    </li>
+                    <li
+                      className="results"
+                    >
+                      <ul>
+                        <span>
+                          Showing 
+                        </span>
+                        <select
+                          className="totalPage"
+                          name="page"
+                          onChange={[Function]}
+                          value={1}
+                        >
+                          <option
+                            key="0"
+                          >
+                            1
+                          </option>
+                          <option
+                            key="1"
+                          >
+                            2
+                          </option>
+                          <option
+                            key="2"
+                          >
+                            3
+                          </option>
+                          <option
+                            key="3"
+                          >
+                            4
+                          </option>
+                          <option
+                            key="4"
+                          >
+                            5
+                          </option>
+                          <option
+                            key="5"
+                          >
+                            6
+                          </option>
+                          <option
+                            key="6"
+                          >
+                            7
+                          </option>
+                          <option
+                            key="7"
+                          >
+                            8
+                          </option>
+                          <option
+                            key="8"
+                          >
+                            9
+                          </option>
+                          <option
+                            key="9"
+                          >
+                            10
+                          </option>
+                          <option
+                            key="10"
+                          >
+                            11
+                          </option>
+                          <option
+                            key="11"
+                          >
+                            12
+                          </option>
+                          <option
+                            key="12"
+                          >
+                            13
+                          </option>
+                          <option
+                            key="13"
+                          >
+                            14
+                          </option>
+                          <option
+                            key="14"
+                          >
+                            15
+                          </option>
+                          <option
+                            key="15"
+                          >
+                            16
+                          </option>
+                          <option
+                            key="16"
+                          >
+                            17
+                          </option>
+                          <option
+                            key="17"
+                          >
+                            18
+                          </option>
+                          <option
+                            key="18"
+                          >
+                            19
+                          </option>
+                          <option
+                            key="19"
+                          >
+                            20
+                          </option>
+                          <option
+                            key="20"
+                          >
+                            21
+                          </option>
+                          <option
+                            key="21"
+                          >
+                            22
+                          </option>
+                          <option
+                            key="22"
+                          >
+                            23
+                          </option>
+                          <option
+                            key="23"
+                          >
+                            24
+                          </option>
+                          <option
+                            key="24"
+                          >
+                            25
+                          </option>
+                          <option
+                            key="25"
+                          >
+                            26
+                          </option>
+                          <option
+                            key="26"
+                          >
+                            27
+                          </option>
+                          <option
+                            key="27"
+                          >
+                            28
+                          </option>
+                          <option
+                            key="28"
+                          >
+                            29
+                          </option>
+                          <option
+                            key="29"
+                          >
+                            30
+                          </option>
+                          <option
+                            key="30"
+                          >
+                            31
+                          </option>
+                          <option
+                            key="31"
+                          >
+                            32
+                          </option>
+                          <option
+                            key="32"
+                          >
+                            33
+                          </option>
+                          <option
+                            key="33"
+                          >
+                            34
+                          </option>
+                          <option
+                            key="34"
+                          >
+                            35
+                          </option>
+                          <option
+                            key="35"
+                          >
+                            36
+                          </option>
+                          <option
+                            key="36"
+                          >
+                            37
+                          </option>
+                          <option
+                            key="37"
+                          >
+                            38
+                          </option>
+                          <option
+                            key="38"
+                          >
+                            39
+                          </option>
+                          <option
+                            key="39"
+                          >
+                            40
+                          </option>
+                          <option
+                            key="40"
+                          >
+                            41
+                          </option>
+                          <option
+                            key="41"
+                          >
+                            42
+                          </option>
+                          <option
+                            key="42"
+                          >
+                            43
+                          </option>
+                          <option
+                            key="43"
+                          >
+                            44
+                          </option>
+                          <option
+                            key="44"
+                          >
+                            45
+                          </option>
+                          <option
+                            key="45"
+                          >
+                            46
+                          </option>
+                          <option
+                            key="46"
+                          >
+                            47
+                          </option>
+                          <option
+                            key="47"
+                          >
+                            48
+                          </option>
+                          <option
+                            key="48"
+                          >
+                            49
+                          </option>
+                          <option
+                            key="49"
+                          >
+                            50
+                          </option>
+                        </select>
+                        <span
+                          className="pageNum reverse"
+                        >
+                           of 
+                          50
+                           Results
+                        </span>
+                      </ul>
+                    </li>
+                    <li>
+                      <button
+                        className="enabled"
+                        id="next"
+                        onClick={[Function]}
+                      >
+                        Next
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+              </nav>
+            </Pagination>
+          </QueryAnalyticsPerWeekPagination>
+        </div>
+      </div>
+    </AverageMeetingList>
+  </ApolloProvider>
+</MockedProvider>
+`;

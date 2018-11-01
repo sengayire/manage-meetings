@@ -23,4 +23,12 @@ AnalyticsOverview.propTypes = {
   dateValue: PropTypes.string,
 };
 
+AnalyticsOverview.defaultProps = {
+  dateValue: 'Today',
+};
+
+AnalyticsOverview.propTypes = {
+  dateValue: PropTypes.string,
+};
+
 export default AnalyticsOverview;

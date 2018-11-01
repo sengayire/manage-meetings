@@ -1,32 +1,31 @@
 import React from 'react';
+import { mount } from 'enzyme';
 import wait from 'waait';
 import renderer from 'react-test-renderer';
-import { mount } from 'enzyme';
 import { MockedProvider } from 'react-apollo/test-utils';
-import QueryAnalyticsPerMonth, { QueryAnalyticsPerMonthPagination } from '../../../src/components/analytics/QueryAnalyticsPerMonth';
-import { ANALYTICS_MEETING_ROOM_PER_MONTH } from '../../../src/graphql/queries/analytics';
+import QueryAnalyticsPerWeek, { QueryAnalyticsPerWeekPagination } from '../../../src/components/analytics/QueryAnalyticsPerWeek';
+import { ANALYTICS_MEETING_ROOM_PER_WEEK } from '../../../src/graphql/queries/analytics';
 
-
-describe('QueryAnalyticsPerMonth component', () => {
+describe('<QueryAnalyticsPerMonth /> ', () => {
   it('should render without error', () => {
     renderer.create((
       <MockedProvider mocks={[]}>
-        <QueryAnalyticsPerMonth />
+        <QueryAnalyticsPerWeek />
       </MockedProvider>
     ));
   });
 
   it('should render analytics data', async () => {
     const analyticsMock = {
-      request: { query: ANALYTICS_MEETING_ROOM_PER_MONTH },
+      request: { query: ANALYTICS_MEETING_ROOM_PER_WEEK },
       result: {
         data: {
-          monthlyDurationsOfMeetings: {
+          weeklyDurationsOfMeetings: {
             MeetingsDurationaAnalytics: [
               {
-                roomName: 'Tortuga',
-                count: 1,
-                totalDuration: 61,
+                roomName: 'Accra',
+                count: 12,
+                totalDuration: 670,
               },
             ],
           },
@@ -36,7 +35,7 @@ describe('QueryAnalyticsPerMonth component', () => {
 
     const component = renderer.create((
       <MockedProvider mocks={[analyticsMock]} addTypename={false}>
-        <QueryAnalyticsPerMonth />
+        <QueryAnalyticsPerWeek />
       </MockedProvider>
     ));
 
@@ -47,11 +46,10 @@ describe('QueryAnalyticsPerMonth component', () => {
   });
 });
 
-describe('QueryAnalyticsPerMonthPagination component', () => {
-  const paginationWrapper = mount(<QueryAnalyticsPerMonthPagination />);
-  it('should click next', () => {
+describe('QueryAnalyticsPerWeekPagination component', () => {
+  const paginationWrapper = mount(<QueryAnalyticsPerWeekPagination />);
+  it('should render without error', () => {
     paginationWrapper.find('#next').at(0).simulate('click');
     expect(paginationWrapper).toMatchSnapshot();
   });
 });
-

@@ -11,6 +11,11 @@ describe('timeConvert', () => {
     expect(time).toEqual('0 Hour 2 Minutes');
   });
 
+  it('should render one minute', () => {
+    const time = timeConvert(1);
+    expect(time).toEqual('0 Hour 1 Minute');
+  });
+
   it('should render 3 Hours 20 Minutes', () => {
     const time = timeConvert(200);
     expect(time).toEqual('3 Hours 20 Minutes');

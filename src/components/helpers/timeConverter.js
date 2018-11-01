@@ -6,4 +6,3 @@ const timeConvert = (data) => {
 };
 
 export default timeConvert;
-

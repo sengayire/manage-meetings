@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import '../../assets/styles/averageMeetinglist.scss';
 import TableHead from '../helpers/TableHead';
 import QueryAnalyticsPerMonth, { QueryAnalyticsPerMonthPagination } from './QueryAnalyticsPerMonth';
+import QueryAnalyticsPerWeek, { QueryAnalyticsPerWeekPagination } from './QueryAnalyticsPerWeek';
 
 
 const AverageMeetingList = ({ dateValue }) => {
@@ -13,6 +14,10 @@ const AverageMeetingList = ({ dateValue }) => {
     case 'This Month':
       renderData = <QueryAnalyticsPerMonth />;
       dataPagination = <QueryAnalyticsPerMonthPagination />;
+      break;
+    case 'This Week':
+      renderData = <QueryAnalyticsPerWeek />;
+      dataPagination = <QueryAnalyticsPerWeekPagination />;
       break;
     default:
       renderData = null;
@@ -47,4 +52,3 @@ AverageMeetingList.propTypes = {
 };
 
 export default AverageMeetingList;
-
