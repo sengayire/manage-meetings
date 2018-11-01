@@ -3,7 +3,7 @@ import { graphql, compose } from 'react-apollo';
 import PropTypes from 'prop-types';
 
 import '../assets/styles/roomlist.scss';
-import { GET_ROOMS_QUERY, GET_LOCATIONS_QUERY } from '../graphql/queries/Rooms';
+import { GET_ROOMS_QUERY, GET_LOCATIONS_QUERY, GET_ROOM_BY_NAME } from '../graphql/queries/Rooms';
 import ColGroup from './helpers/ColGroup';
 import TableHead from './helpers/TableHead';
 import TableBody from './helpers/TableBody';
@@ -21,6 +21,7 @@ export class RoomsList extends React.Component {
       capacity: 0,
       location: '',
       office: '',
+      isSearching: false,
     };
   }
 
@@ -79,8 +80,36 @@ export class RoomsList extends React.Component {
     });
   };
 
+  handleSearchData = (searchData) => {
+    const rooms = { rooms: searchData };
+    this.setState({ allRooms: rooms, noResource: true });
+  }
+
+  stopSearching = () => {
+    this.setState({ isSearching: false });
+  }
+
+  startSearching = (roomName) => {
+    this.setState({ isSearching: true });
+
+    /* istanbul ignore next */
+    this.props.getRoomByName.fetchMore({
+      variables: { name: roomName },
+      updateQuery: (prev, { fetchMoreResult }) => ({ ...fetchMoreResult }),
+    })
+      .then((result) => {
+        if (result.data) {
+          this.handleSearchData(result.data.getRoomByName);
+        }
+      })
+      .catch(() => {
+        this.setState({ noResource: false });
+        this.setState({ isSearching: false });
+      });
+  }
+
   render() {
-    const { allRooms, noResource } = this.state;
+    const { allRooms, noResource, isSearching } = this.state;
     const { loading, error } = this.props.data;
     const {
       allLocations: locations,
@@ -102,6 +131,8 @@ export class RoomsList extends React.Component {
             isResource={this.handleResource}
             handleSetState={this.handleSetState}
             handleResetState={this.handleResetState}
+            isSearching={this.startSearching}
+            stopSearching={this.stopSearching}
           />
           <AddRoomMenu />
         </div>
@@ -116,7 +147,7 @@ export class RoomsList extends React.Component {
         ) : (
           <h2 style={{ marginLeft: '0' }}>No Rooms Found</h2>
         )}
-        { noResource ? (<Pagination
+        { noResource && !isSearching ? (<Pagination
           totalPages={allRooms.pages}
           hasNext={allRooms.hasNext}
           hasPrevious={allRooms.hasPrevious}
@@ -144,6 +175,9 @@ RoomsList.propTypes = {
     })),
     PropTypes.object,
   ]).isRequired,
+  getRoomByName: PropTypes.shape({
+    fetchMore: PropTypes.func.isRequired,
+  }).isRequired,
 };
 
 export default compose(
@@ -160,4 +194,12 @@ export default compose(
     }),
   }),
   graphql(GET_LOCATIONS_QUERY, { name: 'locations' }),
+  graphql(GET_ROOM_BY_NAME, {
+    name: 'getRoomByName',
+    options: () => ({
+      variables: {
+        name: '',
+      },
+    }),
+  }),
 )(RoomsList);

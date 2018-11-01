@@ -33,4 +33,26 @@ query locations {
   }
 }`;
 
-export { GET_ROOMS_QUERY as default, GET_LOCATIONS_QUERY };
+const GET_ROOM_BY_NAME = gql`
+  query roomByName($name: String!) {
+    getRoomByName(name: $name) {
+      roomType
+      id
+      name
+      capacity
+      floor{
+        block{
+          offices{
+            name
+            location{
+              name
+              id
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+
+export { GET_ROOMS_QUERY as default, GET_LOCATIONS_QUERY, GET_ROOM_BY_NAME };

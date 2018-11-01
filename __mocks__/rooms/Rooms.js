@@ -146,6 +146,29 @@ const locationData = {
   },
 };
 
+const getRoomByNameData = {
+  data: {
+    getRoomByName: [
+      {
+        roomType: 'meeting room',
+        id: '150',
+        name: 'Kampala',
+        capacity: 14,
+        floor: {
+          block: {
+            offices: {
+              name: 'The Dojo 2',
+              location: {
+                name: 'Nairobi',
+                id: '3',
+              },
+            },
+          },
+        },
+      },
+    ],
+  },
+};
 
 // const formDetails = [
 //   {
@@ -166,5 +189,12 @@ const locationData = {
 // ];
 
 
-export { allRoomsReturnData as default, roomLocations, formDetails, locationData };
+export
+{
+  allRoomsReturnData as default,
+  roomLocations,
+  formDetails,
+  locationData,
+  getRoomByNameData,
+};
 

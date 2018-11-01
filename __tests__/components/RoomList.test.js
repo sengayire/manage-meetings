@@ -4,8 +4,9 @@ import { MockedProvider } from 'react-apollo/test-utils';
 import {
   GET_ROOMS_QUERY,
   GET_LOCATIONS_QUERY,
+  GET_ROOM_BY_NAME,
 } from '../../src/graphql/queries/Rooms';
-import allRooms, { roomLocations } from '../../__mocks__/rooms/Rooms';
+import allRooms, { roomLocations, getRoomByNameData } from '../../__mocks__/rooms/Rooms';
 import RoomsLists, { RoomsList } from '../../src/components/RoomsList';
 
 describe('RoomList Component', () => {
@@ -16,6 +17,14 @@ describe('RoomList Component', () => {
       perPage: 5,
     },
   };
+
+  const getRoomByNameRequest = {
+    query: GET_ROOM_BY_NAME,
+    variables: {
+      name: 'Kampala',
+    },
+  };
+
   const props = {
     data: {
       fetchMore: jest.fn(),
@@ -50,6 +59,10 @@ describe('RoomList Component', () => {
         name: 'Kampala',
       }],
     },
+    getRoomByName: {
+      fetchMore: jest.fn(() => Promise.resolve()),
+      updateQuery: jest.fn(),
+    },
     loading: false,
     error: undefined,
   };
@@ -61,8 +74,9 @@ describe('RoomList Component', () => {
   const wrapperCode = (
     <MockedProvider
       mocks={[
-        { request, result },
+        { request, result, getRoomByNameRequest },
         { request: roomLocationsRequest, result: locationsResult },
+        { request: getRoomByNameRequest, result: getRoomByNameData },
       ]}
       addTypename={false}
     >
@@ -108,6 +122,22 @@ describe('RoomList Component', () => {
     expect(wrapper.instance().handleResource());
     expect(wrapper.instance().handleSetState('Kampala', 0, 'Lagos'));
     expect(wrapper.instance().handleResetState());
+  });
+
+  it('handles startSearching function', () => {
+    const wrapper = shallow(<RoomsList {...initProps} />);
+    expect(wrapper.instance().startSearching('kampala'));
+    expect(initProps.data.fetchMore).toBeCalled();
+  });
+
+  it('handles stopSearching function', () => {
+    const wrapper = shallow(<RoomsList {...initProps} />);
+    expect(wrapper.instance().stopSearching());
+  });
+
+  it('calls handleSearchData function', () => {
+    const wrapper = shallow(<RoomsList {...initProps} />);
+    expect(wrapper.instance().handleSearchData());
   });
 
   it('should render loading screen', () => {

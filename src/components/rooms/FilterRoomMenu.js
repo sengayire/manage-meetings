@@ -14,6 +14,8 @@ export class FilterButton extends Component {
     isNoResource: PropTypes.func.isRequired,
     handleSetState: PropTypes.func.isRequired,
     handleResetState: PropTypes.func.isRequired,
+    isSearching: PropTypes.func.isRequired,
+    stopSearching: PropTypes.func.isRequired,
     locations: PropTypes.shape({
       allLocations: PropTypes.array,
     }),
@@ -38,7 +40,6 @@ export class FilterButton extends Component {
   roomCapacity = React.createRef();
 
   handleClear = () => {
-    this.roomCapacity.current.clear();
     this.setState(
       {
         roomCapacity: 0,
@@ -49,6 +50,7 @@ export class FilterButton extends Component {
       () => {
         this.props.isResource();
         this.props.handleResetState();
+        this.props.stopSearching();
       },
     );
     /* istanbul ignore next */
@@ -93,6 +95,18 @@ export class FilterButton extends Component {
         });
     });
   };
+
+  handleSearch = (e) => {
+    const { value } = e.target;
+
+    this.setState({ search: value }, () => {
+      const { search } = this.state;
+      if (search !== '') {
+        this.props.isSearching(search);
+      }
+    });
+  }
+
   render() {
     const {
       roomCapacity, office, location, search,
@@ -118,8 +132,9 @@ export class FilterButton extends Component {
             labelName=""
             inputClass="mrm-input filter-search-input"
             placeholder="Search"
-            onChange={this.handleInputChange}
+            onChange={this.handleSearch}
             required
+            ref={(searchInputField) => { this.searchInputField = searchInputField; }}
           />
         </div>
         <div className="other-filters">

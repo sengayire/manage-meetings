@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AddRoomMenu renders correctly from memory 1`] = `
+exports[`FilterButton renders correctly from memory 1`] = `
 <MockedProvider
   addTypename={false}
   mocks={
@@ -5150,6 +5150,7 @@ exports[`AddRoomMenu renders correctly from memory 1`] = `
       handleSetState={[MockFunction]}
       isNoResource={[MockFunction]}
       isResource={[MockFunction]}
+      isSearching={[MockFunction]}
       locations={
         Object {
           "allLocations": Array [],
@@ -5162,6 +5163,7 @@ exports[`AddRoomMenu renders correctly from memory 1`] = `
           },
         }
       }
+      stopSearching={[MockFunction]}
     >
       <Query
         displayName="Apollo(Apollo(Apollo(FilterButton)))"
@@ -5594,6 +5596,7 @@ exports[`AddRoomMenu renders correctly from memory 1`] = `
           handleSetState={[MockFunction]}
           isNoResource={[MockFunction]}
           isResource={[MockFunction]}
+          isSearching={[MockFunction]}
           locations={
             Object {
               "allLocations": Array [],
@@ -5606,6 +5609,7 @@ exports[`AddRoomMenu renders correctly from memory 1`] = `
               },
             }
           }
+          stopSearching={[MockFunction]}
         >
           <Query
             displayName="Apollo(Apollo(FilterButton))"
@@ -5700,6 +5704,7 @@ exports[`AddRoomMenu renders correctly from memory 1`] = `
               handleSetState={[MockFunction]}
               isNoResource={[MockFunction]}
               isResource={[MockFunction]}
+              isSearching={[MockFunction]}
               locations={
                 Object {
                   "error": undefined,
@@ -5721,6 +5726,7 @@ exports[`AddRoomMenu renders correctly from memory 1`] = `
                   },
                 }
               }
+              stopSearching={[MockFunction]}
             >
               <Query
                 displayName="Apollo(FilterButton)"
@@ -5867,6 +5873,7 @@ exports[`AddRoomMenu renders correctly from memory 1`] = `
                   handleSetState={[MockFunction]}
                   isNoResource={[MockFunction]}
                   isResource={[MockFunction]}
+                  isSearching={[MockFunction]}
                   locations={
                     Object {
                       "error": undefined,
@@ -5895,6 +5902,7 @@ exports[`AddRoomMenu renders correctly from memory 1`] = `
                       "variables": Object {},
                     }
                   }
+                  stopSearching={[MockFunction]}
                 >
                   <ThemedIconMenu
                     className="filter-dropdown"

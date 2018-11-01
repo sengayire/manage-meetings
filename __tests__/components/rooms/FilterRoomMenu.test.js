@@ -8,12 +8,14 @@ import { officeDetails } from '../../../__mocks__/offices/Offices';
 
 import FilterRoomMenu, { FilterButton } from '../../../src/components/rooms/FilterRoomMenu';
 
-describe('AddRoomMenu', () => {
+describe('FilterButton', () => {
   const initProps = {
     isResource: jest.fn(),
     isNoResource: jest.fn(),
     handleSetState: jest.fn(),
     handleResetState: jest.fn(),
+    isSearching: jest.fn(),
+    stopSearching: jest.fn(),
     offices: {
       allOffices: {
         offices: [],
@@ -80,6 +82,26 @@ describe('AddRoomMenu', () => {
   it('should handle the handleInputChange function on resovle', () => {
     expect(wrapper.instance().handleInputChange(event, 0));
     expect(initProps.data.fetchMore).toBeCalled();
+  });
+
+  it('should call the handleSearch function', () => {
+    const eventForSearch = {
+      target: {
+        name: 'search',
+        value: 'Kampala',
+      },
+    };
+    expect(wrapper.instance().handleSearch(eventForSearch, 0));
+  });
+
+  it('should handle Search for an empty input', () => {
+    const eventForSearch = {
+      target: {
+        name: 'search',
+        value: '',
+      },
+    };
+    expect(wrapper.instance().handleSearch(eventForSearch, 0));
   });
 
   it('should handle the handleInputChange function on reject', () => {
