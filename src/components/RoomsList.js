@@ -3,7 +3,11 @@ import { graphql, compose } from 'react-apollo';
 import PropTypes from 'prop-types';
 
 import '../assets/styles/roomlist.scss';
-import { GET_ROOMS_QUERY, GET_LOCATIONS_QUERY, GET_ROOM_BY_NAME } from '../graphql/queries/Rooms';
+import {
+  GET_ROOMS_QUERY,
+  GET_LOCATIONS_QUERY,
+  GET_ROOM_BY_NAME,
+} from '../graphql/queries/Rooms';
 import ColGroup from './helpers/ColGroup';
 import TableHead from './helpers/TableHead';
 import TableBody from './helpers/TableBody';
@@ -58,7 +62,7 @@ export class RoomsList extends React.Component {
       location: '',
       office: '',
     });
-  }
+  };
 
   handleData = (perPage, page) => {
     const { location, capacity, office } = this.state;
@@ -83,20 +87,21 @@ export class RoomsList extends React.Component {
   handleSearchData = (searchData) => {
     const rooms = { rooms: searchData };
     this.setState({ allRooms: rooms, noResource: true });
-  }
+  };
 
   stopSearching = () => {
     this.setState({ isSearching: false });
-  }
+  };
 
   startSearching = (roomName) => {
     this.setState({ isSearching: true });
 
     /* istanbul ignore next */
-    this.props.getRoomByName.fetchMore({
-      variables: { name: roomName },
-      updateQuery: (prev, { fetchMoreResult }) => ({ ...fetchMoreResult }),
-    })
+    this.props.getRoomByName
+      .fetchMore({
+        variables: { name: roomName },
+        updateQuery: (prev, { fetchMoreResult }) => ({ ...fetchMoreResult }),
+      })
       .then((result) => {
         if (result.data) {
           this.handleSearchData(result.data.getRoomByName);
@@ -106,7 +111,7 @@ export class RoomsList extends React.Component {
         this.setState({ noResource: false });
         this.setState({ isSearching: false });
       });
-  }
+  };
 
   render() {
     const { allRooms, noResource, isSearching } = this.state;
@@ -147,12 +152,14 @@ export class RoomsList extends React.Component {
         ) : (
           <h2 style={{ marginLeft: '0' }}>No Rooms Found</h2>
         )}
-        { noResource && !isSearching ? (<Pagination
-          totalPages={allRooms.pages}
-          hasNext={allRooms.hasNext}
-          hasPrevious={allRooms.hasPrevious}
-          handleData={this.handleData}
-        />) : null }
+        {noResource && !isSearching ? (
+          <Pagination
+            totalPages={allRooms.pages}
+            hasNext={allRooms.hasNext}
+            hasPrevious={allRooms.hasPrevious}
+            handleData={this.handleData}
+          />
+        ) : null}
       </div>
     );
   }

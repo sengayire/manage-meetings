@@ -6,7 +6,10 @@ import {
   GET_LOCATIONS_QUERY,
   GET_ROOM_BY_NAME,
 } from '../../src/graphql/queries/Rooms';
-import allRooms, { roomLocations, getRoomByNameData } from '../../__mocks__/rooms/Rooms';
+import allRooms, {
+  roomLocations,
+  getRoomByNameData,
+} from '../../__mocks__/rooms/Rooms';
 import RoomsLists, { RoomsList } from '../../src/components/RoomsList';
 
 describe('RoomList Component', () => {
@@ -25,27 +28,6 @@ describe('RoomList Component', () => {
     },
   };
 
-  const props = {
-    data: {
-      fetchMore: jest.fn(),
-      allRooms: {
-        rooms: [],
-      },
-    },
-    locations: {
-      allLocations: [{
-        id: 2,
-        name: 'Kampala',
-      }],
-      error: {
-        locationError: {
-          message: 'error',
-        },
-      },
-    },
-    loading: false,
-    error: undefined,
-  };
   const initProps = {
     data: {
       fetchMore: jest.fn(),
@@ -53,11 +35,16 @@ describe('RoomList Component', () => {
         rooms: [],
       },
     },
+    allRooms: {
+      rooms: [],
+    },
     locations: {
-      allLocations: [{
-        id: 2,
-        name: 'Kampala',
-      }],
+      allLocations: [
+        {
+          id: 2,
+          name: 'Kampala',
+        },
+      ],
     },
     getRoomByName: {
       fetchMore: jest.fn(() => Promise.resolve()),
@@ -83,7 +70,6 @@ describe('RoomList Component', () => {
       <RoomsLists />
     </MockedProvider>
   );
-
 
   const locationErrorWrapper = (
     <MockedProvider
@@ -137,7 +123,8 @@ describe('RoomList Component', () => {
 
   it('calls handleSearchData function', () => {
     const wrapper = shallow(<RoomsList {...initProps} />);
-    expect(wrapper.instance().handleSearchData());
+    const searchedData = [];
+    expect(wrapper.instance().handleSearchData(searchedData));
   });
 
   it('should render loading screen', () => {
@@ -181,7 +168,8 @@ describe('RoomList Component', () => {
   });
 
   it('handles the error in component', () => {
-    const wrapper = shallow(<RoomsList {...props} />);
+    const wrapper = shallow(<RoomsList {...initProps} />);
+
     wrapper.setState({
       allRooms: {
         rooms: [],

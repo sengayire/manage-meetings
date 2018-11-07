@@ -20,4 +20,3 @@ TableBody.propTypes = {
 };
 
 export default TableBody;
-

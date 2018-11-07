@@ -1,7 +1,10 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import { MockedProvider } from 'react-apollo/test-utils';
-import { GET_ROOMS_QUERY, GET_LOCATIONS_QUERY } from '../../../src/graphql/queries/Rooms';
+import {
+  GET_ROOMS_QUERY,
+  GET_LOCATIONS_QUERY,
+} from '../../../src/graphql/queries/Rooms';
 import { GET_ALL_OFFICES } from '../../../src/graphql/queries/Offices';
 import allRooms, { roomLocations } from '../../../__mocks__/rooms/Rooms';
 import { officeDetails } from '../../../__mocks__/offices/Offices';
@@ -114,9 +117,13 @@ describe('FilterButton', () => {
       isNoResource: jest.fn(),
       handleSetState: jest.fn(),
       handleResetState: jest.fn(),
+      isSearching: jest.fn(),
+      stopSearching: jest.fn(),
       offices: {
         allOffices: {
-          offices: [{ id: 1, name: 'The Crest', location: { name: 'Kampala' } }],
+          offices: [
+            { id: 1, name: 'The Crest', location: { name: 'Kampala' } },
+          ],
         },
       },
       locations: {
