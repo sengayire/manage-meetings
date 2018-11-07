@@ -28,7 +28,7 @@ exports[`AverageMeetingList component should render correctly 1`] = `
                         "value": Object {
                           "block": false,
                           "kind": "StringValue",
-                          "value": "Oct",
+                          "value": "Nov",
                         },
                       },
                       Object {
@@ -163,7 +163,7 @@ exports[`AverageMeetingList component should render correctly 1`] = `
                             "value": Object {
                               "block": false,
                               "kind": "StringValue",
-                              "value": "Oct",
+                              "value": "Nov",
                             },
                           },
                           Object {
@@ -292,7 +292,7 @@ exports[`AverageMeetingList component should render correctly 1`] = `
                               "value": Object {
                                 "block": false,
                                 "kind": "StringValue",
-                                "value": "Oct",
+                                "value": "Nov",
                               },
                             },
                             Object {
@@ -432,7 +432,7 @@ exports[`AverageMeetingList component should render correctly 1`] = `
                                   "value": Object {
                                     "block": false,
                                     "kind": "StringValue",
-                                    "value": "Oct",
+                                    "value": "Nov",
                                   },
                                 },
                                 Object {
@@ -560,7 +560,7 @@ exports[`AverageMeetingList component should render correctly 1`] = `
                               "value": Object {
                                 "block": false,
                                 "kind": "StringValue",
-                                "value": "Oct",
+                                "value": "Nov",
                               },
                             },
                             Object {
@@ -658,7 +658,7 @@ exports[`AverageMeetingList component should render correctly 1`] = `
                 "isCurrentlyPolling": false,
                 "isTornDown": false,
                 "lastError": [Error: Network error: No more mocked responses for the query: {
-  monthlyDurationsOfMeetings(month: "Oct", year: 2018) {
+  monthlyDurationsOfMeetings(month: "Nov", year: 2018) {
     MeetingsDurationaAnalytics {
       roomName
       count
@@ -711,7 +711,7 @@ exports[`AverageMeetingList component should render correctly 1`] = `
                                   "value": Object {
                                     "block": false,
                                     "kind": "StringValue",
-                                    "value": "Oct",
+                                    "value": "Nov",
                                   },
                                 },
                                 Object {
@@ -842,7 +842,7 @@ exports[`AverageMeetingList component should render correctly 1`] = `
                                 "value": Object {
                                   "block": false,
                                   "kind": "StringValue",
-                                  "value": "Oct",
+                                  "value": "Nov",
                                 },
                               },
                               Object {
@@ -935,7 +935,7 @@ exports[`AverageMeetingList component should render correctly 1`] = `
                   },
                 },
                 "networkError": [Error: No more mocked responses for the query: {
-  monthlyDurationsOfMeetings(month: "Oct", year: 2018) {
+  monthlyDurationsOfMeetings(month: "Nov", year: 2018) {
     MeetingsDurationaAnalytics {
       roomName
       count
@@ -1004,7 +1004,7 @@ exports[`AverageMeetingList component should render correctly 1`] = `
                                 "value": Object {
                                   "block": false,
                                   "kind": "StringValue",
-                                  "value": "Oct",
+                                  "value": "Nov",
                                 },
                               },
                               Object {
@@ -1177,7 +1177,7 @@ exports[`AverageMeetingList component should render correctly 1`] = `
                                     "value": Object {
                                       "block": false,
                                       "kind": "StringValue",
-                                      "value": "Oct",
+                                      "value": "Nov",
                                     },
                                   },
                                   Object {
@@ -1714,7 +1714,7 @@ exports[`AverageMeetingList component should render correctly 2`] = `
                         "value": Object {
                           "block": false,
                           "kind": "StringValue",
-                          "value": "Oct",
+                          "value": "Nov",
                         },
                       },
                       Object {
@@ -1849,7 +1849,7 @@ exports[`AverageMeetingList component should render correctly 2`] = `
                             "value": Object {
                               "block": false,
                               "kind": "StringValue",
-                              "value": "Oct 29 2018",
+                              "value": "Nov 05 2018",
                             },
                           },
                           Object {
@@ -1861,7 +1861,7 @@ exports[`AverageMeetingList component should render correctly 2`] = `
                             "value": Object {
                               "block": false,
                               "kind": "StringValue",
-                              "value": "Nov 02 2018",
+                              "value": "Nov 09 2018",
                             },
                           },
                         ],
@@ -1979,7 +1979,7 @@ exports[`AverageMeetingList component should render correctly 2`] = `
                               "value": Object {
                                 "block": false,
                                 "kind": "StringValue",
-                                "value": "Oct 29 2018",
+                                "value": "Nov 05 2018",
                               },
                             },
                             Object {
@@ -1991,7 +1991,7 @@ exports[`AverageMeetingList component should render correctly 2`] = `
                               "value": Object {
                                 "block": false,
                                 "kind": "StringValue",
-                                "value": "Nov 02 2018",
+                                "value": "Nov 09 2018",
                               },
                             },
                           ],
@@ -2120,7 +2120,7 @@ exports[`AverageMeetingList component should render correctly 2`] = `
                                   "value": Object {
                                     "block": false,
                                     "kind": "StringValue",
-                                    "value": "Oct 29 2018",
+                                    "value": "Nov 05 2018",
                                   },
                                 },
                                 Object {
@@ -2132,7 +2132,7 @@ exports[`AverageMeetingList component should render correctly 2`] = `
                                   "value": Object {
                                     "block": false,
                                     "kind": "StringValue",
-                                    "value": "Nov 02 2018",
+                                    "value": "Nov 09 2018",
                                   },
                                 },
                               ],
@@ -2249,7 +2249,7 @@ exports[`AverageMeetingList component should render correctly 2`] = `
                               "value": Object {
                                 "block": false,
                                 "kind": "StringValue",
-                                "value": "Oct 29 2018",
+                                "value": "Nov 05 2018",
                               },
                             },
                             Object {
@@ -2261,7 +2261,7 @@ exports[`AverageMeetingList component should render correctly 2`] = `
                               "value": Object {
                                 "block": false,
                                 "kind": "StringValue",
-                                "value": "Nov 02 2018",
+                                "value": "Nov 09 2018",
                               },
                             },
                           ],
@@ -2348,7 +2348,7 @@ exports[`AverageMeetingList component should render correctly 2`] = `
                 "isCurrentlyPolling": false,
                 "isTornDown": false,
                 "lastError": [Error: Network error: No more mocked responses for the query: {
-  weeklyDurationsOfMeetings(weekStart: "Oct 29 2018", weekEnd: "Nov 02 2018") {
+  weeklyDurationsOfMeetings(weekStart: "Nov 05 2018", weekEnd: "Nov 09 2018") {
     MeetingsDurationaAnalytics {
       roomName
       count
@@ -2401,7 +2401,7 @@ exports[`AverageMeetingList component should render correctly 2`] = `
                                   "value": Object {
                                     "block": false,
                                     "kind": "StringValue",
-                                    "value": "Oct 29 2018",
+                                    "value": "Nov 05 2018",
                                   },
                                 },
                                 Object {
@@ -2413,7 +2413,7 @@ exports[`AverageMeetingList component should render correctly 2`] = `
                                   "value": Object {
                                     "block": false,
                                     "kind": "StringValue",
-                                    "value": "Nov 02 2018",
+                                    "value": "Nov 09 2018",
                                   },
                                 },
                               ],
@@ -2533,7 +2533,7 @@ exports[`AverageMeetingList component should render correctly 2`] = `
                                 "value": Object {
                                   "block": false,
                                   "kind": "StringValue",
-                                  "value": "Oct 29 2018",
+                                  "value": "Nov 05 2018",
                                 },
                               },
                               Object {
@@ -2545,7 +2545,7 @@ exports[`AverageMeetingList component should render correctly 2`] = `
                                 "value": Object {
                                   "block": false,
                                   "kind": "StringValue",
-                                  "value": "Nov 02 2018",
+                                  "value": "Nov 09 2018",
                                 },
                               },
                             ],
@@ -2627,7 +2627,7 @@ exports[`AverageMeetingList component should render correctly 2`] = `
                   },
                 },
                 "networkError": [Error: No more mocked responses for the query: {
-  weeklyDurationsOfMeetings(weekStart: "Oct 29 2018", weekEnd: "Nov 02 2018") {
+  weeklyDurationsOfMeetings(weekStart: "Nov 05 2018", weekEnd: "Nov 09 2018") {
     MeetingsDurationaAnalytics {
       roomName
       count
@@ -2696,7 +2696,7 @@ exports[`AverageMeetingList component should render correctly 2`] = `
                                 "value": Object {
                                   "block": false,
                                   "kind": "StringValue",
-                                  "value": "Oct 29 2018",
+                                  "value": "Nov 05 2018",
                                 },
                               },
                               Object {
@@ -2708,7 +2708,7 @@ exports[`AverageMeetingList component should render correctly 2`] = `
                                 "value": Object {
                                   "block": false,
                                   "kind": "StringValue",
-                                  "value": "Nov 02 2018",
+                                  "value": "Nov 09 2018",
                                 },
                               },
                             ],
@@ -2870,7 +2870,7 @@ exports[`AverageMeetingList component should render correctly 2`] = `
                                     "value": Object {
                                       "block": false,
                                       "kind": "StringValue",
-                                      "value": "Oct 29 2018",
+                                      "value": "Nov 05 2018",
                                     },
                                   },
                                   Object {
@@ -2882,7 +2882,7 @@ exports[`AverageMeetingList component should render correctly 2`] = `
                                     "value": Object {
                                       "block": false,
                                       "kind": "StringValue",
-                                      "value": "Nov 02 2018",
+                                      "value": "Nov 09 2018",
                                     },
                                   },
                                 ],

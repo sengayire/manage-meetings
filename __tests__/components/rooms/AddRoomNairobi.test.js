@@ -73,14 +73,14 @@ describe('AddRoomNairobi', () => {
     wrapper.find('input#roomName')
       .simulate('change', { target: { name: 'roomName', value: 'Accra' } });
     wrapper.update();
-    expect(wrapper.find('input#roomName').prop('defaultValue')).toEqual('Accra');
+    expect(wrapper.find('input#roomName').prop('value')).toEqual('Accra');
   });
 
   it('should handle change in roomCapacity', () => {
     wrapper.find('input#roomCapacity')
       .simulate('change', { target: { name: 'roomCapacity', value: 2 } });
     wrapper.update();
-    expect(wrapper.find('input#roomCapacity').prop('defaultValue')).toEqual(2);
+    expect(wrapper.find('input#roomCapacity').prop('value')).toEqual(2);
   });
   it('should handle increment in roomCapacity', () => {
     shallowWrapper.instance().handleInputChange({ target: { name: 'up' } }, 12);

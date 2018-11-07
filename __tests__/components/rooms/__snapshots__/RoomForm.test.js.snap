@@ -63,13 +63,13 @@ exports[`RoomForm should render properly 1`] = `
           Room Name
           <input
             className="mrm-input default-input"
-            defaultValue="text"
             id="roomName"
             name="roomName"
             onChange={[MockFunction]}
             placeholder="Enter room name"
             required={true}
             type="text"
+            value="text"
           />
         </label>
       </div>

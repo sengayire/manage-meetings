@@ -66,6 +66,10 @@ export class FilterButton extends Component {
     });
   };
 
+  handleClose = () => {
+    this.filterButton.click();
+  }
+
   handleInputChange = (e, capacity = 0) => {
     const { name, value } = e.target;
     this.setState({ [name]: value, roomCapacity: capacity }, () => {
@@ -117,7 +121,7 @@ export class FilterButton extends Component {
       offices &&
       offices.filter(selectedOffice => selectedOffice.location.name === this.state.location);
     const filterIcon = () => (
-      <div className="filterBtn">
+      <div ref={(filterButton) => { this.filterButton = filterButton; }} className="filterBtn">
         <span>Filter</span>
       </div>
     );
@@ -134,7 +138,6 @@ export class FilterButton extends Component {
             placeholder="Search"
             onChange={this.handleSearch}
             required
-            ref={(searchInputField) => { this.searchInputField = searchInputField; }}
           />
         </div>
         <div className="other-filters">

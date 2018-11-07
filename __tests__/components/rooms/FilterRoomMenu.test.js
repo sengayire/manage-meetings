@@ -104,6 +104,10 @@ describe('FilterButton', () => {
     expect(wrapper.instance().handleSearch(eventForSearch, 0));
   });
 
+  it('should have handleClose for filter menu', () => {
+    expect(wrapper.instance().handleClose());
+  });
+
   it('should handle the handleInputChange function on reject', () => {
     const props = {
       isResource: jest.fn(),

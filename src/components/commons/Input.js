@@ -52,7 +52,7 @@ export class Input extends Component {
             type={type}
             className={inputClass}
             name={name}
-            defaultValue={value}
+            value={value}
             onChange={onChange}
             id={id}
             {...otherProps}

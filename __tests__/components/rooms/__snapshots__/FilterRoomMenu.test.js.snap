@@ -6110,13 +6110,13 @@ exports[`FilterButton renders correctly from memory 1`] = `
                                       >
                                         <input
                                           className="mrm-input filter-search-input"
-                                          defaultValue=""
                                           id="filterSearch"
                                           name="search"
                                           onChange={[Function]}
                                           placeholder="Search"
                                           required={true}
                                           type="text"
+                                          value=""
                                         />
                                       </label>
                                     </div>
@@ -6227,7 +6227,6 @@ exports[`FilterButton renders correctly from memory 1`] = `
                                         Room Capacity
                                         <input
                                           className="mrm-input"
-                                          defaultValue={0}
                                           id="roomCapacity"
                                           name="roomCapacity"
                                           onChange={[Function]}
@@ -6235,6 +6234,7 @@ exports[`FilterButton renders correctly from memory 1`] = `
                                           required={true}
                                           title="Please add numbers only"
                                           type="number"
+                                          value={0}
                                         />
                                         <Controls
                                           controlsClass="filter-controls"
@@ -6283,6 +6283,7 @@ exports[`FilterButton renders correctly from memory 1`] = `
                                   </button>
                                   <button
                                     className="footer-btns close"
+                                    onClick={[Function]}
                                   >
                                     Close
                                   </button>
