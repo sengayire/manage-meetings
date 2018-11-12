@@ -114,9 +114,9 @@ export class AnalyticsActivity extends Component {
                 <div className="date-label">Date options</div>
                 <RadioButton value="Today" label="Today" />
                 <RadioButton value="Tomorrow" label="Tomorrow" />
-                <RadioButton value="This Week" label="This week" className="radioGroup-test1" />
-                <RadioButton value="This Month" label="This month" />
-                <RadioButton value="Pick a Date" label="Pick a Date" />
+                <RadioButton value="This Week" label="This Week" className="radioGroup-test1" />
+                <RadioButton value="This Month" label="This Month" />
+                <RadioButton value="Pick Date" label="Pick a Date" />
               </RadioGroup>
             </IconMenu>
 

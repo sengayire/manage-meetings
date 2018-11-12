@@ -4,6 +4,7 @@ import '../../assets/styles/averageMeetinglist.scss';
 import TableHead from '../helpers/TableHead';
 import QueryAnalyticsPerMonth, { QueryAnalyticsPerMonthPagination } from './QueryAnalyticsPerMonth';
 import QueryAnalyticsPerWeek, { QueryAnalyticsPerWeekPagination } from './QueryAnalyticsPerWeek';
+import QueryAnalyticsPerDay, { QueryAnalyticsPerDailyPagination } from './QueryAnalyticsPerDay';
 
 
 const AverageMeetingList = ({ dateValue }) => {
@@ -18,6 +19,10 @@ const AverageMeetingList = ({ dateValue }) => {
     case 'This Week':
       renderData = <QueryAnalyticsPerWeek />;
       dataPagination = <QueryAnalyticsPerWeekPagination />;
+      break;
+    case 'Today':
+      renderData = <QueryAnalyticsPerDay />;
+      dataPagination = <QueryAnalyticsPerDailyPagination />;
       break;
     default:
       renderData = null;

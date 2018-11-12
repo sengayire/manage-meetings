@@ -21,6 +21,7 @@ describe('RoomList Component', () => {
     },
   };
 
+
   const getRoomByNameRequest = {
     query: GET_ROOM_BY_NAME,
     variables: {

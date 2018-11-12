@@ -1,11 +1,11 @@
-import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
+import React, { Fragment } from 'react';
+import Checkins from '../../src/components/analytics/checkins';
 import '../assets/styles/custom.scss';
 import '../assets/styles/topmenu.scss';
-import AveragePieChartList from '../components/analytics/averagePieChart/AveragePieChartList';
-import Checkins from '../../src/components/analytics/checkins';
-import ComposedBookedRooms from '../components/analytics/ComposedBookedRooms';
 import AverageMeetingList from '../components/analytics/AverageMeetingList';
+import ComposedBookedRooms from '../components/analytics/ComposedBookedRooms';
+import AveragePieChartList from '../components/analytics/averagePieChart/AveragePieChartList';
 
 const AnalyticsOverview = ({ dateValue }) => (
   <Fragment>
@@ -29,6 +29,10 @@ AnalyticsOverview.defaultProps = {
 
 AnalyticsOverview.propTypes = {
   dateValue: PropTypes.string,
+};
+
+AnalyticsOverview.propTypes = {
+  dateValue: PropTypes.string.isRequired,
 };
 
 export default AnalyticsOverview;

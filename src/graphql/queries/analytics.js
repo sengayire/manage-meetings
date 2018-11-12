@@ -1,5 +1,6 @@
 import gql from 'graphql-tag';
 import getCurrentWeek from '../../components/helpers/getCurrentWeek';
+import currentDate from '../../components/helpers/getCurrentDay';
 
 const months = ['"Jan"', '"Feb"', '"Mar"', '"Apr"', '"May"', '"Jun"', '"Jul"', '"Aug"', '"Sep"', '"Oct"', '"Nov"', '"Dec"'];
 
@@ -36,4 +37,20 @@ export const ANALYTICS_MEETING_ROOM_PER_WEEK = gql`
   }
 `;
 
-export { ANALYTICS_MEETING_ROOM_PER_WEEK as default, ANALYTICS_MEETING_ROOM_PER_MONTH };
+
+const ANALYTICS_MEETING_ROOM_PER_DAY = gql`
+ query {
+    dailyDurationsOfMeetings(dayStart: "${currentDate()}"){
+        MeetingsDurationaAnalytics {
+            count
+            roomName
+            totalDuration
+    }
+ }
+}
+`;
+export {
+  ANALYTICS_MEETING_ROOM_PER_WEEK as default,
+  ANALYTICS_MEETING_ROOM_PER_MONTH,
+  ANALYTICS_MEETING_ROOM_PER_DAY,
+};

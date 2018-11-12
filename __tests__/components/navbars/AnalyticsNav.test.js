@@ -1,10 +1,16 @@
 import React from 'react';
 import { mount } from 'enzyme';
+
+
 import AnalyticsNav from '../../../src/components/navbars/AnalyticsNav';
 
 describe('AnalyticsNav Component', () => {
   const toggleMenu = jest.fn();
-  const wrapper = mount(<AnalyticsNav onClick={toggleMenu} onBlur={toggleMenu} />);
+
+  const wrapper = mount(<AnalyticsNav
+    onClick={toggleMenu}
+    onBlur={toggleMenu}
+  />);
 
   const event = {
     preventDefault: jest.fn(),
@@ -37,20 +43,28 @@ describe('AnalyticsNav Component', () => {
 
   it('should have a button', () => {
     wrapper.setState({
-      view: 'activity',
+      view: 'overview',
+      value: '',
     });
     const action = wrapper.instance();
+    const showOverview = jest.spyOn(wrapper.instance(), 'showOverview');
     action.showOverview();
     expect(wrapper.state().view).toEqual('overview');
+    wrapper.update();
+    expect(showOverview).toBeCalled();
   });
 
   it('should have a button', () => {
     wrapper.setState({
-      view: 'overview',
+      view: 'activity',
+      value: '',
     });
     const action = wrapper.instance();
+    const showActivityView = jest.spyOn(wrapper.instance(), 'showActivityView');
     action.showActivityView();
     expect(wrapper.state().view).toEqual('activity');
+    wrapper.update();
+    expect(showActivityView).toBeCalled();
   });
 
   it('should have a button', () => {
@@ -81,13 +95,16 @@ describe('AnalyticsNav Component', () => {
   it('should show overViewIcon', () => {
     wrapper.setState({
       view: 'overview',
+      value: '',
     });
     const overviewSpan = wrapper.find('#overview-span');
     expect(overviewSpan).toHaveLength(1);
+    wrapper.update();
   });
   it('should show activityIcon', () => {
     wrapper.setState({
       view: 'overview',
+      value: '',
     });
     const activitySpan = wrapper.find('#activity-span');
     expect(activitySpan).toHaveLength(1);
@@ -99,9 +116,9 @@ describe('AnalyticsNav Component', () => {
     expect(wrapper.state().menuOpen).toEqual(true);
   });
   it('should call toggleMenu at onBlur', () => {
-    wrapper.setState({ menuOpen: false });
+    wrapper.setState({ menuOpen: true });
     const dropBtn = wrapper.find('#btnControl');
     dropBtn.simulate('blur');
-    expect(wrapper.state().menuOpen).toEqual(true);
+    expect(wrapper.state().menuOpen).toEqual(false);
   });
 });
