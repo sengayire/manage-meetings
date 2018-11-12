@@ -24,8 +24,8 @@ const Checkins = () => (
       chartSvg={appBookingsSvg}
     />
     <DonutChart
-      chartTitle="Average Room Utilisation"
-      hintText="Average Room Utilisation pie chart"
+      chartTitle="% of Auto Cancellations"
+      hintText="% of Auto Cancellations pie chart"
       entries={16}
       total={20}
       percentage={80}

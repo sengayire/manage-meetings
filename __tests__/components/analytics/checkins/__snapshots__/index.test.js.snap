@@ -24,10 +24,10 @@ exports[`Checkins component should render properly 1`] = `
   />
   <DonutChart
     chartSvg="test-file-stub"
-    chartTitle="Average Room Utilisation"
+    chartTitle="% of Auto Cancellations"
     entries={16}
     hasInfo={false}
-    hintText="Average Room Utilisation pie chart"
+    hintText="% of Auto Cancellations pie chart"
     percentage={80}
     total={20}
   />
