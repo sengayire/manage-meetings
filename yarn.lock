@@ -10570,10 +10570,7 @@ w3c-hr-time@^1.0.1:
 waait@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/waait/-/waait-1.0.2.tgz#c234ed748a032cb7d5e83cb691567c6dc545b37d"
-<<<<<<< HEAD
   integrity sha512-amvD7uRx48U2gXOgzwV7PbcpSy8O3Fect2SqiLbBIVH9Zh0UMnDWckSLnsdKNwq7pvarWnPWrpYad2P3pgmRYw==
-=======
->>>>>>> 5f673b9... feat(Analytics): Average analytics per day
 
 walker@~1.0.5:
   version "1.0.7"

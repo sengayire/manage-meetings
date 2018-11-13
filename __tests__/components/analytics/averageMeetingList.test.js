@@ -15,7 +15,8 @@ describe('AverageMeetingList component for case: This month', () => {
       </MockedProvider>
     ));
     await wait(0);
-    expect(wrapper).toMatchSnapshot();
+    const findClass = wrapper.find('.showingBlock');
+    expect(findClass.length).toBe(1);
   });
 });
 
@@ -27,7 +28,8 @@ describe('AverageMeetingList component for case: Today', () => {
       </MockedProvider>
     ));
     await wait(0);
-    expect(wrapper).toMatchSnapshot();
+    const findClass = wrapper.find('.average-meeting-list');
+    expect(findClass.length).toBe(1);
   });
 });
 
@@ -39,6 +41,7 @@ describe('AverageMeetingList component for case: This Week', () => {
       </MockedProvider>
     ));
     await wait(0);
-    expect(wrapper).toMatchSnapshot();
+    const findClass = wrapper.find('.average-meeting-list');
+    expect(findClass.length).toBe(1);
   });
 });
