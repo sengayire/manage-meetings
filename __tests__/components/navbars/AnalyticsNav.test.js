@@ -34,37 +34,25 @@ describe('AnalyticsNav Component', () => {
 
   const analyticNavWrapper = wrapper.find(AnalyticsNav).instance();
 
-  const event = {
-    preventDefault: jest.fn(),
-  };
-
-  it('renders properly', () => {
-    expect(wrapper).toMatchSnapshot();
-  });
-
   it('should have a div', () => {
     const div = wrapper.find('div');
-    expect(div).toHaveLength(63);
+    expect(div).toHaveLength(49);
   });
 
-  it('should have a IconMenu', () => {
-    const IconMenu = wrapper.find('IconMenu');
-    expect(IconMenu).toHaveLength(1);
-  });
-
-  it('should have a RadioGroup', () => {
-    const RadioGroup = wrapper.find('RadioGroup');
-    expect(RadioGroup).toHaveLength(1);
-  });
-
-  it('should have a RadioButton', () => {
-    const RadioButton = wrapper.find('RadioButton');
-    expect(RadioButton).toHaveLength(5);
+  it('should have a calendar when calendar button is clicked', () => {
+    analyticNavWrapper.setState({
+      calenderOpen: true,
+    });
+    const CalendarButton = wrapper.find('#calendar-btn').at(0);
+    expect(CalendarButton).toHaveLength(1);
+    analyticNavWrapper.setState({
+      calenderOpen: false,
+    });
   });
 
   it('should have a button', () => {
     const button = wrapper.find('button');
-    expect(button).toHaveLength(7);
+    expect(button).toHaveLength(5);
   });
 
   it('should call showOverview', () => {
@@ -73,7 +61,6 @@ describe('AnalyticsNav Component', () => {
       value: '',
     });
 
-    // const action = analyticNavWrapper.instance();
     const showOverview = jest.spyOn(analyticNavWrapper, 'showOverview');
     analyticNavWrapper.showOverview();
     expect(analyticNavWrapper.state.view).toEqual('overview');
@@ -102,21 +89,6 @@ describe('AnalyticsNav Component', () => {
     expect(analyticNavWrapper.state.value).toEqual('Today');
   });
 
-  it('should call handleChange', () => {
-    const handleChange = jest.spyOn(analyticNavWrapper, 'handleChange');
-    analyticNavWrapper.handleChange('Today');
-    expect(handleChange).toBeCalled();
-  });
-
-  it('should call handleStateChange', () => {
-    const handleStateChange = jest.spyOn(
-      analyticNavWrapper,
-      'handleStateChange',
-    );
-    analyticNavWrapper.handleStateChange(event);
-    expect(handleStateChange).toBeCalled();
-  });
-
   it('should show overViewIcon', () => {
     analyticNavWrapper.setState({
       view: 'overview',
@@ -143,11 +115,20 @@ describe('AnalyticsNav Component', () => {
     dropBtn.simulate('click');
     expect(analyticNavWrapper.state.menuOpen).toEqual(true);
   });
-
+  it('should call sendDateData', () => {
+    analyticNavWrapper.sendDateData('05 Nov 2018', '06 Nov 2018');
+    expect(analyticNavWrapper.state.endDate).toEqual('06 Nov 2018');
+  });
   it('should call toggleMenu at onBlur', () => {
     analyticNavWrapper.setState({ menuOpen: true });
     const dropBtn = wrapper.find('#btnControl');
     dropBtn.simulate('blur');
     expect(analyticNavWrapper.state.menuOpen).toEqual(false);
+  });
+  it('should call calendarToggle at onClick', () => {
+    analyticNavWrapper.setState({ calenderOpen: true });
+    const calendarBtn = wrapper.find('#calendar-btn').at(0);
+    calendarBtn.simulate('click');
+    expect(analyticNavWrapper.state.calenderOpen).toEqual(false);
   });
 });

@@ -1,0 +1,148 @@
+.Selectable{
+    line-height: 15px;
+}
+.Selectable .DayPicker-Day--selected:not(.DayPicker-Day--start):not(.DayPicker-Day--end):not(.DayPicker-Day--outside) {
+    background-color: #f0f8ff !important;
+    color: #2a598f;
+  }
+  .Selectable .DayPicker-Day {
+    border-radius: 0 !important;
+  }
+  .Selectable .DayPicker-Day--start {
+    border-top-left-radius: 50% !important;
+    border-bottom-left-radius: 50% !important;
+  }
+  .Selectable .DayPicker-Day--end {
+    border-top-right-radius: 50% !important;
+    border-bottom-right-radius: 50% !important;
+  }
+
+
+  .calender {
+    display: flex;
+    flex-direction: column;
+    right: 9vw;
+    position: absolute;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    background: #fff;
+    justify-content: space-between;
+    padding: 20px 15px 8px;
+    margin-top: 70px;
+    
+    &__button {
+      z-index: 10000;
+      align-self: flex-end;
+      
+      .ok {
+        background-color: #3359DB;
+        color: #FFFFFF;
+      }
+      
+      &__item {
+        margin: 10px;
+        padding: 5px;
+        color: #333E44;
+        padding-top: 14px;
+        border-radius: 2px;
+        font-family: "DIN Pro";
+        font-size: 13px;
+        font-weight: 300;
+        line-height: 14px;
+        text-align: right;   
+      }
+    }
+  }
+  .calendar-parent{
+    display: flex;
+    position: absolute;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    background: #fff;
+  }
+ .date_nav {
+   float: left;
+ }
+  .number_of_days{
+    padding: 7px 3px 0 3px;
+    float: right;
+    margin-right: 150px;
+    border-radius: 7px;
+    background-color: #FFAF30;  
+    span {
+      height: 15px;
+      width: 31px;
+      color: #FFFFFF;
+      font-family: "DIN Pro";
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 15px;
+      padding: 10px 1px 5px 1px;
+    
+    }
+  }
+  .days_to_choose{
+    position: absolute;
+    top: 5px;
+    float: left;
+  }
+  #reset-button{
+    margin-top: 5px;
+  }
+
+  .DayPicker-NavButton {
+    position: absolute;
+    top: 1em;
+    right: 1.5em;
+    left: auto;
+    display: inline-block;
+    margin-top: 2px;
+    width: 1.25em;
+    height: 1.25em;
+    background-position: center;
+    background-size: 50%;
+    background-repeat: no-repeat;
+    color: #8B9898;
+    cursor: pointer;
+}
+.DayPicker-NavButton--next {
+  top: 5px;
+  right: 15px;
+  color: #FFFFFF !important;
+}
+
+.DayPicker-NavButton--prev {
+  top: 5px;
+  left: 15px;
+  color: #FFFFFF !important;
+
+}
+.DayPicker-Caption > div {
+  font-size: 1.15em;
+  text-align: center;
+}
+.DayPicker{ 
+  font-size: 0.9rem !important;
+  font-weight: 200;
+}
+
+.DayPicker-Months {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+	border-radius: 2px;
+  background-color: #F8F8F8;
+  padding: 7px 0;
+}
+.DayPicker-wrapper {
+  padding-bottom: 0px;
+}
+.selected_date{
+  display: flex;
+
+}
+.selected_single_date{
+  padding: 0 3px;
+  font-weight: bold;
+}
+#chosen_days{
+  margin: 0;
+}
