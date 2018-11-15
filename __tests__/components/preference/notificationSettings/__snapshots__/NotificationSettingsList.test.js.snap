@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Notification Settings Component should render properly 1`] = `
+exports[`NotificationsList Component renders correctly from memory 1`] = `
 <Query
   query={
     Object {

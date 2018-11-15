@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`NotificationSetting Component should render without crashing 1`] = `
+exports[`NotificationSetting Component renders correctly from memory 1`] = `
 <div
   className="notification-container"
 >
@@ -10,10 +10,10 @@ exports[`NotificationSetting Component should render without crashing 1`] = `
     <h2
       className="notification-title"
     >
-      Title
+      Meeting Notifications
     </h2>
     <p>
-      paragraph
+      some
     </p>
   </section>
   <section
@@ -24,6 +24,7 @@ exports[`NotificationSetting Component should render without crashing 1`] = `
       className="switch-component"
       composeTheme="deeply"
       disabled={false}
+      id="switchBtn"
       mapThemrProps={[Function]}
       onChange={[Function]}
     />
