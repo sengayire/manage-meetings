@@ -1099,12 +1099,13 @@ exports[`AnalyticsNav Component renders properly 1`] = `
           </div>
           <div
             className="activity-info-row"
+            key="1234"
           >
             <div
               className="title"
             >
               <div>
-                Travela Backlog Grooming Started
+                Travela Backlog Grooming Start
               </div>
               <div
                 className="time"
@@ -1151,6 +1152,113 @@ exports[`AnalyticsNav Component renders properly 1`] = `
           </div>
           <div
             className="activity-info-row"
+            key="55"
+          >
+            <div
+              className="title"
+            >
+              <div>
+                Olamide Jolomi Sync
+              </div>
+              <div
+                className="time"
+              >
+                09:30 am - 10:30 pm
+              </div>
+            </div>
+            <div
+              className="room"
+            >
+              Amara
+            </div>
+            <div
+              className="status"
+            >
+              <div
+                className="started"
+              >
+                Started 
+                <bdi>
+                  11:40am
+                </bdi>
+              </div>
+              <div
+                className="ended"
+              >
+                Ended 
+                <bdi>
+                  11:40am
+                </bdi>
+              </div>
+            </div>
+            <div
+              className="participants"
+            >
+              <img
+                alt=""
+                src="test-file-stub"
+              />
+              <span>
+                2
+              </span>
+            </div>
+          </div>
+          <div
+            className="activity-info-row"
+            key="1222"
+          >
+            <div
+              className="title"
+            >
+              <div>
+                Activo Backlog Grooming
+              </div>
+              <div
+                className="time"
+              >
+                11:35 am - 12:30 pm
+              </div>
+            </div>
+            <div
+              className="room"
+            >
+              Amara
+            </div>
+            <div
+              className="status"
+            >
+              <div
+                className="started"
+              >
+                Started 
+                <bdi>
+                  11:40am
+                </bdi>
+              </div>
+              <div
+                className="ended"
+              >
+                Ended 
+                <bdi>
+                  11:40am
+                </bdi>
+              </div>
+            </div>
+            <div
+              className="participants"
+            >
+              <img
+                alt=""
+                src="test-file-stub"
+              />
+              <span>
+                18
+              </span>
+            </div>
+          </div>
+          <div
+            className="activity-info-row"
+            key="1216889"
           >
             <div
               className="title"
@@ -1186,110 +1294,6 @@ exports[`AnalyticsNav Component renders properly 1`] = `
                 src="test-file-stub"
               />
               <span>
-                11
-              </span>
-            </div>
-          </div>
-          <div
-            className="activity-info-row"
-          >
-            <div
-              className="title"
-            >
-              <div>
-                Olamide Jolomi Sync
-              </div>
-              <div
-                className="time"
-              >
-                09:30 am - 10:30 pm
-              </div>
-            </div>
-            <div
-              className="room"
-            >
-              Amara
-            </div>
-            <div
-              className="status"
-            >
-              <div
-                className="started"
-              >
-                Started 
-                <bdi>
-                  02:30pm
-                </bdi>
-              </div>
-              <div
-                className="ended"
-              >
-                Ended 
-                <bdi>
-                  03:00pm
-                </bdi>
-              </div>
-            </div>
-            <div
-              className="participants"
-            >
-              <img
-                alt=""
-                src="test-file-stub"
-              />
-              <span>
-                2
-              </span>
-            </div>
-          </div>
-          <div
-            className="activity-info-row"
-          >
-            <div
-              className="title"
-            >
-              <div>
-                Activo Backlog Grooming
-              </div>
-              <div
-                className="time"
-              >
-                11:35 am - 12:30 pm
-              </div>
-            </div>
-            <div
-              className="room"
-            >
-              Cairo
-            </div>
-            <div
-              className="status"
-            >
-              <div
-                className="started"
-              >
-                Started 
-                <bdi>
-                  11:40am
-                </bdi>
-              </div>
-              <div
-                className="ended"
-              >
-                Ended 
-                <bdi>
-                  11:40am
-                </bdi>
-              </div>
-            </div>
-            <div
-              className="participants"
-            >
-              <img
-                alt=""
-                src="test-file-stub"
-              />
-              <span>
                 18
               </span>
             </div>
@@ -1305,12 +1309,13 @@ exports[`AnalyticsNav Component renders properly 1`] = `
           </div>
           <div
             className="activity-info-row"
+            key="1234"
           >
             <div
               className="title"
             >
               <div>
-                Travela Backlog Grooming Started
+                Travela Backlog Grooming Start
               </div>
               <div
                 className="time"
@@ -1351,12 +1356,119 @@ exports[`AnalyticsNav Component renders properly 1`] = `
                 src="test-file-stub"
               />
               <span>
-                17
+                20
               </span>
             </div>
           </div>
           <div
             className="activity-info-row"
+            key="55"
+          >
+            <div
+              className="title"
+            >
+              <div>
+                Olamide Jolomi Sync
+              </div>
+              <div
+                className="time"
+              >
+                09:30 am - 10:30 pm
+              </div>
+            </div>
+            <div
+              className="room"
+            >
+              Amara
+            </div>
+            <div
+              className="status"
+            >
+              <div
+                className="started"
+              >
+                Started 
+                <bdi>
+                  11:40am
+                </bdi>
+              </div>
+              <div
+                className="ended"
+              >
+                Ended 
+                <bdi>
+                  11:40am
+                </bdi>
+              </div>
+            </div>
+            <div
+              className="participants"
+            >
+              <img
+                alt=""
+                src="test-file-stub"
+              />
+              <span>
+                2
+              </span>
+            </div>
+          </div>
+          <div
+            className="activity-info-row"
+            key="1222"
+          >
+            <div
+              className="title"
+            >
+              <div>
+                Activo Backlog Grooming
+              </div>
+              <div
+                className="time"
+              >
+                11:35 am - 12:30 pm
+              </div>
+            </div>
+            <div
+              className="room"
+            >
+              Amara
+            </div>
+            <div
+              className="status"
+            >
+              <div
+                className="started"
+              >
+                Started 
+                <bdi>
+                  11:40am
+                </bdi>
+              </div>
+              <div
+                className="ended"
+              >
+                Ended 
+                <bdi>
+                  11:40am
+                </bdi>
+              </div>
+            </div>
+            <div
+              className="participants"
+            >
+              <img
+                alt=""
+                src="test-file-stub"
+              />
+              <span>
+                18
+              </span>
+            </div>
+          </div>
+          <div
+            className="activity-info-row"
+            key="1216889"
           >
             <div
               className="title"
@@ -1392,111 +1504,7 @@ exports[`AnalyticsNav Component renders properly 1`] = `
                 src="test-file-stub"
               />
               <span>
-                12
-              </span>
-            </div>
-          </div>
-          <div
-            className="activity-info-row"
-          >
-            <div
-              className="title"
-            >
-              <div>
-                Olamide Jolomi Sync
-              </div>
-              <div
-                className="time"
-              >
-                09:30 am - 10:30 pm
-              </div>
-            </div>
-            <div
-              className="room"
-            >
-              Amara
-            </div>
-            <div
-              className="status"
-            >
-              <div
-                className="started"
-              >
-                Started 
-                <bdi>
-                  02:30pm
-                </bdi>
-              </div>
-              <div
-                className="ended"
-              >
-                Ended 
-                <bdi>
-                  03:00pm
-                </bdi>
-              </div>
-            </div>
-            <div
-              className="participants"
-            >
-              <img
-                alt=""
-                src="test-file-stub"
-              />
-              <span>
-                2
-              </span>
-            </div>
-          </div>
-          <div
-            className="activity-info-row"
-          >
-            <div
-              className="title"
-            >
-              <div>
-                Activo Backlog Grooming
-              </div>
-              <div
-                className="time"
-              >
-                11:35 am - 12:30 pm
-              </div>
-            </div>
-            <div
-              className="room"
-            >
-              Cairo
-            </div>
-            <div
-              className="status"
-            >
-              <div
-                className="started"
-              >
-                Started 
-                <bdi>
-                  11:40am
-                </bdi>
-              </div>
-              <div
-                className="ended"
-              >
-                Ended 
-                <bdi>
-                  11:40am
-                </bdi>
-              </div>
-            </div>
-            <div
-              className="participants"
-            >
-              <img
-                alt=""
-                src="test-file-stub"
-              />
-              <span>
-                15
+                18
               </span>
             </div>
           </div>

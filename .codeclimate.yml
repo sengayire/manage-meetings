@@ -44,3 +44,4 @@ exclude_patterns:
   - "hooks/"
   - "__tests__/" #Confirm if this is appropraite
   - "__mocks__/"
+  - "src/utils/nonPersistentData.js"
