@@ -10,7 +10,7 @@ import AveragePieChartList from '../components/analytics/averagePieChart/Average
 const AnalyticsOverview = ({ dateValue }) => (
   <Fragment>
     <AveragePieChartList />
-    <ComposedBookedRooms />
+    <ComposedBookedRooms dateValue={dateValue} />
     <Checkins />
     <AverageMeetingList dateValue={dateValue} />
   </Fragment>

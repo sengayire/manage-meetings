@@ -30,6 +30,9 @@ describe('AverageMeetingList component for case: Today', () => {
     await wait(0);
     const findClass = wrapper.find('.average-meeting-list');
     expect(findClass.length).toBe(1);
+    expect(wrapper).toMatchSnapshot({
+      value: expect.any(/\w{3}\s\d{2}\s\d{4}/),
+    });
   });
 });
 
@@ -43,5 +46,9 @@ describe('AverageMeetingList component for case: This Week', () => {
     await wait(0);
     const findClass = wrapper.find('.average-meeting-list');
     expect(findClass.length).toBe(1);
+
+    expect(wrapper).toMatchSnapshot({
+      value: expect.any(/\w{3}\s\d{2}\s\d{4}/),
+    });
   });
 });

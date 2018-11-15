@@ -12,7 +12,7 @@
 
   h4 {
     font-family: 'DINPro-Light';
-    color: #333E44;
+    color: #333e44;
     font-size: 16px;
     font-weight: 200;
     line-height: 21px;
@@ -20,7 +20,7 @@
 
   .booked-room-header {
     display: flex;
-    border-bottom: 1px solid #E4E4E4;
+    border-bottom: 1px solid #e4e4e4;
     padding: 0 30px;
 
     :first-child {
@@ -34,6 +34,8 @@
 
   .booked-room-list {
     padding: 0 30px;
+    max-height: 310px;
+    overflow-y: auto;
 
     table {
       border-collapse: collapse;
@@ -49,7 +51,7 @@
           th {
             font-weight: 900;
             line-height: 20px;
-            color: #333E44;
+            color: #333e44;
 
             &:first-child {
               width: 35%;
@@ -74,7 +76,7 @@
             }
 
             &:nth-child(2) {
-              width: 30%
+              width: 30%;
             }
 
             &:last-child {
@@ -84,9 +86,8 @@
             padding: 25px 0 10px 0;
             font-weight: 900;
             text-align: left;
-            color: #333E44;
-            font-family: 'DINPro-Regular',
-            sans-serif;
+            color: #333e44;
+            font-family: 'DINPro-Regular', sans-serif;
             font-size: 15px;
           }
         }
@@ -94,7 +95,7 @@
 
       tbody {
         tr {
-          border-bottom: 1px solid #E4E4E4;
+          border-bottom: 1px solid #e4e4e4;
 
           &:last-child {
             border: none;
@@ -102,7 +103,7 @@
 
           td {
             padding: 15px 0;
-            color: #6D6D6D;
+            color: #6d6d6d;
             font-family: 'DINPro-Light';
             font-size: 15px;
           }

@@ -33,73 +33,73 @@ exports[`BookedRooms component should render correctly 1`] = `
       />
       <tbody>
         <tr
-          id="booked-room-body"
-          key="1"
+          key="Accra"
         >
           <td>
             Accra
           </td>
           <td>
-            22
+            19
           </td>
           <td>
-            20%
+            6
+            %
           </td>
         </tr>
         <tr
-          id="booked-room-body"
-          key="2"
+          key="Antananarivo"
         >
           <td>
             Antananarivo
           </td>
           <td>
-            18
+            17
           </td>
           <td>
-            13%
+            5
+            %
           </td>
         </tr>
         <tr
-          id="booked-room-body"
-          key="3"
+          key="Asmara"
         >
           <td>
             Asmara
           </td>
           <td>
+            15
+          </td>
+          <td>
+            4
+            %
+          </td>
+        </tr>
+        <tr
+          key="Brazaville"
+        >
+          <td>
+            Brazaville
+          </td>
+          <td>
             14
           </td>
           <td>
-            11%
+            4
+            %
           </td>
         </tr>
         <tr
-          id="booked-room-body"
-          key="4"
-        >
-          <td>
-            Brazzaville
-          </td>
-          <td>
-            13
-          </td>
-          <td>
-            9%
-          </td>
-        </tr>
-        <tr
-          id="booked-room-body"
-          key="5"
+          key="Cairo"
         >
           <td>
             Cairo
           </td>
           <td>
-            13
+            14
           </td>
           <td>
-            9
+            4
+            %
           </td>
         </tr>
       </tbody>

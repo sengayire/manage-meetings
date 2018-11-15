@@ -1,33 +1,24 @@
 const mostBookedRooms = [
   {
-    id: 1,
-    name: 'Accra',
-    meeting: 22,
-    shareOfAllMeeting: '20%',
+    0: 'Accra',
+    1: 'Antananarivo',
+    2: 'Asmara',
+    3: 'Brazaville',
+    4: 'Cairo',
   },
   {
-    id: 2,
-    name: 'Antananarivo',
-    meeting: 18,
-    shareOfAllMeeting: '13%',
+    0: 19,
+    1: 17,
+    2: 15,
+    3: 14,
+    4: 14,
   },
   {
-    id: 3,
-    name: 'Asmara',
-    meeting: 14,
-    shareOfAllMeeting: '11%',
-  },
-  {
-    id: 4,
-    name: 'Brazzaville',
-    meeting: 13,
-    shareOfAllMeeting: '9%',
-  },
-  {
-    id: 5,
-    name: 'Cairo',
-    meeting: 13,
-    shareOfAllMeeting: '9',
+    0: 6,
+    1: 5,
+    2: 4,
+    3: 4,
+    4: 4,
   },
 ];
 export default mostBookedRooms;

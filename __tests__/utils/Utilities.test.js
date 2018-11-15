@@ -3,6 +3,7 @@ import {
   getItemFromLocalStorage,
   saveItemInLocalStorage,
   removeItemFromLocalStorage,
+  thisWeek,
 } from '../../src/utils/Utilities';
 
 describe('parseQueryString Method', () => {
@@ -52,5 +53,20 @@ describe('removeItemInLocalStorage(', () => {
     global.localStorage = { removeItem: jest.fn() };
     expect(removeItemFromLocalStorage('key')).toBe(true);
   });
-});
+  it('should return the date of the current week', () => {
+    const date = thisWeek();
+    expect(date).toBeInstanceOf(Object);
+    expect(date.weekEnd).toMatch(/\w{3}\s\d{2}\s\d{4}/);
+    expect(date.weekStart).toMatch(/\w{3}\s\d{2}\s\d{4}/);
+  });
+  it('should return the date of the current week', () => {
+    // Mock the system date for a weekend day (Saturday)
+    const fakeDate = new Date('2018-11-17');
+    global.Date = jest.fn(() => fakeDate);
 
+    const date = thisWeek();
+    expect(date).toBeInstanceOf(Object);
+    expect(date.weekEnd).toMatch(/\w{3}\s\d{2}\s\d{4}/);
+    expect(date.weekStart).toMatch(/\w{3}\s\d{2}\s\d{4}/);
+  });
+});

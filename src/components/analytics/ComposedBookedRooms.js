@@ -1,14 +1,35 @@
 import React from 'react';
+import { PropTypes } from 'prop-types';
 import BookedRoomsHOC from './BookedRoomsHOC';
 import BookedRooms from './BookedRooms';
 import '../../assets/styles/composed-rooms.scss';
 
-const MostBookedRooms = BookedRoomsHOC(BookedRooms, 'Most Booked Rooms');
-const LeastBookedRooms = BookedRoomsHOC(BookedRooms, 'Least Booked Rooms');
-const ComposedBookedRooms = () => (
+const ComposedBookedRooms = ({ dateValue }) => (
   <div className="wrap-composed-rooms">
-    <div>{<MostBookedRooms />}</div>
-    <div id="booked-room-margin">{<LeastBookedRooms />}</div>
+    <div>
+      {
+        <BookedRoomsHOC
+          bookedRoomText="Most Booked Rooms"
+          component={BookedRooms}
+          dateValue={dateValue}
+        />
+      }
+    </div>
+    <div id="booked-room-margin">
+      {
+        <BookedRoomsHOC
+          bookedRoomText="Least Booked Rooms"
+          component={BookedRooms}
+          dateValue={dateValue}
+        />
+      }
+    </div>
   </div>
 );
+ComposedBookedRooms.propTypes = {
+  dateValue: PropTypes.string,
+};
+ComposedBookedRooms.defaultProps = {
+  dateValue: 'Today',
+};
 export default ComposedBookedRooms;

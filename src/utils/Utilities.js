@@ -8,12 +8,14 @@
  * the string got from props.location.search when using react router.
  */
 const parseQueryString = (urlQueryString) => {
-// replace first ? with a space
+  // replace first ? with a space
   const formattedQueryString = decodeURIComponent(urlQueryString.replace(/^\?/, ''));
-  return formattedQueryString.split('&').reduce((parsedObject, stringToSplit) => {
-    const [key, value] = stringToSplit.split('=');
-    return { ...parsedObject, [key]: value };
-  }, {});
+  return formattedQueryString
+    .split('&')
+    .reduce((parsedObject, stringToSplit) => {
+      const [key, value] = stringToSplit.split('=');
+      return { ...parsedObject, [key]: value };
+    }, {});
 };
 
 /**
@@ -55,10 +57,38 @@ const saveItemInLocalStorage = (key, value) => {
   }
 };
 
+/*
+* Returns the start and end dates of a 5 day working week
+* endDate is either a Friday or current day if the week
+* days are still less or equal to Friday
+* @retuns {object} that contains startDay and endDay
+*/
+function thisWeek() {
+  const today = Date();
+  const date = new Date();
+  let milliSecs;
+  let weekStart;
+  let weekEnd;
+  const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+  const weekDay = today.toString().substring(0, 3);
+  if (days.indexOf(weekDay) > 4) {
+    milliSecs = date.setDate(date.getDate() - (days.indexOf(weekDay) - 4));
+    const fourDays = 4 * 24 * 60 * 60 * 999;
+    weekStart = new Date(date - fourDays).toString().substring(4, 15);
+    weekEnd = new Date(milliSecs).toString().substring(4, 15);
+
+    return { weekStart, weekEnd };
+  }
+  milliSecs = date.setDate(date.getDate() - days.indexOf(weekDay));
+  weekStart = new Date(milliSecs).toString().substring(4, 15);
+  weekEnd = today.toString().substring(4, 15);
+  return { weekStart, weekEnd };
+}
+
 export {
   parseQueryString,
   getItemFromLocalStorage,
   saveItemInLocalStorage,
   removeItemFromLocalStorage,
+  thisWeek,
 };
-
