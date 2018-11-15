@@ -134,7 +134,7 @@ export class AnalyticsActivity extends Component {
                 />
               </button>
               <div className={this.state.menuOpen ? 'dropdown-content' : 'dropdown-content-null'}>
-                <a href="/" className="download-dropdown-label" >Export options </a>
+                <a href="/" className="download-dropdown-label" disabled >Export options </a>
                 <a href="/analytics">PDF</a>
                 <a href="/analytics">JPEG</a>
                 <a href="/analytics">CSV</a>
