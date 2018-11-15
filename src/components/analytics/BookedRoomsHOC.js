@@ -3,21 +3,30 @@ import { PropTypes } from 'prop-types';
 import PollIcon from '../../assets/images/poll.svg';
 import RedPollIcon from '../../assets/images/poll_red.svg';
 import MoreIcon from '../../assets/images/more.svg';
-// import leastBookedRooms from '../../fixtures/leastBookedRooms';
-import mostBookedRooms from '../../fixtures/mostBookedRooms';
 import { getMostUsedAndLeastUsedRooms } from '../../json_requests';
-import { thisWeek } from '../../utils/Utilities';
+import {
+  thisWeek,
+  getFirstDayOfTheMonth,
+  getTodaysDate,
+} from '../../utils/Utilities';
 
 export class ComposedBooked extends React.Component {
   state = {
     leastUsedRooms: [],
+    mostUsedRooms: [],
     fetching: false,
     // eslint-disable-next-line
     error: null,
   };
+
+  componentDidMount() {
+    this.fetchMostAndLeastUsedRooms(this.props.dateValue);
+  }
+
   componentWillReceiveProps({ dateValue }) {
     this.fetchMostAndLeastUsedRooms(dateValue);
   }
+
   fetchMostAndLeastUsedRooms = (dateValue) => {
     this.setState({ fetching: true });
     let startDate;
@@ -26,6 +35,12 @@ export class ComposedBooked extends React.Component {
       const dates = thisWeek();
       startDate = dates.weekStart;
       endDate = dates.weekEnd;
+    } else if (dateValue === 'This Month') {
+      startDate = getFirstDayOfTheMonth();
+      endDate = getTodaysDate();
+    } else if (dateValue === 'Today') {
+      startDate = getTodaysDate();
+      endDate = getTodaysDate();
     }
 
     return (
@@ -35,8 +50,19 @@ export class ComposedBooked extends React.Component {
           const meetings = response.data['Least Used Rooms'].Meetings;
           const meetingShares =
             response.data['Least Used Rooms']['% Share of All Meetings'];
+
+          const mostUsedRooms = response.data['Most Used Rooms'].Room;
+          const mostUsedMeetings = response.data['Most Used Rooms'].Meetings;
+          const mostUsedMeetingShares =
+            response.data['Most Used Rooms']['% Share of All Meetings'];
+
           this.setState({
             leastUsedRooms: [rooms, meetings, meetingShares],
+            mostUsedRooms: [
+              mostUsedRooms,
+              mostUsedMeetings,
+              mostUsedMeetingShares,
+            ],
             fetching: false,
           });
         })
@@ -46,6 +72,7 @@ export class ComposedBooked extends React.Component {
         .catch((error) => this.setState({ fetching: true, error }))
     );
   };
+
   render() {
     const ComposedBookedRooms = this.props.component;
     if (this.props.bookedRoomText === 'Most Booked Rooms') {
@@ -54,8 +81,8 @@ export class ComposedBooked extends React.Component {
           pollIcon={PollIcon}
           moreIcon={MoreIcon}
           bookedRoomText={this.props.bookedRoomText}
-          fetching={false}
-          bookedRoomsList={mostBookedRooms}
+          fetching={this.state.fetching}
+          bookedRoomsList={this.state.mostUsedRooms}
         />
       );
     }
@@ -72,9 +99,13 @@ export class ComposedBooked extends React.Component {
 }
 
 ComposedBooked.propTypes = {
-  dateValue: PropTypes.string.isRequired,
+  dateValue: PropTypes.string,
   component: PropTypes.func.isRequired,
   bookedRoomText: PropTypes.string.isRequired,
 };
 
-export default ComposedBooked;
+ComposedBooked.defaultProps = {
+  dateValue: 'Today',
+};
+
+export { ComposedBooked as default, getMostUsedAndLeastUsedRooms };

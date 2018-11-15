@@ -25,29 +25,26 @@ export class AnalyticsActivity extends Component {
     this.setState({ value });
   };
 
-
   showOverview = () => {
     this.setState({
       view: 'overview',
     });
-  }
+  };
 
   showActivityView = () => {
     this.setState({
       view: 'activity',
     });
-  }
+  };
 
   toggleMenu = () => {
     this.setState(prevState => ({
       menuOpen: !prevState.menuOpen,
     }));
-  }
+  };
 
   render() {
-    const {
-      view,
-    } = this.state;
+    const { view } = this.state;
 
     const overViewIcon = () => (
       <div className="overViewBtn">
@@ -57,7 +54,7 @@ export class AnalyticsActivity extends Component {
 
     const overViewBtnToggle = () => (
       <div className="overViewBtnToggle">
-        <span >OVERVIEW</span>
+        <span>OVERVIEW</span>
       </div>
     );
     const activityIcon = () => (
@@ -83,21 +80,31 @@ export class AnalyticsActivity extends Component {
 
     return (
       <div>
-        <div className="analytics-cover " >
+        <div className="analytics-cover ">
           <div className="btn-left">
             <Button
-              className={view === 'activity' ? 'activity-btn pad-top analysis-btn btn  ' : 'activity-btn pad-top analysis-btn btn btn-color'}
+              className={
+                view === 'activity'
+                  ? 'activity-btn pad-top analysis-btn btn  '
+                  : 'activity-btn pad-top analysis-btn btn btn-color'
+              }
               icon={view === 'activity' ? overViewBtnToggle() : overViewIcon()}
               onClick={this.showOverview}
               type="button"
               id="overview-button"
             />
             <Button
-              className={view === 'overview' ? 'overview-btn  analysis-btn btn ' : 'overview-btn  analysis-btn btn btn-color'}
-              icon={view === 'overview' ? activityIcon() : activityIconBtnToggle()}
+              className={
+                view === 'overview'
+                  ? 'overview-btn  analysis-btn btn '
+                  : 'overview-btn  analysis-btn btn btn-color'
+              }
+              icon={
+                view === 'overview' ? activityIcon() : activityIconBtnToggle()
+              }
               onClick={this.showActivityView}
             />
-          </div >
+          </div>
           <div className="btn-right">
             <Button
               className="location-btn analysis-btn "
@@ -110,7 +117,11 @@ export class AnalyticsActivity extends Component {
               type="button"
               id="calendar-btn"
             >
-              <RadioGroup value={this.state.value} onChange={this.handleChange} className="radio-wrapper" >
+              <RadioGroup
+                value={this.state.value}
+                onChange={this.handleChange}
+                className="radio-wrapper"
+              >
                 <div className="date-label">Date options</div>
                 <RadioButton value="Today" label="Today" />
                 <RadioButton value="Tomorrow" label="Tomorrow" />
@@ -120,7 +131,7 @@ export class AnalyticsActivity extends Component {
               </RadioGroup>
             </IconMenu>
 
-            <div className="dropdown" >
+            <div className="dropdown">
               <button
                 className="dropbtn"
                 id="btnControl"
@@ -143,7 +154,9 @@ export class AnalyticsActivity extends Component {
           </div>
         </div>
 
-        {view === 'overview' && <AnalyticsOverview dateValue={this.state.value} />}
+        {view === 'overview' && (
+          <AnalyticsOverview dateValue={this.state.value} />
+        )}
         {view === 'activity' && <AnalyticsAct />}
       </div>
     );

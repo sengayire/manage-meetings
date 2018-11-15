@@ -1,4 +1,4 @@
-const mostBookedRooms = [
+const bookedRoomsList = [
   {
     0: 'Accra',
     1: 'Antananarivo',
@@ -21,4 +21,4 @@ const mostBookedRooms = [
     4: 4,
   },
 ];
-export default mostBookedRooms;
+export default bookedRoomsList;

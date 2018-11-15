@@ -84,6 +84,23 @@ function thisWeek() {
   weekEnd = today.toString().substring(4, 15);
   return { weekStart, weekEnd };
 }
+/**
+ * getFirstDayOfTheMonth : This returns the firstDay of the current month.
+ * getTodaysDate : This returns today's current date.
+ * The format is day/month/year, e.g "01 Nov 2018"
+ * @type {Date}
+ */
+const date = new Date();
+const getFirstDayOfTheMonth = () => {
+  const firstOfMonth = `${date
+    .toString()
+    .substring(4, 7)} 01 ${date.toString().substring(11, 15)}`;
+  return firstOfMonth;
+};
+const getTodaysDate = () => {
+  const today = date.toString().substring(4, 15);
+  return today;
+};
 
 export {
   parseQueryString,
@@ -91,4 +108,6 @@ export {
   saveItemInLocalStorage,
   removeItemFromLocalStorage,
   thisWeek,
+  getFirstDayOfTheMonth,
+  getTodaysDate,
 };

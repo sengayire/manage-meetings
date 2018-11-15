@@ -5,7 +5,7 @@ exports[`BookedRoomsHOC Component should renders correctly 1`] = `
   bookedRoomText=""
   bookedRoomsList={Array []}
   dateValue="Today"
-  fetching={false}
+  fetching={true}
   moreIcon="test-file-stub"
   pollIcon="test-file-stub"
 />
@@ -16,7 +16,7 @@ exports[`BookedRoomsHOC Component should renders correctly 2`] = `
   bookedRoomText=""
   bookedRoomsList={Array []}
   dateValue="Today"
-  fetching={false}
+  fetching={true}
   moreIcon="test-file-stub"
   pollIcon="test-file-stub"
 />

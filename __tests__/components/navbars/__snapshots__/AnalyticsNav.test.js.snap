@@ -1040,6 +1040,7 @@ exports[`AnalyticsNav Component renders properly 1`] = `
           >
             <a
               className="download-dropdown-label"
+              disabled={true}
               href="/"
             >
               Export options 

@@ -1,16 +1,11 @@
 import React from 'react';
-import { mount } from 'enzyme';
-
-
+import { mount, shallow } from 'enzyme';
 import AnalyticsNav from '../../../src/components/navbars/AnalyticsNav';
 
 describe('AnalyticsNav Component', () => {
   const toggleMenu = jest.fn();
-
-  const wrapper = mount(<AnalyticsNav
-    onClick={toggleMenu}
-    onBlur={toggleMenu}
-  />);
+  const wrapper = mount(<AnalyticsNav onClick={toggleMenu} onBlur={toggleMenu} />);
+  const shallowNav = shallow(<AnalyticsNav />);
 
   const event = {
     preventDefault: jest.fn(),
@@ -55,9 +50,8 @@ describe('AnalyticsNav Component', () => {
   });
 
   it('should have a button', () => {
-    wrapper.setState({
-      view: 'activity',
-      value: '',
+    shallowNav.setState({
+      view: 'overview',
     });
     const action = wrapper.instance();
     const showActivityView = jest.spyOn(wrapper.instance(), 'showActivityView');
@@ -75,7 +69,6 @@ describe('AnalyticsNav Component', () => {
     action.showActivityView();
     expect(wrapper.state().value).toEqual('Today');
   });
-
 
   it('should call handleChange', () => {
     const action = wrapper.instance();

@@ -4,6 +4,8 @@ import {
   saveItemInLocalStorage,
   removeItemFromLocalStorage,
   thisWeek,
+  getFirstDayOfTheMonth,
+  getTodaysDate,
 } from '../../src/utils/Utilities';
 
 describe('parseQueryString Method', () => {
@@ -68,5 +70,13 @@ describe('removeItemInLocalStorage(', () => {
     expect(date).toBeInstanceOf(Object);
     expect(date.weekEnd).toMatch(/\w{3}\s\d{2}\s\d{4}/);
     expect(date.weekStart).toMatch(/\w{3}\s\d{2}\s\d{4}/);
+  });
+  describe('Get the first/current day of the month', () => {
+    it('should return the first day of the month', () => {
+      const firstDay = getFirstDayOfTheMonth();
+      const today = getTodaysDate();
+      expect(firstDay.length).toBe(11);
+      expect(today.length).toBe(11);
+    });
   });
 });
