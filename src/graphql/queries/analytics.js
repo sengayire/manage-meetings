@@ -20,4 +20,15 @@ const MEETING_DURATION_ANALYTICS = gql`
   }
 `;
 
-export { MEETING_DURATION_ANALYTICS as default };
+const ANALYTICS_BOOKINGS_COUNT = gql`
+  query AnalyticsBookingsCount($startDate: String!, $endDate: String!){
+    analyticsRatios(startDate: $startDate endDate: $endDate){
+      bookings
+    }
+  }
+`;
+
+export {
+  MEETING_DURATION_ANALYTICS as default,
+  ANALYTICS_BOOKINGS_COUNT,
+};
