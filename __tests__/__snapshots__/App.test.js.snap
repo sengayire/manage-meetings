@@ -2685,9 +2685,15 @@ exports[`App component should not render Login if token is present but render Se
                                       }
                                     }
                                   >
-                                    <h2>
-                                      Loading...
-                                    </h2>
+                                    <Spinner>
+                                      <div
+                                        className="centered"
+                                      >
+                                        <div
+                                          className="spinner"
+                                        />
+                                      </div>
+                                    </Spinner>
                                   </OfficeList>
                                 </Query>
                               </Apollo(OfficeList)>

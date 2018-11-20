@@ -12,7 +12,7 @@ import UPDATE_ROLES_MUTATION from '../../graphql/mutations/People';
 import { GET_PEOPLE_QUERY, GET_ROLES_QUERY } from '../../graphql/queries/People';
 import { formatPeopleData } from '../../graphql/mappers/People';
 import MenuTitle from '../MenuTitle';
-
+import Spinner from '../commons/Spinner';
 
 const locationMenuCaret = () => (
   <div className="sort-by-caret" />
@@ -68,7 +68,7 @@ export class PeopleList extends React.Component {
       loading: loadingRoles,
       error: rolesError,
     } = this.props.roles;
-    if (loading || loadingLocations || loadingRoles) return <div>Loading...</div>;
+    if (loading || loadingLocations || loadingRoles) return <Spinner />;
     if (error || locationsError || rolesError) {
       const errorMessage = handleErrorMessage(error, locationsError, rolesError);
       return <div>{errorMessage}</div>;

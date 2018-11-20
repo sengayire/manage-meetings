@@ -9,11 +9,12 @@ import TableHead from './helpers/TableHead';
 
 import { GET_ALL_OFFICES } from '../graphql/queries/Offices';
 import MenuTitle from './MenuTitle';
+import Spinner from './commons/Spinner';
 
 export const OfficeList = (props) => {
   const { allOffices: { offices } = {}, loading } = props.allOffices;
   return (
-    loading ? <h2>Loading...</h2> :
+    loading ? <Spinner /> :
     <div className="settings-offices">
       <div className="settings-offices-control">
         <MenuTitle title="Offices" />
@@ -30,7 +31,7 @@ export const OfficeList = (props) => {
                 key={office.name}
                 officeId={office.id}
               />
-            ))}
+              ))}
           </tbody>
         </table>
       </div>

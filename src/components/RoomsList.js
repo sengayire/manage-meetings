@@ -15,6 +15,7 @@ import Pagination from './commons/Pagination';
 import FilterRoomMenu from './rooms/FilterRoomMenu';
 
 import AddRoomMenu from './rooms/AddRoomMenu';
+import Spinner from './commons/Spinner';
 
 export class RoomsList extends React.Component {
   constructor(props) {
@@ -122,7 +123,7 @@ export class RoomsList extends React.Component {
       error: locationsError,
     } = this.props.locations;
 
-    if (loading || loadingLocations) return <div>Loading...</div>;
+    if (loading || loadingLocations) return <Spinner />;
 
     if (error || locationsError) {
       return <div>{error ? error.message : locationsError.message}</div>;
