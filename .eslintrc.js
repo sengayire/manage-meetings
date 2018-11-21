@@ -8,6 +8,7 @@ module.exports = {
     jest: true
   },
   rules: {
+    'function-paren-newline': 'off',
     'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
     'react/no-children-prop': 0,
     'no-unused-expressions': ["error", {"allowShortCircuit": true}],

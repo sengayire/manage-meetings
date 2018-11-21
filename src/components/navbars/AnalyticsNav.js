@@ -11,7 +11,7 @@ import IconNotifications from '../../assets/images/download_24px.svg';
 
 export class AnalyticsActivity extends Component {
   state = {
-    view: 'activity',
+    view: 'overview',
     menuOpen: false,
     value: 'Today',
   };
