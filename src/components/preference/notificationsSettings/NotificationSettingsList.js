@@ -5,6 +5,7 @@ import GET_NOTIFICATION_STATUS from '../../../graphql/queries/Preferences';
 import notificationSettings from '../../../fixtures/notificationSettings';
 import MeetingNotifications from './MeetingNotifications';
 import DeviceNotifications from './DeviceNotifications';
+import CheckInWindowSettings from '../eventCustomisation/checkInWindowSettings';
 
 /**
  * notification preferences
@@ -32,6 +33,7 @@ const NotificationSettingsList = () => (
             body={notificationSettings.device.body}
             device={deviceHealthNotification}
           />
+          <CheckInWindowSettings />
         </section>
       );
     }}
