@@ -1,11 +1,38 @@
 import React from 'react';
-import { mount, shallow } from 'enzyme';
+import { mount } from 'enzyme';
+import { ApolloClient } from 'apollo-client';
+import { ApolloProvider } from 'react-apollo';
+import { createHttpLink } from 'apollo-link-http';
+// eslint-disable-next-line import/extensions
+import fetch from 'unfetch';
+import { InMemoryCache } from 'apollo-cache-inmemory';
+
 import AnalyticsNav from '../../../src/components/navbars/AnalyticsNav';
+
+
+const { MRM_API_URL } = process.env || {};
+
+const httpLink = createHttpLink({
+  uri: MRM_API_URL,
+  fetch,
+});
+
+const client = new ApolloClient({
+  link: httpLink,
+  cache: new InMemoryCache(),
+
+});
 
 describe('AnalyticsNav Component', () => {
   const toggleMenu = jest.fn();
-  const wrapper = mount(<AnalyticsNav onClick={toggleMenu} onBlur={toggleMenu} />);
-  const shallowNav = shallow(<AnalyticsNav />);
+
+  const wrapper = mount(
+    <ApolloProvider client={client}>
+      <AnalyticsNav onClick={toggleMenu} onBlur={toggleMenu} />
+    </ApolloProvider>,
+  );
+
+  const analyticNavWrapper = wrapper.find(AnalyticsNav).instance();
 
   const event = {
     preventDefault: jest.fn(),
@@ -17,101 +44,110 @@ describe('AnalyticsNav Component', () => {
 
   it('should have a div', () => {
     const div = wrapper.find('div');
-    expect(div).toHaveLength(100);
+    expect(div).toHaveLength(63);
   });
+
   it('should have a IconMenu', () => {
     const IconMenu = wrapper.find('IconMenu');
     expect(IconMenu).toHaveLength(1);
   });
-  it('should have a IconMenu', () => {
+
+  it('should have a RadioGroup', () => {
     const RadioGroup = wrapper.find('RadioGroup');
     expect(RadioGroup).toHaveLength(1);
   });
+
   it('should have a RadioButton', () => {
     const RadioButton = wrapper.find('RadioButton');
     expect(RadioButton).toHaveLength(5);
   });
-  it('should have a button', () => {
-    const button = wrapper.find('button');
-    expect(button).toHaveLength(5);
-  });
 
   it('should have a button', () => {
-    wrapper.setState({
+    const button = wrapper.find('button');
+    expect(button).toHaveLength(7);
+  });
+
+  it('should call showOverview', () => {
+    analyticNavWrapper.setState({
       view: 'overview',
       value: '',
     });
-    const action = wrapper.instance();
-    const showOverview = jest.spyOn(wrapper.instance(), 'showOverview');
-    action.showOverview();
-    expect(wrapper.state().view).toEqual('overview');
+
+    // const action = analyticNavWrapper.instance();
+    const showOverview = jest.spyOn(analyticNavWrapper, 'showOverview');
+    analyticNavWrapper.showOverview();
+    expect(analyticNavWrapper.state.view).toEqual('overview');
     wrapper.update();
     expect(showOverview).toBeCalled();
   });
 
-  it('should have a button', () => {
-    shallowNav.setState({
-      view: 'overview',
+  it('should call showActivityView', () => {
+    analyticNavWrapper.setState({
+      view: 'activity',
     });
-    const action = wrapper.instance();
-    const showActivityView = jest.spyOn(wrapper.instance(), 'showActivityView');
-    action.showActivityView();
-    expect(wrapper.state().view).toEqual('activity');
+
+    const showActivityView = jest.spyOn(analyticNavWrapper, 'showActivityView');
+    analyticNavWrapper.showActivityView();
+    expect(analyticNavWrapper.state.view).toEqual('activity');
     wrapper.update();
     expect(showActivityView).toBeCalled();
   });
 
-  it('should have a button', () => {
-    wrapper.setState({
+  it('should update value state', () => {
+    analyticNavWrapper.setState({
       value: 'Today',
     });
-    const action = wrapper.instance();
-    action.showActivityView();
-    expect(wrapper.state().value).toEqual('Today');
+
+    analyticNavWrapper.showActivityView();
+    expect(analyticNavWrapper.state.value).toEqual('Today');
   });
 
   it('should call handleChange', () => {
-    const action = wrapper.instance();
-    const handleChange = jest.spyOn(wrapper.instance(), 'handleChange');
-    action.handleChange('Today');
+    const handleChange = jest.spyOn(analyticNavWrapper, 'handleChange');
+    analyticNavWrapper.handleChange('Today');
     expect(handleChange).toBeCalled();
   });
+
   it('should call handleStateChange', () => {
-    const action = wrapper.instance();
     const handleStateChange = jest.spyOn(
-      wrapper.instance(),
+      analyticNavWrapper,
       'handleStateChange',
     );
-    action.handleStateChange(event);
+    analyticNavWrapper.handleStateChange(event);
     expect(handleStateChange).toBeCalled();
   });
+
   it('should show overViewIcon', () => {
-    wrapper.setState({
+    analyticNavWrapper.setState({
       view: 'overview',
       value: '',
     });
+    wrapper.update();
     const overviewSpan = wrapper.find('#overview-span');
     expect(overviewSpan).toHaveLength(1);
-    wrapper.update();
   });
+
   it('should show activityIcon', () => {
-    wrapper.setState({
+    analyticNavWrapper.setState({
       view: 'overview',
       value: '',
     });
+    wrapper.update();
     const activitySpan = wrapper.find('#activity-span');
     expect(activitySpan).toHaveLength(1);
   });
+
   it('should call toggleMenu at onClick', () => {
-    wrapper.setState({ menuOpen: false });
+    analyticNavWrapper.setState({ menuOpen: false });
     const dropBtn = wrapper.find('#btnControl');
     dropBtn.simulate('click');
-    expect(wrapper.state().menuOpen).toEqual(true);
+    expect(analyticNavWrapper.state.menuOpen).toEqual(true);
   });
+
   it('should call toggleMenu at onBlur', () => {
-    wrapper.setState({ menuOpen: true });
+    analyticNavWrapper.setState({ menuOpen: true });
     const dropBtn = wrapper.find('#btnControl');
     dropBtn.simulate('blur');
-    expect(wrapper.state().menuOpen).toEqual(false);
+    expect(analyticNavWrapper.state.menuOpen).toEqual(false);
   });
 });
