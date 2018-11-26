@@ -1124,7 +1124,74 @@ exports[`AverageMeetingList component for case: This Week should render correctl
           </h4>
           <span
             className="moreVerticalIcon"
-          />
+          >
+            <ThemedTooltippedComponent
+              className=""
+              composeTheme="deeply"
+              mapThemrProps={[Function]}
+              theme={null}
+              tooltip="The number of meetings in a room,  the average number of attendees to these meetings as well as the average duration of the meetings."
+              tooltipDelay={0}
+              tooltipHideOnClick={true}
+              tooltipPosition="top"
+              tooltipShowOnClick={true}
+            >
+              <TooltippedComponent
+                className=""
+                theme={
+                  Object {
+                    "tooltipInner": "tooltipInner",
+                  }
+                }
+                tooltip="The number of meetings in a room,  the average number of attendees to these meetings as well as the average duration of the meetings."
+                tooltipDelay={0}
+                tooltipHideOnClick={true}
+                tooltipPosition="top"
+                tooltipShowOnClick={true}
+              >
+                <ThemedLink
+                  active={false}
+                  className=""
+                  composeTheme="deeply"
+                  mapThemrProps={[Function]}
+                  onClick={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
+                  theme={
+                    Object {
+                      "tooltipInner": "tooltipInner",
+                    }
+                  }
+                >
+                  <Link
+                    active={false}
+                    className=""
+                    onClick={[Function]}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    theme={
+                      Object {
+                        "tooltipInner": "tooltipInner",
+                      }
+                    }
+                  >
+                    <a
+                      className=""
+                      data-react-toolbox="link"
+                      onClick={[Function]}
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                    >
+                      <img
+                        alt="help icon"
+                        src="test-file-stub"
+                      />
+                    </a>
+                  </Link>
+                </ThemedLink>
+              </TooltippedComponent>
+            </ThemedTooltippedComponent>
+          </span>
         </div>
         <div
           className="average-meeting-list"
@@ -1297,7 +1364,11 @@ exports[`AverageMeetingList component for case: This Week should render correctl
                           min={0}
                           mode="indeterminate"
                           multicolor={false}
-                          theme={Object {}}
+                          theme={
+                            Object {
+                              "tooltipInner": "tooltipInner",
+                            }
+                          }
                           type="linear"
                           value={0}
                         >
@@ -2723,7 +2794,74 @@ exports[`AverageMeetingList component for case: Today should render correctly: [
           </h4>
           <span
             className="moreVerticalIcon"
-          />
+          >
+            <ThemedTooltippedComponent
+              className=""
+              composeTheme="deeply"
+              mapThemrProps={[Function]}
+              theme={null}
+              tooltip="The number of meetings in a room,  the average number of attendees to these meetings as well as the average duration of the meetings."
+              tooltipDelay={0}
+              tooltipHideOnClick={true}
+              tooltipPosition="top"
+              tooltipShowOnClick={true}
+            >
+              <TooltippedComponent
+                className=""
+                theme={
+                  Object {
+                    "tooltipInner": "tooltipInner",
+                  }
+                }
+                tooltip="The number of meetings in a room,  the average number of attendees to these meetings as well as the average duration of the meetings."
+                tooltipDelay={0}
+                tooltipHideOnClick={true}
+                tooltipPosition="top"
+                tooltipShowOnClick={true}
+              >
+                <ThemedLink
+                  active={false}
+                  className=""
+                  composeTheme="deeply"
+                  mapThemrProps={[Function]}
+                  onClick={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
+                  theme={
+                    Object {
+                      "tooltipInner": "tooltipInner",
+                    }
+                  }
+                >
+                  <Link
+                    active={false}
+                    className=""
+                    onClick={[Function]}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                    theme={
+                      Object {
+                        "tooltipInner": "tooltipInner",
+                      }
+                    }
+                  >
+                    <a
+                      className=""
+                      data-react-toolbox="link"
+                      onClick={[Function]}
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                    >
+                      <img
+                        alt="help icon"
+                        src="test-file-stub"
+                      />
+                    </a>
+                  </Link>
+                </ThemedLink>
+              </TooltippedComponent>
+            </ThemedTooltippedComponent>
+          </span>
         </div>
         <div
           className="average-meeting-list"
@@ -2884,7 +3022,11 @@ exports[`AverageMeetingList component for case: Today should render correctly: [
                           min={0}
                           mode="indeterminate"
                           multicolor={false}
-                          theme={Object {}}
+                          theme={
+                            Object {
+                              "tooltipInner": "tooltipInner",
+                            }
+                          }
                           type="linear"
                           value={0}
                         >

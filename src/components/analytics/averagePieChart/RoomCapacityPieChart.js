@@ -1,53 +1,25 @@
 import React, { Component } from 'react';
 
 // import svg files
-import helpIcon from '../../../../src/assets/images/help_outline_24px.svg';
 import roomCapacityChart from '../../../../src/assets/images/chart_blue.svg';
 
 // import styles
 import '../../../../src/assets/styles/pieChartBaseStyle.scss';
 import '../../../../src/assets/styles/roomCapacityPieChart.scss';
 
-class RoomCapacityPieChart extends Component {
-  state = {
-    isHovering: false,
-    xPosition: 0,
-    yPosition: 0,
-    hoverInfo: 'Room capacity info here!',
-  };
+// Import the tip
+import Tip from '../../commons/Tooltip';
 
-  handleMouseHover = (e) => {
-    this.setState({
-      isHovering: true,
-      xPosition: e.nativeEvent.clientX,
-      yPosition: e.nativeEvent.clientY,
-    });
-  };
-  handleMouseLeave = () => {
-    this.setState({ isHovering: false });
-  };
+class RoomCapacityPieChart extends Component {
+  // eslint-disable-next-line
+  state = {};
   render() {
+    const tip = 'The number of people a meeting room can accommodate';
     return (
       <article className="pie-chart">
         <section className="chart-header">
-          {this.state.isHovering ? (
-            <div
-              className="chart-hover-info"
-              style={{
-                top: `${this.state.yPosition}px`,
-                left: `${this.state.xPosition}px`,
-              }}
-            >
-              {this.state.hoverInfo}
-            </div>
-          ) : null}
           <p className="chart-title">Average Room Capacity</p>
-          <img
-            src={helpIcon}
-            alt="help icon"
-            onMouseEnter={this.handleMouseHover}
-            onMouseLeave={this.handleMouseLeave}
-          />
+          {Tip(tip)}
         </section>
         <section className="chart-content">
           <img src={roomCapacityChart} alt="average meeting chart" />

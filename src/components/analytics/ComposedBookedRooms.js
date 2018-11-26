@@ -19,6 +19,7 @@ const ComposedBookedRooms = ({ dateValue }) => (
       {
         <BookedRoomsHOC
           bookedRoomText="Least Booked Rooms"
+          tip=""
           component={BookedRooms}
           dateValue={dateValue}
         />

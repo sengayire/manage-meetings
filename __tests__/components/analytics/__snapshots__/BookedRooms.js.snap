@@ -12,11 +12,22 @@ exports[`BookedRooms component should render correctly 1`] = `
       src=""
     />
     <h4 />
-    <img
-      alt="More"
+    <ThemedTooltippedComponent
       className=""
-      src=""
-    />
+      composeTheme="deeply"
+      mapThemrProps={[Function]}
+      theme={null}
+      tooltip=""
+      tooltipDelay={0}
+      tooltipHideOnClick={true}
+      tooltipPosition="top"
+      tooltipShowOnClick={true}
+    >
+      <img
+        alt="help icon"
+        src="test-file-stub"
+      />
+    </ThemedTooltippedComponent>
   </div>
   <div
     className="booked-room-list"

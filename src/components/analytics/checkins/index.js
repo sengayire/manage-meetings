@@ -9,31 +9,30 @@ const Checkins = () => (
   <div className="checkins">
     <DonutChart
       chartTitle="% of Checkins"
-      hintText="% of Checkins pie chart"
       entries={15}
       total={20}
       percentage={75}
       chartSvg={checkinSvg}
+      tip="The number and % of check-ins of booked meeting rooms"
     />
     <DonutChart
       chartTitle="% of App Bookings"
-      hintText="% of App Bookings pie chart"
       entries={4}
       total={20}
       percentage={20}
       chartSvg={appBookingsSvg}
+      tip="The number and % of people who book directly from the app instead from google calendar"
     />
     <DonutChart
       chartTitle="% of Auto Cancellations"
-      hintText="% of Auto Cancellations pie chart"
       entries={16}
       total={20}
       percentage={80}
       chartSvg={averageRoomSvg}
       hasInfo={false}
+      tip="Number and % of auto-cancelled meeting rooms"
     />
   </div>
 );
-
 
 export default Checkins;

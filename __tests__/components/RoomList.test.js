@@ -1,6 +1,7 @@
 import React from 'react';
 import { mount, shallow } from 'enzyme';
 import { MockedProvider } from 'react-apollo/test-utils';
+import wait from 'waait';
 import {
   GET_ROOMS_QUERY,
   GET_LOCATIONS_QUERY,
@@ -20,7 +21,6 @@ describe('RoomList Component', () => {
       perPage: 5,
     },
   };
-
 
   const getRoomByNameRequest = {
     query: GET_ROOM_BY_NAME,
@@ -135,7 +135,7 @@ describe('RoomList Component', () => {
 
   it('should render an error screen', async () => {
     const errorWrapper = (
-      <MockedProvider mocks={[{ request, error }]} addTypename>
+      <MockedProvider mocks={[{ request, error }]} addTypename={false}>
         <RoomsLists />
       </MockedProvider>
     );
@@ -146,9 +146,9 @@ describe('RoomList Component', () => {
     expect(wrapper.find('RoomsList').props().data.error).toBe(undefined);
     await new Promise(resolve => setTimeout(resolve));
     wrapper.update();
+    expect(wrapper.find('div').length).toBe(1);
     // check whether an error occurs after loading
     expect(wrapper.find('RoomsList').props().data.error).toBeTruthy();
-    // expect(wrapper.find('RoomsList').props().data.error.networkError).toBe(error);
   });
 
   it('should should pass the allRooms and locations props to the contained element', async () => {
@@ -162,7 +162,8 @@ describe('RoomList Component', () => {
   it('should render an error on failure to load locations', async () => {
     const errorWrapper = mount(locationErrorWrapper);
 
-    await new Promise(resolve => setTimeout(resolve));
+    // await new Promise((resolve) => setTimeout(resolve));
+    await wait(0);
     errorWrapper.update();
     expect(errorWrapper.find('RoomsList').props().locations.error).toBeTruthy();
     expect(errorWrapper.find('RoomsList').props().locations.error.networkError).toBe(error);
@@ -178,5 +179,21 @@ describe('RoomList Component', () => {
       noResoure: false,
     });
     expect(wrapper.instance().handleNoResource());
+  });
+
+  it('renders the locationsError error', async () => {
+    const locationError = (
+      <MockedProvider
+        mocks={[{ request: roomLocationsRequest, error }]}
+        addTypename={false}
+      >
+        <RoomsLists />
+      </MockedProvider>
+    );
+    const wrapper = mount(locationError);
+    await wait(0);
+    wrapper.update();
+    expect(wrapper.find('RoomsList').props().locations.error).toBeTruthy();
+    expect(wrapper.find('div').length).toBe(1);
   });
 });

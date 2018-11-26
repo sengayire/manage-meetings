@@ -2,7 +2,6 @@ import React from 'react';
 import { PropTypes } from 'prop-types';
 import PollIcon from '../../assets/images/poll.svg';
 import RedPollIcon from '../../assets/images/poll_red.svg';
-import MoreIcon from '../../assets/images/more.svg';
 import { getMostUsedAndLeastUsedRooms } from '../../json_requests';
 import {
   thisWeek,
@@ -16,7 +15,7 @@ export class ComposedBooked extends React.Component {
     mostUsedRooms: [],
     fetching: false,
     // eslint-disable-next-line
-    error: null,
+    error: null
   };
 
   componentDidMount() {
@@ -69,7 +68,7 @@ export class ComposedBooked extends React.Component {
         // this fetching value is not set to false to avoid props validation
         // failure in the child component, otherwise it should be set to false
         // eslint-disable-next-line
-        .catch((error) => this.setState({ fetching: true, error }))
+        .catch(error => this.setState({ fetching: true, error }))
     );
   };
 
@@ -79,7 +78,7 @@ export class ComposedBooked extends React.Component {
       return (
         <ComposedBookedRooms
           pollIcon={PollIcon}
-          moreIcon={MoreIcon}
+          tip="The highest number of times meeting rooms were booked in a set time period"
           bookedRoomText={this.props.bookedRoomText}
           fetching={this.state.fetching}
           bookedRoomsList={this.state.mostUsedRooms}
@@ -89,7 +88,7 @@ export class ComposedBooked extends React.Component {
     return (
       <ComposedBookedRooms
         pollIcon={RedPollIcon}
-        moreIcon={MoreIcon}
+        tip="The least number of times meeting rooms were booked in a set time period"
         bookedRoomText={this.props.bookedRoomText}
         fetching={this.state.fetching}
         bookedRoomsList={this.state.leastUsedRooms}

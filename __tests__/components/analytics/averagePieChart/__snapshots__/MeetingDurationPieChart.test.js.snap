@@ -12,12 +12,22 @@ exports[`Meeting Duration Pie Chart Component renders correctly from memory 1`] 
     >
       Average Meeting Duration
     </p>
-    <img
-      alt="help icon"
-      onMouseEnter={[Function]}
-      onMouseLeave={[Function]}
-      src="test-file-stub"
-    />
+    <ThemedTooltippedComponent
+      className=""
+      composeTheme="deeply"
+      mapThemrProps={[Function]}
+      theme={null}
+      tooltip="The average amount of time people spend in all booked meeting rooms in a set time period"
+      tooltipDelay={0}
+      tooltipHideOnClick={true}
+      tooltipPosition="top"
+      tooltipShowOnClick={true}
+    >
+      <img
+        alt="help icon"
+        src="test-file-stub"
+      />
+    </ThemedTooltippedComponent>
   </section>
   <section
     className="chart-content"
@@ -59,28 +69,27 @@ exports[`Meeting Duration Pie Chart Component should be able to hover 1`] = `
   <section
     className="chart-header"
   >
-    <div
-      className="chart-hover-info"
-      style={
-        Object {
-          "left": "300px",
-          "top": "250px",
-        }
-      }
-    >
-      Meeting duration info here!
-    </div>
     <p
       className="chart-title"
     >
       Average Meeting Duration
     </p>
-    <img
-      alt="help icon"
-      onMouseEnter={[Function]}
-      onMouseLeave={[Function]}
-      src="test-file-stub"
-    />
+    <ThemedTooltippedComponent
+      className=""
+      composeTheme="deeply"
+      mapThemrProps={[Function]}
+      theme={null}
+      tooltip="The average amount of time people spend in all booked meeting rooms in a set time period"
+      tooltipDelay={0}
+      tooltipHideOnClick={true}
+      tooltipPosition="top"
+      tooltipShowOnClick={true}
+    >
+      <img
+        alt="help icon"
+        src="test-file-stub"
+      />
+    </ThemedTooltippedComponent>
   </section>
   <section
     className="chart-content"
@@ -127,12 +136,22 @@ exports[`Meeting Duration Pie Chart Component should be able to hover 2`] = `
     >
       Average Meeting Duration
     </p>
-    <img
-      alt="help icon"
-      onMouseEnter={[Function]}
-      onMouseLeave={[Function]}
-      src="test-file-stub"
-    />
+    <ThemedTooltippedComponent
+      className=""
+      composeTheme="deeply"
+      mapThemrProps={[Function]}
+      theme={null}
+      tooltip="The average amount of time people spend in all booked meeting rooms in a set time period"
+      tooltipDelay={0}
+      tooltipHideOnClick={true}
+      tooltipPosition="top"
+      tooltipShowOnClick={true}
+    >
+      <img
+        alt="help icon"
+        src="test-file-stub"
+      />
+    </ThemedTooltippedComponent>
   </section>
   <section
     className="chart-content"
