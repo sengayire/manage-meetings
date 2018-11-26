@@ -225,6 +225,7 @@ exports[`RoomFeeback Component should render properly 1`] = `
                   "question": "How would you rate the cleanliness of this room",
                   "responses": "60",
                   "startDate": "3 Nov 2018",
+                  "status": true,
                   "type": "rate",
                 },
                 Object {
@@ -232,6 +233,7 @@ exports[`RoomFeeback Component should render properly 1`] = `
                   "question": "Is there any missing meeting tools",
                   "responses": "60",
                   "startDate": "3 Nov 2018",
+                  "status": false,
                   "type": "check",
                 },
                 Object {
@@ -239,6 +241,7 @@ exports[`RoomFeeback Component should render properly 1`] = `
                   "question": "Any suggestions on how we can improve the service",
                   "responses": "60",
                   "startDate": "3 Nov 2018",
+                  "status": true,
                   "type": "text",
                 },
               ]
@@ -274,19 +277,20 @@ exports[`RoomFeeback Component should render properly 1`] = `
               </td>
               <td>
                 <Slider
-                  checked={false}
+                  checked={true}
                 >
                   <label
                     className="switch"
                     htmlFor="slider"
                   >
                     <input
-                      checked={false}
+                      checked={true}
                       className="checkbox"
+                      onChange={[Function]}
                       type="checkbox"
                     />
                     <span
-                      className="false slider round"
+                      className="checked slider round"
                     />
                   </label>
                 </Slider>
@@ -331,6 +335,7 @@ exports[`RoomFeeback Component should render properly 1`] = `
                     <input
                       checked={false}
                       className="checkbox"
+                      onChange={[Function]}
                       type="checkbox"
                     />
                     <span
@@ -370,19 +375,20 @@ exports[`RoomFeeback Component should render properly 1`] = `
               </td>
               <td>
                 <Slider
-                  checked={false}
+                  checked={true}
                 >
                   <label
                     className="switch"
                     htmlFor="slider"
                   >
                     <input
-                      checked={false}
+                      checked={true}
                       className="checkbox"
+                      onChange={[Function]}
                       type="checkbox"
                     />
                     <span
-                      className="false slider round"
+                      className="checked slider round"
                     />
                   </label>
                 </Slider>

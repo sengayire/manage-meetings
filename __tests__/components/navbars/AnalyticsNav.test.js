@@ -4,10 +4,11 @@ import { mount, shallow } from 'enzyme';
 import { ApolloClient } from 'apollo-client';
 import { ApolloProvider } from 'react-apollo';
 import { createHttpLink } from 'apollo-link-http';
+import html2canvas from 'html2canvas';
+import jsPDF from 'jspdf';
 // eslint-disable-next-line import/extensions
 import fetch from 'unfetch';
 import download from 'downloadjs';
-import html2canvas from 'html2canvas';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 import { MockedProvider } from 'react-apollo/test-utils';
 import { GET_USER_QUERY } from '../../../src/graphql/queries/People';
@@ -15,15 +16,16 @@ import allUser from '../../../__mocks__/people/User';
 import getDataAsJPEG from '../../../src/json_requests/getJPEGData';
 import AnalyticsNav, { AnalyticsActivity as AnalyticComponent } from '../../../src/components/navbars/AnalyticsNav';
 import getCSVData from '../../../src/json_requests/getCSVData';
+import downloadAnalyticsData from '../../../src/json_requests/getPdfDownload';
 
 
 jest.mock('../../../src/json_requests/getCSVData');
 jest.mock('js-file-download');
-
-
 jest.mock('html2canvas');
 jest.mock('downloadjs');
 jest.mock('../../../src/json_requests/getJPEGData.js');
+jest.mock('../../../src/json_requests/getPdfDownload.js');
+jest.mock('jspdf');
 
 const { MRM_API_URL } = process.env || {};
 
@@ -171,7 +173,6 @@ describe('AnalyticsNav Component', () => {
   });
 });
 
-
 describe('CSV functionality', () => {
   const user = {
     user: {
@@ -237,3 +238,37 @@ describe('JPEG functionality', () => {
   });
 });
 
+describe('Download analytics in pdf', () => {
+  beforeEach(() => {
+    document.body.innerHTML += `
+    <div id="pdf">Test data</div>
+    `;
+  });
+  const user = {
+    user: {
+      id: 8,
+      location: 'Nairobi',
+    },
+  };
+  downloadAnalyticsData.mockImplementation(() => Promise.resolve({ data: { data: '<p>test</p>' } }));
+  html2canvas.mockImplementation(() => Promise.resolve({ data: { data: '<p>test</p>' }, toDataURL: jest.fn() }));
+  jsPDF.mockImplementation(() => ({ save: jest.fn(), addImage: jest.fn() }));
+  it('call downloadAnalyticsData function', () => {
+    const wrapper = shallow(<AnalyticComponent user={user} />);
+    const instance = wrapper.instance();
+    const spy = jest.spyOn(instance, 'downloadPdf');
+    spy();
+    expect(downloadAnalyticsData).toHaveBeenCalled();
+    Promise.resolve().then(() => {
+      expect(html2canvas).toBeCalled();
+    });
+  });
+  it('should catch error from server', () => {
+    downloadAnalyticsData.mockImplementation(() => Promise.reject());
+    const wrapper = shallow(<AnalyticComponent user={user} />);
+    const instance = wrapper.instance();
+    const spy = jest.spyOn(instance, 'downloadPdf');
+    spy();
+    expect(downloadAnalyticsData).toHaveBeenCalled();
+  });
+});

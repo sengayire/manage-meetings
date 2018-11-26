@@ -11,10 +11,11 @@ export const apiRequest = axios.create({
     Authorization: `Bearer ${token}`,
   },
 });
-
-export const getMostUsedAndLeastUsedRooms = (startDate, endDate) =>
+/* istanbul ignore next */
+const downloadAnalyticsData = (startDate, endDate, fileType) =>
   apiRequest.post('', {
     start_date: startDate,
     end_date: endDate,
+    file_type: fileType,
   });
-
+export default downloadAnalyticsData;
