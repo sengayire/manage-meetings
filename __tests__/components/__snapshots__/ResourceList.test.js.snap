@@ -2830,9 +2830,15 @@ query resources ($page: Int!, $perPage: Int!) {
             }
           }
         >
-          <div>
-            Loading...
-          </div>
+          <Spinner>
+            <div
+              className="centered"
+            >
+              <div
+                className="spinner"
+              />
+            </div>
+          </Spinner>
         </ResourceList>
       </Query>
     </Apollo(ResourceList)>

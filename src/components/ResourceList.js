@@ -10,6 +10,7 @@ import ColGroup from './helpers/ColGroup';
 import TableHead from './helpers/TableHead';
 import Pagination from './commons/Pagination';
 import MenuTitle from './MenuTitle';
+import Spinner from './commons/Spinner';
 
 export class ResourceList extends React.Component {
   constructor(props) {
@@ -46,7 +47,7 @@ export class ResourceList extends React.Component {
     const { loading, error } = this.props.data;
     const { allResources } = this.state;
 
-    if (loading) return <div>Loading...</div>;
+    if (loading) return <Spinner />;
 
     if (error) return <div>{error.message}</div>;
 

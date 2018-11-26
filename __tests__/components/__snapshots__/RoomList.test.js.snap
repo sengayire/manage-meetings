@@ -6964,9 +6964,15 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                     }
                   }
                 >
-                  <div>
-                    Loading...
-                  </div>
+                  <Spinner>
+                    <div
+                      className="centered"
+                    >
+                      <div
+                        className="spinner"
+                      />
+                    </div>
+                  </Spinner>
                 </RoomsList>
               </Query>
             </Apollo(RoomsList)>

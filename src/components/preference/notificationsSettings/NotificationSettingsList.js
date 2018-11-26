@@ -6,6 +6,7 @@ import notificationSettings from '../../../fixtures/notificationSettings';
 import MeetingNotifications from './MeetingNotifications';
 import DeviceNotifications from './DeviceNotifications';
 import CheckInWindowSettings from '../eventCustomisation/checkInWindowSettings';
+import Spinner from '../../commons/Spinner';
 
 /**
  * notification preferences
@@ -13,7 +14,7 @@ import CheckInWindowSettings from '../eventCustomisation/checkInWindowSettings';
 const NotificationSettingsList = () => (
   <Query query={GET_NOTIFICATION_STATUS}>
     {({ loading, error, data }) => {
-      if (loading) return <h2>Loading...</h2>;
+      if (loading) return <Spinner />;
       if (error) return <h2>Error...</h2>;
 
       const {

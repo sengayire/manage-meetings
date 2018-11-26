@@ -4648,9 +4648,15 @@ exports[`PeopleList Component renders correctly from memory 1`] = `
                         }
                       }
                     >
-                      <div>
-                        Loading...
-                      </div>
+                      <Spinner>
+                        <div
+                          className="centered"
+                        >
+                          <div
+                            className="spinner"
+                          />
+                        </div>
+                      </Spinner>
                     </PeopleList>
                   </Mutation>
                 </Apollo(PeopleList)>
