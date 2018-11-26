@@ -1,0 +1,94 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests for CheckInWindowSettings Component renders correctly from memory 1`] = `
+<React.Fragment>
+  <h1>
+    Event Customizations
+  </h1>
+  <div
+    className="notification-container"
+  >
+    <section
+      className="check-in"
+    >
+      <h2
+        className="notification-title"
+      >
+        Checkin Window
+      </h2>
+      <p>
+        Time before you can check into a meeting
+      </p>
+    </section>
+    <section
+      className="checkin-time"
+    >
+      <ThemedIconMenu
+        className="time-picker-dropdown"
+        composeTheme="deeply"
+        icon={
+          <div
+            className="time-picker"
+          >
+            <span>
+              10
+               minutes
+            </span>
+          </div>
+        }
+        iconRipple={true}
+        mapThemrProps={[Function]}
+        menuRipple={true}
+        position="auto"
+        selectable={false}
+      >
+        <ThemedRadioGroup
+          className="radio-wrapper"
+          composeTheme="deeply"
+          disabled={false}
+          mapThemrProps={[Function]}
+          onChange={[Function]}
+          value="10"
+        >
+          <ThemedRadioButton
+            checked={false}
+            className=""
+            composeTheme="deeply"
+            disabled={false}
+            label="2 mins"
+            mapThemrProps={[Function]}
+            value="2"
+          />
+          <ThemedRadioButton
+            checked={false}
+            className=""
+            composeTheme="deeply"
+            disabled={false}
+            label="5 mins"
+            mapThemrProps={[Function]}
+            value="5"
+          />
+          <ThemedRadioButton
+            checked={false}
+            className=""
+            composeTheme="deeply"
+            disabled={false}
+            label="10 mins"
+            mapThemrProps={[Function]}
+            value="10"
+          />
+          <ThemedRadioButton
+            checked={false}
+            className=""
+            composeTheme="deeply"
+            disabled={false}
+            label="15 mins"
+            mapThemrProps={[Function]}
+            value="15"
+          />
+        </ThemedRadioGroup>
+      </ThemedIconMenu>
+    </section>
+  </div>
+</React.Fragment>
+`;
