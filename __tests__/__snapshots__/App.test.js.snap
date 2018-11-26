@@ -1655,7 +1655,11 @@ exports[`App component should not render Login if token is present but render Se
                                         menuRipple={true}
                                         position="auto"
                                         selectable={false}
-                                        theme={Object {}}
+                                        theme={
+                                          Object {
+                                            "tooltipInner": "tooltipInner",
+                                          }
+                                        }
                                       >
                                         <div
                                           className="material-icons profile-dropdown"
@@ -1683,7 +1687,11 @@ exports[`App component should not render Login if token is present but render Se
                                               rippleClassName=""
                                               rippleMultiple={true}
                                               rippleSpread={2}
-                                              theme={Object {}}
+                                              theme={
+                                                Object {
+                                                  "tooltipInner": "tooltipInner",
+                                                }
+                                              }
                                             >
                                               <RippledComponent
                                                 disabled={false}
@@ -1694,7 +1702,11 @@ exports[`App component should not render Login if token is present but render Se
                                                 rippleClassName=""
                                                 rippleMultiple={true}
                                                 rippleSpread={2}
-                                                theme={Object {}}
+                                                theme={
+                                                  Object {
+                                                    "tooltipInner": "tooltipInner",
+                                                  }
+                                                }
                                               >
                                                 <IconButton
                                                   accent={false}
@@ -1706,7 +1718,11 @@ exports[`App component should not render Login if token is present but render Se
                                                   onMouseDown={[Function]}
                                                   onTouchStart={[Function]}
                                                   primary={false}
-                                                  theme={Object {}}
+                                                  theme={
+                                                    Object {
+                                                      "tooltipInner": "tooltipInner",
+                                                    }
+                                                  }
                                                   type="button"
                                                 >
                                                   <button
@@ -1747,7 +1763,11 @@ exports[`App component should not render Login if token is present but render Se
                                             position="auto"
                                             ripple={true}
                                             selectable={false}
-                                            theme={Object {}}
+                                            theme={
+                                              Object {
+                                                "tooltipInner": "tooltipInner",
+                                              }
+                                            }
                                           >
                                             <Menu
                                               active={false}
@@ -1756,7 +1776,11 @@ exports[`App component should not render Login if token is present but render Se
                                               position="auto"
                                               ripple={true}
                                               selectable={false}
-                                              theme={Object {}}
+                                              theme={
+                                                Object {
+                                                  "tooltipInner": "tooltipInner",
+                                                }
+                                              }
                                             >
                                               <div
                                                 className=""
@@ -1819,7 +1843,11 @@ exports[`App component should not render Login if token is present but render Se
                                                               rippleClassName=""
                                                               rippleMultiple={true}
                                                               rippleSpread={2}
-                                                              theme={Object {}}
+                                                              theme={
+                                                                Object {
+                                                                  "tooltipInner": "tooltipInner",
+                                                                }
+                                                              }
                                                             >
                                                               <RippledComponent
                                                                 caption="Preference"
@@ -1830,7 +1858,11 @@ exports[`App component should not render Login if token is present but render Se
                                                                 rippleClassName=""
                                                                 rippleMultiple={true}
                                                                 rippleSpread={2}
-                                                                theme={Object {}}
+                                                                theme={
+                                                                  Object {
+                                                                    "tooltipInner": "tooltipInner",
+                                                                  }
+                                                                }
                                                               >
                                                                 <MenuItem
                                                                   caption="Preference"
@@ -1839,7 +1871,11 @@ exports[`App component should not render Login if token is present but render Se
                                                                   onMouseDown={[Function]}
                                                                   onTouchStart={[Function]}
                                                                   selected={false}
-                                                                  theme={Object {}}
+                                                                  theme={
+                                                                    Object {
+                                                                      "tooltipInner": "tooltipInner",
+                                                                    }
+                                                                  }
                                                                 >
                                                                   <li
                                                                     className="profile-menu"
@@ -1888,7 +1924,11 @@ exports[`App component should not render Login if token is present but render Se
                                                       rippleMultiple={true}
                                                       rippleSpread={2}
                                                       selected={false}
-                                                      theme={Object {}}
+                                                      theme={
+                                                        Object {
+                                                          "tooltipInner": "tooltipInner",
+                                                        }
+                                                      }
                                                     >
                                                       <RippledComponent
                                                         caption="LOGOUT"
@@ -1901,7 +1941,11 @@ exports[`App component should not render Login if token is present but render Se
                                                         rippleMultiple={true}
                                                         rippleSpread={2}
                                                         selected={false}
-                                                        theme={Object {}}
+                                                        theme={
+                                                          Object {
+                                                            "tooltipInner": "tooltipInner",
+                                                          }
+                                                        }
                                                       >
                                                         <MenuItem
                                                           caption="LOGOUT"
@@ -1911,7 +1955,11 @@ exports[`App component should not render Login if token is present but render Se
                                                           onMouseDown={[Function]}
                                                           onTouchStart={[Function]}
                                                           selected={false}
-                                                          theme={Object {}}
+                                                          theme={
+                                                            Object {
+                                                              "tooltipInner": "tooltipInner",
+                                                            }
+                                                          }
                                                         >
                                                           <li
                                                             className="profile-menu"
@@ -1959,7 +2007,11 @@ exports[`App component should not render Login if token is present but render Se
                               fixed={false}
                               flat={false}
                               scrollHide={false}
-                              theme={Object {}}
+                              theme={
+                                Object {
+                                  "tooltipInner": "tooltipInner",
+                                }
+                              }
                             >
                               <header
                                 className="nav-app-bar"
@@ -1978,7 +2030,11 @@ exports[`App component should not render Login if token is present but render Se
                                       actions={Array []}
                                       className=""
                                       routes={Array []}
-                                      theme={Object {}}
+                                      theme={
+                                        Object {
+                                          "tooltipInner": "tooltipInner",
+                                        }
+                                      }
                                       type="horizontal"
                                     >
                                       <nav
@@ -2027,7 +2083,11 @@ exports[`App component should not render Login if token is present but render Se
                                                 }
                                                 label="Analytics"
                                                 onClick={[Function]}
-                                                theme={Object {}}
+                                                theme={
+                                                  Object {
+                                                    "tooltipInner": "tooltipInner",
+                                                  }
+                                                }
                                               >
                                                 <a
                                                   className=""
@@ -2105,7 +2165,11 @@ exports[`App component should not render Login if token is present but render Se
                                                 }
                                                 label="Settings"
                                                 onClick={[Function]}
-                                                theme={Object {}}
+                                                theme={
+                                                  Object {
+                                                    "tooltipInner": "tooltipInner",
+                                                  }
+                                                }
                                               >
                                                 <a
                                                   className="undefined"
@@ -2183,7 +2247,11 @@ exports[`App component should not render Login if token is present but render Se
                                                 }
                                                 label="Room Feedback"
                                                 onClick={[Function]}
-                                                theme={Object {}}
+                                                theme={
+                                                  Object {
+                                                    "tooltipInner": "tooltipInner",
+                                                  }
+                                                }
                                               >
                                                 <a
                                                   className=""
@@ -3090,6 +3158,7 @@ exports[`App component should render properly in memory 1`] = `
                               Object {
                                 "button": "button-error",
                                 "snackbar": "error",
+                                "tooltipInner": "tooltipInner",
                               }
                             }
                             timeout={6000}
@@ -3105,6 +3174,7 @@ exports[`App component should render properly in memory 1`] = `
                                 Object {
                                   "button": "button-error",
                                   "snackbar": "error",
+                                  "tooltipInner": "tooltipInner",
                                 }
                               }
                               timeout={6000}

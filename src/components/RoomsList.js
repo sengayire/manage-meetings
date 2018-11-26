@@ -124,8 +124,10 @@ export class RoomsList extends React.Component {
 
     if (loading || loadingLocations) return <div>Loading...</div>;
 
-    if (error || locationsError) {
-      return <div>{error ? error.message : locationsError.message}</div>;
+    if (locationsError || error) {
+      return (
+        <div>{locationsError ? locationsError.message : error.message}</div>
+      );
     }
 
     return (

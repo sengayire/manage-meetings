@@ -3,13 +3,14 @@ import PropTypes from 'prop-types';
 import ProgressBar from 'react-toolbox/lib/progress_bar';
 import TableHead from '../helpers/TableHead';
 import '../../assets/styles/bookedroom.scss';
+import Tip from '../commons/Tooltip';
 
 const BookedRooms = ({
   pollIcon,
-  moreIcon,
   bookedRoomText,
   bookedRoomsList,
   fetching,
+  tip,
 }) => {
   const rooms = bookedRoomsList.length ? Object.values(bookedRoomsList[0]) : [];
   const meetings = bookedRoomsList.length
@@ -24,7 +25,7 @@ const BookedRooms = ({
       <div className="booked-room-header">
         <img src={pollIcon} alt="Pull" />
         <h4>{bookedRoomText}</h4>
-        <img src={moreIcon} alt="More" className="" />
+        {Tip(tip)}
       </div>
       <div className="booked-room-list">
         <table>
@@ -47,7 +48,7 @@ const BookedRooms = ({
                 </td>
               </tr>
             </tbody>
-            )}
+          )}
         </table>
       </div>
     </div>
@@ -56,8 +57,8 @@ const BookedRooms = ({
 
 BookedRooms.propTypes = {
   pollIcon: PropTypes.string.isRequired,
-  moreIcon: PropTypes.string.isRequired,
   bookedRoomText: PropTypes.string.isRequired,
+  tip: PropTypes.string.isRequired,
   bookedRoomsList: PropTypes.instanceOf(Array).isRequired,
   fetching: PropTypes.bool.isRequired,
 };

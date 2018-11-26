@@ -3,10 +3,10 @@ import { shallow } from 'enzyme';
 import DonutChart from '../../../../src/components/analytics/checkins/DonutChart';
 
 describe('Checkins component', () => {
-  const wrapper = shallow(<DonutChart />);
+  const props = { tip: '' };
+  const wrapper = shallow(<DonutChart {...props} />);
 
   it('should render properly', () => {
     expect(wrapper).toMatchSnapshot();
   });
 });
-

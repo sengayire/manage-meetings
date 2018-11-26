@@ -12,6 +12,7 @@ describe('BookedRooms component', () => {
       moreIcon: '',
       bookedRoomText: '',
       fetching: false,
+      tip: '',
     };
     const wrapper = shallow(<BookedRooms {...props} />);
     expect(wrapper).toMatchSnapshot();

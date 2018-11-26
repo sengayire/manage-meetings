@@ -13,16 +13,26 @@ exports[`Checkins component should render properly 1`] = `
     <div
       className="hint"
     >
-      <img
-        alt="help icon"
-        src="test-file-stub"
-      />
+      <ThemedTooltippedComponent
+        className=""
+        composeTheme="deeply"
+        mapThemrProps={[Function]}
+        theme={null}
+        tooltip=""
+        tooltipDelay={0}
+        tooltipHideOnClick={true}
+        tooltipPosition="top"
+        tooltipShowOnClick={true}
+      >
+        <img
+          alt="help icon"
+          src="test-file-stub"
+        />
+      </ThemedTooltippedComponent>
       <div
         className="hint-text"
       >
-        <p>
-          Pie Chart
-        </p>
+        <p />
       </div>
     </div>
   </div>

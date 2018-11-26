@@ -9,8 +9,9 @@ exports[`Checkins component should render properly 1`] = `
     chartTitle="% of Checkins"
     entries={15}
     hasInfo={true}
-    hintText="% of Checkins pie chart"
+    hintText=""
     percentage={75}
+    tip="The number and % of check-ins of booked meeting rooms"
     total={20}
   />
   <DonutChart
@@ -18,8 +19,9 @@ exports[`Checkins component should render properly 1`] = `
     chartTitle="% of App Bookings"
     entries={4}
     hasInfo={true}
-    hintText="% of App Bookings pie chart"
+    hintText=""
     percentage={20}
+    tip="The number and % of people who book directly from the app instead from google calendar"
     total={20}
   />
   <DonutChart
@@ -27,8 +29,9 @@ exports[`Checkins component should render properly 1`] = `
     chartTitle="% of Auto Cancellations"
     entries={16}
     hasInfo={false}
-    hintText="% of Auto Cancellations pie chart"
+    hintText=""
     percentage={80}
+    tip="Number and % of auto-cancelled meeting rooms"
     total={20}
   />
 </div>

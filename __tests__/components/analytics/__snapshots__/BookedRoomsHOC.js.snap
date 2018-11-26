@@ -6,8 +6,8 @@ exports[`BookedRoomsHOC Component should renders correctly 1`] = `
   bookedRoomsList={Array []}
   dateValue="Today"
   fetching={true}
-  moreIcon="test-file-stub"
   pollIcon="test-file-stub"
+  tip="The least number of times meeting rooms were booked in a set time period"
 />
 `;
 
@@ -17,8 +17,8 @@ exports[`BookedRoomsHOC Component should renders correctly 2`] = `
   bookedRoomsList={Array []}
   dateValue="Today"
   fetching={true}
-  moreIcon="test-file-stub"
   pollIcon="test-file-stub"
+  tip="The least number of times meeting rooms were booked in a set time period"
 />
 `;
 
@@ -40,6 +40,7 @@ exports[`BookedRoomsHOC Component should renders correctly 3`] = `
       bookedRoomText="Least Booked Rooms"
       component={[Function]}
       dateValue="Today"
+      tip=""
     />
   </div>
 </div>
