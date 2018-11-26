@@ -15,20 +15,15 @@ const AnalyticsOverview = ({ dateValue }) => (
     <AverageMeetingList dateValue={dateValue} />
   </Fragment>
 );
+
 AnalyticsOverview.defaultProps = {
-  dateValue: 'Today',
+  dateValue: {},
 };
 
 AnalyticsOverview.propTypes = {
-  dateValue: PropTypes.string,
-};
-
-AnalyticsOverview.defaultProps = {
-  dateValue: 'Today',
-};
-
-AnalyticsOverview.propTypes = {
-  dateValue: PropTypes.string,
+  dateValue: PropTypes.shape({
+    date: PropTypes.object,
+  }),
 };
 
 AnalyticsOverview.propTypes = {

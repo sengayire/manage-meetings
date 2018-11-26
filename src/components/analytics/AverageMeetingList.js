@@ -53,7 +53,12 @@ const AverageMeetingList = ({ dateValue }) => {
 };
 
 AverageMeetingList.propTypes = {
-  dateValue: PropTypes.string.isRequired,
+  dateValue: PropTypes.shape({
+    dates: PropTypes.object,
+  }),
+};
+AverageMeetingList.defaultProps = {
+  dateValue: {},
 };
 
 export default AverageMeetingList;

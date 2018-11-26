@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { Button } from 'react-toolbox/lib/button';
-import { IconMenu } from 'react-toolbox/lib/menu';
-import { RadioGroup, RadioButton } from 'react-toolbox/lib/radio';
+import moment from 'moment';
 import '../../assets/styles/custom.scss';
 import '../../assets/styles/topmenu.scss';
 import '../../../src/assets/styles/analyticsPage.scss';
+import Calendar from '../../components/commons/Calendar';
 import AnalyticsAct from '../../containers/AnalyticsActivity';
 import AnalyticsOverview from '../../containers/AnalyticsOverview';
 import IconNotifications from '../../assets/images/download_24px.svg';
@@ -13,17 +13,20 @@ export class AnalyticsActivity extends Component {
   state = {
     view: 'overview',
     menuOpen: false,
-    value: 'Today',
+    startDate: moment().format('MMM DD Y'),
+    endDate: moment().format('MMM DD Y'),
+    calenderOpen: false,
   };
 
-  handleStateChange = (event) => {
-    event.preventDefault();
-    // logic goes here
+  sendDateData = (start, end) => {
+    this.setState({ startDate: start, endDate: end });
+    this.calenderToggle();
   };
 
-  handleChange = (value) => {
-    this.setState({ value });
-  };
+  calenderToggle = () => {
+    const { calenderOpen } = this.state;
+    this.setState({ calenderOpen: !calenderOpen });
+  }
 
   showOverview = () => {
     this.setState({
@@ -44,8 +47,16 @@ export class AnalyticsActivity extends Component {
   };
 
   render() {
-    const { view } = this.state;
+    const {
+      view, calenderOpen, startDate, endDate,
+    } = this.state;
 
+    //  The dates object is to contain the dates to be passed
+    //  to other analytics components
+    const dates = {
+      startDate: this.state.startDate,
+      endDate: this.state.endDate,
+    };
     const overViewIcon = () => (
       <div className="overViewBtn">
         <span id="overview-span">OVERVIEW</span>
@@ -54,7 +65,7 @@ export class AnalyticsActivity extends Component {
 
     const overViewBtnToggle = () => (
       <div className="overViewBtnToggle">
-        <span>OVERVIEW</span>
+        <span >OVERVIEW</span>
       </div>
     );
     const activityIcon = () => (
@@ -74,7 +85,7 @@ export class AnalyticsActivity extends Component {
     );
     const calendarIcon = () => (
       <div className="calendarIconBtn">
-        <span>{this.state.value}</span>
+        <span>{`${startDate} - ${endDate}`}</span>
       </div>
     );
 
@@ -96,12 +107,10 @@ export class AnalyticsActivity extends Component {
             <Button
               className={
                 view === 'overview'
-                  ? 'overview-btn  analysis-btn btn '
-                  : 'overview-btn  analysis-btn btn btn-color'
+                ? 'overview-btn  analysis-btn btn '
+                : 'overview-btn  analysis-btn btn btn-color'
               }
-              icon={
-                view === 'overview' ? activityIcon() : activityIconBtnToggle()
-              }
+              icon={view === 'overview' ? activityIcon() : activityIconBtnToggle()}
               onClick={this.showActivityView}
             />
           </div>
@@ -111,25 +120,20 @@ export class AnalyticsActivity extends Component {
               icon={locationIcon()}
               id="location-btn"
             />
-            <IconMenu
+
+            <Button
               icon={calendarIcon()}
-              className="calendar-btn analysis-btn "
-              type="button"
+              className="analysis-btn calendar-btn"
               id="calendar-btn"
-            >
-              <RadioGroup
-                value={this.state.value}
-                onChange={this.handleChange}
-                className="radio-wrapper"
-              >
-                <div className="date-label">Date options</div>
-                <RadioButton value="Today" label="Today" />
-                <RadioButton value="Tomorrow" label="Tomorrow" />
-                <RadioButton value="This Week" label="This Week" className="radioGroup-test1" />
-                <RadioButton value="This Month" label="This Month" />
-                <RadioButton value="Pick Date" label="Pick a Date" />
-              </RadioGroup>
-            </IconMenu>
+              onClick={this.calenderToggle}
+            />
+
+            {calenderOpen && (
+              <Calendar
+                sendDateData={this.sendDateData}
+                handleCloseModal={this.calenderToggle}
+              />)}
+
 
             <div className="dropdown">
               <button
@@ -145,7 +149,7 @@ export class AnalyticsActivity extends Component {
                 />
               </button>
               <div className={this.state.menuOpen ? 'dropdown-content' : 'dropdown-content-null'}>
-                <a href="/" className="download-dropdown-label" disabled >Export options </a>
+                <a href="/" className="download-dropdown-label" >Export options </a>
                 <a href="/analytics">PDF</a>
                 <a href="/analytics">JPEG</a>
                 <a href="/analytics">CSV</a>
@@ -154,10 +158,8 @@ export class AnalyticsActivity extends Component {
           </div>
         </div>
 
-        {view === 'overview' && (
-          <AnalyticsOverview dateValue={this.state.value} />
-        )}
-        {view === 'activity' && <AnalyticsAct />}
+        {view === 'overview' && <AnalyticsOverview dateValue={dates} />}
+        {view === 'activity' && <AnalyticsAct dateValue={dates} />}
       </div>
     );
   }
