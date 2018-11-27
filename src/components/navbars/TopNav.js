@@ -1,36 +1,64 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+
 import React from 'react';
-import AppBar from 'react-toolbox/lib/app_bar';
-import Navigation from 'react-toolbox/lib/navigation';
+import { Link, withRouter } from 'react-router-dom';
 import ROUTES from '../../utils/routes';
 import '../../assets/styles/topnav.scss';
 import IconAnalytics from '../../assets/images/analytics_icon.svg';
 import IconFeedback from '../../assets/images/feedback_icon.svg';
 import IconSettings from '../../assets/images/settings_icon.svg';
 
-import NavLink from '../helpers/NavLink';
 
-const TopNav = () => (
-  <div className="top-nav">
-    <AppBar className="nav-app-bar">
-      <Navigation type="horizontal">
-        <NavLink
-          to={ROUTES.analytics}
-          label="Analytics"
-          icon={<img src={IconAnalytics} alt="Analytics" />}
-        />
-        <NavLink
-          to={ROUTES.settings}
-          label="Settings"
-          icon={<img src={IconSettings} alt="Settings" />}
-        />
-        <NavLink
-          to={ROUTES.feedback}
-          label="Room Feedback"
-          icon={<img src={IconFeedback} alt="Room Feedback" />}
-        />
-      </Navigation>
-    </AppBar>
-  </div>
-);
+const menuItems = [
+  { route: ROUTES.analytics, menu: 'Analytics', icon: IconAnalytics },
+  { route: ROUTES.settingsOffices, icon: IconSettings, menu: 'Settings' },
+  { icon: IconFeedback, route: ROUTES.feedback, menu: 'Room Feedback' },
+];
 
-export default TopNav;
+class TopNav extends React.Component {
+  constructor(props) {
+    super(props);
+    let { pathname } = props.location;
+
+    if (pathname === '/' || pathname === '/settings') {
+      pathname = ROUTES.analytics;
+    }
+
+    menuItems.forEach((router) => {
+      if (pathname.includes(router.route)) {
+        this.state = {
+          activeMenu: router.menu,
+        };
+      }
+    });
+  }
+
+  handleClick = menuItem => () => {
+    this.setState({ activeMenu: menuItem });
+  };
+
+  render() {
+    const { activeMenu } = this.state;
+    return (
+      <div className="top-nav">
+        <ul className="converge-menu">
+          {menuItems.map(item => (
+            <li key={item.menu} className={activeMenu === item.menu ? 'active' : ''} >
+              <Link href={item.route} onClick={this.handleClick(item.menu)} className="converge-link" to={item.route}>
+                <span>
+                  <img src={item.icon} alt={item.menu} />
+                </span>{item.menu}
+              </Link>
+            </li>
+            ),
+          )
+          }
+        </ul>
+      </div>
+    );
+  }
+}
+
+export default withRouter(TopNav);

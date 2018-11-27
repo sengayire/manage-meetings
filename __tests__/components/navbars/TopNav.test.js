@@ -1,17 +1,18 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { mount } from 'enzyme';
+import { MemoryRouter } from 'react-router-dom';
 import TopNav from '../../../src/components/navbars/TopNav';
 
 describe('TopNav Component', () => {
-  const wrapper = shallow(<TopNav />);
+  const wrapper = mount(<MemoryRouter ><TopNav /></MemoryRouter>);
 
   it('renders correctly in memory', () => {
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.find(TopNav)).toHaveLength(1);
   });
-  it('renders the three links in the nav', () => {
-    const menuText = ['Analytics', 'Settings', 'Room Feedback'];
-    const navWrapper = wrapper.find('[type="horizontal"]').children();
-    expect(navWrapper).toHaveLength(3);
-    menuText.map((nav, index) => expect(navWrapper.at(index).props().label).toEqual(nav));
+
+  it('renders active link in the nav', () => {
+    const navWrapper = wrapper.find('.active').children();
+    wrapper.find('.converge-link').at(2).simulate('click');
+    expect(navWrapper).toHaveLength(1);
   });
 });

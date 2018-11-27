@@ -31,7 +31,7 @@ const SettingsContent = () => (
         />
         <Route exact path={ROUTES.settingsIntegrations} component={PlaceHolder} />
         <Route exact path={ROUTES.settingsWings} component={WingList} />
-        <Redirect from="/settings" to="/settings/offices" />
+        <Redirect from="/settings" to="/analytics" />
       </Switch>
     </div>
   </div>

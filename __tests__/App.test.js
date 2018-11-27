@@ -47,7 +47,7 @@ describe('App component', () => {
     const appWrapper = mount(wrapperCode);
     // test whether it goes to the settings page
     expect(appWrapper.find('Login')).toHaveLength(0);
-    expect(appWrapper.find('.settings-vertical')).toHaveLength(1);
+    expect(appWrapper.find('.overViewBtn')).toHaveLength(1);
     expect(appWrapper).toMatchSnapshot();
   });
 });

@@ -5,25 +5,25 @@ exports[`Analytics Overview Component renders correctly from memory 1`] = `
   <AveragePieChartList
     dateValue={
       Object {
-        "endDate": "\\"Dec 17 2018\\"",
-        "startDate": "\\"Dec 17 2018\\"",
+        "endDate": "\\"Dec 18 2018\\"",
+        "startDate": "\\"Dec 18 2018\\"",
       }
     }
   />
   <ComposedBookedRooms
     dateValue={
       Object {
-        "endDate": "\\"Dec 17 2018\\"",
-        "startDate": "\\"Dec 17 2018\\"",
+        "endDate": "\\"Dec 18 2018\\"",
+        "startDate": "\\"Dec 18 2018\\"",
       }
     }
   />
   <Checkins />
-  <AverageMeetingList
+  <Apollo(AverageMeetingList)
     dateValue={
       Object {
-        "endDate": "\\"Dec 17 2018\\"",
-        "startDate": "\\"Dec 17 2018\\"",
+        "endDate": "\\"Dec 18 2018\\"",
+        "startDate": "\\"Dec 18 2018\\"",
       }
     }
   />

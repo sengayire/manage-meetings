@@ -19,12 +19,20 @@ cookieFunctions.decodeTokenAndGetUserData.mockImplementation(() => ({
   },
 }));
 
+jest.useFakeTimers();
+
 describe('TopMenu Component', () => {
   const wrapper = shallow(<TopMenu />);
 
   it('renders correctly in memory', () => {
     expect(wrapper).toMatchSnapshot();
+    expect(setTimeout).toHaveBeenCalledTimes(1);
+    expect(setTimeout).toHaveBeenLastCalledWith(expect.any(Function), 100);
+    jest.runOnlyPendingTimers();
+    expect(setTimeout).toHaveBeenCalledTimes(2);
+    expect(setTimeout).toHaveBeenLastCalledWith(expect.any(Function), 100);
   });
+
   it('displays the logo', () => {
     const logo = wrapper.find('.logo');
 

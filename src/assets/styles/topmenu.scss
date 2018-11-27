@@ -88,15 +88,13 @@
 }
 
 .search-bar {
-  border-style: solid;
   border-radius: 17px;
   width: 224px;
   height: 32px;
   padding-left: 1em;
   font-size: 100%;
   vertical-align: middle;
-  border-width: 1px;
-  border-color: rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.12);
 }
 
 .search-bar:focus {
@@ -197,4 +195,14 @@
   .nav-brand {
     -webkit-padding-start: 20px;
   }
+}
+
+.profile-menu{
+  list-style: none;
+}
+
+.menu-icon{
+  height: 34px;
+  width: 34px;
+  border-radius: 17px;
 }

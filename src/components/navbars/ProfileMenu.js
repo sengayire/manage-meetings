@@ -12,22 +12,30 @@ const {
 } = Constants;
 
 
-const ProfileMenu = () => {
-  const onLogOut = () => {
+class ProfileMenu extends React.Component {
+  onLogOut = () => {
     removeItemFromLocalStorage(MRM_TOKEN);
     clearCookies();
     // refresh page
     window.location.reload();
   };
 
-  return (
-    <IconMenu className="material-icons profile-dropdown" icon="arrow_drop_down">
-      <NavLink to="/preference">
-        <MenuItem className="profile-menu" caption="Preference" />
-      </NavLink>
-      <MenuItem className="profile-menu" caption="LOGOUT" onClick={() => { onLogOut(); }} />
-    </IconMenu>
-  );
-};
+  render() {
+    return (
+      <IconMenu className="material-icons profile-dropdown" icon="arrow_drop_down">
+        <NavLink to="/preference">
+          <MenuItem className="profile-menu" caption="Preference" />
+        </NavLink>
+        <MenuItem
+          className="profile-menu"
+          caption="LOGOUT"
+          onClick={() => {
+            this.onLogOut();
+          }}
+        />
+      </IconMenu>
+    );
+  }
+}
 
 export default ProfileMenu;

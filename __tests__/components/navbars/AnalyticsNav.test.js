@@ -161,6 +161,7 @@ describe('AnalyticsNav Component', () => {
     dropBtn.simulate('click');
     expect(analyticNav.state.menuOpen).toEqual(true);
   });
+
   it('should call sendDateData', () => {
     analyticNavWrapper.sendDateData('05 Nov 2018', '06 Nov 2018');
     expect(analyticNavWrapper.state.endDate).toEqual('06 Nov 2018');
