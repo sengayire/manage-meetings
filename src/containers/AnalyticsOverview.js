@@ -16,21 +16,15 @@ const AnalyticsOverview = ({ dateValue }) => (
   </Fragment>
 );
 
-AnalyticsOverview.defaultProps = {
-  dateValue: {},
-};
-
 AnalyticsOverview.propTypes = {
   dateValue: PropTypes.shape({
-    date: PropTypes.object,
+    startDate: PropTypes.string,
+    endDate: PropTypes.string,
   }),
 };
 
-AnalyticsOverview.propTypes = {
-  dateValue: PropTypes.string,
-};
 AnalyticsOverview.defaultProps = {
-  dateValue: 'Today',
+  dateValue: {},
 };
 
 export default AnalyticsOverview;

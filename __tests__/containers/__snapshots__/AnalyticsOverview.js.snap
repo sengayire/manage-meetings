@@ -4,11 +4,11 @@ exports[`Analytics Overview Component renders correctly from memory 1`] = `
 <React.Fragment>
   <AveragePieChartList />
   <ComposedBookedRooms
-    dateValue="Today"
+    dateValue={Object {}}
   />
   <Checkins />
   <AverageMeetingList
-    dateValue="Today"
+    dateValue={Object {}}
   />
 </React.Fragment>
 `;

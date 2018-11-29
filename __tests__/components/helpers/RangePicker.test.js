@@ -24,13 +24,13 @@ describe('test for date picker', () => {
   it('handles chosen days', () => {
     wrapper.setState({ from: new Date('05 Nov 2018') });
     const chosenParagraph = wrapper.find('#chosen-days');
-    expect(chosenParagraph.props().children).toContain('Please select the last day');
+    expect(chosenParagraph.props().children).toContain('Please select a day');
     wrapper.setState({ from: '' });
   });
   it('handles chosen days if one date selected', () => {
     wrapper.setState({ to: new Date('05 Nov 2018') });
     const chosenParagraph = wrapper.find('#chosen-days');
-    expect(chosenParagraph.props().children).toContain('Please select the first day');
+    expect(chosenParagraph.props().children).toContain('Please select a day');
   });
   it('handles getting number of days selected', () => {
     wrapper.setState({ from: new Date('05 Nov 2018'), to: new Date('20 Nov 2018') });

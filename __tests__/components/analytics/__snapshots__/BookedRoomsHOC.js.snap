@@ -4,7 +4,7 @@ exports[`BookedRoomsHOC Component should renders correctly 1`] = `
 <ComposedBookedRooms
   bookedRoomText=""
   bookedRoomsList={Array []}
-  dateValue="Today"
+  dateValue={Object {}}
   fetching={true}
   pollIcon="test-file-stub"
   tip="The least number of times meeting rooms were booked in a set time period"
@@ -15,7 +15,7 @@ exports[`BookedRoomsHOC Component should renders correctly 2`] = `
 <ComposedBookedRooms
   bookedRoomText=""
   bookedRoomsList={Array []}
-  dateValue="Today"
+  dateValue={Object {}}
   fetching={true}
   pollIcon="test-file-stub"
   tip="The least number of times meeting rooms were booked in a set time period"
@@ -30,7 +30,7 @@ exports[`BookedRoomsHOC Component should renders correctly 3`] = `
     <ComposedBooked
       bookedRoomText="Most Booked Rooms"
       component={[Function]}
-      dateValue="Today"
+      date={Object {}}
     />
   </div>
   <div
@@ -39,7 +39,7 @@ exports[`BookedRoomsHOC Component should renders correctly 3`] = `
     <ComposedBooked
       bookedRoomText="Least Booked Rooms"
       component={[Function]}
-      dateValue="Today"
+      date={Object {}}
       tip=""
     />
   </div>

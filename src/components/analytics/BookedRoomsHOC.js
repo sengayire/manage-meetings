@@ -3,11 +3,6 @@ import { PropTypes } from 'prop-types';
 import PollIcon from '../../assets/images/poll.svg';
 import RedPollIcon from '../../assets/images/poll_red.svg';
 import { getMostUsedAndLeastUsedRooms } from '../../json_requests';
-import {
-  thisWeek,
-  getFirstDayOfTheMonth,
-  getTodaysDate,
-} from '../../utils/Utilities';
 
 export class ComposedBooked extends React.Component {
   state = {
@@ -19,28 +14,18 @@ export class ComposedBooked extends React.Component {
   };
 
   componentDidMount() {
-    this.fetchMostAndLeastUsedRooms(this.props.dateValue);
+    this.fetchMostAndLeastUsedRooms(this.props.date);
   }
 
-  componentWillReceiveProps({ dateValue }) {
-    this.fetchMostAndLeastUsedRooms(dateValue);
-  }
-
-  fetchMostAndLeastUsedRooms = (dateValue) => {
-    this.setState({ fetching: true });
-    let startDate;
-    let endDate;
-    if (dateValue === 'This Week') {
-      const dates = thisWeek();
-      startDate = dates.weekStart;
-      endDate = dates.weekEnd;
-    } else if (dateValue === 'This Month') {
-      startDate = getFirstDayOfTheMonth();
-      endDate = getTodaysDate();
-    } else if (dateValue === 'Today') {
-      startDate = getTodaysDate();
-      endDate = getTodaysDate();
+  componentWillReceiveProps(prevProps) {
+    if (this.props.date.startDate !== prevProps.date.startDate) {
+      this.fetchMostAndLeastUsedRooms(prevProps.date);
     }
+  }
+
+  fetchMostAndLeastUsedRooms = (date) => {
+    this.setState({ fetching: true });
+    const { startDate, endDate } = date;
 
     return (
       getMostUsedAndLeastUsedRooms(startDate, endDate)
@@ -98,13 +83,16 @@ export class ComposedBooked extends React.Component {
 }
 
 ComposedBooked.propTypes = {
-  dateValue: PropTypes.string,
+  date: PropTypes.shape({
+    startDate: PropTypes.string,
+    endDate: PropTypes.string,
+  }),
   component: PropTypes.func.isRequired,
   bookedRoomText: PropTypes.string.isRequired,
 };
 
 ComposedBooked.defaultProps = {
-  dateValue: 'Today',
+  date: {},
 };
 
 export { ComposedBooked as default, getMostUsedAndLeastUsedRooms };

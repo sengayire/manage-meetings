@@ -4,13 +4,20 @@
 .Selectable .DayPicker-Day--selected:not(.DayPicker-Day--start):not(.DayPicker-Day--end):not(.DayPicker-Day--outside) {
     background-color: #f0f8ff !important;
     color: #2a598f;
-  }
+    border-radius: 2px !important;
+}
   .Selectable .DayPicker-Day {
-    border-radius: 0 !important;
+    height: 17px;
+    width: 7px;
+    font-family: "DIN Pro";
+    font-size: 13px;
+    line-height: 17px;
+    text-align: center;
   }
   .Selectable .DayPicker-Day--start {
     border-top-left-radius: 50% !important;
     border-bottom-left-radius: 50% !important;
+
   }
   .Selectable .DayPicker-Day--end {
     border-top-right-radius: 50% !important;
@@ -28,6 +35,7 @@
     justify-content: space-between;
     padding: 20px 15px 8px;
     margin-top: 70px;
+    z-index: 2;
     
     &__button {
       z-index: 10000;
@@ -36,6 +44,12 @@
       .ok {
         background-color: #3359DB;
         color: #FFFFFF;
+        height: 14px;
+        width: 36px;
+        padding: 6px 40px 14px 10px;
+        align-content: right;
+        line-height: 14px;font-weight: 500;
+        font-family: "DIN Pro"
       }
       
       &__item {
@@ -48,7 +62,7 @@
         font-size: 13px;
         font-weight: 300;
         line-height: 14px;
-        text-align: right;   
+        text-align: center;   
       }
     }
   }
@@ -65,7 +79,7 @@
     padding: 7px 3px 0 3px;
     float: right;
     margin-right: 150px;
-    border-radius: 7px;
+    border-radius: 10px;
     background-color: #FFAF30;  
     span {
       height: 15px;
@@ -104,13 +118,13 @@
     cursor: pointer;
 }
 .DayPicker-NavButton--next {
-  top: 5px;
+  top: 0.5rem;
   right: 15px;
   color: #FFFFFF !important;
 }
 
 .DayPicker-NavButton--prev {
-  top: 5px;
+  top: 0.5rem;
   left: 15px;
   color: #FFFFFF !important;
 
@@ -131,6 +145,8 @@
 	border-radius: 2px;
   background-color: #F8F8F8;
   padding: 7px 0;
+  height: 235px;
+
 }
 .DayPicker-wrapper {
   padding-bottom: 0px;
@@ -145,4 +161,14 @@
 }
 #chosen_days{
   margin: 0;
+}
+
+.DayPicker-Day--selected:not(.DayPicker-Day--disabled):not(.DayPicker-Day--outside) {
+  position: relative;
+  color: #F0F8FF;
+  border-radius: 2px !important;
+  background-color: #3359DB;
+  height: 20px !important;
+  width: 20px !important;
+  padding-bottom: 0.1px;
 }

@@ -50,8 +50,8 @@ export default class PickRange extends React.Component {
             </span>
             )
           : !from && to
-            ? 'Please select the first day.'
-            : 'Please select the last day.'
+            ? 'Please select a day.'
+            : 'Please select a day.'
           }
 
       </p>

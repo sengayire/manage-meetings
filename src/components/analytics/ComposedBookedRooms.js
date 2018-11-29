@@ -11,7 +11,7 @@ const ComposedBookedRooms = ({ dateValue }) => (
         <BookedRoomsHOC
           bookedRoomText="Most Booked Rooms"
           component={BookedRooms}
-          dateValue={dateValue}
+          date={dateValue}
         />
       }
     </div>
@@ -21,16 +21,20 @@ const ComposedBookedRooms = ({ dateValue }) => (
           bookedRoomText="Least Booked Rooms"
           tip=""
           component={BookedRooms}
-          dateValue={dateValue}
+          date={dateValue}
         />
       }
     </div>
   </div>
 );
 ComposedBookedRooms.propTypes = {
-  dateValue: PropTypes.string,
+  dateValue: PropTypes.shape({
+    startDate: PropTypes.string,
+    endDate: PropTypes.string,
+  }),
 };
+
 ComposedBookedRooms.defaultProps = {
-  dateValue: 'Today',
+  dateValue: {},
 };
 export default ComposedBookedRooms;

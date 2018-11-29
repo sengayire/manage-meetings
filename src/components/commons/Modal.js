@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import Modal from 'react-modal';
 import PropTypes from 'prop-types';
-import '../../assets/styles/calendarmodal.scss';
+import '../../assets/styles/modal.scss';
 import IconButton from './IconButtons';
 
 const customStyles = {
