@@ -116,9 +116,9 @@ describe('AnalyticsNav Component', () => {
     expect(showOverview).toBeCalled();
   });
 
-  it('should have a button', () => {
-    shallowNav.setState({
-      view: 'overview',
+  it('should call showActivityView', () => {
+    analyticNavWrapper.setState({
+      view: 'activity',
     });
     const showActivityView = jest.spyOn(analyticNavWrapper, 'showActivityView');
     analyticNavWrapper.showActivityView();

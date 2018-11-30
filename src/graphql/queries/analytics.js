@@ -22,7 +22,8 @@ const MEETING_DURATION_ANALYTICS = gql`
 
 const ANALYTICS_BOOKINGS_COUNT = gql`
   query AnalyticsBookingsCount($startDate: String!, $endDate: String!){
-    analyticsRatios(startDate: $startDate endDate: $endDate){
+    bookingsAnalyticsCount(startDate: $startDate, endDate: $endDate){
+      period
       bookings
     }
   }

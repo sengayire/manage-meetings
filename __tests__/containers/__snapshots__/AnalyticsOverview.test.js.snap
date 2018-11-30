@@ -2,13 +2,30 @@
 
 exports[`AnalyticsOverview Component renders properly 1`] = `
 <React.Fragment>
-  <AveragePieChartList />
+  <AveragePieChartList
+    dateValue={
+      Object {
+        "endDate": "\\"Dec 17 2018\\"",
+        "startDate": "\\"Dec 17 2018\\"",
+      }
+    }
+  />
   <ComposedBookedRooms
-    dateValue={Object {}}
+    dateValue={
+      Object {
+        "endDate": "\\"Dec 17 2018\\"",
+        "startDate": "\\"Dec 17 2018\\"",
+      }
+    }
   />
   <Checkins />
-  <Apollo(AverageMeetingList)
-    dateValue={Object {}}
+  <AverageMeetingList
+    dateValue={
+      Object {
+        "endDate": "\\"Dec 17 2018\\"",
+        "startDate": "\\"Dec 17 2018\\"",
+      }
+    }
   />
 </React.Fragment>
 `;

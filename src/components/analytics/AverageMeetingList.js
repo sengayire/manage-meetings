@@ -4,7 +4,6 @@ import { graphql, compose } from 'react-apollo';
 import '../../assets/styles/averageMeetinglist.scss';
 import TableHead from '../helpers/TableHead';
 import QueryAnalyticsPerMeetingRoom from './AverageMeetingList/QueryAnalyticsPerMeetingRoom';
-import { getTodaysDate } from '../../utils/Utilities';
 import Tip from '../commons/Tooltip';
 import MEETING_DURATION_ANALYTICS from '../../graphql/queries/analytics';
 import Pagination from '../commons/Pagination';
@@ -84,7 +83,6 @@ class AverageMeetingList extends Component {
 
 AverageMeetingList.propTypes = {
   dateValue: PropTypes.shape({
-    dates: PropTypes.object,
     startDate: PropTypes.string,
     endDate: PropTypes.string,
   }),
@@ -96,10 +94,7 @@ AverageMeetingList.propTypes = {
   }).isRequired,
 };
 AverageMeetingList.defaultProps = {
-  dateValue: {
-    startDate: `"${getTodaysDate()}"`,
-    endDate: `"${getTodaysDate()}"`,
-  },
+  dateValue: {},
 };
 
 export default compose(
