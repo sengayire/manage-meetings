@@ -1794,7 +1794,7 @@ exports[`AverageMeetingList component for case: Today should render correctly: [
                         "value": Object {
                           "block": false,
                           "kind": "StringValue",
-                          "value": "Nov 28 2018",
+                          "value": "Nov 29 2018",
                         },
                       },
                     ],
@@ -1918,7 +1918,7 @@ exports[`AverageMeetingList component for case: Today should render correctly: [
                             "value": Object {
                               "block": false,
                               "kind": "StringValue",
-                              "value": "Nov 28 2018",
+                              "value": "Nov 29 2018",
                             },
                           },
                         ],
@@ -2036,7 +2036,7 @@ exports[`AverageMeetingList component for case: Today should render correctly: [
                               "value": Object {
                                 "block": false,
                                 "kind": "StringValue",
-                                "value": "Nov 28 2018",
+                                "value": "Nov 29 2018",
                               },
                             },
                           ],
@@ -2165,7 +2165,7 @@ exports[`AverageMeetingList component for case: Today should render correctly: [
                                   "value": Object {
                                     "block": false,
                                     "kind": "StringValue",
-                                    "value": "Nov 28 2018",
+                                    "value": "Nov 29 2018",
                                   },
                                 },
                               ],
@@ -2282,7 +2282,7 @@ exports[`AverageMeetingList component for case: Today should render correctly: [
                               "value": Object {
                                 "block": false,
                                 "kind": "StringValue",
-                                "value": "Nov 28 2018",
+                                "value": "Nov 29 2018",
                               },
                             },
                           ],
@@ -2369,7 +2369,7 @@ exports[`AverageMeetingList component for case: Today should render correctly: [
                 "isCurrentlyPolling": false,
                 "isTornDown": false,
                 "lastError": [Error: Network error: No more mocked responses for the query: {
-  dailyDurationsOfMeetings(dayStart: "Nov 28 2018") {
+  dailyDurationsOfMeetings(dayStart: "Nov 29 2018") {
     MeetingsDurationaAnalytics {
       count
       roomName
@@ -2422,7 +2422,7 @@ exports[`AverageMeetingList component for case: Today should render correctly: [
                                   "value": Object {
                                     "block": false,
                                     "kind": "StringValue",
-                                    "value": "Nov 28 2018",
+                                    "value": "Nov 29 2018",
                                   },
                                 },
                               ],
@@ -2542,7 +2542,7 @@ exports[`AverageMeetingList component for case: Today should render correctly: [
                                 "value": Object {
                                   "block": false,
                                   "kind": "StringValue",
-                                  "value": "Nov 28 2018",
+                                  "value": "Nov 29 2018",
                                 },
                               },
                             ],
@@ -2624,7 +2624,7 @@ exports[`AverageMeetingList component for case: Today should render correctly: [
                   },
                 },
                 "networkError": [Error: No more mocked responses for the query: {
-  dailyDurationsOfMeetings(dayStart: "Nov 28 2018") {
+  dailyDurationsOfMeetings(dayStart: "Nov 29 2018") {
     MeetingsDurationaAnalytics {
       count
       roomName
@@ -2693,7 +2693,7 @@ exports[`AverageMeetingList component for case: Today should render correctly: [
                                 "value": Object {
                                   "block": false,
                                   "kind": "StringValue",
-                                  "value": "Nov 28 2018",
+                                  "value": "Nov 29 2018",
                                 },
                               },
                             ],
@@ -2922,7 +2922,7 @@ exports[`AverageMeetingList component for case: Today should render correctly: [
                                     "value": Object {
                                       "block": false,
                                       "kind": "StringValue",
-                                      "value": "Nov 28 2018",
+                                      "value": "Nov 29 2018",
                                     },
                                   },
                                 ],

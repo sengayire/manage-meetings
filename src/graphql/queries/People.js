@@ -22,6 +22,15 @@ query allUsers ($page: Int!, $perPage: Int!) {
 }
 `;
 
+const GET_USER_QUERY = gql`
+query user ($email: String!) {
+  user( email: $email) {
+    id
+    location
+  }
+}
+`;
+
 const GET_ROLES_QUERY = gql`
 query roles {
   roles {
@@ -29,4 +38,4 @@ query roles {
     role
   }
 }`;
-export { GET_PEOPLE_QUERY as default, GET_ROLES_QUERY };
+export { GET_PEOPLE_QUERY as default, GET_ROLES_QUERY, GET_USER_QUERY };

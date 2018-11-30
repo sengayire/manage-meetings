@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Button } from 'react-toolbox/lib/button';
 import moment from 'moment';
+import PropTypes from 'prop-types';
+import { graphql } from 'react-apollo';
 import '../../assets/styles/custom.scss';
 import '../../assets/styles/topmenu.scss';
 import '../../../src/assets/styles/analyticsPage.scss';
@@ -8,6 +10,8 @@ import Calendar from '../../components/commons/Calendar';
 import AnalyticsAct from '../../containers/AnalyticsActivity';
 import AnalyticsOverview from '../../containers/AnalyticsOverview';
 import IconNotifications from '../../assets/images/download_24px.svg';
+import { decodeTokenAndGetUserData } from '../../utils/Cookie';
+import { GET_USER_QUERY } from '../../graphql/queries/People';
 
 export class AnalyticsActivity extends Component {
   state = {
@@ -16,6 +20,7 @@ export class AnalyticsActivity extends Component {
     startDate: moment().format('MMM DD Y'),
     endDate: moment().format('MMM DD Y'),
     calenderOpen: false,
+    location: 'Kampala',
   };
 
   sendDateData = (start, end) => {
@@ -50,6 +55,7 @@ export class AnalyticsActivity extends Component {
     const {
       view, calenderOpen, startDate, endDate,
     } = this.state;
+    const { user } = this.props;
 
     //  The dates object is to contain the dates to be passed
     //  to other analytics components
@@ -80,7 +86,7 @@ export class AnalyticsActivity extends Component {
     );
     const locationIcon = () => (
       <div className="locationIconBtn">
-        <span>Nairobi</span>
+        {user.user !== undefined ? <span>{user.user.location}</span> : this.state.location}
       </div>
     );
     const calendarIcon = () => (
@@ -96,7 +102,7 @@ export class AnalyticsActivity extends Component {
             <Button
               className={
                 view === 'activity'
-                  ? 'activity-btn pad-top analysis-btn btn  '
+                  ? 'activity-btn pad-top analysis-btn btn'
                   : 'activity-btn pad-top analysis-btn btn btn-color'
               }
               icon={view === 'activity' ? overViewBtnToggle() : overViewIcon()}
@@ -165,4 +171,23 @@ export class AnalyticsActivity extends Component {
   }
 }
 
-export default AnalyticsActivity;
+AnalyticsActivity.propTypes = {
+  user: PropTypes.shape({
+    user: PropTypes.object,
+  }).isRequired,
+};
+
+/* This gets the token from the localstorage and select the user
+email to pass as a parameter to the query being sent */
+const { UserInfo: userData } = decodeTokenAndGetUserData() || {};
+
+export default graphql(GET_USER_QUERY, {
+  name: 'user',
+  options: /* istanbul ignore next */ () => ({
+    variables: {
+      // Added the test email in order to pass the variable to the test environment
+      email: process.env.NODE_ENV === 'test' ? 'sammy.muriuki@andela.com' : userData.email,
+    },
+  }),
+})(AnalyticsActivity);
+

@@ -6,7 +6,7 @@ exports[`Analytics component renders correctly in memory 1`] = `
   <div
     className="analytics-container"
   >
-    <AnalyticsActivity />
+    <Apollo(AnalyticsActivity) />
   </div>
 </React.Fragment>
 `;

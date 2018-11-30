@@ -1,14 +1,15 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 import { ApolloClient } from 'apollo-client';
 import { ApolloProvider } from 'react-apollo';
 import { createHttpLink } from 'apollo-link-http';
 // eslint-disable-next-line import/extensions
 import fetch from 'unfetch';
 import { InMemoryCache } from 'apollo-cache-inmemory';
-
-import AnalyticsNav from '../../../src/components/navbars/AnalyticsNav';
-
+import { MockedProvider } from 'react-apollo/test-utils';
+import { GET_USER_QUERY } from '../../../src/graphql/queries/People';
+import allUser from '../../../__mocks__/people/User';
+import AnalyticsNav, { AnalyticsActivity as AnalyticComponent } from '../../../src/components/navbars/AnalyticsNav';
 
 const { MRM_API_URL } = process.env || {};
 
@@ -20,19 +21,54 @@ const httpLink = createHttpLink({
 const client = new ApolloClient({
   link: httpLink,
   cache: new InMemoryCache(),
-
 });
 
 describe('AnalyticsNav Component', () => {
   const toggleMenu = jest.fn();
+  let analyticNavWrapper;
+  let analyticNav;
+  let wrapper;
+  const user = {
+    user: {
+      id: 8,
+      location: 'Nairobi',
+    },
+  };
+  beforeEach(() => {
+    wrapper = mount(
+      <ApolloProvider client={client}>
+        <AnalyticsNav onClick={toggleMenu} onBlur={toggleMenu} />
+      </ApolloProvider>,
+    );
+    const componentWrapper = shallow(<AnalyticComponent user={user} />);
+    analyticNavWrapper = componentWrapper.instance();
+    analyticNav = wrapper.find(AnalyticComponent).instance();
+  });
 
-  const wrapper = mount(
-    <ApolloProvider client={client}>
-      <AnalyticsNav onClick={toggleMenu} onBlur={toggleMenu} />
-    </ApolloProvider>,
-  );
+  it('renders correctly from memory', () => {
+    const mocks = [
+      {
+        request: {
+          query: GET_USER_QUERY,
+          variables: {
+            email: 'sammy.muriuki@andela.com',
+          },
+        },
+        result: { ...allUser },
+      },
+    ];
 
-  const analyticNavWrapper = wrapper.find(AnalyticsNav).instance();
+    const wrapperCode = (
+      <MockedProvider
+        mocks={mocks}
+        addTypename={false}
+      >
+        <AnalyticsNav email="sammy.muriuki@andela.com" />
+      </MockedProvider>
+    );
+    const mountWrapper = mount(wrapperCode);
+    expect(mountWrapper).toMatchSnapshot();
+  });
 
   it('should have a div', () => {
     const div = wrapper.find('div');
@@ -40,12 +76,12 @@ describe('AnalyticsNav Component', () => {
   });
 
   it('should have a calendar when calendar button is clicked', () => {
-    analyticNavWrapper.setState({
+    analyticNav.setState({
       calenderOpen: true,
     });
     const CalendarButton = wrapper.find('#calendar-btn').at(0);
     expect(CalendarButton).toHaveLength(1);
-    analyticNavWrapper.setState({
+    analyticNav.setState({
       calenderOpen: false,
     });
   });
@@ -60,7 +96,6 @@ describe('AnalyticsNav Component', () => {
       view: 'overview',
       value: '',
     });
-
     const showOverview = jest.spyOn(analyticNavWrapper, 'showOverview');
     analyticNavWrapper.showOverview();
     expect(analyticNavWrapper.state.view).toEqual('overview');
@@ -72,7 +107,6 @@ describe('AnalyticsNav Component', () => {
     analyticNavWrapper.setState({
       view: 'activity',
     });
-
     const showActivityView = jest.spyOn(analyticNavWrapper, 'showActivityView');
     analyticNavWrapper.showActivityView();
     expect(analyticNavWrapper.state.view).toEqual('activity');
@@ -80,17 +114,16 @@ describe('AnalyticsNav Component', () => {
     expect(showActivityView).toBeCalled();
   });
 
-  it('should update value state', () => {
+  it('should have a button', () => {
     analyticNavWrapper.setState({
       value: 'Today',
     });
-
     analyticNavWrapper.showActivityView();
     expect(analyticNavWrapper.state.value).toEqual('Today');
   });
 
   it('should show overViewIcon', () => {
-    analyticNavWrapper.setState({
+    analyticNav.setState({
       view: 'overview',
       value: '',
     });
@@ -100,7 +133,7 @@ describe('AnalyticsNav Component', () => {
   });
 
   it('should show activityIcon', () => {
-    analyticNavWrapper.setState({
+    analyticNav.setState({
       view: 'overview',
       value: '',
     });
@@ -110,25 +143,25 @@ describe('AnalyticsNav Component', () => {
   });
 
   it('should call toggleMenu at onClick', () => {
-    analyticNavWrapper.setState({ menuOpen: false });
+    analyticNav.setState({ menuOpen: false });
     const dropBtn = wrapper.find('#btnControl');
     dropBtn.simulate('click');
-    expect(analyticNavWrapper.state.menuOpen).toEqual(true);
+    expect(analyticNav.state.menuOpen).toEqual(true);
   });
   it('should call sendDateData', () => {
     analyticNavWrapper.sendDateData('05 Nov 2018', '06 Nov 2018');
     expect(analyticNavWrapper.state.endDate).toEqual('06 Nov 2018');
   });
   it('should call toggleMenu at onBlur', () => {
-    analyticNavWrapper.setState({ menuOpen: true });
+    analyticNav.setState({ menuOpen: true });
     const dropBtn = wrapper.find('#btnControl');
     dropBtn.simulate('blur');
-    expect(analyticNavWrapper.state.menuOpen).toEqual(false);
+    expect(analyticNav.state.menuOpen).toEqual(false);
   });
   it('should call calendarToggle at onClick', () => {
-    analyticNavWrapper.setState({ calenderOpen: true });
+    analyticNav.setState({ calenderOpen: true });
     const calendarBtn = wrapper.find('#calendar-btn').at(0);
     calendarBtn.simulate('click');
-    expect(analyticNavWrapper.state.calenderOpen).toEqual(false);
+    expect(analyticNav.state.calenderOpen).toEqual(false);
   });
 });
