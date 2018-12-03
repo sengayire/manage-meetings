@@ -2,35 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import '../../assets/styles/averageMeetinglist.scss';
 import TableHead from '../helpers/TableHead';
-import QueryAnalyticsPerMonth, { QueryAnalyticsPerMonthPagination } from './QueryAnalyticsPerMonth';
-import QueryAnalyticsPerWeek, { QueryAnalyticsPerWeekPagination } from './QueryAnalyticsPerWeek';
-import QueryAnalyticsPerDay, { QueryAnalyticsPerDailyPagination } from './QueryAnalyticsPerDay';
+import QueryAnalyticsPerMeetingRoom, { QueryAnalyticsPerMeetingRoomPagination } from './QueryAnalyticsPerMeetingRoom';
+import { getTodaysDate } from '../../utils/Utilities';
 import Tip from '../commons/Tooltip';
 
 const AverageMeetingList = ({ dateValue }) => {
-  let renderData;
-  let dataPagination;
-  let tip =
+  const tip =
     'The number of meetings in a room,  the average number of attendees to these meetings as well as the average duration of the meetings.';
-  // render component matching what is picked from the drop down
-  switch (dateValue) {
-    case 'This Month':
-      renderData = <QueryAnalyticsPerMonth />;
-      dataPagination = <QueryAnalyticsPerMonthPagination />;
-      break;
-    case 'This Week':
-      renderData = <QueryAnalyticsPerWeek />;
-      dataPagination = <QueryAnalyticsPerWeekPagination />;
-      break;
-    case 'Today':
-      renderData = <QueryAnalyticsPerDay />;
-      dataPagination = <QueryAnalyticsPerDailyPagination />;
-      break;
-    default:
-      renderData = null;
-      dataPagination = null;
-      tip = null;
-  }
 
   return (
     <div className="average-meeting">
@@ -43,10 +21,14 @@ const AverageMeetingList = ({ dateValue }) => {
           <TableHead
             titles={['Room', 'No. of meetings', 'Average Meeting Duration']}
           />
-          <tbody>{renderData}</tbody>
+          <tbody>
+            <QueryAnalyticsPerMeetingRoom dateValue={dateValue} />
+          </tbody>
         </table>
       </div>
-      <div className="average-meeting-pagination">{dataPagination}</div>
+      <div className="average-meeting-pagination">
+        <QueryAnalyticsPerMeetingRoomPagination />
+      </div>
     </div>
   );
 };
@@ -57,7 +39,10 @@ AverageMeetingList.propTypes = {
   }),
 };
 AverageMeetingList.defaultProps = {
-  dateValue: {},
+  dateValue: {
+    startDate: `"${getTodaysDate()}"`,
+    endDate: `"${getTodaysDate()}"`,
+  },
 };
 
 export default AverageMeetingList;

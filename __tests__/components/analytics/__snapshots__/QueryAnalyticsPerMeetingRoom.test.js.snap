@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`QueryAnalyticsPerMonthPagination component should click next 1`] = `
-<QueryAnalyticsPerMonthPagination>
+<QueryAnalyticsPerMeetingRoomPagination>
   <Pagination
     handleData={[Function]}
     hasNext={true}
@@ -359,5 +359,5 @@ exports[`QueryAnalyticsPerMonthPagination component should click next 1`] = `
       </div>
     </nav>
   </Pagination>
-</QueryAnalyticsPerMonthPagination>
+</QueryAnalyticsPerMeetingRoomPagination>
 `;
