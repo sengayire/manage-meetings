@@ -156,7 +156,7 @@ export class RoomsList extends React.Component {
           </div>
         ) : (
           <h2 style={{ marginLeft: '0' }}>No Rooms Found</h2>
-        )}
+          )}
         {noResource && !isSearching ? (
           <Pagination
             totalPages={allRooms.pages}

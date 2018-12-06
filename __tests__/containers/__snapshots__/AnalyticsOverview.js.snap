@@ -7,7 +7,7 @@ exports[`Analytics Overview Component renders correctly from memory 1`] = `
     dateValue={Object {}}
   />
   <Checkins />
-  <AverageMeetingList
+  <Apollo(AverageMeetingList)
     dateValue={Object {}}
   />
 </React.Fragment>

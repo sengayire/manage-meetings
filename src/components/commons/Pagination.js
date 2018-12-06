@@ -76,8 +76,8 @@ class Pagination extends Component {
                 <span>Showing {reverse ? '' : 'page'}</span>
                 <select className="totalPage" name="page" value={page} onChange={this.handleChange}>
                   {[...Array(totalPages).keys()].map(item => (
-                    <option key={item}>{ item + 1 }</option>
-                ))}
+                    <option key={item}>{item + 1}</option>
+                  ))}
                 </select>
                 {!reverse && <span className="pageNum"> of {totalPages}</span>}
                 {reverse && <span className="pageNum reverse"> of {totalPages} Results</span>}
