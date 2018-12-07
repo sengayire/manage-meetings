@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
+import fileDownload from 'js-file-download';
 import { Button } from 'react-toolbox/lib/button';
 import moment from 'moment';
 import PropTypes from 'prop-types';
 import { graphql } from 'react-apollo';
+import toastr from 'toastr';
 import '../../assets/styles/custom.scss';
 import '../../assets/styles/topmenu.scss';
 import '../../../src/assets/styles/analyticsPage.scss';
+import getCSVData from '../../json_requests/getCSVData';
 import Calendar from '../../components/commons/Calendar';
+import notification from '../../utils/notification';
 import AnalyticsAct from '../../containers/AnalyticsActivity';
 import AnalyticsOverview from '../../containers/AnalyticsOverview';
 import IconNotifications from '../../assets/images/download_24px.svg';
@@ -22,6 +26,27 @@ export class AnalyticsActivity extends Component {
     calenderOpen: false,
     location: 'Kampala',
   };
+
+  /** this will fetch csv data */
+  fetchCSVData = () => {
+  //  notify user download will start soon
+    notification(toastr, 'success', 'Fetching csv file. Will notify you when download starts')();
+    this.toggleMenu();
+
+    // call the axios api
+    getCSVData(this.state.startDate, this.state.endDate)
+      .then((res) => {
+        // this will download and save the csv file
+        fileDownload(res.data, 'analytics_data.csv');
+        notification(toastr, 'success', 'CSV file download started')();
+      })
+      /*eslint-disable */
+      .catch((error) => {
+        // notify user if the server sends back error
+        notification(toastr, 'error', 'There was a server error. Please try again.')();
+      });
+      /* eslint-enable */
+  }
 
   sendDateData = (start, end) => {
     this.setState({ startDate: start, endDate: end });
@@ -63,6 +88,7 @@ export class AnalyticsActivity extends Component {
       startDate: this.state.startDate,
       endDate: this.state.endDate,
     };
+
     const overViewIcon = () => (
       <div className="overViewBtn">
         <span id="overview-span">OVERVIEW</span>
@@ -145,8 +171,7 @@ export class AnalyticsActivity extends Component {
               <button
                 className="dropbtn"
                 id="btnControl"
-                onClick={() => this.toggleMenu()}
-                onBlur={() => this.toggleMenu()}
+                onClick={this.toggleMenu}
               >
                 <img
                   className="dropbtn-img"
@@ -155,10 +180,12 @@ export class AnalyticsActivity extends Component {
                 />
               </button>
               <div className={this.state.menuOpen ? 'dropdown-content' : 'dropdown-content-null'}>
-                <a href="/" className="download-dropdown-label" >Export options </a>
-                <a href="/analytics">PDF</a>
-                <a href="/analytics">JPEG</a>
-                <a href="/analytics">CSV</a>
+                {/* eslint-disable */}
+                <span className="download-dropdown-label" >Export options </span>
+                <span >PDF</span>
+                <span >JPEG</span>
+                <span onClick={this.fetchCSVData} >CSV</span>
+                {/* eslint-enable */}
               </div>
             </div>
           </div>

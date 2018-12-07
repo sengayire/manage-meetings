@@ -1,4 +1,5 @@
 import React from 'react';
+import fileDownload from 'js-file-download';
 import { mount, shallow } from 'enzyme';
 import { ApolloClient } from 'apollo-client';
 import { ApolloProvider } from 'react-apollo';
@@ -10,6 +11,12 @@ import { MockedProvider } from 'react-apollo/test-utils';
 import { GET_USER_QUERY } from '../../../src/graphql/queries/People';
 import allUser from '../../../__mocks__/people/User';
 import AnalyticsNav, { AnalyticsActivity as AnalyticComponent } from '../../../src/components/navbars/AnalyticsNav';
+import getCSVData from '../../../src/json_requests/getCSVData';
+
+
+jest.mock('../../../src/json_requests/getCSVData');
+jest.mock('js-file-download');
+
 
 const { MRM_API_URL } = process.env || {};
 
@@ -149,12 +156,6 @@ describe('AnalyticsNav Component', () => {
     analyticNavWrapper.sendDateData('05 Nov 2018', '06 Nov 2018');
     expect(analyticNavWrapper.state.endDate).toEqual('06 Nov 2018');
   });
-  it('should call toggleMenu at onBlur', () => {
-    analyticNav.setState({ menuOpen: true });
-    const dropBtn = wrapper.find('#btnControl');
-    dropBtn.simulate('blur');
-    expect(analyticNav.state.menuOpen).toEqual(false);
-  });
   it('should call calendarToggle at onClick', () => {
     analyticNav.setState({ calenderOpen: true });
     const calendarBtn = wrapper.find('#calendar-btn').at(0);
@@ -162,3 +163,35 @@ describe('AnalyticsNav Component', () => {
     expect(analyticNav.state.calenderOpen).toEqual(false);
   });
 });
+
+
+describe('CSV functionality', () => {
+  const user = {
+    user: {
+      id: 8,
+      location: 'Nairobi',
+    },
+  };
+  getCSVData.mockImplementation(() => Promise.resolve());
+  getCSVData.mockResolvedValue(() => Promise.resolve());
+  it('should hit csv fetch functionality', () => {
+    const wrapper = shallow(<AnalyticComponent user={user} />);
+    const instance = wrapper.instance();
+    const spy = jest.spyOn(instance, 'fetchCSVData');
+    spy();
+    expect(getCSVData).toHaveBeenCalled();
+    Promise.resolve().then(() => {
+      expect(fileDownload).toHaveBeenCalled();
+    });
+  });
+
+  it('should catch error from server', () => {
+    getCSVData.mockImplementation(() => Promise.reject());
+    const wrapper = shallow(<AnalyticComponent user={user} />);
+    const instance = wrapper.instance();
+    const spy = jest.spyOn(instance, 'fetchCSVData');
+    spy();
+    expect(getCSVData).toHaveBeenCalled();
+  });
+});
+

@@ -3014,7 +3014,6 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                   <button
                     className="dropbtn"
                     id="btnControl"
-                    onBlur={[Function]}
                     onClick={[Function]}
                   >
                     <img
@@ -3026,27 +3025,22 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                   <div
                     className="dropdown-content-null"
                   >
-                    <a
+                    <span
                       className="download-dropdown-label"
-                      href="/"
                     >
                       Export options 
-                    </a>
-                    <a
-                      href="/analytics"
-                    >
+                    </span>
+                    <span>
                       PDF
-                    </a>
-                    <a
-                      href="/analytics"
-                    >
+                    </span>
+                    <span>
                       JPEG
-                    </a>
-                    <a
-                      href="/analytics"
+                    </span>
+                    <span
+                      onClick={[Function]}
                     >
                       CSV
-                    </a>
+                    </span>
                   </div>
                 </div>
               </div>
