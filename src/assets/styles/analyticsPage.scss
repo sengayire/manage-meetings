@@ -25,14 +25,14 @@
     .btn-left .btn-color:hover {
         background-color: #3359DB;
         }
-    
+
     .btn-right {
         margin: 10px 0 0 0;
         display: flex;
         justify-content: space-evenly;
     }
 
-    
+
     .analysis-btn {
         margin: 20px;
         height: 41px;
@@ -42,19 +42,19 @@
         background-color: #fff;
         border: 1px solid #EBEBEB!important;
     }
-    
+
     .theme--icon--3aBSXDLw {
         text-transform: none;
         font-weight: bold;
         font-size: 15px;
     }
-    
+
     .theme--flat--1jWAQA6f{
         background: white;
         margin: 20px;
         font-family: 'DINPro';
     }
-    
+
     .overViewBtn{
         margin-top: -3px;
         z-index: -2px;
@@ -67,7 +67,7 @@
             height: 12px;
             width: 22px;
             position: auto;
-        }        
+        }
         span{
             color: white!important;
             font-weight: bold;
@@ -93,7 +93,7 @@
             height: 12px;
             width: 22px;
             position: auto;
-        }        
+        }
         span{
             color: #4F4F4F!important;
             font-weight: bold;
@@ -116,9 +116,9 @@
             padding-top: 40px !important;
             height: 12px;
             width: 22px;
-            position: auto; 
-            vertical-align: sub;    
-        }        
+            position: auto;
+            vertical-align: sub;
+        }
         span{
             color: #4F4F4F!important;
             font-weight: bold;
@@ -142,8 +142,8 @@
             width: 22px;
             position: auto;
             vertical-align: sub;
-            
-        }        
+
+        }
         span{
             color: white!important;
             font-weight: bold;
@@ -164,8 +164,8 @@
             margin-left: 59px;
             margin-right: 15px;
             position: auto;
-            vertical-align: sub !important; 
-        }        
+            vertical-align: sub !important;
+        }
         span{
             color: #6D6D6D!important;
             font-weight: normal!important;
@@ -191,18 +191,18 @@
             margin-left: 9px;
             margin-right: 15px;
             position: auto;
-            vertical-align: sub !important; 
-        }        
+            vertical-align: sub !important;
+        }
         span{
             color: #6D6D6D!important;
             font-weight: normal!important;
             font-size: 15px;
             text-transform: none !important;
             padding: 15px 15px 15px 15px !important;
-           
+
         }
     }
-         
+
     .date-label {
         margin-left: 36px;
         width: 100%;
@@ -211,7 +211,7 @@
         margin-top: 15px;
     }
 
-            
+
 
 
 
@@ -222,11 +222,11 @@
         height: 40px;
         width: 40px;
     }
-        
+
         .dropbtn {
             background-color: #FFAF30;
             color: white;
-            padding:  8px 14px; 
+            padding:  8px 14px;
             font-size: 16px;
             border: none;
             cursor: pointer;
@@ -237,8 +237,8 @@
                 padding: 25px!important;
             }
         }
- 
-        
+
+
         .dropdown-content {
             display: none;
             position: absolute;
@@ -256,7 +256,7 @@
         .dropdown-content-null {
             display: none;
         }
-        
+
         .dropdown-content span {
             color: #3359DB;
             padding: 25px 16px 5px 16px;;
@@ -276,12 +276,11 @@
         .dropdown-content .download-dropdown-label:hover {
             background-color: #f9f9f9 !important;
         }
-        
         .dropdown-content span:hover {
             background-color: #f1f1f1;
             cursor: pointer;
         }
-        
+
         .dropdown .dropdown-content {
             display: block;
         }
@@ -291,7 +290,7 @@
         }
 
         .pad-top {
-            padding-top: 15px !important; 
+            padding-top: 15px !important;
         }
 
     #location-btn {

@@ -6,10 +6,13 @@ import { ApolloProvider } from 'react-apollo';
 import { createHttpLink } from 'apollo-link-http';
 // eslint-disable-next-line import/extensions
 import fetch from 'unfetch';
+import download from 'downloadjs';
+import html2canvas from 'html2canvas';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 import { MockedProvider } from 'react-apollo/test-utils';
 import { GET_USER_QUERY } from '../../../src/graphql/queries/People';
 import allUser from '../../../__mocks__/people/User';
+import getDataAsJPEG from '../../../src/json_requests/getJPEGData';
 import AnalyticsNav, { AnalyticsActivity as AnalyticComponent } from '../../../src/components/navbars/AnalyticsNav';
 import getCSVData from '../../../src/json_requests/getCSVData';
 
@@ -17,6 +20,10 @@ import getCSVData from '../../../src/json_requests/getCSVData';
 jest.mock('../../../src/json_requests/getCSVData');
 jest.mock('js-file-download');
 
+
+jest.mock('html2canvas');
+jest.mock('downloadjs');
+jest.mock('../../../src/json_requests/getJPEGData.js');
 
 const { MRM_API_URL } = process.env || {};
 
@@ -192,6 +199,41 @@ describe('CSV functionality', () => {
     const spy = jest.spyOn(instance, 'fetchCSVData');
     spy();
     expect(getCSVData).toHaveBeenCalled();
+  });
+});
+
+describe('JPEG functionality', () => {
+  beforeEach(() => {
+    document.body.innerHTML += `
+  <div id="jpeg">Test data</div>
+ `;
+  });
+  const user = {
+    user: {
+      id: 8,
+      location: 'Nairobi',
+    },
+  };
+  getDataAsJPEG.mockImplementation(() => Promise.resolve({ data: { data: '<p>test</p>' } }));
+  html2canvas.mockImplementation(() => Promise.resolve({ data: { data: '<p>test</p>' } }));
+  it('should call getDataAsJPEG function', () => {
+    const wrapper = shallow(<AnalyticComponent user={user} />);
+    const instance = wrapper.instance();
+    const spy = jest.spyOn(instance, 'fetchDataAsJPEG');
+    spy();
+    expect(getDataAsJPEG).toHaveBeenCalled();
+    Promise.resolve().then(() => {
+      expect(html2canvas).toBeCalled();
+      expect(download).toBeCalled();
+    });
+  });
+  it('should catch error from server', () => {
+    getDataAsJPEG.mockImplementation(() => Promise.reject());
+    const wrapper = shallow(<AnalyticComponent user={user} />);
+    const instance = wrapper.instance();
+    const spy = jest.spyOn(instance, 'fetchDataAsJPEG');
+    spy();
+    expect(getDataAsJPEG).toHaveBeenCalled();
   });
 });
 

@@ -5,6 +5,8 @@ import moment from 'moment';
 import PropTypes from 'prop-types';
 import { graphql } from 'react-apollo';
 import toastr from 'toastr';
+import download from 'downloadjs';
+import html2canvas from 'html2canvas';
 import '../../assets/styles/custom.scss';
 import '../../assets/styles/topmenu.scss';
 import '../../../src/assets/styles/analyticsPage.scss';
@@ -16,6 +18,7 @@ import AnalyticsOverview from '../../containers/AnalyticsOverview';
 import IconNotifications from '../../assets/images/download_24px.svg';
 import { decodeTokenAndGetUserData } from '../../utils/Cookie';
 import { GET_USER_QUERY } from '../../graphql/queries/People';
+import getDataAsJPEG from '../../json_requests/getJPEGData';
 
 export class AnalyticsActivity extends Component {
   state = {
@@ -30,7 +33,7 @@ export class AnalyticsActivity extends Component {
   /** this will fetch csv data */
   fetchCSVData = () => {
   //  notify user download will start soon
-    notification(toastr, 'success', 'Fetching csv file. Will notify you when download starts')();
+    notification(toastr, 'success', 'Fetching csv file. Download will begin shortly')();
     this.toggleMenu();
 
     // call the axios api
@@ -38,7 +41,7 @@ export class AnalyticsActivity extends Component {
       .then((res) => {
         // this will download and save the csv file
         fileDownload(res.data, 'analytics_data.csv');
-        notification(toastr, 'success', 'CSV file download started')();
+        notification(toastr, 'success', 'CSV File downloaded successfully')();
       })
       /*eslint-disable */
       .catch((error) => {
@@ -46,6 +49,26 @@ export class AnalyticsActivity extends Component {
         notification(toastr, 'error', 'There was a server error. Please try again.')();
       });
       /* eslint-enable */
+  }
+  fetchDataAsJPEG = () => {
+    notification(toastr, 'success', 'Fetching JPEG file. Download will begin shortly')();
+    this.toggleMenu();
+    getDataAsJPEG(this.state.startDate, this.state.endDate)
+      .then((res) => {
+        const { data } = res.data;
+        const element = document.createElement('div');
+        element.id = 'jpeg';
+        element.innerHTML = data;
+        document.body.appendChild(element);
+        html2canvas(document.getElementById('jpeg')).then((canvas) => {
+          element.remove();
+          notification(toastr, 'success', 'File downloaded successfully')();
+          download(canvas.toDataURL(), 'report.jpeg');
+        });
+        /* eslint-disable */
+      }).catch((error) => {
+        notification(toastr, 'error', 'A server error occured, Please try again!')();
+      });
   }
 
   sendDateData = (start, end) => {
@@ -75,7 +98,6 @@ export class AnalyticsActivity extends Component {
       menuOpen: !prevState.menuOpen,
     }));
   };
-
   render() {
     const {
       view, calenderOpen, startDate, endDate,
@@ -112,7 +134,7 @@ export class AnalyticsActivity extends Component {
     );
     const locationIcon = () => (
       <div className="locationIconBtn">
-        {user.user ? <span>{user.user.location}</span> : <span>{this.state.location}</span> }
+        {user.user ? <span>{user.user.location}</span> : <span>{this.state.location}</span>}
       </div>
     );
     const calendarIcon = () => (
@@ -183,9 +205,8 @@ export class AnalyticsActivity extends Component {
                 {/* eslint-disable */}
                 <span className="download-dropdown-label" >Export options </span>
                 <span >PDF</span>
-                <span >JPEG</span>
+                <span onClick={this.fetchDataAsJPEG}>JPEG</span>
                 <span onClick={this.fetchCSVData} >CSV</span>
-                {/* eslint-enable */}
               </div>
             </div>
           </div>
