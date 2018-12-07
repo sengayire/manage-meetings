@@ -53,7 +53,7 @@ export class ComposedBooked extends React.Component {
         // this fetching value is not set to false to avoid props validation
         // failure in the child component, otherwise it should be set to false
         // eslint-disable-next-line
-        .catch(error => this.setState({ fetching: true, error }))
+        .catch(error => this.setState({ fetching: false, error:error }))
     );
   };
 
@@ -66,6 +66,7 @@ export class ComposedBooked extends React.Component {
           tip="The highest number of times meeting rooms were booked in a set time period"
           bookedRoomText={this.props.bookedRoomText}
           fetching={this.state.fetching}
+          error={this.state.error}
           bookedRoomsList={this.state.mostUsedRooms}
         />
       );
@@ -76,6 +77,7 @@ export class ComposedBooked extends React.Component {
         tip="The least number of times meeting rooms were booked in a set time period"
         bookedRoomText={this.props.bookedRoomText}
         fetching={this.state.fetching}
+        error={this.state.error}
         bookedRoomsList={this.state.leastUsedRooms}
       />
     );

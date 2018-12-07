@@ -103,7 +103,6 @@ export class AnalyticsActivity extends Component {
       view, calenderOpen, startDate, endDate,
     } = this.state;
     const { user } = this.props;
-
     //  The dates object is to contain the dates to be passed
     //  to other analytics components
     const dates = {

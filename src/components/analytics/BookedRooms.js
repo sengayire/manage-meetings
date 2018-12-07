@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import ProgressBar from 'react-toolbox/lib/progress_bar';
 import TableHead from '../helpers/TableHead';
 import '../../assets/styles/bookedroom.scss';
+import Warning from '../../assets/images/warning_icon.svg';
 import Tip from '../commons/Tooltip';
 
 const BookedRooms = ({
@@ -10,6 +11,7 @@ const BookedRooms = ({
   bookedRoomText,
   bookedRoomsList,
   fetching,
+  error,
   tip,
 }) => {
   const rooms = bookedRoomsList.length ? Object.values(bookedRoomsList[0]) : [];
@@ -30,7 +32,7 @@ const BookedRooms = ({
       <div className="booked-room-list">
         <table>
           <TableHead titles={['Room', 'Meetings', '% Share of All Meetings']} />
-          {!fetching ? (
+          {!fetching && error === null ? (
             <tbody>
               {rooms.map((room, index) => (
                 <tr key={room}>
@@ -42,11 +44,21 @@ const BookedRooms = ({
             </tbody>
           ) : (
             <tbody>
-              <tr>
-                <td colSpan="3">
-                  <ProgressBar type="linear" mode="indeterminate" />
-                </td>
-              </tr>
+              {error !== null ? (
+                <tr>
+                  <td className="error_class">
+                    <img className="error_icon" src={Warning} alt="error_icon" />
+                    <b><p className="error_msg">An error occurred, cannot fetch data</p></b>
+                  </td>
+                </tr>
+              ) : (
+                <tr>
+                  <td colSpan="3">
+                    <ProgressBar type="linear" mode="indeterminate" />
+                  </td>
+                </tr>
+              )}
+
             </tbody>
           )}
         </table>
@@ -61,5 +73,13 @@ BookedRooms.propTypes = {
   tip: PropTypes.string.isRequired,
   bookedRoomsList: PropTypes.instanceOf(Array).isRequired,
   fetching: PropTypes.bool.isRequired,
+  error: PropTypes.shape({
+    error: PropTypes.string,
+  }),
 };
+
+BookedRooms.defaultProps = {
+  error: {},
+};
+
 export default BookedRooms;

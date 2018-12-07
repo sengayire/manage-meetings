@@ -3419,6 +3419,7 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                       <BookedRooms
                         bookedRoomText="Most Booked Rooms"
                         bookedRoomsList={Array []}
+                        error={null}
                         fetching={true}
                         pollIcon="test-file-stub"
                         tip="The highest number of times meeting rooms were booked in a set time period"
@@ -3612,6 +3613,7 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                       <BookedRooms
                         bookedRoomText="Least Booked Rooms"
                         bookedRoomsList={Array []}
+                        error={null}
                         fetching={true}
                         pollIcon="test-file-stub"
                         tip="The least number of times meeting rooms were booked in a set time period"

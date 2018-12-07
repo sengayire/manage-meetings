@@ -29,12 +29,8 @@ export default class PickRange extends React.Component {
 
   handleDayClick = (day) => {
     const range = DateUtils.addDayToRange(day, this.state);
-    this.state.from = range.from;
-    this.state.to = range.to;
-    if (range.from && range.to) {
-      this.setState(range);
-      this.props.handleChange(range);
-    }
+    this.setState(range);
+    this.props.handleChange(range);
   }
 
   calculatedDays = (from, to) => (
@@ -53,7 +49,6 @@ export default class PickRange extends React.Component {
             ? 'Please select a day.'
             : 'Please select a day.'
           }
-
       </p>
     </div>
   )

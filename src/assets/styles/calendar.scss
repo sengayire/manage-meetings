@@ -2,7 +2,7 @@
     line-height: 15px;
 }
 .Selectable .DayPicker-Day--selected:not(.DayPicker-Day--start):not(.DayPicker-Day--end):not(.DayPicker-Day--outside) {
-    background-color: #f0f8ff !important;
+    background-color: #c2cedd !important;
     color: #2a598f;
     border-radius: 2px !important;
 }
@@ -14,16 +14,16 @@
     line-height: 17px;
     text-align: center;
   }
-  .Selectable .DayPicker-Day--start {
+  .Selectable .DayPicker-Day--start:visited {
     border-top-left-radius: 50% !important;
     border-bottom-left-radius: 50% !important;
+    color:red !important;
 
   }
   .Selectable .DayPicker-Day--end {
     border-top-right-radius: 50% !important;
     border-bottom-right-radius: 50% !important;
   }
-
 
   .calender {
     display: flex;
@@ -66,6 +66,7 @@
       }
     }
   }
+
   .calendar-parent{
     display: flex;
     position: absolute;
@@ -75,6 +76,7 @@
  .date_nav {
    float: left;
  }
+
   .number_of_days{
     padding: 7px 3px 0 3px;
     float: right;
@@ -90,14 +92,15 @@
       font-weight: 500;
       line-height: 15px;
       padding: 10px 1px 5px 1px;
-    
     }
   }
+
   .days_to_choose{
     position: absolute;
     top: 5px;
     float: left;
   }
+
   #reset-button{
     margin-top: 5px;
   }
@@ -127,7 +130,6 @@
   top: 0.5rem;
   left: 15px;
   color: #FFFFFF !important;
-
 }
 .DayPicker-Caption > div {
   font-size: 1.15em;
@@ -136,6 +138,9 @@
 .DayPicker{ 
   font-size: 0.9rem !important;
   font-weight: 200;
+}
+.DayPicker-Day .DayPicker-Day--start .DayPicker-Day--selected:focus {
+  color:red !important;
 }
 
 .DayPicker-Months {
@@ -146,7 +151,6 @@
   background-color: #F8F8F8;
   padding: 7px 0;
   height: 235px;
-
 }
 .DayPicker-wrapper {
   padding-bottom: 0px;
