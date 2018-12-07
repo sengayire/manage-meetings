@@ -389,8 +389,8 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
               },
             },
             "variables": Object {
-              "endDate": "Dec 03 2018",
-              "startDate": "Dec 03 2018",
+              "endDate": "Dec 06 2018",
+              "startDate": "Dec 06 2018",
             },
           },
         },
@@ -572,8 +572,8 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                 },
               },
               "variables": Object {
-                "endDate": "Dec 03 2018",
-                "startDate": "Dec 03 2018",
+                "endDate": "Dec 06 2018",
+                "startDate": "Dec 06 2018",
               },
             },
             Object {
@@ -872,8 +872,8 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                     },
                   },
                   "variables": Object {
-                    "endDate": "Dec 03 2018",
-                    "startDate": "Dec 03 2018",
+                    "endDate": "Dec 06 2018",
+                    "startDate": "Dec 06 2018",
                   },
                 },
                 Object {
@@ -1360,8 +1360,8 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                     },
                   },
                   "variables": Object {
-                    "endDate": "Dec 03 2018",
-                    "startDate": "Dec 03 2018",
+                    "endDate": "Dec 06 2018",
+                    "startDate": "Dec 06 2018",
                   },
                 },
                 "queryId": "2",
@@ -1377,8 +1377,8 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                 "shouldSubscribe": true,
                 "subscriptionHandles": Array [],
                 "variables": Object {
-                  "endDate": "Dec 03 2018",
-                  "startDate": "Dec 03 2018",
+                  "endDate": "Dec 06 2018",
+                  "startDate": "Dec 06 2018",
                 },
               },
               "subscriptions": Array [],
@@ -1940,8 +1940,8 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                 "networkStatus": 1,
                 "previousVariables": null,
                 "variables": Object {
-                  "endDate": "Dec 03 2018",
-                  "startDate": "Dec 03 2018",
+                  "endDate": "Dec 06 2018",
+                  "startDate": "Dec 06 2018",
                 },
               },
             },
@@ -2138,8 +2138,8 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                   },
                 },
                 "variables": Object {
-                  "endDate": "Dec 03 2018",
-                  "startDate": "Dec 03 2018",
+                  "endDate": "Dec 06 2018",
+                  "startDate": "Dec 06 2018",
                 },
               },
               Object {
@@ -2725,7 +2725,9 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                     <div
                       className="locationIconBtn"
                     >
-                      Kampala
+                      <span>
+                        Kampala
+                      </span>
                     </div>
                   }
                   id="location-btn"
@@ -2744,7 +2746,9 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                       <div
                         className="locationIconBtn"
                       >
-                        Kampala
+                        <span>
+                          Kampala
+                        </span>
                       </div>
                     }
                     id="location-btn"
@@ -2767,7 +2771,9 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                         <div
                           className="locationIconBtn"
                         >
-                          Kampala
+                          <span>
+                            Kampala
+                          </span>
                         </div>
                       }
                       id="location-btn"
@@ -2792,7 +2798,9 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                           <div
                             className="locationIconBtn"
                           >
-                            Kampala
+                            <span>
+                              Kampala
+                            </span>
                           </div>
                         }
                         id="location-btn"
@@ -2827,7 +2835,9 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                               <div
                                 className="locationIconBtn"
                               >
-                                Kampala
+                                <span>
+                                  Kampala
+                                </span>
                               </div>
                             }
                           >
@@ -2839,7 +2849,9 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                               <div
                                 className="locationIconBtn"
                               >
-                                Kampala
+                                <span>
+                                  Kampala
+                                </span>
                               </div>
                             </span>
                           </FontIcon>
@@ -2857,7 +2869,7 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                       className="calendarIconBtn"
                     >
                       <span>
-                        Dec 03 2018 - Dec 03 2018
+                        Dec 06 2018 - Dec 06 2018
                       </span>
                     </div>
                   }
@@ -2879,7 +2891,7 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                         className="calendarIconBtn"
                       >
                         <span>
-                          Dec 03 2018 - Dec 03 2018
+                          Dec 06 2018 - Dec 06 2018
                         </span>
                       </div>
                     }
@@ -2905,7 +2917,7 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                           className="calendarIconBtn"
                         >
                           <span>
-                            Dec 03 2018 - Dec 03 2018
+                            Dec 06 2018 - Dec 06 2018
                           </span>
                         </div>
                       }
@@ -2933,7 +2945,7 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                             className="calendarIconBtn"
                           >
                             <span>
-                              Dec 03 2018 - Dec 03 2018
+                              Dec 06 2018 - Dec 06 2018
                             </span>
                           </div>
                         }
@@ -2972,7 +2984,7 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                                 className="calendarIconBtn"
                               >
                                 <span>
-                                  Dec 03 2018 - Dec 03 2018
+                                  Dec 06 2018 - Dec 06 2018
                                 </span>
                               </div>
                             }
@@ -2986,7 +2998,7 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                                 className="calendarIconBtn"
                               >
                                 <span>
-                                  Dec 03 2018 - Dec 03 2018
+                                  Dec 06 2018 - Dec 06 2018
                                 </span>
                               </div>
                             </span>
@@ -3042,8 +3054,8 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
             <AnalyticsOverview
               dateValue={
                 Object {
-                  "endDate": "Dec 03 2018",
-                  "startDate": "Dec 03 2018",
+                  "endDate": "Dec 06 2018",
+                  "startDate": "Dec 06 2018",
                 }
               }
             >
@@ -3389,8 +3401,8 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
               <ComposedBookedRooms
                 dateValue={
                   Object {
-                    "endDate": "Dec 03 2018",
-                    "startDate": "Dec 03 2018",
+                    "endDate": "Dec 06 2018",
+                    "startDate": "Dec 06 2018",
                   }
                 }
               >
@@ -3403,8 +3415,8 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                       component={[Function]}
                       date={
                         Object {
-                          "endDate": "Dec 03 2018",
-                          "startDate": "Dec 03 2018",
+                          "endDate": "Dec 06 2018",
+                          "startDate": "Dec 06 2018",
                         }
                       }
                     >
@@ -3595,8 +3607,8 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                       component={[Function]}
                       date={
                         Object {
-                          "endDate": "Dec 03 2018",
-                          "startDate": "Dec 03 2018",
+                          "endDate": "Dec 06 2018",
+                          "startDate": "Dec 06 2018",
                         }
                       }
                       tip=""
@@ -4154,8 +4166,8 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
               <AverageMeetingList
                 dateValue={
                   Object {
-                    "endDate": "Dec 03 2018",
-                    "startDate": "Dec 03 2018",
+                    "endDate": "Dec 06 2018",
+                    "startDate": "Dec 06 2018",
                   }
                 }
               >
@@ -4278,8 +4290,8 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                         <QueryAnalyticsPerMeetingRoom
                           dateValue={
                             Object {
-                              "endDate": "Dec 03 2018",
-                              "startDate": "Dec 03 2018",
+                              "endDate": "Dec 06 2018",
+                              "startDate": "Dec 06 2018",
                             }
                           }
                         >
@@ -4447,8 +4459,8 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                             }
                             variables={
                               Object {
-                                "endDate": "Dec 03 2018",
-                                "startDate": "Dec 03 2018",
+                                "endDate": "Dec 06 2018",
+                                "startDate": "Dec 06 2018",
                               }
                             }
                           >

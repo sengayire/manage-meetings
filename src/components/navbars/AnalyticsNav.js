@@ -86,7 +86,7 @@ export class AnalyticsActivity extends Component {
     );
     const locationIcon = () => (
       <div className="locationIconBtn">
-        {user.user !== undefined ? <span>{user.user.location}</span> : this.state.location}
+        {user.user ? <span>{user.user.location}</span> : <span>{this.state.location}</span> }
       </div>
     );
     const calendarIcon = () => (
