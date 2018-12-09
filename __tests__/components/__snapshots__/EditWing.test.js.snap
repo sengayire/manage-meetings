@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EditWing Component renders properly 1`] = `
+<MrmModal
+  buttonText="Edit"
+  className="edit-office-modal"
+  closeModal={false}
+  handleCloseRequest={[Function]}
+  modalButtonClassName="edit-button"
+  title="EDIT WING"
+>
+  <form
+    className="modal-form"
+    onSubmit={[Function]}
+  >
+    <Input
+      controlsClass=""
+      id="wingName"
+      inputClass="input1"
+      labelClass="label1"
+      labelName="Wing Name"
+      name="wingName"
+      onChange={[Function]}
+      placeholder=""
+      required={true}
+      type="text"
+      value="Epic"
+    />
+    <ActionButtons
+      actionButtonClassName="action-button"
+      actionButtonText="SAVE CHANGES"
+      cancelButtonClassName="cancel-button"
+      cancelButtonText="CANCEL"
+      onClickCancel={[Function]}
+      withCancel={true}
+    />
+  </form>
+</MrmModal>
+`;

@@ -44,6 +44,16 @@ exports[`Tests for SettingsContent renders correctly in memory 1`] = `
         exact={true}
         path="/settings/integrations"
       />
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/settings/integrations"
+      />
+      <Route
+        component={[Function]}
+        exact={true}
+        path="/settings/wings"
+      />
       <Redirect
         from="/settings"
         push={false}
