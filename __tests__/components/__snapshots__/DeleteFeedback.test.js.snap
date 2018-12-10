@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DeleteFeedback Component renders correctly 1`] = `
+<MrmModal
+  buttonText="Delete"
+  className="delete-modal"
+  closeModal={false}
+  handleCloseRequest={[Function]}
+  modalButtonClassName="button"
+  title="Delete Question"
+>
+  <div
+    className="delete-modal-content"
+  >
+    <p
+      id="confirm-msg"
+    >
+      Are you sure you want to delete 
+      "How would you rate the cleanliness of this room"
+      ?
+      <br />
+      This cannot be undone
+    </p>
+    <div
+      className="modal-actions"
+    >
+      <button
+        id="cancel-btn"
+        onClick={[Function]}
+      >
+        Cancel
+      </button>
+      <button
+        id="delete-btn"
+        onClick={[Function]}
+      >
+        Delete
+      </button>
+    </div>
+  </div>
+</MrmModal>
+`;

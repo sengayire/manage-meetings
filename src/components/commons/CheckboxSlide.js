@@ -9,7 +9,7 @@ const CheckboxSlide = props => (
       className="checkbox"
       checked={props.checked}
     />
-    <span className={`${props.checked && 'checked'} CheckboxSlide round`} />
+    <span className={`${props.checked && 'checked'} slider round`} />
   </label>
 );
 

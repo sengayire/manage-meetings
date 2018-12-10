@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EditFeedback Component renders correctly 1`] = `
+<MrmModal
+  buttonText="Edit"
+  className="edit-feedback-modal"
+  closeModal={false}
+  handleCloseRequest={[Function]}
+  modalButtonClassName="edit-button"
+  title="Edit Question"
+>
+  <form
+    className="modal-form"
+    onSubmit={[Function]}
+  >
+    <Input
+      controlsClass=""
+      id="question"
+      inputClass="input1"
+      labelClass="label1"
+      labelName="Question"
+      name="question"
+      onChange={[Function]}
+      placeholder=""
+      type="text"
+      value="How would you rate the cleanliness of this room"
+    />
+    <SelectInput
+      id="type"
+      isValue={false}
+      labelText="Type"
+      name="type"
+      onChange={[Function]}
+      options={Array []}
+      placeholder="Rate"
+      placeholderValue=""
+      required={false}
+      selectInputClassName="edit-feedback-select"
+      value="rate"
+      wrapperClassName="label1"
+    />
+    <Input
+      controlsClass=""
+      id="startDate"
+      inputClass="input1"
+      labelClass="label1"
+      labelName="Start Date"
+      name="startDate"
+      onChange={[Function]}
+      placeholder="03 Nov 2018"
+      type="text"
+      value="3 Nov 2018"
+    />
+    <Input
+      controlsClass=""
+      id="duration"
+      inputClass="input1"
+      labelClass="label1"
+      labelName="Duration"
+      name="duration"
+      onChange={[Function]}
+      placeholder="3 Weeks"
+      type="text"
+      value="3 Weeks"
+    />
+    <ActionButtons
+      actionButtonClassName="action-button"
+      actionButtonText="Save Changes"
+      cancelButtonClassName="cancel-button"
+      cancelButtonText="CANCEL"
+      onClickCancel={[Function]}
+      withCancel={true}
+    />
+  </form>
+</MrmModal>
+`;
