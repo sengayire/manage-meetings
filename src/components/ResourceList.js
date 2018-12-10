@@ -44,7 +44,7 @@ export class ResourceList extends React.Component {
   }
 
   render() {
-    const { loading, error } = this.props.data;
+    const { loading, error, refetch } = this.props.data;
     const { allResources } = this.state;
 
     if (loading) return <Spinner />;
@@ -65,6 +65,7 @@ export class ResourceList extends React.Component {
               {allResources.resources.map(resource => (
                 <Resource
                   resource={formatResourceData(resource)}
+                  refetch={refetch}
                   key={resource.id}
                 />
             ))}
@@ -88,6 +89,7 @@ ResourceList.propTypes = {
     allResources: PropTypes.shape({
       resources: PropTypes.array,
     }),
+    refetch: PropTypes.func,
     loading: PropTypes.bool,
     error: PropTypes.object,
     fetchMore: PropTypes.func,

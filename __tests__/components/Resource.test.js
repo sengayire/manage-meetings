@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 import Resource from '../../src/components/Resource';
-import DeleteResource from '../../src/components/DeleteResource';
+import { DeleteResource } from '../../src/components/DeleteResource';
 import data from '../../__mocks__/data';
 
 

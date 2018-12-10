@@ -1,47 +1,85 @@
 import React from 'react';
-import { shallow } from 'enzyme';
-import data from '../../__mocks__/data';
-import DeleteResource from '../../src/components/DeleteResource';
+import { mount, shallow } from 'enzyme';
+import { MockedProvider } from 'react-apollo/test-utils';
+import DeleteResourceComponent, { DeleteResource } from '../../src/components/DeleteResource';
+import { DELETE_RESOURCE_MUTATION } from '../../src/graphql/mutations/resources';
 
-describe('DeleteResource Component', () => {
-  const wrapper = shallow(<DeleteResource
-    handleCloseModal={jest.fn()}
-    toDelete={data.office}
-    openModal
-  />);
+describe('DeleteOffice Test Suite', () => {
+  const request = {
+    query: DELETE_RESOURCE_MUTATION,
+    variables: { resourceId: 1 },
+  };
+  const deleteResource = { name: 'Duster', id: '1' };
+  const result = { data: { deleteResource } };
 
-  it('renders properly', () => {
+  const props = {
+    toDelete: {
+      name: 'Duster',
+      id: '1',
+    },
+    getResourcesQuery: {
+      refetch: jest.fn(),
+    },
+  };
+
+  const wrapperCode = (
+    <MockedProvider
+      mocks={[{ request, result }]}
+      addTypename={false}
+    >
+      <DeleteResourceComponent {...props} />
+    </MockedProvider>
+  );
+  const wrapper = mount(wrapperCode);
+  const deleteComponent = wrapper.find('DeleteResource');
+
+  it('renders as expected', () => {
     expect(wrapper).toMatchSnapshot();
   });
-  it('contains two buttons', () => {
-    expect(wrapper.find('button')).toHaveLength(2);
+
+  it('should pop up a modal when delete button is clicked', () => {
+    const modalButton = wrapper.find('#modal-button');
+
+    modalButton.simulate('click');
+    wrapper.update();
+    expect(wrapper).toMatchSnapshot();
   });
-  it('contains two paragraphs', () => {
-    expect(wrapper.find('p')).toHaveLength(2);
+
+  it('should change modal state', () => {
+    deleteComponent.instance().state = {
+      closeModal: true,
+    };
+    deleteComponent.instance().handleCloseModal();
+    expect(deleteComponent.instance().state.closeModal).toBeFalsy();
   });
-  it('should have a `Delete` button', () => {
-    expect(wrapper
-      .find('.button-container')
-      .childAt(0)
-      .text()).toBe('Delete');
+
+  it('should delete resource succesfully', () => {
+    const preventDefault = jest.fn();
+    const newProps = {
+      deleteResource: jest.fn(() => Promise.resolve(result)),
+      toDelete: {
+        id: '1',
+        name: 'Duster',
+      },
+    };
+    const newWrapper = shallow(<DeleteResource {...newProps} />);
+    newWrapper.setState({ closeModal: false });
+    newWrapper.instance().handleDeleteResource({ preventDefault });
+    expect(newProps.deleteResource).toHaveBeenCalled();
   });
-  it('should have a `Cancel` button', () => {
-    expect(wrapper
-      .find('.button-container')
-      .childAt(1)
-      .text()).toBe('Cancel');
-  });
-  it('should accept `Modal` state changes', () => {
-    // Change the state of the modal to `Closed`
-    wrapper.instance().handleCloseModal();
-    // Perform a state change and expect it to toggle
-    wrapper.instance().handleModalStateChange();
-    expect(wrapper.state('closeModal')).toEqual(false);
-  });
-  describe('Responds to cancel click', () => {
-    it('should hide model once `Cancel` button is clicked', () => {
-      wrapper.find('.delete-resource-modal .modal-cancel').simulate('click');
-      expect(wrapper.state('closeModal')).toEqual(true);
-    });
+
+  it('should return an error when deleting resource', () => {
+    const preventDefault = jest.fn();
+    const newProps = {
+      deleteResource: jest.fn(() =>
+        Promise.reject(new Error('You are not authorized to perform this action'))),
+      toDelete: {
+        id: '1',
+        name: 'Duster',
+      },
+    };
+    const newWrapper = shallow(<DeleteResource {...newProps} />);
+    newWrapper.instance().handleDeleteResource({ preventDefault });
+    expect(newProps.deleteResource).toHaveBeenCalled();
   });
 });

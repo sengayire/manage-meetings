@@ -7,10 +7,17 @@ exports[`Tests for Resource Component renders correctly from memory 1`] = `
   </td>
   <td>
     <EditResource
-      resourceName="Marker"
+      refetch={null}
+      resource={
+        Object {
+          "name": "Marker",
+          "rooms": 4,
+        }
+      }
     />
       
     <DeleteResource
+      getResourcesQuery={Object {}}
       toDelete={
         Object {
           "name": "Marker",

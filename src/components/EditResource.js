@@ -1,18 +1,24 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import toastr from 'toastr';
+import { graphql, compose } from 'react-apollo';
 import { Input } from '../components/commons/Input';
 import MrmModal from '../components/commons/Modal';
 import '../assets/styles/editresource.scss';
+import notification from '../utils/notification';
 
-class EditResource extends React.Component {
+import { EDIT_RESOURCE_MUTATION } from '../graphql/mutations/resources';
+
+export class EditResource extends Component {
   static propTypes = {
-    resourceName: PropTypes.string.isRequired,
+    resource: PropTypes.string.isRequired,
   };
-
   constructor(props) {
     super(props);
     this.state = {
-      resourceName: props.resourceName,
+      resourceName: props.resource.name,
+      resourceId: props.resource.id,
+      roomId: props.resource.roomId,
       closeModal: false,
     };
   }
@@ -31,8 +37,23 @@ class EditResource extends React.Component {
 
   handleEditResource = (event) => {
     event.preventDefault();
-    // submit logic here
-    // after succesful submission close the modal
+    const { resourceId, resourceName, roomId } = this.state;
+    const { refetch } = this.props;
+    this.props.editResource({
+      variables: {
+        resourceId,
+        name: resourceName,
+        roomId,
+      },
+    }).then(() => {
+      notification(toastr, 'success', `${resourceName} resource has been updated successfully`)();
+      refetch();
+    }).catch((err) => {
+      this.setState({
+        resourceName: this.props.resourceName,
+      });
+      notification(toastr, 'error', err.graphQLErrors[0].message)();
+    });
     this.handleCloseModal();
   }
 
@@ -68,4 +89,13 @@ class EditResource extends React.Component {
   }
 }
 
-export default EditResource;
+EditResource.propTypes = {
+  editResource: PropTypes.func.isRequired,
+  refetch: PropTypes.func.isRequired,
+  resourceName: PropTypes.string.isRequired,
+};
+
+
+export default compose(
+  graphql(EDIT_RESOURCE_MUTATION, { name: 'editResource' }),
+)(EditResource);

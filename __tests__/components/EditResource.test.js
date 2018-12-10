@@ -1,46 +1,141 @@
 import React from 'react';
-import { shallow } from 'enzyme';
-import EditResource from '../../src/components/EditResource';
+import { mount, shallow } from 'enzyme';
+import { MockedProvider } from 'react-apollo/test-utils';
+import WrappedEditResource, { EditResource } from '../../src/components/EditResource';
+import allResourcesReturnData from '../../__mocks__/resources/Resources';
+import { GET_RESOURCES_QUERY } from '../../src/graphql/queries/Resources';
+import { EDIT_RESOURCE_MUTATION } from '../../src/graphql/mutations/resources';
 
-describe('EditResource Component', () => {
-  const props = {
-    resourceName: 'Jabra Speaker',
+describe('EditRoom', () => {
+  const mutationResult = {
+    data: {
+      updateRoomResource: {
+        resource: {
+          name: 'Markers 2',
+        },
+      },
+    },
   };
-  const wrapper = shallow(<EditResource {...props} />);
-  const preventDefault = jest.fn();
 
-  it('renders properly', () => {
-    expect(wrapper).toMatchSnapshot();
-  });
+  const getResourceResult = {
+    data: {
+      allResources: {
+        resources: allResourcesReturnData.data.allResources.resources,
+      },
+    },
+  };
 
-  it('should have a form', () => {
-    const modalForm = wrapper.find('form');
-    expect(modalForm).toHaveLength(1);
-  });
+  const mocks = [
+    {
+      request: {
+        query: GET_RESOURCES_QUERY,
+      },
+      result: getResourceResult,
+    },
+    {
+      request: {
+        query: EDIT_RESOURCE_MUTATION,
+        variables: {
+          resourceId: '3',
+          name: 'Markers 2',
+          roomId: '1',
+        },
+      },
+      result: mutationResult,
+    },
+  ];
 
-  it('should have two button', () => {
-    const modalForm = wrapper.find('button');
-    expect(modalForm).toHaveLength(2);
-  });
+  const props = {
+    editResource: jest.fn(Promise.resolve(mutationResult)),
+    refetch: jest.fn(),
+    resource: {
+      id: '3',
+      name: 'Gulu',
+      roomId: '1',
+    },
+  };
 
-  it('handles handleCloseModal()', () => {
-    wrapper.instance().handleCloseModal();
-    expect(wrapper.state('closeModal')).toEqual(true);
-  });
+  describe('Wrapped component', () => {
+    const setup =
+      (
+        <MockedProvider
+          mocks={mocks}
+          addTypename={false}
+        >
+          <WrappedEditResource
+            {...props}
+          />
+        </MockedProvider>);
+    const wrapperForFunctionality = mount(setup);
 
-  it('handles handleModalStateChange()', () => {
-    wrapper.instance().handleModalStateChange();
-    expect(wrapper.state('closeModal')).toEqual(false);
-  });
+    const event = {
+      preventDefault: jest.fn(),
+      target: {
+        name: '',
+        value: '',
+      },
+    };
 
-  it('handles handleEditResource()', () => {
-    wrapper.instance().handleEditResource({ preventDefault });
-    expect(wrapper.state('closeModal')).toEqual(true);
-  });
+    const wrapperValue = wrapperForFunctionality.find('EditResource');
 
-  it('inputs should respond to state changes', () => {
-    wrapper.find('#resourceName').simulate('change', { target: { name: 'name', value: 'Jabra Speaker' } });
-    // expect(wrapper.find('#resourceName').props().value).toBe('Jabra Speaker');
-    expect(wrapper.state('resourceName')).toEqual('Jabra Speaker');
+    it('should return an error notification if an error was encountered', () => {
+      const errorProps = {
+        refetch: jest.fn(),
+        resource: {
+          id: '3',
+          name: 'Gulu',
+          roomId: '1',
+        },
+        editResource: jest.fn(() => Promise.reject(new Error('An error occurred'))),
+      };
+      const newWrapper = shallow(<EditResource {...errorProps} />);
+      newWrapper.instance().handleEditResource(event);
+      expect(errorProps.editResource).toHaveBeenCalled();
+    });
+
+    it('should return a notification when a room is edited succesfully', () => {
+      const newProps = {
+        roomName: 'Makers 3',
+        roomId: '13',
+        editResource: jest.fn(() => Promise.resolve(mutationResult)),
+        handleEditResource: jest.fn(),
+        refetch: jest.fn(),
+        resource: {
+          id: '3',
+          name: 'Gulu',
+          roomId: '1',
+        },
+      };
+      const newWrapper = shallow(<EditResource {...newProps} />);
+      const newState = {
+        resourceName: 'Makers 6',
+        roomId: '13',
+        resourceId: '1',
+      };
+      newWrapper.setState({ ...newState });
+      newWrapper.instance().handleEditResource(event);
+      expect(newProps.editResource).toBeCalled();
+    });
+
+    it('should call handleNameChange', () => {
+      const action = wrapperValue.instance();
+      const handleInputChange = jest.spyOn(wrapperValue.instance(), 'handleNameChange');
+      action.handleNameChange(event);
+      expect(handleInputChange).toBeCalled();
+    });
+
+    it('should call handleCloseModal', () => {
+      const action = wrapperValue.instance();
+      const handleCloseModal = jest.spyOn(wrapperValue.instance(), 'handleCloseModal');
+      action.handleCloseModal();
+      expect(handleCloseModal).toBeCalled();
+    });
+
+    it('should call handleModalStateChange', () => {
+      const action = wrapperValue.instance();
+      const handleModalStateChange = jest.spyOn(wrapperValue.instance(), 'handleModalStateChange');
+      action.handleModalStateChange();
+      expect(handleModalStateChange).toBeCalled();
+    });
   });
 });
