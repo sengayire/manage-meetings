@@ -251,8 +251,8 @@ exports[`App component should not render Login if token is present but render Se
                 },
               },
               "variables": Object {
-                "endDate": "Dec 18 2018",
-                "startDate": "Dec 18 2018",
+                "endDate": "Dec 20 2018",
+                "startDate": "Dec 20 2018",
               },
             },
           ],
@@ -516,10 +516,10 @@ exports[`App component should not render Login if token is present but render Se
                 },
               },
               "variables": Object {
-                "endDate": "Dec 18 2018",
+                "endDate": "Dec 20 2018",
                 "page": 1,
                 "perPage": 5,
-                "startDate": "Dec 18 2018",
+                "startDate": "Dec 20 2018",
               },
             },
           ],
@@ -698,8 +698,8 @@ exports[`App component should not render Login if token is present but render Se
                 },
               },
               "variables": Object {
-                "endDate": "Dec 18 2018",
-                "startDate": "Dec 18 2018",
+                "endDate": "Dec 20 2018",
+                "startDate": "Dec 20 2018",
               },
             },
             Object {
@@ -1003,10 +1003,10 @@ exports[`App component should not render Login if token is present but render Se
                 },
               },
               "variables": Object {
-                "endDate": "Dec 18 2018",
+                "endDate": "Dec 20 2018",
                 "page": 1,
                 "perPage": 5,
-                "startDate": "Dec 18 2018",
+                "startDate": "Dec 20 2018",
               },
             },
             Object {
@@ -1323,8 +1323,8 @@ query user ($email: String!) {
                     },
                   },
                   "variables": Object {
-                    "endDate": "Dec 18 2018",
-                    "startDate": "Dec 18 2018",
+                    "endDate": "Dec 20 2018",
+                    "startDate": "Dec 20 2018",
                   },
                 },
                 Object {
@@ -1628,10 +1628,10 @@ query user ($email: String!) {
                     },
                   },
                   "variables": Object {
-                    "endDate": "Dec 18 2018",
+                    "endDate": "Dec 20 2018",
                     "page": 1,
                     "perPage": 5,
-                    "startDate": "Dec 18 2018",
+                    "startDate": "Dec 20 2018",
                   },
                 },
                 Object {
@@ -2125,8 +2125,8 @@ query user ($email: String!) {
                       },
                     },
                     "variables": Object {
-                      "endDate": "Dec 18 2018",
-                      "startDate": "Dec 18 2018",
+                      "endDate": "Dec 20 2018",
+                      "startDate": "Dec 20 2018",
                     },
                   },
                   "queryId": "2",
@@ -2142,8 +2142,8 @@ query user ($email: String!) {
                   "shouldSubscribe": true,
                   "subscriptionHandles": Array [],
                   "variables": Object {
-                    "endDate": "Dec 18 2018",
-                    "startDate": "Dec 18 2018",
+                    "endDate": "Dec 20 2018",
+                    "startDate": "Dec 20 2018",
                   },
                 },
                 "subscriptions": Array [],
@@ -2738,10 +2738,10 @@ query user ($email: String!) {
                       },
                     },
                     "variables": Object {
-                      "endDate": "Dec 18 2018",
+                      "endDate": "Dec 20 2018",
                       "page": 1,
                       "perPage": 5,
-                      "startDate": "Dec 18 2018",
+                      "startDate": "Dec 20 2018",
                     },
                   },
                   "queryId": "3",
@@ -2757,10 +2757,10 @@ query user ($email: String!) {
                   "shouldSubscribe": true,
                   "subscriptionHandles": Array [],
                   "variables": Object {
-                    "endDate": "Dec 18 2018",
+                    "endDate": "Dec 20 2018",
                     "page": 1,
                     "perPage": 5,
-                    "startDate": "Dec 18 2018",
+                    "startDate": "Dec 20 2018",
                   },
                 },
                 "subscriptions": Array [],
@@ -3358,8 +3358,8 @@ query user ($email: String!) {
                 "networkStatus": 1,
                 "previousVariables": null,
                 "variables": Object {
-                  "endDate": "Dec 18 2018",
-                  "startDate": "Dec 18 2018",
+                  "endDate": "Dec 20 2018",
+                  "startDate": "Dec 20 2018",
                 },
               },
               "3": Object {
@@ -3669,10 +3669,10 @@ query user ($email: String!) {
                 "networkStatus": 1,
                 "previousVariables": null,
                 "variables": Object {
-                  "endDate": "Dec 18 2018",
+                  "endDate": "Dec 20 2018",
                   "page": 1,
                   "perPage": 5,
-                  "startDate": "Dec 18 2018",
+                  "startDate": "Dec 20 2018",
                 },
               },
             },
@@ -3865,8 +3865,8 @@ query user ($email: String!) {
                   },
                 },
                 "variables": Object {
-                  "endDate": "Dec 18 2018",
-                  "startDate": "Dec 18 2018",
+                  "endDate": "Dec 20 2018",
+                  "startDate": "Dec 20 2018",
                 },
               },
               Object {
@@ -4170,10 +4170,10 @@ query user ($email: String!) {
                   },
                 },
                 "variables": Object {
-                  "endDate": "Dec 18 2018",
+                  "endDate": "Dec 20 2018",
                   "page": 1,
                   "perPage": 5,
-                  "startDate": "Dec 18 2018",
+                  "startDate": "Dec 20 2018",
                 },
               },
               Object {
@@ -5685,7 +5685,7 @@ query user ($email: String!) {
                                         className="calendarIconBtn"
                                       >
                                         <span>
-                                          Dec 18 2018 - Dec 18 2018
+                                          Dec 20 2018 - Dec 20 2018
                                         </span>
                                       </div>
                                     }
@@ -5707,7 +5707,7 @@ query user ($email: String!) {
                                           className="calendarIconBtn"
                                         >
                                           <span>
-                                            Dec 18 2018 - Dec 18 2018
+                                            Dec 20 2018 - Dec 20 2018
                                           </span>
                                         </div>
                                       }
@@ -5733,7 +5733,7 @@ query user ($email: String!) {
                                             className="calendarIconBtn"
                                           >
                                             <span>
-                                              Dec 18 2018 - Dec 18 2018
+                                              Dec 20 2018 - Dec 20 2018
                                             </span>
                                           </div>
                                         }
@@ -5761,7 +5761,7 @@ query user ($email: String!) {
                                               className="calendarIconBtn"
                                             >
                                               <span>
-                                                Dec 18 2018 - Dec 18 2018
+                                                Dec 20 2018 - Dec 20 2018
                                               </span>
                                             </div>
                                           }
@@ -5800,7 +5800,7 @@ query user ($email: String!) {
                                                   className="calendarIconBtn"
                                                 >
                                                   <span>
-                                                    Dec 18 2018 - Dec 18 2018
+                                                    Dec 20 2018 - Dec 20 2018
                                                   </span>
                                                 </div>
                                               }
@@ -5814,7 +5814,7 @@ query user ($email: String!) {
                                                   className="calendarIconBtn"
                                                 >
                                                   <span>
-                                                    Dec 18 2018 - Dec 18 2018
+                                                    Dec 20 2018 - Dec 20 2018
                                                   </span>
                                                 </div>
                                               </span>
@@ -5869,16 +5869,16 @@ query user ($email: String!) {
                               <AnalyticsOverview
                                 dateValue={
                                   Object {
-                                    "endDate": "Dec 18 2018",
-                                    "startDate": "Dec 18 2018",
+                                    "endDate": "Dec 20 2018",
+                                    "startDate": "Dec 20 2018",
                                   }
                                 }
                               >
                                 <AveragePieChartList
                                   dateValue={
                                     Object {
-                                      "endDate": "Dec 18 2018",
-                                      "startDate": "Dec 18 2018",
+                                      "endDate": "Dec 20 2018",
+                                      "startDate": "Dec 20 2018",
                                     }
                                   }
                                 >
@@ -6110,8 +6110,8 @@ query user ($email: String!) {
                                     <BookingsCountBarGraph
                                       dateValue={
                                         Object {
-                                          "endDate": "Dec 18 2018",
-                                          "startDate": "Dec 18 2018",
+                                          "endDate": "Dec 20 2018",
+                                          "startDate": "Dec 20 2018",
                                         }
                                       }
                                     >
@@ -6199,8 +6199,8 @@ query user ($email: String!) {
                                           <QueryBookingsCount
                                             dateValue={
                                               Object {
-                                                "endDate": "Dec 18 2018",
-                                                "startDate": "Dec 18 2018",
+                                                "endDate": "Dec 20 2018",
+                                                "startDate": "Dec 20 2018",
                                               }
                                             }
                                           >
@@ -6343,8 +6343,8 @@ query user ($email: String!) {
                                               }
                                               variables={
                                                 Object {
-                                                  "endDate": "Dec 18 2018",
-                                                  "startDate": "Dec 18 2018",
+                                                  "endDate": "Dec 20 2018",
+                                                  "startDate": "Dec 20 2018",
                                                 }
                                               }
                                             >
@@ -6361,8 +6361,8 @@ query user ($email: String!) {
                                 <ComposedBookedRooms
                                   dateValue={
                                     Object {
-                                      "endDate": "Dec 18 2018",
-                                      "startDate": "Dec 18 2018",
+                                      "endDate": "Dec 20 2018",
+                                      "startDate": "Dec 20 2018",
                                     }
                                   }
                                 >
@@ -6375,8 +6375,8 @@ query user ($email: String!) {
                                         component={[Function]}
                                         date={
                                           Object {
-                                            "endDate": "Dec 18 2018",
-                                            "startDate": "Dec 18 2018",
+                                            "endDate": "Dec 20 2018",
+                                            "startDate": "Dec 20 2018",
                                           }
                                         }
                                       >
@@ -6568,8 +6568,8 @@ query user ($email: String!) {
                                         component={[Function]}
                                         date={
                                           Object {
-                                            "endDate": "Dec 18 2018",
-                                            "startDate": "Dec 18 2018",
+                                            "endDate": "Dec 20 2018",
+                                            "startDate": "Dec 20 2018",
                                           }
                                         }
                                         tip=""
@@ -7128,8 +7128,8 @@ query user ($email: String!) {
                                 <Apollo(AverageMeetingList)
                                   dateValue={
                                     Object {
-                                      "endDate": "Dec 18 2018",
-                                      "startDate": "Dec 18 2018",
+                                      "endDate": "Dec 20 2018",
+                                      "startDate": "Dec 20 2018",
                                     }
                                   }
                                 >
@@ -7396,10 +7396,10 @@ query user ($email: String!) {
                                     skip={false}
                                     variables={
                                       Object {
-                                        "endDate": "Dec 18 2018",
+                                        "endDate": "Dec 20 2018",
                                         "page": 1,
                                         "perPage": 5,
-                                        "startDate": "Dec 18 2018",
+                                        "startDate": "Dec 20 2018",
                                       }
                                     }
                                     warnUnhandledError={true}
@@ -7417,17 +7417,17 @@ query user ($email: String!) {
                                           "subscribeToMore": [Function],
                                           "updateQuery": [Function],
                                           "variables": Object {
-                                            "endDate": "Dec 18 2018",
+                                            "endDate": "Dec 20 2018",
                                             "page": 1,
                                             "perPage": 5,
-                                            "startDate": "Dec 18 2018",
+                                            "startDate": "Dec 20 2018",
                                           },
                                         }
                                       }
                                       dateValue={
                                         Object {
-                                          "endDate": "Dec 18 2018",
-                                          "startDate": "Dec 18 2018",
+                                          "endDate": "Dec 20 2018",
+                                          "startDate": "Dec 20 2018",
                                         }
                                       }
                                     >

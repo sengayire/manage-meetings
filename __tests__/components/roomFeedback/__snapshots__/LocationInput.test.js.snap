@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Location Input should render location input 1`] = `
+<input
+  disabled={true}
+  id="feedback-location-input"
+  size="12"
+  type="text"
+  value="Nairobi"
+/>
+`;

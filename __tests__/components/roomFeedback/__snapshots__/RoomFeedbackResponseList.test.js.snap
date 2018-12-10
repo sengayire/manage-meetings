@@ -1,0 +1,115 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Room feedback list should render correctly 1`] = `
+<div>
+  <RoomFeedbackCard />
+  <nav
+    id="feedback-nav"
+  >
+    <LocationInput />
+    <section
+      className="feedback-menu-buttons"
+    >
+      <RoomFeedbackFilterButton />
+      <ExportButton />
+    </section>
+  </nav>
+  <header
+    className="room-feedback-list-container"
+  >
+    <span>
+      Meeting Room
+    </span>
+    <span>
+      Responses
+    </span>
+    <span>
+      Cleanliness Rating
+    </span>
+    <span>
+      Missing Items
+    </span>
+    <span>
+      Suggestion on how to improve
+    </span>
+  </header>
+  <RoomFeedbackResponse
+    key="1"
+    roomFeedbackResponse={
+      Object {
+        "id": 1,
+        "missingItems": "2 out of 10",
+        "rating": 4,
+        "responses": 25,
+        "room": "Olkaria",
+        "suggestion": "The substring() method returns the part of the string between the start and end indexes, or to the end of the string.",
+      }
+    }
+  />
+  <RoomFeedbackResponse
+    key="2"
+    roomFeedbackResponse={
+      Object {
+        "id": 2,
+        "missingItems": "2 out of 10",
+        "rating": 3,
+        "responses": 23,
+        "room": "Monrovia",
+        "suggestion": "Any argument value that is less than 0 or greater than stringName.length is treated as if it were 0 and stringName.length respectively. Any argument value that is NaN is treated as if it were 0.",
+      }
+    }
+  />
+  <RoomFeedbackResponse
+    key="3"
+    roomFeedbackResponse={
+      Object {
+        "id": 3,
+        "missingItems": "2 out of 10",
+        "rating": 5,
+        "responses": 7,
+        "room": "Lokichar",
+        "suggestion": "Lorem",
+      }
+    }
+  />
+  <RoomFeedbackResponse
+    key="4"
+    roomFeedbackResponse={
+      Object {
+        "id": 4,
+        "missingItems": "2 out of 10",
+        "rating": 2,
+        "responses": 19,
+        "room": "Kigali",
+        "suggestion": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias, quis ea. Vitae nesciunt ex dignissimos quae, odio excepturi nobis inventore!",
+      }
+    }
+  />
+  <RoomFeedbackResponse
+    key="5"
+    roomFeedbackResponse={
+      Object {
+        "id": 5,
+        "missingItems": "2 out of 10",
+        "rating": 1,
+        "responses": 13,
+        "room": "Tunis",
+        "suggestion": "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+      }
+    }
+  />
+  <RoomFeedbackResponse
+    key="6"
+    roomFeedbackResponse={
+      Object {
+        "id": 6,
+        "missingItems": "2 out of 10",
+        "rating": 0,
+        "responses": 0,
+        "room": "Malabo",
+        "suggestion": "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+      }
+    }
+  />
+</div>
+`;

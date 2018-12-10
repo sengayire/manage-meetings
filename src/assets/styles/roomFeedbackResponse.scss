@@ -1,0 +1,30 @@
+@font-face {
+  font-family: 'DINPro-Light';
+  font-style: normal;
+  src: url('../fonts/DINPro-Light.otf');
+}
+
+.room-feedback-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  font-family: 'DINPro-Light';
+  border-radius: 4px;
+  background-color: #FFFFFF;
+  padding: 0.875em 1.875em;
+  margin-bottom: 8px;
+  color: #333E44;
+
+  span:first-of-type {
+    color: #3359DB;
+  }
+
+  span img {
+    margin-right: 6px;
+  }
+
+  span.star-text {
+    margin-right: 0.938em;
+    color: #333E44 !important;
+  }
+
+}
