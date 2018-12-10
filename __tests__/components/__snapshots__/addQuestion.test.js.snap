@@ -1,0 +1,154 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddQuestion component should be rendered without errors 1`] = `
+<MrmModal
+  buttonText="Add Question"
+  className="add-question-modal"
+  closeModal={false}
+  handleCloseRequest={[Function]}
+  modalButtonClassName="button"
+  title="ADD QUESTION"
+>
+  <form
+    className="question-form"
+  >
+    <React.Fragment>
+      <div
+        key="0"
+      >
+        <span
+          className="question-form__sections"
+        >
+          Schedule
+        </span>
+        <div
+          className="inputs-inline"
+        >
+          <div
+            className="inputs"
+            key="0"
+          >
+            <label
+              className="inputs-title"
+              htmlFor="startDate"
+            >
+              <span>
+                from
+              </span>
+            </label>
+            <input
+              id="startDate"
+              placeholder="Dec 3rd 2018"
+              type="text"
+            />
+          </div>
+          <div
+            className="inputs"
+            key="1"
+          >
+            <label
+              className="inputs-title"
+              htmlFor="startDate"
+            >
+              <span>
+                to
+              </span>
+            </label>
+            <input
+              id="startDate"
+              placeholder="Dec 3rd 2018"
+              type="text"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        key="1"
+      >
+        <span
+          className="question-form__sections"
+        >
+          Question
+        </span>
+        <div
+          className=""
+        >
+          <div
+            className="inputs"
+            key="0"
+          >
+            <label
+              className="inputs-title"
+              htmlFor="startDate"
+            >
+              <span>
+                rate
+              </span>
+            </label>
+            <input
+              id="startDate"
+              placeholder="How would you rate the cleanliness of the meeting room"
+              type="text"
+            />
+          </div>
+          <div
+            className="inputs"
+            key="1"
+          >
+            <label
+              className="inputs-title"
+              htmlFor="startDate"
+            >
+              <span>
+                check
+              </span>
+            </label>
+            <input
+              id="startDate"
+              placeholder="Is there any missing meeting room tool"
+              type="text"
+            />
+          </div>
+          <div
+            className="inputs"
+            key="2"
+          >
+            <label
+              className="inputs-title"
+              htmlFor="startDate"
+            >
+              <span>
+                suggestion
+              </span>
+            </label>
+            <input
+              id="startDate"
+              placeholder="Any suggestion on how we can improve the service"
+              type="text"
+            />
+          </div>
+        </div>
+      </div>
+      <span
+        className="question-form__add"
+      >
+        Add Questions
+      </span>
+      <div
+        className="button-container"
+      >
+        <button
+          onClick={[Function]}
+        >
+          save question
+        </button>
+        <button
+          onClick={[Function]}
+        >
+          cancel
+        </button>
+      </div>
+    </React.Fragment>
+  </form>
+</MrmModal>
+`;

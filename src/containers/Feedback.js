@@ -1,14 +1,12 @@
 import React, { Fragment } from 'react';
 import { NavBar } from '../components';
-import '../assets/styles/custom.scss';
-import '../assets/styles/topmenu.scss';
+import RoomFeedback from '../components/RoomFeedback';
 
 const Feedback = () => (
   <Fragment>
     <NavBar />
-    <h1>Feedback</h1>
+    <RoomFeedback />
   </Fragment>
 );
-
 
 export default Feedback;

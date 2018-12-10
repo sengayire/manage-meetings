@@ -1,0 +1,144 @@
+@import './variables';
+
+.add-question-modal {
+  font-family: $font-family;
+  padding: 3%;
+  color: map-get($black, 100);
+
+  h2 {
+    margin: 1%;
+    margin-left: 0;
+  }
+  .question-form {
+    padding: 20px 0;
+
+    input {
+      border-radius: 5px;
+      right: 3%;
+      padding: 2.5%;
+      width: 95%;
+      border: none;
+      font-size: 85%;
+      font-weight: 300;
+      @media screen and (max-width: 639px) {
+        width: 91%;
+      }
+
+    }
+
+    &__sections {
+      font-weight: bold;
+    }
+
+    &__add {
+      color: map-get($color-palette, primary);
+    }
+    
+    .inputs {
+      height: 50px;
+      display: flex;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin: 30px 0;
+    }
+
+    .inputs-title {
+      min-width: 120px;
+      display: flex;
+      background-color: #aebdd485;
+
+      span {
+        margin: auto;
+        padding: 0 30px;
+        text-transform: capitalize;
+      }
+    }
+
+    .inputs-inline {
+      display: flex;
+
+      & div:nth-child(2), & div:nth-child(1) {
+        width: 45%;
+      }
+      & div:nth-child(2) {
+        margin-left: auto;
+      }
+    }
+
+    button {
+      cursor: pointer;
+      text-transform: uppercase;
+      bottom: 4%;
+      right: 4%;
+      padding: 2% 1.5%;
+      @media screen and (min-width: 640px) and (max-width: 1023px) and (orientation: landscape) {
+        right: 0%;
+      }
+      @media screen and (min-width: 1024) and (orientation: landscape) {
+        right: 1.75%;
+      }
+      @media screen and (min-width: 768px)  and (orientation: portrait) {
+        right: 1.5%;
+      }
+    }
+
+    .button-container {
+      margin-bottom: 30px;
+      margin-top: 30px;
+      
+      button:nth-child(1) {
+        background-color: #3359db;
+        height: 44px;      
+        float: right;
+        color: #FFFFFF;
+        @media screen and (max-width: 867px) {
+          margin-right: 5%;
+        }
+      }
+      
+      button:nth-child(2) {
+        border: 1px solid #3359DB;
+        background-color: #FFFFFF;
+        height: 44px;
+        float: right;
+        width: 137px;
+        margin-right: 5%;
+      }
+
+      & button:nth-child(2):hover {
+        background-color: #3359DB;
+        color: #FFFFFF;
+      }
+    }
+  ::placeholder {
+    color: $placeholder;
+    opacity: 1;
+  }
+  
+  :-ms-input-placeholder { 
+    color: $placeholder;
+  }
+  
+  ::-ms-input-placeholder {
+    color: $placeholder;
+  }
+}
+    
+
+  @media screen and (max-width: 639px) {
+    height: 33%;
+    width: 78%;
+  }
+  @media screen and (min-width: 640px) and (max-width: 1023px) and (orientation: landscape) {
+    max-height: 68%;
+    width: 60%;
+  }
+  @media screen and (min-width: 768px)  and (orientation: portrait) {
+    height: 20%;
+    width: 52.5%
+  }
+  @media screen and (min-width: 1024) and (orientation: landscape) {
+    width: 49%;
+    height: 33.5%
+  }
+}

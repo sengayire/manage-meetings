@@ -3,8 +3,6 @@
 exports[`Feedback component renders correctly in memory 1`] = `
 <React.Fragment>
   <NavBar />
-  <h1>
-    Feedback
-  </h1>
+  <RoomFeedback />
 </React.Fragment>
 `;
