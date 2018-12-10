@@ -71,6 +71,16 @@ describe('removeItemInLocalStorage(', () => {
     expect(date.weekEnd).toMatch(/\w{3}\s\d{2}\s\d{4}/);
     expect(date.weekStart).toMatch(/\w{3}\s\d{2}\s\d{4}/);
   });
+  it('should return the date of the current week', () => {
+    // Mock the system date for a week day (Tuesday)
+    const fakeDate = new Date('2018-12-11');
+    global.Date = jest.fn(() => fakeDate);
+
+    const date = thisWeek();
+    expect(date).toBeInstanceOf(Object);
+    expect(date.weekEnd).toMatch(/\w{3}\s\d{2}\s\d{4}/);
+    expect(date.weekStart).toMatch(/\w{3}\s\d{2}\s\d{4}/);
+  });
   describe('Get the first/current day of the month', () => {
     it('should return the first day of the month', () => {
       const firstDay = getFirstDayOfTheMonth();

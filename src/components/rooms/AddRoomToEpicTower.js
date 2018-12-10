@@ -40,7 +40,9 @@ export class AddRoomToEpicTower extends Component {
 
     /* istanbul ignore next */
     if (officeDetails.getOfficeByName) {
-      const { floorOptions, wingsObject, officeId } = mapOfficeDetails(officeDetails);
+      const { floorOptions, wingsObject, officeId } = mapOfficeDetails(
+        officeDetails,
+      );
       this.setState({
         floorOptions,
         wingsObject,

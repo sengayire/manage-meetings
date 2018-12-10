@@ -39,7 +39,7 @@ class AddResource extends React.Component {
         className="add-resource-modal"
       >
         <form className="amenity-form" onSubmit={this.handleAddAmenity}>
-          <div >
+          <div>
             <label htmlFor="amenity">
               <br />
               Resource Name
@@ -53,10 +53,14 @@ class AddResource extends React.Component {
                 onChange={this.handleInputChange}
                 placeholder="Separate amenities with comma"
               />
-            </label >
+            </label>
             <div className="button-container ">
-              <button className="add-resource" type="submit">ADD RESOURCE</button>
-              <button className="modal-cancel" onClick={this.handleCloseModal}>CANCEL</button>
+              <button className="add-resource" type="submit">
+                ADD RESOURCE
+              </button>
+              <button className="modal-cancel" onClick={this.handleCloseModal}>
+                CANCEL
+              </button>
             </div>
           </div>
         </form>

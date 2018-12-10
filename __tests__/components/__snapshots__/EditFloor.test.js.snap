@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EditFloor Component renders properly 1`] = `
+<MrmModal
+  buttonText="Edit"
+  className="edit-office-modal"
+  closeModal={false}
+  handleCloseRequest={[Function]}
+  modalButtonClassName="edit-button"
+  title="EDIT FLOOR"
+>
+  <form
+    className="modal-form"
+    onSubmit={[Function]}
+  >
+    <Input
+      controlsClass=""
+      id="floorName"
+      inputClass="input1"
+      labelClass="label1"
+      labelName="Floor Name"
+      name="floorName"
+      onChange={[Function]}
+      required={true}
+      type="text"
+      value="Fourth Floor"
+    />
+    <ActionButtons
+      actionButtonClassName="action-button"
+      actionButtonText="SAVE CHANGES"
+      cancelButtonClassName="cancel-button"
+      cancelButtonText="CANCEL"
+      onClickCancel={[Function]}
+      withCancel={true}
+    />
+  </form>
+</MrmModal>
+`;

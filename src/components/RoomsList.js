@@ -12,6 +12,7 @@ import ColGroup from './helpers/ColGroup';
 import TableHead from './helpers/TableHead';
 import TableBody from './helpers/TableBody';
 import Pagination from './commons/Pagination';
+import MenuTitle from './MenuTitle';
 import FilterRoomMenu from './rooms/FilterRoomMenu';
 
 import AddRoomMenu from './rooms/AddRoomMenu';
@@ -134,6 +135,7 @@ export class RoomsList extends React.Component {
     return (
       <div className="settings-rooms">
         <div className="settings-rooms-control">
+          <MenuTitle title="Rooms" />
           <FilterRoomMenu
             isNoResource={this.handleNoResource}
             isResource={this.handleResource}
@@ -179,10 +181,12 @@ RoomsList.propTypes = {
     fetchMore: PropTypes.func,
   }).isRequired,
   locations: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.shape({
-      id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-      name: PropTypes.string,
-    })),
+    PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+        name: PropTypes.string,
+      }),
+    ),
     PropTypes.object,
   ]).isRequired,
   getRoomByName: PropTypes.shape({

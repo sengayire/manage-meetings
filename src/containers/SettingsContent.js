@@ -10,6 +10,7 @@ import PlaceHolder from '../components/Placeholder';
 import RoomsList from '../components/RoomsList'; //eslint-disable-line
 import PeopleList from '../components/people/PeopleList'; //eslint-disable-line
 import DeviceList from '../components/DeviceList';
+import FloorList from '../components/FloorList'; //eslint-disable-line
 // replace the PlaceHolder component with appropriate component to be rendered
 const SettingsContent = () => (
   <div className="settings-vertical">
@@ -17,11 +18,16 @@ const SettingsContent = () => (
     <div className="settings-tab-content">
       <Switch>
         <Route exact path={ROUTES.settingsOffices} component={OfficeList} />
+        <Route exact path={ROUTES.floors} component={FloorList} />
         <Route exact path={ROUTES.settingsRooms} component={RoomsList} />
         <Route exact path={ROUTES.settingsAmenities} component={ResourceList} />
         <Route exact path={ROUTES.settingsPeople} component={PeopleList} />
         <Route exact path={ROUTES.settingsDevices} component={DeviceList} />
-        <Route exact path={ROUTES.settingsIntegrations} component={PlaceHolder} />
+        <Route
+          exact
+          path={ROUTES.settingsIntegrations}
+          component={PlaceHolder}
+        />
         <Redirect from="/settings" to="/settings/offices" />
       </Switch>
     </div>

@@ -2339,6 +2339,31 @@ exports[`App component should not render Login if token is present but render Se
                                 <NavLink
                                   activeClassName="active"
                                   ariaCurrent="true"
+                                  to="/settings/floors"
+                                >
+                                  <Route
+                                    path="/settings/floors"
+                                  >
+                                    <Link
+                                      aria-current={false}
+                                      replace={false}
+                                      to="/settings/floors"
+                                    >
+                                      <a
+                                        aria-current={false}
+                                        href="/settings/floors"
+                                        onClick={[Function]}
+                                      >
+                                        Floors
+                                      </a>
+                                    </Link>
+                                  </Route>
+                                </NavLink>
+                              </li>
+                              <li>
+                                <NavLink
+                                  activeClassName="active"
+                                  ariaCurrent="true"
                                   to="/settings/rooms"
                                 >
                                   <Route

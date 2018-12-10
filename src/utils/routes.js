@@ -10,6 +10,7 @@ const ROUTES = {
   settingsPeople: '/settings/people',
   settingsDevices: '/settings/devices',
   settingsIntegrations: '/settings/integrations',
+  floors: '/settings/floors',
 };
 
 export default ROUTES;
