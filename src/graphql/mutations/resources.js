@@ -22,7 +22,4 @@ export const DELETE_RESOURCE_MUTATION = gql`
   }
 `;
 
-export {
-  EDIT_RESOURCE_MUTATION as default,
-  // DELETE_RESOURCE_MUTATION,
-};
+export { EDIT_RESOURCE_MUTATION as default };

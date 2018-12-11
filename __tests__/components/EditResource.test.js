@@ -38,7 +38,7 @@ describe('EditRoom', () => {
         variables: {
           resourceId: '3',
           name: 'Markers 2',
-          roomId: '1',
+          roomId: 1,
         },
       },
       result: mutationResult,
@@ -51,7 +51,7 @@ describe('EditRoom', () => {
     resource: {
       id: '3',
       name: 'Gulu',
-      roomId: '1',
+      roomId: 1,
     },
   };
 
@@ -84,7 +84,7 @@ describe('EditRoom', () => {
         resource: {
           id: '3',
           name: 'Gulu',
-          roomId: '1',
+          roomId: 1,
         },
         editResource: jest.fn(() => Promise.reject(new Error('An error occurred'))),
       };
@@ -96,20 +96,20 @@ describe('EditRoom', () => {
     it('should return a notification when a room is edited succesfully', () => {
       const newProps = {
         roomName: 'Makers 3',
-        roomId: '13',
+        roomId: 13,
         editResource: jest.fn(() => Promise.resolve(mutationResult)),
         handleEditResource: jest.fn(),
         refetch: jest.fn(),
         resource: {
           id: '3',
           name: 'Gulu',
-          roomId: '1',
+          roomId: 1,
         },
       };
       const newWrapper = shallow(<EditResource {...newProps} />);
       const newState = {
         resourceName: 'Makers 6',
-        roomId: '13',
+        roomId: 13,
         resourceId: '1',
       };
       newWrapper.setState({ ...newState });

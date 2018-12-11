@@ -6,7 +6,7 @@ exports[`Tests for Resource Component renders correctly from memory 1`] = `
     Marker
   </td>
   <td>
-    <EditResource
+    <Apollo(Apollo(EditResource))
       refetch={null}
       resource={
         Object {
@@ -16,8 +16,7 @@ exports[`Tests for Resource Component renders correctly from memory 1`] = `
       }
     />
       
-    <DeleteResource
-      getResourcesQuery={Object {}}
+    <Apollo(Apollo(DeleteResource))
       toDelete={
         Object {
           "name": "Marker",

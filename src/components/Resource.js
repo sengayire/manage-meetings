@@ -1,14 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { DeleteResource } from './DeleteResource';
-import { EditResource } from './EditResource';
+import WrappedDeleteResource from './DeleteResource';
+import WrappedEditResource from './EditResource';
 
 const Resource = ({ resource, refetch }) => (
   <tr>
     <td>{resource.name}</td>
     <td>
-      <EditResource resource={resource} refetch={refetch} /> &nbsp;
-      <DeleteResource toDelete={resource} />
+      <WrappedEditResource resource={resource} refetch={refetch} /> &nbsp;
+      <WrappedDeleteResource toDelete={resource} />
     </td>
   </tr>
 );
@@ -23,6 +23,5 @@ Resource.propTypes = {
 Resource.defaultProps = {
   refetch: null,
 };
-
 
 export default Resource;

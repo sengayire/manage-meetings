@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 import Resource from '../../src/components/Resource';
-import { DeleteResource } from '../../src/components/DeleteResource';
+import WrappedDeleteResource from '../../src/components/DeleteResource';
 import data from '../../__mocks__/data';
 
 
@@ -13,6 +13,6 @@ describe('Tests for Resource Component', () => {
     expect(shallowWrapper).toMatchSnapshot();
   });
   it('should render the `DeleteResource`', () => {
-    expect(shallowWrapper.find(DeleteResource)).toHaveLength(1);
+    expect(shallowWrapper.find(WrappedDeleteResource)).toHaveLength(1);
   });
 });

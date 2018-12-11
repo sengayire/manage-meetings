@@ -8,11 +8,9 @@ import '../assets/styles/editresource.scss';
 import notification from '../utils/notification';
 
 import { EDIT_RESOURCE_MUTATION } from '../graphql/mutations/resources';
+import { GET_RESOURCES_QUERY } from '../graphql/queries/Resources';
 
 export class EditResource extends Component {
-  static propTypes = {
-    resource: PropTypes.string.isRequired,
-  };
   constructor(props) {
     super(props);
     this.state = {
@@ -50,7 +48,7 @@ export class EditResource extends Component {
       refetch();
     }).catch((err) => {
       this.setState({
-        resourceName: this.props.resourceName,
+        resourceName: this.state.resourceName,
       });
       notification(toastr, 'error', err.graphQLErrors[0].message)();
     });
@@ -61,7 +59,6 @@ export class EditResource extends Component {
     const {
       resourceName, closeModal,
     } = this.state;
-
     return (
       <MrmModal
         title="EDIT RESOURCE"
@@ -90,12 +87,25 @@ export class EditResource extends Component {
 }
 
 EditResource.propTypes = {
-  editResource: PropTypes.func.isRequired,
   refetch: PropTypes.func.isRequired,
-  resourceName: PropTypes.string.isRequired,
+  editResource: PropTypes.func.isRequired,
+  resource: PropTypes.shape({
+    id: PropTypes.string,
+    name: PropTypes.string,
+    roomId: PropTypes.number,
+  }).isRequired,
 };
 
-
 export default compose(
+  graphql(GET_RESOURCES_QUERY, {
+    name: 'getResourcesQuery',
+    options: () => ({
+      variables: {
+        page: 1,
+        perPage: 5,
+      },
+      options: { refetchQueries: [{ query: GET_RESOURCES_QUERY }] },
+    }),
+  }),
   graphql(EDIT_RESOURCE_MUTATION, { name: 'editResource' }),
 )(EditResource);
