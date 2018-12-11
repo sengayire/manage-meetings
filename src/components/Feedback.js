@@ -1,7 +1,7 @@
 /* eslint react/no-array-index-key: 0 */
 import React from 'react';
 import PropTypes from 'prop-types';
-import Slider from './commons/slider';
+import CheckboxSlide from './commons/CheckboxSlide';
 
 const Feedback = props => (
   props.feedback.map(({
@@ -22,7 +22,7 @@ const Feedback = props => (
         <img src="/1982b0427a5a73aeffde1f16255b4f8f.svg" alt="Edit" />
         <img src="/d34784bf1f4cacf5f9970140c723e361.svg" alt="Delete" />
       </td>
-      <td><Slider checked={status} /></td>
+      <td><CheckboxSlide checked={status} /></td>
     </tr>
   ))
 );

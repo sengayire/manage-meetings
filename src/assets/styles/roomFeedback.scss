@@ -13,13 +13,13 @@
   }
 
   button {
-    border: 1px solid #3359db;
+    border: 1px solid map-get($color-palette, primary);
     border-radius: 2px;
     font-size: 16px;
-    color: #3359db;
+    color: map-get($color-palette, primary);
     padding: 1% 3%;
     margin-left: 0;
-    background-color: #ffffff;
+    background-color:map-get($color-palette, white);
 
     @media screen and (max-width: 425px) {
       font-size: 1.05em;
@@ -58,13 +58,13 @@
 
       tr {
         padding: 1%;
-        border-bottom: 10px solid #f4f8f9;
+        border-bottom: 10px solid map-get($white, 100);
         font-weight: 50;
         display: table-row !important;
       }
 
       th {
-        color: #999999;
+        color: map-get($black, 100);
         padding-left: 2%;
         font-weight: inherit;
       }
@@ -74,9 +74,9 @@
       }
 
       td {
-        background: #ffffff;
+        background: map-get($color-palette, white);
         padding: 2%;
-        color: #333e44;
+        color: map-get($black, 600);
         font-size: 95%;
         vertical-align: bottom;
         text-align: center;

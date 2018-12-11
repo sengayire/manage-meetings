@@ -8,7 +8,15 @@ $color-palette: (
 $background: #F6F9FC;
 $font-family: 'DinPro';
 $placeholder: #aca5a5;
+$default-header-color: #787878;
 
 $black: (
-  100: #65696d,
+  100: #999999,
+  300: #65696d,
+  600: #333e44,
 );
+
+$white: (
+  100: #f1f0f0,
+  400: #c3c1c1,
+)

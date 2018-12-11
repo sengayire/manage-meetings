@@ -1,0 +1,28 @@
+@import './variables.scss';
+
+.dropdown-menu {
+  position: absolute;
+  min-width: 112px;
+  background: white; 
+  text-align: left;
+  padding: 5px 0;
+  border-radius: 2px;
+  box-shadow: 0px 2px 6px #c7c6c6;
+  color: map-get($color-palette, primary);
+}
+
+.dropdown-menu:before, .dropdown-menu:after {
+  box-shadow:0 0 50px map-get($black, 600);
+}
+
+.dropdown-caret {
+  margin-right: 40px;
+
+  button {
+    border-color: transparent;
+    background: transparent;
+    font-size: 51px;
+    color: map-get($color-palette, primary);
+    font-size: 30px;
+  }
+}

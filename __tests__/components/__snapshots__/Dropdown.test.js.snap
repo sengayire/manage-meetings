@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Sort Component should render component without errors 1`] = `
+<React.Fragment>
+  <div
+    className="dropdown-caret"
+  >
+    <button
+      onClick={[Function]}
+    >
+      <span>
+         ⌄ 
+      </span>
+    </button>
+  </div>
+</React.Fragment>
+`;
