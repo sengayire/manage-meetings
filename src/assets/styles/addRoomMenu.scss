@@ -1,6 +1,7 @@
+@import './variables';
+
 .add-room-menu{
   height: 100%;
-  font-family: 'DINPro';
   margin-left: 40px;
 
   button{
@@ -89,7 +90,6 @@
           background: transparent;
           width: 100%;
           font-size: 14px;
-          font-family: 'DINPro';
           display: block !important;
 
           &:hover{

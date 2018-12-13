@@ -1,19 +1,8 @@
+@import './variables';
+
 // color variables
 $andela-blue: #3358db;
 $andela-grey: #bcbcbc;
-
-@font-face {
-    font-family: 'DINPro-Light';
-    font-style: normal;
-    src: url('../fonts/DINPro-Light.otf');
-}
-
-@font-face{
-    font-family: 'DIN Pro';
-    font-style: normal;
-    font-weight: 500;
-    src: url('../fonts/DINPro.ttf') format('truetype');
-}
 
 // styles the whole notification settings content
 .notification-container{
@@ -48,7 +37,6 @@ $andela-grey: #bcbcbc;
 
   .preference-main{
       h1{
-          font-family: 'DIN Pro';
           font-size: 1.313em;
           font-weight: normal;
           color: #6D6D6D;
@@ -58,7 +46,6 @@ $andela-grey: #bcbcbc;
 
   .notification-title{
     color: #333E44 !important;
-    font-family: 'DINPro';
     font-size: 1em;
     padding-bottom: 0.375em;
     padding-top: 0.625em;

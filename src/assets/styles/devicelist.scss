@@ -1,8 +1,4 @@
-@font-face {
-  font-family: 'DINPro-Light';
-  font-style: normal;
-  src: url('../fonts/DINPro-Light.otf');
-}
+@import './variables';
 
 .settings-devices-list {
 
@@ -38,7 +34,7 @@
       padding: 1.37% 1.37% 1.35% 2%;
       color: #333e44;
       font-size: 95%;
-      font-family: 'DINPro-Light';
+      font-family: $font-light;
     }
 
     @media screen and (max-width: 425px) {

@@ -1,11 +1,7 @@
-@font-face {
-  font-family: 'DINPro-Regular';
-  font-style: normal;
-  src: url(../fonts/DINPro-Regular.woff);
-}
+@import './variables';
 
 .settings-vertical {
-  font-family: 'DINPro-Regular', sans-serif;
+  font-family: $font-regular, sans-serif;
   display: flex;
   margin-top: 2.0%;
   margin-left: 50px;

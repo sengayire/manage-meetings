@@ -1,7 +1,4 @@
-@font-face {
-  font-family: 'DINPro-Light';
-  src: url(../fonts/DINPro-Light.otf);
-}
+@import './variables';
 
 .page-navigation {
   display: flex;
@@ -19,7 +16,7 @@
   align-content: space-between;
   align-items: baseline;
   padding-left: 0;
-  font-family: 'DINPro';
+  font-family: $font;
 }
 
 .pagination>li {

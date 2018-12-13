@@ -1,3 +1,18 @@
+@font-face {
+  font-family: 'DINPro';
+  src: url(../fonts/DINPro.ttf);
+}
+
+@font-face {
+  font-family: 'DINPro-Regular';
+  src: url(../fonts/DINPro-Regular.woff);
+}
+
+@font-face {
+  font-family: 'DINPro-Light';
+  src: url(../fonts/DINPro-Light.otf);
+}
+
 $color-palette: (
   primary: #3359DB,
   danger: #FF5359,
@@ -6,10 +21,11 @@ $color-palette: (
 );
 
 $background: #f5f9fa;
-$font-family: 'DinPro';
+$font: 'DINPro';
+$font-regular: 'DINPro-Regular';
+$font-light: 'DINPro-Light';
 $placeholder: #aca5a5;
 $default-header-color: #787878;
-$font: 'DINPro-Light';
 $text-color: #6d6d6d;
 
 $black: (

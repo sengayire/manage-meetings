@@ -1,3 +1,5 @@
+@import './variables';
+
 select{
     color: #000 !important;
     &:invalid{
@@ -10,7 +12,7 @@ select:focus {
     border: 1px solid #d6dee4;
     border-radius: 4px;
     line-height: 1.4em;
-    font-family: 'DINPro-Regular';
+    font-family: $font-regular;
     font-size: 16px;
     // margin-top: 0.6em;
     width: 32.3rem !important;

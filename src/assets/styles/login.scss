@@ -1,9 +1,5 @@
 /* Importing the font */
-
-@font-face {
-    font-family: DINPro;
-    src: url(../fonts/DINPro.ttf);
-}
+@import './variables';
 
 /* body */
 
@@ -11,7 +7,6 @@ body.home-bg {
     background-image: url('../images/LandingBackground.svg');
     background-repeat: no-repeat;
     background-size: 100%;
-    font-family: DINPro;
     text-align: center;
 }
 
@@ -25,7 +20,6 @@ html {
 header.home-header>h1 {
     height: 46px;
     color: #FFFFFF;
-    font-family: DINPro;
     font-size: 36px;
     font-weight: 600px;
     line-height: 46px;
@@ -43,7 +37,6 @@ header.home-header {
     height: 62px;
     width: 459px;
     color: #FFFFFF;
-    font-family: DINPro;
     font-size: 24px;
     font-weight: lighter;
     line-height: 31px;

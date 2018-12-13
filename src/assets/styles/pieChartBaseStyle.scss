@@ -1,8 +1,10 @@
+@import './variables';
+
 .pie-chart-container{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 1.875em;
-    font-family: 'DINPro-Regular', sans-serif;
+    font-family: $font-regular, sans-serif;
 }
 
 .pie-chart {

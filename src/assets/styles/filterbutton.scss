@@ -1,8 +1,8 @@
+@import './variables';
 
   .filter-dropdown{
-    font-family: 'DINPro';
     .theme--toggle--hC5Z2BVI{
-        font-family: 'DINPro';
+        font-family: $font;
         width: 130px;
         height: 37px;
         border: solid 1px #FFAF30;
@@ -28,7 +28,6 @@
         }
     }
     .filterBtn{
-        font-family: 'DINPro';
         padding-top: 5px;
         &:after {
             content: url('../images/filter_yellow.svg');
@@ -127,7 +126,7 @@ left: -125px;
   height: 20px;
   cursor: pointer;
   font-size: 11pt;
-  font-family: 'DINPro', sans-serif;
+  font-family: $font, sans-serif;
   padding: 0;
   margin: 0;
   &.close{

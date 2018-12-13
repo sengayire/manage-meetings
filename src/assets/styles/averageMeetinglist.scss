@@ -1,7 +1,4 @@
-@font-face {
-  font-family: "DINPro-Light";
-  src: url(../fonts/DINPro-Light.otf);
-}
+@import './variables';
 
 .average-meeting {
   background: #ffffff;
@@ -17,7 +14,6 @@
       margin: 0;
       padding: 26px 32px 19px;
       color: #333e44;
-      font-family: "DINPro";
       font-size: 16px;
       float: left;
 
@@ -34,7 +30,6 @@
       float: right;
       padding: 26px 32px 19px;
       color: #333e44;
-      font-family: "DINPro";
       font-size: 16px;
     }
   }
@@ -54,7 +49,7 @@
             font-weight: 900;
             text-align: left;
             color: #333e44;
-            font-family: "DINPro-Regular", sans-serif;
+            font-family: $font-regular, sans-serif;
             font-size: 15px;
 
             &:first-child {
@@ -93,7 +88,7 @@
           td {
             padding: 20px 0;
             color: #6d6d6d;
-            font-family: "DINPro-Regular", sans-serif;
+            font-family: $font-regular, sans-serif;
             font-size: 15px;
           }
         }

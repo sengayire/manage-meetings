@@ -1,3 +1,5 @@
+@import './variables';
+
 $andela-blue: #3359DF;
 .check-in {
   flex: 2;
@@ -39,7 +41,6 @@ $andela-blue: #3359DF;
     background-color: #fff;
   }
   .theme--toggle--hC5Z2BVI {
-    font-family: 'DINPro';
     width: 130px;
     height: 37px;
     background-color: #fff;
@@ -81,7 +82,7 @@ $andela-blue: #3359DF;
     position: relative;
     vertical-align: -6px;
     width: 13.3px;
-    font-family: Roboto, Helvetica, Arial, sans-serif;
+    font-family: $font, Helvetica, Arial, sans-serif;
     left: 130px;
   }
 
@@ -89,7 +90,6 @@ $andela-blue: #3359DF;
     height: 21px;
     width: 74px;
     color: #3359db;
-    font-family: 'DIN Pro';
     font-size: 16px;
     line-height: 21px;
     font-size: 14px;

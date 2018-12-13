@@ -1,8 +1,4 @@
-@font-face {
-  font-family: 'DINPro-Light';
-  font-style: normal;
-  src: url('../fonts/DINPro-Light.otf');
-}
+@import './variables';
 
 .settings-rooms {
   width: 85%;
@@ -73,7 +69,7 @@
         padding: 2%;
         color: #333e44;
         font-size: 95%;
-        font-family: 'DINPro-Light';
+        font-family: $font-light;
       }
 
       td:nth-of-type(4) {
