@@ -26,30 +26,7 @@ exports[`App component should not render Login if token is present but render Se
                       "selections": Array [
                         Object {
                           "alias": undefined,
-                          "arguments": Array [
-                            Object {
-                              "kind": "Argument",
-                              "name": Object {
-                                "kind": "Name",
-                                "value": "page",
-                              },
-                              "value": Object {
-                                "kind": "IntValue",
-                                "value": "1",
-                              },
-                            },
-                            Object {
-                              "kind": "Argument",
-                              "name": Object {
-                                "kind": "Name",
-                                "value": "perPage",
-                              },
-                              "value": Object {
-                                "kind": "IntValue",
-                                "value": "5",
-                              },
-                            },
-                          ],
+                          "arguments": Array [],
                           "directives": Array [],
                           "kind": "Field",
                           "name": Object {
@@ -143,7 +120,7 @@ exports[`App component should not render Login if token is present but render Se
                 ],
                 "kind": "Document",
                 "loc": Object {
-                  "end": 181,
+                  "end": 160,
                   "start": 0,
                 },
               },
@@ -184,30 +161,7 @@ exports[`App component should not render Login if token is present but render Se
                       "selections": Array [
                         Object {
                           "alias": undefined,
-                          "arguments": Array [
-                            Object {
-                              "kind": "Argument",
-                              "name": Object {
-                                "kind": "Name",
-                                "value": "page",
-                              },
-                              "value": Object {
-                                "kind": "IntValue",
-                                "value": "1",
-                              },
-                            },
-                            Object {
-                              "kind": "Argument",
-                              "name": Object {
-                                "kind": "Name",
-                                "value": "perPage",
-                              },
-                              "value": Object {
-                                "kind": "IntValue",
-                                "value": "5",
-                              },
-                            },
-                          ],
+                          "arguments": Array [],
                           "directives": Array [],
                           "kind": "Field",
                           "name": Object {
@@ -322,11 +276,11 @@ exports[`App component should not render Login if token is present but render Se
                 ],
                 "kind": "Document",
                 "loc": Object {
-                  "end": 181,
+                  "end": 160,
                   "source": Object {
                     "body": "
   query allOffices {
-    allOffices(page: 1, perPage: 5){
+    allOffices{
       offices{
         id,
         name,
@@ -394,30 +348,7 @@ exports[`App component should not render Login if token is present but render Se
                           "selections": Array [
                             Object {
                               "alias": undefined,
-                              "arguments": Array [
-                                Object {
-                                  "kind": "Argument",
-                                  "name": Object {
-                                    "kind": "Name",
-                                    "value": "page",
-                                  },
-                                  "value": Object {
-                                    "kind": "IntValue",
-                                    "value": "1",
-                                  },
-                                },
-                                Object {
-                                  "kind": "Argument",
-                                  "name": Object {
-                                    "kind": "Name",
-                                    "value": "perPage",
-                                  },
-                                  "value": Object {
-                                    "kind": "IntValue",
-                                    "value": "5",
-                                  },
-                                },
-                              ],
+                              "arguments": Array [],
                               "directives": Array [],
                               "kind": "Field",
                               "name": Object {
@@ -532,11 +463,11 @@ exports[`App component should not render Login if token is present but render Se
                     ],
                     "kind": "Document",
                     "loc": Object {
-                      "end": 181,
+                      "end": 160,
                       "source": Object {
                         "body": "
   query allOffices {
-    allOffices(page: 1, perPage: 5){
+    allOffices{
       offices{
         id,
         name,
@@ -602,30 +533,7 @@ exports[`App component should not render Login if token is present but render Se
                         "selections": Array [
                           Object {
                             "alias": undefined,
-                            "arguments": Array [
-                              Object {
-                                "kind": "Argument",
-                                "name": Object {
-                                  "kind": "Name",
-                                  "value": "page",
-                                },
-                                "value": Object {
-                                  "kind": "IntValue",
-                                  "value": "1",
-                                },
-                              },
-                              Object {
-                                "kind": "Argument",
-                                "name": Object {
-                                  "kind": "Name",
-                                  "value": "perPage",
-                                },
-                                "value": Object {
-                                  "kind": "IntValue",
-                                  "value": "5",
-                                },
-                              },
-                            ],
+                            "arguments": Array [],
                             "directives": Array [],
                             "kind": "Field",
                             "name": Object {
@@ -740,11 +648,11 @@ exports[`App component should not render Login if token is present but render Se
                   ],
                   "kind": "Document",
                   "loc": Object {
-                    "end": 181,
+                    "end": 160,
                     "source": Object {
                       "body": "
   query allOffices {
-    allOffices(page: 1, perPage: 5){
+    allOffices{
       offices{
         id,
         name,
@@ -812,30 +720,7 @@ exports[`App component should not render Login if token is present but render Se
                             "selections": Array [
                               Object {
                                 "alias": undefined,
-                                "arguments": Array [
-                                  Object {
-                                    "kind": "Argument",
-                                    "name": Object {
-                                      "kind": "Name",
-                                      "value": "page",
-                                    },
-                                    "value": Object {
-                                      "kind": "IntValue",
-                                      "value": "1",
-                                    },
-                                  },
-                                  Object {
-                                    "kind": "Argument",
-                                    "name": Object {
-                                      "kind": "Name",
-                                      "value": "perPage",
-                                    },
-                                    "value": Object {
-                                      "kind": "IntValue",
-                                      "value": "5",
-                                    },
-                                  },
-                                ],
+                                "arguments": Array [],
                                 "directives": Array [],
                                 "kind": "Field",
                                 "name": Object {
@@ -929,7 +814,7 @@ exports[`App component should not render Login if token is present but render Se
                       ],
                       "kind": "Document",
                       "loc": Object {
-                        "end": 181,
+                        "end": 160,
                         "start": 0,
                       },
                     },
@@ -976,30 +861,7 @@ exports[`App component should not render Login if token is present but render Se
                         "selections": Array [
                           Object {
                             "alias": undefined,
-                            "arguments": Array [
-                              Object {
-                                "kind": "Argument",
-                                "name": Object {
-                                  "kind": "Name",
-                                  "value": "page",
-                                },
-                                "value": Object {
-                                  "kind": "IntValue",
-                                  "value": "1",
-                                },
-                              },
-                              Object {
-                                "kind": "Argument",
-                                "name": Object {
-                                  "kind": "Name",
-                                  "value": "perPage",
-                                },
-                                "value": Object {
-                                  "kind": "IntValue",
-                                  "value": "5",
-                                },
-                              },
-                            ],
+                            "arguments": Array [],
                             "directives": Array [],
                             "kind": "Field",
                             "name": Object {
@@ -1114,11 +976,11 @@ exports[`App component should not render Login if token is present but render Se
                   ],
                   "kind": "Document",
                   "loc": Object {
-                    "end": 181,
+                    "end": 160,
                     "source": Object {
                       "body": "
   query allOffices {
-    allOffices(page: 1, perPage: 5){
+    allOffices{
       offices{
         id,
         name,
@@ -1199,30 +1061,7 @@ exports[`App component should not render Login if token is present but render Se
                         "selections": Array [
                           Object {
                             "alias": undefined,
-                            "arguments": Array [
-                              Object {
-                                "kind": "Argument",
-                                "name": Object {
-                                  "kind": "Name",
-                                  "value": "page",
-                                },
-                                "value": Object {
-                                  "kind": "IntValue",
-                                  "value": "1",
-                                },
-                              },
-                              Object {
-                                "kind": "Argument",
-                                "name": Object {
-                                  "kind": "Name",
-                                  "value": "perPage",
-                                },
-                                "value": Object {
-                                  "kind": "IntValue",
-                                  "value": "5",
-                                },
-                              },
-                            ],
+                            "arguments": Array [],
                             "directives": Array [],
                             "kind": "Field",
                             "name": Object {
@@ -1337,11 +1176,11 @@ exports[`App component should not render Login if token is present but render Se
                   ],
                   "kind": "Document",
                   "loc": Object {
-                    "end": 181,
+                    "end": 160,
                     "source": Object {
                       "body": "
   query allOffices {
-    allOffices(page: 1, perPage: 5){
+    allOffices{
       offices{
         id,
         name,
@@ -2585,30 +2424,7 @@ exports[`App component should not render Login if token is present but render Se
                                             "selections": Array [
                                               Object {
                                                 "alias": undefined,
-                                                "arguments": Array [
-                                                  Object {
-                                                    "kind": "Argument",
-                                                    "name": Object {
-                                                      "kind": "Name",
-                                                      "value": "page",
-                                                    },
-                                                    "value": Object {
-                                                      "kind": "IntValue",
-                                                      "value": "1",
-                                                    },
-                                                  },
-                                                  Object {
-                                                    "kind": "Argument",
-                                                    "name": Object {
-                                                      "kind": "Name",
-                                                      "value": "perPage",
-                                                    },
-                                                    "value": Object {
-                                                      "kind": "IntValue",
-                                                      "value": "5",
-                                                    },
-                                                  },
-                                                ],
+                                                "arguments": Array [],
                                                 "directives": Array [],
                                                 "kind": "Field",
                                                 "name": Object {
@@ -2702,7 +2518,7 @@ exports[`App component should not render Login if token is present but render Se
                                       ],
                                       "kind": "Document",
                                       "loc": Object {
-                                        "end": 181,
+                                        "end": 160,
                                         "start": 0,
                                       },
                                     }

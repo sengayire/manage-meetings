@@ -611,30 +611,7 @@ exports[`FilterButton renders correctly from memory 1`] = `
                   "selections": Array [
                     Object {
                       "alias": undefined,
-                      "arguments": Array [
-                        Object {
-                          "kind": "Argument",
-                          "name": Object {
-                            "kind": "Name",
-                            "value": "page",
-                          },
-                          "value": Object {
-                            "kind": "IntValue",
-                            "value": "1",
-                          },
-                        },
-                        Object {
-                          "kind": "Argument",
-                          "name": Object {
-                            "kind": "Name",
-                            "value": "perPage",
-                          },
-                          "value": Object {
-                            "kind": "IntValue",
-                            "value": "5",
-                          },
-                        },
-                      ],
+                      "arguments": Array [],
                       "directives": Array [],
                       "kind": "Field",
                       "name": Object {
@@ -728,7 +705,7 @@ exports[`FilterButton renders correctly from memory 1`] = `
             ],
             "kind": "Document",
             "loc": Object {
-              "end": 181,
+              "end": 160,
               "start": 0,
             },
           },
@@ -2860,7 +2837,18 @@ exports[`FilterButton renders correctly from memory 1`] = `
                 "subscriptionHandles": Array [],
                 "variables": Object {},
               },
-              "subscriptions": Array [],
+              "subscriptions": Array [
+                Subscription {
+                  "_cleanup": [Function],
+                  "_observer": Object {
+                    "complete": [Function],
+                    "error": [Function],
+                    "next": [Function],
+                  },
+                  "_queue": undefined,
+                  "_state": "ready",
+                },
+              ],
             },
             "2" => Object {
               "cancel": [Function],
