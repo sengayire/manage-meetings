@@ -23,20 +23,20 @@
 
     }
     .update-button {
-        color: white;	
-        background-color: $primary-color;	
-        height: 44px;		
+        color: white;
+        background-color: $primary-color;
+        height: 44px;
         width: 158px;
-        margin-left: 4%;			
-    }	
-                
-    .cancel-button {	
-        color: $primary-color;	
-        background-color: white;	
-        height: 44px;		
-        width: 130px;	
-    }	
-    
+        margin-left: 4%;
+    }
+
+    .cancel-button {
+        color: $primary-color;
+        background-color: white;
+        height: 44px;
+        width: 130px;
+    }
+
     .label1 {
         display: block;
         margin-bottom: 2em;
@@ -71,7 +71,7 @@
         border: 1px solid #d6dee4;
         font-weight: 100;
     }
-    
+
     .edit-buttons {
         flex: 1;
         justify-content: flex-end;

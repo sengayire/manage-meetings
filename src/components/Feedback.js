@@ -2,6 +2,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import CheckboxSlide from './commons/CheckboxSlide';
+import EditFeedback from './EditFeedback';
+import DeleteFeedback from './DeleteFeedback';
 
 const Feedback = props => (
   props.feedback.map(({
@@ -19,8 +21,14 @@ const Feedback = props => (
       <td>{startDate}</td>
       <td>{duration}</td>
       <td>
-        <img src="/1982b0427a5a73aeffde1f16255b4f8f.svg" alt="Edit" />
-        <img src="/d34784bf1f4cacf5f9970140c723e361.svg" alt="Delete" />
+        <EditFeedback
+          id="edit-modal"
+          question={question}
+          type={type}
+          startDate={startDate}
+          duration={duration}
+        />
+        <DeleteFeedback id="delete-modal" question={question} />
       </td>
       <td><CheckboxSlide checked={status} /></td>
     </tr>

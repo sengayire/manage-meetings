@@ -266,14 +266,267 @@ exports[`RoomFeeback Component should render properly 1`] = `
                 3 weeks
               </td>
               <td>
-                <img
-                  alt="Edit"
-                  src="/1982b0427a5a73aeffde1f16255b4f8f.svg"
-                />
-                <img
-                  alt="Delete"
-                  src="/d34784bf1f4cacf5f9970140c723e361.svg"
-                />
+                <EditFeedback
+                  duration="3 weeks"
+                  id="edit-modal"
+                  question="How would you rate the cleanliness of this room"
+                  startDate="3 Nov 2018"
+                  type="rate"
+                >
+                  <MrmModal
+                    buttonText="Edit"
+                    className="edit-feedback-modal"
+                    closeModal={false}
+                    handleCloseRequest={[Function]}
+                    modalButtonClassName="edit-button"
+                    title="Edit Question"
+                  >
+                    <IconButtons
+                      buttonText="Edit"
+                      modalButtonClassName="edit-button"
+                      openModal={[Function]}
+                    >
+                      <button
+                        className="edit-button"
+                        id="modal-button"
+                        onClick={[Function]}
+                      >
+                        <img
+                          alt="Edit"
+                          src="test-file-stub"
+                        />
+                      </button>
+                    </IconButtons>
+                    <Modal
+                      ariaHideApp={false}
+                      bodyOpenClassName="ReactModal__Body--open"
+                      className="edit-feedback-modal"
+                      closeTimeoutMS={0}
+                      contentLabel="Parent Modal"
+                      isOpen={false}
+                      onAfterOpen={[Function]}
+                      onRequestClose={[Function]}
+                      parentSelector={[Function]}
+                      portalClassName="ReactModalPortal"
+                      shouldCloseOnEsc={true}
+                      shouldCloseOnOverlayClick={false}
+                      shouldFocusAfterRender={true}
+                      shouldReturnFocusAfterClose={true}
+                      style={
+                        Object {
+                          "content": Object {
+                            "backgroundColor": "#ffffff",
+                            "border": "1px solid #CCCCCC",
+                            "borderRadius": "4px",
+                            "bottom": "auto",
+                            "boxShadow": "0 2px 40px 10px rgba(185, 180, 180, 0.2)",
+                            "fontFamily": "DINPro-Regular",
+                            "left": "50%",
+                            "marginRight": "-50%",
+                            "outline": "none",
+                            "overflow": "auto",
+                            "position": "absolute",
+                            "right": "auto",
+                            "top": "50%",
+                            "transform": "translate(-50%, -50%)",
+                          },
+                        }
+                      }
+                    >
+                      <ModalPortal
+                        ariaHideApp={false}
+                        bodyOpenClassName="ReactModal__Body--open"
+                        className="edit-feedback-modal"
+                        closeTimeoutMS={0}
+                        contentLabel="Parent Modal"
+                        defaultStyles={
+                          Object {
+                            "content": Object {
+                              "WebkitOverflowScrolling": "touch",
+                              "background": "#fff",
+                              "border": "1px solid #ccc",
+                              "borderRadius": "4px",
+                              "bottom": "40px",
+                              "left": "40px",
+                              "outline": "none",
+                              "overflow": "auto",
+                              "padding": "20px",
+                              "position": "absolute",
+                              "right": "40px",
+                              "top": "40px",
+                            },
+                            "overlay": Object {
+                              "backgroundColor": "rgba(255, 255, 255, 0.75)",
+                              "bottom": 0,
+                              "left": 0,
+                              "position": "fixed",
+                              "right": 0,
+                              "top": 0,
+                            },
+                          }
+                        }
+                        isOpen={false}
+                        onAfterOpen={[Function]}
+                        onRequestClose={[Function]}
+                        parentSelector={[Function]}
+                        portalClassName="ReactModalPortal"
+                        shouldCloseOnEsc={true}
+                        shouldCloseOnOverlayClick={false}
+                        shouldFocusAfterRender={true}
+                        shouldReturnFocusAfterClose={true}
+                        style={
+                          Object {
+                            "content": Object {
+                              "backgroundColor": "#ffffff",
+                              "border": "1px solid #CCCCCC",
+                              "borderRadius": "4px",
+                              "bottom": "auto",
+                              "boxShadow": "0 2px 40px 10px rgba(185, 180, 180, 0.2)",
+                              "fontFamily": "DINPro-Regular",
+                              "left": "50%",
+                              "marginRight": "-50%",
+                              "outline": "none",
+                              "overflow": "auto",
+                              "position": "absolute",
+                              "right": "auto",
+                              "top": "50%",
+                              "transform": "translate(-50%, -50%)",
+                            },
+                          }
+                        }
+                      />
+                    </Modal>
+                  </MrmModal>
+                </EditFeedback>
+                <DeleteFeedback
+                  id="delete-modal"
+                  question="How would you rate the cleanliness of this room"
+                >
+                  <MrmModal
+                    buttonText="Delete"
+                    className="delete-modal"
+                    closeModal={false}
+                    handleCloseRequest={[Function]}
+                    modalButtonClassName="button"
+                    title="Delete Question"
+                  >
+                    <IconButtons
+                      buttonText="Delete"
+                      modalButtonClassName="button"
+                      openModal={[Function]}
+                    >
+                      <button
+                        className="button"
+                        id="modal-button"
+                        onClick={[Function]}
+                      >
+                        <img
+                          alt="Delete"
+                          src="test-file-stub"
+                        />
+                      </button>
+                    </IconButtons>
+                    <Modal
+                      ariaHideApp={false}
+                      bodyOpenClassName="ReactModal__Body--open"
+                      className="delete-modal"
+                      closeTimeoutMS={0}
+                      contentLabel="Parent Modal"
+                      isOpen={false}
+                      onAfterOpen={[Function]}
+                      onRequestClose={[Function]}
+                      parentSelector={[Function]}
+                      portalClassName="ReactModalPortal"
+                      shouldCloseOnEsc={true}
+                      shouldCloseOnOverlayClick={false}
+                      shouldFocusAfterRender={true}
+                      shouldReturnFocusAfterClose={true}
+                      style={
+                        Object {
+                          "content": Object {
+                            "backgroundColor": "#ffffff",
+                            "border": "1px solid #CCCCCC",
+                            "borderRadius": "4px",
+                            "bottom": "auto",
+                            "boxShadow": "0 2px 40px 10px rgba(185, 180, 180, 0.2)",
+                            "fontFamily": "DINPro-Regular",
+                            "left": "50%",
+                            "marginRight": "-50%",
+                            "outline": "none",
+                            "overflow": "auto",
+                            "position": "absolute",
+                            "right": "auto",
+                            "top": "50%",
+                            "transform": "translate(-50%, -50%)",
+                          },
+                        }
+                      }
+                    >
+                      <ModalPortal
+                        ariaHideApp={false}
+                        bodyOpenClassName="ReactModal__Body--open"
+                        className="delete-modal"
+                        closeTimeoutMS={0}
+                        contentLabel="Parent Modal"
+                        defaultStyles={
+                          Object {
+                            "content": Object {
+                              "WebkitOverflowScrolling": "touch",
+                              "background": "#fff",
+                              "border": "1px solid #ccc",
+                              "borderRadius": "4px",
+                              "bottom": "40px",
+                              "left": "40px",
+                              "outline": "none",
+                              "overflow": "auto",
+                              "padding": "20px",
+                              "position": "absolute",
+                              "right": "40px",
+                              "top": "40px",
+                            },
+                            "overlay": Object {
+                              "backgroundColor": "rgba(255, 255, 255, 0.75)",
+                              "bottom": 0,
+                              "left": 0,
+                              "position": "fixed",
+                              "right": 0,
+                              "top": 0,
+                            },
+                          }
+                        }
+                        isOpen={false}
+                        onAfterOpen={[Function]}
+                        onRequestClose={[Function]}
+                        parentSelector={[Function]}
+                        portalClassName="ReactModalPortal"
+                        shouldCloseOnEsc={true}
+                        shouldCloseOnOverlayClick={false}
+                        shouldFocusAfterRender={true}
+                        shouldReturnFocusAfterClose={true}
+                        style={
+                          Object {
+                            "content": Object {
+                              "backgroundColor": "#ffffff",
+                              "border": "1px solid #CCCCCC",
+                              "borderRadius": "4px",
+                              "bottom": "auto",
+                              "boxShadow": "0 2px 40px 10px rgba(185, 180, 180, 0.2)",
+                              "fontFamily": "DINPro-Regular",
+                              "left": "50%",
+                              "marginRight": "-50%",
+                              "outline": "none",
+                              "overflow": "auto",
+                              "position": "absolute",
+                              "right": "auto",
+                              "top": "50%",
+                              "transform": "translate(-50%, -50%)",
+                            },
+                          }
+                        }
+                      />
+                    </Modal>
+                  </MrmModal>
+                </DeleteFeedback>
               </td>
               <td>
                 <CheckboxSlide
@@ -289,7 +542,7 @@ exports[`RoomFeeback Component should render properly 1`] = `
                       type="checkbox"
                     />
                     <span
-                      className="checked CheckboxSlide round"
+                      className="checked slider round"
                     />
                   </label>
                 </CheckboxSlide>
@@ -314,14 +567,267 @@ exports[`RoomFeeback Component should render properly 1`] = `
                 3 weeks
               </td>
               <td>
-                <img
-                  alt="Edit"
-                  src="/1982b0427a5a73aeffde1f16255b4f8f.svg"
-                />
-                <img
-                  alt="Delete"
-                  src="/d34784bf1f4cacf5f9970140c723e361.svg"
-                />
+                <EditFeedback
+                  duration="3 weeks"
+                  id="edit-modal"
+                  question="Is there any missing meeting tools"
+                  startDate="3 Nov 2018"
+                  type="check"
+                >
+                  <MrmModal
+                    buttonText="Edit"
+                    className="edit-feedback-modal"
+                    closeModal={false}
+                    handleCloseRequest={[Function]}
+                    modalButtonClassName="edit-button"
+                    title="Edit Question"
+                  >
+                    <IconButtons
+                      buttonText="Edit"
+                      modalButtonClassName="edit-button"
+                      openModal={[Function]}
+                    >
+                      <button
+                        className="edit-button"
+                        id="modal-button"
+                        onClick={[Function]}
+                      >
+                        <img
+                          alt="Edit"
+                          src="test-file-stub"
+                        />
+                      </button>
+                    </IconButtons>
+                    <Modal
+                      ariaHideApp={false}
+                      bodyOpenClassName="ReactModal__Body--open"
+                      className="edit-feedback-modal"
+                      closeTimeoutMS={0}
+                      contentLabel="Parent Modal"
+                      isOpen={false}
+                      onAfterOpen={[Function]}
+                      onRequestClose={[Function]}
+                      parentSelector={[Function]}
+                      portalClassName="ReactModalPortal"
+                      shouldCloseOnEsc={true}
+                      shouldCloseOnOverlayClick={false}
+                      shouldFocusAfterRender={true}
+                      shouldReturnFocusAfterClose={true}
+                      style={
+                        Object {
+                          "content": Object {
+                            "backgroundColor": "#ffffff",
+                            "border": "1px solid #CCCCCC",
+                            "borderRadius": "4px",
+                            "bottom": "auto",
+                            "boxShadow": "0 2px 40px 10px rgba(185, 180, 180, 0.2)",
+                            "fontFamily": "DINPro-Regular",
+                            "left": "50%",
+                            "marginRight": "-50%",
+                            "outline": "none",
+                            "overflow": "auto",
+                            "position": "absolute",
+                            "right": "auto",
+                            "top": "50%",
+                            "transform": "translate(-50%, -50%)",
+                          },
+                        }
+                      }
+                    >
+                      <ModalPortal
+                        ariaHideApp={false}
+                        bodyOpenClassName="ReactModal__Body--open"
+                        className="edit-feedback-modal"
+                        closeTimeoutMS={0}
+                        contentLabel="Parent Modal"
+                        defaultStyles={
+                          Object {
+                            "content": Object {
+                              "WebkitOverflowScrolling": "touch",
+                              "background": "#fff",
+                              "border": "1px solid #ccc",
+                              "borderRadius": "4px",
+                              "bottom": "40px",
+                              "left": "40px",
+                              "outline": "none",
+                              "overflow": "auto",
+                              "padding": "20px",
+                              "position": "absolute",
+                              "right": "40px",
+                              "top": "40px",
+                            },
+                            "overlay": Object {
+                              "backgroundColor": "rgba(255, 255, 255, 0.75)",
+                              "bottom": 0,
+                              "left": 0,
+                              "position": "fixed",
+                              "right": 0,
+                              "top": 0,
+                            },
+                          }
+                        }
+                        isOpen={false}
+                        onAfterOpen={[Function]}
+                        onRequestClose={[Function]}
+                        parentSelector={[Function]}
+                        portalClassName="ReactModalPortal"
+                        shouldCloseOnEsc={true}
+                        shouldCloseOnOverlayClick={false}
+                        shouldFocusAfterRender={true}
+                        shouldReturnFocusAfterClose={true}
+                        style={
+                          Object {
+                            "content": Object {
+                              "backgroundColor": "#ffffff",
+                              "border": "1px solid #CCCCCC",
+                              "borderRadius": "4px",
+                              "bottom": "auto",
+                              "boxShadow": "0 2px 40px 10px rgba(185, 180, 180, 0.2)",
+                              "fontFamily": "DINPro-Regular",
+                              "left": "50%",
+                              "marginRight": "-50%",
+                              "outline": "none",
+                              "overflow": "auto",
+                              "position": "absolute",
+                              "right": "auto",
+                              "top": "50%",
+                              "transform": "translate(-50%, -50%)",
+                            },
+                          }
+                        }
+                      />
+                    </Modal>
+                  </MrmModal>
+                </EditFeedback>
+                <DeleteFeedback
+                  id="delete-modal"
+                  question="Is there any missing meeting tools"
+                >
+                  <MrmModal
+                    buttonText="Delete"
+                    className="delete-modal"
+                    closeModal={false}
+                    handleCloseRequest={[Function]}
+                    modalButtonClassName="button"
+                    title="Delete Question"
+                  >
+                    <IconButtons
+                      buttonText="Delete"
+                      modalButtonClassName="button"
+                      openModal={[Function]}
+                    >
+                      <button
+                        className="button"
+                        id="modal-button"
+                        onClick={[Function]}
+                      >
+                        <img
+                          alt="Delete"
+                          src="test-file-stub"
+                        />
+                      </button>
+                    </IconButtons>
+                    <Modal
+                      ariaHideApp={false}
+                      bodyOpenClassName="ReactModal__Body--open"
+                      className="delete-modal"
+                      closeTimeoutMS={0}
+                      contentLabel="Parent Modal"
+                      isOpen={false}
+                      onAfterOpen={[Function]}
+                      onRequestClose={[Function]}
+                      parentSelector={[Function]}
+                      portalClassName="ReactModalPortal"
+                      shouldCloseOnEsc={true}
+                      shouldCloseOnOverlayClick={false}
+                      shouldFocusAfterRender={true}
+                      shouldReturnFocusAfterClose={true}
+                      style={
+                        Object {
+                          "content": Object {
+                            "backgroundColor": "#ffffff",
+                            "border": "1px solid #CCCCCC",
+                            "borderRadius": "4px",
+                            "bottom": "auto",
+                            "boxShadow": "0 2px 40px 10px rgba(185, 180, 180, 0.2)",
+                            "fontFamily": "DINPro-Regular",
+                            "left": "50%",
+                            "marginRight": "-50%",
+                            "outline": "none",
+                            "overflow": "auto",
+                            "position": "absolute",
+                            "right": "auto",
+                            "top": "50%",
+                            "transform": "translate(-50%, -50%)",
+                          },
+                        }
+                      }
+                    >
+                      <ModalPortal
+                        ariaHideApp={false}
+                        bodyOpenClassName="ReactModal__Body--open"
+                        className="delete-modal"
+                        closeTimeoutMS={0}
+                        contentLabel="Parent Modal"
+                        defaultStyles={
+                          Object {
+                            "content": Object {
+                              "WebkitOverflowScrolling": "touch",
+                              "background": "#fff",
+                              "border": "1px solid #ccc",
+                              "borderRadius": "4px",
+                              "bottom": "40px",
+                              "left": "40px",
+                              "outline": "none",
+                              "overflow": "auto",
+                              "padding": "20px",
+                              "position": "absolute",
+                              "right": "40px",
+                              "top": "40px",
+                            },
+                            "overlay": Object {
+                              "backgroundColor": "rgba(255, 255, 255, 0.75)",
+                              "bottom": 0,
+                              "left": 0,
+                              "position": "fixed",
+                              "right": 0,
+                              "top": 0,
+                            },
+                          }
+                        }
+                        isOpen={false}
+                        onAfterOpen={[Function]}
+                        onRequestClose={[Function]}
+                        parentSelector={[Function]}
+                        portalClassName="ReactModalPortal"
+                        shouldCloseOnEsc={true}
+                        shouldCloseOnOverlayClick={false}
+                        shouldFocusAfterRender={true}
+                        shouldReturnFocusAfterClose={true}
+                        style={
+                          Object {
+                            "content": Object {
+                              "backgroundColor": "#ffffff",
+                              "border": "1px solid #CCCCCC",
+                              "borderRadius": "4px",
+                              "bottom": "auto",
+                              "boxShadow": "0 2px 40px 10px rgba(185, 180, 180, 0.2)",
+                              "fontFamily": "DINPro-Regular",
+                              "left": "50%",
+                              "marginRight": "-50%",
+                              "outline": "none",
+                              "overflow": "auto",
+                              "position": "absolute",
+                              "right": "auto",
+                              "top": "50%",
+                              "transform": "translate(-50%, -50%)",
+                            },
+                          }
+                        }
+                      />
+                    </Modal>
+                  </MrmModal>
+                </DeleteFeedback>
               </td>
               <td>
                 <CheckboxSlide
@@ -337,7 +843,7 @@ exports[`RoomFeeback Component should render properly 1`] = `
                       type="checkbox"
                     />
                     <span
-                      className="false CheckboxSlide round"
+                      className="false slider round"
                     />
                   </label>
                 </CheckboxSlide>
@@ -362,14 +868,267 @@ exports[`RoomFeeback Component should render properly 1`] = `
                 3 weeks
               </td>
               <td>
-                <img
-                  alt="Edit"
-                  src="/1982b0427a5a73aeffde1f16255b4f8f.svg"
-                />
-                <img
-                  alt="Delete"
-                  src="/d34784bf1f4cacf5f9970140c723e361.svg"
-                />
+                <EditFeedback
+                  duration="3 weeks"
+                  id="edit-modal"
+                  question="Any suggestions on how we can improve the service"
+                  startDate="3 Nov 2018"
+                  type="text"
+                >
+                  <MrmModal
+                    buttonText="Edit"
+                    className="edit-feedback-modal"
+                    closeModal={false}
+                    handleCloseRequest={[Function]}
+                    modalButtonClassName="edit-button"
+                    title="Edit Question"
+                  >
+                    <IconButtons
+                      buttonText="Edit"
+                      modalButtonClassName="edit-button"
+                      openModal={[Function]}
+                    >
+                      <button
+                        className="edit-button"
+                        id="modal-button"
+                        onClick={[Function]}
+                      >
+                        <img
+                          alt="Edit"
+                          src="test-file-stub"
+                        />
+                      </button>
+                    </IconButtons>
+                    <Modal
+                      ariaHideApp={false}
+                      bodyOpenClassName="ReactModal__Body--open"
+                      className="edit-feedback-modal"
+                      closeTimeoutMS={0}
+                      contentLabel="Parent Modal"
+                      isOpen={false}
+                      onAfterOpen={[Function]}
+                      onRequestClose={[Function]}
+                      parentSelector={[Function]}
+                      portalClassName="ReactModalPortal"
+                      shouldCloseOnEsc={true}
+                      shouldCloseOnOverlayClick={false}
+                      shouldFocusAfterRender={true}
+                      shouldReturnFocusAfterClose={true}
+                      style={
+                        Object {
+                          "content": Object {
+                            "backgroundColor": "#ffffff",
+                            "border": "1px solid #CCCCCC",
+                            "borderRadius": "4px",
+                            "bottom": "auto",
+                            "boxShadow": "0 2px 40px 10px rgba(185, 180, 180, 0.2)",
+                            "fontFamily": "DINPro-Regular",
+                            "left": "50%",
+                            "marginRight": "-50%",
+                            "outline": "none",
+                            "overflow": "auto",
+                            "position": "absolute",
+                            "right": "auto",
+                            "top": "50%",
+                            "transform": "translate(-50%, -50%)",
+                          },
+                        }
+                      }
+                    >
+                      <ModalPortal
+                        ariaHideApp={false}
+                        bodyOpenClassName="ReactModal__Body--open"
+                        className="edit-feedback-modal"
+                        closeTimeoutMS={0}
+                        contentLabel="Parent Modal"
+                        defaultStyles={
+                          Object {
+                            "content": Object {
+                              "WebkitOverflowScrolling": "touch",
+                              "background": "#fff",
+                              "border": "1px solid #ccc",
+                              "borderRadius": "4px",
+                              "bottom": "40px",
+                              "left": "40px",
+                              "outline": "none",
+                              "overflow": "auto",
+                              "padding": "20px",
+                              "position": "absolute",
+                              "right": "40px",
+                              "top": "40px",
+                            },
+                            "overlay": Object {
+                              "backgroundColor": "rgba(255, 255, 255, 0.75)",
+                              "bottom": 0,
+                              "left": 0,
+                              "position": "fixed",
+                              "right": 0,
+                              "top": 0,
+                            },
+                          }
+                        }
+                        isOpen={false}
+                        onAfterOpen={[Function]}
+                        onRequestClose={[Function]}
+                        parentSelector={[Function]}
+                        portalClassName="ReactModalPortal"
+                        shouldCloseOnEsc={true}
+                        shouldCloseOnOverlayClick={false}
+                        shouldFocusAfterRender={true}
+                        shouldReturnFocusAfterClose={true}
+                        style={
+                          Object {
+                            "content": Object {
+                              "backgroundColor": "#ffffff",
+                              "border": "1px solid #CCCCCC",
+                              "borderRadius": "4px",
+                              "bottom": "auto",
+                              "boxShadow": "0 2px 40px 10px rgba(185, 180, 180, 0.2)",
+                              "fontFamily": "DINPro-Regular",
+                              "left": "50%",
+                              "marginRight": "-50%",
+                              "outline": "none",
+                              "overflow": "auto",
+                              "position": "absolute",
+                              "right": "auto",
+                              "top": "50%",
+                              "transform": "translate(-50%, -50%)",
+                            },
+                          }
+                        }
+                      />
+                    </Modal>
+                  </MrmModal>
+                </EditFeedback>
+                <DeleteFeedback
+                  id="delete-modal"
+                  question="Any suggestions on how we can improve the service"
+                >
+                  <MrmModal
+                    buttonText="Delete"
+                    className="delete-modal"
+                    closeModal={false}
+                    handleCloseRequest={[Function]}
+                    modalButtonClassName="button"
+                    title="Delete Question"
+                  >
+                    <IconButtons
+                      buttonText="Delete"
+                      modalButtonClassName="button"
+                      openModal={[Function]}
+                    >
+                      <button
+                        className="button"
+                        id="modal-button"
+                        onClick={[Function]}
+                      >
+                        <img
+                          alt="Delete"
+                          src="test-file-stub"
+                        />
+                      </button>
+                    </IconButtons>
+                    <Modal
+                      ariaHideApp={false}
+                      bodyOpenClassName="ReactModal__Body--open"
+                      className="delete-modal"
+                      closeTimeoutMS={0}
+                      contentLabel="Parent Modal"
+                      isOpen={false}
+                      onAfterOpen={[Function]}
+                      onRequestClose={[Function]}
+                      parentSelector={[Function]}
+                      portalClassName="ReactModalPortal"
+                      shouldCloseOnEsc={true}
+                      shouldCloseOnOverlayClick={false}
+                      shouldFocusAfterRender={true}
+                      shouldReturnFocusAfterClose={true}
+                      style={
+                        Object {
+                          "content": Object {
+                            "backgroundColor": "#ffffff",
+                            "border": "1px solid #CCCCCC",
+                            "borderRadius": "4px",
+                            "bottom": "auto",
+                            "boxShadow": "0 2px 40px 10px rgba(185, 180, 180, 0.2)",
+                            "fontFamily": "DINPro-Regular",
+                            "left": "50%",
+                            "marginRight": "-50%",
+                            "outline": "none",
+                            "overflow": "auto",
+                            "position": "absolute",
+                            "right": "auto",
+                            "top": "50%",
+                            "transform": "translate(-50%, -50%)",
+                          },
+                        }
+                      }
+                    >
+                      <ModalPortal
+                        ariaHideApp={false}
+                        bodyOpenClassName="ReactModal__Body--open"
+                        className="delete-modal"
+                        closeTimeoutMS={0}
+                        contentLabel="Parent Modal"
+                        defaultStyles={
+                          Object {
+                            "content": Object {
+                              "WebkitOverflowScrolling": "touch",
+                              "background": "#fff",
+                              "border": "1px solid #ccc",
+                              "borderRadius": "4px",
+                              "bottom": "40px",
+                              "left": "40px",
+                              "outline": "none",
+                              "overflow": "auto",
+                              "padding": "20px",
+                              "position": "absolute",
+                              "right": "40px",
+                              "top": "40px",
+                            },
+                            "overlay": Object {
+                              "backgroundColor": "rgba(255, 255, 255, 0.75)",
+                              "bottom": 0,
+                              "left": 0,
+                              "position": "fixed",
+                              "right": 0,
+                              "top": 0,
+                            },
+                          }
+                        }
+                        isOpen={false}
+                        onAfterOpen={[Function]}
+                        onRequestClose={[Function]}
+                        parentSelector={[Function]}
+                        portalClassName="ReactModalPortal"
+                        shouldCloseOnEsc={true}
+                        shouldCloseOnOverlayClick={false}
+                        shouldFocusAfterRender={true}
+                        shouldReturnFocusAfterClose={true}
+                        style={
+                          Object {
+                            "content": Object {
+                              "backgroundColor": "#ffffff",
+                              "border": "1px solid #CCCCCC",
+                              "borderRadius": "4px",
+                              "bottom": "auto",
+                              "boxShadow": "0 2px 40px 10px rgba(185, 180, 180, 0.2)",
+                              "fontFamily": "DINPro-Regular",
+                              "left": "50%",
+                              "marginRight": "-50%",
+                              "outline": "none",
+                              "overflow": "auto",
+                              "position": "absolute",
+                              "right": "auto",
+                              "top": "50%",
+                              "transform": "translate(-50%, -50%)",
+                            },
+                          }
+                        }
+                      />
+                    </Modal>
+                  </MrmModal>
+                </DeleteFeedback>
               </td>
               <td>
                 <CheckboxSlide
@@ -385,7 +1144,7 @@ exports[`RoomFeeback Component should render properly 1`] = `
                       type="checkbox"
                     />
                     <span
-                      className="checked CheckboxSlide round"
+                      className="checked slider round"
                     />
                   </label>
                 </CheckboxSlide>

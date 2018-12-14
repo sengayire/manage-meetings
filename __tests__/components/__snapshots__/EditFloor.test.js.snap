@@ -21,6 +21,7 @@ exports[`EditFloor Component renders properly 1`] = `
       labelName="Floor Name"
       name="floorName"
       onChange={[Function]}
+      placeholder=""
       required={true}
       type="text"
       value="Fourth Floor"

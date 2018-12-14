@@ -1,6 +1,6 @@
+@import './variables';
+
 .edit-resource-modal{
-    $primary-color:  #3359db;
-    $font: 'DINPro-Light';
     padding: 1em;
 
     .modal-form {
@@ -23,7 +23,7 @@
     }
 
     .modal-cancel-button {
-        color: #3359DB;
+        color: map-get($color-palette, primary);
         border: 1px solid #3359DB;
         background-color: #FFFFFF;
         text-transform: uppercase;
@@ -34,19 +34,19 @@
 
       .modal-cancel-button:hover {
           cursor: pointer;
-          background-color: #3359DB;
-          color: #FFFFFF; 
-      } 
-      
+          background-color: map-get($color-palette, primary);
+          color: map-get($color-palette, white);
+      }
+
     .update-button {
         @media screen and (min-width: 961px){
             font-size: 1.0em;
             width: 150px;
         }
-        color: white;	
-        background-color: $primary-color;	
+        color: white;
+        background-color: map-get($color-palette, primary);
         height: 44px;
-    }	
+    }
 
     .update-button:hover {
         cursor: pointer;
@@ -75,8 +75,8 @@
             margin-top: 1em;
         }
     }
-    
-   
+
+
 
 
     @media screen and (max-width: 639px) {

@@ -58,7 +58,7 @@
 
       tr {
         padding: 1%;
-        border-bottom: 10px solid map-get($white, 100);
+        border-bottom: 10px solid $background;
         font-weight: 50;
         display: table-row !important;
       }
@@ -85,7 +85,7 @@
         & img:nth-child(2) {
           padding-left: 20px;
         }
-        
+
         & img {
           margin-top: 2px;
         }
