@@ -8,39 +8,54 @@ import allRoles from '../../../__mocks__/people/Roles';
 import allLocations from '../../../__mocks__/offices/Locations';
 import PeopleLists, { PeopleList } from '../../../src/components/people/PeopleList';
 
+const mocks = [
+  {
+    request: {
+      query: GET_PEOPLE_QUERY,
+      variables: {
+        page: 1,
+        perPage: 5,
+        locationId: 0,
+        roleId: 0,
+      },
+    },
+    result: { ...allPeople },
+  },
+  { request: { query: GET_ROLES_QUERY }, result: { ...allRoles } },
+  { request: { query: GET_LOCATIONS_QUERY }, result: { ...allLocations } },
+];
+const initProps = {
+  people: {
+    users: allPeople.data.users,
+    fetchMore: jest.fn(() => Promise.resolve()),
+  },
+  locations: {
+    allLocations: {},
+  },
+  roles: {
+    allRoles: {},
+  },
+};
+const wrapper = (
+  <MockedProvider
+    mocks={mocks}
+    addTypename={false}
+  >
+    <PeopleLists />
+  </MockedProvider>
+);
+const mountWrapper = mount(wrapper);
+const shallowWrapper = shallow(<PeopleList {...initProps} />);
+
 describe('PeopleList Component', () => {
   const error = new Error('Something Went Wrong');
-  const mocks = [
-    {
-      request: {
-        query: GET_PEOPLE_QUERY,
-        variables: {
-          page: 1,
-          perPage: 5,
-        },
-      },
-      result: { ...allPeople },
-    },
-    { request: { query: GET_ROLES_QUERY }, result: { ...allRoles } },
-    { request: { query: GET_LOCATIONS_QUERY }, result: { ...allLocations } },
-  ];
-  const wrapper = (
-    <MockedProvider
-      mocks={mocks}
-      addTypename={false}
-    >
-      <PeopleLists />
-    </MockedProvider>
-  );
 
   it('renders correctly from memory', () => {
-    const mountWrapper = mount(wrapper);
     expect(mountWrapper).toMatchSnapshot();
   });
 
   it('should render loading screen', () => {
-    const mountWrapper = mount(wrapper);
-    expect(mountWrapper.find('PeopleList').props().data.loading).toBe(true);
+    expect(mountWrapper.find('PeopleList').props().people.loading).toBe(true);
     expect(mountWrapper.find('PeopleList').props().roles.loading).toBe(true);
     expect(mountWrapper.find('PeopleList').props().locations.loading).toBe(true);
   });
@@ -53,6 +68,8 @@ describe('PeopleList Component', () => {
           variables: {
             page: 1,
             perPage: 5,
+            locationId: 0,
+            roleId: 0,
           },
         },
         error,
@@ -77,12 +94,12 @@ describe('PeopleList Component', () => {
     const mountErrorWrapper = mount(errorWrapper);
 
     // check whether there is no error during when a loading
-    expect(mountErrorWrapper.find('PeopleList').props().data.error).toBe(undefined);
+    expect(mountErrorWrapper.find('PeopleList').props().people.error).toBe(undefined);
     await new Promise(resolve => setTimeout(resolve));
     mountErrorWrapper.update();
     // check whether an error occurs after loading
-    expect(mountErrorWrapper.find('PeopleList').props().data.error).toBeTruthy();
-    expect(mountErrorWrapper.find('PeopleList').props().data.error.networkError).toBe(error);
+    expect(mountErrorWrapper.find('PeopleList').props().people.error).toBeTruthy();
+    expect(mountErrorWrapper.find('PeopleList').props().people.error.networkError).toBe(error);
   });
 
   it('should render an error screen on failed querying roles', async () => {
@@ -115,7 +132,6 @@ describe('PeopleList Component', () => {
       </MockedProvider>
     );
     const mountErrorWrapper = mount(errorWrapper);
-
     // check whether there is no error during when a loading
     expect(mountErrorWrapper.find('PeopleList').props().roles.error).toBe(undefined);
     await new Promise(resolve => setTimeout(resolve));
@@ -181,28 +197,73 @@ describe('PeopleList Component', () => {
     await new Promise(resolve => setTimeout(resolve));
     mountResolveWrapper.update();
     expect(mountResolveWrapper.find('PeopleList')).toHaveLength(1);
-    expect(mountResolveWrapper.find('PeopleList').prop('data').users.users.length).toEqual(allPeople.data.users.users.length);
+    expect(mountResolveWrapper.find('PeopleList').prop('people').users.users.length).toEqual(allPeople.data.users.users.length);
     expect(mountResolveWrapper.find('PeopleList').prop('locations').allLocations.length).toEqual(allLocations.data.allLocations.length);
     expect(mountResolveWrapper.find('PeopleList').prop('roles').roles.length).toEqual(allRoles.data.roles.length);
   });
-  it('should handle the handleData function', () => {
-    const props = {
-      data: {
-        users: {
-          users: [],
-          pages: 1,
-        },
-        fetchMore: jest.fn(),
-      },
-      loading: false,
-      error: {},
-      locations: {},
-      roles: {
-        loading: {},
-      },
-      editRole: jest.fn(),
-    };
-    const wrapperCode = shallow(<PeopleList {...props} />);
-    expect(wrapperCode.instance().handleData(5, 1));
+
+  it('should have the sort component', async () => {
+    await new Promise(resolve => setTimeout(resolve));
+    mountWrapper.update();
+
+    expect(mountWrapper.find('Sort').length).toEqual(1);
+    expect(mountWrapper.find('Sort Dropdown').length).toEqual(1);
+  });
+
+  it('should display options using the dropdown menu component', () => {
+    mountWrapper.find('Sort Dropdown .dropdown-caret button').simulate('click');
+    expect(mountWrapper.find('.dropdown-menu').length).toEqual(1);
+    expect(mountWrapper.find('.dropdown-menu span').length).toEqual(2);
+    expect(mountWrapper.find('.dropdown-menu span').at(1).text()).toEqual('access');
+    expect(mountWrapper.find('.dropdown-menu span').at(0).text()).toEqual('location');
+  });
+
+  it('should display sub-options within the main option when the option is clicked', () => {
+    expect(mountWrapper.find('.dropdown-menu span').at(0).hasClass('filter-options')).toBe(true);
+    mountWrapper.find('.dropdown-menu span').at(0).simulate('click');
+    expect(mountWrapper.find('.dropdown-menu span').at(0).hasClass('filter-options__disable')).toBe(true);
+    expect(mountWrapper.find('.filter-options__children-list').length).toEqual(3);
+    expect(mountWrapper.find('.filter-options__children-list').at(0).text()).toEqual('Kampala');
+    expect(mountWrapper.find('.filter-options__children-list').at(1).text()).toEqual('Nairobi');
+    expect(mountWrapper.find('.filter-options__children-list').at(2).text()).toEqual('Lagos');
+  });
+
+  it('should display options using the dropdown menu component', () => {
+    expect(mountWrapper.find('.filter-options').length).toEqual(1);
+    mountWrapper.find('.filter-options').simulate('click');
+    expect(mountWrapper.find('.dropdown-menu span').at(1).hasClass('filter-options__disable')).toBe(true);
+    expect(mountWrapper.find('.filter-options__children-list').length).toEqual(2);
+    expect(mountWrapper.find('.filter-options__children-list').at(0).text()).toEqual('Default User');
+    expect(mountWrapper.find('.filter-options__children-list').at(1).text()).toEqual('Admin');
+  });
+
+  it('should call sortPeople when any of the role sub-options is clicked', () => {
+    const peopleWrapper = mountWrapper.find('PeopleList');
+    const sortPeople = jest.spyOn(peopleWrapper.instance(), 'sortPeople');
+    const fetchPeople = jest.spyOn(peopleWrapper.instance(), 'fetchPeople');
+
+    peopleWrapper.find('.dropdown-caret button').simulate('click');
+    peopleWrapper.find('.dropdown-menu span').at(1).simulate('click');
+    peopleWrapper.find('.filter-options__children-list').at(1).simulate('click');
+
+    expect(peopleWrapper.instance().state.optionName).toEqual('access');
+    expect(peopleWrapper.instance().state.id).toEqual('2');
+    expect(peopleWrapper.instance().state.hideDropdownMenu).toBe(true);
+    expect(sortPeople).toHaveBeenCalledWith('access', '2');
+    expect(fetchPeople).toHaveBeenCalledWith(5, 1, 'access', '2');
+
+    sortPeople.mockRestore();
+    fetchPeople.mockRestore();
+  });
+
+  it(`should use value of optionName in state when fetchPeople is called without
+      its argument is provided`, () => {
+    shallowWrapper.instance().fetchPeople(1, 1);
+    expect(initProps.people.fetchMore).toHaveBeenCalled();
+  });
+
+  it('should use value of optionName provided when fetchPeople is called', () => {
+    shallowWrapper.instance().fetchPeople(1, 1, 'location', '2');
+    expect(initProps.people.fetchMore).toHaveBeenCalledTimes(2);
   });
 });

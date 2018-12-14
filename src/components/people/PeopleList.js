@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { graphql, compose } from 'react-apollo';
-import { IconMenu, MenuItem, MenuDivider } from 'react-toolbox/lib/menu';
 import PropTypes from 'prop-types';
 import '../../assets/styles/peopleList.scss';
 import ColGroup from '../helpers/ColGroup';
@@ -13,50 +12,81 @@ import { GET_PEOPLE_QUERY, GET_ROLES_QUERY } from '../../graphql/queries/People'
 import { formatPeopleData } from '../../graphql/mappers/People';
 import MenuTitle from '../MenuTitle';
 import Spinner from '../commons/Spinner';
+import Sort from '../commons/Sort';
 
-const locationMenuCaret = () => (
-  <div className="sort-by-caret" />
-);
 
 const handleErrorMessage = (...errors) => {
   const errorMessage = errors.find(e => e !== undefined).message;
   return errorMessage;
 };
 
-export class PeopleList extends React.Component {
+export class PeopleList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      users: { ...props.data.users },
+      users: { ...props.people.users },
+      hideDropdownMenu: false,
+      optionName: null,
+      id: '',
     };
   }
 
   componentWillReceiveProps(props) {
-    const { users } = props.data;
+    const { users } = props.people;
     this.setState({
       users,
+      hideDropdownMenu: false,
     });
   }
 
-  handleData = (perPage, page) => {
-    /* istanbul ignore next */
-    /* Reasoning: find explicit way of testing configuration options */
-    this.props.data.fetchMore({
+  /**
+   * It initiates the call to fetch users and updates the state
+   *
+   * @param {number} perPage
+   * @param {number} page
+   * @param {string} optionName
+   * @param {number} id
+   *
+   * @returns {void}
+   */
+  fetchPeople = (perPage, page, optionName = this.state.optionName, id = this.state.id) => (
+
+    this.props.people.fetchMore({
       variables: {
         page,
         perPage,
+        locationId: optionName === 'location' ? id : 0,
+        roleId: optionName === 'access' ? id : 0,
       },
-      updateQuery: (prev, { fetchMoreResult }) => {
+      updateQuery: /* istanbul ignore next */ (prev, { fetchMoreResult }) => {
         this.setState({
           users: fetchMoreResult.users,
+          hideDropdownMenu: false,
         });
       },
+    })
+  )
+
+  /**
+   * It sets state and calls fetchPeople
+   *
+   * @param {string} optionName
+   * @param {number} id
+   *
+   * @returns {Function}
+   */
+  sortPeople = (optionName, id) => () => {
+    this.setState({
+      id,
+      optionName,
+      hideDropdownMenu: true,
     });
-  }
+    this.fetchPeople(5, 1, optionName, id);
+  };
 
   render() {
     const { editRole } = this.props;
-    const { loading, error } = this.props.data;
+    const { loading, error } = this.props.people;
     const { users } = this.state;
     const {
       allLocations,
@@ -78,34 +108,27 @@ export class PeopleList extends React.Component {
         <div className="settings-people-list">
           <div className="action-menu">
             <MenuTitle title="People" />
-            <span className="sort-by">
-          Sort by: <span className="location">Location</span>
-              <IconMenu position="topRight" className="people-sort-dropdown" icon={locationMenuCaret()}>
-                <MenuItem caption="Location" disabled />
-                <MenuDivider />
-                <MenuItem className="profile-menu" caption="All" />
-                {
-                allLocations.map(location => (
-                  <MenuItem className="profile-menu" key={location.id} caption={location.name} />
-              ))
-            }
-              </IconMenu>
-            </span>
+            <Sort
+              sortOptions={{ location: allLocations, access: roles }}
+              fetchSortedData={this.sortPeople}
+              hideDropdownMenu={this.state.hideDropdownMenu}
+              withChildren
+            />
           </div>
           <table>
             <ColGroup />
             <TableHead titles={['Name', 'Location', 'Access Level', 'Action']} />
             <tbody>
               {
-            users.users.map(person => (
-              <People
-                people={formatPeopleData(person)}
-                allRoles={roles}
-                key={person.id}
-                editRole={editRole}
-              />
-            ))
-          }
+                this.props.people.users && users.users.map(person => (
+                  <People
+                    people={formatPeopleData(person)}
+                    allRoles={roles}
+                    key={person.id}
+                    editRole={editRole}
+                  />
+                ))
+              }
             </tbody>
           </table>
         </div>
@@ -113,7 +136,7 @@ export class PeopleList extends React.Component {
           totalPages={users.pages}
           hasNext={users.hasNext}
           hasPrevious={users.hasPrevious}
-          handleData={this.handleData}
+          handleData={this.fetchPeople}
         />
       </div>
     );
@@ -121,7 +144,7 @@ export class PeopleList extends React.Component {
 }
 
 PeopleList.propTypes = {
-  data: PropTypes.shape({
+  people: PropTypes.shape({
     users: PropTypes.shape({
       users: PropTypes.array,
       pages: PropTypes.number,
@@ -149,12 +172,15 @@ PeopleList.propTypes = {
 
 export default compose(
   graphql(GET_PEOPLE_QUERY, {
+    name: 'people',
     options: () => ({
       /* istanbul ignore next */
       /* Reasoning: no explicit way of testing configuration options */
       variables: {
         page: 1,
         perPage: 5,
+        locationId: 0,
+        roleId: 0,
       },
     }),
   }),

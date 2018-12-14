@@ -1,8 +1,8 @@
 import gql from 'graphql-tag';
 
 export const GET_PEOPLE_QUERY = gql`
-query allUsers ($page: Int!, $perPage: Int!) {
-  users(page: $page , perPage: $perPage){
+query allUsers ($page: Int!, $perPage: Int!, $locationId: Int, $roleId: Int) {
+  users(page: $page , perPage: $perPage, locationId: $locationId, roleId: $roleId){
     users{
       email
       name

@@ -1,0 +1,61 @@
+@import './variables.scss';
+
+.filter-options-container {
+  display: inline-block;
+  margin-top: 15px;
+}
+
+.filter-options {
+  cursor: pointer;
+  display: block;
+  padding: 5px 10px;
+  text-transform: capitalize;
+
+  &__children {
+    margin: 7px 0 -15px 0;
+    border-top: 1px solid map-get($white, 100);
+  }
+
+  &__children-list {
+    padding: 5px 10px;
+    font-size: 14px;
+    display: block;
+    color: map-get($color-palette, primary);
+    cursor: pointer;
+  }
+
+  &__children-list:hover {
+    background: map-get($white, 100);
+  }
+
+  &__disable {
+    color: map-get($white, 400);
+    padding: 0 10px;
+  }
+}
+
+.filter-options:hover {
+  background: map-get($white, 100);
+}
+
+.container-inner {
+  display: flex;
+
+  span {
+    color: $default-header-color;
+  }
+}
+
+.dropdown-caret {
+  margin-top: -6px;
+}
+
+.dropdown-menu {
+  margin-top: 30px;
+}
+
+.dropdown-caret {
+  button {
+    font-size: 26px;
+  }
+}

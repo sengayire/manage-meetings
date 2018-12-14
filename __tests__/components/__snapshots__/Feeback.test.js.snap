@@ -276,24 +276,23 @@ exports[`RoomFeeback Component should render properly 1`] = `
                 />
               </td>
               <td>
-                <Slider
+                <CheckboxSlide
                   checked={true}
                 >
                   <label
                     className="switch"
-                    htmlFor="slider"
+                    htmlFor="CheckboxSlide"
                   >
                     <input
                       checked={true}
                       className="checkbox"
-                      onChange={[Function]}
                       type="checkbox"
                     />
                     <span
-                      className="checked slider round"
+                      className="checked CheckboxSlide round"
                     />
                   </label>
-                </Slider>
+                </CheckboxSlide>
               </td>
             </tr>
             <tr
@@ -325,24 +324,23 @@ exports[`RoomFeeback Component should render properly 1`] = `
                 />
               </td>
               <td>
-                <Slider
+                <CheckboxSlide
                   checked={false}
                 >
                   <label
                     className="switch"
-                    htmlFor="slider"
+                    htmlFor="CheckboxSlide"
                   >
                     <input
                       checked={false}
                       className="checkbox"
-                      onChange={[Function]}
                       type="checkbox"
                     />
                     <span
-                      className="false slider round"
+                      className="false CheckboxSlide round"
                     />
                   </label>
-                </Slider>
+                </CheckboxSlide>
               </td>
             </tr>
             <tr
@@ -374,24 +372,23 @@ exports[`RoomFeeback Component should render properly 1`] = `
                 />
               </td>
               <td>
-                <Slider
+                <CheckboxSlide
                   checked={true}
                 >
                   <label
                     className="switch"
-                    htmlFor="slider"
+                    htmlFor="CheckboxSlide"
                   >
                     <input
                       checked={true}
                       className="checkbox"
-                      onChange={[Function]}
                       type="checkbox"
                     />
                     <span
-                      className="checked slider round"
+                      className="checked CheckboxSlide round"
                     />
                   </label>
-                </Slider>
+                </CheckboxSlide>
               </td>
             </tr>
           </Feedback>
