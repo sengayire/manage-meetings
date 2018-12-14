@@ -5,7 +5,7 @@ import { IconMenu } from 'react-toolbox/lib/menu';
 import { Input, SelectInput as Select } from '../commons';
 import '../../assets/styles/filterbutton.scss';
 import { GET_ROOMS_QUERY, GET_LOCATIONS_QUERY } from '../../graphql/queries/Rooms';
-import { GET_OFFICES } from '../../graphql/queries/Offices';
+import { GET_ALL_OFFICES } from '../../graphql/queries/Offices';
 
 export class FilterButton extends Component {
   // #region PropTypes
@@ -209,5 +209,5 @@ export default compose(
     }),
   }),
   graphql(GET_LOCATIONS_QUERY, { name: 'locations' }),
-  graphql(GET_OFFICES, { name: 'offices' }),
+  graphql(GET_ALL_OFFICES, { name: 'offices' }),
 )(FilterButton);
