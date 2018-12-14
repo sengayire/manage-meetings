@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import fileDownload from 'js-file-download';
+import toastr from 'toastr';
+import html2canvas from 'html2canvas';
+import jsPDF from 'jspdf';
 import { Button } from 'react-toolbox/lib/button';
 import moment from 'moment';
 import PropTypes from 'prop-types';
 import { graphql } from 'react-apollo';
-import toastr from 'toastr';
 import download from 'downloadjs';
-import html2canvas from 'html2canvas';
 import '../../assets/styles/custom.scss';
 import '../../assets/styles/topmenu.scss';
 import '../../../src/assets/styles/analyticsPage.scss';
@@ -19,6 +20,7 @@ import IconNotifications from '../../assets/images/download_24px.svg';
 import { decodeTokenAndGetUserData } from '../../utils/Cookie';
 import { GET_USER_QUERY } from '../../graphql/queries/People';
 import getDataAsJPEG from '../../json_requests/getJPEGData';
+import downloadAnalyticsData from '../../json_requests/getPdfDownload';
 
 export class AnalyticsActivity extends Component {
   state = {
@@ -98,6 +100,31 @@ export class AnalyticsActivity extends Component {
       menuOpen: !prevState.menuOpen,
     }));
   };
+  
+  downloadPdf = () => {
+    const { startDate, endDate } = this.state;
+    const { toggleMenu } = this;
+    notification(toastr, 'success', 'Your download will start shortly')();
+    toggleMenu();
+    return (downloadAnalyticsData(startDate, endDate, 'html').then((response) => {
+      const { data } = response.data;
+      const div = document.createElement('div');
+      div.innerHTML = data;
+      document.body.appendChild(div);
+      html2canvas(div).then((canvas) => { 
+        const image = canvas.toDataURL('image/png');
+        div.remove();
+        // eslint-disable-next-line
+        const pdf = new jsPDF('p', 'pt', 'a4');
+        pdf.addImage(image, 'PNG', 20, 20, 552, 752);
+        
+        pdf.save('analytics.pdf');
+      });
+      // eslint-disable-next-line no-console
+      }).catch(error => console.log(error))
+      );
+    }
+
   render() {
     const {
       view, calenderOpen, startDate, endDate,
@@ -203,7 +230,7 @@ export class AnalyticsActivity extends Component {
               <div className={this.state.menuOpen ? 'dropdown-content' : 'dropdown-content-null'}>
                 {/* eslint-disable */}
                 <span className="download-dropdown-label" >Export options </span>
-                <span >PDF</span>
+                <span id="download" onClick ={this.downloadPdf}>PDF</span>
                 <span onClick={this.fetchDataAsJPEG}>JPEG</span>
                 <span onClick={this.fetchCSVData} >CSV</span>
               </div>
