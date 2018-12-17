@@ -1,3 +1,5 @@
+@import './variables';
+
 .settings-resource {
   width: 85%;
 
@@ -60,7 +62,7 @@
         color: #333e44;
         font-size: 95%;
         height: 52px;
-        font-family: 'DINPro-Light';
+        font-family: $font-light;
 
         #modal-button {
           margin-left: -2px;
@@ -114,7 +116,7 @@ button {
   }
 
   p {
-    font-family: DINPro-light;
+    font-family: $font-light;
     font-size: 108%;
     color: #6f6f6f;
     -webkit-margin-before: 1px;

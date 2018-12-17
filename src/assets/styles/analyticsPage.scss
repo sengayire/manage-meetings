@@ -1,8 +1,9 @@
+@import './variables';
 
   .analytics-cover {
     display: flex;
     flex-direction: row;
-    font-family: 'DINPro';
+    font-family: $font;
     justify-content: space-between !important;
     margin-top: 49.5px;
     top: 194px;
@@ -36,7 +37,6 @@
         margin: 20px;
         height: 41px;
         border-radius: 4px;
-        font-family: 'DINPro';
         border: 1px solid white;
         padding-top: 8px;
         background-color: #fff;
@@ -52,7 +52,7 @@
     .theme--flat--1jWAQA6f{
         background: white;
         margin: 20px;
-        font-family: 'DINPro';
+        font-family: $font;
     }
 
     .overViewBtn{

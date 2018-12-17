@@ -1,8 +1,5 @@
-@font-face {
-  font-family: 'DINPro-Light';
-  font-style: normal;
-  src: url('../fonts/DINPro-Light.otf');
-}
+@import './variables';
+
 .settings-people {
   width: 85%;
 
@@ -14,7 +11,7 @@
 
       .sort-by {
         color: #999999;
-        font-family: 'DINPro-Light';
+        font-family: $font-light;
         font-size: 18px;
         line-height: 23px;
         display: inline;
@@ -23,7 +20,6 @@
           height: 23px;
           width: 70px;
           color: #3359db;
-          font-family: 'DINPro';
           font-size: 18px;
           font-weight: 700;
           line-height: 23px;
@@ -111,7 +107,7 @@
         background: #ffffff;
         color: #333e44;
         font-size: 95%;
-        font-family: 'DINPro-Light';
+        font-family: $font-light;
         padding: 15px 40px;
 
         .access-by-caret {

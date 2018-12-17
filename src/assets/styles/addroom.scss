@@ -1,6 +1,8 @@
+@import './variables';
+
 .add-room-modal {
     $primary-color:  #3359db;
-    font-family: 'DINPro-Light';
+    font-family: $font-light;
     padding: 3%;
     padding-right: 0;
     border: none !important;

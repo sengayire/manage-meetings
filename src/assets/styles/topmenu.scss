@@ -1,9 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=IBM+Plex+Sans+Condensed");
-
-@font-face {
-  font-family: 'DINPro-Light';
-  src: url(../fonts/DINPro-Light.otf);
-}
+@import './variables';
 
 .top-menu::after {
   content: "";
@@ -76,11 +71,12 @@
 
 .logo-text h1 {
   color: #3458dc;
-  font-family: "IBM Plex Sans Condensed", sans-serif;
+  font-family: $font, sans-serif;
   letter-spacing: 2px;
   vertical-align: middle;
   margin: 0;
   font-size: 120%;
+  padding-top: 3%;
 }
 
 .search-box {
@@ -123,10 +119,14 @@
 }
 
 .username {
-  font-family: 'DINPro-Light';
+  font-family: $font-light;
   font-size: 105%;
   color: #8d8d8d;
   padding-left: 0.5em;
+}
+
+.profile-name {
+  margin-top: 0.5rem;
 }
 
 .profile-dropdown {
@@ -172,7 +172,6 @@
 
       span {
         font-size: 18px;
-        font-family: DINPro;
         line-height: 20px;
         padding: 10px 0;
       }

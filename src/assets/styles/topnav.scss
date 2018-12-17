@@ -1,4 +1,5 @@
-@import url("https://fonts.googleapis.com/css?family=PT+Sans:700");
+@import './variables';
+
 .top-nav {
   min-width: 600px;
 }
@@ -17,7 +18,7 @@
   height: 100%;
   margin: 0 1em !important;
   margin-top: 1.01px !important;
-  font-family: "PT Sans Caption", sans-serif;
+  font-family: $font-regular, sans-serif;
   line-height: 60px;
   height: 60px;
 }

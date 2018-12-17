@@ -1,3 +1,5 @@
+@import './variables';
+
 .Selectable{
     line-height: 15px;
 }
@@ -9,7 +11,6 @@
   .Selectable .DayPicker-Day {
     height: 17px;
     width: 7px;
-    font-family: "DIN Pro";
     font-size: 13px;
     line-height: 17px;
     text-align: center;
@@ -49,7 +50,6 @@
         padding: 6px 40px 14px 10px;
         align-content: right;
         line-height: 14px;font-weight: 500;
-        font-family: "DIN Pro"
       }
       
       &__item {
@@ -58,7 +58,6 @@
         color: #333E44;
         padding-top: 14px;
         border-radius: 2px;
-        font-family: "DIN Pro";
         font-size: 13px;
         font-weight: 300;
         line-height: 14px;
@@ -87,7 +86,6 @@
       height: 15px;
       width: 31px;
       color: #FFFFFF;
-      font-family: "DIN Pro";
       font-size: 12px;
       font-weight: 500;
       line-height: 15px;

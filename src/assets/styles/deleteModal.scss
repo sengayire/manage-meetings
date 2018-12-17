@@ -1,14 +1,10 @@
-@font-face {
-  font-family: 'SFNSDisplay';
-  font-style: normal;
-  src: url('../fonts/SFNSDisplay.ttf');
-}
+@import './variables';
 
 td {
   #modal-button {
     border: none;
     color: #333e44;
-    font-family: 'DINPro-Light';
+    font-family: $font-light;
     cursor: pointer;
     margin-left: 6px;
   }
@@ -28,7 +24,7 @@ td {
 }
 
 #confirm-msg {
-  font-family: 'DINPro-Light';
+  font-family: $font-light;
   font-size: 18px;
   color: #6D6D6D;
   line-height: 21px;
@@ -50,7 +46,7 @@ td {
     width: 130px;
     border: 1px solid #3359DB;
     border-radius: 0;
-    font-family: 'DINPro-Regular';
+    font-family: $font-regular;
   }
 
   #delete-btn {
