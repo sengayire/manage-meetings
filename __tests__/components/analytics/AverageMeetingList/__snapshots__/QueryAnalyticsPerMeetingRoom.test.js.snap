@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`QueryAnalyticsPerMeetingRoom component renders correctly 1`] = `
+Array [
+  <tr
+    key="Malabo"
+  />,
+]
+`;

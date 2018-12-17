@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`QueryAnalyticsLoading component renders correctly 1`] = `
+<div
+  className="average-meeting"
+>
+  <div
+    className="average-meeting-control"
+  >
+    <h4
+      className="header-title"
+    >
+      Average time spent/Meeting Room
+    </h4>
+  </div>
+  <div
+    className="average-meeting-list"
+  >
+    <table>
+      <TableHead
+        titles={
+          Array [
+            "Room",
+            "No. of meetings",
+            "Average Meeting Duration",
+          ]
+        }
+      />
+      <tbody>
+        <tr>
+          <th
+            colSpan="3"
+          >
+            <ThemedProgressBar
+              buffer={0}
+              className=""
+              composeTheme="deeply"
+              mapThemrProps={[Function]}
+              max={100}
+              min={0}
+              mode="indeterminate"
+              multicolor={false}
+              type="linear"
+              value={0}
+            />
+          </th>
+        </tr>
+      </tbody>
+    </table>
+    <br />
+  </div>
+</div>
+`;

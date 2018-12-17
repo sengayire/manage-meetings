@@ -85,7 +85,7 @@ describe('AnalyticsNav Component', () => {
 
   it('should have a div', () => {
     const div = wrapper.find('div');
-    expect(div).toHaveLength(53);
+    expect(div).toHaveLength(50);
   });
 
   it('should have a calendar when calendar button is clicked', () => {
@@ -101,7 +101,7 @@ describe('AnalyticsNav Component', () => {
 
   it('should have a button', () => {
     const button = wrapper.find('button');
-    expect(button).toHaveLength(7);
+    expect(button).toHaveLength(5);
   });
 
   it('should call showOverview', () => {
