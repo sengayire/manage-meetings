@@ -16,5 +16,4 @@ const GET_FLOORS_QUERY = gql`
     }
   }
 `;
-
 export { GET_FLOORS_QUERY as default };

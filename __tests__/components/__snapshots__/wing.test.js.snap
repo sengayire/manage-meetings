@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests for SettingWings renders well without crashing 1`] = `
+<tr>
+  <td>
+    epic wing
+  </td>
+  <td>
+    block A
+  </td>
+  <td>
+    second floor
+  </td>
+  <td>
+    <Apollo(EditWing)
+      id="edit-modal"
+      wingName="epic wing"
+    />
+     
+    <Apollo(Apollo(DeleteWing))
+      id="delete-modal"
+      wingName="epic wing"
+    />
+  </td>
+</tr>
+`;
+
+exports[`Tests for SettingWings renders without crashing 1`] = `
+<tr>
+  <td>
+    epic wing
+  </td>
+  <td>
+    block A
+  </td>
+  <td>
+    second floor
+  </td>
+  <td>
+    <Apollo(EditWing)
+      id="edit-modal"
+      wingName="epic wing"
+    />
+     
+    <Apollo(Apollo(DeleteWing))
+      id="delete-modal"
+      wingName="epic wing"
+    />
+  </td>
+</tr>
+`;

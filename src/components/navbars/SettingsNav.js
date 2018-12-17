@@ -15,6 +15,9 @@ const SettingsNav = () => (
         <NavLink to={ROUTES.floors}>Floors</NavLink>
       </li>
       <li>
+        <NavLink to={ROUTES.settingsWings}>Wings</NavLink>
+      </li>
+      <li>
         <NavLink to={ROUTES.settingsRooms}>Rooms</NavLink>
       </li>
       <li>

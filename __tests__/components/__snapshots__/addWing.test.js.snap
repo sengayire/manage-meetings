@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddWing Component renders the snapshot 1`] = `
+<MrmModal
+  buttonText="Add Wing"
+  className="add-office-modal"
+  closeModal={false}
+  handleCloseRequest={[Function]}
+  modalButton="add-button"
+  modalButtonClassName="button"
+  title="ADD WING"
+>
+  <form
+    className="modal-form"
+    onSubmit={[Function]}
+  >
+    <Input
+      controlsClass=""
+      id="wingName"
+      inputClass="mrm-input default-input"
+      labelClass="input1"
+      labelName="Wing Name"
+      name="name"
+      onChange={[Function]}
+      placeholder="Enter wing name"
+      type="text"
+      value=""
+    />
+    <SelectInput
+      id="floorId"
+      isValue={false}
+      labelText="Select floor"
+      name="floorId"
+      onChange={[Function]}
+      options={Array []}
+      placeholder="Select floor"
+      placeholderValue=""
+      required={false}
+      selectInputClassName="default-select"
+      value=""
+      wrapperClassName="input-wrapper"
+    />
+    <ActionButtons
+      actionButtonClassName="action-button"
+      actionButtonText="ADD WING"
+      cancelButtonClassName="cancel-button"
+      cancelButtonText="CANCEL"
+      onClickCancel={[Function]}
+      withCancel={true}
+    />
+  </form>
+</MrmModal>
+`;

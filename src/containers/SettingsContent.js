@@ -1,6 +1,5 @@
 import React from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
-
 import SettingsNav from '../components/navbars/SettingsNav';
 import OfficeList from '../components/OfficeList'; //eslint-disable-line
 import ResourceList from '../components/ResourceList'; //eslint-disable-line
@@ -11,6 +10,8 @@ import RoomsList from '../components/RoomsList'; //eslint-disable-line
 import PeopleList from '../components/people/PeopleList'; //eslint-disable-line
 import DeviceList from '../components/DeviceList';
 import FloorList from '../components/FloorList'; //eslint-disable-line
+import WingList from '../components/wingList'; //eslint-disable-line
+
 // replace the PlaceHolder component with appropriate component to be rendered
 const SettingsContent = () => (
   <div className="settings-vertical">
@@ -28,6 +29,8 @@ const SettingsContent = () => (
           path={ROUTES.settingsIntegrations}
           component={PlaceHolder}
         />
+        <Route exact path={ROUTES.settingsIntegrations} component={PlaceHolder} />
+        <Route exact path={ROUTES.settingsWings} component={WingList} />
         <Redirect from="/settings" to="/settings/offices" />
       </Switch>
     </div>
