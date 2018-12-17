@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { Fragment } from 'react';
 import Checkins from '../../src/components/analytics/checkins';
+import { getTodaysDate } from '../utils/Utilities';
 import '../assets/styles/custom.scss';
 import '../assets/styles/topmenu.scss';
 import AverageMeetingList from '../components/analytics/AverageMeetingList';
@@ -9,7 +10,7 @@ import AveragePieChartList from '../components/analytics/averagePieChart/Average
 
 const AnalyticsOverview = ({ dateValue }) => (
   <Fragment>
-    <AveragePieChartList />
+    <AveragePieChartList dateValue={dateValue} />
     <ComposedBookedRooms dateValue={dateValue} />
     <Checkins />
     <AverageMeetingList dateValue={dateValue} />
@@ -24,7 +25,10 @@ AnalyticsOverview.propTypes = {
 };
 
 AnalyticsOverview.defaultProps = {
-  dateValue: {},
+  dateValue: {
+    startDate: `"${getTodaysDate()}"`,
+    endDate: `"${getTodaysDate()}"`,
+  },
 };
 
 export default AnalyticsOverview;

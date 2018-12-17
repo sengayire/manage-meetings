@@ -228,6 +228,145 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
               "email": "sammy.muriuki@andela.com",
             },
           },
+          "AnalyticsBookingsCount" => Object {
+            "query": Object {
+              "definitions": Array [
+                Object {
+                  "directives": Array [],
+                  "kind": "OperationDefinition",
+                  "name": Object {
+                    "kind": "Name",
+                    "value": "AnalyticsBookingsCount",
+                  },
+                  "operation": "query",
+                  "selectionSet": Object {
+                    "kind": "SelectionSet",
+                    "selections": Array [
+                      Object {
+                        "alias": undefined,
+                        "arguments": Array [
+                          Object {
+                            "kind": "Argument",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "startDate",
+                            },
+                            "value": Object {
+                              "kind": "Variable",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "startDate",
+                              },
+                            },
+                          },
+                          Object {
+                            "kind": "Argument",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "endDate",
+                            },
+                            "value": Object {
+                              "kind": "Variable",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "endDate",
+                              },
+                            },
+                          },
+                        ],
+                        "directives": Array [],
+                        "kind": "Field",
+                        "name": Object {
+                          "kind": "Name",
+                          "value": "bookingsAnalyticsCount",
+                        },
+                        "selectionSet": Object {
+                          "kind": "SelectionSet",
+                          "selections": Array [
+                            Object {
+                              "alias": undefined,
+                              "arguments": Array [],
+                              "directives": Array [],
+                              "kind": "Field",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "period",
+                              },
+                              "selectionSet": undefined,
+                            },
+                            Object {
+                              "alias": undefined,
+                              "arguments": Array [],
+                              "directives": Array [],
+                              "kind": "Field",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "bookings",
+                              },
+                              "selectionSet": undefined,
+                            },
+                          ],
+                        },
+                      },
+                    ],
+                  },
+                  "variableDefinitions": Array [
+                    Object {
+                      "defaultValue": undefined,
+                      "kind": "VariableDefinition",
+                      "type": Object {
+                        "kind": "NonNullType",
+                        "type": Object {
+                          "kind": "NamedType",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "String",
+                          },
+                        },
+                      },
+                      "variable": Object {
+                        "kind": "Variable",
+                        "name": Object {
+                          "kind": "Name",
+                          "value": "startDate",
+                        },
+                      },
+                    },
+                    Object {
+                      "defaultValue": undefined,
+                      "kind": "VariableDefinition",
+                      "type": Object {
+                        "kind": "NonNullType",
+                        "type": Object {
+                          "kind": "NamedType",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "String",
+                          },
+                        },
+                      },
+                      "variable": Object {
+                        "kind": "Variable",
+                        "name": Object {
+                          "kind": "Name",
+                          "value": "endDate",
+                        },
+                      },
+                    },
+                  ],
+                },
+              ],
+              "kind": "Document",
+              "loc": Object {
+                "end": 181,
+                "start": 0,
+              },
+            },
+            "variables": Object {
+              "endDate": "Dec 17 2018",
+              "startDate": "Dec 17 2018",
+            },
+          },
           "durationOfMeetingsPerMeetingRoom" => Object {
             "query": Object {
               "definitions": Array [
@@ -518,7 +657,7 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                     "kind": "OperationDefinition",
                     "name": Object {
                       "kind": "Name",
-                      "value": "durationOfMeetingsPerMeetingRoom",
+                      "value": "AnalyticsBookingsCount",
                     },
                     "operation": "query",
                     "selectionSet": Object {
@@ -588,7 +727,7 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                           "kind": "Field",
                           "name": Object {
                             "kind": "Name",
-                            "value": "analyticsForMeetingsDurations",
+                            "value": "bookingsAnalyticsCount",
                           },
                           "selectionSet": Object {
                             "kind": "SelectionSet",
@@ -635,44 +774,18 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                                   "kind": "Name",
                                   "value": "MeetingsDurationaAnalytics",
                                 },
-                                "selectionSet": Object {
-                                  "kind": "SelectionSet",
-                                  "selections": Array [
-                                    Object {
-                                      "alias": undefined,
-                                      "arguments": Array [],
-                                      "directives": Array [],
-                                      "kind": "Field",
-                                      "name": Object {
-                                        "kind": "Name",
-                                        "value": "roomName",
-                                      },
-                                      "selectionSet": undefined,
-                                    },
-                                    Object {
-                                      "alias": undefined,
-                                      "arguments": Array [],
-                                      "directives": Array [],
-                                      "kind": "Field",
-                                      "name": Object {
-                                        "kind": "Name",
-                                        "value": "count",
-                                      },
-                                      "selectionSet": undefined,
-                                    },
-                                    Object {
-                                      "alias": undefined,
-                                      "arguments": Array [],
-                                      "directives": Array [],
-                                      "kind": "Field",
-                                      "name": Object {
-                                        "kind": "Name",
-                                        "value": "totalDuration",
-                                      },
-                                      "selectionSet": undefined,
-                                    },
-                                  ],
+                                "selectionSet": undefined,
+                              },
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "bookings",
                                 },
+                                "selectionSet": undefined,
                               },
                             ],
                           },
@@ -771,6 +884,174 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                 "endDate": "Dec 17 2018",
                 "page": 1,
                 "perPage": 5,
+                "startDate": "Dec 17 2018",
+              },
+            },
+            Object {
+              "callback": [Function],
+              "optimistic": true,
+              "previousResult": [Function],
+              "query": Object {
+                "definitions": Array [
+                  Object {
+                    "directives": Array [],
+                    "kind": "OperationDefinition",
+                    "name": Object {
+                      "kind": "Name",
+                      "value": "durationOfMeetingsPerMeetingRoom",
+                    },
+                    "operation": "query",
+                    "selectionSet": Object {
+                      "kind": "SelectionSet",
+                      "selections": Array [
+                        Object {
+                          "alias": undefined,
+                          "arguments": Array [
+                            Object {
+                              "kind": "Argument",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "startDate",
+                              },
+                              "value": Object {
+                                "kind": "Variable",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "startDate",
+                                },
+                              },
+                            },
+                            Object {
+                              "kind": "Argument",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "endDate",
+                              },
+                              "value": Object {
+                                "kind": "Variable",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "endDate",
+                                },
+                              },
+                            },
+                          ],
+                          "directives": Array [],
+                          "kind": "Field",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "analyticsForMeetingsDurations",
+                          },
+                          "selectionSet": Object {
+                            "kind": "SelectionSet",
+                            "selections": Array [
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "MeetingsDurationaAnalytics",
+                                },
+                                "selectionSet": Object {
+                                  "kind": "SelectionSet",
+                                  "selections": Array [
+                                    Object {
+                                      "alias": undefined,
+                                      "arguments": Array [],
+                                      "directives": Array [],
+                                      "kind": "Field",
+                                      "name": Object {
+                                        "kind": "Name",
+                                        "value": "roomName",
+                                      },
+                                      "selectionSet": undefined,
+                                    },
+                                    Object {
+                                      "alias": undefined,
+                                      "arguments": Array [],
+                                      "directives": Array [],
+                                      "kind": "Field",
+                                      "name": Object {
+                                        "kind": "Name",
+                                        "value": "count",
+                                      },
+                                      "selectionSet": undefined,
+                                    },
+                                    Object {
+                                      "alias": undefined,
+                                      "arguments": Array [],
+                                      "directives": Array [],
+                                      "kind": "Field",
+                                      "name": Object {
+                                        "kind": "Name",
+                                        "value": "totalDuration",
+                                      },
+                                      "selectionSet": undefined,
+                                    },
+                                  ],
+                                },
+                              },
+                            ],
+                          },
+                        },
+                      ],
+                    },
+                    "variableDefinitions": Array [
+                      Object {
+                        "defaultValue": undefined,
+                        "kind": "VariableDefinition",
+                        "type": Object {
+                          "kind": "NonNullType",
+                          "type": Object {
+                            "kind": "NamedType",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "String",
+                            },
+                          },
+                        },
+                        "variable": Object {
+                          "kind": "Variable",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "startDate",
+                          },
+                        },
+                      },
+                      Object {
+                        "defaultValue": undefined,
+                        "kind": "VariableDefinition",
+                        "type": Object {
+                          "kind": "NonNullType",
+                          "type": Object {
+                            "kind": "NamedType",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "String",
+                            },
+                          },
+                        },
+                        "variable": Object {
+                          "kind": "Variable",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "endDate",
+                          },
+                        },
+                      },
+                    ],
+                  },
+                ],
+                "kind": "Document",
+                "loc": Object {
+                  "end": 279,
+                  "start": 0,
+                },
+              },
+              "variables": Object {
+                "endDate": "Dec 17 2018",
                 "startDate": "Dec 17 2018",
               },
             },
@@ -917,7 +1198,7 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                         "kind": "OperationDefinition",
                         "name": Object {
                           "kind": "Name",
-                          "value": "durationOfMeetingsPerMeetingRoom",
+                          "value": "AnalyticsBookingsCount",
                         },
                         "operation": "query",
                         "selectionSet": Object {
@@ -987,7 +1268,7 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                               "kind": "Field",
                               "name": Object {
                                 "kind": "Name",
-                                "value": "analyticsForMeetingsDurations",
+                                "value": "bookingsAnalyticsCount",
                               },
                               "selectionSet": Object {
                                 "kind": "SelectionSet",
@@ -1034,44 +1315,18 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                                       "kind": "Name",
                                       "value": "MeetingsDurationaAnalytics",
                                     },
-                                    "selectionSet": Object {
-                                      "kind": "SelectionSet",
-                                      "selections": Array [
-                                        Object {
-                                          "alias": undefined,
-                                          "arguments": Array [],
-                                          "directives": Array [],
-                                          "kind": "Field",
-                                          "name": Object {
-                                            "kind": "Name",
-                                            "value": "roomName",
-                                          },
-                                          "selectionSet": undefined,
-                                        },
-                                        Object {
-                                          "alias": undefined,
-                                          "arguments": Array [],
-                                          "directives": Array [],
-                                          "kind": "Field",
-                                          "name": Object {
-                                            "kind": "Name",
-                                            "value": "count",
-                                          },
-                                          "selectionSet": undefined,
-                                        },
-                                        Object {
-                                          "alias": undefined,
-                                          "arguments": Array [],
-                                          "directives": Array [],
-                                          "kind": "Field",
-                                          "name": Object {
-                                            "kind": "Name",
-                                            "value": "totalDuration",
-                                          },
-                                          "selectionSet": undefined,
-                                        },
-                                      ],
+                                    "selectionSet": undefined,
+                                  },
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "bookings",
                                     },
+                                    "selectionSet": undefined,
                                   },
                                 ],
                               },
@@ -1197,6 +1452,174 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                                   "kind": "Argument",
                                   "name": Object {
                                     "kind": "Name",
+                                    "value": "startDate",
+                                  },
+                                  "value": Object {
+                                    "kind": "Variable",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "startDate",
+                                    },
+                                  },
+                                },
+                                Object {
+                                  "kind": "Argument",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "endDate",
+                                  },
+                                  "value": Object {
+                                    "kind": "Variable",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "endDate",
+                                    },
+                                  },
+                                },
+                              ],
+                              "directives": Array [],
+                              "kind": "Field",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "analyticsForMeetingsDurations",
+                              },
+                              "selectionSet": Object {
+                                "kind": "SelectionSet",
+                                "selections": Array [
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "MeetingsDurationaAnalytics",
+                                    },
+                                    "selectionSet": Object {
+                                      "kind": "SelectionSet",
+                                      "selections": Array [
+                                        Object {
+                                          "alias": undefined,
+                                          "arguments": Array [],
+                                          "directives": Array [],
+                                          "kind": "Field",
+                                          "name": Object {
+                                            "kind": "Name",
+                                            "value": "roomName",
+                                          },
+                                          "selectionSet": undefined,
+                                        },
+                                        Object {
+                                          "alias": undefined,
+                                          "arguments": Array [],
+                                          "directives": Array [],
+                                          "kind": "Field",
+                                          "name": Object {
+                                            "kind": "Name",
+                                            "value": "count",
+                                          },
+                                          "selectionSet": undefined,
+                                        },
+                                        Object {
+                                          "alias": undefined,
+                                          "arguments": Array [],
+                                          "directives": Array [],
+                                          "kind": "Field",
+                                          "name": Object {
+                                            "kind": "Name",
+                                            "value": "totalDuration",
+                                          },
+                                          "selectionSet": undefined,
+                                        },
+                                      ],
+                                    },
+                                  },
+                                ],
+                              },
+                            },
+                          ],
+                        },
+                        "variableDefinitions": Array [
+                          Object {
+                            "defaultValue": undefined,
+                            "kind": "VariableDefinition",
+                            "type": Object {
+                              "kind": "NonNullType",
+                              "type": Object {
+                                "kind": "NamedType",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "String",
+                                },
+                              },
+                            },
+                            "variable": Object {
+                              "kind": "Variable",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "startDate",
+                              },
+                            },
+                          },
+                          Object {
+                            "defaultValue": undefined,
+                            "kind": "VariableDefinition",
+                            "type": Object {
+                              "kind": "NonNullType",
+                              "type": Object {
+                                "kind": "NamedType",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "String",
+                                },
+                              },
+                            },
+                            "variable": Object {
+                              "kind": "Variable",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "endDate",
+                              },
+                            },
+                          },
+                        ],
+                      },
+                    ],
+                    "kind": "Document",
+                    "loc": Object {
+                      "end": 279,
+                      "start": 0,
+                    },
+                  },
+                  "variables": Object {
+                    "endDate": "Dec 17 2018",
+                    "startDate": "Dec 17 2018",
+                  },
+                },
+                Object {
+                  "callback": [Function],
+                  "optimistic": true,
+                  "previousResult": [Function],
+                  "query": Object {
+                    "definitions": Array [
+                      Object {
+                        "directives": Array [],
+                        "kind": "OperationDefinition",
+                        "name": Object {
+                          "kind": "Name",
+                          "value": "user",
+                        },
+                        "operation": "query",
+                        "selectionSet": Object {
+                          "kind": "SelectionSet",
+                          "selections": Array [
+                            Object {
+                              "alias": undefined,
+                              "arguments": Array [
+                                Object {
+                                  "kind": "Argument",
+                                  "name": Object {
+                                    "kind": "Name",
                                     "value": "email",
                                   },
                                   "value": Object {
@@ -1286,16 +1709,20 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
             "request": [Function],
           },
           "fetchQueryPromises": Map {
-            "3" => Object {
-              "reject": [Function],
-              "resolve": [Function],
-            },
             "4" => Object {
               "reject": [Function],
               "resolve": [Function],
             },
+            "5" => Object {
+              "reject": [Function],
+              "resolve": [Function],
+            },
+            "6" => Object {
+              "reject": [Function],
+              "resolve": [Function],
+            },
           },
-          "idCounter": 5,
+          "idCounter": 7,
           "link": ApolloLink {
             "request": [Function],
           },
@@ -1313,7 +1740,7 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                     "kind": "OperationDefinition",
                     "name": Object {
                       "kind": "Name",
-                      "value": "durationOfMeetingsPerMeetingRoom",
+                      "value": "AnalyticsBookingsCount",
                     },
                     "operation": "query",
                     "selectionSet": Object {
@@ -1383,7 +1810,7 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                           "kind": "Field",
                           "name": Object {
                             "kind": "Name",
-                            "value": "analyticsForMeetingsDurations",
+                            "value": "bookingsAnalyticsCount",
                           },
                           "selectionSet": Object {
                             "kind": "SelectionSet",
@@ -1430,44 +1857,18 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                                   "kind": "Name",
                                   "value": "MeetingsDurationaAnalytics",
                                 },
-                                "selectionSet": Object {
-                                  "kind": "SelectionSet",
-                                  "selections": Array [
-                                    Object {
-                                      "alias": undefined,
-                                      "arguments": Array [],
-                                      "directives": Array [],
-                                      "kind": "Field",
-                                      "name": Object {
-                                        "kind": "Name",
-                                        "value": "roomName",
-                                      },
-                                      "selectionSet": undefined,
-                                    },
-                                    Object {
-                                      "alias": undefined,
-                                      "arguments": Array [],
-                                      "directives": Array [],
-                                      "kind": "Field",
-                                      "name": Object {
-                                        "kind": "Name",
-                                        "value": "count",
-                                      },
-                                      "selectionSet": undefined,
-                                    },
-                                    Object {
-                                      "alias": undefined,
-                                      "arguments": Array [],
-                                      "directives": Array [],
-                                      "kind": "Field",
-                                      "name": Object {
-                                        "kind": "Name",
-                                        "value": "totalDuration",
-                                      },
-                                      "selectionSet": undefined,
-                                    },
-                                  ],
+                                "selectionSet": undefined,
+                              },
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "bookings",
                                 },
+                                "selectionSet": undefined,
                               },
                             ],
                           },
@@ -1564,7 +1965,7 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
               },
               "invalidate": false,
               "invalidated": false,
-              "lastRequestId": 3,
+              "lastRequestId": 4,
               "listeners": Array [
                 [Function],
               ],
@@ -1593,7 +1994,7 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                       "displayName": "Apollo(AverageMeetingList)",
                     },
                   },
-                  "notifyOnNetworkStatusChange": false,
+                  "notifyOnNetworkStatusChange": true,
                   "query": Object {
                     "definitions": Array [
                       Object {
@@ -1601,7 +2002,7 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                         "kind": "OperationDefinition",
                         "name": Object {
                           "kind": "Name",
-                          "value": "durationOfMeetingsPerMeetingRoom",
+                          "value": "AnalyticsBookingsCount",
                         },
                         "operation": "query",
                         "selectionSet": Object {
@@ -1671,7 +2072,7 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                               "kind": "Field",
                               "name": Object {
                                 "kind": "Name",
-                                "value": "analyticsForMeetingsDurations",
+                                "value": "bookingsAnalyticsCount",
                               },
                               "selectionSet": Object {
                                 "kind": "SelectionSet",
@@ -1718,44 +2119,18 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                                       "kind": "Name",
                                       "value": "MeetingsDurationaAnalytics",
                                     },
-                                    "selectionSet": Object {
-                                      "kind": "SelectionSet",
-                                      "selections": Array [
-                                        Object {
-                                          "alias": undefined,
-                                          "arguments": Array [],
-                                          "directives": Array [],
-                                          "kind": "Field",
-                                          "name": Object {
-                                            "kind": "Name",
-                                            "value": "roomName",
-                                          },
-                                          "selectionSet": undefined,
-                                        },
-                                        Object {
-                                          "alias": undefined,
-                                          "arguments": Array [],
-                                          "directives": Array [],
-                                          "kind": "Field",
-                                          "name": Object {
-                                            "kind": "Name",
-                                            "value": "count",
-                                          },
-                                          "selectionSet": undefined,
-                                        },
-                                        Object {
-                                          "alias": undefined,
-                                          "arguments": Array [],
-                                          "directives": Array [],
-                                          "kind": "Field",
-                                          "name": Object {
-                                            "kind": "Name",
-                                            "value": "totalDuration",
-                                          },
-                                          "selectionSet": undefined,
-                                        },
-                                      ],
+                                    "selectionSet": undefined,
+                                  },
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "bookings",
                                     },
+                                    "selectionSet": undefined,
                                   },
                                 ],
                               },
@@ -1878,6 +2253,382 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
               },
               "subscriptions": Array [],
             },
+            "3" => Object {
+              "cancel": [Function],
+              "document": Object {
+                "definitions": Array [
+                  Object {
+                    "directives": Array [],
+                    "kind": "OperationDefinition",
+                    "name": Object {
+                      "kind": "Name",
+                      "value": "durationOfMeetingsPerMeetingRoom",
+                    },
+                    "operation": "query",
+                    "selectionSet": Object {
+                      "kind": "SelectionSet",
+                      "selections": Array [
+                        Object {
+                          "alias": undefined,
+                          "arguments": Array [
+                            Object {
+                              "kind": "Argument",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "startDate",
+                              },
+                              "value": Object {
+                                "kind": "Variable",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "startDate",
+                                },
+                              },
+                            },
+                            Object {
+                              "kind": "Argument",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "endDate",
+                              },
+                              "value": Object {
+                                "kind": "Variable",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "endDate",
+                                },
+                              },
+                            },
+                          ],
+                          "directives": Array [],
+                          "kind": "Field",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "analyticsForMeetingsDurations",
+                          },
+                          "selectionSet": Object {
+                            "kind": "SelectionSet",
+                            "selections": Array [
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "MeetingsDurationaAnalytics",
+                                },
+                                "selectionSet": Object {
+                                  "kind": "SelectionSet",
+                                  "selections": Array [
+                                    Object {
+                                      "alias": undefined,
+                                      "arguments": Array [],
+                                      "directives": Array [],
+                                      "kind": "Field",
+                                      "name": Object {
+                                        "kind": "Name",
+                                        "value": "roomName",
+                                      },
+                                      "selectionSet": undefined,
+                                    },
+                                    Object {
+                                      "alias": undefined,
+                                      "arguments": Array [],
+                                      "directives": Array [],
+                                      "kind": "Field",
+                                      "name": Object {
+                                        "kind": "Name",
+                                        "value": "count",
+                                      },
+                                      "selectionSet": undefined,
+                                    },
+                                    Object {
+                                      "alias": undefined,
+                                      "arguments": Array [],
+                                      "directives": Array [],
+                                      "kind": "Field",
+                                      "name": Object {
+                                        "kind": "Name",
+                                        "value": "totalDuration",
+                                      },
+                                      "selectionSet": undefined,
+                                    },
+                                  ],
+                                },
+                              },
+                            ],
+                          },
+                        },
+                      ],
+                    },
+                    "variableDefinitions": Array [
+                      Object {
+                        "defaultValue": undefined,
+                        "kind": "VariableDefinition",
+                        "type": Object {
+                          "kind": "NonNullType",
+                          "type": Object {
+                            "kind": "NamedType",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "String",
+                            },
+                          },
+                        },
+                        "variable": Object {
+                          "kind": "Variable",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "startDate",
+                          },
+                        },
+                      },
+                      Object {
+                        "defaultValue": undefined,
+                        "kind": "VariableDefinition",
+                        "type": Object {
+                          "kind": "NonNullType",
+                          "type": Object {
+                            "kind": "NamedType",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "String",
+                            },
+                          },
+                        },
+                        "variable": Object {
+                          "kind": "Variable",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "endDate",
+                          },
+                        },
+                      },
+                    ],
+                  },
+                ],
+                "kind": "Document",
+                "loc": Object {
+                  "end": 279,
+                  "start": 0,
+                },
+              },
+              "invalidate": false,
+              "invalidated": false,
+              "lastRequestId": 5,
+              "listeners": Array [
+                [Function],
+              ],
+              "newData": null,
+              "observableQuery": ObservableQuery {
+                "_subscriber": [Function],
+                "isCurrentlyPolling": false,
+                "isTornDown": false,
+                "observers": Array [
+                  SubscriptionObserver {
+                    "_subscription": Subscription {
+                      "_cleanup": [Function],
+                      "_observer": Object {
+                        "error": [Function],
+                        "next": [Function],
+                      },
+                      "_queue": undefined,
+                      "_state": "ready",
+                    },
+                  },
+                ],
+                "options": Object {
+                  "context": Object {},
+                  "metadata": Object {
+                    "reactComponent": Object {
+                      "displayName": "Query",
+                    },
+                  },
+                  "notifyOnNetworkStatusChange": false,
+                  "query": Object {
+                    "definitions": Array [
+                      Object {
+                        "directives": Array [],
+                        "kind": "OperationDefinition",
+                        "name": Object {
+                          "kind": "Name",
+                          "value": "durationOfMeetingsPerMeetingRoom",
+                        },
+                        "operation": "query",
+                        "selectionSet": Object {
+                          "kind": "SelectionSet",
+                          "selections": Array [
+                            Object {
+                              "alias": undefined,
+                              "arguments": Array [
+                                Object {
+                                  "kind": "Argument",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "startDate",
+                                  },
+                                  "value": Object {
+                                    "kind": "Variable",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "startDate",
+                                    },
+                                  },
+                                },
+                                Object {
+                                  "kind": "Argument",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "endDate",
+                                  },
+                                  "value": Object {
+                                    "kind": "Variable",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "endDate",
+                                    },
+                                  },
+                                },
+                              ],
+                              "directives": Array [],
+                              "kind": "Field",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "analyticsForMeetingsDurations",
+                              },
+                              "selectionSet": Object {
+                                "kind": "SelectionSet",
+                                "selections": Array [
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "MeetingsDurationaAnalytics",
+                                    },
+                                    "selectionSet": Object {
+                                      "kind": "SelectionSet",
+                                      "selections": Array [
+                                        Object {
+                                          "alias": undefined,
+                                          "arguments": Array [],
+                                          "directives": Array [],
+                                          "kind": "Field",
+                                          "name": Object {
+                                            "kind": "Name",
+                                            "value": "roomName",
+                                          },
+                                          "selectionSet": undefined,
+                                        },
+                                        Object {
+                                          "alias": undefined,
+                                          "arguments": Array [],
+                                          "directives": Array [],
+                                          "kind": "Field",
+                                          "name": Object {
+                                            "kind": "Name",
+                                            "value": "count",
+                                          },
+                                          "selectionSet": undefined,
+                                        },
+                                        Object {
+                                          "alias": undefined,
+                                          "arguments": Array [],
+                                          "directives": Array [],
+                                          "kind": "Field",
+                                          "name": Object {
+                                            "kind": "Name",
+                                            "value": "totalDuration",
+                                          },
+                                          "selectionSet": undefined,
+                                        },
+                                      ],
+                                    },
+                                  },
+                                ],
+                              },
+                            },
+                          ],
+                        },
+                        "variableDefinitions": Array [
+                          Object {
+                            "defaultValue": undefined,
+                            "kind": "VariableDefinition",
+                            "type": Object {
+                              "kind": "NonNullType",
+                              "type": Object {
+                                "kind": "NamedType",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "String",
+                                },
+                              },
+                            },
+                            "variable": Object {
+                              "kind": "Variable",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "startDate",
+                              },
+                            },
+                          },
+                          Object {
+                            "defaultValue": undefined,
+                            "kind": "VariableDefinition",
+                            "type": Object {
+                              "kind": "NonNullType",
+                              "type": Object {
+                                "kind": "NamedType",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "String",
+                                },
+                              },
+                            },
+                            "variable": Object {
+                              "kind": "Variable",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "endDate",
+                              },
+                            },
+                          },
+                        ],
+                      },
+                    ],
+                    "kind": "Document",
+                    "loc": Object {
+                      "end": 279,
+                      "start": 0,
+                    },
+                  },
+                  "variables": Object {
+                    "endDate": "Dec 17 2018",
+                    "startDate": "Dec 17 2018",
+                  },
+                },
+                "queryId": "3",
+                "queryManager": [Circular],
+                "scheduler": QueryScheduler {
+                  "inFlightQueries": Object {},
+                  "intervalQueries": Object {},
+                  "pollingTimers": Object {},
+                  "queryManager": [Circular],
+                  "registeredQueries": Object {},
+                  "ssrMode": false,
+                },
+                "shouldSubscribe": true,
+                "subscriptionHandles": Array [],
+                "variables": Object {
+                  "endDate": "Dec 17 2018",
+                  "startDate": "Dec 17 2018",
+                },
+              },
+              "subscriptions": Array [],
+            },
             "1" => Object {
               "cancel": [Function],
               "document": Object {
@@ -1980,7 +2731,7 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
               },
               "invalidate": false,
               "invalidated": false,
-              "lastRequestId": 4,
+              "lastRequestId": 6,
               "listeners": Array [
                 [Function],
               ],
@@ -2144,8 +2895,11 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
           },
           "queryDeduplication": true,
           "queryIdsByName": Object {
-            "durationOfMeetingsPerMeetingRoom": Array [
+            "AnalyticsBookingsCount": Array [
               "2",
+            ],
+            "durationOfMeetingsPerMeetingRoom": Array [
+              "3",
             ],
             "user": Array [
               "1",
@@ -2266,6 +3020,154 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                 },
               },
               "2": Object {
+                "document": Object {
+                  "definitions": Array [
+                    Object {
+                      "directives": Array [],
+                      "kind": "OperationDefinition",
+                      "name": Object {
+                        "kind": "Name",
+                        "value": "AnalyticsBookingsCount",
+                      },
+                      "operation": "query",
+                      "selectionSet": Object {
+                        "kind": "SelectionSet",
+                        "selections": Array [
+                          Object {
+                            "alias": undefined,
+                            "arguments": Array [
+                              Object {
+                                "kind": "Argument",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "startDate",
+                                },
+                                "value": Object {
+                                  "kind": "Variable",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "startDate",
+                                  },
+                                },
+                              },
+                              Object {
+                                "kind": "Argument",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "endDate",
+                                },
+                                "value": Object {
+                                  "kind": "Variable",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "endDate",
+                                  },
+                                },
+                              },
+                            ],
+                            "directives": Array [],
+                            "kind": "Field",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "bookingsAnalyticsCount",
+                            },
+                            "selectionSet": Object {
+                              "kind": "SelectionSet",
+                              "selections": Array [
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "period",
+                                  },
+                                  "selectionSet": undefined,
+                                },
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "bookings",
+                                  },
+                                  "selectionSet": undefined,
+                                },
+                              ],
+                            },
+                          },
+                        ],
+                      },
+                      "variableDefinitions": Array [
+                        Object {
+                          "defaultValue": undefined,
+                          "kind": "VariableDefinition",
+                          "type": Object {
+                            "kind": "NonNullType",
+                            "type": Object {
+                              "kind": "NamedType",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "String",
+                              },
+                            },
+                          },
+                          "variable": Object {
+                            "kind": "Variable",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "startDate",
+                            },
+                          },
+                        },
+                        Object {
+                          "defaultValue": undefined,
+                          "kind": "VariableDefinition",
+                          "type": Object {
+                            "kind": "NonNullType",
+                            "type": Object {
+                              "kind": "NamedType",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "String",
+                              },
+                            },
+                          },
+                          "variable": Object {
+                            "kind": "Variable",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "endDate",
+                            },
+                          },
+                        },
+                      ],
+                    },
+                  ],
+                  "kind": "Document",
+                  "loc": Object {
+                    "end": 181,
+                    "start": 0,
+                  },
+                },
+                "graphQLErrors": Array [],
+                "metadata": Object {
+                  "reactComponent": Object {
+                    "displayName": "Query",
+                  },
+                },
+                "networkError": null,
+                "networkStatus": 1,
+                "previousVariables": null,
+                "variables": Object {
+                  "endDate": "Dec 17 2018",
+                  "startDate": "Dec 17 2018",
+                },
+              },
+              "3": Object {
                 "document": Object {
                   "definitions": Array [
                     Object {
@@ -2477,6 +3379,187 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                             },
                           },
                         },
+                      ],
+                    },
+                  ],
+                  "kind": "Document",
+                  "loc": Object {
+                    "end": 279,
+                    "start": 0,
+                  },
+                },
+                "graphQLErrors": Array [],
+                "metadata": Object {
+                  "reactComponent": Object {
+                    "displayName": "Query",
+                  },
+                },
+                "networkError": null,
+                "networkStatus": 1,
+                "previousVariables": null,
+                "variables": Object {
+                  "endDate": "Dec 17 2018",
+                  "startDate": "Dec 17 2018",
+                },
+              },
+            },
+          },
+          "scheduler": QueryScheduler {
+            "inFlightQueries": Object {},
+            "intervalQueries": Object {},
+            "pollingTimers": Object {},
+            "queryManager": [Circular],
+            "registeredQueries": Object {},
+            "ssrMode": false,
+          },
+        },
+        "reFetchObservableQueries": [Function],
+        "resetStore": [Function],
+        "resetStoreCallbacks": Array [],
+        "ssrMode": false,
+        "store": DataStore {
+          "cache": InMemoryCache {
+            "addTypename": false,
+            "config": Object {
+              "addTypename": false,
+              "dataIdFromObject": [Function],
+              "fragmentMatcher": HeuristicFragmentMatcher {},
+              "storeFactory": [Function],
+            },
+            "data": ObjectCache {
+              "data": Object {},
+            },
+            "optimistic": Array [],
+            "silenceBroadcast": false,
+            "watches": Array [
+              Object {
+                "callback": [Function],
+                "optimistic": true,
+                "previousResult": [Function],
+                "query": Object {
+                  "definitions": Array [
+                    Object {
+                      "directives": Array [],
+                      "kind": "OperationDefinition",
+                      "name": Object {
+                        "kind": "Name",
+                        "value": "AnalyticsBookingsCount",
+                      },
+                      "operation": "query",
+                      "selectionSet": Object {
+                        "kind": "SelectionSet",
+                        "selections": Array [
+                          Object {
+                            "alias": undefined,
+                            "arguments": Array [
+                              Object {
+                                "kind": "Argument",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "startDate",
+                                },
+                                "value": Object {
+                                  "kind": "Variable",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "startDate",
+                                  },
+                                },
+                              },
+                              Object {
+                                "kind": "Argument",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "endDate",
+                                },
+                                "value": Object {
+                                  "kind": "Variable",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "endDate",
+                                  },
+                                },
+                              },
+                            ],
+                            "directives": Array [],
+                            "kind": "Field",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "bookingsAnalyticsCount",
+                            },
+                            "selectionSet": Object {
+                              "kind": "SelectionSet",
+                              "selections": Array [
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "period",
+                                  },
+                                  "selectionSet": undefined,
+                                },
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "bookings",
+                                  },
+                                  "selectionSet": undefined,
+                                },
+                              ],
+                            },
+                          },
+                        ],
+                      },
+                      "variableDefinitions": Array [
+                        Object {
+                          "defaultValue": undefined,
+                          "kind": "VariableDefinition",
+                          "type": Object {
+                            "kind": "NonNullType",
+                            "type": Object {
+                              "kind": "NamedType",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "String",
+                              },
+                            },
+                          },
+                          "variable": Object {
+                            "kind": "Variable",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "startDate",
+                            },
+                          },
+                        },
+                        Object {
+                          "defaultValue": undefined,
+                          "kind": "VariableDefinition",
+                          "type": Object {
+                            "kind": "NonNullType",
+                            "type": Object {
+                              "kind": "NamedType",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "String",
+                              },
+                            },
+                          },
+                          "variable": Object {
+                            "kind": "Variable",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "endDate",
+                            },
+                          },
+                        },
                         Object {
                           "defaultValue": undefined,
                           "kind": "VariableDefinition",
@@ -2538,36 +3621,6 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                   "startDate": "Dec 17 2018",
                 },
               },
-            },
-          },
-          "scheduler": QueryScheduler {
-            "inFlightQueries": Object {},
-            "intervalQueries": Object {},
-            "pollingTimers": Object {},
-            "queryManager": [Circular],
-            "registeredQueries": Object {},
-            "ssrMode": false,
-          },
-        },
-        "reFetchObservableQueries": [Function],
-        "resetStore": [Function],
-        "resetStoreCallbacks": Array [],
-        "ssrMode": false,
-        "store": DataStore {
-          "cache": InMemoryCache {
-            "addTypename": false,
-            "config": Object {
-              "addTypename": false,
-              "dataIdFromObject": [Function],
-              "fragmentMatcher": HeuristicFragmentMatcher {},
-              "storeFactory": [Function],
-            },
-            "data": ObjectCache {
-              "data": Object {},
-            },
-            "optimistic": Array [],
-            "silenceBroadcast": false,
-            "watches": Array [
               Object {
                 "callback": [Function],
                 "optimistic": true,
@@ -3751,7 +4804,14 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                 }
               }
             >
-              <AveragePieChartList>
+              <AveragePieChartList
+                dateValue={
+                  Object {
+                    "endDate": "Dec 17 2018",
+                    "startDate": "Dec 17 2018",
+                  }
+                }
+              >
                 <div
                   className="pie-chart-container"
                 >
@@ -3977,24 +5037,31 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                       </section>
                     </article>
                   </RoomCapacityPieChart>
-                  <AttendeesPieChart>
+                  <BookingsCountBarGraph
+                    dateValue={
+                      Object {
+                        "endDate": "Dec 17 2018",
+                        "startDate": "Dec 17 2018",
+                      }
+                    }
+                  >
                     <article
-                      className="pie-chart"
+                      className="bar-graph"
                     >
                       <section
-                        className="chart-header"
+                        className="graph-header"
                       >
                         <p
-                          className="chart-title"
+                          className="graph-title"
                         >
-                          Average No. of Attendees/ Meeting
+                          Total Bookings Count
                         </p>
                         <ThemedTooltippedComponent
                           className=""
                           composeTheme="deeply"
                           mapThemrProps={[Function]}
                           theme={null}
-                          tooltip="Number of attendees in a booked meeting room per meeting room"
+                          tooltip="Total count of bookings in a given time"
                           tooltipDelay={0}
                           tooltipHideOnClick={true}
                           tooltipPosition="top"
@@ -4007,7 +5074,7 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                                 "tooltipInner": "tooltipInner",
                               }
                             }
-                            tooltip="Number of attendees in a booked meeting room per meeting room"
+                            tooltip="Total count of bookings in a given time"
                             tooltipDelay={0}
                             tooltipHideOnClick={true}
                             tooltipPosition="top"
@@ -4057,37 +5124,168 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                         </ThemedTooltippedComponent>
                       </section>
                       <section
-                        className="chart-content"
+                        className="graph-content"
                       >
-                        <img
-                          alt="average meeting chart"
-                          src="test-file-stub"
-                        />
-                        <section
-                          className="chart-details"
+                        <QueryBookingsCount
+                          dateValue={
+                            Object {
+                              "endDate": "Dec 17 2018",
+                              "startDate": "Dec 17 2018",
+                            }
+                          }
                         >
-                          <p
-                            className="attendees-first-circle"
+                          <Query
+                            notifyOnNetworkStatusChange={true}
+                            query={
+                              Object {
+                                "definitions": Array [
+                                  Object {
+                                    "directives": Array [],
+                                    "kind": "OperationDefinition",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "AnalyticsBookingsCount",
+                                    },
+                                    "operation": "query",
+                                    "selectionSet": Object {
+                                      "kind": "SelectionSet",
+                                      "selections": Array [
+                                        Object {
+                                          "alias": undefined,
+                                          "arguments": Array [
+                                            Object {
+                                              "kind": "Argument",
+                                              "name": Object {
+                                                "kind": "Name",
+                                                "value": "startDate",
+                                              },
+                                              "value": Object {
+                                                "kind": "Variable",
+                                                "name": Object {
+                                                  "kind": "Name",
+                                                  "value": "startDate",
+                                                },
+                                              },
+                                            },
+                                            Object {
+                                              "kind": "Argument",
+                                              "name": Object {
+                                                "kind": "Name",
+                                                "value": "endDate",
+                                              },
+                                              "value": Object {
+                                                "kind": "Variable",
+                                                "name": Object {
+                                                  "kind": "Name",
+                                                  "value": "endDate",
+                                                },
+                                              },
+                                            },
+                                          ],
+                                          "directives": Array [],
+                                          "kind": "Field",
+                                          "name": Object {
+                                            "kind": "Name",
+                                            "value": "bookingsAnalyticsCount",
+                                          },
+                                          "selectionSet": Object {
+                                            "kind": "SelectionSet",
+                                            "selections": Array [
+                                              Object {
+                                                "alias": undefined,
+                                                "arguments": Array [],
+                                                "directives": Array [],
+                                                "kind": "Field",
+                                                "name": Object {
+                                                  "kind": "Name",
+                                                  "value": "period",
+                                                },
+                                                "selectionSet": undefined,
+                                              },
+                                              Object {
+                                                "alias": undefined,
+                                                "arguments": Array [],
+                                                "directives": Array [],
+                                                "kind": "Field",
+                                                "name": Object {
+                                                  "kind": "Name",
+                                                  "value": "bookings",
+                                                },
+                                                "selectionSet": undefined,
+                                              },
+                                            ],
+                                          },
+                                        },
+                                      ],
+                                    },
+                                    "variableDefinitions": Array [
+                                      Object {
+                                        "defaultValue": undefined,
+                                        "kind": "VariableDefinition",
+                                        "type": Object {
+                                          "kind": "NonNullType",
+                                          "type": Object {
+                                            "kind": "NamedType",
+                                            "name": Object {
+                                              "kind": "Name",
+                                              "value": "String",
+                                            },
+                                          },
+                                        },
+                                        "variable": Object {
+                                          "kind": "Variable",
+                                          "name": Object {
+                                            "kind": "Name",
+                                            "value": "startDate",
+                                          },
+                                        },
+                                      },
+                                      Object {
+                                        "defaultValue": undefined,
+                                        "kind": "VariableDefinition",
+                                        "type": Object {
+                                          "kind": "NonNullType",
+                                          "type": Object {
+                                            "kind": "NamedType",
+                                            "name": Object {
+                                              "kind": "Name",
+                                              "value": "String",
+                                            },
+                                          },
+                                        },
+                                        "variable": Object {
+                                          "kind": "Variable",
+                                          "name": Object {
+                                            "kind": "Name",
+                                            "value": "endDate",
+                                          },
+                                        },
+                                      },
+                                    ],
+                                  },
+                                ],
+                                "kind": "Document",
+                                "loc": Object {
+                                  "end": 181,
+                                  "start": 0,
+                                },
+                              }
+                            }
+                            variables={
+                              Object {
+                                "endDate": "Dec 17 2018",
+                                "startDate": "Dec 17 2018",
+                              }
+                            }
                           >
-                            <span />
-                            130 (Yes)
-                          </p>
-                          <p
-                            className="attendees-second-circle"
-                          >
-                            <span />
-                            20 (Maybe)
-                          </p>
-                          <p
-                            className="attendees-third-circle"
-                          >
-                            <span />
-                            6 (No)
-                          </p>
-                        </section>
+                            <p>
+                              Loading...
+                            </p>
+                          </Query>
+                        </QueryBookingsCount>
                       </section>
                     </article>
-                  </AttendeesPieChart>
+                  </BookingsCountBarGraph>
                 </div>
               </AveragePieChartList>
               <ComposedBookedRooms
