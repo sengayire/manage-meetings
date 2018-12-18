@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'react-apollo';
 import Resource from './Resource';
-import AddResource from './AddResource';
+import AddResourceComponent from './AddResource';
 import '../assets/styles/resourcelist.scss';
 import { GET_RESOURCES_QUERY } from '../graphql/queries/Resources';
 import { formatResourceData } from '../graphql/mappers/Resources';
@@ -56,7 +56,7 @@ export class ResourceList extends React.Component {
         <div className="settings-resource-list">
           <div className="settings-resource-control">
             <MenuTitle title="Resources" />
-            <AddResource />
+            <AddResourceComponent />
           </div>
           <table>
             <ColGroup />
