@@ -5,6 +5,9 @@ import CheckboxSlide from './commons/CheckboxSlide';
 import EditFeedback from './EditFeedback';
 import DeleteFeedback from './DeleteFeedback';
 
+/* istanbul ignore next */
+const onChange = () => {};
+
 const Feedback = props => (
   props.feedback.map(({
     question,
@@ -30,7 +33,7 @@ const Feedback = props => (
         />
         <DeleteFeedback id="delete-modal" question={question} />
       </td>
-      <td><CheckboxSlide checked={status} /></td>
+      <td><CheckboxSlide checked={status} onChange={onChange} /></td>
     </tr>
   ))
 );

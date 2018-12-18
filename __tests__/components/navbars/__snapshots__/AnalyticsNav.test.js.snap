@@ -625,8 +625,10 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
               },
             },
             "variables": Object {
-              "endDate": "Dec 14 2018",
-              "startDate": "Dec 14 2018",
+              "endDate": "Dec 18 2018",
+              "page": 1,
+              "perPage": 5,
+              "startDate": "Dec 18 2018",
             },
           },
         },
@@ -782,8 +784,8 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                 },
               },
               "variables": Object {
-                "endDate": "Dec 14 2018",
-                "startDate": "Dec 14 2018",
+                "endDate": "Dec 18 2018",
+                "startDate": "Dec 18 2018",
               },
             },
             Object {
@@ -1323,8 +1325,8 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                     },
                   },
                   "variables": Object {
-                    "endDate": "Dec 14 2018",
-                    "startDate": "Dec 14 2018",
+                    "endDate": "Dec 18 2018",
+                    "startDate": "Dec 18 2018",
                   },
                 },
                 Object {
@@ -2030,8 +2032,8 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                     },
                   },
                   "variables": Object {
-                    "endDate": "Dec 14 2018",
-                    "startDate": "Dec 14 2018",
+                    "endDate": "Dec 18 2018",
+                    "startDate": "Dec 18 2018",
                   },
                 },
                 "queryId": "2",
@@ -2047,8 +2049,8 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                 "shouldSubscribe": true,
                 "subscriptionHandles": Array [],
                 "variables": Object {
-                  "endDate": "Dec 14 2018",
-                  "startDate": "Dec 14 2018",
+                  "endDate": "Dec 18 2018",
+                  "startDate": "Dec 18 2018",
                 },
               },
               "subscriptions": Array [],
@@ -3432,8 +3434,10 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                 "networkStatus": 1,
                 "previousVariables": null,
                 "variables": Object {
-                  "endDate": "Dec 14 2018",
-                  "startDate": "Dec 14 2018",
+                  "endDate": "Dec 18 2018",
+                  "page": 1,
+                  "perPage": 5,
+                  "startDate": "Dec 18 2018",
                 },
               },
             },
@@ -3869,8 +3873,10 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                   },
                 },
                 "variables": Object {
-                  "endDate": "Dec 14 2018",
-                  "startDate": "Dec 14 2018",
+                  "endDate": "Dec 18 2018",
+                  "page": 1,
+                  "perPage": 5,
+                  "startDate": "Dec 18 2018",
                 },
               },
               Object {
@@ -4600,7 +4606,7 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                       className="calendarIconBtn"
                     >
                       <span>
-                        Dec 14 2018 - Dec 14 2018
+                        Dec 18 2018 - Dec 18 2018
                       </span>
                     </div>
                   }
@@ -4622,7 +4628,7 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                         className="calendarIconBtn"
                       >
                         <span>
-                          Dec 14 2018 - Dec 14 2018
+                          Dec 18 2018 - Dec 18 2018
                         </span>
                       </div>
                     }
@@ -4648,7 +4654,7 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                           className="calendarIconBtn"
                         >
                           <span>
-                            Dec 14 2018 - Dec 14 2018
+                            Dec 18 2018 - Dec 18 2018
                           </span>
                         </div>
                       }
@@ -4676,7 +4682,7 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                             className="calendarIconBtn"
                           >
                             <span>
-                              Dec 14 2018 - Dec 14 2018
+                              Dec 18 2018 - Dec 18 2018
                             </span>
                           </div>
                         }
@@ -4715,7 +4721,7 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                                 className="calendarIconBtn"
                               >
                                 <span>
-                                  Dec 14 2018 - Dec 14 2018
+                                  Dec 18 2018 - Dec 18 2018
                                 </span>
                               </div>
                             }
@@ -4729,7 +4735,7 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                                 className="calendarIconBtn"
                               >
                                 <span>
-                                  Dec 14 2018 - Dec 14 2018
+                                  Dec 18 2018 - Dec 18 2018
                                 </span>
                               </div>
                             </span>
@@ -4759,7 +4765,7 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                     <span
                       className="download-dropdown-label"
                     >
-                      Export options
+                      Export options 
                     </span>
                     <span
                       id="download"
@@ -4784,8 +4790,8 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
             <AnalyticsOverview
               dateValue={
                 Object {
-                  "endDate": "Dec 14 2018",
-                  "startDate": "Dec 14 2018",
+                  "endDate": "Dec 18 2018",
+                  "startDate": "Dec 18 2018",
                 }
               }
             >
@@ -5276,8 +5282,8 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
               <ComposedBookedRooms
                 dateValue={
                   Object {
-                    "endDate": "Dec 14 2018",
-                    "startDate": "Dec 14 2018",
+                    "endDate": "Dec 18 2018",
+                    "startDate": "Dec 18 2018",
                   }
                 }
               >
@@ -5290,8 +5296,8 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                       component={[Function]}
                       date={
                         Object {
-                          "endDate": "Dec 14 2018",
-                          "startDate": "Dec 14 2018",
+                          "endDate": "Dec 18 2018",
+                          "startDate": "Dec 18 2018",
                         }
                       }
                     >
@@ -5483,8 +5489,8 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                       component={[Function]}
                       date={
                         Object {
-                          "endDate": "Dec 14 2018",
-                          "startDate": "Dec 14 2018",
+                          "endDate": "Dec 18 2018",
+                          "startDate": "Dec 18 2018",
                         }
                       }
                       tip=""
@@ -6043,137 +6049,27 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
               <Apollo(AverageMeetingList)
                 dateValue={
                   Object {
-                    "endDate": "Dec 14 2018",
-                    "startDate": "Dec 14 2018",
+                    "endDate": "Dec 18 2018",
+                    "startDate": "Dec 18 2018",
                   }
                 }
               >
-                <div
-                  className="average-meeting"
-                >
-                  <div
-                    className="average-meeting-control"
-                  >
-                    <h4
-                      className="header-title"
-                    >
-                      Average time spent/Meeting Room
-                    </h4>
-                    <span
-                      className="moreVerticalIcon"
-                    >
-                      <ThemedTooltippedComponent
-                        className=""
-                        composeTheme="deeply"
-                        mapThemrProps={[Function]}
-                        theme={null}
-                        tooltip="The number of meetings in a room,  the average number of attendees to these meetings as well as the average duration of the meetings."
-                        tooltipDelay={0}
-                        tooltipHideOnClick={true}
-                        tooltipPosition="top"
-                        tooltipShowOnClick={true}
-                      >
-                        <TooltippedComponent
-                          className=""
-                          theme={
-                            Object {
-                              "tooltipInner": "tooltipInner",
-                            }
-                          }
-                          tooltip="The number of meetings in a room,  the average number of attendees to these meetings as well as the average duration of the meetings."
-                          tooltipDelay={0}
-                          tooltipHideOnClick={true}
-                          tooltipPosition="top"
-                          tooltipShowOnClick={true}
-                        >
-                          <ThemedLink
-                            active={false}
-                            className=""
-                            composeTheme="deeply"
-                            mapThemrProps={[Function]}
-                            onClick={[Function]}
-                            onMouseEnter={[Function]}
-                            onMouseLeave={[Function]}
-                            theme={
-                              Object {
-                                "tooltipInner": "tooltipInner",
-                              }
-                            }
-                          >
-                            <Link
-                              active={false}
-                              className=""
-                              onClick={[Function]}
-                              onMouseEnter={[Function]}
-                              onMouseLeave={[Function]}
-                              theme={
-                                Object {
-                                  "tooltipInner": "tooltipInner",
-                                }
-                              }
-                            >
-                              <a
-                                className=""
-                                data-react-toolbox="link"
-                                onClick={[Function]}
-                                onMouseEnter={[Function]}
-                                onMouseLeave={[Function]}
-                              >
-                                <img
-                                  alt="help icon"
-                                  src="test-file-stub"
-                                />
-                              </a>
-                            </Link>
-                          </ThemedLink>
-                        </TooltippedComponent>
-                      </ThemedTooltippedComponent>
-                    </span>
-                  </div>
-                  <div
-                    className="average-meeting-list"
-                  >
-                    <table>
-                      <TableHead
-                        titles={
-                          Array [
-                            "Room",
-                            "No. of meetings",
-                            "Average Meeting Duration",
-                          ]
-                        }
-                      >
-                        <thead>
-                          <tr>
-                            <th
-                              key="Room"
-                            >
-                              Room
-                            </th>
-                            <th
-                              key="No. of meetings"
-                            >
-                              No. of meetings
-                            </th>
-                            <th
-                              key="Average Meeting Duration"
-                            >
-                              Average Meeting Duration
-                            </th>
-                          </tr>
-                        </thead>
-                      </TableHead>
-                      <tbody>
-                        <QueryAnalyticsPerMeetingRoom
-                          dateValue={
-                            Object {
-                              "endDate": "Dec 14 2018",
-                              "startDate": "Dec 14 2018",
-                            }
-                          }
-                        >
-                          <Query
-                            query={
+                <Query
+                  displayName="Apollo(AverageMeetingList)"
+                  query={
+                    Object {
+                      "definitions": Array [
+                        Object {
+                          "directives": Array [],
+                          "kind": "OperationDefinition",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "durationOfMeetingsPerMeetingRoom",
+                          },
+                          "operation": "query",
+                          "selectionSet": Object {
+                            "kind": "SelectionSet",
+                            "selections": Array [
                               Object {
                                 "alias": undefined,
                                 "arguments": Array [
@@ -6342,14 +6238,129 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                                     "value": "String",
                                   },
                                 },
-                              }
-                            }
-                            variables={
-                              Object {
-                                "endDate": "Dec 14 2018",
-                                "startDate": "Dec 14 2018",
-                              }
-                            }
+                              },
+                              "variable": Object {
+                                "kind": "Variable",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "startDate",
+                                },
+                              },
+                            },
+                            Object {
+                              "defaultValue": undefined,
+                              "kind": "VariableDefinition",
+                              "type": Object {
+                                "kind": "NonNullType",
+                                "type": Object {
+                                  "kind": "NamedType",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "String",
+                                  },
+                                },
+                              },
+                              "variable": Object {
+                                "kind": "Variable",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "endDate",
+                                },
+                              },
+                            },
+                            Object {
+                              "defaultValue": undefined,
+                              "kind": "VariableDefinition",
+                              "type": Object {
+                                "kind": "NamedType",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "Int",
+                                },
+                              },
+                              "variable": Object {
+                                "kind": "Variable",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "page",
+                                },
+                              },
+                            },
+                            Object {
+                              "defaultValue": undefined,
+                              "kind": "VariableDefinition",
+                              "type": Object {
+                                "kind": "NamedType",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "Int",
+                                },
+                              },
+                              "variable": Object {
+                                "kind": "Variable",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "perPage",
+                                },
+                              },
+                            },
+                          ],
+                        },
+                      ],
+                      "kind": "Document",
+                      "loc": Object {
+                        "end": 391,
+                        "start": 0,
+                      },
+                    }
+                  }
+                  skip={false}
+                  variables={
+                    Object {
+                      "endDate": "Dec 18 2018",
+                      "page": 1,
+                      "perPage": 5,
+                      "startDate": "Dec 18 2018",
+                    }
+                  }
+                  warnUnhandledError={true}
+                >
+                  <AverageMeetingList
+                    data={
+                      Object {
+                        "error": undefined,
+                        "fetchMore": [Function],
+                        "loading": true,
+                        "networkStatus": 1,
+                        "refetch": [Function],
+                        "startPolling": [Function],
+                        "stopPolling": [Function],
+                        "subscribeToMore": [Function],
+                        "updateQuery": [Function],
+                        "variables": Object {
+                          "endDate": "Dec 18 2018",
+                          "page": 1,
+                          "perPage": 5,
+                          "startDate": "Dec 18 2018",
+                        },
+                      }
+                    }
+                    dateValue={
+                      Object {
+                        "endDate": "Dec 18 2018",
+                        "startDate": "Dec 18 2018",
+                      }
+                    }
+                  >
+                    <QueryAnalyticsLoading>
+                      <div
+                        className="average-meeting"
+                      >
+                        <div
+                          className="average-meeting-control"
+                        >
+                          <h4
+                            className="header-title"
                           >
                             Average time spent/Meeting Room
                           </h4>

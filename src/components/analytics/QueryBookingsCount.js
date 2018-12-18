@@ -55,7 +55,7 @@ const QueryBookingsCount = ({ dateValue }) => (
           <HorizontalBar
             data={graphData}
             options={options}
-            height="300px"
+            height={300}
           />
         </ErrorBoundary>
       );
