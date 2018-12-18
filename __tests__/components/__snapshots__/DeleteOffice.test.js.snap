@@ -16,23 +16,23 @@ exports[`DeleteOffice Test Suite renders as expected 1`] = `
       id="confirm-msg"
     >
       Are you sure you want to delete the 
-      'EPIC TOWER'
+      "EPIC TOWER"
        office? This cannot be undone & all data will be lost
     </p>
     <div
       className="modal-actions"
     >
       <button
-        id="delete-btn"
-        onClick={[Function]}
-      >
-        DELETE
-      </button>
-      <button
         id="cancel-btn"
         onClick={[Function]}
       >
         CANCEL
+      </button>
+      <button
+        id="delete-btn"
+        onClick={[Function]}
+      >
+        DELETE
       </button>
     </div>
   </div>

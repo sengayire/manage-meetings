@@ -7,6 +7,8 @@ import { DELETE_RESOURCE_MUTATION } from '../graphql/mutations/resources';
 import { GET_RESOURCES_QUERY } from '../graphql/queries/Resources';
 import notification from '../utils/notification';
 
+import '../assets/styles/deleteModal.scss';
+
 export class DeleteResource extends Component {
   state = {
     closeModal: false,
@@ -39,23 +41,27 @@ export class DeleteResource extends Component {
 
   render() {
     const { closeModal } = this.state;
-    const { toDelete } = this.props;
+
     return (
       <MrmModal
-        title="Delete Resources"
+        title="DELETE RESOURCE"
         closeModal={closeModal}
         buttonText="Delete"
-        className="delete-resource-modal"
+        className="delete-modal"
         handleCloseRequest={this.handleModalStateChange}
       >
-        <div className="modal-content">
-          <div className="modal-text">
-            <p>Are you sure you want to delete &quot; {toDelete.name} &quot;?</p>
-            <p>This cannot be undone</p>
-          </div>
-          <div className="button-container">
-            <button onClick={this.handleDeleteResource} className="modal-submit delete-resource">Delete</button>
-            <button className="modal-cancel" onClick={this.handleCloseModal}>Cancel</button>
+        <div className="delete-modal-content">
+          <p id="confirm-msg">
+            Are you sure you want to delete &quot;{this.props.toDelete.name}&quot;? <br />
+            This cannot be undone
+          </p>
+          <div className="modal-actions">
+            <button id="cancel-btn" onClick={this.handleCloseModal}>
+              CANCEL
+            </button>
+            <button id="delete-btn" onClick={this.handleDeleteResource}>
+              DELETE
+            </button>
           </div>
         </div>
       </MrmModal>
