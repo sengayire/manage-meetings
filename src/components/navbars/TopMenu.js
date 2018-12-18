@@ -6,19 +6,11 @@ import IconNotifications from '../../assets/images/notifications_icon.svg';
 import { decodeTokenAndGetUserData } from '../../utils/Cookie';
 
 class TopMenu extends React.Component {
-  state = {
-    displayProfileMenu: false,
-  };
-
   componentDidMount() {
     import('../../assets/styles/topmenu.scss');
   }
 
   render() {
-    setTimeout(() => {
-      this.setState({ displayProfileMenu: true });
-    }, 100);
-
     const { UserInfo: userData } = decodeTokenAndGetUserData() || {};
     // rename some variables to camel case
     const { first_name: firstName, last_name: lastName, picture } = userData || {};
@@ -53,7 +45,7 @@ class TopMenu extends React.Component {
               <div className="profile-name">
                 <span className="username">{`${firstName} ${lastName}`}
                 </span>
-                { this.state.displayProfileMenu && <ProfileMenu /> }
+                <ProfileMenu />
               </div>
             </div>
           </div>

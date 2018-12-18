@@ -531,6 +531,7 @@ exports[`RoomFeeback Component should render properly 1`] = `
               <td>
                 <CheckboxSlide
                   checked={true}
+                  onChange={[Function]}
                 >
                   <label
                     className="switch"
@@ -539,6 +540,7 @@ exports[`RoomFeeback Component should render properly 1`] = `
                     <input
                       checked={true}
                       className="checkbox"
+                      onChange={[Function]}
                       type="checkbox"
                     />
                     <span
@@ -832,6 +834,7 @@ exports[`RoomFeeback Component should render properly 1`] = `
               <td>
                 <CheckboxSlide
                   checked={false}
+                  onChange={[Function]}
                 >
                   <label
                     className="switch"
@@ -840,6 +843,7 @@ exports[`RoomFeeback Component should render properly 1`] = `
                     <input
                       checked={false}
                       className="checkbox"
+                      onChange={[Function]}
                       type="checkbox"
                     />
                     <span
@@ -1133,6 +1137,7 @@ exports[`RoomFeeback Component should render properly 1`] = `
               <td>
                 <CheckboxSlide
                   checked={true}
+                  onChange={[Function]}
                 >
                   <label
                     className="switch"
@@ -1141,6 +1146,7 @@ exports[`RoomFeeback Component should render properly 1`] = `
                     <input
                       checked={true}
                       className="checkbox"
+                      onChange={[Function]}
                       type="checkbox"
                     />
                     <span
