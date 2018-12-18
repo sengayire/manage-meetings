@@ -57,11 +57,11 @@ export class DeleteOffice extends React.Component {
             be undone & all data will be lost
           </p>
           <div className="modal-actions">
-            <button id="cancel-btn" onClick={this.handleCloseModal}>
-              CANCEL
-            </button>
             <button id="delete-btn" onClick={this.handleDeleteOffice}>
               DELETE
+            </button>
+            <button id="cancel-btn" onClick={this.handleCloseModal}>
+              CANCEL
             </button>
           </div>
         </div>
