@@ -81,7 +81,7 @@ export class AnalyticsActivity extends Component {
   calenderToggle = () => {
     const { calenderOpen } = this.state;
     this.setState({ calenderOpen: !calenderOpen });
-  }
+  };
 
   showOverview = () => {
     this.setState({

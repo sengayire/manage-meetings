@@ -57,7 +57,7 @@ exports[`Tests for SettingsContent renders correctly in memory 1`] = `
       <Redirect
         from="/settings"
         push={false}
-        to="/settings/offices"
+        to="/analytics"
       />
     </Switch>
   </div>

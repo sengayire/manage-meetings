@@ -66,14 +66,8 @@ exports[`TopMenu Component renders correctly in memory 1`] = `
         >
           <img
             alt="Profile icon"
+            className="menu-icon"
             src="test-file-stub"
-            style={
-              Object {
-                "borderRadius": "17px",
-                "height": "34px",
-                "width": "34px",
-              }
-            }
           />
         </div>
         <div
@@ -84,7 +78,6 @@ exports[`TopMenu Component renders correctly in memory 1`] = `
           >
             MockFirstName MockLastName
           </span>
-          <ProfileMenu />
         </div>
       </div>
     </div>
