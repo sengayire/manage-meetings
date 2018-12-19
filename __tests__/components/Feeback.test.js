@@ -1,10 +1,15 @@
 import React from 'react';
 import { mount } from 'enzyme';
+import { BrowserRouter as Router } from 'react-router-dom';
 import RoomFeedback from '../../src/components/RoomFeedback';
 import feedbacks from '../../src/fixtures/roomFeebdack';
 
 describe('RoomFeeback Component', () => {
-  const wrapper = mount(<RoomFeedback />);
+  const wrapper = mount(
+    <Router>
+      <RoomFeedback />
+    </Router>,
+  );
 
   it('should render properly', () => {
     expect(wrapper).toMatchSnapshot();
