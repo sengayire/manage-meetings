@@ -1,6 +1,8 @@
 /* eslint react/no-array-index-key: 0 */
 import React from 'react';
 import PropTypes from 'prop-types';
+import { NavLink } from 'react-router-dom';
+import ROUTES from '../utils/routes';
 import CheckboxSlide from './commons/CheckboxSlide';
 import EditFeedback from './EditFeedback';
 import DeleteFeedback from './DeleteFeedback';
@@ -18,7 +20,7 @@ const Feedback = props => (
     status,
   }, index) => (
     <tr key={index}>
-      <td>{question}</td>
+      <td><NavLink to={ROUTES.roomResponses}>{question}</NavLink></td>
       <td>{type}</td>
       <td>{responses}</td>
       <td>{startDate}</td>

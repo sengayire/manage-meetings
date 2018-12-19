@@ -1,0 +1,139 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SelectInput component should call console.warn when given neither option nor children 1`] = `
+<div
+  className="input1"
+>
+  <label
+    htmlFor="testSelect"
+  >
+    Select Something
+    <select
+      className="default-select"
+      id="testSelect"
+      name="testSelect"
+      onChange={[MockFunction]}
+      required={false}
+      value="1"
+    >
+      You need to provide atleast children or options to the select element
+    </select>
+  </label>
+</div>
+`;
+
+exports[`SelectInput component should display value if displayText isn't given in options 1`] = `
+<div
+  className="input1"
+>
+  <label
+    htmlFor="testSelect"
+  >
+    Select Something
+    <select
+      className="default-select"
+      id="testSelect"
+      name="testSelect"
+      onChange={[MockFunction]}
+      required={false}
+      value="1"
+    >
+      <option
+        key="4"
+        value={4}
+      />
+      <option
+        key="5"
+        value={5}
+      />
+    </select>
+  </label>
+</div>
+`;
+
+exports[`SelectInput component should render plaveholder when provided 1`] = `
+<div
+  className="input1"
+>
+  <label
+    htmlFor="testSelect"
+  >
+    Select Something
+    <select
+      className="default-select"
+      id="testSelect"
+      name="testSelect"
+      onChange={[MockFunction]}
+      required={false}
+      value="1"
+    >
+      <option
+        value=""
+      >
+        Hello
+      </option>
+      You need to provide atleast children or options to the select element
+    </select>
+  </label>
+</div>
+`;
+
+exports[`SelectInput component should render properly when given children 1`] = `
+<div
+  className="input1"
+>
+  <label
+    htmlFor="testSelect"
+  >
+    Select Something
+    <select
+      className="default-select"
+      id="testSelect"
+      name="testSelect"
+      onChange={[MockFunction]}
+      required={false}
+      value="1"
+    >
+      <option
+        key="1"
+        value={1}
+      >
+        1
+      </option>
+      <option
+        key="2"
+        value={2}
+      >
+        2
+      </option>
+    </select>
+  </label>
+</div>
+`;
+
+exports[`SelectInput component should render properly when given options prop 1`] = `
+<div
+  className="input1"
+>
+  <label
+    htmlFor="testSelect"
+  >
+    Select Something
+    <select
+      className="default-select"
+      id="testSelect"
+      name="testSelect"
+      onChange={[MockFunction]}
+      required={false}
+      value="1"
+    >
+      <option>
+        hello
+      </option>
+      <option>
+        how are you
+      </option>
+    </select>
+  </label>
+</div>
+`;

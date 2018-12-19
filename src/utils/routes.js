@@ -11,6 +11,7 @@ const ROUTES = {
   settingsDevices: '/settings/devices',
   settingsIntegrations: '/settings/integrations',
   floors: '/settings/floors',
+  roomResponses: '/response',
   settingsWings: '/settings/wings',
 };
 
