@@ -3,16 +3,16 @@
 .dropdown-menu {
   position: absolute;
   min-width: 112px;
-  background: white; 
+  background: map-get($color-white, 000); 
   text-align: left;
   padding: 5px 0;
   border-radius: 2px;
-  box-shadow: 0px 2px 6px #c7c6c6;
-  color: map-get($color-palette, primary);
+  box-shadow: 0px 2px 6px map-get($color-white, 700);
+  color: $color-primary;
 }
 
 .dropdown-menu:before, .dropdown-menu:after {
-  box-shadow:0 0 50px map-get($black, 600);
+  box-shadow:0 0 50px map-get($color-black, 600);
 }
 
 .dropdown-caret {
@@ -22,7 +22,7 @@
     border-color: transparent;
     background: transparent;
     font-size: 51px;
-    color: map-get($color-palette, primary);
+    color: $color-primary;
     font-size: 30px;
   }
 }

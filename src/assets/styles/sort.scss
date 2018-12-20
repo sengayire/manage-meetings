@@ -13,36 +13,36 @@
 
   &__children {
     margin: 7px 0 -15px 0;
-    border-top: 1px solid map-get($white, 100);
+    border-top: 1px solid map-get($color-white, 100);
   }
 
   &__children-list {
     padding: 5px 10px;
     font-size: 14px;
     display: block;
-    color: map-get($color-palette, primary);
+    color: $color-primary;
     cursor: pointer;
   }
 
   &__children-list:hover {
-    background: map-get($white, 100);
+    background: map-get($color-white, 100);
   }
 
   &__disable {
-    color: map-get($white, 400);
+    color: map-get($color-white, 400);
     padding: 0 10px;
   }
 }
 
 .filter-options:hover {
-  background: map-get($white, 100);
+  background: map-get($color-white, 100);
 }
 
 .container-inner {
   display: flex;
 
   span {
-    color: $default-header-color;
+    color: $color-header;
   }
 }
 

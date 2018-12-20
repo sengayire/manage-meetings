@@ -4,8 +4,8 @@
     line-height: 15px;
 }
 .Selectable .DayPicker-Day--selected:not(.DayPicker-Day--start):not(.DayPicker-Day--end):not(.DayPicker-Day--outside) {
-    background-color: #c2cedd !important;
-    color: #2a598f;
+    background-color: map-get($color-calendar, calendar-highlight) !important;
+    color: map-get($color-calendar, calendar-text);
     border-radius: 2px !important;
 }
   .Selectable .DayPicker-Day {
@@ -18,7 +18,7 @@
   .Selectable .DayPicker-Day--start:visited {
     border-top-left-radius: 50% !important;
     border-bottom-left-radius: 50% !important;
-    color:red !important;
+    color: $color-danger !important;
 
   }
   .Selectable .DayPicker-Day--end {
@@ -32,7 +32,7 @@
     right: 9vw;
     position: absolute;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    background: #fff;
+    background: map-get($color-white, 000);
     justify-content: space-between;
     padding: 20px 15px 8px;
     margin-top: 70px;
@@ -43,8 +43,8 @@
       align-self: flex-end;
       
       .ok {
-        background-color: #3359DB;
-        color: #FFFFFF;
+        background-color: $color-primary;
+        color: map-get($color-white, 000);
         height: 14px;
         width: 36px;
         padding: 6px 40px 14px 10px;
@@ -55,7 +55,7 @@
       &__item {
         margin: 10px;
         padding: 5px;
-        color: #333E44;
+        color: map-get($color-black, 600);
         padding-top: 14px;
         border-radius: 2px;
         font-size: 13px;
@@ -70,7 +70,7 @@
     display: flex;
     position: absolute;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    background: #fff;
+    background: map-get($color-white, 000);
   }
  .date_nav {
    float: left;
@@ -81,11 +81,11 @@
     float: right;
     margin-right: 150px;
     border-radius: 10px;
-    background-color: #FFAF30;  
+    background-color: map-get($color-amber, 300);  
     span {
       height: 15px;
       width: 31px;
-      color: #FFFFFF;
+      color: map-get($color-white, 000);
       font-size: 12px;
       font-weight: 500;
       line-height: 15px;
@@ -115,19 +115,19 @@
     background-position: center;
     background-size: 50%;
     background-repeat: no-repeat;
-    color: #8B9898;
+    color: map-get($color-calendar, calender-nav-button);
     cursor: pointer;
 }
 .DayPicker-NavButton--next {
   top: 0.5rem;
   right: 15px;
-  color: #FFFFFF !important;
+  color: map-get($color-white, 000) !important;
 }
 
 .DayPicker-NavButton--prev {
   top: 0.5rem;
   left: 15px;
-  color: #FFFFFF !important;
+  color: map-get($color-white, 000) !important;
 }
 .DayPicker-Caption > div {
   font-size: 1.15em;
@@ -138,7 +138,7 @@
   font-weight: 200;
 }
 .DayPicker-Day .DayPicker-Day--start .DayPicker-Day--selected:focus {
-  color:red !important;
+  color: $color-danger !important;
 }
 
 .DayPicker-Months {
@@ -146,7 +146,7 @@
   flex-wrap: wrap;
   justify-content: center;
 	border-radius: 2px;
-  background-color: #F8F8F8;
+  background-color: map-get($color-white, 200);
   padding: 7px 0;
   height: 235px;
 }
@@ -167,9 +167,9 @@
 
 .DayPicker-Day--selected:not(.DayPicker-Day--disabled):not(.DayPicker-Day--outside) {
   position: relative;
-  color: #F0F8FF;
+  color: map-get($color-calendar, calendar-selected-text);
   border-radius: 2px !important;
-  background-color: #3359DB;
+  background-color: $color-primary;
   height: 20px !important;
   width: 20px !important;
   padding-bottom: 0.1px;

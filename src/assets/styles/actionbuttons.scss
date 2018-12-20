@@ -1,5 +1,4 @@
-$actionColor:#3359DB;
-$cancelColor:white;
+@import './variables';
 
 .form-action-buttons {
   display: flex;
@@ -16,12 +15,12 @@ $cancelColor:white;
     padding: 10px 20px;
     text-transform: uppercase;
     cursor: pointer;
-    border: 1px solid #3359db;
+    border: 1px solid $color-primary;
     border-radius: 2px;
     font-size: 16px;
-    color: #3359db;
+    color: $color-primary;
     margin-left: 0;
-    background-color: #ffffff;
+    background-color: map-get($color-white, 000);
 
     @media screen and (max-width: 425px) {
       font-size: 1.05em;
@@ -33,13 +32,13 @@ $cancelColor:white;
   }
 
   .action-button {
-    background-color: $actionColor;
-    color: $cancelColor;
+    background-color: $color-primary;
+    color: map-get($color-white, 000);
   }
 
   .cancel-button {
-    color: $actionColor;
-    background-color: $cancelColor;
-    border: 1px solid $actionColor;
+    color: $color-primary;
+    background-color: map-get($color-white, 000);
+    border: 1px solid $color-primary;
   }
 }

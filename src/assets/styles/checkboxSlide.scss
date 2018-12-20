@@ -27,7 +27,7 @@ input:focus {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #aba6a6;
+  background-color: map-get($color-black, 200);
   transition: .4s;
 }
 
@@ -38,14 +38,14 @@ input:focus {
   width: 12px;
   bottom: 2px;
   left: 2px;
-  background-color: map-get($color-palette, white);
+  background-color: map-get($color-white, 000);
   -webkit-transition: .4s;
   transition: .4s;
 }
 
 
 input:checked+.slider {
-  background-color:map-get($color-palette, primary);
+  background-color: $color-primary;
 }
 
 input:checked+.slider:before {

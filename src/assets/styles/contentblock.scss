@@ -1,5 +1,7 @@
+@import './variables';
+
 .content-block {
-  background-color: #ddd;
+  background-color: map-get($color-white, 600);
   width: 60%;
   float: right;
 }

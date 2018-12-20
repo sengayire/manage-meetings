@@ -2,14 +2,14 @@
 
 .wrap-booked-room {
   border-radius: 4px;
-  background-color: #ffffff;
+  background-color: map-get($color-white, 000);
   box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.1);
   padding-bottom: 20px;
   margin-top: 30px;
 
   h4 {
     font-family: $font-light;
-    color: #333e44;
+    color: map-get($color-black, 600);
     font-size: 16px;
     font-weight: 200;
     line-height: 21px;
@@ -17,7 +17,7 @@
 
   .booked-room-header {
     display: flex;
-    border-bottom: 1px solid #e4e4e4;
+    border-bottom: 1px solid map-get($color-white, 500);
     padding: 0 30px;
 
     :first-child {
@@ -48,7 +48,7 @@
           th {
             font-weight: 900;
             line-height: 20px;
-            color: #333e44;
+            color: map-get($color-black, 600);
 
             &:first-child {
               width: 35%;
@@ -83,7 +83,7 @@
             padding: 25px 0 10px 0;
             font-weight: 900;
             text-align: left;
-            color: #333e44;
+            color: map-get($color-black, 600);
             font-family: $font-regular, sans-serif;
             font-size: 15px;
           }
@@ -92,7 +92,7 @@
 
       tbody {
         tr {
-          border-bottom: 1px solid #e4e4e4;
+          border-bottom: 1px solid map-get($color-white, 500);
 
           &:last-child {
             border: none;
@@ -100,7 +100,7 @@
 
           td {
             padding: 15px 0;
-            color: #6d6d6d;
+            color: $color-text;
             font-family: $font-light;
             font-size: 15px;
           }

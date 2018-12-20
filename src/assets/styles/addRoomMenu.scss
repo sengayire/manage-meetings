@@ -6,16 +6,16 @@
 
   button{
     width: 130px;
-    border: solid 1px #3359DB;
+    border: solid 1px $color-primary;
     border-radius: 2px;
-    background-color: #fff;
+    background-color: map-get($color-white, 000);
 
     &:hover{
       transition-duration: 0.15s;
 
       .addRoomBtn{
         span{
-          color: #fff;
+          color: map-get($color-white, 000);
         }
 
         &:after{
@@ -26,7 +26,7 @@
           vertical-align: top;
         }
       }
-      background: #3359DB;
+      background: $color-primary;
     }
   }
 
@@ -40,7 +40,7 @@
     }
 
     span{
-      color: #3359DB;
+      color: $color-primary;
       text-transform: capitalize;
       font-size: 15px;
     }
@@ -70,12 +70,12 @@
       li{
         height: 30px;
         width: 100%;
-        color: #3359DB;
+        color: $color-primary;
         padding-top: 15px;
         transition: unset !important;
 
         &:hover{
-          background-color: #F8F8F8;
+          background-color: map-get($color-white, 200);
         }
 
         span{
@@ -93,7 +93,7 @@
           display: block !important;
 
           &:hover{
-            color: #3359DB;
+            color: $color-primary;
             background: transparent;
           }
         }

@@ -25,7 +25,7 @@ describe('it renders correctly', () => {
   });
   it('should have a div', () => {
     const div = wrapper.find('div');
-    expect(div).toHaveLength(124);
+    expect(div).toHaveLength(116);
   });
   it('should have a button', () => {
     const button = wrapper.find('button');

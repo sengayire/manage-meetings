@@ -1,26 +1,27 @@
+@import './variables.scss';
 
 .spinner{
-    width: 5rem;
-    height: 5rem;
-    border-width: 6px;
-    border-top-color: #3359db;
-    border-left-color: #3359db;
-    border-style: solid;
-    border-width: 4px;
-    border-radius: 50%;  
-    animation: spinner 1s linear infinite;
-    border-bottom-color: transparent;
-    border-right-color: transparent;
-    margin: 27%;
-    vertical-align: middle;
- }
+  width: 5rem;
+  height: 5rem;
+  border-width: 6px;
+  border-top-color: $color-primary;
+  border-left-color: $color-primary;
+  border-style: solid;
+  border-width: 4px;
+  border-radius: 50%;  
+  animation: spinner 1s linear infinite;
+  border-bottom-color: transparent;
+  border-right-color: transparent;
+  margin: 27%;
+  vertical-align: middle;
+}
  
- @keyframes spinner{
-             0% { transform: rotate(0deg); }
-             100% { transform: rotate(360deg); }
-         }
+@keyframes spinner{
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
 
 .centered{
-margin: auto;
-width: 70%;
+  margin: auto;
+  width: 70%;
 }

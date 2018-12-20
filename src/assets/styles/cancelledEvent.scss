@@ -1,3 +1,5 @@
+@import './variables';
+
 .email {
   height: 532px;
   width: 611px;
@@ -20,7 +22,7 @@
   font-size: 18px;
   line-height: 23px;
   text-transform: uppercase;
-  color: #3359DB;
+  color: $color-primary;
   letter-spacing: 0.36px;
   margin: 25px 235.5px 24px 0;
 }
@@ -28,7 +30,7 @@
 .email-header {
   height: 70px;
   width: 610px;
-  background-color: #ffffff;
+  background-color: map-get($color-white, 000);
   border-radius: 4px 4px 0 0;
   margin: auto;
 }
@@ -40,7 +42,7 @@
 }
 
 .email-body {
-  background-color: #ffffff;
+  background-color: map-get($color-white, 000);
   height: 297px;
   width: 610px;
 }
@@ -48,7 +50,7 @@
 .email-body-content {
   height: 63px;
   width: 476px;
-  color: #6D6D6D;
+  color: $color-text;
   font-size: 16px;
   line-height: 21px;
   text-align: center;
@@ -61,7 +63,7 @@
 
 .sync-title {
   text-decoration: underline;
-  color: #4368e7;
+  color: $color-primary;
 }
 
 .admin {
@@ -71,7 +73,7 @@
 .email-title {
   font-size: 24px;
   line-height: 31px;
-  color: #333E44;
+  color: map-get($color-black, 600);
   font-weight: 800;
   text-align: center;
   height: 31px;
@@ -80,7 +82,7 @@
 }
 
 .email-sub-footer {
-  background-color: #ffffff;
+  background-color: map-get($color-white, 000);
   border-radius: 0 0 4px 4px;
   height: 130px;
   width: 610px;
@@ -89,7 +91,7 @@
 .email-sub-footer-content {
   height: 54.32px;
   width: 490px;
-  color: #6D6D6D;
+  color: $color-text;
   font-size: 16px;
   line-height: 27px;
   text-align: center;
@@ -101,13 +103,13 @@
 
 
 .email-sub-footer-content a {
-  color: #4368e7;
+  color: $color-primary;
 }
 
 .email-footer {
   height: 19.16px;
   width: 490px;
-  color: #999999;
+  color: map-get($color-black, 100);
   font-size: 16px;
   line-height: 19px;
   text-align: center;
@@ -115,5 +117,5 @@
 }
 
 .email-footer a {
-  color: #999999;
+  color: map-get($color-black, 100);
 }

@@ -1,84 +1,80 @@
 @import './variables';
 
-// color variables
-$andela-blue: #3358db;
-$andela-grey: #bcbcbc;
-
 // styles the whole notification settings content
 .notification-container{
-      display: flex;
-      background-color: #FFFFFF;
-      margin-bottom: 0.625em;
-      border-radius: 0.400em;
-      padding: 1.250em 0 1.250em 1.250em;
+  display: flex;
+  background-color: map-get($color-white, 000);
+  margin-bottom: 0.625em;
+  border-radius: 0.400em;
+  padding: 1.250em 0 1.250em 1.250em;
 
-      .notification-content{
-         flex: 4 0 0;
+  .notification-content{
+    flex: 4 0 0;
 
-         p{
-             font-size: 0.938em;
-             color: #6D6D6D;
-         }
+    p{
+      font-size: 0.938em;
+      color: $color-text;
+    }
 
-         h2, p{
-             margin: 0;
-         }
-      }
-
-      .notification-switch {
-          align-self: center;
-          padding-right: 3.125em;
-
-          .switch-component{
-              margin: auto;
-          }
-      }
+    h2, p{
+      margin: 0;
+    }
   }
 
-  .preference-main{
-      h1{
-          font-size: 1.313em;
-          font-weight: normal;
-          color: #6D6D6D;
-          margin-top: 3.750em;
-      }
-  }
+  .notification-switch {
+    align-self: center;
+    padding-right: 3.125em;
 
-  .notification-title{
-    color: #333E44 !important;
-    font-size: 1em;
-    padding-bottom: 0.375em;
-    padding-top: 0.625em;
+    .switch-component{
+      margin: auto;
+    }
   }
+}
+
+.preference-main{
+  h1{
+    font-size: 1.313em;
+    font-weight: normal;
+    color: $color-text;
+    margin-top: 3.750em;
+  }
+}
+
+.notification-title{
+  color: map-get($color-black, 600) !important;
+  font-size: 1em;
+  padding-bottom: 0.375em;
+  padding-top: 0.625em;
+}
 
   // slider background color when deactivated
 .theme--off--25ui_VhR{
-    background-color: $andela-grey;
+  background-color: $color-grey;
 }
 // slider background color when activated
 .theme--on--p92Ype4U{
-    background-color: $andela-blue;
+  background-color: $color-primary;
 }
 
 // slider bar size
 .theme--off--25ui_VhR, .theme--on--p92Ype4U{
-    width: 36px;
-    height: 20px;
+  width: 36px;
+  height: 20px;
 }
 
 // slider circle color
 .theme--on--p92Ype4U .theme--thumb--1pMry4dA{
-    background: #fafafa;
+  background: map-get($color-white, 000);
 }
 
 // slider circle size and position
 .theme--thumb--1pMry4dA{
-    height: 15px;
-    width: 15px;
-    top: 2px;
+  height: 15px;
+  width: 15px;
+  top: 2px;
 }
 
 // slider circle start position
 .theme--off--25ui_VhR .theme--thumb--1pMry4dA{
-    left: 5px;
+  left: 5px;
 }

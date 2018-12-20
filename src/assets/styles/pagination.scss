@@ -22,10 +22,10 @@
 .pagination>li {
   margin: 8px;
   padding-right: 0;
-  color: #999999;
+  color: map-get($color-black, 100);
 
   button {
-    background: #ffffff00;
+    background: map-get($color-white, 900);
   }
 }
 
@@ -35,7 +35,7 @@
 
 .pagination>li>a {
   text-decoration: none;
-  color: #3358db;
+  color: $color-primary;
 }
 
 .pagination>select.page-select {
@@ -54,20 +54,20 @@
 }
 
 li.pageNum {
-  color: #3358db;
+  color: $color-primary;
   margin-right: 35px;
 }
 
 input[type="text"] {
-  color: #3358db;
+  color: $color-primary;
 }
 
 select {
-  color: #3358db;
+  color: $color-primary;
 }
 
 .enabled {
-  color: #3358db !important;
+  color: $color-primary !important;
   padding: 0 !important;
   border: none !important;
   border-radius: none !important;
@@ -75,7 +75,7 @@ select {
 }
 
 .disabled {
-  color: #BCBCBC !important;
+  color: $color-grey !important;
   cursor: not-allowed;
   pointer-events: none;
   padding: 0 !important;
@@ -91,14 +91,14 @@ select {
 
 .totalPage,
 .totalPage:focus {
-  color: #3358db !important;
+  color: $color-primary !important;
   width: 42px !important;
   height: 40px;
   text-align: center;
   text-align-last: center;
   margin: 0 10px;
-  background-color: white;
-  border: 1px solid #D6DEE4;
+  background-color: map-get($color-white, 000);
+  border: 1px solid $color-input-border;
   border-radius: 4px;
   display: inline-block;
   font: inherit;
@@ -113,9 +113,9 @@ select {
 
 .page-select,
 .page-select:focus {
-  color: #3358db !important;
-  background-color: white;
-  border: 1px solid #D6DEE4;
+  color: $color-primary !important;
+  background-color: map-get($color-white, 000);
+  border: 1px solid $color-input-border;
   border-radius: 4px;
   display: inline-block;
   font: inherit;
@@ -129,9 +129,9 @@ select {
   -moz-appearance: none;
 
   background-image:
-    linear-gradient(45deg, transparent 50%, #999999 50%),
-    linear-gradient(135deg, #999999 50%, transparent 50%),
-    linear-gradient(to right, #f8f8f8, #f8f8f8);
+    linear-gradient(45deg, transparent 50%, map-get($color-black, 100) 50%),
+    linear-gradient(135deg, map-get($color-black, 100) 50%, transparent 50%),
+    linear-gradient(to right, map-get($color-white, 200), map-get($color-white, 200));
   background-position:
     calc(100% - 12px) calc(1em - 1px),
     calc(100% - 7px) calc(1em - 1px),

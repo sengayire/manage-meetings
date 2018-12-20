@@ -10,7 +10,7 @@
       text-align: right;
 
       .sort-by {
-        color: #999999;
+        color: map-get($color-black, 100);
         font-family: $font-light;
         font-size: 18px;
         line-height: 23px;
@@ -19,7 +19,7 @@
         .location {
           height: 23px;
           width: 70px;
-          color: #3359db;
+          color: $color-primary;
           font-size: 18px;
           font-weight: 700;
           line-height: 23px;
@@ -38,7 +38,7 @@
             ul {
               width: 140px;
               border-radius: 4px;
-              background-color: #ffffff;
+              background-color: map-get($color-white, 000);
               padding: 10px 0;
               text-align: left;
               box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
@@ -48,13 +48,13 @@
               }
 
               li {
-                color: #3359db;
+                color: $color-primary;
                 text-align: left;
                 line-height: 27px;
                 height: auto;
 
                 &.theme--disabled--zGTpAm-p {
-                  color: #999999;
+                  color: map-get($color-black, 100);
                 }
               }
 
@@ -89,7 +89,7 @@
       tr {
         height: 40px;
         padding: 1%;
-        border-bottom: 10px solid #f4f8f9;
+        border-bottom: 10px solid map-get($color-white, 800);
         font-weight: 50;
       }
       th:nth-child(4) {
@@ -97,15 +97,15 @@
       }
 
       th {
-        color: #999999;
+        color: map-get($color-black, 100);
         font-weight: 50;
         padding-left: 4%;
         font-size: 97%;
       }
 
       td {
-        background: #ffffff;
-        color: #333e44;
+        background: map-get($color-white, 000);
+        color: map-get($color-black, 600);
         font-size: 95%;
         font-family: $font-light;
         padding: 15px 40px;
@@ -123,7 +123,7 @@
           vertical-align: middle;
 
           &.active button {
-            border: 0.5px solid #ebebeb;
+            border: 0.5px solid $color-border;
             border-radius: 2px;
           }
           button {
@@ -142,19 +142,19 @@
             ul {
               width: auto;
               border-radius: 4px;
-              background-color: #ffffff;
+              background-color: map-get($color-white, 000);
               padding: 10px 0;
               text-align: left;
               box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
 
               li {
-                color: #3359db;
+                color: $color-primary;
                 text-align: left;
                 line-height: 27px;
                 height: auto;
 
                 &.theme--disabled--zGTpAm-p {
-                  color: #999999;
+                  color: map-get($color-black, 100);
                 }
 
                 &.access-menu {

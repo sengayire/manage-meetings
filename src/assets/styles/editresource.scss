@@ -1,98 +1,98 @@
 @import './variables';
 
 .edit-resource-modal{
-    padding: 1em;
+  padding: 1em;
 
-    .modal-form {
-        text-align: left;
-        color: black;
-        margin-top: 2em;
-        margin-left: 2em;
-        margin-right: 2em;
-        font-family: $font-light;
+  .modal-form {
+    text-align: left;
+    color: map-get($color-black, 900);
+    margin-top: 2em;
+    margin-left: 2em;
+    margin-right: 2em;
+    font-family: $font-light;
+  }
+
+  .edit-button{
+    cursor: pointer;
+    position: absolute;
+    color: map-get($color-black, 900);
+    border: 0;
+    margin-top: -1.1px;
+    margin-left: 0px !important;
+    font-family: $font-light;
+  }
+
+  .modal-cancel-button {
+    color: $color-primary;
+    border: 1px solid $color-primary;
+    background-color: map-get($color-white, 000);
+    text-transform: uppercase;
+    height: 44px;
+    margin-right: 5%;
+    width: 120px;
+  }
+
+  .modal-cancel-button:hover {
+    cursor: pointer;
+    background-color: $color-primary;
+    color: map-get($color-white, 000);
+  }
+
+  .update-button {
+    @media screen and (min-width: 961px){
+      font-size: 1.0em;
+      width: 150px;
     }
+    color: map-get($color-white, 000);
+    background-color: $color-primary;
+    height: 44px;
+  }
 
-    .edit-button{
-        cursor: pointer;
-        position: absolute;
-        color: #000000b0;
-        border: 0;
-        margin-top: -1.1px;
-        margin-left: 0px !important;
-        font-family: $font-light;
+  .update-button:hover {
+    cursor: pointer;
+  }
+
+  .buttons-cover {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-bottom: 8%;
+  }
+
+  label[for="resourceName"] {
+    display: block;
+    margin-bottom: 2em;
+
+    input {
+      display: block;
+      border-radius: 4px;
+      padding: 10px;
+      width: 25em;
+      height: 1.4em;
+      font-family: $font-light;
+      font-size: 1.1em;
+      border: 1px solid $color-input-border;
+      margin-top: 1em;
     }
-
-    .modal-cancel-button {
-        color: map-get($color-palette, primary);
-        border: 1px solid #3359DB;
-        background-color: #FFFFFF;
-        text-transform: uppercase;
-        height: 44px;
-        margin-right: 5%;
-        width: 120px;
-      }
-
-      .modal-cancel-button:hover {
-          cursor: pointer;
-          background-color: map-get($color-palette, primary);
-          color: map-get($color-palette, white);
-      }
-
-    .update-button {
-        @media screen and (min-width: 961px){
-            font-size: 1.0em;
-            width: 150px;
-        }
-        color: white;
-        background-color: map-get($color-palette, primary);
-        height: 44px;
-    }
-
-    .update-button:hover {
-        cursor: pointer;
-    }
-
-    .buttons-cover {
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-end;
-        margin-bottom: 8%;
-    }
-
-    label[for="resourceName"] {
-        display: block;
-        margin-bottom: 2em;
-
-        input {
-            display: block;
-            border-radius: 4px;
-            padding: 10px;
-            width: 25em;
-            height: 1.4em;
-            font-family: $font-light;
-            font-size: 1.1em;
-            border: 1px solid #d6dee4;
-            margin-top: 1em;
-        }
-    }
+  }
 
 
 
 
-    @media screen and (max-width: 639px) {
-        height: 33%;
-        width: 78%;
-      }
-      @media screen and (min-width: 640px) and (max-width: 1023px) and (orientation: landscape) {
-        max-height: 68%;
-        width: 60%;
-      }
-      @media screen and (min-width: 768px)  and (orientation: portrait) {
-        height: 20%;
-        width: 52.5%
-      }
-      @media screen and (min-width: 1024) and (orientation: landscape) {
-        width: 49%;
-        height: 33.5%
-      }
-    }
+  @media screen and (max-width: 639px) {
+    height: 33%;
+    width: 78%;
+  }
+  @media screen and (min-width: 640px) and (max-width: 1023px) and (orientation: landscape) {
+    max-height: 68%;
+    width: 60%;
+  }
+  @media screen and (min-width: 768px)  and (orientation: portrait) {
+    height: 20%;
+    width: 52.5%
+  }
+  @media screen and (min-width: 1024) and (orientation: landscape) {
+    width: 49%;
+    height: 33.5%
+  }
+}

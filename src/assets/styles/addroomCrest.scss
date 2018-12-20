@@ -1,59 +1,57 @@
 @import './variables';
 
 .add-room-modal {
-    $primary-color:  #3359db;
-    font-family: $font-light;
-    padding: 3%;
-    padding-right: 0;
-    border: none !important;
+  $primary-color: $color-primary;
+  font-family: $font-light;
+  padding: 3%;
+  padding-right: 0;
+  border: none !important;
 
+  h2 {
+    margin-left: 0;
+    margin-top: 0;
+    margin-bottom: 40px !important;
+  }
 
-    h2 {
-        margin-left: 0;
-        margin-top: 0;
-        margin-bottom: 40px !important;
-    }
+  .mrm-input {
+    width: 28em;
+    margin-top: 0.7em;
+    margin-bottom: 0.7em;
+  }
 
-    .mrm-input {
-        width: 28em;
-        margin-top: 0.7em;
-        margin-bottom: 0.7em;
+  .kla-form{
+    padding-right: 2rem; 
+    width: 33rem;
+    #roomName{
+      width: 30.5em;
     }
-
-    .kla-form{
-        padding-right: 2rem; 
-        width: 33rem;
-      #roomName{
-        width: 30.5em;
-      }
-      .form-action-buttons{
-        padding-right: 15px;
-      }
+    .form-action-buttons{
+      padding-right: 15px;
     }
-    .two-inputs{
-        display: flex;
-        margin-top: -4%;
-        margin-bottom: 4%;
-        .num-inputs{
-            margin-top: 2.3%;
-            margin-left: 4%;
-        }
+  }
+  .two-inputs{
+    display: flex;
+    margin-top: -4%;
+    margin-bottom: 4%;
+    .num-inputs{
+      margin-top: 2.3%;
+      margin-left: 4%;
     }
+  }
     
+  .kla-label{
+    margin-top: 4%;
+    width: 13.5em !important;
+  }
+  .floor-wrapper {
+    margin-top: 5%;
+    margin-bottom: 4%;
+    width: 15.5em !important;
+  }
 
-    .kla-label{
-        margin-top: 4%;
-        width: 13.5em !important;
-    }
-    .floor-wrapper {
-        margin-top: 5%;
-        margin-bottom: 4%;
-        width: 15.5em!important;
-    }
-
-    .capacity-wrapper {
-        margin-top: 8%;
-        margin-bottom: 14%;
-        width: 12em !important;
-    }
+  .capacity-wrapper {
+    margin-top: 8%;
+    margin-bottom: 14%;
+    width: 12em !important;
+  }
 }
