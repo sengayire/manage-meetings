@@ -1,40 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Room feedback card should render correctly 1`] = `
-<div
-  className="feedback-card "
->
-  <section>
-    <p>
-      Total Views
-    </p>
-    <p>
-      370
-    </p>
-  </section>
-  <section>
-    <p>
-      Total Responses
-    </p>
-    <p>
-      300
-    </p>
-  </section>
-  <section>
-    <p>
-      Start Date
-    </p>
-    <p>
-      07 Feb 2018
-    </p>
-  </section>
-  <section>
-    <p>
-      Duration
-    </p>
-    <p>
-      1 Week
-    </p>
-  </section>
-</div>
+exports[`Room feedback Card Component should render correctly 1`] = `
+<section>
+  <p />
+  <p />
+</section>
 `;

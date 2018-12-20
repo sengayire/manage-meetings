@@ -4493,7 +4493,9 @@ query user ($email: String!) {
                       }
                     }
                   >
-                    <NavBar>
+                    <NavBar
+                      route=""
+                    >
                       <TopMenu>
                         <div
                           className="top-menu"

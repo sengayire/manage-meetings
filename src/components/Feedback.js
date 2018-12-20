@@ -20,7 +20,7 @@ const Feedback = props => (
     status,
   }, index) => (
     <tr key={index}>
-      <td><NavLink to={ROUTES.roomResponses}>{question}</NavLink></td>
+      <td><NavLink to={ROUTES.roomResponses} className="questions">{question}</NavLink></td>
       <td>{type}</td>
       <td>{responses}</td>
       <td>{startDate}</td>
