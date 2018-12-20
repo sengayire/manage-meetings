@@ -1,6 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import RoomFeedbackResponse, { starRate } from '../../../src/components/roomFeedback/RoomFeedbackResponse';
+import RoomFeedbackResponseList from '../../../src/components/roomFeedback/RoomFeedbackResponseList';
 
 const props = {
   roomFeedbackResponse: {
@@ -9,15 +10,48 @@ const props = {
     responses: 25,
     rating: 4,
     missingItems: '2 out of 10',
-    suggestion: 'The substring() method returns the part of the string between the start and end indexes, or to the end of the string.',
+    suggestion:
+      'The substring() method returns the part of the string between the start and end indexes, or to the end of the string.',
   },
+  viewSingleFeed: jest.fn(),
 };
 
 describe('Room Feedback', () => {
   it('should find Olkaria', () => {
     const wrapper = shallow(<RoomFeedbackResponse {...props} />);
-    const text = wrapper.find('span').first().text();
+    const text = wrapper
+      .find('span')
+      .first()
+      .text();
     expect(text).toEqual('Olkaria');
+  });
+
+  it('should be able to toggle modal state', () => {
+    const ResponseListComponent = shallow(<RoomFeedbackResponseList />);
+    const ResponseComponent = shallow(<RoomFeedbackResponse {...props} />);
+    const ResponseListInstance = ResponseListComponent.instance();
+    const ResponseInstance = ResponseComponent.instance();
+    const fakeEvent = { preventDefault: () => {} };
+    ResponseListInstance.showModal(fakeEvent);
+    ResponseInstance.showModal(fakeEvent);
+    expect(ResponseListComponent.state()).toEqual({ roomId: null, visible: true });
+  });
+
+  it('should change modal visibility to true', () => {
+    const ResponseListComponent = shallow(<RoomFeedbackResponseList />);
+    const ResponseListInstance = ResponseListComponent.instance();
+    const fakeEvent = { preventDefault: () => {} };
+    ResponseListInstance.showModal(fakeEvent, 1);
+    expect(ResponseListComponent.state()).toEqual({ roomId: 1, visible: true });
+  });
+
+  it('should change modal visibility to false', () => {
+    const ResponseListComponent = shallow(<RoomFeedbackResponseList />);
+    const ResponseListInstance = ResponseListComponent.instance();
+    const fakeEvent = { preventDefault: () => {} };
+    ResponseListInstance.setState({ roomId: 1 });
+    ResponseListInstance.showModal(fakeEvent, 1);
+    expect(ResponseListComponent.state()).toEqual({ roomId: null, visible: false });
   });
 
   it('should return 5 default stars', () => {

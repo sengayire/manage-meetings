@@ -1,21 +1,17 @@
-@font-face {
-  font-family: 'DINPro-Light';
-  font-style: normal;
-  src: url('../fonts/DINPro-Light.otf');
-}
+@import './variables';
 
 .room-feedback-container {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  font-family: 'DINPro-Light';
+  font-family: $font-light;
   border-radius: 4px;
-  background-color: #FFFFFF;
+  background-color: map-get($color-white, 000);
   padding: 0.875em 1.875em;
   margin-bottom: 8px;
-  color: #333E44;
+  color: map-get($color-black, 600);
 
   span:first-of-type {
-    color: #3359DB;
+    color: $color-primary;
   }
 
   span img {
@@ -24,7 +20,10 @@
 
   span.star-text {
     margin-right: 0.938em;
-    color: #333E44 !important;
+    color: map-get($color-black, 600) !important;
   }
-
+  a {
+    text-decoration: none;
+    color: $color-primary;
+  }
 }

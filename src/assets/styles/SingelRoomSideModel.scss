@@ -1,0 +1,116 @@
+@import './variables';
+
+.modal-wrapper {
+  position: fixed;
+  width: 27%;
+  min-height: 100%;
+  overflow-y: scroll;
+  right: 0;
+  padding-left: 1.5%;
+  padding-right: 0.5%;
+  margin-bottom: 100%;
+  box-shadow: -10px 0px 20px -5px $color-shadow;
+  background-color: $color-background;
+  animation: moveInRight .5s ease-out;
+
+  .modal-header {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    color: map-get($color-black, 600);
+    font-family: $font-regular;
+    font-size: 18px;
+    font-weight: 500;
+  }
+  .row-1-headings {
+    margin: 5% 0% 5% 0%;
+  }
+  .row-1-headings,
+  .row-1-data {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    color: $text-color;
+    font-family: $font-regular;
+    font-size: 15px;
+    line-height: 20px;
+    margin: 0% 0% 7% 0%;
+  }
+  .row-1-data > div:nth-child(odd) {
+    font-weight: bolder;
+    font-size: 20px;
+    .green-star {
+      content: url('../images/green_star.svg');
+    }
+  }
+  .row-2 {
+    height: 20px;
+    width: 100%;
+    color: map-get($color-black, 600);
+    font-family: $font-regular;
+    font-size: 15px;
+    .date {
+      margin-top: 5%;
+      margin-bottom: 2%;
+    }
+    .text-comment {
+      font-size: 17px;
+      margin-bottom: 5%;
+    }
+    .item-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding-bottom: 5%;
+      border-bottom: 1px solid $color-input-border;
+      .items {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+      }
+      .item-list-heading {
+        margin-bottom: 4%;
+        color: $text-color;
+        font-family: $font-regular;
+        font-size: 15px;
+      }
+    }
+  }
+  .row-2-heading {
+    padding-bottom: 4%;
+    font-size: 18px;
+    border-bottom: 1px solid $color-input-border;
+    font-family: $font-regular;
+    &:before {
+      content: url('../images/Group.svg');
+      display: block;
+      width: 30px;
+      height: 20px;
+      float: left;
+      margin: -3px 6px 0 0;
+    }
+  }
+  .cancel {
+    content: url('../images/Cancel.svg');
+    float: right;
+    padding-right: 5%;
+  }
+  .cancel:hover {
+    cursor: pointer;
+  }
+}
+
+.row-2 > :last-child {
+  padding-bottom: 40%;
+}
+
+@keyframes moveInRight {
+  0% {
+    transform: translateX(100px);
+  }
+
+  80% {
+    transform: translateX(-10px);
+  }
+
+  100% {
+    transform: translate(0);
+  }
+}
