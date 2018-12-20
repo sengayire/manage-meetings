@@ -10,12 +10,12 @@ const addRoom = {
 };
 
 const variables = {
-  name: 'Test room 1',
-  capacity: 3,
-  floorId: 2,
-  officeId: 2,
+  roomName: 'Test room 1',
+  roomCapacity: 3,
+  roomFloorId: 2,
+  office_id: 2,
   roomType: 'meeting room',
-  calendarId: 'andela.com',
+  roomCalendar: 'andela.com',
   imageUrl: 'test/image',
 };
 

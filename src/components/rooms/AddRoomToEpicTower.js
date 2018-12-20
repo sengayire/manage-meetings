@@ -7,7 +7,7 @@ import { ActionButtons } from '../commons';
 import '../../assets/styles/addroom.scss';
 import SelectImage from '../commons/SelectImage';
 import EpicTowerInputs from '../commons/EpicTowerInputs';
-import { ADD_ROOM_TO_EPIC_TOWER } from '../../graphql/mutations/AddRoomToEpicTower';
+import { ADD_ROOM_TO_EPIC_TOWER } from '../../graphql/mutations/rooms/AddRoomToEpicTower';
 import GET_EPIC_TOWER_DETAILS_QUERY from '../../graphql/queries/Offices';
 import mapOfficeDetails from '../../graphql/mappers/Offices';
 import notification from '../../utils/notification';
@@ -20,7 +20,7 @@ export class AddRoomToEpicTower extends Component {
     super(props);
     this.state = {
       roomType: 'meeting',
-      roomCalendar: 'andela.com1',
+      roomCalendar: 'andela.com_3137343432303133383637@resource.calendar.google.com',
       officeId: 1,
       imageUrl: '',
       roomName: '',
@@ -35,6 +35,7 @@ export class AddRoomToEpicTower extends Component {
       thumbnailName: 'Upload a thumbnail',
     };
   }
+
   componentWillReceiveProps = (props) => {
     const { officeDetails } = props;
 
@@ -52,10 +53,10 @@ export class AddRoomToEpicTower extends Component {
   };
 
   /**
-   * It closes a modal
-   *
-   * @returns {void}
-   */
+  * It handles close modal
+  *
+  * @returns {void}
+  */
   handleCloseModal = () => {
     this.setState({
       imageUrl: '',
@@ -73,11 +74,11 @@ export class AddRoomToEpicTower extends Component {
    * on the changes in the input fields
    *
    * @param {object} event
-   * @param {number} num
+   * @param {number} number
    *
    * @returns {void}
    */
-  handleInputChange = (event, num) => {
+  handleInputChange = (event, number) => {
     const {
       target: { name, value, files },
     } = event;
@@ -134,15 +135,15 @@ export class AddRoomToEpicTower extends Component {
       default:
         intValue = value === '' ? 0 : value;
         intValue = parseInt(intValue, 10);
-        if (num !== undefined) {
-          intValue = num;
+        if (number !== undefined) {
+          intValue = number;
           this.setState({ roomCapacity: intValue });
         }
     }
   };
 
   /**
-   * It updates the state value of closeModal
+   *It updates the state value of closeModal
    * to false whenever the modal closes
    *
    * @returns {void}
@@ -152,11 +153,10 @@ export class AddRoomToEpicTower extends Component {
   };
 
   /**
-   * Adds a room
+   *  It adds a room
    *
-   * @param {object} event
-   *
-   * @returns {void}
+   * @param  {object} event
+   * @requires {function}
    */
   handleAddRoom = (event) => {
     event.preventDefault();
@@ -170,6 +170,7 @@ export class AddRoomToEpicTower extends Component {
       officeId,
       imageUrl,
     } = this.state;
+
     if (!hasInvalidInputs(this.state)) {
       this.props
         .epicTowerMutation({

@@ -1,10 +1,8 @@
 import React from 'react';
 import { IconMenu, MenuItem, MenuDivider } from 'react-toolbox/lib/menu';
-
 import WrappedAddRoomToEpicTower from './AddRoomToEpicTower';
 import AddRoomToKampala from './AddRoomToKampala';
-import AddRoomStCatherine from './AddRoomNairobi';
-
+import AddRoomToNairobi from './AddRoomNairobi';
 import '../../assets/styles/addRoomMenu.scss';
 
 /**
@@ -31,7 +29,7 @@ const AddRoomMenu = () => (
       <WrappedAddRoomToEpicTower />
     </MenuItem>
     <MenuItem>
-      <AddRoomStCatherine />
+      <AddRoomToNairobi />
     </MenuItem>
     <MenuItem>
       <AddRoomToKampala />

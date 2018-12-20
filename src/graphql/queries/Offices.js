@@ -1,38 +1,56 @@
 import gql from 'graphql-tag';
 
 const GET_EPIC_TOWER_DETAILS_QUERY = gql`
-  query officeDetails {
-    getOfficeByName(name: "Epic tower") {
+query officeDetails {
+ getOfficeByName(name: "EPIC Tower"){
+  id
+  blocks {
+    id
+    floors {
       id
-      blocks {
+      name
+      wings{
         id
-        floors {
-          id
-          name
-          wings {
-            id
-            name
-          }
-        }
+        name
       }
     }
   }
-`;
+}
+}`;
+
+const GET_NAIROBI_DETAILS = gql`
+query officeDetails {
+  getOfficeByName(name:"St Catherines"){
+      id
+      name
+      location{
+        id
+        name
+      }
+      blocks{
+        id
+        name
+        floors{
+          id
+          name
+        }
+      }
+    }
+}`;
 
 const GET_CREST_DETAILS = gql`
-  query officeDetails {
-    getOfficeByName(name: "The Crest") {
+query officeDetails {
+ getOfficeByName(name: "The Crest"){
+  id
+  blocks {
+    id
+    floors {
       id
-      blocks {
-        id
-        floors {
-          id
-          name
-        }
-      }
+      name
     }
   }
-`;
+}
+}`;
 
 const GET_ALL_OFFICES = gql`
   query allOffices($page: Int!, $perPage: Int!) {
@@ -53,19 +71,9 @@ const GET_ALL_OFFICES = gql`
   }
 `;
 
-const GET_OFFICES = gql`
-  query allOffices {
-    allOffices {
-      offices {
-        id
-        name
-        location {
-          name
-          timeZone
-        }
-      }
-    }
-  }
-`;
-
-export { GET_EPIC_TOWER_DETAILS_QUERY as default, GET_CREST_DETAILS, GET_ALL_OFFICES, GET_OFFICES };
+export {
+  GET_EPIC_TOWER_DETAILS_QUERY as default,
+  GET_NAIROBI_DETAILS,
+  GET_CREST_DETAILS,
+  GET_ALL_OFFICES,
+};
