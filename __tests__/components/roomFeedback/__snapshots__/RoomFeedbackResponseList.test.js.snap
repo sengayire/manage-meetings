@@ -1,0 +1,182 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Room feedback list should render correctly 1`] = `
+<React.Fragment>
+  <NavBar
+    route="/response"
+  />
+  <div
+    className="feedback-container"
+  >
+    <BackArrow
+      redirectUri="/feedback"
+    />
+    <div
+      className="feedback-card "
+    >
+      <RoomFeedbackCard
+        key="0"
+        title="Total Views"
+        value="370"
+      />
+      <RoomFeedbackCard
+        key="1"
+        title="Total Responses"
+        value="300"
+      />
+      <RoomFeedbackCard
+        key="2"
+        title="Start Date"
+        value="07 Feb 2018"
+      />
+      <RoomFeedbackCard
+        key="3"
+        title="Duration"
+        value="1 Week"
+      />
+    </div>
+    <nav
+      id="feedback-nav"
+    >
+      <input
+        className="feedback-location-input"
+        disabled={true}
+        size="12"
+        type="text"
+        value="Nairobi"
+      />
+      <section
+        className="feedback-menu-buttons"
+      >
+        <span
+          className="feedback-filter-button"
+        >
+          Filter
+          <svg
+            className="svg-feedback-filter"
+            height="16"
+            width="18"
+          >
+            <path
+              d="M6.546 8.66L.195 1.316C-.255.796.123 0 .82 0h16.36c.697 0 1.075.797.625 1.316l-6.35 7.344V15.2c0 .595-.64.981-1.185.716l-3.272-1.6a.798.798 0 0 1-.452-.716V8.66zm8.871-7.06H2.583l5.406 6.25a.79.79 0 0 1 .193.517v4.738l1.636.8V8.367a.79.79 0 0 1 .193-.516L15.417 1.6z"
+              fillRule="nonzero"
+            />
+          </svg>
+        </span>
+        <span
+          className="export-button"
+        >
+          <svg
+            className="svg-export"
+            height="10px"
+            viewBox="0 0 433.5 433.5"
+            width="10px"
+          >
+            <path
+              d="M395.25 153h-102V0h-153v153h-102l178.5 178.5L395.25 153zm-357 229.5v51h357v-51h-357z"
+            />
+          </svg>
+          Export
+        </span>
+      </section>
+    </nav>
+    <header
+      className="room-feedback-list-container"
+    >
+      <span>
+        Meeting Room
+      </span>
+      <span>
+        Responses
+      </span>
+      <span>
+        Cleanliness Rating
+      </span>
+      <span>
+        Missing Items
+      </span>
+      <span>
+        Suggestion on how to improve
+      </span>
+    </header>
+    <RoomFeedbackResponse
+      key="1"
+      roomFeedbackResponse={
+        Object {
+          "id": 1,
+          "missingItems": "2 out of 10",
+          "rating": 4,
+          "responses": 25,
+          "room": "Olkaria",
+          "suggestion": "The substring() method returns the part of the string between the start and end indexes, or to the end of the string.",
+        }
+      }
+    />
+    <RoomFeedbackResponse
+      key="2"
+      roomFeedbackResponse={
+        Object {
+          "id": 2,
+          "missingItems": "2 out of 10",
+          "rating": 3,
+          "responses": 23,
+          "room": "Monrovia",
+          "suggestion": "Any argument value that is less than 0 or greater than stringName.length is treated as if it were 0 and stringName.length respectively. Any argument value that is NaN is treated as if it were 0.",
+        }
+      }
+    />
+    <RoomFeedbackResponse
+      key="3"
+      roomFeedbackResponse={
+        Object {
+          "id": 3,
+          "missingItems": "2 out of 10",
+          "rating": 5,
+          "responses": 7,
+          "room": "Lokichar",
+          "suggestion": "Lorem",
+        }
+      }
+    />
+    <RoomFeedbackResponse
+      key="4"
+      roomFeedbackResponse={
+        Object {
+          "id": 4,
+          "missingItems": "2 out of 10",
+          "rating": 2,
+          "responses": 19,
+          "room": "Kigali",
+          "suggestion": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias, quis ea. Vitae nesciunt ex dignissimos quae, odio excepturi nobis inventore!",
+        }
+      }
+    />
+    <RoomFeedbackResponse
+      key="5"
+      roomFeedbackResponse={
+        Object {
+          "id": 5,
+          "missingItems": "2 out of 10",
+          "rating": 1,
+          "responses": 13,
+          "room": "Tunis",
+          "suggestion": "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+        }
+      }
+    />
+    <RoomFeedbackResponse
+      key="6"
+      roomFeedbackResponse={
+        Object {
+          "id": 6,
+          "missingItems": "2 out of 10",
+          "rating": 0,
+          "responses": 0,
+          "room": "Malabo",
+          "suggestion": "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+        }
+      }
+    />
+  </div>
+</React.Fragment>
+`;

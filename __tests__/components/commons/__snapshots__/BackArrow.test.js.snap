@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Back Arrow Component should render correctly 1`] = `
+<NavLink
+  activeClassName="active"
+  ariaCurrent="true"
+  className="arrow"
+>
+  <span
+    className="arrow-symbol"
+  >
+    ⬅
+  </span>
+  <span>
+    Back
+  </span>
+</NavLink>
+`;

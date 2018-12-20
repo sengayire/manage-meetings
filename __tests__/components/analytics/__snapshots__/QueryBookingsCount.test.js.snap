@@ -1763,8 +1763,8 @@ exports[`Query Bookings Count Component should render without error 1`] = `
             },
           },
           "variables": Object {
-            "endDate": "Dec 18 2018",
-            "startDate": "Dec 18 2018",
+            "endDate": "Dec 20 2018",
+            "startDate": "Dec 20 2018",
           },
         },
       },

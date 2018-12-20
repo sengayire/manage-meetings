@@ -2,7 +2,9 @@
 
 exports[`Preference Component should render properly 1`] = `
 <React.Fragment>
-  <NavBar />
+  <NavBar
+    route=""
+  />
   <div
     className="preference-container"
   >

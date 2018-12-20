@@ -92,7 +92,7 @@
 
       td:nth-of-type(1) {
         text-align: left;
-        color: map-get($color-palette, primary)
+        color: map-get($color-palette, primary) !important;
       }
 
       td:nth-of-type(4), td:nth-of-type(5) {
@@ -109,4 +109,10 @@
       }
     }
   }
+}
+
+.questions {
+  padding: 2%;
+  color: map-get($color-palette,  primary);
+  text-decoration: none;
 }
