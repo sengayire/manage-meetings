@@ -6,10 +6,18 @@ const options = array =>
   array.map(item => <option key={item + 1}>{item}</option>);
 
 class Pagination extends Component {
-  state = {
-    perPage: 5,
-    page: 1,
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      perPage: 5,
+      page: 1,
+    };
+  }
+
+  componentWillMount() {
+    const { currentPage } = this.props;
+    this.setState({ page: currentPage });
+  }
 
   handleChange = (e) => {
     e.preventDefault();
@@ -24,7 +32,7 @@ class Pagination extends Component {
     }
     if (name === 'page') {
       this.setState({ page: parseFloat(value), perPage }, () => {
-        handleData(perPage, value);
+        handleData(perPage, parseInt(value, 10));
       });
     }
   };
@@ -100,11 +108,13 @@ Pagination.propTypes = {
   totalPages: PropTypes.number,
   handleData: PropTypes.func.isRequired,
   reverse: PropTypes.bool,
+  currentPage: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 };
 
 Pagination.defaultProps = {
   itemsPerPage: [5, 10, 20, 50],
   totalPages: 4,
+  currentPage: 1,
   hasNext: true,
   hasPrevious: false,
   reverse: false,

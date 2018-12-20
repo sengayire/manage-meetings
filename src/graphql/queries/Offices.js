@@ -1,46 +1,66 @@
 import gql from 'graphql-tag';
 
 const GET_EPIC_TOWER_DETAILS_QUERY = gql`
-query officeDetails {
- getOfficeByName(name: "Epic tower"){
-  id
-  blocks {
-    id
-    floors {
+  query officeDetails {
+    getOfficeByName(name: "Epic tower") {
       id
-      name
-      wings{
+      blocks {
         id
-        name
+        floors {
+          id
+          name
+          wings {
+            id
+            name
+          }
+        }
       }
     }
   }
-}
-}`;
-
+`;
 
 const GET_CREST_DETAILS = gql`
-query officeDetails {
- getOfficeByName(name: "The Crest"){
-  id
-  blocks {
-    id
-    floors {
+  query officeDetails {
+    getOfficeByName(name: "The Crest") {
       id
-      name
+      blocks {
+        id
+        floors {
+          id
+          name
+        }
+      }
     }
   }
-}
-}`;
+`;
 
 const GET_ALL_OFFICES = gql`
+  query allOffices($page: Int!, $perPage: Int!) {
+    allOffices(page: $page, perPage: $perPage) {
+      offices {
+        id
+        name
+        location {
+          name
+          timeZone
+        }
+      }
+      hasNext
+      hasPrevious
+      pages
+      queryTotal
+    }
+  }
+`;
+
+const GET_OFFICES = gql`
   query allOffices {
-    allOffices{
-      offices{
-        id,
-        name,
-        location{
-          name,
+    allOffices {
+      offices {
+        id
+        name
+        location {
+          name
           timeZone
         }
       }
@@ -48,8 +68,4 @@ const GET_ALL_OFFICES = gql`
   }
 `;
 
-export {
-  GET_EPIC_TOWER_DETAILS_QUERY as default,
-  GET_CREST_DETAILS,
-  GET_ALL_OFFICES,
-};
+export { GET_EPIC_TOWER_DETAILS_QUERY as default, GET_CREST_DETAILS, GET_ALL_OFFICES, GET_OFFICES };

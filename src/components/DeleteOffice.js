@@ -23,16 +23,16 @@ export class DeleteOffice extends React.Component {
   };
 
   handleDeleteOffice = () => {
-    const { officeId, deleteOffice } = this.props;
+    const { officeId, deleteOffice, refetch } = this.props;
     deleteOffice({
       variables: {
         officeId,
       },
-      refetchQueries: [{ query: GET_ALL_OFFICES }],
     })
       .then((office) => {
         const { name } = office.data.deleteOffice.office;
         notification(toastr, 'success', `${name} is deleted successfully`)();
+        refetch();
       })
       .catch((err) => {
         notification(toastr, 'error', err.graphQLErrors[0].message)();
@@ -74,9 +74,24 @@ DeleteOffice.propTypes = {
   officeName: PropTypes.string.isRequired,
   officeId: PropTypes.string.isRequired,
   deleteOffice: PropTypes.func.isRequired,
+  refetch: PropTypes.func,
+};
+
+DeleteOffice.defaultProps = {
+  refetch: PropTypes.func,
 };
 
 export default compose(
   graphql(DELETE_OFFICE_MUTATION, { name: 'deleteOffice' }),
-  graphql(GET_ALL_OFFICES, { name: 'allOffices' }),
+  graphql(GET_ALL_OFFICES, {
+    name: 'allOffices',
+    options: () => ({
+      /* istanbul ignore next */
+      /* Reasoning: no explicit way of testing configuration options */
+      variables: {
+        page: 1,
+        perPage: 5,
+      },
+    }),
+  }),
 )(DeleteOffice);

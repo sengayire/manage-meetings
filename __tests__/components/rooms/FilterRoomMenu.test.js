@@ -13,6 +13,8 @@ import FilterRoomMenu, { FilterButton } from '../../../src/components/rooms/Filt
 
 describe('FilterButton', () => {
   const initProps = {
+    page: 1,
+    perPage: 2,
     isResource: jest.fn(),
     isNoResource: jest.fn(),
     handleSetState: jest.fn(),
@@ -56,7 +58,13 @@ describe('FilterButton', () => {
   };
   const result = { ...allRooms };
   const roomLocationsRequest = { query: GET_LOCATIONS_QUERY };
-  const officeRequest = { query: GET_ALL_OFFICES };
+  const officeRequest = {
+    query: GET_ALL_OFFICES,
+    variables: {
+      page: 1,
+      perPage: 5,
+    },
+  };
   const locationsResult = { data: { allLocations: [...roomLocations] } };
   const officeResult = { ...officeDetails };
 
