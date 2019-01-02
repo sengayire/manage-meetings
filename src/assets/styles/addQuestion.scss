@@ -2,7 +2,7 @@
 
 .add-question-modal {
   padding: 3%;
-  color: map-get($black, 300);
+  color: map-get($color-black, 300);
 
   h2 {
     margin: 1%;
@@ -30,13 +30,13 @@
     }
 
     &__add {
-      color: map-get($color-palette, primary);
+      color: $color-primary;
     }
     
     .inputs {
       height: 50px;
       display: flex;
-      border: 1px solid #ccc;
+      border: 1px solid $color-input-border;
       border-radius: 5px;
       margin: 30px 0;
     }
@@ -44,7 +44,7 @@
     .inputs-title {
       min-width: 120px;
       display: flex;
-      background-color: #aebdd485;
+      background-color: $color-title;
 
       span {
         margin: auto;
@@ -86,18 +86,18 @@
       margin-top: 30px;
       
       button:nth-child(1) {
-        background-color: #3359db;
+        background-color: $color-primary;
         height: 44px;      
         float: right;
-        color: #FFFFFF;
+        color: map-get($color-white, 000);
         @media screen and (max-width: 867px) {
           margin-right: 5%;
         }
       }
       
       button:nth-child(2) {
-        border: 1px solid #3359DB;
-        background-color: #FFFFFF;
+        border: 1px solid $color-primary;
+        background-color: map-get($color-white, 000);
         height: 44px;
         float: right;
         width: 137px;
@@ -105,21 +105,21 @@
       }
 
       & button:nth-child(2):hover {
-        background-color: #3359DB;
-        color: #FFFFFF;
+        background-color: $color-primary;
+        color: map-get($color-white, 000);
       }
     }
   ::placeholder {
-    color: $placeholder;
+    color: $color-placeholder;
     opacity: 1;
   }
   
   :-ms-input-placeholder { 
-    color: $placeholder;
+    color: $color-placeholder;
   }
   
   ::-ms-input-placeholder {
-    color: $placeholder;
+    color: $color-placeholder;
   }
 }
     

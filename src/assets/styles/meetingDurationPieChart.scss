@@ -1,17 +1,19 @@
+@import './variables';
+
 .duration-first-circle {
   span {
-    background-color: #FFAF30;
+    background-color: map-get($color-amber, 300);
   }
 }
 
 .duration-second-circle {
   span {
-    background-color: #FAC56F;
+    background-color: map-get($color-amber, 200);
   }
 }
 
 .duration-third-circle {
   span {
-    background-color: #FFE9C6;;
+    background-color: map-get($color-amber, 100);
   }
 }

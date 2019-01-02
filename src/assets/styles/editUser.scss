@@ -1,8 +1,4 @@
-@font-face {
-  font-family: 'DINPro-Light';
-  font-style: normal;
-  src: url('../fonts/DINPro-Light.otf');
-}
+@import './variables';
 
 .edit-user-modal{
   padding: 0 10px;
@@ -30,7 +26,7 @@
         margin-top: 10px;
         height: 27px;
         width: 458px !important;
-        color: rgba(50, 60, 71, 0.4) !important;
+        color: map-get($color-black, 900) !important;
         font-size: 16px;
         padding-left: 17px;
       }

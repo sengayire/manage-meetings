@@ -3,7 +3,7 @@
 td {
   #modal-button {
     border: none;
-    color: #333e44;
+    color: map-get($color-black, 600);
     font-family: $font-light;
     cursor: pointer;
     margin-left: 6px;
@@ -15,18 +15,18 @@ td {
 }
 
 .delete-modal {
-  padding: 25px 15px;;
+  padding: 25px 15px;
   max-height: 312px;
   width: 614px;
   border: none !important;
   border-radius: 4px;
-  background-color: #FFFFFF;
+  background-color: map-get($color-white, 000);
 }
 
 #confirm-msg {
   font-family: $font-light;
   font-size: 18px;
-  color: #6D6D6D;
+  color: $color-text;
   line-height: 21px;
   padding-top: 30px;
   padding-bottom: 25px;
@@ -44,7 +44,7 @@ td {
     float: right;
     height: 44px;
     width: 130px;
-    border: 1px solid #3359DB;
+    border: 1px solid $color-primary;
     border-radius: 0;
     font-family: $font-regular;
   }
@@ -54,8 +54,8 @@ td {
   }
 
   #delete-btn {
-    background-color: #3359DB;
-    color: #FFFFFF;
+    background-color: $color-primary;
+    color: map-get($color-white, 000);
   }
 }
 

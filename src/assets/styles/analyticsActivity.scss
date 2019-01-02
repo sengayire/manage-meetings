@@ -8,7 +8,7 @@
 	width: 100%;
 	margin-left: 0px;
 	margin-top: 22px;
-	color: #333e44;
+	color: map-get($color-black, 600);
 	font-size: 16px;
 	font-weight: bold;
 	line-height: 21px;
@@ -30,24 +30,24 @@
 	margin-top: 1%;
 	//activity container basics
 	height: 370px;
-	background-color: #ffffff;
+	background-color: map-get($color-white, 000);
 	box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.1);
 	//end of activity container basics
-	color: #3359db;
+	color: $color-primary;
 	font-size: 18px;
 	font-weight: 500;
 	line-height: 23px;
 }
 .activity-day {
 	margin-left: 20px;
-	color: #3359db;
+	color: $color-primary;
 	font-weight: bold;
 	padding-top: 30px;
 	padding-bottom: 10px;
 }
 
 .activity > .activity-info-row {
-	color: #333e44;
+	color: map-get($color-black, 600);
 	.title {
 		padding-left: 3%;
 	}
@@ -55,7 +55,7 @@
 .activity > div:nth-child(5) {
 	height: 75px;
 	width: 1280px;
-	background-color: #ffffff;
+	background-color: map-get($color-white, 000);
 	box-shadow: none;
 }
 
@@ -66,8 +66,8 @@
 	height: 75px;
 	width: 1280px;
 	margin: auto;
-	background-color: #ffffff;
-	box-shadow: inset 0 -1px 0 0 #ebebeb;
+	background-color: map-get($color-white, 000);
+	box-shadow: inset 0 -1px 0 0 $color-border;
 }
 .title,
 .room,
@@ -79,7 +79,7 @@
 	.time {
 		height: 18px;
 		width: 128px;
-		color: #999999;
+		color: map-get($color-black, 100);
 		font-size: 14px;
 		font-weight: 500;
 		line-height: 18px;
@@ -98,9 +98,9 @@
 		padding-left: 20px;
 		height: 34px;
 		width: 155px;
-		border: 1px solid #ebebeb;
+		border: 1px solid $color-border;
 		border-radius: 17px;
-		background-color: #ffffff;
+		background-color: map-get($color-white, 000);
 		line-height: 2.7;
 	}
 	.started {
@@ -109,7 +109,7 @@
 			text-align: right;
 			height: 18px;
 			width: 70px;
-			color: #3359db;
+			color: $color-primary;
 			font-size: 14px;
 			font-weight: bold;
 			line-height: 18px;
@@ -121,7 +121,7 @@
 			text-align: right;
 			height: 18px;
 			width: 70px;
-			color: #ff5359;
+			color: $color-danger;
 			font-size: 14px;
 			font-weight: bold;
 			line-height: 18px;
@@ -129,7 +129,7 @@
 	}
 	.cancelled {
 		width: 95px;
-		color: #ff5359;
+		color: $color-danger;
 		font-weight: bold;
 	}
 }

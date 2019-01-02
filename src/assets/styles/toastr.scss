@@ -2,6 +2,8 @@
 * please go to https://cdnjs.com/libraries/toastr.js and pick a certain version you want to use,
 * make sure you copy the url from the website since the url may change between versions.
 * */
+@import './variables.scss';
+
 .toast-message {
   -ms-word-wrap: break-word;
   word-wrap: break-word;
@@ -9,7 +11,7 @@
  }
  .toast-message a,
  .toast-message label {
-  color: #fff;
+  color: map-get($color-white, 000);
  }
  .toast-close-button {
   position: relative;
@@ -17,7 +19,7 @@
   top: -0.7em;
   float: right;
   font-size: 20px;
-  color: #303030;
+  color: map-get($color-black, 900);
   opacity: 0.8;
   -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
   filter: alpha(opacity=80);
@@ -60,10 +62,10 @@
   border-radius: 3px;
   background-position: 15px center;
   background-repeat: no-repeat;
-  -moz-box-shadow: 0 0 12px #999;
-  -webkit-box-shadow: 0 0 12px #999;
-  box-shadow: 0 0 12px #999;
-  color: #303030;
+  -moz-box-shadow: 0 0 12px map-get($color-black, 100);
+  -webkit-box-shadow: 0 0 12px map-get($color-black, 100);
+  box-shadow: 0 0 12px map-get($color-black, 100);
+  color: map-get($color-black, 900);
   opacity: 0.8;
   -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
   filter: alpha(opacity=80);
@@ -82,10 +84,10 @@
   background-color: #030303;
  }
  .toast-success {
-  background-color: #72d11f;
+  background-color: $color-success;
  }
  .toast-error {
-  background-color: #ff5359;
+  background-color: $color-danger;
  }
  @media all and (max-width: 240px) {
   #toast-container > div {

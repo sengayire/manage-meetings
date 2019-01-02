@@ -1,3 +1,5 @@
+@import './variables';
+
 .nbo-add-room-modal{
   max-width: 570px !important;
   max-height: 580px !important;
@@ -8,7 +10,7 @@
   #roomName, #roomCapacity{
     width: 232px !important;
     font-size: 16px;
-    color: rgba(50,60,71,0.4);
+    color: map-get($color-black, 900);
     height: 24px;
     border-radius: 3px;
   }

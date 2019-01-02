@@ -1,17 +1,19 @@
+@import './variables';
+
 .room-capacity-first-circle {
   span {
-    background-color: #3359DB;
+    background-color: $color-primary;
   }
 }
 
 .room-capacity-second-circle {
   span {
-    background-color: #7A94EB;
+    background-color: map-get($color-blue, 300);
   }
 }
 
 .room-capacity-third-circle {
   span {
-    background-color: #C7D1F7;
+    background-color: map-get($color-blue, 100);
   }
 }

@@ -6,7 +6,7 @@
 
 .arrow {
   padding: 20px 0;
-  color: map-get($color-palette, primary);
+  color: $color-primary;
   display: inline-flex;
   align-items: baseline;
   cursor: pointer;
@@ -14,8 +14,8 @@
 }
 
 .arrow-symbol {
-  background: map-get($color-palette, primary);
-  color:  map-get($color-palette, white);
+  background: $color-primary;
+  color:  map-get($color-white, 000);
   border-radius: 50%;
   padding: 1px 5px;
   margin-right: 5px;

@@ -1,19 +1,19 @@
 @import './variables';
 
 .average-meeting {
-  background: #ffffff;
+  background: map-get($color-white, 000);
   margin: 30px 0 60px;
   box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.1);
   border-radius: 4px;
 
   .average-meeting-control {
-    border-bottom: 1px solid #e4e4e4;
+    border-bottom: 1px solid map-get($color-white, 500);
     height: 66px;
 
     .header-title {
       margin: 0;
       padding: 26px 32px 19px;
-      color: #333e44;
+      color: map-get($color-black, 600);
       font-size: 16px;
       float: left;
 
@@ -29,7 +29,7 @@
     .moreVerticalIcon {
       float: right;
       padding: 26px 32px 19px;
-      color: #333e44;
+      color: map-get($color-black, 600);
       font-size: 16px;
     }
   }
@@ -48,7 +48,7 @@
             padding: 15px 0;
             font-weight: 900;
             text-align: left;
-            color: #333e44;
+            color: map-get($color-black, 600);
             font-family: $font-regular, sans-serif;
             font-size: 15px;
 
@@ -79,7 +79,7 @@
 
       tbody {
         tr {
-          border-bottom: 1px solid #e4e4e4;
+          border-bottom: 1px solid map-get($color-white, 500);
 
           &:last-child {
             border: none;
@@ -87,7 +87,7 @@
 
           td {
             padding: 20px 0;
-            color: #6d6d6d;
+            color: $color-text;
             font-family: $font-regular, sans-serif;
             font-size: 15px;
           }
@@ -97,7 +97,7 @@
   }
 
   .average-meeting-pagination {
-    border-top: 1px solid #e4e4e4;
+    border-top: 1px solid map-get($color-white, 500);
     padding: 0 32px;
 
     .perPageBlock {
@@ -111,7 +111,7 @@
         justify-content: space-between;
 
         .pageNum.reverse {
-          color: #999999;
+          color: map-get($color-black, 100);;
           padding: 0;
           margin-left: 0;
         }

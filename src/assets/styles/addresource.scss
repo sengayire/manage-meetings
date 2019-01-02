@@ -1,3 +1,5 @@
+@import './variables';
+
 .add-resource-modal {
   overflow: hidden !important;
   height: 50%;
@@ -38,12 +40,11 @@
   .amenity-form {
     font-size: 105%;
     input {
-      color: rgba(50, 60, 71, 1);
       border-radius: 5px;
       right: 3%;
       padding: 10px;
       width: 100%;
-      border: 0.5px solid #d6dee4;
+      border: 0.5px solid $color-input-border;
       font-size: 95%;
       box-sizing: border-box;
       height: auto;
@@ -54,7 +55,7 @@
 
     button {
       cursor: pointer;
-      color: white;
+      color: map-get($color-white, 000);
       bottom: 4%;
       right: 4%;
       padding: 2% 1.5%;
@@ -78,7 +79,7 @@
 
       .add-resource {
         text-transform: uppercase;
-        background-color: #3359db;
+        background-color: $color-primary;
         height: 44px;
         float: right;
         margin-right: 7%;
@@ -88,9 +89,9 @@
       }
 
       .modal-cancel {
-        color: #3359db;
-        border: 1px solid #3359db;
-        background-color: #ffffff;
+        color: $color-primary;
+        border: 1px solid $color-primary;
+        background-color: map-get($color-white, 000);
         text-transform: uppercase;
         height: 44px;
         float: right;
@@ -99,8 +100,8 @@
       }
 
       .modal-cancel:hover {
-        background-color: #3359db;
-        color: #ffffff;
+        background-color: $color-primary;
+        color: map-get($color-white, 000);
       }
     }
   }

@@ -1,61 +1,60 @@
 @import './variables';
 
 .mrm-input {
-    display: block;
-    border-radius: 4px;
-    padding: 10px;
-    width: 29.1em;
-    height: 1.49em;
-    font-family: $font-regular;
-    font-size: 16px;
-    color: #000 !important;
-    border: 1px solid #d6dee4;
-    margin-top: 1.3em;
-    ::placeholder {
-      color: rgba(50,60,71,0.4) !important;
-      opacity: 1;
-    }
+  display: block;
+  border-radius: 4px;
+  padding: 10px;
+  width: 29.1em;
+  height: 1.49em;
+  font-family: $font-regular;
+  font-size: 16px;
+  color: map-get($color-black, 900) !important;
+  border: 1px solid $color-input-border;
+  margin-top: 1.3em;
+  ::placeholder {
+    color: map-get($color-black, 900) !important;
+    opacity: 1;
+  }
 }
 
 .controls{
-    box-sizing: border-box;
-    position: relative;
-    float: right;
-    top: -2.17rem;
-    left: -.1rem;
-    z-index: 1;
+  box-sizing: border-box;
+  position: relative;
+  float: right;
+  top: -2.17rem;
+  left: -.1rem;
+  z-index: 1;
 }
 
 .kla-controls{ 
-    top: -3.37rem;
-    left: -.25rem;
+  top: -3.37rem;
+  left: -.25rem;
 }
 .control{
-    background-color: #fafafae7;
-    box-sizing: border-box;
-    position: absolute;
-    height : 1.5rem;
-    width: 2rem;
-    text-align:center;
-    user-select: none;
-    border: 1px solid #D6DEE4;
+  background-color: map-get($color-white, 000);
+  box-sizing: border-box;
+  position: absolute;
+  height : 1.5rem;
+  width: 2rem;
+  text-align:center;
+  user-select: none;
+  border: 1px solid $color-input-border;
 }
 .up {
-    transform: rotate(180deg);
-    border-radius: 0 0 0 4px;
-    top: -1.4rem;
+  transform: rotate(180deg);
+  border-radius: 0 0 0 4px;
+  top: -1.4rem;
 }
 .down{
-    border-radius: 0 0 4px 0;
+  border-radius: 0 0 4px 0;
 }
 input[type=number]
 {
-    border-radius: 4px 0 0 4px;
-
-    &::-webkit-inner-spin-button,
-    &::-webkit-outer-spin-button{
-        -webkit-appearance: none;
-        opacity: 0;
-        margin: 0;
-    }
+  border-radius: 4px 0 0 4px;  
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button{
+      -webkit-appearance: none;
+      opacity: 0;
+      margin: 0;
+  }
 }

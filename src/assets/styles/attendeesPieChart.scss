@@ -1,18 +1,20 @@
+@import './variables';
+
 .attendees-first-circle {
     span {
-      background-color: #3359DB;
+      background-color: $color-primary;
     }
   }
   
   .attendees-second-circle {
     span {
-      background-color: #FFAF30;
+      background-color: map-get($color-amber, 300);
     }
   }
   
   .attendees-third-circle {
     span {
-      background-color: #FF5359;
+      background-color: $color-danger;
     }
   }
   

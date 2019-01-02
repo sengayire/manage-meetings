@@ -1,12 +1,11 @@
 @import './variables';
 
-$andela-blue: #3359DF;
 .check-in {
   flex: 2;
 
   p {
     font-size: 0.938em;
-    color: #6d6d6d;
+    color: $color-text;
   }
 
   h2,
@@ -23,7 +22,7 @@ $andela-blue: #3359DF;
 .time-picker {
   padding-top: 5px;
   span {
-    color: $andela-blue !important;
+    color: $color-primary !important;
   }
 
   &:after {
@@ -38,12 +37,12 @@ $andela-blue: #3359DF;
   button {
     width: 160px;
     border-radius: 2px;
-    background-color: #fff;
+    background-color: map-get($color-white, 000);
   }
   .theme--toggle--hC5Z2BVI {
     width: 130px;
     height: 37px;
-    background-color: #fff;
+    background-color: map-get($color-white, 000);
   }
 
   .theme--menu--1gvr5Gvn {
@@ -69,12 +68,12 @@ $andela-blue: #3359DF;
     padding: 8px 0 11px 0;
   }
   .theme--field--36UDgxsw:hover {
-    background-color: #f8f8f8;
+    background-color: map-get($color-white, 200);
     cursor: pointer;
   }
 
   .theme--radio--1vWJb3Li {
-    border: 1px solid #999999;
+    border: 1px solid map-get($color-black, 100);
     border-radius: 50%;
     cursor: pointer;
     display: inline-block;
@@ -89,7 +88,7 @@ $andela-blue: #3359DF;
   .theme--text--3guDD8Pz {
     height: 21px;
     width: 74px;
-    color: #3359db;
+    color: $color-primary;
     font-size: 16px;
     line-height: 21px;
     font-size: 14px;

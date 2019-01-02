@@ -1,54 +1,54 @@
 .modal {
-    padding: 4% 3.5%;
+  padding: 4% 3.5%;
     
-    h2 {
-        margin: 0;
-        margin-bottom: 5%;
-    }
+  h2 {
+    margin: 0;
+    margin-bottom: 5%;
+  }
 
-    ::placeholder {
-        color: rgba(50,60,71,0.4);
-    }
+  ::placeholder {
+    color: rgba(50,60,71,0.4);
+  }
 
+  input {
+    margin-top: 0.6em;
+    width: 95%;
+    color: rgba(50,60,71,0.4);
+  }
+
+  /* Remove Mozilla styles when input data is invalid*/
+  input:invalid{
+    box-shadow: none;
+  }
+
+  @media screen and (min-width:1072px) {
     input {
-        margin-top: 0.6em;
-        width: 95%;
-        color: rgba(50,60,71,0.4);
+      width: 96%;
     }
+  }
 
-    /* Remove Mozilla styles when input data is invalid*/
-    input:invalid{
-        box-shadow: none;
+  @media screen and (max-width: 678px) {
+    input {
+      width: 93%;
     }
-
-    @media screen and (min-width:1072px) {
-        input {
-            width: 96%;
-        }
-    }
-
-    @media screen and (max-width: 678px) {
-        input {
-            width: 93%;
-        }
-    }
+  }
     
-    @media screen and (max-width: 678px) {
-        input {
-            width: 91%;
-        }
+  @media screen and (max-width: 678px) {
+    input {
+      width: 91%;
     }
+  }
 
-    @media screen and (max-width: 427px) {
-        input {
-            width: 91%;
-        }
+  @media screen and (max-width: 427px) {
+    input {
+      width: 91%;
     }
+  }
 
-    div {
-        &.input-wrapper {
-            margin-bottom: 4%;
-            margin-top: 5%;
-        }
+  div {
+    &.input-wrapper {
+      margin-bottom: 4%;
+      margin-top: 5%;
     }
+  }
 }

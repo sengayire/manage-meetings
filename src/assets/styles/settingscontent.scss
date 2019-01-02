@@ -42,20 +42,20 @@
     a {
       text-decoration: none;
       word-break: break-word;
-      color: #6d6d6d;
+      color: $color-text;
       padding: 5%;
       display: block;
       &:visited {
         text-decoration: none;
-        color: #6D6D6D;
+        color: $color-text;
       }
      
     }
   }
 
   .active {
-    color: white !important;
-    background-color: #3359db;
+    color: map-get($color-white, 000) !important;
+    background-color: $color-primary;
     width: 130px;
     border-radius: 2px;
     text-align: left;

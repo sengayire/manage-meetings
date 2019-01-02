@@ -1,3 +1,5 @@
+@import './variables';
+
 .image-select {
   display: flex;
   flex-wrap: nowrap;
@@ -10,8 +12,8 @@
     width: 240px;
     height: 140px;
     margin-right: 30px;
-    border: 1px solid #E0E0E0;
-    background-color: #F8F8F8;
+    border: 1px solid $color-border;
+    background-color: map-get($color-white, 200);
     overflow: hidden;
     display: flex;
     justify-content: center;
@@ -24,7 +26,7 @@
       height: 88px;
       width: 88px;
       border-radius: 50%;
-      background: #fff;
+      background: map-get($color-white, 000);
       background-image: url('../images/placeholder.svg');
       background-repeat: no-repeat;
       background-position: center;
@@ -36,9 +38,9 @@
     display: flex;
     flex-direction: column;
     button {
-      background-color: #3359DB;
+      background-color: $color-primary;
       border-radius: 2px;
-      color: #fff !important;
+      color: map-get($color-white, 000) !important;
       font-weight: 800;
       text-transform: capitalize;
       font-size: 16px;
@@ -46,8 +48,8 @@
       padding-top: 5px;
 
       &:hover {
-        background-color: #3359DB !important;
-        color: #fff !important;
+        background-color: $color-primary !important;
+        color: map-get($color-white, 000) !important;
       }
     }
 
