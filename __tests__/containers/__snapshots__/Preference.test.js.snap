@@ -2,12 +2,13 @@
 
 exports[`Preference Component should render properly 1`] = `
 <React.Fragment>
-  <NavBar
-    route=""
-  />
+  <TopMenu />
   <div
     className="preference-container"
   >
+    <BackArrow
+      redirectUri="/analytics"
+    />
     <NotificationSettingsList />
   </div>
 </React.Fragment>

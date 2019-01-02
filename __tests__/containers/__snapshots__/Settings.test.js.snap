@@ -2,9 +2,7 @@
 
 exports[`Settings component renders correctly in memory 1`] = `
 <React.Fragment>
-  <NavBar
-    route=""
-  />
+  <NavBar />
   <SettingsContent />
 </React.Fragment>
 `;
