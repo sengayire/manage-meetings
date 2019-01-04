@@ -5,6 +5,7 @@ exports[`Back Arrow Component should render correctly 1`] = `
   activeClassName="active"
   ariaCurrent="true"
   className="arrow"
+  to=""
 >
   <span
     className="arrow-symbol"

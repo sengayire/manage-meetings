@@ -27,7 +27,7 @@ const NairobiRoomInputs = ({
       id="roomCapacity"
       onChange={handleInputChange}
       value={roomCapacity}
-      placeholder={1}
+      placeholder="1"
       required
     />
 

@@ -24,6 +24,7 @@ const mocks = [
   { request: { query: GET_ROLES_QUERY }, result: { ...allRoles } },
   { request: { query: GET_LOCATIONS_QUERY }, result: { ...allLocations } },
 ];
+
 const initProps = {
   people: {
     users: allPeople.data.users,
@@ -33,9 +34,11 @@ const initProps = {
     allLocations: {},
   },
   roles: {
-    allRoles: {},
+    roles: [],
   },
+  editRole: jest.fn(),
 };
+
 const wrapper = (
   <MockedProvider
     mocks={mocks}

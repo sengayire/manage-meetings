@@ -10,7 +10,7 @@ class Sort extends Component {
 
   componentWillReceiveProps() {
     this.props.hideDropdownMenu &&
-    this.Dropdown.current.toggleVisibility();
+      this.Dropdown.current.toggleVisibility();
   }
 
   Dropdown = React.createRef();
@@ -41,9 +41,9 @@ class Sort extends Component {
       onClick={this.toggleOptions(option)}
     >
       {option}
-      { this.state.optionName === option &&
+      {this.state.optionName === option &&
         <div className="filter-options__children">
-          { this.renderOptionsChildren(options[option], option) }
+          {this.renderOptionsChildren(options[option], option)}
         </div>
       }
     </span>
@@ -81,7 +81,7 @@ class Sort extends Component {
    *
    * @returns {JSX}
    */
-  renderArrayOptions = options => {}; // eslint-disable-line
+  renderArrayOptions = () => (<div></div>); // eslint-disable-line
 
   render() {
     const { sortOptions, withChildren } = this.props;
