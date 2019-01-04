@@ -65,8 +65,6 @@
   -moz-box-shadow: 0 0 12px map-get($color-black, 100);
   -webkit-box-shadow: 0 0 12px map-get($color-black, 100);
   box-shadow: 0 0 12px map-get($color-black, 100);
-  color: map-get($color-black, 900);
-  opacity: 0.8;
   -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
   filter: alpha(opacity=80);
  }
@@ -81,13 +79,14 @@
   margin-right: auto;
  }
  .toast {
-  background-color: #030303;
+  background-color: map-get($color-black, 900);
  }
  .toast-success {
   background-color: $color-success;
  }
  .toast-error {
   background-color: $color-danger;
+  color: $toast-error;
  }
  @media all and (max-width: 240px) {
   #toast-container > div {
