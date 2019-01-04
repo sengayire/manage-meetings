@@ -16,7 +16,7 @@ exports[`Delete Wing Test Suite renders as expected 1`] = `
       id="confirm-msg"
     >
       Are you sure you want to delete the 
-      'Nothern'
+      "Nothern"
        wing? This cannot be undone & all data will be lost
     </p>
     <div

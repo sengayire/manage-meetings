@@ -53,15 +53,15 @@ export class DeleteOffice extends React.Component {
       >
         <div className="delete-modal-content">
           <p id="confirm-msg">
-            Are you sure you want to delete the {`'${this.props.officeName}'`} office? This cannot
+            Are you sure you want to delete the {`"${this.props.officeName}"`} office? This cannot
             be undone & all data will be lost
           </p>
           <div className="modal-actions">
-            <button id="delete-btn" onClick={this.handleDeleteOffice}>
-              DELETE
-            </button>
             <button id="cancel-btn" onClick={this.handleCloseModal}>
               CANCEL
+            </button>
+            <button id="delete-btn" onClick={this.handleDeleteOffice}>
+              DELETE
             </button>
           </div>
         </div>

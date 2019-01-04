@@ -2874,11 +2874,11 @@ exports[`DeleteOffice Test Suite renders as expected 1`] = `
             >
               <MrmModal
                 buttonText="Delete"
-                className="delete-resource-modal"
+                className="delete-modal"
                 closeModal={false}
                 handleCloseRequest={[Function]}
                 modalButtonClassName="button"
-                title="Delete Resources"
+                title="DELETE RESOURCE"
               >
                 <IconButtons
                   buttonText="Delete"
@@ -2899,7 +2899,7 @@ exports[`DeleteOffice Test Suite renders as expected 1`] = `
                 <Modal
                   ariaHideApp={false}
                   bodyOpenClassName="ReactModal__Body--open"
-                  className="delete-resource-modal"
+                  className="delete-modal"
                   closeTimeoutMS={0}
                   contentLabel="Parent Modal"
                   isOpen={false}
@@ -2935,7 +2935,7 @@ exports[`DeleteOffice Test Suite renders as expected 1`] = `
                   <ModalPortal
                     ariaHideApp={false}
                     bodyOpenClassName="ReactModal__Body--open"
-                    className="delete-resource-modal"
+                    className="delete-modal"
                     closeTimeoutMS={0}
                     contentLabel="Parent Modal"
                     defaultStyles={
@@ -5915,11 +5915,11 @@ exports[`DeleteOffice Test Suite should pop up a modal when delete button is cli
             >
               <MrmModal
                 buttonText="Delete"
-                className="delete-resource-modal"
+                className="delete-modal"
                 closeModal={false}
                 handleCloseRequest={[Function]}
                 modalButtonClassName="button"
-                title="Delete Resources"
+                title="DELETE RESOURCE"
               >
                 <IconButtons
                   buttonText="Delete"
@@ -5940,7 +5940,7 @@ exports[`DeleteOffice Test Suite should pop up a modal when delete button is cli
                 <Modal
                   ariaHideApp={false}
                   bodyOpenClassName="ReactModal__Body--open"
-                  className="delete-resource-modal"
+                  className="delete-modal"
                   closeTimeoutMS={0}
                   contentLabel="Parent Modal"
                   isOpen={true}
@@ -5976,7 +5976,7 @@ exports[`DeleteOffice Test Suite should pop up a modal when delete button is cli
                   <ModalPortal
                     ariaHideApp={false}
                     bodyOpenClassName="ReactModal__Body--open"
-                    className="delete-resource-modal"
+                    className="delete-modal"
                     closeTimeoutMS={0}
                     contentLabel="Parent Modal"
                     defaultStyles={
@@ -6053,7 +6053,7 @@ exports[`DeleteOffice Test Suite should pop up a modal when delete button is cli
                     >
                       <div
                         aria-label="Parent Modal"
-                        className="ReactModal__Content ReactModal__Content--after-open delete-resource-modal"
+                        className="ReactModal__Content ReactModal__Content--after-open delete-modal"
                         onClick={[Function]}
                         onKeyDown={[Function]}
                         onMouseDown={[Function]}
@@ -6079,37 +6079,34 @@ exports[`DeleteOffice Test Suite should pop up a modal when delete button is cli
                         tabIndex="-1"
                       >
                         <h2>
-                          Delete Resources
+                          DELETE RESOURCE
                         </h2>
                         <div
-                          className="modal-content"
+                          className="delete-modal-content"
                         >
-                          <div
-                            className="modal-text"
+                          <p
+                            id="confirm-msg"
                           >
-                            <p>
-                              Are you sure you want to delete " 
-                              Duster
-                               "?
-                            </p>
-                            <p>
-                              This cannot be undone
-                            </p>
-                          </div>
+                            Are you sure you want to delete "
+                            Duster
+                            "? 
+                            <br />
+                            This cannot be undone
+                          </p>
                           <div
-                            className="button-container"
+                            className="modal-actions"
                           >
                             <button
-                              className="modal-submit delete-resource"
+                              id="cancel-btn"
                               onClick={[Function]}
                             >
-                              Delete
+                              CANCEL
                             </button>
                             <button
-                              className="modal-cancel"
+                              id="delete-btn"
                               onClick={[Function]}
                             >
-                              Cancel
+                              DELETE
                             </button>
                           </div>
                         </div>

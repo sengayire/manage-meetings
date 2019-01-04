@@ -51,7 +51,7 @@ export class DeleteWing extends React.Component {
       >
         <div className="delete-modal-content">
           <p id="confirm-msg">
-            Are you sure you want to delete the {`'${this.props.wingName}'`} wing? This cannot
+            Are you sure you want to delete the {`"${this.props.wingName}"`} wing? This cannot
             be undone & all data will be lost
           </p>
           <div className="modal-actions">
