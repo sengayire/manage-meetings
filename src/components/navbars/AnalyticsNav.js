@@ -203,7 +203,7 @@ export class AnalyticsActivity extends Component {
 
             <Button
               icon={calendarIcon()}
-              className="analysis-btn calendar-btn"
+              className="analysis-btn calendar-btn" 
               id="calendar-btn"
               onClick={this.calenderToggle}
             />

@@ -1,37 +1,35 @@
 /* eslint react/no-array-index-key: 0 */
 import React, { Component } from 'react';
+import { Button } from 'react-toolbox/lib/button';
+import moment from 'moment';
+import Calendar from './commons/Calendar';
 import MrmModal from '../components/commons/Modal';
+import { SelectInput as Select } from './commons';
 import '../assets/styles/addQuestion.scss';
 
 class AddQuestion extends Component {
   state = {
+    questionType: '',
+    startDate: moment().format('MMM DD Y'),
+    endDate: moment().format('MMM DD Y'),
+    startTime: moment().format('HH:MM'),
+    endTime: moment().add(1, 'hours').format('HH:MM'),
+    calenderOpen: false,
     closeModal: false,
-    defaultQuestionSet: {
-      Schedule: [
-        {
-          title: 'from',
-          description: 'Dec 3rd 2018',
-        },
-        {
-          title: 'to',
-          description: 'Dec 3rd 2018',
-        },
-      ],
-      Question: [
-        {
-          title: 'rate',
-          description: 'How would you rate the cleanliness of the meeting room',
-        },
-        {
-          title: 'check',
-          description: 'Is there any missing meeting room tool',
-        },
-        {
-          title: 'suggestion',
-          description: 'Any suggestion on how we can improve the service',
-        },
-      ],
-    },
+    options: [
+      {
+        id: '1',
+        name: 'Rate',
+      },
+      {
+        id: '2',
+        name: 'Check',
+      },
+      {
+        id: '3',
+        name: 'Suggest',
+      },
+    ],
   };
 
   /**
@@ -44,72 +42,168 @@ class AddQuestion extends Component {
   };
 
   /**
-   * It renders the input boxes
+   * It updates the state value of closeModal to false
    *
-   * @param {string} title
-   * @param {string} placeholder
-   * @param {string} id
-   * @param {number} index
-   * @param {Function} onChange
-   * @param {string} value
+   * @returns {void}
+   */
+  handleModalStateChange = () => {
+    this.state.closeModal && this.setState({ closeModal: false });
+  };
+
+  /**
+   * It toggles the visibility of the calendar modal
+   *
+   * @returns {void}
+   */
+  calenderToggle = () => {
+    const { calenderOpen } = this.state;
+    this.setState({ calenderOpen: !calenderOpen });
+  };
+
+  /**
+   * It updates the state with the selected start and end date
+   *
+   * @param {string} start
+   * @param {string} end
+   *
+   * @returns {void}
+   */
+  sendDateData = (start, end) => {
+    this.setState({ startDate: start, endDate: end });
+    this.calenderToggle();
+  };
+
+  /**
+   * It shows the start and end date in the calendar button
    *
    * @returns {JSX}
    */
-  renderInputBox = (
-    title,
-    placeholder,
-    id,
-    index,
-    onChange = this.handleInputChange,
-    value = this.state[id],
+  calendarIcon = () => (
+    <div className="calendarIconBtn">
+      <span>{`${this.state.startDate}  -  ${this.state.endDate}`}</span>
+    </div>
+  );
+
+  /**
+   * It handles the selected choice from the options
+   *
+   * @returns {void}
+   */
+  handleInputChange = (event) => {
+    const { name, value } = event.target;
+    this.setState({ [name]: value });
+  }
+
+  /**
+   * It returns the action buttons for the question modal
+   * @param {Function} handleCloseModal
+   *
+   * @returns {JSX}
+   */
+  actionButtons = () => (
+    <div className="button-container">
+      <button onClick={this.handleCloseModal}>save question</button>
+      <button onClick={this.handleCloseModal}>cancel</button>
+    </div>
+  );
+
+  /**
+   * It returns the inputs for adding start time and endtime of a question
+   * @param {Function} handleInputChange
+   *
+   * @returns {JSX}
+   */
+  timeInputs = () => (
+    <div className="inputs-inline">
+      <div className="inputs">
+        <label htmlFor="startTime" className="inputs-title">
+          <span>
+            Start
+          </span>
+        </label>
+        <input type="time" name="startTime" onChange={this.handleInputChange} id="timeField" value={this.state.startTime} />
+      </div>
+      <div className="inputs">
+        <label htmlFor="endTime" className="inputs-title">
+          <span>
+            End
+          </span>
+        </label>
+        <input type="time" name="endTime" onChange={this.handleInputChange} id="timeField" value={this.state.endTime} />
+      </div>
+    </div>
+  );
+
+  /**
+   * It returns the input text box for typing the question
+   * @param {Function} handleInputChange
+   *
+   * @returns {JSX}
+   */
+  renderQuestionInputBox = (
   ) => (
-    <div className="inputs" key={index}>
-      <label htmlFor={id} className="inputs-title">
-        <span>
-          {title}
-        </span>
-      </label>
+    <div className="inputs">
       <input
-        id={id}
-        value={value}
-        onChange={onChange}
-        placeholder={placeholder}
+        placeholder="Enter Question here..."
         type="text"
+        name="question"
+        onChange={this.handleInputChange}
       />
     </div>
   );
 
   /**
-   * It shows renders the default questions
-   *
-   * @param {Object} defaultQuestionSet
+   * It shows all the input fields required for creating a question
+   * @param {Function} renderQuestionInputBox
+   * @param {Function} actionButtons
+   * @param {Function} calendarIcon
    *
    * @returns {JSX}
    */
-  renderDefaultQuestions = ({ defaultQuestionSet } = this.state) => (
-    <React.Fragment>
-      {
-        Object.keys(defaultQuestionSet).map((data, index) => (
-          <div key={index}>
-            <span className="question-form__sections">
-              {data}
-            </span>
-            <div className={data === 'Schedule' ? 'inputs-inline' : ''}>
-              {
-                defaultQuestionSet[data].map(({ title, description }, childIndex) => (
-                  this.renderInputBox(title, description, 'startDate', childIndex)
-                ))
-              }
-            </div>
-          </div>
-        ))
-      }
-      <span className="question-form__add">Add Questions</span>
-      <div className="button-container">
-        <button onClick={this.handleCloseModal}>save question</button>
-        <button onClick={this.handleCloseModal}>cancel</button>
+  renderQuestionValues = ({
+    calenderOpen,
+  } = this.state) => (
+    <div>
+      <span className="question-form__sections">
+        Date Duration
+      </span>
+      <div>
+        <Button
+          icon={this.calendarIcon()}
+          id="calendar-btn"
+          onClick={this.calenderToggle}
+        />
+        {calenderOpen && (
+        <Calendar
+          sendDateData={this.sendDateData}
+          handleCloseModal={this.calenderToggle}
+        />)}
       </div>
-    </React.Fragment>
+      <span className="question-form__sections">
+          Time Duration
+      </span>
+      {this.timeInputs()}
+      <span className="question-form__sections">
+        Question
+      </span>
+      {this.renderQuestionInputBox()}
+      <div>
+        <span className="question-form__sections">
+          Question Type
+        </span>
+        <Select
+          labelText=""
+          name="questionType"
+          id="selectType"
+          value={this.state.questionType}
+          onChange={this.handleInputChange}
+          wrapperClassName="input-wrapper"
+          placeholder="Select Type"
+          options={this.state.options}
+        />
+      </div>
+      {this.actionButtons()}
+    </div>
   );
 
   render() {
@@ -118,11 +212,11 @@ class AddQuestion extends Component {
         title="ADD QUESTION"
         buttonText="Add Question"
         closeModal={this.state.closeModal}
-        handleCloseRequest={this.handleCloseModal}
+        handleCloseRequest={this.handleModalStateChange}
         className="add-question-modal"
       >
         <form className="question-form">
-          {this.renderDefaultQuestions()}
+          {this.renderQuestionValues()}
         </form>
       </MrmModal>
     );

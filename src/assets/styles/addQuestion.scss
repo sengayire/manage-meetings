@@ -3,6 +3,9 @@
 .add-question-modal {
   padding: 3%;
   color: map-get($color-black, 300);
+  border-radius: 4px;
+  background-color: map-get($color-white, 100);
+  box-shadow: 0 2px 40px 10px rgba(0,0,0,0.2);
 
   h2 {
     margin: 1%;
@@ -17,13 +20,18 @@
       padding: 2.5%;
       width: 95%;
       border: none;
-      font-size: 85%;
+      font-size: 95%;
       font-weight: 300;
-      @media screen and (max-width: 639px) {
-        width: 91%;
+      margin-bottom: 1px;
+      @media screen and (max-width: 630px) {
+        width: 90%;
       }
 
     }
+
+    input[type="text"] {
+      color: $color-text;
+  }
 
     &__sections {
       font-weight: bold;
@@ -34,12 +42,54 @@
     }
     
     .inputs {
-      height: 50px;
+      height: 40px;
       display: flex;
       border: 1px solid $color-input-border;
       border-radius: 5px;
       margin: 30px 0;
     }
+
+    select {
+      color:$color-text !important;
+    }
+
+    select, select:focus {
+      right: 5%;
+      padding: 1.8%;
+      width: 39.6rem !important;
+      box-sizing: border-box;
+      font-size: 95%;
+      font-weight: 300;
+      margin: 30px 0;
+  }
+
+    .calender {
+      display: flex;
+      flex-direction: column;
+      right: 7vw;
+      position: absolute;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      background:map-get($color-white, 000);
+      justify-content: space-between;
+      margin-top: -25px;
+      margin-left: 5px;
+      z-index: 2;
+  }
+
+    .calender__button .apply_button {
+      background-color:$color-primary; 
+      color: map-get($color-white, 000);
+      height: 13px;
+      width: 50px;
+      padding: 4px 50px 16px 12px; 
+      line-height: 14px;
+      font-weight: 500;
+  }
+    .number_of_days {
+      margin-top: 12px;
+      padding: 0px 5px 5px 5px;
+      margin-right: 150px;
+  }
 
     .inputs-title {
       min-width: 120px;
@@ -64,12 +114,31 @@
       }
     }
 
+    input#timeField {
+      font-size: 16px;
+      color: $time-color;
+      font-weight: 100;
+      padding: 7.0%;
+      margin-right: 1px;
+    }
+
+    #calendar-btn {
+      height: 40px;
+      display: flex;
+      border: 1px solid $color-input-border;
+      border-radius: 5px;
+      margin: 30px 0;
+      width: 100%;
+      right: 0%;
+      color:$color-text;
+    }
+
     button {
       cursor: pointer;
       text-transform: uppercase;
       bottom: 4%;
       right: 4%;
-      padding: 2% 1.5%;
+      padding: 0% 1.5%;
       @media screen and (min-width: 640px) and (max-width: 1023px) and (orientation: landscape) {
         right: 0%;
       }
@@ -83,7 +152,7 @@
 
     .button-container {
       margin-bottom: 30px;
-      margin-top: 30px;
+      margin-top: 50px;
       
       button:nth-child(1) {
         background-color: $color-primary;
@@ -109,6 +178,22 @@
         color: map-get($color-white, 000);
       }
     }
+
+    .calendarIconBtn {
+
+      &:hover {
+        background-color: map-get($color-blue, 400) !important;
+        color: $color-primary !important;
+      }
+  
+      &:after {
+        content: url('../images/date_range_24px.svg');
+        margin-left: 380px;
+        position: auto;
+        vertical-align: sub !important;
+      }
+    }
+
   ::placeholder {
     color: $color-placeholder;
     opacity: 1;

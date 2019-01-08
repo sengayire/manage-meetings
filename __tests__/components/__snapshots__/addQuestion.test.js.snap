@@ -12,128 +12,133 @@ exports[`AddQuestion component should be rendered without errors 1`] = `
   <form
     className="question-form"
   >
-    <React.Fragment>
-      <div
-        key="0"
+    <div>
+      <span
+        className="question-form__sections"
       >
-        <span
-          className="question-form__sections"
-        >
-          Schedule
-        </span>
-        <div
-          className="inputs-inline"
-        >
-          <div
-            className="inputs"
-            key="0"
-          >
-            <label
-              className="inputs-title"
-              htmlFor="startDate"
+        Date Duration
+      </span>
+      <div>
+        <ThemedThemed
+          composeTheme="deeply"
+          disabled={false}
+          icon={
+            <div
+              className="calendarIconBtn"
             >
               <span>
-                from
+                Jan 15 2019  -  Jan 15 2019
               </span>
-            </label>
-            <input
-              id="startDate"
-              placeholder="Dec 3rd 2018"
-              type="text"
-            />
-          </div>
-          <div
-            className="inputs"
-            key="1"
-          >
-            <label
-              className="inputs-title"
-              htmlFor="startDate"
-            >
-              <span>
-                to
-              </span>
-            </label>
-            <input
-              id="startDate"
-              placeholder="Dec 3rd 2018"
-              type="text"
-            />
-          </div>
-        </div>
+            </div>
+          }
+          id="calendar-btn"
+          mapThemrProps={[Function]}
+          onClick={[Function]}
+          ripple={true}
+          rippleCentered={false}
+          rippleClassName=""
+          rippleMultiple={true}
+          rippleSpread={2}
+        />
       </div>
-      <div
-        key="1"
+      <span
+        className="question-form__sections"
       >
-        <span
-          className="question-form__sections"
-        >
-          Question
-        </span>
+        Time Duration
+      </span>
+      <div
+        className="inputs-inline"
+      >
         <div
-          className=""
+          className="inputs"
         >
-          <div
-            className="inputs"
-            key="0"
+          <label
+            className="inputs-title"
+            htmlFor="startTime"
           >
-            <label
-              className="inputs-title"
-              htmlFor="startDate"
-            >
-              <span>
-                rate
-              </span>
-            </label>
-            <input
-              id="startDate"
-              placeholder="How would you rate the cleanliness of the meeting room"
-              type="text"
-            />
-          </div>
-          <div
-            className="inputs"
-            key="1"
+            <span>
+              Start
+            </span>
+          </label>
+          <input
+            id="timeField"
+            name="startTime"
+            onChange={[Function]}
+            type="time"
+            value="17:01"
+          />
+        </div>
+        <div
+          className="inputs"
+        >
+          <label
+            className="inputs-title"
+            htmlFor="endTime"
           >
-            <label
-              className="inputs-title"
-              htmlFor="startDate"
-            >
-              <span>
-                check
-              </span>
-            </label>
-            <input
-              id="startDate"
-              placeholder="Is there any missing meeting room tool"
-              type="text"
-            />
-          </div>
-          <div
-            className="inputs"
-            key="2"
-          >
-            <label
-              className="inputs-title"
-              htmlFor="startDate"
-            >
-              <span>
-                suggestion
-              </span>
-            </label>
-            <input
-              id="startDate"
-              placeholder="Any suggestion on how we can improve the service"
-              type="text"
-            />
-          </div>
+            <span>
+              End
+            </span>
+          </label>
+          <input
+            id="timeField"
+            name="endTime"
+            onChange={[Function]}
+            type="time"
+            value="18:01"
+          />
         </div>
       </div>
       <span
-        className="question-form__add"
+        className="question-form__sections"
       >
-        Add Questions
+        Question
       </span>
+      <div
+        className="inputs"
+      >
+        <input
+          name="question"
+          onChange={[Function]}
+          placeholder="Enter Question here..."
+          type="text"
+        />
+      </div>
+      <div>
+        <span
+          className="question-form__sections"
+        >
+          Question Type
+        </span>
+        <SelectInput
+          id="selectType"
+          isValue={false}
+          labelText=""
+          name="questionType"
+          onChange={[Function]}
+          options={
+            Array [
+              Object {
+                "id": "1",
+                "name": "Rate",
+              },
+              Object {
+                "id": "2",
+                "name": "Check",
+              },
+              Object {
+                "id": "3",
+                "name": "Suggest",
+              },
+            ]
+          }
+          placeholder="Select Type"
+          placeholderValue=""
+          required={false}
+          selectInputClassName="default-select"
+          value=""
+          wrapperClassName="input-wrapper"
+        />
+      </div>
       <div
         className="button-container"
       >
@@ -148,7 +153,7 @@ exports[`AddQuestion component should be rendered without errors 1`] = `
           cancel
         </button>
       </div>
-    </React.Fragment>
+    </div>
   </form>
 </MrmModal>
 `;
