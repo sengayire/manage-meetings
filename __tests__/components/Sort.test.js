@@ -20,6 +20,7 @@ describe('Sort Component', () => {
     withChildren: false,
     hideDropdownMenu: true,
   };
+
   const wrapper = mount(<Sort {...props} />);
 
   it('should render component without errors', () => {

@@ -25,4 +25,5 @@ module.exports = {
   testPathIgnorePatterns: ['__mocks__'],
   setupTestFrameworkScriptFile: '<rootDir>/setupTests.js',
   snapshotSerializers: ['enzyme-to-json/serializer'],
+  setupFiles: ['jest-canvas-mock'],
 };

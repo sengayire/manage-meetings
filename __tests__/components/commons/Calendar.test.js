@@ -77,10 +77,10 @@ describe('it renders correctly', () => {
     });
 
     const variables =
-        {
-          endDate: '05 Nov 2018',
-          startDate: '05 Nov 2018',
-        };
+    {
+      endDate: '05 Nov 2018',
+      startDate: '05 Nov 2018',
+    };
 
     Calendarwrapper.instance().sendDate();
     expect(calendarProps.sendDateData).toHaveBeenCalledWith(variables.startDate, variables.endDate);
@@ -104,10 +104,10 @@ describe('it renders correctly', () => {
     });
 
     const variables =
-        {
-          endDate: '05 Nov 2018',
-          startDate: '05 Nov 2018',
-        };
+    {
+      endDate: '05 Nov 2018',
+      startDate: '05 Nov 2018',
+    };
 
     Calendarwrapper.instance().sendDate();
     expect(calendarProps.sendDateData).toHaveBeenCalledWith(variables.startDate, variables.endDate);

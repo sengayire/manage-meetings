@@ -2,9 +2,14 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import RoomFeedbackResponseCard from '../../../src/components/roomFeedback/RoomFeedbackResponseCard';
 
+const initProps = {
+  title: '',
+  value: '',
+};
+
 describe('Room feedback Card Component', () => {
   it('should render correctly', () => {
-    const wrapper = shallow(<RoomFeedbackResponseCard />);
+    const wrapper = shallow(<RoomFeedbackResponseCard {...initProps} />);
     expect(wrapper).toMatchSnapshot();
   });
 });
