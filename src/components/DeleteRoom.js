@@ -25,6 +25,7 @@ export class DeleteRoom extends Component {
   handleDeleteRoom = (event) => {
     event.preventDefault();
     const variables = { variables: { roomId: this.props.roomId } };
+    const { refetch, currentPage } = this.props;
     this.props
       .deleteRoom(variables)
       .then(() => {
@@ -33,6 +34,7 @@ export class DeleteRoom extends Component {
           'error',
           `'${this.props.roomName}' has been deleted successfully`,
         )();
+        refetch({ page: currentPage });
       })
       .catch((err) => {
         notification(toastr, 'error', err.graphQLErrors[0].message)();
@@ -74,6 +76,13 @@ DeleteRoom.propTypes = {
   roomName: PropTypes.string.isRequired,
   roomId: PropTypes.string.isRequired,
   deleteRoom: PropTypes.func.isRequired,
+  refetch: PropTypes.func,
+  currentPage: PropTypes.number,
+};
+
+DeleteRoom.defaultProps = {
+  currentPage: 1,
+  refetch: null,
 };
 
 export default compose(graphql(DELETE_ROOM, {

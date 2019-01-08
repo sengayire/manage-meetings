@@ -119,7 +119,7 @@ export class PeopleList extends Component {
           </div>
           <table>
             <ColGroup />
-            <TableHead titles={['Name', 'Location', 'Access Level', 'Action']} />
+            <TableHead titles={['Name', 'Location', 'Access Level']} />
             <tbody>
               {
                 this.props.people.users && users.users.map(person => (

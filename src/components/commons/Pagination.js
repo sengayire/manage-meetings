@@ -6,15 +6,12 @@ const options = array =>
   array.map(item => <option key={item + 1}>{item}</option>);
 
 class Pagination extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      perPage: 5,
-      page: 1,
-    };
-  }
+  state = {
+    perPage: 5,
+    page: 1,
+  };
 
-  componentWillMount() {
+  componentWillMount = () => {
     const { currentPage } = this.props;
     this.setState({ page: currentPage });
   }

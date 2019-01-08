@@ -24,6 +24,7 @@ export class DeleteResource extends Component {
 
   handleDeleteResource = () => {
     const variables = { variables: { resourceId: this.props.toDelete.id } };
+    const { refetch, currentPage } = this.props;
     this.props.deleteResource(variables)
       .then(() => {
         notification(
@@ -31,7 +32,7 @@ export class DeleteResource extends Component {
           'error',
           `'${this.props.toDelete.name}' has been deleted successfully`,
         )();
-        this.props.getResourcesQuery.refetch();
+        refetch({ page: currentPage });
       })
       .catch((err) => {
         notification(toastr, 'error', err.graphQLErrors[0].message)();
@@ -75,13 +76,13 @@ DeleteResource.propTypes = {
     id: PropTypes.string,
   }).isRequired,
   deleteResource: PropTypes.func.isRequired,
-  getResourcesQuery: PropTypes.shape({
-    refetch: PropTypes.func,
-  }),
+  refetch: PropTypes.func,
+  currentPage: PropTypes.number,
 };
 
 DeleteResource.defaultProps = {
-  getResourcesQuery: {},
+  currentPage: 1,
+  refetch: null,
 };
 
 export default compose(

@@ -18,6 +18,7 @@ export class ResourceList extends React.Component {
     this.state = {
       allResources: { ...props.data.allResources },
       dataFetched: true, // true when there is an active internet connection
+      currentPage: 1,
     };
   }
 
@@ -39,6 +40,7 @@ export class ResourceList extends React.Component {
       updateQuery: (prev, { fetchMoreResult }) => {
         this.setState({
           allResources: fetchMoreResult.allResources,
+          currentPage: page,
         });
       },
     }).then(() => this.setState({ dataFetched: true }))
@@ -47,7 +49,7 @@ export class ResourceList extends React.Component {
 
   render() {
     const { loading, error, refetch } = this.props.data;
-    const { allResources } = this.state;
+    const { allResources, currentPage } = this.state;
 
     if (loading) return <Spinner />;
 
@@ -66,6 +68,7 @@ export class ResourceList extends React.Component {
             <tbody>
               {allResources.resources.map(resource => (
                 <Resource
+                  currentPage={currentPage}
                   resource={formatResourceData(resource)}
                   refetch={refetch}
                   key={resource.id}
@@ -75,6 +78,7 @@ export class ResourceList extends React.Component {
           </table>
         </div>
         <Pagination
+          currentPage={currentPage}
           totalPages={allResources.pages}
           hasNext={allResources.hasNext}
           hasPrevious={allResources.hasPrevious}

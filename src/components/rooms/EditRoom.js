@@ -23,10 +23,14 @@ export class EditRoom extends Component {
       })),
       PropTypes.object,
     ]).isRequired,
+    refetch: PropTypes.func,
+    currentPage: PropTypes.number,
   };
 
   static defaultProps = {
     editRoom: PropTypes.func,
+    refetch: null,
+    currentPage: null,
   }
 
   state = {
@@ -49,21 +53,21 @@ export class EditRoom extends Component {
 
   handleEditRoom = () => {
     const { roomId, roomName } = this.state;
+    const { currentPage, refetch } = this.props;
 
     this.props.editRoom({
       variables: {
         roomId,
         name: roomName,
       },
-      refetchQueries: [{ query: GET_ROOMS_QUERY }],
     }).then(() => {
       notification(toastr, 'success', `Room name editted successfully to ${roomName}`)();
+      refetch({ page: currentPage });
     }).catch((err) => {
       notification(toastr, 'error', err.graphQLErrors[0].message)();
     });
     this.handleCloseModal();
   };
-
 
   render() {
     const { closeModal } = this.state;
@@ -101,6 +105,9 @@ export default compose(
       variables: {
         page: 1,
         perPage: 5,
+        capacity: 0,
+        location: '',
+        office: '',
       },
     }),
   }),

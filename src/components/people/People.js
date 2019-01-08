@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import toastr from 'toastr';
 import { IconMenu, MenuItem } from 'react-toolbox/lib/menu';
-import EditUser from '../EditUser';
 import notification from '../../utils/notification';
 
 const accessMenuCaret = () => (
@@ -49,13 +48,6 @@ const People = ({
             }
           </IconMenu>
         </span>
-      </td>
-      <td>
-        <EditUser
-          userName={name}
-          userLocation={location}
-          accessLevel={accessLevel}
-        />
       </td>
     </tr>
   );

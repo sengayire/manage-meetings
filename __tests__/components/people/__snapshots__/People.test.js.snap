@@ -61,12 +61,5 @@ exports[`People Component renders properly 1`] = `
       </ThemedIconMenu>
     </span>
   </td>
-  <td>
-    <EditUser
-      accessLevel="Admin"
-      userLocation="Nairobi"
-      userName="Edward Barton"
-    />
-  </td>
 </tr>
 `;

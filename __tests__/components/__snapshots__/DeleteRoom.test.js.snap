@@ -601,7 +601,9 @@ exports[`DeleteOffice Test Suite renders as expected 1`] = `
         }
       >
         <DeleteRoom
+          currentPage={1}
           deleteRoom={[Function]}
+          refetch={null}
           roomId="1"
           roomName="Rabat"
         >
@@ -1337,7 +1339,9 @@ exports[`DeleteOffice Test Suite should pop up a modal when delete button is cli
         }
       >
         <DeleteRoom
+          currentPage={1}
           deleteRoom={[Function]}
+          refetch={null}
           roomId="1"
           roomName="Rabat"
         >

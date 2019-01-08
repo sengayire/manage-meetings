@@ -29,6 +29,7 @@ export class RoomsList extends React.Component {
       office: '',
       isSearching: false,
       dataFetched: true, // true when there an active internet connection
+      currentPage: 1,
     };
   }
 
@@ -82,6 +83,7 @@ export class RoomsList extends React.Component {
       updateQuery: (prev, { fetchMoreResult }) => {
         this.setState({
           allRooms: fetchMoreResult.allRooms,
+          currentPage: page,
         });
       },
     }).then(() => this.setState({ dataFetched: true }))
@@ -118,8 +120,13 @@ export class RoomsList extends React.Component {
   };
 
   render() {
-    const { allRooms, noResource, isSearching } = this.state;
-    const { loading, error } = this.props.data;
+    const {
+      allRooms,
+      noResource,
+      isSearching,
+      currentPage,
+    } = this.state;
+    const { loading, error, refetch } = this.props.data;
     const {
       allLocations: locations,
       loading: loadingLocations,
@@ -155,7 +162,12 @@ export class RoomsList extends React.Component {
             <table>
               <ColGroup />
               <TableHead titles={['Room', 'Location', 'Office', 'Action']} />
-              <TableBody rooms={allRooms.rooms} location={locations} />
+              <TableBody
+                rooms={allRooms.rooms}
+                location={locations}
+                currentPage={currentPage}
+                refetch={refetch}
+              />
             </table>
           </div>
         ) : (
@@ -163,6 +175,7 @@ export class RoomsList extends React.Component {
           )}
         {noResource && !isSearching ? (
           <Pagination
+            currentPage={currentPage}
             totalPages={allRooms.pages}
             hasNext={allRooms.hasNext}
             hasPrevious={allRooms.hasPrevious}
@@ -188,6 +201,7 @@ RoomsList.propTypes = {
     loading: PropTypes.bool,
     error: PropTypes.object,
     fetchMore: PropTypes.func,
+    refetch: PropTypes.func,
   }).isRequired,
   locations: PropTypes.oneOfType([
     PropTypes.arrayOf(

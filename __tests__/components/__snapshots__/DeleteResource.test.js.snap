@@ -2847,6 +2847,7 @@ exports[`DeleteOffice Test Suite renders as expected 1`] = `
             }
           >
             <DeleteResource
+              currentPage={1}
               deleteResource={[Function]}
               getResourcesQuery={
                 Object {
@@ -2865,6 +2866,7 @@ exports[`DeleteOffice Test Suite renders as expected 1`] = `
                   },
                 }
               }
+              refetch={null}
               toDelete={
                 Object {
                   "id": "1",
@@ -5870,6 +5872,7 @@ exports[`DeleteOffice Test Suite should pop up a modal when delete button is cli
             }
           >
             <DeleteResource
+              currentPage={1}
               deleteResource={[Function]}
               getResourcesQuery={
                 Object {
@@ -5906,6 +5909,7 @@ exports[`DeleteOffice Test Suite should pop up a modal when delete button is cli
                   },
                 }
               }
+              refetch={null}
               toDelete={
                 Object {
                   "id": "1",
