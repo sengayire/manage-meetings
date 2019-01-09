@@ -23,7 +23,7 @@ const props = {
   data: {
     loading: false,
     refetch: jest.fn(),
-    fetchMore: jest.fn(),
+    fetchMore: jest.fn(() => Promise.resolve()),
   },
 };
 

@@ -23,14 +23,14 @@ class Pagination extends Component {
     e.preventDefault();
     const { name, value } = e.target;
     const { perPage } = this.state;
-    const { handleData } = this.props;
+    const { handleData, dataFetched } = this.props;
 
-    if (name === 'perPage') {
+    if (name === 'perPage' && dataFetched) {
       this.setState({ perPage: parseFloat(value), page: 1 }, () => {
         handleData(value, 1);
       });
     }
-    if (name === 'page') {
+    if (name === 'page' && dataFetched) {
       this.setState({ page: parseFloat(value), perPage }, () => {
         handleData(perPage, parseInt(value, 10));
       });
@@ -38,17 +38,19 @@ class Pagination extends Component {
   };
 
   handleNext = () => {
+    const { handleData, dataFetched } = this.props;
     const { page, perPage } = this.state;
-    this.props.handleData(perPage, page + 1);
-    this.setState({
+    handleData(perPage, page + 1);
+    dataFetched && this.setState({
       page: page + 1,
     });
   };
 
   handlePrevious = () => {
     const { page, perPage } = this.state;
-    this.props.handleData(perPage, page - 1);
-    this.setState({
+    const { handleData, dataFetched } = this.props;
+    handleData(perPage, page - 1);
+    dataFetched && this.setState({
       page: page - 1,
     });
   };
@@ -109,6 +111,7 @@ Pagination.propTypes = {
   handleData: PropTypes.func.isRequired,
   reverse: PropTypes.bool,
   currentPage: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  dataFetched: PropTypes.bool,
 };
 
 Pagination.defaultProps = {
@@ -118,6 +121,7 @@ Pagination.defaultProps = {
   hasNext: true,
   hasPrevious: false,
   reverse: false,
+  dataFetched: true,
 };
 
 export default Pagination;

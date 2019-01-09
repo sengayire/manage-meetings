@@ -17,6 +17,7 @@ export class ResourceList extends React.Component {
     super(props);
     this.state = {
       allResources: { ...props.data.allResources },
+      dataFetched: true, // true when there is an active internet connection
     };
   }
 
@@ -40,7 +41,8 @@ export class ResourceList extends React.Component {
           allResources: fetchMoreResult.allResources,
         });
       },
-    });
+    }).then(() => this.setState({ dataFetched: true }))
+      .catch(() => this.setState({ dataFetched: false }));
   }
 
   render() {
@@ -77,6 +79,7 @@ export class ResourceList extends React.Component {
           hasNext={allResources.hasNext}
           hasPrevious={allResources.hasPrevious}
           handleData={this.handleData}
+          dataFetched={this.state.dataFetched}
         />
       </div>
     );

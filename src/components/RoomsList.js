@@ -28,6 +28,7 @@ export class RoomsList extends React.Component {
       location: '',
       office: '',
       isSearching: false,
+      dataFetched: true, // true when there an active internet connection
     };
   }
 
@@ -83,7 +84,8 @@ export class RoomsList extends React.Component {
           allRooms: fetchMoreResult.allRooms,
         });
       },
-    });
+    }).then(() => this.setState({ dataFetched: true }))
+      .catch(() => this.setState({ dataFetched: false }));
   };
 
   handleSearchData = (searchData) => {
@@ -165,6 +167,7 @@ export class RoomsList extends React.Component {
             hasNext={allRooms.hasNext}
             hasPrevious={allRooms.hasPrevious}
             handleData={this.handleData}
+            dataFetched={this.state.dataFetched}
           />
         ) : null}
       </div>
