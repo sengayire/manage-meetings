@@ -29,9 +29,11 @@ export class OfficeList extends React.Component {
   }
   /**
   * Handles pagination data retrieval.
-  * param { object } page, perPage- the number of items in a page and the total number of pages.
-  * returns {array} - an array of new offices that have been fetched.
-  * returns {string} - an error if one occurrs.
+  *
+  * @param { number } page the current page
+  * @param {number} perpage the number of items in a page
+  *
+  * @returns {void} - an error if one occurrs.
   */
   handleData = (perPage, page) => {
     /* istanbul ignore next */
