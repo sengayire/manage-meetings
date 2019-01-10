@@ -20,7 +20,11 @@ const props = {
       }],
     },
   },
-  loading: false,
+  data: {
+    loading: false,
+    refetch: jest.fn(),
+    fetchMore: jest.fn(),
+  },
 };
 
 describe('Tests for SettingOffices', () => {
@@ -35,10 +39,33 @@ describe('Tests for SettingOffices', () => {
     expect(props.allOffices.allOffices.offices).toHaveLength(1);
   });
 
+  it('should render an error screen', async () => {
+    const officeListErrorMocks = {
+      request: {
+        query: GET_ALL_OFFICES,
+        variables: {
+          page: 1,
+          perPage: 5,
+        },
+      },
+      error: { message: 'An error occured' },
+    };
+    const errorWrapper = renderer.create(
+      <MockedProvider mocks={[officeListErrorMocks]} addTypename={false}>
+        <SettingsOffices {...props} />
+      </MockedProvider>);
+    await wait(0);
+    expect(errorWrapper.toJSON().children).toContain('Network error: An error occured');
+  });
+
   it('renders the offices', async () => {
     const officeMocks = {
       request: {
         query: GET_ALL_OFFICES,
+        variables: {
+          page: 1,
+          perPage: 5,
+        },
       },
       result: {
         data: {
@@ -52,6 +79,11 @@ describe('Tests for SettingOffices', () => {
                   timeZone: 'TimeZoneType.EAST_AFRICA_TIME',
                 },
               }],
+            hasNext: false,
+            hasPrevious: true,
+            pages: 1,
+            queryTotal: 1,
+            __typename: 'PaginateOffices',
           },
         },
       },

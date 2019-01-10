@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import toastr from 'toastr';
-import { graphql } from 'react-apollo';
+import { graphql, compose } from 'react-apollo';
 import MrmModal from '../components/commons/Modal';
 import ActionButtons from './commons/ActionButtons';
 import { Input, SelectInput as Select } from '../components/commons';
@@ -20,39 +20,42 @@ export class EditOffice extends React.Component {
 
   handleInputChange = ({ target: { name, value } }) => {
     this.setState({ [name]: value });
-  }
+  };
 
   handleCloseModal = () => {
     this.setState({ closeModal: true });
-  }
+  };
 
   handleModalStateChange = () => {
     this.state.closeModal && this.setState({ closeModal: false });
-  }
+  };
 
   handleEditOffice = (event) => {
     event.preventDefault();
     const { officeId, officeName } = this.state;
-    this.props.editOffice({
-      variables: {
-        officeId,
-        name: officeName,
-      },
-    }).then(() => {
-      notification(toastr, 'success', `${officeName} office has been updated successfully`)();
-    }).catch((err) => {
-      this.setState({
-        officeName: this.props.officeName,
+    const { refetch, currentPage } = this.props;
+    this.props
+      .editOffice({
+        variables: {
+          officeId,
+          name: officeName,
+        },
+      })
+      .then(() => {
+        notification(toastr, 'success', `${officeName} office has been updated successfully`)();
+        refetch({ page: currentPage });
+      })
+      .catch((err) => {
+        this.setState({
+          officeName: this.props.officeName,
+        });
+        notification(toastr, 'error', err.graphQLErrors[0].message)();
       });
-      notification(toastr, 'error', err.graphQLErrors[0].message)();
-    });
     this.handleCloseModal();
-  }
+  };
 
   render() {
-    const {
-      officeName, officeLocation, closeModal,
-    } = this.state;
+    const { officeName, officeLocation, closeModal } = this.state;
 
     return (
       <MrmModal
@@ -87,11 +90,7 @@ export class EditOffice extends React.Component {
             disabled
             selectInputClassName="edit-office-location default-select"
           />
-          <ActionButtons
-            withCancel
-            onClickCancel={this.handleCloseModal}
-            actionButtonText="SAVE CHANGES"
-          />
+          <ActionButtons withCancel onClickCancel={this.handleCloseModal} actionButtonText="SAVE CHANGES" />
         </form>
       </MrmModal>
     );
@@ -103,6 +102,25 @@ EditOffice.propTypes = {
   officeName: PropTypes.string.isRequired,
   officeId: PropTypes.string.isRequired,
   officeLocation: PropTypes.string.isRequired,
+  refetch: PropTypes.func,
+  currentPage: PropTypes.number,
 };
 
-export default graphql(EDIT_OFFICE_MUTATION, { name: 'editOffice', options: { refetchQueries: [{ query: GET_ALL_OFFICES }] } })(EditOffice);
+EditOffice.defaultProps = {
+  refetch: PropTypes.func,
+  currentPage: null,
+};
+
+export default compose(
+  graphql(GET_ALL_OFFICES, {
+    name: 'allOffices',
+    options: () => ({
+      variables: {
+        page: 1,
+        perPage: 5,
+      },
+      options: { refetchQueries: [{ query: GET_ALL_OFFICES }] },
+    }),
+  }),
+  graphql(EDIT_OFFICE_MUTATION, { name: 'editOffice' }),
+)(EditOffice);

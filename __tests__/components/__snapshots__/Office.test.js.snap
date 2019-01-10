@@ -10,13 +10,15 @@ exports[`Tests for SettingOffices renders correctly from memory 1`] = `
     GMT -1
   </td>
   <td>
-    <Apollo(EditOffice)
+    <Apollo(Apollo(EditOffice))
+      currentPage={1}
       id="edit-modal"
       officeId="11"
       officeName="EPIC Tower"
     />
      
     <Apollo(Apollo(DeleteOffice))
+      currentPage={1}
       id="delete-modal"
       officeId="11"
       officeName="EPIC Tower"
@@ -35,13 +37,15 @@ exports[`Tests for SettingOffices renders correctly from memory 2`] = `
     GMT +1
   </td>
   <td>
-    <Apollo(EditOffice)
+    <Apollo(Apollo(EditOffice))
+      currentPage={1}
       id="edit-modal"
       officeId="11"
       officeName="EPIC Tower"
     />
      
     <Apollo(Apollo(DeleteOffice))
+      currentPage={1}
       id="delete-modal"
       officeId="11"
       officeName="EPIC Tower"

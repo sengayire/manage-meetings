@@ -143,6 +143,8 @@ export class RoomsList extends React.Component {
             handleResetState={this.handleResetState}
             isSearching={this.startSearching}
             stopSearching={this.stopSearching}
+            page={this.props.data.variables.page}
+            perPage={this.props.data.variables.perPage}
           />
           <AddRoomMenu />
         </div>
@@ -175,6 +177,10 @@ RoomsList.propTypes = {
     allRooms: PropTypes.shape({
       rooms: PropTypes.array,
       pages: PropTypes.number,
+    }),
+    variables: PropTypes.shape({
+      page: PropTypes.number,
+      perPage: PropTypes.number,
     }),
     loading: PropTypes.bool,
     error: PropTypes.object,

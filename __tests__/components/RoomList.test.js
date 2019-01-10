@@ -35,6 +35,10 @@ describe('RoomList Component', () => {
       allRooms: {
         rooms: [],
       },
+      variables: {
+        page: 1,
+        perPage: 5,
+      },
     },
     allRooms: {
       rooms: [],
