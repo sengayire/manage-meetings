@@ -97,4 +97,29 @@ describe('Tests for SettingOffices', () => {
 
     expect(wrapper.toJSON().children[1].children[0].children[2].children.length).toBe(1);
   });
+
+  it('should toggle the state when handleData is called', () => {
+    const officeProps = {
+      data: {
+        fetchMore: jest.fn(() => Promise.resolve()),
+        refetch: jest.fn(),
+        allOffices: {
+          offices: [
+            {
+              id: '81',
+              name: 'The Crest7',
+              location: {
+                name: 'Kampala',
+                timeZone: 'TimeZoneType.EAST_AFRICA_TIME',
+              },
+            }],
+          hasNext: false,
+          hasPrevious: true,
+        },
+      },
+    };
+    const wrapper = shallow(<OfficeList {...officeProps} />);
+    wrapper.instance().handleData();
+    expect(wrapper.state('isFetching')).toBe(true);
+  });
 });

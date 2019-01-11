@@ -15,6 +15,7 @@ exports[`Tests for SettingOffices renders correctly from memory 1`] = `
       id="edit-modal"
       officeId="11"
       officeName="EPIC Tower"
+      refetch={[MockFunction]}
     />
      
     <Apollo(Apollo(DeleteOffice))
@@ -22,6 +23,7 @@ exports[`Tests for SettingOffices renders correctly from memory 1`] = `
       id="delete-modal"
       officeId="11"
       officeName="EPIC Tower"
+      refetch={[MockFunction]}
     />
   </td>
 </tr>
@@ -42,6 +44,7 @@ exports[`Tests for SettingOffices renders correctly from memory 2`] = `
       id="edit-modal"
       officeId="11"
       officeName="EPIC Tower"
+      refetch={[MockFunction]}
     />
      
     <Apollo(Apollo(DeleteOffice))
@@ -49,6 +52,7 @@ exports[`Tests for SettingOffices renders correctly from memory 2`] = `
       id="delete-modal"
       officeId="11"
       officeName="EPIC Tower"
+      refetch={[MockFunction]}
     />
   </td>
 </tr>

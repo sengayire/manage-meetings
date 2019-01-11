@@ -16,6 +16,7 @@ import Spinner from '../commons/Spinner';
 import Sort from '../commons/Sort';
 import notification from '../../utils/notification';
 
+import Overlay from '../commons/Overlay';
 
 const handleErrorMessage = (...errors) => {
   const errorMessage = errors.find(e => e !== undefined).message;
@@ -31,6 +32,7 @@ export class PeopleList extends Component {
       optionName: null,
       id: '',
       dataFetched: true, // true when there is an active internet connection
+      isFetching: false,
     };
   }
 
@@ -52,8 +54,8 @@ export class PeopleList extends Component {
    *
    * @returns {void}
    */
-  fetchPeople = (perPage, page, optionName = this.state.optionName, id = this.state.id) => (
-
+  fetchPeople = (perPage, page, optionName = this.state.optionName, id = this.state.id) => {
+    this.setState({ isFetching: true });
     this.props.people.fetchMore({
       variables: {
         page,
@@ -67,16 +69,16 @@ export class PeopleList extends Component {
           hideDropdownMenu: false,
         });
       },
-    }).then(() => this.setState({ dataFetched: true }))
+    }).then(() => this.setState({ dataFetched: true, isFetching: false }))
       .catch(() => {
-        this.setState({ dataFetched: false });
+        this.setState({ dataFetched: false, isFetching: false });
         notification(
           toastr,
           'error',
           'You seem to be offline, check your internet connection.',
         )();
-      })
-  );
+      });
+  };
 
   /**
    * It sets state and calls fetchPeople
@@ -98,7 +100,7 @@ export class PeopleList extends Component {
   render() {
     const { editRole } = this.props;
     const { loading, error } = this.props.people;
-    const { users } = this.state;
+    const { users, isFetching } = this.state;
     const {
       allLocations,
       loading: loadingLocations,
@@ -116,16 +118,20 @@ export class PeopleList extends Component {
     }
     return (
       <div className="settings-people">
+        <div className={`action-menu ${isFetching ? 'disabled-buttons' : null}`}>
+          <MenuTitle title="People" />
+          <Sort
+            sortOptions={{ location: allLocations, access: roles }}
+            fetchSortedData={this.sortPeople}
+            hideDropdownMenu={this.state.hideDropdownMenu}
+            withChildren
+          />
+        </div>
         <div className="settings-people-list">
-          <div className="action-menu">
-            <MenuTitle title="People" />
-            <Sort
-              sortOptions={{ location: allLocations, access: roles }}
-              fetchSortedData={this.sortPeople}
-              hideDropdownMenu={this.state.hideDropdownMenu}
-              withChildren
-            />
-          </div>
+          {isFetching
+           ? <Overlay />
+           : null
+          }
           <table>
             <ColGroup />
             <TableHead titles={['Name', 'Location', 'Access Level']} />
@@ -149,6 +155,7 @@ export class PeopleList extends Component {
           hasPrevious={users.hasPrevious}
           handleData={this.fetchPeople}
           dataFetched={this.state.dataFetched}
+          isFetching={isFetching}
         />
       </div>
     );

@@ -1,4 +1,5 @@
 const data = {
+  refetch: jest.fn(),
   office: {
     id: '11',
     name: 'EPIC Tower',

@@ -19,6 +19,7 @@ import FilterRoomMenu from './rooms/FilterRoomMenu';
 import AddRoomMenu from './rooms/AddRoomMenu';
 import Spinner from './commons/Spinner';
 import notification from '../utils/notification';
+import Overlay from './commons/Overlay';
 
 export class RoomsList extends React.Component {
   constructor(props) {
@@ -32,6 +33,7 @@ export class RoomsList extends React.Component {
       isSearching: false,
       dataFetched: true, // true when there an active internet connection
       currentPage: 1,
+      isFetching: false,
     };
   }
 
@@ -72,6 +74,7 @@ export class RoomsList extends React.Component {
 
   handleData = (perPage, page) => {
     const { location, capacity, office } = this.state;
+    this.setState({ isFetching: true });
     /* istanbul ignore next */
     /* Reasoning: find explicit way of testing configuration options */
     this.props.data.fetchMore({
@@ -88,9 +91,9 @@ export class RoomsList extends React.Component {
           currentPage: page,
         });
       },
-    }).then(() => this.setState({ dataFetched: true }))
+    }).then(() => this.setState({ dataFetched: true, isFetching: false }))
       .catch(() => {
-        this.setState({ dataFetched: false });
+        this.setState({ dataFetched: false, isFetching: false });
         notification(
           toastr,
           'error',
@@ -134,6 +137,7 @@ export class RoomsList extends React.Component {
       noResource,
       isSearching,
       currentPage,
+      isFetching,
     } = this.state;
     const { loading, error, refetch } = this.props.data;
     const {
@@ -152,7 +156,7 @@ export class RoomsList extends React.Component {
 
     return (
       <div className="settings-rooms">
-        <div className="settings-rooms-control">
+        <div className={`settings-rooms-control ${isFetching ? 'disabled-buttons' : null}`}>
           <MenuTitle title="Rooms" />
           <FilterRoomMenu
             isNoResource={this.handleNoResource}
@@ -168,6 +172,10 @@ export class RoomsList extends React.Component {
         </div>
         {noResource ? (
           <div className="settings-rooms-list">
+            {isFetching
+              ? <Overlay />
+              : null
+            }
             <table>
               <ColGroup />
               <TableHead titles={['Room', 'Location', 'Office', 'Action']} />
@@ -190,6 +198,7 @@ export class RoomsList extends React.Component {
             hasPrevious={allRooms.hasPrevious}
             handleData={this.handleData}
             dataFetched={this.state.dataFetched}
+            isFetching={isFetching}
           />
         ) : null}
       </div>
