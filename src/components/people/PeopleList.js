@@ -28,6 +28,7 @@ export class PeopleList extends Component {
       hideDropdownMenu: false,
       optionName: null,
       id: '',
+      dataFetched: true, // true when there is an active internet connection
     };
   }
 
@@ -64,8 +65,9 @@ export class PeopleList extends Component {
           hideDropdownMenu: false,
         });
       },
-    })
-  )
+    }).then(() => this.setState({ dataFetched: true }))
+      .catch(() => this.setState({ dataFetched: false }))
+  );
 
   /**
    * It sets state and calls fetchPeople
@@ -137,6 +139,7 @@ export class PeopleList extends Component {
           hasNext={users.hasNext}
           hasPrevious={users.hasPrevious}
           handleData={this.fetchPeople}
+          dataFetched={this.state.dataFetched}
         />
       </div>
     );

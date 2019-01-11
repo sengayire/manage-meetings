@@ -18,6 +18,8 @@ export class OfficeList extends React.Component {
     this.state = {
       allOffices: { ...props.data.allOffices },
       currentPage: 1,
+      dataFetched: true, // true when there is an active internet connection.
+
     };
   }
 
@@ -27,13 +29,14 @@ export class OfficeList extends React.Component {
       allOffices,
     });
   }
+
   /**
   * Handles pagination data retrieval.
   *
-  * @param { number } page the current page
+  * @param {number} page the current page
   * @param {number} perpage the number of items in a page
   *
-  * @returns {void} - an error if one occurrs.
+  * @returns {void}
   */
   handleData = (perPage, page) => {
     /* istanbul ignore next */
@@ -49,12 +52,13 @@ export class OfficeList extends React.Component {
           currentPage: page,
         });
       },
-    });
+    }).then(() => this.setState({ dataFetched: true }))
+      .catch(() => this.setState({ dataFetched: false }));
   };
 
   render() {
     const { loading, refetch, error } = this.props.data;
-    const { allOffices, currentPage } = this.state;
+    const { allOffices, currentPage, dataFetched } = this.state;
     if (error) return <div>{error.message}</div>;
     return loading ? (
       <Spinner />
@@ -91,6 +95,7 @@ export class OfficeList extends React.Component {
           hasPrevious={allOffices.hasPrevious}
           handleData={this.handleData}
           currentPage={currentPage}
+          dataFetched={dataFetched}
         />
       </div>
     );

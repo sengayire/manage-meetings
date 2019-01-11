@@ -53,7 +53,7 @@ describe('Tests for ResourceList Component', () => {
         allResources: {
           resources: [],
         },
-        fetchMore: jest.fn(),
+        fetchMore: jest.fn(() => Promise.resolve()),
       },
       loading: false,
       error: {},

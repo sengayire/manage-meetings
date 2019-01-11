@@ -31,7 +31,7 @@ describe('RoomList Component', () => {
 
   const initProps = {
     data: {
-      fetchMore: jest.fn(),
+      fetchMore: jest.fn(() => Promise.resolve()),
       allRooms: {
         rooms: [],
       },
