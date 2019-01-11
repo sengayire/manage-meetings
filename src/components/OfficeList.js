@@ -1,12 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'react-apollo';
+import toastr from 'toastr';
 import Office from './Office';
 import AddOffice from './AddOffice'; // eslint-disable-line
 import '../assets/styles/officelist.scss';
 import ColGroup from './helpers/ColGroup';
 import TableHead from './helpers/TableHead';
 import Pagination from './commons/Pagination';
+import notification from '../utils/notification';
 
 import { GET_ALL_OFFICES } from '../graphql/queries/Offices';
 import MenuTitle from './MenuTitle';
@@ -53,7 +55,14 @@ export class OfficeList extends React.Component {
         });
       },
     }).then(() => this.setState({ dataFetched: true }))
-      .catch(() => this.setState({ dataFetched: false }));
+      .catch(() => {
+        this.setState({ dataFetched: false });
+        notification(
+          toastr,
+          'error',
+          'You seem to be offline, check your internet connection.',
+        )();
+      });
   };
 
   render() {
@@ -63,42 +72,42 @@ export class OfficeList extends React.Component {
     return loading ? (
       <Spinner />
     ) : (
-      <div className="settings-offices">
-        <div className="settings-offices-control">
-          <MenuTitle title="Offices" />
-          <AddOffice
-            refetch={refetch}
+        <div className="settings-offices">
+          <div className="settings-offices-control">
+            <MenuTitle title="Offices" />
+            <AddOffice
+              refetch={refetch}
+              currentPage={currentPage}
+            />
+          </div>
+          <div className="settings-offices-list">
+            <table>
+              <ColGroup />
+              <TableHead titles={['Office', 'Location', 'Timezone', 'Action']} />
+              <tbody>
+                {allOffices.offices &&
+                  allOffices.offices.map(office => (
+                    <Office
+                      office={office}
+                      key={office.name}
+                      refetch={refetch}
+                      officeId={office.id}
+                      currentPage={currentPage}
+                    />
+                  ))}
+              </tbody>
+            </table>
+          </div>
+          <Pagination
+            totalPages={allOffices.pages}
+            hasNext={allOffices.hasNext}
+            hasPrevious={allOffices.hasPrevious}
+            handleData={this.handleData}
             currentPage={currentPage}
+            dataFetched={dataFetched}
           />
         </div>
-        <div className="settings-offices-list">
-          <table>
-            <ColGroup />
-            <TableHead titles={['Office', 'Location', 'Timezone', 'Action']} />
-            <tbody>
-              {allOffices.offices &&
-                allOffices.offices.map(office => (
-                  <Office
-                    office={office}
-                    key={office.name}
-                    refetch={refetch}
-                    officeId={office.id}
-                    currentPage={currentPage}
-                  />
-                ))}
-            </tbody>
-          </table>
-        </div>
-        <Pagination
-          totalPages={allOffices.pages}
-          hasNext={allOffices.hasNext}
-          hasPrevious={allOffices.hasPrevious}
-          handleData={this.handleData}
-          currentPage={currentPage}
-          dataFetched={dataFetched}
-        />
-      </div>
-    );
+      );
   }
 }
 

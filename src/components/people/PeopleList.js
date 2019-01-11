@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { graphql, compose } from 'react-apollo';
 import PropTypes from 'prop-types';
+import toastr from 'toastr';
 import '../../assets/styles/peopleList.scss';
 import ColGroup from '../helpers/ColGroup';
 import TableHead from '../helpers/TableHead';
@@ -13,6 +14,7 @@ import { formatPeopleData } from '../../graphql/mappers/People';
 import MenuTitle from '../MenuTitle';
 import Spinner from '../commons/Spinner';
 import Sort from '../commons/Sort';
+import notification from '../../utils/notification';
 
 
 const handleErrorMessage = (...errors) => {
@@ -66,7 +68,14 @@ export class PeopleList extends Component {
         });
       },
     }).then(() => this.setState({ dataFetched: true }))
-      .catch(() => this.setState({ dataFetched: false }))
+      .catch(() => {
+        this.setState({ dataFetched: false });
+        notification(
+          toastr,
+          'error',
+          'You seem to be offline, check your internet connection.',
+        )();
+      })
   );
 
   /**

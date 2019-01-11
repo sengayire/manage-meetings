@@ -1,6 +1,7 @@
 import React from 'react';
 import { graphql, compose } from 'react-apollo';
 import PropTypes from 'prop-types';
+import toastr from 'toastr';
 
 import '../assets/styles/roomlist.scss';
 import {
@@ -17,6 +18,7 @@ import FilterRoomMenu from './rooms/FilterRoomMenu';
 
 import AddRoomMenu from './rooms/AddRoomMenu';
 import Spinner from './commons/Spinner';
+import notification from '../utils/notification';
 
 export class RoomsList extends React.Component {
   constructor(props) {
@@ -85,7 +87,14 @@ export class RoomsList extends React.Component {
         });
       },
     }).then(() => this.setState({ dataFetched: true }))
-      .catch(() => this.setState({ dataFetched: false }));
+      .catch(() => {
+        this.setState({ dataFetched: false });
+        notification(
+          toastr,
+          'error',
+          'You seem to be offline, check your internet connection.',
+        )();
+      });
   };
 
   handleSearchData = (searchData) => {
@@ -159,7 +168,7 @@ export class RoomsList extends React.Component {
             </table>
           </div>
         ) : (
-          <h2 style={{ marginLeft: '0' }}>No Rooms Found</h2>
+            <h2 style={{ marginLeft: '0' }}>No Rooms Found</h2>
           )}
         {noResource && !isSearching ? (
           <Pagination
