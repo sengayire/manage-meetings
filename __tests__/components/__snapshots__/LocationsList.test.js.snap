@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests for LocationsList renders correctly from memory 1`] = `
+<div
+  className="settings-locations"
+>
+  <div
+    className="settings-locations-control"
+  >
+    <MenuTitle
+      title="Locations"
+    />
+    <Apollo(Apollo(AddLocation)) />
+  </div>
+  <div
+    className="settings-locations-list"
+  >
+    <table>
+      <ColGroup
+        numberOfMiddleColumns={2}
+      />
+      <TableHead
+        titles={
+          Array [
+            "Location",
+            "Country",
+            "abbreviation",
+          ]
+        }
+      />
+      <tbody>
+        <Location
+          key="1"
+          location={
+            Object {
+              "abbreviation": "KLA",
+              "country": "Type.Uganda",
+              "id": "1",
+              "name": "Kampala",
+              "timeZone": "UTC",
+            }
+          }
+        />
+      </tbody>
+    </table>
+  </div>
+</div>
+`;

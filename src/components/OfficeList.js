@@ -130,7 +130,7 @@ OfficeList.propTypes = {
   data: PropTypes.shape({
     loading: PropTypes.bool,
     error: PropTypes.object,
-    refetch: PropTypes.func.isRequired,
+    refetch: PropTypes.func,
     fetchMore: PropTypes.func.isRequired,
     allOffices: PropTypes.shape({
       offices: PropTypes.array,

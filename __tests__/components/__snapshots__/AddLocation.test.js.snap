@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddLocation Component renders AddLocation Component 1`] = `
+<MrmModal
+  buttonText="Add Location"
+  className="add-office-modal"
+  closeModal={false}
+  handleCloseRequest={[Function]}
+  modalButton="add-button"
+  modalButtonClassName="button"
+  title="ADD LOCATION"
+>
+  <form
+    className="modal-form"
+    onSubmit={[Function]}
+  >
+    <SelectImage
+      imageUrl=""
+      onChange={[Function]}
+      thumbnailName="Upload a thumbnail"
+    />
+    <Input
+      controlsClass=""
+      id="locationName"
+      inputClass="mrm-input default-input"
+      labelClass="input1"
+      labelName="Location Name"
+      name="locationName"
+      onChange={[Function]}
+      placeholder="Enter location name"
+      type="text"
+      value=""
+    />
+    <Input
+      controlsClass=""
+      id="abbreviation"
+      inputClass="mrm-input default-input"
+      labelClass="input1"
+      labelName="Abbreviation"
+      name="abbreviation"
+      onChange={[Function]}
+      placeholder="Eg. Kla"
+      type="text"
+      value=""
+    />
+    <ActionButtons
+      actionButtonClassName="action-button"
+      actionButtonText="ADD LOCATION"
+      cancelButtonClassName="cancel-button"
+      cancelButtonText="CANCEL"
+      onClickCancel={[Function]}
+      withCancel={true}
+    />
+  </form>
+</MrmModal>
+`;

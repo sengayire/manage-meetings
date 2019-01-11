@@ -12,7 +12,10 @@ const SettingsNav = () => (
   <div className="settings-tabs">
     <ul>
       <li>
-        <NavLink to={ROUTES.settingsOffices} activeClassName="active">
+        <NavLink to={ROUTES.settingsLocations} activeClassName="active">Locations</NavLink>
+      </li>
+      <li>
+        <NavLink to={ROUTES.settingsOffices} >
           Offices
         </NavLink>
       </li>
@@ -33,9 +36,6 @@ const SettingsNav = () => (
       </li>
       <li>
         <NavLink to={ROUTES.settingsDevices}>Devices</NavLink>
-      </li>
-      <li>
-        <NavLink to={ROUTES.settingsIntegrations}>Integrations</NavLink>
       </li>
     </ul>
   </div>

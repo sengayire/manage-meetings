@@ -7207,11 +7207,11 @@ query user ($email: String!) {
                                     className="converge-link"
                                     onClick={[Function]}
                                     replace={false}
-                                    to="/settings/offices"
+                                    to="/settings/locations"
                                   >
                                     <a
                                       className="converge-link"
-                                      href="/settings/offices"
+                                      href="/settings/locations"
                                       onClick={[Function]}
                                     >
                                       <span>

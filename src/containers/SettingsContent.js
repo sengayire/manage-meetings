@@ -11,6 +11,7 @@ import PeopleList from '../components/people/PeopleList'; //eslint-disable-line
 import DeviceList from '../components/DeviceList';
 import FloorList from '../components/FloorList'; //eslint-disable-line
 import WingList from '../components/wingList'; //eslint-disable-line
+import LocationsList from '../components/LocationsList'; //eslint-disable-line
 import { decodeTokenAndGetUserData } from '../utils/Cookie';
 import Maintenance from '../assets/images/maintenance.svg';
 
@@ -52,6 +53,7 @@ const SettingsContent = () => (
       <SettingsNav />
       <div className="settings-tab-content">
         <Switch>
+          <Route exact path={ROUTES.settingsLocations} component={LocationsList} />
           <Route exact path={ROUTES.settingsOffices} component={OfficeList} />
           <Route exact path={ROUTES.floors} component={FloorList} />
           <Route exact path={ROUTES.settingsRooms} component={RoomsList} />
