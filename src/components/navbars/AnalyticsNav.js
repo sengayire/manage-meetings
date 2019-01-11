@@ -121,9 +121,9 @@ export class AnalyticsActivity extends Component {
         pdf.save('analytics.pdf');
       });
       // eslint-disable-next-line no-console
-      }).catch(error => console.log(error))
-      );
-    }
+      }).catch(error => notification(toastr, 'error', 'A server error occured, Please try again!')())
+    );
+  }
 
   render() {
     const {

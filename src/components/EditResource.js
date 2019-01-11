@@ -36,7 +36,7 @@ export class EditResource extends Component {
   handleEditResource = (event) => {
     event.preventDefault();
     const { resourceId, resourceName, roomId } = this.state;
-    const { refetch } = this.props;
+    const { refetch, currentPage } = this.props;
     this.props.editResource({
       variables: {
         resourceId,
@@ -45,7 +45,7 @@ export class EditResource extends Component {
       },
     }).then(() => {
       notification(toastr, 'success', `${resourceName} resource has been updated successfully`)();
-      refetch();
+      refetch({ page: currentPage });
     }).catch((err) => {
       this.setState({
         resourceName: this.state.resourceName,
@@ -94,6 +94,11 @@ EditResource.propTypes = {
     name: PropTypes.string,
     roomId: PropTypes.number,
   }).isRequired,
+  currentPage: PropTypes.number,
+};
+
+EditResource.defaultProps = {
+  currentPage: 1,
 };
 
 export default compose(

@@ -6,7 +6,7 @@ import DeleteRoomComponent from './DeleteRoom';
 const Room = ({
   room: {
     name, location, office, locationId, id,
-  }, locations,
+  }, locations, currentPage, refetch,
 }) => (
   <tr>
     <td>{name}</td>
@@ -18,11 +18,15 @@ const Room = ({
         roomLocation={locationId}
         locations={locations}
         roomId={id}
+        currentPage={currentPage}
+        refetch={refetch}
       /> &nbsp;
       <DeleteRoomComponent
         roomName={name}
         id="delete-modal"
         roomId={id}
+        currentPage={currentPage}
+        refetch={refetch}
       />
     </td>
   </tr>
@@ -39,6 +43,13 @@ Room.propTypes = {
     id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     name: PropTypes.string,
   })).isRequired,
+  currentPage: PropTypes.number,
+  refetch: PropTypes.func,
+};
+
+Room.defaultProps = {
+  currentPage: null,
+  refetch: null,
 };
 
 export default Room;
