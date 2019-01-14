@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'react-apollo';
+import toastr from 'toastr';
 import Resource from './Resource';
 import AddResourceComponent from './AddResource';
 import '../assets/styles/resourcelist.scss';
@@ -11,6 +12,7 @@ import TableHead from './helpers/TableHead';
 import Pagination from './commons/Pagination';
 import MenuTitle from './MenuTitle';
 import Spinner from './commons/Spinner';
+import notification from '../utils/notification';
 
 export class ResourceList extends React.Component {
   constructor(props) {
@@ -44,7 +46,14 @@ export class ResourceList extends React.Component {
         });
       },
     }).then(() => this.setState({ dataFetched: true }))
-      .catch(() => this.setState({ dataFetched: false }));
+      .catch(() => {
+        this.setState({ dataFetched: false });
+        notification(
+          toastr,
+          'error',
+          'You seem to be offline, check your internet connection.',
+        )();
+      });
   }
 
   render() {
@@ -73,7 +82,7 @@ export class ResourceList extends React.Component {
                   refetch={refetch}
                   key={resource.id}
                 />
-            ))}
+              ))}
             </tbody>
           </table>
         </div>
