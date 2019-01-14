@@ -68,24 +68,28 @@ export class OfficeList extends React.Component {
   render() {
     const { loading, refetch, error } = this.props.data;
     const { allOffices, currentPage, dataFetched } = this.state;
-    if (error) return <div>{error.message}</div>;
-    return loading ? (
-      <Spinner />
-    ) : (
-        <div className="settings-offices">
-          <div className="settings-offices-control">
-            <MenuTitle title="Offices" />
-            <AddOffice
-              refetch={refetch}
-              currentPage={currentPage}
-            />
-          </div>
-          <div className="settings-offices-list">
-            <table>
-              <ColGroup />
-              <TableHead titles={['Office', 'Location', 'Timezone', 'Action']} />
-              <tbody>
-                {allOffices.offices &&
+
+    if (error) {
+      return <div>{error.message}</div>;
+    } else if (loading) {
+      return <Spinner />;
+    }
+
+    return (
+      <div className="settings-offices">
+        <div className="settings-offices-control">
+          <MenuTitle title="Offices" />
+          <AddOffice
+            refetch={refetch}
+            currentPage={currentPage}
+          />
+        </div>
+        <div className="settings-offices-list">
+          <table>
+            <ColGroup />
+            <TableHead titles={['Office', 'Location', 'Timezone', 'Action']} />
+            <tbody>
+              {allOffices.offices &&
                   allOffices.offices.map(office => (
                     <Office
                       office={office}
@@ -95,19 +99,19 @@ export class OfficeList extends React.Component {
                       currentPage={currentPage}
                     />
                   ))}
-              </tbody>
-            </table>
-          </div>
-          <Pagination
-            totalPages={allOffices.pages}
-            hasNext={allOffices.hasNext}
-            hasPrevious={allOffices.hasPrevious}
-            handleData={this.handleData}
-            currentPage={currentPage}
-            dataFetched={dataFetched}
-          />
+            </tbody>
+          </table>
         </div>
-      );
+        <Pagination
+          totalPages={allOffices.pages}
+          hasNext={allOffices.hasNext}
+          hasPrevious={allOffices.hasPrevious}
+          handleData={this.handleData}
+          currentPage={currentPage}
+          dataFetched={dataFetched}
+        />
+      </div>
+    );
   }
 }
 
