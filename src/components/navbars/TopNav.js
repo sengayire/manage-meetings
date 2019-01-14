@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable react/prop-types */
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
@@ -13,7 +14,7 @@ import IconSettings from '../../assets/images/settings_icon.svg';
 
 const menuItems = [
   { route: ROUTES.analytics, menu: 'Analytics', icon: IconAnalytics },
-  { route: ROUTES.settingsOffices, icon: IconSettings, menu: 'Settings' },
+  { route: ROUTES.settings, icon: IconSettings, menu: 'Settings' },
   { icon: IconFeedback, route: ROUTES.feedback, menu: 'Room Feedback' },
 ];
 
@@ -22,7 +23,7 @@ class TopNav extends React.Component {
     super(props);
     let { pathname } = props.location;
 
-    if (pathname === '/' || pathname === '/settings') {
+    if (pathname === '/' || pathname === '/analytics') {
       pathname = ROUTES.analytics;
     }
 
@@ -46,15 +47,17 @@ class TopNav extends React.Component {
         <ul className="converge-menu">
           {menuItems.map(item => (
             <li key={item.menu} className={activeMenu === item.menu ? 'active' : ''} >
-              <Link href={item.route} onClick={this.handleClick(item.menu)} className="converge-link" to={item.route}>
+              <Link
+                to={item.menu === 'Settings' ? ROUTES.settingsOffices : item.route}
+                onClick={this.handleClick(item.menu)}
+                className="converge-link"
+              >
                 <span>
                   <img src={item.icon} alt={item.menu} />
                 </span>{item.menu}
               </Link>
             </li>
-            ),
-          )
-          }
+          ))}
         </ul>
       </div>
     );

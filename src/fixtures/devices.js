@@ -23,7 +23,7 @@ const devices = [{
 
 },
 {
-  name: 'Samsung duos',
+  name: 'Samsung Note',
   type: 'Internal Display',
   date: '14 Aug 2018',
   last: '16 Feb 2018',

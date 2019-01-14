@@ -2,9 +2,7 @@
 
 exports[`Room feedback list should render correctly 1`] = `
 <React.Fragment>
-  <NavBar
-    route="/response"
-  />
+  <TopMenu />
   <div
     className="feedback-container"
   >
