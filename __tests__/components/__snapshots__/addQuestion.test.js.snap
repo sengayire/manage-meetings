@@ -16,7 +16,7 @@ exports[`AddQuestion component should be rendered without errors 1`] = `
       <span
         className="question-form__sections"
       >
-        Date Duration
+        Date
       </span>
       <div>
         <ThemedThemed
@@ -27,7 +27,7 @@ exports[`AddQuestion component should be rendered without errors 1`] = `
               className="calendarIconBtn"
             >
               <span>
-                Jan 15 2019  -  Jan 15 2019
+                Jan 16 2019  -  Jan 16 2019
               </span>
             </div>
           }
@@ -44,7 +44,7 @@ exports[`AddQuestion component should be rendered without errors 1`] = `
       <span
         className="question-form__sections"
       >
-        Time Duration
+        Time
       </span>
       <div
         className="inputs-inline"

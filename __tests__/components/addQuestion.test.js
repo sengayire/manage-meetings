@@ -31,17 +31,17 @@ describe('AddQuestion component', () => {
     expect(wrapper.state().calenderOpen).toBe(true);
   });
 
-  it('should call sendDateData function', () => {
+  it('should set the date value to state when sendDateData is called', () => {
     questionWrapper.sendDateData('05 Jan 2018', '06 Jan 2018');
     expect(questionWrapper.state.startDate).toEqual('05 Jan 2018');
   });
 
-  it('handles handleModalStateChange()', () => {
+  it('should change closeModal state to false', () => {
     wrapper.instance().handleModalStateChange();
     expect(wrapper.state('closeModal')).toEqual(false);
   });
 
-  it('handleInputChange should update state when onChange happens on select input', () => {
+  it('should change closeModal value in the state to false', () => {
     const Input = wrapper.find('#selectType');
     Input.simulate('change', { target: { name: 'questionType', value: '1' } });
     expect(wrapper.instance().state.questionType).toEqual('1');

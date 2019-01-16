@@ -159,7 +159,7 @@ class AddQuestion extends Component {
   renderQuestionValues = () => (
     <div>
       <span className="question-form__sections">
-        Date Duration
+        Date
       </span>
       <div>
         <Button
@@ -174,7 +174,7 @@ class AddQuestion extends Component {
         />)}
       </div>
       <span className="question-form__sections">
-          Time Duration
+          Time
       </span>
       {this.renderTimeInputs()}
       <span className="question-form__sections">
