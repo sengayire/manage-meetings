@@ -42,7 +42,7 @@ class Calendar extends Component {
         <PickRange handleChange={this.handleChange} />
         <div className="calender__button" >
           <span onClick={this.cancelDate} role="presentation" id="cancel_date_button" className="calender__button__item"> Cancel</span>
-          <button type="button" onClick={this.sendDate} id="apply_date_button" className="calender__button__item ok"> Apply </button>
+          <button type="button" onClick={this.sendDate} id="apply_date_button" className="calender__button__item apply_button"> Apply </button>
         </div>
       </div>
     );
