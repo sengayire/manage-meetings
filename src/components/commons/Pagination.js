@@ -111,7 +111,6 @@ Pagination.propTypes = {
   currentPage: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   dataFetched: PropTypes.bool,
   isFetching: PropTypes.bool,
-
 };
 
 Pagination.defaultProps = {

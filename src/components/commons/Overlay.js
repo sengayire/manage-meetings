@@ -11,6 +11,7 @@ const Overlay = ({ id }) => (
     </div>
   </div>
 );
+
 Overlay.propTypes = {
   id: propTypes.string,
 };

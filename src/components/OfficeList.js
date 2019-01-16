@@ -89,7 +89,6 @@ export class OfficeList extends React.Component {
             ? <Overlay />
             : null
           }
-
           <table>
             <ColGroup />
             <TableHead titles={['Office', 'Location', 'Timezone', 'Action']} />
