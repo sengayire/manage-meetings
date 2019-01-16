@@ -13,6 +13,7 @@ import notification from '../utils/notification';
 import { GET_ALL_OFFICES } from '../graphql/queries/Offices';
 import MenuTitle from './MenuTitle';
 import Spinner from './commons/Spinner';
+import Overlay from './commons/Overlay';
 
 export class OfficeList extends React.Component {
   constructor(props) {
@@ -21,7 +22,7 @@ export class OfficeList extends React.Component {
       allOffices: { ...props.data.allOffices },
       currentPage: 1,
       dataFetched: true, // true when there is an active internet connection.
-
+      isFetching: false,
     };
   }
 
@@ -41,6 +42,7 @@ export class OfficeList extends React.Component {
   * @returns {void}
   */
   handleData = (perPage, page) => {
+    this.setState({ isFetching: true });
     /* istanbul ignore next */
     /* Reasoning: find explicit way of testing configuration options */
     this.props.data.fetchMore({
@@ -54,9 +56,9 @@ export class OfficeList extends React.Component {
           currentPage: page,
         });
       },
-    }).then(() => this.setState({ dataFetched: true }))
+    }).then(() => this.setState({ dataFetched: true, isFetching: false }))
       .catch(() => {
-        this.setState({ dataFetched: false });
+        this.setState({ dataFetched: false, isFetching: false });
         notification(
           toastr,
           'error',
@@ -67,17 +69,15 @@ export class OfficeList extends React.Component {
 
   render() {
     const { loading, refetch, error } = this.props.data;
-    const { allOffices, currentPage, dataFetched } = this.state;
-
-    if (error) {
-      return <div>{error.message}</div>;
-    } else if (loading) {
-      return <Spinner />;
-    }
-
-    return (
+    const {
+      allOffices, currentPage, dataFetched, isFetching,
+    } = this.state;
+    if (error) return <div>{error.message}</div>;
+    return loading ? (
+      <Spinner />
+    ) : (
       <div className="settings-offices">
-        <div className="settings-offices-control">
+        <div className={`settings-offices-control ${isFetching ? 'disabled-buttons' : null}`}>
           <MenuTitle title="Offices" />
           <AddOffice
             refetch={refetch}
@@ -85,6 +85,10 @@ export class OfficeList extends React.Component {
           />
         </div>
         <div className="settings-offices-list">
+          {isFetching
+            ? <Overlay />
+            : null
+          }
           <table>
             <ColGroup />
             <TableHead titles={['Office', 'Location', 'Timezone', 'Action']} />
@@ -109,6 +113,7 @@ export class OfficeList extends React.Component {
           handleData={this.handleData}
           currentPage={currentPage}
           dataFetched={dataFetched}
+          isFetching={isFetching}
         />
       </div>
     );

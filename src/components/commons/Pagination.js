@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import '../../assets/styles/pagination.scss';
+import '../../assets/styles/paginationOverlay.scss';
 
 const options = array =>
   array.map(item => <option key={item + 1}>{item}</option>);
@@ -55,7 +56,7 @@ class Pagination extends Component {
   render() {
     const { page, perPage } = this.state;
     const {
-      itemsPerPage, totalPages, hasNext, hasPrevious, reverse,
+      itemsPerPage, totalPages, hasNext, hasPrevious, reverse, isFetching,
     } = this.props;
 
     return (
@@ -76,7 +77,7 @@ class Pagination extends Component {
         <div className="showingBlock">
           <ul className="pagination">
             <li>
-              <button id="previous" onClick={this.handlePrevious} className={hasPrevious ? 'enabled' : 'disabled'}>Previous</button>
+              <button id="previous" onClick={this.handlePrevious} className={hasPrevious && !isFetching ? 'enabled' : 'disabled'}>Previous</button>
             </li>
             <li className="results">
               <ul>
@@ -91,7 +92,7 @@ class Pagination extends Component {
               </ul>
             </li>
             <li>
-              <button id="next" onClick={this.handleNext} className={hasNext ? 'enabled' : 'disabled'}>Next</button>
+              <button id="next" onClick={this.handleNext} className={hasNext && !isFetching ? 'enabled' : 'disabled'}>Next</button>
             </li>
           </ul>
         </div>
@@ -109,6 +110,7 @@ Pagination.propTypes = {
   reverse: PropTypes.bool,
   currentPage: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   dataFetched: PropTypes.bool,
+  isFetching: PropTypes.bool,
 };
 
 Pagination.defaultProps = {
@@ -119,6 +121,7 @@ Pagination.defaultProps = {
   hasPrevious: false,
   reverse: false,
   dataFetched: true,
+  isFetching: false,
 };
 
 export default Pagination;

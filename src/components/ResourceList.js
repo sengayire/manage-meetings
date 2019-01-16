@@ -13,6 +13,7 @@ import Pagination from './commons/Pagination';
 import MenuTitle from './MenuTitle';
 import Spinner from './commons/Spinner';
 import notification from '../utils/notification';
+import Overlay from './commons/Overlay';
 
 export class ResourceList extends React.Component {
   constructor(props) {
@@ -21,6 +22,7 @@ export class ResourceList extends React.Component {
       allResources: { ...props.data.allResources },
       dataFetched: true, // true when there is an active internet connection
       currentPage: 1,
+      isFetching: false,
     };
   }
 
@@ -32,6 +34,7 @@ export class ResourceList extends React.Component {
   }
 
   handleData = (perPage, page) => {
+    this.setState({ isFetching: true });
     /* istanbul ignore next */
     /* Reasoning: find explicit way of testing configuration options */
     this.props.data.fetchMore({
@@ -45,9 +48,9 @@ export class ResourceList extends React.Component {
           currentPage: page,
         });
       },
-    }).then(() => this.setState({ dataFetched: true }))
+    }).then(() => this.setState({ dataFetched: true, isFetching: false }))
       .catch(() => {
-        this.setState({ dataFetched: false });
+        this.setState({ dataFetched: false, isFetching: false });
         notification(
           toastr,
           'error',
@@ -58,19 +61,22 @@ export class ResourceList extends React.Component {
 
   render() {
     const { loading, error, refetch } = this.props.data;
-    const { allResources, currentPage } = this.state;
-
+    const { allResources, currentPage, isFetching } = this.state;
     if (loading) return <Spinner />;
 
     if (error) return <div>{error.message}</div>;
 
     return (
       <div className="settings-resource">
+        <div className={`settings-resource-control ${isFetching ? 'disabled-buttons' : null}`}>
+          <MenuTitle title="Resources" />
+          <AddResourceComponent />
+        </div>
         <div className="settings-resource-list">
-          <div className="settings-resource-control">
-            <MenuTitle title="Resources" />
-            <AddResourceComponent />
-          </div>
+          {isFetching
+            ? <Overlay />
+            : null
+          }
           <table>
             <ColGroup />
             <TableHead titles={['Resource', 'Action']} />
@@ -93,6 +99,7 @@ export class ResourceList extends React.Component {
           hasPrevious={allResources.hasPrevious}
           handleData={this.handleData}
           dataFetched={this.state.dataFetched}
+          isFetching={isFetching}
         />
       </div>
     );

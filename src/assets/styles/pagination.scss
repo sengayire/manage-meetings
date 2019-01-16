@@ -74,6 +74,10 @@ select {
   font-size: 14px;
 }
 
+.enabled:hover{
+  cursor: pointer;
+}
+
 .disabled {
   color: $color-grey !important;
   cursor: not-allowed;

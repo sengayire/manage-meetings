@@ -6,11 +6,12 @@ import Office from '../../src/components/Office';
 
 describe('Tests for SettingOffices', () => {
   it('renders correctly from memory', () => {
-    const shalloWrapper = shallow(<Office office={data.office} />);
+    const shalloWrapper = shallow(<Office office={data.office} refetch={data.refetch} />);
     expect(shalloWrapper).toMatchSnapshot();
   });
+
   it('renders correctly from memory', () => {
-    const shalloWrapper = shallow(<Office office={data.officeII} />);
+    const shalloWrapper = shallow(<Office office={data.officeII} refetch={data.refetch} />);
     expect(shalloWrapper).toMatchSnapshot();
   });
 });

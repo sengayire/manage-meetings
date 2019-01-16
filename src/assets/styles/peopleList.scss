@@ -2,7 +2,12 @@
 
 .settings-people {
   width: 85%;
-
+  .action-menu{
+    height: 70px;
+    padding-top: 4%;
+    text-align: right;
+  }
+  
   .settings-people-list {
     .action-menu {
       height: 70px;

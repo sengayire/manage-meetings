@@ -4,7 +4,7 @@ import Checkins from '../../src/components/analytics/checkins';
 import { getTodaysDate } from '../utils/Utilities';
 import '../assets/styles/custom.scss';
 import '../assets/styles/topmenu.scss';
-import AverageMeetingList from '../components/analytics/AverageMeetingList';
+import AverageMeetingListComponent from '../components/analytics/AverageMeetingList';
 import ComposedBookedRooms from '../components/analytics/ComposedBookedRooms';
 import AveragePieChartList from '../components/analytics/averagePieChart/AveragePieChartList';
 
@@ -13,7 +13,7 @@ const AnalyticsOverview = ({ dateValue }) => (
     <AveragePieChartList dateValue={dateValue} />
     <ComposedBookedRooms dateValue={dateValue} />
     <Checkins />
-    <AverageMeetingList dateValue={dateValue} />
+    <AverageMeetingListComponent dateValue={dateValue} />
   </Fragment>
 );
 

@@ -2,7 +2,8 @@ import React from 'react';
 import { mount, shallow } from 'enzyme';
 import wait from 'waait';
 import { MockedProvider } from 'react-apollo/test-utils';
-import AverageMeetingList from '../../../src/components/analytics/AverageMeetingList';
+import AverageMeetingComponent, { AverageMeetingList }
+  from '../../../src/components/analytics/AverageMeetingList';
 import MEETING_DURATION_ANALYTICS from '../../../src/graphql/queries/analytics';
 
 describe('Average Meeting List Component', () => {
@@ -42,18 +43,35 @@ describe('Average Meeting List Component', () => {
 
   const setup = (
     <MockedProvider mocks={mocks} addTypename={false}>
-      <AverageMeetingList {...props} />
+      <AverageMeetingComponent {...props} />
     </MockedProvider>
   );
 
   const wrapper = mount(setup);
 
   it('renders correctly from memory', () => {
-    expect(shallow(<AverageMeetingList {...props} />)).toMatchSnapshot();
+    expect(shallow(<AverageMeetingComponent {...props} />)).toMatchSnapshot();
   });
 
   it('Should render <AverageMeetingList />', async () => {
     await wait(0); // Wait a tick to get past the loading state
     expect(wrapper.text()).toContain('Entebbe');
+  });
+
+  it('Should toggle state when handleData is called ', () => {
+    const initialProps = {
+      data: {
+        fetchMore: jest.fn(() => Promise.resolve()),
+        variables: {
+          startDate: 'Nov 02 2018',
+          endDate: 'Nov 03 2018',
+          page: 1,
+          perPage: 5,
+        },
+      },
+    };
+    const component = shallow(<AverageMeetingList {...initialProps} />);
+    component.instance().handleData();
+    expect(component.state('isFetching')).toBe(true);
   });
 });

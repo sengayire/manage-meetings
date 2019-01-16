@@ -1,0 +1,36 @@
+@import './variables';
+
+.overlay {
+  position: absolute;
+  background: $transparent-background;
+  opacity: .5;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Pagination-spinner {
+  position: absolute;
+  top: 55%;
+  left: 55%;
+  transform: translateX(-157%) translateY(-60%)
+}
+
+.settings-offices-list,
+.average-meeting-list,
+.settings-rooms-list,
+.settings-resource-list,
+.settings-people-list,
+.average-meeting-list {
+  position: relative;
+}
+
+#average-meeting {
+  left: 0%;
+}
+
+.disabled-buttons {
+  pointer-events: none !important;
+}

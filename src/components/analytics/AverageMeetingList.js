@@ -8,12 +8,14 @@ import Tip from '../commons/Tooltip';
 import MEETING_DURATION_ANALYTICS from '../../graphql/queries/analytics';
 import Pagination from '../commons/Pagination';
 import QueryAnalyticsLoading from './AverageMeetingList/QueryAnalyticsLoading';
+import Overlay from '../commons/Overlay';
 
-class AverageMeetingList extends Component {
+export class AverageMeetingList extends Component {
   constructor(props) {
     super(props);
     this.state = {
       analyticsForMeetingsDurations: { ...props.data.analyticsForMeetingsDurations },
+      isFetching: false,
     };
   }
 
@@ -25,6 +27,7 @@ class AverageMeetingList extends Component {
   }
 
   handleData = (perPage, page) => {
+    this.setState({ isFetching: true });
     /* istanbul ignore next */
     /* Reasoning: find explicit way of testing configuration options */
     this.props.data.fetchMore({
@@ -39,14 +42,15 @@ class AverageMeetingList extends Component {
           analyticsForMeetingsDurations: fetchMoreResult.analyticsForMeetingsDurations,
         });
       },
-    });
+    }).then(() => this.setState({ isFetching: false }))
+      .catch(() => this.setState({ isFetching: false }));
   };
 
   render() {
     const tip =
       'The number of meetings in a room,  the average number of attendees to these meetings as well as the average duration of the meetings.';
     /* eslint no-param-reassign: "error" */
-    const { analyticsForMeetingsDurations } = this.state;
+    const { analyticsForMeetingsDurations, isFetching } = this.state;
     const { loading, error } = this.props.data;
     if (loading) return <QueryAnalyticsLoading />;
     if (error) return `Error: ${error}`;
@@ -57,6 +61,10 @@ class AverageMeetingList extends Component {
           <span className="moreVerticalIcon">{Tip(tip)}</span>
         </div>
         <div className="average-meeting-list">
+          {isFetching
+            ? <Overlay id="average-meeting" />
+            : null
+          }
           <table>
             <TableHead
               titles={['Room', 'No. of meetings', 'Average Meeting Duration']}
@@ -73,6 +81,7 @@ class AverageMeetingList extends Component {
               hasNext={analyticsForMeetingsDurations.hasNext}
               hasPrevious={analyticsForMeetingsDurations.hasPrevious}
               handleData={this.handleData}
+              isFetching={isFetching}
             />
           </div>
         </div>
