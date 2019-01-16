@@ -87,6 +87,8 @@ class AddQuestion extends Component {
   /**
    * It handles the selected choice from the options
    *
+   * @param {Object} event
+   *
    * @returns {void}
    */
   handleInputChange = (event) => {
@@ -96,11 +98,10 @@ class AddQuestion extends Component {
 
   /**
    * It returns the action buttons for the question modal
-   * @param {Function} handleCloseModal
    *
    * @returns {JSX}
    */
-  actionButtons = () => (
+  renderActionButtons = () => (
     <div className="button-container">
       <button onClick={this.handleCloseModal}>save question</button>
       <button onClick={this.handleCloseModal}>cancel</button>
@@ -113,7 +114,7 @@ class AddQuestion extends Component {
    *
    * @returns {JSX}
    */
-  timeInputs = () => (
+  renderTimeInputs = () => (
     <div className="inputs-inline">
       <div className="inputs">
         <label htmlFor="startTime" className="inputs-title">
@@ -136,12 +137,10 @@ class AddQuestion extends Component {
 
   /**
    * It returns the input text box for typing the question
-   * @param {Function} handleInputChange
    *
    * @returns {JSX}
    */
-  renderQuestionInputBox = (
-  ) => (
+  renderQuestionInputBox = () => (
     <div className="inputs">
       <input
         placeholder="Enter Question here..."
@@ -154,15 +153,10 @@ class AddQuestion extends Component {
 
   /**
    * It shows all the input fields required for creating a question
-   * @param {Function} renderQuestionInputBox
-   * @param {Function} actionButtons
-   * @param {Function} calendarIcon
    *
    * @returns {JSX}
    */
-  renderQuestionValues = ({
-    calenderOpen,
-  } = this.state) => (
+  renderQuestionValues = () => (
     <div>
       <span className="question-form__sections">
         Date Duration
@@ -173,7 +167,7 @@ class AddQuestion extends Component {
           id="calendar-btn"
           onClick={this.calenderToggle}
         />
-        {calenderOpen && (
+        {this.state.calenderOpen && (
         <Calendar
           sendDateData={this.sendDateData}
           handleCloseModal={this.calenderToggle}
@@ -182,7 +176,7 @@ class AddQuestion extends Component {
       <span className="question-form__sections">
           Time Duration
       </span>
-      {this.timeInputs()}
+      {this.renderTimeInputs()}
       <span className="question-form__sections">
         Question
       </span>
@@ -202,7 +196,7 @@ class AddQuestion extends Component {
           options={this.state.options}
         />
       </div>
-      {this.actionButtons()}
+      {this.renderActionButtons()}
     </div>
   );
 
