@@ -3,6 +3,13 @@ import PropTypes from 'prop-types';
 import { formatRoomData } from '../../graphql/mappers/Rooms';
 import Room from '../../components/Room';
 
+/**
+ * Component that builds the body of a table
+ *
+ * @param {array} props
+ *
+ * @returns {JSX}
+ */
 const TableBody = props => (
   <tbody className="bundle">
     {props.rooms.map(room => (

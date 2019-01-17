@@ -8,19 +8,43 @@ import { DELETE_FLOOR_MUTATION } from '../graphql/mutations/Floors';
 import notification from '../utils/notification';
 import '../assets/styles/deleteModal.scss';
 
+/**
+ * Delete Floor Component
+ *
+ * @extends React.Component
+ *
+ * @returns {JSX}
+ */
 export class DeleteFloor extends Component {
   state = {
     closeModal: false,
   };
 
+  /**
+   * It closes a modal
+   *
+   * @returns {void}
+   */
   handleCloseModal = () => {
     this.setState({ closeModal: true });
   };
 
+  /**
+   * Handles the state changes for the deleting floor modal
+   *
+   * @returns {void}
+   */
   handleModalStateChange = () => {
     this.state.closeModal && this.setState({ closeModal: false });
   };
 
+  /**
+   * Handles deleting floor
+   *
+   * @param {object} event
+   *
+   * @returns {void}
+   */
   handleDeleteFloor = (event) => {
     event.preventDefault();
 

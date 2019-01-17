@@ -3,6 +3,11 @@ import { NavLink } from 'react-router-dom';
 
 import ROUTES from '../../utils/routes';
 
+/**
+ * 1. Lists all the settings items on the left side nav bar
+ *
+ * @returns {JSX}
+ */
 const SettingsNav = () => (
   <div className="settings-tabs">
     <ul>

@@ -7,25 +7,26 @@ import { ANALYTICS_BOOKINGS_COUNT } from '../../graphql/queries/analytics';
 import ErrorBoundary from '../commons/ErrorBoundary';
 import graphColor from '../../fixtures/graphColor';
 
-
+/**
+ * Component for Querying Bookings Count
+ *
+ * @param {Object} dateValueObject
+ *
+ * @returns {JSX}
+ */
 const QueryBookingsCount = ({ dateValue }) => (
   <Query
-    query={
-    ANALYTICS_BOOKINGS_COUNT}
+    query={ANALYTICS_BOOKINGS_COUNT}
     variables={dateValue}
     notifyOnNetworkStatusChange={true} // eslint-disable-line
   >
     {({ loading, error, data }) => {
       if (loading) {
-        return (
-          <p>Loading...</p>
-        );
+        return <p>Loading...</p>;
       }
       if (error) {
         const errors = error.graphQLErrors.map(err => err.message);
-        return (
-          <p>{ errors }</p>
-        );
+        return <p>{errors}</p>;
       }
 
       const bookings = data.bookingsAnalyticsCount;
@@ -51,12 +52,8 @@ const QueryBookingsCount = ({ dateValue }) => (
       };
 
       return (
-        <ErrorBoundary >
-          <HorizontalBar
-            data={graphData}
-            options={options}
-            height={300}
-          />
+        <ErrorBoundary>
+          <HorizontalBar data={graphData} options={options} height={300} />
         </ErrorBoundary>
       );
     }}

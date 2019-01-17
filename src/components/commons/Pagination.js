@@ -1,11 +1,17 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import '../../assets/styles/pagination.scss';
-import '../../assets/styles/paginationOverlay.scss';
 
 const options = array =>
   array.map(item => <option key={item + 1}>{item}</option>);
 
+/**
+ * Reusabel pagination component
+ *
+ * @extends Component
+ *
+ * @returns {JSX}
+ */
 class Pagination extends Component {
   state = {
     perPage: 5,
@@ -15,8 +21,13 @@ class Pagination extends Component {
   componentWillMount = () => {
     const { currentPage } = this.props;
     this.setState({ page: currentPage });
-  }
+  };
 
+  /**
+   * Handles changes to the pagination field
+   *
+   * @returns {void}
+   */
   handleChange = (e) => {
     e.preventDefault();
     const { name, value } = e.target;
@@ -35,28 +46,44 @@ class Pagination extends Component {
     }
   };
 
+  /**
+   * Calls data for the next page when the next button is hit.
+   *
+   * @returns {void}
+   */
   handleNext = () => {
     const { handleData, dataFetched } = this.props;
     const { page, perPage } = this.state;
     handleData(perPage, page + 1);
-    dataFetched && this.setState({
-      page: page + 1,
-    });
+    dataFetched &&
+      this.setState({
+        page: page + 1,
+      });
   };
 
+  /**
+   * Calls data for the previous page when the previous button is hit.
+   *
+   * @returns {Function} handleData
+   */
   handlePrevious = () => {
     const { page, perPage } = this.state;
     const { handleData, dataFetched } = this.props;
     handleData(perPage, page - 1);
-    dataFetched && this.setState({
-      page: page - 1,
-    });
+    dataFetched &&
+      this.setState({
+        page: page - 1,
+      });
   };
 
   render() {
     const { page, perPage } = this.state;
     const {
-      itemsPerPage, totalPages, hasNext, hasPrevious, reverse, isFetching,
+      itemsPerPage,
+      totalPages,
+      hasNext,
+      hasPrevious,
+      reverse,
     } = this.props;
 
     return (
@@ -77,22 +104,44 @@ class Pagination extends Component {
         <div className="showingBlock">
           <ul className="pagination">
             <li>
-              <button id="previous" onClick={this.handlePrevious} className={hasPrevious && !isFetching ? 'enabled' : 'disabled'}>Previous</button>
+              <button
+                id="previous"
+                onClick={this.handlePrevious}
+                className={hasPrevious ? 'enabled' : 'disabled'}
+              >
+                Previous
+              </button>
             </li>
             <li className="results">
               <ul>
                 <span>Showing {reverse ? '' : 'page'}</span>
-                <select className="totalPage" name="page" value={page} onChange={this.handleChange}>
+                <select
+                  className="totalPage"
+                  name="page"
+                  value={page}
+                  onChange={this.handleChange}
+                >
                   {[...Array(totalPages).keys()].map(item => (
                     <option key={item}>{item + 1}</option>
                   ))}
                 </select>
                 {!reverse && <span className="pageNum"> of {totalPages}</span>}
-                {reverse && <span className="pageNum reverse"> of {totalPages} Results</span>}
+                {reverse && (
+                  <span className="pageNum reverse">
+                    {' '}
+                    of {totalPages} Results
+                  </span>
+                )}
               </ul>
             </li>
             <li>
-              <button id="next" onClick={this.handleNext} className={hasNext && !isFetching ? 'enabled' : 'disabled'}>Next</button>
+              <button
+                id="next"
+                onClick={this.handleNext}
+                className={hasNext ? 'enabled' : 'disabled'}
+              >
+                Next
+              </button>
             </li>
           </ul>
         </div>
@@ -110,7 +159,6 @@ Pagination.propTypes = {
   reverse: PropTypes.bool,
   currentPage: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   dataFetched: PropTypes.bool,
-  isFetching: PropTypes.bool,
 };
 
 Pagination.defaultProps = {
@@ -121,7 +169,6 @@ Pagination.defaultProps = {
   hasPrevious: false,
   reverse: false,
   dataFetched: true,
-  isFetching: false,
 };
 
 export default Pagination;

@@ -10,11 +10,20 @@ import Pagination from '../commons/Pagination';
 import QueryAnalyticsLoading from './AverageMeetingList/QueryAnalyticsLoading';
 import Overlay from '../commons/Overlay';
 
+/**
+ * Component for the average meeting list
+ *
+ * @param {array} props
+ *
+ * @returns {JSX}
+ */
 export class AverageMeetingList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      analyticsForMeetingsDurations: { ...props.data.analyticsForMeetingsDurations },
+      analyticsForMeetingsDurations: {
+        ...props.data.analyticsForMeetingsDurations,
+      },
       isFetching: false,
     };
   }
@@ -26,23 +35,34 @@ export class AverageMeetingList extends Component {
     });
   }
 
+  /**
+   * fetches data for the given number of pages
+   *
+   * @param {number} perPage
+   * @param {number} page
+   *
+   * @returns {void}
+   */
   handleData = (perPage, page) => {
     this.setState({ isFetching: true });
     /* istanbul ignore next */
     /* Reasoning: find explicit way of testing configuration options */
-    this.props.data.fetchMore({
-      variables: {
-        startDate: this.props.dateValue.startDate,
-        endDate: this.props.dateValue.endDate,
-        page,
-        perPage,
-      },
-      updateQuery: (prev, { fetchMoreResult }) => {
-        this.setState({
-          analyticsForMeetingsDurations: fetchMoreResult.analyticsForMeetingsDurations,
-        });
-      },
-    }).then(() => this.setState({ isFetching: false }))
+    this.props.data
+      .fetchMore({
+        variables: {
+          startDate: this.props.dateValue.startDate,
+          endDate: this.props.dateValue.endDate,
+          page,
+          perPage,
+        },
+        updateQuery: (prev, { fetchMoreResult }) => {
+          this.setState({
+            analyticsForMeetingsDurations:
+              fetchMoreResult.analyticsForMeetingsDurations,
+          });
+        },
+      })
+      .then(() => this.setState({ isFetching: false }))
       .catch(() => this.setState({ isFetching: false }));
   };
 
@@ -61,16 +81,15 @@ export class AverageMeetingList extends Component {
           <span className="moreVerticalIcon">{Tip(tip)}</span>
         </div>
         <div className="average-meeting-list">
-          {isFetching
-            ? <Overlay id="average-meeting" />
-            : null
-          }
+          {isFetching ? <Overlay id="average-meeting" /> : null}
           <table>
             <TableHead
               titles={['Room', 'No. of meetings', 'Average Meeting Duration']}
             />
             <tbody>
-              <QueryAnalyticsPerMeetingRoom data={analyticsForMeetingsDurations} />
+              <QueryAnalyticsPerMeetingRoom
+                data={analyticsForMeetingsDurations}
+              />
             </tbody>
           </table>
         </div>
@@ -119,4 +138,3 @@ export default compose(
     }),
   }),
 )(AverageMeetingList);
-

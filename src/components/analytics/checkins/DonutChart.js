@@ -5,6 +5,14 @@ import '../../../assets/styles/donutchart.scss';
 // Import the tip
 import Tip from '../../commons/Tooltip';
 
+/**
+ *
+ * A donut Chart for Checkins
+ *
+ * @param {array} props
+ *
+ * @returns {JSX}
+ */
 const DonutChart = (props) => {
   const {
     chartTitle,

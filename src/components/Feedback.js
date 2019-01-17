@@ -9,36 +9,44 @@ import DeleteFeedback from './DeleteFeedback';
 
 /* istanbul ignore next */
 const onChange = () => {};
-
-const Feedback = props => (
-  props.feedback.map(({
-    question,
-    startDate,
-    duration,
-    responses,
-    type,
-    status,
-  }, index) => (
-    <tr key={index}>
-      <td><NavLink to={ROUTES.roomResponses} className="questions">{question}</NavLink></td>
-      <td>{type}</td>
-      <td>{responses}</td>
-      <td>{startDate}</td>
-      <td>{duration}</td>
-      <td>
-        <EditFeedback
-          id="edit-modal"
-          question={question}
-          type={type}
-          startDate={startDate}
-          duration={duration}
-        />
-        <DeleteFeedback id="delete-modal" question={question} />
-      </td>
-      <td><CheckboxSlide checked={status} onChange={onChange} /></td>
-    </tr>
-  ))
-);
+/**
+ * Feedback Component
+ *
+ * @param {array} props
+ *
+ * @returns {JSX}
+ */
+const Feedback = props =>
+  props.feedback.map(
+    ({
+      question, startDate, duration, responses, type, status,
+    }, index) => (
+      <tr key={index}>
+        <td>
+          <NavLink to={ROUTES.roomResponses} className="questions">
+            {question}
+          </NavLink>
+        </td>
+        <td>{type}</td>
+        <td>{responses}</td>
+        <td>{startDate}</td>
+        <td>{duration}</td>
+        <td>
+          <EditFeedback
+            id="edit-modal"
+            question={question}
+            type={type}
+            startDate={startDate}
+            duration={duration}
+          />
+          <DeleteFeedback id="delete-modal" question={question} />
+        </td>
+        <td>
+          <CheckboxSlide checked={status} onChange={onChange} />
+        </td>
+      </tr>
+    ),
+  );
 
 Feedback.propTypes = {
   feedback: PropTypes.arrayOf(PropTypes.object).isRequired,

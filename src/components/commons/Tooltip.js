@@ -9,6 +9,14 @@ import theme from '../../assets/styles/toolTipStyles.scss';
 theme.tooltipInner = 'tooltipInner';
 
 const TooltipLink = Tooltip(Link);
+
+/**
+ * Reusable Tooltip component
+ *
+ * @param {string} tip - The words
+ *
+ * @returns {JSX}
+ */
 const Tip = tip => (
   <TooltipLink
     theme={theme}

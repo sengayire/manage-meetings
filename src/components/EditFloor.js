@@ -9,6 +9,13 @@ import { Input } from '../components/commons';
 import notification from '../utils/notification';
 import { EDIT_FLOOR_MUTATION } from '../graphql/mutations/Floors';
 
+/**
+ * Edit Floor Component
+ *
+ * @extends React.Component
+ *
+ * @returns {JSX}
+ */
 export class EditFloor extends React.Component {
   state = {
     floorName: this.props.floorName,
@@ -16,18 +23,43 @@ export class EditFloor extends React.Component {
     closeModal: false,
   };
 
+  /**
+   * Ensures that the state is updated basing
+   * on the changes in the input fields
+   *
+   * @param {Object} target
+   *
+   * @returns {void}
+   */
   handleInputChange = ({ target: { name, value } }) => {
     this.setState({ [name]: value });
   };
 
+  /**
+   * It closes a modal
+   *
+   * @returns {void}
+   */
   handleCloseModal = () => {
     this.setState({ closeModal: true });
   };
 
+  /**
+   * It changes the state of the modal
+   *
+   * @returns {void}
+   */
   handleModalStateChange = () => {
     this.state.closeModal && this.setState({ closeModal: false });
   };
 
+  /**
+   * Handles editing floor
+   *
+   * @param {object} event
+   *
+   * @returns {void}
+   */
   handleEditFloor = (event) => {
     event.preventDefault();
     const { floorId, floorName } = this.state;

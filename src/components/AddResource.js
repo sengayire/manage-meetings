@@ -10,6 +10,13 @@ import { GET_ALL_ROOMS_QUERY } from '../graphql/queries/Rooms';
 import { ADD_RESOURCE_MUTATION } from '../graphql/mutations/AddResourceToRoom';
 import notification from '../utils/notification';
 
+/**
+ * Add Resource Component
+ *
+ * @extends React.Component
+ *
+ * @returns {JSX}
+ */
 export class AddResource extends React.Component {
   state = {
     amenity: '',
@@ -20,19 +27,50 @@ export class AddResource extends React.Component {
 
   resourceQuantity = React.createRef();
 
+  /**
+   * Ensures that the modal for adding office closes
+   * when a user hits CANCEL on the modal or when the
+   * creation of an office is successful
+   *
+   * @returns {void}
+   */
   handleCloseModal = () => {
     this.setState({ closeModal: true });
   };
 
+  /**
+   * Ensures that the state is updated basing on the
+   * user input
+   *
+   * @param {object} event The input event parameter
+   * @param {number} capacity
+   *
+   * @returns {void}
+   */
   handleInputChange = (event, capacity = 0) => {
     const { name, value } = event.target;
     this.setState({ [name]: value, resourceQuantity: capacity });
   };
 
+  /**
+   * It updates the state value of closeModal
+   * to false whenever the modal closes
+   *
+   * @returns {void}
+   */
   handleModalStateChange = () => {
     this.state.closeModal && this.setState({ closeModal: false });
   };
 
+  /**
+   * 1. Submits the office data to the backend
+   * 2. Notifies the user about the response from the request
+   * i.e whether it was a success or a failure
+   *
+   * @param {object} event
+   *
+   * @returns {void}
+   */
   handleAddAmenity = (event) => {
     event.preventDefault();
 
@@ -49,7 +87,7 @@ export class AddResource extends React.Component {
       })
       .then(() => {
         this.handleCloseModal();
-        /** Notify user of success of adding of room */
+        /** Notify user of success of adding room */
         notification(toastr, 'success', 'Resource Successfully added')();
         /** Clear the state and restore default values */
         this.setState({ amenity: '', resourceQuantity: 0, room: '' });

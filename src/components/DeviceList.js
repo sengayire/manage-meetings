@@ -10,6 +10,11 @@ const deviceListItems = devices.map(device => (
   <Device device={device} key={device.name} />
 ));
 
+/**
+ * Device List Component
+ *
+ * @returns {JSX}
+ */
 const DeviceList = () => (
   <div className="settings-devices-list">
     <div className="settings-devices-control">
@@ -17,13 +22,12 @@ const DeviceList = () => (
     </div>
     <table>
       <ColGroup />
-      <TableHead titles={['Name', 'Type', 'Date Added', 'Last Seen', 'Location']} />
-      <tbody>
-        {deviceListItems}
-      </tbody>
+      <TableHead
+        titles={['Name', 'Type', 'Date Added', 'Last Seen', 'Location']}
+      />
+      <tbody>{deviceListItems}</tbody>
     </table>
   </div>
 );
 
 export default DeviceList;
-

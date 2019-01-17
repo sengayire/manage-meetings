@@ -5,6 +5,11 @@ import { mapLocationsToSelectInputs } from '../../graphql/mappers/Rooms';
 
 import '../../assets/styles/roomform.scss';
 
+/**
+ * Component for the room input form
+ *
+ * @returns {JSX}
+ */
 export class RoomForm extends Component {
   static propTypes = {
     roomLocation: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
@@ -12,10 +17,12 @@ export class RoomForm extends Component {
     handleInputChange: PropTypes.func.isRequired,
     onCloseModalRequest: PropTypes.func.isRequired,
     formDetails: PropTypes.oneOfType([
-      PropTypes.arrayOf(PropTypes.shape({
-        id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-        name: PropTypes.string,
-      })),
+      PropTypes.arrayOf(
+        PropTypes.shape({
+          id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+          name: PropTypes.string,
+        }),
+      ),
       PropTypes.object,
     ]).isRequired,
     locations: PropTypes.arrayOf(PropTypes.object).isRequired,
@@ -23,8 +30,15 @@ export class RoomForm extends Component {
 
   static defaultProps = {
     roomLocation: '',
-  }
+  };
 
+  /**
+   * Submits the form data to the backend
+   *
+   * @param {object} event
+   *
+   * @returns {void}
+   */
   handleSubmit = (event) => {
     event.preventDefault();
     this.props.onSubmit();

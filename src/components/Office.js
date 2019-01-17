@@ -1,8 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import DeleteOffice from './DeleteOffice'; //eslint-disable-line
-import EditOffice from './EditOffice'; //eslint-disable-line
+import DeleteOffice from "./DeleteOffice"; //eslint-disable-line
+import EditOffice from "./EditOffice"; //eslint-disable-line
 
+/**
+ * shows offices data in a table
+ *
+ * @param {Object} office
+ *
+ * @returns {JSX}
+ */
 const Office = ({ office: { id, location, name }, refetch, currentPage }) => {
   let gmt = '';
   if (location.timeZone.includes('WEST')) {

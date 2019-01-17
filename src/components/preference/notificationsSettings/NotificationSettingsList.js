@@ -10,6 +10,8 @@ import Spinner from '../../commons/Spinner';
 
 /**
  * notification preferences
+ *
+ * @returns {JSX}
  */
 const NotificationSettingsList = () => (
   <Query query={GET_NOTIFICATION_STATUS}>

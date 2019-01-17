@@ -9,23 +9,46 @@ import notification from '../utils/notification';
 
 import '../assets/styles/deleteModal.scss';
 
+/**
+ * Delete Resource Component
+ *
+ * @extends React.Component
+ *
+ * @returns {JSX}
+ */
 export class DeleteResource extends Component {
   state = {
     closeModal: false,
   };
 
+  /**
+   * It closes a modal
+   *
+   * @returns {void}
+   */
   handleCloseModal = () => {
     this.setState({ closeModal: true });
   };
 
+  /**
+   * Handles the state changes for the deleting resource modal
+   *
+   * @returns {void}
+   */
   handleModalStateChange = () => {
     this.state.closeModal && this.setState({ closeModal: false });
   };
 
+  /**
+   * Handles deleting resource
+   *
+   * @returns {void}
+   */
   handleDeleteResource = () => {
     const variables = { variables: { resourceId: this.props.toDelete.id } };
     const { refetch, currentPage } = this.props;
-    this.props.deleteResource(variables)
+    this.props
+      .deleteResource(variables)
       .then(() => {
         notification(
           toastr,
@@ -53,7 +76,8 @@ export class DeleteResource extends Component {
       >
         <div className="delete-modal-content">
           <p id="confirm-msg">
-            Are you sure you want to delete &quot;{this.props.toDelete.name}&quot;? <br />
+            Are you sure you want to delete &quot;{this.props.toDelete.name}
+            &quot;? <br />
             This cannot be undone
           </p>
           <div className="modal-actions">

@@ -7,12 +7,22 @@ import AddRoomStCatherine from './AddRoomNairobi';
 
 import '../../assets/styles/addRoomMenu.scss';
 
+/**
+ * The button for adding rooms
+ *
+ * @returns {JSX}
+ */
 const menuText = () => (
   <div className="addRoomBtn">
     <span>Add Room</span>
   </div>
 );
 
+/**
+ * Displays the components in which rooms can be added
+ *
+ * @returns {JSX}
+ */
 const AddRoomMenu = () => (
   <IconMenu className="add-room-menu" icon={menuText()}>
     <MenuItem caption="Select Office" disabled />

@@ -5,8 +5,12 @@ import '../../../assets/styles/notificationSettingsList.scss';
 
 /**
  * will render a single notification setting card
+ *
+ * @param {Object} notificationSettingsObject
+ *
+ * @returns {JSX}
+ *
  */
-
 const NotificationSetting = ({
   title, body, toggle, handleChange,
 }) => (

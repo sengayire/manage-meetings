@@ -10,6 +10,11 @@ import '../../../../src/assets/styles/roomCapacityPieChart.scss';
 // Import the tip
 import Tip from '../../commons/Tooltip';
 
+/**
+ * Room capacity Pie chart component
+ *
+ * @returns {JSX}
+ */
 class RoomCapacityPieChart extends Component {
   // eslint-disable-next-line
   state = {};

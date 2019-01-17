@@ -3,18 +3,24 @@ import PropTypes from 'prop-types';
 import { graphql } from 'react-apollo';
 import toastr from 'toastr';
 import Office from './Office';
-import AddOffice from './AddOffice'; // eslint-disable-line
+import AddOffice from "./AddOffice"; // eslint-disable-line
 import '../assets/styles/officelist.scss';
 import ColGroup from './helpers/ColGroup';
 import TableHead from './helpers/TableHead';
 import Pagination from './commons/Pagination';
 import notification from '../utils/notification';
-
 import { GET_ALL_OFFICES } from '../graphql/queries/Offices';
 import MenuTitle from './MenuTitle';
 import Spinner from './commons/Spinner';
 import Overlay from './commons/Overlay';
 
+/**
+ * Offices List component
+ *
+ * @param {array} props
+ *
+ * @returns {JSX}
+ */
 export class OfficeList extends React.Component {
   constructor(props) {
     super(props);
@@ -34,29 +40,31 @@ export class OfficeList extends React.Component {
   }
 
   /**
-  * Handles pagination data retrieval.
-  *
-  * @param {number} page the current page
-  * @param {number} perpage the number of items in a page
-  *
-  * @returns {void}
-  */
+   * Handles pagination data retrieval.
+   *
+   * @param {number} page the current page
+   * @param {number} perpage the number of items in a page
+   *
+   * @returns {void}
+   */
   handleData = (perPage, page) => {
     this.setState({ isFetching: true });
     /* istanbul ignore next */
     /* Reasoning: find explicit way of testing configuration options */
-    this.props.data.fetchMore({
-      variables: {
-        page,
-        perPage,
-      },
-      updateQuery: (prev, { fetchMoreResult }) => {
-        this.setState({
-          allOffices: fetchMoreResult.allOffices,
-          currentPage: page,
-        });
-      },
-    }).then(() => this.setState({ dataFetched: true, isFetching: false }))
+    this.props.data
+      .fetchMore({
+        variables: {
+          page,
+          perPage,
+        },
+        updateQuery: (prev, { fetchMoreResult }) => {
+          this.setState({
+            allOffices: fetchMoreResult.allOffices,
+            currentPage: page,
+          });
+        },
+      })
+      .then(() => this.setState({ dataFetched: true, isFetching: false }))
       .catch(() => {
         this.setState({ dataFetched: false, isFetching: false });
         notification(
@@ -77,32 +85,30 @@ export class OfficeList extends React.Component {
       <Spinner />
     ) : (
       <div className="settings-offices">
-        <div className={`settings-offices-control ${isFetching ? 'disabled-buttons' : null}`}>
+        <div
+          className={`settings-offices-control ${
+            isFetching ? 'disabled-buttons' : null
+          }`}
+        >
           <MenuTitle title="Offices" />
-          <AddOffice
-            refetch={refetch}
-            currentPage={currentPage}
-          />
+          <AddOffice refetch={refetch} currentPage={currentPage} />
         </div>
         <div className="settings-offices-list">
-          {isFetching
-            ? <Overlay />
-            : null
-          }
+          {isFetching ? <Overlay /> : null}
           <table>
             <ColGroup />
             <TableHead titles={['Office', 'Location', 'Timezone', 'Action']} />
             <tbody>
               {allOffices.offices &&
-                  allOffices.offices.map(office => (
-                    <Office
-                      office={office}
-                      key={office.name}
-                      refetch={refetch}
-                      officeId={office.id}
-                      currentPage={currentPage}
-                    />
-                  ))}
+                allOffices.offices.map(office => (
+                  <Office
+                    office={office}
+                    key={office.name}
+                    refetch={refetch}
+                    officeId={office.id}
+                    currentPage={currentPage}
+                  />
+                ))}
             </tbody>
           </table>
         </div>

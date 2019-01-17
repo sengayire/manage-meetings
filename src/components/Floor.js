@@ -1,8 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import DeleteFloor from './DeleteFloor'; //eslint-disable-line
-import EditFloor from './EditFloor'; //eslint-disable-line
+import DeleteFloor from "./DeleteFloor"; //eslint-disable-line
+import EditFloor from "./EditFloor"; //eslint-disable-line
 
+/**
+ * Floor Component
+ *
+ * @param {Object} floor
+ *
+ * @returns {JSX}
+ */
 export const Floor = ({ floor }) => (
   <tr>
     <td>{floor.name}</td>
@@ -14,7 +21,8 @@ export const Floor = ({ floor }) => (
         floorName={floor.name}
         floorId={floor.id}
         floorLocation={floor.office}
-      />&nbsp;
+      />
+      &nbsp;
       <DeleteFloor
         floorName={floor.name}
         id="delete-modal"

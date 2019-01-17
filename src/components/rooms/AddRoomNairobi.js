@@ -28,6 +28,11 @@ export class AddRoomNairobi extends Component {
     imageUrl: '',
   };
 
+  /**
+   * It closes a modal
+   *
+   * @returns {void}
+   */
   handleCloseModal = () => {
     this.setState({
       roomName: '',
@@ -41,6 +46,14 @@ export class AddRoomNairobi extends Component {
     });
   };
 
+  /**
+   * Ensures that the state is updated basing on the changes
+   * in the input fields
+   *
+   * @param {Object} target
+   *
+   * @returns {void}
+   */
   handleInputChange = ({ target: { name, value, files } }, num) => {
     if (value === 'A') {
       this.setState({
@@ -75,9 +88,23 @@ export class AddRoomNairobi extends Component {
     }
   };
 
+  /**
+   * It updates the state value of closeModal
+   * to false whenever the modal closes
+   *
+   * @returns {void}
+   */
   handleModalStateChange = () => {
     this.state.closeModal && this.setState({ closeModal: false });
   };
+
+  /**
+   * Ensures that a room is added
+   *
+   * @param {object} event
+   *
+   * @returns {void}
+   */
 
   handleAddRoom = (event) => {
     event.preventDefault();

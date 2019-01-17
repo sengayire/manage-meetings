@@ -7,6 +7,11 @@ import AddQuestion from './AddQuestion';
 import Feedback from './Feedback';
 import feedbackList from '../fixtures/roomFeebdack';
 
+/**
+ * Component for Room Feedback
+ *
+ * @returns {JSX}
+ */
 const RoomFeedback = () => (
   <div className="room-feedback">
     <div className="room-feedback__control">

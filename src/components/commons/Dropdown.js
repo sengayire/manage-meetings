@@ -2,6 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import '../../assets/styles/dropdown.scss';
 
+/**
+ * Builds reusable component for Dropdowns
+ *
+ * @extends React.Component
+ *
+ * @returns {JSX}
+ */
 class Dropdown extends React.Component {
   state = {
     isVisible: false,
@@ -14,21 +21,17 @@ class Dropdown extends React.Component {
    */
   toggleVisibility = () => {
     this.setState({ isVisible: !this.state.isVisible });
-  }
+  };
 
   render() {
     return (
       <React.Fragment>
         <div className="dropdown-caret">
           <button onClick={this.toggleVisibility}>
-            { this.props.icon
-              ? this.props.icon
-              : <span> &#x2304; </span>
-            }
+            {this.props.icon ? this.props.icon : <span> &#x2304; </span>}
           </button>
         </div>
-        {
-          this.state.isVisible &&
+        {this.state.isVisible && (
           <div
             id="dropdown-menu"
             className="dropdown-menu"
@@ -38,7 +41,7 @@ class Dropdown extends React.Component {
           >
             {this.props.content}
           </div>
-        }
+        )}
       </React.Fragment>
     );
   }

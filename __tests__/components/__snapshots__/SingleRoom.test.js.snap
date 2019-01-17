@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SingleRoom test Initial "visible" prop is "false"  1`] = `
+exports[`SingleRoom test renders correctly when "visible" prop is "false"  1`] = `
 <SingleRoomFeedBack
   roomId={1}
   rooms={
@@ -966,7 +966,7 @@ exports[`SingleRoom test Initial "visible" prop is "false"  1`] = `
 />
 `;
 
-exports[`SingleRoom test renders correctly 1`] = `
+exports[`SingleRoom test renders correctly when "visible" prop is "true" 1`] = `
 <SingleRoomFeedBack
   roomId={1}
   rooms={

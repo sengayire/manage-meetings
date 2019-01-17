@@ -11,4 +11,3 @@ const MESSAGES = {
 };
 
 export default { ERROR_TIMEOUT, MRM_TOKEN, MESSAGES };
-

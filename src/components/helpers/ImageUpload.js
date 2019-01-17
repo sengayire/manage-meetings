@@ -5,12 +5,22 @@ import config from '../../utils/FirebaseConfig';
 
 firebase.initializeApp(config);
 
+/**
+ * This is responsible for getting the
+ * URL of the image being uploaded
+ *
+ * @param {string} folderName
+ * @param {File} imageFile
+ *
+ * @returns {Function} storageRef
+ */
 const getImageUrl = (folderName, imageFile) => {
   const storageRef = firebase.storage().ref(folderName + imageFile.name);
 
-  return storageRef.put(imageFile)
-    .then(() => (storageRef.getDownloadURL().then(url => url)))
-    .catch(err => (notification(toastr, 'error', err)()));
+  return storageRef
+    .put(imageFile)
+    .then(() => storageRef.getDownloadURL().then(url => url))
+    .catch(err => notification(toastr, 'error', err)());
 };
 
 export default getImageUrl;

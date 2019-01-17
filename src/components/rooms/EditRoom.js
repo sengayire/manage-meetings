@@ -6,8 +6,10 @@ import Modal from '../commons/Modal';
 import notification from '../../utils/notification';
 import RoomFormInput from './RoomForm';
 
-
-import { GET_LOCATIONS_QUERY, GET_ROOMS_QUERY } from '../../graphql/queries/Rooms';
+import {
+  GET_LOCATIONS_QUERY,
+  GET_ROOMS_QUERY,
+} from '../../graphql/queries/Rooms';
 import { EDIT_ROOM_DETAILS_MUTATION } from '../../graphql/mutations/Rooms';
 
 export class EditRoom extends Component {
@@ -15,12 +17,15 @@ export class EditRoom extends Component {
     roomName: PropTypes.string.isRequired,
     editRoom: PropTypes.func,
     roomId: PropTypes.string.isRequired,
-    roomLocation: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+    roomLocation: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+      .isRequired,
     locations: PropTypes.oneOfType([
-      PropTypes.arrayOf(PropTypes.shape({
-        id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-        name: PropTypes.string,
-      })),
+      PropTypes.arrayOf(
+        PropTypes.shape({
+          id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+          name: PropTypes.string,
+        }),
+      ),
       PropTypes.object,
     ]).isRequired,
     refetch: PropTypes.func,
@@ -31,7 +36,7 @@ export class EditRoom extends Component {
     editRoom: PropTypes.func,
     refetch: null,
     currentPage: null,
-  }
+  };
 
   state = {
     closeModal: false,
@@ -39,33 +44,64 @@ export class EditRoom extends Component {
     roomName: this.props.roomName,
   };
 
+  /**
+   * It closes a modal
+   *
+   * @returns {void}
+   */
   handleCloseModal = () => {
     this.setState({ closeModal: true });
   };
 
+  /**
+   * HIt updates the state value of closeModal
+   * to false whenever the modal closes
+   *
+   * @returns {void}
+   */
   handleModalStateChange = () => {
     this.state.closeModal && this.setState({ closeModal: false });
   };
 
+  /**
+   * Ensures that the state is updated basing
+   * on the changes in the input fields
+   *
+   * @param {Object} target
+   *
+   * @returns {void}
+   */
   handleInputChange = ({ target: { name, value } }) => {
     this.setState({ [name]: value });
   };
 
+  /**
+   * Edits a room
+   *
+   * @returns {void}
+   */
   handleEditRoom = () => {
     const { roomId, roomName } = this.state;
     const { currentPage, refetch } = this.props;
 
-    this.props.editRoom({
-      variables: {
-        roomId,
-        name: roomName,
-      },
-    }).then(() => {
-      notification(toastr, 'success', `Room name editted successfully to ${roomName}`)();
-      refetch({ page: currentPage });
-    }).catch((err) => {
-      notification(toastr, 'error', err.graphQLErrors[0].message)();
-    });
+    this.props
+      .editRoom({
+        variables: {
+          roomId,
+          name: roomName,
+        },
+      })
+      .then(() => {
+        notification(
+          toastr,
+          'success',
+          `Room name editted successfully to ${roomName}`,
+        )();
+        refetch({ page: currentPage });
+      })
+      .catch((err) => {
+        notification(toastr, 'error', err.graphQLErrors[0].message)();
+      });
     this.handleCloseModal();
   };
 
@@ -95,7 +131,6 @@ export class EditRoom extends Component {
     );
   }
 }
-
 
 export default compose(
   graphql(GET_LOCATIONS_QUERY, { name: 'locations' }),

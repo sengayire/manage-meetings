@@ -3,6 +3,11 @@ import ProgressBar from 'react-toolbox/lib/progress_bar';
 import TableHead from '../../helpers/TableHead';
 import '../../../assets/styles/averageMeetinglist.scss';
 
+/**
+ * Component for loading query analytics
+ *
+ * @returns {JSX}
+ */
 const QueryAnalyticsLoading = () => (
   <div className="average-meeting">
     <div className="average-meeting-control">

@@ -1,6 +1,15 @@
 import toastr from 'toastr';
 import notification from '../../utils/notification';
 
+/**
+ *
+ * This functions handles all the validations and
+ * returns descriptive error messages
+ *
+ * @param {object} state
+ *
+ * @returns {void}
+ */
 const hasInvalidInputs = (state) => {
   const re = /^[A-Za-z]+[\s-\w]*/;
 
@@ -8,7 +17,11 @@ const hasInvalidInputs = (state) => {
     notification(toastr, 'error', 'Room name should not be empty')();
     return true;
   } else if (state.roomName !== undefined && !re.test(state.roomName.trim())) {
-    notification(toastr, 'error', 'Room name should start with a letter and contain only alphanumeric characters')();
+    notification(
+      toastr,
+      'error',
+      'Room name should start with a letter and contain only alphanumeric characters',
+    )();
     return true;
   } else if (state.uploading !== undefined && state.uploading) {
     notification(toastr, 'error', 'Still uploading thumbnail')();

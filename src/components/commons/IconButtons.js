@@ -12,19 +12,26 @@ class IconButtons extends Component {
 
   static defaultProps = {
     modalButtonClassName: 'button',
-  }
+  };
 
+  /**
+   * Fires an event when the text on a reusable button changes
+   *
+   * @param {string} text
+   *
+   * @returns {string}
+   */
   onButtonTextChange = (text) => {
     let buttonText;
     if (text === 'Delete') {
-      buttonText = (<img src={IconDelete} alt="Delete" />);
+      buttonText = <img src={IconDelete} alt="Delete" />;
     } else if (text === 'Edit') {
-      buttonText = (<img src={IconEdit} alt="Edit" />);
+      buttonText = <img src={IconEdit} alt="Edit" />;
     } else {
       buttonText = text;
     }
     return buttonText;
-  }
+  };
 
   render() {
     const { buttonText, modalButtonClassName } = this.props;

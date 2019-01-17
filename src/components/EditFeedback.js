@@ -6,6 +6,13 @@ import MrmModal from './commons/Modal';
 import ActionButtons from './commons/ActionButtons';
 import '../assets/styles/editfeedback.scss';
 
+/**
+ * Edit Feedback Component
+ *
+ * @extends React.Component
+ *
+ * @returns {JSX}
+ */
 class EditFeedback extends Component {
   state = {
     question: this.props.question,
@@ -15,23 +22,48 @@ class EditFeedback extends Component {
     closeModal: false,
   };
 
+  /**
+   * It closes a modal
+   *
+   * @returns {void}
+   */
   handleCloseModal = () => {
     this.setState({ closeModal: true });
-  }
+  };
 
+  /**
+   * It changes the state of the modal
+   *
+   * @returns {void}
+   */
   handleModalStateChange = () => {
     this.state.closeModal && this.setState({ closeModal: false });
-  }
+  };
 
+  /**
+   * Ensures that the state is updated basing
+   * on the changes in the input fields
+   *
+   * @param {Object} target
+   *
+   * @returns {void}
+   */
   handleInputChange = ({ target: { name, value } }) => {
     this.setState({ [name]: value });
-  }
+  };
 
+  /**
+   * Handles editing feedback
+   *
+   * @param {object} event
+   *
+   * @returns {void}
+   */
   handleEditFeedback = (event) => {
     event.preventDefault();
     /** submit logic here */
     this.handleCloseModal();
-  }
+  };
 
   render() {
     const {
@@ -107,4 +139,3 @@ EditFeedback.propTypes = {
 };
 
 export default EditFeedback;
-

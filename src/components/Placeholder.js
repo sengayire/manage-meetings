@@ -1,7 +1,8 @@
 import React from 'react';
 
-export default () => (
-  <div>
-      Placeholder
-  </div>
-);
+/**
+ * Builds a reusable placeholder component
+ *
+ * @returns {JSX}
+ */
+export default () => <div>Placeholder</div>;

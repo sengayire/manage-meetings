@@ -7,6 +7,13 @@ import RoomCapacityPieChart from './RoomCapacityPieChart';
 import '../../../../src/assets/styles/averagePieChartList.scss';
 import BookingsCountBarGraph from '../barGraph/BookingsCountBarGraph';
 
+/**
+ * Average Pie Chart list component
+ *
+ * @param {Object} dateValueObject
+ *
+ * @returns {JSX}
+ */
 const AveragePieChartList = ({ dateValue }) => (
   <div className="pie-chart-container">
     <MeetingDurationPieChart />

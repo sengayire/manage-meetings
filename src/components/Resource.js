@@ -3,12 +3,28 @@ import PropTypes from 'prop-types';
 import WrappedDeleteResource from './DeleteResource';
 import WrappedEditResource from './EditResource';
 
+/**
+ * Component that shows resources in a table
+ *
+ * @param {Object} resourcesObject
+ *
+ * @returns {JSX}
+ */
 const Resource = ({ resource, refetch, currentPage }) => (
   <tr>
     <td>{resource.name}</td>
     <td>
-      <WrappedEditResource resource={resource} refetch={refetch} currentPage={currentPage} /> &nbsp;
-      <WrappedDeleteResource toDelete={resource} refetch={refetch} currentPage={currentPage} />
+      <WrappedEditResource
+        resource={resource}
+        refetch={refetch}
+        currentPage={currentPage}
+      />{' '}
+      &nbsp;
+      <WrappedDeleteResource
+        toDelete={resource}
+        refetch={refetch}
+        currentPage={currentPage}
+      />
     </td>
   </tr>
 );

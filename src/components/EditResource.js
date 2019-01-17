@@ -10,6 +10,13 @@ import notification from '../utils/notification';
 import { EDIT_RESOURCE_MUTATION } from '../graphql/mutations/resources';
 import { GET_RESOURCES_QUERY } from '../graphql/queries/Resources';
 
+/**
+ * Edit Resource Component
+ *
+ * @extends React.Component
+ *
+ * @returns {JSX}
+ */
 export class EditResource extends Component {
   constructor(props) {
     super(props);
@@ -21,44 +28,74 @@ export class EditResource extends Component {
     };
   }
 
+  /**
+   * It closes a modal
+   *
+   * @returns {void}
+   */
   handleCloseModal = () => {
     this.setState({ closeModal: true });
-  }
+  };
 
+  /**
+   * It changes the state of the modal
+   *
+   * @returns {void}
+   */
   handleModalStateChange = () => {
     this.state.closeModal && this.setState({ closeModal: false });
-  }
+  };
 
+  /**
+   * Ensures that the state is updated basing
+   * on the changes in the input fields
+   *
+   * @param {Object} target
+   *
+   * @returns {void}
+   */
   handleNameChange = ({ target: { name, value } }) => {
     this.setState({ [name]: value });
-  }
+  };
 
+  /**
+   * Handles editing resource
+   *
+   * @param {object} event
+   *
+   * @returns {void}
+   */
   handleEditResource = (event) => {
     event.preventDefault();
     const { resourceId, resourceName, roomId } = this.state;
     const { refetch, currentPage } = this.props;
-    this.props.editResource({
-      variables: {
-        resourceId,
-        name: resourceName,
-        roomId,
-      },
-    }).then(() => {
-      notification(toastr, 'success', `${resourceName} resource has been updated successfully`)();
-      refetch({ page: currentPage });
-    }).catch((err) => {
-      this.setState({
-        resourceName: this.state.resourceName,
+    this.props
+      .editResource({
+        variables: {
+          resourceId,
+          name: resourceName,
+          roomId,
+        },
+      })
+      .then(() => {
+        notification(
+          toastr,
+          'success',
+          `${resourceName} resource has been updated successfully`,
+        )();
+        refetch({ page: currentPage });
+      })
+      .catch((err) => {
+        this.setState({
+          resourceName: this.state.resourceName,
+        });
+        notification(toastr, 'error', err.graphQLErrors[0].message)();
       });
-      notification(toastr, 'error', err.graphQLErrors[0].message)();
-    });
     this.handleCloseModal();
-  }
+  };
 
   render() {
-    const {
-      resourceName, closeModal,
-    } = this.state;
+    const { resourceName, closeModal } = this.state;
     return (
       <MrmModal
         title="EDIT RESOURCE"
@@ -77,8 +114,15 @@ export class EditResource extends Component {
             onChange={this.handleNameChange}
           />
           <div className="buttons-cover">
-            <button className="modal-cancel-button" onClick={this.handleCloseModal}>CANCEL</button>
-            <button className="update-button" type="submit">SAVE CHANGES</button>
+            <button
+              className="modal-cancel-button"
+              onClick={this.handleCloseModal}
+            >
+              CANCEL
+            </button>
+            <button className="update-button" type="submit">
+              SAVE CHANGES
+            </button>
           </div>
         </form>
       </MrmModal>

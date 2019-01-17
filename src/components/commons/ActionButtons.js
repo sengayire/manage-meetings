@@ -3,10 +3,21 @@ import PropTypes from 'prop-types';
 
 import '../../assets/styles/actionbuttons.scss';
 
+/**
+ * Reusable button component for performing
+ * actions and canceling
+ *
+ * @param {array} props
+ *
+ * @returns {JSX}
+ */
 const ActionButtons = props => (
   <div className="form-action-buttons">
     {props.withCancel && (
-      <button className={props.cancelButtonClassName} onClick={props.onClickCancel}>
+      <button
+        className={props.cancelButtonClassName}
+        onClick={props.onClickCancel}
+      >
         {props.cancelButtonText}
       </button>
     )}

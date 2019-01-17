@@ -3,8 +3,21 @@ import PropTypes from 'prop-types';
 import { Input, SelectInput as Select } from '../commons';
 import '../../assets/styles/addroom.scss';
 
+/**
+ * Reusabel input fields
+ *
+ * @param {Object} epicTowerInputObject
+ *
+ * @returns {JSX}
+ */
 const EpicTowerInputs = ({
-  roomName, roomFloor, floorOptions, roomCapacity, roomWing, wingOptions, handleInputChange,
+  roomName,
+  roomFloor,
+  floorOptions,
+  roomCapacity,
+  roomWing,
+  wingOptions,
+  handleInputChange,
 }) => (
   <div className="epic-tower-inputs">
     <Input

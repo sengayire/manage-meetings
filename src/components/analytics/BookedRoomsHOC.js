@@ -4,6 +4,13 @@ import PollIcon from '../../assets/images/poll.svg';
 import RedPollIcon from '../../assets/images/poll_red.svg';
 import { getMostUsedAndLeastUsedRooms } from '../../json_requests';
 
+/**
+ * Component for showing booked rooms HOC
+ *
+ * @param {array} props
+ *
+ * @returns {JSX}
+ */
 export class ComposedBooked extends React.Component {
   state = {
     leastUsedRooms: [],
@@ -23,6 +30,13 @@ export class ComposedBooked extends React.Component {
     }
   }
 
+  /**
+   * Fetches most and least used rooms
+   *
+   * @param {date} date
+   *
+   * @returns {Function}
+   */
   fetchMostAndLeastUsedRooms = (date) => {
     this.setState({ fetching: true });
     const { startDate, endDate } = date;
@@ -53,7 +67,7 @@ export class ComposedBooked extends React.Component {
         // this fetching value is not set to false to avoid props validation
         // failure in the child component, otherwise it should be set to false
         // eslint-disable-next-line
-        .catch(error => this.setState({ fetching: false, error:error }))
+        .catch(error => this.setState({ fetching: false, error: error }))
     );
   };
 

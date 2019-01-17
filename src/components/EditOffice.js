@@ -10,6 +10,13 @@ import notification from '../utils/notification';
 import { GET_ALL_OFFICES } from '../graphql/queries/Offices';
 import { EDIT_OFFICE_MUTATION } from '../graphql/mutations/offices';
 
+/**
+ * Edit Office Component
+ *
+ * @extends React.Component
+ *
+ * @returns {JSX}
+ */
 export class EditOffice extends React.Component {
   state = {
     officeName: this.props.officeName,
@@ -18,18 +25,43 @@ export class EditOffice extends React.Component {
     closeModal: false,
   };
 
+  /**
+   * Ensures that the state is updated basing
+   * on the changes in the input fields
+   *
+   * @param {Object} target
+   *
+   * @returns {void}
+   */
   handleInputChange = ({ target: { name, value } }) => {
     this.setState({ [name]: value });
   };
 
+  /**
+   * It closes a modal
+   *
+   * @returns {void}
+   */
   handleCloseModal = () => {
     this.setState({ closeModal: true });
   };
 
+  /**
+   * HIt changes the state of the modal
+   *
+   * @returns {void}
+   */
   handleModalStateChange = () => {
     this.state.closeModal && this.setState({ closeModal: false });
   };
 
+  /**
+   * Handles editing office
+   *
+   * @param {object} event
+   *
+   * @returns {void}
+   */
   handleEditOffice = (event) => {
     event.preventDefault();
     const { officeId, officeName } = this.state;
@@ -42,7 +74,11 @@ export class EditOffice extends React.Component {
         },
       })
       .then(() => {
-        notification(toastr, 'success', `${officeName} office has been updated successfully`)();
+        notification(
+          toastr,
+          'success',
+          `${officeName} office has been updated successfully`,
+        )();
         refetch({ page: currentPage });
       })
       .catch((err) => {
@@ -90,7 +126,11 @@ export class EditOffice extends React.Component {
             disabled
             selectInputClassName="edit-office-location default-select"
           />
-          <ActionButtons withCancel onClickCancel={this.handleCloseModal} actionButtonText="SAVE CHANGES" />
+          <ActionButtons
+            withCancel
+            onClickCancel={this.handleCloseModal}
+            actionButtonText="SAVE CHANGES"
+          />
         </form>
       </MrmModal>
     );

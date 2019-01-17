@@ -1,8 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import DeleteWing  from './DeleteWing'; //eslint-disable-line
-import EditWing from './EditWing'; //eslint-disable-line
+import DeleteWing from "./DeleteWing"; //eslint-disable-line
+import EditWing from "./EditWing"; //eslint-disable-line
 
+/**
+ * Wing component
+ *
+ * @param {object} wing
+ *
+ * @returns {JSX}
+ */
 export const Wing = ({ wing }) => (
   <tr>
     <td>{wing.name}</td>
@@ -14,12 +21,9 @@ export const Wing = ({ wing }) => (
         wingName={wing.name}
         wingId={wing.id}
         wingBlock={wing.block}
-      />&nbsp;
-      <DeleteWing
-        wingName={wing.name}
-        id="delete-modal"
-        wingId={wing.id}
       />
+      &nbsp;
+      <DeleteWing wingName={wing.name} id="delete-modal" wingId={wing.id} />
     </td>
   </tr>
 );
