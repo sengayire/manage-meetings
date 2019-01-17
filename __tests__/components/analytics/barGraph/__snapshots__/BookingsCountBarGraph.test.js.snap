@@ -1671,9 +1671,15 @@ exports[`Bookings Count Bar Graph Component renders correctly 1`] = `
                 }
               }
             >
-              <p>
-                Loading...
-              </p>
+              <Spinner>
+                <div
+                  className="centered"
+                >
+                  <div
+                    className="spinner"
+                  />
+                </div>
+              </Spinner>
             </Query>
           </QueryBookingsCount>
         </section>

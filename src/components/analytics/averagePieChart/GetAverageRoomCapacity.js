@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { Pie } from 'react-chartjs-2';
 import roomCapacityBackground from '../../../fixtures/pieChartColors';
 import { GET_ALL_ROOMS } from '../../../graphql/queries/Rooms';
+import Spinner from '../../commons/Spinner';
 
 export class GetAverageRoomCapacityComponent extends Component {
   constructor(props) {
@@ -37,7 +38,7 @@ export class GetAverageRoomCapacityComponent extends Component {
     if (error) {
       return <div>{error.message}</div>;
     } else if (loading) {
-      return <p> Loading chart data ...</p>;
+      return <Spinner />;
     }
 
     const { lessThanTenData, betweenTenandTwentyData, greaterThanTwentyData } = this.getRoomData();

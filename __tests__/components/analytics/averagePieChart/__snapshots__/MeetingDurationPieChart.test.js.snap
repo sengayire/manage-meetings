@@ -32,9 +32,8 @@ exports[`Meeting Duration Pie Chart Component renders correctly from memory 1`] 
   <section
     className="chart-content"
   >
-    <img
-      alt="average meeting chart"
-      src="test-file-stub"
+    <Apollo(AverageMeetingDurationPieChart)
+      dateValue={Object {}}
     />
     <section
       className="chart-details"
@@ -43,19 +42,25 @@ exports[`Meeting Duration Pie Chart Component renders correctly from memory 1`] 
         className="duration-first-circle"
       >
         <span />
-        60 Minutes
+        Above 60 Minutes
       </p>
       <p
         className="duration-second-circle"
       >
         <span />
-        45 Minutes
+        45 - 60 Minutes
       </p>
       <p
         className="duration-third-circle"
       >
         <span />
-        30 Minutes
+        30 - 45 Minutes
+      </p>
+      <p
+        className="duration-forth-circle"
+      >
+        <span />
+        Below 30 Minutes
       </p>
     </section>
   </section>
@@ -94,9 +99,8 @@ exports[`Meeting Duration Pie Chart Component should be able to hover 1`] = `
   <section
     className="chart-content"
   >
-    <img
-      alt="average meeting chart"
-      src="test-file-stub"
+    <Apollo(AverageMeetingDurationPieChart)
+      dateValue={Object {}}
     />
     <section
       className="chart-details"
@@ -105,19 +109,25 @@ exports[`Meeting Duration Pie Chart Component should be able to hover 1`] = `
         className="duration-first-circle"
       >
         <span />
-        60 Minutes
+        Above 60 Minutes
       </p>
       <p
         className="duration-second-circle"
       >
         <span />
-        45 Minutes
+        45 - 60 Minutes
       </p>
       <p
         className="duration-third-circle"
       >
         <span />
-        30 Minutes
+        30 - 45 Minutes
+      </p>
+      <p
+        className="duration-forth-circle"
+      >
+        <span />
+        Below 30 Minutes
       </p>
     </section>
   </section>
@@ -156,9 +166,8 @@ exports[`Meeting Duration Pie Chart Component should be able to hover 2`] = `
   <section
     className="chart-content"
   >
-    <img
-      alt="average meeting chart"
-      src="test-file-stub"
+    <Apollo(AverageMeetingDurationPieChart)
+      dateValue={Object {}}
     />
     <section
       className="chart-details"
@@ -167,19 +176,25 @@ exports[`Meeting Duration Pie Chart Component should be able to hover 2`] = `
         className="duration-first-circle"
       >
         <span />
-        60 Minutes
+        Above 60 Minutes
       </p>
       <p
         className="duration-second-circle"
       >
         <span />
-        45 Minutes
+        45 - 60 Minutes
       </p>
       <p
         className="duration-third-circle"
       >
         <span />
-        30 Minutes
+        30 - 45 Minutes
+      </p>
+      <p
+        className="duration-forth-circle"
+      >
+        <span />
+        Below 30 Minutes
       </p>
     </section>
   </section>

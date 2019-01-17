@@ -1,14 +1,11 @@
 import React, { Component } from 'react';
-
-// import svg files
-import averageMeetingChart from '../../../../src/assets/images/average_meeting_chart.svg';
-
-// import styles
+import propTypes from 'prop-types';
 import '../../../../src/assets/styles/pieChartBaseStyle.scss';
 import '../../../../src/assets/styles/meetingDurationPieChart.scss';
 
 // Import the tip
 import Tip from '../../commons/Tooltip';
+import AverageMeetingDurationsPieChart from './AverageMeetingDurationPieChart';
 
 /**
  * Meeting Duration Pie chart component
@@ -28,19 +25,23 @@ class MeetingDurationPieChart extends Component {
           {Tip(tip)}
         </section>
         <section className="chart-content">
-          <img src={averageMeetingChart} alt="average meeting chart" />
+          <AverageMeetingDurationsPieChart dateValue={this.props.dateValue} />
           <section className="chart-details">
             <p className="duration-first-circle">
               <span>{}</span>
-              60 Minutes
+              Above 60 Minutes
             </p>
             <p className="duration-second-circle">
               <span>{}</span>
-              45 Minutes
+              45 - 60 Minutes
             </p>
             <p className="duration-third-circle">
               <span>{}</span>
-              30 Minutes
+              30 - 45 Minutes
+            </p>
+            <p className="duration-forth-circle">
+              <span>{}</span>
+              Below 30 Minutes
             </p>
           </section>
         </section>
@@ -48,5 +49,10 @@ class MeetingDurationPieChart extends Component {
     );
   }
 }
-
+MeetingDurationPieChart.propTypes = {
+  dateValue: propTypes.instanceOf(Object),
+};
+MeetingDurationPieChart.defaultProps = {
+  dateValue: {},
+};
 export default MeetingDurationPieChart;

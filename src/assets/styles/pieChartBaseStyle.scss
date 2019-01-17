@@ -15,6 +15,7 @@
 
   .chart-header, .chart-content{
     display: flex;
+    justify-content: center;
   }
 
   .chart-header{
@@ -43,7 +44,7 @@
 }
 
 .chart-details{
-  margin-left: 3.125em;
+  margin-left: 0.125em;
   color: map-get($color-black, 100); //color for all texts inside the details class
 }
 

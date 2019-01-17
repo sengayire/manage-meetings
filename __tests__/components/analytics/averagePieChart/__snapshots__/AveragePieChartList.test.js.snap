@@ -4,7 +4,9 @@ exports[`Average Pie Chart Component renders correctly from memory 1`] = `
 <div
   className="pie-chart-container"
 >
-  <MeetingDurationPieChart />
+  <MeetingDurationPieChart
+    dateValue={Object {}}
+  />
   <RoomCapacityPieChart />
   <BookingsCountBarGraph
     dateValue={Object {}}
