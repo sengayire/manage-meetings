@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 
-// import svg files
-import roomCapacityChart from '../../../../src/assets/images/chart_blue.svg';
-
+import GetAverageRoomCapacity from './GetAverageRoomCapacity';
 // import styles
 import '../../../../src/assets/styles/pieChartBaseStyle.scss';
 import '../../../../src/assets/styles/roomCapacityPieChart.scss';
@@ -27,7 +25,7 @@ class RoomCapacityPieChart extends Component {
           {Tip(tip)}
         </section>
         <section className="chart-content">
-          <img src={roomCapacityChart} alt="average meeting chart" />
+          <GetAverageRoomCapacity />
           <section className="chart-details">
             <p className="room-capacity-first-circle">
               <span>{}</span>

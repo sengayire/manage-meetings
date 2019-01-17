@@ -46,3 +46,9 @@ export const queryBookingsCountMocksData = {
     },
   },
 };
+
+export const queryAllRoomsCapacity = {
+  betweenTenandTwentyData: 0,
+  greaterThanTwentyData: 0,
+  lessThanTenData: 100,
+};

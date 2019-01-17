@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Get Average Room Capacity Component renders correctly from memory 1`] = `
+<React.Fragment>
+  <Pie
+    data={
+      Object {
+        "datasets": Array [
+          Object {
+            "backgroundColor": Array [
+              "#3a63e0",
+              "#859eee",
+              "#cdd7f8",
+            ],
+            "borderWidth": 3,
+            "data": Array [
+              100,
+              0,
+              0,
+            ],
+            "label": "Average Meeting Duration",
+          },
+        ],
+        "labels": Array [
+          "Less than 10 ",
+          "10-20 ",
+          "More than 20 ",
+        ],
+      }
+    }
+    height={168}
+    options={
+      Object {
+        "legend": Object {
+          "display": false,
+        },
+        "maintainAspectRatio": false,
+        "responsive": false,
+      }
+    }
+    width={230}
+  />
+</React.Fragment>
+`;
