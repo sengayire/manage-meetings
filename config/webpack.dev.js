@@ -11,7 +11,6 @@ module.exports = merge(common, {
   devServer: {
     contentBase: path.resolve(__dirname, '../public'),
     compress: true,
-    open: true,
     public: 'mrm-dev.andela.com:8080',
     historyApiFallback: true,
   },

@@ -4,7 +4,7 @@
   "description": "MRM is a tool aimed at managing meeting room availability to ensure optimized and beneficial use by and for all Andelans and capturing meeting room feedback and data in a timely manner to improve experience and track down issues",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --mode=development",
+    "start": "webpack-dev-server --mode=development --host 0.0.0.0",
     "test:coveralls": "yarn test-ci && cat ./coverage/lcov.info | coveralls",
     "build": "webpack --progress --mode=production --optimize-dedupe --optimize-minimize --optimize-occurrence-order",
     "test": "jest --watch --config jest.config.js",

@@ -1,15 +1,29 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/96eb001b4748df1f3688/maintainability)](https://codeclimate.com/repos/5b06cdaec544c6027e008559/maintainability)
 [![Coverage Status](https://coveralls.io/repos/github/andela/mrm_front/badge.svg?t=h371yr)](https://coveralls.io/github/andela/mrm_front) [![Test Coverage](https://api.codeclimate.com/v1/badges/96eb001b4748df1f3688/test_coverage)](https://codeclimate.com/repos/5b06cdaec544c6027e008559/test_coverage)
 
-## MRM
+# MRM
 The Andela Meeting Room management solution
 
 ### Product Road Map
 check the product scope and roadmap [here](https://docs.google.com/spreadsheets/d/1Uc5q1sCm4n-71K5iyiu7t5_uRKgRCqNl1nh1BZp15s4/edit#gid=0)
 
-### Getting started
+## Getting started
 
-#### Prerquisites
+
+### Automatic Installation (Using Docker)
+
+#### Prerequisites
+- Install [Docker](https://docs.docker.com/docker-for-mac/install/) and get it running on your machine
+
+#### Installing
+    $ git clone https://github.com/andela/mrm_front.git
+    $ cd mrm_front
+    $ docker-compose build
+
+
+### Manual Installation
+
+#### Prerequisites
 Ensure you have [NodeJS](https://nodejs.org/en/) environment and [YARN](https://yarnpkg.com/en/) package manager globally installed on your system.
 
 #### Installing
@@ -17,14 +31,14 @@ Ensure you have [NodeJS](https://nodejs.org/en/) environment and [YARN](https://
     $ cd mrm_front
     $ yarn install
 
-#### Running the application
+### Running the application
 ##### 1. Setting environment variables
 Create a .env file in the root folder of the application where you are to add your environment variables.
 The contents of the .env file are pinned on the `mrm-coverge` channel. Reach out to [@shemogumbe](https://github.com/shemogumbe) if you cant find them.
 > Remember some parts of the application won't run if you don't have them
 
 ##### 2. Updating the ```etc/hosts``` file
-The application runs on mrm-dev.andela.com in development mode. This can be enabled by adding mrm-dev.andela.com to the etc/hosts file as decribed below.
+The application runs on mrm-dev.andela.com in development mode. This can be enabled by adding mrm-dev.andela.com to the etc/hosts file as described below.
 - On Mac OS using the vim editor.
 ```
 $ sudo vim /etc/hosts
@@ -49,6 +63,18 @@ yarn start
 
 #### Running tests
 `yarn test --coverage`
+
+
+
+#### Run the containers by running the commands below(Using Docker)
+- To start application
+```
+   $ docker-compose run -p 8080:8080/tcp app
+```
+- To run the test
+```
+   docker-compose run test
+```
 
 ### Built With
 * [ReactJS](https://reactjs.org/) - The javascript client library.
