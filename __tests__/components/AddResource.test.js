@@ -125,13 +125,4 @@ describe('AddResource Component', () => {
     resourceForm.simulate('submit', { preventDefault: () => {} });
     expect(spy).toHaveBeenCalled();
   });
-
-  it('calls handleCloseModal on closing the modal', async () => {
-    const spy = jest.spyOn(addResourceWrapper.instance(), 'handleCloseModal');
-    addResourceWrapper.instance().forceUpdate();
-    addResourceWrapper.find('#modal-button').simulate('click');
-    const cancelButton = addResourceWrapper.find('.modal-cancel');
-    cancelButton.simulate('click');
-    expect(spy).toHaveBeenCalled();
-  });
 });

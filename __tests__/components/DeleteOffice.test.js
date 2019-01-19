@@ -28,12 +28,6 @@ describe('DeleteOffice Test Suite', () => {
     expect(wrapper.prop('buttonText')).toEqual('Delete');
   });
 
-  it('should close the modal on cancelling', () => {
-    const cancelButton = wrapper.find('#cancel-btn');
-    cancelButton.simulate('click', { preventDefault() { } });
-    expect(wrapper.state('closeModal')).toEqual(true);
-  });
-
   it('should handle state change', () => {
     // Change the state of the modal to `Closed`
     wrapper.instance().handleCloseModal();

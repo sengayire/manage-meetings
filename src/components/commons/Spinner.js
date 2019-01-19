@@ -6,16 +6,14 @@ import '../../assets/styles/spinner.scss';
  *
  * @returns {JSX}
  */
-const Spinner = () => (
+const Spinner = prop => (
   <div className="centered">
-    <div className="spinner" />
+    <div className={prop.size === 'small' ? 'spinner small' : 'spinner'} />
   </div>
 );
 
-const SmallSpinner = () => (
-  <div className="centered">
-    <div className="spinner small" />
-  </div>
-);
+Spinner.defaultProps = {
+  size: '',
+};
 
-export { Spinner as default, SmallSpinner };
+export default Spinner;

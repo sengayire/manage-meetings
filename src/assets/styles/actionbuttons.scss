@@ -27,6 +27,18 @@
     }
   }
 
+  .disable-btn {
+    pointer-events: none;
+  }
+  
+  .loading-div {
+    display: flex;
+  }
+
+  .loading-text {
+    padding: .05rem;
+  }
+
   button:last-child {
     margin-left: 4%;
   }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import MrmModal from './commons/Modal';
+import ActionButtons from './commons/ActionButtons';
 import '../assets/styles/deleteModal.scss';
 
 /**
@@ -62,14 +63,13 @@ class DeleteFeedback extends Component {
             <br />
             This cannot be undone
           </p>
-          <div className="modal-actions">
-            <button id="cancel-btn" onClick={this.handleCloseModal}>
-              Cancel
-            </button>
-            <button id="delete-btn" onClick={this.handleDeleteFeedback}>
-              Delete
-            </button>
-          </div>
+          <ActionButtons
+            withCancel
+            onClickCancel={this.handleCloseModal}
+            isLoading={false}
+            actionButtonText="DELETE FLOOR"
+            onClickSubmit={this.handleDeleteFeedback}
+          />
         </div>
       </MrmModal>
     );

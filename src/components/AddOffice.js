@@ -33,6 +33,7 @@ export class AddOffice extends Component {
     officeName: '',
     officeLocation: '',
     closeModal: false,
+    isLoading: false,
   };
 
   /**
@@ -88,6 +89,7 @@ export class AddOffice extends Component {
     } else if (!officeLocation) {
       notification(toastr, 'error', 'Office location is required')();
     } else {
+      this.toggleLoading();
       this.props
         .addOffice({
           variables: {
@@ -96,6 +98,8 @@ export class AddOffice extends Component {
           },
         })
         .then((office) => {
+          this.toggleLoading();
+          this.handleCloseModal();
           const { name } = office.data.createOffice.office;
           notification(
             toastr,
@@ -104,14 +108,29 @@ export class AddOffice extends Component {
           )();
         })
         .catch((err) => {
+          this.toggleLoading();
+          this.handleCloseModal();
           notification(toastr, 'error', err.graphQLErrors[0].message)();
         });
-      this.handleCloseModal();
     }
   };
 
+  /**
+   * 1. change isLoading state to it's opposite value
+   * i.e true to false or vise verser
+   *
+   * @returns {void}
+   */
+  toggleLoading = () => {
+    this.setState({
+      isLoading: !this.state.isLoading,
+    });
+  }
+
   render() {
-    const { officeName, officeLocation, closeModal } = this.state;
+    const {
+      officeName, officeLocation, closeModal, isLoading,
+    } = this.state;
     const { allLocations } = this.props.locations;
 
     return (
@@ -123,7 +142,7 @@ export class AddOffice extends Component {
         className="add-office-modal"
         modalButton="add-button"
       >
-        <form className="modal-form" onSubmit={this.handleAddOffice}>
+        <form className="modal-form">
           <Input
             labelName="Office Name"
             name="officeName"
@@ -145,7 +164,9 @@ export class AddOffice extends Component {
           <ActionButtons
             withCancel
             onClickCancel={this.handleCloseModal}
+            isLoading={isLoading}
             actionButtonText="ADD OFFICE"
+            onClickSubmit={this.handleAddOffice}
           />
         </form>
       </MrmModal>

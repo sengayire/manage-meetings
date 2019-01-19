@@ -7,6 +7,7 @@ import MrmModal from '../components/commons/Modal';
 import '../assets/styles/editresource.scss';
 import notification from '../utils/notification';
 
+import ActionButtons from './commons/ActionButtons';
 import { EDIT_RESOURCE_MUTATION } from '../graphql/mutations/resources';
 import { GET_RESOURCES_QUERY } from '../graphql/queries/Resources';
 
@@ -25,6 +26,7 @@ export class EditResource extends Component {
       resourceId: props.resource.id,
       roomId: props.resource.roomId,
       closeModal: false,
+      isLoading: false,
     };
   }
 
@@ -69,33 +71,44 @@ export class EditResource extends Component {
     event.preventDefault();
     const { resourceId, resourceName, roomId } = this.state;
     const { refetch, currentPage } = this.props;
-    this.props
-      .editResource({
-        variables: {
-          resourceId,
-          name: resourceName,
-          roomId,
-        },
-      })
-      .then(() => {
-        notification(
-          toastr,
-          'success',
-          `${resourceName} resource has been updated successfully`,
-        )();
-        refetch({ page: currentPage });
-      })
-      .catch((err) => {
-        this.setState({
-          resourceName: this.state.resourceName,
-        });
-        notification(toastr, 'error', err.graphQLErrors[0].message)();
+    this.toggleLoading();
+    this.props.editResource({
+      variables: {
+        resourceId,
+        name: resourceName,
+        roomId,
+      },
+    }).then(() => {
+      this.toggleLoading();
+      this.handleCloseModal();
+      notification(toastr, 'success', `${resourceName} resource has been updated successfully`)();
+      refetch({ page: currentPage });
+    }).catch((err) => {
+      this.toggleLoading();
+      this.handleCloseModal();
+      this.setState({
+        resourceName: this.state.resourceName,
       });
-    this.handleCloseModal();
-  };
+      notification(toastr, 'error', err.graphQLErrors[0].message)();
+    });
+  }
+
+  /**
+   * 1. change isLoading state to it's opposite value
+   * i.e true to false or vise verser
+   *
+   * @returns {void}
+   */
+  toggleLoading = () => {
+    this.setState({
+      isLoading: !this.state.isLoading,
+    });
+  }
 
   render() {
-    const { resourceName, closeModal } = this.state;
+    const {
+      resourceName, closeModal, isLoading,
+    } = this.state;
     return (
       <MrmModal
         title="EDIT RESOURCE"
@@ -113,17 +126,14 @@ export class EditResource extends Component {
             id="resourceName"
             onChange={this.handleNameChange}
           />
-          <div className="buttons-cover">
-            <button
-              className="modal-cancel-button"
-              onClick={this.handleCloseModal}
-            >
-              CANCEL
-            </button>
-            <button className="update-button" type="submit">
-              SAVE CHANGES
-            </button>
-          </div>
+          <ActionButtons
+            withCancel
+            onClickCancel={this.handleCloseModal}
+            isLoading={isLoading}
+            actionButtonText="SAVE CHANGES"
+            onClickSubmit={this.handleEditResource}
+          />
+
         </form>
       </MrmModal>
     );

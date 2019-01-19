@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql, compose } from 'react-apollo';
 import toastr from 'toastr';
+import ActionButtons from './commons/ActionButtons';
 import MrmModal from '../components/commons/Modal';
 import { DELETE_OFFICE_MUTATION } from '../graphql/mutations/offices';
 import { GET_ALL_OFFICES } from '../graphql/queries/Offices';
@@ -19,6 +20,7 @@ import '../assets/styles/deleteModal.scss';
 export class DeleteOffice extends React.Component {
   state = {
     closeModal: false,
+    isDeleting: false,
   };
 
   /**
@@ -46,24 +48,40 @@ export class DeleteOffice extends React.Component {
    */
   handleDeleteOffice = () => {
     const { officeId, deleteOffice, refetch } = this.props;
+    this.toggleLoading();
     deleteOffice({
       variables: {
         officeId,
       },
     })
       .then((office) => {
+        this.toggleLoading();
+        this.handleCloseModal();
         const { name } = office.data.deleteOffice.office;
         notification(toastr, 'success', `${name} is deleted successfully`)();
         refetch();
       })
       .catch((err) => {
+        this.toggleLoading();
+        this.handleCloseModal();
         notification(toastr, 'error', err.graphQLErrors[0].message)();
       });
-    this.handleCloseModal();
   };
 
+  /**
+   * 1. change isLoading state to it's opposite value
+   * i.e true to false or vise verser
+   *
+   * @returns {void}
+   */
+  toggleLoading = () => {
+    this.setState({
+      isDeleting: !this.state.isDeleting,
+    });
+  }
+
   render() {
-    const { closeModal } = this.state;
+    const { closeModal, isDeleting } = this.state;
 
     return (
       <MrmModal
@@ -78,14 +96,13 @@ export class DeleteOffice extends React.Component {
             Are you sure you want to delete the {`"${this.props.officeName}"`}{' '}
             office? This cannot be undone & all data will be lost
           </p>
-          <div className="modal-actions">
-            <button id="cancel-btn" onClick={this.handleCloseModal}>
-              CANCEL
-            </button>
-            <button id="delete-btn" onClick={this.handleDeleteOffice}>
-              DELETE
-            </button>
-          </div>
+          <ActionButtons
+            withCancel
+            onClickCancel={this.handleCloseModal}
+            isLoading={isDeleting}
+            actionButtonText="DELETE OFFICE"
+            onClickSubmit={this.handleDeleteOffice}
+          />
         </div>
       </MrmModal>
     );

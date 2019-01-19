@@ -12,7 +12,6 @@ import notification from '../../utils/notification';
 import SelectImage from '../commons/SelectImage';
 import getThumbnailName from '../helpers/thumbnailName';
 import getImageUrl from '../helpers/ImageUpload';
-import { SmallSpinner } from '../commons/Spinner';
 import { GET_USER_QUERY } from '../../graphql/queries/People';
 import { decodeTokenAndGetUserData } from '../../utils/Cookie';
 import allCites from '../../fixtures/cities';
@@ -176,7 +175,7 @@ export class AddLocation extends Component {
         className="add-office-modal"
         modalButton="add-button"
       >
-        <form className="modal-form" onSubmit={this.handleAddLocation}>
+        <form className="modal-form">
           <SelectImage
             onChange={this.handleInputChange}
             imageUrl={imageUrl}
@@ -198,13 +197,13 @@ export class AddLocation extends Component {
             id="abbreviation"
             onChange={this.handleInputChange}
           />
-          {uploading ? (<SmallSpinner />)
-            :
-          (<ActionButtons
+          <ActionButtons
             withCancel
             onClickCancel={this.handleCloseModal}
             actionButtonText="ADD LOCATION"
-          />)}
+            isLoading={uploading}
+            onClickSubmit={this.handleAddLocation}
+          />
         </form>
       </MrmModal>
     );

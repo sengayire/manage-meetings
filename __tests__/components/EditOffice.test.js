@@ -52,6 +52,7 @@ describe('EditOffice Component', () => {
     });
     wrapper.update();
     wrapper.instance().handleEditOffice(event);
+    wrapper.instance().handleCloseModal();
     expect(wrapper.state('closeModal')).toEqual(true);
   });
 
@@ -63,9 +64,9 @@ describe('EditOffice Component', () => {
       officeLocation: 'Lagos',
     };
     wrapper = shallow(<EditOffice {...newProps} />);
-
     wrapper.instance().handleEditOffice(event);
     expect(newProps.editOffice).toBeCalled();
+    wrapper.instance().handleCloseModal();
     expect(wrapper.state('closeModal')).toEqual(true);
   });
 });

@@ -27,6 +27,7 @@ export class AddWing extends Component {
     name: '',
     floorId: '',
     closeModal: false,
+    isLoading: false,
   };
 
   /**
@@ -72,6 +73,7 @@ export class AddWing extends Component {
     if (!name) {
       notification(toastr, 'error', 'Wing name is required')();
     } else {
+      this.toggleLoading();
       this.props
         .addWing({
           variables: {
@@ -80,6 +82,8 @@ export class AddWing extends Component {
           },
         })
         .then((wing) => {
+          this.toggleLoading();
+          this.handleCloseModal();
           notification(
             toastr,
             'success',
@@ -87,14 +91,29 @@ export class AddWing extends Component {
           )();
         })
         .catch((err) => {
+          this.toggleLoading();
+          this.handleCloseModal();
           notification(toastr, 'error', err.graphQLErrors[0].message)();
         });
-      this.handleCloseModal();
     }
   };
 
+  /**
+   * 1. change isLoading state to it's opposite value
+   * i.e true to false or vise verser
+   *
+   * @returns {void}
+   */
+  toggleLoading = () => {
+    this.setState({
+      isLoading: !this.state.isLoading,
+    });
+  }
+
   render() {
-    const { name, floorId, closeModal } = this.state;
+    const {
+      name, floorId, closeModal, isLoading,
+    } = this.state;
     const { allFloors } = this.props.allFloors;
     const { handleAddWing, handleInputChange, handleCloseModal } = this;
 
@@ -107,7 +126,7 @@ export class AddWing extends Component {
         className="add-office-modal"
         modalButton="add-button"
       >
-        <form className="modal-form" onSubmit={handleAddWing}>
+        <form className="modal-form">
           <Input
             labelName="Wing Name"
             name="name"
@@ -128,8 +147,10 @@ export class AddWing extends Component {
           />
           <ActionButtons
             withCancel
+            isLoading={isLoading}
             onClickCancel={handleCloseModal}
             actionButtonText="ADD WING"
+            onClickSubmit={handleAddWing}
           />
         </form>
       </MrmModal>

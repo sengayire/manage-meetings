@@ -33,6 +33,7 @@ export class AddRoomToEpicTower extends Component {
       wingOptions: [],
       closeModal: false,
       thumbnailName: 'Upload a thumbnail',
+      isLoading: false,
     };
   }
 
@@ -172,6 +173,7 @@ export class AddRoomToEpicTower extends Component {
     } = this.state;
 
     if (!hasInvalidInputs(this.state)) {
+      this.toggleLoading();
       this.props
         .epicTowerMutation({
           variables: {
@@ -186,8 +188,9 @@ export class AddRoomToEpicTower extends Component {
           },
         })
         .then((res) => {
-          this.handleCloseModal();
           /** Notify user of sucess of adding of room */
+          this.toggleLoading();
+          this.handleCloseModal();
           notification(
             toastr,
             'success',
@@ -197,11 +200,24 @@ export class AddRoomToEpicTower extends Component {
         })
         .catch((err) => {
           /** Notify user on failure to add room */
-
+          this.toggleLoading();
+          this.handleCloseModal();
           notification(toastr, 'error', err.message)();
         });
     }
   };
+
+  /**
+   * 1. change isLoading state to it's opposite value
+   * i.e true to false or vise verser
+   *
+   * @returns {void}
+   */
+  toggleLoading = () => {
+    this.setState({
+      isLoading: !this.state.isLoading,
+    });
+  }
 
   render() {
     const {
@@ -214,6 +230,7 @@ export class AddRoomToEpicTower extends Component {
       closeModal,
       thumbnailName,
       imageUrl,
+      isLoading,
     } = this.state;
     let floorOptionsList = floorOptions;
     const { officeDetails } = this.props;
@@ -232,7 +249,6 @@ export class AddRoomToEpicTower extends Component {
       >
         <form
           className="modal-form epic-tower-form"
-          onSubmit={this.handleAddRoom}
         >
           <SelectImage
             onChange={this.handleInputChange}
@@ -252,6 +268,8 @@ export class AddRoomToEpicTower extends Component {
             withCancel
             onClickCancel={this.handleCloseModal}
             actionButtonText="ADD ROOM"
+            isLoading={isLoading}
+            onClickSubmit={this.handleAddRoom}
           />
         </form>
       </Modal>

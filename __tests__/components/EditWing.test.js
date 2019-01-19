@@ -51,6 +51,7 @@ describe('EditWing Component', () => {
     });
     wrapper.update();
     wrapper.instance().handleEditWing(event);
+    wrapper.instance().handleCloseModal();
     expect(wrapper.state('closeModal')).toEqual(true);
   });
 
@@ -64,6 +65,7 @@ describe('EditWing Component', () => {
 
     wrapper.instance().handleEditWing(event);
     expect(newProps.editWing).toBeCalled();
+    wrapper.instance().handleCloseModal();
     expect(wrapper.state('closeModal')).toEqual(true);
   });
 });

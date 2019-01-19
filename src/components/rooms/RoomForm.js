@@ -26,11 +26,13 @@ export class RoomForm extends Component {
       PropTypes.object,
     ]).isRequired,
     locations: PropTypes.arrayOf(PropTypes.object).isRequired,
+    isLoading: PropTypes.bool,
   };
 
   static defaultProps = {
     roomLocation: '',
-  };
+    isLoading: false,
+  }
 
   /**
    * Submits the form data to the backend
@@ -50,6 +52,7 @@ export class RoomForm extends Component {
       formDetails,
       roomLocation,
       handleInputChange,
+      isLoading,
     } = this.props;
     return (
       <form onSubmit={this.handleSubmit}>
@@ -80,6 +83,8 @@ export class RoomForm extends Component {
           withCancel
           onClickCancel={onCloseModalRequest}
           actionButtonText="Save Changes"
+          isLoading={isLoading}
+          onClickSubmit={this.handleSubmit}
         />
       </form>
     );

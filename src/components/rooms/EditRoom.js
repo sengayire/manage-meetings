@@ -42,6 +42,7 @@ export class EditRoom extends Component {
     closeModal: false,
     roomId: this.props.roomId,
     roomName: this.props.roomName,
+    isLoading: false,
   };
 
   /**
@@ -81,32 +82,41 @@ export class EditRoom extends Component {
    * @returns {void}
    */
   handleEditRoom = () => {
+    this.toggleLoading();
     const { roomId, roomName } = this.state;
     const { currentPage, refetch } = this.props;
 
-    this.props
-      .editRoom({
-        variables: {
-          roomId,
-          name: roomName,
-        },
-      })
-      .then(() => {
-        notification(
-          toastr,
-          'success',
-          `Room name editted successfully to ${roomName}`,
-        )();
-        refetch({ page: currentPage });
-      })
-      .catch((err) => {
-        notification(toastr, 'error', err.graphQLErrors[0].message)();
-      });
-    this.handleCloseModal();
+    this.props.editRoom({
+      variables: {
+        roomId,
+        name: roomName,
+      },
+    }).then(() => {
+      this.toggleLoading();
+      this.handleCloseModal();
+      notification(toastr, 'success', `Room name editted successfully to ${roomName}`)();
+      refetch({ page: currentPage });
+    }).catch((err) => {
+      this.toggleLoading();
+      this.handleCloseModal();
+      notification(toastr, 'error', err.graphQLErrors[0].message)();
+    });
   };
 
+  /**
+   * 1. change isLoading state to it's opposite value
+   * i.e true to false or vise verser
+   *
+   * @returns {void}
+   */
+  toggleLoading = () => {
+    this.setState({
+      isLoading: !this.state.isLoading,
+    });
+  }
+
   render() {
-    const { closeModal } = this.state;
+    const { closeModal, isLoading } = this.state;
     const { roomLocation } = this.props;
     const { allLocations } = this.props.locations;
 
@@ -119,6 +129,7 @@ export class EditRoom extends Component {
         className="modal"
       >
         <RoomFormInput
+          isLoading={isLoading}
           onSubmit={this.handleEditRoom}
           onCloseModalRequest={this.handleCloseModal}
           roomLocation={roomLocation}
