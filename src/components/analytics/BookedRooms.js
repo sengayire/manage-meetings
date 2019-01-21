@@ -6,6 +6,14 @@ import '../../assets/styles/bookedroom.scss';
 import Warning from '../../assets/images/warning_icon.svg';
 import Tip from '../commons/Tooltip';
 
+/**
+ *
+ * Component for showing booked rooms
+ *
+ * @param {Object} bookedRoomsObject
+ *
+ * @returns {JSX}
+ */
 const BookedRooms = ({
   pollIcon,
   bookedRoomText,
@@ -47,8 +55,16 @@ const BookedRooms = ({
               {error !== null ? (
                 <tr>
                   <td className="error_class">
-                    <img className="error_icon" src={Warning} alt="error_icon" />
-                    <b><p className="error_msg">An error occurred, cannot fetch data</p></b>
+                    <img
+                      className="error_icon"
+                      src={Warning}
+                      alt="error_icon"
+                    />
+                    <b>
+                      <p className="error_msg">
+                        An error occurred, cannot fetch data
+                      </p>
+                    </b>
                   </td>
                 </tr>
               ) : (
@@ -58,7 +74,6 @@ const BookedRooms = ({
                   </td>
                 </tr>
               )}
-
             </tbody>
           )}
         </table>

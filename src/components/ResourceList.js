@@ -15,6 +15,11 @@ import Spinner from './commons/Spinner';
 import notification from '../utils/notification';
 import Overlay from './commons/Overlay';
 
+/**
+ * Resource List Component
+ *
+ * @returns {JSX}
+ */
 export class ResourceList extends React.Component {
   constructor(props) {
     super(props);
@@ -33,22 +38,33 @@ export class ResourceList extends React.Component {
     });
   }
 
+  /**
+   * Queries resources list
+   *
+   * @param {Integer} perPage
+   * @param {Integer} page
+   *
+   * @returns {void}
+   */
+
   handleData = (perPage, page) => {
     this.setState({ isFetching: true });
     /* istanbul ignore next */
     /* Reasoning: find explicit way of testing configuration options */
-    this.props.data.fetchMore({
-      variables: {
-        page,
-        perPage,
-      },
-      updateQuery: (prev, { fetchMoreResult }) => {
-        this.setState({
-          allResources: fetchMoreResult.allResources,
-          currentPage: page,
-        });
-      },
-    }).then(() => this.setState({ dataFetched: true, isFetching: false }))
+    this.props.data
+      .fetchMore({
+        variables: {
+          page,
+          perPage,
+        },
+        updateQuery: (prev, { fetchMoreResult }) => {
+          this.setState({
+            allResources: fetchMoreResult.allResources,
+            currentPage: page,
+          });
+        },
+      })
+      .then(() => this.setState({ dataFetched: true, isFetching: false }))
       .catch(() => {
         this.setState({ dataFetched: false, isFetching: false });
         notification(
@@ -57,7 +73,7 @@ export class ResourceList extends React.Component {
           'You seem to be offline, check your internet connection.',
         )();
       });
-  }
+  };
 
   render() {
     const { loading, error, refetch } = this.props.data;
@@ -68,15 +84,16 @@ export class ResourceList extends React.Component {
 
     return (
       <div className="settings-resource">
-        <div className={`settings-resource-control ${isFetching ? 'disabled-buttons' : null}`}>
+        <div
+          className={`settings-resource-control ${
+            isFetching ? 'disabled-buttons' : null
+          }`}
+        >
           <MenuTitle title="Resources" />
           <AddResourceComponent />
         </div>
         <div className="settings-resource-list">
-          {isFetching
-            ? <Overlay />
-            : null
-          }
+          {isFetching ? <Overlay /> : null}
           <table>
             <ColGroup />
             <TableHead titles={['Resource', 'Action']} />
@@ -105,7 +122,6 @@ export class ResourceList extends React.Component {
     );
   }
 }
-
 
 ResourceList.propTypes = {
   data: PropTypes.shape({

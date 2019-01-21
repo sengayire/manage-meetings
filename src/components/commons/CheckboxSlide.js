@@ -2,6 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import '../../assets/styles/checkboxSlide.scss';
 
+/**
+ * Builds reusable component for checkboxes
+ *
+ * @param {array} props
+ *
+ * @returns {JSX}
+ */
 const CheckboxSlide = props => (
   <label className="switch" htmlFor="CheckboxSlide">
     <input

@@ -7,13 +7,22 @@ import MrmModal from '../components/commons/Modal';
 import { SelectInput as Select } from './commons';
 import '../assets/styles/addQuestion.scss';
 
+/**
+ * Add Question Component
+ *
+ * @extends React.Component
+ *
+ * @returns {JSX}
+ */
 class AddQuestion extends Component {
   state = {
     questionType: '',
     startDate: moment().format('MMM DD Y'),
     endDate: moment().format('MMM DD Y'),
     startTime: moment().format('HH:MM'),
-    endTime: moment().add(1, 'hours').format('HH:MM'),
+    endTime: moment()
+      .add(1, 'hours')
+      .format('HH:MM'),
     calenderOpen: false,
     closeModal: false,
     options: [
@@ -43,6 +52,7 @@ class AddQuestion extends Component {
 
   /**
    * It updates the state value of closeModal to false
+   * whenever the modal closes
    *
    * @returns {void}
    */
@@ -94,7 +104,7 @@ class AddQuestion extends Component {
   handleInputChange = (event) => {
     const { name, value } = event.target;
     this.setState({ [name]: value });
-  }
+  };
 
   /**
    * It returns the action buttons for the question modal
@@ -118,19 +128,27 @@ class AddQuestion extends Component {
     <div className="inputs-inline">
       <div className="inputs">
         <label htmlFor="startTime" className="inputs-title">
-          <span>
-            Start
-          </span>
+          <span>Start</span>
         </label>
-        <input type="time" name="startTime" onChange={this.handleInputChange} id="timeField" value={this.state.startTime} />
+        <input
+          type="time"
+          name="startTime"
+          onChange={this.handleInputChange}
+          id="timeField"
+          value={this.state.startTime}
+        />
       </div>
       <div className="inputs">
         <label htmlFor="endTime" className="inputs-title">
-          <span>
-            End
-          </span>
+          <span>End</span>
         </label>
-        <input type="time" name="endTime" onChange={this.handleInputChange} id="timeField" value={this.state.endTime} />
+        <input
+          type="time"
+          name="endTime"
+          onChange={this.handleInputChange}
+          id="timeField"
+          value={this.state.endTime}
+        />
       </div>
     </div>
   );
@@ -158,9 +176,7 @@ class AddQuestion extends Component {
    */
   renderQuestionValues = () => (
     <div>
-      <span className="question-form__sections">
-        Date
-      </span>
+      <span className="question-form__sections">Date</span>
       <div>
         <Button
           icon={this.calendarIcon()}
@@ -168,23 +184,18 @@ class AddQuestion extends Component {
           onClick={this.calenderToggle}
         />
         {this.state.calenderOpen && (
-        <Calendar
-          sendDateData={this.sendDateData}
-          handleCloseModal={this.calenderToggle}
-        />)}
+          <Calendar
+            sendDateData={this.sendDateData}
+            handleCloseModal={this.calenderToggle}
+          />
+        )}
       </div>
-      <span className="question-form__sections">
-          Time
-      </span>
+      <span className="question-form__sections">Time</span>
       {this.renderTimeInputs()}
-      <span className="question-form__sections">
-        Question
-      </span>
+      <span className="question-form__sections">Question</span>
       {this.renderQuestionInputBox()}
       <div>
-        <span className="question-form__sections">
-          Question Type
-        </span>
+        <span className="question-form__sections">Question Type</span>
         <Select
           labelText=""
           name="questionType"
@@ -209,9 +220,7 @@ class AddQuestion extends Component {
         handleCloseRequest={this.handleModalStateChange}
         className="add-question-modal"
       >
-        <form className="question-form">
-          {this.renderQuestionValues()}
-        </form>
+        <form className="question-form">{this.renderQuestionValues()}</form>
       </MrmModal>
     );
   }

@@ -7,7 +7,9 @@ import '../../../src/assets/styles/roomFeedbackResponse.scss';
 
 /**
  * Creates stars
- * @param rating
+ *
+ * @param {Integer} rating
+ *
  * @returns {{starImage: Array, rateText: string}}
  */
 export const starRate = (rating = 0) => {
@@ -100,24 +102,29 @@ export const starRate = (rating = 0) => {
 
 /**
  * Represents a single feedback
- * @param room
- * @param responses
- * @param rating
- * @param missingItems
- * @param suggestion
+ *
+ * @param {Object} roomFeedbackResponse
+ *
  * @returns {jsx}
- * @constructor
+ *
  */
 class RoomFeedbackResponse extends Component {
   showModal = (e) => {
-    const { roomFeedbackResponse: { id }, viewSingleFeed } = this.props;
+    const {
+      roomFeedbackResponse: { id },
+      viewSingleFeed,
+    } = this.props;
     viewSingleFeed(e, id);
-  }
+  };
 
   render() {
     const {
       roomFeedbackResponse: {
-        room, responses, rating, missingItems, suggestion,
+        room,
+        responses,
+        rating,
+        missingItems,
+        suggestion,
       },
     } = this.props;
 

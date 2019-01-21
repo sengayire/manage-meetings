@@ -51,6 +51,11 @@ export class AddRoomToEpicTower extends Component {
     }
   };
 
+  /**
+   * It closes a modal
+   *
+   * @returns {void}
+   */
   handleCloseModal = () => {
     this.setState({
       imageUrl: '',
@@ -63,6 +68,15 @@ export class AddRoomToEpicTower extends Component {
     });
   };
 
+  /**
+   * Ensures that the state is updated basing
+   * on the changes in the input fields
+   *
+   * @param {object} event
+   * @param {number} num
+   *
+   * @returns {void}
+   */
   handleInputChange = (event, num) => {
     const {
       target: { name, value, files },
@@ -127,10 +141,23 @@ export class AddRoomToEpicTower extends Component {
     }
   };
 
+  /**
+   * It updates the state value of closeModal
+   * to false whenever the modal closes
+   *
+   * @returns {void}
+   */
   handleModalStateChange = () => {
     this.state.closeModal && this.setState({ closeModal: false });
   };
 
+  /**
+   * Adds a room
+   *
+   * @param {object} event
+   *
+   * @returns {void}
+   */
   handleAddRoom = (event) => {
     event.preventDefault();
     const {

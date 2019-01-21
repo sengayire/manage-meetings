@@ -1,6 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+/**
+ *
+ * Device component
+ *
+ * @param {Object} device
+ *
+ * @returns {JSX}
+ */
 const Device = ({
   device: {
     name, type, date, last, location,

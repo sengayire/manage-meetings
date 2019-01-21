@@ -21,6 +21,11 @@ import Spinner from './commons/Spinner';
 import notification from '../utils/notification';
 import Overlay from './commons/Overlay';
 
+/**
+ * Rooms List Component
+ *
+ * @returns {JSX}
+ */
 export class RoomsList extends React.Component {
   constructor(props) {
     super(props);
@@ -44,18 +49,38 @@ export class RoomsList extends React.Component {
     });
   }
 
+  /**
+   * Sets noResource state to False when no resource is found
+   *
+   * @returns {void}
+   */
   handleNoResource = () => {
     this.setState({
       noResource: false,
     });
   };
 
+  /**
+   * Sets noResource state to True when a resource is found
+   *
+   * @returns {void}
+   */
   handleResource = () => {
     this.setState({
       noResource: true,
     });
   };
 
+  /**
+   * Updates the state basing on the rooms list capacity,
+   * location, and office
+   *
+   * @param {string} capacity
+   * @param {string } location
+   * @param {string} office
+   *
+   * @returns {void}
+   */
   handleSetState = (location, capacity, office) => {
     this.setState({
       capacity,
@@ -64,6 +89,12 @@ export class RoomsList extends React.Component {
     });
   };
 
+  /**
+   * Resets the state basing on the rooms list capacity,
+   * location, and office
+   *
+   * @returns {void}
+   */
   handleResetState = () => {
     this.setState({
       capacity: '',
@@ -72,26 +103,36 @@ export class RoomsList extends React.Component {
     });
   };
 
+  /**
+   * Handles the data displayed per page
+   *
+   * @param {string} perPage
+   * @param {string } page
+   *
+   * @returns {Function}
+   */
   handleData = (perPage, page) => {
     const { location, capacity, office } = this.state;
     this.setState({ isFetching: true });
     /* istanbul ignore next */
     /* Reasoning: find explicit way of testing configuration options */
-    this.props.data.fetchMore({
-      variables: {
-        page,
-        perPage,
-        location,
-        capacity,
-        office,
-      },
-      updateQuery: (prev, { fetchMoreResult }) => {
-        this.setState({
-          allRooms: fetchMoreResult.allRooms,
-          currentPage: page,
-        });
-      },
-    }).then(() => this.setState({ dataFetched: true, isFetching: false }))
+    this.props.data
+      .fetchMore({
+        variables: {
+          page,
+          perPage,
+          location,
+          capacity,
+          office,
+        },
+        updateQuery: (prev, { fetchMoreResult }) => {
+          this.setState({
+            allRooms: fetchMoreResult.allRooms,
+            currentPage: page,
+          });
+        },
+      })
+      .then(() => this.setState({ dataFetched: true, isFetching: false }))
       .catch(() => {
         this.setState({ dataFetched: false, isFetching: false });
         notification(
@@ -102,15 +143,31 @@ export class RoomsList extends React.Component {
       });
   };
 
+  /**
+   * Helps to search the data
+   *
+   * @param {object} searchData
+   *
+   * @returns {void}
+   */
   handleSearchData = (searchData) => {
     const rooms = { rooms: searchData };
     this.setState({ allRooms: rooms, noResource: true });
   };
 
+  /**
+   * Sets isSearching state to false
+   *
+   * @returns {void}
+   */
   stopSearching = () => {
     this.setState({ isSearching: false });
   };
-
+  /**
+   * Sets isSearching state to true
+   *
+   * @returns {void}
+   */
   startSearching = (roomName) => {
     this.setState({ isSearching: true });
 
@@ -156,7 +213,11 @@ export class RoomsList extends React.Component {
 
     return (
       <div className="settings-rooms">
-        <div className={`settings-rooms-control ${isFetching ? 'disabled-buttons' : null}`}>
+        <div
+          className={`settings-rooms-control ${
+            isFetching ? 'disabled-buttons' : null
+          }`}
+        >
           <MenuTitle title="Rooms" />
           <FilterRoomMenu
             isNoResource={this.handleNoResource}
@@ -172,10 +233,7 @@ export class RoomsList extends React.Component {
         </div>
         {noResource ? (
           <div className="settings-rooms-list">
-            {isFetching
-              ? <Overlay />
-              : null
-            }
+            {isFetching ? <Overlay /> : null}
             <table>
               <ColGroup />
               <TableHead titles={['Room', 'Location', 'Office', 'Action']} />
@@ -189,7 +247,7 @@ export class RoomsList extends React.Component {
           </div>
         ) : (
           <h2 style={{ marginLeft: '0' }}>No Rooms Found</h2>
-          )}
+        )}
         {noResource && !isSearching ? (
           <Pagination
             currentPage={currentPage}

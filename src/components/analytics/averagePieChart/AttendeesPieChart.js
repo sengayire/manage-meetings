@@ -10,6 +10,11 @@ import '../../../../src/assets/styles/attendeesPieChart.scss';
 // Import the tip
 import Tip from '../../commons/Tooltip';
 
+/**
+ * Attendees Pie chart component
+ *
+ * @returns {JSX}
+ */
 class AttendeesPieChart extends Component {
   // eslint-disable-next-line
   state = {};

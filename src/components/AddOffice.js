@@ -11,6 +11,13 @@ import { GET_LOCATIONS_QUERY } from '../graphql/queries/Rooms';
 import ADD_OFFICE_MUTATION from '../graphql/mutations/offices';
 import notification from '../utils/notification';
 
+/**
+ * Add Office Component
+ *
+ * @extends React.Component
+ *
+ * @returns {JSX}
+ */
 export class AddOffice extends Component {
   static propTypes = {
     locations: PropTypes.shape({
@@ -28,19 +35,51 @@ export class AddOffice extends Component {
     closeModal: false,
   };
 
+  /**
+   * Ensures that the modal for adding office closes
+   * when a user hits CANCEL on the modal or when the
+   * creation of an office is successful
+   *
+   * @returns {void}
+   */
+
   handleCloseModal = () => {
     this.setState({ closeModal: true });
   };
 
+  /**
+   * Ensures that the state is updated basing on the
+   * user input
+   *
+   * @param {object} event The input event parameter
+   *
+   * @returns {void}
+   */
   handleInputChange = (event) => {
     const { name, value } = event.target;
     this.setState({ [name]: value });
   };
 
+  /**
+   * It updates the state value of closeModal
+   * to false whenever the modal closes
+   *
+   * @returns {void}
+   */
   handleModalStateChange = () => {
     this.state.closeModal && this.setState({ closeModal: false });
   };
 
+  /**
+   * 1. Validates the user input
+   * 2. Submits the office data to the backend
+   * 3. Notifies the user about the response from his request
+   * i.e whether it was a success or a failure
+   *
+   * @param {object} event
+   *
+   * @returns {Function}
+   */
   handleAddOffice = (event) => {
     event.preventDefault();
     const { officeLocation, officeName } = this.state;

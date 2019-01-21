@@ -41,9 +41,11 @@ exports[`Cancelled Event Component should render properly 1`] = `
         >
           Harrison &lt;&gt; Jolomi Sync
         </span>
-         event was just cancelled
+         
+        event was just cancelled
         <br />
-         and removed from your calendar by 
+         and removed from your calendar by
+         
         <span
           className="admin"
         >

@@ -11,11 +11,17 @@ import ADD_WING_MUTATION from '../graphql/mutations/wings';
 import GET_FLOORS_QUERY from '../graphql/queries/Floors';
 import notification from '../utils/notification';
 
+/**
+ * Add Wing Component
+ *
+ * @extends React.Component
+ *
+ * @returns {JSX}
+ */
 export class AddWing extends Component {
   static propTypes = {
     addWing: PropTypes.func.isRequired,
   };
-
 
   state = {
     name: '',
@@ -23,19 +29,43 @@ export class AddWing extends Component {
     closeModal: false,
   };
 
+  /**
+   * Ensures that the modal for adding wing closes
+   *
+   * @returns {void}
+   */
   handleCloseModal = () => {
     this.setState({ closeModal: true });
   };
 
+  /**
+   * Ensures that the state is updated basing
+   * on the changes in the input fields
+   *
+   * @param {object} event
+   *
+   * @returns {void}
+   */
   handleInputChange = (event) => {
     const { name, value } = event.target;
     this.setState({ [name]: value });
   };
 
+  /**
+   * It updates the state value of closeModal
+   * to false whenever the modal closes
+   *
+   * @returns {void}
+   */
   handleModalStateChange = () => {
     this.state.closeModal && this.setState({ closeModal: false });
   };
 
+  /**
+   * Handles the adding of Wings
+   *
+   * @returns {void}
+   */
   handleAddWing = (event) => {
     event.preventDefault();
     const { name, floorId } = this.state;

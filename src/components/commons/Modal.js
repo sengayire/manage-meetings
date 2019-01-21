@@ -32,9 +32,7 @@ class MrmModal extends Component {
     closeModal: PropTypes.bool.isRequired,
     className: PropTypes.string,
     modalButtonClassName: PropTypes.string,
-    buttonText: PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.object]),
+    buttonText: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
   };
 
   static defaultProps = {
@@ -54,28 +52,60 @@ class MrmModal extends Component {
     }
   };
 
+  /**
+   * Gets the snapshot before it updates the state
+   *
+   * @param {array} prevProps
+   * @param {object} prevState
+   *
+   * @returns {Boolean}
+   */
   getSnapshotBeforeUpdate(prevProps, prevState) {
-    if (!prevProps.closeModal && prevState.modalIsOpen && this.props.closeModal) {
+    if (
+      !prevProps.closeModal &&
+      prevState.modalIsOpen &&
+      this.props.closeModal
+    ) {
       return true;
     }
     return null;
   }
 
+  /**
+   * Allows opening of modal
+   *
+   * @returns {void}
+   */
   openModal = () => {
     this.setState({ modalIsOpen: true });
   };
 
+  /**
+   * Changes the subtitle color after
+   * successfully opening the modal
+   *
+   * @returns {void}
+   */
   afterOpenModal = () => {
     this.subtitle.style.color = '#f00';
   };
 
+  /**
+   * Allows closing of modal
+   *
+   * @returns {void}
+   */
   closeModal = () => {
     this.setState({ modalIsOpen: false });
   };
 
   render() {
     const {
-      buttonText, className, title, children, modalButtonClassName,
+      buttonText,
+      className,
+      title,
+      children,
+      modalButtonClassName,
     } = this.props;
     return (
       <Fragment>
@@ -94,7 +124,13 @@ class MrmModal extends Component {
           className={className}
           ariaHideApp={false}
         >
-          <h2 ref={(subtitle) => { this.subtitle = subtitle; }}>{title}</h2>
+          <h2
+            ref={(subtitle) => {
+              this.subtitle = subtitle;
+            }}
+          >
+            {title}
+          </h2>
           {children}
         </Modal>
       </Fragment>

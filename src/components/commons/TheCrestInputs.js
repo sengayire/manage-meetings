@@ -3,8 +3,19 @@ import PropTypes from 'prop-types';
 import { Input, SelectInput as Select } from '../commons';
 import '../../assets/styles/addroomCrest.scss';
 
+/**
+ * Reusable component for the Crest Inputs
+ *
+ * @param {Object} theCrestInputsObject
+ *
+ * @returns {JSX}
+ */
 const TheCrestInputs = ({
-  roomName, roomFloor, floorOptionsList, roomCapacity, handleInputChange,
+  roomName,
+  roomFloor,
+  floorOptionsList,
+  roomCapacity,
+  handleInputChange,
 }) => (
   <div className="kla-inputs">
     <Input

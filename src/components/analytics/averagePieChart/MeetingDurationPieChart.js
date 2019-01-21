@@ -10,6 +10,11 @@ import '../../../../src/assets/styles/meetingDurationPieChart.scss';
 // Import the tip
 import Tip from '../../commons/Tooltip';
 
+/**
+ * Meeting Duration Pie chart component
+ *
+ * @returns {JSX}
+ */
 class MeetingDurationPieChart extends Component {
   // eslint-disable-next-line
   state = {};

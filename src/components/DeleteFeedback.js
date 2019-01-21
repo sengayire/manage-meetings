@@ -3,24 +3,48 @@ import PropTypes from 'prop-types';
 import MrmModal from './commons/Modal';
 import '../assets/styles/deleteModal.scss';
 
+/**
+ * Delete Feedback Component
+ *
+ * @extends React.Component
+ *
+ * @returns {JSX}
+ */
 class DeleteFeedback extends Component {
   state = {
     closeModal: false,
   };
 
+  /**
+   * It closes a modal
+   *
+   * @returns {void}
+   */
   handleCloseModal = () => {
     this.setState({ closeModal: true });
-  }
+  };
 
+  /**
+   * Handles the state changes for the deleting feedback modal
+   *
+   * @returns {void}
+   */
   handleModalStateChange = () => {
     this.state.closeModal && this.setState({ closeModal: false });
-  }
+  };
 
+  /**
+   * Handles deleting feedback
+   *
+   * @param {object} event
+   *
+   * @returns {void}
+   */
   handleDeleteFeedback = (event) => {
     event.preventDefault();
     // submit logic goes here
     this.handleCloseModal();
-  }
+  };
 
   render() {
     const { closeModal } = this.state;
@@ -57,4 +81,3 @@ DeleteFeedback.propTypes = {
 };
 
 export default DeleteFeedback;
-

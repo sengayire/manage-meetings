@@ -10,6 +10,13 @@ import notification from '../utils/notification';
 import { GET_ALL_WINGS } from '../graphql/queries/wings';
 import { EDIT_WING_MUTATION } from '../graphql/mutations/wings';
 
+/**
+ * Edit Wing Component
+ *
+ * @extends React.Component
+ *
+ * @returns {JSX}
+ */
 export class EditWing extends React.Component {
   static propTypes = {
     wingId: PropTypes.string.isRequired,
@@ -23,18 +30,43 @@ export class EditWing extends React.Component {
     closeModal: false,
   };
 
+  /**
+   * Ensures that the state is updated basing
+   * on the changes in the input fields
+   *
+   * @param {Object} target
+   *
+   * @returns {void}
+   */
   handleInputChange = ({ target: { name, value } }) => {
     this.setState({ [name]: value });
-  }
+  };
 
+  /**
+   * It closes a modal
+   *
+   * @returns {void}
+   */
   handleCloseModal = () => {
     this.setState({ closeModal: true });
-  }
+  };
 
+  /**
+   * It changes the state of the modal
+   *
+   * @returns {void}
+   */
   handleModalStateChange = () => {
     this.state.closeModal && this.setState({ closeModal: false });
-  }
+  };
 
+  /**
+   * Handles editing wing
+   *
+   * @param {object} event
+   *
+   * @returns {void}
+   */
   handleEditWing = (e) => {
     const { wingId, wingName } = this.state;
     const { editWing } = this.props;
@@ -44,16 +76,22 @@ export class EditWing extends React.Component {
         wingId,
         name: wingName,
       },
-    }).then(() => {
-      notification(toastr, 'success', `${wingName} office has been updated successfully`)();
-    }).catch((err) => {
-      this.setState({
-        wingName: this.props.wingName,
+    })
+      .then(() => {
+        notification(
+          toastr,
+          'success',
+          `${wingName} office has been updated successfully`,
+        )();
+      })
+      .catch((err) => {
+        this.setState({
+          wingName: this.props.wingName,
+        });
+        notification(toastr, 'error', err.graphQLErrors[0].message)();
       });
-      notification(toastr, 'error', err.graphQLErrors[0].message)();
-    });
     this.handleCloseModal();
-  }
+  };
 
   render() {
     const { closeModal, wingName } = this.state;
@@ -83,8 +121,12 @@ export class EditWing extends React.Component {
             actionButtonText="SAVE CHANGES"
           />
         </form>
-      </MrmModal>);
+      </MrmModal>
+    );
   }
 }
 
-export default graphql(EDIT_WING_MUTATION, { name: 'editWing', options: { refetchQueries: [{ query: GET_ALL_WINGS }] } })(EditWing);
+export default graphql(EDIT_WING_MUTATION, {
+  name: 'editWing',
+  options: { refetchQueries: [{ query: GET_ALL_WINGS }] },
+})(EditWing);

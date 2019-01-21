@@ -21,10 +21,13 @@ const {
   MRM_TOKEN,
   MESSAGES: { defaultLoginError },
 } = Constants;
+
 /**
- * The login component. Currently only implements the Login  User Interface
- * Login functionality to be Added Later
- * @author [Dennis Jjagwe](https://github.com/dennisja)
+ * The login component.
+ *
+ * @extends Component
+ *
+ * @returns {JSX}
  */
 export class Login extends Component {
   static propTypes = {
@@ -42,6 +45,13 @@ export class Login extends Component {
     loginError: null,
   };
 
+  /**
+   * Gets the derived state from the props
+   *
+   * @param {array} props
+   *
+   * @returns {void}
+   */
   static getDerivedStateFromProps = (props) => {
     const { push } = props.history;
     const token = getItemFromLocalStorage(MRM_TOKEN);
@@ -91,16 +101,30 @@ export class Login extends Component {
     document.body.classList.remove('home-bg');
   }
 
-  // Apply body styles on homepage only
+  /**
+   * Apply body styles on homepage only
+   *
+   * @returns {void}
+   */
   applyBodyStyles = () => {
     const { location } = this.props;
     location.pathname === ROUTES.home && document.body.classList.add('home-bg');
   };
 
+  /**
+   * shows login error
+   *
+   * @returns {void}
+   */
   handleLoginError = (loginError = defaultLoginError) => {
     this.setState({ loginError });
   };
 
+  /**
+   * It closes the snack bar and redirects to home page
+   *
+   * @returns {void}
+   */
   handleSnackBarClose = () => {
     this.setState({ loginError: null });
     this.props.history.push(ROUTES.home);

@@ -6,11 +6,10 @@ import '../../assets/styles/sort.scss';
 class Sort extends Component {
   state = {
     optionName: null,
-  }
+  };
 
   componentWillReceiveProps() {
-    this.props.hideDropdownMenu &&
-      this.Dropdown.current.toggleVisibility();
+    this.props.hideDropdownMenu && this.Dropdown.current.toggleVisibility();
   }
 
   Dropdown = React.createRef();
@@ -20,11 +19,11 @@ class Sort extends Component {
    *
    * @param {Object} optionName
    *
-   * @returns {Function}
+   * @returns {void}
    */
   toggleOptions = optionName => () => {
     this.setState({ optionName });
-  }
+  };
 
   /**
    * It renders the options to sort by
@@ -33,21 +32,26 @@ class Sort extends Component {
    *
    * @returns {JSX}
    */
-  renderObjectOptions = options => Object.keys(options).map(option => (
-    // eslint-disable-next-line
-    <span
-      key={option}
-      className={this.state.optionName === option ? 'filter-options__disable' : 'filter-options'}
-      onClick={this.toggleOptions(option)}
-    >
-      {option}
-      {this.state.optionName === option &&
-        <div className="filter-options__children">
-          {this.renderOptionsChildren(options[option], option)}
-        </div>
-      }
-    </span>
-  ));
+  renderObjectOptions = options =>
+    Object.keys(options).map(option => (
+      // eslint-disable-next-line
+      <span
+        key={option}
+        className={
+          this.state.optionName === option
+            ? 'filter-options__disable'
+            : 'filter-options'
+        }
+        onClick={this.toggleOptions(option)}
+      >
+        {option}
+        {this.state.optionName === option && (
+          <div className="filter-options__children">
+            {this.renderOptionsChildren(options[option], option)}
+          </div>
+        )}
+      </span>
+    ));
 
   /**
    * It renders the options children
@@ -59,18 +63,16 @@ class Sort extends Component {
    */
   renderOptionsChildren = (subOptions, optionName) => (
     <React.Fragment>
-      {
-        subOptions.map(option => (
-          // eslint-disable-next-line
-          <span
-            key={option.id}
-            className="filter-options__children-list"
-            onClick={this.props.fetchSortedData(optionName, option.id)}
-          >
-            {option[Object.keys(option)[1]]}
-          </span>
-        ))
-      }
+      {subOptions.map(option => (
+        // eslint-disable-next-line
+        <span
+          key={option.id}
+          className="filter-options__children-list"
+          onClick={this.props.fetchSortedData(optionName, option.id)}
+        >
+          {option[Object.keys(option)[1]]}
+        </span>
+      ))}
     </React.Fragment>
   );
 
@@ -81,7 +83,7 @@ class Sort extends Component {
    *
    * @returns {JSX}
    */
-  renderArrayOptions = () => (<div></div>); // eslint-disable-line
+  renderArrayOptions = () => <div />; // eslint-disable-line
 
   render() {
     const { sortOptions, withChildren } = this.props;
@@ -105,10 +107,8 @@ class Sort extends Component {
 }
 
 Sort.propTypes = {
-  sortOptions: PropTypes.oneOfType([
-    PropTypes.object,
-    PropTypes.array,
-  ]).isRequired,
+  sortOptions: PropTypes.oneOfType([PropTypes.object, PropTypes.array])
+    .isRequired,
   withChildren: PropTypes.bool,
   fetchSortedData: PropTypes.func.isRequired,
   hideDropdownMenu: PropTypes.bool,

@@ -11,6 +11,13 @@ import MenuTitle from './MenuTitle';
 import { formatFloorData } from '../graphql/mappers/Floors';
 import Pagination from './commons/Pagination';
 
+/**
+ * Floor List Component
+ *
+ * @extends React.Component
+ *
+ * @returns {JSX}
+ */
 export class FloorList extends Component {
   state = {};
 

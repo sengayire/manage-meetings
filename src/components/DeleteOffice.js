@@ -9,19 +9,41 @@ import notification from '../utils/notification';
 
 import '../assets/styles/deleteModal.scss';
 
+/**
+ * Delete Office Component
+ *
+ * @extends React.Component
+ *
+ * @returns {JSX}
+ */
 export class DeleteOffice extends React.Component {
   state = {
     closeModal: false,
   };
 
+  /**
+   * It closes a modal
+   *
+   * @returns {void}
+   */
   handleCloseModal = () => {
     this.setState({ closeModal: true });
   };
 
+  /**
+   * Handles the state changes for the deleting floor modal
+   *
+   * @returns {void}
+   */
   handleModalStateChange = () => {
     this.state.closeModal && this.setState({ closeModal: false });
   };
 
+  /**
+   * This function deletes an office
+   *
+   * @returns {void}
+   */
   handleDeleteOffice = () => {
     const { officeId, deleteOffice, refetch } = this.props;
     deleteOffice({
@@ -53,8 +75,8 @@ export class DeleteOffice extends React.Component {
       >
         <div className="delete-modal-content">
           <p id="confirm-msg">
-            Are you sure you want to delete the {`"${this.props.officeName}"`} office? This cannot
-            be undone & all data will be lost
+            Are you sure you want to delete the {`"${this.props.officeName}"`}{' '}
+            office? This cannot be undone & all data will be lost
           </p>
           <div className="modal-actions">
             <button id="cancel-btn" onClick={this.handleCloseModal}>

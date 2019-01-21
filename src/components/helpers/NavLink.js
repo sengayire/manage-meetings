@@ -3,6 +3,16 @@ import PropTypes from 'prop-types';
 import { Route } from 'react-router-dom';
 import Link from 'react-toolbox/lib/link';
 
+/**
+ * Handles redirections upon click
+ * of any component on the NavLink
+ *
+ * @param {object} event
+ * @param {object} history
+ * @param {object} to
+ *
+ * @returns {JSX}
+ */
 export const handleClick = (event, history, to) => {
   event.preventDefault();
 

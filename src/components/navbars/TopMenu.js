@@ -4,16 +4,24 @@ import Logo from '../../assets/images/converge_logo.svg';
 import IconSearch from '../../assets/images/search_icon.svg';
 import IconNotifications from '../../assets/images/notifications_icon.svg';
 import { decodeTokenAndGetUserData } from '../../utils/Cookie';
+import '../../assets/styles/topmenu.scss';
 
+/**
+ * Component for Top Menu
+ *
+ * @extends React.Component
+ *
+ * @returns {JSX}
+ *
+ */
 class TopMenu extends React.Component {
-  componentDidMount() {
-    import('../../assets/styles/topmenu.scss');
-  }
+  componentDidMount() {}
 
   render() {
     const { UserInfo: userData } = decodeTokenAndGetUserData() || {};
-    // rename some variables to camel case
-    const { first_name: firstName, last_name: lastName, picture } = userData || {};
+
+    const { first_name: firstName, last_name: lastName, picture } =
+      userData || {};
 
     return (
       <div className="top-menu">
@@ -32,7 +40,11 @@ class TopMenu extends React.Component {
             <div className="search-box">
               <form className="container">
                 <input className="search-bar" type="text" />
-                <img className="search-icon" src={IconSearch} alt="Search icon" />
+                <img
+                  className="search-icon"
+                  src={IconSearch}
+                  alt="Search icon"
+                />
               </form>
             </div>
             <div className="container side-nav">
@@ -43,8 +55,7 @@ class TopMenu extends React.Component {
                 <img src={picture} className="menu-icon" alt="Profile icon" />
               </div>
               <div className="profile-name">
-                <span className="username">{`${firstName} ${lastName}`}
-                </span>
+                <span className="username">{`${firstName} ${lastName}`}</span>
                 <ProfileMenu />
               </div>
             </div>

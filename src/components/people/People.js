@@ -4,29 +4,49 @@ import toastr from 'toastr';
 import { IconMenu, MenuItem } from 'react-toolbox/lib/menu';
 import notification from '../../utils/notification';
 
-const accessMenuCaret = () => (
-  <span className="access-by-caret" />
-);
+/**
+ * Shows the menuCart besides the Access Level on the people's table
+ *
+ * @returns {JSX}
+ */
+const accessMenuCaret = () => <span className="access-by-caret" />;
 
+/**
+ * Component that shows people and their attributes
+ *
+ * @param {Object} people - name, email, accessLevel, location, and picture
+ * @param {Object} allRoles
+ * @param {Object} editRole
+ *
+ * @returns {void}
+ */
 const People = ({
   people: {
     email, name, accessLevel, location, picture,
-  }, allRoles, editRole,
+  },
+  allRoles,
+  editRole,
 }) => {
   const editRoleFunction = (roleId) => {
     const variables = { variables: { email, roleId } };
     editRole(variables)
       .then(() => {
         notification(
-          toastr, 'success',
+          toastr,
+          'success',
           `'${name}' role has been changed successfully`,
         )();
       })
-      .catch(err => notification(toastr, 'error', err.graphQLErrors[0].message)());
+      .catch(err =>
+        notification(toastr, 'error', err.graphQLErrors[0].message)(),
+      );
   };
   return (
     <tr>
-      <td><img className="profilePic" src={picture} alt="profilePicture" />{name}</td>
+      <td>
+        <img className="profilePic" src={picture} alt="profilePicture" />
+        {name}
+      </td>
       <td>{location}</td>
       <td>
         <span>
@@ -36,16 +56,16 @@ const People = ({
             className="people-access-dropdown"
             icon={accessMenuCaret()}
           >
-            {
-              allRoles.map(role => (
-                <MenuItem
-                  className={`access-menu ${role.role === accessLevel ? 'selected' : ''}`}
-                  key={role.id}
-                  caption={role.role}
-                  onClick={() => editRoleFunction(role.id)}
-                />
-              ))
-            }
+            {allRoles.map(role => (
+              <MenuItem
+                className={`access-menu ${
+                  role.role === accessLevel ? 'selected' : ''
+                }`}
+                key={role.id}
+                caption={role.role}
+                onClick={() => editRoleFunction(role.id)}
+              />
+            ))}
           </IconMenu>
         </span>
       </td>
@@ -61,10 +81,12 @@ People.propTypes = {
     accessLevel: PropTypes.string.isRequired,
     picture: PropTypes.string.isRequired,
   }).isRequired,
-  allRoles: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-    role: PropTypes.string,
-  })).isRequired,
+  allRoles: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+      role: PropTypes.string,
+    }),
+  ).isRequired,
   editRole: PropTypes.func.isRequired,
 };
 

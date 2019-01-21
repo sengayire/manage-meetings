@@ -3,8 +3,19 @@ import PropTypes from 'prop-types';
 import { Input, SelectInput as Select } from '../commons';
 import '../../assets/styles/addroom.scss';
 
+/**
+ * Component that handles the input of Nairobi office data
+ *
+ * @param {Object} roomInputObject
+ *
+ * @returns {JSX}
+ */
 const NairobiRoomInputs = ({
-  roomName, roomCapacity, officeBlock, officeFloor, handleInputChange,
+  roomName,
+  roomCapacity,
+  officeBlock,
+  officeFloor,
+  handleInputChange,
 }) => (
   <div className="form-inputs">
     <Input
@@ -56,7 +67,6 @@ const NairobiRoomInputs = ({
       required
     />
   </div>
-
 );
 
 NairobiRoomInputs.propTypes = {

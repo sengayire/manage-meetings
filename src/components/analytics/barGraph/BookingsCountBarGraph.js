@@ -7,7 +7,13 @@ import Tip from '../../commons/Tooltip';
 // import styles
 import '../../../../src/assets/styles/barGraphBaseStyle.scss';
 
-
+/**
+ * Bar graph for bookings count
+ *
+ * @param {Object} dateValueObject
+ *
+ * @returns {JSX}
+ */
 const BookingsCountBarGraph = ({ dateValue }) => {
   const tip = 'Total count of bookings in a given time';
   return (

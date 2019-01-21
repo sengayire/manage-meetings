@@ -2,6 +2,12 @@ import React from 'react';
 import '../../../assets/styles/cancelledEvent.scss';
 import Logo from '../../../assets/images/converge_logo.svg';
 
+/**
+ * Component that notifies a user about
+ * an event that has been cancelled
+ *
+ * @returns {JSX}
+ */
 const cancelledEvent = () => (
   <div className="email">
     <div className="email-header">
@@ -14,9 +20,12 @@ const cancelledEvent = () => (
       <p className="email-title">Cancelled Event</p>
       <div className="email-body-content">
         <p className="email-body-text">
-          <span className="sync-title">Harrison &lt;&gt; Jolomi Sync</span> event was just
-          cancelled<br /> and removed from your calendar by <span className="admin">Jolomi Otumara</span> with this
-          note:<br />&quot;Cancelling because of our leadership offsite.&quot;
+          <span className="sync-title">Harrison &lt;&gt; Jolomi Sync</span>{' '}
+          event was just cancelled
+          <br /> and removed from your calendar by{' '}
+          <span className="admin">Jolomi Otumara</span> with this note:
+          <br />
+          &quot;Cancelling because of our leadership offsite.&quot;
         </p>
       </div>
     </div>

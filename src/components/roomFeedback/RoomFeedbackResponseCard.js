@@ -3,7 +3,11 @@ import PropTypes from 'prop-types';
 
 /**
  * Represents the cards of data
+ *
+ * @param {Object} roomFeedbackCard
+ *
  * @returns {JSX}
+ *
  * @constructor
  */
 const RoomFeedbackCard = ({ title, value }) => (

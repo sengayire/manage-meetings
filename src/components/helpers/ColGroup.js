@@ -1,6 +1,14 @@
 import React from 'react';
 import Proptypes from 'prop-types';
 
+/**
+ *
+ * Column group component
+ *
+ * @param {Object} numberOfMiddleColumns
+ *
+ * @returns {JSX}
+ */
 const ColGroup = ({ numberOfMiddleColumns }) => (
   <colgroup>
     <col className="first-col" />

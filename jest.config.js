@@ -22,7 +22,7 @@ module.exports = {
     '!**/src/utils/ApolloClient.js',
     '!**/src/utils/FirebaseConfig.js',
   ],
-  testPathIgnorePatterns: ['__mocks__'],
+  testPathIgnorePatterns: ['__mocks__', 'docs'],
   setupTestFrameworkScriptFile: '<rootDir>/setupTests.js',
   snapshotSerializers: ['enzyme-to-json/serializer'],
   setupFiles: ['jest-canvas-mock'],

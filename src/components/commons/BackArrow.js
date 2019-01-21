@@ -3,11 +3,16 @@ import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 import '../../assets/styles/backArrow.scss';
 
+/**
+ * Reusable component for a back arrow
+ *
+ * @param {object} redirectUri
+ *
+ * @returns {JSX}
+ */
 const BackArrow = ({ redirectUri }) => (
   <NavLink to={redirectUri} className="arrow">
-    <span className="arrow-symbol">
-      &#11013;
-    </span>
+    <span className="arrow-symbol">&#11013;</span>
     <span>Back</span>
   </NavLink>
 );

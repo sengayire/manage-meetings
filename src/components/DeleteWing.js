@@ -9,19 +9,41 @@ import notification from '../utils/notification';
 
 import '../assets/styles/deleteModal.scss';
 
+/**
+ * Delete Wing Component
+ *
+ * @extends React.Component
+ *
+ * @returns {JSX}
+ */
 export class DeleteWing extends React.Component {
   state = {
     closeModal: false,
   };
 
+  /**
+   * Ensures that the modal for deleting wing closes
+   *
+   * @returns {void}
+   */
   handleCloseModal = () => {
     this.setState({ closeModal: true });
   };
 
+  /**
+   * Handles the state changes for the deleting wing modal
+   *
+   * @returns {void}
+   */
   handleModalStateChange = () => {
     this.state.closeModal && this.setState({ closeModal: false });
   };
 
+  /**
+   * Handles deleting wing
+   *
+   * @returns {void}
+   */
   handleDeleteWing = () => {
     const { wingId, deleteWing } = this.props;
     deleteWing({
@@ -51,8 +73,8 @@ export class DeleteWing extends React.Component {
       >
         <div className="delete-modal-content">
           <p id="confirm-msg">
-            Are you sure you want to delete the {`"${this.props.wingName}"`} wing? This cannot
-            be undone & all data will be lost
+            Are you sure you want to delete the {`"${this.props.wingName}"`}{' '}
+            wing? This cannot be undone & all data will be lost
           </p>
           <div className="modal-actions">
             <button id="cancel-btn" onClick={this.handleCloseModal}>
@@ -72,7 +94,6 @@ DeleteWing.propTypes = {
   deleteWing: PropTypes.func.isRequired,
   wingName: PropTypes.string.isRequired,
   wingId: PropTypes.string.isRequired,
-
 };
 
 export default compose(

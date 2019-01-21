@@ -3,10 +3,20 @@ import PropTypes from 'prop-types';
 import EditRoomFunc from './rooms/EditRoom';
 import DeleteRoomComponent from './DeleteRoom';
 
+/**
+ * Shows the room component
+ *
+ * @param {Object} room
+ *
+ * @returns {JSX}
+ */
 const Room = ({
   room: {
     name, location, office, locationId, id,
-  }, locations, currentPage, refetch,
+  },
+  locations,
+  currentPage,
+  refetch,
 }) => (
   <tr>
     <td>{name}</td>
@@ -20,7 +30,8 @@ const Room = ({
         roomId={id}
         currentPage={currentPage}
         refetch={refetch}
-      /> &nbsp;
+      />{' '}
+      &nbsp;
       <DeleteRoomComponent
         roomName={name}
         id="delete-modal"
@@ -37,12 +48,15 @@ Room.propTypes = {
     name: PropTypes.string.isRequired,
     location: PropTypes.string.isRequired,
     office: PropTypes.string.isRequired,
-    locationId: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+    locationId: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+      .isRequired,
   }).isRequired,
-  locations: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-    name: PropTypes.string,
-  })).isRequired,
+  locations: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+      name: PropTypes.string,
+    }),
+  ).isRequired,
   currentPage: PropTypes.number,
   refetch: PropTypes.func,
 };

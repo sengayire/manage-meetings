@@ -10,12 +10,21 @@ import TopMenu from '../navbars/TopMenu';
 
 import SingleRoom from './SingleRoom';
 import rooms from '../../fixtures/roomFeedbackList';
-
+/**
+ * Component for RoomFeedbackResponseList
+ *
+ * @extends React.Component
+ *
+ * @returns {JSX}
+ */
 class RoomFeedbackResponseList extends React.Component {
   state = { visible: false };
 
   /**
    * Sets component state after comparing roomId state with id argument
+   *
+   * @param {Object} event
+   * @param {string} id
    */
   showModal = (e, id = null) => {
     e.preventDefault();
@@ -33,9 +42,6 @@ class RoomFeedbackResponseList extends React.Component {
     }
   };
 
-  /**
-   * Maps over the list of feedback and returns each one of them
-   */
   roomFeedbackItems = roomFeedbackResponse.map(feedback => (
     <RoomFeedbackResponse
       roomFeedbackResponse={feedback}
@@ -44,6 +50,11 @@ class RoomFeedbackResponseList extends React.Component {
     />
   ));
 
+  /**
+   * Renders export button
+   *
+   * @returns {JSX}
+   */
   renderExportButton = () => (
     <span className="export-button">
       <svg
@@ -58,6 +69,11 @@ class RoomFeedbackResponseList extends React.Component {
     </span>
   );
 
+  /**
+   * Renders location input
+   *
+   * @returns {JSX}
+   */
   renderLocationInput = () => (
     <input
       type="text"
@@ -68,6 +84,11 @@ class RoomFeedbackResponseList extends React.Component {
     />
   );
 
+  /**
+   * Renders filter button
+   *
+   * @returns {JSX}
+   */
   renderFilterButton = () => (
     <span className="feedback-filter-button">
       Filter
@@ -80,6 +101,11 @@ class RoomFeedbackResponseList extends React.Component {
     </span>
   );
 
+  /**
+   * Renders a card
+   *
+   * @returns {JSX}
+   */
   renderCard = () => {
     const cardsContent = [
       {
@@ -106,11 +132,6 @@ class RoomFeedbackResponseList extends React.Component {
     ));
   };
 
-  /**
-   * Represents a list of feedback
-   * @returns {JSX}
-   * @constructor
-   */
   render() {
     const { roomId } = this.state;
     return (

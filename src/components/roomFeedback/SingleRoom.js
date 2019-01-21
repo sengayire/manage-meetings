@@ -11,7 +11,8 @@ class SingleRoomFeedBack extends Component {
    * Loops through the room cleanliness
    * ratings and determines how to render
    * the green and grey Stars.
-   * @return {[type]} [html]
+   *
+   * @return {JSX}
    */
   roomCleanlinessRating = () => {
     const { rooms, roomId } = this.props;
@@ -32,7 +33,8 @@ class SingleRoomFeedBack extends Component {
   /**
    * Loops through the room responses
    * and returns a list of the room's feedback
-   * @return {[type]} [html]
+   *
+   * @return {JSX}
    */
   roomFeedbackList = () => {
     const { rooms, roomId } = this.props;
@@ -65,7 +67,7 @@ class SingleRoomFeedBack extends Component {
   render() {
     const { rooms, roomId } = this.props;
 
-    return (!this.props.visible || !roomId) ? null : (
+    return !this.props.visible || !roomId ? null : (
       <div className="modal-wrapper">
         <div className="modal-header">
           {rooms[roomId].name}
@@ -86,7 +88,9 @@ class SingleRoomFeedBack extends Component {
             </div>
           </div>
         </div>
-        <div className="row-2-heading">{rooms[roomId].responses.length} Responses</div>
+        <div className="row-2-heading">
+          {rooms[roomId].responses.length} Responses
+        </div>
         <div className="row-2">{this.roomFeedbackList()}</div>
       </div>
     );

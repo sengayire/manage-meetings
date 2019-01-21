@@ -4,6 +4,13 @@ import PropTypes from 'prop-types';
 import DayPicker, { DateUtils } from 'react-day-picker';
 import 'react-day-picker/lib/style.css';
 
+/**
+ * Component for selecting date range
+ *
+ * @extends React.Component
+ *
+ * @returns {JSX}
+ */
 export default class PickRange extends React.Component {
   static propTypes = {
     handleChange: PropTypes.func.isRequired,
@@ -11,8 +18,13 @@ export default class PickRange extends React.Component {
   state = {
     from: '',
     to: '',
-  }
+  };
 
+  /**
+   * Gets the number of days
+   *
+   * @returns {string}
+   */
   getNumberOfDays = () => {
     const { from, to } = this.state;
     const fromDate = moment(from, 'DD/MM/YYYY');
@@ -25,33 +37,52 @@ export default class PickRange extends React.Component {
       return `${days} day`;
     }
     return `${days} days`;
-  }
+  };
 
+  /**
+   * Changes the range of days when day picker is clicked
+   *
+   * @param {date} day
+   *
+   * @returns {void}
+   */
   handleDayClick = (day) => {
     const range = DateUtils.addDayToRange(day, this.state);
     this.setState(range);
     this.props.handleChange(range);
-  }
+  };
 
+  /**
+   * Calculates the number of days between
+   * the selected start and the end date
+   *
+   * @param {date} from
+   * @param {date} to
+   *
+   * @returns {JSX}
+   */
   calculatedDays = (from, to) => (
     <div className="date_nav">
       <p id="chosen-days">
-        { from && to
-          ? (
-            <span className="selected_date">
-              <span>Selected:</span>
-              <span className="selected_single_date">{from.toString().slice(4, 15)}</span>
-              <span>to</span>
-              <span className="selected_single_date">{to.toString().slice(4, 15)}</span>
+        {from && to ? (
+          <span className="selected_date">
+            <span>Selected:</span>
+            <span className="selected_single_date">
+              {from.toString().slice(4, 15)}
             </span>
-            )
-          : !from && to
-            ? 'Please select a day.'
-            : 'Please select a day.'
-          }
+            <span>to</span>
+            <span className="selected_single_date">
+              {to.toString().slice(4, 15)}
+            </span>
+          </span>
+        ) : !from && to ? (
+          'Please select a day.'
+        ) : (
+          'Please select a day.'
+        )}
       </p>
     </div>
-  )
+  );
 
   render() {
     const { from, to } = this.state;
@@ -60,7 +91,9 @@ export default class PickRange extends React.Component {
       <div className="date_di ">
         <div>
           {this.calculatedDays(from, to)}
-          <div className="date_nav number_of_days" ><span>{this.getNumberOfDays()}</span></div>
+          <div className="date_nav number_of_days">
+            <span>{this.getNumberOfDays()}</span>
+          </div>
         </div>
         <DayPicker
           className="Selectable"

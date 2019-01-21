@@ -4,6 +4,13 @@ import BookedRoomsHOC from './BookedRoomsHOC';
 import BookedRooms from './BookedRooms';
 import '../../assets/styles/composed-rooms.scss';
 
+/**
+ * Component for composed booked rooms
+ *
+ * @param {object} dateValueObject
+ *
+ * @returns {JSX}
+ */
 const ComposedBookedRooms = ({ dateValue }) => (
   <div className="wrap-composed-rooms">
     <div>

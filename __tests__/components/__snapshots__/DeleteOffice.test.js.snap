@@ -17,7 +17,8 @@ exports[`DeleteOffice Test Suite renders as expected 1`] = `
     >
       Are you sure you want to delete the 
       "EPIC TOWER"
-       office? This cannot be undone & all data will be lost
+       
+      office? This cannot be undone & all data will be lost
     </p>
     <div
       className="modal-actions"

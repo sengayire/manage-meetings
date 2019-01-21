@@ -11,8 +11,15 @@ export class Input extends Component {
 
   clear = () => {
     this.inputRef.current.value = 0;
-  }
+  };
 
+  /**
+   * Increases and decreases numeric input value
+   *
+   * @param {object} event
+   *
+   * @returns {void}
+   */
   handleIncrement = (event) => {
     const { onChange } = this.props;
     event.preventDefault();
@@ -36,17 +43,27 @@ export class Input extends Component {
         this.inputRef.current.value = num - 1;
       }
     }
-  }
+  };
 
   render() {
     const {
-      name, value, inputClass, type, labelName, labelClass, id, placeholder,
-      onChange, controlsClass, ...otherProps
+      name,
+      value,
+      inputClass,
+      type,
+      labelName,
+      labelClass,
+      id,
+      placeholder,
+      onChange,
+      controlsClass,
+      ...otherProps
     } = this.props;
 
     return (
       <div className={labelClass}>
-        <label htmlFor={name}>{labelName}
+        <label htmlFor={name}>
+          {labelName}
           <input
             ref={this.inputRef}
             type={type}
@@ -59,12 +76,12 @@ export class Input extends Component {
             {...otherProps}
           />
 
-          { type === 'number' ?
+          {type === 'number' ? (
             <Controls
               controlsClass={controlsClass}
               handleIncrement={this.handleIncrement}
             />
-            : null }
+          ) : null}
         </label>
       </div>
     );
@@ -73,10 +90,7 @@ export class Input extends Component {
 
 Input.propTypes = {
   name: PropTypes.string.isRequired,
-  value: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.number,
-  ]),
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   inputClass: PropTypes.string,
   controlsClass: PropTypes.string,
   id: PropTypes.string.isRequired,

@@ -4,6 +4,11 @@ import { Mutation } from 'react-apollo';
 import NotificationSetting from './NotificationSetting';
 import UPDATE_NOTIFICATION_MUTATION from '../../../graphql/mutations/Preferences';
 
+/**
+ * Component that shows notification to users
+ *
+ * @returns {JSX}
+ */
 class DeviceNotifications extends Component {
   static propTypes = {
     title: PropTypes.string.isRequired,

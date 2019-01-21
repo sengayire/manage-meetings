@@ -4,7 +4,10 @@ import PropTypes from 'prop-types';
 import { IconMenu } from 'react-toolbox/lib/menu';
 import { Input, SelectInput as Select } from '../commons';
 import '../../assets/styles/filterbutton.scss';
-import { GET_ROOMS_QUERY, GET_LOCATIONS_QUERY } from '../../graphql/queries/Rooms';
+import {
+  GET_ROOMS_QUERY,
+  GET_LOCATIONS_QUERY,
+} from '../../graphql/queries/Rooms';
 import { GET_ALL_OFFICES } from '../../graphql/queries/Offices';
 
 export class FilterButton extends Component {
@@ -39,6 +42,11 @@ export class FilterButton extends Component {
   };
   roomCapacity = React.createRef();
 
+  /**
+   * This clears the state to default values
+   *
+   * @returns {void}
+   */
   handleClear = () => {
     this.setState(
       {
@@ -66,9 +74,25 @@ export class FilterButton extends Component {
     });
   };
 
+  /**
+   * Handles closing the modal for filtering rooms
+   *
+   * @returns {void}
+   */
+
   handleClose = () => {
     this.filterButton.click();
-  }
+  };
+
+  /**
+   * Handles updating the state upon detection
+   * of changes in the input fields
+   *
+   * @param {object} event
+   * @param {number} capacity
+   *
+   * @returns {void}
+   */
 
   handleInputChange = (e, capacity = 0) => {
     const { name, value } = e.target;
@@ -100,6 +124,13 @@ export class FilterButton extends Component {
     });
   };
 
+  /**
+   * Handles searching for rooms during filtering
+   *
+   * @param {object} event
+   *
+   * @returns {void}
+   */
   handleSearch = (e) => {
     const { value } = e.target;
 
@@ -109,7 +140,7 @@ export class FilterButton extends Component {
         this.props.isSearching(search);
       }
     });
-  }
+  };
 
   render() {
     const {
@@ -119,14 +150,21 @@ export class FilterButton extends Component {
     const { allOffices: { offices } = {} } = this.props.offices;
     const selectedOffices =
       offices &&
-      offices.filter(selectedOffice => selectedOffice.location.name === this.state.location);
+      offices.filter(
+        selectedOffice => selectedOffice.location.name === this.state.location,
+      );
     const filterIcon = () => (
-      <div ref={(filterButton) => { this.filterButton = filterButton; }} className="filterBtn">
+      <div
+        ref={(filterButton) => {
+          this.filterButton = filterButton;
+        }}
+        className="filterBtn"
+      >
         <span>Filter</span>
       </div>
     );
     return (
-      <IconMenu className="filter-dropdown" icon={filterIcon()} >
+      <IconMenu className="filter-dropdown" icon={filterIcon()}>
         <div className="filter-search">
           <Input
             id="filterSearch"

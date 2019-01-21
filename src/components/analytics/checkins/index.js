@@ -5,6 +5,11 @@ import checkinSvg from '../../../assets/images/checkins.svg';
 import appBookingsSvg from '../../../assets/images/app_bookings.svg';
 import averageRoomSvg from '../../../assets/images/average_room_utilisation.svg';
 
+/**
+ * Checkins component
+ *
+ * @returns {JSX}
+ */
 const Checkins = () => (
   <div className="checkins">
     <DonutChart

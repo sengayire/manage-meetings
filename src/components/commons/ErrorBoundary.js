@@ -3,6 +3,13 @@ import PropTypes from 'prop-types';
 
 import '../../assets/styles/errorBoundary.scss';
 
+/**
+ * Error catching component
+ *
+ * @extends React.Component
+ *
+ * @returns {JSX}
+ */
 class ErrorBoundary extends React.Component {
   state = { error: null, errorInfo: null };
 
@@ -18,7 +25,7 @@ class ErrorBoundary extends React.Component {
       return (
         <div>
           <h2>Something went wrong.</h2>
-          <details className="wrap" >
+          <details className="wrap">
             {this.state.error && this.state.error.toString()}
             <br />
             {this.state.errorInfo.componentStack}

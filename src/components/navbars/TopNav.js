@@ -11,13 +11,19 @@ import IconAnalytics from '../../assets/images/analytics_icon.svg';
 import IconFeedback from '../../assets/images/feedback_icon.svg';
 import IconSettings from '../../assets/images/settings_icon.svg';
 
-
 const menuItems = [
   { route: ROUTES.analytics, menu: 'Analytics', icon: IconAnalytics },
   { route: ROUTES.settings, icon: IconSettings, menu: 'Settings' },
   { icon: IconFeedback, route: ROUTES.feedback, menu: 'Room Feedback' },
 ];
 
+/**
+ * Component for the top navigation bar
+ *
+ * @extends React.Component
+ *
+ * @returns {JSX}
+ */
 class TopNav extends React.Component {
   constructor(props) {
     super(props);
@@ -36,6 +42,13 @@ class TopNav extends React.Component {
     });
   }
 
+  /**
+   * 1. Set chosen item as the active menu
+   *
+   * @param {string} menuItem
+   *
+   * @returns {void}
+   */
   handleClick = menuItem => () => {
     this.setState({ activeMenu: menuItem });
   };
@@ -46,15 +59,21 @@ class TopNav extends React.Component {
       <div className="top-nav">
         <ul className="converge-menu">
           {menuItems.map(item => (
-            <li key={item.menu} className={activeMenu === item.menu ? 'active' : ''} >
+            <li
+              key={item.menu}
+              className={activeMenu === item.menu ? 'active' : ''}
+            >
               <Link
-                to={item.menu === 'Settings' ? ROUTES.settingsOffices : item.route}
+                to={
+                  item.menu === 'Settings' ? ROUTES.settingsOffices : item.route
+                }
                 onClick={this.handleClick(item.menu)}
                 className="converge-link"
               >
                 <span>
                   <img src={item.icon} alt={item.menu} />
-                </span>{item.menu}
+                </span>
+                {item.menu}
               </Link>
             </li>
           ))}

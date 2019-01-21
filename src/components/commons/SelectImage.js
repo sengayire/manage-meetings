@@ -3,17 +3,25 @@ import PropTypes from 'prop-types';
 import { Button } from '../../../node_modules/react-toolbox/lib/button';
 
 import '../../assets/styles/selectImage.scss';
-// import placeholder from '../../assets/images/placeholder.svg';
 
+/**
+ *
+ * Reusable Image Selector component
+ *
+ * @param {array} props
+ *
+ * @returns {JSX}
+ */
 const SelectImage = (props) => {
   const { onChange, thumbnailName, imageUrl } = props;
   return (
     <div className="image-select">
       <div className="thumbnail">
-        { imageUrl === ''
-        ? <div className="placeholder" />
-        : <img className="uploaded" src={imageUrl} alt="Room Thumbnail" />
-          }
+        {imageUrl === '' ? (
+          <div className="placeholder" />
+        ) : (
+          <img className="uploaded" src={imageUrl} alt="Room Thumbnail" />
+        )}
       </div>
       <div className="select-button">
         <div>{thumbnailName}</div>
