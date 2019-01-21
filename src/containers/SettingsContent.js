@@ -30,6 +30,7 @@ const authorizedUser = [
   'walter.nyeko@andela.com',
   'kevin.bett@andela.com',
   'olayemi.lawal@andela.com',
+  'welike.amos@andela.com',
 ];
 
 /* istanbul ignore next */

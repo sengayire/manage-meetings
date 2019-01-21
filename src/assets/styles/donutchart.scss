@@ -60,28 +60,60 @@
   }
   .chart-content{
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     padding-top: 14px;
-    .chart{
-      margin-left: 20px;
-      width: 160px;
-      height: 160px;
+    position: relative;
+    width: 100%;
+
+    .chart-loader {
+      color: map-get($color-black, 100);
+      padding-top: 25px;
+      font-size: 0.875em;
+      width: 100%;
     }
-    .diagram{
-      position: relative;
-      img{
-        height: 160px; width: 160px;
-      }
-      p{
-        position: absolute;
-        top: calc(50% - 1rem);
-        left: calc(50% - 1rem);
-        font-size: 1.5rem;
-        font-weight: bold;
-        color: map-get($color-black, 600);
-      }
+
+    .centered {
+      padding-right: 70px;
     }
-    .text{
+
+    .error-class{
+      padding-top: 30px;
+    }
+
+    .icon-container {
+      text-align: center;
+    }
+
+    .error-icon{
+      font-size: 20px;
+      height: 30px;
+      width: 22px;
+    }
+
+    .error-msg{
+      padding-top: 7px;
+      text-align: center;
+      color: map-get($color-black, 100);
+    }
+
+    .chart-percentage {
+      top: 45%;
+      left: 23%;
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: map-get($color-black, 600);
+      position: absolute;
+    }
+    .no-info-percentage {
+      top: 45%;
+      left: 45%;
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: map-get($color-black, 600);
+      position: absolute;
+    }
+
+    .chart-text{
       display: flex;
       justify-content: center;
       align-items: left;

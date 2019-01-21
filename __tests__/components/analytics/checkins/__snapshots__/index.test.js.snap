@@ -5,32 +5,56 @@ exports[`Checkins component should render properly 1`] = `
   className="checkins"
 >
   <DonutChart
-    chartSvg="test-file-stub"
+    chartColor={
+      Array [
+        "#3359DB",
+        "#bcbcbc",
+      ]
+    }
     chartTitle="% of Checkins"
-    entries={15}
+    dataName="Checkins"
+    entries={0}
+    error={null}
     hasInfo={true}
     hintText=""
-    percentage={75}
+    loading={false}
+    percentage={0}
     tip="The number and % of check-ins of booked meeting rooms"
-    total={20}
+    total={10}
   />
   <DonutChart
-    chartSvg="test-file-stub"
+    chartColor={
+      Array [
+        "#FFAF30",
+        "#bcbcbc",
+      ]
+    }
     chartTitle="% of App Bookings"
-    entries={4}
+    dataName="Bookings"
+    entries={15}
+    error={null}
     hasInfo={true}
     hintText=""
-    percentage={20}
+    loading={false}
+    percentage={75}
     tip="The number and % of people who book directly from the app instead from google calendar"
     total={20}
   />
   <DonutChart
-    chartSvg="test-file-stub"
+    chartColor={
+      Array [
+        "#49AAAF",
+        "#bcbcbc",
+      ]
+    }
     chartTitle="% of Auto Cancellations"
-    entries={16}
+    dataName="Cancellations"
+    entries={15}
+    error={null}
     hasInfo={false}
     hintText=""
-    percentage={80}
+    loading={false}
+    percentage={75}
     tip="Number and % of auto-cancelled meeting rooms"
     total={20}
   />

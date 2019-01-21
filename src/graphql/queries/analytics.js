@@ -29,7 +29,19 @@ const ANALYTICS_BOOKINGS_COUNT = gql`
   }
 `;
 
+const CHECKINS_BOOKINGS_CANCELLATIONS_PERCENTAGES = gql`
+  query AnalyticsRatiosTotal($startDate: String!, $endDate: String!){
+    analyticsRatios(startDate: $startDate, endDate: $endDate){
+      checkins
+      checkinsPercentage
+      bookings
+      cancellationsPercentage
+    }
+  }
+`;
+
 export {
   MEETING_DURATION_ANALYTICS as default,
   ANALYTICS_BOOKINGS_COUNT,
+  CHECKINS_BOOKINGS_CANCELLATIONS_PERCENTAGES,
 };
