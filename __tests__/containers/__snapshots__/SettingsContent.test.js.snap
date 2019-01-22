@@ -2,64 +2,68 @@
 
 exports[`Tests for SettingsContent renders correctly in memory 1`] = `
 <div
-  className="settings-vertical"
+  className="outer-div"
 >
-  <SettingsNav />
   <div
-    className="settings-tab-content"
+    className="settings-vertical undefined"
   >
-    <Switch>
-      <Route
-        component={[Function]}
-        exact={true}
-        path="/settings/offices"
-      />
-      <Route
-        component={[Function]}
-        exact={true}
-        path="/settings/floors"
-      />
-      <Route
-        component={[Function]}
-        exact={true}
-        path="/settings/rooms"
-      />
-      <Route
-        component={[Function]}
-        exact={true}
-        path="/settings/resources"
-      />
-      <Route
-        component={[Function]}
-        exact={true}
-        path="/settings/people"
-      />
-      <Route
-        component={[Function]}
-        exact={true}
-        path="/settings/devices"
-      />
-      <Route
-        component={[Function]}
-        exact={true}
-        path="/settings/integrations"
-      />
-      <Route
-        component={[Function]}
-        exact={true}
-        path="/settings/integrations"
-      />
-      <Route
-        component={[Function]}
-        exact={true}
-        path="/settings/wings"
-      />
-      <Redirect
-        from="/settings"
-        push={false}
-        to="/analytics"
-      />
-    </Switch>
+    <SettingsNav />
+    <div
+      className="settings-tab-content"
+    >
+      <Switch>
+        <Route
+          component={[Function]}
+          exact={true}
+          path="/settings/offices"
+        />
+        <Route
+          component={[Function]}
+          exact={true}
+          path="/settings/floors"
+        />
+        <Route
+          component={[Function]}
+          exact={true}
+          path="/settings/rooms"
+        />
+        <Route
+          component={[Function]}
+          exact={true}
+          path="/settings/resources"
+        />
+        <Route
+          component={[Function]}
+          exact={true}
+          path="/settings/people"
+        />
+        <Route
+          component={[Function]}
+          exact={true}
+          path="/settings/devices"
+        />
+        <Route
+          component={[Function]}
+          exact={true}
+          path="/settings/integrations"
+        />
+        <Route
+          component={[Function]}
+          exact={true}
+          path="/settings/integrations"
+        />
+        <Route
+          component={[Function]}
+          exact={true}
+          path="/settings/wings"
+        />
+        <Redirect
+          from="/settings"
+          push={false}
+          to="/analytics"
+        />
+      </Switch>
+    </div>
   </div>
 </div>
 `;

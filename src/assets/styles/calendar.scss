@@ -45,11 +45,11 @@
       .apply_button {
         background-color:$color-primary; 
         color: map-get($color-white, 000);
-        height: 13px;
-        width: 50px;
-        padding: 4px 50px 16px 12px; 
-        line-height: 14px;
-        font-weight: 500;
+        height: 14px;
+        width: 36px;
+        padding: 6px 40px 20px 6px;
+        align-content: right;
+        line-height: 14px;font-weight: 500;
       }
       
       &__item {
