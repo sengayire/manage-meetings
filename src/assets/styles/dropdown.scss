@@ -9,6 +9,7 @@
   border-radius: 2px;
   box-shadow: 0px 2px 6px map-get($color-white, 700);
   color: $color-primary;
+  z-index: 99;
 }
 
 .dropdown-menu:before, .dropdown-menu:after {
