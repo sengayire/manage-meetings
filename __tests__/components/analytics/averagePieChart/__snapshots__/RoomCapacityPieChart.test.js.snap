@@ -32,10 +32,7 @@ exports[`Room Capacity Pie Chart Component renders correctly from memory 1`] = `
   <section
     className="chart-content"
   >
-    <img
-      alt="average meeting chart"
-      src="test-file-stub"
-    />
+    <Apollo(GetAverageRoomCapacityComponent) />
     <section
       className="chart-details"
     >
@@ -94,10 +91,7 @@ exports[`Room Capacity Pie Chart Component should be able to hover 1`] = `
   <section
     className="chart-content"
   >
-    <img
-      alt="average meeting chart"
-      src="test-file-stub"
-    />
+    <Apollo(GetAverageRoomCapacityComponent) />
     <section
       className="chart-details"
     >
@@ -156,10 +150,7 @@ exports[`Room Capacity Pie Chart Component should be able to hover 2`] = `
   <section
     className="chart-content"
   >
-    <img
-      alt="average meeting chart"
-      src="test-file-stub"
-    />
+    <Apollo(GetAverageRoomCapacityComponent) />
     <section
       className="chart-details"
     >

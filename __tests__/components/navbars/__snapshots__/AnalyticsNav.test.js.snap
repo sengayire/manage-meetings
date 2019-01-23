@@ -228,6 +228,93 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
               "email": "sammy.muriuki@andela.com",
             },
           },
+          "data" => Object {
+            "query": Object {
+              "definitions": Array [
+                Object {
+                  "directives": Array [],
+                  "kind": "OperationDefinition",
+                  "name": undefined,
+                  "operation": "query",
+                  "selectionSet": Object {
+                    "kind": "SelectionSet",
+                    "selections": Array [
+                      Object {
+                        "alias": undefined,
+                        "arguments": Array [],
+                        "directives": Array [],
+                        "kind": "Field",
+                        "name": Object {
+                          "kind": "Name",
+                          "value": "allRooms",
+                        },
+                        "selectionSet": Object {
+                          "kind": "SelectionSet",
+                          "selections": Array [
+                            Object {
+                              "alias": undefined,
+                              "arguments": Array [],
+                              "directives": Array [],
+                              "kind": "Field",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "rooms",
+                              },
+                              "selectionSet": Object {
+                                "kind": "SelectionSet",
+                                "selections": Array [
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "id",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "name",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "capacity",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
+                                ],
+                              },
+                            },
+                          ],
+                        },
+                      },
+                    ],
+                  },
+                  "variableDefinitions": Array [],
+                },
+              ],
+              "kind": "Document",
+              "loc": Object {
+                "end": 73,
+                "start": 0,
+              },
+            },
+            "variables": undefined,
+          },
           "AnalyticsBookingsCount" => Object {
             "query": Object {
               "definitions": Array [
@@ -363,13 +450,8 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
               },
             },
             "variables": Object {
-<<<<<<< HEAD
-              "endDate": "Jan 20 2019",
-              "startDate": "Jan 20 2019",
-=======
-              "endDate": "Jan 22 2019",
-              "startDate": "Jan 22 2019",
->>>>>>> feat(maintenance) user should see page maintenance
+              "endDate": "Jan 23 2019",
+              "startDate": "Jan 23 2019",
             },
           },
           "durationOfMeetingsPerMeetingRoom" => Object {
@@ -630,17 +712,10 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
               },
             },
             "variables": Object {
-<<<<<<< HEAD
-              "endDate": "Jan 20 2019",
+              "endDate": "Jan 23 2019",
               "page": 1,
               "perPage": 5,
-              "startDate": "Jan 20 2019",
-=======
-              "endDate": "Jan 22 2019",
-              "page": 1,
-              "perPage": 5,
-              "startDate": "Jan 22 2019",
->>>>>>> feat(maintenance) user should see page maintenance
+              "startDate": "Jan 23 2019",
             },
           },
         },
@@ -658,6 +733,96 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
           "optimistic": Array [],
           "silenceBroadcast": false,
           "watches": Array [
+            Object {
+              "callback": [Function],
+              "optimistic": true,
+              "previousResult": [Function],
+              "query": Object {
+                "definitions": Array [
+                  Object {
+                    "directives": Array [],
+                    "kind": "OperationDefinition",
+                    "name": undefined,
+                    "operation": "query",
+                    "selectionSet": Object {
+                      "kind": "SelectionSet",
+                      "selections": Array [
+                        Object {
+                          "alias": undefined,
+                          "arguments": Array [],
+                          "directives": Array [],
+                          "kind": "Field",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "allRooms",
+                          },
+                          "selectionSet": Object {
+                            "kind": "SelectionSet",
+                            "selections": Array [
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "rooms",
+                                },
+                                "selectionSet": Object {
+                                  "kind": "SelectionSet",
+                                  "selections": Array [
+                                    Object {
+                                      "alias": undefined,
+                                      "arguments": Array [],
+                                      "directives": Array [],
+                                      "kind": "Field",
+                                      "name": Object {
+                                        "kind": "Name",
+                                        "value": "id",
+                                      },
+                                      "selectionSet": undefined,
+                                    },
+                                    Object {
+                                      "alias": undefined,
+                                      "arguments": Array [],
+                                      "directives": Array [],
+                                      "kind": "Field",
+                                      "name": Object {
+                                        "kind": "Name",
+                                        "value": "name",
+                                      },
+                                      "selectionSet": undefined,
+                                    },
+                                    Object {
+                                      "alias": undefined,
+                                      "arguments": Array [],
+                                      "directives": Array [],
+                                      "kind": "Field",
+                                      "name": Object {
+                                        "kind": "Name",
+                                        "value": "capacity",
+                                      },
+                                      "selectionSet": undefined,
+                                    },
+                                  ],
+                                },
+                              },
+                            ],
+                          },
+                        },
+                      ],
+                    },
+                    "variableDefinitions": Array [],
+                  },
+                ],
+                "kind": "Document",
+                "loc": Object {
+                  "end": 73,
+                  "start": 0,
+                },
+              },
+              "variables": undefined,
+            },
             Object {
               "callback": [Function],
               "optimistic": true,
@@ -796,13 +961,8 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                 },
               },
               "variables": Object {
-<<<<<<< HEAD
-                "endDate": "Jan 20 2019",
-                "startDate": "Jan 20 2019",
-=======
-                "endDate": "Jan 22 2019",
-                "startDate": "Jan 22 2019",
->>>>>>> feat(maintenance) user should see page maintenance
+                "endDate": "Jan 23 2019",
+                "startDate": "Jan 23 2019",
               },
             },
             Object {
@@ -1066,17 +1226,10 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                 },
               },
               "variables": Object {
-<<<<<<< HEAD
-                "endDate": "Jan 20 2019",
+                "endDate": "Jan 23 2019",
                 "page": 1,
                 "perPage": 5,
-                "startDate": "Jan 20 2019",
-=======
-                "endDate": "Jan 22 2019",
-                "page": 1,
-                "perPage": 5,
-                "startDate": "Jan 22 2019",
->>>>>>> feat(maintenance) user should see page maintenance
+                "startDate": "Jan 23 2019",
               },
             },
             Object {
@@ -1220,6 +1373,96 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                       Object {
                         "directives": Array [],
                         "kind": "OperationDefinition",
+                        "name": undefined,
+                        "operation": "query",
+                        "selectionSet": Object {
+                          "kind": "SelectionSet",
+                          "selections": Array [
+                            Object {
+                              "alias": undefined,
+                              "arguments": Array [],
+                              "directives": Array [],
+                              "kind": "Field",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "allRooms",
+                              },
+                              "selectionSet": Object {
+                                "kind": "SelectionSet",
+                                "selections": Array [
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "rooms",
+                                    },
+                                    "selectionSet": Object {
+                                      "kind": "SelectionSet",
+                                      "selections": Array [
+                                        Object {
+                                          "alias": undefined,
+                                          "arguments": Array [],
+                                          "directives": Array [],
+                                          "kind": "Field",
+                                          "name": Object {
+                                            "kind": "Name",
+                                            "value": "id",
+                                          },
+                                          "selectionSet": undefined,
+                                        },
+                                        Object {
+                                          "alias": undefined,
+                                          "arguments": Array [],
+                                          "directives": Array [],
+                                          "kind": "Field",
+                                          "name": Object {
+                                            "kind": "Name",
+                                            "value": "name",
+                                          },
+                                          "selectionSet": undefined,
+                                        },
+                                        Object {
+                                          "alias": undefined,
+                                          "arguments": Array [],
+                                          "directives": Array [],
+                                          "kind": "Field",
+                                          "name": Object {
+                                            "kind": "Name",
+                                            "value": "capacity",
+                                          },
+                                          "selectionSet": undefined,
+                                        },
+                                      ],
+                                    },
+                                  },
+                                ],
+                              },
+                            },
+                          ],
+                        },
+                        "variableDefinitions": Array [],
+                      },
+                    ],
+                    "kind": "Document",
+                    "loc": Object {
+                      "end": 73,
+                      "start": 0,
+                    },
+                  },
+                  "variables": undefined,
+                },
+                Object {
+                  "callback": [Function],
+                  "optimistic": true,
+                  "previousResult": [Function],
+                  "query": Object {
+                    "definitions": Array [
+                      Object {
+                        "directives": Array [],
+                        "kind": "OperationDefinition",
                         "name": Object {
                           "kind": "Name",
                           "value": "AnalyticsBookingsCount",
@@ -1349,13 +1592,8 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                     },
                   },
                   "variables": Object {
-<<<<<<< HEAD
-                    "endDate": "Jan 20 2019",
-                    "startDate": "Jan 20 2019",
-=======
-                    "endDate": "Jan 22 2019",
-                    "startDate": "Jan 22 2019",
->>>>>>> feat(maintenance) user should see page maintenance
+                    "endDate": "Jan 23 2019",
+                    "startDate": "Jan 23 2019",
                   },
                 },
                 Object {
@@ -1619,17 +1857,10 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                     },
                   },
                   "variables": Object {
-<<<<<<< HEAD
-                    "endDate": "Jan 20 2019",
+                    "endDate": "Jan 23 2019",
                     "page": 1,
                     "perPage": 5,
-                    "startDate": "Jan 20 2019",
-=======
-                    "endDate": "Jan 22 2019",
-                    "page": 1,
-                    "perPage": 5,
-                    "startDate": "Jan 22 2019",
->>>>>>> feat(maintenance) user should see page maintenance
+                    "startDate": "Jan 23 2019",
                   },
                 },
                 Object {
@@ -1745,10 +1976,6 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
             "request": [Function],
           },
           "fetchQueryPromises": Map {
-            "4" => Object {
-              "reject": [Function],
-              "resolve": [Function],
-            },
             "5" => Object {
               "reject": [Function],
               "resolve": [Function],
@@ -1757,8 +1984,16 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
               "reject": [Function],
               "resolve": [Function],
             },
+            "7" => Object {
+              "reject": [Function],
+              "resolve": [Function],
+            },
+            "8" => Object {
+              "reject": [Function],
+              "resolve": [Function],
+            },
           },
-          "idCounter": 7,
+          "idCounter": 9,
           "link": ApolloLink {
             "request": [Function],
           },
@@ -1768,6 +2003,225 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
           "onBroadcast": [Function],
           "queries": Map {
             "2" => Object {
+              "cancel": [Function],
+              "document": Object {
+                "definitions": Array [
+                  Object {
+                    "directives": Array [],
+                    "kind": "OperationDefinition",
+                    "name": undefined,
+                    "operation": "query",
+                    "selectionSet": Object {
+                      "kind": "SelectionSet",
+                      "selections": Array [
+                        Object {
+                          "alias": undefined,
+                          "arguments": Array [],
+                          "directives": Array [],
+                          "kind": "Field",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "allRooms",
+                          },
+                          "selectionSet": Object {
+                            "kind": "SelectionSet",
+                            "selections": Array [
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "rooms",
+                                },
+                                "selectionSet": Object {
+                                  "kind": "SelectionSet",
+                                  "selections": Array [
+                                    Object {
+                                      "alias": undefined,
+                                      "arguments": Array [],
+                                      "directives": Array [],
+                                      "kind": "Field",
+                                      "name": Object {
+                                        "kind": "Name",
+                                        "value": "id",
+                                      },
+                                      "selectionSet": undefined,
+                                    },
+                                    Object {
+                                      "alias": undefined,
+                                      "arguments": Array [],
+                                      "directives": Array [],
+                                      "kind": "Field",
+                                      "name": Object {
+                                        "kind": "Name",
+                                        "value": "name",
+                                      },
+                                      "selectionSet": undefined,
+                                    },
+                                    Object {
+                                      "alias": undefined,
+                                      "arguments": Array [],
+                                      "directives": Array [],
+                                      "kind": "Field",
+                                      "name": Object {
+                                        "kind": "Name",
+                                        "value": "capacity",
+                                      },
+                                      "selectionSet": undefined,
+                                    },
+                                  ],
+                                },
+                              },
+                            ],
+                          },
+                        },
+                      ],
+                    },
+                    "variableDefinitions": Array [],
+                  },
+                ],
+                "kind": "Document",
+                "loc": Object {
+                  "end": 73,
+                  "start": 0,
+                },
+              },
+              "invalidate": false,
+              "invalidated": false,
+              "lastRequestId": 5,
+              "listeners": Array [
+                [Function],
+              ],
+              "newData": null,
+              "observableQuery": ObservableQuery {
+                "_subscriber": [Function],
+                "isCurrentlyPolling": false,
+                "isTornDown": false,
+                "observers": Array [
+                  SubscriptionObserver {
+                    "_subscription": Subscription {
+                      "_cleanup": [Function],
+                      "_observer": Object {
+                        "error": [Function],
+                        "next": [Function],
+                      },
+                      "_queue": undefined,
+                      "_state": "ready",
+                    },
+                  },
+                ],
+                "options": Object {
+                  "context": Object {},
+                  "metadata": Object {
+                    "reactComponent": Object {
+                      "displayName": "Apollo(GetAverageRoomCapacityComponent)",
+                    },
+                  },
+                  "notifyOnNetworkStatusChange": false,
+                  "query": Object {
+                    "definitions": Array [
+                      Object {
+                        "directives": Array [],
+                        "kind": "OperationDefinition",
+                        "name": undefined,
+                        "operation": "query",
+                        "selectionSet": Object {
+                          "kind": "SelectionSet",
+                          "selections": Array [
+                            Object {
+                              "alias": undefined,
+                              "arguments": Array [],
+                              "directives": Array [],
+                              "kind": "Field",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "allRooms",
+                              },
+                              "selectionSet": Object {
+                                "kind": "SelectionSet",
+                                "selections": Array [
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "rooms",
+                                    },
+                                    "selectionSet": Object {
+                                      "kind": "SelectionSet",
+                                      "selections": Array [
+                                        Object {
+                                          "alias": undefined,
+                                          "arguments": Array [],
+                                          "directives": Array [],
+                                          "kind": "Field",
+                                          "name": Object {
+                                            "kind": "Name",
+                                            "value": "id",
+                                          },
+                                          "selectionSet": undefined,
+                                        },
+                                        Object {
+                                          "alias": undefined,
+                                          "arguments": Array [],
+                                          "directives": Array [],
+                                          "kind": "Field",
+                                          "name": Object {
+                                            "kind": "Name",
+                                            "value": "name",
+                                          },
+                                          "selectionSet": undefined,
+                                        },
+                                        Object {
+                                          "alias": undefined,
+                                          "arguments": Array [],
+                                          "directives": Array [],
+                                          "kind": "Field",
+                                          "name": Object {
+                                            "kind": "Name",
+                                            "value": "capacity",
+                                          },
+                                          "selectionSet": undefined,
+                                        },
+                                      ],
+                                    },
+                                  },
+                                ],
+                              },
+                            },
+                          ],
+                        },
+                        "variableDefinitions": Array [],
+                      },
+                    ],
+                    "kind": "Document",
+                    "loc": Object {
+                      "end": 73,
+                      "start": 0,
+                    },
+                  },
+                },
+                "queryId": "2",
+                "queryManager": [Circular],
+                "scheduler": QueryScheduler {
+                  "inFlightQueries": Object {},
+                  "intervalQueries": Object {},
+                  "pollingTimers": Object {},
+                  "queryManager": [Circular],
+                  "registeredQueries": Object {},
+                  "ssrMode": false,
+                },
+                "shouldSubscribe": true,
+                "subscriptionHandles": Array [],
+                "variables": Object {},
+              },
+              "subscriptions": Array [],
+            },
+            "3" => Object {
               "cancel": [Function],
               "document": Object {
                 "definitions": Array [
@@ -1904,7 +2358,7 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
               },
               "invalidate": false,
               "invalidated": false,
-              "lastRequestId": 4,
+              "lastRequestId": 6,
               "listeners": Array [
                 [Function],
               ],
@@ -2068,16 +2522,11 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                     },
                   },
                   "variables": Object {
-<<<<<<< HEAD
-                    "endDate": "Jan 20 2019",
-                    "startDate": "Jan 20 2019",
-=======
-                    "endDate": "Jan 22 2019",
-                    "startDate": "Jan 22 2019",
->>>>>>> feat(maintenance) user should see page maintenance
+                    "endDate": "Jan 23 2019",
+                    "startDate": "Jan 23 2019",
                   },
                 },
-                "queryId": "2",
+                "queryId": "3",
                 "queryManager": [Circular],
                 "scheduler": QueryScheduler {
                   "inFlightQueries": Object {},
@@ -2090,18 +2539,13 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                 "shouldSubscribe": true,
                 "subscriptionHandles": Array [],
                 "variables": Object {
-<<<<<<< HEAD
-                  "endDate": "Jan 20 2019",
-                  "startDate": "Jan 20 2019",
-=======
-                  "endDate": "Jan 22 2019",
-                  "startDate": "Jan 22 2019",
->>>>>>> feat(maintenance) user should see page maintenance
+                  "endDate": "Jan 23 2019",
+                  "startDate": "Jan 23 2019",
                 },
               },
               "subscriptions": Array [],
             },
-            "3" => Object {
+            "4" => Object {
               "cancel": [Function],
               "document": Object {
                 "definitions": Array [
@@ -2361,7 +2805,7 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
               },
               "invalidate": false,
               "invalidated": false,
-              "lastRequestId": 5,
+              "lastRequestId": 7,
               "listeners": Array [
                 [Function],
               ],
@@ -2648,20 +3092,13 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                     },
                   },
                   "variables": Object {
-<<<<<<< HEAD
-                    "endDate": "Jan 20 2019",
+                    "endDate": "Jan 23 2019",
                     "page": 1,
                     "perPage": 5,
-                    "startDate": "Jan 20 2019",
-=======
-                    "endDate": "Jan 22 2019",
-                    "page": 1,
-                    "perPage": 5,
-                    "startDate": "Jan 22 2019",
->>>>>>> feat(maintenance) user should see page maintenance
+                    "startDate": "Jan 23 2019",
                   },
                 },
-                "queryId": "3",
+                "queryId": "4",
                 "queryManager": [Circular],
                 "scheduler": QueryScheduler {
                   "inFlightQueries": Object {},
@@ -2674,17 +3111,10 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                 "shouldSubscribe": true,
                 "subscriptionHandles": Array [],
                 "variables": Object {
-<<<<<<< HEAD
-                  "endDate": "Jan 20 2019",
+                  "endDate": "Jan 23 2019",
                   "page": 1,
                   "perPage": 5,
-                  "startDate": "Jan 20 2019",
-=======
-                  "endDate": "Jan 22 2019",
-                  "page": 1,
-                  "perPage": 5,
-                  "startDate": "Jan 22 2019",
->>>>>>> feat(maintenance) user should see page maintenance
+                  "startDate": "Jan 23 2019",
                 },
               },
               "subscriptions": Array [],
@@ -2791,7 +3221,7 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
               },
               "invalidate": false,
               "invalidated": false,
-              "lastRequestId": 6,
+              "lastRequestId": 8,
               "listeners": Array [
                 [Function],
               ],
@@ -2956,10 +3386,10 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
           "queryDeduplication": true,
           "queryIdsByName": Object {
             "AnalyticsBookingsCount": Array [
-              "2",
+              "3",
             ],
             "durationOfMeetingsPerMeetingRoom": Array [
-              "3",
+              "4",
             ],
             "user": Array [
               "1",
@@ -3080,6 +3510,102 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                 },
               },
               "2": Object {
+                "document": Object {
+                  "definitions": Array [
+                    Object {
+                      "directives": Array [],
+                      "kind": "OperationDefinition",
+                      "name": undefined,
+                      "operation": "query",
+                      "selectionSet": Object {
+                        "kind": "SelectionSet",
+                        "selections": Array [
+                          Object {
+                            "alias": undefined,
+                            "arguments": Array [],
+                            "directives": Array [],
+                            "kind": "Field",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "allRooms",
+                            },
+                            "selectionSet": Object {
+                              "kind": "SelectionSet",
+                              "selections": Array [
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "rooms",
+                                  },
+                                  "selectionSet": Object {
+                                    "kind": "SelectionSet",
+                                    "selections": Array [
+                                      Object {
+                                        "alias": undefined,
+                                        "arguments": Array [],
+                                        "directives": Array [],
+                                        "kind": "Field",
+                                        "name": Object {
+                                          "kind": "Name",
+                                          "value": "id",
+                                        },
+                                        "selectionSet": undefined,
+                                      },
+                                      Object {
+                                        "alias": undefined,
+                                        "arguments": Array [],
+                                        "directives": Array [],
+                                        "kind": "Field",
+                                        "name": Object {
+                                          "kind": "Name",
+                                          "value": "name",
+                                        },
+                                        "selectionSet": undefined,
+                                      },
+                                      Object {
+                                        "alias": undefined,
+                                        "arguments": Array [],
+                                        "directives": Array [],
+                                        "kind": "Field",
+                                        "name": Object {
+                                          "kind": "Name",
+                                          "value": "capacity",
+                                        },
+                                        "selectionSet": undefined,
+                                      },
+                                    ],
+                                  },
+                                },
+                              ],
+                            },
+                          },
+                        ],
+                      },
+                      "variableDefinitions": Array [],
+                    },
+                  ],
+                  "kind": "Document",
+                  "loc": Object {
+                    "end": 73,
+                    "start": 0,
+                  },
+                },
+                "graphQLErrors": Array [],
+                "metadata": Object {
+                  "reactComponent": Object {
+                    "displayName": "Apollo(GetAverageRoomCapacityComponent)",
+                  },
+                },
+                "networkError": null,
+                "networkStatus": 1,
+                "previousVariables": null,
+                "variables": Object {},
+              },
+              "3": Object {
                 "document": Object {
                   "definitions": Array [
                     Object {
@@ -3223,16 +3749,11 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                 "networkStatus": 1,
                 "previousVariables": null,
                 "variables": Object {
-<<<<<<< HEAD
-                  "endDate": "Jan 20 2019",
-                  "startDate": "Jan 20 2019",
-=======
-                  "endDate": "Jan 22 2019",
-                  "startDate": "Jan 22 2019",
->>>>>>> feat(maintenance) user should see page maintenance
+                  "endDate": "Jan 23 2019",
+                  "startDate": "Jan 23 2019",
                 },
               },
-              "3": Object {
+              "4": Object {
                 "document": Object {
                   "definitions": Array [
                     Object {
@@ -3499,17 +4020,10 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                 "networkStatus": 1,
                 "previousVariables": null,
                 "variables": Object {
-<<<<<<< HEAD
-                  "endDate": "Jan 20 2019",
+                  "endDate": "Jan 23 2019",
                   "page": 1,
                   "perPage": 5,
-                  "startDate": "Jan 20 2019",
-=======
-                  "endDate": "Jan 22 2019",
-                  "page": 1,
-                  "perPage": 5,
-                  "startDate": "Jan 22 2019",
->>>>>>> feat(maintenance) user should see page maintenance
+                  "startDate": "Jan 23 2019",
                 },
               },
             },
@@ -3542,6 +4056,96 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
             "optimistic": Array [],
             "silenceBroadcast": false,
             "watches": Array [
+              Object {
+                "callback": [Function],
+                "optimistic": true,
+                "previousResult": [Function],
+                "query": Object {
+                  "definitions": Array [
+                    Object {
+                      "directives": Array [],
+                      "kind": "OperationDefinition",
+                      "name": undefined,
+                      "operation": "query",
+                      "selectionSet": Object {
+                        "kind": "SelectionSet",
+                        "selections": Array [
+                          Object {
+                            "alias": undefined,
+                            "arguments": Array [],
+                            "directives": Array [],
+                            "kind": "Field",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "allRooms",
+                            },
+                            "selectionSet": Object {
+                              "kind": "SelectionSet",
+                              "selections": Array [
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "rooms",
+                                  },
+                                  "selectionSet": Object {
+                                    "kind": "SelectionSet",
+                                    "selections": Array [
+                                      Object {
+                                        "alias": undefined,
+                                        "arguments": Array [],
+                                        "directives": Array [],
+                                        "kind": "Field",
+                                        "name": Object {
+                                          "kind": "Name",
+                                          "value": "id",
+                                        },
+                                        "selectionSet": undefined,
+                                      },
+                                      Object {
+                                        "alias": undefined,
+                                        "arguments": Array [],
+                                        "directives": Array [],
+                                        "kind": "Field",
+                                        "name": Object {
+                                          "kind": "Name",
+                                          "value": "name",
+                                        },
+                                        "selectionSet": undefined,
+                                      },
+                                      Object {
+                                        "alias": undefined,
+                                        "arguments": Array [],
+                                        "directives": Array [],
+                                        "kind": "Field",
+                                        "name": Object {
+                                          "kind": "Name",
+                                          "value": "capacity",
+                                        },
+                                        "selectionSet": undefined,
+                                      },
+                                    ],
+                                  },
+                                },
+                              ],
+                            },
+                          },
+                        ],
+                      },
+                      "variableDefinitions": Array [],
+                    },
+                  ],
+                  "kind": "Document",
+                  "loc": Object {
+                    "end": 73,
+                    "start": 0,
+                  },
+                },
+                "variables": undefined,
+              },
               Object {
                 "callback": [Function],
                 "optimistic": true,
@@ -3680,13 +4284,8 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                   },
                 },
                 "variables": Object {
-<<<<<<< HEAD
-                  "endDate": "Jan 20 2019",
-                  "startDate": "Jan 20 2019",
-=======
-                  "endDate": "Jan 22 2019",
-                  "startDate": "Jan 22 2019",
->>>>>>> feat(maintenance) user should see page maintenance
+                  "endDate": "Jan 23 2019",
+                  "startDate": "Jan 23 2019",
                 },
               },
               Object {
@@ -3950,17 +4549,10 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                   },
                 },
                 "variables": Object {
-<<<<<<< HEAD
-                  "endDate": "Jan 20 2019",
+                  "endDate": "Jan 23 2019",
                   "page": 1,
                   "perPage": 5,
-                  "startDate": "Jan 20 2019",
-=======
-                  "endDate": "Jan 22 2019",
-                  "page": 1,
-                  "perPage": 5,
-                  "startDate": "Jan 22 2019",
->>>>>>> feat(maintenance) user should see page maintenance
+                  "startDate": "Jan 23 2019",
                 },
               },
               Object {
@@ -4690,11 +5282,7 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                       className="calendarIconBtn"
                     >
                       <span>
-<<<<<<< HEAD
-                        Jan 20 2019 - Jan 20 2019
-=======
-                        Jan 22 2019 - Jan 22 2019
->>>>>>> feat(maintenance) user should see page maintenance
+                        Jan 23 2019 - Jan 23 2019
                       </span>
                     </div>
                   }
@@ -4716,11 +5304,7 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                         className="calendarIconBtn"
                       >
                         <span>
-<<<<<<< HEAD
-                          Jan 20 2019 - Jan 20 2019
-=======
-                          Jan 22 2019 - Jan 22 2019
->>>>>>> feat(maintenance) user should see page maintenance
+                          Jan 23 2019 - Jan 23 2019
                         </span>
                       </div>
                     }
@@ -4746,11 +5330,7 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                           className="calendarIconBtn"
                         >
                           <span>
-<<<<<<< HEAD
-                            Jan 20 2019 - Jan 20 2019
-=======
-                            Jan 22 2019 - Jan 22 2019
->>>>>>> feat(maintenance) user should see page maintenance
+                            Jan 23 2019 - Jan 23 2019
                           </span>
                         </div>
                       }
@@ -4778,11 +5358,7 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                             className="calendarIconBtn"
                           >
                             <span>
-<<<<<<< HEAD
-                              Jan 20 2019 - Jan 20 2019
-=======
-                              Jan 22 2019 - Jan 22 2019
->>>>>>> feat(maintenance) user should see page maintenance
+                              Jan 23 2019 - Jan 23 2019
                             </span>
                           </div>
                         }
@@ -4821,11 +5397,7 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                                 className="calendarIconBtn"
                               >
                                 <span>
-<<<<<<< HEAD
-                                  Jan 20 2019 - Jan 20 2019
-=======
-                                  Jan 22 2019 - Jan 22 2019
->>>>>>> feat(maintenance) user should see page maintenance
+                                  Jan 23 2019 - Jan 23 2019
                                 </span>
                               </div>
                             }
@@ -4839,11 +5411,7 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                                 className="calendarIconBtn"
                               >
                                 <span>
-<<<<<<< HEAD
-                                  Jan 20 2019 - Jan 20 2019
-=======
-                                  Jan 22 2019 - Jan 22 2019
->>>>>>> feat(maintenance) user should see page maintenance
+                                  Jan 23 2019 - Jan 23 2019
                                 </span>
                               </div>
                             </span>
@@ -4898,26 +5466,16 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
             <AnalyticsOverview
               dateValue={
                 Object {
-<<<<<<< HEAD
-                  "endDate": "Jan 20 2019",
-                  "startDate": "Jan 20 2019",
-=======
-                  "endDate": "Jan 22 2019",
-                  "startDate": "Jan 22 2019",
->>>>>>> feat(maintenance) user should see page maintenance
+                  "endDate": "Jan 23 2019",
+                  "startDate": "Jan 23 2019",
                 }
               }
             >
               <AveragePieChartList
                 dateValue={
                   Object {
-<<<<<<< HEAD
-                    "endDate": "Jan 20 2019",
-                    "startDate": "Jan 20 2019",
-=======
-                    "endDate": "Jan 22 2019",
-                    "startDate": "Jan 22 2019",
->>>>>>> feat(maintenance) user should see page maintenance
+                    "endDate": "Jan 23 2019",
+                    "startDate": "Jan 23 2019",
                   }
                 }
               >
@@ -5117,10 +5675,120 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                       <section
                         className="chart-content"
                       >
-                        <img
-                          alt="average meeting chart"
-                          src="test-file-stub"
-                        />
+                        <Apollo(GetAverageRoomCapacityComponent)>
+                          <Query
+                            displayName="Apollo(GetAverageRoomCapacityComponent)"
+                            query={
+                              Object {
+                                "definitions": Array [
+                                  Object {
+                                    "directives": Array [],
+                                    "kind": "OperationDefinition",
+                                    "name": undefined,
+                                    "operation": "query",
+                                    "selectionSet": Object {
+                                      "kind": "SelectionSet",
+                                      "selections": Array [
+                                        Object {
+                                          "alias": undefined,
+                                          "arguments": Array [],
+                                          "directives": Array [],
+                                          "kind": "Field",
+                                          "name": Object {
+                                            "kind": "Name",
+                                            "value": "allRooms",
+                                          },
+                                          "selectionSet": Object {
+                                            "kind": "SelectionSet",
+                                            "selections": Array [
+                                              Object {
+                                                "alias": undefined,
+                                                "arguments": Array [],
+                                                "directives": Array [],
+                                                "kind": "Field",
+                                                "name": Object {
+                                                  "kind": "Name",
+                                                  "value": "rooms",
+                                                },
+                                                "selectionSet": Object {
+                                                  "kind": "SelectionSet",
+                                                  "selections": Array [
+                                                    Object {
+                                                      "alias": undefined,
+                                                      "arguments": Array [],
+                                                      "directives": Array [],
+                                                      "kind": "Field",
+                                                      "name": Object {
+                                                        "kind": "Name",
+                                                        "value": "id",
+                                                      },
+                                                      "selectionSet": undefined,
+                                                    },
+                                                    Object {
+                                                      "alias": undefined,
+                                                      "arguments": Array [],
+                                                      "directives": Array [],
+                                                      "kind": "Field",
+                                                      "name": Object {
+                                                        "kind": "Name",
+                                                        "value": "name",
+                                                      },
+                                                      "selectionSet": undefined,
+                                                    },
+                                                    Object {
+                                                      "alias": undefined,
+                                                      "arguments": Array [],
+                                                      "directives": Array [],
+                                                      "kind": "Field",
+                                                      "name": Object {
+                                                        "kind": "Name",
+                                                        "value": "capacity",
+                                                      },
+                                                      "selectionSet": undefined,
+                                                    },
+                                                  ],
+                                                },
+                                              },
+                                            ],
+                                          },
+                                        },
+                                      ],
+                                    },
+                                    "variableDefinitions": Array [],
+                                  },
+                                ],
+                                "kind": "Document",
+                                "loc": Object {
+                                  "end": 73,
+                                  "start": 0,
+                                },
+                              }
+                            }
+                            skip={false}
+                            warnUnhandledError={true}
+                          >
+                            <GetAverageRoomCapacityComponent
+                              data={
+                                Object {
+                                  "error": undefined,
+                                  "fetchMore": [Function],
+                                  "loading": true,
+                                  "networkStatus": 1,
+                                  "refetch": [Function],
+                                  "startPolling": [Function],
+                                  "stopPolling": [Function],
+                                  "subscribeToMore": [Function],
+                                  "updateQuery": [Function],
+                                  "variables": Object {},
+                                }
+                              }
+                            >
+                              <p>
+                                 Loading chart data ...
+                              </p>
+                            </GetAverageRoomCapacityComponent>
+                          </Query>
+                        </Apollo(GetAverageRoomCapacityComponent)>
                         <section
                           className="chart-details"
                         >
@@ -5149,13 +5817,8 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                   <BookingsCountBarGraph
                     dateValue={
                       Object {
-<<<<<<< HEAD
-                        "endDate": "Jan 20 2019",
-                        "startDate": "Jan 20 2019",
-=======
-                        "endDate": "Jan 22 2019",
-                        "startDate": "Jan 22 2019",
->>>>>>> feat(maintenance) user should see page maintenance
+                        "endDate": "Jan 23 2019",
+                        "startDate": "Jan 23 2019",
                       }
                     }
                   >
@@ -5243,13 +5906,8 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                         <QueryBookingsCount
                           dateValue={
                             Object {
-<<<<<<< HEAD
-                              "endDate": "Jan 20 2019",
-                              "startDate": "Jan 20 2019",
-=======
-                              "endDate": "Jan 22 2019",
-                              "startDate": "Jan 22 2019",
->>>>>>> feat(maintenance) user should see page maintenance
+                              "endDate": "Jan 23 2019",
+                              "startDate": "Jan 23 2019",
                             }
                           }
                         >
@@ -5392,13 +6050,8 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                             }
                             variables={
                               Object {
-<<<<<<< HEAD
-                                "endDate": "Jan 20 2019",
-                                "startDate": "Jan 20 2019",
-=======
-                                "endDate": "Jan 22 2019",
-                                "startDate": "Jan 22 2019",
->>>>>>> feat(maintenance) user should see page maintenance
+                                "endDate": "Jan 23 2019",
+                                "startDate": "Jan 23 2019",
                               }
                             }
                           >
@@ -5415,13 +6068,8 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
               <ComposedBookedRooms
                 dateValue={
                   Object {
-<<<<<<< HEAD
-                    "endDate": "Jan 20 2019",
-                    "startDate": "Jan 20 2019",
-=======
-                    "endDate": "Jan 22 2019",
-                    "startDate": "Jan 22 2019",
->>>>>>> feat(maintenance) user should see page maintenance
+                    "endDate": "Jan 23 2019",
+                    "startDate": "Jan 23 2019",
                   }
                 }
               >
@@ -5434,13 +6082,8 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                       component={[Function]}
                       date={
                         Object {
-<<<<<<< HEAD
-                          "endDate": "Jan 20 2019",
-                          "startDate": "Jan 20 2019",
-=======
-                          "endDate": "Jan 22 2019",
-                          "startDate": "Jan 22 2019",
->>>>>>> feat(maintenance) user should see page maintenance
+                          "endDate": "Jan 23 2019",
+                          "startDate": "Jan 23 2019",
                         }
                       }
                     >
@@ -5632,13 +6275,8 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                       component={[Function]}
                       date={
                         Object {
-<<<<<<< HEAD
-                          "endDate": "Jan 20 2019",
-                          "startDate": "Jan 20 2019",
-=======
-                          "endDate": "Jan 22 2019",
-                          "startDate": "Jan 22 2019",
->>>>>>> feat(maintenance) user should see page maintenance
+                          "endDate": "Jan 23 2019",
+                          "startDate": "Jan 23 2019",
                         }
                       }
                       tip=""
@@ -6197,13 +6835,8 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
               <Apollo(AverageMeetingList)
                 dateValue={
                   Object {
-<<<<<<< HEAD
-                    "endDate": "Jan 20 2019",
-                    "startDate": "Jan 20 2019",
-=======
-                    "endDate": "Jan 22 2019",
-                    "startDate": "Jan 22 2019",
->>>>>>> feat(maintenance) user should see page maintenance
+                    "endDate": "Jan 23 2019",
+                    "startDate": "Jan 23 2019",
                   }
                 }
               >
@@ -6470,17 +7103,10 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                   skip={false}
                   variables={
                     Object {
-<<<<<<< HEAD
-                      "endDate": "Jan 20 2019",
+                      "endDate": "Jan 23 2019",
                       "page": 1,
                       "perPage": 5,
-                      "startDate": "Jan 20 2019",
-=======
-                      "endDate": "Jan 22 2019",
-                      "page": 1,
-                      "perPage": 5,
-                      "startDate": "Jan 22 2019",
->>>>>>> feat(maintenance) user should see page maintenance
+                      "startDate": "Jan 23 2019",
                     }
                   }
                   warnUnhandledError={true}
@@ -6498,29 +7124,17 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                         "subscribeToMore": [Function],
                         "updateQuery": [Function],
                         "variables": Object {
-<<<<<<< HEAD
-                          "endDate": "Jan 20 2019",
+                          "endDate": "Jan 23 2019",
                           "page": 1,
                           "perPage": 5,
-                          "startDate": "Jan 20 2019",
-=======
-                          "endDate": "Jan 22 2019",
-                          "page": 1,
-                          "perPage": 5,
-                          "startDate": "Jan 22 2019",
->>>>>>> feat(maintenance) user should see page maintenance
+                          "startDate": "Jan 23 2019",
                         },
                       }
                     }
                     dateValue={
                       Object {
-<<<<<<< HEAD
-                        "endDate": "Jan 20 2019",
-                        "startDate": "Jan 20 2019",
-=======
-                        "endDate": "Jan 22 2019",
-                        "startDate": "Jan 22 2019",
->>>>>>> feat(maintenance) user should see page maintenance
+                        "endDate": "Jan 23 2019",
+                        "startDate": "Jan 23 2019",
                       }
                     }
                   >

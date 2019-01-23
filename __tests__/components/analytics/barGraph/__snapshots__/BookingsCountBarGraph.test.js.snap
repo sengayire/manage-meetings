@@ -151,13 +151,8 @@ exports[`Bookings Count Bar Graph Component renders correctly 1`] = `
             },
           },
           "variables": Object {
-<<<<<<< HEAD
-            "endDate": "Jan 20 2019",
-            "startDate": "Jan 20 2019",
-=======
-            "endDate": "Jan 22 2019",
-            "startDate": "Jan 22 2019",
->>>>>>> feat(maintenance) user should see page maintenance
+            "endDate": "Jan 23 2019",
+            "startDate": "Jan 23 2019",
           },
         },
       },
@@ -1839,13 +1834,8 @@ exports[`Bookings Count Bar Graph Component should be able to hover 1`] = `
             },
           },
           "variables": Object {
-<<<<<<< HEAD
-            "endDate": "Jan 20 2019",
-            "startDate": "Jan 20 2019",
-=======
-            "endDate": "Jan 22 2019",
-            "startDate": "Jan 22 2019",
->>>>>>> feat(maintenance) user should see page maintenance
+            "endDate": "Jan 23 2019",
+            "startDate": "Jan 23 2019",
           },
         },
       },
@@ -3525,13 +3515,8 @@ exports[`Bookings Count Bar Graph Component should be able to hover 2`] = `
             },
           },
           "variables": Object {
-<<<<<<< HEAD
-            "endDate": "Jan 20 2019",
-            "startDate": "Jan 20 2019",
-=======
-            "endDate": "Jan 22 2019",
-            "startDate": "Jan 22 2019",
->>>>>>> feat(maintenance) user should see page maintenance
+            "endDate": "Jan 23 2019",
+            "startDate": "Jan 23 2019",
           },
         },
       },
