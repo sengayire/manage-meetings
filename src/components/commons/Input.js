@@ -97,7 +97,7 @@ Input.propTypes = {
   labelName: PropTypes.string.isRequired,
   labelClass: PropTypes.string,
   onChange: PropTypes.func.isRequired,
-  placeholder: PropTypes.string,
+  placeholder: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   type: PropTypes.string,
 };
 

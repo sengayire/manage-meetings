@@ -1,3 +1,4 @@
+/* eslint-disable react/forbid-prop-types */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Input, SelectInput as Select } from '../commons';
@@ -11,11 +12,7 @@ import '../../assets/styles/addroom.scss';
  * @returns {JSX}
  */
 const NairobiRoomInputs = ({
-  roomName,
-  roomCapacity,
-  officeBlock,
-  officeFloor,
-  handleInputChange,
+  roomName, roomCapacity, officeBlock, officeFloor, blockOptions, floorOptions, handleInputChange,
 }) => (
   <div className="form-inputs">
     <Input
@@ -51,7 +48,7 @@ const NairobiRoomInputs = ({
       onChange={handleInputChange}
       wrapperClassName="input-wrapper"
       placeholder="Select block"
-      options={[{ id: 2, name: 'A' }]}
+      options={blockOptions}
       required
     />
 
@@ -63,7 +60,7 @@ const NairobiRoomInputs = ({
       onChange={handleInputChange}
       wrapperClassName="input-wrapper"
       placeholder="Select floor"
-      options={[{ id: 2, name: 2 }]}
+      options={floorOptions}
       required
     />
   </div>
@@ -71,9 +68,11 @@ const NairobiRoomInputs = ({
 
 NairobiRoomInputs.propTypes = {
   roomName: PropTypes.string.isRequired,
-  officeFloor: PropTypes.string.isRequired,
+  officeFloor: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
   roomCapacity: PropTypes.number.isRequired,
-  officeBlock: PropTypes.string.isRequired,
+  officeBlock: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+  blockOptions: PropTypes.array.isRequired,
+  floorOptions: PropTypes.array.isRequired,
   handleInputChange: PropTypes.func.isRequired,
 };
 

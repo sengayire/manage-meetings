@@ -9363,11 +9363,19 @@ query user ($email: String!) {
                                             <div
                                               className="chart-content"
                                             >
-                                              <p
-                                                className="chart-loader"
+                                              <div
+                                                className="chart-spinner"
                                               >
-                                                 Loading...
-                                              </p>
+                                                <Spinner>
+                                                  <div
+                                                    className="centered"
+                                                  >
+                                                    <div
+                                                      className="spinner"
+                                                    />
+                                                  </div>
+                                                </Spinner>
+                                              </div>
                                             </div>
                                           </div>
                                         </DonutChart>
@@ -9477,11 +9485,19 @@ query user ($email: String!) {
                                             <div
                                               className="chart-content"
                                             >
-                                              <p
-                                                className="chart-loader"
+                                              <div
+                                                className="chart-spinner"
                                               >
-                                                 Loading...
-                                              </p>
+                                                <Spinner>
+                                                  <div
+                                                    className="centered"
+                                                  >
+                                                    <div
+                                                      className="spinner"
+                                                    />
+                                                  </div>
+                                                </Spinner>
+                                              </div>
                                             </div>
                                           </div>
                                         </DonutChart>
@@ -9591,11 +9607,19 @@ query user ($email: String!) {
                                             <div
                                               className="chart-content"
                                             >
-                                              <p
-                                                className="chart-loader"
+                                              <div
+                                                className="chart-spinner"
                                               >
-                                                 Loading...
-                                              </p>
+                                                <Spinner>
+                                                  <div
+                                                    className="centered"
+                                                  >
+                                                    <div
+                                                      className="spinner"
+                                                    />
+                                                  </div>
+                                                </Spinner>
+                                              </div>
                                             </div>
                                           </div>
                                         </DonutChart>

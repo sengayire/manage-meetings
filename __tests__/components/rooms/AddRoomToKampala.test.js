@@ -3,7 +3,7 @@ import { mount, shallow } from 'enzyme';
 import { MockedProvider } from 'react-apollo/test-utils';
 import AddRoomToKampala, { AddRoomToTheCrest } from '../../../src/components/rooms/AddRoomToKampala';
 import { GET_CREST_DETAILS } from '../../../src/graphql/queries/Offices';
-import { ADD_ROOM_TO_CREST } from '../../../src/graphql/mutations/AddRoomToCrest';
+import { ADD_ROOM_TO_CREST } from '../../../src/graphql/mutations/rooms/AddRoomToCrest';
 import { crestOfficeDetails } from '../../../__mocks__/offices/Offices';
 import AddRoomToCrest, { variables } from '../../../__mocks__/rooms/AddRoomToCrest';
 

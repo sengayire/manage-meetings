@@ -24,19 +24,3 @@ const mapLocationsToSelectInputs = locations => (
   locations.map(({ id, name }) => ({ id, name })));
 
 export { formatRoomData as default, mapLocationsToSelectInputs };
-
-export const formatData = (
-  roomName,
-  roomCapacity,
-  officeBlock,
-  officeFloor,
-  imageUrl,
-) => ({
-  name: roomName,
-  capacity: parseFloat(roomCapacity),
-  officeId: officeBlock ? 2 : officeBlock,
-  floorId: officeFloor ? 2 : officeFloor,
-  roomType: 'meeting room',
-  calendarId: 'andela.com',
-  imageUrl,
-});

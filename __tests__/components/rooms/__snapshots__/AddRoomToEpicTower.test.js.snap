@@ -444,7 +444,7 @@ exports[`AddRoomEpicTower should render properly 1`] = `
                           "value": Object {
                             "block": false,
                             "kind": "StringValue",
-                            "value": "Epic tower",
+                            "value": "EPIC Tower",
                           },
                         },
                       ],
@@ -578,7 +578,7 @@ exports[`AddRoomEpicTower should render properly 1`] = `
             ],
             "kind": "Document",
             "loc": Object {
-              "end": 237,
+              "end": 175,
               "start": 0,
             },
           },
@@ -643,7 +643,7 @@ exports[`AddRoomEpicTower should render properly 1`] = `
                             "value": Object {
                               "block": false,
                               "kind": "StringValue",
-                              "value": "Epic tower",
+                              "value": "EPIC Tower",
                             },
                           },
                         ],
@@ -777,7 +777,7 @@ exports[`AddRoomEpicTower should render properly 1`] = `
               ],
               "kind": "Document",
               "loc": Object {
-                "end": 237,
+                "end": 175,
                 "start": 0,
               },
             },
@@ -795,50 +795,50 @@ exports[`AddRoomEpicTower should render properly 1`] = `
           "data": ObjectCache {
             "data": Object {
               "ROOT_QUERY": Object {
-                "getOfficeByName({\\"name\\":\\"Epic tower\\"})": Array [
+                "getOfficeByName({\\"name\\":\\"EPIC Tower\\"})": Array [
                   Object {
                     "generated": true,
-                    "id": "ROOT_QUERY.getOfficeByName({\\"name\\":\\"Epic tower\\"}).0",
+                    "id": "ROOT_QUERY.getOfficeByName({\\"name\\":\\"EPIC Tower\\"}).0",
                     "type": "id",
                     "typename": undefined,
                   },
                 ],
               },
-              "ROOT_QUERY.getOfficeByName({\\"name\\":\\"Epic tower\\"}).0": Object {
+              "ROOT_QUERY.getOfficeByName({\\"name\\":\\"EPIC Tower\\"}).0": Object {
                 "blocks": Array [
                   Object {
                     "generated": true,
-                    "id": "ROOT_QUERY.getOfficeByName({\\"name\\":\\"Epic tower\\"}).0.blocks.0",
+                    "id": "ROOT_QUERY.getOfficeByName({\\"name\\":\\"EPIC Tower\\"}).0.blocks.0",
                     "type": "id",
                     "typename": undefined,
                   },
                 ],
                 "id": "1",
               },
-              "ROOT_QUERY.getOfficeByName({\\"name\\":\\"Epic tower\\"}).0.blocks.0": Object {
+              "ROOT_QUERY.getOfficeByName({\\"name\\":\\"EPIC Tower\\"}).0.blocks.0": Object {
                 "floors": Array [
                   Object {
                     "generated": true,
-                    "id": "ROOT_QUERY.getOfficeByName({\\"name\\":\\"Epic tower\\"}).0.blocks.0.floors.0",
+                    "id": "ROOT_QUERY.getOfficeByName({\\"name\\":\\"EPIC Tower\\"}).0.blocks.0.floors.0",
                     "type": "id",
                     "typename": undefined,
                   },
                 ],
                 "id": "1",
               },
-              "ROOT_QUERY.getOfficeByName({\\"name\\":\\"Epic tower\\"}).0.blocks.0.floors.0": Object {
+              "ROOT_QUERY.getOfficeByName({\\"name\\":\\"EPIC Tower\\"}).0.blocks.0.floors.0": Object {
                 "id": "1",
                 "name": "fourth floor",
                 "wings": Array [
                   Object {
                     "generated": true,
-                    "id": "ROOT_QUERY.getOfficeByName({\\"name\\":\\"Epic tower\\"}).0.blocks.0.floors.0.wings.0",
+                    "id": "ROOT_QUERY.getOfficeByName({\\"name\\":\\"EPIC Tower\\"}).0.blocks.0.floors.0.wings.0",
                     "type": "id",
                     "typename": undefined,
                   },
                 ],
               },
-              "ROOT_QUERY.getOfficeByName({\\"name\\":\\"Epic tower\\"}).0.blocks.0.floors.0.wings.0": Object {
+              "ROOT_QUERY.getOfficeByName({\\"name\\":\\"EPIC Tower\\"}).0.blocks.0.floors.0.wings.0": Object {
                 "id": "1",
                 "name": "Big Apple",
               },
@@ -876,7 +876,7 @@ exports[`AddRoomEpicTower should render properly 1`] = `
                               "value": Object {
                                 "block": false,
                                 "kind": "StringValue",
-                                "value": "Epic tower",
+                                "value": "EPIC Tower",
                               },
                             },
                           ],
@@ -1010,7 +1010,7 @@ exports[`AddRoomEpicTower should render properly 1`] = `
                 ],
                 "kind": "Document",
                 "loc": Object {
-                  "end": 237,
+                  "end": 175,
                   "start": 0,
                 },
               },
@@ -1039,50 +1039,50 @@ exports[`AddRoomEpicTower should render properly 1`] = `
               "data": ObjectCache {
                 "data": Object {
                   "ROOT_QUERY": Object {
-                    "getOfficeByName({\\"name\\":\\"Epic tower\\"})": Array [
+                    "getOfficeByName({\\"name\\":\\"EPIC Tower\\"})": Array [
                       Object {
                         "generated": true,
-                        "id": "ROOT_QUERY.getOfficeByName({\\"name\\":\\"Epic tower\\"}).0",
+                        "id": "ROOT_QUERY.getOfficeByName({\\"name\\":\\"EPIC Tower\\"}).0",
                         "type": "id",
                         "typename": undefined,
                       },
                     ],
                   },
-                  "ROOT_QUERY.getOfficeByName({\\"name\\":\\"Epic tower\\"}).0": Object {
+                  "ROOT_QUERY.getOfficeByName({\\"name\\":\\"EPIC Tower\\"}).0": Object {
                     "blocks": Array [
                       Object {
                         "generated": true,
-                        "id": "ROOT_QUERY.getOfficeByName({\\"name\\":\\"Epic tower\\"}).0.blocks.0",
+                        "id": "ROOT_QUERY.getOfficeByName({\\"name\\":\\"EPIC Tower\\"}).0.blocks.0",
                         "type": "id",
                         "typename": undefined,
                       },
                     ],
                     "id": "1",
                   },
-                  "ROOT_QUERY.getOfficeByName({\\"name\\":\\"Epic tower\\"}).0.blocks.0": Object {
+                  "ROOT_QUERY.getOfficeByName({\\"name\\":\\"EPIC Tower\\"}).0.blocks.0": Object {
                     "floors": Array [
                       Object {
                         "generated": true,
-                        "id": "ROOT_QUERY.getOfficeByName({\\"name\\":\\"Epic tower\\"}).0.blocks.0.floors.0",
+                        "id": "ROOT_QUERY.getOfficeByName({\\"name\\":\\"EPIC Tower\\"}).0.blocks.0.floors.0",
                         "type": "id",
                         "typename": undefined,
                       },
                     ],
                     "id": "1",
                   },
-                  "ROOT_QUERY.getOfficeByName({\\"name\\":\\"Epic tower\\"}).0.blocks.0.floors.0": Object {
+                  "ROOT_QUERY.getOfficeByName({\\"name\\":\\"EPIC Tower\\"}).0.blocks.0.floors.0": Object {
                     "id": "1",
                     "name": "fourth floor",
                     "wings": Array [
                       Object {
                         "generated": true,
-                        "id": "ROOT_QUERY.getOfficeByName({\\"name\\":\\"Epic tower\\"}).0.blocks.0.floors.0.wings.0",
+                        "id": "ROOT_QUERY.getOfficeByName({\\"name\\":\\"EPIC Tower\\"}).0.blocks.0.floors.0.wings.0",
                         "type": "id",
                         "typename": undefined,
                       },
                     ],
                   },
-                  "ROOT_QUERY.getOfficeByName({\\"name\\":\\"Epic tower\\"}).0.blocks.0.floors.0.wings.0": Object {
+                  "ROOT_QUERY.getOfficeByName({\\"name\\":\\"EPIC Tower\\"}).0.blocks.0.floors.0.wings.0": Object {
                     "id": "1",
                     "name": "Big Apple",
                   },
@@ -1120,7 +1120,7 @@ exports[`AddRoomEpicTower should render properly 1`] = `
                                   "value": Object {
                                     "block": false,
                                     "kind": "StringValue",
-                                    "value": "Epic tower",
+                                    "value": "EPIC Tower",
                                   },
                                 },
                               ],
@@ -1254,7 +1254,7 @@ exports[`AddRoomEpicTower should render properly 1`] = `
                     ],
                     "kind": "Document",
                     "loc": Object {
-                      "end": 237,
+                      "end": 175,
                       "start": 0,
                     },
                   },
@@ -1303,7 +1303,7 @@ exports[`AddRoomEpicTower should render properly 1`] = `
                               "value": Object {
                                 "block": false,
                                 "kind": "StringValue",
-                                "value": "Epic tower",
+                                "value": "EPIC Tower",
                               },
                             },
                           ],
@@ -1437,7 +1437,7 @@ exports[`AddRoomEpicTower should render properly 1`] = `
                 ],
                 "kind": "Document",
                 "loc": Object {
-                  "end": 237,
+                  "end": 175,
                   "start": 0,
                 },
               },
@@ -1466,18 +1466,18 @@ exports[`AddRoomEpicTower should render properly 1`] = `
                                   Object {
                                     "id": "1",
                                     "name": "Big Apple",
-                                    Symbol(id): "ROOT_QUERY.getOfficeByName({\\"name\\":\\"Epic tower\\"}).0.blocks.0.floors.0.wings.0",
+                                    Symbol(id): "ROOT_QUERY.getOfficeByName({\\"name\\":\\"EPIC Tower\\"}).0.blocks.0.floors.0.wings.0",
                                   },
                                 ],
-                                Symbol(id): "ROOT_QUERY.getOfficeByName({\\"name\\":\\"Epic tower\\"}).0.blocks.0.floors.0",
+                                Symbol(id): "ROOT_QUERY.getOfficeByName({\\"name\\":\\"EPIC Tower\\"}).0.blocks.0.floors.0",
                               },
                             ],
                             "id": "1",
-                            Symbol(id): "ROOT_QUERY.getOfficeByName({\\"name\\":\\"Epic tower\\"}).0.blocks.0",
+                            Symbol(id): "ROOT_QUERY.getOfficeByName({\\"name\\":\\"EPIC Tower\\"}).0.blocks.0",
                           },
                         ],
                         "id": "1",
-                        Symbol(id): "ROOT_QUERY.getOfficeByName({\\"name\\":\\"Epic tower\\"}).0",
+                        Symbol(id): "ROOT_QUERY.getOfficeByName({\\"name\\":\\"EPIC Tower\\"}).0",
                       },
                     ],
                     Symbol(id): "ROOT_QUERY",
@@ -1532,7 +1532,7 @@ exports[`AddRoomEpicTower should render properly 1`] = `
                                   "value": Object {
                                     "block": false,
                                     "kind": "StringValue",
-                                    "value": "Epic tower",
+                                    "value": "EPIC Tower",
                                   },
                                 },
                               ],
@@ -1666,7 +1666,7 @@ exports[`AddRoomEpicTower should render properly 1`] = `
                     ],
                     "kind": "Document",
                     "loc": Object {
-                      "end": 237,
+                      "end": 175,
                       "start": 0,
                     },
                   },
@@ -1722,7 +1722,7 @@ exports[`AddRoomEpicTower should render properly 1`] = `
                                 "value": Object {
                                   "block": false,
                                   "kind": "StringValue",
-                                  "value": "Epic tower",
+                                  "value": "EPIC Tower",
                                 },
                               },
                             ],
@@ -1856,7 +1856,7 @@ exports[`AddRoomEpicTower should render properly 1`] = `
                   ],
                   "kind": "Document",
                   "loc": Object {
-                    "end": 237,
+                    "end": 175,
                     "start": 0,
                   },
                 },
@@ -1898,50 +1898,50 @@ exports[`AddRoomEpicTower should render properly 1`] = `
             "data": ObjectCache {
               "data": Object {
                 "ROOT_QUERY": Object {
-                  "getOfficeByName({\\"name\\":\\"Epic tower\\"})": Array [
+                  "getOfficeByName({\\"name\\":\\"EPIC Tower\\"})": Array [
                     Object {
                       "generated": true,
-                      "id": "ROOT_QUERY.getOfficeByName({\\"name\\":\\"Epic tower\\"}).0",
+                      "id": "ROOT_QUERY.getOfficeByName({\\"name\\":\\"EPIC Tower\\"}).0",
                       "type": "id",
                       "typename": undefined,
                     },
                   ],
                 },
-                "ROOT_QUERY.getOfficeByName({\\"name\\":\\"Epic tower\\"}).0": Object {
+                "ROOT_QUERY.getOfficeByName({\\"name\\":\\"EPIC Tower\\"}).0": Object {
                   "blocks": Array [
                     Object {
                       "generated": true,
-                      "id": "ROOT_QUERY.getOfficeByName({\\"name\\":\\"Epic tower\\"}).0.blocks.0",
+                      "id": "ROOT_QUERY.getOfficeByName({\\"name\\":\\"EPIC Tower\\"}).0.blocks.0",
                       "type": "id",
                       "typename": undefined,
                     },
                   ],
                   "id": "1",
                 },
-                "ROOT_QUERY.getOfficeByName({\\"name\\":\\"Epic tower\\"}).0.blocks.0": Object {
+                "ROOT_QUERY.getOfficeByName({\\"name\\":\\"EPIC Tower\\"}).0.blocks.0": Object {
                   "floors": Array [
                     Object {
                       "generated": true,
-                      "id": "ROOT_QUERY.getOfficeByName({\\"name\\":\\"Epic tower\\"}).0.blocks.0.floors.0",
+                      "id": "ROOT_QUERY.getOfficeByName({\\"name\\":\\"EPIC Tower\\"}).0.blocks.0.floors.0",
                       "type": "id",
                       "typename": undefined,
                     },
                   ],
                   "id": "1",
                 },
-                "ROOT_QUERY.getOfficeByName({\\"name\\":\\"Epic tower\\"}).0.blocks.0.floors.0": Object {
+                "ROOT_QUERY.getOfficeByName({\\"name\\":\\"EPIC Tower\\"}).0.blocks.0.floors.0": Object {
                   "id": "1",
                   "name": "fourth floor",
                   "wings": Array [
                     Object {
                       "generated": true,
-                      "id": "ROOT_QUERY.getOfficeByName({\\"name\\":\\"Epic tower\\"}).0.blocks.0.floors.0.wings.0",
+                      "id": "ROOT_QUERY.getOfficeByName({\\"name\\":\\"EPIC Tower\\"}).0.blocks.0.floors.0.wings.0",
                       "type": "id",
                       "typename": undefined,
                     },
                   ],
                 },
-                "ROOT_QUERY.getOfficeByName({\\"name\\":\\"Epic tower\\"}).0.blocks.0.floors.0.wings.0": Object {
+                "ROOT_QUERY.getOfficeByName({\\"name\\":\\"EPIC Tower\\"}).0.blocks.0.floors.0.wings.0": Object {
                   "id": "1",
                   "name": "Big Apple",
                 },
@@ -1979,7 +1979,7 @@ exports[`AddRoomEpicTower should render properly 1`] = `
                                 "value": Object {
                                   "block": false,
                                   "kind": "StringValue",
-                                  "value": "Epic tower",
+                                  "value": "EPIC Tower",
                                 },
                               },
                             ],
@@ -2113,7 +2113,7 @@ exports[`AddRoomEpicTower should render properly 1`] = `
                   ],
                   "kind": "Document",
                   "loc": Object {
-                    "end": 237,
+                    "end": 175,
                     "start": 0,
                   },
                 },
@@ -2176,7 +2176,7 @@ exports[`AddRoomEpicTower should render properly 1`] = `
                           "value": Object {
                             "block": false,
                             "kind": "StringValue",
-                            "value": "Epic tower",
+                            "value": "EPIC Tower",
                           },
                         },
                       ],
@@ -2310,7 +2310,7 @@ exports[`AddRoomEpicTower should render properly 1`] = `
             ],
             "kind": "Document",
             "loc": Object {
-              "end": 237,
+              "end": 175,
               "start": 0,
             },
           }
@@ -2354,18 +2354,18 @@ exports[`AddRoomEpicTower should render properly 1`] = `
                             Object {
                               "id": "1",
                               "name": "Big Apple",
-                              Symbol(id): "ROOT_QUERY.getOfficeByName({\\"name\\":\\"Epic tower\\"}).0.blocks.0.floors.0.wings.0",
+                              Symbol(id): "ROOT_QUERY.getOfficeByName({\\"name\\":\\"EPIC Tower\\"}).0.blocks.0.floors.0.wings.0",
                             },
                           ],
-                          Symbol(id): "ROOT_QUERY.getOfficeByName({\\"name\\":\\"Epic tower\\"}).0.blocks.0.floors.0",
+                          Symbol(id): "ROOT_QUERY.getOfficeByName({\\"name\\":\\"EPIC Tower\\"}).0.blocks.0.floors.0",
                         },
                       ],
                       "id": "1",
-                      Symbol(id): "ROOT_QUERY.getOfficeByName({\\"name\\":\\"Epic tower\\"}).0.blocks.0",
+                      Symbol(id): "ROOT_QUERY.getOfficeByName({\\"name\\":\\"EPIC Tower\\"}).0.blocks.0",
                     },
                   ],
                   "id": "1",
-                  Symbol(id): "ROOT_QUERY.getOfficeByName({\\"name\\":\\"Epic tower\\"}).0",
+                  Symbol(id): "ROOT_QUERY.getOfficeByName({\\"name\\":\\"EPIC Tower\\"}).0",
                 },
               ],
               "loading": false,
@@ -2807,18 +2807,18 @@ exports[`AddRoomEpicTower should render properly 1`] = `
                                 Object {
                                   "id": "1",
                                   "name": "Big Apple",
-                                  Symbol(id): "ROOT_QUERY.getOfficeByName({\\"name\\":\\"Epic tower\\"}).0.blocks.0.floors.0.wings.0",
+                                  Symbol(id): "ROOT_QUERY.getOfficeByName({\\"name\\":\\"EPIC Tower\\"}).0.blocks.0.floors.0.wings.0",
                                 },
                               ],
-                              Symbol(id): "ROOT_QUERY.getOfficeByName({\\"name\\":\\"Epic tower\\"}).0.blocks.0.floors.0",
+                              Symbol(id): "ROOT_QUERY.getOfficeByName({\\"name\\":\\"EPIC Tower\\"}).0.blocks.0.floors.0",
                             },
                           ],
                           "id": "1",
-                          Symbol(id): "ROOT_QUERY.getOfficeByName({\\"name\\":\\"Epic tower\\"}).0.blocks.0",
+                          Symbol(id): "ROOT_QUERY.getOfficeByName({\\"name\\":\\"EPIC Tower\\"}).0.blocks.0",
                         },
                       ],
                       "id": "1",
-                      Symbol(id): "ROOT_QUERY.getOfficeByName({\\"name\\":\\"Epic tower\\"}).0",
+                      Symbol(id): "ROOT_QUERY.getOfficeByName({\\"name\\":\\"EPIC Tower\\"}).0",
                     },
                   ],
                   "loading": false,

@@ -6,7 +6,7 @@ import Modal from '../commons/Modal';
 import { ActionButtons } from '../commons';
 import TheCrestInputs from '../commons/TheCrestInputs';
 import { GET_CREST_DETAILS } from '../../graphql/queries/Offices';
-import { ADD_ROOM_TO_CREST } from '../../graphql/mutations/AddRoomToCrest';
+import { ADD_ROOM_TO_CREST } from '../../graphql/mutations/rooms/AddRoomToCrest';
 import SelectImage from '../commons/SelectImage';
 import '../../assets/styles/addroomCrest.scss';
 import notification from '../../utils/notification';
@@ -17,7 +17,7 @@ import hasInvalidInputs from '../helpers/InputValidators';
 export class AddRoomToTheCrest extends Component {
   state = {
     roomType: 'meeting',
-    roomCalendar: 'andela.com1',
+    roomCalendar: 'andela.com_3137343432303133383637@resource.calendar.google.com',
     officeId: 0,
     imageUrl: '',
     roomName: '',
@@ -28,9 +28,9 @@ export class AddRoomToTheCrest extends Component {
     closeModal: false,
     thumbnailName: 'Upload a thumbnail',
   };
+
   componentWillReceiveProps = (props) => {
     const { officeDetails } = props;
-
     /* istanbul ignore next */
     if (officeDetails.getOfficeByName) {
       const {
@@ -51,7 +51,7 @@ export class AddRoomToTheCrest extends Component {
   };
 
   /**
-   * It closes a modal
+   * It handles close modal
    *
    * @returns {void}
    */
@@ -67,12 +67,11 @@ export class AddRoomToTheCrest extends Component {
   };
 
   /**
-   * Ensures that the state is updated basing
+   *  Ensures that the state is updated basing
    * on the changes in the input fields
    *
    * @param {Object} target
-   *
-   * @returns {void}
+   * @returns {function}
    */
   handleInputChange = ({ target: { name, value, files } }, num) => {
     let thumbnailName;
@@ -119,7 +118,7 @@ export class AddRoomToTheCrest extends Component {
   };
 
   /**
-   * It updates the state value of closeModal
+   *   * It updates the state value of closeModal
    * to false whenever the modal closes
    *
    * @returns {void}
@@ -129,11 +128,10 @@ export class AddRoomToTheCrest extends Component {
   };
 
   /**
-   * Adds a room
+   * It adds a room
    *
-   * @param {object} event
-   *
-   * @returns {void}
+   * @param  {object} event
+   * @returns {function}
    */
   handleAddRoom = (event) => {
     event.preventDefault();

@@ -4,7 +4,7 @@ import { MockedProvider } from 'react-apollo/test-utils';
 import { roomLocations } from '../../../__mocks__/rooms/Rooms';
 import WrappedAddRoomToEpicTower, { AddRoomToEpicTower } from '../../../src/components/rooms/AddRoomToEpicTower';
 import GET_EPIC_TOWER_DETAILS_QUERY from '../../../src/graphql/queries/Offices';
-import { ADD_ROOM_TO_EPIC_TOWER } from '../../../src/graphql/mutations/AddRoomToEpicTower';
+import { ADD_ROOM_TO_EPIC_TOWER } from '../../../src/graphql/mutations/rooms/AddRoomToEpicTower';
 import addRoomToEpicTower, { variables } from '../../../__mocks__/rooms/AddRoomToEpicTower';
 import officeDetailsData from '../../../__mocks__/offices/Offices';
 
@@ -20,13 +20,13 @@ describe('AddRoomEpicTower', () => {
           result: {
             ...addRoomToEpicTower,
           },
-      },
-      {
-        request: {
-          query: GET_EPIC_TOWER_DETAILS_QUERY,
         },
-        result: officeDetailsData,
-    },
+        {
+          request: {
+            query: GET_EPIC_TOWER_DETAILS_QUERY,
+          },
+          result: officeDetailsData,
+        },
       ]}
       addTypename={false}
     >
@@ -72,6 +72,7 @@ describe('AddRoomEpicTower', () => {
     epicTower.instance().handleModalStateChange();
     expect(epicTower.instance().state.closeModal).toBeFalsy();
   });
+
   it('should change room name', () => {
     epicTower.instance().handleInputChange({ target: { name: 'roomName', value: 'room2' } });
     expect(epicTower.instance().state.roomName).toEqual('room2');
@@ -112,6 +113,7 @@ describe('AddRoomEpicTower', () => {
     epicTower.instance().handleInputChange({ target: { name: 'roomFloor', value: 1 } });
     expect(epicTower.instance().state.roomFloor).toEqual(1);
   });
+
   it('should change room wing', () => {
     epicTower.instance().state = {
       ...epicTower.instance().state,
@@ -123,7 +125,7 @@ describe('AddRoomEpicTower', () => {
     expect(epicTower.instance().state.roomWing).toEqual(1);
   });
 
-  it('should parse value to integer when an empty string is perovided', () => {
+  it('should parse value to integer when an empty string is provided', () => {
     epicTower.instance().state = {
       ...epicTower.instance().state,
       wingsObject: {
@@ -211,6 +213,7 @@ describe('AddRoomEpicTower', () => {
     epicTower.instance().handleInputChange({ target: { name: 'selectImage', files: imageFiles } });
     expect(epicTower.instance().state.thumbnailName).toEqual('fail');
   });
+
   it('should reduce long image name', () => {
     const imageFiles = [
       {
