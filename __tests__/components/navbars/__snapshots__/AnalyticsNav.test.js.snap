@@ -813,6 +813,17 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                               "kind": "Field",
                               "name": Object {
                                 "kind": "Name",
+                                "value": "cancellations",
+                              },
+                              "selectionSet": undefined,
+                            },
+                            Object {
+                              "alias": undefined,
+                              "arguments": Array [],
+                              "directives": Array [],
+                              "kind": "Field",
+                              "name": Object {
+                                "kind": "Name",
                                 "value": "cancellationsPercentage",
                               },
                               "selectionSet": undefined,
@@ -870,7 +881,7 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
               ],
               "kind": "Document",
               "loc": Object {
-                "end": 229,
+                "end": 249,
                 "start": 0,
               },
             },
@@ -1491,6 +1502,17 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                                 "kind": "Field",
                                 "name": Object {
                                   "kind": "Name",
+                                  "value": "cancellations",
+                                },
+                                "selectionSet": undefined,
+                              },
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
                                   "value": "cancellationsPercentage",
                                 },
                                 "selectionSet": undefined,
@@ -1548,7 +1570,7 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                 ],
                 "kind": "Document",
                 "loc": Object {
-                  "end": 229,
+                  "end": 249,
                   "start": 0,
                 },
               },
@@ -2553,6 +2575,17 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                                     "kind": "Field",
                                     "name": Object {
                                       "kind": "Name",
+                                      "value": "cancellations",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
                                       "value": "cancellationsPercentage",
                                     },
                                     "selectionSet": undefined,
@@ -2610,7 +2643,7 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                     ],
                     "kind": "Document",
                     "loc": Object {
-                      "end": 229,
+                      "end": 249,
                       "start": 0,
                     },
                   },
@@ -4244,6 +4277,17 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                                 "kind": "Field",
                                 "name": Object {
                                   "kind": "Name",
+                                  "value": "cancellations",
+                                },
+                                "selectionSet": undefined,
+                              },
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
                                   "value": "cancellationsPercentage",
                                 },
                                 "selectionSet": undefined,
@@ -4301,7 +4345,7 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                 ],
                 "kind": "Document",
                 "loc": Object {
-                  "end": 229,
+                  "end": 249,
                   "start": 0,
                 },
               },
@@ -4431,6 +4475,17 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                                     "kind": "Field",
                                     "name": Object {
                                       "kind": "Name",
+                                      "value": "cancellations",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
                                       "value": "cancellationsPercentage",
                                     },
                                     "selectionSet": undefined,
@@ -4488,7 +4543,7 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                     ],
                     "kind": "Document",
                     "loc": Object {
-                      "end": 229,
+                      "end": 249,
                       "start": 0,
                     },
                   },
@@ -6098,6 +6153,17 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                                   "kind": "Field",
                                   "name": Object {
                                     "kind": "Name",
+                                    "value": "cancellations",
+                                  },
+                                  "selectionSet": undefined,
+                                },
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
                                     "value": "cancellationsPercentage",
                                   },
                                   "selectionSet": undefined,
@@ -6155,7 +6221,7 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                   ],
                   "kind": "Document",
                   "loc": Object {
-                    "end": 229,
+                    "end": 249,
                     "start": 0,
                   },
                 },
@@ -7073,6 +7139,17 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                                   "kind": "Field",
                                   "name": Object {
                                     "kind": "Name",
+                                    "value": "cancellations",
+                                  },
+                                  "selectionSet": undefined,
+                                },
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
                                     "value": "cancellationsPercentage",
                                   },
                                   "selectionSet": undefined,
@@ -7130,7 +7207,7 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                   ],
                   "kind": "Document",
                   "loc": Object {
-                    "end": 229,
+                    "end": 249,
                     "start": 0,
                   },
                 },
@@ -9756,6 +9833,17 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                                       "kind": "Field",
                                       "name": Object {
                                         "kind": "Name",
+                                        "value": "cancellations",
+                                      },
+                                      "selectionSet": undefined,
+                                    },
+                                    Object {
+                                      "alias": undefined,
+                                      "arguments": Array [],
+                                      "directives": Array [],
+                                      "kind": "Field",
+                                      "name": Object {
+                                        "kind": "Name",
                                         "value": "cancellationsPercentage",
                                       },
                                       "selectionSet": undefined,
@@ -9813,7 +9901,7 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                       ],
                       "kind": "Document",
                       "loc": Object {
-                        "end": 229,
+                        "end": 249,
                         "start": 0,
                       },
                     }
@@ -10112,14 +10200,14 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                         }
                         chartTitle="% of Auto Cancellations"
                         dataName="Cancellations"
-                        entries={15}
+                        entries={0}
                         error={null}
                         hasInfo={false}
                         hintText=""
                         loading={true}
-                        percentage={75}
+                        percentage={0}
                         tip="Number and % of auto-cancelled meeting rooms"
-                        total={20}
+                        total={10}
                       >
                         <div
                           className="donut-chart"

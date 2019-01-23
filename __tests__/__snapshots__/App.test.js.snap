@@ -710,6 +710,17 @@ exports[`App component should not render Login if token is present but render Se
                                 "kind": "Field",
                                 "name": Object {
                                   "kind": "Name",
+                                  "value": "cancellations",
+                                },
+                                "selectionSet": undefined,
+                              },
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
                                   "value": "cancellationsPercentage",
                                 },
                                 "selectionSet": undefined,
@@ -767,7 +778,7 @@ exports[`App component should not render Login if token is present but render Se
                 ],
                 "kind": "Document",
                 "loc": Object {
-                  "end": 229,
+                  "end": 249,
                   "start": 0,
                 },
               },
@@ -1483,6 +1494,17 @@ exports[`App component should not render Login if token is present but render Se
                                 "kind": "Field",
                                 "name": Object {
                                   "kind": "Name",
+                                  "value": "cancellations",
+                                },
+                                "selectionSet": undefined,
+                              },
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
                                   "value": "cancellationsPercentage",
                                 },
                                 "selectionSet": undefined,
@@ -1547,7 +1569,7 @@ exports[`App component should not render Login if token is present but render Se
                 ],
                 "kind": "Document",
                 "loc": Object {
-                  "end": 229,
+                  "end": 249,
                   "source": Object {
                     "body": "
   query AnalyticsRatiosTotal($startDate: String!, $endDate: String!){
@@ -1555,6 +1577,7 @@ exports[`App component should not render Login if token is present but render Se
       checkins
       checkinsPercentage
       bookings
+      cancellations
       cancellationsPercentage
     }
   }
@@ -2725,6 +2748,17 @@ query user ($email: String!) {
                                     "kind": "Field",
                                     "name": Object {
                                       "kind": "Name",
+                                      "value": "cancellations",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
                                       "value": "cancellationsPercentage",
                                     },
                                     "selectionSet": undefined,
@@ -2789,7 +2823,7 @@ query user ($email: String!) {
                     ],
                     "kind": "Document",
                     "loc": Object {
-                      "end": 229,
+                      "end": 249,
                       "source": Object {
                         "body": "
   query AnalyticsRatiosTotal($startDate: String!, $endDate: String!){
@@ -2797,6 +2831,7 @@ query user ($email: String!) {
       checkins
       checkinsPercentage
       bookings
+      cancellations
       cancellationsPercentage
     }
   }
@@ -4625,6 +4660,17 @@ query user ($email: String!) {
                                   "kind": "Field",
                                   "name": Object {
                                     "kind": "Name",
+                                    "value": "cancellations",
+                                  },
+                                  "selectionSet": undefined,
+                                },
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
                                     "value": "cancellationsPercentage",
                                   },
                                   "selectionSet": undefined,
@@ -4689,7 +4735,7 @@ query user ($email: String!) {
                   ],
                   "kind": "Document",
                   "loc": Object {
-                    "end": 229,
+                    "end": 249,
                     "source": Object {
                       "body": "
   query AnalyticsRatiosTotal($startDate: String!, $endDate: String!){
@@ -4697,6 +4743,7 @@ query user ($email: String!) {
       checkins
       checkinsPercentage
       bookings
+      cancellations
       cancellationsPercentage
     }
   }
@@ -4836,6 +4883,17 @@ query user ($email: String!) {
                                       "kind": "Field",
                                       "name": Object {
                                         "kind": "Name",
+                                        "value": "cancellations",
+                                      },
+                                      "selectionSet": undefined,
+                                    },
+                                    Object {
+                                      "alias": undefined,
+                                      "arguments": Array [],
+                                      "directives": Array [],
+                                      "kind": "Field",
+                                      "name": Object {
+                                        "kind": "Name",
                                         "value": "cancellationsPercentage",
                                       },
                                       "selectionSet": undefined,
@@ -4893,7 +4951,7 @@ query user ($email: String!) {
                       ],
                       "kind": "Document",
                       "loc": Object {
-                        "end": 229,
+                        "end": 249,
                         "start": 0,
                       },
                     },
@@ -6677,6 +6735,17 @@ query user ($email: String!) {
                                   "kind": "Field",
                                   "name": Object {
                                     "kind": "Name",
+                                    "value": "cancellations",
+                                  },
+                                  "selectionSet": undefined,
+                                },
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
                                     "value": "cancellationsPercentage",
                                   },
                                   "selectionSet": undefined,
@@ -6741,7 +6810,7 @@ query user ($email: String!) {
                   ],
                   "kind": "Document",
                   "loc": Object {
-                    "end": 229,
+                    "end": 249,
                     "source": Object {
                       "body": "
   query AnalyticsRatiosTotal($startDate: String!, $endDate: String!){
@@ -6749,6 +6818,7 @@ query user ($email: String!) {
       checkins
       checkinsPercentage
       bookings
+      cancellations
       cancellationsPercentage
     }
   }
@@ -7810,6 +7880,17 @@ query user ($email: String!) {
                                   "kind": "Field",
                                   "name": Object {
                                     "kind": "Name",
+                                    "value": "cancellations",
+                                  },
+                                  "selectionSet": undefined,
+                                },
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
                                     "value": "cancellationsPercentage",
                                   },
                                   "selectionSet": undefined,
@@ -7874,7 +7955,7 @@ query user ($email: String!) {
                   ],
                   "kind": "Document",
                   "loc": Object {
-                    "end": 229,
+                    "end": 249,
                     "source": Object {
                       "body": "
   query AnalyticsRatiosTotal($startDate: String!, $endDate: String!){
@@ -7882,6 +7963,7 @@ query user ($email: String!) {
       checkins
       checkinsPercentage
       bookings
+      cancellations
       cancellationsPercentage
     }
   }
@@ -11336,6 +11418,17 @@ query user ($email: String!) {
                                                         "kind": "Field",
                                                         "name": Object {
                                                           "kind": "Name",
+                                                          "value": "cancellations",
+                                                        },
+                                                        "selectionSet": undefined,
+                                                      },
+                                                      Object {
+                                                        "alias": undefined,
+                                                        "arguments": Array [],
+                                                        "directives": Array [],
+                                                        "kind": "Field",
+                                                        "name": Object {
+                                                          "kind": "Name",
                                                           "value": "cancellationsPercentage",
                                                         },
                                                         "selectionSet": undefined,
@@ -11393,7 +11486,7 @@ query user ($email: String!) {
                                         ],
                                         "kind": "Document",
                                         "loc": Object {
-                                          "end": 229,
+                                          "end": 249,
                                           "start": 0,
                                         },
                                       }
@@ -11692,14 +11785,14 @@ query user ($email: String!) {
                                           }
                                           chartTitle="% of Auto Cancellations"
                                           dataName="Cancellations"
-                                          entries={15}
+                                          entries={0}
                                           error={null}
                                           hasInfo={false}
                                           hintText=""
                                           loading={true}
-                                          percentage={75}
+                                          percentage={0}
                                           tip="Number and % of auto-cancelled meeting rooms"
-                                          total={20}
+                                          total={10}
                                         >
                                           <div
                                             className="donut-chart"

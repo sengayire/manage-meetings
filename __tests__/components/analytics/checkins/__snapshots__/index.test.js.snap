@@ -49,14 +49,14 @@ exports[`Checkins component should render properly 1`] = `
     }
     chartTitle="% of Auto Cancellations"
     dataName="Cancellations"
-    entries={15}
+    entries={0}
     error={null}
     hasInfo={false}
     hintText=""
     loading={false}
-    percentage={75}
+    percentage={0}
     tip="Number and % of auto-cancelled meeting rooms"
-    total={20}
+    total={10}
   />
 </div>
 `;
