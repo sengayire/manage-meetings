@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { Fragment } from 'react';
-import Checkins from '../../src/components/analytics/checkins';
+import Checkins from '../../src/components/analytics/checkins'; // eslint-disable-line
 import { getTodaysDate } from '../utils/Utilities';
 import '../assets/styles/custom.scss';
 import '../assets/styles/topmenu.scss';
@@ -12,7 +12,7 @@ const AnalyticsOverview = ({ dateValue }) => (
   <Fragment>
     <AveragePieChartList dateValue={dateValue} />
     <ComposedBookedRooms dateValue={dateValue} />
-    <Checkins />
+    <Checkins dateValue={dateValue} />
     <AverageMeetingListComponent dateValue={dateValue} />
   </Fragment>
 );

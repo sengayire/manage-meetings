@@ -454,6 +454,169 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
               "startDate": "Jan 23 2019",
             },
           },
+          "AnalyticsRatiosTotal" => Object {
+            "query": Object {
+              "definitions": Array [
+                Object {
+                  "directives": Array [],
+                  "kind": "OperationDefinition",
+                  "name": Object {
+                    "kind": "Name",
+                    "value": "AnalyticsRatiosTotal",
+                  },
+                  "operation": "query",
+                  "selectionSet": Object {
+                    "kind": "SelectionSet",
+                    "selections": Array [
+                      Object {
+                        "alias": undefined,
+                        "arguments": Array [
+                          Object {
+                            "kind": "Argument",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "startDate",
+                            },
+                            "value": Object {
+                              "kind": "Variable",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "startDate",
+                              },
+                            },
+                          },
+                          Object {
+                            "kind": "Argument",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "endDate",
+                            },
+                            "value": Object {
+                              "kind": "Variable",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "endDate",
+                              },
+                            },
+                          },
+                        ],
+                        "directives": Array [],
+                        "kind": "Field",
+                        "name": Object {
+                          "kind": "Name",
+                          "value": "analyticsRatios",
+                        },
+                        "selectionSet": Object {
+                          "kind": "SelectionSet",
+                          "selections": Array [
+                            Object {
+                              "alias": undefined,
+                              "arguments": Array [],
+                              "directives": Array [],
+                              "kind": "Field",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "checkins",
+                              },
+                              "selectionSet": undefined,
+                            },
+                            Object {
+                              "alias": undefined,
+                              "arguments": Array [],
+                              "directives": Array [],
+                              "kind": "Field",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "checkinsPercentage",
+                              },
+                              "selectionSet": undefined,
+                            },
+                            Object {
+                              "alias": undefined,
+                              "arguments": Array [],
+                              "directives": Array [],
+                              "kind": "Field",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "bookings",
+                              },
+                              "selectionSet": undefined,
+                            },
+                            Object {
+                              "alias": undefined,
+                              "arguments": Array [],
+                              "directives": Array [],
+                              "kind": "Field",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "cancellationsPercentage",
+                              },
+                              "selectionSet": undefined,
+                            },
+                          ],
+                        },
+                      },
+                    ],
+                  },
+                  "variableDefinitions": Array [
+                    Object {
+                      "defaultValue": undefined,
+                      "kind": "VariableDefinition",
+                      "type": Object {
+                        "kind": "NonNullType",
+                        "type": Object {
+                          "kind": "NamedType",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "String",
+                          },
+                        },
+                      },
+                      "variable": Object {
+                        "kind": "Variable",
+                        "name": Object {
+                          "kind": "Name",
+                          "value": "startDate",
+                        },
+                      },
+                    },
+                    Object {
+                      "defaultValue": undefined,
+                      "kind": "VariableDefinition",
+                      "type": Object {
+                        "kind": "NonNullType",
+                        "type": Object {
+                          "kind": "NamedType",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "String",
+                          },
+                        },
+                      },
+                      "variable": Object {
+                        "kind": "Variable",
+                        "name": Object {
+                          "kind": "Name",
+                          "value": "endDate",
+                        },
+                      },
+                    },
+                  ],
+                },
+              ],
+              "kind": "Document",
+              "loc": Object {
+                "end": 229,
+                "start": 0,
+              },
+            },
+            "variables": Object {
+              "endDate": "Jan 23 2019",
+              "page": 1,
+              "perPage": 5,
+              "startDate": "Jan 23 2019",
+            },
+          },
           "durationOfMeetingsPerMeetingRoom" => Object {
             "query": Object {
               "definitions": Array [
@@ -962,6 +1125,172 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
               },
               "variables": Object {
                 "endDate": "Jan 23 2019",
+                "startDate": "Jan 23 2019",
+              },
+            },
+            Object {
+              "callback": [Function],
+              "optimistic": true,
+              "previousResult": [Function],
+              "query": Object {
+                "definitions": Array [
+                  Object {
+                    "directives": Array [],
+                    "kind": "OperationDefinition",
+                    "name": Object {
+                      "kind": "Name",
+                      "value": "AnalyticsRatiosTotal",
+                    },
+                    "operation": "query",
+                    "selectionSet": Object {
+                      "kind": "SelectionSet",
+                      "selections": Array [
+                        Object {
+                          "alias": undefined,
+                          "arguments": Array [
+                            Object {
+                              "kind": "Argument",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "startDate",
+                              },
+                              "value": Object {
+                                "kind": "Variable",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "startDate",
+                                },
+                              },
+                            },
+                            Object {
+                              "kind": "Argument",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "endDate",
+                              },
+                              "value": Object {
+                                "kind": "Variable",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "endDate",
+                                },
+                              },
+                            },
+                          ],
+                          "directives": Array [],
+                          "kind": "Field",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "analyticsRatios",
+                          },
+                          "selectionSet": Object {
+                            "kind": "SelectionSet",
+                            "selections": Array [
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "checkins",
+                                },
+                                "selectionSet": undefined,
+                              },
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "checkinsPercentage",
+                                },
+                                "selectionSet": undefined,
+                              },
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "bookings",
+                                },
+                                "selectionSet": undefined,
+                              },
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "cancellationsPercentage",
+                                },
+                                "selectionSet": undefined,
+                              },
+                            ],
+                          },
+                        },
+                      ],
+                    },
+                    "variableDefinitions": Array [
+                      Object {
+                        "defaultValue": undefined,
+                        "kind": "VariableDefinition",
+                        "type": Object {
+                          "kind": "NonNullType",
+                          "type": Object {
+                            "kind": "NamedType",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "String",
+                            },
+                          },
+                        },
+                        "variable": Object {
+                          "kind": "Variable",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "startDate",
+                          },
+                        },
+                      },
+                      Object {
+                        "defaultValue": undefined,
+                        "kind": "VariableDefinition",
+                        "type": Object {
+                          "kind": "NonNullType",
+                          "type": Object {
+                            "kind": "NamedType",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "String",
+                            },
+                          },
+                        },
+                        "variable": Object {
+                          "kind": "Variable",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "endDate",
+                          },
+                        },
+                      },
+                    ],
+                  },
+                ],
+                "kind": "Document",
+                "loc": Object {
+                  "end": 229,
+                  "start": 0,
+                },
+              },
+              "variables": Object {
+                "endDate": "Jan 23 2019",
+                "page": 1,
+                "perPage": 5,
                 "startDate": "Jan 23 2019",
               },
             },
@@ -1607,6 +1936,172 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                         "kind": "OperationDefinition",
                         "name": Object {
                           "kind": "Name",
+                          "value": "AnalyticsRatiosTotal",
+                        },
+                        "operation": "query",
+                        "selectionSet": Object {
+                          "kind": "SelectionSet",
+                          "selections": Array [
+                            Object {
+                              "alias": undefined,
+                              "arguments": Array [
+                                Object {
+                                  "kind": "Argument",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "startDate",
+                                  },
+                                  "value": Object {
+                                    "kind": "Variable",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "startDate",
+                                    },
+                                  },
+                                },
+                                Object {
+                                  "kind": "Argument",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "endDate",
+                                  },
+                                  "value": Object {
+                                    "kind": "Variable",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "endDate",
+                                    },
+                                  },
+                                },
+                              ],
+                              "directives": Array [],
+                              "kind": "Field",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "analyticsRatios",
+                              },
+                              "selectionSet": Object {
+                                "kind": "SelectionSet",
+                                "selections": Array [
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "checkins",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "checkinsPercentage",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "bookings",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "cancellationsPercentage",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
+                                ],
+                              },
+                            },
+                          ],
+                        },
+                        "variableDefinitions": Array [
+                          Object {
+                            "defaultValue": undefined,
+                            "kind": "VariableDefinition",
+                            "type": Object {
+                              "kind": "NonNullType",
+                              "type": Object {
+                                "kind": "NamedType",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "String",
+                                },
+                              },
+                            },
+                            "variable": Object {
+                              "kind": "Variable",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "startDate",
+                              },
+                            },
+                          },
+                          Object {
+                            "defaultValue": undefined,
+                            "kind": "VariableDefinition",
+                            "type": Object {
+                              "kind": "NonNullType",
+                              "type": Object {
+                                "kind": "NamedType",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "String",
+                                },
+                              },
+                            },
+                            "variable": Object {
+                              "kind": "Variable",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "endDate",
+                              },
+                            },
+                          },
+                        ],
+                      },
+                    ],
+                    "kind": "Document",
+                    "loc": Object {
+                      "end": 229,
+                      "start": 0,
+                    },
+                  },
+                  "variables": Object {
+                    "endDate": "Jan 23 2019",
+                    "page": 1,
+                    "perPage": 5,
+                    "startDate": "Jan 23 2019",
+                  },
+                },
+                Object {
+                  "callback": [Function],
+                  "optimistic": true,
+                  "previousResult": [Function],
+                  "query": Object {
+                    "definitions": Array [
+                      Object {
+                        "directives": Array [],
+                        "kind": "OperationDefinition",
+                        "name": Object {
+                          "kind": "Name",
                           "value": "durationOfMeetingsPerMeetingRoom",
                         },
                         "operation": "query",
@@ -1976,10 +2471,6 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
             "request": [Function],
           },
           "fetchQueryPromises": Map {
-            "5" => Object {
-              "reject": [Function],
-              "resolve": [Function],
-            },
             "6" => Object {
               "reject": [Function],
               "resolve": [Function],
@@ -1992,8 +2483,16 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
               "reject": [Function],
               "resolve": [Function],
             },
+            "9" => Object {
+              "reject": [Function],
+              "resolve": [Function],
+            },
+            "10" => Object {
+              "reject": [Function],
+              "resolve": [Function],
+            },
           },
-          "idCounter": 9,
+          "idCounter": 11,
           "link": ApolloLink {
             "request": [Function],
           },
@@ -2090,7 +2589,7 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
               },
               "invalidate": false,
               "invalidated": false,
-              "lastRequestId": 5,
+              "lastRequestId": 6,
               "listeners": Array [
                 [Function],
               ],
@@ -2358,7 +2857,7 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
               },
               "invalidate": false,
               "invalidated": false,
-              "lastRequestId": 6,
+              "lastRequestId": 7,
               "listeners": Array [
                 [Function],
               ],
@@ -2546,6 +3045,378 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
               "subscriptions": Array [],
             },
             "4" => Object {
+              "cancel": [Function],
+              "document": Object {
+                "definitions": Array [
+                  Object {
+                    "directives": Array [],
+                    "kind": "OperationDefinition",
+                    "name": Object {
+                      "kind": "Name",
+                      "value": "AnalyticsRatiosTotal",
+                    },
+                    "operation": "query",
+                    "selectionSet": Object {
+                      "kind": "SelectionSet",
+                      "selections": Array [
+                        Object {
+                          "alias": undefined,
+                          "arguments": Array [
+                            Object {
+                              "kind": "Argument",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "startDate",
+                              },
+                              "value": Object {
+                                "kind": "Variable",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "startDate",
+                                },
+                              },
+                            },
+                            Object {
+                              "kind": "Argument",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "endDate",
+                              },
+                              "value": Object {
+                                "kind": "Variable",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "endDate",
+                                },
+                              },
+                            },
+                          ],
+                          "directives": Array [],
+                          "kind": "Field",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "analyticsRatios",
+                          },
+                          "selectionSet": Object {
+                            "kind": "SelectionSet",
+                            "selections": Array [
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "checkins",
+                                },
+                                "selectionSet": undefined,
+                              },
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "checkinsPercentage",
+                                },
+                                "selectionSet": undefined,
+                              },
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "bookings",
+                                },
+                                "selectionSet": undefined,
+                              },
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "cancellationsPercentage",
+                                },
+                                "selectionSet": undefined,
+                              },
+                            ],
+                          },
+                        },
+                      ],
+                    },
+                    "variableDefinitions": Array [
+                      Object {
+                        "defaultValue": undefined,
+                        "kind": "VariableDefinition",
+                        "type": Object {
+                          "kind": "NonNullType",
+                          "type": Object {
+                            "kind": "NamedType",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "String",
+                            },
+                          },
+                        },
+                        "variable": Object {
+                          "kind": "Variable",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "startDate",
+                          },
+                        },
+                      },
+                      Object {
+                        "defaultValue": undefined,
+                        "kind": "VariableDefinition",
+                        "type": Object {
+                          "kind": "NonNullType",
+                          "type": Object {
+                            "kind": "NamedType",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "String",
+                            },
+                          },
+                        },
+                        "variable": Object {
+                          "kind": "Variable",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "endDate",
+                          },
+                        },
+                      },
+                    ],
+                  },
+                ],
+                "kind": "Document",
+                "loc": Object {
+                  "end": 229,
+                  "start": 0,
+                },
+              },
+              "invalidate": false,
+              "invalidated": false,
+              "lastRequestId": 8,
+              "listeners": Array [
+                [Function],
+              ],
+              "newData": null,
+              "observableQuery": ObservableQuery {
+                "_subscriber": [Function],
+                "isCurrentlyPolling": false,
+                "isTornDown": false,
+                "observers": Array [
+                  SubscriptionObserver {
+                    "_subscription": Subscription {
+                      "_cleanup": [Function],
+                      "_observer": Object {
+                        "error": [Function],
+                        "next": [Function],
+                      },
+                      "_queue": undefined,
+                      "_state": "ready",
+                    },
+                  },
+                ],
+                "options": Object {
+                  "context": Object {},
+                  "metadata": Object {
+                    "reactComponent": Object {
+                      "displayName": "Apollo(Checkins)",
+                    },
+                  },
+                  "notifyOnNetworkStatusChange": false,
+                  "query": Object {
+                    "definitions": Array [
+                      Object {
+                        "directives": Array [],
+                        "kind": "OperationDefinition",
+                        "name": Object {
+                          "kind": "Name",
+                          "value": "AnalyticsRatiosTotal",
+                        },
+                        "operation": "query",
+                        "selectionSet": Object {
+                          "kind": "SelectionSet",
+                          "selections": Array [
+                            Object {
+                              "alias": undefined,
+                              "arguments": Array [
+                                Object {
+                                  "kind": "Argument",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "startDate",
+                                  },
+                                  "value": Object {
+                                    "kind": "Variable",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "startDate",
+                                    },
+                                  },
+                                },
+                                Object {
+                                  "kind": "Argument",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "endDate",
+                                  },
+                                  "value": Object {
+                                    "kind": "Variable",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "endDate",
+                                    },
+                                  },
+                                },
+                              ],
+                              "directives": Array [],
+                              "kind": "Field",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "analyticsRatios",
+                              },
+                              "selectionSet": Object {
+                                "kind": "SelectionSet",
+                                "selections": Array [
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "checkins",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "checkinsPercentage",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "bookings",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "cancellationsPercentage",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
+                                ],
+                              },
+                            },
+                          ],
+                        },
+                        "variableDefinitions": Array [
+                          Object {
+                            "defaultValue": undefined,
+                            "kind": "VariableDefinition",
+                            "type": Object {
+                              "kind": "NonNullType",
+                              "type": Object {
+                                "kind": "NamedType",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "String",
+                                },
+                              },
+                            },
+                            "variable": Object {
+                              "kind": "Variable",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "startDate",
+                              },
+                            },
+                          },
+                          Object {
+                            "defaultValue": undefined,
+                            "kind": "VariableDefinition",
+                            "type": Object {
+                              "kind": "NonNullType",
+                              "type": Object {
+                                "kind": "NamedType",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "String",
+                                },
+                              },
+                            },
+                            "variable": Object {
+                              "kind": "Variable",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "endDate",
+                              },
+                            },
+                          },
+                        ],
+                      },
+                    ],
+                    "kind": "Document",
+                    "loc": Object {
+                      "end": 229,
+                      "start": 0,
+                    },
+                  },
+                  "variables": Object {
+                    "endDate": "Jan 23 2019",
+                    "page": 1,
+                    "perPage": 5,
+                    "startDate": "Jan 23 2019",
+                  },
+                },
+                "queryId": "4",
+                "queryManager": [Circular],
+                "scheduler": QueryScheduler {
+                  "inFlightQueries": Object {},
+                  "intervalQueries": Object {},
+                  "pollingTimers": Object {},
+                  "queryManager": [Circular],
+                  "registeredQueries": Object {},
+                  "ssrMode": false,
+                },
+                "shouldSubscribe": true,
+                "subscriptionHandles": Array [],
+                "variables": Object {
+                  "endDate": "Jan 23 2019",
+                  "page": 1,
+                  "perPage": 5,
+                  "startDate": "Jan 23 2019",
+                },
+              },
+              "subscriptions": Array [],
+            },
+            "5" => Object {
               "cancel": [Function],
               "document": Object {
                 "definitions": Array [
@@ -2805,7 +3676,7 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
               },
               "invalidate": false,
               "invalidated": false,
-              "lastRequestId": 7,
+              "lastRequestId": 9,
               "listeners": Array [
                 [Function],
               ],
@@ -3098,7 +3969,7 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                     "startDate": "Jan 23 2019",
                   },
                 },
-                "queryId": "4",
+                "queryId": "5",
                 "queryManager": [Circular],
                 "scheduler": QueryScheduler {
                   "inFlightQueries": Object {},
@@ -3221,7 +4092,7 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
               },
               "invalidate": false,
               "invalidated": false,
-              "lastRequestId": 8,
+              "lastRequestId": 10,
               "listeners": Array [
                 [Function],
               ],
@@ -3388,8 +4259,11 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
             "AnalyticsBookingsCount": Array [
               "3",
             ],
-            "durationOfMeetingsPerMeetingRoom": Array [
+            "AnalyticsRatiosTotal": Array [
               "4",
+            ],
+            "durationOfMeetingsPerMeetingRoom": Array [
+              "5",
             ],
             "user": Array [
               "1",
@@ -3754,6 +4628,178 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                 },
               },
               "4": Object {
+                "document": Object {
+                  "definitions": Array [
+                    Object {
+                      "directives": Array [],
+                      "kind": "OperationDefinition",
+                      "name": Object {
+                        "kind": "Name",
+                        "value": "AnalyticsRatiosTotal",
+                      },
+                      "operation": "query",
+                      "selectionSet": Object {
+                        "kind": "SelectionSet",
+                        "selections": Array [
+                          Object {
+                            "alias": undefined,
+                            "arguments": Array [
+                              Object {
+                                "kind": "Argument",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "startDate",
+                                },
+                                "value": Object {
+                                  "kind": "Variable",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "startDate",
+                                  },
+                                },
+                              },
+                              Object {
+                                "kind": "Argument",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "endDate",
+                                },
+                                "value": Object {
+                                  "kind": "Variable",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "endDate",
+                                  },
+                                },
+                              },
+                            ],
+                            "directives": Array [],
+                            "kind": "Field",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "analyticsRatios",
+                            },
+                            "selectionSet": Object {
+                              "kind": "SelectionSet",
+                              "selections": Array [
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "checkins",
+                                  },
+                                  "selectionSet": undefined,
+                                },
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "checkinsPercentage",
+                                  },
+                                  "selectionSet": undefined,
+                                },
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "bookings",
+                                  },
+                                  "selectionSet": undefined,
+                                },
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "cancellationsPercentage",
+                                  },
+                                  "selectionSet": undefined,
+                                },
+                              ],
+                            },
+                          },
+                        ],
+                      },
+                      "variableDefinitions": Array [
+                        Object {
+                          "defaultValue": undefined,
+                          "kind": "VariableDefinition",
+                          "type": Object {
+                            "kind": "NonNullType",
+                            "type": Object {
+                              "kind": "NamedType",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "String",
+                              },
+                            },
+                          },
+                          "variable": Object {
+                            "kind": "Variable",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "startDate",
+                            },
+                          },
+                        },
+                        Object {
+                          "defaultValue": undefined,
+                          "kind": "VariableDefinition",
+                          "type": Object {
+                            "kind": "NonNullType",
+                            "type": Object {
+                              "kind": "NamedType",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "String",
+                              },
+                            },
+                          },
+                          "variable": Object {
+                            "kind": "Variable",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "endDate",
+                            },
+                          },
+                        },
+                      ],
+                    },
+                  ],
+                  "kind": "Document",
+                  "loc": Object {
+                    "end": 229,
+                    "start": 0,
+                  },
+                },
+                "graphQLErrors": Array [],
+                "metadata": Object {
+                  "reactComponent": Object {
+                    "displayName": "Apollo(Checkins)",
+                  },
+                },
+                "networkError": null,
+                "networkStatus": 1,
+                "previousVariables": null,
+                "variables": Object {
+                  "endDate": "Jan 23 2019",
+                  "page": 1,
+                  "perPage": 5,
+                  "startDate": "Jan 23 2019",
+                },
+              },
+              "5": Object {
                 "document": Object {
                   "definitions": Array [
                     Object {
@@ -4285,6 +5331,172 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                 },
                 "variables": Object {
                   "endDate": "Jan 23 2019",
+                  "startDate": "Jan 23 2019",
+                },
+              },
+              Object {
+                "callback": [Function],
+                "optimistic": true,
+                "previousResult": [Function],
+                "query": Object {
+                  "definitions": Array [
+                    Object {
+                      "directives": Array [],
+                      "kind": "OperationDefinition",
+                      "name": Object {
+                        "kind": "Name",
+                        "value": "AnalyticsRatiosTotal",
+                      },
+                      "operation": "query",
+                      "selectionSet": Object {
+                        "kind": "SelectionSet",
+                        "selections": Array [
+                          Object {
+                            "alias": undefined,
+                            "arguments": Array [
+                              Object {
+                                "kind": "Argument",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "startDate",
+                                },
+                                "value": Object {
+                                  "kind": "Variable",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "startDate",
+                                  },
+                                },
+                              },
+                              Object {
+                                "kind": "Argument",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "endDate",
+                                },
+                                "value": Object {
+                                  "kind": "Variable",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "endDate",
+                                  },
+                                },
+                              },
+                            ],
+                            "directives": Array [],
+                            "kind": "Field",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "analyticsRatios",
+                            },
+                            "selectionSet": Object {
+                              "kind": "SelectionSet",
+                              "selections": Array [
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "checkins",
+                                  },
+                                  "selectionSet": undefined,
+                                },
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "checkinsPercentage",
+                                  },
+                                  "selectionSet": undefined,
+                                },
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "bookings",
+                                  },
+                                  "selectionSet": undefined,
+                                },
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "cancellationsPercentage",
+                                  },
+                                  "selectionSet": undefined,
+                                },
+                              ],
+                            },
+                          },
+                        ],
+                      },
+                      "variableDefinitions": Array [
+                        Object {
+                          "defaultValue": undefined,
+                          "kind": "VariableDefinition",
+                          "type": Object {
+                            "kind": "NonNullType",
+                            "type": Object {
+                              "kind": "NamedType",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "String",
+                              },
+                            },
+                          },
+                          "variable": Object {
+                            "kind": "Variable",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "startDate",
+                            },
+                          },
+                        },
+                        Object {
+                          "defaultValue": undefined,
+                          "kind": "VariableDefinition",
+                          "type": Object {
+                            "kind": "NonNullType",
+                            "type": Object {
+                              "kind": "NamedType",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "String",
+                              },
+                            },
+                          },
+                          "variable": Object {
+                            "kind": "Variable",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "endDate",
+                            },
+                          },
+                        },
+                      ],
+                    },
+                  ],
+                  "kind": "Document",
+                  "loc": Object {
+                    "end": 229,
+                    "start": 0,
+                  },
+                },
+                "variables": Object {
+                  "endDate": "Jan 23 2019",
+                  "page": 1,
+                  "perPage": 5,
                   "startDate": "Jan 23 2019",
                 },
               },
@@ -6463,375 +7675,560 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                   </div>
                 </div>
               </ComposedBookedRooms>
-              <Checkins>
-                <div
-                  className="checkins"
+              <Apollo(Checkins)
+                dateValue={
+                  Object {
+                    "endDate": "Jan 23 2019",
+                    "startDate": "Jan 23 2019",
+                  }
+                }
+              >
+                <Query
+                  displayName="Apollo(Checkins)"
+                  query={
+                    Object {
+                      "definitions": Array [
+                        Object {
+                          "directives": Array [],
+                          "kind": "OperationDefinition",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "AnalyticsRatiosTotal",
+                          },
+                          "operation": "query",
+                          "selectionSet": Object {
+                            "kind": "SelectionSet",
+                            "selections": Array [
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [
+                                  Object {
+                                    "kind": "Argument",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "startDate",
+                                    },
+                                    "value": Object {
+                                      "kind": "Variable",
+                                      "name": Object {
+                                        "kind": "Name",
+                                        "value": "startDate",
+                                      },
+                                    },
+                                  },
+                                  Object {
+                                    "kind": "Argument",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "endDate",
+                                    },
+                                    "value": Object {
+                                      "kind": "Variable",
+                                      "name": Object {
+                                        "kind": "Name",
+                                        "value": "endDate",
+                                      },
+                                    },
+                                  },
+                                ],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "analyticsRatios",
+                                },
+                                "selectionSet": Object {
+                                  "kind": "SelectionSet",
+                                  "selections": Array [
+                                    Object {
+                                      "alias": undefined,
+                                      "arguments": Array [],
+                                      "directives": Array [],
+                                      "kind": "Field",
+                                      "name": Object {
+                                        "kind": "Name",
+                                        "value": "checkins",
+                                      },
+                                      "selectionSet": undefined,
+                                    },
+                                    Object {
+                                      "alias": undefined,
+                                      "arguments": Array [],
+                                      "directives": Array [],
+                                      "kind": "Field",
+                                      "name": Object {
+                                        "kind": "Name",
+                                        "value": "checkinsPercentage",
+                                      },
+                                      "selectionSet": undefined,
+                                    },
+                                    Object {
+                                      "alias": undefined,
+                                      "arguments": Array [],
+                                      "directives": Array [],
+                                      "kind": "Field",
+                                      "name": Object {
+                                        "kind": "Name",
+                                        "value": "bookings",
+                                      },
+                                      "selectionSet": undefined,
+                                    },
+                                    Object {
+                                      "alias": undefined,
+                                      "arguments": Array [],
+                                      "directives": Array [],
+                                      "kind": "Field",
+                                      "name": Object {
+                                        "kind": "Name",
+                                        "value": "cancellationsPercentage",
+                                      },
+                                      "selectionSet": undefined,
+                                    },
+                                  ],
+                                },
+                              },
+                            ],
+                          },
+                          "variableDefinitions": Array [
+                            Object {
+                              "defaultValue": undefined,
+                              "kind": "VariableDefinition",
+                              "type": Object {
+                                "kind": "NonNullType",
+                                "type": Object {
+                                  "kind": "NamedType",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "String",
+                                  },
+                                },
+                              },
+                              "variable": Object {
+                                "kind": "Variable",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "startDate",
+                                },
+                              },
+                            },
+                            Object {
+                              "defaultValue": undefined,
+                              "kind": "VariableDefinition",
+                              "type": Object {
+                                "kind": "NonNullType",
+                                "type": Object {
+                                  "kind": "NamedType",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "String",
+                                  },
+                                },
+                              },
+                              "variable": Object {
+                                "kind": "Variable",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "endDate",
+                                },
+                              },
+                            },
+                          ],
+                        },
+                      ],
+                      "kind": "Document",
+                      "loc": Object {
+                        "end": 229,
+                        "start": 0,
+                      },
+                    }
+                  }
+                  skip={false}
+                  variables={
+                    Object {
+                      "endDate": "Jan 23 2019",
+                      "page": 1,
+                      "perPage": 5,
+                      "startDate": "Jan 23 2019",
+                    }
+                  }
+                  warnUnhandledError={true}
                 >
-                  <DonutChart
-                    chartSvg="test-file-stub"
-                    chartTitle="% of Checkins"
-                    entries={15}
-                    hasInfo={true}
-                    hintText=""
-                    percentage={75}
-                    tip="The number and % of check-ins of booked meeting rooms"
-                    total={20}
+                  <Checkins
+                    data={
+                      Object {
+                        "error": undefined,
+                        "fetchMore": [Function],
+                        "loading": true,
+                        "networkStatus": 1,
+                        "refetch": [Function],
+                        "startPolling": [Function],
+                        "stopPolling": [Function],
+                        "subscribeToMore": [Function],
+                        "updateQuery": [Function],
+                        "variables": Object {
+                          "endDate": "Jan 23 2019",
+                          "page": 1,
+                          "perPage": 5,
+                          "startDate": "Jan 23 2019",
+                        },
+                      }
+                    }
+                    dateValue={
+                      Object {
+                        "endDate": "Jan 23 2019",
+                        "startDate": "Jan 23 2019",
+                      }
+                    }
                   >
                     <div
-                      className="donut-chart"
+                      className="checkins"
                     >
-                      <div
-                        className="chart-header"
+                      <DonutChart
+                        chartColor={
+                          Array [
+                            "#3359DB",
+                            "#bcbcbc",
+                          ]
+                        }
+                        chartTitle="% of Checkins"
+                        dataName="Checkins"
+                        entries={0}
+                        error={null}
+                        hasInfo={true}
+                        hintText=""
+                        loading={true}
+                        percentage={0}
+                        tip="The number and % of check-ins of booked meeting rooms"
+                        total={10}
                       >
-                        <p>
-                          % of Checkins
-                        </p>
                         <div
-                          className="hint"
+                          className="donut-chart"
                         >
-                          <ThemedTooltippedComponent
-                            className=""
-                            composeTheme="deeply"
-                            mapThemrProps={[Function]}
-                            theme={null}
-                            tooltip="The number and % of check-ins of booked meeting rooms"
-                            tooltipDelay={0}
-                            tooltipHideOnClick={true}
-                            tooltipPosition="top"
-                            tooltipShowOnClick={true}
+                          <div
+                            className="chart-header"
                           >
-                            <TooltippedComponent
-                              className=""
-                              theme={
-                                Object {
-                                  "tooltipInner": "tooltipInner",
-                                }
-                              }
-                              tooltip="The number and % of check-ins of booked meeting rooms"
-                              tooltipDelay={0}
-                              tooltipHideOnClick={true}
-                              tooltipPosition="top"
-                              tooltipShowOnClick={true}
+                            <p>
+                              % of Checkins
+                            </p>
+                            <div
+                              className="hint"
                             >
-                              <ThemedLink
-                                active={false}
+                              <ThemedTooltippedComponent
                                 className=""
                                 composeTheme="deeply"
                                 mapThemrProps={[Function]}
-                                onClick={[Function]}
-                                onMouseEnter={[Function]}
-                                onMouseLeave={[Function]}
-                                theme={
-                                  Object {
-                                    "tooltipInner": "tooltipInner",
-                                  }
-                                }
+                                theme={null}
+                                tooltip="The number and % of check-ins of booked meeting rooms"
+                                tooltipDelay={0}
+                                tooltipHideOnClick={true}
+                                tooltipPosition="top"
+                                tooltipShowOnClick={true}
                               >
-                                <Link
-                                  active={false}
+                                <TooltippedComponent
                                   className=""
-                                  onClick={[Function]}
-                                  onMouseEnter={[Function]}
-                                  onMouseLeave={[Function]}
                                   theme={
                                     Object {
                                       "tooltipInner": "tooltipInner",
                                     }
                                   }
+                                  tooltip="The number and % of check-ins of booked meeting rooms"
+                                  tooltipDelay={0}
+                                  tooltipHideOnClick={true}
+                                  tooltipPosition="top"
+                                  tooltipShowOnClick={true}
                                 >
-                                  <a
+                                  <ThemedLink
+                                    active={false}
                                     className=""
-                                    data-react-toolbox="link"
+                                    composeTheme="deeply"
+                                    mapThemrProps={[Function]}
                                     onClick={[Function]}
                                     onMouseEnter={[Function]}
                                     onMouseLeave={[Function]}
+                                    theme={
+                                      Object {
+                                        "tooltipInner": "tooltipInner",
+                                      }
+                                    }
                                   >
-                                    <img
-                                      alt="help icon"
-                                      src="test-file-stub"
-                                    />
-                                  </a>
-                                </Link>
-                              </ThemedLink>
-                            </TooltippedComponent>
-                          </ThemedTooltippedComponent>
+                                    <Link
+                                      active={false}
+                                      className=""
+                                      onClick={[Function]}
+                                      onMouseEnter={[Function]}
+                                      onMouseLeave={[Function]}
+                                      theme={
+                                        Object {
+                                          "tooltipInner": "tooltipInner",
+                                        }
+                                      }
+                                    >
+                                      <a
+                                        className=""
+                                        data-react-toolbox="link"
+                                        onClick={[Function]}
+                                        onMouseEnter={[Function]}
+                                        onMouseLeave={[Function]}
+                                      >
+                                        <img
+                                          alt="help icon"
+                                          src="test-file-stub"
+                                        />
+                                      </a>
+                                    </Link>
+                                  </ThemedLink>
+                                </TooltippedComponent>
+                              </ThemedTooltippedComponent>
+                              <div
+                                className="hint-text"
+                              >
+                                <p />
+                              </div>
+                            </div>
+                          </div>
                           <div
-                            className="hint-text"
+                            className="chart-content"
                           >
-                            <p />
+                            <p
+                              className="chart-loader"
+                            >
+                               Loading...
+                            </p>
                           </div>
                         </div>
-                      </div>
-                      <div
-                        className="chart-content"
+                      </DonutChart>
+                      <DonutChart
+                        chartColor={
+                          Array [
+                            "#FFAF30",
+                            "#bcbcbc",
+                          ]
+                        }
+                        chartTitle="% of App Bookings"
+                        dataName="Bookings"
+                        entries={15}
+                        error={null}
+                        hasInfo={true}
+                        hintText=""
+                        loading={true}
+                        percentage={75}
+                        tip="The number and % of people who book directly from the app instead from google calendar"
+                        total={20}
                       >
                         <div
-                          className="chart diagram"
+                          className="donut-chart"
                         >
-                          <img
-                            alt="chart-svg"
-                            src="test-file-stub"
-                          />
-                          <p>
-                            75
-                            %
-                          </p>
-                        </div>
-                        <div
-                          className="chart text"
-                        >
-                          <p>
-                            15
-                            /
-                            20
-                          </p>
-                          <p>
-                            Meeting
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </DonutChart>
-                  <DonutChart
-                    chartSvg="test-file-stub"
-                    chartTitle="% of App Bookings"
-                    entries={4}
-                    hasInfo={true}
-                    hintText=""
-                    percentage={20}
-                    tip="The number and % of people who book directly from the app instead from google calendar"
-                    total={20}
-                  >
-                    <div
-                      className="donut-chart"
-                    >
-                      <div
-                        className="chart-header"
-                      >
-                        <p>
-                          % of App Bookings
-                        </p>
-                        <div
-                          className="hint"
-                        >
-                          <ThemedTooltippedComponent
-                            className=""
-                            composeTheme="deeply"
-                            mapThemrProps={[Function]}
-                            theme={null}
-                            tooltip="The number and % of people who book directly from the app instead from google calendar"
-                            tooltipDelay={0}
-                            tooltipHideOnClick={true}
-                            tooltipPosition="top"
-                            tooltipShowOnClick={true}
+                          <div
+                            className="chart-header"
                           >
-                            <TooltippedComponent
-                              className=""
-                              theme={
-                                Object {
-                                  "tooltipInner": "tooltipInner",
-                                }
-                              }
-                              tooltip="The number and % of people who book directly from the app instead from google calendar"
-                              tooltipDelay={0}
-                              tooltipHideOnClick={true}
-                              tooltipPosition="top"
-                              tooltipShowOnClick={true}
+                            <p>
+                              % of App Bookings
+                            </p>
+                            <div
+                              className="hint"
                             >
-                              <ThemedLink
-                                active={false}
+                              <ThemedTooltippedComponent
                                 className=""
                                 composeTheme="deeply"
                                 mapThemrProps={[Function]}
-                                onClick={[Function]}
-                                onMouseEnter={[Function]}
-                                onMouseLeave={[Function]}
-                                theme={
-                                  Object {
-                                    "tooltipInner": "tooltipInner",
-                                  }
-                                }
+                                theme={null}
+                                tooltip="The number and % of people who book directly from the app instead from google calendar"
+                                tooltipDelay={0}
+                                tooltipHideOnClick={true}
+                                tooltipPosition="top"
+                                tooltipShowOnClick={true}
                               >
-                                <Link
-                                  active={false}
+                                <TooltippedComponent
                                   className=""
-                                  onClick={[Function]}
-                                  onMouseEnter={[Function]}
-                                  onMouseLeave={[Function]}
                                   theme={
                                     Object {
                                       "tooltipInner": "tooltipInner",
                                     }
                                   }
+                                  tooltip="The number and % of people who book directly from the app instead from google calendar"
+                                  tooltipDelay={0}
+                                  tooltipHideOnClick={true}
+                                  tooltipPosition="top"
+                                  tooltipShowOnClick={true}
                                 >
-                                  <a
+                                  <ThemedLink
+                                    active={false}
                                     className=""
-                                    data-react-toolbox="link"
+                                    composeTheme="deeply"
+                                    mapThemrProps={[Function]}
                                     onClick={[Function]}
                                     onMouseEnter={[Function]}
                                     onMouseLeave={[Function]}
+                                    theme={
+                                      Object {
+                                        "tooltipInner": "tooltipInner",
+                                      }
+                                    }
                                   >
-                                    <img
-                                      alt="help icon"
-                                      src="test-file-stub"
-                                    />
-                                  </a>
-                                </Link>
-                              </ThemedLink>
-                            </TooltippedComponent>
-                          </ThemedTooltippedComponent>
+                                    <Link
+                                      active={false}
+                                      className=""
+                                      onClick={[Function]}
+                                      onMouseEnter={[Function]}
+                                      onMouseLeave={[Function]}
+                                      theme={
+                                        Object {
+                                          "tooltipInner": "tooltipInner",
+                                        }
+                                      }
+                                    >
+                                      <a
+                                        className=""
+                                        data-react-toolbox="link"
+                                        onClick={[Function]}
+                                        onMouseEnter={[Function]}
+                                        onMouseLeave={[Function]}
+                                      >
+                                        <img
+                                          alt="help icon"
+                                          src="test-file-stub"
+                                        />
+                                      </a>
+                                    </Link>
+                                  </ThemedLink>
+                                </TooltippedComponent>
+                              </ThemedTooltippedComponent>
+                              <div
+                                className="hint-text"
+                              >
+                                <p />
+                              </div>
+                            </div>
+                          </div>
                           <div
-                            className="hint-text"
+                            className="chart-content"
                           >
-                            <p />
+                            <p
+                              className="chart-loader"
+                            >
+                               Loading...
+                            </p>
                           </div>
                         </div>
-                      </div>
-                      <div
-                        className="chart-content"
+                      </DonutChart>
+                      <DonutChart
+                        chartColor={
+                          Array [
+                            "#49AAAF",
+                            "#bcbcbc",
+                          ]
+                        }
+                        chartTitle="% of Auto Cancellations"
+                        dataName="Cancellations"
+                        entries={15}
+                        error={null}
+                        hasInfo={false}
+                        hintText=""
+                        loading={true}
+                        percentage={75}
+                        tip="Number and % of auto-cancelled meeting rooms"
+                        total={20}
                       >
                         <div
-                          className="chart diagram"
+                          className="donut-chart"
                         >
-                          <img
-                            alt="chart-svg"
-                            src="test-file-stub"
-                          />
-                          <p>
-                            20
-                            %
-                          </p>
-                        </div>
-                        <div
-                          className="chart text"
-                        >
-                          <p>
-                            4
-                            /
-                            20
-                          </p>
-                          <p>
-                            Meeting
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </DonutChart>
-                  <DonutChart
-                    chartSvg="test-file-stub"
-                    chartTitle="% of Auto Cancellations"
-                    entries={16}
-                    hasInfo={false}
-                    hintText=""
-                    percentage={80}
-                    tip="Number and % of auto-cancelled meeting rooms"
-                    total={20}
-                  >
-                    <div
-                      className="donut-chart"
-                    >
-                      <div
-                        className="chart-header"
-                      >
-                        <p>
-                          % of Auto Cancellations
-                        </p>
-                        <div
-                          className="hint"
-                        >
-                          <ThemedTooltippedComponent
-                            className=""
-                            composeTheme="deeply"
-                            mapThemrProps={[Function]}
-                            theme={null}
-                            tooltip="Number and % of auto-cancelled meeting rooms"
-                            tooltipDelay={0}
-                            tooltipHideOnClick={true}
-                            tooltipPosition="top"
-                            tooltipShowOnClick={true}
+                          <div
+                            className="chart-header"
                           >
-                            <TooltippedComponent
-                              className=""
-                              theme={
-                                Object {
-                                  "tooltipInner": "tooltipInner",
-                                }
-                              }
-                              tooltip="Number and % of auto-cancelled meeting rooms"
-                              tooltipDelay={0}
-                              tooltipHideOnClick={true}
-                              tooltipPosition="top"
-                              tooltipShowOnClick={true}
+                            <p>
+                              % of Auto Cancellations
+                            </p>
+                            <div
+                              className="hint"
                             >
-                              <ThemedLink
-                                active={false}
+                              <ThemedTooltippedComponent
                                 className=""
                                 composeTheme="deeply"
                                 mapThemrProps={[Function]}
-                                onClick={[Function]}
-                                onMouseEnter={[Function]}
-                                onMouseLeave={[Function]}
-                                theme={
-                                  Object {
-                                    "tooltipInner": "tooltipInner",
-                                  }
-                                }
+                                theme={null}
+                                tooltip="Number and % of auto-cancelled meeting rooms"
+                                tooltipDelay={0}
+                                tooltipHideOnClick={true}
+                                tooltipPosition="top"
+                                tooltipShowOnClick={true}
                               >
-                                <Link
-                                  active={false}
+                                <TooltippedComponent
                                   className=""
-                                  onClick={[Function]}
-                                  onMouseEnter={[Function]}
-                                  onMouseLeave={[Function]}
                                   theme={
                                     Object {
                                       "tooltipInner": "tooltipInner",
                                     }
                                   }
+                                  tooltip="Number and % of auto-cancelled meeting rooms"
+                                  tooltipDelay={0}
+                                  tooltipHideOnClick={true}
+                                  tooltipPosition="top"
+                                  tooltipShowOnClick={true}
                                 >
-                                  <a
+                                  <ThemedLink
+                                    active={false}
                                     className=""
-                                    data-react-toolbox="link"
+                                    composeTheme="deeply"
+                                    mapThemrProps={[Function]}
                                     onClick={[Function]}
                                     onMouseEnter={[Function]}
                                     onMouseLeave={[Function]}
+                                    theme={
+                                      Object {
+                                        "tooltipInner": "tooltipInner",
+                                      }
+                                    }
                                   >
-                                    <img
-                                      alt="help icon"
-                                      src="test-file-stub"
-                                    />
-                                  </a>
-                                </Link>
-                              </ThemedLink>
-                            </TooltippedComponent>
-                          </ThemedTooltippedComponent>
+                                    <Link
+                                      active={false}
+                                      className=""
+                                      onClick={[Function]}
+                                      onMouseEnter={[Function]}
+                                      onMouseLeave={[Function]}
+                                      theme={
+                                        Object {
+                                          "tooltipInner": "tooltipInner",
+                                        }
+                                      }
+                                    >
+                                      <a
+                                        className=""
+                                        data-react-toolbox="link"
+                                        onClick={[Function]}
+                                        onMouseEnter={[Function]}
+                                        onMouseLeave={[Function]}
+                                      >
+                                        <img
+                                          alt="help icon"
+                                          src="test-file-stub"
+                                        />
+                                      </a>
+                                    </Link>
+                                  </ThemedLink>
+                                </TooltippedComponent>
+                              </ThemedTooltippedComponent>
+                              <div
+                                className="hint-text"
+                              >
+                                <p />
+                              </div>
+                            </div>
+                          </div>
                           <div
-                            className="hint-text"
+                            className="chart-content"
                           >
-                            <p />
+                            <p
+                              className="chart-loader"
+                            >
+                               Loading...
+                            </p>
                           </div>
                         </div>
-                      </div>
-                      <div
-                        className="chart-content"
-                      >
-                        <div
-                          className="chart diagram"
-                        >
-                          <img
-                            alt="chart-svg"
-                            src="test-file-stub"
-                          />
-                          <p>
-                            80
-                            %
-                          </p>
-                        </div>
-                      </div>
+                      </DonutChart>
                     </div>
-                  </DonutChart>
-                </div>
-              </Checkins>
+                  </Checkins>
+                </Query>
+              </Apollo(Checkins)>
               <Apollo(AverageMeetingList)
                 dateValue={
                   Object {
