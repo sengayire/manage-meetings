@@ -1,5 +1,7 @@
-[![Maintainability](https://api.codeclimate.com/v1/badges/96eb001b4748df1f3688/maintainability)](https://codeclimate.com/repos/5b06cdaec544c6027e008559/maintainability)
-[![Coverage Status](https://coveralls.io/repos/github/andela/mrm_front/badge.svg?t=h371yr)](https://coveralls.io/github/andela/mrm_front) [![Test Coverage](https://api.codeclimate.com/v1/badges/96eb001b4748df1f3688/test_coverage)](https://codeclimate.com/repos/5b06cdaec544c6027e008559/test_coverage)
+[![Maintainability](https://api.codeclimate.com/v1/badges/730b5c8ecdf49b97d939/maintainability)](https://codeclimate.com/repos/5c374a9e21a6d10240009535/maintainability)
+[![Coverage Status](https://coveralls.io/repos/github/andela/mrm_front/badge.svg?t=h371yr)](https://coveralls.io/github/andela/mrm_front)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/730b5c8ecdf49b97d939/test_coverage)](https://codeclimate.com/repos/5c374a9e21a6d10240009535/test_coverage)
+
 
 # MRM
 The Andela Meeting Room management solution
