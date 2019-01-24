@@ -1,9 +1,9 @@
 @import './variables';
 
-.settings-rooms {
+.settings-rooms, .settings-locations {
   width: 85%;
 
-  .settings-rooms-control {
+  .settings-rooms-control, .settings-locations-control {
     height: 80px;
     text-align: right;
     margin-top: 2%;
@@ -17,7 +17,7 @@
     }
   }
 
-  .settings-rooms-list {
+  .settings-rooms-list, .settings-locations-list {
     table {
       clear: left;
       table-layout: fixed;

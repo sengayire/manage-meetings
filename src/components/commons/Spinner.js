@@ -12,4 +12,10 @@ const Spinner = () => (
   </div>
 );
 
-export default Spinner;
+const SmallSpinner = () => (
+  <div className="centered">
+    <div className="spinner small" />
+  </div>
+);
+
+export { Spinner as default, SmallSpinner };
