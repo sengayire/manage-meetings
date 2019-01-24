@@ -27,7 +27,7 @@ exports[`AddQuestion component should be rendered without errors 1`] = `
               className="calendarIconBtn"
             >
               <span>
-                Jan 23 2019  -  Jan 23 2019
+                Jan 24 2019  -  Jan 24 2019
               </span>
             </div>
           }
@@ -65,7 +65,7 @@ exports[`AddQuestion component should be rendered without errors 1`] = `
             name="startTime"
             onChange={[Function]}
             type="time"
-            value="17:01"
+            value="12:01"
           />
         </div>
         <div
@@ -84,7 +84,7 @@ exports[`AddQuestion component should be rendered without errors 1`] = `
             name="endTime"
             onChange={[Function]}
             type="time"
-            value="18:01"
+            value="13:01"
           />
         </div>
       </div>

@@ -450,8 +450,8 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
               },
             },
             "variables": Object {
-              "endDate": "Jan 23 2019",
-              "startDate": "Jan 23 2019",
+              "endDate": "Jan 24 2019",
+              "startDate": "Jan 24 2019",
             },
           },
           "AnalyticsRatiosTotal" => Object {
@@ -611,10 +611,10 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
               },
             },
             "variables": Object {
-              "endDate": "Jan 23 2019",
+              "endDate": "Jan 24 2019",
               "page": 1,
               "perPage": 5,
-              "startDate": "Jan 23 2019",
+              "startDate": "Jan 24 2019",
             },
           },
           "durationOfMeetingsPerMeetingRoom" => Object {
@@ -875,10 +875,10 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
               },
             },
             "variables": Object {
-              "endDate": "Jan 23 2019",
+              "endDate": "Jan 24 2019",
               "page": 1,
               "perPage": 5,
-              "startDate": "Jan 23 2019",
+              "startDate": "Jan 24 2019",
             },
           },
         },
@@ -1124,8 +1124,8 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                 },
               },
               "variables": Object {
-                "endDate": "Jan 23 2019",
-                "startDate": "Jan 23 2019",
+                "endDate": "Jan 24 2019",
+                "startDate": "Jan 24 2019",
               },
             },
             Object {
@@ -1288,10 +1288,10 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                 },
               },
               "variables": Object {
-                "endDate": "Jan 23 2019",
+                "endDate": "Jan 24 2019",
                 "page": 1,
                 "perPage": 5,
-                "startDate": "Jan 23 2019",
+                "startDate": "Jan 24 2019",
               },
             },
             Object {
@@ -1555,10 +1555,10 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                 },
               },
               "variables": Object {
-                "endDate": "Jan 23 2019",
+                "endDate": "Jan 24 2019",
                 "page": 1,
                 "perPage": 5,
-                "startDate": "Jan 23 2019",
+                "startDate": "Jan 24 2019",
               },
             },
             Object {
@@ -1921,8 +1921,8 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                     },
                   },
                   "variables": Object {
-                    "endDate": "Jan 23 2019",
-                    "startDate": "Jan 23 2019",
+                    "endDate": "Jan 24 2019",
+                    "startDate": "Jan 24 2019",
                   },
                 },
                 Object {
@@ -2085,10 +2085,10 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                     },
                   },
                   "variables": Object {
-                    "endDate": "Jan 23 2019",
+                    "endDate": "Jan 24 2019",
                     "page": 1,
                     "perPage": 5,
-                    "startDate": "Jan 23 2019",
+                    "startDate": "Jan 24 2019",
                   },
                 },
                 Object {
@@ -2352,10 +2352,10 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                     },
                   },
                   "variables": Object {
-                    "endDate": "Jan 23 2019",
+                    "endDate": "Jan 24 2019",
                     "page": 1,
                     "perPage": 5,
-                    "startDate": "Jan 23 2019",
+                    "startDate": "Jan 24 2019",
                   },
                 },
                 Object {
@@ -3021,8 +3021,8 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                     },
                   },
                   "variables": Object {
-                    "endDate": "Jan 23 2019",
-                    "startDate": "Jan 23 2019",
+                    "endDate": "Jan 24 2019",
+                    "startDate": "Jan 24 2019",
                   },
                 },
                 "queryId": "3",
@@ -3038,8 +3038,8 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                 "shouldSubscribe": true,
                 "subscriptionHandles": Array [],
                 "variables": Object {
-                  "endDate": "Jan 23 2019",
-                  "startDate": "Jan 23 2019",
+                  "endDate": "Jan 24 2019",
+                  "startDate": "Jan 24 2019",
                 },
               },
               "subscriptions": Array [],
@@ -3389,10 +3389,10 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                     },
                   },
                   "variables": Object {
-                    "endDate": "Jan 23 2019",
+                    "endDate": "Jan 24 2019",
                     "page": 1,
                     "perPage": 5,
-                    "startDate": "Jan 23 2019",
+                    "startDate": "Jan 24 2019",
                   },
                 },
                 "queryId": "4",
@@ -3408,10 +3408,10 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                 "shouldSubscribe": true,
                 "subscriptionHandles": Array [],
                 "variables": Object {
-                  "endDate": "Jan 23 2019",
+                  "endDate": "Jan 24 2019",
                   "page": 1,
                   "perPage": 5,
-                  "startDate": "Jan 23 2019",
+                  "startDate": "Jan 24 2019",
                 },
               },
               "subscriptions": Array [],
@@ -3963,10 +3963,10 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                     },
                   },
                   "variables": Object {
-                    "endDate": "Jan 23 2019",
+                    "endDate": "Jan 24 2019",
                     "page": 1,
                     "perPage": 5,
-                    "startDate": "Jan 23 2019",
+                    "startDate": "Jan 24 2019",
                   },
                 },
                 "queryId": "5",
@@ -3982,10 +3982,10 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                 "shouldSubscribe": true,
                 "subscriptionHandles": Array [],
                 "variables": Object {
-                  "endDate": "Jan 23 2019",
+                  "endDate": "Jan 24 2019",
                   "page": 1,
                   "perPage": 5,
-                  "startDate": "Jan 23 2019",
+                  "startDate": "Jan 24 2019",
                 },
               },
               "subscriptions": Array [],
@@ -4623,8 +4623,8 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                 "networkStatus": 1,
                 "previousVariables": null,
                 "variables": Object {
-                  "endDate": "Jan 23 2019",
-                  "startDate": "Jan 23 2019",
+                  "endDate": "Jan 24 2019",
+                  "startDate": "Jan 24 2019",
                 },
               },
               "4": Object {
@@ -4793,10 +4793,10 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                 "networkStatus": 1,
                 "previousVariables": null,
                 "variables": Object {
-                  "endDate": "Jan 23 2019",
+                  "endDate": "Jan 24 2019",
                   "page": 1,
                   "perPage": 5,
-                  "startDate": "Jan 23 2019",
+                  "startDate": "Jan 24 2019",
                 },
               },
               "5": Object {
@@ -5066,10 +5066,10 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                 "networkStatus": 1,
                 "previousVariables": null,
                 "variables": Object {
-                  "endDate": "Jan 23 2019",
+                  "endDate": "Jan 24 2019",
                   "page": 1,
                   "perPage": 5,
-                  "startDate": "Jan 23 2019",
+                  "startDate": "Jan 24 2019",
                 },
               },
             },
@@ -5330,8 +5330,8 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                   },
                 },
                 "variables": Object {
-                  "endDate": "Jan 23 2019",
-                  "startDate": "Jan 23 2019",
+                  "endDate": "Jan 24 2019",
+                  "startDate": "Jan 24 2019",
                 },
               },
               Object {
@@ -5494,10 +5494,10 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                   },
                 },
                 "variables": Object {
-                  "endDate": "Jan 23 2019",
+                  "endDate": "Jan 24 2019",
                   "page": 1,
                   "perPage": 5,
-                  "startDate": "Jan 23 2019",
+                  "startDate": "Jan 24 2019",
                 },
               },
               Object {
@@ -5761,10 +5761,10 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                   },
                 },
                 "variables": Object {
-                  "endDate": "Jan 23 2019",
+                  "endDate": "Jan 24 2019",
                   "page": 1,
                   "perPage": 5,
-                  "startDate": "Jan 23 2019",
+                  "startDate": "Jan 24 2019",
                 },
               },
               Object {
@@ -6494,7 +6494,7 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                       className="calendarIconBtn"
                     >
                       <span>
-                        Jan 23 2019 - Jan 23 2019
+                        Jan 24 2019 - Jan 24 2019
                       </span>
                     </div>
                   }
@@ -6516,7 +6516,7 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                         className="calendarIconBtn"
                       >
                         <span>
-                          Jan 23 2019 - Jan 23 2019
+                          Jan 24 2019 - Jan 24 2019
                         </span>
                       </div>
                     }
@@ -6542,7 +6542,7 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                           className="calendarIconBtn"
                         >
                           <span>
-                            Jan 23 2019 - Jan 23 2019
+                            Jan 24 2019 - Jan 24 2019
                           </span>
                         </div>
                       }
@@ -6570,7 +6570,7 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                             className="calendarIconBtn"
                           >
                             <span>
-                              Jan 23 2019 - Jan 23 2019
+                              Jan 24 2019 - Jan 24 2019
                             </span>
                           </div>
                         }
@@ -6609,7 +6609,7 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                                 className="calendarIconBtn"
                               >
                                 <span>
-                                  Jan 23 2019 - Jan 23 2019
+                                  Jan 24 2019 - Jan 24 2019
                                 </span>
                               </div>
                             }
@@ -6623,7 +6623,7 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                                 className="calendarIconBtn"
                               >
                                 <span>
-                                  Jan 23 2019 - Jan 23 2019
+                                  Jan 24 2019 - Jan 24 2019
                                 </span>
                               </div>
                             </span>
@@ -6678,16 +6678,16 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
             <AnalyticsOverview
               dateValue={
                 Object {
-                  "endDate": "Jan 23 2019",
-                  "startDate": "Jan 23 2019",
+                  "endDate": "Jan 24 2019",
+                  "startDate": "Jan 24 2019",
                 }
               }
             >
               <AveragePieChartList
                 dateValue={
                   Object {
-                    "endDate": "Jan 23 2019",
-                    "startDate": "Jan 23 2019",
+                    "endDate": "Jan 24 2019",
+                    "startDate": "Jan 24 2019",
                   }
                 }
               >
@@ -7029,8 +7029,8 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                   <BookingsCountBarGraph
                     dateValue={
                       Object {
-                        "endDate": "Jan 23 2019",
-                        "startDate": "Jan 23 2019",
+                        "endDate": "Jan 24 2019",
+                        "startDate": "Jan 24 2019",
                       }
                     }
                   >
@@ -7118,8 +7118,8 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                         <QueryBookingsCount
                           dateValue={
                             Object {
-                              "endDate": "Jan 23 2019",
-                              "startDate": "Jan 23 2019",
+                              "endDate": "Jan 24 2019",
+                              "startDate": "Jan 24 2019",
                             }
                           }
                         >
@@ -7262,8 +7262,8 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                             }
                             variables={
                               Object {
-                                "endDate": "Jan 23 2019",
-                                "startDate": "Jan 23 2019",
+                                "endDate": "Jan 24 2019",
+                                "startDate": "Jan 24 2019",
                               }
                             }
                           >
@@ -7280,8 +7280,8 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
               <ComposedBookedRooms
                 dateValue={
                   Object {
-                    "endDate": "Jan 23 2019",
-                    "startDate": "Jan 23 2019",
+                    "endDate": "Jan 24 2019",
+                    "startDate": "Jan 24 2019",
                   }
                 }
               >
@@ -7294,8 +7294,8 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                       component={[Function]}
                       date={
                         Object {
-                          "endDate": "Jan 23 2019",
-                          "startDate": "Jan 23 2019",
+                          "endDate": "Jan 24 2019",
+                          "startDate": "Jan 24 2019",
                         }
                       }
                     >
@@ -7487,8 +7487,8 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                       component={[Function]}
                       date={
                         Object {
-                          "endDate": "Jan 23 2019",
-                          "startDate": "Jan 23 2019",
+                          "endDate": "Jan 24 2019",
+                          "startDate": "Jan 24 2019",
                         }
                       }
                       tip=""
@@ -7678,8 +7678,8 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
               <Apollo(Checkins)
                 dateValue={
                   Object {
-                    "endDate": "Jan 23 2019",
-                    "startDate": "Jan 23 2019",
+                    "endDate": "Jan 24 2019",
+                    "startDate": "Jan 24 2019",
                   }
                 }
               >
@@ -7845,10 +7845,10 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                   skip={false}
                   variables={
                     Object {
-                      "endDate": "Jan 23 2019",
+                      "endDate": "Jan 24 2019",
                       "page": 1,
                       "perPage": 5,
-                      "startDate": "Jan 23 2019",
+                      "startDate": "Jan 24 2019",
                     }
                   }
                   warnUnhandledError={true}
@@ -7866,17 +7866,17 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                         "subscribeToMore": [Function],
                         "updateQuery": [Function],
                         "variables": Object {
-                          "endDate": "Jan 23 2019",
+                          "endDate": "Jan 24 2019",
                           "page": 1,
                           "perPage": 5,
-                          "startDate": "Jan 23 2019",
+                          "startDate": "Jan 24 2019",
                         },
                       }
                     }
                     dateValue={
                       Object {
-                        "endDate": "Jan 23 2019",
-                        "startDate": "Jan 23 2019",
+                        "endDate": "Jan 24 2019",
+                        "startDate": "Jan 24 2019",
                       }
                     }
                   >
@@ -8256,8 +8256,8 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
               <Apollo(AverageMeetingList)
                 dateValue={
                   Object {
-                    "endDate": "Jan 23 2019",
-                    "startDate": "Jan 23 2019",
+                    "endDate": "Jan 24 2019",
+                    "startDate": "Jan 24 2019",
                   }
                 }
               >
@@ -8524,10 +8524,10 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                   skip={false}
                   variables={
                     Object {
-                      "endDate": "Jan 23 2019",
+                      "endDate": "Jan 24 2019",
                       "page": 1,
                       "perPage": 5,
-                      "startDate": "Jan 23 2019",
+                      "startDate": "Jan 24 2019",
                     }
                   }
                   warnUnhandledError={true}
@@ -8545,17 +8545,17 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                         "subscribeToMore": [Function],
                         "updateQuery": [Function],
                         "variables": Object {
-                          "endDate": "Jan 23 2019",
+                          "endDate": "Jan 24 2019",
                           "page": 1,
                           "perPage": 5,
-                          "startDate": "Jan 23 2019",
+                          "startDate": "Jan 24 2019",
                         },
                       }
                     }
                     dateValue={
                       Object {
-                        "endDate": "Jan 23 2019",
-                        "startDate": "Jan 23 2019",
+                        "endDate": "Jan 24 2019",
+                        "startDate": "Jan 24 2019",
                       }
                     }
                   >
