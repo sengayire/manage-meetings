@@ -16,7 +16,7 @@ import BookingsCountBarGraph from '../barGraph/BookingsCountBarGraph';
  */
 const AveragePieChartList = ({ dateValue }) => (
   <div className="pie-chart-container">
-    <MeetingDurationPieChart />
+    <MeetingDurationPieChart dateValue={dateValue} />
     <RoomCapacityPieChart />
     <BookingsCountBarGraph dateValue={dateValue} />
   </div>

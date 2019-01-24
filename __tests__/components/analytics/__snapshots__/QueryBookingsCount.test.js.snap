@@ -1602,9 +1602,15 @@ exports[`Query Bookings Count Component should render analytics data 1`] = `
             }
           }
         >
-          <p>
-            Loading...
-          </p>
+          <Spinner>
+            <div
+              className="centered"
+            >
+              <div
+                className="spinner"
+              />
+            </div>
+          </Spinner>
         </Query>
       </QueryBookingsCount>
     </ErrorBoundary>
@@ -3195,9 +3201,15 @@ exports[`Query Bookings Count Component should render without error 1`] = `
             }
           }
         >
-          <p>
-            Loading...
-          </p>
+          <Spinner>
+            <div
+              className="centered"
+            >
+              <div
+                className="spinner"
+              />
+            </div>
+          </Spinner>
         </Query>
       </QueryBookingsCount>
     </ErrorBoundary>

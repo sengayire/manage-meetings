@@ -6,6 +6,7 @@ import { HorizontalBar } from 'react-chartjs-2';
 import { ANALYTICS_BOOKINGS_COUNT } from '../../graphql/queries/analytics';
 import ErrorBoundary from '../commons/ErrorBoundary';
 import graphColor from '../../fixtures/graphColor';
+import Spinner from '../commons/Spinner';
 
 /**
  * Component for Querying Bookings Count
@@ -22,7 +23,7 @@ const QueryBookingsCount = ({ dateValue }) => (
   >
     {({ loading, error, data }) => {
       if (loading) {
-        return <p>Loading...</p>;
+        return <Spinner />;
       }
       if (error) {
         const errors = error.graphQLErrors.map(err => err.message);

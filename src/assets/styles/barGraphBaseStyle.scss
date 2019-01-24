@@ -33,6 +33,11 @@
   align-items: center;
   max-height: 150px;
   overflow-y: auto;
+  .centered{
+    .spinner{
+      margin-top:19%;
+    }
+  }
 }
 
 .graph-title {
