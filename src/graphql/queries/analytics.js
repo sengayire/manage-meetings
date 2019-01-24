@@ -35,6 +35,7 @@ const CHECKINS_BOOKINGS_CANCELLATIONS_PERCENTAGES = gql`
       checkins
       checkinsPercentage
       bookings
+      cancellations
       cancellationsPercentage
     }
   }

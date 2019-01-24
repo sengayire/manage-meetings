@@ -34,6 +34,8 @@ export class Checkins extends Component {
       checkins,
       checkinsPercentage,
       bookings,
+      cancellationsPercentage,
+      cancellations,
     } = this.formatAnalyticsData(analyticsRatios, loading, error);
     return (
       <div className="checkins">
@@ -61,14 +63,14 @@ export class Checkins extends Component {
         />
         <DonutChart
           chartTitle="% of Auto Cancellations"
-          entries={15}
-          total={20}
-          percentage={75}
-          hasInfo={false}
+          entries={cancellations}
+          total={bookings}
+          percentage={cancellationsPercentage}
           loading={loading}
           error={error}
           chartColor={cancellationsChart}
           dataName="Cancellations"
+          hasInfo={false}
           tip="Number and % of auto-cancelled meeting rooms"
         />
       </div>
