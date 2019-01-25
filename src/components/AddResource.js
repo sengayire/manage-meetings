@@ -2,6 +2,7 @@ import React from 'react';
 import { graphql, compose } from 'react-apollo';
 import toastr from 'toastr';
 import PropTypes from 'prop-types';
+import ActionButtons from './commons/ActionButtons';
 
 import MrmModal from '../components/commons/Modal';
 import '../assets/styles/addresource.scss';
@@ -23,6 +24,7 @@ export class AddResource extends React.Component {
     closeModal: false,
     resourceQuantity: 0,
     room: '',
+    isLoading: false,
   };
 
   resourceQuantity = React.createRef();
@@ -73,8 +75,8 @@ export class AddResource extends React.Component {
    */
   handleAddAmenity = (event) => {
     event.preventDefault();
-
     // submission logic
+    this.toggleLoading();
     const { amenity, resourceQuantity, room } = this.state;
     const roomId = parseInt(room, 10);
     this.props
@@ -86,22 +88,36 @@ export class AddResource extends React.Component {
         },
       })
       .then(() => {
+        /** Notify user of success of adding of room */
+        this.toggleLoading();
         this.handleCloseModal();
-        /** Notify user of success of adding room */
         notification(toastr, 'success', 'Resource Successfully added')();
         /** Clear the state and restore default values */
         this.setState({ amenity: '', resourceQuantity: 0, room: '' });
-        this.handleCloseModal();
       })
       .catch((err) => {
         /** Notify user on failure to add resource */
+        this.toggleLoading();
+        this.handleCloseModal();
         notification(toastr, 'error', err)();
       });
   };
 
+  /**
+   * 1. change isLoading state to it's opposite value
+   * i.e true to false or vise verser
+   *
+   * @returns {void}
+   */
+  toggleLoading = () => {
+    this.setState({
+      isLoading: !this.state.isLoading,
+    });
+  }
+
   render() {
     const {
-      amenity, closeModal, resourceQuantity, room,
+      amenity, closeModal, resourceQuantity, room, isLoading,
     } = this.state;
     const { allRooms } = this.props.data;
 
@@ -150,13 +166,14 @@ export class AddResource extends React.Component {
               value={resourceQuantity}
               onChange={this.handleInputChange}
             />
-            <div className="button-container ">
-              <button className="add-resource" type="submit">
-                ADD RESOURCE
-              </button>
-              <button className="modal-cancel" onClick={this.handleCloseModal}>
-                CANCEL
-              </button>
+            <div className="loading-btn-div">
+              <ActionButtons
+                withCancel
+                onClickCancel={this.handleCloseModal}
+                isLoading={isLoading}
+                actionButtonText="ADD RESOURCE"
+                onClickSubmit={this.handleAddAmenity}
+              />
             </div>
           </div>
         </form>

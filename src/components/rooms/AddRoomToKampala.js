@@ -27,6 +27,7 @@ export class AddRoomToTheCrest extends Component {
     roomCapacity: 0,
     closeModal: false,
     thumbnailName: 'Upload a thumbnail',
+    isLoading: false,
   };
 
   componentWillReceiveProps = (props) => {
@@ -128,7 +129,21 @@ export class AddRoomToTheCrest extends Component {
   };
 
   /**
-   * It adds a room
+   * 1. change isLoading state to it's opposite value
+   * i.e true to false or vise verser
+   *
+   * @returns {void}
+   */
+  toggleLoading = () => {
+    this.setState({
+      isLoading: !this.state.isLoading,
+    });
+  }
+
+  /**
+   * Adds a room
+   *
+   * @param {object} event
    *
    * @param  {object} event
    * @returns {function}
@@ -146,6 +161,7 @@ export class AddRoomToTheCrest extends Component {
     } = this.state;
 
     if (!hasInvalidInputs(this.state)) {
+      this.toggleLoading();
       this.props
         .crestMutation({
           variables: {
@@ -159,8 +175,9 @@ export class AddRoomToTheCrest extends Component {
           },
         })
         .then((res) => {
-          this.handleCloseModal();
           /** Notify user of sucess of adding of room */
+          this.toggleLoading();
+          this.handleCloseModal();
           notification(
             toastr,
             'success',
@@ -170,7 +187,8 @@ export class AddRoomToTheCrest extends Component {
         })
         .catch((err) => {
           /** Notify user on failure to add room */
-
+          this.toggleLoading();
+          this.handleCloseModal();
           notification(toastr, 'error', err.message)();
         });
     }
@@ -184,6 +202,7 @@ export class AddRoomToTheCrest extends Component {
       imageUrl,
       thumbnailName,
       floorOptions,
+      isLoading,
     } = this.state;
 
     let floorOptionsList = floorOptions;
@@ -201,7 +220,7 @@ export class AddRoomToTheCrest extends Component {
         handleCloseRequest={this.handleModalStateChange}
         className="add-room-modal"
       >
-        <form className="modal-form kla-form" onSubmit={this.handleAddRoom}>
+        <form className="modal-form kla-form">
           <SelectImage
             onChange={this.handleInputChange}
             imageUrl={imageUrl}
@@ -218,6 +237,8 @@ export class AddRoomToTheCrest extends Component {
             withCancel
             onClickCancel={this.handleCloseModal}
             actionButtonText="ADD ROOM"
+            isLoading={isLoading}
+            onClickSubmit={this.handleAddRoom}
           />
         </form>
       </Modal>

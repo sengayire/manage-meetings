@@ -6,7 +6,7 @@ import MrmModal from '../components/commons/Modal';
 import { DELETE_WING_MUTATION } from '../graphql/mutations/wings';
 import { GET_ALL_WINGS } from '../graphql/queries/wings';
 import notification from '../utils/notification';
-
+import ActionButtons from './commons/ActionButtons';
 import '../assets/styles/deleteModal.scss';
 
 /**
@@ -19,6 +19,7 @@ import '../assets/styles/deleteModal.scss';
 export class DeleteWing extends React.Component {
   state = {
     closeModal: false,
+    isDeleting: false,
   };
 
   /**
@@ -46,6 +47,7 @@ export class DeleteWing extends React.Component {
    */
   handleDeleteWing = () => {
     const { wingId, deleteWing } = this.props;
+    this.toggleLoading();
     deleteWing({
       variables: {
         wingId,
@@ -53,16 +55,32 @@ export class DeleteWing extends React.Component {
       refetchQueries: [{ query: GET_ALL_WINGS }],
     })
       .then((wing) => {
+        this.toggleLoading();
+        this.handleCloseModal();
         const { name } = wing.data.deleteWing.wing;
         notification(toastr, 'success', `${name} is deleted successfully`)();
       })
       .catch((err) => {
+        this.toggleLoading();
+        this.handleCloseModal();
         notification(toastr, 'error', err.graphQLErrors[0].message)();
       });
-    this.handleCloseModal();
   };
 
+  /**
+   * 1. change isLoading state to it's opposite value
+   * i.e true to false or vise verser
+   *
+   * @returns {void}
+   */
+  toggleLoading = () => {
+    this.setState({
+      isDeleting: !this.state.isDeleting,
+    });
+  }
+
   render() {
+    const { isDeleting } = this.state;
     return (
       <MrmModal
         handleCloseRequest={this.handleModalStateChange}
@@ -76,14 +94,13 @@ export class DeleteWing extends React.Component {
             Are you sure you want to delete the {`"${this.props.wingName}"`}{' '}
             wing? This cannot be undone & all data will be lost
           </p>
-          <div className="modal-actions">
-            <button id="cancel-btn" onClick={this.handleCloseModal}>
-              CANCEL
-            </button>
-            <button id="delete-btn" onClick={this.handleDeleteWing}>
-              DELETE
-            </button>
-          </div>
+          <ActionButtons
+            withCancel
+            onClickCancel={this.handleCloseModal}
+            isLoading={isDeleting}
+            actionButtonText="DELETE WING"
+            onClickSubmit={this.handleDeleteWing}
+          />
         </div>
       </MrmModal>
     );

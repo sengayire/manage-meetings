@@ -32,6 +32,7 @@ export class AddRoomNairobi extends Component {
       thumbnailName: 'Upload a thumbnail',
       closeModal: false,
       imageUrl: '',
+      isLoading: false,
     };
   }
 
@@ -167,6 +168,7 @@ export class AddRoomNairobi extends Component {
       roomCalendar, roomCapacity, roomName, roomType, imageUrl, officeBlock, officeFloor, officeId,
     } = this.state;
     if (!hasInvalidInputs(this.state)) {
+      this.toggleLoading();
       this.props.dojoMutation({
         variables: {
           roomType,
@@ -179,13 +181,28 @@ export class AddRoomNairobi extends Component {
           imageUrl,
         },
       }).then((res) => {
+        this.toggleLoading();
         this.handleCloseModal();
         notification(toastr, 'success', `${res.data.createRoom.room.name} Successfully added`)();
       }).catch((err) => {
+        this.toggleLoading();
+        this.handleCloseModal();
         notification(toastr, 'error', err.message)();
       });
     }
   };
+
+  /**
+   * 1. change isLoading state to it's opposite value
+   * i.e true to false or vise verser
+   *
+   * @returns {void}
+   */
+  toggleLoading = () => {
+    this.setState({
+      isLoading: !this.state.isLoading,
+    });
+  }
 
   render() {
     const {
@@ -198,6 +215,7 @@ export class AddRoomNairobi extends Component {
       closeModal,
       thumbnailName,
       imageUrl,
+      isLoading,
     } = this.state;
     let blockOptionsList = blockOptions;
     const { officeDetails } = this.props;
@@ -233,6 +251,8 @@ export class AddRoomNairobi extends Component {
             withCancel
             onClickCancel={this.handleCloseModal}
             actionButtonText="ADD ROOM"
+            isLoading={isLoading}
+            onClickSubmit={this.handleAddRoom}
           />
         </form>
       </Modal>

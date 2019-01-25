@@ -16,6 +16,14 @@
     margin-top: 25px;
   }
 
+  .loading-text {
+    padding-top:0.2rem;
+  }
+
+  .loading-div {
+    display: flex;
+  }
+
   h2 {
     margin: 1%;
     margin-left: 0;
@@ -55,7 +63,6 @@
 
     button {
       cursor: pointer;
-      color: map-get($color-white, 000);
       bottom: 4%;
       right: 4%;
       padding: 2% 1.5%;
@@ -68,6 +75,10 @@
       @media screen and (min-width: 768px) and (orientation: portrait) {
         right: 1.5%;
       }
+    }
+
+    .loading-btn-div {
+      margin-top: 1rem;
     }
 
     .button-container {

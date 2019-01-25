@@ -28,6 +28,7 @@ export class EditWing extends React.Component {
     wingName: this.props.wingName,
     wingId: this.props.wingId,
     closeModal: false,
+    isLoading: false,
   };
 
   /**
@@ -71,30 +72,39 @@ export class EditWing extends React.Component {
     const { wingId, wingName } = this.state;
     const { editWing } = this.props;
     e.preventDefault();
+    this.toggleLoading();
     editWing({
       variables: {
         wingId,
         name: wingName,
       },
-    })
-      .then(() => {
-        notification(
-          toastr,
-          'success',
-          `${wingName} office has been updated successfully`,
-        )();
-      })
-      .catch((err) => {
-        this.setState({
-          wingName: this.props.wingName,
-        });
-        notification(toastr, 'error', err.graphQLErrors[0].message)();
+    }).then(() => {
+      this.toggleLoading();
+      this.handleCloseModal();
+      notification(toastr, 'success', `${wingName} office has been updated successfully`)();
+    }).catch((err) => {
+      this.toggleLoading();
+      this.handleCloseModal();
+      this.setState({
+        wingName: this.props.wingName,
       });
-    this.handleCloseModal();
-  };
+      notification(toastr, 'error', err.graphQLErrors[0].message)();
+    });
+  }
 
+  /**
+ * 1. change isLoading state to it's opposite value
+ * i.e true to false or vise verser
+ *
+ * @returns {void}
+ */
+  toggleLoading = () => {
+    this.setState({
+      isLoading: !this.state.isLoading,
+    });
+  }
   render() {
-    const { closeModal, wingName } = this.state;
+    const { closeModal, wingName, isLoading } = this.state;
     return (
       <MrmModal
         closeModal={closeModal}
@@ -104,7 +114,7 @@ export class EditWing extends React.Component {
         className="edit-office-modal"
         modalButtonClassName="edit-button"
       >
-        <form className="modal-form" onSubmit={this.handleEditWing}>
+        <form className="modal-form">
           <Input
             name="wingName"
             labelName="Wing Name"
@@ -119,6 +129,8 @@ export class EditWing extends React.Component {
             withCancel
             onClickCancel={this.handleCloseModal}
             actionButtonText="SAVE CHANGES"
+            isLoading={isLoading}
+            onClickSubmit={this.handleEditWing}
           />
         </form>
       </MrmModal>

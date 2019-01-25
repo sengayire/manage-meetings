@@ -23,6 +23,7 @@ export class EditOffice extends React.Component {
     officeLocation: this.props.officeLocation,
     officeId: this.props.officeId,
     closeModal: false,
+    isLoading: false,
   };
 
   /**
@@ -64,6 +65,7 @@ export class EditOffice extends React.Component {
    */
   handleEditOffice = (event) => {
     event.preventDefault();
+    this.toggleLoading();
     const { officeId, officeName } = this.state;
     const { refetch, currentPage } = this.props;
     this.props
@@ -74,24 +76,37 @@ export class EditOffice extends React.Component {
         },
       })
       .then(() => {
-        notification(
-          toastr,
-          'success',
-          `${officeName} office has been updated successfully`,
-        )();
-        refetch({ page: currentPage });
+        notification(toastr,
+          'success', `${officeName} office has been updated successfully`)();
+        this.handleCloseModal();
+        this.toggles(); refetch({ page: currentPage });
       })
       .catch((err) => {
+        this.toggleLoading();
+        this.handleCloseModal();
         this.setState({
           officeName: this.props.officeName,
         });
         notification(toastr, 'error', err.graphQLErrors[0].message)();
       });
-    this.handleCloseModal();
   };
 
+  /**
+   * 1. change isLoading state to it's opposite value
+   * i.e true to false or vise verser
+   *
+   * @returns {void}
+   */
+  toggleLoading = () => {
+    this.setState({
+      isLoading: !this.state.isLoading,
+    });
+  }
+
   render() {
-    const { officeName, officeLocation, closeModal } = this.state;
+    const {
+      officeName, officeLocation, closeModal, isLoading,
+    } = this.state;
 
     return (
       <MrmModal
@@ -102,7 +117,7 @@ export class EditOffice extends React.Component {
         className="edit-office-modal"
         modalButtonClassName="edit-button"
       >
-        <form className="modal-form" onSubmit={this.handleEditOffice}>
+        <form className="modal-form">
           <Input
             labelName="Office Name"
             labelClass="label1"
@@ -130,6 +145,8 @@ export class EditOffice extends React.Component {
             withCancel
             onClickCancel={this.handleCloseModal}
             actionButtonText="SAVE CHANGES"
+            isLoading={isLoading}
+            onClickSubmit={this.handleEditOffice}
           />
         </form>
       </MrmModal>

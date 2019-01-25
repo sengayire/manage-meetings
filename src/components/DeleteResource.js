@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { graphql, compose } from 'react-apollo';
 import toastr from 'toastr';
+import ActionButtons from './commons/ActionButtons';
 import MrmModal from '../components/commons/Modal';
 import { DELETE_RESOURCE_MUTATION } from '../graphql/mutations/resources';
 import { GET_RESOURCES_QUERY } from '../graphql/queries/Resources';
@@ -19,6 +20,7 @@ import '../assets/styles/deleteModal.scss';
 export class DeleteResource extends Component {
   state = {
     closeModal: false,
+    isDeleting: false,
   };
 
   /**
@@ -45,11 +47,14 @@ export class DeleteResource extends Component {
    * @returns {void}
    */
   handleDeleteResource = () => {
+    this.toggleLoading();
     const variables = { variables: { resourceId: this.props.toDelete.id } };
     const { refetch, currentPage } = this.props;
     this.props
       .deleteResource(variables)
       .then(() => {
+        this.toggleLoading();
+        this.handleCloseModal();
         notification(
           toastr,
           'error',
@@ -58,13 +63,26 @@ export class DeleteResource extends Component {
         refetch({ page: currentPage });
       })
       .catch((err) => {
+        this.toggleLoading();
+        this.handleCloseModal();
         notification(toastr, 'error', err.graphQLErrors[0].message)();
       });
-    this.handleCloseModal();
   };
 
+  /**
+   * 1. change isLoading state to it's opposite value
+   * i.e true to false or vise verser
+   *
+   * @returns {void}
+   */
+  toggleLoading = () => {
+    this.setState({
+      isDeleting: !this.state.isDeleting,
+    });
+  }
+
   render() {
-    const { closeModal } = this.state;
+    const { closeModal, isDeleting } = this.state;
 
     return (
       <MrmModal
@@ -80,14 +98,13 @@ export class DeleteResource extends Component {
             &quot;? <br />
             This cannot be undone
           </p>
-          <div className="modal-actions">
-            <button id="cancel-btn" onClick={this.handleCloseModal}>
-              CANCEL
-            </button>
-            <button id="delete-btn" onClick={this.handleDeleteResource}>
-              DELETE
-            </button>
-          </div>
+          <ActionButtons
+            withCancel
+            onClickCancel={this.handleCloseModal}
+            isLoading={isDeleting}
+            actionButtonText="DELETE RESOURCE"
+            onClickSubmit={this.handleDeleteResource}
+          />
         </div>
       </MrmModal>
     );

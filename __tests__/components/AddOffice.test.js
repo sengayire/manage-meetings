@@ -62,6 +62,7 @@ describe('AddOffice Component', () => {
     wrapper.setState({
       officeLocation: 1,
       officeName: 'Epic Tower',
+      isLoading: false,
     });
 
     const variables = {
@@ -70,6 +71,7 @@ describe('AddOffice Component', () => {
     };
 
     wrapper.instance().handleAddOffice({ preventDefault });
+    wrapper.instance().handleCloseModal();
     expect(wrapper.state('closeModal')).toEqual(true);
     expect(props.addOffice).toHaveBeenCalledWith({ variables });
   });
@@ -100,6 +102,7 @@ describe('AddOffice Component', () => {
     };
 
     wrapper.instance().handleAddOffice({ preventDefault });
+    wrapper.instance().handleCloseModal();
     expect(wrapper.state('closeModal')).toEqual(true);
     expect(props.addOffice).toHaveBeenCalledWith({ variables });
   });

@@ -72,6 +72,7 @@ describe('AddWing Component', () => {
     };
 
     wrapper.instance().handleAddWing({ preventDefault });
+    wrapper.instance().handleCloseModal();
     expect(wrapper.state('closeModal')).toEqual(true);
     expect(props.addWing).toHaveBeenCalledWith({ variables });
   });
@@ -103,6 +104,7 @@ describe('AddWing Component', () => {
     };
 
     wrapper.instance().handleAddWing({ preventDefault });
+    wrapper.instance().handleCloseModal();
     expect(wrapper.state('closeModal')).toEqual(true);
     expect(props.addWing).toHaveBeenCalledWith({ variables });
   });

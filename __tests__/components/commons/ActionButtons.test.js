@@ -19,6 +19,6 @@ describe('ActionButton component', () => {
     wrapper.setProps({ withCancel: false });
     wrapper.update();
     expect(wrapper).toMatchSnapshot();
-    expect(wrapper.find('button').length).toBe(1);
+    expect(wrapper.find('button').length).toBe(2);
   });
 });

@@ -12,7 +12,7 @@
     font-family: $font-light;
   }
 
-  .edit-button{
+  .edit-button {
     cursor: pointer;
     position: absolute;
     color: map-get($color-black, 900);
@@ -32,20 +32,26 @@
     width: 120px;
   }
 
-  .modal-cancel-button:hover {
-    cursor: pointer;
-    background-color: $color-primary;
-    color: map-get($color-white, 000);
+  .loading-div {
+    display: flex;
+  }
+
+  .loading-text {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
   }
 
   .update-button {
-    @media screen and (min-width: 961px){
-      font-size: 1.0em;
-      width: 150px;
-    }
-    color: map-get($color-white, 000);
+    text-transform: uppercase;
     background-color: $color-primary;
     height: 44px;
+    float: right;
+    margin-right: 7%;
+    color: map-get($color-white, 000);
+    @media screen and (min-width: 961px) {
+      margin-right: 5%;
+      width: 150px;
+    }
   }
 
   .update-button:hover {
@@ -75,9 +81,6 @@
       margin-top: 1em;
     }
   }
-
-
-
 
   @media screen and (max-width: 639px) {
     height: 33%;
