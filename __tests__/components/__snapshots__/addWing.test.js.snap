@@ -12,7 +12,6 @@ exports[`AddWing Component renders the snapshot 1`] = `
 >
   <form
     className="modal-form"
-    onSubmit={[Function]}
   >
     <Input
       controlsClass=""
@@ -41,11 +40,11 @@ exports[`AddWing Component renders the snapshot 1`] = `
       wrapperClassName="input-wrapper"
     />
     <ActionButtons
-      actionButtonClassName="action-button"
       actionButtonText="ADD WING"
-      cancelButtonClassName="cancel-button"
       cancelButtonText="CANCEL"
+      isLoading={false}
       onClickCancel={[Function]}
+      onClickSubmit={[Function]}
       withCancel={true}
     />
   </form>

@@ -2,7 +2,9 @@
 
 exports[`ErrorBoundary component should render correctly 1`] = `
 <ErrorBoundary>
-  <Spinner>
+  <Spinner
+    size=""
+  >
     <div
       className="centered"
     >

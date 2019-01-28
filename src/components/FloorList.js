@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import { graphql } from 'react-apollo';
 import PropTypes from 'prop-types';
 import Spinner from './commons/Spinner';
-import GET_FLOORS_QUERY from '../graphql/queries/Floors';
+import { GET_PAGINATED_FLOORS_QUERY } from '../graphql/queries/Floors';
 import ColGroup from './helpers/ColGroup';
 import TableHead from './helpers/TableHead';
 import { Floor } from './Floor';
-import AddFloor from './AddFloorMenu';
+import AddFloorMenuComp from './AddFloorMenu';
 import MenuTitle from './MenuTitle';
 import { formatFloorData } from '../graphql/mappers/Floors';
 import Pagination from './commons/Pagination';
@@ -23,30 +23,30 @@ export class FloorList extends Component {
 
   /* This will be used for pagination when Pagination is implemeneted. */
   /* istanbul ignore nextline */
-  handleData = () => {};
+  handleData = /* istanbul ignore next */() => {};
 
   render() {
-    const { loading, error, allFloors } = this.props.data;
+    const {
+      loading, error, allFloors, refetch,
+    } = this.props.data;
 
     if (loading) {
       return <Spinner />;
-    }
-    if (error) {
+    } else if (error) {
       return <div>{error.message}</div>;
     }
-
     return (
       <div className="settings-resource">
         <div className="settings-resource-list">
           <div className="settings-resource-control">
             <MenuTitle title="Floors" />
-            <AddFloor />
+            <AddFloorMenuComp refetch={refetch} />
           </div>
           <table className="test-One">
             <ColGroup />
             <TableHead titles={['Floor', 'Office', 'Block', 'Action']} />
             <tbody>
-              {allFloors.map(floor => (
+              {allFloors.floors.map(floor => (
                 <Floor floor={formatFloorData(floor)} key={floor.id} />
               ))}
             </tbody>
@@ -65,8 +65,9 @@ export class FloorList extends Component {
 
 FloorList.propTypes = {
   data: PropTypes.shape({
+    refetch: PropTypes.func.isRequired,
     loading: PropTypes.bool,
-    allFloors: PropTypes.array,
+    allFloors: PropTypes.object,
     id: PropTypes.number,
     name: PropTypes.string,
     blockId: PropTypes.number,
@@ -75,9 +76,15 @@ FloorList.propTypes = {
       name: PropTypes.string,
       offices: PropTypes.string,
     }),
-
     error: PropTypes.object,
   }).isRequired,
 };
 
-export default graphql(GET_FLOORS_QUERY)(FloorList);
+export default graphql(GET_PAGINATED_FLOORS_QUERY, {
+  options: () => ({
+    variables: {
+      page: 1,
+      perPage: 50,
+    },
+  }),
+})(FloorList);

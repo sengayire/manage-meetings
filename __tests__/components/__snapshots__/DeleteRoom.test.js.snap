@@ -1525,22 +1525,31 @@ exports[`DeleteOffice Test Suite should pop up a modal when delete button is cli
                         <br />
                         This cannot be undone
                       </p>
-                      <div
-                        className="modal-actions"
+                      <ActionButtons
+                        actionButtonText="DELETE ROOM"
+                        cancelButtonText="CANCEL"
+                        isLoading={false}
+                        onClickCancel={[Function]}
+                        onClickSubmit={[Function]}
+                        withCancel={true}
                       >
-                        <button
-                          id="cancel-btn"
-                          onClick={[Function]}
+                        <div
+                          className="form-action-buttons"
                         >
-                          CANCEL
-                        </button>
-                        <button
-                          id="delete-btn"
-                          onClick={[Function]}
-                        >
-                          DELETE
-                        </button>
-                      </div>
+                          <button
+                            className="cancel-button action-button"
+                            onClick={[Function]}
+                          >
+                            CANCEL
+                          </button>
+                          <button
+                            className="action-button"
+                            onClick={[Function]}
+                          >
+                            DELETE ROOM
+                          </button>
+                        </div>
+                      </ActionButtons>
                     </div>
                   </div>
                 </div>

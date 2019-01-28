@@ -1,10 +1,29 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import AddFloorMenu from '../../src/components/AddFloorMenu';
+import { AddFloorMenu } from '../../src/components/AddFloorMenu';
 
-const wrapper = shallow(<AddFloorMenu />);
 describe('Test the AddFloor component', () => {
-  it('should render corrently', () => {
+  const props = {
+    data: {
+      allOffices: {
+        offices: [
+          {
+            id: 1,
+            name: 'Kampala',
+            blocks: {
+              name: 'blockA',
+              id: 12,
+            },
+          },
+        ],
+      },
+      loading: false,
+      error: undefined,
+    },
+    refetch: jest.fn(),
+  };
+  const wrapper = shallow(<AddFloorMenu {...props} />);
+  it('should render correctly', () => {
     expect(wrapper).toMatchSnapshot();
   });
 });

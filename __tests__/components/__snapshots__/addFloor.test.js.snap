@@ -1,49 +1,53 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AddLocation Component renders AddLocation Component 1`] = `
+exports[`AddFloor Component renders the snapshot 1`] = `
 <MrmModal
-  buttonText="Add Location"
+  buttonText="The crest"
   className="add-office-modal"
   closeModal={false}
   handleCloseRequest={[Function]}
   modalButton="add-button"
   modalButtonClassName="button"
-  title="ADD LOCATION"
+  title="ADD FLOOR"
 >
   <form
     className="modal-form"
   >
-    <SelectImage
-      imageUrl=""
-      onChange={[Function]}
-      thumbnailName="Upload a thumbnail"
-    />
     <Input
       controlsClass=""
-      id="locationName"
+      id="floorName"
       inputClass="mrm-input default-input"
       labelClass="input1"
-      labelName="Location Name"
-      name="locationName"
+      labelName="Floor Name"
+      name="floorName"
       onChange={[Function]}
-      placeholder="Enter location name"
+      placeholder="Enter floor name"
       type="text"
       value=""
     />
-    <Input
-      controlsClass=""
-      id="abbreviation"
-      inputClass="mrm-input default-input"
-      labelClass="input1"
-      labelName="Abbreviation"
-      name="abbreviation"
+    <SelectInput
+      id="block"
+      isValue={false}
+      labelText="Select Block "
+      name="blockId"
       onChange={[Function]}
-      placeholder="Eg. Kla"
-      type="text"
+      options={
+        Array [
+          Object {
+            "id": "12",
+            "name": "blockA",
+          },
+        ]
+      }
+      placeholder="Select block"
+      placeholderValue=""
+      required={false}
+      selectInputClassName="default-select"
       value=""
+      wrapperClassName="input-wrapper"
     />
     <ActionButtons
-      actionButtonText="ADD LOCATION"
+      actionButtonText="ADD FLOOR"
       cancelButtonText="CANCEL"
       isLoading={false}
       onClickCancel={[Function]}

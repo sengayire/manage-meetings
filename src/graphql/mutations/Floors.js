@@ -20,5 +20,14 @@ const DELETE_FLOOR_MUTATION = gql`
     }
   }
 `;
-
-export { EDIT_FLOOR_MUTATION, DELETE_FLOOR_MUTATION };
+const ADD_FLOOR_MUTATION = gql`
+  mutation createFloor($name: String!, $blockId: Int!) {
+    createFloor(name: $name, blockId: $blockId) {
+      floor {
+        id
+        name
+      }
+    }
+  }
+`;
+export { EDIT_FLOOR_MUTATION, DELETE_FLOOR_MUTATION, ADD_FLOOR_MUTATION };

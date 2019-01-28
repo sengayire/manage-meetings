@@ -9,6 +9,7 @@ exports[`RoomForm should render properly 1`] = `
     }
   }
   handleInputChange={[MockFunction]}
+  isLoading={false}
   locations={
     Array [
       Object {
@@ -148,25 +149,25 @@ exports[`RoomForm should render properly 1`] = `
       </div>
     </SelectInput>
     <ActionButtons
-      actionButtonClassName="action-button"
       actionButtonText="Save Changes"
-      cancelButtonClassName="cancel-button"
       cancelButtonText="CANCEL"
+      isLoading={false}
       onClickCancel={[MockFunction]}
+      onClickSubmit={[Function]}
       withCancel={true}
     >
       <div
         className="form-action-buttons"
       >
         <button
-          className="cancel-button"
+          className="cancel-button action-button"
           onClick={[MockFunction]}
         >
           CANCEL
         </button>
         <button
           className="action-button"
-          type="submit"
+          onClick={[Function]}
         >
           Save Changes
         </button>
