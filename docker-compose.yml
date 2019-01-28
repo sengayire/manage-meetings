@@ -1,16 +1,66 @@
 version: '3'
-
 services:
-  app:
+  database:
+    restart: always
+    image: postgres:10.1
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=converge-backend
+      - POSTGRES_DB=converge
+    volumes:
+      - ../mrm_api/converge_db:/var/lib/postgresql/data
+    ports:
+      - '5432:5432'
+    expose:
+      - '5432'
+    networks:
+      converge:
+    container_name: mrm_database
+  redis:
+    image: redis
+    ports:
+      - '6379:6379'
+    networks:
+      converge:
+    container_name: mrm_redis
+  backend:
+    restart: always
+    build:
+      context: ../mrm_api
+      dockerfile: docker/dev/Dockerfile
+    ports:
+      - '8000:8000'
+    volumes:
+      - ../mrm_api:/app
+    depends_on:
+      - database
+    networks:
+      converge:
+    stdin_open: true
+    tty: true
+    container_name: mrm_backend
+  frontend:
     build:
       context: .
       dockerfile: ./docker/app/Dockerfile
     ports:
       - "8080:8080"
+    expose:
+      - '8080'
     volumes:
       - .:/mrm_front
       - /mrm_front/node_modules
+    depends_on:
+      - backend
+    networks:
+      converge:
+    container_name: mrm_frontend
   test:
     build:
       context: .
       dockerfile: ./docker/test/Dockerfile
+    container_name: mrm_frontend_test
+
+networks:
+  converge:
+    driver: bridge

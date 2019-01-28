@@ -17,13 +17,158 @@ check the product scope and roadmap [here](https://docs.google.com/spreadsheets/
 #### Prerequisites
 - Install [Docker](https://docs.docker.com/docker-for-mac/install/) and get it running on your machine
 
-#### Installing
+
+### Installing with docker
+- Install docker
+	```
+    brew cask install docker
+    ```
+    OR
+    
+    [install via dmg file](https://docs.docker.com/docker-for-mac/install/)
+    
+- Create a new directory 
+	```
+    mkdir <directory name>
+    ```
+- In that directory clone both the frontend and backend applications
+	- Change working directory to the newly created one `cd <directory name>`
+    - Clone the frontend application `https://github.com/andela/mrm_front.git`
+	- Clone the backend application `git clone https://github.com/andela/mrm_api.git`
+
+#### running the application
+- Create environment variables for the backend application and save them in `mrm_api/.env` file
+    ```
+    APP_SETTINGS="testing" # set app Enviroment.
+    SECRET_KEY="some-very-long-string-of-random-characters"
+    DEV_DATABASE_URL="" # Db for Development.
+    TEST_DATABASE_URL="" # Db for Testing
+    DATABASE_URL="" # Db for Production
+    MAIL_SERVER=""# SMTP server
+    MAIL_PORT="" # server port
+    MAIL_USE_TLS="" # Using TLS?
+    MAIL_USERNAME="" # converge username
+    MAIL_PASSWORD="" # password
+    CELERY_BROKER_URL="" # redis url
+    CELERY_RESULT_BACKEND="" # redis url
+    C_FORCE_ROOT=true
+    ```
+    
+- Create environment variables for frontend in `mrm_front/.env` application
+	```
+    # change this to production if in production
+    NODE_ENV=development
+    # the mrm domain name (this should change to the staging or production url)
+    MRM_URL=http://mrm-dev.andela.com:8080
+    # the url of the mrm staging api (It should change to production URL if in production)
+    MRM_API_URL=http://mrm-dev.andela.com:8000/mrm
+    # the andela url to handle login
+    ANDELA_LOGIN_URL=############
+    # the analytics page url for axios requests
+    BASE_URL=http://mrm-dev.andela:8000/analytics
+    # the andela api url
+    ANDELA_API_URL=############
+    FIREBASE_API_KEY=############
+    FIREBASE_PROJECT_ID=############
+    FIREBASE_DATABASE_NAME=############
+	```
+
+- Starting the containers.
+    ```
+    make build
+    ```
+    This will create 5 services
+    	
+     - database
+     - backend
+     - frontend
+     - redis
+     - test
+
+    Start the backend gunicorn server
+    ```
+    make run-app
+    ```
+    
+- Running frontend tests
+	```
+    make frontend-tests
+    ```
+- Running migrations
+
+    - Initial migration commands
+        ```
+        make migrate-initial message="Migration message"
+        ```
+    - If you have one migration file in the alembic/version folder. Run the commands below:
+        ```
+        make migrate
+        ```
+    - If you have more than 2 migration files in the alembic/versions folder. Rum the commands bellow
+        ```
+        make migrate message="Migration message"
+        ```
+- Show services
+	```
+    make services
+    ```
+- Check the status
+	```
+    make status
+    ```
+- Start services individually
+	```
+    make start service=<service name>
+    ```
+- Create services individually
+	```
+    make create service=<service name>
+    ```
+- Stop all services
+	```
+    make down
+    ```
+- Stop services individually
+	```
+    make stop service=<service name>
+    ```
+- Remove services individually
+	```
+    make remove service=<service name>
+    ```
+- Restarting a service
+	```
+    make restart service=<service name>
+    ```
+- Kill services
+	```
+    make kill
+    ```
+- Remove a container
+	```
+    make remove
+    ```
+- SSH into a container
+	```
+    make ssh service=<service name>
+    ```
+
+##### Importing a database dump to the docker database container
+  - Create a dump from a database, preferrably `--no-owner` flag
+	```
+	pg_dump -d <dbname> -U <postgres-user> -h <localhost/ipaddress> --no-owner -F p --column-inserts > converge.sql
+	```
+  - Import the database
+  	```
+    make import dump="<path to dump file>"
+  	```
+
+Further instructions on the backend, kindly visite the mrm_api repo [here](https://github.com/andela/mrm_api)
+
+### Installing without docker
     $ git clone https://github.com/andela/mrm_front.git
     $ cd mrm_front
-    $ docker-compose build
 
-
-### Manual Installation
 
 #### Prerequisites
 Ensure you have [NodeJS](https://nodejs.org/en/) environment and [YARN](https://yarnpkg.com/en/) package manager globally installed on your system.
@@ -66,17 +211,6 @@ yarn start
 #### Running tests
 `yarn test --coverage`
 
-
-
-#### Run the containers by running the commands below(Using Docker)
-- To start application
-```
-   $ docker-compose run -p 8080:8080/tcp app
-```
-- To run the test
-```
-   docker-compose run test
-```
 
 ### Built With
 * [ReactJS](https://reactjs.org/) - The javascript client library.

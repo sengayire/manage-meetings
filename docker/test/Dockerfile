@@ -1,4 +1,4 @@
-FROM mrm_front_app:latest
+FROM mrm_front_frontend:latest
 
 WORKDIR /mrm_front
 
