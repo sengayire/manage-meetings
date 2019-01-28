@@ -14,7 +14,7 @@ exports[`DeleteOffice Test Suite renders as expected 1`] = `
         },
         "result": Object {
           "data": Object {
-            "deleteRoom": Object {
+            "deletedRoom": Object {
               "id": 1,
               "name": "Rabat",
             },
@@ -78,6 +78,7 @@ exports[`DeleteOffice Test Suite renders as expected 1`] = `
     }
   >
     <Apollo(DeleteRoom)
+      refetch={[MockFunction]}
       roomId="1"
       roomName="Rabat"
     >
@@ -198,402 +199,6 @@ exports[`DeleteOffice Test Suite renders as expected 1`] = `
             },
           }
         }
-        refetchQueries={
-          Array [
-            Object {
-              "query": Object {
-                "definitions": Array [
-                  Object {
-                    "directives": Array [],
-                    "kind": "OperationDefinition",
-                    "name": Object {
-                      "kind": "Name",
-                      "value": "rooms",
-                    },
-                    "operation": "query",
-                    "selectionSet": Object {
-                      "kind": "SelectionSet",
-                      "selections": Array [
-                        Object {
-                          "alias": undefined,
-                          "arguments": Array [
-                            Object {
-                              "kind": "Argument",
-                              "name": Object {
-                                "kind": "Name",
-                                "value": "page",
-                              },
-                              "value": Object {
-                                "kind": "Variable",
-                                "name": Object {
-                                  "kind": "Name",
-                                  "value": "page",
-                                },
-                              },
-                            },
-                            Object {
-                              "kind": "Argument",
-                              "name": Object {
-                                "kind": "Name",
-                                "value": "perPage",
-                              },
-                              "value": Object {
-                                "kind": "Variable",
-                                "name": Object {
-                                  "kind": "Name",
-                                  "value": "perPage",
-                                },
-                              },
-                            },
-                            Object {
-                              "kind": "Argument",
-                              "name": Object {
-                                "kind": "Name",
-                                "value": "capacity",
-                              },
-                              "value": Object {
-                                "kind": "Variable",
-                                "name": Object {
-                                  "kind": "Name",
-                                  "value": "capacity",
-                                },
-                              },
-                            },
-                            Object {
-                              "kind": "Argument",
-                              "name": Object {
-                                "kind": "Name",
-                                "value": "location",
-                              },
-                              "value": Object {
-                                "kind": "Variable",
-                                "name": Object {
-                                  "kind": "Name",
-                                  "value": "location",
-                                },
-                              },
-                            },
-                            Object {
-                              "kind": "Argument",
-                              "name": Object {
-                                "kind": "Name",
-                                "value": "office",
-                              },
-                              "value": Object {
-                                "kind": "Variable",
-                                "name": Object {
-                                  "kind": "Name",
-                                  "value": "office",
-                                },
-                              },
-                            },
-                          ],
-                          "directives": Array [],
-                          "kind": "Field",
-                          "name": Object {
-                            "kind": "Name",
-                            "value": "allRooms",
-                          },
-                          "selectionSet": Object {
-                            "kind": "SelectionSet",
-                            "selections": Array [
-                              Object {
-                                "alias": undefined,
-                                "arguments": Array [],
-                                "directives": Array [],
-                                "kind": "Field",
-                                "name": Object {
-                                  "kind": "Name",
-                                  "value": "rooms",
-                                },
-                                "selectionSet": Object {
-                                  "kind": "SelectionSet",
-                                  "selections": Array [
-                                    Object {
-                                      "alias": undefined,
-                                      "arguments": Array [],
-                                      "directives": Array [],
-                                      "kind": "Field",
-                                      "name": Object {
-                                        "kind": "Name",
-                                        "value": "id",
-                                      },
-                                      "selectionSet": undefined,
-                                    },
-                                    Object {
-                                      "alias": undefined,
-                                      "arguments": Array [],
-                                      "directives": Array [],
-                                      "kind": "Field",
-                                      "name": Object {
-                                        "kind": "Name",
-                                        "value": "name",
-                                      },
-                                      "selectionSet": undefined,
-                                    },
-                                    Object {
-                                      "alias": undefined,
-                                      "arguments": Array [],
-                                      "directives": Array [],
-                                      "kind": "Field",
-                                      "name": Object {
-                                        "kind": "Name",
-                                        "value": "floor",
-                                      },
-                                      "selectionSet": Object {
-                                        "kind": "SelectionSet",
-                                        "selections": Array [
-                                          Object {
-                                            "alias": undefined,
-                                            "arguments": Array [],
-                                            "directives": Array [],
-                                            "kind": "Field",
-                                            "name": Object {
-                                              "kind": "Name",
-                                              "value": "block",
-                                            },
-                                            "selectionSet": Object {
-                                              "kind": "SelectionSet",
-                                              "selections": Array [
-                                                Object {
-                                                  "alias": undefined,
-                                                  "arguments": Array [],
-                                                  "directives": Array [],
-                                                  "kind": "Field",
-                                                  "name": Object {
-                                                    "kind": "Name",
-                                                    "value": "offices",
-                                                  },
-                                                  "selectionSet": Object {
-                                                    "kind": "SelectionSet",
-                                                    "selections": Array [
-                                                      Object {
-                                                        "alias": undefined,
-                                                        "arguments": Array [],
-                                                        "directives": Array [],
-                                                        "kind": "Field",
-                                                        "name": Object {
-                                                          "kind": "Name",
-                                                          "value": "name",
-                                                        },
-                                                        "selectionSet": undefined,
-                                                      },
-                                                      Object {
-                                                        "alias": undefined,
-                                                        "arguments": Array [],
-                                                        "directives": Array [],
-                                                        "kind": "Field",
-                                                        "name": Object {
-                                                          "kind": "Name",
-                                                          "value": "location",
-                                                        },
-                                                        "selectionSet": Object {
-                                                          "kind": "SelectionSet",
-                                                          "selections": Array [
-                                                            Object {
-                                                              "alias": undefined,
-                                                              "arguments": Array [],
-                                                              "directives": Array [],
-                                                              "kind": "Field",
-                                                              "name": Object {
-                                                                "kind": "Name",
-                                                                "value": "name",
-                                                              },
-                                                              "selectionSet": undefined,
-                                                            },
-                                                            Object {
-                                                              "alias": undefined,
-                                                              "arguments": Array [],
-                                                              "directives": Array [],
-                                                              "kind": "Field",
-                                                              "name": Object {
-                                                                "kind": "Name",
-                                                                "value": "id",
-                                                              },
-                                                              "selectionSet": undefined,
-                                                            },
-                                                          ],
-                                                        },
-                                                      },
-                                                    ],
-                                                  },
-                                                },
-                                              ],
-                                            },
-                                          },
-                                        ],
-                                      },
-                                    },
-                                  ],
-                                },
-                              },
-                              Object {
-                                "alias": undefined,
-                                "arguments": Array [],
-                                "directives": Array [],
-                                "kind": "Field",
-                                "name": Object {
-                                  "kind": "Name",
-                                  "value": "pages",
-                                },
-                                "selectionSet": undefined,
-                              },
-                              Object {
-                                "alias": undefined,
-                                "arguments": Array [],
-                                "directives": Array [],
-                                "kind": "Field",
-                                "name": Object {
-                                  "kind": "Name",
-                                  "value": "queryTotal",
-                                },
-                                "selectionSet": undefined,
-                              },
-                              Object {
-                                "alias": undefined,
-                                "arguments": Array [],
-                                "directives": Array [],
-                                "kind": "Field",
-                                "name": Object {
-                                  "kind": "Name",
-                                  "value": "hasNext",
-                                },
-                                "selectionSet": undefined,
-                              },
-                              Object {
-                                "alias": undefined,
-                                "arguments": Array [],
-                                "directives": Array [],
-                                "kind": "Field",
-                                "name": Object {
-                                  "kind": "Name",
-                                  "value": "hasPrevious",
-                                },
-                                "selectionSet": undefined,
-                              },
-                            ],
-                          },
-                        },
-                      ],
-                    },
-                    "variableDefinitions": Array [
-                      Object {
-                        "defaultValue": undefined,
-                        "kind": "VariableDefinition",
-                        "type": Object {
-                          "kind": "NonNullType",
-                          "type": Object {
-                            "kind": "NamedType",
-                            "name": Object {
-                              "kind": "Name",
-                              "value": "Int",
-                            },
-                          },
-                        },
-                        "variable": Object {
-                          "kind": "Variable",
-                          "name": Object {
-                            "kind": "Name",
-                            "value": "capacity",
-                          },
-                        },
-                      },
-                      Object {
-                        "defaultValue": undefined,
-                        "kind": "VariableDefinition",
-                        "type": Object {
-                          "kind": "NonNullType",
-                          "type": Object {
-                            "kind": "NamedType",
-                            "name": Object {
-                              "kind": "Name",
-                              "value": "String",
-                            },
-                          },
-                        },
-                        "variable": Object {
-                          "kind": "Variable",
-                          "name": Object {
-                            "kind": "Name",
-                            "value": "location",
-                          },
-                        },
-                      },
-                      Object {
-                        "defaultValue": undefined,
-                        "kind": "VariableDefinition",
-                        "type": Object {
-                          "kind": "NonNullType",
-                          "type": Object {
-                            "kind": "NamedType",
-                            "name": Object {
-                              "kind": "Name",
-                              "value": "String",
-                            },
-                          },
-                        },
-                        "variable": Object {
-                          "kind": "Variable",
-                          "name": Object {
-                            "kind": "Name",
-                            "value": "office",
-                          },
-                        },
-                      },
-                      Object {
-                        "defaultValue": undefined,
-                        "kind": "VariableDefinition",
-                        "type": Object {
-                          "kind": "NonNullType",
-                          "type": Object {
-                            "kind": "NamedType",
-                            "name": Object {
-                              "kind": "Name",
-                              "value": "Int",
-                            },
-                          },
-                        },
-                        "variable": Object {
-                          "kind": "Variable",
-                          "name": Object {
-                            "kind": "Name",
-                            "value": "page",
-                          },
-                        },
-                      },
-                      Object {
-                        "defaultValue": undefined,
-                        "kind": "VariableDefinition",
-                        "type": Object {
-                          "kind": "NonNullType",
-                          "type": Object {
-                            "kind": "NamedType",
-                            "name": Object {
-                              "kind": "Name",
-                              "value": "Int",
-                            },
-                          },
-                        },
-                        "variable": Object {
-                          "kind": "Variable",
-                          "name": Object {
-                            "kind": "Name",
-                            "value": "perPage",
-                          },
-                        },
-                      },
-                    ],
-                  },
-                ],
-                "kind": "Document",
-                "loc": Object {
-                  "end": 464,
-                  "start": 0,
-                },
-              },
-            },
-          ]
-        }
         variables={
           Object {
             "roomId": "1",
@@ -603,7 +208,7 @@ exports[`DeleteOffice Test Suite renders as expected 1`] = `
         <DeleteRoom
           currentPage={1}
           deleteRoom={[Function]}
-          refetch={null}
+          refetch={[MockFunction]}
           roomId="1"
           roomName="Rabat"
         >
@@ -752,7 +357,7 @@ exports[`DeleteOffice Test Suite should pop up a modal when delete button is cli
         },
         "result": Object {
           "data": Object {
-            "deleteRoom": Object {
+            "deletedRoom": Object {
               "id": 1,
               "name": "Rabat",
             },
@@ -816,6 +421,7 @@ exports[`DeleteOffice Test Suite should pop up a modal when delete button is cli
     }
   >
     <Apollo(DeleteRoom)
+      refetch={[MockFunction]}
       roomId="1"
       roomName="Rabat"
     >
@@ -936,402 +542,6 @@ exports[`DeleteOffice Test Suite should pop up a modal when delete button is cli
             },
           }
         }
-        refetchQueries={
-          Array [
-            Object {
-              "query": Object {
-                "definitions": Array [
-                  Object {
-                    "directives": Array [],
-                    "kind": "OperationDefinition",
-                    "name": Object {
-                      "kind": "Name",
-                      "value": "rooms",
-                    },
-                    "operation": "query",
-                    "selectionSet": Object {
-                      "kind": "SelectionSet",
-                      "selections": Array [
-                        Object {
-                          "alias": undefined,
-                          "arguments": Array [
-                            Object {
-                              "kind": "Argument",
-                              "name": Object {
-                                "kind": "Name",
-                                "value": "page",
-                              },
-                              "value": Object {
-                                "kind": "Variable",
-                                "name": Object {
-                                  "kind": "Name",
-                                  "value": "page",
-                                },
-                              },
-                            },
-                            Object {
-                              "kind": "Argument",
-                              "name": Object {
-                                "kind": "Name",
-                                "value": "perPage",
-                              },
-                              "value": Object {
-                                "kind": "Variable",
-                                "name": Object {
-                                  "kind": "Name",
-                                  "value": "perPage",
-                                },
-                              },
-                            },
-                            Object {
-                              "kind": "Argument",
-                              "name": Object {
-                                "kind": "Name",
-                                "value": "capacity",
-                              },
-                              "value": Object {
-                                "kind": "Variable",
-                                "name": Object {
-                                  "kind": "Name",
-                                  "value": "capacity",
-                                },
-                              },
-                            },
-                            Object {
-                              "kind": "Argument",
-                              "name": Object {
-                                "kind": "Name",
-                                "value": "location",
-                              },
-                              "value": Object {
-                                "kind": "Variable",
-                                "name": Object {
-                                  "kind": "Name",
-                                  "value": "location",
-                                },
-                              },
-                            },
-                            Object {
-                              "kind": "Argument",
-                              "name": Object {
-                                "kind": "Name",
-                                "value": "office",
-                              },
-                              "value": Object {
-                                "kind": "Variable",
-                                "name": Object {
-                                  "kind": "Name",
-                                  "value": "office",
-                                },
-                              },
-                            },
-                          ],
-                          "directives": Array [],
-                          "kind": "Field",
-                          "name": Object {
-                            "kind": "Name",
-                            "value": "allRooms",
-                          },
-                          "selectionSet": Object {
-                            "kind": "SelectionSet",
-                            "selections": Array [
-                              Object {
-                                "alias": undefined,
-                                "arguments": Array [],
-                                "directives": Array [],
-                                "kind": "Field",
-                                "name": Object {
-                                  "kind": "Name",
-                                  "value": "rooms",
-                                },
-                                "selectionSet": Object {
-                                  "kind": "SelectionSet",
-                                  "selections": Array [
-                                    Object {
-                                      "alias": undefined,
-                                      "arguments": Array [],
-                                      "directives": Array [],
-                                      "kind": "Field",
-                                      "name": Object {
-                                        "kind": "Name",
-                                        "value": "id",
-                                      },
-                                      "selectionSet": undefined,
-                                    },
-                                    Object {
-                                      "alias": undefined,
-                                      "arguments": Array [],
-                                      "directives": Array [],
-                                      "kind": "Field",
-                                      "name": Object {
-                                        "kind": "Name",
-                                        "value": "name",
-                                      },
-                                      "selectionSet": undefined,
-                                    },
-                                    Object {
-                                      "alias": undefined,
-                                      "arguments": Array [],
-                                      "directives": Array [],
-                                      "kind": "Field",
-                                      "name": Object {
-                                        "kind": "Name",
-                                        "value": "floor",
-                                      },
-                                      "selectionSet": Object {
-                                        "kind": "SelectionSet",
-                                        "selections": Array [
-                                          Object {
-                                            "alias": undefined,
-                                            "arguments": Array [],
-                                            "directives": Array [],
-                                            "kind": "Field",
-                                            "name": Object {
-                                              "kind": "Name",
-                                              "value": "block",
-                                            },
-                                            "selectionSet": Object {
-                                              "kind": "SelectionSet",
-                                              "selections": Array [
-                                                Object {
-                                                  "alias": undefined,
-                                                  "arguments": Array [],
-                                                  "directives": Array [],
-                                                  "kind": "Field",
-                                                  "name": Object {
-                                                    "kind": "Name",
-                                                    "value": "offices",
-                                                  },
-                                                  "selectionSet": Object {
-                                                    "kind": "SelectionSet",
-                                                    "selections": Array [
-                                                      Object {
-                                                        "alias": undefined,
-                                                        "arguments": Array [],
-                                                        "directives": Array [],
-                                                        "kind": "Field",
-                                                        "name": Object {
-                                                          "kind": "Name",
-                                                          "value": "name",
-                                                        },
-                                                        "selectionSet": undefined,
-                                                      },
-                                                      Object {
-                                                        "alias": undefined,
-                                                        "arguments": Array [],
-                                                        "directives": Array [],
-                                                        "kind": "Field",
-                                                        "name": Object {
-                                                          "kind": "Name",
-                                                          "value": "location",
-                                                        },
-                                                        "selectionSet": Object {
-                                                          "kind": "SelectionSet",
-                                                          "selections": Array [
-                                                            Object {
-                                                              "alias": undefined,
-                                                              "arguments": Array [],
-                                                              "directives": Array [],
-                                                              "kind": "Field",
-                                                              "name": Object {
-                                                                "kind": "Name",
-                                                                "value": "name",
-                                                              },
-                                                              "selectionSet": undefined,
-                                                            },
-                                                            Object {
-                                                              "alias": undefined,
-                                                              "arguments": Array [],
-                                                              "directives": Array [],
-                                                              "kind": "Field",
-                                                              "name": Object {
-                                                                "kind": "Name",
-                                                                "value": "id",
-                                                              },
-                                                              "selectionSet": undefined,
-                                                            },
-                                                          ],
-                                                        },
-                                                      },
-                                                    ],
-                                                  },
-                                                },
-                                              ],
-                                            },
-                                          },
-                                        ],
-                                      },
-                                    },
-                                  ],
-                                },
-                              },
-                              Object {
-                                "alias": undefined,
-                                "arguments": Array [],
-                                "directives": Array [],
-                                "kind": "Field",
-                                "name": Object {
-                                  "kind": "Name",
-                                  "value": "pages",
-                                },
-                                "selectionSet": undefined,
-                              },
-                              Object {
-                                "alias": undefined,
-                                "arguments": Array [],
-                                "directives": Array [],
-                                "kind": "Field",
-                                "name": Object {
-                                  "kind": "Name",
-                                  "value": "queryTotal",
-                                },
-                                "selectionSet": undefined,
-                              },
-                              Object {
-                                "alias": undefined,
-                                "arguments": Array [],
-                                "directives": Array [],
-                                "kind": "Field",
-                                "name": Object {
-                                  "kind": "Name",
-                                  "value": "hasNext",
-                                },
-                                "selectionSet": undefined,
-                              },
-                              Object {
-                                "alias": undefined,
-                                "arguments": Array [],
-                                "directives": Array [],
-                                "kind": "Field",
-                                "name": Object {
-                                  "kind": "Name",
-                                  "value": "hasPrevious",
-                                },
-                                "selectionSet": undefined,
-                              },
-                            ],
-                          },
-                        },
-                      ],
-                    },
-                    "variableDefinitions": Array [
-                      Object {
-                        "defaultValue": undefined,
-                        "kind": "VariableDefinition",
-                        "type": Object {
-                          "kind": "NonNullType",
-                          "type": Object {
-                            "kind": "NamedType",
-                            "name": Object {
-                              "kind": "Name",
-                              "value": "Int",
-                            },
-                          },
-                        },
-                        "variable": Object {
-                          "kind": "Variable",
-                          "name": Object {
-                            "kind": "Name",
-                            "value": "capacity",
-                          },
-                        },
-                      },
-                      Object {
-                        "defaultValue": undefined,
-                        "kind": "VariableDefinition",
-                        "type": Object {
-                          "kind": "NonNullType",
-                          "type": Object {
-                            "kind": "NamedType",
-                            "name": Object {
-                              "kind": "Name",
-                              "value": "String",
-                            },
-                          },
-                        },
-                        "variable": Object {
-                          "kind": "Variable",
-                          "name": Object {
-                            "kind": "Name",
-                            "value": "location",
-                          },
-                        },
-                      },
-                      Object {
-                        "defaultValue": undefined,
-                        "kind": "VariableDefinition",
-                        "type": Object {
-                          "kind": "NonNullType",
-                          "type": Object {
-                            "kind": "NamedType",
-                            "name": Object {
-                              "kind": "Name",
-                              "value": "String",
-                            },
-                          },
-                        },
-                        "variable": Object {
-                          "kind": "Variable",
-                          "name": Object {
-                            "kind": "Name",
-                            "value": "office",
-                          },
-                        },
-                      },
-                      Object {
-                        "defaultValue": undefined,
-                        "kind": "VariableDefinition",
-                        "type": Object {
-                          "kind": "NonNullType",
-                          "type": Object {
-                            "kind": "NamedType",
-                            "name": Object {
-                              "kind": "Name",
-                              "value": "Int",
-                            },
-                          },
-                        },
-                        "variable": Object {
-                          "kind": "Variable",
-                          "name": Object {
-                            "kind": "Name",
-                            "value": "page",
-                          },
-                        },
-                      },
-                      Object {
-                        "defaultValue": undefined,
-                        "kind": "VariableDefinition",
-                        "type": Object {
-                          "kind": "NonNullType",
-                          "type": Object {
-                            "kind": "NamedType",
-                            "name": Object {
-                              "kind": "Name",
-                              "value": "Int",
-                            },
-                          },
-                        },
-                        "variable": Object {
-                          "kind": "Variable",
-                          "name": Object {
-                            "kind": "Name",
-                            "value": "perPage",
-                          },
-                        },
-                      },
-                    ],
-                  },
-                ],
-                "kind": "Document",
-                "loc": Object {
-                  "end": 464,
-                  "start": 0,
-                },
-              },
-            },
-          ]
-        }
         variables={
           Object {
             "roomId": "1",
@@ -1341,7 +551,7 @@ exports[`DeleteOffice Test Suite should pop up a modal when delete button is cli
         <DeleteRoom
           currentPage={1}
           deleteRoom={[Function]}
-          refetch={null}
+          refetch={[MockFunction]}
           roomId="1"
           roomName="Rabat"
         >
@@ -1525,22 +735,31 @@ exports[`DeleteOffice Test Suite should pop up a modal when delete button is cli
                         <br />
                         This cannot be undone
                       </p>
-                      <div
-                        className="modal-actions"
+                      <ActionButtons
+                        actionButtonText="DELETE ROOM"
+                        cancelButtonText="CANCEL"
+                        isLoading={false}
+                        onClickCancel={[Function]}
+                        onClickSubmit={[Function]}
+                        withCancel={true}
                       >
-                        <button
-                          id="cancel-btn"
-                          onClick={[Function]}
+                        <div
+                          className="form-action-buttons"
                         >
-                          CANCEL
-                        </button>
-                        <button
-                          id="delete-btn"
-                          onClick={[Function]}
-                        >
-                          DELETE
-                        </button>
-                      </div>
+                          <button
+                            className="cancel-button action-button"
+                            onClick={[Function]}
+                          >
+                            CANCEL
+                          </button>
+                          <button
+                            className="action-button"
+                            onClick={[Function]}
+                          >
+                            DELETE ROOM
+                          </button>
+                        </div>
+                      </ActionButtons>
                     </div>
                   </div>
                 </div>

@@ -78,7 +78,7 @@ class Calendar extends Component {
             type="button"
             onClick={this.sendDate}
             id="apply_date_button"
-            className="calender__button__item ok"
+            className="calender__button__item apply_button"
           >
             {' '}
             Apply{' '}

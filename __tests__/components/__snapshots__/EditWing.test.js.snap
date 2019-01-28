@@ -11,7 +11,6 @@ exports[`EditWing Component renders properly 1`] = `
 >
   <form
     className="modal-form"
-    onSubmit={[Function]}
   >
     <Input
       controlsClass=""
@@ -27,11 +26,11 @@ exports[`EditWing Component renders properly 1`] = `
       value="Epic"
     />
     <ActionButtons
-      actionButtonClassName="action-button"
       actionButtonText="SAVE CHANGES"
-      cancelButtonClassName="cancel-button"
       cancelButtonText="CANCEL"
+      isLoading={false}
       onClickCancel={[Function]}
+      onClickSubmit={[Function]}
       withCancel={true}
     />
   </form>

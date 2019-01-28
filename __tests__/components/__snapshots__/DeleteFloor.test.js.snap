@@ -22,22 +22,14 @@ exports[`DeleteFloor Test Suite renders as expected 1`] = `
       <br />
       This cannot be undone
     </p>
-    <div
-      className="modal-actions"
-    >
-      <button
-        id="cancel-btn"
-        onClick={[Function]}
-      >
-        CANCEL
-      </button>
-      <button
-        id="delete-btn"
-        onClick={[Function]}
-      >
-        DELETE
-      </button>
-    </div>
+    <ActionButtons
+      actionButtonText="DELETE FLOOR"
+      cancelButtonText="CANCEL"
+      isLoading={false}
+      onClickCancel={[Function]}
+      onClickSubmit={[Function]}
+      withCancel={true}
+    />
   </div>
 </MrmModal>
 `;

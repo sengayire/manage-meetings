@@ -11,7 +11,6 @@ exports[`EditOffice Component renders properly 1`] = `
 >
   <form
     className="modal-form"
-    onSubmit={[Function]}
   >
     <Input
       controlsClass=""
@@ -42,11 +41,11 @@ exports[`EditOffice Component renders properly 1`] = `
       wrapperClassName="edit-office-select"
     />
     <ActionButtons
-      actionButtonClassName="action-button"
       actionButtonText="SAVE CHANGES"
-      cancelButtonClassName="cancel-button"
       cancelButtonText="CANCEL"
+      isLoading={false}
       onClickCancel={[Function]}
+      onClickSubmit={[Function]}
       withCancel={true}
     />
   </form>

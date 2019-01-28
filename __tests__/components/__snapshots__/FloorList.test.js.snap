@@ -1457,7 +1457,9 @@ exports[`RoomList Component renders correctly from memory 1`] = `
           }
           handleData={[MockFunction]}
         >
-          <Spinner>
+          <Spinner
+            size=""
+          >
             <div
               className="centered"
             >

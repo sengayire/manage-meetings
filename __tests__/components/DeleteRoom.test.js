@@ -9,15 +9,15 @@ describe('DeleteOffice Test Suite', () => {
     query: DELETE_ROOM,
     variables: { roomId: 1 },
   };
-  const deleteRoom = { name: 'Rabat', id: 1 };
-  const result = { data: { deleteRoom } };
+  const deletedRoom = { name: 'Rabat', id: 1 };
+  const result = { data: { deletedRoom } };
 
   const wrapperCode = (
     <MockedProvider
       mocks={[{ request, result }]}
       addTypename={false}
     >
-      <DeleteRoomComponent roomName="Rabat" roomId="1" />
+      <DeleteRoomComponent roomName="Rabat" roomId="1" refetch={jest.fn(() => Promise.resolve())} />
     </MockedProvider>
   );
   const wrapper = mount(wrapperCode);
@@ -44,26 +44,24 @@ describe('DeleteOffice Test Suite', () => {
   });
 
   it('should delete room succesfully', () => {
-    const preventDefault = jest.fn();
     const newProps = {
       deleteRoom: jest.fn(() => Promise.resolve(result)),
     };
     const newWrapper = shallow(<DeleteRoom roomName="Rabat" roomId="1" {...newProps} />);
 
     newWrapper.setState({ closeModal: false });
-    newWrapper.instance().handleDeleteRoom({ preventDefault });
+    newWrapper.instance().handleDeleteRoom();
     expect(newProps.deleteRoom).toHaveBeenCalled();
   });
 
   it('should return an error when deleting room', () => {
-    const preventDefault = jest.fn();
     const newProps = {
       deleteRoom: jest.fn(() =>
         Promise.reject(new Error('You are not authorized to perform this action'))),
     };
     const newWrapper = shallow(<DeleteRoom roomName="Rabat" roomId="1" {...newProps} />);
 
-    newWrapper.instance().handleDeleteRoom({ preventDefault });
+    newWrapper.instance().handleDeleteRoom();
     expect(newProps.deleteRoom).toHaveBeenCalled();
   });
 });

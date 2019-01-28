@@ -41,25 +41,35 @@ export class DeleteRoom extends Component {
   };
 
   /**
-   * Handles deleting room
-   *
-   * @param {object} event
+   * it makes a graphQL mutation to delete a room
    *
    * @returns {void}
    */
-  handleDeleteRoom = (event) => {
-    event.preventDefault();
+  handleDeleteRoom = () => {
     this.toggleLoading();
-    const variables = { variables: { roomId: this.props.roomId } };
-    const { refetch, currentPage } = this.props;
-    this.props
-      .deleteRoom(variables)
+    const {
+      deleteRoom, roomId, refetch, currentPage,
+    } = this.props;
+    deleteRoom(
+      {
+        variables: { roomId },
+        refetchQueries: [{
+          query: GET_ROOMS_QUERY,
+          variables: {
+            page: 1,
+            perPage: 5,
+            capacity: 0,
+            location: '',
+            office: '',
+          },
+        }],
+      })
       .then(() => {
         this.toggleLoading();
         this.handleCloseModal();
         notification(
           toastr,
-          'error',
+          'success',
           `'${this.props.roomName}' has been deleted successfully`,
         )();
         refetch({ page: currentPage });
@@ -121,13 +131,10 @@ DeleteRoom.propTypes = {
 };
 
 DeleteRoom.defaultProps = {
-  currentPage: 1,
   refetch: null,
+  currentPage: 1,
 };
 
 export default compose(
-  graphql(DELETE_ROOM, {
-    name: 'deleteRoom',
-    options: { refetchQueries: [{ query: GET_ROOMS_QUERY }] },
-  }),
+  graphql(DELETE_ROOM, { name: 'deleteRoom' }),
 )(DeleteRoom);

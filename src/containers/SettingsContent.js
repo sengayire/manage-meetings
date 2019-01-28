@@ -49,7 +49,7 @@ const SettingsContent = () => (
         </div>
       </div>
     }
-    <div className={`settings-vertical ${isAuthorizedUser && 'blur-background'}`}>
+    <div className={`settings-vertical ${isAuthorizedUser && /* istanbul ignore next */ 'blur-background'}`}>
       <SettingsNav />
       <div className="settings-tab-content">
         <Switch>

@@ -64,11 +64,11 @@ exports[`EditFeedback Component renders correctly 1`] = `
       value="3 Weeks"
     />
     <ActionButtons
-      actionButtonClassName="action-button"
       actionButtonText="Save Changes"
-      cancelButtonClassName="cancel-button"
       cancelButtonText="CANCEL"
+      isLoading={false}
       onClickCancel={[Function]}
+      onClickSubmit={[Function]}
       withCancel={true}
     />
   </form>
