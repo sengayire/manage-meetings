@@ -6964,9 +6964,7 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                     }
                   }
                 >
-                  <Spinner
-                    size=""
-                  >
+                  <Spinner>
                     <div
                       className="centered"
                     >

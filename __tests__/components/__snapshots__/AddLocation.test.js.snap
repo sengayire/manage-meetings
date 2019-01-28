@@ -12,6 +12,7 @@ exports[`AddLocation Component renders AddLocation Component 1`] = `
 >
   <form
     className="modal-form"
+    onSubmit={[Function]}
   >
     <SelectImage
       imageUrl=""
@@ -43,11 +44,11 @@ exports[`AddLocation Component renders AddLocation Component 1`] = `
       value=""
     />
     <ActionButtons
+      actionButtonClassName="action-button"
       actionButtonText="ADD LOCATION"
+      cancelButtonClassName="cancel-button"
       cancelButtonText="CANCEL"
-      isLoading={false}
       onClickCancel={[Function]}
-      onClickSubmit={[Function]}
       withCancel={true}
     />
   </form>

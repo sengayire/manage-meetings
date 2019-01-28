@@ -27,11 +27,11 @@ exports[`EditFloor Component renders properly 1`] = `
       value="Fourth Floor"
     />
     <ActionButtons
+      actionButtonClassName="action-button"
       actionButtonText="SAVE CHANGES"
+      cancelButtonClassName="cancel-button"
       cancelButtonText="CANCEL"
-      isLoading={false}
       onClickCancel={[Function]}
-      onClickSubmit={[Function]}
       withCancel={true}
     />
   </form>

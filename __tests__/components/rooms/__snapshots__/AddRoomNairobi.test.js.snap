@@ -2703,25 +2703,25 @@ exports[`AddRoomNairobi should pop up a modal when modal button is clicked 1`] =
                             </div>
                           </NairobiRoomInputs>
                           <ActionButtons
+                            actionButtonClassName="action-button"
                             actionButtonText="ADD ROOM"
+                            cancelButtonClassName="cancel-button"
                             cancelButtonText="CANCEL"
-                            isLoading={false}
                             onClickCancel={[Function]}
-                            onClickSubmit={[Function]}
                             withCancel={true}
                           >
                             <div
                               className="form-action-buttons"
                             >
                               <button
-                                className="cancel-button action-button"
+                                className="cancel-button"
                                 onClick={[Function]}
                               >
                                 CANCEL
                               </button>
                               <button
                                 className="action-button"
-                                onClick={[Function]}
+                                type="submit"
                               >
                                 ADD ROOM
                               </button>

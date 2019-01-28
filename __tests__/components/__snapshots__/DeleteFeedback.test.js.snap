@@ -21,14 +21,22 @@ exports[`DeleteFeedback Component renders correctly 1`] = `
       <br />
       This cannot be undone
     </p>
-    <ActionButtons
-      actionButtonText="DELETE FLOOR"
-      cancelButtonText="CANCEL"
-      isLoading={false}
-      onClickCancel={[Function]}
-      onClickSubmit={[Function]}
-      withCancel={true}
-    />
+    <div
+      className="modal-actions"
+    >
+      <button
+        id="cancel-btn"
+        onClick={[Function]}
+      >
+        Cancel
+      </button>
+      <button
+        id="delete-btn"
+        onClick={[Function]}
+      >
+        Delete
+      </button>
+    </div>
   </div>
 </MrmModal>
 `;

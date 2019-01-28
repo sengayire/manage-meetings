@@ -71,33 +71,9 @@ const GET_ALL_OFFICES = gql`
   }
 `;
 
-const GET_ALL_OFFICES_QUERY = gql`
-  query allOffices($page: Int!, $perPage: Int!) {
-    allOffices(page: $page, perPage: $perPage) {
-      offices {
-        id
-        name
-        location {
-          name
-          timeZone
-        }
-        blocks{
-          name
-          id
-        }
-      }
-      hasNext
-      hasPrevious
-      pages
-      queryTotal
-    }
-  }
-`;
-
 export {
   GET_EPIC_TOWER_DETAILS_QUERY as default,
   GET_NAIROBI_DETAILS,
   GET_CREST_DETAILS,
   GET_ALL_OFFICES,
-  GET_ALL_OFFICES_QUERY,
 };

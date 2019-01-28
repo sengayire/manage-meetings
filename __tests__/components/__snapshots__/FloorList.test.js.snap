@@ -12,46 +12,14 @@ exports[`RoomList Component renders correctly from memory 1`] = `
               Object {
                 "directives": Array [],
                 "kind": "OperationDefinition",
-                "name": Object {
-                  "kind": "Name",
-                  "value": "allFloors",
-                },
+                "name": undefined,
                 "operation": "query",
                 "selectionSet": Object {
                   "kind": "SelectionSet",
                   "selections": Array [
                     Object {
                       "alias": undefined,
-                      "arguments": Array [
-                        Object {
-                          "kind": "Argument",
-                          "name": Object {
-                            "kind": "Name",
-                            "value": "page",
-                          },
-                          "value": Object {
-                            "kind": "Variable",
-                            "name": Object {
-                              "kind": "Name",
-                              "value": "page",
-                            },
-                          },
-                        },
-                        Object {
-                          "kind": "Argument",
-                          "name": Object {
-                            "kind": "Name",
-                            "value": "perPage",
-                          },
-                          "value": Object {
-                            "kind": "Variable",
-                            "name": Object {
-                              "kind": "Name",
-                              "value": "perPage",
-                            },
-                          },
-                        },
-                      ],
+                      "arguments": Array [],
                       "directives": Array [],
                       "kind": "Field",
                       "name": Object {
@@ -68,7 +36,40 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                             "kind": "Field",
                             "name": Object {
                               "kind": "Name",
-                              "value": "floors",
+                              "value": "id",
+                            },
+                            "selectionSet": undefined,
+                          },
+                          Object {
+                            "alias": undefined,
+                            "arguments": Array [],
+                            "directives": Array [],
+                            "kind": "Field",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "name",
+                            },
+                            "selectionSet": undefined,
+                          },
+                          Object {
+                            "alias": undefined,
+                            "arguments": Array [],
+                            "directives": Array [],
+                            "kind": "Field",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "blockId",
+                            },
+                            "selectionSet": undefined,
+                          },
+                          Object {
+                            "alias": undefined,
+                            "arguments": Array [],
+                            "directives": Array [],
+                            "kind": "Field",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "block",
                             },
                             "selectionSet": Object {
                               "kind": "SelectionSet",
@@ -102,18 +103,7 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                                   "kind": "Field",
                                   "name": Object {
                                     "kind": "Name",
-                                    "value": "blockId",
-                                  },
-                                  "selectionSet": undefined,
-                                },
-                                Object {
-                                  "alias": undefined,
-                                  "arguments": Array [],
-                                  "directives": Array [],
-                                  "kind": "Field",
-                                  "name": Object {
-                                    "kind": "Name",
-                                    "value": "block",
+                                    "value": "offices",
                                   },
                                   "selectionSet": Object {
                                     "kind": "SelectionSet",
@@ -129,43 +119,6 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                                         },
                                         "selectionSet": undefined,
                                       },
-                                      Object {
-                                        "alias": undefined,
-                                        "arguments": Array [],
-                                        "directives": Array [],
-                                        "kind": "Field",
-                                        "name": Object {
-                                          "kind": "Name",
-                                          "value": "id",
-                                        },
-                                        "selectionSet": undefined,
-                                      },
-                                      Object {
-                                        "alias": undefined,
-                                        "arguments": Array [],
-                                        "directives": Array [],
-                                        "kind": "Field",
-                                        "name": Object {
-                                          "kind": "Name",
-                                          "value": "offices",
-                                        },
-                                        "selectionSet": Object {
-                                          "kind": "SelectionSet",
-                                          "selections": Array [
-                                            Object {
-                                              "alias": undefined,
-                                              "arguments": Array [],
-                                              "directives": Array [],
-                                              "kind": "Field",
-                                              "name": Object {
-                                                "kind": "Name",
-                                                "value": "id",
-                                              },
-                                              "selectionSet": undefined,
-                                            },
-                                          ],
-                                        },
-                                      },
                                     ],
                                   },
                                 },
@@ -177,81 +130,32 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                     },
                   ],
                 },
-                "variableDefinitions": Array [
-                  Object {
-                    "defaultValue": undefined,
-                    "kind": "VariableDefinition",
-                    "type": Object {
-                      "kind": "NonNullType",
-                      "type": Object {
-                        "kind": "NamedType",
-                        "name": Object {
-                          "kind": "Name",
-                          "value": "Int",
-                        },
-                      },
-                    },
-                    "variable": Object {
-                      "kind": "Variable",
-                      "name": Object {
-                        "kind": "Name",
-                        "value": "page",
-                      },
-                    },
-                  },
-                  Object {
-                    "defaultValue": undefined,
-                    "kind": "VariableDefinition",
-                    "type": Object {
-                      "kind": "NonNullType",
-                      "type": Object {
-                        "kind": "NamedType",
-                        "name": Object {
-                          "kind": "Name",
-                          "value": "Int",
-                        },
-                      },
-                    },
-                    "variable": Object {
-                      "kind": "Variable",
-                      "name": Object {
-                        "kind": "Name",
-                        "value": "perPage",
-                      },
-                    },
-                  },
-                ],
+                "variableDefinitions": Array [],
               },
             ],
             "kind": "Document",
             "loc": Object {
-              "end": 264,
+              "end": 154,
               "start": 0,
             },
-          },
-          "variables": Object {
-            "page": 1,
-            "perPage": 50,
           },
         },
         "result": Object {
           "data": Object {
-            "allFloors": Object {
-              "floors": Array [
-                Object {
-                  "block": Object {
-                    "id": "5",
-                    "name": "Container",
-                    "offices": Object {
-                      "id": "2",
-                    },
+            "allFloors": Array [
+              Object {
+                "block": Object {
+                  "id": "1",
+                  "name": "Epic Towers",
+                  "offices": Object {
+                    "name": "The Dojo 2",
                   },
-                  "blockId": 5,
-                  "id": "11",
-                  "name": "2nd floor",
                 },
-              ],
-            },
+                "blockId": 1,
+                "id": "1",
+                "name": "fouth floor ",
+              },
+            ],
           },
         },
       },
@@ -262,52 +166,20 @@ exports[`RoomList Component renders correctly from memory 1`] = `
     client={
       ApolloClient {
         "__operations_cache__": Map {
-          "allFloors" => Object {
+          "data" => Object {
             "query": Object {
               "definitions": Array [
                 Object {
                   "directives": Array [],
                   "kind": "OperationDefinition",
-                  "name": Object {
-                    "kind": "Name",
-                    "value": "allFloors",
-                  },
+                  "name": undefined,
                   "operation": "query",
                   "selectionSet": Object {
                     "kind": "SelectionSet",
                     "selections": Array [
                       Object {
                         "alias": undefined,
-                        "arguments": Array [
-                          Object {
-                            "kind": "Argument",
-                            "name": Object {
-                              "kind": "Name",
-                              "value": "page",
-                            },
-                            "value": Object {
-                              "kind": "Variable",
-                              "name": Object {
-                                "kind": "Name",
-                                "value": "page",
-                              },
-                            },
-                          },
-                          Object {
-                            "kind": "Argument",
-                            "name": Object {
-                              "kind": "Name",
-                              "value": "perPage",
-                            },
-                            "value": Object {
-                              "kind": "Variable",
-                              "name": Object {
-                                "kind": "Name",
-                                "value": "perPage",
-                              },
-                            },
-                          },
-                        ],
+                        "arguments": Array [],
                         "directives": Array [],
                         "kind": "Field",
                         "name": Object {
@@ -324,7 +196,312 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                               "kind": "Field",
                               "name": Object {
                                 "kind": "Name",
-                                "value": "floors",
+                                "value": "id",
+                              },
+                              "selectionSet": undefined,
+                            },
+                            Object {
+                              "alias": undefined,
+                              "arguments": Array [],
+                              "directives": Array [],
+                              "kind": "Field",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "name",
+                              },
+                              "selectionSet": undefined,
+                            },
+                            Object {
+                              "alias": undefined,
+                              "arguments": Array [],
+                              "directives": Array [],
+                              "kind": "Field",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "blockId",
+                              },
+                              "selectionSet": undefined,
+                            },
+                            Object {
+                              "alias": undefined,
+                              "arguments": Array [],
+                              "directives": Array [],
+                              "kind": "Field",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "block",
+                              },
+                              "selectionSet": Object {
+                                "kind": "SelectionSet",
+                                "selections": Array [
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "id",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "name",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "offices",
+                                    },
+                                    "selectionSet": Object {
+                                      "kind": "SelectionSet",
+                                      "selections": Array [
+                                        Object {
+                                          "alias": undefined,
+                                          "arguments": Array [],
+                                          "directives": Array [],
+                                          "kind": "Field",
+                                          "name": Object {
+                                            "kind": "Name",
+                                            "value": "name",
+                                          },
+                                          "selectionSet": undefined,
+                                        },
+                                      ],
+                                    },
+                                  },
+                                ],
+                              },
+                            },
+                          ],
+                        },
+                      },
+                    ],
+                  },
+                  "variableDefinitions": Array [],
+                },
+              ],
+              "kind": "Document",
+              "loc": Object {
+                "end": 154,
+                "start": 0,
+              },
+            },
+            "variables": undefined,
+          },
+        },
+        "cache": InMemoryCache {
+          "addTypename": false,
+          "config": Object {
+            "addTypename": false,
+            "dataIdFromObject": [Function],
+            "fragmentMatcher": HeuristicFragmentMatcher {},
+            "storeFactory": [Function],
+          },
+          "data": ObjectCache {
+            "data": Object {},
+          },
+          "optimistic": Array [],
+          "silenceBroadcast": false,
+          "watches": Array [
+            Object {
+              "callback": [Function],
+              "optimistic": true,
+              "previousResult": [Function],
+              "query": Object {
+                "definitions": Array [
+                  Object {
+                    "directives": Array [],
+                    "kind": "OperationDefinition",
+                    "name": undefined,
+                    "operation": "query",
+                    "selectionSet": Object {
+                      "kind": "SelectionSet",
+                      "selections": Array [
+                        Object {
+                          "alias": undefined,
+                          "arguments": Array [],
+                          "directives": Array [],
+                          "kind": "Field",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "allFloors",
+                          },
+                          "selectionSet": Object {
+                            "kind": "SelectionSet",
+                            "selections": Array [
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "id",
+                                },
+                                "selectionSet": undefined,
+                              },
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "name",
+                                },
+                                "selectionSet": undefined,
+                              },
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "blockId",
+                                },
+                                "selectionSet": undefined,
+                              },
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "block",
+                                },
+                                "selectionSet": Object {
+                                  "kind": "SelectionSet",
+                                  "selections": Array [
+                                    Object {
+                                      "alias": undefined,
+                                      "arguments": Array [],
+                                      "directives": Array [],
+                                      "kind": "Field",
+                                      "name": Object {
+                                        "kind": "Name",
+                                        "value": "id",
+                                      },
+                                      "selectionSet": undefined,
+                                    },
+                                    Object {
+                                      "alias": undefined,
+                                      "arguments": Array [],
+                                      "directives": Array [],
+                                      "kind": "Field",
+                                      "name": Object {
+                                        "kind": "Name",
+                                        "value": "name",
+                                      },
+                                      "selectionSet": undefined,
+                                    },
+                                    Object {
+                                      "alias": undefined,
+                                      "arguments": Array [],
+                                      "directives": Array [],
+                                      "kind": "Field",
+                                      "name": Object {
+                                        "kind": "Name",
+                                        "value": "offices",
+                                      },
+                                      "selectionSet": Object {
+                                        "kind": "SelectionSet",
+                                        "selections": Array [
+                                          Object {
+                                            "alias": undefined,
+                                            "arguments": Array [],
+                                            "directives": Array [],
+                                            "kind": "Field",
+                                            "name": Object {
+                                              "kind": "Name",
+                                              "value": "name",
+                                            },
+                                            "selectionSet": undefined,
+                                          },
+                                        ],
+                                      },
+                                    },
+                                  ],
+                                },
+                              },
+                            ],
+                          },
+                        },
+                      ],
+                    },
+                    "variableDefinitions": Array [],
+                  },
+                ],
+                "kind": "Document",
+                "loc": Object {
+                  "end": 154,
+                  "start": 0,
+                },
+              },
+              "variables": undefined,
+            },
+          ],
+        },
+        "defaultOptions": Object {},
+        "disableNetworkFetches": false,
+        "link": ApolloLink {
+          "request": [Function],
+        },
+        "mutate": [Function],
+        "query": [Function],
+        "queryDeduplication": true,
+        "queryManager": QueryManager {
+          "dataStore": DataStore {
+            "cache": InMemoryCache {
+              "addTypename": false,
+              "config": Object {
+                "addTypename": false,
+                "dataIdFromObject": [Function],
+                "fragmentMatcher": HeuristicFragmentMatcher {},
+                "storeFactory": [Function],
+              },
+              "data": ObjectCache {
+                "data": Object {},
+              },
+              "optimistic": Array [],
+              "silenceBroadcast": false,
+              "watches": Array [
+                Object {
+                  "callback": [Function],
+                  "optimistic": true,
+                  "previousResult": [Function],
+                  "query": Object {
+                    "definitions": Array [
+                      Object {
+                        "directives": Array [],
+                        "kind": "OperationDefinition",
+                        "name": undefined,
+                        "operation": "query",
+                        "selectionSet": Object {
+                          "kind": "SelectionSet",
+                          "selections": Array [
+                            Object {
+                              "alias": undefined,
+                              "arguments": Array [],
+                              "directives": Array [],
+                              "kind": "Field",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "allFloors",
                               },
                               "selectionSet": Object {
                                 "kind": "SelectionSet",
@@ -381,7 +558,7 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                                           "kind": "Field",
                                           "name": Object {
                                             "kind": "Name",
-                                            "value": "name",
+                                            "value": "id",
                                           },
                                           "selectionSet": undefined,
                                         },
@@ -392,7 +569,7 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                                           "kind": "Field",
                                           "name": Object {
                                             "kind": "Name",
-                                            "value": "id",
+                                            "value": "name",
                                           },
                                           "selectionSet": undefined,
                                         },
@@ -415,516 +592,10 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                                                 "kind": "Field",
                                                 "name": Object {
                                                   "kind": "Name",
-                                                  "value": "id",
-                                                },
-                                                "selectionSet": undefined,
-                                              },
-                                            ],
-                                          },
-                                        },
-                                      ],
-                                    },
-                                  },
-                                ],
-                              },
-                            },
-                          ],
-                        },
-                      },
-                    ],
-                  },
-                  "variableDefinitions": Array [
-                    Object {
-                      "defaultValue": undefined,
-                      "kind": "VariableDefinition",
-                      "type": Object {
-                        "kind": "NonNullType",
-                        "type": Object {
-                          "kind": "NamedType",
-                          "name": Object {
-                            "kind": "Name",
-                            "value": "Int",
-                          },
-                        },
-                      },
-                      "variable": Object {
-                        "kind": "Variable",
-                        "name": Object {
-                          "kind": "Name",
-                          "value": "page",
-                        },
-                      },
-                    },
-                    Object {
-                      "defaultValue": undefined,
-                      "kind": "VariableDefinition",
-                      "type": Object {
-                        "kind": "NonNullType",
-                        "type": Object {
-                          "kind": "NamedType",
-                          "name": Object {
-                            "kind": "Name",
-                            "value": "Int",
-                          },
-                        },
-                      },
-                      "variable": Object {
-                        "kind": "Variable",
-                        "name": Object {
-                          "kind": "Name",
-                          "value": "perPage",
-                        },
-                      },
-                    },
-                  ],
-                },
-              ],
-              "kind": "Document",
-              "loc": Object {
-                "end": 264,
-                "start": 0,
-              },
-            },
-            "variables": Object {
-              "page": 1,
-              "perPage": 50,
-            },
-          },
-        },
-        "cache": InMemoryCache {
-          "addTypename": false,
-          "config": Object {
-            "addTypename": false,
-            "dataIdFromObject": [Function],
-            "fragmentMatcher": HeuristicFragmentMatcher {},
-            "storeFactory": [Function],
-          },
-          "data": ObjectCache {
-            "data": Object {},
-          },
-          "optimistic": Array [],
-          "silenceBroadcast": false,
-          "watches": Array [
-            Object {
-              "callback": [Function],
-              "optimistic": true,
-              "previousResult": [Function],
-              "query": Object {
-                "definitions": Array [
-                  Object {
-                    "directives": Array [],
-                    "kind": "OperationDefinition",
-                    "name": Object {
-                      "kind": "Name",
-                      "value": "allFloors",
-                    },
-                    "operation": "query",
-                    "selectionSet": Object {
-                      "kind": "SelectionSet",
-                      "selections": Array [
-                        Object {
-                          "alias": undefined,
-                          "arguments": Array [
-                            Object {
-                              "kind": "Argument",
-                              "name": Object {
-                                "kind": "Name",
-                                "value": "page",
-                              },
-                              "value": Object {
-                                "kind": "Variable",
-                                "name": Object {
-                                  "kind": "Name",
-                                  "value": "page",
-                                },
-                              },
-                            },
-                            Object {
-                              "kind": "Argument",
-                              "name": Object {
-                                "kind": "Name",
-                                "value": "perPage",
-                              },
-                              "value": Object {
-                                "kind": "Variable",
-                                "name": Object {
-                                  "kind": "Name",
-                                  "value": "perPage",
-                                },
-                              },
-                            },
-                          ],
-                          "directives": Array [],
-                          "kind": "Field",
-                          "name": Object {
-                            "kind": "Name",
-                            "value": "allFloors",
-                          },
-                          "selectionSet": Object {
-                            "kind": "SelectionSet",
-                            "selections": Array [
-                              Object {
-                                "alias": undefined,
-                                "arguments": Array [],
-                                "directives": Array [],
-                                "kind": "Field",
-                                "name": Object {
-                                  "kind": "Name",
-                                  "value": "floors",
-                                },
-                                "selectionSet": Object {
-                                  "kind": "SelectionSet",
-                                  "selections": Array [
-                                    Object {
-                                      "alias": undefined,
-                                      "arguments": Array [],
-                                      "directives": Array [],
-                                      "kind": "Field",
-                                      "name": Object {
-                                        "kind": "Name",
-                                        "value": "id",
-                                      },
-                                      "selectionSet": undefined,
-                                    },
-                                    Object {
-                                      "alias": undefined,
-                                      "arguments": Array [],
-                                      "directives": Array [],
-                                      "kind": "Field",
-                                      "name": Object {
-                                        "kind": "Name",
-                                        "value": "name",
-                                      },
-                                      "selectionSet": undefined,
-                                    },
-                                    Object {
-                                      "alias": undefined,
-                                      "arguments": Array [],
-                                      "directives": Array [],
-                                      "kind": "Field",
-                                      "name": Object {
-                                        "kind": "Name",
-                                        "value": "blockId",
-                                      },
-                                      "selectionSet": undefined,
-                                    },
-                                    Object {
-                                      "alias": undefined,
-                                      "arguments": Array [],
-                                      "directives": Array [],
-                                      "kind": "Field",
-                                      "name": Object {
-                                        "kind": "Name",
-                                        "value": "block",
-                                      },
-                                      "selectionSet": Object {
-                                        "kind": "SelectionSet",
-                                        "selections": Array [
-                                          Object {
-                                            "alias": undefined,
-                                            "arguments": Array [],
-                                            "directives": Array [],
-                                            "kind": "Field",
-                                            "name": Object {
-                                              "kind": "Name",
-                                              "value": "name",
-                                            },
-                                            "selectionSet": undefined,
-                                          },
-                                          Object {
-                                            "alias": undefined,
-                                            "arguments": Array [],
-                                            "directives": Array [],
-                                            "kind": "Field",
-                                            "name": Object {
-                                              "kind": "Name",
-                                              "value": "id",
-                                            },
-                                            "selectionSet": undefined,
-                                          },
-                                          Object {
-                                            "alias": undefined,
-                                            "arguments": Array [],
-                                            "directives": Array [],
-                                            "kind": "Field",
-                                            "name": Object {
-                                              "kind": "Name",
-                                              "value": "offices",
-                                            },
-                                            "selectionSet": Object {
-                                              "kind": "SelectionSet",
-                                              "selections": Array [
-                                                Object {
-                                                  "alias": undefined,
-                                                  "arguments": Array [],
-                                                  "directives": Array [],
-                                                  "kind": "Field",
-                                                  "name": Object {
-                                                    "kind": "Name",
-                                                    "value": "id",
-                                                  },
-                                                  "selectionSet": undefined,
-                                                },
-                                              ],
-                                            },
-                                          },
-                                        ],
-                                      },
-                                    },
-                                  ],
-                                },
-                              },
-                            ],
-                          },
-                        },
-                      ],
-                    },
-                    "variableDefinitions": Array [
-                      Object {
-                        "defaultValue": undefined,
-                        "kind": "VariableDefinition",
-                        "type": Object {
-                          "kind": "NonNullType",
-                          "type": Object {
-                            "kind": "NamedType",
-                            "name": Object {
-                              "kind": "Name",
-                              "value": "Int",
-                            },
-                          },
-                        },
-                        "variable": Object {
-                          "kind": "Variable",
-                          "name": Object {
-                            "kind": "Name",
-                            "value": "page",
-                          },
-                        },
-                      },
-                      Object {
-                        "defaultValue": undefined,
-                        "kind": "VariableDefinition",
-                        "type": Object {
-                          "kind": "NonNullType",
-                          "type": Object {
-                            "kind": "NamedType",
-                            "name": Object {
-                              "kind": "Name",
-                              "value": "Int",
-                            },
-                          },
-                        },
-                        "variable": Object {
-                          "kind": "Variable",
-                          "name": Object {
-                            "kind": "Name",
-                            "value": "perPage",
-                          },
-                        },
-                      },
-                    ],
-                  },
-                ],
-                "kind": "Document",
-                "loc": Object {
-                  "end": 264,
-                  "start": 0,
-                },
-              },
-              "variables": Object {
-                "page": 1,
-                "perPage": 50,
-              },
-            },
-          ],
-        },
-        "defaultOptions": Object {},
-        "disableNetworkFetches": false,
-        "link": ApolloLink {
-          "request": [Function],
-        },
-        "mutate": [Function],
-        "query": [Function],
-        "queryDeduplication": true,
-        "queryManager": QueryManager {
-          "dataStore": DataStore {
-            "cache": InMemoryCache {
-              "addTypename": false,
-              "config": Object {
-                "addTypename": false,
-                "dataIdFromObject": [Function],
-                "fragmentMatcher": HeuristicFragmentMatcher {},
-                "storeFactory": [Function],
-              },
-              "data": ObjectCache {
-                "data": Object {},
-              },
-              "optimistic": Array [],
-              "silenceBroadcast": false,
-              "watches": Array [
-                Object {
-                  "callback": [Function],
-                  "optimistic": true,
-                  "previousResult": [Function],
-                  "query": Object {
-                    "definitions": Array [
-                      Object {
-                        "directives": Array [],
-                        "kind": "OperationDefinition",
-                        "name": Object {
-                          "kind": "Name",
-                          "value": "allFloors",
-                        },
-                        "operation": "query",
-                        "selectionSet": Object {
-                          "kind": "SelectionSet",
-                          "selections": Array [
-                            Object {
-                              "alias": undefined,
-                              "arguments": Array [
-                                Object {
-                                  "kind": "Argument",
-                                  "name": Object {
-                                    "kind": "Name",
-                                    "value": "page",
-                                  },
-                                  "value": Object {
-                                    "kind": "Variable",
-                                    "name": Object {
-                                      "kind": "Name",
-                                      "value": "page",
-                                    },
-                                  },
-                                },
-                                Object {
-                                  "kind": "Argument",
-                                  "name": Object {
-                                    "kind": "Name",
-                                    "value": "perPage",
-                                  },
-                                  "value": Object {
-                                    "kind": "Variable",
-                                    "name": Object {
-                                      "kind": "Name",
-                                      "value": "perPage",
-                                    },
-                                  },
-                                },
-                              ],
-                              "directives": Array [],
-                              "kind": "Field",
-                              "name": Object {
-                                "kind": "Name",
-                                "value": "allFloors",
-                              },
-                              "selectionSet": Object {
-                                "kind": "SelectionSet",
-                                "selections": Array [
-                                  Object {
-                                    "alias": undefined,
-                                    "arguments": Array [],
-                                    "directives": Array [],
-                                    "kind": "Field",
-                                    "name": Object {
-                                      "kind": "Name",
-                                      "value": "floors",
-                                    },
-                                    "selectionSet": Object {
-                                      "kind": "SelectionSet",
-                                      "selections": Array [
-                                        Object {
-                                          "alias": undefined,
-                                          "arguments": Array [],
-                                          "directives": Array [],
-                                          "kind": "Field",
-                                          "name": Object {
-                                            "kind": "Name",
-                                            "value": "id",
-                                          },
-                                          "selectionSet": undefined,
-                                        },
-                                        Object {
-                                          "alias": undefined,
-                                          "arguments": Array [],
-                                          "directives": Array [],
-                                          "kind": "Field",
-                                          "name": Object {
-                                            "kind": "Name",
-                                            "value": "name",
-                                          },
-                                          "selectionSet": undefined,
-                                        },
-                                        Object {
-                                          "alias": undefined,
-                                          "arguments": Array [],
-                                          "directives": Array [],
-                                          "kind": "Field",
-                                          "name": Object {
-                                            "kind": "Name",
-                                            "value": "blockId",
-                                          },
-                                          "selectionSet": undefined,
-                                        },
-                                        Object {
-                                          "alias": undefined,
-                                          "arguments": Array [],
-                                          "directives": Array [],
-                                          "kind": "Field",
-                                          "name": Object {
-                                            "kind": "Name",
-                                            "value": "block",
-                                          },
-                                          "selectionSet": Object {
-                                            "kind": "SelectionSet",
-                                            "selections": Array [
-                                              Object {
-                                                "alias": undefined,
-                                                "arguments": Array [],
-                                                "directives": Array [],
-                                                "kind": "Field",
-                                                "name": Object {
-                                                  "kind": "Name",
                                                   "value": "name",
                                                 },
                                                 "selectionSet": undefined,
                                               },
-                                              Object {
-                                                "alias": undefined,
-                                                "arguments": Array [],
-                                                "directives": Array [],
-                                                "kind": "Field",
-                                                "name": Object {
-                                                  "kind": "Name",
-                                                  "value": "id",
-                                                },
-                                                "selectionSet": undefined,
-                                              },
-                                              Object {
-                                                "alias": undefined,
-                                                "arguments": Array [],
-                                                "directives": Array [],
-                                                "kind": "Field",
-                                                "name": Object {
-                                                  "kind": "Name",
-                                                  "value": "offices",
-                                                },
-                                                "selectionSet": Object {
-                                                  "kind": "SelectionSet",
-                                                  "selections": Array [
-                                                    Object {
-                                                      "alias": undefined,
-                                                      "arguments": Array [],
-                                                      "directives": Array [],
-                                                      "kind": "Field",
-                                                      "name": Object {
-                                                        "kind": "Name",
-                                                        "value": "id",
-                                                      },
-                                                      "selectionSet": undefined,
-                                                    },
-                                                  ],
-                                                },
-                                              },
                                             ],
                                           },
                                         },
@@ -936,62 +607,16 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                             },
                           ],
                         },
-                        "variableDefinitions": Array [
-                          Object {
-                            "defaultValue": undefined,
-                            "kind": "VariableDefinition",
-                            "type": Object {
-                              "kind": "NonNullType",
-                              "type": Object {
-                                "kind": "NamedType",
-                                "name": Object {
-                                  "kind": "Name",
-                                  "value": "Int",
-                                },
-                              },
-                            },
-                            "variable": Object {
-                              "kind": "Variable",
-                              "name": Object {
-                                "kind": "Name",
-                                "value": "page",
-                              },
-                            },
-                          },
-                          Object {
-                            "defaultValue": undefined,
-                            "kind": "VariableDefinition",
-                            "type": Object {
-                              "kind": "NonNullType",
-                              "type": Object {
-                                "kind": "NamedType",
-                                "name": Object {
-                                  "kind": "Name",
-                                  "value": "Int",
-                                },
-                              },
-                            },
-                            "variable": Object {
-                              "kind": "Variable",
-                              "name": Object {
-                                "kind": "Name",
-                                "value": "perPage",
-                              },
-                            },
-                          },
-                        ],
+                        "variableDefinitions": Array [],
                       },
                     ],
                     "kind": "Document",
                     "loc": Object {
-                      "end": 264,
+                      "end": 154,
                       "start": 0,
                     },
                   },
-                  "variables": Object {
-                    "page": 1,
-                    "perPage": 50,
-                  },
+                  "variables": undefined,
                 },
               ],
             },
@@ -1021,46 +646,14 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                   Object {
                     "directives": Array [],
                     "kind": "OperationDefinition",
-                    "name": Object {
-                      "kind": "Name",
-                      "value": "allFloors",
-                    },
+                    "name": undefined,
                     "operation": "query",
                     "selectionSet": Object {
                       "kind": "SelectionSet",
                       "selections": Array [
                         Object {
                           "alias": undefined,
-                          "arguments": Array [
-                            Object {
-                              "kind": "Argument",
-                              "name": Object {
-                                "kind": "Name",
-                                "value": "page",
-                              },
-                              "value": Object {
-                                "kind": "Variable",
-                                "name": Object {
-                                  "kind": "Name",
-                                  "value": "page",
-                                },
-                              },
-                            },
-                            Object {
-                              "kind": "Argument",
-                              "name": Object {
-                                "kind": "Name",
-                                "value": "perPage",
-                              },
-                              "value": Object {
-                                "kind": "Variable",
-                                "name": Object {
-                                  "kind": "Name",
-                                  "value": "perPage",
-                                },
-                              },
-                            },
-                          ],
+                          "arguments": Array [],
                           "directives": Array [],
                           "kind": "Field",
                           "name": Object {
@@ -1077,7 +670,40 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                                 "kind": "Field",
                                 "name": Object {
                                   "kind": "Name",
-                                  "value": "floors",
+                                  "value": "id",
+                                },
+                                "selectionSet": undefined,
+                              },
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "name",
+                                },
+                                "selectionSet": undefined,
+                              },
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "blockId",
+                                },
+                                "selectionSet": undefined,
+                              },
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "block",
                                 },
                                 "selectionSet": Object {
                                   "kind": "SelectionSet",
@@ -1111,18 +737,7 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                                       "kind": "Field",
                                       "name": Object {
                                         "kind": "Name",
-                                        "value": "blockId",
-                                      },
-                                      "selectionSet": undefined,
-                                    },
-                                    Object {
-                                      "alias": undefined,
-                                      "arguments": Array [],
-                                      "directives": Array [],
-                                      "kind": "Field",
-                                      "name": Object {
-                                        "kind": "Name",
-                                        "value": "block",
+                                        "value": "offices",
                                       },
                                       "selectionSet": Object {
                                         "kind": "SelectionSet",
@@ -1138,43 +753,6 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                                             },
                                             "selectionSet": undefined,
                                           },
-                                          Object {
-                                            "alias": undefined,
-                                            "arguments": Array [],
-                                            "directives": Array [],
-                                            "kind": "Field",
-                                            "name": Object {
-                                              "kind": "Name",
-                                              "value": "id",
-                                            },
-                                            "selectionSet": undefined,
-                                          },
-                                          Object {
-                                            "alias": undefined,
-                                            "arguments": Array [],
-                                            "directives": Array [],
-                                            "kind": "Field",
-                                            "name": Object {
-                                              "kind": "Name",
-                                              "value": "offices",
-                                            },
-                                            "selectionSet": Object {
-                                              "kind": "SelectionSet",
-                                              "selections": Array [
-                                                Object {
-                                                  "alias": undefined,
-                                                  "arguments": Array [],
-                                                  "directives": Array [],
-                                                  "kind": "Field",
-                                                  "name": Object {
-                                                    "kind": "Name",
-                                                    "value": "id",
-                                                  },
-                                                  "selectionSet": undefined,
-                                                },
-                                              ],
-                                            },
-                                          },
                                         ],
                                       },
                                     },
@@ -1186,55 +764,12 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                         },
                       ],
                     },
-                    "variableDefinitions": Array [
-                      Object {
-                        "defaultValue": undefined,
-                        "kind": "VariableDefinition",
-                        "type": Object {
-                          "kind": "NonNullType",
-                          "type": Object {
-                            "kind": "NamedType",
-                            "name": Object {
-                              "kind": "Name",
-                              "value": "Int",
-                            },
-                          },
-                        },
-                        "variable": Object {
-                          "kind": "Variable",
-                          "name": Object {
-                            "kind": "Name",
-                            "value": "page",
-                          },
-                        },
-                      },
-                      Object {
-                        "defaultValue": undefined,
-                        "kind": "VariableDefinition",
-                        "type": Object {
-                          "kind": "NonNullType",
-                          "type": Object {
-                            "kind": "NamedType",
-                            "name": Object {
-                              "kind": "Name",
-                              "value": "Int",
-                            },
-                          },
-                        },
-                        "variable": Object {
-                          "kind": "Variable",
-                          "name": Object {
-                            "kind": "Name",
-                            "value": "perPage",
-                          },
-                        },
-                      },
-                    ],
+                    "variableDefinitions": Array [],
                   },
                 ],
                 "kind": "Document",
                 "loc": Object {
-                  "end": 264,
+                  "end": 154,
                   "start": 0,
                 },
               },
@@ -1275,46 +810,14 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                       Object {
                         "directives": Array [],
                         "kind": "OperationDefinition",
-                        "name": Object {
-                          "kind": "Name",
-                          "value": "allFloors",
-                        },
+                        "name": undefined,
                         "operation": "query",
                         "selectionSet": Object {
                           "kind": "SelectionSet",
                           "selections": Array [
                             Object {
                               "alias": undefined,
-                              "arguments": Array [
-                                Object {
-                                  "kind": "Argument",
-                                  "name": Object {
-                                    "kind": "Name",
-                                    "value": "page",
-                                  },
-                                  "value": Object {
-                                    "kind": "Variable",
-                                    "name": Object {
-                                      "kind": "Name",
-                                      "value": "page",
-                                    },
-                                  },
-                                },
-                                Object {
-                                  "kind": "Argument",
-                                  "name": Object {
-                                    "kind": "Name",
-                                    "value": "perPage",
-                                  },
-                                  "value": Object {
-                                    "kind": "Variable",
-                                    "name": Object {
-                                      "kind": "Name",
-                                      "value": "perPage",
-                                    },
-                                  },
-                                },
-                              ],
+                              "arguments": Array [],
                               "directives": Array [],
                               "kind": "Field",
                               "name": Object {
@@ -1331,7 +834,40 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                                     "kind": "Field",
                                     "name": Object {
                                       "kind": "Name",
-                                      "value": "floors",
+                                      "value": "id",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "name",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "blockId",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "block",
                                     },
                                     "selectionSet": Object {
                                       "kind": "SelectionSet",
@@ -1365,18 +901,7 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                                           "kind": "Field",
                                           "name": Object {
                                             "kind": "Name",
-                                            "value": "blockId",
-                                          },
-                                          "selectionSet": undefined,
-                                        },
-                                        Object {
-                                          "alias": undefined,
-                                          "arguments": Array [],
-                                          "directives": Array [],
-                                          "kind": "Field",
-                                          "name": Object {
-                                            "kind": "Name",
-                                            "value": "block",
+                                            "value": "offices",
                                           },
                                           "selectionSet": Object {
                                             "kind": "SelectionSet",
@@ -1392,43 +917,6 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                                                 },
                                                 "selectionSet": undefined,
                                               },
-                                              Object {
-                                                "alias": undefined,
-                                                "arguments": Array [],
-                                                "directives": Array [],
-                                                "kind": "Field",
-                                                "name": Object {
-                                                  "kind": "Name",
-                                                  "value": "id",
-                                                },
-                                                "selectionSet": undefined,
-                                              },
-                                              Object {
-                                                "alias": undefined,
-                                                "arguments": Array [],
-                                                "directives": Array [],
-                                                "kind": "Field",
-                                                "name": Object {
-                                                  "kind": "Name",
-                                                  "value": "offices",
-                                                },
-                                                "selectionSet": Object {
-                                                  "kind": "SelectionSet",
-                                                  "selections": Array [
-                                                    Object {
-                                                      "alias": undefined,
-                                                      "arguments": Array [],
-                                                      "directives": Array [],
-                                                      "kind": "Field",
-                                                      "name": Object {
-                                                        "kind": "Name",
-                                                        "value": "id",
-                                                      },
-                                                      "selectionSet": undefined,
-                                                    },
-                                                  ],
-                                                },
-                                              },
                                             ],
                                           },
                                         },
@@ -1440,61 +928,14 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                             },
                           ],
                         },
-                        "variableDefinitions": Array [
-                          Object {
-                            "defaultValue": undefined,
-                            "kind": "VariableDefinition",
-                            "type": Object {
-                              "kind": "NonNullType",
-                              "type": Object {
-                                "kind": "NamedType",
-                                "name": Object {
-                                  "kind": "Name",
-                                  "value": "Int",
-                                },
-                              },
-                            },
-                            "variable": Object {
-                              "kind": "Variable",
-                              "name": Object {
-                                "kind": "Name",
-                                "value": "page",
-                              },
-                            },
-                          },
-                          Object {
-                            "defaultValue": undefined,
-                            "kind": "VariableDefinition",
-                            "type": Object {
-                              "kind": "NonNullType",
-                              "type": Object {
-                                "kind": "NamedType",
-                                "name": Object {
-                                  "kind": "Name",
-                                  "value": "Int",
-                                },
-                              },
-                            },
-                            "variable": Object {
-                              "kind": "Variable",
-                              "name": Object {
-                                "kind": "Name",
-                                "value": "perPage",
-                              },
-                            },
-                          },
-                        ],
+                        "variableDefinitions": Array [],
                       },
                     ],
                     "kind": "Document",
                     "loc": Object {
-                      "end": 264,
+                      "end": 154,
                       "start": 0,
                     },
-                  },
-                  "variables": Object {
-                    "page": 1,
-                    "perPage": 50,
                   },
                 },
                 "queryId": "1",
@@ -1509,10 +950,7 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                 },
                 "shouldSubscribe": true,
                 "subscriptionHandles": Array [],
-                "variables": Object {
-                  "page": 1,
-                  "perPage": 50,
-                },
+                "variables": Object {},
               },
               "subscriptions": Array [
                 Subscription {
@@ -1529,11 +967,7 @@ exports[`RoomList Component renders correctly from memory 1`] = `
             },
           },
           "queryDeduplication": true,
-          "queryIdsByName": Object {
-            "allFloors": Array [
-              "1",
-            ],
-          },
+          "queryIdsByName": Object {},
           "queryStore": QueryStore {
             "store": Object {
               "1": Object {
@@ -1542,572 +976,8 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                     Object {
                       "directives": Array [],
                       "kind": "OperationDefinition",
-                      "name": Object {
-                        "kind": "Name",
-                        "value": "allFloors",
-                      },
+                      "name": undefined,
                       "operation": "query",
-                      "selectionSet": Object {
-                        "kind": "SelectionSet",
-                        "selections": Array [
-                          Object {
-                            "alias": undefined,
-                            "arguments": Array [
-                              Object {
-                                "kind": "Argument",
-                                "name": Object {
-                                  "kind": "Name",
-                                  "value": "page",
-                                },
-                                "value": Object {
-                                  "kind": "Variable",
-                                  "name": Object {
-                                    "kind": "Name",
-                                    "value": "page",
-                                  },
-                                },
-                              },
-                              Object {
-                                "kind": "Argument",
-                                "name": Object {
-                                  "kind": "Name",
-                                  "value": "perPage",
-                                },
-                                "value": Object {
-                                  "kind": "Variable",
-                                  "name": Object {
-                                    "kind": "Name",
-                                    "value": "perPage",
-                                  },
-                                },
-                              },
-                            ],
-                            "directives": Array [],
-                            "kind": "Field",
-                            "name": Object {
-                              "kind": "Name",
-                              "value": "allFloors",
-                            },
-                            "selectionSet": Object {
-                              "kind": "SelectionSet",
-                              "selections": Array [
-                                Object {
-                                  "alias": undefined,
-                                  "arguments": Array [],
-                                  "directives": Array [],
-                                  "kind": "Field",
-                                  "name": Object {
-                                    "kind": "Name",
-                                    "value": "floors",
-                                  },
-                                  "selectionSet": Object {
-                                    "kind": "SelectionSet",
-                                    "selections": Array [
-                                      Object {
-                                        "alias": undefined,
-                                        "arguments": Array [],
-                                        "directives": Array [],
-                                        "kind": "Field",
-                                        "name": Object {
-                                          "kind": "Name",
-                                          "value": "id",
-                                        },
-                                        "selectionSet": undefined,
-                                      },
-                                      Object {
-                                        "alias": undefined,
-                                        "arguments": Array [],
-                                        "directives": Array [],
-                                        "kind": "Field",
-                                        "name": Object {
-                                          "kind": "Name",
-                                          "value": "name",
-                                        },
-                                        "selectionSet": undefined,
-                                      },
-                                      Object {
-                                        "alias": undefined,
-                                        "arguments": Array [],
-                                        "directives": Array [],
-                                        "kind": "Field",
-                                        "name": Object {
-                                          "kind": "Name",
-                                          "value": "blockId",
-                                        },
-                                        "selectionSet": undefined,
-                                      },
-                                      Object {
-                                        "alias": undefined,
-                                        "arguments": Array [],
-                                        "directives": Array [],
-                                        "kind": "Field",
-                                        "name": Object {
-                                          "kind": "Name",
-                                          "value": "block",
-                                        },
-                                        "selectionSet": Object {
-                                          "kind": "SelectionSet",
-                                          "selections": Array [
-                                            Object {
-                                              "alias": undefined,
-                                              "arguments": Array [],
-                                              "directives": Array [],
-                                              "kind": "Field",
-                                              "name": Object {
-                                                "kind": "Name",
-                                                "value": "name",
-                                              },
-                                              "selectionSet": undefined,
-                                            },
-                                            Object {
-                                              "alias": undefined,
-                                              "arguments": Array [],
-                                              "directives": Array [],
-                                              "kind": "Field",
-                                              "name": Object {
-                                                "kind": "Name",
-                                                "value": "id",
-                                              },
-                                              "selectionSet": undefined,
-                                            },
-                                            Object {
-                                              "alias": undefined,
-                                              "arguments": Array [],
-                                              "directives": Array [],
-                                              "kind": "Field",
-                                              "name": Object {
-                                                "kind": "Name",
-                                                "value": "offices",
-                                              },
-                                              "selectionSet": Object {
-                                                "kind": "SelectionSet",
-                                                "selections": Array [
-                                                  Object {
-                                                    "alias": undefined,
-                                                    "arguments": Array [],
-                                                    "directives": Array [],
-                                                    "kind": "Field",
-                                                    "name": Object {
-                                                      "kind": "Name",
-                                                      "value": "id",
-                                                    },
-                                                    "selectionSet": undefined,
-                                                  },
-                                                ],
-                                              },
-                                            },
-                                          ],
-                                        },
-                                      },
-                                    ],
-                                  },
-                                },
-                              ],
-                            },
-                          },
-                        ],
-                      },
-                      "variableDefinitions": Array [
-                        Object {
-                          "defaultValue": undefined,
-                          "kind": "VariableDefinition",
-                          "type": Object {
-                            "kind": "NonNullType",
-                            "type": Object {
-                              "kind": "NamedType",
-                              "name": Object {
-                                "kind": "Name",
-                                "value": "Int",
-                              },
-                            },
-                          },
-                          "variable": Object {
-                            "kind": "Variable",
-                            "name": Object {
-                              "kind": "Name",
-                              "value": "page",
-                            },
-                          },
-                        },
-                        Object {
-                          "defaultValue": undefined,
-                          "kind": "VariableDefinition",
-                          "type": Object {
-                            "kind": "NonNullType",
-                            "type": Object {
-                              "kind": "NamedType",
-                              "name": Object {
-                                "kind": "Name",
-                                "value": "Int",
-                              },
-                            },
-                          },
-                          "variable": Object {
-                            "kind": "Variable",
-                            "name": Object {
-                              "kind": "Name",
-                              "value": "perPage",
-                            },
-                          },
-                        },
-                      ],
-                    },
-                  ],
-                  "kind": "Document",
-                  "loc": Object {
-                    "end": 264,
-                    "start": 0,
-                  },
-                },
-                "graphQLErrors": Array [],
-                "metadata": Object {
-                  "reactComponent": Object {
-                    "displayName": "Apollo(FloorList)",
-                  },
-                },
-                "networkError": null,
-                "networkStatus": 1,
-                "previousVariables": null,
-                "variables": Object {
-                  "page": 1,
-                  "perPage": 50,
-                },
-              },
-            },
-          },
-          "scheduler": QueryScheduler {
-            "inFlightQueries": Object {},
-            "intervalQueries": Object {},
-            "pollingTimers": Object {},
-            "queryManager": [Circular],
-            "registeredQueries": Object {},
-            "ssrMode": false,
-          },
-        },
-        "reFetchObservableQueries": [Function],
-        "resetStore": [Function],
-        "resetStoreCallbacks": Array [],
-        "ssrMode": false,
-        "store": DataStore {
-          "cache": InMemoryCache {
-            "addTypename": false,
-            "config": Object {
-              "addTypename": false,
-              "dataIdFromObject": [Function],
-              "fragmentMatcher": HeuristicFragmentMatcher {},
-              "storeFactory": [Function],
-            },
-            "data": ObjectCache {
-              "data": Object {},
-            },
-            "optimistic": Array [],
-            "silenceBroadcast": false,
-            "watches": Array [
-              Object {
-                "callback": [Function],
-                "optimistic": true,
-                "previousResult": [Function],
-                "query": Object {
-                  "definitions": Array [
-                    Object {
-                      "directives": Array [],
-                      "kind": "OperationDefinition",
-                      "name": Object {
-                        "kind": "Name",
-                        "value": "allFloors",
-                      },
-                      "operation": "query",
-                      "selectionSet": Object {
-                        "kind": "SelectionSet",
-                        "selections": Array [
-                          Object {
-                            "alias": undefined,
-                            "arguments": Array [
-                              Object {
-                                "kind": "Argument",
-                                "name": Object {
-                                  "kind": "Name",
-                                  "value": "page",
-                                },
-                                "value": Object {
-                                  "kind": "Variable",
-                                  "name": Object {
-                                    "kind": "Name",
-                                    "value": "page",
-                                  },
-                                },
-                              },
-                              Object {
-                                "kind": "Argument",
-                                "name": Object {
-                                  "kind": "Name",
-                                  "value": "perPage",
-                                },
-                                "value": Object {
-                                  "kind": "Variable",
-                                  "name": Object {
-                                    "kind": "Name",
-                                    "value": "perPage",
-                                  },
-                                },
-                              },
-                            ],
-                            "directives": Array [],
-                            "kind": "Field",
-                            "name": Object {
-                              "kind": "Name",
-                              "value": "allFloors",
-                            },
-                            "selectionSet": Object {
-                              "kind": "SelectionSet",
-                              "selections": Array [
-                                Object {
-                                  "alias": undefined,
-                                  "arguments": Array [],
-                                  "directives": Array [],
-                                  "kind": "Field",
-                                  "name": Object {
-                                    "kind": "Name",
-                                    "value": "floors",
-                                  },
-                                  "selectionSet": Object {
-                                    "kind": "SelectionSet",
-                                    "selections": Array [
-                                      Object {
-                                        "alias": undefined,
-                                        "arguments": Array [],
-                                        "directives": Array [],
-                                        "kind": "Field",
-                                        "name": Object {
-                                          "kind": "Name",
-                                          "value": "id",
-                                        },
-                                        "selectionSet": undefined,
-                                      },
-                                      Object {
-                                        "alias": undefined,
-                                        "arguments": Array [],
-                                        "directives": Array [],
-                                        "kind": "Field",
-                                        "name": Object {
-                                          "kind": "Name",
-                                          "value": "name",
-                                        },
-                                        "selectionSet": undefined,
-                                      },
-                                      Object {
-                                        "alias": undefined,
-                                        "arguments": Array [],
-                                        "directives": Array [],
-                                        "kind": "Field",
-                                        "name": Object {
-                                          "kind": "Name",
-                                          "value": "blockId",
-                                        },
-                                        "selectionSet": undefined,
-                                      },
-                                      Object {
-                                        "alias": undefined,
-                                        "arguments": Array [],
-                                        "directives": Array [],
-                                        "kind": "Field",
-                                        "name": Object {
-                                          "kind": "Name",
-                                          "value": "block",
-                                        },
-                                        "selectionSet": Object {
-                                          "kind": "SelectionSet",
-                                          "selections": Array [
-                                            Object {
-                                              "alias": undefined,
-                                              "arguments": Array [],
-                                              "directives": Array [],
-                                              "kind": "Field",
-                                              "name": Object {
-                                                "kind": "Name",
-                                                "value": "name",
-                                              },
-                                              "selectionSet": undefined,
-                                            },
-                                            Object {
-                                              "alias": undefined,
-                                              "arguments": Array [],
-                                              "directives": Array [],
-                                              "kind": "Field",
-                                              "name": Object {
-                                                "kind": "Name",
-                                                "value": "id",
-                                              },
-                                              "selectionSet": undefined,
-                                            },
-                                            Object {
-                                              "alias": undefined,
-                                              "arguments": Array [],
-                                              "directives": Array [],
-                                              "kind": "Field",
-                                              "name": Object {
-                                                "kind": "Name",
-                                                "value": "offices",
-                                              },
-                                              "selectionSet": Object {
-                                                "kind": "SelectionSet",
-                                                "selections": Array [
-                                                  Object {
-                                                    "alias": undefined,
-                                                    "arguments": Array [],
-                                                    "directives": Array [],
-                                                    "kind": "Field",
-                                                    "name": Object {
-                                                      "kind": "Name",
-                                                      "value": "id",
-                                                    },
-                                                    "selectionSet": undefined,
-                                                  },
-                                                ],
-                                              },
-                                            },
-                                          ],
-                                        },
-                                      },
-                                    ],
-                                  },
-                                },
-                              ],
-                            },
-                          },
-                        ],
-                      },
-                      "variableDefinitions": Array [
-                        Object {
-                          "defaultValue": undefined,
-                          "kind": "VariableDefinition",
-                          "type": Object {
-                            "kind": "NonNullType",
-                            "type": Object {
-                              "kind": "NamedType",
-                              "name": Object {
-                                "kind": "Name",
-                                "value": "Int",
-                              },
-                            },
-                          },
-                          "variable": Object {
-                            "kind": "Variable",
-                            "name": Object {
-                              "kind": "Name",
-                              "value": "page",
-                            },
-                          },
-                        },
-                        Object {
-                          "defaultValue": undefined,
-                          "kind": "VariableDefinition",
-                          "type": Object {
-                            "kind": "NonNullType",
-                            "type": Object {
-                              "kind": "NamedType",
-                              "name": Object {
-                                "kind": "Name",
-                                "value": "Int",
-                              },
-                            },
-                          },
-                          "variable": Object {
-                            "kind": "Variable",
-                            "name": Object {
-                              "kind": "Name",
-                              "value": "perPage",
-                            },
-                          },
-                        },
-                      ],
-                    },
-                  ],
-                  "kind": "Document",
-                  "loc": Object {
-                    "end": 264,
-                    "start": 0,
-                  },
-                },
-                "variables": Object {
-                  "page": 1,
-                  "perPage": 50,
-                },
-              },
-            ],
-          },
-        },
-        "version": "2.3.1",
-        "watchQuery": [Function],
-      }
-    }
-  >
-    <Apollo(FloorList)
-      data={
-        Object {
-          "allFloors": Object {},
-          "error": "",
-          "fetchMore": [MockFunction],
-          "loading": false,
-          "refetch": [MockFunction],
-        }
-      }
-      handleData={[MockFunction]}
-    >
-      <Query
-        displayName="Apollo(FloorList)"
-        query={
-          Object {
-            "definitions": Array [
-              Object {
-                "directives": Array [],
-                "kind": "OperationDefinition",
-                "name": Object {
-                  "kind": "Name",
-                  "value": "allFloors",
-                },
-                "operation": "query",
-                "selectionSet": Object {
-                  "kind": "SelectionSet",
-                  "selections": Array [
-                    Object {
-                      "alias": undefined,
-                      "arguments": Array [
-                        Object {
-                          "kind": "Argument",
-                          "name": Object {
-                            "kind": "Name",
-                            "value": "page",
-                          },
-                          "value": Object {
-                            "kind": "Variable",
-                            "name": Object {
-                              "kind": "Name",
-                              "value": "page",
-                            },
-                          },
-                        },
-                        Object {
-                          "kind": "Argument",
-                          "name": Object {
-                            "kind": "Name",
-                            "value": "perPage",
-                          },
-                          "value": Object {
-                            "kind": "Variable",
-                            "name": Object {
-                              "kind": "Name",
-                              "value": "perPage",
-                            },
-                          },
-                        },
-                      ],
-                      "directives": Array [],
-                      "kind": "Field",
-                      "name": Object {
-                        "kind": "Name",
-                        "value": "allFloors",
-                      },
                       "selectionSet": Object {
                         "kind": "SelectionSet",
                         "selections": Array [
@@ -2118,7 +988,7 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                             "kind": "Field",
                             "name": Object {
                               "kind": "Name",
-                              "value": "floors",
+                              "value": "allFloors",
                             },
                             "selectionSet": Object {
                               "kind": "SelectionSet",
@@ -2175,7 +1045,7 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                                         "kind": "Field",
                                         "name": Object {
                                           "kind": "Name",
-                                          "value": "name",
+                                          "value": "id",
                                         },
                                         "selectionSet": undefined,
                                       },
@@ -2186,7 +1056,7 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                                         "kind": "Field",
                                         "name": Object {
                                           "kind": "Name",
-                                          "value": "id",
+                                          "value": "name",
                                         },
                                         "selectionSet": undefined,
                                       },
@@ -2209,7 +1079,7 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                                               "kind": "Field",
                                               "name": Object {
                                                 "kind": "Name",
-                                                "value": "id",
+                                                "value": "name",
                                               },
                                               "selectionSet": undefined,
                                             },
@@ -2224,69 +1094,350 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                           },
                         ],
                       },
+                      "variableDefinitions": Array [],
+                    },
+                  ],
+                  "kind": "Document",
+                  "loc": Object {
+                    "end": 154,
+                    "start": 0,
+                  },
+                },
+                "graphQLErrors": Array [],
+                "metadata": Object {
+                  "reactComponent": Object {
+                    "displayName": "Apollo(FloorList)",
+                  },
+                },
+                "networkError": null,
+                "networkStatus": 1,
+                "previousVariables": null,
+                "variables": Object {},
+              },
+            },
+          },
+          "scheduler": QueryScheduler {
+            "inFlightQueries": Object {},
+            "intervalQueries": Object {},
+            "pollingTimers": Object {},
+            "queryManager": [Circular],
+            "registeredQueries": Object {},
+            "ssrMode": false,
+          },
+        },
+        "reFetchObservableQueries": [Function],
+        "resetStore": [Function],
+        "resetStoreCallbacks": Array [],
+        "ssrMode": false,
+        "store": DataStore {
+          "cache": InMemoryCache {
+            "addTypename": false,
+            "config": Object {
+              "addTypename": false,
+              "dataIdFromObject": [Function],
+              "fragmentMatcher": HeuristicFragmentMatcher {},
+              "storeFactory": [Function],
+            },
+            "data": ObjectCache {
+              "data": Object {},
+            },
+            "optimistic": Array [],
+            "silenceBroadcast": false,
+            "watches": Array [
+              Object {
+                "callback": [Function],
+                "optimistic": true,
+                "previousResult": [Function],
+                "query": Object {
+                  "definitions": Array [
+                    Object {
+                      "directives": Array [],
+                      "kind": "OperationDefinition",
+                      "name": undefined,
+                      "operation": "query",
+                      "selectionSet": Object {
+                        "kind": "SelectionSet",
+                        "selections": Array [
+                          Object {
+                            "alias": undefined,
+                            "arguments": Array [],
+                            "directives": Array [],
+                            "kind": "Field",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "allFloors",
+                            },
+                            "selectionSet": Object {
+                              "kind": "SelectionSet",
+                              "selections": Array [
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "id",
+                                  },
+                                  "selectionSet": undefined,
+                                },
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "name",
+                                  },
+                                  "selectionSet": undefined,
+                                },
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "blockId",
+                                  },
+                                  "selectionSet": undefined,
+                                },
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "block",
+                                  },
+                                  "selectionSet": Object {
+                                    "kind": "SelectionSet",
+                                    "selections": Array [
+                                      Object {
+                                        "alias": undefined,
+                                        "arguments": Array [],
+                                        "directives": Array [],
+                                        "kind": "Field",
+                                        "name": Object {
+                                          "kind": "Name",
+                                          "value": "id",
+                                        },
+                                        "selectionSet": undefined,
+                                      },
+                                      Object {
+                                        "alias": undefined,
+                                        "arguments": Array [],
+                                        "directives": Array [],
+                                        "kind": "Field",
+                                        "name": Object {
+                                          "kind": "Name",
+                                          "value": "name",
+                                        },
+                                        "selectionSet": undefined,
+                                      },
+                                      Object {
+                                        "alias": undefined,
+                                        "arguments": Array [],
+                                        "directives": Array [],
+                                        "kind": "Field",
+                                        "name": Object {
+                                          "kind": "Name",
+                                          "value": "offices",
+                                        },
+                                        "selectionSet": Object {
+                                          "kind": "SelectionSet",
+                                          "selections": Array [
+                                            Object {
+                                              "alias": undefined,
+                                              "arguments": Array [],
+                                              "directives": Array [],
+                                              "kind": "Field",
+                                              "name": Object {
+                                                "kind": "Name",
+                                                "value": "name",
+                                              },
+                                              "selectionSet": undefined,
+                                            },
+                                          ],
+                                        },
+                                      },
+                                    ],
+                                  },
+                                },
+                              ],
+                            },
+                          },
+                        ],
+                      },
+                      "variableDefinitions": Array [],
+                    },
+                  ],
+                  "kind": "Document",
+                  "loc": Object {
+                    "end": 154,
+                    "start": 0,
+                  },
+                },
+                "variables": undefined,
+              },
+            ],
+          },
+        },
+        "version": "2.3.1",
+        "watchQuery": [Function],
+      }
+    }
+  >
+    <Apollo(FloorList)
+      data={
+        Object {
+          "allFloors": Array [],
+          "error": undefined,
+          "fetchMore": [MockFunction],
+          "loading": false,
+        }
+      }
+      handleData={[MockFunction]}
+    >
+      <Query
+        displayName="Apollo(FloorList)"
+        query={
+          Object {
+            "definitions": Array [
+              Object {
+                "directives": Array [],
+                "kind": "OperationDefinition",
+                "name": undefined,
+                "operation": "query",
+                "selectionSet": Object {
+                  "kind": "SelectionSet",
+                  "selections": Array [
+                    Object {
+                      "alias": undefined,
+                      "arguments": Array [],
+                      "directives": Array [],
+                      "kind": "Field",
+                      "name": Object {
+                        "kind": "Name",
+                        "value": "allFloors",
+                      },
+                      "selectionSet": Object {
+                        "kind": "SelectionSet",
+                        "selections": Array [
+                          Object {
+                            "alias": undefined,
+                            "arguments": Array [],
+                            "directives": Array [],
+                            "kind": "Field",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "id",
+                            },
+                            "selectionSet": undefined,
+                          },
+                          Object {
+                            "alias": undefined,
+                            "arguments": Array [],
+                            "directives": Array [],
+                            "kind": "Field",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "name",
+                            },
+                            "selectionSet": undefined,
+                          },
+                          Object {
+                            "alias": undefined,
+                            "arguments": Array [],
+                            "directives": Array [],
+                            "kind": "Field",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "blockId",
+                            },
+                            "selectionSet": undefined,
+                          },
+                          Object {
+                            "alias": undefined,
+                            "arguments": Array [],
+                            "directives": Array [],
+                            "kind": "Field",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "block",
+                            },
+                            "selectionSet": Object {
+                              "kind": "SelectionSet",
+                              "selections": Array [
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "id",
+                                  },
+                                  "selectionSet": undefined,
+                                },
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "name",
+                                  },
+                                  "selectionSet": undefined,
+                                },
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "offices",
+                                  },
+                                  "selectionSet": Object {
+                                    "kind": "SelectionSet",
+                                    "selections": Array [
+                                      Object {
+                                        "alias": undefined,
+                                        "arguments": Array [],
+                                        "directives": Array [],
+                                        "kind": "Field",
+                                        "name": Object {
+                                          "kind": "Name",
+                                          "value": "name",
+                                        },
+                                        "selectionSet": undefined,
+                                      },
+                                    ],
+                                  },
+                                },
+                              ],
+                            },
+                          },
+                        ],
+                      },
                     },
                   ],
                 },
-                "variableDefinitions": Array [
-                  Object {
-                    "defaultValue": undefined,
-                    "kind": "VariableDefinition",
-                    "type": Object {
-                      "kind": "NonNullType",
-                      "type": Object {
-                        "kind": "NamedType",
-                        "name": Object {
-                          "kind": "Name",
-                          "value": "Int",
-                        },
-                      },
-                    },
-                    "variable": Object {
-                      "kind": "Variable",
-                      "name": Object {
-                        "kind": "Name",
-                        "value": "page",
-                      },
-                    },
-                  },
-                  Object {
-                    "defaultValue": undefined,
-                    "kind": "VariableDefinition",
-                    "type": Object {
-                      "kind": "NonNullType",
-                      "type": Object {
-                        "kind": "NamedType",
-                        "name": Object {
-                          "kind": "Name",
-                          "value": "Int",
-                        },
-                      },
-                    },
-                    "variable": Object {
-                      "kind": "Variable",
-                      "name": Object {
-                        "kind": "Name",
-                        "value": "perPage",
-                      },
-                    },
-                  },
-                ],
+                "variableDefinitions": Array [],
               },
             ],
             "kind": "Document",
             "loc": Object {
-              "end": 264,
+              "end": 154,
               "start": 0,
             },
           }
         }
         skip={false}
-        variables={
-          Object {
-            "page": 1,
-            "perPage": 50,
-          }
-        }
         warnUnhandledError={true}
       >
         <FloorList
@@ -2301,17 +1452,12 @@ exports[`RoomList Component renders correctly from memory 1`] = `
               "stopPolling": [Function],
               "subscribeToMore": [Function],
               "updateQuery": [Function],
-              "variables": Object {
-                "page": 1,
-                "perPage": 50,
-              },
+              "variables": Object {},
             }
           }
           handleData={[MockFunction]}
         >
-          <Spinner
-            size=""
-          >
+          <Spinner>
             <div
               className="centered"
             >

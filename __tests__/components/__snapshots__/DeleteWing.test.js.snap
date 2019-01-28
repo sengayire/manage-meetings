@@ -20,14 +20,22 @@ exports[`Delete Wing Test Suite renders as expected 1`] = `
        
       wing? This cannot be undone & all data will be lost
     </p>
-    <ActionButtons
-      actionButtonText="DELETE WING"
-      cancelButtonText="CANCEL"
-      isLoading={false}
-      onClickCancel={[Function]}
-      onClickSubmit={[Function]}
-      withCancel={true}
-    />
+    <div
+      className="modal-actions"
+    >
+      <button
+        id="cancel-btn"
+        onClick={[Function]}
+      >
+        CANCEL
+      </button>
+      <button
+        id="delete-btn"
+        onClick={[Function]}
+      >
+        DELETE
+      </button>
+    </div>
   </div>
 </MrmModal>
 `;

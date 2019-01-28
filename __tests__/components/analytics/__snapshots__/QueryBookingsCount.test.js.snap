@@ -1602,9 +1602,7 @@ exports[`Query Bookings Count Component should render analytics data 1`] = `
             }
           }
         >
-          <Spinner
-            size=""
-          >
+          <Spinner>
             <div
               className="centered"
             >
@@ -1771,8 +1769,8 @@ exports[`Query Bookings Count Component should render without error 1`] = `
             },
           },
           "variables": Object {
-            "endDate": "Jan 28 2019",
-            "startDate": "Jan 28 2019",
+            "endDate": "Jan 24 2019",
+            "startDate": "Jan 24 2019",
           },
         },
       },
@@ -3203,9 +3201,7 @@ exports[`Query Bookings Count Component should render without error 1`] = `
             }
           }
         >
-          <Spinner
-            size=""
-          >
+          <Spinner>
             <div
               className="centered"
             >

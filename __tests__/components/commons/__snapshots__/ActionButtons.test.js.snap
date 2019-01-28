@@ -5,20 +5,8 @@ exports[`ActionButton component should not display cancel button if withCancel i
   className="form-action-buttons"
 >
   <button
-    className="cancel-button action-button"
-    onClick={
-      [MockFunction] {
-        "calls": Array [
-          Array [],
-        ],
-      }
-    }
-  >
-    CANCEL
-  </button>
-  <button
     className="action-button"
-    onClick={[Function]}
+    type="submit"
   >
     SAVE CHANGES
   </button>
@@ -30,14 +18,14 @@ exports[`ActionButton component should render correctly 1`] = `
   className="form-action-buttons"
 >
   <button
-    className="cancel-button action-button"
+    className="cancel-button"
     onClick={[MockFunction]}
   >
     CANCEL
   </button>
   <button
     className="action-button"
-    onClick={[Function]}
+    type="submit"
   >
     SAVE CHANGES
   </button>

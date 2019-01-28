@@ -12,6 +12,7 @@ exports[`AddOffice Component renders properly 1`] = `
 >
   <form
     className="modal-form"
+    onSubmit={[Function]}
   >
     <Input
       controlsClass=""
@@ -40,11 +41,11 @@ exports[`AddOffice Component renders properly 1`] = `
       wrapperClassName="input-wrapper"
     />
     <ActionButtons
+      actionButtonClassName="action-button"
       actionButtonText="ADD OFFICE"
+      cancelButtonClassName="cancel-button"
       cancelButtonText="CANCEL"
-      isLoading={false}
       onClickCancel={[Function]}
-      onClickSubmit={[Function]}
       withCancel={true}
     />
   </form>

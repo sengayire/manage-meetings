@@ -2830,9 +2830,7 @@ query resources ($page: Int!, $perPage: Int!) {
             }
           }
         >
-          <Spinner
-            size=""
-          >
+          <Spinner>
             <div
               className="centered"
             >
