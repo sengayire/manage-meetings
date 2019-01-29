@@ -1,4 +1,4 @@
 import NavBar from '../containers/NavBar';
-import LoginPage from './Login';
+import LoginPage from './login/Login';
 
 export { NavBar, LoginPage };

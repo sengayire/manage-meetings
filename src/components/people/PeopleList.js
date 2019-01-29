@@ -14,7 +14,7 @@ import {
   GET_ROLES_QUERY,
 } from '../../graphql/queries/People';
 import { formatPeopleData } from '../../graphql/mappers/People';
-import MenuTitle from '../MenuTitle';
+import MenuTitle from '../commons/MenuTitle';
 import Spinner from '../commons/Spinner';
 import Sort from '../commons/Sort';
 import notification from '../../utils/notification';

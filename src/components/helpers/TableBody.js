@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { formatRoomData } from '../../graphql/mappers/Rooms';
-import Room from '../../components/Room';
+import Room from '../rooms/Room';
 
 /**
  * Component that builds the body of a table

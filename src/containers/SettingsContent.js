@@ -1,17 +1,17 @@
 import React from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import SettingsNav from '../components/navbars/SettingsNav';
-import OfficeList from '../components/OfficeList'; //eslint-disable-line
-import ResourceList from '../components/ResourceList'; //eslint-disable-line
+import OfficeList from '../components/offices/OfficeList'; //eslint-disable-line
+import ResourceList from '../components/resources/ResourceList'; //eslint-disable-line
 import '../assets/styles/settingscontent.scss';
 import ROUTES from '../utils/routes';
-import PlaceHolder from '../components/Placeholder';
-import RoomsList from '../components/RoomsList'; //eslint-disable-line
+import PlaceHolder from '../components/commons/Placeholder';
+import RoomsList from '../components/rooms/RoomsList'; //eslint-disable-line
 import PeopleList from '../components/people/PeopleList'; //eslint-disable-line
-import DeviceList from '../components/DeviceList';
-import FloorList from '../components/FloorList'; //eslint-disable-line
-import WingList from '../components/wingList'; //eslint-disable-line
-import LocationsList from '../components/LocationsList'; //eslint-disable-line
+import DeviceList from '../components/devices/DeviceList';
+import FloorList from '../components/floors/FloorList'; //eslint-disable-line
+import WingList from '../components/wing/wingList'; //eslint-disable-line
+import LocationsList from '../components/locations/LocationsList'; //eslint-disable-line
 import { decodeTokenAndGetUserData } from '../utils/Cookie';
 import Maintenance from '../assets/images/maintenance.svg';
 

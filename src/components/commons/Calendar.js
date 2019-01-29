@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import moment from 'moment';
 import 'react-day-picker/lib/style.css';
 import '../../assets/styles/calendar.scss';
-import PickRange from '../../components/helpers/RangePicker';
+import PickRange from '../helpers/RangePicker';
 
 const startingDate = moment().format('MMM DD Y');
 const endingDate = moment().format('MMM DD Y');
