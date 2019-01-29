@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DeleteBlockModal Component renders properly 1`] = `
+<MrmModal
+  buttonText="Delete"
+  className="add-office-modal"
+  closeModal={false}
+  handleCloseRequest={[MockFunction]}
+  modalButtonClassName="button"
+  title="DELETE Block"
+>
+  <div
+    className="delete-modal-content"
+  >
+    <p
+      id="confirm-msg"
+    >
+      Are you sure you want to delete 
+      "Udi"
+      ? 
+      <br />
+      This cannot be undone
+    </p>
+    <ActionButtons
+      actionButtonText="DELETE BLOCK"
+      cancelButtonText="CANCEL"
+      isLoading={false}
+      onClickCancel={[MockFunction]}
+      onClickSubmit={[MockFunction]}
+      withCancel={true}
+    />
+  </div>
+</MrmModal>
+`;

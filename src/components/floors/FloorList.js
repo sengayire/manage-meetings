@@ -44,7 +44,7 @@ export class FloorList extends Component {
           </div>
           <table className="test-One">
             <ColGroup />
-            <TableHead titles={['Floor', 'Office', 'Block', 'Action']} />
+            <TableHead titles={['Floor', 'Office', 'SingleBlock', 'Action']} />
             <tbody>
               {allFloors.map(floor => (
                 <Floor floor={formatFloorData(floor)} key={floor.id} />
@@ -75,7 +75,6 @@ FloorList.propTypes = {
       name: PropTypes.string,
       offices: PropTypes.string,
     }),
-
     error: PropTypes.object,
   }).isRequired,
 };

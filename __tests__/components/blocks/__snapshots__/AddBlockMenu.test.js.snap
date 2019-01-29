@@ -1,0 +1,90 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddBlockMenu Component renders properly 1`] = `
+<ThemedIconMenu
+  className="add-block-menu"
+  composeTheme="deeply"
+  icon={
+    <div
+      className="addBlockBtn"
+    >
+      <span>
+        Add Block
+      </span>
+    </div>
+  }
+  iconRipple={true}
+  mapThemrProps={[Function]}
+  menuRipple={true}
+  position="auto"
+  selectable={false}
+>
+  <ThemedThemed
+    caption="Select Office"
+    composeTheme="deeply"
+    disabled={true}
+    mapThemrProps={[Function]}
+    ripple={true}
+    rippleCentered={false}
+    rippleClassName=""
+    rippleMultiple={true}
+    rippleSpread={2}
+  />
+  <ThemedMenuDivider
+    composeTheme="deeply"
+    mapThemrProps={[Function]}
+  />
+  <div
+    className="add-block-menu-list"
+  >
+    <ThemedThemed
+      composeTheme="deeply"
+      disabled={false}
+      key="1"
+      mapThemrProps={[Function]}
+      ripple={true}
+      rippleCentered={false}
+      rippleClassName=""
+      rippleMultiple={true}
+      rippleSpread={2}
+    >
+      <Apollo(Apollo(Apollo(BlockActions)))
+        office={
+          Object {
+            "id": 1,
+            "location": Object {
+              "name": "Nairobi",
+            },
+            "name": "Dojo 1",
+          }
+        }
+        refetch={null}
+      />
+    </ThemedThemed>
+    <ThemedThemed
+      composeTheme="deeply"
+      disabled={false}
+      key="2"
+      mapThemrProps={[Function]}
+      ripple={true}
+      rippleCentered={false}
+      rippleClassName=""
+      rippleMultiple={true}
+      rippleSpread={2}
+    >
+      <Apollo(Apollo(Apollo(BlockActions)))
+        office={
+          Object {
+            "id": 2,
+            "location": Object {
+              "name": "Nairobi",
+            },
+            "name": "Dojo 3",
+          }
+        }
+        refetch={null}
+      />
+    </ThemedThemed>
+  </div>
+</ThemedIconMenu>
+`;

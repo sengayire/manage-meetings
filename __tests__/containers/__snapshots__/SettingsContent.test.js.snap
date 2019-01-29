@@ -35,6 +35,11 @@ exports[`Tests for SettingsContent renders correctly in memory 1`] = `
         <Route
           component={[Function]}
           exact={true}
+          path="/settings/blocks"
+        />
+        <Route
+          component={[Function]}
+          exact={true}
           path="/settings/resources"
         />
         <Route

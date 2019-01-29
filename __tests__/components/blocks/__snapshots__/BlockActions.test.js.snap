@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BlockActions Component renders properly 1`] = `
+<BlockModal
+  blockName="Container"
+  closeModal={false}
+  editing={false}
+  handleCloseModal={[Function]}
+  handleFormInputChange={[Function]}
+  handleModalStateChange={[Function]}
+  handleSubmit={[Function]}
+  isLoading={false}
+  office={
+    Object {
+      "id": "81",
+      "location": Object {
+        "name": "Kampala",
+      },
+      "name": "The Crest7",
+    }
+  }
+/>
+`;

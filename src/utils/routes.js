@@ -8,6 +8,7 @@ const ROUTES = {
   settingsLocations: '/settings/locations',
   settingsOffices: '/settings/offices',
   settingsRooms: '/settings/rooms',
+  settingsBlocks: '/settings/blocks',
   settingsPeople: '/settings/people',
   settingsDevices: '/settings/devices',
   settingsIntegrations: '/settings/integrations',

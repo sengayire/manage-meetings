@@ -124,16 +124,6 @@ describe('AddRoomNairobi', () => {
     expect(theDojo.instance().state.officeFloor).toEqual(1);
   });
 
-  it('should have form and close the modal when the form is submitted', () => {
-    const preventDefault = jest.fn();
-    const form = wrapper.find('form');
-    expect(form).toHaveLength(1);
-
-    form.simulate('submit', { preventDefault });
-    expect(preventDefault).toHaveBeenCalled();
-    expect(wrapper.find('form')).toHaveLength(0);
-  });
-
   it('should parse value to integer when an empty string is provided', () => {
     theDojo.instance().state = {
       ...theDojo.instance().state,

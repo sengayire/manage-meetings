@@ -416,7 +416,7 @@ exports[`FilterButton renders correctly from memory 1`] = `
                   "floor": Object {
                     "__typename": "Floor",
                     "block": Object {
-                      "__typename": "Block",
+                      "__typename": "SingleBlock",
                       "offices": Object {
                         "__typename": "Offices",
                         "location": Object {
@@ -436,7 +436,7 @@ exports[`FilterButton renders correctly from memory 1`] = `
                   "floor": Object {
                     "__typename": "Floor",
                     "block": Object {
-                      "__typename": "Block",
+                      "__typename": "SingleBlock",
                       "offices": Object {
                         "__typename": "Offices",
                         "location": Object {
@@ -456,7 +456,7 @@ exports[`FilterButton renders correctly from memory 1`] = `
                   "floor": Object {
                     "__typename": "Floor",
                     "block": Object {
-                      "__typename": "Block",
+                      "__typename": "SingleBlock",
                       "offices": Object {
                         "__typename": "Offices",
                         "location": Object {
@@ -476,7 +476,7 @@ exports[`FilterButton renders correctly from memory 1`] = `
                   "floor": Object {
                     "__typename": "Floor",
                     "block": Object {
-                      "__typename": "Block",
+                      "__typename": "SingleBlock",
                       "offices": null,
                     },
                   },
@@ -488,7 +488,7 @@ exports[`FilterButton renders correctly from memory 1`] = `
                   "floor": Object {
                     "__typename": "Floor",
                     "block": Object {
-                      "__typename": "Block",
+                      "__typename": "SingleBlock",
                       "offices": Object {
                         "__typename": "Offices",
                         "location": Object {

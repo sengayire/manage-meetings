@@ -90,7 +90,7 @@ describe('FilterButton', () => {
     expect(wrapper.instance().handleInputChange(event, 0));
   });
 
-  it('should handle the handleInputChange function on resovle', () => {
+  it('should handle the handleFormInputChange function on resovle', () => {
     expect(wrapper.instance().handleInputChange(event, 0));
     expect(initProps.data.fetchMore).toBeCalled();
   });
@@ -119,7 +119,7 @@ describe('FilterButton', () => {
     expect(wrapper.instance().handleClose());
   });
 
-  it('should handle the handleInputChange function on reject', () => {
+  it('should handle the handleFormInputChange function on reject', () => {
     const props = {
       isResource: jest.fn(),
       isNoResource: jest.fn(),

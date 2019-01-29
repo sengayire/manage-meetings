@@ -20,6 +20,9 @@ const SettingsNav = () => (
         </NavLink>
       </li>
       <li>
+        <NavLink to={ROUTES.settingsBlocks}>Blocks</NavLink>
+      </li>
+      <li>
         <NavLink to={ROUTES.floors}>Floors</NavLink>
       </li>
       <li>

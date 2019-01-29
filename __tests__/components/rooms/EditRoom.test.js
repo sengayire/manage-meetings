@@ -125,7 +125,7 @@ describe('EditRoom', () => {
       expect(newProps.editRoom).toBeCalled();
     });
 
-    it('should call handleInputChange', () => {
+    it('should call handleFormInputChange', () => {
       const action = wrapperValue.instance();
       const handleInputChange = jest.spyOn(wrapperValue.instance(), 'handleInputChange');
       action.handleInputChange(event);

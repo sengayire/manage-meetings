@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BlockModal Component renders properly 1`] = `
+<MrmModal
+  buttonText="Udi"
+  className="add-office-modal"
+  closeModal={false}
+  handleCloseRequest={[MockFunction]}
+  modalButtonClassName="button"
+  title="Udi"
+>
+  <form
+    className="modal-form"
+    onSubmit={[MockFunction]}
+  >
+    <Input
+      controlsClass=""
+      id="blockName"
+      inputClass="mrm-input default-input"
+      labelClass="input1"
+      labelName="Block Name"
+      name="blockName"
+      onChange={[MockFunction]}
+      placeholder="Enter block name"
+      type="text"
+      value=""
+    />
+    <ActionButtons
+      actionButtonText="ADD BLOCK"
+      cancelButtonText="CANCEL"
+      isLoading={false}
+      onClickCancel={[MockFunction]}
+      onClickSubmit={[Function]}
+      withCancel={true}
+    />
+  </form>
+</MrmModal>
+`;

@@ -9,6 +9,7 @@ import PlaceHolder from '../components/commons/Placeholder';
 import RoomsList from '../components/rooms/RoomsList'; //eslint-disable-line
 import PeopleList from '../components/people/PeopleList'; //eslint-disable-line
 import DeviceList from '../components/devices/DeviceList';
+import BlocksList from '../components/blocks/BlocksList'; //eslint-disable-line
 import FloorList from '../components/floors/FloorList'; //eslint-disable-line
 import WingList from '../components/wing/wingList'; //eslint-disable-line
 import LocationsList from '../components/locations/LocationsList'; //eslint-disable-line
@@ -57,6 +58,7 @@ const SettingsContent = () => (
           <Route exact path={ROUTES.settingsOffices} component={OfficeList} />
           <Route exact path={ROUTES.floors} component={FloorList} />
           <Route exact path={ROUTES.settingsRooms} component={RoomsList} />
+          <Route exact path={ROUTES.settingsBlocks} component={BlocksList} />
           <Route exact path={ROUTES.settingsAmenities} component={ResourceList} />
           <Route exact path={ROUTES.settingsPeople} component={PeopleList} />
           <Route exact path={ROUTES.settingsDevices} component={DeviceList} />
