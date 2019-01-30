@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Floor component renders correctly from memory 1`] = `
+<tr>
+  <td>
+    first floor
+  </td>
+  <td />
+  <td />
+  <td>
+    <Apollo(EditFloor)
+      floorName="first floor"
+      id="edit-modal"
+    />
+     
+    <Apollo(DeleteFloor)
+      floorName="first floor"
+      id="delete-modal"
+      refetch={[MockFunction]}
+    />
+  </td>
+</tr>
+`;

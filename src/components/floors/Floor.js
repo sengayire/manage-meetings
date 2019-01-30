@@ -10,7 +10,7 @@ import EditFloor from "./EditFloor"; //eslint-disable-line
  *
  * @returns {JSX}
  */
-export const Floor = ({ floor }) => (
+export const Floor = ({ floor, refetch }) => (
   <tr>
     <td>{floor.name}</td>
     <td>{floor.office}</td>
@@ -27,6 +27,7 @@ export const Floor = ({ floor }) => (
         floorName={floor.name}
         id="delete-modal"
         floorId={floor.id}
+        refetch={refetch}
       />
     </td>
   </tr>
@@ -36,6 +37,7 @@ Floor.propTypes = {
   floor: PropTypes.shape({
     name: PropTypes.string.isRequired,
   }).isRequired,
+  refetch: PropTypes.func.isRequired,
 };
 
 export default Floor;

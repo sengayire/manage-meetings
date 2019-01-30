@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Test the AddFloor component should render corrently 1`] = `
+exports[`Test the AddFloor component should render correctly 1`] = `
 <ThemedIconMenu
   className="add-room-menu"
   composeTheme="deeply"
@@ -35,48 +35,27 @@ exports[`Test the AddFloor component should render corrently 1`] = `
     mapThemrProps={[Function]}
   />
   <ThemedThemed
-    caption="To The Crest"
     composeTheme="deeply"
     disabled={false}
+    key="1"
     mapThemrProps={[Function]}
     ripple={true}
     rippleCentered={false}
     rippleClassName=""
     rippleMultiple={true}
     rippleSpread={2}
-  />
-  <ThemedThemed
-    caption="To Epic Tower"
-    composeTheme="deeply"
-    disabled={false}
-    mapThemrProps={[Function]}
-    ripple={true}
-    rippleCentered={false}
-    rippleClassName=""
-    rippleMultiple={true}
-    rippleSpread={2}
-  />
-  <ThemedThemed
-    caption="To St.Catherines"
-    composeTheme="deeply"
-    disabled={false}
-    mapThemrProps={[Function]}
-    ripple={true}
-    rippleCentered={false}
-    rippleClassName=""
-    rippleMultiple={true}
-    rippleSpread={2}
-  />
-  <ThemedThemed
-    caption="Kigali Office"
-    composeTheme="deeply"
-    disabled={false}
-    mapThemrProps={[Function]}
-    ripple={true}
-    rippleCentered={false}
-    rippleClassName=""
-    rippleMultiple={true}
-    rippleSpread={2}
-  />
+  >
+    <Apollo(AddFloor)
+      blocks={
+        Object {
+          "id": 12,
+          "name": "blockA",
+        }
+      }
+      currentPage={1}
+      refetch={[MockFunction]}
+      theOffice="Kampala"
+    />
+  </ThemedThemed>
 </ThemedIconMenu>
 `;

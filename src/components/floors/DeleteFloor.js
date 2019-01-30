@@ -63,6 +63,7 @@ export class DeleteFloor extends Component {
           'success',
           `'${this.props.floorName}' has been deleted successfully`,
         )();
+        this.props.refetch();
       })
       .catch((err) => {
         this.toggleLoading();
@@ -117,8 +118,8 @@ DeleteFloor.propTypes = {
   floorName: PropTypes.string.isRequired,
   floorId: PropTypes.string.isRequired,
   deleteFloor: PropTypes.func.isRequired,
+  refetch: PropTypes.func.isRequired,
 };
-
 export default compose(
   graphql(DELETE_FLOOR_MUTATION, {
     name: 'deleteFloor',

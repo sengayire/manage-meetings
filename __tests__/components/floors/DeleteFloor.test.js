@@ -8,6 +8,7 @@ describe('DeleteFloor Test Suite', () => {
     floorName: 'Fourth Floor',
     id: 'delete-modal',
     floorId: '1',
+    refetch: jest.fn(),
   };
   let wrapper = shallow(<DeleteFloor {...initProps} />);
 
@@ -42,6 +43,7 @@ describe('DeleteFloor Test Suite', () => {
       floorName: 'Fourth Floor',
       id: 'delete-modal',
       floorId: '1',
+      refetch: jest.fn(),
     };
     wrapper = shallow(<DeleteFloor {...props} />);
     // fake the event to pass to handleDeleteFloor
@@ -66,6 +68,7 @@ describe('DeleteFloor Test Suite', () => {
       floorName: 'EPIC TOWER',
       id: 'delete-modal',
       floorId: '11',
+      refetch: jest.fn(),
     };
     wrapper = shallow(<DeleteFloor {...props} />);
     // fake the event top pass to handleDeleteFloor

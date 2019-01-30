@@ -14,9 +14,9 @@ import TableHead from '../helpers/TableHead';
 import TableBody from '../helpers/TableBody';
 import Pagination from '../commons/Pagination';
 import MenuTitle from '../commons/MenuTitle';
-import FilterRoomMenu from '../rooms/FilterRoomMenu';
+import FilterRoomMenu from './FilterRoomMenu';
 
-import AddRoomMenu from '../rooms/AddRoomMenu';
+import AddRoomMenu from './AddRoomMenu';
 import Spinner from '../commons/Spinner';
 import notification from '../../utils/notification';
 import Overlay from '../commons/Overlay';

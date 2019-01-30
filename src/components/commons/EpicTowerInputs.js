@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Input, SelectInput as Select } from '../commons';
+import { Input, SelectInput as Select } from '.';
 import '../../assets/styles/addroom.scss';
 
 /**

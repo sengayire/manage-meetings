@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddFloor Component renders the snapshot 1`] = `
+<MrmModal
+  buttonText="The crest"
+  className="add-office-modal"
+  closeModal={false}
+  handleCloseRequest={[Function]}
+  modalButton="add-button"
+  modalButtonClassName="button"
+  title="ADD FLOOR"
+>
+  <form
+    className="modal-form"
+  >
+    <Input
+      controlsClass=""
+      id="floorName"
+      inputClass="mrm-input default-input"
+      labelClass="input1"
+      labelName="Floor Name"
+      name="floorName"
+      onChange={[Function]}
+      placeholder="Enter floor name"
+      type="text"
+      value=""
+    />
+    <SelectInput
+      id="block"
+      isValue={false}
+      labelText="Select Block "
+      name="blockId"
+      onChange={[Function]}
+      options={
+        Array [
+          Object {
+            "id": "12",
+            "name": "blockA",
+          },
+        ]
+      }
+      placeholder="Select block"
+      placeholderValue=""
+      required={false}
+      selectInputClassName="default-select"
+      value=""
+      wrapperClassName="input-wrapper"
+    />
+    <ActionButtons
+      actionButtonText="ADD FLOOR"
+      cancelButtonText="CANCEL"
+      isLoading={false}
+      onClickCancel={[Function]}
+      onClickSubmit={[Function]}
+      withCancel={true}
+    />
+  </form>
+</MrmModal>
+`;
