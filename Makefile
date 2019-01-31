@@ -1,5 +1,8 @@
-# Define filename references
+# Directory of files inside docker container
 DEV_FOLDER := docker/dev
+# Directory of files on the host machine
+HOST_DEV_FOLDER := ../mrm_api/docker/dev
+# location of docker-compose file
 DEV_COMPOSE_FILE := docker-compose.yml
 
 # Set target lists
@@ -68,13 +71,13 @@ migrate:
 
 import:
 	@ echo "importing database..."
-	@ docker cp ${DEV_FOLDER}/start_db_import.sh mrm_database:/
+	@ docker cp ${HOST_DEV_FOLDER}/start_db_import.sh mrm_database:/
 	@ docker cp $(dump) mrm_database:/
 	@ docker-compose -f ${DEV_COMPOSE_FILE} exec database /start_db_import.sh $(dump)
 
 create-test-database:
 	@ echo 'create test database...'
-	@ docker cp ${DEV_FOLDER}/create_test_db.sh mrm_database:/
+	@ docker cp ${HOST_DEV_FOLDER}/create_test_db.sh mrm_database:/
 	@ docker-compose -f ${DEV_COMPOSE_FILE} exec -u root database /create_test_db.sh
 
 test:
