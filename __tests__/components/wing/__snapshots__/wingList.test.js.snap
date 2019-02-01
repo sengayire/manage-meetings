@@ -30,7 +30,9 @@ exports[`Tests for SettingOffices renders the snapshot correctly 1`] = `
             ]
           }
         />
-        <tbody />
+        <tbody>
+          <DataNotFound />
+        </tbody>
       </table>
     </div>
   </div>

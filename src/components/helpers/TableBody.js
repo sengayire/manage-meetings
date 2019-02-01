@@ -12,15 +12,17 @@ import Room from '../rooms/Room';
  */
 const TableBody = props => (
   <tbody className="bundle">
-    {props.rooms.map(room => (
-      <Room
-        currentPage={props.currentPage}
-        room={formatRoomData(room)}
-        key={room.id}
-        locations={props.location}
-        refetch={props.refetch}
-      />
-    ))}
+    {
+      props.rooms && props.rooms.map(room => (
+        <Room
+          currentPage={props.currentPage}
+          room={formatRoomData(room)}
+          key={room.id}
+          locations={props.location}
+          refetch={props.refetch}
+        />
+    ))
+  }
   </tbody>
 );
 TableBody.propTypes = {

@@ -17,6 +17,7 @@ import { GET_USER_ROLE } from '../../graphql/queries/People';
 import { decodeTokenAndGetUserData } from '../../utils/Cookie';
 import { saveItemInLocalStorage } from '../../utils/Utilities';
 import defaultUserRole from '../../fixtures/user';
+import DataNotFound from '../commons/DataNotFound';
 
 /**
  * Offices List component
@@ -82,10 +83,10 @@ export class OfficeList extends React.Component {
   render() {
     const { loading, refetch, error } = this.props.data;
     const { user } = this.props.user;
-
     const {
       allOffices, currentPage, dataFetched, isFetching,
     } = this.state;
+    if (error && error.message === 'GraphQL error: No more offices') return <DataNotFound />;
     if (error) return <div>{error.message}</div>;
     if (loading) return <Spinner />;
 
@@ -107,8 +108,8 @@ export class OfficeList extends React.Component {
             <ColGroup />
             <TableHead titles={['Office', 'Location', 'Timezone', 'Action']} />
             <tbody>
-              {allOffices.offices &&
-                allOffices.offices.map(office => (
+              {
+                allOffices.offices && allOffices.offices.map(office => (
                   <Office
                     office={office}
                     key={office.name}
@@ -116,7 +117,8 @@ export class OfficeList extends React.Component {
                     officeId={office.id}
                     currentPage={currentPage}
                   />
-                ))}
+                ))
+                }
             </tbody>
           </table>
         </div>

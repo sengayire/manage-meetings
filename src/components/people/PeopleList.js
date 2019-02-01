@@ -20,6 +20,7 @@ import Sort from '../commons/Sort';
 import notification from '../../utils/notification';
 
 import Overlay from '../commons/Overlay';
+import DataNotFound from '../commons/DataNotFound';
 
 const handleErrorMessage = (...errors) => {
   const errorMessage = errors.find(e => e !== undefined).message;
@@ -122,6 +123,7 @@ export class PeopleList extends Component {
       error: rolesError,
     } = this.props.roles;
     if (loading || loadingLocations || loadingRoles) return <Spinner />;
+    if (error && error.message === 'GraphQL error: No users found') return <DataNotFound />;
     if (error || locationsError || rolesError) {
       const errorMessage = handleErrorMessage(
         error,

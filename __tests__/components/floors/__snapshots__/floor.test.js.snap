@@ -6,7 +6,6 @@ exports[`Floor component renders correctly from memory 1`] = `
     first floor
   </td>
   <td />
-  <td />
   <td>
     <Apollo(EditFloor)
       floorName="first floor"

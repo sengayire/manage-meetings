@@ -12,6 +12,7 @@ import Spinner from '../commons/Spinner';
 import { GET_USER_ROLE } from '../../graphql/queries/People';
 import { decodeTokenAndGetUserData } from '../../utils/Cookie';
 import { saveItemInLocalStorage } from '../../utils/Utilities';
+import DataNotFound from '../commons/DataNotFound';
 
 /**
  * Wing list component
@@ -21,10 +22,10 @@ import { saveItemInLocalStorage } from '../../utils/Utilities';
  * @returns {JSX}
  */
 export const WingList = (props) => {
-  const { allWings, loading } = props.allWings;
+  const { allWings, loading, error } = props.allWings;
   const { user } = props.user;
   if (user) saveItemInLocalStorage('access', user.roles[0].id);
-
+  if (error) return (<div>{error.message}</div>);
   return (
     /* istanbul ignore next */
     loading ? (
@@ -41,10 +42,13 @@ export const WingList = (props) => {
               <ColGroup />
               <TableHead titles={['Wing', 'Block', 'Floor', 'Action']} />
               <tbody>
-                {allWings &&
-                  allWings.map(wing => (
+                {
+                  allWings.length > 1
+                  ? allWings.map(wing => (
                     <Wing wing={wing} key={wing.name} wingId={wing.id} />
-                  ))}
+                  ))
+                : <DataNotFound />
+                }
               </tbody>
             </table>
           </div>

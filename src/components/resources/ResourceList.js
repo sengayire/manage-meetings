@@ -18,6 +18,7 @@ import { GET_USER_ROLE } from '../../graphql/queries/People';
 import { decodeTokenAndGetUserData } from '../../utils/Cookie';
 import { saveItemInLocalStorage } from '../../utils/Utilities';
 import defaultUserRole from '../../fixtures/user';
+import DataNotFound from '../commons/DataNotFound';
 
 /**
  * Resource List Component
@@ -86,9 +87,8 @@ export class ResourceList extends React.Component {
     if (user) saveItemInLocalStorage('access', user.roles[0].id);
 
     if (loading) return <Spinner />;
-
+    if (error && error.message === 'GraphQL error: No more resources') return <DataNotFound />;
     if (error) return <div>{error.message}</div>;
-
     return (
       <div className="settings-resource">
         <div
@@ -105,13 +105,14 @@ export class ResourceList extends React.Component {
             <ColGroup />
             <TableHead titles={['Resource', 'Action']} />
             <tbody>
-              {allResources.resources.map(resource => (
-                <Resource
-                  currentPage={currentPage}
-                  resource={formatResourceData(resource)}
-                  refetch={refetch}
-                  key={resource.id}
-                />
+              {
+                allResources && allResources.resources.map(resource => (
+                  <Resource
+                    currentPage={currentPage}
+                    resource={formatResourceData(resource)}
+                    refetch={refetch}
+                    key={resource.id}
+                  />
               ))}
             </tbody>
           </table>

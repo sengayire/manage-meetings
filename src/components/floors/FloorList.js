@@ -16,6 +16,7 @@ import { decodeTokenAndGetUserData } from '../../utils/Cookie';
 import { saveItemInLocalStorage } from '../../utils/Utilities';
 import MenuTitle from '../commons/MenuTitle';
 import Pagination from '../commons/Pagination';
+import DataNotFound from '../commons/DataNotFound';
 
 /**
  * Floor List Component
@@ -89,11 +90,10 @@ export class FloorList extends Component {
 
     if (loading) {
       return <Spinner />;
-    } if (error) {
-      return <div>{error.message}</div>;
     }
     if (user) saveItemInLocalStorage('access', user.roles[0].id);
-
+    if (error && error.message === 'GraphQL error: No more resources') return <DataNotFound />;
+    if (error) return <div>{error.message}</div>;
     return (
       <div className="settings-resource">
         <div
@@ -107,14 +107,15 @@ export class FloorList extends Component {
           {isFetching ? <Overlay id="floors-table" /> : null}
           <table className="test-One">
             <ColGroup />
-            <TableHead titles={['Floor', 'Office', 'SingleBlock', 'Action']} />
+            <TableHead titles={['Floor', 'Block', 'Action']} />
             <tbody>
-              {allFloors.floors.map(floor => (
-                <Floor
-                  floor={formatFloorData(floor)}
-                  key={floor.id}
-                  refetch={refetch}
-                />
+              {
+                allFloors && allFloors.floors.map(floor => (
+                  <Floor
+                    floor={formatFloorData(floor)}
+                    key={floor.id}
+                    refetch={refetch}
+                  />
               ))}
             </tbody>
           </table>

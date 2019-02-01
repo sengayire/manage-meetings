@@ -49,9 +49,8 @@ export class AddFloorMenu extends React.Component {
     const { loading, allOffices: { offices } = {}, error } = this.props.data;
     if (loading) return <Spinner />;
     if (error) return <div>{error.message}</div>;
-    const officeList = offices.filter(office => office.blocks.length !== 0);
     return (
-      officeList.map(office => (
+      offices.map(office => (
         <MenuItem key={office.id}>
           <AddFloorComponent
             theOffice={office.name}

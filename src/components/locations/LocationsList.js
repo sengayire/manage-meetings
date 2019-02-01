@@ -11,10 +11,11 @@ import Spinner from '../commons/Spinner';
 import { GET_USER_ROLE } from '../../graphql/queries/People';
 import { decodeTokenAndGetUserData } from '../../utils/Cookie';
 import { saveItemInLocalStorage } from '../../utils/Utilities';
+import DataNotFound from '../commons/DataNotFound';
 
 export const LocationsList = (props) => {
   const {
-    loading, refetch, allLocations,
+    loading, refetch, allLocations, error,
   } = props.data;
   const { user } = props.user;
 
@@ -23,6 +24,7 @@ export const LocationsList = (props) => {
   }
   if (user) saveItemInLocalStorage('access', user.roles[0].id);
 
+  if (error) return <div>{error.message}</div>;
   return (
     <div className="settings-locations">
       <div className="settings-locations-control">
@@ -30,18 +32,24 @@ export const LocationsList = (props) => {
         <AddLocation refetch={refetch} />
       </div>
       <div className="settings-locations-list">
-        <table>
-          <ColGroup />
-          <TableHead titles={['Location', 'Country', 'abbreviation']} />
-          <tbody>
-            {allLocations && allLocations.map(location => (
-              <Location
-                location={location}
-                key={location.id}
-              />
-             ))}
-          </tbody>
-        </table>
+        {
+          allLocations.length < 1
+          ? <DataNotFound /> :
+          <table>
+            <ColGroup />
+            <TableHead titles={['Location', 'Country', 'abbreviation']} />
+            <tbody>
+              {
+                allLocations.map(location => (
+                  <Location
+                    location={location}
+                    key={location.id}
+                  />
+              ))
+              }
+            </tbody>
+          </table>
+        }
       </div>
     </div>
   );

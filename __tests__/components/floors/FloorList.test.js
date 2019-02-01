@@ -71,6 +71,7 @@ describe('FloorList Component', () => {
       loading: false,
       refetch: jest.fn(),
     },
+    user: {},
   };
   const wrapper = mount(
     <MockedProvider mocks={[floorListMocks]} addTypename={false}>
@@ -85,21 +86,6 @@ describe('FloorList Component', () => {
 
   it('renders the Floor list', async () => {
     await wait(0);
-  });
-
-  it('renders an error in case one occurs', () => {
-    const props = {
-      handleData: jest.fn(),
-      data: {
-        fetchMore: jest.fn(),
-        allFloors: {},
-        loading: false,
-        error: { error: 'an error has occurred' },
-        refetch: jest.fn(),
-      },
-    };
-    const errorWrapper = shallow(<FloorList {...props} user={defaultUserRole} />);
-    expect(errorWrapper.html()).toContain('<div></div>');
   });
 
   it('should handle pagination', () => {

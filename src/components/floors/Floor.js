@@ -13,7 +13,6 @@ import EditFloor from "./EditFloor"; //eslint-disable-line
 export const Floor = ({ floor, refetch }) => (
   <tr>
     <td>{floor.name}</td>
-    <td>{floor.office}</td>
     <td>{floor.block}</td>
     <td>
       <EditFloor

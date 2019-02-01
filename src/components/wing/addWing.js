@@ -8,7 +8,7 @@ import { Input, SelectInput as Select } from '../commons';
 import '../../assets/styles/addoffice.scss';
 import ActionButtons from '../commons/ActionButtons';
 import ADD_WING_MUTATION from '../../graphql/mutations/wings';
-import GET_FLOORS_QUERY from '../../graphql/queries/Floors';
+import { GET_PAGINATED_FLOORS_QUERY } from '../../graphql/queries/Floors';
 import notification from '../../utils/notification';
 
 /**
@@ -114,9 +114,7 @@ export class AddWing extends Component {
     const {
       name, floorId, closeModal, isLoading,
     } = this.state;
-    const { allFloors } = this.props.allFloors;
     const { handleAddWing, handleInputChange, handleCloseModal } = this;
-
     return (
       <MrmModal
         title="ADD WING"
@@ -143,7 +141,7 @@ export class AddWing extends Component {
             onChange={handleInputChange}
             wrapperClassName="input-wrapper"
             placeholder="Select floor"
-            options={allFloors}
+            options={this.props.allFloors.allFloors && this.props.allFloors.allFloors.floors}
           />
           <ActionButtons
             withCancel
@@ -159,6 +157,14 @@ export class AddWing extends Component {
 }
 
 export default compose(
-  graphql(GET_FLOORS_QUERY, { name: 'allFloors' }),
+  graphql(GET_PAGINATED_FLOORS_QUERY, {
+    name: 'allFloors',
+    options: () => ({
+      variables: {
+        page: 1,
+        perPage: 100,
+      },
+    }),
+  }),
   graphql(ADD_WING_MUTATION, { name: 'addWing' }),
 )(AddWing);

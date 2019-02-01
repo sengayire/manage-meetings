@@ -5,7 +5,16 @@ import { WingList } from '../../../src/components/wing/wingList';
 import defaultUserRole from '../../../src/fixtures/user';
 
 describe('Tests for SettingOffices', () => {
-  const shalloWrapper = shallow(<WingList user={defaultUserRole} />);
+  const initialProps = {
+    allWings: {
+      allWings: [{ name: 'epic', id: 1 }],
+    },
+    user: defaultUserRole,
+  };
+  const shalloWrapper = shallow(<WingList
+    allWings={initialProps.allWings}
+    user={defaultUserRole}
+  />);
 
   it('renders the snapshot correctly', () => {
     expect(shalloWrapper).toMatchSnapshot();
@@ -16,8 +25,9 @@ describe('Tests for SettingOffices', () => {
       allWings: {
         allWings: [{ name: 'epic', id: 1 }],
       },
+      user: defaultUserRole,
     };
-    shallow(<WingList allWings={props.allWings} user={{}} />);
+    shallow(<WingList allWings={props.allWings} user={defaultUserRole} />);
     expect(props.allWings.allWings).toHaveLength(1);
   });
 });

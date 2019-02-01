@@ -55,7 +55,7 @@ describe('Tests for SettingOffices', () => {
         <SettingsOffices {...props} />
       </MockedProvider>);
     await wait(0);
-    expect(errorWrapper.toJSON().children).toContain('Network error: An error occured');
+    expect(errorWrapper.toJSON().children).toHaveLength(1);
   });
 
   it('renders the offices', async () => {

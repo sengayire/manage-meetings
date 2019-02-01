@@ -95,7 +95,6 @@ export class AddFloor extends Component {
    */
   handleAddFloor = (event) => {
     event.preventDefault();
-    this.toggleLoading();
     const { blockId, floorName } = this.state;
     const { refetch, currentPage } = this.props;
     if (!floorName) {
@@ -103,6 +102,7 @@ export class AddFloor extends Component {
     } else if (!blockId) {
       notification(toastr, 'error', 'A block is required')();
     } else {
+      this.toggleLoading();
       this.props
         .addFloor({
           variables: {

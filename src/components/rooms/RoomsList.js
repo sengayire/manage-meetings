@@ -24,6 +24,7 @@ import { GET_USER_ROLE } from '../../graphql/queries/People';
 import { decodeTokenAndGetUserData } from '../../utils/Cookie';
 import { saveItemInLocalStorage } from '../../utils/Utilities';
 import defaultUserRole from '../../fixtures/user';
+import DataNotFound from '../commons/DataNotFound';
 
 /**
  * Rooms List Component
@@ -209,10 +210,13 @@ export class RoomsList extends React.Component {
     const { user } = this.props.user;
     if (user) saveItemInLocalStorage('access', user.roles[0].id);
     if (loading || loadingLocations) return <Spinner />;
-
+    if (error && error.message === 'GraphQL error: No more resources') return <DataNotFound />;
     if (locationsError || error) {
       return (
-        <div>{locationsError ? locationsError.message : error.message}</div>
+        <div>{locationsError ?
+           locationsError.message
+          : <div>{error.message}</div>}
+        </div>
       );
     }
 

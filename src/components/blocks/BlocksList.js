@@ -13,26 +13,30 @@ import MenuTitle from '../commons/MenuTitle';
 import { GET_USER_ROLE } from '../../graphql/queries/People';
 import { decodeTokenAndGetUserData } from '../../utils/Cookie';
 import { saveItemInLocalStorage } from '../../utils/Utilities';
+import DataNotFound from '../commons/DataNotFound';
 
 export const BlocksList = (props) => {
-  const { allOffices } = props.allOffices;
-  const { allBlocks, loading, refetch } = props.allBlocks;
-  if (allBlocks === undefined || allOffices === undefined || loading) return <Spinner />;
+  const { allOffices, user, allBlocks } = props;
+  const error = allOffices.error || allBlocks.error || user.error;
+  const loading = allOffices.loading || allBlocks.loading || user.loading;
 
-  const { user } = props.user;
-  if (user) saveItemInLocalStorage('access', user.roles[0].id);
+  if (error && error.message === 'GraphQL error: No more offices') {
+    return <DataNotFound />;
+  } else if (error) { return (<div>{error.message}</div>); }
+  if (loading) return <Spinner />;
 
+  if (user.user) saveItemInLocalStorage('access', user.user.roles[0].id);
   return (
     <div className="settings-rooms">
       <div className="settings-rooms-control">
         <MenuTitle title="Blocks" />
-        <AddBlockMenu offices={allOffices} refetch={refetch} />
+        <AddBlockMenu offices={allOffices.allOffices} refetch={allBlocks.allBlocks.refetch} />
       </div>
       <div className="settings-rooms-list">
         <table>
           <ColGroup />
           <TableHead titles={['SingleBlock', 'Location', 'Office', 'Action']} />
-          <BlockTableBody blocks={allBlocks} refetch={refetch} />
+          <BlockTableBody blocks={allBlocks.allBlocks} refetch={allBlocks.allBlocks.refetch} />
         </table>
       </div>
     </div>
@@ -50,6 +54,7 @@ BlocksList.propTypes = {
   allBlocks: PropTypes.shape({
     id: PropTypes.number,
     name: PropTypes.string,
+    error: PropTypes.object,
     offices: PropTypes.shape({
       name: PropTypes.string,
     }),

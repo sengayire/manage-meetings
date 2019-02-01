@@ -5424,18 +5424,7 @@ exports[`FloorList Component renders correctly from memory 1`] = `
           "refetch": [MockFunction],
         }
       }
-      user={
-        Object {
-          "user": Object {
-            "roles": Array [
-              Object {
-                "id": 1,
-                "name": "default",
-              },
-            ],
-          },
-        }
-      }
+      user={Object {}}
     >
       <Query
         displayName="Apollo(Apollo(FloorList))"
@@ -5723,18 +5712,7 @@ exports[`FloorList Component renders correctly from memory 1`] = `
               },
             }
           }
-          user={
-            Object {
-              "user": Object {
-                "roles": Array [
-                  Object {
-                    "id": 1,
-                    "name": "default",
-                  },
-                ],
-              },
-            }
-          }
+          user={Object {}}
         >
           <Query
             displayName="Apollo(FloorList)"
