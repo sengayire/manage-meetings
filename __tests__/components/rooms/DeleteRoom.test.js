@@ -39,7 +39,7 @@ describe('DeleteOffice Test Suite', () => {
     deleteComponent.instance().state = {
       closeModal: true,
     };
-    deleteComponent.instance().handleCloseModal();
+    deleteComponent.instance().handleModalStateChange();
     expect(deleteComponent.instance().state.closeModal).toBeFalsy();
   });
 

@@ -47,3 +47,10 @@ form{
 .inline li{
   display: inline-block;
 }
+
+button:disabled,
+button[disabled]{
+  border: 1px solid $color-input-border;
+  border-radius: 2px;
+  color: $color-text;
+}

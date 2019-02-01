@@ -8,15 +8,20 @@ import ColGroup from '../helpers/ColGroup';
 import TableHead from '../helpers/TableHead';
 import Location from './Location';
 import Spinner from '../commons/Spinner';
+import { GET_USER_ROLE } from '../../graphql/queries/People';
+import { decodeTokenAndGetUserData } from '../../utils/Cookie';
+import { saveItemInLocalStorage } from '../../utils/Utilities';
 
 export const LocationsList = (props) => {
   const {
     loading, refetch, allLocations,
   } = props.data;
+  const { user } = props.user;
 
   if (loading) {
     return <Spinner />;
   }
+  if (user) saveItemInLocalStorage('access', user.roles[0].id);
 
   return (
     <div className="settings-locations">
@@ -49,6 +54,9 @@ LocationsList.propTypes = {
     refetch: PropTypes.func,
     allLocations: PropTypes.array,
   }),
+  user: PropTypes.shape({
+    user: PropTypes.object,
+  }).isRequired,
 };
 
 LocationsList.defaultProps = {
@@ -57,6 +65,19 @@ LocationsList.defaultProps = {
   },
 };
 
+const { UserInfo: userData } = decodeTokenAndGetUserData() || {};
+
 export default compose(
   graphql(GET_ALL_LOCATIONS),
+  graphql(GET_USER_ROLE, {
+    name: 'user',
+    options: /* istanbul ignore next */ () => ({
+      variables: {
+        email:
+          process.env.NODE_ENV === 'test'
+            ? 'sammy.muriuki@andela.com'
+            : userData.email,
+      },
+    }),
+  }),
 )(LocationsList);

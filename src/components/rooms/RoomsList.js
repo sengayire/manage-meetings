@@ -20,6 +20,10 @@ import AddRoomMenu from './AddRoomMenu';
 import Spinner from '../commons/Spinner';
 import notification from '../../utils/notification';
 import Overlay from '../commons/Overlay';
+import { GET_USER_ROLE } from '../../graphql/queries/People';
+import { decodeTokenAndGetUserData } from '../../utils/Cookie';
+import { saveItemInLocalStorage } from '../../utils/Utilities';
+import defaultUserRole from '../../fixtures/user';
 
 /**
  * Rooms List Component
@@ -202,7 +206,8 @@ export class RoomsList extends React.Component {
       loading: loadingLocations,
       error: locationsError,
     } = this.props.locations;
-
+    const { user } = this.props.user;
+    if (user) saveItemInLocalStorage('access', user.roles[0].id);
     if (loading || loadingLocations) return <Spinner />;
 
     if (locationsError || error) {
@@ -291,8 +296,16 @@ RoomsList.propTypes = {
   getRoomByName: PropTypes.shape({
     fetchMore: PropTypes.func.isRequired,
   }).isRequired,
+  user: PropTypes.shape({
+    user: PropTypes.object,
+  }),
 };
 
+RoomsList.defaultProps = {
+  user: defaultUserRole,
+};
+
+const { UserInfo: userData } = decodeTokenAndGetUserData() || {};
 export default compose(
   graphql(GET_ROOMS_QUERY, {
     name: 'data',
@@ -312,6 +325,17 @@ export default compose(
     options: () => ({
       variables: {
         name: '',
+      },
+    }),
+  }),
+  graphql(GET_USER_ROLE, {
+    name: 'user',
+    options: /* istanbul ignore next */ () => ({
+      variables: {
+        email:
+          process.env.NODE_ENV === 'test'
+            ? 'sammy.muriuki@andela.com'
+            : userData.email,
       },
     }),
   }),

@@ -31,6 +31,17 @@ query user ($email: String!) {
 }
 `;
 
+const GET_USER_ROLE = gql`
+query user ($email: String!) {
+  user( email: $email){
+    roles{
+      id
+      role
+    }
+  }
+ }
+`;
+
 const GET_ROLES_QUERY = gql`
 query roles {
   roles {
@@ -38,4 +49,5 @@ query roles {
     role
   }
 }`;
-export { GET_PEOPLE_QUERY as default, GET_ROLES_QUERY, GET_USER_QUERY };
+
+export { GET_PEOPLE_QUERY as default, GET_ROLES_QUERY, GET_USER_QUERY, GET_USER_ROLE };

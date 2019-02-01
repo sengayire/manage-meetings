@@ -4,6 +4,7 @@ exports[`AddRoomMenu should render properly 1`] = `
 <ThemedIconMenu
   className="add-room-menu"
   composeTheme="deeply"
+  disabled={true}
   icon={
     <div
       className="addRoomBtn"

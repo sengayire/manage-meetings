@@ -2245,11 +2245,13 @@ exports[`AddRoomNairobi should pop up a modal when modal button is clicked 1`] =
               >
                 <IconButtons
                   buttonText="St Catherines"
+                  disabled={false}
                   modalButtonClassName="button"
                   openModal={[Function]}
                 >
                   <button
                     className="button"
+                    disabled={false}
                     id="modal-button"
                     onClick={[Function]}
                   >
@@ -4951,11 +4953,13 @@ exports[`AddRoomNairobi should render properly 1`] = `
               >
                 <IconButtons
                   buttonText="St Catherines"
+                  disabled={false}
                   modalButtonClassName="button"
                   openModal={[Function]}
                 >
                   <button
                     className="button"
+                    disabled={false}
                     id="modal-button"
                     onClick={[Function]}
                   >

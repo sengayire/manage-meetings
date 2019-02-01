@@ -10,11 +10,17 @@ import GET_ALL_BLOCKS from '../../graphql/queries/Blocks';
 import AddBlockMenu from './AddBlockMenu';
 import { GET_ALL_OFFICES } from '../../graphql/queries/Offices';
 import MenuTitle from '../commons/MenuTitle';
+import { GET_USER_ROLE } from '../../graphql/queries/People';
+import { decodeTokenAndGetUserData } from '../../utils/Cookie';
+import { saveItemInLocalStorage } from '../../utils/Utilities';
 
 export const BlocksList = (props) => {
   const { allOffices } = props.allOffices;
   const { allBlocks, loading, refetch } = props.allBlocks;
   if (allBlocks === undefined || allOffices === undefined || loading) return <Spinner />;
+
+  const { user } = props.user;
+  if (user) saveItemInLocalStorage('access', user.roles[0].id);
 
   return (
     <div className="settings-rooms">
@@ -48,7 +54,12 @@ BlocksList.propTypes = {
       name: PropTypes.string,
     }),
   }).isRequired,
+  user: PropTypes.shape({
+    user: PropTypes.object,
+  }).isRequired,
 };
+
+const { UserInfo: userData } = decodeTokenAndGetUserData() || {};
 
 export default compose(
   graphql(GET_ALL_BLOCKS, {
@@ -64,4 +75,15 @@ export default compose(
         },
       }),
     }),
+  graphql(GET_USER_ROLE, {
+    name: 'user',
+    options: /* istanbul ignore next */ () => ({
+      variables: {
+        email:
+          process.env.NODE_ENV === 'test'
+            ? 'sammy.muriuki@andela.com'
+            : userData.email,
+      },
+    }),
+  }),
 )(BlocksList);

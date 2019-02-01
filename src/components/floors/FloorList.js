@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { graphql } from 'react-apollo';
+import { graphql, compose } from 'react-apollo';
 import PropTypes from 'prop-types';
 import toastr from 'toastr';
 import { Floor } from './Floor';
@@ -10,8 +10,11 @@ import Spinner from '../commons/Spinner';
 import { GET_PAGINATED_FLOORS_QUERY } from '../../graphql/queries/Floors';
 import ColGroup from '../helpers/ColGroup';
 import TableHead from '../helpers/TableHead';
-import MenuTitle from '../commons/MenuTitle';
 import { formatFloorData } from '../../graphql/mappers/Floors';
+import { GET_USER_ROLE } from '../../graphql/queries/People';
+import { decodeTokenAndGetUserData } from '../../utils/Cookie';
+import { saveItemInLocalStorage } from '../../utils/Utilities';
+import MenuTitle from '../commons/MenuTitle';
 import Pagination from '../commons/Pagination';
 
 /**
@@ -82,15 +85,19 @@ export class FloorList extends Component {
     const {
       isFetching, dataFetched, currentPage, allFloors,
     } = this.state;
+    const { user } = this.props.user;
+
     if (loading) {
       return <Spinner />;
     } if (error) {
       return <div>{error.message}</div>;
     }
+    if (user) saveItemInLocalStorage('access', user.roles[0].id);
+
     return (
       <div className="settings-resource">
         <div
-          className={`settings-resource-control 
+          className={`settings-resource-control
         ${isFetching ? 'disabled-button' : null}`}
         >
           <MenuTitle title="Floors" />
@@ -142,13 +149,31 @@ FloorList.propTypes = {
     }),
     error: PropTypes.object,
   }).isRequired,
+  user: PropTypes.shape({
+    user: PropTypes.object,
+  }).isRequired,
 };
 
-export default graphql(GET_PAGINATED_FLOORS_QUERY, {
-  options: () => ({
-    variables: {
-      page: 1,
-      perPage: 5,
-    },
+const { UserInfo: userData } = decodeTokenAndGetUserData() || {};
+
+export default compose(
+  graphql(GET_PAGINATED_FLOORS_QUERY, {
+    options: () => ({
+      variables: {
+        page: 1,
+        perPage: 5,
+      },
+    }),
   }),
-})(FloorList);
+  graphql(GET_USER_ROLE, {
+    name: 'user',
+    options: /* istanbul ignore next */ () => ({
+      variables: {
+        email:
+          process.env.NODE_ENV === 'test'
+            ? 'sammy.muriuki@andela.com'
+            : userData.email,
+      },
+    }),
+  }),
+)(FloorList);

@@ -3,6 +3,7 @@ import Modal from 'react-modal';
 import PropTypes from 'prop-types';
 import '../../assets/styles/modal.scss';
 import IconButton from './IconButtons';
+import { getItemFromLocalStorage } from '../../utils/Utilities';
 
 const customStyles = {
   content: {
@@ -107,12 +108,15 @@ class MrmModal extends Component {
       children,
       modalButtonClassName,
     } = this.props;
+    const access = getItemFromLocalStorage('access');
+
     return (
       <Fragment>
         <IconButton
           buttonText={buttonText}
           modalButtonClassName={modalButtonClassName}
           openModal={this.openModal}
+          disabled={parseInt(access, 10) === 1}
         />
         <Modal
           shouldCloseOnOverlayClick={false}

@@ -2843,11 +2843,13 @@ exports[`AddRoomEpicTower should render properly 1`] = `
               >
                 <IconButtons
                   buttonText="Epic Tower"
+                  disabled={false}
                   modalButtonClassName="button"
                   openModal={[Function]}
                 >
                   <button
                     className="button"
+                    disabled={false}
                     id="modal-button"
                     onClick={[Function]}
                   >

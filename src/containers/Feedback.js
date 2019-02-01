@@ -1,3 +1,4 @@
+/* eslint-disable import/no-named-as-default */
 import React, { Fragment } from 'react';
 import { NavBar } from '../components';
 import RoomFeedback from '../components/roomFeedback/RoomFeedback';

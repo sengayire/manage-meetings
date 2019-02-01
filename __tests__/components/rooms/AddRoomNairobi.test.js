@@ -39,7 +39,7 @@ describe('AddRoomNairobi', () => {
       roomBlock: 0,
       floorObject: {},
       floorOptions: [],
-      closeModal: false,
+      closeModal: true,
       thumbnailName: 'Upload a thumbnail',
       officeId: 1,
     };
@@ -56,14 +56,13 @@ describe('AddRoomNairobi', () => {
   it('should pop up a modal when modal button is clicked', () => {
     const modalButton = wrapper.find('#modal-button');
     expect(modalButton).toHaveLength(1);
-
     modalButton.simulate('click');
     wrapper.update();
     expect(wrapper).toMatchSnapshot();
   });
 
   it('should close modal state', () => {
-    theDojo.instance().handleCloseModal();
+    theDojo.instance().handleModalStateChange();
     expect(theDojo.instance().state.closeModal).toBeFalsy();
   });
 
@@ -122,6 +121,15 @@ describe('AddRoomNairobi', () => {
     };
     theDojo.instance().handleInputChange({ target: { name: 'officeFloor', value: 1 } });
     expect(theDojo.instance().state.officeFloor).toEqual(1);
+  });
+
+  it('should have form and close the modal when the form is submitted', () => {
+    const preventDefault = jest.fn();
+    const form = wrapper.find('form');
+    expect(form).toHaveLength(1);
+
+    form.simulate('submit', { preventDefault });
+    expect(preventDefault).toHaveBeenCalled();
   });
 
   it('should parse value to integer when an empty string is provided', () => {

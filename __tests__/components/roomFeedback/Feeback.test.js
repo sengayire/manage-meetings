@@ -1,13 +1,14 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 import { BrowserRouter as Router } from 'react-router-dom';
-import RoomFeedback from '../../../src/components/roomFeedback/RoomFeedback';
+import { RoomFeedback } from '../../../src/components/roomFeedback/RoomFeedback';
 import feedbacks from '../../../src/fixtures/roomFeebdack';
+import defaultUserRole from '../../../src/fixtures/user';
 
 describe('RoomFeeback Component', () => {
   const wrapper = mount(
     <Router>
-      <RoomFeedback />
+      <RoomFeedback user={defaultUserRole} />
     </Router>,
   );
 
@@ -33,5 +34,10 @@ describe('RoomFeeback Component', () => {
       .text()).toEqual(feedbacks[1].type);
     expect(wrapper.find('tr').at(2).find('td').at(3)
       .text()).toEqual(feedbacks[1].startDate);
+  });
+
+  it('should has empty user prop', () => {
+    const roomFeedback = shallow(<RoomFeedback user={{}} />);
+    expect(roomFeedback.props().user).toBeFalsy();
   });
 });

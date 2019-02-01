@@ -22,7 +22,7 @@ const menuText = () => (
  * @returns {JSX}
  */
 const AddRoomMenu = () => (
-  <IconMenu className="add-room-menu" icon={menuText()}>
+  <IconMenu className="add-room-menu" icon={menuText()} disabled>
     <MenuItem caption="Select Office" disabled />
     <MenuDivider />
     <MenuItem>

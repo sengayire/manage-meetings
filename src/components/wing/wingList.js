@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { graphql } from 'react-apollo';
+import { graphql, compose } from 'react-apollo';
 import Wing from "./wings"; // eslint-disable-line
 import AddWing from "./addWing"; // eslint-disable-line
 import '../../assets/styles/officelist.scss';
@@ -9,6 +9,9 @@ import TableHead from '../helpers/TableHead';
 import { GET_ALL_WINGS } from '../../graphql/queries/wings';
 import MenuTitle from '../commons/MenuTitle';
 import Spinner from '../commons/Spinner';
+import { GET_USER_ROLE } from '../../graphql/queries/People';
+import { decodeTokenAndGetUserData } from '../../utils/Cookie';
+import { saveItemInLocalStorage } from '../../utils/Utilities';
 
 /**
  * Wing list component
@@ -19,6 +22,9 @@ import Spinner from '../commons/Spinner';
  */
 export const WingList = (props) => {
   const { allWings, loading } = props.allWings;
+  const { user } = props.user;
+  if (user) saveItemInLocalStorage('access', user.roles[0].id);
+
   return (
     /* istanbul ignore next */
     loading ? (
@@ -53,6 +59,9 @@ WingList.propTypes = {
     id: PropTypes.number,
     name: PropTypes.string,
   }),
+  user: PropTypes.shape({
+    user: PropTypes.object,
+  }).isRequired,
 };
 
 WingList.defaultProps = {
@@ -62,4 +71,19 @@ WingList.defaultProps = {
   },
 };
 
-export default graphql(GET_ALL_WINGS, { name: 'allWings' })(WingList);
+const { UserInfo: userData } = decodeTokenAndGetUserData() || {};
+
+export default compose(
+  graphql(GET_ALL_WINGS, { name: 'allWings' }),
+  graphql(GET_USER_ROLE, {
+    name: 'user',
+    options: /* istanbul ignore next */ () => ({
+      variables: {
+        email:
+          process.env.NODE_ENV === 'test'
+            ? 'sammy.muriuki@andela.com'
+            : userData.email,
+      },
+    }),
+  }),
+)(WingList);

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { graphql } from 'react-apollo';
+import { graphql, compose } from 'react-apollo';
 import toastr from 'toastr';
 import Resource from './Resource';
 import AddResourceComponent from './AddResource';
@@ -14,6 +14,10 @@ import MenuTitle from '../commons/MenuTitle';
 import Spinner from '../commons/Spinner';
 import notification from '../../utils/notification';
 import Overlay from '../commons/Overlay';
+import { GET_USER_ROLE } from '../../graphql/queries/People';
+import { decodeTokenAndGetUserData } from '../../utils/Cookie';
+import { saveItemInLocalStorage } from '../../utils/Utilities';
+import defaultUserRole from '../../fixtures/user';
 
 /**
  * Resource List Component
@@ -78,6 +82,9 @@ export class ResourceList extends React.Component {
   render() {
     const { loading, error, refetch } = this.props.data;
     const { allResources, currentPage, isFetching } = this.state;
+    const { user } = this.props.user;
+    if (user) saveItemInLocalStorage('access', user.roles[0].id);
+
     if (loading) return <Spinner />;
 
     if (error) return <div>{error.message}</div>;
@@ -133,15 +140,37 @@ ResourceList.propTypes = {
     error: PropTypes.object,
     fetchMore: PropTypes.func,
   }).isRequired,
+  user: PropTypes.shape({
+    user: PropTypes.object,
+  }),
 };
 
-export default graphql(GET_RESOURCES_QUERY, {
-  options: () => ({
+ResourceList.defaultProps = {
+  user: defaultUserRole,
+};
+
+const { UserInfo: userData } = decodeTokenAndGetUserData() || {};
+
+export default compose(
+  graphql(GET_RESOURCES_QUERY, {
+    options: () => ({
     /* istanbul ignore next */
     /* Reasoning: no explicit way of testing configuration options */
-    variables: {
-      page: 1,
-      perPage: 5,
-    },
+      variables: {
+        page: 1,
+        perPage: 5,
+      },
+    }),
   }),
-})(ResourceList);
+  graphql(GET_USER_ROLE, {
+    name: 'user',
+    options: /* istanbul ignore next */ () => ({
+      variables: {
+        email:
+          process.env.NODE_ENV === 'test'
+            ? 'sammy.muriuki@andela.com'
+            : userData.email,
+      },
+    }),
+  }),
+)(ResourceList);

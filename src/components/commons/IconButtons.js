@@ -8,10 +8,12 @@ class IconButtons extends Component {
     buttonText: PropTypes.string.isRequired,
     modalButtonClassName: PropTypes.string,
     openModal: PropTypes.func.isRequired,
+    disabled: PropTypes.bool,
   };
 
   static defaultProps = {
     modalButtonClassName: 'button',
+    disabled: false,
   };
 
   /**
@@ -34,12 +36,13 @@ class IconButtons extends Component {
   };
 
   render() {
-    const { buttonText, modalButtonClassName } = this.props;
+    const { buttonText, modalButtonClassName, disabled } = this.props;
     return (
       <button
         id="modal-button"
         className={modalButtonClassName}
         onClick={this.props.openModal}
+        disabled={disabled}
       >
         {this.onButtonTextChange(buttonText)}
       </button>

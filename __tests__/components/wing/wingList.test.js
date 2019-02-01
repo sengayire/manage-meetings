@@ -1,10 +1,11 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import Wings, { WingList } from '../../../src/components/wing/wingList';
+import { WingList } from '../../../src/components/wing/wingList';
+import defaultUserRole from '../../../src/fixtures/user';
 
 describe('Tests for SettingOffices', () => {
-  const shalloWrapper = shallow(<Wings />);
+  const shalloWrapper = shallow(<WingList user={defaultUserRole} />);
 
   it('renders the snapshot correctly', () => {
     expect(shalloWrapper).toMatchSnapshot();
@@ -16,8 +17,7 @@ describe('Tests for SettingOffices', () => {
         allWings: [{ name: 'epic', id: 1 }],
       },
     };
-
-    shallow(<WingList {...props} />);
+    shallow(<WingList allWings={props.allWings} user={{}} />);
     expect(props.allWings.allWings).toHaveLength(1);
   });
 });

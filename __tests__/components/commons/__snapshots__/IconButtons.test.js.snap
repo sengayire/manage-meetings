@@ -3,11 +3,13 @@
 exports[`IconButtons Component renders properly 1`] = `
 <IconButtons
   buttonText="button"
+  disabled={false}
   modalButtonClassName="button"
   openModal={[MockFunction]}
 >
   <button
     className="button"
+    disabled={false}
     id="modal-button"
     onClick={[MockFunction]}
   >

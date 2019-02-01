@@ -24,7 +24,20 @@ exports[`RoomFeeback Component should render properly 1`] = `
       }
     }
   >
-    <RoomFeedback>
+    <RoomFeedback
+      user={
+        Object {
+          "user": Object {
+            "roles": Array [
+              Object {
+                "id": 1,
+                "name": "default",
+              },
+            ],
+          },
+        }
+      }
+    >
       <div
         className="room-feedback"
       >
@@ -51,11 +64,13 @@ exports[`RoomFeeback Component should render properly 1`] = `
             >
               <IconButtons
                 buttonText="Add Question"
+                disabled={false}
                 modalButtonClassName="button"
                 openModal={[Function]}
               >
                 <button
                   className="button"
+                  disabled={false}
                   id="modal-button"
                   onClick={[Function]}
                 >
@@ -331,11 +346,13 @@ exports[`RoomFeeback Component should render properly 1`] = `
                       >
                         <IconButtons
                           buttonText="Edit"
+                          disabled={false}
                           modalButtonClassName="edit-button"
                           openModal={[Function]}
                         >
                           <button
                             className="edit-button"
+                            disabled={false}
                             id="modal-button"
                             onClick={[Function]}
                           >
@@ -460,11 +477,13 @@ exports[`RoomFeeback Component should render properly 1`] = `
                       >
                         <IconButtons
                           buttonText="Delete"
+                          disabled={false}
                           modalButtonClassName="button"
                           openModal={[Function]}
                         >
                           <button
                             className="button"
+                            disabled={false}
                             id="modal-button"
                             onClick={[Function]}
                           >
@@ -659,11 +678,13 @@ exports[`RoomFeeback Component should render properly 1`] = `
                       >
                         <IconButtons
                           buttonText="Edit"
+                          disabled={false}
                           modalButtonClassName="edit-button"
                           openModal={[Function]}
                         >
                           <button
                             className="edit-button"
+                            disabled={false}
                             id="modal-button"
                             onClick={[Function]}
                           >
@@ -788,11 +809,13 @@ exports[`RoomFeeback Component should render properly 1`] = `
                       >
                         <IconButtons
                           buttonText="Delete"
+                          disabled={false}
                           modalButtonClassName="button"
                           openModal={[Function]}
                         >
                           <button
                             className="button"
+                            disabled={false}
                             id="modal-button"
                             onClick={[Function]}
                           >
@@ -987,11 +1010,13 @@ exports[`RoomFeeback Component should render properly 1`] = `
                       >
                         <IconButtons
                           buttonText="Edit"
+                          disabled={false}
                           modalButtonClassName="edit-button"
                           openModal={[Function]}
                         >
                           <button
                             className="edit-button"
+                            disabled={false}
                             id="modal-button"
                             onClick={[Function]}
                           >
@@ -1116,11 +1141,13 @@ exports[`RoomFeeback Component should render properly 1`] = `
                       >
                         <IconButtons
                           buttonText="Delete"
+                          disabled={false}
                           modalButtonClassName="button"
                           openModal={[Function]}
                         >
                           <button
                             className="button"
+                            disabled={false}
                             id="modal-button"
                             onClick={[Function]}
                           >

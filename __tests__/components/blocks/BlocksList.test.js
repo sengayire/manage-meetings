@@ -5,6 +5,7 @@ import fetch from 'unfetch';
 import { MockedProvider } from 'react-apollo/test-utils';
 // eslint-disable-next-line
 import BlocksList, { BlocksList as ListOfBlocks } from '../../../src/components/blocks/BlocksList';
+import defaultUserRole from '../../../src/fixtures/user';
 
 const blocks = {
   allBlocks: [
@@ -38,6 +39,7 @@ describe('blockslist Component', () => {
       <BlocksList
         allBlocks={blocks}
         allOffices={offices}
+        user={defaultUserRole}
       />
     </MockedProvider>,
   );
@@ -50,9 +52,20 @@ describe('blockslist Component', () => {
     const blocksList = shallow(<ListOfBlocks
       allBlocks={blocks}
       allOffices={offices}
+      user={defaultUserRole}
     />,
     );
     const settings = blocksList.find('.settings-rooms');
     expect(settings).toHaveLength(1);
+  });
+
+  it('set user prop to empty', () => {
+    const blocksList = shallow(<ListOfBlocks
+      allBlocks={blocks}
+      allOffices={offices}
+      user={{}}
+    />,
+    );
+    expect(blocksList.props().user).toBeFalsy();
   });
 });

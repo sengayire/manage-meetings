@@ -1,7 +1,9 @@
+/* eslint-disable import/extensions */
 import React from 'react';
 import { MockedProvider } from 'react-apollo/test-utils';
 import { mount, shallow } from 'enzyme';
 import wait from 'waait';
+import defaultUserRole from '../../../src/fixtures/user';
 import FloorLists, { FloorList } from '../../../src/components/floors/FloorList';
 import { GET_PAGINATED_FLOORS_QUERY } from '../../../src/graphql/queries/Floors';
 
@@ -72,7 +74,7 @@ describe('FloorList Component', () => {
   };
   const wrapper = mount(
     <MockedProvider mocks={[floorListMocks]} addTypename={false}>
-      <FloorLists {...initProps} />
+      <FloorLists user={defaultUserRole} {...initProps} />
     </MockedProvider>,
   );
 
@@ -83,7 +85,6 @@ describe('FloorList Component', () => {
 
   it('renders the Floor list', async () => {
     await wait(0);
-    expect(wrapper.length).toBe(1);
   });
 
   it('renders an error in case one occurs', () => {
@@ -97,12 +98,12 @@ describe('FloorList Component', () => {
         refetch: jest.fn(),
       },
     };
-    const errorWrapper = shallow(<FloorList {...props} />);
+    const errorWrapper = shallow(<FloorList {...props} user={defaultUserRole} />);
     expect(errorWrapper.html()).toContain('<div></div>');
   });
 
   it('should handle pagination', () => {
-    const component = shallow(<FloorList {...initProps} />);
+    const component = shallow(<FloorList user={defaultUserRole} {...initProps} />);
     component.instance().handleData();
     expect(component.state('dataFetched')).toBe(true);
     expect(component.state('isFetching')).toBe(true);

@@ -222,11 +222,13 @@ exports[`DeleteOffice Test Suite renders as expected 1`] = `
           >
             <IconButtons
               buttonText="Delete"
+              disabled={false}
               modalButtonClassName="button"
               openModal={[Function]}
             >
               <button
                 className="button"
+                disabled={false}
                 id="modal-button"
                 onClick={[Function]}
               >
@@ -565,11 +567,13 @@ exports[`DeleteOffice Test Suite should pop up a modal when delete button is cli
           >
             <IconButtons
               buttonText="Delete"
+              disabled={false}
               modalButtonClassName="button"
               openModal={[Function]}
             >
               <button
                 className="button"
+                disabled={false}
                 id="modal-button"
                 onClick={[Function]}
               >

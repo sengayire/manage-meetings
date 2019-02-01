@@ -4,7 +4,7 @@ import { MockedProvider } from 'react-apollo/test-utils';
 import DeleteResourceComponent, { DeleteResource } from '../../../src/components/resources/DeleteResource';
 import { DELETE_RESOURCE_MUTATION } from '../../../src/graphql/mutations/resources';
 
-describe('DeleteOffice Test Suite', () => {
+describe('DeleteResource Test Suite', () => {
   const request = {
     query: DELETE_RESOURCE_MUTATION,
     variables: { resourceId: 1 },
