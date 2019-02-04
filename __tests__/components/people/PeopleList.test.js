@@ -29,6 +29,7 @@ const initProps = {
   people: {
     users: allPeople.data.users,
     fetchMore: jest.fn(() => Promise.resolve()),
+    refetch: jest.fn(),
   },
   locations: {
     allLocations: {},

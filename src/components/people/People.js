@@ -25,6 +25,8 @@ const People = ({
     email, name, accessLevel, location, picture,
   },
   allRoles,
+  refetch,
+  currentPage,
   editRole,
 }) => {
   const editRoleFunction = (roleId) => {
@@ -36,6 +38,7 @@ const People = ({
           'success',
           `'${name}' role has been changed successfully`,
         )();
+        refetch({ page: currentPage });
       })
       .catch(err =>
         notification(toastr, 'error', err.graphQLErrors[0].message)(),
@@ -77,7 +80,7 @@ People.propTypes = {
   people: PropTypes.shape({
     email: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
-    location: PropTypes.string.isRequired,
+    location: PropTypes.string,
     accessLevel: PropTypes.string.isRequired,
     picture: PropTypes.string.isRequired,
   }).isRequired,
@@ -88,6 +91,8 @@ People.propTypes = {
     }),
   ).isRequired,
   editRole: PropTypes.func.isRequired,
+  refetch: PropTypes.func.isRequired,
+  currentPage: PropTypes.number.isRequired,
 };
 
 export default People;

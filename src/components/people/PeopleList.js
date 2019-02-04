@@ -37,6 +37,7 @@ export class PeopleList extends Component {
       id: '',
       dataFetched: true, // true when there is an active internet connection
       isFetching: false,
+      currentPage: 1,
     };
   }
 
@@ -77,6 +78,7 @@ export class PeopleList extends Component {
           this.setState({
             users: fetchMoreResult.users,
             hideDropdownMenu: false,
+            currentPage: page,
           });
         },
       })
@@ -110,8 +112,8 @@ export class PeopleList extends Component {
 
   render() {
     const { editRole } = this.props;
-    const { loading, error } = this.props.people;
-    const { users, isFetching } = this.state;
+    const { loading, error, refetch } = this.props.people;
+    const { users, isFetching, currentPage } = this.state;
     const {
       allLocations,
       loading: loadingLocations,
@@ -157,6 +159,8 @@ export class PeopleList extends Component {
                     people={formatPeopleData(person)}
                     allRoles={roles}
                     key={person.id}
+                    refetch={refetch}
+                    currentPage={currentPage}
                     editRole={editRole}
                   />
                 ))}
@@ -170,6 +174,7 @@ export class PeopleList extends Component {
           handleData={this.fetchPeople}
           dataFetched={this.state.dataFetched}
           isFetching={isFetching}
+          currentPage={currentPage}
         />
       </div>
     );
@@ -184,6 +189,7 @@ PeopleList.propTypes = {
     }),
     loading: PropTypes.bool,
     error: PropTypes.object,
+    refetch: PropTypes.func,
     fetchMore: PropTypes.func,
   }).isRequired,
   locations: PropTypes.oneOfType([
@@ -225,6 +231,5 @@ export default compose(
   graphql(GET_LOCATIONS_QUERY, { name: 'locations' }),
   graphql(UPDATE_ROLES_MUTATION, {
     name: 'editRole',
-    options: { refetchQueries: [{ query: GET_PEOPLE_QUERY }] },
   }),
 )(PeopleList);

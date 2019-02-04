@@ -19,7 +19,13 @@ describe('People Component', () => {
     editRole: jest.fn(() => Promise.resolve(result)),
   };
 
-  const wrapper = shallow(<People people={person} allRoles={allRoles} {...props} />);
+  const wrapper = shallow(<People
+    people={person}
+    refetch={jest.fn()}
+    allRoles={allRoles}
+    {...props}
+    currentPage={1}
+  />);
 
   it('renders properly', () => {
     expect(wrapper).toMatchSnapshot();
