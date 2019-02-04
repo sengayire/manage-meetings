@@ -34,7 +34,6 @@ class IconButtons extends Component {
     }
     return buttonText;
   };
-
   render() {
     const { buttonText, modalButtonClassName, disabled } = this.props;
     return (

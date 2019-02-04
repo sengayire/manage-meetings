@@ -2,6 +2,7 @@ import React from 'react';
 import { mount } from 'enzyme';
 import ErrorBoundary from '../../../src/components/commons/ErrorBoundary';
 import Spinner from '../../../src/components/commons/Spinner';
+import { getItemFromLocalStorage } from '../../../src/utils/Utilities';
 
 describe('ErrorBoundary component', () => {
   const wrapper = mount(
@@ -23,6 +24,21 @@ describe('ErrorBoundary component', () => {
       error: ' This is the error.',
       errorInfo: 'This is the error info',
     });
-    expect(wrapper.text()).toEqual('Something went wrong. This is the error.');
+    expect(wrapper.text()).toEqual('Something went wrong');
+  });
+
+  it('it should remove clear cookies upon receiving invalid token', () => {
+    const errorWrapper = mount(
+      <ErrorBoundary isAuthError >
+        <Spinner />
+      </ErrorBoundary>,
+    );
+    errorWrapper.setState({
+      error: ' This is the error.',
+      errorInfo: 'This is the error info',
+    });
+    window.location.assign = jest.fn();
+    global.localStorage = undefined;
+    expect(getItemFromLocalStorage('key')).toEqual(null);
   });
 });

@@ -7,6 +7,7 @@ import { LoginPage } from './components';
 import { getItemFromLocalStorage } from './utils/Utilities';
 import Constants from './utils/Constants';
 import '../src/assets/styles/toastr.scss';
+import ErrorBoundary from './components/commons/ErrorBoundary';
 
 // destruscture constants to be used
 const {
@@ -49,14 +50,16 @@ class App extends Component {
     }
 
     return (
-      <Switch>
-        <Route exact path={ROUTES.home} component={LoginPage} />
-        <Route path={ROUTES.settings} component={Settings} />
-        <Route path={ROUTES.analytics} component={Analytics} />
-        <Route path={ROUTES.feedback} component={Feedback} />
-        <Route path={ROUTES.preference} component={Preference} />
-        <Route path={ROUTES.roomResponses} component={RoomFeedbackResponseList} />
-      </Switch>
+      <ErrorBoundary isAuthError>
+        <Switch>
+          <Route exact path={ROUTES.home} component={LoginPage} />
+          <Route path={ROUTES.settings} component={Settings} />
+          <Route path={ROUTES.analytics} component={Analytics} />
+          <Route path={ROUTES.feedback} component={Feedback} />
+          <Route path={ROUTES.preference} component={Preference} />
+          <Route path={ROUTES.roomResponses} component={RoomFeedbackResponseList} />
+        </Switch>
+      </ErrorBoundary>
     );
   }
 }

@@ -29,4 +29,11 @@ describe('Cookie file methods', () => {
     expect(data).toBeTruthy();
     expect(Object.keys(data)).toEqual(['UserInfo', 'iat', 'exp', 'aud', 'iss']);
   });
+
+  it('should clear local storage and cookies incase of invalid token', () => {
+    const invalidToken = 'hgygh ghg hghgb hghbh';
+    window.location.reload = jest.fn();
+    const data = decodeTokenAndGetUserData(invalidToken);
+    expect(data).toBe(null);
+  });
 });

@@ -2,11 +2,18 @@
  * Implements methods to parse cookies inorder to login a user
  */
 import jwtDecode from 'jwt-decode';
+import { removeItemFromLocalStorage } from './Utilities';
+import Constants from '../utils/Constants';
 
 /**
  * Returns an object containing cookies key:value pairs
  * @param {string} cookieString The cookie string
  */
+const {
+  MRM_TOKEN,
+} = Constants;
+
+
 const parseCookie = (cookieString) => {
   const cookiesObject = cookieString.split('; ').reduce((acc, val) => {
     const [key, value] = val.split('=');
@@ -50,8 +57,14 @@ const clearCookies = () => {
 const decodeTokenAndGetUserData = (userToken = null) => {
   const token = getToken() || userToken;
   if (!token) return null;
-
-  return jwtDecode(token);
+  try {
+    return jwtDecode(token);
+  } catch (e) {
+    removeItemFromLocalStorage(MRM_TOKEN);
+    clearCookies();
+    window.location.reload();
+    return null;
+  }
 };
 
 export {

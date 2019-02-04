@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Bookings Count Bar Graph Component renders correctly 1`] = `
+exports['Bookings Count Bar Graph Component renders correctly 1'] = `
 <MockedProvider
   addTypename={true}
   mocks={
@@ -1691,7 +1691,7 @@ exports[`Bookings Count Bar Graph Component renders correctly 1`] = `
 </MockedProvider>
 `;
 
-exports[`Bookings Count Bar Graph Component should be able to hover 1`] = `
+exports['Bookings Count Bar Graph Component should be able to hover 1'] = `
 <MockedProvider
   addTypename={true}
   mocks={
@@ -3372,7 +3372,7 @@ exports[`Bookings Count Bar Graph Component should be able to hover 1`] = `
 </MockedProvider>
 `;
 
-exports[`Bookings Count Bar Graph Component should be able to hover 2`] = `
+exports['Bookings Count Bar Graph Component should be able to hover 2'] = `
 <MockedProvider
   addTypename={true}
   mocks={

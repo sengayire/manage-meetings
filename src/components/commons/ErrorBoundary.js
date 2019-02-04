@@ -2,6 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import '../../assets/styles/errorBoundary.scss';
+import { clearCookies } from '../../utils/Cookie';
+import Constants from '../../utils/Constants';
+import { removeItemFromLocalStorage } from '../../utils/Utilities';
 
 /**
  * Error catching component
@@ -10,26 +13,29 @@ import '../../assets/styles/errorBoundary.scss';
  *
  * @returns {JSX}
  */
+
+const {
+  MRM_TOKEN,
+} = Constants;
+
 class ErrorBoundary extends React.Component {
-  state = { error: null, errorInfo: null };
+  state = { errorInfo: '' };
 
   componentDidCatch(error, errorInfo) {
     this.setState({
-      error,
       errorInfo,
     });
   }
 
   render() {
     if (this.state.errorInfo) {
+      if (this.props.isAuthError) {
+        removeItemFromLocalStorage(MRM_TOKEN);
+        clearCookies();
+      }
       return (
         <div>
-          <h2>Something went wrong.</h2>
-          <details className="wrap">
-            {this.state.error && this.state.error.toString()}
-            <br />
-            {this.state.errorInfo.componentStack}
-          </details>
+          {!this.props.isAuthError && this.props.error}
         </div>
       );
     }
@@ -39,6 +45,13 @@ class ErrorBoundary extends React.Component {
 
 ErrorBoundary.propTypes = {
   children: PropTypes.element.isRequired,
+  isAuthError: PropTypes.bool,
+  error: PropTypes.string,
+};
+
+ErrorBoundary.defaultProps = {
+  isAuthError: false,
+  error: 'Something went wrong',
 };
 
 export default ErrorBoundary;
