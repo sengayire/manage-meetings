@@ -91,6 +91,7 @@ export class FloorList extends Component {
     if (loading) {
       return <Spinner />;
     }
+
     if (user) saveItemInLocalStorage('access', user.roles[0].id);
     if (error && error.message === 'GraphQL error: No more resources') return <DataNotFound />;
     if (error) return <div>{error.message}</div>;

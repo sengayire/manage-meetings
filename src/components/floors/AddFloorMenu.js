@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { graphql } from 'react-apollo';
+import { graphql, compose } from 'react-apollo';
 import { IconMenu, MenuItem, MenuDivider } from 'react-toolbox/lib/menu';
 import AddFloorComponent from './AddFloor';
 import Spinner from '../commons/Spinner';
-import { GET_ALL_OFFICES_QUERY } from '../../graphql/queries/Offices';
+import GET_ALL_BLOCKS from '../../graphql/queries/Blocks';
 
 /**
  * Renders the add office button
@@ -24,10 +24,8 @@ const menuText = () => (
  */
 export class AddFloorMenu extends React.Component {
   static propTypes = {
-    data: PropTypes.shape({
-      allOffices: PropTypes.shape({
-        office: PropTypes.array,
-      }),
+    allBlocks: PropTypes.shape({
+      allBlocks: PropTypes.array,
       loading: PropTypes.bool,
       error: PropTypes.object,
     }),
@@ -36,7 +34,7 @@ export class AddFloorMenu extends React.Component {
   };
 
   static defaultProps = {
-    data: {},
+    allBlocks: {},
     currentPage: 1,
   };
 
@@ -45,18 +43,19 @@ export class AddFloorMenu extends React.Component {
  *
  * @returns {JSX}
  */
-  getOffice = () => {
-    const { loading, allOffices: { offices } = {}, error } = this.props.data;
+  getBlocks = () => {
+    const { loading, allBlocks, error } = this.props.allBlocks;
     if (loading) return <Spinner />;
     if (error) return <div>{error.message}</div>;
     return (
-      offices.map(office => (
-        <MenuItem key={office.id}>
+      allBlocks.map(block => (
+        <MenuItem key={block.id}>
           <AddFloorComponent
-            theOffice={office.name}
+            theOffice={block.name}
             refetch={this.props.refetch}
-            blocks={office.blocks}
+            blocks={block.offices.location.name === 'Nairobi' && allBlocks}
             currentPage={this.props.currentPage}
+            officeId={block.id}
           />
         </MenuItem>
       ))
@@ -68,19 +67,14 @@ export class AddFloorMenu extends React.Component {
       <IconMenu className="add-room-menu" icon={menuText()}>
         <MenuItem caption="Select Office" disabled />
         <MenuDivider />
-        {this.getOffice()}
+        {this.getBlocks()}
       </IconMenu>
     );
   }
 }
 
-export default graphql(GET_ALL_OFFICES_QUERY, {
-  /* istanbul ignore next */
-  /* Reasoning: no explicit way of testing configuration options */
-  options: () => ({
-    variables: {
-      page: 1,
-      perPage: 50,
-    },
+export default compose(
+  graphql(GET_ALL_BLOCKS, {
+    name: 'allBlocks',
   }),
-})(AddFloorMenu);
+)(AddFloorMenu);

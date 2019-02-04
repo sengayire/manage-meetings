@@ -47,12 +47,21 @@ exports[`Test the AddFloor component should render correctly 1`] = `
   >
     <Apollo(AddFloor)
       blocks={
-        Object {
-          "id": 12,
-          "name": "blockA",
-        }
+        Array [
+          Object {
+            "id": 1,
+            "name": "Kampala",
+            "offices": Object {
+              "id": "2",
+              "location": Object {
+                "name": "Nairobi",
+              },
+            },
+          },
+        ]
       }
       currentPage={1}
+      officeId={1}
       refetch={[MockFunction]}
       theOffice="Kampala"
     />

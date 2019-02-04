@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports['Query Bookings Count Component should render analytics data 1'] = `
+exports[`Query Bookings Count Component should render analytics data 1`] = `
 <MockedProvider
   addTypename={false}
   mocks={
@@ -1623,7 +1623,7 @@ exports['Query Bookings Count Component should render analytics data 1'] = `
 </MockedProvider>
 `;
 
-exports['Query Bookings Count Component should render without error 1'] = `
+exports[`Query Bookings Count Component should render without error 1`] = `
 <MockedProvider
   addTypename={true}
   mocks={

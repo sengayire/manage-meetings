@@ -17,6 +17,7 @@ import { ADD_FLOOR_MUTATION } from '../../graphql/mutations/Floors';
  */
 export class AddFloor extends Component {
   static propTypes = {
+    officeId: PropTypes.string,
     addFloor: PropTypes.func.isRequired,
     theOffice: PropTypes.string,
     currentPage: PropTypes.number,
@@ -30,6 +31,7 @@ export class AddFloor extends Component {
   static defaultProps = {
     theOffice: '',
     currentPage: 1,
+    officeId: '',
   };
 
   state = {
@@ -96,10 +98,10 @@ export class AddFloor extends Component {
   handleAddFloor = (event) => {
     event.preventDefault();
     const { blockId, floorName } = this.state;
-    const { refetch, currentPage } = this.props;
+    const { refetch, currentPage, officeId } = this.props;
     if (!floorName) {
       notification(toastr, 'error', 'Floor name is required')();
-    } else if (!blockId) {
+    } else if (!blockId && this.props.blocks) {
       notification(toastr, 'error', 'A block is required')();
     } else {
       this.toggleLoading();
@@ -107,7 +109,7 @@ export class AddFloor extends Component {
         .addFloor({
           variables: {
             name: floorName,
-            blockId,
+            blockId: blockId || officeId,
           },
         })
         .then(() => {
@@ -156,7 +158,7 @@ export class AddFloor extends Component {
             id="floorName"
             onChange={this.handleInputChange}
           />
-          <Select
+          {blocks && <Select
             labelText="Select Block "
             name="blockId"
             id="block"
@@ -166,6 +168,7 @@ export class AddFloor extends Component {
             placeholder="Select block"
             options={blocks}
           />
+          }
           <ActionButtons
             withCancel
             onClickCancel={this.handleCloseModal}

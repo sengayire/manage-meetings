@@ -22,7 +22,8 @@ export const LocationsList = (props) => {
   if (loading) {
     return <Spinner />;
   }
-  if (user) saveItemInLocalStorage('access', user.roles[0].id);
+
+  if (user && user.roles) saveItemInLocalStorage('access', user.roles[0].id);
 
   if (error) return <div>{error.message}</div>;
   return (

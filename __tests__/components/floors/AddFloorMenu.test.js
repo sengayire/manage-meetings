@@ -4,19 +4,17 @@ import { AddFloorMenu } from '../../../src/components/floors/AddFloorMenu';
 
 describe('Test the AddFloor component', () => {
   const props = {
-    data: {
-      allOffices: {
-        offices: [
-          {
-            id: 1,
-            name: 'Kampala',
-            blocks: {
-              name: 'blockA',
-              id: 12,
-            },
+    allBlocks: {
+      allBlocks: [
+        {
+          id: 1,
+          name: 'Kampala',
+          offices: {
+            id: '2',
+            location: { name: 'Nairobi' },
           },
-        ],
-      },
+        },
+      ],
       loading: false,
       error: undefined,
     },
