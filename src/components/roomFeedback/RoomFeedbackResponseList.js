@@ -2,6 +2,7 @@ import React, { Fragment } from 'react';
 import RoomFeedbackResponse from './RoomFeedbackResponse';
 import '../../../src/assets/styles/roomFeedbackResponseList.scss';
 import '../../../src/assets/styles/feedbackContainer.scss';
+import IconNotifications from '../../assets/images/download_24px.svg';
 import roomFeedbackResponse from '../../fixtures/roomFeedbackResponse';
 import RoomFeedbackCard from './RoomFeedbackResponseCard';
 import BackArrow from '../../components/commons/BackArrow';
@@ -10,6 +11,7 @@ import TopMenu from '../navbars/TopMenu';
 
 import SingleRoom from './SingleRoom';
 import rooms from '../../fixtures/roomFeedbackList';
+import Dropdown from '../commons/Dropdown';
 /**
  * Component for RoomFeedbackResponseList
  *
@@ -51,22 +53,30 @@ class RoomFeedbackResponseList extends React.Component {
   ));
 
   /**
+   * List of items to be exported
+   */
+  dropOptions = () => (
+    <span className="dropdown-list">
+      <span>PDF</span>
+      <span>JPEG</span>
+      <span>CSV</span>
+    </span>
+  );
+
+  /**
    * Renders export button
    *
    * @returns {JSX}
    */
   renderExportButton = () => (
-    <span className="export-button">
-      <svg
-        width="10px"
-        height="10px"
-        viewBox="0 0 433.5 433.5"
-        className="svg-export"
-      >
-        <path d="M395.25 153h-102V0h-153v153h-102l178.5 178.5L395.25 153zm-357 229.5v51h357v-51h-357z" />
-      </svg>
-      Export
-    </span>
+    <Dropdown
+      icon={<img
+        className="dropbtn-img"
+        src={IconNotifications}
+        alt="download icon"
+      />}
+      content={[this.dropOptions()]}
+    />
   );
 
   /**

@@ -106,3 +106,24 @@
     }
   }
 }
+
+.dropdown-list span {
+  color: $color-primary;
+  padding: 25px 16px 5px 16px;;
+  text-decoration: none;
+  display: block;
+  height: 8px;
+  cursor: pointer;
+}
+
+.filter-options-container {
+  display: inline-block;
+  margin-top: 15px;
+}
+.container-inner {
+  display: flex;
+
+  span {
+    color: $color-header;
+  }
+}

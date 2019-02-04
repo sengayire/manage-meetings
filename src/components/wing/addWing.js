@@ -8,7 +8,8 @@ import { Input, SelectInput as Select } from '../commons';
 import '../../assets/styles/addoffice.scss';
 import ActionButtons from '../commons/ActionButtons';
 import ADD_WING_MUTATION from '../../graphql/mutations/wings';
-import { GET_PAGINATED_FLOORS_QUERY } from '../../graphql/queries/Floors';
+import GET_FLOORS_QUERY from '../../graphql/queries/Floors';
+import { GET_ALL_WINGS } from '../../graphql/queries/wings';
 import notification from '../../utils/notification';
 
 /**
@@ -19,10 +20,6 @@ import notification from '../../utils/notification';
  * @returns {JSX}
  */
 export class AddWing extends Component {
-  static propTypes = {
-    addWing: PropTypes.func.isRequired,
-  };
-
   state = {
     name: '',
     floorId: '',
@@ -72,6 +69,8 @@ export class AddWing extends Component {
     const { name, floorId } = this.state;
     if (!name) {
       notification(toastr, 'error', 'Wing name is required')();
+    } else if (!floorId) {
+      notification(toastr, 'error', 'Floor is required')();
     } else {
       this.toggleLoading();
       this.props
@@ -87,7 +86,7 @@ export class AddWing extends Component {
           notification(
             toastr,
             'success',
-            `${wing.data.addWing.wing.name} wing has been added successfully`,
+            `${wing.data.createWing.wing.name} wing has been added successfully`,
           )();
         })
         .catch((err) => {
@@ -110,11 +109,19 @@ export class AddWing extends Component {
     });
   }
 
+
   render() {
     const {
       name, floorId, closeModal, isLoading,
     } = this.state;
+    const { loading, allFloors } = this.props.data;
     const { handleAddWing, handleInputChange, handleCloseModal } = this;
+    let floors;
+    if (!loading) {
+      floors = allFloors && allFloors.floors.filter(floor =>
+        floor.block.offices.location.name === this.props.userLocation);
+    }
+
     return (
       <MrmModal
         title="ADD WING"
@@ -141,7 +148,7 @@ export class AddWing extends Component {
             onChange={handleInputChange}
             wrapperClassName="input-wrapper"
             placeholder="Select floor"
-            options={this.props.allFloors.allFloors && this.props.allFloors.allFloors.floors}
+            options={this.props.data.loading ? [] : floors}
           />
           <ActionButtons
             withCancel
@@ -155,16 +162,29 @@ export class AddWing extends Component {
     );
   }
 }
+AddWing.propTypes = {
+  data: PropTypes.shape({
+    loading: PropTypes.bool,
+    refetch: PropTypes.func,
+  }),
+};
+
+AddWing.defaultProps = {
+  data: {
+    loading: false,
+  },
+};
 
 export default compose(
-  graphql(GET_PAGINATED_FLOORS_QUERY, {
-    name: 'allFloors',
+  graphql(GET_FLOORS_QUERY, {
     options: () => ({
       variables: {
         page: 1,
-        perPage: 100,
+        perPage: 50,
       },
     }),
   }),
-  graphql(ADD_WING_MUTATION, { name: 'addWing' }),
-)(AddWing);
+  graphql(ADD_WING_MUTATION, {
+    name: 'addWing',
+    options: { refetchQueries: [{ query: GET_ALL_WINGS }] },
+  }))(AddWing);

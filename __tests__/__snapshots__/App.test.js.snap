@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports['App component should not render Login if token is present but render Settings component 1'] = `
+exports[`App component should not render Login if token is present but render Settings component 1`] = `
 <MockedProvider
   addTypename={true}
 >
@@ -9960,7 +9960,7 @@ query user ($email: String!) {
                                         <span
                                           className="download-dropdown-label"
                                         >
-                                          Export options
+                                          Export options 
                                         </span>
                                         <span
                                           id="download"
@@ -12350,7 +12350,7 @@ query user ($email: String!) {
 </MockedProvider>
 `;
 
-exports['App component should render properly in memory 1'] = `
+exports[`App component should render properly in memory 1`] = `
 <MockedProvider
   addTypename={true}
 >

@@ -1,16 +1,21 @@
 import gql from 'graphql-tag';
 
 const GET_FLOORS_QUERY = gql`
-  {
-    allFloors {
-      id
-      name
-      blockId
-      block {
-        id
+  query allFloors($page: Int!, $perPage:Int!){
+    allFloors(page: $page, perPage:$perPage) {
+      floors{
         name
-        offices {
+        id
+        blockId
+        block{
           name
+          id
+          offices{
+            name
+            location {
+              name
+            }
+          }
         }
       }
     }

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports['AddQuestion component should be rendered without errors 1'] = `
+exports[`AddQuestion component should be rendered without errors 1`] = `
 <MrmModal
   buttonText="Add Question"
   className="add-question-modal"
@@ -65,7 +65,7 @@ exports['AddQuestion component should be rendered without errors 1'] = `
             name="startTime"
             onChange={[Function]}
             type="time"
-            value="11:02"
+            value="19:02"
           />
         </div>
         <div
@@ -84,7 +84,7 @@ exports['AddQuestion component should be rendered without errors 1'] = `
             name="endTime"
             onChange={[Function]}
             type="time"
-            value="12:02"
+            value="20:02"
           />
         </div>
       </div>

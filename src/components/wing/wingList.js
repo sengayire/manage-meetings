@@ -2,17 +2,20 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql, compose } from 'react-apollo';
 import Wing from "./wings"; // eslint-disable-line
-import AddWing from "./addWing"; // eslint-disable-line
+import AddWing from './addWing'; // eslint-disable-line
 import '../../assets/styles/officelist.scss';
 import ColGroup from '../helpers/ColGroup';
 import TableHead from '../helpers/TableHead';
-import { GET_ALL_WINGS } from '../../graphql/queries/wings';
 import MenuTitle from '../commons/MenuTitle';
 import Spinner from '../commons/Spinner';
-import { GET_USER_ROLE } from '../../graphql/queries/People';
 import { decodeTokenAndGetUserData } from '../../utils/Cookie';
-import { saveItemInLocalStorage } from '../../utils/Utilities';
-import DataNotFound from '../commons/DataNotFound';
+import { GET_USER_QUERY } from '../../graphql/queries/People';
+import { GET_ALL_WINGS } from '../../graphql/queries/wings';
+
+/**
+ * Get user data from token
+*/
+const { UserInfo: userData } = decodeTokenAndGetUserData() || {};
 
 /**
  * Wing list component
@@ -22,10 +25,7 @@ import DataNotFound from '../commons/DataNotFound';
  * @returns {JSX}
  */
 export const WingList = (props) => {
-  const { allWings, loading, error } = props.allWings;
-  const { user } = props.user;
-  if (user) saveItemInLocalStorage('access', user.roles[0].id);
-  if (error) return (<div>{error.message}</div>);
+  const { allWings, loading } = props.allWings;
   return (
     /* istanbul ignore next */
     loading ? (
@@ -35,20 +35,17 @@ export const WingList = (props) => {
         <div className="settings-offices">
           <div className="settings-offices-control">
             <MenuTitle title="Wings" />
-            <AddWing />
+            <AddWing userLocation={props.data.loading ? '' : props.data.user.location} />
           </div>
           <div className="settings-offices-list">
             <table>
               <ColGroup />
               <TableHead titles={['Wing', 'Block', 'Floor', 'Action']} />
               <tbody>
-                {
-                  allWings.length > 1
-                  ? allWings.map(wing => (
+                {allWings &&
+                  allWings.map(wing => (
                     <Wing wing={wing} key={wing.name} wingId={wing.id} />
-                  ))
-                : <DataNotFound />
-                }
+                  ))}
               </tbody>
             </table>
           </div>
@@ -63,9 +60,10 @@ WingList.propTypes = {
     id: PropTypes.number,
     name: PropTypes.string,
   }),
-  user: PropTypes.shape({
+  data: PropTypes.shape({
+    loading: PropTypes.bool,
     user: PropTypes.object,
-  }).isRequired,
+  }),
 };
 
 WingList.defaultProps = {
@@ -73,21 +71,20 @@ WingList.defaultProps = {
     id: 1,
     name: '',
   },
+  data: {
+    loading: false,
+  },
 };
 
-const { UserInfo: userData } = decodeTokenAndGetUserData() || {};
+const options = () => ({
+  variables: {
+    email: userData.email,
+  },
+});
 
 export default compose(
   graphql(GET_ALL_WINGS, { name: 'allWings' }),
-  graphql(GET_USER_ROLE, {
-    name: 'user',
-    options: /* istanbul ignore next */ () => ({
-      variables: {
-        email:
-          process.env.NODE_ENV === 'test'
-            ? 'sammy.muriuki@andela.com'
-            : userData.email,
-      },
-    }),
+  graphql(GET_USER_QUERY, {
+    options,
   }),
 )(WingList);

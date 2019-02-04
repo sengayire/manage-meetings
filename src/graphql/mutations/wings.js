@@ -1,7 +1,7 @@
 import gql from 'graphql-tag';
 
 const ADD_WING_MUTATION = gql`
-  mutation createWing($name: string!, $floorId: Int!) {
+  mutation createWing($name: String!, $floorId: Int!) {
     createWing(name: $name, floorId: $floorId) {
       wing {
         name

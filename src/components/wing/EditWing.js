@@ -18,12 +18,6 @@ import { EDIT_WING_MUTATION } from '../../graphql/mutations/wings';
  * @returns {JSX}
  */
 export class EditWing extends React.Component {
-  static propTypes = {
-    wingId: PropTypes.string.isRequired,
-    wingName: PropTypes.string.isRequired,
-    editWing: PropTypes.func.isRequired,
-  };
-
   state = {
     wingName: this.props.wingName,
     wingId: this.props.wingId,
@@ -137,6 +131,13 @@ export class EditWing extends React.Component {
     );
   }
 }
+
+EditWing.propTypes = {
+  wingId: PropTypes.string.isRequired,
+  wingName: PropTypes.string.isRequired,
+  editWing: PropTypes.func.isRequired,
+};
+
 
 export default graphql(EDIT_WING_MUTATION, {
   name: 'editWing',

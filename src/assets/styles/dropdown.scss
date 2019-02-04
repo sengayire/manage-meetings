@@ -2,7 +2,7 @@
 
 .dropdown-menu {
   position: absolute;
-  min-width: 112px;
+  min-width: 120px;
   background: map-get($color-white, 000); 
   text-align: left;
   padding: 5px 0;
@@ -12,18 +12,24 @@
   z-index: 99;
 }
 
+.dropdown-menu span:hover {
+  background-color: map-get($color-white, 300) !important;
+}
+
 .dropdown-menu:before, .dropdown-menu:after {
   box-shadow:0 0 50px map-get($color-black, 600);
 }
 
 .dropdown-caret {
-  margin-right: 40px;
 
   button {
-    border-color: transparent;
-    background: transparent;
-    font-size: 51px;
-    color: $color-primary;
-    font-size: 30px;
+    background-color: #FFAF30;
+    color: #ffffff;
+    font-size: 16px;
+    padding: 5px 20px;
+    border: none;
+    height: 40px;
+    margin-top: 3px;
+    cursor: pointer;
   }
 }

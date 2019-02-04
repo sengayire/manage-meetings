@@ -11,7 +11,9 @@ exports[`Tests for SettingOffices renders the snapshot correctly 1`] = `
       <MenuTitle
         title="Wings"
       />
-      <Apollo(Apollo(AddWing)) />
+      <Apollo(Apollo(AddWing))
+        userLocation=""
+      />
     </div>
     <div
       className="settings-offices-list"
@@ -31,7 +33,16 @@ exports[`Tests for SettingOffices renders the snapshot correctly 1`] = `
           }
         />
         <tbody>
-          <DataNotFound />
+          <Wing
+            key="epic"
+            wing={
+              Object {
+                "id": 1,
+                "name": "epic",
+              }
+            }
+            wingId={1}
+          />
         </tbody>
       </table>
     </div>

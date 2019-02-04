@@ -13,8 +13,8 @@ import EditWing from "./EditWing"; //eslint-disable-line
 export const Wing = ({ wing }) => (
   <tr>
     <td>{wing.name}</td>
-    <td>{wing.floor.block.name}</td>
-    <td>{wing.floor.name}</td>
+    <td>{wing.floor && wing.floor.block.name}</td>
+    <td>{wing.floor && wing.floor.name}</td>
     <td>
       <EditWing
         id="edit-modal"
