@@ -1,61 +1,83 @@
 import gql from 'graphql-tag';
 
 export const GET_ROOMS_QUERY = gql`
-query rooms($capacity: Int!, $location: String!, $office: String, !$page: Int!, $perPage: Int!) {
-  allRooms (page: $page, perPage: $perPage, capacity: $capacity, location: $location, office: $office){
-    rooms{
-      id
-      name
-      floor{
-        block{
-          offices{
-            name
-            location{
+  query rooms(
+    $capacity: Int!
+    $location: String!
+    $office: String!
+    $page: Int!
+    $perPage: Int!
+  ) {
+    allRooms(
+      page: $page
+      perPage: $perPage
+      capacity: $capacity
+      location: $location
+      office: $office
+    ) {
+      rooms {
+        id
+        name
+        floor {
+          block {
+            offices {
               name
-              id
+              location {
+                name
+                id
+              }
             }
           }
         }
       }
+      pages
+      queryTotal
+      hasNext
+      hasPrevious
     }
-    pages
-    queryTotal
-    hasNext
-    hasPrevious
-  }
-}`;
+  }`;
 
 export const GET_ALL_ROOMS_QUERY = gql`
-query rooms($capacity: Int!, $location: String!, $office: String, !$page: Int!, $perPage: Int!) {
-  allRooms (page: $page, perPage: $perPage, capacity:  $capacity, location: $location, office: $office){
-    rooms{
-      id
-      name
-      capacity
+  query rooms(
+    $capacity: Int!
+    $location: String!
+    $office: String!
+    $page: Int!
+    $perPage: Int!
+  ) {
+    allRooms(
+      page: $page
+      perPage: $perPage
+      capacity: $capacity
+      location: $location
+      office: $office
+    ) {
+      rooms {
+        id
+        name
+        capacity
+      }
     }
-  }
-}
-`;
+  }`;
 
 export const GET_ALL_ROOMS = gql`
-{
-  allRooms{
-    rooms{
-      id
-      name
-      capacity
+  {
+    allRooms {
+      rooms {
+        id
+        name
+        capacity
+      }
     }
-  }
-}
-`;
+  }`;
 
 const GET_LOCATIONS_QUERY = gql`
-query locations {
-  allLocations {
-    id
-    name
-  }
-}`;
+  query locations {
+    allLocations {
+      id
+      name
+    }
+  }`;
 
 const GET_ROOM_BY_NAME = gql`
   query roomByName($name: String!) {
@@ -64,11 +86,11 @@ const GET_ROOM_BY_NAME = gql`
       id
       name
       capacity
-      floor{
-        block{
-          offices{
+      floor {
+        block {
+          offices {
             name
-            location{
+            location {
               name
               id
             }
@@ -76,7 +98,18 @@ const GET_ROOM_BY_NAME = gql`
         }
       }
     }
-  }
-`;
+  }`;
+
+export const GET_ROOM_FEEDBACK_QUESTIONS_QUERY = gql`
+  query {
+    allQuestions {
+      question
+      questionType
+      startDate
+      endDate
+      questionResponseCount
+      isActive
+    }
+  }`;
 
 export { GET_ROOMS_QUERY as default, GET_LOCATIONS_QUERY, GET_ROOM_BY_NAME };

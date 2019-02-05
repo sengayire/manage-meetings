@@ -14,20 +14,21 @@ const CheckboxSlide = props => (
     <input
       type="checkbox"
       className="checkbox"
-      checked={props.checked}
       onChange={props.onChange}
+      checked={props.checked}
     />
-    <span className={`${props.checked && 'checked'} slider round`} />
+    <span className={`${props.checked && /* istanbul ignore next */ 'checked'} slider round`} />
   </label>
 );
 
 CheckboxSlide.propTypes = {
   checked: PropTypes.bool,
-  onChange: PropTypes.func.isRequired,
+  onChange: PropTypes.func,
 };
 
 CheckboxSlide.defaultProps = {
   checked: false,
+  onChange: PropTypes.func,
 };
 
 export default CheckboxSlide;

@@ -23,7 +23,7 @@
 .dropdown-caret {
 
   button {
-    background-color: #FFAF30;
+    background-color: #FFAF30 !important;
     color: #ffffff;
     font-size: 16px;
     padding: 5px 20px;
@@ -31,5 +31,6 @@
     height: 40px;
     margin-top: 3px;
     cursor: pointer;
+    
   }
 }

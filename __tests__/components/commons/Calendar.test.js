@@ -17,7 +17,9 @@ describe('it renders correctly', () => {
       }
     }),
   };
-  const wrapper = mount(<Calendar handleCloseModal={jest.fn()} onClick={sendDate} {...props} />);
+  const wrapper = mount(
+    <Calendar handleCloseModal={jest.fn()} onClick={sendDate} {...props} />,
+  );
 
   it('it should have a calendar', () => {
     const calendar = wrapper.find('PickRange');
@@ -64,26 +66,29 @@ describe('it renders correctly', () => {
       endDate: 'Nov 26 2018',
     };
     const calendarProps = {
-      sendDateData: jest.fn(() => Promise.resolve(
-        mockStateDates.startDate,
-        mockStateDates.endDate,
-      )),
+      sendDateData: jest.fn(() =>
+        Promise.resolve(mockStateDates.startDate, mockStateDates.endDate),
+      ),
     };
-    const Calendarwrapper = shallow(<Calendar handleCloseModal={jest.fn()} {...calendarProps} />);
+    const Calendarwrapper = shallow(
+      <Calendar handleCloseModal={jest.fn()} {...calendarProps} />,
+    );
 
     Calendarwrapper.setState({
       startDate: '05 Nov 2018',
       endDate: '05 Nov 2018',
     });
 
-    const variables =
-    {
+    const variables = {
       endDate: '05 Nov 2018',
       startDate: '05 Nov 2018',
     };
 
     Calendarwrapper.instance().sendDate();
-    expect(calendarProps.sendDateData).toHaveBeenCalledWith(variables.startDate, variables.endDate);
+    expect(calendarProps.sendDateData).toHaveBeenCalledWith(
+      variables.startDate,
+      variables.endDate,
+    );
   });
   it('handles handleChange', () => {
     const mockStateDates = {
@@ -91,25 +96,28 @@ describe('it renders correctly', () => {
       endDate: 'Nov 26 2018',
     };
     const calendarProps = {
-      sendDateData: jest.fn(() => Promise.resolve(
-        mockStateDates.startDate,
-        mockStateDates.endDate,
-      )),
+      sendDateData: jest.fn(() =>
+        Promise.resolve(mockStateDates.startDate, mockStateDates.endDate),
+      ),
     };
-    const Calendarwrapper = shallow(<Calendar handleCloseModal={jest.fn()} {...calendarProps} />);
+    const Calendarwrapper = shallow(
+      <Calendar handleCloseModal={jest.fn()} {...calendarProps} />,
+    );
 
     Calendarwrapper.setState({
       startDate: '05 Nov 2018',
       endDate: '05 Nov 2018',
     });
 
-    const variables =
-    {
+    const variables = {
       endDate: '05 Nov 2018',
       startDate: '05 Nov 2018',
     };
 
     Calendarwrapper.instance().sendDate();
-    expect(calendarProps.sendDateData).toHaveBeenCalledWith(variables.startDate, variables.endDate);
+    expect(calendarProps.sendDateData).toHaveBeenCalledWith(
+      variables.startDate,
+      variables.endDate,
+    );
   });
 });

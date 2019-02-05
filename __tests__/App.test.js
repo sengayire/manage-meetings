@@ -44,7 +44,9 @@ describe('App component', () => {
 
   it('should not render Login if token is present but render Settings component', () => {
     // make a mock token
-    utilityFunctions.getItemFromLocalStorage.mockImplementation(() => 'MOCK_TOKEN');
+    utilityFunctions.getItemFromLocalStorage.mockImplementation(
+      () => 'MOCK_TOKEN',
+    );
     // mount wrapper
     const appWrapper = mount(wrapperCode);
     // test whether it goes to the settings page

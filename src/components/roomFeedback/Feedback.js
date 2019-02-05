@@ -7,8 +7,6 @@ import CheckboxSlide from '../commons/CheckboxSlide';
 import EditFeedback from './EditFeedback';
 import DeleteFeedback from './DeleteFeedback';
 
-/* istanbul ignore next */
-const onChange = () => {};
 /**
  * Feedback Component
  *
@@ -18,35 +16,56 @@ const onChange = () => {};
  */
 const Feedback = props =>
   props.feedback.map(
-    ({
-      question, startDate, duration, responses, type, status,
-    }, index) => (
+    (
+      {
+        question,
+        startDate,
+        endDate,
+        questionResponseCount,
+        questionType,
+        isActive,
+      },
+      index,
+    ) => (
       <tr key={index}>
         <td>
           <NavLink to={ROUTES.roomResponses} className="questions">
             {question}
           </NavLink>
         </td>
-        <td>{type}</td>
-        <td>{responses}</td>
-        <td>{startDate}</td>
-        <td>{duration}</td>
+        <td>{questionType}</td>
+        <td>{questionResponseCount}</td>
+        <td>{props.startDateFormatter(startDate)}</td>
+        <td>{props.durationFormatter(startDate, endDate)}</td>
         <td>
           <EditFeedback
             id="edit-modal"
             question={question}
-            type={type}
+            type={questionType}
             startDate={startDate}
-            duration={duration}
+            duration={props.durationFormatter(startDate, endDate)}
           />
           <DeleteFeedback id="delete-modal" question={question} />
         </td>
         <td>
-          <CheckboxSlide checked={status} onChange={onChange} />
+          <CheckboxSlide checked={isActive} onChange={props.onChange} />
         </td>
       </tr>
     ),
   );
+
+Feedback.defaultProps = {
+  feedback: [
+    {
+      question: 'There is no question so far',
+      questionType: 'Input',
+      startDate: '2019-02-21 23:42:43',
+      endDate: '2019-02-21 23:42:43',
+      questionResponseCount: 0,
+      isActive: false,
+    },
+  ],
+};
 
 Feedback.propTypes = {
   feedback: PropTypes.arrayOf(PropTypes.object).isRequired,

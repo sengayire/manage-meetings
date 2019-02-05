@@ -254,7 +254,7 @@ exports[`Tests for ResourceList Component renders correctly from memory 1`] = `
             ],
             "kind": "Document",
             "loc": Object {
-              "end": 261,
+              "end": 307,
               "start": 0,
             },
           },
@@ -556,7 +556,7 @@ exports[`Tests for ResourceList Component renders correctly from memory 1`] = `
               ],
               "kind": "Document",
               "loc": Object {
-                "end": 261,
+                "end": 307,
                 "start": 0,
               },
             },
@@ -1122,30 +1122,27 @@ query user ($email: String!) {
                 ],
                 "kind": "Document",
                 "loc": Object {
-                  "end": 261,
+                  "end": 307,
                   "source": Object {
                     "body": "
-query resources ($page: Int!, $perPage: Int!) {
-  allResources(
-    page: $page,
-    perPage: $perPage
-  ) {
-    resources{
-      id
-    name
-    quantity
-    roomId
-    room {
-      id
-      name
+  query resources($page: Int!, $perPage: Int!) {
+    allResources(page: $page, perPage: $perPage) {
+      resources {
+        id
+        name
+        quantity
+        roomId
+        room {
+          id
+          name
+        }
+      }
+      pages
+      hasNext
+      hasPrevious
+      queryTotal
     }
-    }
-  pages
-  hasNext
-  hasPrevious
-  queryTotal
   }
-}
 ",
                     "locationOffset": Object {
                       "column": 1,
@@ -1611,30 +1608,27 @@ query user ($email: String!) {
                     ],
                     "kind": "Document",
                     "loc": Object {
-                      "end": 261,
+                      "end": 307,
                       "source": Object {
                         "body": "
-query resources ($page: Int!, $perPage: Int!) {
-  allResources(
-    page: $page,
-    perPage: $perPage
-  ) {
-    resources{
-      id
-    name
-    quantity
-    roomId
-    room {
-      id
-      name
+  query resources($page: Int!, $perPage: Int!) {
+    allResources(page: $page, perPage: $perPage) {
+      resources {
+        id
+        name
+        quantity
+        roomId
+        room {
+          id
+          name
+        }
+      }
+      pages
+      hasNext
+      hasPrevious
+      queryTotal
     }
-    }
-  pages
-  hasNext
-  hasPrevious
-  queryTotal
   }
-}
 ",
                         "locationOffset": Object {
                           "column": 1,
@@ -2266,30 +2260,27 @@ query user ($email: String!) {
                 ],
                 "kind": "Document",
                 "loc": Object {
-                  "end": 261,
+                  "end": 307,
                   "source": Object {
                     "body": "
-query resources ($page: Int!, $perPage: Int!) {
-  allResources(
-    page: $page,
-    perPage: $perPage
-  ) {
-    resources{
-      id
-    name
-    quantity
-    roomId
-    room {
-      id
-      name
+  query resources($page: Int!, $perPage: Int!) {
+    allResources(page: $page, perPage: $perPage) {
+      resources {
+        id
+        name
+        quantity
+        roomId
+        room {
+          id
+          name
+        }
+      }
+      pages
+      hasNext
+      hasPrevious
+      queryTotal
     }
-    }
-  pages
-  hasNext
-  hasPrevious
-  queryTotal
   }
-}
 ",
                     "locationOffset": Object {
                       "column": 1,
@@ -2579,7 +2570,7 @@ query resources ($page: Int!, $perPage: Int!) {
                     ],
                     "kind": "Document",
                     "loc": Object {
-                      "end": 261,
+                      "end": 307,
                       "start": 0,
                     },
                   },
@@ -2899,30 +2890,27 @@ query resources ($page: Int!, $perPage: Int!) {
                   ],
                   "kind": "Document",
                   "loc": Object {
-                    "end": 261,
+                    "end": 307,
                     "source": Object {
                       "body": "
-query resources ($page: Int!, $perPage: Int!) {
-  allResources(
-    page: $page,
-    perPage: $perPage
-  ) {
-    resources{
-      id
-    name
-    quantity
-    roomId
-    room {
-      id
-      name
+  query resources($page: Int!, $perPage: Int!) {
+    allResources(page: $page, perPage: $perPage) {
+      resources {
+        id
+        name
+        quantity
+        roomId
+        room {
+          id
+          name
+        }
+      }
+      pages
+      hasNext
+      hasPrevious
+      queryTotal
     }
-    }
-  pages
-  hasNext
-  hasPrevious
-  queryTotal
   }
-}
 ",
                       "locationOffset": Object {
                         "column": 1,
@@ -3569,30 +3557,27 @@ query user ($email: String!) {
                   ],
                   "kind": "Document",
                   "loc": Object {
-                    "end": 261,
+                    "end": 307,
                     "source": Object {
                       "body": "
-query resources ($page: Int!, $perPage: Int!) {
-  allResources(
-    page: $page,
-    perPage: $perPage
-  ) {
-    resources{
-      id
-    name
-    quantity
-    roomId
-    room {
-      id
-      name
+  query resources($page: Int!, $perPage: Int!) {
+    allResources(page: $page, perPage: $perPage) {
+      resources {
+        id
+        name
+        quantity
+        roomId
+        room {
+          id
+          name
+        }
+      }
+      pages
+      hasNext
+      hasPrevious
+      queryTotal
     }
-    }
-  pages
-  hasNext
-  hasPrevious
-  queryTotal
   }
-}
 ",
                       "locationOffset": Object {
                         "column": 1,
@@ -3867,7 +3852,7 @@ query resources ($page: Int!, $perPage: Int!) {
             ],
             "kind": "Document",
             "loc": Object {
-              "end": 261,
+              "end": 307,
               "start": 0,
             },
           }

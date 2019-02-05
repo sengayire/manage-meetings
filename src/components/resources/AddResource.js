@@ -113,11 +113,15 @@ export class AddResource extends React.Component {
     this.setState({
       isLoading: !this.state.isLoading,
     });
-  }
+  };
 
   render() {
     const {
-      amenity, closeModal, resourceQuantity, room, isLoading,
+      amenity,
+      closeModal,
+      resourceQuantity,
+      room,
+      isLoading,
     } = this.state;
     const { allRooms } = this.props.data;
 

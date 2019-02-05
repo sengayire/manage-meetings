@@ -464,7 +464,7 @@ exports[`App component should not render Login if token is present but render Se
                 ],
                 "kind": "Document",
                 "loc": Object {
-                  "end": 73,
+                  "end": 92,
                   "start": 0,
                 },
               },
@@ -1208,19 +1208,18 @@ exports[`App component should not render Login if token is present but render Se
                 ],
                 "kind": "Document",
                 "loc": Object {
-                  "end": 73,
+                  "end": 92,
                   "source": Object {
                     "body": "
-{
-  allRooms{
-    rooms{
-      id
-      name
-      capacity
+  {
+    allRooms {
+      rooms {
+        id
+        name
+        capacity
+      }
     }
-  }
-}
-",
+  }",
                     "locationOffset": Object {
                       "column": 1,
                       "line": 1,
@@ -2462,19 +2461,18 @@ query user ($email: String!) {
                     ],
                     "kind": "Document",
                     "loc": Object {
-                      "end": 73,
+                      "end": 92,
                       "source": Object {
                         "body": "
-{
-  allRooms{
-    rooms{
-      id
-      name
-      capacity
+  {
+    allRooms {
+      rooms {
+        id
+        name
+        capacity
+      }
     }
-  }
-}
-",
+  }",
                         "locationOffset": Object {
                           "column": 1,
                           "line": 1,
@@ -4057,19 +4055,18 @@ query user ($email: String!) {
                   ],
                   "kind": "Document",
                   "loc": Object {
-                    "end": 73,
+                    "end": 92,
                     "source": Object {
                       "body": "
-{
-  allRooms{
-    rooms{
-      id
-      name
-      capacity
+  {
+    allRooms {
+      rooms {
+        id
+        name
+        capacity
+      }
     }
-  }
-}
-",
+  }",
                       "locationOffset": Object {
                         "column": 1,
                         "line": 1,
@@ -4191,7 +4188,7 @@ query user ($email: String!) {
                       ],
                       "kind": "Document",
                       "loc": Object {
-                        "end": 73,
+                        "end": 92,
                         "start": 0,
                       },
                     },
@@ -6437,19 +6434,18 @@ query user ($email: String!) {
                   ],
                   "kind": "Document",
                   "loc": Object {
-                    "end": 73,
+                    "end": 92,
                     "source": Object {
                       "body": "
-{
-  allRooms{
-    rooms{
-      id
-      name
-      capacity
+  {
+    allRooms {
+      rooms {
+        id
+        name
+        capacity
+      }
     }
-  }
-}
-",
+  }",
                       "locationOffset": Object {
                         "column": 1,
                         "line": 1,
@@ -7594,19 +7590,18 @@ query user ($email: String!) {
                   ],
                   "kind": "Document",
                   "loc": Object {
-                    "end": 73,
+                    "end": 92,
                     "source": Object {
                       "body": "
-{
-  allRooms{
-    rooms{
-      id
-      name
-      capacity
+  {
+    allRooms {
+      rooms {
+        id
+        name
+        capacity
+      }
     }
-  }
-}
-",
+  }",
                       "locationOffset": Object {
                         "column": 1,
                         "line": 1,
@@ -10603,7 +10598,7 @@ query user ($email: String!) {
                                                     ],
                                                     "kind": "Document",
                                                     "loc": Object {
-                                                      "end": 73,
+                                                      "end": 92,
                                                       "start": 0,
                                                     },
                                                   }

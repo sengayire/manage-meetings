@@ -65,7 +65,7 @@ exports[`AddQuestion component should be rendered without errors 1`] = `
             name="startTime"
             onChange={[Function]}
             type="time"
-            value="14:02"
+            value="20:02"
           />
         </div>
         <div
@@ -84,7 +84,7 @@ exports[`AddQuestion component should be rendered without errors 1`] = `
             name="endTime"
             onChange={[Function]}
             type="time"
-            value="15:02"
+            value="21:02"
           />
         </div>
       </div>

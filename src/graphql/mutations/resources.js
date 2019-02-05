@@ -1,13 +1,17 @@
 import gql from 'graphql-tag';
 
 export const EDIT_RESOURCE_MUTATION = gql`
-mutation updateRoomResource($resourceId: Int!,$name:String!,$roomId:Int!){
-    updateRoomResource(resourceId: $resourceId,name:$name,roomId:$roomId){
+  mutation updateRoomResource(
+    $resourceId: Int!
+    $name: String!
+    $roomId: Int!
+  ) {
+    updateRoomResource(resourceId: $resourceId, name: $name, roomId: $roomId) {
       resource {
-      name
+        name
+      }
     }
   }
-}
 `;
 
 export const DELETE_RESOURCE_MUTATION = gql`
