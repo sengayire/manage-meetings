@@ -4,6 +4,11 @@ import { AddFloorMenu } from '../../../src/components/floors/AddFloorMenu';
 
 describe('Test the AddFloor component', () => {
   const props = {
+    user: {
+      user: {
+        location: 'Nairobi',
+      },
+    },
     allBlocks: {
       allBlocks: [
         {

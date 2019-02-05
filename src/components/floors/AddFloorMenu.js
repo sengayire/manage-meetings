@@ -5,6 +5,12 @@ import { IconMenu, MenuItem, MenuDivider } from 'react-toolbox/lib/menu';
 import AddFloorComponent from './AddFloor';
 import Spinner from '../commons/Spinner';
 import GET_ALL_BLOCKS from '../../graphql/queries/Blocks';
+import { decodeTokenAndGetUserData } from '../../utils/Cookie';
+import { GET_USER_QUERY } from '../../graphql/queries/People';
+
+/* This gets the token from the localstorage and select the user
+email to pass as a parameter to the query being sent */
+const { UserInfo: userData } = decodeTokenAndGetUserData() || {};
 
 /**
  * Renders the add office button
@@ -45,10 +51,12 @@ export class AddFloorMenu extends React.Component {
  */
   getBlocks = () => {
     const { loading, allBlocks, error } = this.props.allBlocks;
+    const { user: { user } } = this.props;
     if (loading) return <Spinner />;
     if (error) return <div>{error.message}</div>;
+    const allBlocksList = allBlocks.filter(block => block.offices.location.name === user.location);
     return (
-      allBlocks.map(block => (
+      allBlocksList.map(block => (
         <MenuItem key={block.id}>
           <AddFloorComponent
             theOffice={block.name}
@@ -73,8 +81,26 @@ export class AddFloorMenu extends React.Component {
   }
 }
 
+AddFloorMenu.propTypes = {
+  user: PropTypes.shape({
+    location: PropTypes.string,
+  }),
+};
+
+AddFloorMenu.defaultProps = {
+  user: { location: 'Nairobi' },
+};
+
 export default compose(
   graphql(GET_ALL_BLOCKS, {
     name: 'allBlocks',
+  }),
+  graphql(GET_USER_QUERY, {
+    name: 'user',
+    options: /* istanbul ignore next */ () => ({
+      variables: {
+        email: userData ? userData.email : 'test.email@gmail.com',
+      },
+    }),
   }),
 )(AddFloorMenu);

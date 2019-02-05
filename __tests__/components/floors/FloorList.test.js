@@ -6,6 +6,7 @@ import wait from 'waait';
 import defaultUserRole from '../../../src/fixtures/user';
 import FloorLists, { FloorList } from '../../../src/components/floors/FloorList';
 import { GET_PAGINATED_FLOORS_QUERY } from '../../../src/graphql/queries/Floors';
+import { GET_USER_QUERY } from '../../../src/graphql/queries/People';
 
 describe('FloorList Component', () => {
   const floorListMocks = {
@@ -59,6 +60,24 @@ describe('FloorList Component', () => {
       },
     },
   };
+  const userMock = {
+    request: {
+      query: GET_USER_QUERY,
+      name: 'user',
+      variables: {
+        email: 'test.email@andela.com',
+      },
+    },
+    result: {
+      user: {
+        user: {
+          location: 'Nairobi',
+          loading: false,
+        },
+      },
+    },
+  };
+
   const initProps = {
     data: {
       fetchMore: jest.fn(() => Promise.resolve()),
@@ -74,8 +93,8 @@ describe('FloorList Component', () => {
     user: {},
   };
   const wrapper = mount(
-    <MockedProvider mocks={[floorListMocks]} addTypename={false}>
-      <FloorLists user={defaultUserRole} {...initProps} />
+    <MockedProvider mocks={[floorListMocks, userMock]} addTypename={false}>
+      <FloorLists {...defaultUserRole} {...initProps} />
     </MockedProvider>,
   );
 

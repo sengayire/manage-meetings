@@ -60,7 +60,6 @@ exports[`Test the AddFloor component should render correctly 1`] = `
           },
         ]
       }
-      currentPage={1}
       officeId={1}
       refetch={[MockFunction]}
       theOffice="Kampala"
