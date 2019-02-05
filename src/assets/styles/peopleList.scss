@@ -219,3 +219,13 @@
     }
   }
 }
+
+.dropdown-caret button {
+  margin-top: -1px !important;
+  background-color: #f4f8f9 !important;
+  color: $color-primary !important;
+}
+
+.dropdown-menu {
+  margin-left: -9px !important;
+}

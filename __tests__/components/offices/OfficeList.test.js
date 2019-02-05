@@ -122,4 +122,15 @@ describe('Tests for SettingOffices', () => {
     wrapper.instance().handleData();
     expect(wrapper.state('isFetching')).toBe(true);
   });
+
+  it('should render the DataNotFound component when there is no data in the database', async () => {
+    const officeProps = {
+      data: {
+        error: { message: 'GraphQL error: No more offices' },
+        fetchMore: jest.fn(),
+      },
+    };
+    const component = shallow(<OfficeList {...officeProps} />);
+    expect(component.find('DataNotFound')).toHaveLength(1);
+  });
 });

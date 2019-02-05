@@ -19,7 +19,6 @@ export const BlocksList = (props) => {
   const { allOffices, user, allBlocks } = props;
   const error = allOffices.error || allBlocks.error || user.error;
   const loading = allOffices.loading || allBlocks.loading || user.loading;
-
   if (error && error.message === 'GraphQL error: No more offices') {
     return <DataNotFound />;
   } else if (error) { return (<div>{error.message}</div>); }

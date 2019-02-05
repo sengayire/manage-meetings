@@ -94,4 +94,30 @@ describe('FloorList Component', () => {
     expect(component.state('dataFetched')).toBe(true);
     expect(component.state('isFetching')).toBe(true);
   });
+
+  it('should render the DataNotFound component when there is no data in the database', () => {
+    const props = {
+      user: defaultUserRole,
+      data: {
+        error: { message: 'GraphQL error: No more resources' },
+        fetchMore: jest.fn(),
+        refetch: jest.fn(),
+      },
+    };
+    const component = shallow(<FloorList user={defaultUserRole} {...props} />);
+    expect(component.find('DataNotFound')).toHaveLength(1);
+  });
+
+  it('should render an error incase it occurs', () => {
+    const props = {
+      user: defaultUserRole,
+      data: {
+        error: { message: 'An error has occurred' },
+        fetchMore: jest.fn(),
+        refetch: jest.fn(),
+      },
+    };
+    const component = shallow(<FloorList user={defaultUserRole} {...props} />);
+    expect(component.find('div').text()).toEqual('An error has occurred');
+  });
 });

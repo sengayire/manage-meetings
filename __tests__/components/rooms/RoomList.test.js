@@ -200,4 +200,37 @@ describe('RoomList Component', () => {
     expect(wrapper.find('RoomsList').props().locations.error).toBeTruthy();
     expect(wrapper.find('div').length).toBe(1);
   });
+
+  it('should render the DataNotFound component when there is no data in the database', () => {
+    const props = {
+      data: {
+        error: { message: 'GraphQL error: No more resources' },
+        fetchMore: jest.fn(() => Promise.resolve()),
+        allRooms: {
+          rooms: [],
+        },
+        variables: {
+          page: 1,
+          perPage: 5,
+        },
+      },
+      allRooms: {
+        rooms: [],
+      },
+      locations: {
+        allLocations: [
+          {
+            id: 2,
+            name: 'Kampala',
+          },
+        ],
+      },
+      getRoomByName: {
+        fetchMore: jest.fn(() => Promise.resolve()),
+        updateQuery: jest.fn(),
+      },
+    };
+    const component = shallow(<RoomsList {...props} />);
+    expect(component.find('DataNotFound')).toBeTruthy();
+  });
 });

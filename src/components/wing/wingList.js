@@ -25,7 +25,8 @@ const { UserInfo: userData } = decodeTokenAndGetUserData() || {};
  * @returns {JSX}
  */
 export const WingList = (props) => {
-  const { allWings, loading } = props.allWings;
+  const { allWings, loading, error } = props.allWings;
+  if (error) return (<div>{error.message}</div>);
   return (
     /* istanbul ignore next */
     loading ? (

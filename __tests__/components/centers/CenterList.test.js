@@ -48,4 +48,14 @@ describe('Tests for CenterList', () => {
     wrapper = shallow(<CenterList data={props} user={{}} />);
     expect(wrapper.props().user).toBeFalsy();
   });
+
+  it('should render an error incase it occurs', () => {
+    const props = {
+      allLocations: [],
+      loading: false,
+      error: { message: 'An error has occurred' },
+    };
+    wrapper = shallow(<CenterList data={props} user={{}} />);
+    expect(wrapper.find('div').text()).toBe('An error has occurred');
+  });
 });

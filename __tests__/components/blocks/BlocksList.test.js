@@ -68,4 +68,24 @@ describe('blockslist Component', () => {
     );
     expect(blocksList.props().user).toBeFalsy();
   });
+
+  it('should render the DataNotFound component when there is no data in the database', () => {
+    const props = {
+      allOffices: {
+        laoding: false,
+        error: { message: 'GraphQL error: No more offices' },
+      },
+      allBlocks: {
+        laoding: false,
+        error: { message: 'error' },
+      },
+      user: {
+        laoding: false,
+        error: { message: 'error' },
+      },
+    };
+    const blocksList = shallow(<ListOfBlocks {...props} />,
+    );
+    expect(blocksList.find('DataNotFound')).toHaveLength(1);
+  });
 });

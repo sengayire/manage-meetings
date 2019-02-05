@@ -270,4 +270,24 @@ describe('PeopleList Component', () => {
     shallowWrapper.instance().fetchPeople(1, 1, 'location', '2');
     expect(initProps.people.fetchMore).toHaveBeenCalledTimes(2);
   });
+
+  it('should render the DataNotFound component when there is no data in the database', () => {
+    const props = {
+      people: {
+        users: allPeople.data.users,
+        fetchMore: jest.fn(() => Promise.resolve()),
+        refetch: jest.fn(),
+        error: { message: 'GraphQL error: No users found' },
+      },
+      locations: {
+        allLocations: {},
+      },
+      roles: {
+        roles: [],
+      },
+      editRole: jest.fn(),
+    };
+    const component = shallow(<PeopleList {...props} />);
+    expect(component.find('DataNotFound')).toHaveLength(1);
+  });
 });

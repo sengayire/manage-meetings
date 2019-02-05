@@ -24,9 +24,11 @@ describe('Tests for ResourceList Component', () => {
   it('renders correctly from memory', () => {
     expect(mountWrapper).toMatchSnapshot();
   });
+
   it('renders the loading screen', () => {
     expect(mountWrapper.find('ResourceList').props().data.loading).toBe(true);
   });
+
   it('should render an error screen', async () => {
     const errorWrapper = (
       <MockedProvider mocks={[{ request, error }]} addTypename>
@@ -41,12 +43,14 @@ describe('Tests for ResourceList Component', () => {
     expect(mountErrorWrapper.find('ResourceList').props().data.error).toBeTruthy();
     expect(mountErrorWrapper.find('ResourceList').props().data.error.networkError).toBe(error);
   });
+
   it('should have all data passed as props', async () => {
     await new Promise(resolve => setTimeout(resolve));
     mountWrapper.update();
     expect(mountWrapper.find('ResourceList')).toHaveLength(1);
     expect(mountWrapper.find('ResourceList').prop('data').allResources.resources.length).toEqual(allResources.data.allResources.resources.length);
   });
+
   it('should handle handleData function', () => {
     const props = {
       data: {
@@ -60,5 +64,17 @@ describe('Tests for ResourceList Component', () => {
     };
     const wrapperCode = shallow(<ResourceList {...props} />);
     expect(wrapperCode.instance().handleData(5, 1));
+  });
+
+  it('should render the DataNotFound component when there is no data in the database', () => {
+    const props = {
+      data: {
+        loading: false,
+        error: { message: 'GraphQL error: No more resources' },
+        fetchMore: jest.fn(() => Promise.resolve()),
+      },
+    };
+    const component = shallow(<ResourceList {...props} />);
+    expect(component.find('DataNotFound')).toHaveLength(1);
   });
 });
