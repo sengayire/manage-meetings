@@ -1,8 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Location from '../../../src/components/locations/Location';
+import Center from '../../../src/components/centers/Center';
 
-describe('Location Component', () => {
+describe('Center Component', () => {
   const location = {
     id: '1',
     name: 'Kampala',
@@ -10,7 +10,7 @@ describe('Location Component', () => {
     timeZone: 'UTC',
     abbreviation: 'KLA',
   };
-  const roomWrapper = shallow(<Location location={location} />);
+  const roomWrapper = shallow(<Center location={location} />);
 
   it('renders the correct content', () => {
     const td = roomWrapper.find('td');

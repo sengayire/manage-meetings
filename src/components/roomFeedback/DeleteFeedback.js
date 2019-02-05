@@ -67,7 +67,7 @@ class DeleteFeedback extends Component {
             withCancel
             onClickCancel={this.handleCloseModal}
             isLoading={false}
-            actionButtonText="DELETE FLOOR"
+            actionButtonText="DELETE QUESTION"
             onClickSubmit={this.handleDeleteFeedback}
           />
         </div>

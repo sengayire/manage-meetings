@@ -64,7 +64,7 @@ class TopNav extends React.Component {
               className={activeMenu === item.menu ? 'active' : ''}
             >
               <Link
-                to={item.menu === 'Settings' ? ROUTES.settingsLocations : item.route}
+                to={item.menu === 'Settings' ? ROUTES.settingsCenters : item.route}
                 onClick={this.handleClick(item.menu)}
                 className="converge-link"
               >

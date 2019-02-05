@@ -21,7 +21,7 @@ query{
   }
 `;
 
-const GET_ALL_LOCATIONS = gql`
+const GET_ALL_CENTERS = gql`
 query{
   allLocations {
     id
@@ -33,4 +33,4 @@ query{
  }
 `;
 
-export { GET_NAIROBI_QUERY as default, GET_ALL_LOCATIONS };
+export { GET_NAIROBI_QUERY as default, GET_ALL_CENTERS };

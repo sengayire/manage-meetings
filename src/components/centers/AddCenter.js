@@ -5,28 +5,22 @@ import PropTypes from 'prop-types';
 import toastr from 'toastr';
 import { Input } from '../commons';
 import ActionButtons from '../commons/ActionButtons';
-import ADD_LOCATION_MUTATION from '../../graphql/mutations/locations';
-import MrmModal from '../../components/commons/Modal';
+import ADD_CENTER_MUTATION from '../../graphql/mutations/centers';
+import MrmModal from '../commons/Modal';
 import countries from '../../fixtures/countries';
 import notification from '../../utils/notification';
-import SelectImage from '../commons/SelectImage';
-import getThumbnailName from '../helpers/thumbnailName';
-import getImageUrl from '../helpers/ImageUpload';
 import { GET_USER_QUERY } from '../../graphql/queries/People';
 import { decodeTokenAndGetUserData } from '../../utils/Cookie';
 import allCites from '../../fixtures/cities';
 
-export class AddLocation extends Component {
+export class AddCenter extends Component {
   static propTypes = {
-    addLocation: PropTypes.func.isRequired,
+    addCenter: PropTypes.func.isRequired,
   };
 
   state = {
-    locationName: '',
+    centerName: '',
     abbreviation: '',
-    imageUrl: '',
-    uploading: false,
-    thumbnailName: 'Upload a thumbnail',
     closeModal: false,
   };
 
@@ -36,9 +30,7 @@ export class AddLocation extends Component {
    */
   handleCloseModal = () => {
     this.setState({
-      imageUrl: '',
       closeModal: true,
-      thumbnailName: 'Upload a thumbnail',
     });
   };
 
@@ -48,26 +40,8 @@ export class AddLocation extends Component {
    * @returns {void}
    */
   handleInputChange = (event) => {
-    const { name, value, files } = event.target;
-    let thumbnailName;
-
-    /* istanbul ignore next */
-    if (name === 'selectImage') {
-      thumbnailName = getThumbnailName(files);
-      const reader = new FileReader();
-      const file = files[0];
-
-      reader.onloadend = () => {
-        this.setState({
-          file,
-          thumbnailName,
-          imageUrl: reader.result,
-        });
-      };
-      if (file) reader.readAsDataURL(file);
-    } else {
-      this.setState({ [name]: value });
-    }
+    const { name, value } = event.target;
+    this.setState({ [name]: value });
   };
 
   /**
@@ -79,14 +53,14 @@ export class AddLocation extends Component {
   };
 
   /**
-   *1. submits location data to the backend api
+   *1. submits center data to the backend api
    *2. notifies the user about the response from the request
    *
    * @returns {void}
    */
-  createLocation = () => {
+  createCenter = () => {
     const {
-      imageUrl, locationName, abbreviation,
+      centerName, abbreviation,
     } = this.state;
 
     const { user } = this.props;
@@ -101,11 +75,10 @@ export class AddLocation extends Component {
 
     const { timeZone, name } = selectedCountry;
     this.props
-      .addLocation({
+      .addCenter({
         variables: {
-          imageUrl,
           country: name,
-          name: locationName,
+          name: centerName,
           timeZone,
           abbreviation,
         },
@@ -114,79 +87,58 @@ export class AddLocation extends Component {
         notification(
           toastr,
           'success',
-          `${locationName} location has been added successfully`,
+          `${centerName} center has been added successfully`,
         )();
         this.props.refetch();
       })
       .catch((err) => {
         notification(toastr, 'error', err.graphQLErrors[0].message)();
       });
-    this.setState({ uploading: false });
     this.handleCloseModal();
   };
 
   /**
    *1. validates input
-   *2. uploads image in case ImageUrl is not empty
-   *3. calls createLocation method after validation to perform location creation
+   *2. calls createCenter method after validation to perform center creation
    *
    * @param {object} event
    * @returns {void}
    */
-  handleAddLocation = (event) => {
+  handleAddCenter = (event) => {
     event.preventDefault();
     const {
-      imageUrl, locationName, abbreviation,
+      centerName, abbreviation,
     } = this.state;
-    if (!locationName) {
-      notification(toastr, 'error', 'location name is required')();
+    if (!centerName) {
+      notification(toastr, 'error', 'center name is required')();
     } else if (!abbreviation) {
       notification(toastr, 'error', 'abbreviation field is required')();
-    } else
-    /* istanbul ignore next */
-    if (imageUrl) {
-      this.setState({ uploading: true });
-      getImageUrl('upload/', this.state.file).then((url) => {
-        if (typeof url === 'string') {
-          this.setState({
-            imageUrl: url,
-          });
-          this.createLocation();
-        }
-      });
     } else {
-      this.setState({ uploading: true });
-      this.createLocation();
+      this.createCenter();
     }
   };
 
   render() {
     const {
-      locationName, closeModal,
-      abbreviation, imageUrl, thumbnailName, uploading,
+      centerName, closeModal,
+      abbreviation,
     } = this.state;
-
     return (
       <MrmModal
-        title="ADD LOCATION"
-        buttonText="Add Location"
+        title="ADD CENTER"
+        buttonText="Add Center"
         closeModal={closeModal}
         handleCloseRequest={this.handleModalStateChange}
         className="add-office-modal"
         modalButton="add-button"
       >
         <form className="modal-form">
-          <SelectImage
-            onChange={this.handleInputChange}
-            imageUrl={imageUrl}
-            thumbnailName={thumbnailName}
-          />
           <Input
-            labelName="Location Name"
-            name="locationName"
-            value={locationName}
-            placeholder="Enter location name"
-            id="locationName"
+            labelName="Center Name"
+            name="centerName"
+            value={centerName}
+            placeholder="Enter center name"
+            id="centerName"
             onChange={this.handleInputChange}
           />
           <Input
@@ -200,9 +152,8 @@ export class AddLocation extends Component {
           <ActionButtons
             withCancel
             onClickCancel={this.handleCloseModal}
-            actionButtonText="ADD LOCATION"
-            isLoading={uploading}
-            onClickSubmit={this.handleAddLocation}
+            actionButtonText="ADD CENTER"
+            onClickSubmit={this.handleAddCenter}
           />
         </form>
       </MrmModal>
@@ -210,7 +161,7 @@ export class AddLocation extends Component {
   }
 }
 
-AddLocation.propTypes = {
+AddCenter.propTypes = {
   refetch: PropTypes.func.isRequired,
   user: PropTypes.shape({
     user: PropTypes.object,
@@ -220,7 +171,7 @@ AddLocation.propTypes = {
 const { UserInfo: userData } = decodeTokenAndGetUserData() || {};
 
 export default compose(
-  graphql(ADD_LOCATION_MUTATION, { name: 'addLocation' }),
+  graphql(ADD_CENTER_MUTATION, { name: 'addCenter' }),
   graphql(GET_USER_QUERY, {
     name: 'user',
     options: /* istanbul ignore next */ () => ({
@@ -232,4 +183,4 @@ export default compose(
       },
     }),
   }),
-)(AddLocation);
+)(AddCenter);

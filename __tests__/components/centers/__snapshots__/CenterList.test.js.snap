@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Tests for LocationsList renders correctly from memory 1`] = `
+exports[`Tests for CenterList renders correctly from memory 1`] = `
 <div
   className="settings-locations"
 >
@@ -8,9 +8,9 @@ exports[`Tests for LocationsList renders correctly from memory 1`] = `
     className="settings-locations-control"
   >
     <MenuTitle
-      title="Locations"
+      title="Centers"
     />
-    <Apollo(Apollo(AddLocation)) />
+    <Apollo(Apollo(AddCenter)) />
   </div>
   <div
     className="settings-locations-list"
@@ -22,14 +22,14 @@ exports[`Tests for LocationsList renders correctly from memory 1`] = `
       <TableHead
         titles={
           Array [
-            "Location",
+            "Center",
             "Country",
-            "abbreviation",
+            "Abbreviation",
           ]
         }
       />
       <tbody>
-        <Location
+        <Center
           key="1"
           location={
             Object {

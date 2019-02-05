@@ -2,18 +2,18 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql, compose } from 'react-apollo';
 import MenuTitle from '../commons/MenuTitle';
-import AddLocation from './AddLocation'; // eslint-disable-line
-import { GET_ALL_LOCATIONS } from '../../graphql/queries/locations';
+import AddCenter from './AddCenter'; // eslint-disable-line
+import { GET_ALL_CENTERS } from '../../graphql/queries/centers';
 import ColGroup from '../helpers/ColGroup';
 import TableHead from '../helpers/TableHead';
-import Location from './Location';
+import Location from './Center';
 import Spinner from '../commons/Spinner';
 import { GET_USER_ROLE } from '../../graphql/queries/People';
 import { decodeTokenAndGetUserData } from '../../utils/Cookie';
 import { saveItemInLocalStorage } from '../../utils/Utilities';
 import DataNotFound from '../commons/DataNotFound';
 
-export const LocationsList = (props) => {
+export const CenterList = (props) => {
   const {
     loading, refetch, allLocations, error,
   } = props.data;
@@ -29,8 +29,8 @@ export const LocationsList = (props) => {
   return (
     <div className="settings-locations">
       <div className="settings-locations-control">
-        <MenuTitle title="Locations" />
-        <AddLocation refetch={refetch} />
+        <MenuTitle title="Centers" />
+        <AddCenter refetch={refetch} />
       </div>
       <div className="settings-locations-list">
         {
@@ -38,7 +38,7 @@ export const LocationsList = (props) => {
           ? <DataNotFound /> :
           <table>
             <ColGroup />
-            <TableHead titles={['Location', 'Country', 'abbreviation']} />
+            <TableHead titles={['Center', 'Country', 'Abbreviation']} />
             <tbody>
               {
                 allLocations.map(location => (
@@ -56,7 +56,7 @@ export const LocationsList = (props) => {
   );
 };
 
-LocationsList.propTypes = {
+CenterList.propTypes = {
   data: PropTypes.shape({
     loading: PropTypes.bool,
     error: PropTypes.object,
@@ -68,7 +68,7 @@ LocationsList.propTypes = {
   }).isRequired,
 };
 
-LocationsList.defaultProps = {
+CenterList.defaultProps = {
   data: {
     loading: true,
   },
@@ -77,7 +77,7 @@ LocationsList.defaultProps = {
 const { UserInfo: userData } = decodeTokenAndGetUserData() || {};
 
 export default compose(
-  graphql(GET_ALL_LOCATIONS),
+  graphql(GET_ALL_CENTERS),
   graphql(GET_USER_ROLE, {
     name: 'user',
     options: /* istanbul ignore next */ () => ({
@@ -89,4 +89,4 @@ export default compose(
       },
     }),
   }),
-)(LocationsList);
+)(CenterList);

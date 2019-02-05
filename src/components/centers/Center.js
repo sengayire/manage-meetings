@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
  * @param {object} props
  * @returns {JSX}
  */
-const Location = (props) => {
+const Center = (props) => {
   const { name, country, abbreviation } = props.location;
 
   return (
@@ -17,7 +17,7 @@ const Location = (props) => {
   );
 };
 
-Location.propTypes = {
+Center.propTypes = {
   location: PropTypes.shape({
     id: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
@@ -25,4 +25,4 @@ Location.propTypes = {
   }).isRequired,
 };
 
-export default Location;
+export default Center;

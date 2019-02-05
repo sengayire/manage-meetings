@@ -22,7 +22,7 @@ exports[`DeleteFeedback Component renders correctly 1`] = `
       This cannot be undone
     </p>
     <ActionButtons
-      actionButtonText="DELETE FLOOR"
+      actionButtonText="DELETE QUESTION"
       cancelButtonText="CANCEL"
       isLoading={false}
       onClickCancel={[Function]}

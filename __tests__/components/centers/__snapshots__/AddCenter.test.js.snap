@@ -1,32 +1,27 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AddLocation Component renders AddLocation Component 1`] = `
+exports[`AddCenter Component renders AddCenter Component 1`] = `
 <MrmModal
-  buttonText="Add Location"
+  buttonText="Add Center"
   className="add-office-modal"
   closeModal={false}
   handleCloseRequest={[Function]}
   modalButton="add-button"
   modalButtonClassName="button"
-  title="ADD LOCATION"
+  title="ADD CENTER"
 >
   <form
     className="modal-form"
   >
-    <SelectImage
-      imageUrl=""
-      onChange={[Function]}
-      thumbnailName="Upload a thumbnail"
-    />
     <Input
       controlsClass=""
-      id="locationName"
+      id="centerName"
       inputClass="mrm-input default-input"
       labelClass="input1"
-      labelName="Location Name"
-      name="locationName"
+      labelName="Center Name"
+      name="centerName"
       onChange={[Function]}
-      placeholder="Enter location name"
+      placeholder="Enter center name"
       type="text"
       value=""
     />
@@ -43,7 +38,7 @@ exports[`AddLocation Component renders AddLocation Component 1`] = `
       value=""
     />
     <ActionButtons
-      actionButtonText="ADD LOCATION"
+      actionButtonText="ADD CENTER"
       cancelButtonText="CANCEL"
       isLoading={false}
       onClickCancel={[Function]}

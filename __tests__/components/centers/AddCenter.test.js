@@ -1,26 +1,26 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { AddLocation } from '../../../src/components/locations/AddLocation';
+import { AddCenter } from '../../../src/components/centers/AddCenter';
 
-describe('AddLocation Component', () => {
+describe('AddCenter Component', () => {
   const initProps = {
-    addLocation: jest.fn(),
+    addCenter: jest.fn(),
     refetch: jest.fn(),
     user: { user: { location: 'kampala' } },
   };
-  let wrapper = shallow(<AddLocation {...initProps} />);
+  let wrapper = shallow(<AddCenter {...initProps} />);
   const preventDefault = jest.fn();
 
-  it('renders AddLocation Component', () => {
+  it('renders AddCenter Component', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('should have empty locationName value', () => {
-    expect(wrapper.state().locationName).toEqual('');
+  it('should have empty centerName value', () => {
+    expect(wrapper.state().centerName).toEqual('');
   });
 
   it('includes title prop', () => {
-    expect(wrapper.prop('title')).toEqual('ADD LOCATION');
+    expect(wrapper.prop('title')).toEqual('ADD CENTER');
   });
 
   it('should have a form', () => {
@@ -28,9 +28,9 @@ describe('AddLocation Component', () => {
     expect(modalForm).toHaveLength(1);
   });
 
-  it('should change locationName to KAMPALA', () => {
-    wrapper.find('#locationName').simulate('change', { target: { name: 'locationName', value: 'KAMPALA' } });
-    expect(wrapper.find('#locationName').props().value).toBe('KAMPALA');
+  it('should change centerName to KAMPALA', () => {
+    wrapper.find('#centerName').simulate('change', { target: { name: 'centerName', value: 'KAMPALA' } });
+    expect(wrapper.find('#centerName').props().value).toBe('KAMPALA');
   });
 
   it('should close modal', () => {
@@ -43,75 +43,73 @@ describe('AddLocation Component', () => {
     expect(wrapper.state('closeModal')).toEqual(false);
   });
 
-  it('should not close modal when locationName validation fails', () => {
+  it('should not close modal when centerName validation fails', () => {
     const modalForm = wrapper.find('form');
-    wrapper.setState({ locationName: '' });
+    wrapper.setState({ centerName: '' });
     modalForm.simulate('submit', {
       preventDefault: () => {
       },
     });
-    wrapper.instance().handleAddLocation({ preventDefault });
+    wrapper.instance().handleAddCenter({ preventDefault });
     expect(wrapper.state('closeModal')).toEqual(false);
   });
 
   it('should not close modal when country validation fails', () => {
-    wrapper.setState({ locationName: 'Kampala', country: '' });
-    wrapper.instance().handleAddLocation({ preventDefault });
+    wrapper.setState({ centerName: 'Kampala', country: '' });
+    wrapper.instance().handleAddCenter({ preventDefault });
     expect(wrapper.state('closeModal')).toEqual(false);
   });
 
   it('should not close modal when abbreviation validation fails', () => {
     wrapper.setState({
-      locationName: 'Kampala', country: 'Uganda', timeZone: 'UTC +1', abbreviation: '',
+      centerName: 'Kampala', country: 'Uganda', timeZone: 'UTC +1', abbreviation: '',
     });
-    wrapper.instance().handleAddLocation({ preventDefault });
+    wrapper.instance().handleAddCenter({ preventDefault });
     expect(wrapper.state('closeModal')).toEqual(false);
   });
 
-  it('should call addLocation with set variables when promise is rejected', () => {
+  it('should call addCenter with set variables when promise is rejected', () => {
     const props = {
-      addLocation: jest.fn(() => Promise.reject()),
+      addCenter: jest.fn(() => Promise.reject()),
       refetch: jest.fn(),
       user: { user: { location: 'kampala' } },
     };
-    wrapper = shallow(<AddLocation {...props} />);
+    wrapper = shallow(<AddCenter {...props} />);
     wrapper.setState({
-      locationName: 'Kampala',
+      centerName: 'Kampala',
       abbreviation: 'KLA',
     });
     const variables = {
       abbreviation: 'KLA',
       country: 'Uganda',
-      imageUrl: '',
       name: 'Kampala',
       timeZone: 'EAST_AFRICA_TIME',
     };
-    wrapper.instance().handleAddLocation({ preventDefault });
+    wrapper.instance().handleAddCenter({ preventDefault });
     expect(wrapper.state('closeModal')).toEqual(true);
-    expect(props.addLocation).toHaveBeenCalledWith({ variables });
+    expect(props.addCenter).toHaveBeenCalledWith({ variables });
   });
 
-  it('should call addLocation with set variables', () => {
+  it('should call addCenter with set variables', () => {
     const props = {
-      addLocation: jest.fn(() => Promise.resolve()),
+      addCenter: jest.fn(() => Promise.resolve()),
       refetch: jest.fn(),
       user: { user: { location: 'kampala' } },
     };
-    wrapper = shallow(<AddLocation {...props} />);
+    wrapper = shallow(<AddCenter {...props} />);
     wrapper.setState({
-      locationName: 'Kampala',
+      centerName: 'Kampala',
       country: '232',
       abbreviation: 'KLA',
     });
     const variables = {
       abbreviation: 'KLA',
       country: 'Uganda',
-      imageUrl: '',
       name: 'Kampala',
       timeZone: 'EAST_AFRICA_TIME',
     };
-    wrapper.instance().handleAddLocation({ preventDefault });
+    wrapper.instance().handleAddCenter({ preventDefault });
     expect(wrapper.state('closeModal')).toEqual(true);
-    expect(props.addLocation).toHaveBeenCalledWith({ variables });
+    expect(props.addCenter).toHaveBeenCalledWith({ variables });
   });
 });

@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import defaultUserRole from '../../../src/fixtures/user';
-import { LocationsList } from '../../../src/components/locations/LocationsList';
+import { CenterList } from '../../../src/components/centers/CenterList';
 
 const data = {
   allLocations: [
@@ -18,8 +18,8 @@ const data = {
 
 let wrapper;
 
-describe('Tests for LocationsList', () => {
-  wrapper = shallow(<LocationsList data={data} user={defaultUserRole} />);
+describe('Tests for CenterList', () => {
+  wrapper = shallow(<CenterList data={data} user={defaultUserRole} />);
 
   it('renders correctly from memory', () => {
     expect(wrapper).toMatchSnapshot();
@@ -35,7 +35,7 @@ describe('Tests for LocationsList', () => {
       allLocations: [],
       loading: true,
     };
-    wrapper = shallow(<LocationsList data={props} user={{}} />);
+    wrapper = shallow(<CenterList data={props} user={{}} />);
     const list = wrapper.find(('Spinner'));
     expect(list).toHaveLength(1);
   });
@@ -45,7 +45,7 @@ describe('Tests for LocationsList', () => {
       allLocations: [],
       loading: false,
     };
-    wrapper = shallow(<LocationsList data={props} user={{}} />);
+    wrapper = shallow(<CenterList data={props} user={{}} />);
     expect(wrapper.props().user).toBeFalsy();
   });
 });

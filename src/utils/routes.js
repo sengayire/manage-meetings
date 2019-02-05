@@ -5,7 +5,7 @@ const ROUTES = {
   analytics: '/analytics',
   preference: '/preference',
   settingsAmenities: '/settings/resources',
-  settingsLocations: '/settings/locations',
+  settingsCenters: '/settings/centers',
   settingsOffices: '/settings/offices',
   settingsRooms: '/settings/rooms',
   settingsBlocks: '/settings/blocks',
