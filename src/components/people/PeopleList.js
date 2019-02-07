@@ -18,7 +18,6 @@ import MenuTitle from '../commons/MenuTitle';
 import Spinner from '../commons/Spinner';
 import Sort from '../commons/Sort';
 import notification from '../../utils/notification';
-
 import Overlay from '../commons/Overlay';
 import DataNotFound from '../commons/DataNotFound';
 

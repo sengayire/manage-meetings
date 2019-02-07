@@ -15,7 +15,7 @@ const Office = ({ office: { id, location, name }, refetch, currentPage }) => {
   if (location.timeZone.includes('WEST')) {
     gmt = 'GMT +1';
   } else {
-    gmt = 'GMT -1';
+    gmt = 'GMT +3';
   }
   return (
     <tr>

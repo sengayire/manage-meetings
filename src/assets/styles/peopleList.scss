@@ -7,6 +7,16 @@
     padding-top: 4%;
     text-align: right;
   }
+  .dropdown-caret button {
+    margin-top: -7px !important;
+    padding: 0 !important;
+    background-color: transparent !important;
+    color: $color-primary !important;
+  }
+
+  .dropdown-menu {
+    margin-left: -49px !important;
+  }
   
   .settings-people-list {
     .action-menu {
@@ -218,14 +228,4 @@
       }
     }
   }
-}
-
-.dropdown-caret button {
-  margin-top: -1px !important;
-  background-color: #f4f8f9 !important;
-  color: $color-primary !important;
-}
-
-.dropdown-menu {
-  margin-left: -9px !important;
 }

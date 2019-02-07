@@ -4,7 +4,6 @@ import { graphql, compose } from 'react-apollo';
 import toastr from 'toastr';
 import MrmModal from '../commons/Modal';
 import { Input, SelectInput as Select } from '../commons';
-
 import '../../assets/styles/addoffice.scss';
 import ActionButtons from '../commons/ActionButtons';
 import { GET_LOCATIONS_QUERY } from '../../graphql/queries/Rooms';
@@ -132,7 +131,6 @@ export class AddOffice extends Component {
       officeName, officeLocation, closeModal, isLoading,
     } = this.state;
     const { allLocations } = this.props.locations;
-
     return (
       <MrmModal
         title="ADD OFFICE"

@@ -1,5 +1,21 @@
+@import './variables';
+
 .feedback-container {
   margin: 0 auto;
   width: 90%;
   margin-bottom: 50px;
+
+  .spinner {
+    margin: 27% auto !important;
+  }
 }  
+
+.dropdown-caret {
+  margin-top: -2px !important;
+
+  button {
+    background-color: map-get($color-amber, 300) !important;
+    padding: 4px 20px;
+    margin-top: 2px !important;
+  }
+}
