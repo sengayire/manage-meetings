@@ -13,16 +13,44 @@
   background-color: $color-background;
   animation: moveInRight .7s ease-out;
 
+  .error-class{
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 30px;
+
+    .icon-container {
+      text-align: center;
+  
+      .error-icon{
+        font-size: 20px;
+        height: 30px;
+        width: 22px;
+      }
+    }
+  
+    .error-msg{
+      padding-top: 7px;
+      text-align: center;
+      color: map-get($color-black, 100);
+    }
+  }
+
+  .modal-spinner {
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   .modal-header {
-    margin-top: 5%;
-    margin-bottom: 5%;
+    margin-top: 7%;
+    margin-bottom: 10%;
     color: map-get($color-black, 600);
     font-family: $font-regular;
     font-size: 18px;
-    font-weight: 500;
-  }
-  .row-1-headings {
-    margin: 5% 0% 5% 0%;
+    font-weight: bolder;
   }
   .row-1-headings,
   .row-1-data {
@@ -32,8 +60,17 @@
     font-family: $font-regular;
     font-size: 15px;
     line-height: 20px;
+    margin: 0% 0% 5% 0%;
+
+    .row-1-grade {
+      font-size: 12px;
+      font-family: $font-light;
+    }
+  }
+  .row-1-data {
     margin: 0% 0% 7% 0%;
   }
+
   .row-1-data > div:nth-child(odd) {
     font-weight: bolder;
     font-size: 20px;
@@ -47,26 +84,43 @@
     color: map-get($color-black, 600);
     font-family: $font-regular;
     font-size: 15px;
+    .item-list-empty {
+      height: 50vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
     .date {
       margin-top: 5%;
-      margin-bottom: 2%;
+      margin-bottom: 3%;
     }
     .text-comment {
-      font-size: 17px;
+      font-size: 15px;
       margin-bottom: 5%;
+      padding-bottom: 5%;
+      border-bottom: 1px solid $color-input-border;
+    }
+    .text-comment-heading {
+      margin-bottom: 2%;
+      color: $text-color;
+      font-family: $font-regular;
+      font-size: 15px;
     }
     .item-list {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: auto auto;
       padding-bottom: 5%;
       border-bottom: 1px solid $color-input-border;
       .items {
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
+        grid-template-columns: auto auto;
+
+        label {
+          padding-bottom: 5%;
+        }
       }
       .item-list-heading {
-        margin-bottom: 4%;
+        margin-bottom: 2.5%;
         color: $text-color;
         font-family: $font-regular;
         font-size: 15px;
@@ -75,16 +129,15 @@
   }
   .row-2-heading {
     padding-bottom: 4%;
-    font-size: 18px;
+    font-size: 16px;
     border-bottom: 1px solid $color-input-border;
     font-family: $font-regular;
     &:before {
-      content: url('../images/Group.svg');
+      content: url('../images/responses.svg');
       display: block;
-      width: 30px;
-      height: 20px;
+      width: 25px;
+      height: 10px;
       float: left;
-      margin: -3px 6px 0 0;
     }
   }
   .cancel {

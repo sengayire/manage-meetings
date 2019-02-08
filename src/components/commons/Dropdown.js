@@ -48,7 +48,7 @@ class Dropdown extends React.Component {
 }
 
 Dropdown.propTypes = {
-  icon: PropTypes.string, // eslint-disable-line
+  icon: PropTypes.any, // eslint-disable-line
   content: PropTypes.node.isRequired,
 };
 

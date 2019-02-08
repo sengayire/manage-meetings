@@ -119,7 +119,9 @@ class RoomFeedbackResponse extends Component {
 
   render() {
     const {
+      activeRoomId,
       roomFeedbackResponse: {
+        id,
         room,
         responses,
         rating,
@@ -127,11 +129,10 @@ class RoomFeedbackResponse extends Component {
         suggestion,
       },
     } = this.props;
-
     const { starImage, rateText } = starRate(rating);
     const allStars = starImage.map(star => star);
     return (
-      <div className="room-feedback-container">
+      <div className={`room-feedback-container ${(activeRoomId === id) ? 'active' : ''}`}>
         <span>
           <a href="/" onClick={this.showModal}>
             {room}
@@ -156,7 +157,12 @@ RoomFeedbackResponse.propTypes = {
     missingItems: PropTypes.string.isRequired,
     suggestion: PropTypes.string.isRequired,
   }).isRequired,
+  activeRoomId: PropTypes.number,
   viewSingleFeed: PropTypes.func.isRequired,
+};
+
+RoomFeedbackResponse.defaultProps = {
+  activeRoomId: null,
 };
 
 export default RoomFeedbackResponse;

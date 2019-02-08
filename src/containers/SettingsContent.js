@@ -34,6 +34,13 @@ const authorizedUser = [
   'olayemi.lawal@andela.com',
   'welike.amos@andela.com',
   'bonifase.orwa@andela.com',
+  'karen.kinoti@andela.com',
+  'ademola.hussain@andela.com',
+  'emmanuel.chayu@andela.com',
+  'nnaemeka.okoro@andela.com',
+  'bill.twinomuhwezi@andela.com',
+  'brian.cheruiyot@andela.com',
+  'davis.kimame@andela.com',
 ];
 
 /* istanbul ignore next */

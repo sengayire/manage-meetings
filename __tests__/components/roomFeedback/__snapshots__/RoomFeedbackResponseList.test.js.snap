@@ -6,8 +6,7 @@ exports[`Room feedback list should render correctly 1`] = `
   <div
     className="feedback-container"
   >
-    <SingleRoomFeedBack
-      roomId={null}
+    <Apollo(Apollo(SingleRoomFeedBack))
       rooms={
         Object {
           "1": Object {
@@ -1072,6 +1071,7 @@ exports[`Room feedback list should render correctly 1`] = `
       </span>
     </header>
     <RoomFeedbackResponse
+      activeRoomId={null}
       key="1"
       roomFeedbackResponse={
         Object {
@@ -1086,6 +1086,7 @@ exports[`Room feedback list should render correctly 1`] = `
       viewSingleFeed={[Function]}
     />
     <RoomFeedbackResponse
+      activeRoomId={null}
       key="2"
       roomFeedbackResponse={
         Object {
@@ -1100,6 +1101,7 @@ exports[`Room feedback list should render correctly 1`] = `
       viewSingleFeed={[Function]}
     />
     <RoomFeedbackResponse
+      activeRoomId={null}
       key="3"
       roomFeedbackResponse={
         Object {
@@ -1114,6 +1116,7 @@ exports[`Room feedback list should render correctly 1`] = `
       viewSingleFeed={[Function]}
     />
     <RoomFeedbackResponse
+      activeRoomId={null}
       key="4"
       roomFeedbackResponse={
         Object {
@@ -1128,6 +1131,7 @@ exports[`Room feedback list should render correctly 1`] = `
       viewSingleFeed={[Function]}
     />
     <RoomFeedbackResponse
+      activeRoomId={null}
       key="5"
       roomFeedbackResponse={
         Object {
@@ -1142,6 +1146,7 @@ exports[`Room feedback list should render correctly 1`] = `
       viewSingleFeed={[Function]}
     />
     <RoomFeedbackResponse
+      activeRoomId={null}
       key="6"
       roomFeedbackResponse={
         Object {

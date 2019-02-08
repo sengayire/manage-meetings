@@ -1,6 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import DonutChart from '../../../../src/components/analytics/checkins/DonutChart';
+import ErrorIcon from '../../../../src/components/commons/ErrorIcon';
 
 describe('Checkins component', () => {
   let props;
@@ -26,7 +27,7 @@ describe('Checkins component', () => {
   it('should render properly when an error occurs', () => {
     props = { tip: '', error: {} };
     const wrapperError = shallow(<DonutChart {...props} />);
-    expect(wrapperError.find('.error-class')).toHaveLength(1);
+    expect(wrapperError.find(ErrorIcon)).toHaveLength(1);
   });
 
   it('should display the cancellations doughnut chart properly', () => {

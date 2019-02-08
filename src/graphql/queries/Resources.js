@@ -21,4 +21,12 @@ export const GET_RESOURCES_QUERY = gql`
   }
 `;
 
+export const GET_ROOM_RESOURCES = gql`
+  query singleRoomResources($roomId: Int!) {
+    getResourcesByRoomId(roomId: $roomId) {
+      name
+    }
+  }
+`;
+
 export { GET_RESOURCES_QUERY as default };
