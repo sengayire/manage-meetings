@@ -86,7 +86,7 @@ describe('AddCenter Component', () => {
       timeZone: 'EAST_AFRICA_TIME',
     };
     wrapper.instance().handleAddCenter({ preventDefault });
-    expect(wrapper.state('closeModal')).toEqual(true);
+    expect(wrapper.state('closeModal')).toEqual(false);
     expect(props.addCenter).toHaveBeenCalledWith({ variables });
   });
 
@@ -109,7 +109,7 @@ describe('AddCenter Component', () => {
       timeZone: 'EAST_AFRICA_TIME',
     };
     wrapper.instance().handleAddCenter({ preventDefault });
-    expect(wrapper.state('closeModal')).toEqual(true);
+    expect(wrapper.state('closeModal')).toEqual(false);
     expect(props.addCenter).toHaveBeenCalledWith({ variables });
   });
 });

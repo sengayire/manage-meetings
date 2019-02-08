@@ -25,19 +25,23 @@ describe('it renders correctly', () => {
     const calendar = wrapper.find('PickRange');
     expect(calendar).toHaveLength(1);
   });
+
   it('should have a div', () => {
     const div = wrapper.find('div');
     expect(div).toHaveLength(124);
   });
+
   it('should have a button', () => {
     const button = wrapper.find('button');
     expect(button).toHaveLength(1);
   });
+
   it('handles cancel', () => {
     const canceldateBtn = wrapper.find('#cancel_date_button');
     canceldateBtn.simulate('click');
     expect(props.handleCloseModal).toBeCalled();
   });
+
   it('should have initial state', () => {
     expect(wrapper.state().startDate).toEqual(moment().format('MMM DD Y'));
     expect(wrapper.state().endDate).toEqual(moment().format('MMM DD Y'));

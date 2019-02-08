@@ -10,14 +10,14 @@ exports[`Meeting Duration Pie Chart Component renders correctly from memory 1`] 
     <p
       className="chart-title"
     >
-      Average Meeting Duration
+      Average Meeting Duration [%]
     </p>
     <ThemedTooltippedComponent
       className=""
       composeTheme="deeply"
       mapThemrProps={[Function]}
       theme={null}
-      tooltip="The average amount of time people spend in all booked meeting rooms in a set time period"
+      tooltip="The percentage representation of the average amount of time people spend in all booked meeting rooms in a set time period"
       tooltipDelay={0}
       tooltipHideOnClick={true}
       tooltipPosition="top"
@@ -77,14 +77,14 @@ exports[`Meeting Duration Pie Chart Component should be able to hover 1`] = `
     <p
       className="chart-title"
     >
-      Average Meeting Duration
+      Average Meeting Duration [%]
     </p>
     <ThemedTooltippedComponent
       className=""
       composeTheme="deeply"
       mapThemrProps={[Function]}
       theme={null}
-      tooltip="The average amount of time people spend in all booked meeting rooms in a set time period"
+      tooltip="The percentage representation of the average amount of time people spend in all booked meeting rooms in a set time period"
       tooltipDelay={0}
       tooltipHideOnClick={true}
       tooltipPosition="top"
@@ -144,14 +144,14 @@ exports[`Meeting Duration Pie Chart Component should be able to hover 2`] = `
     <p
       className="chart-title"
     >
-      Average Meeting Duration
+      Average Meeting Duration [%]
     </p>
     <ThemedTooltippedComponent
       className=""
       composeTheme="deeply"
       mapThemrProps={[Function]}
       theme={null}
-      tooltip="The average amount of time people spend in all booked meeting rooms in a set time period"
+      tooltip="The percentage representation of the average amount of time people spend in all booked meeting rooms in a set time period"
       tooltipDelay={0}
       tooltipHideOnClick={true}
       tooltipPosition="top"

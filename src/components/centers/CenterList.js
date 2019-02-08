@@ -38,16 +38,15 @@ export const CenterList = (props) => {
           ? <DataNotFound /> :
           <table>
             <ColGroup />
-            <TableHead titles={['Center', 'Country', 'Abbreviation']} />
+            <TableHead titles={['Center', 'Country', 'Abbreviation', 'Action']} />
             <tbody>
-              {
-                allLocations.map(location => (
-                  <Location
-                    location={location}
-                    key={location.id}
-                  />
-              ))
-              }
+              {allLocations && allLocations.map(location => (
+                <Location
+                  location={location}
+                  key={location.id}
+                  refetch={refetch}
+                />
+             ))}
             </tbody>
           </table>
         }

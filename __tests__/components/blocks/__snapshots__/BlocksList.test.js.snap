@@ -4383,6 +4383,7 @@ query user ($email: String!) {
       allOffices={
         Object {
           "allOffices": Object {
+            "error": "GraphQL error: No more offices",
             "offices": Array [
               Object {
                 "id": "81",
@@ -4557,6 +4558,7 @@ query user ($email: String!) {
           allOffices={
             Object {
               "allOffices": Object {
+                "error": "GraphQL error: No more offices",
                 "offices": Array [
                   Object {
                     "id": "81",

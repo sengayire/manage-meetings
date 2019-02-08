@@ -30,6 +30,7 @@ const offices = {
           name: 'Kampala',
         },
       }],
+    error: 'GraphQL error: No more offices',
   },
 };
 
@@ -43,6 +44,7 @@ describe('blockslist Component', () => {
       />
     </MockedProvider>,
   );
+
 
   it('renders properly', () => {
     expect(wrapper).toMatchSnapshot();

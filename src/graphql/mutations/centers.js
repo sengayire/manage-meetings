@@ -11,4 +11,29 @@ const ADD_CENTER_MUTATION = gql`
   }
 `;
 
-export { ADD_CENTER_MUTATION as default };
+const EDIT_CENTER_MUTATION = gql`
+  mutation updateLocation($locationId: Int!, $name: String!, $country: String!, $abbreviation: String!){
+    updateLocation(locationId: $locationId, name: $name, country: $country, abbreviation: $abbreviation){ 
+        location{
+            name
+            abbreviation
+            country
+        }
+    }
+}
+`;
+
+const DELETE_CENTER_MUTATION = gql`
+  mutation deleteLocation($locationId: Int!){
+    deleteLocation(locationId:$locationId){
+        location{
+          id
+        }
+    }
+  }
+`;
+export {
+  ADD_CENTER_MUTATION as default,
+  EDIT_CENTER_MUTATION,
+  DELETE_CENTER_MUTATION,
+};

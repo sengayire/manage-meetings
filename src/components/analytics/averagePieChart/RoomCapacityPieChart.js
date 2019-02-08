@@ -17,11 +17,12 @@ class RoomCapacityPieChart extends Component {
   // eslint-disable-next-line
   state = {};
   render() {
-    const tip = 'The number of people a meeting room can accommodate';
+    // const tip = 'The number of people a meeting room can accommodate';
+    const tip = 'The percentage representation of the average rooms\' capacity ';
     return (
       <article className="pie-chart">
         <section className="chart-header">
-          <p className="chart-title">Average Room Capacity</p>
+          <p className="chart-title">Average Room Capacity [%]</p>
           {Tip(tip)}
         </section>
         <section className="chart-content">

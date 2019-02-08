@@ -2,7 +2,8 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import Center from '../../../src/components/centers/Center';
 
-describe('Center Component', () => {
+describe('Location Component', () => {
+  const refetch = jest.fn();
   const location = {
     id: '1',
     name: 'Kampala',
@@ -10,10 +11,10 @@ describe('Center Component', () => {
     timeZone: 'UTC',
     abbreviation: 'KLA',
   };
-  const roomWrapper = shallow(<Center location={location} />);
+  const roomWrapper = shallow(<Center location={location} refetch={refetch} />);
 
   it('renders the correct content', () => {
     const td = roomWrapper.find('td');
-    expect(td).toHaveLength(3);
+    expect(td).toHaveLength(4);
   });
 });

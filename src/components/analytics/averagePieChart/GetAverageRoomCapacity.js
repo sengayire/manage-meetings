@@ -14,7 +14,7 @@ export class GetAverageRoomCapacityComponent extends Component {
 
   getPercentage = (capacity, total) => {
     const result = (capacity / total) * 100;
-    return result;
+    return Math.round(result);
   }
 
   getRoomData = () => {

@@ -119,4 +119,35 @@ describe('AddFloor Component', () => {
     expect(wrapper.state('closeModal')).toEqual(false);
     expect(props.addFloor).toHaveBeenCalledWith({ variables });
   });
+
+  it('should make a request to add a floor without blockId but with officeId', () => {
+    const mockFloor = {
+      data: {
+        addFloor: {
+          floor: {
+            name: 'second floor',
+          },
+        },
+      },
+    };
+    const props = {
+      addFloor: jest.fn(() => Promise.resolve(mockFloor)),
+      allBlocks: { loading: false, allBlocks: [{ offices: { name: 'block A' } }] },
+      theOffice: 'The crest',
+      refetch: jest.fn(),
+      officeId: 1,
+      blocks: null,
+    };
+    wrapper = shallow(<AddFloor {...props} />);
+    wrapper.setState({
+      floorName: 'second floor',
+    });
+    const variables = {
+      blockId: 1,
+      name: 'second floor',
+    };
+    wrapper.instance().handleAddFloor({ preventDefault });
+    expect(wrapper.state('closeModal')).toEqual(false);
+    expect(props.addFloor).toHaveBeenCalledWith({ variables });
+  });
 });

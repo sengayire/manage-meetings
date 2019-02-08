@@ -10,14 +10,14 @@ exports[`Room Capacity Pie Chart Component renders correctly from memory 1`] = `
     <p
       className="chart-title"
     >
-      Average Room Capacity
+      Average Room Capacity [%]
     </p>
     <ThemedTooltippedComponent
       className=""
       composeTheme="deeply"
       mapThemrProps={[Function]}
       theme={null}
-      tooltip="The number of people a meeting room can accommodate"
+      tooltip="The percentage representation of the average rooms' capacity "
       tooltipDelay={0}
       tooltipHideOnClick={true}
       tooltipPosition="top"
@@ -69,14 +69,14 @@ exports[`Room Capacity Pie Chart Component should be able to hover 1`] = `
     <p
       className="chart-title"
     >
-      Average Room Capacity
+      Average Room Capacity [%]
     </p>
     <ThemedTooltippedComponent
       className=""
       composeTheme="deeply"
       mapThemrProps={[Function]}
       theme={null}
-      tooltip="The number of people a meeting room can accommodate"
+      tooltip="The percentage representation of the average rooms' capacity "
       tooltipDelay={0}
       tooltipHideOnClick={true}
       tooltipPosition="top"
@@ -128,14 +128,14 @@ exports[`Room Capacity Pie Chart Component should be able to hover 2`] = `
     <p
       className="chart-title"
     >
-      Average Room Capacity
+      Average Room Capacity [%]
     </p>
     <ThemedTooltippedComponent
       className=""
       composeTheme="deeply"
       mapThemrProps={[Function]}
       theme={null}
-      tooltip="The number of people a meeting room can accommodate"
+      tooltip="The percentage representation of the average rooms' capacity "
       tooltipDelay={0}
       tooltipHideOnClick={true}
       tooltipPosition="top"

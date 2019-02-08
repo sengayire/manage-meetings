@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import toastr from 'toastr';
 import { Input } from '../commons';
 import ActionButtons from '../commons/ActionButtons';
-import ADD_CENTER_MUTATION from '../../graphql/mutations/centers';
+import { EDIT_CENTER_MUTATION } from '../../graphql/mutations/centers';
 import MrmModal from '../commons/Modal';
 import countries from '../../fixtures/countries';
 import notification from '../../utils/notification';
@@ -13,25 +13,34 @@ import { GET_USER_QUERY } from '../../graphql/queries/People';
 import { decodeTokenAndGetUserData } from '../../utils/Cookie';
 import allCites from '../../fixtures/cities';
 
-export class AddCenter extends Component {
+export class EditCenter extends Component {
   static propTypes = {
-    addCenter: PropTypes.func.isRequired,
+    editCenter: PropTypes.func.isRequired,
+    centerName: PropTypes.string.isRequired,
+    centerId: PropTypes.string.isRequired,
+    abbreviation: PropTypes.string.isRequired,
+    user: PropTypes.shape({
+      user: PropTypes.object,
+    }).isRequired,
+    refetch: PropTypes.func,
   };
 
   state = {
-    centerName: '',
-    abbreviation: '',
+    centerName: this.props.centerName,
+    abbreviation: this.props.abbreviation,
+    centerId: this.props.centerId,
     closeModal: false,
     isLoading: false,
   };
 
   /**
-   * it closes the modal and resets imageUrl and thumbnailName to defaults
+   * it closes the modal
    * @returns {void}
    */
   handleCloseModal = () => {
     this.setState({
       closeModal: true,
+      isLoading: false,
     });
   };
 
@@ -54,14 +63,14 @@ export class AddCenter extends Component {
   };
 
   /**
-   *1. submits center data to the backend api
+   *1. submits location data to the backend api
    *2. notifies the user about the response from the request
    *
    * @returns {void}
    */
-  createCenter = () => {
+  editCenter = () => {
     const {
-      centerName, abbreviation,
+      centerName, abbreviation, centerId,
     } = this.state;
 
     const { user } = this.props;
@@ -74,14 +83,15 @@ export class AddCenter extends Component {
       }
     });
 
-    const { timeZone, name } = selectedCountry;
+    const { name } = selectedCountry;
+    const { refetch } = this.props;
     this.toggleLoading();
     this.props
-      .addCenter({
+      .editCenter({
         variables: {
-          country: name,
+          locationId: centerId,
           name: centerName,
-          timeZone,
+          country: name,
           abbreviation,
         },
       })
@@ -90,14 +100,16 @@ export class AddCenter extends Component {
         notification(
           toastr,
           'success',
-          `${centerName} center has been added successfully`,
+          `${centerName} location has been edited successfully`,
         )();
+        refetch();
         this.handleCloseModal();
-        this.props.refetch();
       })
       .catch((err) => {
-        notification(toastr, 'error', err.graphQLErrors[0].message)();
+        this.setState({ centerName: this.props.centerName });
+        this.toggleLoading();
         this.handleCloseModal();
+        notification(toastr, 'error', err.graphQLErrors[0].message)();
       });
     this.toggleLoading();
   };
@@ -113,26 +125,25 @@ export class AddCenter extends Component {
       isLoading: !this.state.isLoading,
     });
   }
-
   /**
    *1. validates input
-   *2. calls createCenter method after validation to perform center creation
+   *2. calls editCenter method after validation to perform location creation
    *
    * @param {object} event
    * @returns {void}
    */
-  handleAddCenter = (event) => {
+  handleEditCenter = (event) => {
     event.preventDefault();
     const {
       centerName, abbreviation,
     } = this.state;
     if (!centerName) {
-      notification(toastr, 'error', 'center name is required')();
+      notification(toastr, 'error', 'location name is required')();
     } else if (!abbreviation) {
       notification(toastr, 'error', 'abbreviation field is required')();
     } else {
       this.toggleLoading();
-      this.createCenter();
+      this.editCenter();
     }
   };
 
@@ -141,14 +152,15 @@ export class AddCenter extends Component {
       centerName, closeModal,
       abbreviation, isLoading,
     } = this.state;
+
     return (
       <MrmModal
-        title="ADD CENTER"
-        buttonText="Add Center"
+        title="EDIT CENTER"
+        buttonText="Edit"
         closeModal={closeModal}
         handleCloseRequest={this.handleModalStateChange}
         className="add-office-modal"
-        modalButton="add-button"
+        modalButtonClassName="edit-button"
       >
         <form className="modal-form">
           <Input
@@ -170,9 +182,9 @@ export class AddCenter extends Component {
           <ActionButtons
             withCancel
             onClickCancel={this.handleCloseModal}
-            actionButtonText="ADD CENTER"
+            actionButtonText="SAVE CHANGES"
             isLoading={isLoading}
-            onClickSubmit={this.handleAddCenter}
+            onClickSubmit={this.handleEditCenter}
           />
         </form>
       </MrmModal>
@@ -180,17 +192,14 @@ export class AddCenter extends Component {
   }
 }
 
-AddCenter.propTypes = {
-  refetch: PropTypes.func.isRequired,
-  user: PropTypes.shape({
-    user: PropTypes.object,
-  }).isRequired,
+EditCenter.defaultProps = {
+  refetch: PropTypes.func,
 };
 
 const { UserInfo: userData } = decodeTokenAndGetUserData() || {};
 
 export default compose(
-  graphql(ADD_CENTER_MUTATION, { name: 'addCenter' }),
+  graphql(EDIT_CENTER_MUTATION, { name: 'editCenter' }),
   graphql(GET_USER_QUERY, {
     name: 'user',
     options: /* istanbul ignore next */ () => ({
@@ -202,4 +211,4 @@ export default compose(
       },
     }),
   }),
-)(AddCenter);
+)(EditCenter);

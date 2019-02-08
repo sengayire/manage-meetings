@@ -17,7 +17,7 @@ import { ADD_FLOOR_MUTATION } from '../../graphql/mutations/Floors';
  */
 export class AddFloor extends Component {
   static propTypes = {
-    officeId: PropTypes.string,
+    officeId: PropTypes.number,
     addFloor: PropTypes.func.isRequired,
     theOffice: PropTypes.string,
     currentPage: PropTypes.number,
@@ -25,13 +25,14 @@ export class AddFloor extends Component {
     blocks: PropTypes.arrayOf(PropTypes.shape({
       name: PropTypes.string.isRequired,
       id: PropTypes.string.isRequired,
-    })).isRequired,
+    })),
   };
 
   static defaultProps = {
     theOffice: '',
     currentPage: 1,
-    officeId: '',
+    officeId: null,
+    blocks: null,
   };
 
   state = {

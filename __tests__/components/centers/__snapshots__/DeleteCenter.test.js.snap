@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Edit center component renders without failing 1`] = `
+<MrmModal
+  buttonText="Delete"
+  className="delete-modal"
+  closeModal={false}
+  handleCloseRequest={[Function]}
+  modalButtonClassName="button"
+  title="DELETE CENTER"
+>
+  <div
+    className="delete-modal-content"
+  >
+    <p
+      id="confirm-msg"
+    >
+      Are you sure you want to delete the 
+      "Lagos"
+       
+      center? This cannot be undone & all data will be lost
+    </p>
+    <ActionButtons
+      actionButtonText="DELETE CENTER"
+      cancelButtonText="CANCEL"
+      isLoading={false}
+      onClickCancel={[Function]}
+      onClickSubmit={[Function]}
+      withCancel={true}
+    />
+  </div>
+</MrmModal>
+`;

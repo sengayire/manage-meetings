@@ -14,6 +14,7 @@ const data = {
     },
   ],
   loading: false,
+  refetch: jest.fn(),
 };
 
 let wrapper;
