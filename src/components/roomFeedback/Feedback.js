@@ -2,10 +2,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
+import { graphql } from 'react-apollo';
 import ROUTES from '../../utils/routes';
 import CheckboxSlide from '../commons/CheckboxSlide';
 import EditFeedback from './EditFeedback';
 import DeleteFeedback from './DeleteFeedback';
+import UPDATE_QUESTION_MUTATION from '../../graphql/mutations/Question';
 
 /**
  * Feedback Component
@@ -14,10 +16,11 @@ import DeleteFeedback from './DeleteFeedback';
  *
  * @returns {JSX}
  */
-const Feedback = props =>
+const Feedback = props => (
   props.feedback.map(
     (
       {
+        id,
         question,
         startDate,
         endDate,
@@ -48,11 +51,16 @@ const Feedback = props =>
           <DeleteFeedback id="delete-modal" question={question} />
         </td>
         <td>
-          <CheckboxSlide checked={isActive} onChange={props.onChange} />
+          <CheckboxSlide
+            questionId={parseInt(id, 10)}
+            checked={isActive}
+            updateQuestion={props.updateQuestion}
+          />
         </td>
       </tr>
     ),
-  );
+  )
+);
 
 Feedback.defaultProps = {
   feedback: [
@@ -71,4 +79,4 @@ Feedback.propTypes = {
   feedback: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
-export default Feedback;
+export default graphql(UPDATE_QUESTION_MUTATION, { name: 'updateQuestion' })(Feedback);

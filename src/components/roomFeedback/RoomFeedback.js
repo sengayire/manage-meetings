@@ -10,7 +10,7 @@ import { GET_USER_ROLE } from '../../graphql/queries/People';
 import { decodeTokenAndGetUserData } from '../../utils/Cookie';
 import { saveItemInLocalStorage } from '../../utils/Utilities';
 import '../../../src/assets/styles/roomFeedback.scss';
-import { GET_ROOM_FEEDBACK_QUESTIONS_QUERY } from '../../../src/graphql/queries/Rooms';
+import GET_ROOM_FEEDBACK_QUESTIONS_QUERY from '../../../src/graphql/queries/questions';
 import Spinner from '../commons/Spinner';
 
 /**
@@ -30,17 +30,7 @@ export class RoomFeedback extends Component {
   componentWillReceiveProps(props) {
     const { user } = props.user;
     if (user) saveItemInLocalStorage('access', user.roles[0].id);
-
     this.setAllQuestionsToState(props);
-  }
-
-  /**
-   * handles changes on the slider
-   *
-   * @returns {void}
-   */
-  onChange = () => {
-
   }
 
   /**
@@ -138,7 +128,6 @@ export class RoomFeedback extends Component {
                   feedback={allQuestions}
                   durationFormatter={this.durationInWeeks}
                   startDateFormatter={this.formatStartDate}
-                  onChange={this.onChange}
                 />
               }
             </tbody>
@@ -148,6 +137,7 @@ export class RoomFeedback extends Component {
     );
   }
 }
+
 RoomFeedback.defaultProps = {
   data: {
     allQuestions: [

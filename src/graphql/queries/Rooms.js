@@ -100,16 +100,4 @@ const GET_ROOM_BY_NAME = gql`
     }
   }`;
 
-export const GET_ROOM_FEEDBACK_QUESTIONS_QUERY = gql`
-  query {
-    allQuestions {
-      question
-      questionType
-      startDate
-      endDate
-      questionResponseCount
-      isActive
-    }
-  }`;
-
 export { GET_ROOMS_QUERY as default, GET_LOCATIONS_QUERY, GET_ROOM_BY_NAME };

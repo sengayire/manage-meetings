@@ -65,10 +65,6 @@ describe('Tests for RoomFeedback Component', () => {
     expect(wrapper.instance().componentWillMount());
   });
 
-  it('should update the state when the slider changes state', () => {
-    expect(wrapper.instance().onChange());
-  });
-
   it('should have empty user props', () => {
     const props = {
       user: {},

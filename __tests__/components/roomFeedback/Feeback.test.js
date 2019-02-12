@@ -1,14 +1,17 @@
 import React from 'react';
 import { mount, shallow } from 'enzyme';
+import { MockedProvider } from 'react-apollo/test-utils';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { RoomFeedback } from '../../../src/components/roomFeedback/RoomFeedback';
 import defaultUserRole from '../../../src/fixtures/user';
 
 describe('RoomFeeback Component', () => {
   const wrapper = mount(
-    <Router>
-      <RoomFeedback user={defaultUserRole} />
-    </Router>,
+    <MockedProvider>
+      <Router>
+        <RoomFeedback user={defaultUserRole} />
+      </Router>
+    </MockedProvider>,
   );
 
   it('should render table row property while rendering the component', () => {
