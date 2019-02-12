@@ -10,7 +10,7 @@ import ROUTES from '../src/utils/routes';
 jest.mock('../src/utils/Utilities');
 jest.mock('../src/utils/Cookie');
 
-const utilityFunctions = require('../src/utils/Utilities');
+const utilityFunctions = require('../src/utils/Cookie');
 
 const routes = [ROUTES.home, ROUTES.settings];
 const wrapperCode = (
@@ -44,7 +44,7 @@ describe('App component', () => {
 
   it('should not render Login if token is present but render Settings component', () => {
     // make a mock token
-    utilityFunctions.getItemFromLocalStorage.mockImplementation(
+    utilityFunctions.getToken.mockImplementation(
       () => 'MOCK_TOKEN',
     );
     // mount wrapper

@@ -613,6 +613,17 @@ exports[`Tests for ResourceList Component renders correctly from memory 1`] = `
                               "kind": "Field",
                               "name": Object {
                                 "kind": "Name",
+                                "value": "id",
+                              },
+                              "selectionSet": undefined,
+                            },
+                            Object {
+                              "alias": undefined,
+                              "arguments": Array [],
+                              "directives": Array [],
+                              "kind": "Field",
+                              "name": Object {
+                                "kind": "Name",
                                 "value": "roles",
                               },
                               "selectionSet": Object {
@@ -675,7 +686,7 @@ exports[`Tests for ResourceList Component renders correctly from memory 1`] = `
               ],
               "kind": "Document",
               "loc": Object {
-                "end": 100,
+                "end": 107,
                 "start": 0,
               },
             },
@@ -742,6 +753,17 @@ exports[`Tests for ResourceList Component renders correctly from memory 1`] = `
                           "selectionSet": Object {
                             "kind": "SelectionSet",
                             "selections": Array [
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "id",
+                                },
+                                "selectionSet": undefined,
+                              },
                               Object {
                                 "alias": undefined,
                                 "arguments": Array [],
@@ -825,11 +847,12 @@ exports[`Tests for ResourceList Component renders correctly from memory 1`] = `
                 ],
                 "kind": "Document",
                 "loc": Object {
-                  "end": 100,
+                  "end": 107,
                   "source": Object {
                     "body": "
 query user ($email: String!) {
   user( email: $email){
+    id
     roles{
       id
       role
@@ -1235,6 +1258,17 @@ query user ($email: String!) {
                                     "kind": "Field",
                                     "name": Object {
                                       "kind": "Name",
+                                      "value": "id",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
                                       "value": "roles",
                                     },
                                     "selectionSet": Object {
@@ -1311,11 +1345,12 @@ query user ($email: String!) {
                     ],
                     "kind": "Document",
                     "loc": Object {
-                      "end": 100,
+                      "end": 107,
                       "source": Object {
                         "body": "
 query user ($email: String!) {
   user( email: $email){
+    id
     roles{
       id
       role
@@ -1714,6 +1749,17 @@ query user ($email: String!) {
                                 "kind": "Field",
                                 "name": Object {
                                   "kind": "Name",
+                                  "value": "id",
+                                },
+                                "selectionSet": undefined,
+                              },
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
                                   "value": "roles",
                                 },
                                 "selectionSet": Object {
@@ -1790,11 +1836,12 @@ query user ($email: String!) {
                 ],
                 "kind": "Document",
                 "loc": Object {
-                  "end": 100,
+                  "end": 107,
                   "source": Object {
                     "body": "
 query user ($email: String!) {
   user( email: $email){
+    id
     roles{
       id
       role
@@ -1824,6 +1871,7 @@ query user ($email: String!) {
                 "isTornDown": false,
                 "lastError": [Error: Network error: No more mocked responses for the query: query user($email: String!) {
   user(email: $email) {
+    id
     roles {
       id
       role
@@ -1902,6 +1950,17 @@ query user ($email: String!) {
                                     "kind": "Field",
                                     "name": Object {
                                       "kind": "Name",
+                                      "value": "id",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
                                       "value": "roles",
                                     },
                                     "selectionSet": Object {
@@ -1964,7 +2023,7 @@ query user ($email: String!) {
                     ],
                     "kind": "Document",
                     "loc": Object {
-                      "end": 100,
+                      "end": 107,
                       "start": 0,
                     },
                   },
@@ -2983,6 +3042,17 @@ query user ($email: String!) {
                                   "kind": "Field",
                                   "name": Object {
                                     "kind": "Name",
+                                    "value": "id",
+                                  },
+                                  "selectionSet": undefined,
+                                },
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
                                     "value": "roles",
                                   },
                                   "selectionSet": Object {
@@ -3059,11 +3129,12 @@ query user ($email: String!) {
                   ],
                   "kind": "Document",
                   "loc": Object {
-                    "end": 100,
+                    "end": 107,
                     "source": Object {
                       "body": "
 query user ($email: String!) {
   user( email: $email){
+    id
     roles{
       id
       role
@@ -3088,6 +3159,7 @@ query user ($email: String!) {
                 },
                 "networkError": [Error: No more mocked responses for the query: query user($email: String!) {
   user(email: $email) {
+    id
     roles {
       id
       role
@@ -3184,6 +3256,17 @@ query user ($email: String!) {
                                   "kind": "Field",
                                   "name": Object {
                                     "kind": "Name",
+                                    "value": "id",
+                                  },
+                                  "selectionSet": undefined,
+                                },
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
                                     "value": "roles",
                                   },
                                   "selectionSet": Object {
@@ -3260,11 +3343,12 @@ query user ($email: String!) {
                   ],
                   "kind": "Document",
                   "loc": Object {
-                    "end": 100,
+                    "end": 107,
                     "source": Object {
                       "body": "
 query user ($email: String!) {
   user( email: $email){
+    id
     roles{
       id
       role
@@ -3935,6 +4019,17 @@ query user ($email: String!) {
                                 "kind": "Field",
                                 "name": Object {
                                   "kind": "Name",
+                                  "value": "id",
+                                },
+                                "selectionSet": undefined,
+                              },
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
                                   "value": "roles",
                                 },
                                 "selectionSet": Object {
@@ -3997,7 +4092,7 @@ query user ($email: String!) {
                 ],
                 "kind": "Document",
                 "loc": Object {
-                  "end": 100,
+                  "end": 107,
                   "start": 0,
                 },
               }

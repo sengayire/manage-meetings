@@ -1,7 +1,7 @@
 import axios from 'axios';
-import { getItemFromLocalStorage } from '../utils/Utilities';
+import { getToken } from '../utils/Cookie';
 
-const token = getItemFromLocalStorage('MRM_AUTH_TOKEN');
+const token = getToken();
 const { BASE_URL } = process.env;
 export const apiRequest = axios.create({
   baseURL: BASE_URL,

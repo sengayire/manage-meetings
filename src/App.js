@@ -4,14 +4,13 @@ import PropTypes from 'prop-types';
 import ROUTES from './utils/routes';
 import { Settings, Analytics, Feedback, Preference, RoomFeedbackResponseList } from './containers';
 import { LoginPage } from './components';
-import { getItemFromLocalStorage } from './utils/Utilities';
 import Constants from './utils/Constants';
 import '../src/assets/styles/toastr.scss';
 import ErrorBoundary from './components/commons/ErrorBoundary';
+import { getToken } from './utils/Cookie';
 
 // destruscture constants to be used
 const {
-  MRM_TOKEN,
   MESSAGES: { authenticationError },
 } = Constants;
 class App extends Component {
@@ -26,7 +25,7 @@ class App extends Component {
   };
 
   static getDerivedStateFromProps = () => {
-    const token = getItemFromLocalStorage(MRM_TOKEN);
+    const token = getToken();
     if (!token) {
       return { loggedIn: false };
     }

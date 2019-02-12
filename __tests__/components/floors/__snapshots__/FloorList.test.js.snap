@@ -1034,6 +1034,17 @@ exports[`FloorList Component renders correctly from memory 1`] = `
                                 "kind": "Field",
                                 "name": Object {
                                   "kind": "Name",
+                                  "value": "id",
+                                },
+                                "selectionSet": undefined,
+                              },
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
                                   "value": "roles",
                                 },
                                 "selectionSet": Object {
@@ -1096,7 +1107,7 @@ exports[`FloorList Component renders correctly from memory 1`] = `
                 ],
                 "kind": "Document",
                 "loc": Object {
-                  "end": 100,
+                  "end": 107,
                   "start": 0,
                 },
               },
@@ -1727,6 +1738,17 @@ exports[`FloorList Component renders correctly from memory 1`] = `
                                     "kind": "Field",
                                     "name": Object {
                                       "kind": "Name",
+                                      "value": "id",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
                                       "value": "roles",
                                     },
                                     "selectionSet": Object {
@@ -1789,7 +1811,7 @@ exports[`FloorList Component renders correctly from memory 1`] = `
                     ],
                     "kind": "Document",
                     "loc": Object {
-                      "end": 100,
+                      "end": 107,
                       "start": 0,
                     },
                   },
@@ -2362,6 +2384,17 @@ exports[`FloorList Component renders correctly from memory 1`] = `
                                 "kind": "Field",
                                 "name": Object {
                                   "kind": "Name",
+                                  "value": "id",
+                                },
+                                "selectionSet": undefined,
+                              },
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
                                   "value": "roles",
                                 },
                                 "selectionSet": Object {
@@ -2424,7 +2457,7 @@ exports[`FloorList Component renders correctly from memory 1`] = `
                 ],
                 "kind": "Document",
                 "loc": Object {
-                  "end": 100,
+                  "end": 107,
                   "start": 0,
                 },
               },
@@ -2446,6 +2479,7 @@ exports[`FloorList Component renders correctly from memory 1`] = `
                 "isTornDown": false,
                 "lastError": [Error: Network error: No more mocked responses for the query: query user($email: String!) {
   user(email: $email) {
+    id
     roles {
       id
       role
@@ -2522,6 +2556,17 @@ exports[`FloorList Component renders correctly from memory 1`] = `
                                     "kind": "Field",
                                     "name": Object {
                                       "kind": "Name",
+                                      "value": "id",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
                                       "value": "roles",
                                     },
                                     "selectionSet": Object {
@@ -2584,7 +2629,7 @@ exports[`FloorList Component renders correctly from memory 1`] = `
                     ],
                     "kind": "Document",
                     "loc": Object {
-                      "end": 100,
+                      "end": 107,
                       "start": 0,
                     },
                   },
@@ -4117,6 +4162,17 @@ exports[`FloorList Component renders correctly from memory 1`] = `
                                   "kind": "Field",
                                   "name": Object {
                                     "kind": "Name",
+                                    "value": "id",
+                                  },
+                                  "selectionSet": undefined,
+                                },
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
                                     "value": "roles",
                                   },
                                   "selectionSet": Object {
@@ -4179,7 +4235,7 @@ exports[`FloorList Component renders correctly from memory 1`] = `
                   ],
                   "kind": "Document",
                   "loc": Object {
-                    "end": 100,
+                    "end": 107,
                     "start": 0,
                   },
                 },
@@ -4191,6 +4247,7 @@ exports[`FloorList Component renders correctly from memory 1`] = `
                 },
                 "networkError": [Error: No more mocked responses for the query: query user($email: String!) {
   user(email: $email) {
+    id
     roles {
       id
       role
@@ -4598,6 +4655,17 @@ exports[`FloorList Component renders correctly from memory 1`] = `
                                   "kind": "Field",
                                   "name": Object {
                                     "kind": "Name",
+                                    "value": "id",
+                                  },
+                                  "selectionSet": undefined,
+                                },
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
                                     "value": "roles",
                                   },
                                   "selectionSet": Object {
@@ -4660,7 +4728,7 @@ exports[`FloorList Component renders correctly from memory 1`] = `
                   ],
                   "kind": "Document",
                   "loc": Object {
-                    "end": 100,
+                    "end": 107,
                     "start": 0,
                   },
                 },
@@ -5530,6 +5598,17 @@ exports[`FloorList Component renders correctly from memory 1`] = `
                                 "kind": "Field",
                                 "name": Object {
                                   "kind": "Name",
+                                  "value": "id",
+                                },
+                                "selectionSet": undefined,
+                              },
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
                                   "value": "roles",
                                 },
                                 "selectionSet": Object {
@@ -5592,7 +5671,7 @@ exports[`FloorList Component renders correctly from memory 1`] = `
                 ],
                 "kind": "Document",
                 "loc": Object {
-                  "end": 100,
+                  "end": 107,
                   "start": 0,
                 },
               }

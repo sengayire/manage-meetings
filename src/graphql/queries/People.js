@@ -34,6 +34,7 @@ query user ($email: String!) {
 const GET_USER_ROLE = gql`
 query user ($email: String!) {
   user( email: $email){
+    id
     roles{
       id
       role
