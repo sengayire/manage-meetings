@@ -183,11 +183,6 @@ export class AddFloor extends Component {
   }
 }
 
-AddFloor.propTypes = {
-  // eslint-disable-next-line react/forbid-prop-types
-  blocks: PropTypes.any.isRequired,
-};
-
 export default compose(
   graphql(ADD_FLOOR_MUTATION, { name: 'addFloor' }),
 )(AddFloor);

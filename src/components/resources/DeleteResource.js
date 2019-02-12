@@ -57,7 +57,7 @@ export class DeleteResource extends Component {
         this.handleCloseModal();
         notification(
           toastr,
-          'error',
+          'success',
           `'${this.props.toDelete.name}' has been deleted successfully`,
         )();
         refetch({ page: currentPage });

@@ -94,6 +94,7 @@ export class AddResource extends React.Component {
         notification(toastr, 'success', 'Resource Successfully added')();
         /** Clear the state and restore default values */
         this.setState({ amenity: '', resourceQuantity: 0, room: '' });
+        this.props.refetch();
       })
       .catch((err) => {
         /** Notify user on failure to add resource */
@@ -191,6 +192,11 @@ AddResource.propTypes = {
     allRooms: PropTypes.object,
   }).isRequired,
   addResourceMutation: PropTypes.func.isRequired,
+  refetch: PropTypes.func,
+};
+
+AddResource.defaultProps = {
+  refetch: null,
 };
 
 export default compose(

@@ -106,7 +106,7 @@ export class OfficeList extends React.Component {
           {isFetching ? <Overlay /> : null}
           <table>
             <ColGroup />
-            <TableHead titles={['Office', 'Location', 'Timezone', 'Action']} />
+            <TableHead titles={['Office', 'Center', 'Timezone', 'Action']} />
             <tbody>
               {
                 allOffices.offices && allOffices.offices.map(office => (

@@ -14,17 +14,6 @@ import { decodeTokenAndGetUserData } from '../../utils/Cookie';
 import allCites from '../../fixtures/cities';
 
 export class EditCenter extends Component {
-  static propTypes = {
-    editCenter: PropTypes.func.isRequired,
-    centerName: PropTypes.string.isRequired,
-    centerId: PropTypes.string.isRequired,
-    abbreviation: PropTypes.string.isRequired,
-    user: PropTypes.shape({
-      user: PropTypes.object,
-    }).isRequired,
-    refetch: PropTypes.func,
-  };
-
   state = {
     centerName: this.props.centerName,
     abbreviation: this.props.abbreviation,
@@ -191,9 +180,23 @@ export class EditCenter extends Component {
     );
   }
 }
+EditCenter.propTypes = {
+  editCenter: PropTypes.func,
+  centerName: PropTypes.string,
+  centerId: PropTypes.string,
+  abbreviation: PropTypes.string,
+  user: PropTypes.shape({
+    user: PropTypes.object,
+  }).isRequired,
+  refetch: PropTypes.func,
+};
 
 EditCenter.defaultProps = {
-  refetch: PropTypes.func,
+  refetch: null,
+  editCenter: null,
+  centerName: '',
+  abbreviation: '',
+  centerId: null,
 };
 
 const { UserInfo: userData } = decodeTokenAndGetUserData() || {};

@@ -2,10 +2,13 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { EditCenter } from '../../../src/components/centers/EditCenter';
 
-describe('Edit location component', () => {
+describe('Edit center component', () => {
   const initialProps = {
     editCenter: jest.fn(),
     refetch: jest.fn(),
+    centerName: 'Kampla',
+    abbreviation: 'KLA',
+    centerId: '1',
     user: { user: { location: 'kampala' } },
   };
   let wrapper = shallow(<EditCenter {...initialProps} />);
@@ -34,7 +37,7 @@ describe('Edit location component', () => {
       editCenter: jest.fn(() => Promise.resolve()),
       refetch: jest.fn(),
       user: { user: { location: 'kampala' } },
-      centerId: 1,
+      centerId: '1',
     };
     wrapper = shallow(<EditCenter {...props} />);
     wrapper.setState({
@@ -45,7 +48,7 @@ describe('Edit location component', () => {
     const variables = {
       abbreviation: 'KLA',
       country: 'Uganda',
-      locationId: 1,
+      locationId: '1',
       name: 'Kampala',
     };
     wrapper.instance().handleEditCenter({ preventDefault });
@@ -58,7 +61,7 @@ describe('Edit location component', () => {
       editCenter: jest.fn(() => Promise.reject()),
       refetch: jest.fn(),
       user: { user: { location: 'kampala' } },
-      centerId: 1,
+      centerId: '1',
     };
     wrapper = shallow(<EditCenter {...editProps} />);
     wrapper.setState({
@@ -68,7 +71,7 @@ describe('Edit location component', () => {
     const variables = {
       abbreviation: 'KLA',
       country: 'Uganda',
-      locationId: 1,
+      locationId: '1',
       name: 'Kampala',
     };
     wrapper.instance().handleEditCenter({ preventDefault });
@@ -80,7 +83,7 @@ describe('Edit location component', () => {
     const updateData = {
       centerName: '',
       abbreviation: '',
-      centerId: 1,
+      centerId: '1',
       user: { user: { location: 'kampala' } },
     };
     wrapper = shallow(<EditCenter {...updateData} />);
@@ -92,7 +95,7 @@ describe('Edit location component', () => {
 
   it('should not close modal when abbreviation validation fails', () => {
     wrapper.setState({
-      centerName: 'Kampala', abbreviation: '', centerId: 1,
+      centerName: 'Kampala', abbreviation: '', centerId: '1',
     });
     wrapper.instance().handleEditCenter({ preventDefault });
     expect(wrapper.state('closeModal')).toEqual(false);

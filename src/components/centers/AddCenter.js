@@ -96,8 +96,8 @@ export class AddCenter extends Component {
         this.props.refetch();
       })
       .catch((err) => {
-        notification(toastr, 'error', err.graphQLErrors[0].message)();
         this.handleCloseModal();
+        notification(toastr, 'error', err.graphQLErrors[0].message)();
       });
     this.toggleLoading();
   };

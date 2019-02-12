@@ -60,6 +60,11 @@ describe('AddResource Component', () => {
     expect(wrapperCode).toMatchSnapshot();
   });
 
+  it('renders properly', () => {
+    addResourceWrapper.instance().handleCloseModal();
+    expect(addResourceWrapper.state('closeModal')).toEqual(true);
+  });
+
   it('opens up the add resource modal on clicking add resource button', () => {
     wrapper.find('#modal-button').simulate('click');
     expect(wrapper.find('Modal')).toBeTruthy();

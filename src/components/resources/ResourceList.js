@@ -97,7 +97,7 @@ export class ResourceList extends React.Component {
           }`}
         >
           <MenuTitle title="Resources" />
-          <AddResourceComponent />
+          <AddResourceComponent refetch={refetch} />
         </div>
         <div className="settings-resource-list">
           {isFetching ? <Overlay /> : null}

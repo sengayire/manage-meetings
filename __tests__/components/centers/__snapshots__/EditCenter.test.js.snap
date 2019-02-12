@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Edit location component renders without failing 1`] = `
+exports[`Edit center component renders without failing 1`] = `
 <MrmModal
   buttonText="Edit"
   className="add-office-modal"
@@ -22,7 +22,7 @@ exports[`Edit location component renders without failing 1`] = `
       onChange={[Function]}
       placeholder="Enter center name"
       type="text"
-      value="text"
+      value="Kampla"
     />
     <Input
       controlsClass=""
@@ -34,7 +34,7 @@ exports[`Edit location component renders without failing 1`] = `
       onChange={[Function]}
       placeholder="Eg. Kla"
       type="text"
-      value="text"
+      value="KLA"
     />
     <ActionButtons
       actionButtonText="SAVE CHANGES"
