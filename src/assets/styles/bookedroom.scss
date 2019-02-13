@@ -52,7 +52,7 @@
 
             &:first-child {
               width: 35%;
-
+              text-align: left !important;
               @media screen and (max-width: 425px) {
                 width: 24%;
               }
@@ -82,7 +82,7 @@
 
             padding: 25px 0 10px 0;
             font-weight: 900;
-            text-align: left;
+            text-align: center;
             color: map-get($color-black, 600);
             font-family: $font-regular, sans-serif;
             font-size: 15px;
@@ -103,7 +103,14 @@
             color: $color-text;
             font-family: $font-light;
             font-size: 15px;
+            text-align: center;
+
+            &:first-child {
+              text-align: left !important;
+            }
+
           }
+
         }
       }
     }
