@@ -1,7 +1,8 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { IconMenu, MenuItem } from 'react-toolbox/lib/menu';
+import Dropdown from '../commons/Dropdown';
 import '../../assets/styles/topmenu.scss';
+import LogoutIcon from '../../assets/images/settings_gears.svg';
 import { removeItemFromLocalStorage } from '../../utils/Utilities';
 import Constants from '../../utils/Constants';
 import { clearCookies } from '../../utils/Cookie';
@@ -30,23 +31,38 @@ class ProfileMenu extends React.Component {
     window.location.reload();
   };
 
+  /**
+   * 1. Renders Dropdown child components
+   *
+   * @returns {JSX}
+   */
+  dropOptions = () => (
+    <span key={0} className="preference-dropdown-list">
+      <NavLink className="preference-link" to="/preference">
+        <div className="preference-div" >
+          <li>
+              Preferences
+          </li>
+        </div>
+        <img type="image" alt="logout" src={LogoutIcon} className="preference-icon" />
+      </NavLink>
+      <div className="preference-border" />
+      <button
+        className="logout-btn"
+        tabIndex={0}
+        onClick={this.onLogOut}
+      >
+      Log Out
+      </button>
+    </span>
+  );
+
   render() {
     return (
-      <IconMenu
-        className="material-icons profile-dropdown"
-        icon="arrow_drop_down"
-      >
-        <NavLink to="/preference">
-          <MenuItem className="profile-menu" caption="Preference" />
-        </NavLink>
-        <MenuItem
-          className="profile-menu"
-          caption="LOGOUT"
-          onClick={() => {
-            this.onLogOut();
-          }}
-        />
-      </IconMenu>
+      <Dropdown
+        isPreference
+        content={this.dropOptions()}
+      />
     );
   }
 }

@@ -6,19 +6,17 @@ import ProfileMenu from '../../../src/components/navbars/ProfileMenu';
 describe('ProfileMenu', () => {
   const wrapper = mount(<Router><ProfileMenu /></Router>);
 
-  it('should render properly', () => {
-    expect(wrapper).toMatchSnapshot();
+  it('should have a dropdown', () => {
+    const list = wrapper.find('Dropdown');
+    expect(list).toHaveLength(1);
   });
 
-  it('should have two menu item', () => {
-    const list = wrapper.find('li');
-    expect(list).toHaveLength(2);
-  });
-
-  it('should respond to click events properly', () => {
+  it('should respond to click events properly and render the child components correctly', () => {
+    const list = wrapper.find('span');
     window.location.reload = jest.fn();
-    const list = wrapper.find('li').last();
     list.simulate('click');
+    const span = wrapper.find('button').last();
+    span.simulate('click');
     expect(window.location.reload).toHaveBeenCalled();
   });
 });
