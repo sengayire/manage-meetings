@@ -4,6 +4,7 @@ import RoomFeedbackResponse, { starRate } from '../../../src/components/roomFeed
 import RoomFeedbackResponseList from '../../../src/components/roomFeedback/RoomFeedbackResponseList';
 
 const props = {
+  activeRoomId: null,
   roomFeedbackResponse: {
     id: 1,
     room: 'Olkaria',
@@ -82,5 +83,29 @@ describe('Room Feedback', () => {
   it('should render 5 stars', () => {
     const stars5 = starRate(5);
     expect(stars5.starImage.length).toEqual(5);
+  });
+
+  it('should not have an active class on initial page load', () => {
+    const unClickedRoomFeedbackResponse = shallow(<RoomFeedbackResponse {...props} />);
+    expect(unClickedRoomFeedbackResponse.find('.active')).toHaveLength(0);
+  });
+
+  it('should have an active class when it is clicked', () => {
+    const activeProps = {
+      activeRoomId: 1,
+      roomFeedbackResponse: {
+        id: 1,
+        room: 'Olkaria',
+        responses: 25,
+        rating: 4,
+        missingItems: '2 out of 10',
+        suggestion:
+          'The substring() method returns the part of the string between the start and end indexes, or to the end of the string.',
+      },
+      viewSingleFeed: jest.fn(),
+    };
+
+    const clickedRoomFeedbackResponse = shallow(<RoomFeedbackResponse {...activeProps} />);
+    expect(clickedRoomFeedbackResponse.find('.active')).toHaveLength(1);
   });
 });

@@ -20,7 +20,9 @@ import Dropdown from '../commons/Dropdown';
  * @returns {JSX}
  */
 class RoomFeedbackResponseList extends React.Component {
-  state = { visible: false };
+  state = {
+    visible: false,
+  };
 
   /**
    * Sets component state after comparing roomId state with id argument
@@ -31,7 +33,6 @@ class RoomFeedbackResponseList extends React.Component {
   showModal = (e, id = null) => {
     e.preventDefault();
     const { roomId } = this.state;
-
     if (id === null) {
       this.setState({
         visible: !this.state.visible,
@@ -43,14 +44,6 @@ class RoomFeedbackResponseList extends React.Component {
       this.setState({ visible: false, roomId: null });
     }
   };
-
-  roomFeedbackItems = roomFeedbackResponse.map(feedback => (
-    <RoomFeedbackResponse
-      roomFeedbackResponse={feedback}
-      key={feedback.id}
-      viewSingleFeed={this.showModal}
-    />
-  ));
 
   /**
    * List of items to be exported
@@ -170,7 +163,14 @@ class RoomFeedbackResponseList extends React.Component {
             <span>Missing Items</span>
             <span>Suggestion on how to improve</span>
           </header>
-          {this.roomFeedbackItems}
+          {roomFeedbackResponse.map(feedback => (
+            <RoomFeedbackResponse
+              activeRoomId={roomId}
+              roomFeedbackResponse={feedback}
+              key={feedback.id}
+              viewSingleFeed={this.showModal}
+            />
+          ))}
         </div>
       </Fragment>
     );

@@ -10,6 +10,10 @@
   margin-bottom: 8px;
   color: map-get($color-black, 600);
 
+  &.active {
+    background-color: $color-hover;
+  }
+
   span:first-of-type {
     color: $color-primary;
   }

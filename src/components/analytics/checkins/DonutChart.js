@@ -2,8 +2,8 @@ import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { Doughnut } from 'react-chartjs-2';
 import '../../../assets/styles/donutchart.scss';
-import Warning from '../../../assets/images/warning_icon.svg';
 import Spinner from '../../../../src/components/commons/Spinner';
+import ErrorIcon from '../../../../src/components/commons/ErrorIcon';
 
 // Import the tip
 import Tip from '../../commons/Tooltip';
@@ -37,14 +37,7 @@ class DonutChart extends Component {
     } = this.props;
 
     if (error) {
-      return (
-        <div className="error-class">
-          <div className="icon-container">
-            <img className="error-icon" src={Warning} alt="error_icon" />
-          </div>
-          <b><p className="error-msg">An error occurred, cannot fetch data</p></b>
-        </div>
-      );
+      return <ErrorIcon />;
     } else if (loading) {
       return (
         <div className="chart-spinner">
