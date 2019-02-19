@@ -3667,6 +3667,17 @@ query user ($email: String!) {
                         "_state": "ready",
                       },
                     },
+                    SubscriptionObserver {
+                      "_subscription": Subscription {
+                        "_cleanup": [Function],
+                        "_observer": Object {
+                          "error": [Function],
+                          "next": [Function],
+                        },
+                        "_queue": undefined,
+                        "_state": "ready",
+                      },
+                    },
                   ],
                   "options": Object {
                     "context": Object {},
@@ -4099,6 +4110,17 @@ query user ($email: String!) {
                         "_state": "ready",
                       },
                     },
+                    SubscriptionObserver {
+                      "_subscription": Subscription {
+                        "_cleanup": [Function],
+                        "_observer": Object {
+                          "error": [Function],
+                          "next": [Function],
+                        },
+                        "_queue": undefined,
+                        "_state": "ready",
+                      },
+                    },
                   ],
                   "options": Object {
                     "context": Object {},
@@ -4381,6 +4403,17 @@ query user ($email: String!) {
                   "isCurrentlyPolling": false,
                   "isTornDown": false,
                   "observers": Array [
+                    SubscriptionObserver {
+                      "_subscription": Subscription {
+                        "_cleanup": [Function],
+                        "_observer": Object {
+                          "error": [Function],
+                          "next": [Function],
+                        },
+                        "_queue": undefined,
+                        "_state": "ready",
+                      },
+                    },
                     SubscriptionObserver {
                       "_subscription": Subscription {
                         "_cleanup": [Function],
@@ -4766,6 +4799,17 @@ query user ($email: String!) {
                   "isCurrentlyPolling": false,
                   "isTornDown": false,
                   "observers": Array [
+                    SubscriptionObserver {
+                      "_subscription": Subscription {
+                        "_cleanup": [Function],
+                        "_observer": Object {
+                          "error": [Function],
+                          "next": [Function],
+                        },
+                        "_queue": undefined,
+                        "_state": "ready",
+                      },
+                    },
                     SubscriptionObserver {
                       "_subscription": Subscription {
                         "_cleanup": [Function],
@@ -5293,6 +5337,17 @@ query user ($email: String!) {
                   "isCurrentlyPolling": false,
                   "isTornDown": false,
                   "observers": Array [
+                    SubscriptionObserver {
+                      "_subscription": Subscription {
+                        "_cleanup": [Function],
+                        "_observer": Object {
+                          "error": [Function],
+                          "next": [Function],
+                        },
+                        "_queue": undefined,
+                        "_state": "ready",
+                      },
+                    },
                     SubscriptionObserver {
                       "_subscription": Subscription {
                         "_cleanup": [Function],
@@ -8686,351 +8741,57 @@ query user ($email: String!) {
                                       undefined undefined
                                     </span>
                                     <ProfileMenu>
-                                      <ThemedIconMenu
-                                        className="material-icons profile-dropdown"
-                                        composeTheme="deeply"
-                                        icon="arrow_drop_down"
-                                        iconRipple={true}
-                                        mapThemrProps={[Function]}
-                                        menuRipple={true}
-                                        position="auto"
-                                        selectable={false}
-                                      >
-                                        <IconMenu
-                                          className="material-icons profile-dropdown"
-                                          icon="arrow_drop_down"
-                                          iconRipple={true}
-                                          menuRipple={true}
-                                          position="auto"
-                                          selectable={false}
-                                          theme={
-                                            Object {
-                                              "tooltipInner": "tooltipInner",
-                                            }
-                                          }
-                                        >
-                                          <div
-                                            className="material-icons profile-dropdown"
+                                      <Dropdown
+                                        content={
+                                          <span
+                                            className="preference-dropdown-list"
                                           >
-                                            <ThemedThemed
-                                              composeTheme="deeply"
-                                              disabled={false}
-                                              icon="arrow_drop_down"
-                                              mapThemrProps={[Function]}
+                                            <NavLink
+                                              activeClassName="active"
+                                              ariaCurrent="true"
+                                              className="preference-link"
+                                              to="/preference"
+                                            >
+                                              <div
+                                                className="preference-div"
+                                              >
+                                                <li>
+                                                  Preferences
+                                                </li>
+                                              </div>
+                                              <img
+                                                alt="logout"
+                                                className="preference-icon"
+                                                src="test-file-stub"
+                                                type="image"
+                                              />
+                                            </NavLink>
+                                            <div
+                                              className="preference-border"
+                                            />
+                                            <button
+                                              className="logout-btn"
                                               onClick={[Function]}
-                                              ripple={true}
-                                              rippleCentered={true}
-                                              rippleClassName=""
-                                              rippleMultiple={true}
-                                              rippleSpread={2}
+                                              tabIndex={0}
                                             >
-                                              <ThemedRippledComponent
-                                                composeTheme="deeply"
-                                                disabled={false}
-                                                icon="arrow_drop_down"
-                                                mapThemrProps={[Function]}
-                                                onClick={[Function]}
-                                                ripple={true}
-                                                rippleCentered={true}
-                                                rippleClassName=""
-                                                rippleMultiple={true}
-                                                rippleSpread={2}
-                                                theme={
-                                                  Object {
-                                                    "tooltipInner": "tooltipInner",
-                                                  }
-                                                }
-                                              >
-                                                <RippledComponent
-                                                  disabled={false}
-                                                  icon="arrow_drop_down"
-                                                  onClick={[Function]}
-                                                  ripple={true}
-                                                  rippleCentered={true}
-                                                  rippleClassName=""
-                                                  rippleMultiple={true}
-                                                  rippleSpread={2}
-                                                  theme={
-                                                    Object {
-                                                      "tooltipInner": "tooltipInner",
-                                                    }
-                                                  }
-                                                >
-                                                  <IconButton
-                                                    accent={false}
-                                                    className=""
-                                                    disabled={false}
-                                                    icon="arrow_drop_down"
-                                                    neutral={true}
-                                                    onClick={[Function]}
-                                                    onMouseDown={[Function]}
-                                                    onTouchStart={[Function]}
-                                                    primary={false}
-                                                    theme={
-                                                      Object {
-                                                        "tooltipInner": "tooltipInner",
-                                                      }
-                                                    }
-                                                    type="button"
-                                                  >
-                                                    <button
-                                                      className=""
-                                                      data-react-toolbox="button"
-                                                      disabled={false}
-                                                      onClick={[Function]}
-                                                      onMouseDown={[Function]}
-                                                      onMouseLeave={[Function]}
-                                                      onMouseUp={[Function]}
-                                                      onTouchStart={[Function]}
-                                                      type="button"
-                                                    >
-                                                      <FontIcon
-                                                        alt=""
-                                                        className=""
-                                                        value="arrow_drop_down"
-                                                      >
-                                                        <span
-                                                          aria-label=""
-                                                          className="material-icons"
-                                                          data-react-toolbox="font-icon"
-                                                        >
-                                                          arrow_drop_down
-                                                        </span>
-                                                      </FontIcon>
-                                                    </button>
-                                                  </IconButton>
-                                                </RippledComponent>
-                                              </ThemedRippledComponent>
-                                            </ThemedThemed>
-                                            <ThemedMenu
-                                              active={false}
-                                              composeTheme="deeply"
-                                              mapThemrProps={[Function]}
-                                              onHide={[Function]}
-                                              outline={true}
-                                              position="auto"
-                                              ripple={true}
-                                              selectable={false}
-                                              theme={
-                                                Object {
-                                                  "tooltipInner": "tooltipInner",
-                                                }
-                                              }
-                                            >
-                                              <Menu
-                                                active={false}
-                                                onHide={[Function]}
-                                                outline={true}
-                                                position="auto"
-                                                ripple={true}
-                                                selectable={false}
-                                                theme={
-                                                  Object {
-                                                    "tooltipInner": "tooltipInner",
-                                                  }
-                                                }
-                                              >
-                                                <div
-                                                  className=""
-                                                  data-react-toolbox="menu"
-                                                  style={
-                                                    Object {
-                                                      "height": undefined,
-                                                      "width": undefined,
-                                                    }
-                                                  }
-                                                >
-                                                  <div
-                                                    style={
-                                                      Object {
-                                                        "height": undefined,
-                                                        "width": undefined,
-                                                      }
-                                                    }
-                                                  />
-                                                  <ul>
-                                                    <NavLink
-                                                      activeClassName="active"
-                                                      ariaCurrent="true"
-                                                      key=".0"
-                                                      to="/preference"
-                                                    >
-                                                      <Route
-                                                        path="/preference"
-                                                      >
-                                                        <Link
-                                                          aria-current={false}
-                                                          replace={false}
-                                                          to="/preference"
-                                                        >
-                                                          <a
-                                                            aria-current={false}
-                                                            href="/preference"
-                                                            onClick={[Function]}
-                                                          >
-                                                            <ThemedThemed
-                                                              caption="Preference"
-                                                              className="profile-menu"
-                                                              composeTheme="deeply"
-                                                              disabled={false}
-                                                              mapThemrProps={[Function]}
-                                                              ripple={true}
-                                                              rippleCentered={false}
-                                                              rippleClassName=""
-                                                              rippleMultiple={true}
-                                                              rippleSpread={2}
-                                                            >
-                                                              <ThemedRippledComponent
-                                                                caption="Preference"
-                                                                className="profile-menu"
-                                                                composeTheme="deeply"
-                                                                disabled={false}
-                                                                mapThemrProps={[Function]}
-                                                                ripple={true}
-                                                                rippleCentered={false}
-                                                                rippleClassName=""
-                                                                rippleMultiple={true}
-                                                                rippleSpread={2}
-                                                                theme={
-                                                                  Object {
-                                                                    "tooltipInner": "tooltipInner",
-                                                                  }
-                                                                }
-                                                              >
-                                                                <RippledComponent
-                                                                  caption="Preference"
-                                                                  className="profile-menu"
-                                                                  disabled={false}
-                                                                  ripple={true}
-                                                                  rippleCentered={false}
-                                                                  rippleClassName=""
-                                                                  rippleMultiple={true}
-                                                                  rippleSpread={2}
-                                                                  theme={
-                                                                    Object {
-                                                                      "tooltipInner": "tooltipInner",
-                                                                    }
-                                                                  }
-                                                                >
-                                                                  <MenuItem
-                                                                    caption="Preference"
-                                                                    className="profile-menu"
-                                                                    disabled={false}
-                                                                    onMouseDown={[Function]}
-                                                                    onTouchStart={[Function]}
-                                                                    selected={false}
-                                                                    theme={
-                                                                      Object {
-                                                                        "tooltipInner": "tooltipInner",
-                                                                      }
-                                                                    }
-                                                                  >
-                                                                    <li
-                                                                      className="profile-menu"
-                                                                      data-react-toolbox="menu-item"
-                                                                      onClick={[Function]}
-                                                                      onMouseDown={[Function]}
-                                                                      onTouchStart={[Function]}
-                                                                    >
-                                                                      <span>
-                                                                        Preference
-                                                                      </span>
-                                                                    </li>
-                                                                  </MenuItem>
-                                                                </RippledComponent>
-                                                              </ThemedRippledComponent>
-                                                            </ThemedThemed>
-                                                          </a>
-                                                        </Link>
-                                                      </Route>
-                                                    </NavLink>
-                                                    <ThemedThemed
-                                                      caption="LOGOUT"
-                                                      className="profile-menu"
-                                                      composeTheme="deeply"
-                                                      disabled={false}
-                                                      key=".1"
-                                                      mapThemrProps={[Function]}
-                                                      onClick={[Function]}
-                                                      ripple={true}
-                                                      rippleCentered={false}
-                                                      rippleClassName=""
-                                                      rippleMultiple={true}
-                                                      rippleSpread={2}
-                                                      selected={false}
-                                                    >
-                                                      <ThemedRippledComponent
-                                                        caption="LOGOUT"
-                                                        className="profile-menu"
-                                                        composeTheme="deeply"
-                                                        disabled={false}
-                                                        mapThemrProps={[Function]}
-                                                        onClick={[Function]}
-                                                        ripple={true}
-                                                        rippleCentered={false}
-                                                        rippleClassName=""
-                                                        rippleMultiple={true}
-                                                        rippleSpread={2}
-                                                        selected={false}
-                                                        theme={
-                                                          Object {
-                                                            "tooltipInner": "tooltipInner",
-                                                          }
-                                                        }
-                                                      >
-                                                        <RippledComponent
-                                                          caption="LOGOUT"
-                                                          className="profile-menu"
-                                                          disabled={false}
-                                                          onClick={[Function]}
-                                                          ripple={true}
-                                                          rippleCentered={false}
-                                                          rippleClassName=""
-                                                          rippleMultiple={true}
-                                                          rippleSpread={2}
-                                                          selected={false}
-                                                          theme={
-                                                            Object {
-                                                              "tooltipInner": "tooltipInner",
-                                                            }
-                                                          }
-                                                        >
-                                                          <MenuItem
-                                                            caption="LOGOUT"
-                                                            className="profile-menu"
-                                                            disabled={false}
-                                                            onClick={[Function]}
-                                                            onMouseDown={[Function]}
-                                                            onTouchStart={[Function]}
-                                                            selected={false}
-                                                            theme={
-                                                              Object {
-                                                                "tooltipInner": "tooltipInner",
-                                                              }
-                                                            }
-                                                          >
-                                                            <li
-                                                              className="profile-menu"
-                                                              data-react-toolbox="menu-item"
-                                                              onClick={[Function]}
-                                                              onMouseDown={[Function]}
-                                                              onTouchStart={[Function]}
-                                                            >
-                                                              <span>
-                                                                LOGOUT
-                                                              </span>
-                                                            </li>
-                                                          </MenuItem>
-                                                        </RippledComponent>
-                                                      </ThemedRippledComponent>
-                                                    </ThemedThemed>
-                                                  </ul>
-                                                </div>
-                                              </Menu>
-                                            </ThemedMenu>
-                                          </div>
-                                        </IconMenu>
-                                      </ThemedIconMenu>
+                                              Log Out
+                                            </button>
+                                          </span>
+                                        }
+                                        isPreference={true}
+                                      >
+                                        <div
+                                          className="dropdown-caret"
+                                        >
+                                          <button
+                                            onClick={[Function]}
+                                          >
+                                            <span>
+                                               ⌄ 
+                                            </span>
+                                          </button>
+                                        </div>
+                                      </Dropdown>
                                     </ProfileMenu>
                                   </div>
                                 </div>
@@ -9938,17 +9699,6 @@ query user ($email: String!) {
                                     <div
                                       className="dropdown"
                                     >
-                                      <button
-                                        className="dropbtn"
-                                        id="btnControl"
-                                        onClick={[Function]}
-                                      >
-                                        <img
-                                          alt="download icon"
-                                          className="dropbtn-img"
-                                          src="test-file-stub"
-                                        />
-                                      </button>
                                       <div
                                         className="dropdown-content-null"
                                       >
@@ -9958,10 +9708,9 @@ query user ($email: String!) {
                                           Export options 
                                         </span>
                                         <span
-                                          id="download"
                                           onClick={[Function]}
                                         >
-                                          PDF
+                                          CSV
                                         </span>
                                         <span
                                           onClick={[Function]}
@@ -9971,7 +9720,7 @@ query user ($email: String!) {
                                         <span
                                           onClick={[Function]}
                                         >
-                                          CSV
+                                          PDF
                                         </span>
                                       </div>
                                     </div>

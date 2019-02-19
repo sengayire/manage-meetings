@@ -44,8 +44,7 @@ describe('Tests for ResourceList Component', () => {
     expect(mountErrorWrapper.find('ResourceList').props().data.error.networkError).toBe(error);
   });
 
-  it('should have all data passed as props', async () => {
-    await new Promise(resolve => setTimeout(resolve));
+  it('should have all data passed as props', () => {
     mountWrapper.update();
     expect(mountWrapper.find('ResourceList')).toHaveLength(1);
     expect(mountWrapper.find('ResourceList').prop('data').allResources.resources.length).toEqual(allResources.data.allResources.resources.length);
@@ -58,6 +57,11 @@ describe('Tests for ResourceList Component', () => {
           resources: [],
         },
         fetchMore: jest.fn(() => Promise.resolve()),
+      },
+      userLocation: {
+        user: {
+          location: 'Kampala',
+        },
       },
       loading: false,
       error: {},

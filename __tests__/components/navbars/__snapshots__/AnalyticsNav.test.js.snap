@@ -3349,6 +3349,17 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                       "_state": "ready",
                     },
                   },
+                  SubscriptionObserver {
+                    "_subscription": Subscription {
+                      "_cleanup": [Function],
+                      "_observer": Object {
+                        "error": [Function],
+                        "next": [Function],
+                      },
+                      "_queue": undefined,
+                      "_state": "ready",
+                    },
+                  },
                 ],
                 "options": Object {
                   "context": Object {},
@@ -3747,6 +3758,17 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                       "_state": "ready",
                     },
                   },
+                  SubscriptionObserver {
+                    "_subscription": Subscription {
+                      "_cleanup": [Function],
+                      "_observer": Object {
+                        "error": [Function],
+                        "next": [Function],
+                      },
+                      "_queue": undefined,
+                      "_state": "ready",
+                    },
+                  },
                 ],
                 "options": Object {
                   "context": Object {},
@@ -4004,6 +4026,17 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                 "isCurrentlyPolling": false,
                 "isTornDown": false,
                 "observers": Array [
+                  SubscriptionObserver {
+                    "_subscription": Subscription {
+                      "_cleanup": [Function],
+                      "_observer": Object {
+                        "error": [Function],
+                        "next": [Function],
+                      },
+                      "_queue": undefined,
+                      "_state": "ready",
+                    },
+                  },
                   SubscriptionObserver {
                     "_subscription": Subscription {
                       "_cleanup": [Function],
@@ -4361,6 +4394,17 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                 "isCurrentlyPolling": false,
                 "isTornDown": false,
                 "observers": Array [
+                  SubscriptionObserver {
+                    "_subscription": Subscription {
+                      "_cleanup": [Function],
+                      "_observer": Object {
+                        "error": [Function],
+                        "next": [Function],
+                      },
+                      "_queue": undefined,
+                      "_state": "ready",
+                    },
+                  },
                   SubscriptionObserver {
                     "_subscription": Subscription {
                       "_cleanup": [Function],
@@ -4845,6 +4889,17 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                 "isCurrentlyPolling": false,
                 "isTornDown": false,
                 "observers": Array [
+                  SubscriptionObserver {
+                    "_subscription": Subscription {
+                      "_cleanup": [Function],
+                      "_observer": Object {
+                        "error": [Function],
+                        "next": [Function],
+                      },
+                      "_queue": undefined,
+                      "_state": "ready",
+                    },
+                  },
                   SubscriptionObserver {
                     "_subscription": Subscription {
                       "_cleanup": [Function],
@@ -8354,17 +8409,6 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                 <div
                   className="dropdown"
                 >
-                  <button
-                    className="dropbtn"
-                    id="btnControl"
-                    onClick={[Function]}
-                  >
-                    <img
-                      alt="download icon"
-                      className="dropbtn-img"
-                      src="test-file-stub"
-                    />
-                  </button>
                   <div
                     className="dropdown-content-null"
                   >
@@ -8374,10 +8418,9 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                       Export options 
                     </span>
                     <span
-                      id="download"
                       onClick={[Function]}
                     >
-                      PDF
+                      CSV
                     </span>
                     <span
                       onClick={[Function]}
@@ -8387,7 +8430,7 @@ exports[`AnalyticsNav Component renders correctly from memory 1`] = `
                     <span
                       onClick={[Function]}
                     >
-                      CSV
+                      PDF
                     </span>
                   </div>
                 </div>

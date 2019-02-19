@@ -33,6 +33,15 @@ const allResourcesReturnData = {
       hasPrevious: false,
       __typename: 'Resources',
     },
+    refetch: jest.fn(),
+    loading: false,
+    error: {},
+    fetchMore: jest.fn(),
+    userLocation: {
+      user: {
+        location: 'Kampala',
+      },
+    },
   },
 };
 

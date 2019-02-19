@@ -9,12 +9,18 @@ exports[`AddResource Component renders properly 1`] = `
     data={
       Object {
         "allRooms": Object {
-          "rooms": Array [],
+          "rooms": Array [
+            Object {},
+          ],
         },
-        "fetchMore": [MockFunction],
       }
     }
-    refetch={null}
+    refetch={[MockFunction]}
+    userLocation={
+      Object {
+        "location": "Nairobi",
+      }
+    }
   />
 </MockedProvider>
 `;

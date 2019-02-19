@@ -14,7 +14,7 @@ import MenuTitle from '../commons/MenuTitle';
 import Spinner from '../commons/Spinner';
 import notification from '../../utils/notification';
 import Overlay from '../commons/Overlay';
-import { GET_USER_ROLE } from '../../graphql/queries/People';
+import { GET_USER_ROLE, GET_USER_QUERY } from '../../graphql/queries/People';
 import { decodeTokenAndGetUserData } from '../../utils/Cookie';
 import { saveItemInLocalStorage } from '../../utils/Utilities';
 import defaultUserRole from '../../fixtures/user';
@@ -97,7 +97,10 @@ export class ResourceList extends React.Component {
           }`}
         >
           <MenuTitle title="Resources" />
-          <AddResourceComponent refetch={refetch} />
+          <AddResourceComponent
+            userLocation={this.props.userLocation.user}
+            refetch={refetch}
+          />
         </div>
         <div className="settings-resource-list">
           {isFetching ? <Overlay /> : null}
@@ -144,10 +147,18 @@ ResourceList.propTypes = {
   user: PropTypes.shape({
     user: PropTypes.object,
   }),
+  userLocation: PropTypes.shape({
+    user: PropTypes.object,
+  }),
 };
 
 ResourceList.defaultProps = {
   user: defaultUserRole,
+  userLocation: {
+    user: {
+      location: '',
+    },
+  },
 };
 
 const { UserInfo: userData } = decodeTokenAndGetUserData() || {};
@@ -165,6 +176,17 @@ export default compose(
   }),
   graphql(GET_USER_ROLE, {
     name: 'user',
+    options: /* istanbul ignore next */ () => ({
+      variables: {
+        email:
+          process.env.NODE_ENV === 'test'
+            ? 'sammy.muriuki@andela.com'
+            : userData.email,
+      },
+    }),
+  }),
+  graphql(GET_USER_QUERY, {
+    name: 'userLocation',
     options: /* istanbul ignore next */ () => ({
       variables: {
         email:

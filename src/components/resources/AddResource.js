@@ -90,9 +90,9 @@ export class AddResource extends React.Component {
       .then(() => {
         /** Notify user of success of adding of room */
         this.toggleLoading();
-        this.handleCloseModal();
         notification(toastr, 'success', 'Resource Successfully added')();
         /** Clear the state and restore default values */
+        this.handleCloseModal();
         this.setState({ amenity: '', resourceQuantity: 0, room: '' });
         this.props.refetch();
       })
@@ -124,6 +124,7 @@ export class AddResource extends React.Component {
       room,
       isLoading,
     } = this.state;
+
     const { allRooms } = this.props.data;
 
     return (
@@ -190,24 +191,32 @@ export class AddResource extends React.Component {
 AddResource.propTypes = {
   data: PropTypes.shape({
     allRooms: PropTypes.object,
+    fetchMore: PropTypes.func,
   }).isRequired,
+  // eslint-disable-next-line
+  userLocation: PropTypes.shape({
+    location: PropTypes.string,
+  }),
   addResourceMutation: PropTypes.func.isRequired,
   refetch: PropTypes.func,
 };
 
 AddResource.defaultProps = {
   refetch: null,
+  userLocation: {
+    location: 'nairobi',
+  },
 };
 
 export default compose(
   graphql(GET_ALL_ROOMS_QUERY, {
     name: 'data',
-    options: () => ({
+    options: props => ({
       variables: {
         page: 1,
         perPage: 1000,
         capacity: 0,
-        location: '',
+        location: props.userLocation && /* istanbul ignore next */ props.userLocation.location,
         office: '',
       },
     }),

@@ -15,10 +15,13 @@ describe('AddResource Component', () => {
     addResourceMutation: jest.fn(),
     data: {
       allRooms: {
-        rooms: [],
+        rooms: [{}],
       },
-      fetchMore: jest.fn(() => Promise.resolve()),
     },
+    userLocation: {
+      location: 'Nairobi',
+    },
+    refetch: jest.fn(),
   };
 
   const { MRM_API_URL } = process.env || {};
@@ -98,6 +101,9 @@ describe('AddResource Component', () => {
         },
         fetchMore: jest.fn(() => Promise.resolve()),
       },
+      userLocation: {
+        location: 'Nairobi',
+      },
     };
 
     const myWrapper = mount(<AddResource {...props} />);
@@ -118,6 +124,9 @@ describe('AddResource Component', () => {
           rooms: [],
         },
         fetchMore: jest.fn(() => Promise.resolve()),
+      },
+      userLocation: {
+        location: 'Kampala',
       },
     };
 
