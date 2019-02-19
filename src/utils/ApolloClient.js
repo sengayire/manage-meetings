@@ -2,8 +2,7 @@ import { ApolloClient } from 'apollo-client';
 import { createHttpLink } from 'apollo-link-http';
 import { setContext } from 'apollo-link-context';
 import { InMemoryCache } from 'apollo-cache-inmemory';
-import { getItemFromLocalStorage } from './Utilities';
-import Constants from './Constants';
+import { getToken } from '../utils/Cookie';
 
 // get mrm api link from environment variables
 const { MRM_API_URL } = process.env || {};
@@ -15,8 +14,8 @@ const httpLink = createHttpLink({
 
 // append a token on each apollo request
 const authHttpLink = setContext((_, { headers }) => {
-  // read token from localStorage
-  const token = getItemFromLocalStorage(Constants.MRM_TOKEN);
+  // read token from Cookies
+  const token = getToken();
   // send token on each request
   return {
     headers: {

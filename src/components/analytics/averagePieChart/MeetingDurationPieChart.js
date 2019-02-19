@@ -21,7 +21,7 @@ class MeetingDurationPieChart extends Component {
     return (
       <article className="pie-chart">
         <section className="chart-header">
-          <p className="chart-title">Average Meeting Duration [%]</p>
+          <p className="chart-title">Average Meetings Duration [%]</p>
           {Tip(tip)}
         </section>
         <section className="chart-content">

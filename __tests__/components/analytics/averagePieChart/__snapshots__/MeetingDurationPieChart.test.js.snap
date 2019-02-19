@@ -10,7 +10,7 @@ exports[`Meeting Duration Pie Chart Component renders correctly from memory 1`] 
     <p
       className="chart-title"
     >
-      Average Meeting Duration [%]
+      Average Meetings Duration [%]
     </p>
     <ThemedTooltippedComponent
       className=""
@@ -77,7 +77,7 @@ exports[`Meeting Duration Pie Chart Component should be able to hover 1`] = `
     <p
       className="chart-title"
     >
-      Average Meeting Duration [%]
+      Average Meetings Duration [%]
     </p>
     <ThemedTooltippedComponent
       className=""
@@ -144,7 +144,7 @@ exports[`Meeting Duration Pie Chart Component should be able to hover 2`] = `
     <p
       className="chart-title"
     >
-      Average Meeting Duration [%]
+      Average Meetings Duration [%]
     </p>
     <ThemedTooltippedComponent
       className=""

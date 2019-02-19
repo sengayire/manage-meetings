@@ -22,7 +22,7 @@ class RoomCapacityPieChart extends Component {
     return (
       <article className="pie-chart">
         <section className="chart-header">
-          <p className="chart-title">Average Room Capacity [%]</p>
+          <p className="chart-title">Average Rooms Capacity [%]</p>
           {Tip(tip)}
         </section>
         <section className="chart-content">
