@@ -36,7 +36,14 @@ module.exports = {
         exclude: /node_modules/,
         loader: 'graphql-tag/loader',
       },
-      { test: /\.js$/, exclude: /node_modules/, use: ['babel-loader'] },
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: ['babel-loader'],
+        query: {
+          presets: ['react', 'env'],
+        },
+      },
       {
         test: /\.css$/,
         use: [
@@ -56,7 +63,7 @@ module.exports = {
       {
         test: /\.scss$/,
         use: [
-          { loader: 'style-loader' }, // create style npdes from js strings
+          { loader: 'style-loader' }, // create style nodes from js strings
           { loader: 'css-loader' }, // translate css into commonjs
           { loader: 'sass-loader' }, // compiles sass to css
         ],

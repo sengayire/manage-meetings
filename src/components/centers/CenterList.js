@@ -12,6 +12,7 @@ import { GET_USER_ROLE } from '../../graphql/queries/People';
 import { decodeTokenAndGetUserData } from '../../utils/Cookie';
 import { saveItemInLocalStorage } from '../../utils/Utilities';
 import DataNotFound from '../commons/DataNotFound';
+import Errors from '../commons/Errors';
 
 export const CenterList = (props) => {
   const {
@@ -22,10 +23,7 @@ export const CenterList = (props) => {
   if (loading) {
     return <Spinner />;
   }
-
   if (user && user.roles) saveItemInLocalStorage('access', user.roles[0].id);
-
-  if (error) return <div>{error.message}</div>;
   return (
     <div className="settings-locations">
       <div className="settings-locations-control">
@@ -34,6 +32,8 @@ export const CenterList = (props) => {
       </div>
       <div className="settings-locations-list">
         {
+        !error ?
+        (
           allLocations.length < 1
           ? <DataNotFound /> :
           <table>
@@ -49,7 +49,9 @@ export const CenterList = (props) => {
              ))}
             </tbody>
           </table>
-        }
+        ) :
+          <Errors message="Data cannot be returned at the moment" />
+      }
       </div>
     </div>
   );

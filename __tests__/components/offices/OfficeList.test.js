@@ -39,23 +39,15 @@ describe('Tests for SettingOffices', () => {
     expect(props.allOffices.allOffices.offices).toHaveLength(1);
   });
 
-  it('should render an error screen', async () => {
-    const officeListErrorMocks = {
-      request: {
-        query: GET_ALL_OFFICES,
-        variables: {
-          page: 1,
-          perPage: 5,
-        },
+  it('should render an error screen', () => {
+    const officeProps = {
+      data: {
+        error: { message: 'Error' },
+        fetchMore: jest.fn(),
       },
-      error: { message: 'An error occured' },
     };
-    const errorWrapper = renderer.create(
-      <MockedProvider mocks={[officeListErrorMocks]} addTypename={false}>
-        <SettingsOffices {...props} />
-      </MockedProvider>);
-    await wait(0);
-    expect(errorWrapper.toJSON().children).toHaveLength(1);
+    const errorWrapper = shallow(<OfficeList {...officeProps} />);
+    expect(errorWrapper.find('Errors')).toHaveLength(1);
   });
 
   it('renders the offices', async () => {

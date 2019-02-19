@@ -19,6 +19,7 @@ import { decodeTokenAndGetUserData } from '../../utils/Cookie';
 import { saveItemInLocalStorage } from '../../utils/Utilities';
 import defaultUserRole from '../../fixtures/user';
 import DataNotFound from '../commons/DataNotFound';
+import Errors from '../commons/Errors';
 
 /**
  * Resource List Component
@@ -84,11 +85,9 @@ export class ResourceList extends React.Component {
     const { loading, error, refetch } = this.props.data;
     const { allResources, currentPage, isFetching } = this.state;
     const { user } = this.props.user;
-    if (user) saveItemInLocalStorage('access', user.roles[0].id);
-
     if (loading) return <Spinner />;
-    if (error && error.message === 'GraphQL error: No more resources') return <DataNotFound />;
-    if (error) return <div>{error.message}</div>;
+    else if (error && error.message === 'GraphQL error: No more resources') return <DataNotFound />;
+    else if (user) saveItemInLocalStorage('access', user.roles[0].id);
     return (
       <div className="settings-resource">
         <div
@@ -104,11 +103,12 @@ export class ResourceList extends React.Component {
         </div>
         <div className="settings-resource-list">
           {isFetching ? <Overlay /> : null}
-          <table>
-            <ColGroup />
-            <TableHead titles={['Resource', 'Action']} />
-            <tbody>
-              {
+          {!error ?
+            <table>
+              <ColGroup />
+              <TableHead titles={['Resource', 'Action']} />
+              <tbody>
+                {
                 allResources && allResources.resources.map(resource => (
                   <Resource
                     currentPage={currentPage}
@@ -117,10 +117,12 @@ export class ResourceList extends React.Component {
                     key={resource.id}
                   />
               ))}
-            </tbody>
-          </table>
+              </tbody>
+            </table>
+          : <Errors message="Data cannot be returned at the moment" />
+          }
         </div>
-        <Pagination
+        {!error && <Pagination
           currentPage={currentPage}
           totalPages={allResources.pages}
           hasNext={allResources.hasNext}
@@ -128,7 +130,7 @@ export class ResourceList extends React.Component {
           handleData={this.handleData}
           dataFetched={this.state.dataFetched}
           isFetching={isFetching}
-        />
+        />}
       </div>
     );
   }

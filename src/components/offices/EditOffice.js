@@ -79,7 +79,9 @@ export class EditOffice extends React.Component {
         notification(toastr,
           'success', `${officeName} office has been updated successfully`)();
         this.handleCloseModal();
-        this.toggles(); refetch({ page: currentPage });
+        this.toggles();
+        /* istanbul ignore next */
+        refetch({ page: currentPage });
       })
       .catch((err) => {
         this.toggleLoading();

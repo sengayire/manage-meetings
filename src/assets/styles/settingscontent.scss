@@ -118,7 +118,7 @@
 
 .data-not-found{
   padding-top: 18%;
-  color:#c7c6c6;
+  color: map-get($color-white, 700);
   width: 200%;
   padding-bottom: 15%;
   padding-left: 8%;
@@ -133,5 +133,28 @@
 @media screen and (min-width: 1500px) {
   .data-not-found {
     font-size: 740%;
+  }
+}
+
+.error-occurred{
+  padding-top: 18%;
+  color: map-get($color-white, 700);
+  padding-bottom: 15%;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+@media screen and (max-width: 1500px) {
+  .error-occurred {
+    font-size: 370%;
+    width: 110%;
+  }
+}
+
+@media screen and (min-width: 1500px) {
+  .error-occurred {
+    font-size: 492%;
+    width: 110%;
   }
 }

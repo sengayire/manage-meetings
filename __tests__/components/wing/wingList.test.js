@@ -32,6 +32,6 @@ describe('Tests for SettingOffices', () => {
       user: { roles: [{ id: 1, name: 'default' }], location: 'Nairobi' },
     };
     const component = shallow(<WingList {...initialprops} />);
-    expect(component.find('div').text()).toBe('An error has occurred');
+    expect(component.find('Errors')).toHaveLength(1);
   });
 });

@@ -14,6 +14,7 @@ import { GET_USER_ROLE } from '../../graphql/queries/People';
 import { decodeTokenAndGetUserData } from '../../utils/Cookie';
 import { saveItemInLocalStorage } from '../../utils/Utilities';
 import DataNotFound from '../commons/DataNotFound';
+import Errors from '../commons/Errors';
 
 export const BlocksList = (props) => {
   const { allOffices, user, allBlocks } = props;
@@ -21,7 +22,7 @@ export const BlocksList = (props) => {
   const loading = allOffices.loading || allBlocks.loading || user.loading;
   if (error && error.message === 'GraphQL error: No more offices') {
     return <DataNotFound />;
-  } else if (error) { return (<div>{error.message}</div>); }
+  }
   if (loading) return <Spinner />;
 
   if (user.user) saveItemInLocalStorage('access', user.user.roles[0].id);
@@ -29,14 +30,19 @@ export const BlocksList = (props) => {
     <div className="settings-rooms">
       <div className="settings-rooms-control">
         <MenuTitle title="Blocks" />
+        {!error &&
         <AddBlockMenu offices={allOffices.allOffices} refetch={allBlocks.allBlocks.refetch} />
+        }
       </div>
       <div className="settings-rooms-list">
-        <table>
-          <ColGroup />
-          <TableHead titles={['SingleBlock', 'Location', 'Office', 'Action']} />
-          <BlockTableBody blocks={allBlocks.allBlocks} refetch={allBlocks.allBlocks.refetch} />
-        </table>
+        {!error ?
+          <table>
+            <ColGroup />
+            <TableHead titles={['SingleBlock', 'Location', 'Office', 'Action']} />
+            <BlockTableBody blocks={allBlocks.allBlocks} refetch={allBlocks.allBlocks.refetch} />
+          </table>
+        : <Errors message="Data cannot be returned at the moment" />
+        }
       </div>
     </div>
   );

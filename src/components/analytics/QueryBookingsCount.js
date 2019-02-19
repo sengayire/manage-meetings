@@ -7,6 +7,9 @@ import { ANALYTICS_BOOKINGS_COUNT } from '../../graphql/queries/analytics';
 import ErrorBoundary from '../commons/ErrorBoundary';
 import graphColor from '../../fixtures/graphColor';
 import Spinner from '../commons/Spinner';
+import Warning from '../../assets/images/warning_icon.svg';
+import '../../assets/styles/analyticsPage.scss';
+
 
 /**
  * Component for Querying Bookings Count
@@ -26,10 +29,15 @@ const QueryBookingsCount = ({ dateValue }) => (
         return <Spinner />;
       }
       if (error) {
-        const errors = error.graphQLErrors.map(err => err.message);
-        return <p>{errors}</p>;
+        return (
+          <div className="error-class">
+            <div className="icon-container">
+              <img className="error-icon" src={Warning} alt="error_icon" />
+            </div>
+            <b><p className="error-msg">An error occurred, cannot fetch data</p></b>
+          </div>
+        );
       }
-
       const bookings = data.bookingsAnalyticsCount;
 
       const options = {

@@ -4,10 +4,10 @@ exports[`Average Pie Chart Component renders correctly from memory 1`] = `
 <div
   className="pie-chart-container"
 >
-  <MeetingDurationPieChart
+  <Apollo(AverageMeetingDurationPieChart)
     dateValue={Object {}}
   />
-  <RoomCapacityPieChart />
+  <Apollo(GetAverageRoomCapacityComponent) />
   <BookingsCountBarGraph
     dateValue={Object {}}
   />

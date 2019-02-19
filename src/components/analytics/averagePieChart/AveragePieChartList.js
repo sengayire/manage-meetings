@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import MeetingDurationPieChart from './MeetingDurationPieChart';
-import RoomCapacityPieChart from './RoomCapacityPieChart';
 
 // import styles
 import '../../../../src/assets/styles/averagePieChartList.scss';
 import BookingsCountBarGraph from '../barGraph/BookingsCountBarGraph';
+import AverageMeetingDurationPieCharts from './AverageMeetingDurationPieChart';
+import GetAverageRoomCapacity from './GetAverageRoomCapacity';
 
 /**
  * Average Pie Chart list component
@@ -16,8 +16,8 @@ import BookingsCountBarGraph from '../barGraph/BookingsCountBarGraph';
  */
 const AveragePieChartList = ({ dateValue }) => (
   <div className="pie-chart-container">
-    <MeetingDurationPieChart dateValue={dateValue} />
-    <RoomCapacityPieChart />
+    <AverageMeetingDurationPieCharts dateValue={dateValue} />
+    <GetAverageRoomCapacity />
     <BookingsCountBarGraph dateValue={dateValue} />
   </div>
 );

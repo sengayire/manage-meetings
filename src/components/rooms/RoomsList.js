@@ -25,6 +25,7 @@ import { decodeTokenAndGetUserData } from '../../utils/Cookie';
 import { saveItemInLocalStorage } from '../../utils/Utilities';
 import defaultUserRole from '../../fixtures/user';
 import DataNotFound from '../commons/DataNotFound';
+import Errors from '../commons/Errors';
 
 /**
  * Rooms List Component
@@ -208,18 +209,9 @@ export class RoomsList extends React.Component {
       error: locationsError,
     } = this.props.locations;
     const { user } = this.props.user;
-    if (user) saveItemInLocalStorage('access', user.roles[0].id);
     if (loading || loadingLocations) return <Spinner />;
-    if (error && error.message === 'GraphQL error: No more resources') return <DataNotFound />;
-    if (locationsError || error) {
-      return (
-        <div>{locationsError ?
-           locationsError.message
-          : <div>{error.message}</div>}
-        </div>
-      );
-    }
-
+    else if (error && error.message === 'GraphQL error: No more resources') return <DataNotFound />;
+    else if (user) saveItemInLocalStorage('access', user.roles[0].id);
     return (
       <div className="settings-rooms">
         <div
@@ -243,21 +235,24 @@ export class RoomsList extends React.Component {
         {noResource ? (
           <div className="settings-rooms-list">
             {isFetching ? <Overlay /> : null}
-            <table>
-              <ColGroup />
-              <TableHead titles={['Room', 'Location', 'Office', 'Action']} />
-              <TableBody
-                rooms={allRooms.rooms}
-                location={locations}
-                currentPage={currentPage}
-                refetch={refetch}
-              />
-            </table>
+            {!(locationsError || error) ?
+              <table>
+                <ColGroup />
+                <TableHead titles={['Room', 'Location', 'Office', 'Action']} />
+                <TableBody
+                  rooms={allRooms.rooms}
+                  location={locations}
+                  currentPage={currentPage}
+                  refetch={refetch}
+                />
+              </table>
+            : <Errors message="Data cannot be returned at the moment" />
+            }
           </div>
         ) : (
           <h2 style={{ marginLeft: '0' }}>No Rooms Found</h2>
         )}
-        {noResource && !isSearching ? (
+        {noResource && !isSearching && !(locationsError || error) ? (
           <Pagination
             currentPage={currentPage}
             totalPages={allRooms.pages}

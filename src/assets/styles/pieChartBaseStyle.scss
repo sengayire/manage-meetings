@@ -35,6 +35,26 @@
       width: 150px;
       height: 150px;
     }
+    .error-class{
+      position: relative;
+      .icon-container{
+        position: relative;
+        left: 48%;
+        width: 10%;
+        height: 10%;
+        img{
+          width: 26px;
+          height: 29px;
+        }
+      }
+      p{
+        position: relative;
+        left: -7%;
+        font-weight: bold;
+        color: map-get($color-black, 100);
+        width: 106%;
+      }
+    }
   }
 }
 

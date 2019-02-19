@@ -76,7 +76,7 @@ describe('AnalyticsNav Component', () => {
     expect(mountWrapper).toMatchSnapshot();
   });
 
-  it('should have a div', () => {
+  it('should have 68 divs', () => {
     const div = wrapper.find('div');
     expect(div).toHaveLength(60);
   });

@@ -85,9 +85,32 @@ describe('blockslist Component', () => {
         laoding: false,
         error: { message: 'error' },
       },
+      refetch: jest.fn(),
     };
     const blocksList = shallow(<ListOfBlocks {...props} />,
     );
     expect(blocksList.find('DataNotFound')).toHaveLength(1);
+  });
+
+  it('should render an error incase it occurs', () => {
+    const props = {
+      allOffices: {
+        laoding: false,
+      },
+      allBlocks: {
+        laoding: false,
+        error: { message: 'error' },
+        allBlocks: {
+          refetch: jest.fn(),
+        },
+      },
+      user: {
+        laoding: false,
+        error: { message: 'error' },
+      },
+    };
+    const blocksList = shallow(<ListOfBlocks {...props} />,
+    );
+    expect(blocksList.find('Errors')).toHaveLength(1);
   });
 });

@@ -128,3 +128,22 @@
     }
   }
 }
+
+.average-table-error{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  width:200%;
+  height: 100% !important;
+  position: relative;
+  td{
+    img{
+      width: 30%;
+      position: relative;
+      left:30%
+    }
+    p{
+      width: 100%;
+    }
+  }
+}

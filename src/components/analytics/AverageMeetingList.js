@@ -9,6 +9,7 @@ import MEETING_DURATION_ANALYTICS from '../../graphql/queries/analytics';
 import Pagination from '../commons/Pagination';
 import QueryAnalyticsLoading from './AverageMeetingList/QueryAnalyticsLoading';
 import Overlay from '../commons/Overlay';
+import Warning from '../../assets/images/warning_icon.svg';
 
 /**
  * Component for the average meeting list
@@ -73,7 +74,6 @@ export class AverageMeetingList extends Component {
     const { analyticsForMeetingsDurations, isFetching } = this.state;
     const { loading, error } = this.props.data;
     if (loading) return <QueryAnalyticsLoading />;
-    if (error) return `Error: ${error}`;
     return (
       <div className="average-meeting">
         <div className="average-meeting-control">
@@ -87,21 +87,38 @@ export class AverageMeetingList extends Component {
               titles={['Room', 'No. of meetings', 'Average Meeting Duration']}
             />
             <tbody>
-              <QueryAnalyticsPerMeetingRoom
-                data={analyticsForMeetingsDurations}
-              />
+              {
+                error ?
+                  <tr className="average-table-error">
+                    <td className="error_class">
+                      <img
+                        className="error_icon"
+                        src={Warning}
+                        alt="error_icon"
+                      />
+                      <b>
+                        <p className="error_msg">
+                        An error occurred, cannot fetch data
+                        </p>
+                      </b>
+                    </td>
+                  </tr> :
+                  <QueryAnalyticsPerMeetingRoom
+                    data={analyticsForMeetingsDurations}
+                  />
+              }
             </tbody>
           </table>
         </div>
         <div className="average-meeting-pagination">
           <div>
-            <Pagination
+            { !error && <Pagination
               totalPages={analyticsForMeetingsDurations.pages}
               hasNext={analyticsForMeetingsDurations.hasNext}
               hasPrevious={analyticsForMeetingsDurations.hasPrevious}
               handleData={this.handleData}
               isFetching={isFetching}
-            />
+            />}
           </div>
         </div>
       </div>

@@ -150,7 +150,7 @@ describe('RoomList Component', () => {
     expect(wrapper.find('RoomsList').props().data.error).toBe(undefined);
     await new Promise(resolve => setTimeout(resolve));
     wrapper.update();
-    expect(wrapper.find('div').length).toBe(1);
+    expect(wrapper.find('.error-occurred').text()).toBe('Data cannot be returned at the moment');
     // check whether an error occurs after loading
     expect(wrapper.find('RoomsList').props().data.error).toBeTruthy();
   });
@@ -198,7 +198,7 @@ describe('RoomList Component', () => {
     await wait(0);
     wrapper.update();
     expect(wrapper.find('RoomsList').props().locations.error).toBeTruthy();
-    expect(wrapper.find('div').length).toBe(1);
+    expect(wrapper.find('.error-occurred').text()).toBe('Data cannot be returned at the moment');
   });
 
   it('should render the DataNotFound component when there is no data in the database', () => {

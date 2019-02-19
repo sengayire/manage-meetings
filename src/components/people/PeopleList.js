@@ -20,11 +20,7 @@ import Sort from '../commons/Sort';
 import notification from '../../utils/notification';
 import Overlay from '../commons/Overlay';
 import DataNotFound from '../commons/DataNotFound';
-
-const handleErrorMessage = (...errors) => {
-  const errorMessage = errors.find(e => e !== undefined).message;
-  return errorMessage;
-};
+import Errors from '../commons/Errors';
 
 export class PeopleList extends Component {
   constructor(props) {
@@ -125,14 +121,6 @@ export class PeopleList extends Component {
     } = this.props.roles;
     if (loading || loadingLocations || loadingRoles) return <Spinner />;
     if (error && error.message === 'GraphQL error: No users found') return <DataNotFound />;
-    if (error || locationsError || rolesError) {
-      const errorMessage = handleErrorMessage(
-        error,
-        locationsError,
-        rolesError,
-      );
-      return <div>{errorMessage}</div>;
-    }
     return (
       <div className="settings-people">
         <div
@@ -148,11 +136,12 @@ export class PeopleList extends Component {
         </div>
         <div className="settings-people-list">
           {isFetching ? <Overlay /> : null}
-          <table>
-            <ColGroup />
-            <TableHead titles={['Name', 'Location', 'Access Level']} />
-            <tbody>
-              {this.props.people.users &&
+          {!(error || locationsError || rolesError) ?
+            <table>
+              <ColGroup />
+              <TableHead titles={['Name', 'Location', 'Access Level']} />
+              <tbody>
+                {this.props.people.users &&
                 users.users.map(person => (
                   <People
                     people={formatPeopleData(person)}
@@ -163,10 +152,12 @@ export class PeopleList extends Component {
                     editRole={editRole}
                   />
                 ))}
-            </tbody>
-          </table>
+              </tbody>
+            </table>
+          : <Errors message="Data cannot be returned at the moment" />
+          }
         </div>
-        <Pagination
+        {!error && <Pagination
           totalPages={users.pages}
           hasNext={users.hasNext}
           hasPrevious={users.hasPrevious}
@@ -174,7 +165,7 @@ export class PeopleList extends Component {
           dataFetched={this.state.dataFetched}
           isFetching={isFetching}
           currentPage={currentPage}
-        />
+        />}
       </div>
     );
   }

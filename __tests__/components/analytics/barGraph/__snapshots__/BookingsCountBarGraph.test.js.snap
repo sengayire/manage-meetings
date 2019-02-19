@@ -151,8 +151,8 @@ exports[`Bookings Count Bar Graph Component renders correctly 1`] = `
             },
           },
           "variables": Object {
-            "endDate": "Feb 18 2019",
-            "startDate": "Feb 18 2019",
+            "endDate": "Feb 19 2019",
+            "startDate": "Feb 19 2019",
           },
         },
       },
@@ -1842,8 +1842,8 @@ exports[`Bookings Count Bar Graph Component should be able to hover 1`] = `
             },
           },
           "variables": Object {
-            "endDate": "Feb 18 2019",
-            "startDate": "Feb 18 2019",
+            "endDate": "Feb 19 2019",
+            "startDate": "Feb 19 2019",
           },
         },
       },
@@ -3362,7 +3362,26 @@ exports[`Bookings Count Bar Graph Component should be able to hover 1`] = `
                 }
               }
             >
-              <p />
+              <div
+                className="error-class"
+              >
+                <div
+                  className="icon-container"
+                >
+                  <img
+                    alt="error_icon"
+                    className="error-icon"
+                    src="test-file-stub"
+                  />
+                </div>
+                <b>
+                  <p
+                    className="error-msg"
+                  >
+                    An error occurred, cannot fetch data
+                  </p>
+                </b>
+              </div>
             </Query>
           </QueryBookingsCount>
         </section>
@@ -3523,8 +3542,8 @@ exports[`Bookings Count Bar Graph Component should be able to hover 2`] = `
             },
           },
           "variables": Object {
-            "endDate": "Feb 18 2019",
-            "startDate": "Feb 18 2019",
+            "endDate": "Feb 19 2019",
+            "startDate": "Feb 19 2019",
           },
         },
       },
@@ -5043,7 +5062,26 @@ exports[`Bookings Count Bar Graph Component should be able to hover 2`] = `
                 }
               }
             >
-              <p />
+              <div
+                className="error-class"
+              >
+                <div
+                  className="icon-container"
+                >
+                  <img
+                    alt="error_icon"
+                    className="error-icon"
+                    src="test-file-stub"
+                  />
+                </div>
+                <b>
+                  <p
+                    className="error-msg"
+                  >
+                    An error occurred, cannot fetch data
+                  </p>
+                </b>
+              </div>
             </Query>
           </QueryBookingsCount>
         </section>

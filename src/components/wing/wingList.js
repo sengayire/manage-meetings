@@ -11,6 +11,7 @@ import Spinner from '../commons/Spinner';
 import { decodeTokenAndGetUserData } from '../../utils/Cookie';
 import { GET_USER_QUERY } from '../../graphql/queries/People';
 import { GET_ALL_WINGS } from '../../graphql/queries/wings';
+import Errors from '../commons/Errors';
 
 /**
  * Get user data from token
@@ -26,7 +27,7 @@ const { UserInfo: userData } = decodeTokenAndGetUserData() || {};
  */
 export const WingList = (props) => {
   const { allWings, loading, error } = props.allWings;
-  if (error) return (<div>{error.message}</div>);
+  if (error) return <Errors message="Data cannot be returned at the moment" />;
   return (
     /* istanbul ignore next */
     loading ? (
@@ -77,6 +78,7 @@ WingList.defaultProps = {
   },
 };
 
+/* istanbul ignore next */
 const options = () => ({
   variables: {
     email: userData.email,

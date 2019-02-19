@@ -5,6 +5,10 @@ import { Pie } from 'react-chartjs-2';
 import MEETING_DURATION_ANALYTICS from '../../../graphql/queries/analytics';
 import { meetingDurationBackground, borderColor } from '../../../fixtures/pieChartColors';
 import Spinner from '../../commons/Spinner';
+import Tip from '../../commons/Tooltip';
+import '../../../../src/assets/styles/pieChartBaseStyle.scss';
+import '../../../../src/assets/styles/meetingDurationPieChart.scss';
+import AnalyticsError from '../../commons/AnalayticsError';
 
 /**
  * AverageMeetingDurationPieChart Component
@@ -43,13 +47,15 @@ export class AverageMeetingDurationPieChart extends React.Component {
       .catch(() => null);
   };
 
-  render() {
+  renderPieChart = () => {
     const { MeetingsDurationaAnalytics = [] } = this.state.analyticsForMeetingsDurations;
     const { loading, error } = this.props.data;
+
     if (loading) return <Spinner />;
     else if (error) {
-      const errors = error.graphQLErrors.map(err => err.message);
-      return <p>{errors}</p>;
+      return (<AnalyticsError
+        title="Average Meeting Duration [%]"
+      />);
     }
     const options = {
       legend: {
@@ -91,13 +97,48 @@ export class AverageMeetingDurationPieChart extends React.Component {
     };
 
     return (
-      <div>
-        <Pie
-          data={graphData}
-          options={options}
-          width={172}
-        />
-      </div>
+      <section className="chart-content">
+        <div>
+          <Pie
+            data={graphData}
+            options={options}
+            width={172}
+          />
+        </div>
+        <section className="chart-details">
+          <p className="duration-first-circle">
+            <span>{}</span>
+          Above 60 Minutes
+          </p>
+          <p className="duration-second-circle">
+            <span>{}</span>
+          45 - 60 Minutes
+          </p>
+          <p className="duration-third-circle">
+            <span>{}</span>
+          30 - 45 Minutes
+          </p>
+          <p className="duration-forth-circle">
+            <span>{}</span>
+          Below 30 Minutes
+          </p>
+        </section>
+      </section>
+    );
+  }
+
+  render() {
+    const tip =
+      'The percentage representation of the average amount of time people spend in all booked meeting rooms in a set time period';
+    return (
+      <article className="pie-chart">
+        <section className="chart-header">
+          <p className="chart-title">Average Meetings Duration [%]</p>
+          {Tip(tip)}
+        </section>
+        {this.renderPieChart()}
+      </article>
+
     );
   }
 }

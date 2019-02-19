@@ -137,6 +137,6 @@ describe('FloorList Component', () => {
       },
     };
     const component = shallow(<FloorList user={defaultUserRole} {...props} />);
-    expect(component.find('div').text()).toEqual('An error has occurred');
+    expect(component.find('Errors')).toHaveLength(1);
   });
 });

@@ -18,6 +18,7 @@ import { decodeTokenAndGetUserData } from '../../utils/Cookie';
 import { saveItemInLocalStorage } from '../../utils/Utilities';
 import defaultUserRole from '../../fixtures/user';
 import DataNotFound from '../commons/DataNotFound';
+import Errors from '../commons/Errors';
 
 /**
  * Offices List component
@@ -87,7 +88,6 @@ export class OfficeList extends React.Component {
       allOffices, currentPage, dataFetched, isFetching,
     } = this.state;
     if (error && error.message === 'GraphQL error: No more offices') return <DataNotFound />;
-    if (error) return <div>{error.message}</div>;
     if (loading) return <Spinner />;
 
     if (user) saveItemInLocalStorage('access', user.roles[0].id);
@@ -104,11 +104,12 @@ export class OfficeList extends React.Component {
         </div>
         <div className="settings-offices-list">
           {isFetching ? <Overlay /> : null}
-          <table>
-            <ColGroup />
-            <TableHead titles={['Office', 'Center', 'Timezone', 'Action']} />
-            <tbody>
-              {
+          {!error ?
+            <table>
+              <ColGroup />
+              <TableHead titles={['Office', 'Center', 'Timezone', 'Action']} />
+              <tbody>
+                {
                 allOffices.offices && allOffices.offices.map(office => (
                   <Office
                     office={office}
@@ -119,10 +120,12 @@ export class OfficeList extends React.Component {
                   />
                 ))
                 }
-            </tbody>
-          </table>
+              </tbody>
+            </table>
+          : <Errors message="Data cannot be returned at the moment" />
+          }
         </div>
-        <Pagination
+        {!error && <Pagination
           totalPages={allOffices.pages}
           hasNext={allOffices.hasNext}
           hasPrevious={allOffices.hasPrevious}
@@ -130,7 +133,7 @@ export class OfficeList extends React.Component {
           currentPage={currentPage}
           dataFetched={dataFetched}
           isFetching={isFetching}
-        />
+        />}
       </div>
     );
   }

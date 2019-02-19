@@ -17,6 +17,7 @@ import { saveItemInLocalStorage } from '../../utils/Utilities';
 import MenuTitle from '../commons/MenuTitle';
 import Pagination from '../commons/Pagination';
 import DataNotFound from '../commons/DataNotFound';
+import Errors from '../commons/Errors';
 
 /**
  * Floor List Component
@@ -94,7 +95,6 @@ export class FloorList extends Component {
 
     if (user) saveItemInLocalStorage('access', user.roles[0].id);
     if (error && error.message === 'GraphQL error: No more resources') return <DataNotFound />;
-    if (error) return <div>{error.message}</div>;
     return (
       <div className="settings-resource">
         <div
@@ -106,11 +106,12 @@ export class FloorList extends Component {
         </div>
         <div className="settings-resource-list">
           {isFetching ? <Overlay id="floors-table" /> : null}
-          <table className="test-One">
-            <ColGroup />
-            <TableHead titles={['Floor', 'Block', 'Action']} />
-            <tbody>
-              {
+          { !error ?
+            <table className="test-One">
+              <ColGroup />
+              <TableHead titles={['Floor', 'Block', 'Action']} />
+              <tbody>
+                {
                 allFloors && allFloors.floors.map(floor => (
                   <Floor
                     floor={formatFloorData(floor)}
@@ -118,10 +119,12 @@ export class FloorList extends Component {
                     refetch={refetch}
                   />
               ))}
-            </tbody>
-          </table>
+              </tbody>
+            </table>
+          : <Errors message="Data cannot be returned at the moment" />
+          }
         </div>
-        <Pagination
+        { !error && <Pagination
           totalPages={allFloors.pages}
           hasNext={allFloors.hasNext}
           hasPrevious={allFloors.hasPrevious}
@@ -129,7 +132,7 @@ export class FloorList extends Component {
           currentPage={currentPage}
           isFetching={isFetching}
           dataFetched={dataFetched}
-        />
+        />}
       </div>
     );
   }

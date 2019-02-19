@@ -5,6 +5,9 @@ import { Pie } from 'react-chartjs-2';
 import roomCapacityBackground from '../../../fixtures/pieChartColors';
 import { GET_ALL_ROOMS } from '../../../graphql/queries/Rooms';
 import Spinner from '../../commons/Spinner';
+import Tip from '../../commons/Tooltip';
+import '../../../../src/assets/styles/roomCapacityPieChart.scss';
+import AnalyticsError from '../../commons/AnalayticsError';
 
 export class GetAverageRoomCapacityComponent extends Component {
   constructor(props) {
@@ -33,10 +36,12 @@ export class GetAverageRoomCapacityComponent extends Component {
     return { lessThanTenData, betweenTenandTwentyData, greaterThanTwentyData };
   }
 
-  render() {
+  renderPieChart = () => {
     const { loading, error } = this.props.data;
     if (error) {
-      return <div>{error.message}</div>;
+      return (<AnalyticsError
+        title="Average Rooms Capacity [%]"
+      />);
     } else if (loading) {
       return <Spinner />;
     }
@@ -52,7 +57,7 @@ export class GetAverageRoomCapacityComponent extends Component {
     const graphData = {
       labels: ['Less than 10 ', '10-20 ', 'More than 20 '],
       datasets: [{
-        label: 'Average Meeting Duration',
+        label: 'Average Meetings Duration',
         data: [lessThanTenData, betweenTenandTwentyData, greaterThanTwentyData],
         backgroundColor: roomCapacityBackground,
         borderWidth: 3,
@@ -60,14 +65,42 @@ export class GetAverageRoomCapacityComponent extends Component {
     };
 
     return (
-      <React.Fragment>
+      <section className="chart-content">
         <Pie
           data={graphData}
           options={options}
           height={168}
           width={230}
         />
-      </React.Fragment>
+        <section className="chart-details">
+          <p className="room-capacity-first-circle">
+            <span>{}</span>
+            Less than 10
+          </p>
+          <p className="room-capacity-second-circle">
+            <span>{}</span>
+            10 - 20
+          </p>
+          <p className="room-capacity-third-circle">
+            <span>{}</span>
+            More than 20
+          </p>
+        </section>
+      </section>
+    );
+  }
+
+  render() {
+    const tip = 'The percentage representation of the average rooms\' capacity ';
+
+    return (
+      <article className="pie-chart">
+        <section className="chart-header">
+          <p className="chart-title">Average Rooms Capacity [%]</p>
+          {Tip(tip)}
+        </section>
+        {this.renderPieChart()}
+      </article>
     );
   }
 }

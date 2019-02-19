@@ -1,44 +1,97 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Get Average Room Capacity Component renders correctly from memory 1`] = `
-<React.Fragment>
-  <Pie
-    data={
-      Object {
-        "datasets": Array [
-          Object {
-            "backgroundColor": Array [
-              "#3a63e0",
-              "#859eee",
-              "#cdd7f8",
-            ],
-            "borderWidth": 3,
-            "data": Array [
-              100,
-              0,
-              0,
-            ],
-            "label": "Average Meeting Duration",
+<article
+  className="pie-chart"
+>
+  <section
+    className="chart-header"
+  >
+    <p
+      className="chart-title"
+    >
+      Average Rooms Capacity [%]
+    </p>
+    <ThemedTooltippedComponent
+      className=""
+      composeTheme="deeply"
+      mapThemrProps={[Function]}
+      theme={null}
+      tooltip="The percentage representation of the average rooms' capacity "
+      tooltipDelay={0}
+      tooltipHideOnClick={true}
+      tooltipPosition="top"
+      tooltipShowOnClick={true}
+    >
+      <img
+        alt="help icon"
+        src="test-file-stub"
+      />
+    </ThemedTooltippedComponent>
+  </section>
+  <section
+    className="chart-content"
+  >
+    <Pie
+      data={
+        Object {
+          "datasets": Array [
+            Object {
+              "backgroundColor": Array [
+                "#3a63e0",
+                "#859eee",
+                "#cdd7f8",
+              ],
+              "borderWidth": 3,
+              "data": Array [
+                100,
+                0,
+                0,
+              ],
+              "label": "Average Meetings Duration",
+            },
+          ],
+          "labels": Array [
+            "Less than 10 ",
+            "10-20 ",
+            "More than 20 ",
+          ],
+        }
+      }
+      height={168}
+      options={
+        Object {
+          "legend": Object {
+            "display": false,
           },
-        ],
-        "labels": Array [
-          "Less than 10 ",
-          "10-20 ",
-          "More than 20 ",
-        ],
+          "maintainAspectRatio": false,
+          "responsive": false,
+        }
       }
-    }
-    height={168}
-    options={
-      Object {
-        "legend": Object {
-          "display": false,
-        },
-        "maintainAspectRatio": false,
-        "responsive": false,
-      }
-    }
-    width={230}
-  />
-</React.Fragment>
+      width={230}
+    />
+    <section
+      className="chart-details"
+    >
+      <p
+        className="room-capacity-first-circle"
+      >
+        <span />
+        Less than 10
+      </p>
+      <p
+        className="room-capacity-second-circle"
+      >
+        <span />
+        10 - 20
+      </p>
+      <p
+        className="room-capacity-third-circle"
+      >
+        <span />
+        More than 20
+      </p>
+    </section>
+  </section>
+</article>
 `;
