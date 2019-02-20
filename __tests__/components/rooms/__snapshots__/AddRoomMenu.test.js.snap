@@ -45,7 +45,7 @@ exports[`AddRoomMenu should render properly 1`] = `
     rippleMultiple={true}
     rippleSpread={2}
   >
-    <Apollo(Apollo(AddRoomToEpicTower)) />
+    <Apollo(Apollo(Apollo(AddRoomToEpicTower))) />
   </ThemedThemed>
   <ThemedThemed
     composeTheme="deeply"
@@ -57,7 +57,7 @@ exports[`AddRoomMenu should render properly 1`] = `
     rippleMultiple={true}
     rippleSpread={2}
   >
-    <Apollo(Apollo(AddRoomNairobi)) />
+    <Apollo(Apollo(Apollo(AddRoomNairobi))) />
   </ThemedThemed>
   <ThemedThemed
     composeTheme="deeply"
@@ -69,7 +69,7 @@ exports[`AddRoomMenu should render properly 1`] = `
     rippleMultiple={true}
     rippleSpread={2}
   >
-    <Apollo(Apollo(AddRoomToTheCrest)) />
+    <Apollo(Apollo(Apollo(AddRoomToTheCrest))) />
   </ThemedThemed>
   <ThemedThemed
     caption="New York"

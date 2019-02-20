@@ -7,6 +7,7 @@ import { ActionButtons } from '../commons';
 import TheCrestInputs from '../commons/TheCrestInputs';
 import { GET_CREST_DETAILS } from '../../graphql/queries/Offices';
 import { ADD_ROOM_TO_CREST } from '../../graphql/mutations/rooms/AddRoomToCrest';
+import { GET_ALL_REMOTE_ROOMS } from '../../graphql/queries/Rooms';
 import SelectImage from '../commons/SelectImage';
 import '../../assets/styles/addroomCrest.scss';
 import notification from '../../utils/notification';
@@ -17,13 +18,14 @@ import hasInvalidInputs from '../helpers/InputValidators';
 export class AddRoomToTheCrest extends Component {
   state = {
     roomType: 'meeting',
-    roomCalendar: 'andela.com_3137343432303133383637@resource.calendar.google.com',
+    roomCalendar: '',
     officeId: 0,
     imageUrl: '',
     roomName: '',
     roomFloor: 0,
     uploading: false,
     floorOptions: [],
+    allRemoteRooms: [],
     roomCapacity: 0,
     closeModal: false,
     thumbnailName: 'Upload a thumbnail',
@@ -32,6 +34,7 @@ export class AddRoomToTheCrest extends Component {
 
   componentWillReceiveProps = (props) => {
     const { officeDetails } = props;
+    const { remoteRooms } = props;
     /* istanbul ignore next */
     if (officeDetails.getOfficeByName) {
       const {
@@ -47,6 +50,16 @@ export class AddRoomToTheCrest extends Component {
       this.setState({
         floorOptions,
         officeId,
+      });
+    }
+    /* istanbul ignore next */
+    if (remoteRooms.allRemoteRooms) {
+      const { rooms: [{ calendarId, name }] } = remoteRooms.allRemoteRooms;
+      const { rooms } = remoteRooms.allRemoteRooms;
+      this.setState({
+        allRemoteRooms: rooms,
+        roomName: name,
+        roomCalendar: calendarId,
       });
     }
   };
@@ -203,8 +216,8 @@ export class AddRoomToTheCrest extends Component {
       thumbnailName,
       floorOptions,
       isLoading,
+      allRemoteRooms,
     } = this.state;
-
     let floorOptionsList = floorOptions;
     const { officeDetails } = this.props;
 
@@ -232,6 +245,7 @@ export class AddRoomToTheCrest extends Component {
             floorOptionsList={floorOptionsList}
             roomCapacity={roomCapacity}
             handleInputChange={this.handleInputChange}
+            allRemoteRooms={allRemoteRooms}
           />
           <ActionButtons
             withCancel
@@ -250,8 +264,23 @@ AddRoomToTheCrest.propTypes = {
     getOfficeByName: PropTypes.array,
   }).isRequired,
   crestMutation: PropTypes.func.isRequired,
+  // eslint-disable-next-line
+  remoteRooms: PropTypes.shape({
+    allRemoteRooms: PropTypes.shape({
+      rooms: PropTypes.array,
+    }),
+  }),
+};
+
+AddRoomToTheCrest.defaultProps = {
+  remoteRooms: {
+    allRemoteRooms: {
+      rooms: [{}],
+    },
+  },
 };
 export default compose(
   graphql(GET_CREST_DETAILS, { name: 'officeDetails' }),
+  graphql(GET_ALL_REMOTE_ROOMS, { name: 'remoteRooms' }),
   graphql(ADD_ROOM_TO_CREST, { name: 'crestMutation' }),
 )(AddRoomToTheCrest);

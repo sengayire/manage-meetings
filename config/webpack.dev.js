@@ -14,29 +14,6 @@ module.exports = merge(common, {
     public: 'mrm-dev.andela.com:8080',
     historyApiFallback: true,
   },
-  resolve: {
-    extensions: ['.js', '.jsx'],
-  },
-  module: {
-    rules: [
-      {
-        test: /\.jsx?$/,
-        loaders: 'babel-loader',
-        query: {
-          presets: ['react', 'env'],
-          plugins: [
-            'transform-class-properties',
-          ],
-        },
-        include: [path.join(__dirname, 'src')],
-        exclude: /(node_modules|server|.vscode)/,
-      },
-      {
-        test: /\.(sass|scss|css)$/,
-        loaders: ['style-loader', 'css-loader', 'sass-loader'],
-      },
-    ],
-  },
   plugins: [
     new HtmlWebpackPlugin({
       inject: true,

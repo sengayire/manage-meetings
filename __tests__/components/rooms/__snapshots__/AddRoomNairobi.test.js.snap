@@ -224,6 +224,82 @@ exports[`AddRoomNairobi should pop up a modal when modal button is clicked 1`] =
             },
             "variables": undefined,
           },
+          "data" => Object {
+            "query": Object {
+              "definitions": Array [
+                Object {
+                  "directives": Array [],
+                  "kind": "OperationDefinition",
+                  "name": undefined,
+                  "operation": "query",
+                  "selectionSet": Object {
+                    "kind": "SelectionSet",
+                    "selections": Array [
+                      Object {
+                        "alias": undefined,
+                        "arguments": Array [],
+                        "directives": Array [],
+                        "kind": "Field",
+                        "name": Object {
+                          "kind": "Name",
+                          "value": "allRemoteRooms",
+                        },
+                        "selectionSet": Object {
+                          "kind": "SelectionSet",
+                          "selections": Array [
+                            Object {
+                              "alias": undefined,
+                              "arguments": Array [],
+                              "directives": Array [],
+                              "kind": "Field",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "rooms",
+                              },
+                              "selectionSet": Object {
+                                "kind": "SelectionSet",
+                                "selections": Array [
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "calendarId",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "name",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
+                                ],
+                              },
+                            },
+                          ],
+                        },
+                      },
+                    ],
+                  },
+                  "variableDefinitions": Array [],
+                },
+              ],
+              "kind": "Document",
+              "loc": Object {
+                "end": 93,
+                "start": 0,
+              },
+            },
+            "variables": undefined,
+          },
         },
         "cache": InMemoryCache {
           "addTypename": false,
@@ -239,6 +315,85 @@ exports[`AddRoomNairobi should pop up a modal when modal button is clicked 1`] =
           "optimistic": Array [],
           "silenceBroadcast": false,
           "watches": Array [
+            Object {
+              "callback": [Function],
+              "optimistic": true,
+              "previousResult": [Function],
+              "query": Object {
+                "definitions": Array [
+                  Object {
+                    "directives": Array [],
+                    "kind": "OperationDefinition",
+                    "name": undefined,
+                    "operation": "query",
+                    "selectionSet": Object {
+                      "kind": "SelectionSet",
+                      "selections": Array [
+                        Object {
+                          "alias": undefined,
+                          "arguments": Array [],
+                          "directives": Array [],
+                          "kind": "Field",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "allRemoteRooms",
+                          },
+                          "selectionSet": Object {
+                            "kind": "SelectionSet",
+                            "selections": Array [
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "rooms",
+                                },
+                                "selectionSet": Object {
+                                  "kind": "SelectionSet",
+                                  "selections": Array [
+                                    Object {
+                                      "alias": undefined,
+                                      "arguments": Array [],
+                                      "directives": Array [],
+                                      "kind": "Field",
+                                      "name": Object {
+                                        "kind": "Name",
+                                        "value": "calendarId",
+                                      },
+                                      "selectionSet": undefined,
+                                    },
+                                    Object {
+                                      "alias": undefined,
+                                      "arguments": Array [],
+                                      "directives": Array [],
+                                      "kind": "Field",
+                                      "name": Object {
+                                        "kind": "Name",
+                                        "value": "name",
+                                      },
+                                      "selectionSet": undefined,
+                                    },
+                                  ],
+                                },
+                              },
+                            ],
+                          },
+                        },
+                      ],
+                    },
+                    "variableDefinitions": Array [],
+                  },
+                ],
+                "kind": "Document",
+                "loc": Object {
+                  "end": 93,
+                  "start": 0,
+                },
+              },
+              "variables": undefined,
+            },
             Object {
               "callback": [Function],
               "optimistic": true,
@@ -465,6 +620,85 @@ exports[`AddRoomNairobi should pop up a modal when modal button is clicked 1`] =
                       Object {
                         "directives": Array [],
                         "kind": "OperationDefinition",
+                        "name": undefined,
+                        "operation": "query",
+                        "selectionSet": Object {
+                          "kind": "SelectionSet",
+                          "selections": Array [
+                            Object {
+                              "alias": undefined,
+                              "arguments": Array [],
+                              "directives": Array [],
+                              "kind": "Field",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "allRemoteRooms",
+                              },
+                              "selectionSet": Object {
+                                "kind": "SelectionSet",
+                                "selections": Array [
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "rooms",
+                                    },
+                                    "selectionSet": Object {
+                                      "kind": "SelectionSet",
+                                      "selections": Array [
+                                        Object {
+                                          "alias": undefined,
+                                          "arguments": Array [],
+                                          "directives": Array [],
+                                          "kind": "Field",
+                                          "name": Object {
+                                            "kind": "Name",
+                                            "value": "calendarId",
+                                          },
+                                          "selectionSet": undefined,
+                                        },
+                                        Object {
+                                          "alias": undefined,
+                                          "arguments": Array [],
+                                          "directives": Array [],
+                                          "kind": "Field",
+                                          "name": Object {
+                                            "kind": "Name",
+                                            "value": "name",
+                                          },
+                                          "selectionSet": undefined,
+                                        },
+                                      ],
+                                    },
+                                  },
+                                ],
+                              },
+                            },
+                          ],
+                        },
+                        "variableDefinitions": Array [],
+                      },
+                    ],
+                    "kind": "Document",
+                    "loc": Object {
+                      "end": 93,
+                      "start": 0,
+                    },
+                  },
+                  "variables": undefined,
+                },
+                Object {
+                  "callback": [Function],
+                  "optimistic": true,
+                  "previousResult": [Function],
+                  "query": Object {
+                    "definitions": Array [
+                      Object {
+                        "directives": Array [],
+                        "kind": "OperationDefinition",
                         "name": Object {
                           "kind": "Name",
                           "value": "officeDetails",
@@ -654,7 +888,7 @@ exports[`AddRoomNairobi should pop up a modal when modal button is clicked 1`] =
             "request": [Function],
           },
           "fetchQueryPromises": Map {},
-          "idCounter": 3,
+          "idCounter": 5,
           "link": ApolloLink {
             "request": [Function],
           },
@@ -663,6 +897,213 @@ exports[`AddRoomNairobi should pop up a modal when modal button is clicked 1`] =
           },
           "onBroadcast": [Function],
           "queries": Map {
+            "2" => Object {
+              "cancel": [Function],
+              "document": Object {
+                "definitions": Array [
+                  Object {
+                    "directives": Array [],
+                    "kind": "OperationDefinition",
+                    "name": undefined,
+                    "operation": "query",
+                    "selectionSet": Object {
+                      "kind": "SelectionSet",
+                      "selections": Array [
+                        Object {
+                          "alias": undefined,
+                          "arguments": Array [],
+                          "directives": Array [],
+                          "kind": "Field",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "allRemoteRooms",
+                          },
+                          "selectionSet": Object {
+                            "kind": "SelectionSet",
+                            "selections": Array [
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "rooms",
+                                },
+                                "selectionSet": Object {
+                                  "kind": "SelectionSet",
+                                  "selections": Array [
+                                    Object {
+                                      "alias": undefined,
+                                      "arguments": Array [],
+                                      "directives": Array [],
+                                      "kind": "Field",
+                                      "name": Object {
+                                        "kind": "Name",
+                                        "value": "calendarId",
+                                      },
+                                      "selectionSet": undefined,
+                                    },
+                                    Object {
+                                      "alias": undefined,
+                                      "arguments": Array [],
+                                      "directives": Array [],
+                                      "kind": "Field",
+                                      "name": Object {
+                                        "kind": "Name",
+                                        "value": "name",
+                                      },
+                                      "selectionSet": undefined,
+                                    },
+                                  ],
+                                },
+                              },
+                            ],
+                          },
+                        },
+                      ],
+                    },
+                    "variableDefinitions": Array [],
+                  },
+                ],
+                "kind": "Document",
+                "loc": Object {
+                  "end": 93,
+                  "start": 0,
+                },
+              },
+              "invalidate": false,
+              "invalidated": false,
+              "lastRequestId": 3,
+              "listeners": Array [
+                [Function],
+              ],
+              "newData": null,
+              "observableQuery": ObservableQuery {
+                "_subscriber": [Function],
+                "isCurrentlyPolling": false,
+                "isTornDown": false,
+                "lastError": [Error: Network error: No more mocked responses for the query: {
+  allRemoteRooms {
+    rooms {
+      calendarId
+      name
+    }
+  }
+}
+, variables: {}],
+                "lastResult": undefined,
+                "observers": Array [
+                  SubscriptionObserver {
+                    "_subscription": Subscription {
+                      "_cleanup": [Function],
+                      "_observer": Object {
+                        "error": [Function],
+                        "next": [Function],
+                      },
+                      "_queue": undefined,
+                      "_state": "ready",
+                    },
+                  },
+                ],
+                "options": Object {
+                  "context": Object {},
+                  "metadata": Object {
+                    "reactComponent": Object {
+                      "displayName": "Apollo(Apollo(AddRoomNairobi))",
+                    },
+                  },
+                  "notifyOnNetworkStatusChange": false,
+                  "query": Object {
+                    "definitions": Array [
+                      Object {
+                        "directives": Array [],
+                        "kind": "OperationDefinition",
+                        "name": undefined,
+                        "operation": "query",
+                        "selectionSet": Object {
+                          "kind": "SelectionSet",
+                          "selections": Array [
+                            Object {
+                              "alias": undefined,
+                              "arguments": Array [],
+                              "directives": Array [],
+                              "kind": "Field",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "allRemoteRooms",
+                              },
+                              "selectionSet": Object {
+                                "kind": "SelectionSet",
+                                "selections": Array [
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "rooms",
+                                    },
+                                    "selectionSet": Object {
+                                      "kind": "SelectionSet",
+                                      "selections": Array [
+                                        Object {
+                                          "alias": undefined,
+                                          "arguments": Array [],
+                                          "directives": Array [],
+                                          "kind": "Field",
+                                          "name": Object {
+                                            "kind": "Name",
+                                            "value": "calendarId",
+                                          },
+                                          "selectionSet": undefined,
+                                        },
+                                        Object {
+                                          "alias": undefined,
+                                          "arguments": Array [],
+                                          "directives": Array [],
+                                          "kind": "Field",
+                                          "name": Object {
+                                            "kind": "Name",
+                                            "value": "name",
+                                          },
+                                          "selectionSet": undefined,
+                                        },
+                                      ],
+                                    },
+                                  },
+                                ],
+                              },
+                            },
+                          ],
+                        },
+                        "variableDefinitions": Array [],
+                      },
+                    ],
+                    "kind": "Document",
+                    "loc": Object {
+                      "end": 93,
+                      "start": 0,
+                    },
+                  },
+                },
+                "queryId": "2",
+                "queryManager": [Circular],
+                "scheduler": QueryScheduler {
+                  "inFlightQueries": Object {},
+                  "intervalQueries": Object {},
+                  "pollingTimers": Object {},
+                  "queryManager": [Circular],
+                  "registeredQueries": Object {},
+                  "ssrMode": false,
+                },
+                "shouldSubscribe": true,
+                "subscriptionHandles": Array [],
+                "variables": Object {},
+              },
+              "subscriptions": Array [],
+            },
             "1" => Object {
               "cancel": [Function],
               "document": Object {
@@ -852,7 +1293,7 @@ exports[`AddRoomNairobi should pop up a modal when modal button is clicked 1`] =
               },
               "invalidate": false,
               "invalidated": false,
-              "lastRequestId": 2,
+              "lastRequestId": 4,
               "listeners": Array [
                 [Function],
               ],
@@ -898,7 +1339,7 @@ exports[`AddRoomNairobi should pop up a modal when modal button is clicked 1`] =
                   "context": Object {},
                   "metadata": Object {
                     "reactComponent": Object {
-                      "displayName": "Apollo(Apollo(AddRoomNairobi))",
+                      "displayName": "Apollo(Apollo(Apollo(AddRoomNairobi)))",
                     },
                   },
                   "notifyOnNetworkStatusChange": false,
@@ -1302,7 +1743,7 @@ exports[`AddRoomNairobi should pop up a modal when modal button is clicked 1`] =
                 "graphQLErrors": Array [],
                 "metadata": Object {
                   "reactComponent": Object {
-                    "displayName": "Apollo(Apollo(AddRoomNairobi))",
+                    "displayName": "Apollo(Apollo(Apollo(AddRoomNairobi)))",
                   },
                 },
                 "networkError": [Error: No more mocked responses for the query: query officeDetails {
@@ -1320,6 +1761,99 @@ exports[`AddRoomNairobi should pop up a modal when modal button is clicked 1`] =
         id
         name
       }
+    }
+  }
+}
+, variables: {}],
+                "networkStatus": 8,
+                "previousVariables": null,
+                "variables": Object {},
+              },
+              "2": Object {
+                "document": Object {
+                  "definitions": Array [
+                    Object {
+                      "directives": Array [],
+                      "kind": "OperationDefinition",
+                      "name": undefined,
+                      "operation": "query",
+                      "selectionSet": Object {
+                        "kind": "SelectionSet",
+                        "selections": Array [
+                          Object {
+                            "alias": undefined,
+                            "arguments": Array [],
+                            "directives": Array [],
+                            "kind": "Field",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "allRemoteRooms",
+                            },
+                            "selectionSet": Object {
+                              "kind": "SelectionSet",
+                              "selections": Array [
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "rooms",
+                                  },
+                                  "selectionSet": Object {
+                                    "kind": "SelectionSet",
+                                    "selections": Array [
+                                      Object {
+                                        "alias": undefined,
+                                        "arguments": Array [],
+                                        "directives": Array [],
+                                        "kind": "Field",
+                                        "name": Object {
+                                          "kind": "Name",
+                                          "value": "calendarId",
+                                        },
+                                        "selectionSet": undefined,
+                                      },
+                                      Object {
+                                        "alias": undefined,
+                                        "arguments": Array [],
+                                        "directives": Array [],
+                                        "kind": "Field",
+                                        "name": Object {
+                                          "kind": "Name",
+                                          "value": "name",
+                                        },
+                                        "selectionSet": undefined,
+                                      },
+                                    ],
+                                  },
+                                },
+                              ],
+                            },
+                          },
+                        ],
+                      },
+                      "variableDefinitions": Array [],
+                    },
+                  ],
+                  "kind": "Document",
+                  "loc": Object {
+                    "end": 93,
+                    "start": 0,
+                  },
+                },
+                "graphQLErrors": Array [],
+                "metadata": Object {
+                  "reactComponent": Object {
+                    "displayName": "Apollo(Apollo(AddRoomNairobi))",
+                  },
+                },
+                "networkError": [Error: No more mocked responses for the query: {
+  allRemoteRooms {
+    rooms {
+      calendarId
+      name
     }
   }
 }
@@ -1358,6 +1892,85 @@ exports[`AddRoomNairobi should pop up a modal when modal button is clicked 1`] =
             "optimistic": Array [],
             "silenceBroadcast": false,
             "watches": Array [
+              Object {
+                "callback": [Function],
+                "optimistic": true,
+                "previousResult": [Function],
+                "query": Object {
+                  "definitions": Array [
+                    Object {
+                      "directives": Array [],
+                      "kind": "OperationDefinition",
+                      "name": undefined,
+                      "operation": "query",
+                      "selectionSet": Object {
+                        "kind": "SelectionSet",
+                        "selections": Array [
+                          Object {
+                            "alias": undefined,
+                            "arguments": Array [],
+                            "directives": Array [],
+                            "kind": "Field",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "allRemoteRooms",
+                            },
+                            "selectionSet": Object {
+                              "kind": "SelectionSet",
+                              "selections": Array [
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "rooms",
+                                  },
+                                  "selectionSet": Object {
+                                    "kind": "SelectionSet",
+                                    "selections": Array [
+                                      Object {
+                                        "alias": undefined,
+                                        "arguments": Array [],
+                                        "directives": Array [],
+                                        "kind": "Field",
+                                        "name": Object {
+                                          "kind": "Name",
+                                          "value": "calendarId",
+                                        },
+                                        "selectionSet": undefined,
+                                      },
+                                      Object {
+                                        "alias": undefined,
+                                        "arguments": Array [],
+                                        "directives": Array [],
+                                        "kind": "Field",
+                                        "name": Object {
+                                          "kind": "Name",
+                                          "value": "name",
+                                        },
+                                        "selectionSet": undefined,
+                                      },
+                                    ],
+                                  },
+                                },
+                              ],
+                            },
+                          },
+                        ],
+                      },
+                      "variableDefinitions": Array [],
+                    },
+                  ],
+                  "kind": "Document",
+                  "loc": Object {
+                    "end": 93,
+                    "start": 0,
+                  },
+                },
+                "variables": undefined,
+              },
               Object {
                 "callback": [Function],
                 "optimistic": true,
@@ -1557,7 +2170,7 @@ exports[`AddRoomNairobi should pop up a modal when modal button is clicked 1`] =
       }
     }
   >
-    <Apollo(Apollo(AddRoomNairobi))
+    <Apollo(Apollo(Apollo(AddRoomNairobi)))
       locations={
         Array [
           Object {
@@ -1579,7 +2192,7 @@ exports[`AddRoomNairobi should pop up a modal when modal button is clicked 1`] =
       }
     >
       <Query
-        displayName="Apollo(Apollo(AddRoomNairobi))"
+        displayName="Apollo(Apollo(Apollo(AddRoomNairobi)))"
         query={
           Object {
             "definitions": Array [
@@ -1770,7 +2383,7 @@ exports[`AddRoomNairobi should pop up a modal when modal button is clicked 1`] =
         skip={false}
         warnUnhandledError={true}
       >
-        <Apollo(AddRoomNairobi)
+        <Apollo(Apollo(AddRoomNairobi))
           locations={
             Array [
               Object {
@@ -1823,129 +2436,27 @@ exports[`AddRoomNairobi should pop up a modal when modal button is clicked 1`] =
             }
           }
         >
-          <Mutation
-            ignoreResults={true}
-            mutation={
+          <Query
+            displayName="Apollo(Apollo(AddRoomNairobi))"
+            query={
               Object {
                 "definitions": Array [
                   Object {
                     "directives": Array [],
                     "kind": "OperationDefinition",
-                    "name": Object {
-                      "kind": "Name",
-                      "value": "CreateRoom",
-                    },
-                    "operation": "mutation",
+                    "name": undefined,
+                    "operation": "query",
                     "selectionSet": Object {
                       "kind": "SelectionSet",
                       "selections": Array [
                         Object {
                           "alias": undefined,
-                          "arguments": Array [
-                            Object {
-                              "kind": "Argument",
-                              "name": Object {
-                                "kind": "Name",
-                                "value": "roomType",
-                              },
-                              "value": Object {
-                                "kind": "Variable",
-                                "name": Object {
-                                  "kind": "Name",
-                                  "value": "roomType",
-                                },
-                              },
-                            },
-                            Object {
-                              "kind": "Argument",
-                              "name": Object {
-                                "kind": "Name",
-                                "value": "name",
-                              },
-                              "value": Object {
-                                "kind": "Variable",
-                                "name": Object {
-                                  "kind": "Name",
-                                  "value": "roomName",
-                                },
-                              },
-                            },
-                            Object {
-                              "kind": "Argument",
-                              "name": Object {
-                                "kind": "Name",
-                                "value": "floorId",
-                              },
-                              "value": Object {
-                                "kind": "Variable",
-                                "name": Object {
-                                  "kind": "Name",
-                                  "value": "roomFloorId",
-                                },
-                              },
-                            },
-                            Object {
-                              "kind": "Argument",
-                              "name": Object {
-                                "kind": "Name",
-                                "value": "capacity",
-                              },
-                              "value": Object {
-                                "kind": "Variable",
-                                "name": Object {
-                                  "kind": "Name",
-                                  "value": "roomCapacity",
-                                },
-                              },
-                            },
-                            Object {
-                              "kind": "Argument",
-                              "name": Object {
-                                "kind": "Name",
-                                "value": "calendarId",
-                              },
-                              "value": Object {
-                                "kind": "Variable",
-                                "name": Object {
-                                  "kind": "Name",
-                                  "value": "roomCalendar",
-                                },
-                              },
-                            },
-                            Object {
-                              "kind": "Argument",
-                              "name": Object {
-                                "kind": "Name",
-                                "value": "imageUrl",
-                              },
-                              "value": Object {
-                                "kind": "Variable",
-                                "name": Object {
-                                  "kind": "Name",
-                                  "value": "roomImageUrl",
-                                },
-                              },
-                            },
-                            Object {
-                              "kind": "Argument",
-                              "name": Object {
-                                "kind": "Name",
-                                "value": "officeId",
-                              },
-                              "value": Object {
-                                "kind": "Variable",
-                                "name": Object {
-                                  "kind": "Name",
-                                  "value": "office_id",
-                                },
-                              },
-                            },
-                          ],
+                          "arguments": Array [],
                           "directives": Array [],
                           "kind": "Field",
                           "name": Object {
                             "kind": "Name",
-                            "value": "createRoom",
+                            "value": "allRemoteRooms",
                           },
                           "selectionSet": Object {
                             "kind": "SelectionSet",
@@ -1957,7 +2468,7 @@ exports[`AddRoomNairobi should pop up a modal when modal button is clicked 1`] =
                                 "kind": "Field",
                                 "name": Object {
                                   "kind": "Name",
-                                  "value": "room",
+                                  "value": "rooms",
                                 },
                                 "selectionSet": Object {
                                   "kind": "SelectionSet",
@@ -1969,7 +2480,7 @@ exports[`AddRoomNairobi should pop up a modal when modal button is clicked 1`] =
                                       "kind": "Field",
                                       "name": Object {
                                         "kind": "Name",
-                                        "value": "id",
+                                        "value": "calendarId",
                                       },
                                       "selectionSet": undefined,
                                     },
@@ -1984,39 +2495,6 @@ exports[`AddRoomNairobi should pop up a modal when modal button is clicked 1`] =
                                       },
                                       "selectionSet": undefined,
                                     },
-                                    Object {
-                                      "alias": undefined,
-                                      "arguments": Array [],
-                                      "directives": Array [],
-                                      "kind": "Field",
-                                      "name": Object {
-                                        "kind": "Name",
-                                        "value": "roomType",
-                                      },
-                                      "selectionSet": undefined,
-                                    },
-                                    Object {
-                                      "alias": undefined,
-                                      "arguments": Array [],
-                                      "directives": Array [],
-                                      "kind": "Field",
-                                      "name": Object {
-                                        "kind": "Name",
-                                        "value": "capacity",
-                                      },
-                                      "selectionSet": undefined,
-                                    },
-                                    Object {
-                                      "alias": undefined,
-                                      "arguments": Array [],
-                                      "directives": Array [],
-                                      "kind": "Field",
-                                      "name": Object {
-                                        "kind": "Name",
-                                        "value": "imageUrl",
-                                      },
-                                      "selectionSet": undefined,
-                                    },
                                   ],
                                 },
                               },
@@ -2025,164 +2503,20 @@ exports[`AddRoomNairobi should pop up a modal when modal button is clicked 1`] =
                         },
                       ],
                     },
-                    "variableDefinitions": Array [
-                      Object {
-                        "defaultValue": undefined,
-                        "kind": "VariableDefinition",
-                        "type": Object {
-                          "kind": "NonNullType",
-                          "type": Object {
-                            "kind": "NamedType",
-                            "name": Object {
-                              "kind": "Name",
-                              "value": "String",
-                            },
-                          },
-                        },
-                        "variable": Object {
-                          "kind": "Variable",
-                          "name": Object {
-                            "kind": "Name",
-                            "value": "roomType",
-                          },
-                        },
-                      },
-                      Object {
-                        "defaultValue": undefined,
-                        "kind": "VariableDefinition",
-                        "type": Object {
-                          "kind": "NonNullType",
-                          "type": Object {
-                            "kind": "NamedType",
-                            "name": Object {
-                              "kind": "Name",
-                              "value": "String",
-                            },
-                          },
-                        },
-                        "variable": Object {
-                          "kind": "Variable",
-                          "name": Object {
-                            "kind": "Name",
-                            "value": "roomName",
-                          },
-                        },
-                      },
-                      Object {
-                        "defaultValue": undefined,
-                        "kind": "VariableDefinition",
-                        "type": Object {
-                          "kind": "NonNullType",
-                          "type": Object {
-                            "kind": "NamedType",
-                            "name": Object {
-                              "kind": "Name",
-                              "value": "Int",
-                            },
-                          },
-                        },
-                        "variable": Object {
-                          "kind": "Variable",
-                          "name": Object {
-                            "kind": "Name",
-                            "value": "roomFloorId",
-                          },
-                        },
-                      },
-                      Object {
-                        "defaultValue": undefined,
-                        "kind": "VariableDefinition",
-                        "type": Object {
-                          "kind": "NonNullType",
-                          "type": Object {
-                            "kind": "NamedType",
-                            "name": Object {
-                              "kind": "Name",
-                              "value": "Int",
-                            },
-                          },
-                        },
-                        "variable": Object {
-                          "kind": "Variable",
-                          "name": Object {
-                            "kind": "Name",
-                            "value": "roomCapacity",
-                          },
-                        },
-                      },
-                      Object {
-                        "defaultValue": undefined,
-                        "kind": "VariableDefinition",
-                        "type": Object {
-                          "kind": "NonNullType",
-                          "type": Object {
-                            "kind": "NamedType",
-                            "name": Object {
-                              "kind": "Name",
-                              "value": "String",
-                            },
-                          },
-                        },
-                        "variable": Object {
-                          "kind": "Variable",
-                          "name": Object {
-                            "kind": "Name",
-                            "value": "roomCalendar",
-                          },
-                        },
-                      },
-                      Object {
-                        "defaultValue": undefined,
-                        "kind": "VariableDefinition",
-                        "type": Object {
-                          "kind": "NonNullType",
-                          "type": Object {
-                            "kind": "NamedType",
-                            "name": Object {
-                              "kind": "Name",
-                              "value": "Int",
-                            },
-                          },
-                        },
-                        "variable": Object {
-                          "kind": "Variable",
-                          "name": Object {
-                            "kind": "Name",
-                            "value": "office_id",
-                          },
-                        },
-                      },
-                      Object {
-                        "defaultValue": undefined,
-                        "kind": "VariableDefinition",
-                        "type": Object {
-                          "kind": "NamedType",
-                          "name": Object {
-                            "kind": "Name",
-                            "value": "String",
-                          },
-                        },
-                        "variable": Object {
-                          "kind": "Variable",
-                          "name": Object {
-                            "kind": "Name",
-                            "value": "roomImageUrl",
-                          },
-                        },
-                      },
-                    ],
+                    "variableDefinitions": Array [],
                   },
                 ],
                 "kind": "Document",
                 "loc": Object {
-                  "end": 430,
+                  "end": 93,
                   "start": 0,
                 },
               }
             }
+            skip={false}
+            warnUnhandledError={true}
           >
-            <AddRoomNairobi
-              dojoMutation={[Function]}
+            <Apollo(AddRoomNairobi)
               locations={
                 Array [
                   Object {
@@ -2234,153 +2568,504 @@ exports[`AddRoomNairobi should pop up a modal when modal button is clicked 1`] =
                   "variables": Object {},
                 }
               }
+              remoteRooms={
+                Object {
+                  "error": [Error: Network error: No more mocked responses for the query: {
+  allRemoteRooms {
+    rooms {
+      calendarId
+      name
+    }
+  }
+}
+, variables: {}],
+                  "fetchMore": [Function],
+                  "loading": false,
+                  "networkStatus": 8,
+                  "refetch": [Function],
+                  "startPolling": [Function],
+                  "stopPolling": [Function],
+                  "subscribeToMore": [Function],
+                  "updateQuery": [Function],
+                  "variables": Object {},
+                }
+              }
             >
-              <MrmModal
-                buttonText="St Catherines"
-                className="nbo-add-room-modal button addRoomBtn"
-                closeModal={false}
-                handleCloseRequest={[Function]}
-                modalButtonClassName="button"
-                title="ADD ROOM"
-              >
-                <IconButtons
-                  buttonText="St Catherines"
-                  disabled={false}
-                  modalButtonClassName="button"
-                  openModal={[Function]}
-                >
-                  <button
-                    className="button"
-                    disabled={false}
-                    id="modal-button"
-                    onClick={[Function]}
-                  >
-                    St Catherines
-                  </button>
-                </IconButtons>
-                <Modal
-                  ariaHideApp={false}
-                  bodyOpenClassName="ReactModal__Body--open"
-                  className="nbo-add-room-modal button addRoomBtn"
-                  closeTimeoutMS={0}
-                  contentLabel="Parent Modal"
-                  isOpen={true}
-                  onAfterOpen={[Function]}
-                  onRequestClose={[Function]}
-                  parentSelector={[Function]}
-                  portalClassName="ReactModalPortal"
-                  shouldCloseOnEsc={true}
-                  shouldCloseOnOverlayClick={false}
-                  shouldFocusAfterRender={true}
-                  shouldReturnFocusAfterClose={true}
-                  style={
-                    Object {
-                      "content": Object {
-                        "backgroundColor": "#ffffff",
-                        "border": "1px solid #CCCCCC",
-                        "borderRadius": "4px",
-                        "bottom": "auto",
-                        "boxShadow": "0 2px 40px 10px rgba(185, 180, 180, 0.2)",
-                        "fontFamily": "DINPro-Regular",
-                        "left": "50%",
-                        "marginRight": "-50%",
-                        "outline": "none",
-                        "overflow": "auto",
-                        "position": "absolute",
-                        "right": "auto",
-                        "top": "50%",
-                        "transform": "translate(-50%, -50%)",
+              <Mutation
+                ignoreResults={true}
+                mutation={
+                  Object {
+                    "definitions": Array [
+                      Object {
+                        "directives": Array [],
+                        "kind": "OperationDefinition",
+                        "name": Object {
+                          "kind": "Name",
+                          "value": "CreateRoom",
+                        },
+                        "operation": "mutation",
+                        "selectionSet": Object {
+                          "kind": "SelectionSet",
+                          "selections": Array [
+                            Object {
+                              "alias": undefined,
+                              "arguments": Array [
+                                Object {
+                                  "kind": "Argument",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "roomType",
+                                  },
+                                  "value": Object {
+                                    "kind": "Variable",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "roomType",
+                                    },
+                                  },
+                                },
+                                Object {
+                                  "kind": "Argument",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "name",
+                                  },
+                                  "value": Object {
+                                    "kind": "Variable",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "roomName",
+                                    },
+                                  },
+                                },
+                                Object {
+                                  "kind": "Argument",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "floorId",
+                                  },
+                                  "value": Object {
+                                    "kind": "Variable",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "roomFloorId",
+                                    },
+                                  },
+                                },
+                                Object {
+                                  "kind": "Argument",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "capacity",
+                                  },
+                                  "value": Object {
+                                    "kind": "Variable",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "roomCapacity",
+                                    },
+                                  },
+                                },
+                                Object {
+                                  "kind": "Argument",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "calendarId",
+                                  },
+                                  "value": Object {
+                                    "kind": "Variable",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "roomCalendar",
+                                    },
+                                  },
+                                },
+                                Object {
+                                  "kind": "Argument",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "imageUrl",
+                                  },
+                                  "value": Object {
+                                    "kind": "Variable",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "roomImageUrl",
+                                    },
+                                  },
+                                },
+                                Object {
+                                  "kind": "Argument",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "officeId",
+                                  },
+                                  "value": Object {
+                                    "kind": "Variable",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "office_id",
+                                    },
+                                  },
+                                },
+                              ],
+                              "directives": Array [],
+                              "kind": "Field",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "createRoom",
+                              },
+                              "selectionSet": Object {
+                                "kind": "SelectionSet",
+                                "selections": Array [
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "room",
+                                    },
+                                    "selectionSet": Object {
+                                      "kind": "SelectionSet",
+                                      "selections": Array [
+                                        Object {
+                                          "alias": undefined,
+                                          "arguments": Array [],
+                                          "directives": Array [],
+                                          "kind": "Field",
+                                          "name": Object {
+                                            "kind": "Name",
+                                            "value": "id",
+                                          },
+                                          "selectionSet": undefined,
+                                        },
+                                        Object {
+                                          "alias": undefined,
+                                          "arguments": Array [],
+                                          "directives": Array [],
+                                          "kind": "Field",
+                                          "name": Object {
+                                            "kind": "Name",
+                                            "value": "name",
+                                          },
+                                          "selectionSet": undefined,
+                                        },
+                                        Object {
+                                          "alias": undefined,
+                                          "arguments": Array [],
+                                          "directives": Array [],
+                                          "kind": "Field",
+                                          "name": Object {
+                                            "kind": "Name",
+                                            "value": "roomType",
+                                          },
+                                          "selectionSet": undefined,
+                                        },
+                                        Object {
+                                          "alias": undefined,
+                                          "arguments": Array [],
+                                          "directives": Array [],
+                                          "kind": "Field",
+                                          "name": Object {
+                                            "kind": "Name",
+                                            "value": "capacity",
+                                          },
+                                          "selectionSet": undefined,
+                                        },
+                                        Object {
+                                          "alias": undefined,
+                                          "arguments": Array [],
+                                          "directives": Array [],
+                                          "kind": "Field",
+                                          "name": Object {
+                                            "kind": "Name",
+                                            "value": "imageUrl",
+                                          },
+                                          "selectionSet": undefined,
+                                        },
+                                      ],
+                                    },
+                                  },
+                                ],
+                              },
+                            },
+                          ],
+                        },
+                        "variableDefinitions": Array [
+                          Object {
+                            "defaultValue": undefined,
+                            "kind": "VariableDefinition",
+                            "type": Object {
+                              "kind": "NonNullType",
+                              "type": Object {
+                                "kind": "NamedType",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "String",
+                                },
+                              },
+                            },
+                            "variable": Object {
+                              "kind": "Variable",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "roomType",
+                              },
+                            },
+                          },
+                          Object {
+                            "defaultValue": undefined,
+                            "kind": "VariableDefinition",
+                            "type": Object {
+                              "kind": "NonNullType",
+                              "type": Object {
+                                "kind": "NamedType",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "String",
+                                },
+                              },
+                            },
+                            "variable": Object {
+                              "kind": "Variable",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "roomName",
+                              },
+                            },
+                          },
+                          Object {
+                            "defaultValue": undefined,
+                            "kind": "VariableDefinition",
+                            "type": Object {
+                              "kind": "NonNullType",
+                              "type": Object {
+                                "kind": "NamedType",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "Int",
+                                },
+                              },
+                            },
+                            "variable": Object {
+                              "kind": "Variable",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "roomFloorId",
+                              },
+                            },
+                          },
+                          Object {
+                            "defaultValue": undefined,
+                            "kind": "VariableDefinition",
+                            "type": Object {
+                              "kind": "NonNullType",
+                              "type": Object {
+                                "kind": "NamedType",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "Int",
+                                },
+                              },
+                            },
+                            "variable": Object {
+                              "kind": "Variable",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "roomCapacity",
+                              },
+                            },
+                          },
+                          Object {
+                            "defaultValue": undefined,
+                            "kind": "VariableDefinition",
+                            "type": Object {
+                              "kind": "NonNullType",
+                              "type": Object {
+                                "kind": "NamedType",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "String",
+                                },
+                              },
+                            },
+                            "variable": Object {
+                              "kind": "Variable",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "roomCalendar",
+                              },
+                            },
+                          },
+                          Object {
+                            "defaultValue": undefined,
+                            "kind": "VariableDefinition",
+                            "type": Object {
+                              "kind": "NonNullType",
+                              "type": Object {
+                                "kind": "NamedType",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "Int",
+                                },
+                              },
+                            },
+                            "variable": Object {
+                              "kind": "Variable",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "office_id",
+                              },
+                            },
+                          },
+                          Object {
+                            "defaultValue": undefined,
+                            "kind": "VariableDefinition",
+                            "type": Object {
+                              "kind": "NamedType",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "String",
+                              },
+                            },
+                            "variable": Object {
+                              "kind": "Variable",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "roomImageUrl",
+                              },
+                            },
+                          },
+                        ],
                       },
+                    ],
+                    "kind": "Document",
+                    "loc": Object {
+                      "end": 430,
+                      "start": 0,
+                    },
+                  }
+                }
+              >
+                <AddRoomNairobi
+                  dojoMutation={[Function]}
+                  locations={
+                    Array [
+                      Object {
+                        "__typename": "Location",
+                        "id": "1",
+                        "name": "Kampala",
+                      },
+                      Object {
+                        "__typename": "Location",
+                        "id": "2",
+                        "name": "Lagos",
+                      },
+                      Object {
+                        "__typename": "Location",
+                        "id": "3",
+                        "name": "Nairobi",
+                      },
+                    ]
+                  }
+                  officeDetails={
+                    Object {
+                      "error": [Error: Network error: No more mocked responses for the query: query officeDetails {
+  getOfficeByName(name: "St Catherines") {
+    id
+    name
+    location {
+      id
+      name
+    }
+    blocks {
+      id
+      name
+      floors {
+        id
+        name
+      }
+    }
+  }
+}
+, variables: {}],
+                      "fetchMore": [Function],
+                      "loading": false,
+                      "networkStatus": 8,
+                      "refetch": [Function],
+                      "startPolling": [Function],
+                      "stopPolling": [Function],
+                      "subscribeToMore": [Function],
+                      "updateQuery": [Function],
+                      "variables": Object {},
+                    }
+                  }
+                  remoteRooms={
+                    Object {
+                      "error": [Error: Network error: No more mocked responses for the query: {
+  allRemoteRooms {
+    rooms {
+      calendarId
+      name
+    }
+  }
+}
+, variables: {}],
+                      "fetchMore": [Function],
+                      "loading": false,
+                      "networkStatus": 8,
+                      "refetch": [Function],
+                      "startPolling": [Function],
+                      "stopPolling": [Function],
+                      "subscribeToMore": [Function],
+                      "updateQuery": [Function],
+                      "variables": Object {},
                     }
                   }
                 >
-                  <ModalPortal
-                    ariaHideApp={false}
-                    bodyOpenClassName="ReactModal__Body--open"
+                  <MrmModal
+                    buttonText="St Catherines"
                     className="nbo-add-room-modal button addRoomBtn"
-                    closeTimeoutMS={0}
-                    contentLabel="Parent Modal"
-                    defaultStyles={
-                      Object {
-                        "content": Object {
-                          "WebkitOverflowScrolling": "touch",
-                          "background": "#fff",
-                          "border": "1px solid #ccc",
-                          "borderRadius": "4px",
-                          "bottom": "40px",
-                          "left": "40px",
-                          "outline": "none",
-                          "overflow": "auto",
-                          "padding": "20px",
-                          "position": "absolute",
-                          "right": "40px",
-                          "top": "40px",
-                        },
-                        "overlay": Object {
-                          "backgroundColor": "rgba(255, 255, 255, 0.75)",
-                          "bottom": 0,
-                          "left": 0,
-                          "position": "fixed",
-                          "right": 0,
-                          "top": 0,
-                        },
-                      }
-                    }
-                    isOpen={true}
-                    onAfterOpen={[Function]}
-                    onRequestClose={[Function]}
-                    parentSelector={[Function]}
-                    portalClassName="ReactModalPortal"
-                    shouldCloseOnEsc={true}
-                    shouldCloseOnOverlayClick={false}
-                    shouldFocusAfterRender={true}
-                    shouldReturnFocusAfterClose={true}
-                    style={
-                      Object {
-                        "content": Object {
-                          "backgroundColor": "#ffffff",
-                          "border": "1px solid #CCCCCC",
-                          "borderRadius": "4px",
-                          "bottom": "auto",
-                          "boxShadow": "0 2px 40px 10px rgba(185, 180, 180, 0.2)",
-                          "fontFamily": "DINPro-Regular",
-                          "left": "50%",
-                          "marginRight": "-50%",
-                          "outline": "none",
-                          "overflow": "auto",
-                          "position": "absolute",
-                          "right": "auto",
-                          "top": "50%",
-                          "transform": "translate(-50%, -50%)",
-                        },
-                      }
-                    }
+                    closeModal={false}
+                    handleCloseRequest={[Function]}
+                    modalButtonClassName="button"
+                    title="ADD ROOM"
                   >
-                    <div
-                      aria-modal="true"
-                      className="ReactModal__Overlay ReactModal__Overlay--after-open"
-                      onClick={[Function]}
-                      onMouseDown={[Function]}
+                    <IconButtons
+                      buttonText="St Catherines"
+                      disabled={false}
+                      modalButtonClassName="button"
+                      openModal={[Function]}
+                    >
+                      <button
+                        className="button"
+                        disabled={false}
+                        id="modal-button"
+                        onClick={[Function]}
+                      >
+                        St Catherines
+                      </button>
+                    </IconButtons>
+                    <Modal
+                      ariaHideApp={false}
+                      bodyOpenClassName="ReactModal__Body--open"
+                      className="nbo-add-room-modal button addRoomBtn"
+                      closeTimeoutMS={0}
+                      contentLabel="Parent Modal"
+                      isOpen={true}
+                      onAfterOpen={[Function]}
+                      onRequestClose={[Function]}
+                      parentSelector={[Function]}
+                      portalClassName="ReactModalPortal"
+                      shouldCloseOnEsc={true}
+                      shouldCloseOnOverlayClick={false}
+                      shouldFocusAfterRender={true}
+                      shouldReturnFocusAfterClose={true}
                       style={
                         Object {
-                          "backgroundColor": "rgba(255, 255, 255, 0.75)",
-                          "bottom": 0,
-                          "left": 0,
-                          "position": "fixed",
-                          "right": 0,
-                          "top": 0,
-                        }
-                      }
-                    >
-                      <div
-                        aria-label="Parent Modal"
-                        className="ReactModal__Content ReactModal__Content--after-open nbo-add-room-modal button addRoomBtn"
-                        onClick={[Function]}
-                        onKeyDown={[Function]}
-                        onMouseDown={[Function]}
-                        onMouseUp={[Function]}
-                        style={
-                          Object {
+                          "content": Object {
                             "backgroundColor": "#ffffff",
                             "border": "1px solid #CCCCCC",
                             "borderRadius": "4px",
@@ -2395,373 +3080,483 @@ exports[`AddRoomNairobi should pop up a modal when modal button is clicked 1`] =
                             "right": "auto",
                             "top": "50%",
                             "transform": "translate(-50%, -50%)",
+                          },
+                        }
+                      }
+                    >
+                      <ModalPortal
+                        ariaHideApp={false}
+                        bodyOpenClassName="ReactModal__Body--open"
+                        className="nbo-add-room-modal button addRoomBtn"
+                        closeTimeoutMS={0}
+                        contentLabel="Parent Modal"
+                        defaultStyles={
+                          Object {
+                            "content": Object {
+                              "WebkitOverflowScrolling": "touch",
+                              "background": "#fff",
+                              "border": "1px solid #ccc",
+                              "borderRadius": "4px",
+                              "bottom": "40px",
+                              "left": "40px",
+                              "outline": "none",
+                              "overflow": "auto",
+                              "padding": "20px",
+                              "position": "absolute",
+                              "right": "40px",
+                              "top": "40px",
+                            },
+                            "overlay": Object {
+                              "backgroundColor": "rgba(255, 255, 255, 0.75)",
+                              "bottom": 0,
+                              "left": 0,
+                              "position": "fixed",
+                              "right": 0,
+                              "top": 0,
+                            },
                           }
                         }
-                        tabIndex="-1"
+                        isOpen={true}
+                        onAfterOpen={[Function]}
+                        onRequestClose={[Function]}
+                        parentSelector={[Function]}
+                        portalClassName="ReactModalPortal"
+                        shouldCloseOnEsc={true}
+                        shouldCloseOnOverlayClick={false}
+                        shouldFocusAfterRender={true}
+                        shouldReturnFocusAfterClose={true}
+                        style={
+                          Object {
+                            "content": Object {
+                              "backgroundColor": "#ffffff",
+                              "border": "1px solid #CCCCCC",
+                              "borderRadius": "4px",
+                              "bottom": "auto",
+                              "boxShadow": "0 2px 40px 10px rgba(185, 180, 180, 0.2)",
+                              "fontFamily": "DINPro-Regular",
+                              "left": "50%",
+                              "marginRight": "-50%",
+                              "outline": "none",
+                              "overflow": "auto",
+                              "position": "absolute",
+                              "right": "auto",
+                              "top": "50%",
+                              "transform": "translate(-50%, -50%)",
+                            },
+                          }
+                        }
                       >
-                        <h2>
-                          ADD ROOM
-                        </h2>
-                        <form
-                          className="modal-form"
-                          onSubmit={[Function]}
+                        <div
+                          aria-modal="true"
+                          className="ReactModal__Overlay ReactModal__Overlay--after-open"
+                          onClick={[Function]}
+                          onMouseDown={[Function]}
+                          style={
+                            Object {
+                              "backgroundColor": "rgba(255, 255, 255, 0.75)",
+                              "bottom": 0,
+                              "left": 0,
+                              "position": "fixed",
+                              "right": 0,
+                              "top": 0,
+                            }
+                          }
                         >
-                          <SelectImage
-                            imageUrl=""
-                            onChange={[Function]}
-                            thumbnailName="Upload a thumbnail"
+                          <div
+                            aria-label="Parent Modal"
+                            className="ReactModal__Content ReactModal__Content--after-open nbo-add-room-modal button addRoomBtn"
+                            onClick={[Function]}
+                            onKeyDown={[Function]}
+                            onMouseDown={[Function]}
+                            onMouseUp={[Function]}
+                            style={
+                              Object {
+                                "backgroundColor": "#ffffff",
+                                "border": "1px solid #CCCCCC",
+                                "borderRadius": "4px",
+                                "bottom": "auto",
+                                "boxShadow": "0 2px 40px 10px rgba(185, 180, 180, 0.2)",
+                                "fontFamily": "DINPro-Regular",
+                                "left": "50%",
+                                "marginRight": "-50%",
+                                "outline": "none",
+                                "overflow": "auto",
+                                "position": "absolute",
+                                "right": "auto",
+                                "top": "50%",
+                                "transform": "translate(-50%, -50%)",
+                              }
+                            }
+                            tabIndex="-1"
                           >
-                            <div
-                              className="image-select"
+                            <h2>
+                              ADD ROOM
+                            </h2>
+                            <form
+                              className="modal-form"
+                              onSubmit={[Function]}
                             >
-                              <div
-                                className="thumbnail"
+                              <SelectImage
+                                imageUrl=""
+                                onChange={[Function]}
+                                thumbnailName="Upload a thumbnail"
                               >
                                 <div
-                                  className="placeholder"
-                                />
-                              </div>
-                              <div
-                                className="select-button"
-                              >
-                                <div>
-                                  Upload a thumbnail
-                                </div>
-                                <ThemedThemed
-                                  composeTheme="deeply"
-                                  disabled={false}
-                                  id="upload_widget_opener"
-                                  label="Select Image"
-                                  mapThemrProps={[Function]}
-                                  ripple={true}
-                                  rippleCentered={false}
-                                  rippleClassName=""
-                                  rippleMultiple={true}
-                                  rippleSpread={2}
+                                  className="image-select"
                                 >
-                                  <ThemedRippledComponent
-                                    composeTheme="deeply"
-                                    disabled={false}
-                                    id="upload_widget_opener"
-                                    label="Select Image"
-                                    mapThemrProps={[Function]}
-                                    ripple={true}
-                                    rippleCentered={false}
-                                    rippleClassName=""
-                                    rippleMultiple={true}
-                                    rippleSpread={2}
-                                    theme={Object {}}
+                                  <div
+                                    className="thumbnail"
                                   >
-                                    <RippledComponent
+                                    <div
+                                      className="placeholder"
+                                    />
+                                  </div>
+                                  <div
+                                    className="select-button"
+                                  >
+                                    <div>
+                                      Upload a thumbnail
+                                    </div>
+                                    <ThemedThemed
+                                      composeTheme="deeply"
                                       disabled={false}
                                       id="upload_widget_opener"
                                       label="Select Image"
+                                      mapThemrProps={[Function]}
                                       ripple={true}
                                       rippleCentered={false}
                                       rippleClassName=""
                                       rippleMultiple={true}
                                       rippleSpread={2}
-                                      theme={Object {}}
                                     >
-                                      <Button
-                                        accent={false}
-                                        className=""
+                                      <ThemedRippledComponent
+                                        composeTheme="deeply"
                                         disabled={false}
-                                        flat={false}
-                                        floating={false}
                                         id="upload_widget_opener"
                                         label="Select Image"
-                                        mini={false}
-                                        neutral={true}
-                                        onMouseDown={[Function]}
-                                        onTouchStart={[Function]}
-                                        primary={false}
-                                        raised={false}
+                                        mapThemrProps={[Function]}
+                                        ripple={true}
+                                        rippleCentered={false}
+                                        rippleClassName=""
+                                        rippleMultiple={true}
+                                        rippleSpread={2}
                                         theme={Object {}}
-                                        type="button"
                                       >
-                                        <button
-                                          className=""
-                                          data-react-toolbox="button"
+                                        <RippledComponent
                                           disabled={false}
                                           id="upload_widget_opener"
-                                          onMouseDown={[Function]}
-                                          onMouseLeave={[Function]}
-                                          onMouseUp={[Function]}
-                                          onTouchStart={[Function]}
-                                          type="button"
+                                          label="Select Image"
+                                          ripple={true}
+                                          rippleCentered={false}
+                                          rippleClassName=""
+                                          rippleMultiple={true}
+                                          rippleSpread={2}
+                                          theme={Object {}}
                                         >
-                                          Select Image
-                                        </button>
-                                      </Button>
-                                    </RippledComponent>
-                                  </ThemedRippledComponent>
-                                </ThemedThemed>
+                                          <Button
+                                            accent={false}
+                                            className=""
+                                            disabled={false}
+                                            flat={false}
+                                            floating={false}
+                                            id="upload_widget_opener"
+                                            label="Select Image"
+                                            mini={false}
+                                            neutral={true}
+                                            onMouseDown={[Function]}
+                                            onTouchStart={[Function]}
+                                            primary={false}
+                                            raised={false}
+                                            theme={Object {}}
+                                            type="button"
+                                          >
+                                            <button
+                                              className=""
+                                              data-react-toolbox="button"
+                                              disabled={false}
+                                              id="upload_widget_opener"
+                                              onMouseDown={[Function]}
+                                              onMouseLeave={[Function]}
+                                              onMouseUp={[Function]}
+                                              onTouchStart={[Function]}
+                                              type="button"
+                                            >
+                                              Select Image
+                                            </button>
+                                          </Button>
+                                        </RippledComponent>
+                                      </ThemedRippledComponent>
+                                    </ThemedThemed>
+                                    <div
+                                      className="invisible-input"
+                                    >
+                                      <input
+                                        name="selectImage"
+                                        onChange={[Function]}
+                                        type="file"
+                                      />
+                                    </div>
+                                  </div>
+                                </div>
+                              </SelectImage>
+                              <NairobiRoomInputs
+                                allRemoteRooms={Array []}
+                                blockOptions={Array []}
+                                floorOptions={Array []}
+                                handleInputChange={[Function]}
+                                officeBlock=""
+                                officeFloor=""
+                                roomCapacity={0}
+                                roomName=""
+                              >
                                 <div
-                                  className="invisible-input"
+                                  className="form-inputs"
                                 >
-                                  <input
-                                    name="selectImage"
+                                  <SelectInput
+                                    id="officeBlock"
+                                    isValue={false}
+                                    labelText="Select Room"
+                                    name="roomName"
                                     onChange={[Function]}
-                                    type="file"
-                                  />
-                                </div>
-                              </div>
-                            </div>
-                          </SelectImage>
-                          <NairobiRoomInputs
-                            blockOptions={Array []}
-                            floorOptions={Array []}
-                            handleInputChange={[Function]}
-                            officeBlock=""
-                            officeFloor=""
-                            roomCapacity={0}
-                            roomName=""
-                          >
-                            <div
-                              className="form-inputs"
-                            >
-                              <Input
-                                controlsClass=""
-                                id="roomName"
-                                inputClass="mrm-input default-input"
-                                labelClass="input1"
-                                labelName="Room Name"
-                                name="roomName"
-                                onChange={[Function]}
-                                pattern="^[a-zA-Z]+(([' .-][a-zA-Z ])?[a-zA-Z]*)*$"
-                                placeholder="Enter room name"
-                                required={true}
-                                title="Name cannot be numbers or any special characters"
-                                type="text"
-                                value=""
-                              >
-                                <div
-                                  className="input1"
-                                >
-                                  <label
-                                    htmlFor="roomName"
+                                    options={Array []}
+                                    placeholder="Select Room"
+                                    placeholderValue=""
+                                    required={true}
+                                    selectInputClassName="default-select"
+                                    value=""
+                                    wrapperClassName="input-wrapper"
                                   >
-                                    Room Name
-                                    <input
-                                      className="mrm-input default-input"
-                                      id="roomName"
-                                      name="roomName"
-                                      onChange={[Function]}
-                                      pattern="^[a-zA-Z]+(([' .-][a-zA-Z ])?[a-zA-Z]*)*$"
-                                      placeholder="Enter room name"
-                                      required={true}
-                                      title="Name cannot be numbers or any special characters"
-                                      type="text"
-                                      value=""
-                                    />
-                                  </label>
-                                </div>
-                              </Input>
-                              <Input
-                                controlsClass=""
-                                id="roomCapacity"
-                                inputClass="mrm-input default-input"
-                                labelClass="input1"
-                                labelName="Room Capacity"
-                                min="1"
-                                name="roomCapacity"
-                                onChange={[Function]}
-                                placeholder="1"
-                                required={true}
-                                type="number"
-                                value={0}
-                              >
-                                <div
-                                  className="input1"
-                                >
-                                  <label
-                                    htmlFor="roomCapacity"
-                                  >
-                                    Room Capacity
-                                    <input
-                                      className="mrm-input default-input"
-                                      id="roomCapacity"
-                                      min="1"
-                                      name="roomCapacity"
-                                      onChange={[Function]}
-                                      placeholder="1"
-                                      required={true}
-                                      type="number"
-                                      value={0}
-                                    />
-                                    <Controls
-                                      controlsClass=""
-                                      handleIncrement={[Function]}
+                                    <div
+                                      className="input-wrapper"
                                     >
-                                      <div
-                                        className="controls "
+                                      <label
+                                        htmlFor="officeBlock"
                                       >
-                                        <button
-                                          className="control up"
-                                          name="up"
-                                          onClick={[Function]}
+                                        Select Room
+                                        <select
+                                          className="default-select"
+                                          id="officeBlock"
+                                          name="roomName"
+                                          onChange={[Function]}
+                                          required={true}
+                                          value=""
                                         >
-                                          <img
-                                            alt="up"
-                                            name="up"
-                                            src="test-file-stub"
-                                          />
-                                        </button>
-                                        <button
-                                          className="control down"
-                                          name="down"
-                                          onClick={[Function]}
+                                          <option
+                                            value=""
+                                          >
+                                            Select Room
+                                          </option>
+                                          0
+                                        </select>
+                                      </label>
+                                    </div>
+                                  </SelectInput>
+                                  <Input
+                                    controlsClass=""
+                                    id="roomCapacity"
+                                    inputClass="mrm-input default-input"
+                                    labelClass="input1"
+                                    labelName="Room Capacity"
+                                    min="1"
+                                    name="roomCapacity"
+                                    onChange={[Function]}
+                                    placeholder="1"
+                                    required={true}
+                                    type="number"
+                                    value={0}
+                                  >
+                                    <div
+                                      className="input1"
+                                    >
+                                      <label
+                                        htmlFor="roomCapacity"
+                                      >
+                                        Room Capacity
+                                        <input
+                                          className="mrm-input default-input"
+                                          id="roomCapacity"
+                                          min="1"
+                                          name="roomCapacity"
+                                          onChange={[Function]}
+                                          placeholder="1"
+                                          required={true}
+                                          type="number"
+                                          value={0}
+                                        />
+                                        <Controls
+                                          controlsClass=""
+                                          handleIncrement={[Function]}
                                         >
-                                          <img
-                                            alt="down"
-                                            name="down"
-                                            src="test-file-stub"
-                                          />
-                                        </button>
-                                      </div>
-                                    </Controls>
-                                  </label>
+                                          <div
+                                            className="controls "
+                                          >
+                                            <button
+                                              className="control up"
+                                              name="up"
+                                              onClick={[Function]}
+                                            >
+                                              <img
+                                                alt="up"
+                                                name="up"
+                                                src="test-file-stub"
+                                              />
+                                            </button>
+                                            <button
+                                              className="control down"
+                                              name="down"
+                                              onClick={[Function]}
+                                            >
+                                              <img
+                                                alt="down"
+                                                name="down"
+                                                src="test-file-stub"
+                                              />
+                                            </button>
+                                          </div>
+                                        </Controls>
+                                      </label>
+                                    </div>
+                                  </Input>
+                                  <SelectInput
+                                    id="officeBlock"
+                                    isValue={false}
+                                    labelText="Select Block"
+                                    name="officeBlock"
+                                    onChange={[Function]}
+                                    options={Array []}
+                                    placeholder="Select block"
+                                    placeholderValue=""
+                                    required={true}
+                                    selectInputClassName="default-select"
+                                    value=""
+                                    wrapperClassName="input-wrapper"
+                                  >
+                                    <div
+                                      className="input-wrapper"
+                                    >
+                                      <label
+                                        htmlFor="officeBlock"
+                                      >
+                                        Select Block
+                                        <select
+                                          className="default-select"
+                                          id="officeBlock"
+                                          name="officeBlock"
+                                          onChange={[Function]}
+                                          required={true}
+                                          value=""
+                                        >
+                                          <option
+                                            value=""
+                                          >
+                                            Select block
+                                          </option>
+                                          0
+                                        </select>
+                                      </label>
+                                    </div>
+                                  </SelectInput>
+                                  <SelectInput
+                                    id="officeFloor"
+                                    isValue={false}
+                                    labelText="Select Floor"
+                                    name="officeFloor"
+                                    onChange={[Function]}
+                                    options={Array []}
+                                    placeholder="Select floor"
+                                    placeholderValue=""
+                                    required={true}
+                                    selectInputClassName="default-select"
+                                    value=""
+                                    wrapperClassName="input-wrapper"
+                                  >
+                                    <div
+                                      className="input-wrapper"
+                                    >
+                                      <label
+                                        htmlFor="officeFloor"
+                                      >
+                                        Select Floor
+                                        <select
+                                          className="default-select"
+                                          id="officeFloor"
+                                          name="officeFloor"
+                                          onChange={[Function]}
+                                          required={true}
+                                          value=""
+                                        >
+                                          <option
+                                            value=""
+                                          >
+                                            Select floor
+                                          </option>
+                                          0
+                                        </select>
+                                      </label>
+                                    </div>
+                                  </SelectInput>
                                 </div>
-                              </Input>
-                              <SelectInput
-                                id="officeBlock"
-                                isValue={false}
-                                labelText="Select Block"
-                                name="officeBlock"
-                                onChange={[Function]}
-                                options={Array []}
-                                placeholder="Select block"
-                                placeholderValue=""
-                                required={true}
-                                selectInputClassName="default-select"
-                                value=""
-                                wrapperClassName="input-wrapper"
+                              </NairobiRoomInputs>
+                              <ActionButtons
+                                actionButtonText="ADD ROOM"
+                                cancelButtonText="CANCEL"
+                                isLoading={false}
+                                onClickCancel={[Function]}
+                                onClickSubmit={[Function]}
+                                withCancel={true}
                               >
                                 <div
-                                  className="input-wrapper"
+                                  className="form-action-buttons"
                                 >
-                                  <label
-                                    htmlFor="officeBlock"
+                                  <Button
+                                    classProp={null}
+                                    handleClick={[Function]}
+                                    isDisabled={false}
+                                    title="CANCEL"
+                                    type={1}
                                   >
-                                    Select Block
-                                    <select
-                                      className="default-select"
-                                      id="officeBlock"
-                                      name="officeBlock"
-                                      onChange={[Function]}
-                                      required={true}
-                                      value=""
+                                    <button
+                                      className="null btn-primary"
+                                      disabled={false}
+                                      onClick={[Function]}
                                     >
-                                      <option
-                                        value=""
-                                      >
-                                        Select block
-                                      </option>
-                                      0
-                                    </select>
-                                  </label>
-                                </div>
-                              </SelectInput>
-                              <SelectInput
-                                id="officeFloor"
-                                isValue={false}
-                                labelText="Select Floor"
-                                name="officeFloor"
-                                onChange={[Function]}
-                                options={Array []}
-                                placeholder="Select floor"
-                                placeholderValue=""
-                                required={true}
-                                selectInputClassName="default-select"
-                                value=""
-                                wrapperClassName="input-wrapper"
-                              >
-                                <div
-                                  className="input-wrapper"
-                                >
-                                  <label
-                                    htmlFor="officeFloor"
+                                      <span>
+                                        CANCEL
+                                      </span>
+                                    </button>
+                                  </Button>
+                                  <Button
+                                    classProp="main-button"
+                                    handleClick={[Function]}
+                                    isDisabled={false}
+                                    title="ADD ROOM"
+                                    type={1}
                                   >
-                                    Select Floor
-                                    <select
-                                      className="default-select"
-                                      id="officeFloor"
-                                      name="officeFloor"
-                                      onChange={[Function]}
-                                      required={true}
-                                      value=""
+                                    <button
+                                      className="main-button btn-primary"
+                                      disabled={false}
+                                      onClick={[Function]}
                                     >
-                                      <option
-                                        value=""
-                                      >
-                                        Select floor
-                                      </option>
-                                      0
-                                    </select>
-                                  </label>
+                                      <span>
+                                        ADD ROOM
+                                      </span>
+                                    </button>
+                                  </Button>
                                 </div>
-                              </SelectInput>
-                            </div>
-                          </NairobiRoomInputs>
-                          <ActionButtons
-                            actionButtonText="ADD ROOM"
-                            cancelButtonText="CANCEL"
-                            isLoading={false}
-                            onClickCancel={[Function]}
-                            onClickSubmit={[Function]}
-                            withCancel={true}
-                          >
-                            <div
-                              className="form-action-buttons"
-                            >
-                              <Button
-                                classProp={null}
-                                handleClick={[Function]}
-                                isDisabled={false}
-                                title="CANCEL"
-                                type={1}
-                              >
-                                <button
-                                  className="null btn-primary"
-                                  disabled={false}
-                                  onClick={[Function]}
-                                >
-                                  <span>
-                                    CANCEL
-                                  </span>
-                                </button>
-                              </Button>
-                              <Button
-                                classProp="main-button"
-                                handleClick={[Function]}
-                                isDisabled={false}
-                                title="ADD ROOM"
-                                type={1}
-                              >
-                                <button
-                                  className="main-button btn-primary"
-                                  disabled={false}
-                                  onClick={[Function]}
-                                >
-                                  <span>
-                                    ADD ROOM
-                                  </span>
-                                </button>
-                              </Button>
-                            </div>
-                          </ActionButtons>
-                        </form>
-                      </div>
-                    </div>
-                  </ModalPortal>
-                </Modal>
-              </MrmModal>
-            </AddRoomNairobi>
-          </Mutation>
-        </Apollo(AddRoomNairobi)>
+                              </ActionButtons>
+                            </form>
+                          </div>
+                        </div>
+                      </ModalPortal>
+                    </Modal>
+                  </MrmModal>
+                </AddRoomNairobi>
+              </Mutation>
+            </Apollo(AddRoomNairobi)>
+          </Query>
+        </Apollo(Apollo(AddRoomNairobi))>
       </Query>
-    </Apollo(Apollo(AddRoomNairobi))>
+    </Apollo(Apollo(Apollo(AddRoomNairobi)))>
   </ApolloProvider>
 </MockedProvider>
 `;
@@ -2990,6 +3785,82 @@ exports[`AddRoomNairobi should render properly 1`] = `
             },
             "variables": undefined,
           },
+          "data" => Object {
+            "query": Object {
+              "definitions": Array [
+                Object {
+                  "directives": Array [],
+                  "kind": "OperationDefinition",
+                  "name": undefined,
+                  "operation": "query",
+                  "selectionSet": Object {
+                    "kind": "SelectionSet",
+                    "selections": Array [
+                      Object {
+                        "alias": undefined,
+                        "arguments": Array [],
+                        "directives": Array [],
+                        "kind": "Field",
+                        "name": Object {
+                          "kind": "Name",
+                          "value": "allRemoteRooms",
+                        },
+                        "selectionSet": Object {
+                          "kind": "SelectionSet",
+                          "selections": Array [
+                            Object {
+                              "alias": undefined,
+                              "arguments": Array [],
+                              "directives": Array [],
+                              "kind": "Field",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "rooms",
+                              },
+                              "selectionSet": Object {
+                                "kind": "SelectionSet",
+                                "selections": Array [
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "calendarId",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "name",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
+                                ],
+                              },
+                            },
+                          ],
+                        },
+                      },
+                    ],
+                  },
+                  "variableDefinitions": Array [],
+                },
+              ],
+              "kind": "Document",
+              "loc": Object {
+                "end": 93,
+                "start": 0,
+              },
+            },
+            "variables": undefined,
+          },
         },
         "cache": InMemoryCache {
           "addTypename": false,
@@ -3005,6 +3876,85 @@ exports[`AddRoomNairobi should render properly 1`] = `
           "optimistic": Array [],
           "silenceBroadcast": false,
           "watches": Array [
+            Object {
+              "callback": [Function],
+              "optimistic": true,
+              "previousResult": [Function],
+              "query": Object {
+                "definitions": Array [
+                  Object {
+                    "directives": Array [],
+                    "kind": "OperationDefinition",
+                    "name": undefined,
+                    "operation": "query",
+                    "selectionSet": Object {
+                      "kind": "SelectionSet",
+                      "selections": Array [
+                        Object {
+                          "alias": undefined,
+                          "arguments": Array [],
+                          "directives": Array [],
+                          "kind": "Field",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "allRemoteRooms",
+                          },
+                          "selectionSet": Object {
+                            "kind": "SelectionSet",
+                            "selections": Array [
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "rooms",
+                                },
+                                "selectionSet": Object {
+                                  "kind": "SelectionSet",
+                                  "selections": Array [
+                                    Object {
+                                      "alias": undefined,
+                                      "arguments": Array [],
+                                      "directives": Array [],
+                                      "kind": "Field",
+                                      "name": Object {
+                                        "kind": "Name",
+                                        "value": "calendarId",
+                                      },
+                                      "selectionSet": undefined,
+                                    },
+                                    Object {
+                                      "alias": undefined,
+                                      "arguments": Array [],
+                                      "directives": Array [],
+                                      "kind": "Field",
+                                      "name": Object {
+                                        "kind": "Name",
+                                        "value": "name",
+                                      },
+                                      "selectionSet": undefined,
+                                    },
+                                  ],
+                                },
+                              },
+                            ],
+                          },
+                        },
+                      ],
+                    },
+                    "variableDefinitions": Array [],
+                  },
+                ],
+                "kind": "Document",
+                "loc": Object {
+                  "end": 93,
+                  "start": 0,
+                },
+              },
+              "variables": undefined,
+            },
             Object {
               "callback": [Function],
               "optimistic": true,
@@ -3231,6 +4181,85 @@ exports[`AddRoomNairobi should render properly 1`] = `
                       Object {
                         "directives": Array [],
                         "kind": "OperationDefinition",
+                        "name": undefined,
+                        "operation": "query",
+                        "selectionSet": Object {
+                          "kind": "SelectionSet",
+                          "selections": Array [
+                            Object {
+                              "alias": undefined,
+                              "arguments": Array [],
+                              "directives": Array [],
+                              "kind": "Field",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "allRemoteRooms",
+                              },
+                              "selectionSet": Object {
+                                "kind": "SelectionSet",
+                                "selections": Array [
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "rooms",
+                                    },
+                                    "selectionSet": Object {
+                                      "kind": "SelectionSet",
+                                      "selections": Array [
+                                        Object {
+                                          "alias": undefined,
+                                          "arguments": Array [],
+                                          "directives": Array [],
+                                          "kind": "Field",
+                                          "name": Object {
+                                            "kind": "Name",
+                                            "value": "calendarId",
+                                          },
+                                          "selectionSet": undefined,
+                                        },
+                                        Object {
+                                          "alias": undefined,
+                                          "arguments": Array [],
+                                          "directives": Array [],
+                                          "kind": "Field",
+                                          "name": Object {
+                                            "kind": "Name",
+                                            "value": "name",
+                                          },
+                                          "selectionSet": undefined,
+                                        },
+                                      ],
+                                    },
+                                  },
+                                ],
+                              },
+                            },
+                          ],
+                        },
+                        "variableDefinitions": Array [],
+                      },
+                    ],
+                    "kind": "Document",
+                    "loc": Object {
+                      "end": 93,
+                      "start": 0,
+                    },
+                  },
+                  "variables": undefined,
+                },
+                Object {
+                  "callback": [Function],
+                  "optimistic": true,
+                  "previousResult": [Function],
+                  "query": Object {
+                    "definitions": Array [
+                      Object {
+                        "directives": Array [],
+                        "kind": "OperationDefinition",
                         "name": Object {
                           "kind": "Name",
                           "value": "officeDetails",
@@ -3420,7 +4449,7 @@ exports[`AddRoomNairobi should render properly 1`] = `
             "request": [Function],
           },
           "fetchQueryPromises": Map {},
-          "idCounter": 3,
+          "idCounter": 5,
           "link": ApolloLink {
             "request": [Function],
           },
@@ -3429,6 +4458,213 @@ exports[`AddRoomNairobi should render properly 1`] = `
           },
           "onBroadcast": [Function],
           "queries": Map {
+            "2" => Object {
+              "cancel": [Function],
+              "document": Object {
+                "definitions": Array [
+                  Object {
+                    "directives": Array [],
+                    "kind": "OperationDefinition",
+                    "name": undefined,
+                    "operation": "query",
+                    "selectionSet": Object {
+                      "kind": "SelectionSet",
+                      "selections": Array [
+                        Object {
+                          "alias": undefined,
+                          "arguments": Array [],
+                          "directives": Array [],
+                          "kind": "Field",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "allRemoteRooms",
+                          },
+                          "selectionSet": Object {
+                            "kind": "SelectionSet",
+                            "selections": Array [
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "rooms",
+                                },
+                                "selectionSet": Object {
+                                  "kind": "SelectionSet",
+                                  "selections": Array [
+                                    Object {
+                                      "alias": undefined,
+                                      "arguments": Array [],
+                                      "directives": Array [],
+                                      "kind": "Field",
+                                      "name": Object {
+                                        "kind": "Name",
+                                        "value": "calendarId",
+                                      },
+                                      "selectionSet": undefined,
+                                    },
+                                    Object {
+                                      "alias": undefined,
+                                      "arguments": Array [],
+                                      "directives": Array [],
+                                      "kind": "Field",
+                                      "name": Object {
+                                        "kind": "Name",
+                                        "value": "name",
+                                      },
+                                      "selectionSet": undefined,
+                                    },
+                                  ],
+                                },
+                              },
+                            ],
+                          },
+                        },
+                      ],
+                    },
+                    "variableDefinitions": Array [],
+                  },
+                ],
+                "kind": "Document",
+                "loc": Object {
+                  "end": 93,
+                  "start": 0,
+                },
+              },
+              "invalidate": false,
+              "invalidated": false,
+              "lastRequestId": 3,
+              "listeners": Array [
+                [Function],
+              ],
+              "newData": null,
+              "observableQuery": ObservableQuery {
+                "_subscriber": [Function],
+                "isCurrentlyPolling": false,
+                "isTornDown": false,
+                "lastError": [Error: Network error: No more mocked responses for the query: {
+  allRemoteRooms {
+    rooms {
+      calendarId
+      name
+    }
+  }
+}
+, variables: {}],
+                "lastResult": undefined,
+                "observers": Array [
+                  SubscriptionObserver {
+                    "_subscription": Subscription {
+                      "_cleanup": [Function],
+                      "_observer": Object {
+                        "error": [Function],
+                        "next": [Function],
+                      },
+                      "_queue": undefined,
+                      "_state": "ready",
+                    },
+                  },
+                ],
+                "options": Object {
+                  "context": Object {},
+                  "metadata": Object {
+                    "reactComponent": Object {
+                      "displayName": "Apollo(Apollo(AddRoomNairobi))",
+                    },
+                  },
+                  "notifyOnNetworkStatusChange": false,
+                  "query": Object {
+                    "definitions": Array [
+                      Object {
+                        "directives": Array [],
+                        "kind": "OperationDefinition",
+                        "name": undefined,
+                        "operation": "query",
+                        "selectionSet": Object {
+                          "kind": "SelectionSet",
+                          "selections": Array [
+                            Object {
+                              "alias": undefined,
+                              "arguments": Array [],
+                              "directives": Array [],
+                              "kind": "Field",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "allRemoteRooms",
+                              },
+                              "selectionSet": Object {
+                                "kind": "SelectionSet",
+                                "selections": Array [
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "rooms",
+                                    },
+                                    "selectionSet": Object {
+                                      "kind": "SelectionSet",
+                                      "selections": Array [
+                                        Object {
+                                          "alias": undefined,
+                                          "arguments": Array [],
+                                          "directives": Array [],
+                                          "kind": "Field",
+                                          "name": Object {
+                                            "kind": "Name",
+                                            "value": "calendarId",
+                                          },
+                                          "selectionSet": undefined,
+                                        },
+                                        Object {
+                                          "alias": undefined,
+                                          "arguments": Array [],
+                                          "directives": Array [],
+                                          "kind": "Field",
+                                          "name": Object {
+                                            "kind": "Name",
+                                            "value": "name",
+                                          },
+                                          "selectionSet": undefined,
+                                        },
+                                      ],
+                                    },
+                                  },
+                                ],
+                              },
+                            },
+                          ],
+                        },
+                        "variableDefinitions": Array [],
+                      },
+                    ],
+                    "kind": "Document",
+                    "loc": Object {
+                      "end": 93,
+                      "start": 0,
+                    },
+                  },
+                },
+                "queryId": "2",
+                "queryManager": [Circular],
+                "scheduler": QueryScheduler {
+                  "inFlightQueries": Object {},
+                  "intervalQueries": Object {},
+                  "pollingTimers": Object {},
+                  "queryManager": [Circular],
+                  "registeredQueries": Object {},
+                  "ssrMode": false,
+                },
+                "shouldSubscribe": true,
+                "subscriptionHandles": Array [],
+                "variables": Object {},
+              },
+              "subscriptions": Array [],
+            },
             "1" => Object {
               "cancel": [Function],
               "document": Object {
@@ -3618,7 +4854,7 @@ exports[`AddRoomNairobi should render properly 1`] = `
               },
               "invalidate": false,
               "invalidated": false,
-              "lastRequestId": 2,
+              "lastRequestId": 4,
               "listeners": Array [
                 [Function],
               ],
@@ -3664,7 +4900,7 @@ exports[`AddRoomNairobi should render properly 1`] = `
                   "context": Object {},
                   "metadata": Object {
                     "reactComponent": Object {
-                      "displayName": "Apollo(Apollo(AddRoomNairobi))",
+                      "displayName": "Apollo(Apollo(Apollo(AddRoomNairobi)))",
                     },
                   },
                   "notifyOnNetworkStatusChange": false,
@@ -4068,7 +5304,7 @@ exports[`AddRoomNairobi should render properly 1`] = `
                 "graphQLErrors": Array [],
                 "metadata": Object {
                   "reactComponent": Object {
-                    "displayName": "Apollo(Apollo(AddRoomNairobi))",
+                    "displayName": "Apollo(Apollo(Apollo(AddRoomNairobi)))",
                   },
                 },
                 "networkError": [Error: No more mocked responses for the query: query officeDetails {
@@ -4086,6 +5322,99 @@ exports[`AddRoomNairobi should render properly 1`] = `
         id
         name
       }
+    }
+  }
+}
+, variables: {}],
+                "networkStatus": 8,
+                "previousVariables": null,
+                "variables": Object {},
+              },
+              "2": Object {
+                "document": Object {
+                  "definitions": Array [
+                    Object {
+                      "directives": Array [],
+                      "kind": "OperationDefinition",
+                      "name": undefined,
+                      "operation": "query",
+                      "selectionSet": Object {
+                        "kind": "SelectionSet",
+                        "selections": Array [
+                          Object {
+                            "alias": undefined,
+                            "arguments": Array [],
+                            "directives": Array [],
+                            "kind": "Field",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "allRemoteRooms",
+                            },
+                            "selectionSet": Object {
+                              "kind": "SelectionSet",
+                              "selections": Array [
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "rooms",
+                                  },
+                                  "selectionSet": Object {
+                                    "kind": "SelectionSet",
+                                    "selections": Array [
+                                      Object {
+                                        "alias": undefined,
+                                        "arguments": Array [],
+                                        "directives": Array [],
+                                        "kind": "Field",
+                                        "name": Object {
+                                          "kind": "Name",
+                                          "value": "calendarId",
+                                        },
+                                        "selectionSet": undefined,
+                                      },
+                                      Object {
+                                        "alias": undefined,
+                                        "arguments": Array [],
+                                        "directives": Array [],
+                                        "kind": "Field",
+                                        "name": Object {
+                                          "kind": "Name",
+                                          "value": "name",
+                                        },
+                                        "selectionSet": undefined,
+                                      },
+                                    ],
+                                  },
+                                },
+                              ],
+                            },
+                          },
+                        ],
+                      },
+                      "variableDefinitions": Array [],
+                    },
+                  ],
+                  "kind": "Document",
+                  "loc": Object {
+                    "end": 93,
+                    "start": 0,
+                  },
+                },
+                "graphQLErrors": Array [],
+                "metadata": Object {
+                  "reactComponent": Object {
+                    "displayName": "Apollo(Apollo(AddRoomNairobi))",
+                  },
+                },
+                "networkError": [Error: No more mocked responses for the query: {
+  allRemoteRooms {
+    rooms {
+      calendarId
+      name
     }
   }
 }
@@ -4124,6 +5453,85 @@ exports[`AddRoomNairobi should render properly 1`] = `
             "optimistic": Array [],
             "silenceBroadcast": false,
             "watches": Array [
+              Object {
+                "callback": [Function],
+                "optimistic": true,
+                "previousResult": [Function],
+                "query": Object {
+                  "definitions": Array [
+                    Object {
+                      "directives": Array [],
+                      "kind": "OperationDefinition",
+                      "name": undefined,
+                      "operation": "query",
+                      "selectionSet": Object {
+                        "kind": "SelectionSet",
+                        "selections": Array [
+                          Object {
+                            "alias": undefined,
+                            "arguments": Array [],
+                            "directives": Array [],
+                            "kind": "Field",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "allRemoteRooms",
+                            },
+                            "selectionSet": Object {
+                              "kind": "SelectionSet",
+                              "selections": Array [
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "rooms",
+                                  },
+                                  "selectionSet": Object {
+                                    "kind": "SelectionSet",
+                                    "selections": Array [
+                                      Object {
+                                        "alias": undefined,
+                                        "arguments": Array [],
+                                        "directives": Array [],
+                                        "kind": "Field",
+                                        "name": Object {
+                                          "kind": "Name",
+                                          "value": "calendarId",
+                                        },
+                                        "selectionSet": undefined,
+                                      },
+                                      Object {
+                                        "alias": undefined,
+                                        "arguments": Array [],
+                                        "directives": Array [],
+                                        "kind": "Field",
+                                        "name": Object {
+                                          "kind": "Name",
+                                          "value": "name",
+                                        },
+                                        "selectionSet": undefined,
+                                      },
+                                    ],
+                                  },
+                                },
+                              ],
+                            },
+                          },
+                        ],
+                      },
+                      "variableDefinitions": Array [],
+                    },
+                  ],
+                  "kind": "Document",
+                  "loc": Object {
+                    "end": 93,
+                    "start": 0,
+                  },
+                },
+                "variables": undefined,
+              },
               Object {
                 "callback": [Function],
                 "optimistic": true,
@@ -4323,7 +5731,7 @@ exports[`AddRoomNairobi should render properly 1`] = `
       }
     }
   >
-    <Apollo(Apollo(AddRoomNairobi))
+    <Apollo(Apollo(Apollo(AddRoomNairobi)))
       locations={
         Array [
           Object {
@@ -4345,7 +5753,7 @@ exports[`AddRoomNairobi should render properly 1`] = `
       }
     >
       <Query
-        displayName="Apollo(Apollo(AddRoomNairobi))"
+        displayName="Apollo(Apollo(Apollo(AddRoomNairobi)))"
         query={
           Object {
             "definitions": Array [
@@ -4536,7 +5944,7 @@ exports[`AddRoomNairobi should render properly 1`] = `
         skip={false}
         warnUnhandledError={true}
       >
-        <Apollo(AddRoomNairobi)
+        <Apollo(Apollo(AddRoomNairobi))
           locations={
             Array [
               Object {
@@ -4571,129 +5979,27 @@ exports[`AddRoomNairobi should render properly 1`] = `
             }
           }
         >
-          <Mutation
-            ignoreResults={true}
-            mutation={
+          <Query
+            displayName="Apollo(Apollo(AddRoomNairobi))"
+            query={
               Object {
                 "definitions": Array [
                   Object {
                     "directives": Array [],
                     "kind": "OperationDefinition",
-                    "name": Object {
-                      "kind": "Name",
-                      "value": "CreateRoom",
-                    },
-                    "operation": "mutation",
+                    "name": undefined,
+                    "operation": "query",
                     "selectionSet": Object {
                       "kind": "SelectionSet",
                       "selections": Array [
                         Object {
                           "alias": undefined,
-                          "arguments": Array [
-                            Object {
-                              "kind": "Argument",
-                              "name": Object {
-                                "kind": "Name",
-                                "value": "roomType",
-                              },
-                              "value": Object {
-                                "kind": "Variable",
-                                "name": Object {
-                                  "kind": "Name",
-                                  "value": "roomType",
-                                },
-                              },
-                            },
-                            Object {
-                              "kind": "Argument",
-                              "name": Object {
-                                "kind": "Name",
-                                "value": "name",
-                              },
-                              "value": Object {
-                                "kind": "Variable",
-                                "name": Object {
-                                  "kind": "Name",
-                                  "value": "roomName",
-                                },
-                              },
-                            },
-                            Object {
-                              "kind": "Argument",
-                              "name": Object {
-                                "kind": "Name",
-                                "value": "floorId",
-                              },
-                              "value": Object {
-                                "kind": "Variable",
-                                "name": Object {
-                                  "kind": "Name",
-                                  "value": "roomFloorId",
-                                },
-                              },
-                            },
-                            Object {
-                              "kind": "Argument",
-                              "name": Object {
-                                "kind": "Name",
-                                "value": "capacity",
-                              },
-                              "value": Object {
-                                "kind": "Variable",
-                                "name": Object {
-                                  "kind": "Name",
-                                  "value": "roomCapacity",
-                                },
-                              },
-                            },
-                            Object {
-                              "kind": "Argument",
-                              "name": Object {
-                                "kind": "Name",
-                                "value": "calendarId",
-                              },
-                              "value": Object {
-                                "kind": "Variable",
-                                "name": Object {
-                                  "kind": "Name",
-                                  "value": "roomCalendar",
-                                },
-                              },
-                            },
-                            Object {
-                              "kind": "Argument",
-                              "name": Object {
-                                "kind": "Name",
-                                "value": "imageUrl",
-                              },
-                              "value": Object {
-                                "kind": "Variable",
-                                "name": Object {
-                                  "kind": "Name",
-                                  "value": "roomImageUrl",
-                                },
-                              },
-                            },
-                            Object {
-                              "kind": "Argument",
-                              "name": Object {
-                                "kind": "Name",
-                                "value": "officeId",
-                              },
-                              "value": Object {
-                                "kind": "Variable",
-                                "name": Object {
-                                  "kind": "Name",
-                                  "value": "office_id",
-                                },
-                              },
-                            },
-                          ],
+                          "arguments": Array [],
                           "directives": Array [],
                           "kind": "Field",
                           "name": Object {
                             "kind": "Name",
-                            "value": "createRoom",
+                            "value": "allRemoteRooms",
                           },
                           "selectionSet": Object {
                             "kind": "SelectionSet",
@@ -4705,7 +6011,7 @@ exports[`AddRoomNairobi should render properly 1`] = `
                                 "kind": "Field",
                                 "name": Object {
                                   "kind": "Name",
-                                  "value": "room",
+                                  "value": "rooms",
                                 },
                                 "selectionSet": Object {
                                   "kind": "SelectionSet",
@@ -4717,7 +6023,7 @@ exports[`AddRoomNairobi should render properly 1`] = `
                                       "kind": "Field",
                                       "name": Object {
                                         "kind": "Name",
-                                        "value": "id",
+                                        "value": "calendarId",
                                       },
                                       "selectionSet": undefined,
                                     },
@@ -4732,39 +6038,6 @@ exports[`AddRoomNairobi should render properly 1`] = `
                                       },
                                       "selectionSet": undefined,
                                     },
-                                    Object {
-                                      "alias": undefined,
-                                      "arguments": Array [],
-                                      "directives": Array [],
-                                      "kind": "Field",
-                                      "name": Object {
-                                        "kind": "Name",
-                                        "value": "roomType",
-                                      },
-                                      "selectionSet": undefined,
-                                    },
-                                    Object {
-                                      "alias": undefined,
-                                      "arguments": Array [],
-                                      "directives": Array [],
-                                      "kind": "Field",
-                                      "name": Object {
-                                        "kind": "Name",
-                                        "value": "capacity",
-                                      },
-                                      "selectionSet": undefined,
-                                    },
-                                    Object {
-                                      "alias": undefined,
-                                      "arguments": Array [],
-                                      "directives": Array [],
-                                      "kind": "Field",
-                                      "name": Object {
-                                        "kind": "Name",
-                                        "value": "imageUrl",
-                                      },
-                                      "selectionSet": undefined,
-                                    },
                                   ],
                                 },
                               },
@@ -4773,164 +6046,20 @@ exports[`AddRoomNairobi should render properly 1`] = `
                         },
                       ],
                     },
-                    "variableDefinitions": Array [
-                      Object {
-                        "defaultValue": undefined,
-                        "kind": "VariableDefinition",
-                        "type": Object {
-                          "kind": "NonNullType",
-                          "type": Object {
-                            "kind": "NamedType",
-                            "name": Object {
-                              "kind": "Name",
-                              "value": "String",
-                            },
-                          },
-                        },
-                        "variable": Object {
-                          "kind": "Variable",
-                          "name": Object {
-                            "kind": "Name",
-                            "value": "roomType",
-                          },
-                        },
-                      },
-                      Object {
-                        "defaultValue": undefined,
-                        "kind": "VariableDefinition",
-                        "type": Object {
-                          "kind": "NonNullType",
-                          "type": Object {
-                            "kind": "NamedType",
-                            "name": Object {
-                              "kind": "Name",
-                              "value": "String",
-                            },
-                          },
-                        },
-                        "variable": Object {
-                          "kind": "Variable",
-                          "name": Object {
-                            "kind": "Name",
-                            "value": "roomName",
-                          },
-                        },
-                      },
-                      Object {
-                        "defaultValue": undefined,
-                        "kind": "VariableDefinition",
-                        "type": Object {
-                          "kind": "NonNullType",
-                          "type": Object {
-                            "kind": "NamedType",
-                            "name": Object {
-                              "kind": "Name",
-                              "value": "Int",
-                            },
-                          },
-                        },
-                        "variable": Object {
-                          "kind": "Variable",
-                          "name": Object {
-                            "kind": "Name",
-                            "value": "roomFloorId",
-                          },
-                        },
-                      },
-                      Object {
-                        "defaultValue": undefined,
-                        "kind": "VariableDefinition",
-                        "type": Object {
-                          "kind": "NonNullType",
-                          "type": Object {
-                            "kind": "NamedType",
-                            "name": Object {
-                              "kind": "Name",
-                              "value": "Int",
-                            },
-                          },
-                        },
-                        "variable": Object {
-                          "kind": "Variable",
-                          "name": Object {
-                            "kind": "Name",
-                            "value": "roomCapacity",
-                          },
-                        },
-                      },
-                      Object {
-                        "defaultValue": undefined,
-                        "kind": "VariableDefinition",
-                        "type": Object {
-                          "kind": "NonNullType",
-                          "type": Object {
-                            "kind": "NamedType",
-                            "name": Object {
-                              "kind": "Name",
-                              "value": "String",
-                            },
-                          },
-                        },
-                        "variable": Object {
-                          "kind": "Variable",
-                          "name": Object {
-                            "kind": "Name",
-                            "value": "roomCalendar",
-                          },
-                        },
-                      },
-                      Object {
-                        "defaultValue": undefined,
-                        "kind": "VariableDefinition",
-                        "type": Object {
-                          "kind": "NonNullType",
-                          "type": Object {
-                            "kind": "NamedType",
-                            "name": Object {
-                              "kind": "Name",
-                              "value": "Int",
-                            },
-                          },
-                        },
-                        "variable": Object {
-                          "kind": "Variable",
-                          "name": Object {
-                            "kind": "Name",
-                            "value": "office_id",
-                          },
-                        },
-                      },
-                      Object {
-                        "defaultValue": undefined,
-                        "kind": "VariableDefinition",
-                        "type": Object {
-                          "kind": "NamedType",
-                          "name": Object {
-                            "kind": "Name",
-                            "value": "String",
-                          },
-                        },
-                        "variable": Object {
-                          "kind": "Variable",
-                          "name": Object {
-                            "kind": "Name",
-                            "value": "roomImageUrl",
-                          },
-                        },
-                      },
-                    ],
+                    "variableDefinitions": Array [],
                   },
                 ],
                 "kind": "Document",
                 "loc": Object {
-                  "end": 430,
+                  "end": 93,
                   "start": 0,
                 },
               }
             }
+            skip={false}
+            warnUnhandledError={true}
           >
-            <AddRoomNairobi
-              dojoMutation={[Function]}
+            <Apollo(AddRoomNairobi)
               locations={
                 Array [
                   Object {
@@ -4964,135 +6093,559 @@ exports[`AddRoomNairobi should render properly 1`] = `
                   "variables": Object {},
                 }
               }
+              remoteRooms={
+                Object {
+                  "error": undefined,
+                  "fetchMore": [Function],
+                  "loading": true,
+                  "networkStatus": 1,
+                  "refetch": [Function],
+                  "startPolling": [Function],
+                  "stopPolling": [Function],
+                  "subscribeToMore": [Function],
+                  "updateQuery": [Function],
+                  "variables": Object {},
+                }
+              }
             >
-              <MrmModal
-                buttonText="St Catherines"
-                className="nbo-add-room-modal button addRoomBtn"
-                closeModal={false}
-                handleCloseRequest={[Function]}
-                modalButtonClassName="button"
-                title="ADD ROOM"
-              >
-                <IconButtons
-                  buttonText="St Catherines"
-                  disabled={false}
-                  modalButtonClassName="button"
-                  openModal={[Function]}
-                >
-                  <button
-                    className="button"
-                    disabled={false}
-                    id="modal-button"
-                    onClick={[Function]}
-                  >
-                    St Catherines
-                  </button>
-                </IconButtons>
-                <Modal
-                  ariaHideApp={false}
-                  bodyOpenClassName="ReactModal__Body--open"
-                  className="nbo-add-room-modal button addRoomBtn"
-                  closeTimeoutMS={0}
-                  contentLabel="Parent Modal"
-                  isOpen={false}
-                  onAfterOpen={[Function]}
-                  onRequestClose={[Function]}
-                  parentSelector={[Function]}
-                  portalClassName="ReactModalPortal"
-                  shouldCloseOnEsc={true}
-                  shouldCloseOnOverlayClick={false}
-                  shouldFocusAfterRender={true}
-                  shouldReturnFocusAfterClose={true}
-                  style={
-                    Object {
-                      "content": Object {
-                        "backgroundColor": "#ffffff",
-                        "border": "1px solid #CCCCCC",
-                        "borderRadius": "4px",
-                        "bottom": "auto",
-                        "boxShadow": "0 2px 40px 10px rgba(185, 180, 180, 0.2)",
-                        "fontFamily": "DINPro-Regular",
-                        "left": "50%",
-                        "marginRight": "-50%",
-                        "outline": "none",
-                        "overflow": "auto",
-                        "position": "absolute",
-                        "right": "auto",
-                        "top": "50%",
-                        "transform": "translate(-50%, -50%)",
+              <Mutation
+                ignoreResults={true}
+                mutation={
+                  Object {
+                    "definitions": Array [
+                      Object {
+                        "directives": Array [],
+                        "kind": "OperationDefinition",
+                        "name": Object {
+                          "kind": "Name",
+                          "value": "CreateRoom",
+                        },
+                        "operation": "mutation",
+                        "selectionSet": Object {
+                          "kind": "SelectionSet",
+                          "selections": Array [
+                            Object {
+                              "alias": undefined,
+                              "arguments": Array [
+                                Object {
+                                  "kind": "Argument",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "roomType",
+                                  },
+                                  "value": Object {
+                                    "kind": "Variable",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "roomType",
+                                    },
+                                  },
+                                },
+                                Object {
+                                  "kind": "Argument",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "name",
+                                  },
+                                  "value": Object {
+                                    "kind": "Variable",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "roomName",
+                                    },
+                                  },
+                                },
+                                Object {
+                                  "kind": "Argument",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "floorId",
+                                  },
+                                  "value": Object {
+                                    "kind": "Variable",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "roomFloorId",
+                                    },
+                                  },
+                                },
+                                Object {
+                                  "kind": "Argument",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "capacity",
+                                  },
+                                  "value": Object {
+                                    "kind": "Variable",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "roomCapacity",
+                                    },
+                                  },
+                                },
+                                Object {
+                                  "kind": "Argument",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "calendarId",
+                                  },
+                                  "value": Object {
+                                    "kind": "Variable",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "roomCalendar",
+                                    },
+                                  },
+                                },
+                                Object {
+                                  "kind": "Argument",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "imageUrl",
+                                  },
+                                  "value": Object {
+                                    "kind": "Variable",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "roomImageUrl",
+                                    },
+                                  },
+                                },
+                                Object {
+                                  "kind": "Argument",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "officeId",
+                                  },
+                                  "value": Object {
+                                    "kind": "Variable",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "office_id",
+                                    },
+                                  },
+                                },
+                              ],
+                              "directives": Array [],
+                              "kind": "Field",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "createRoom",
+                              },
+                              "selectionSet": Object {
+                                "kind": "SelectionSet",
+                                "selections": Array [
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "room",
+                                    },
+                                    "selectionSet": Object {
+                                      "kind": "SelectionSet",
+                                      "selections": Array [
+                                        Object {
+                                          "alias": undefined,
+                                          "arguments": Array [],
+                                          "directives": Array [],
+                                          "kind": "Field",
+                                          "name": Object {
+                                            "kind": "Name",
+                                            "value": "id",
+                                          },
+                                          "selectionSet": undefined,
+                                        },
+                                        Object {
+                                          "alias": undefined,
+                                          "arguments": Array [],
+                                          "directives": Array [],
+                                          "kind": "Field",
+                                          "name": Object {
+                                            "kind": "Name",
+                                            "value": "name",
+                                          },
+                                          "selectionSet": undefined,
+                                        },
+                                        Object {
+                                          "alias": undefined,
+                                          "arguments": Array [],
+                                          "directives": Array [],
+                                          "kind": "Field",
+                                          "name": Object {
+                                            "kind": "Name",
+                                            "value": "roomType",
+                                          },
+                                          "selectionSet": undefined,
+                                        },
+                                        Object {
+                                          "alias": undefined,
+                                          "arguments": Array [],
+                                          "directives": Array [],
+                                          "kind": "Field",
+                                          "name": Object {
+                                            "kind": "Name",
+                                            "value": "capacity",
+                                          },
+                                          "selectionSet": undefined,
+                                        },
+                                        Object {
+                                          "alias": undefined,
+                                          "arguments": Array [],
+                                          "directives": Array [],
+                                          "kind": "Field",
+                                          "name": Object {
+                                            "kind": "Name",
+                                            "value": "imageUrl",
+                                          },
+                                          "selectionSet": undefined,
+                                        },
+                                      ],
+                                    },
+                                  },
+                                ],
+                              },
+                            },
+                          ],
+                        },
+                        "variableDefinitions": Array [
+                          Object {
+                            "defaultValue": undefined,
+                            "kind": "VariableDefinition",
+                            "type": Object {
+                              "kind": "NonNullType",
+                              "type": Object {
+                                "kind": "NamedType",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "String",
+                                },
+                              },
+                            },
+                            "variable": Object {
+                              "kind": "Variable",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "roomType",
+                              },
+                            },
+                          },
+                          Object {
+                            "defaultValue": undefined,
+                            "kind": "VariableDefinition",
+                            "type": Object {
+                              "kind": "NonNullType",
+                              "type": Object {
+                                "kind": "NamedType",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "String",
+                                },
+                              },
+                            },
+                            "variable": Object {
+                              "kind": "Variable",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "roomName",
+                              },
+                            },
+                          },
+                          Object {
+                            "defaultValue": undefined,
+                            "kind": "VariableDefinition",
+                            "type": Object {
+                              "kind": "NonNullType",
+                              "type": Object {
+                                "kind": "NamedType",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "Int",
+                                },
+                              },
+                            },
+                            "variable": Object {
+                              "kind": "Variable",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "roomFloorId",
+                              },
+                            },
+                          },
+                          Object {
+                            "defaultValue": undefined,
+                            "kind": "VariableDefinition",
+                            "type": Object {
+                              "kind": "NonNullType",
+                              "type": Object {
+                                "kind": "NamedType",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "Int",
+                                },
+                              },
+                            },
+                            "variable": Object {
+                              "kind": "Variable",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "roomCapacity",
+                              },
+                            },
+                          },
+                          Object {
+                            "defaultValue": undefined,
+                            "kind": "VariableDefinition",
+                            "type": Object {
+                              "kind": "NonNullType",
+                              "type": Object {
+                                "kind": "NamedType",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "String",
+                                },
+                              },
+                            },
+                            "variable": Object {
+                              "kind": "Variable",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "roomCalendar",
+                              },
+                            },
+                          },
+                          Object {
+                            "defaultValue": undefined,
+                            "kind": "VariableDefinition",
+                            "type": Object {
+                              "kind": "NonNullType",
+                              "type": Object {
+                                "kind": "NamedType",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "Int",
+                                },
+                              },
+                            },
+                            "variable": Object {
+                              "kind": "Variable",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "office_id",
+                              },
+                            },
+                          },
+                          Object {
+                            "defaultValue": undefined,
+                            "kind": "VariableDefinition",
+                            "type": Object {
+                              "kind": "NamedType",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "String",
+                              },
+                            },
+                            "variable": Object {
+                              "kind": "Variable",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "roomImageUrl",
+                              },
+                            },
+                          },
+                        ],
                       },
+                    ],
+                    "kind": "Document",
+                    "loc": Object {
+                      "end": 430,
+                      "start": 0,
+                    },
+                  }
+                }
+              >
+                <AddRoomNairobi
+                  dojoMutation={[Function]}
+                  locations={
+                    Array [
+                      Object {
+                        "__typename": "Location",
+                        "id": "1",
+                        "name": "Kampala",
+                      },
+                      Object {
+                        "__typename": "Location",
+                        "id": "2",
+                        "name": "Lagos",
+                      },
+                      Object {
+                        "__typename": "Location",
+                        "id": "3",
+                        "name": "Nairobi",
+                      },
+                    ]
+                  }
+                  officeDetails={
+                    Object {
+                      "error": undefined,
+                      "fetchMore": [Function],
+                      "loading": true,
+                      "networkStatus": 1,
+                      "refetch": [Function],
+                      "startPolling": [Function],
+                      "stopPolling": [Function],
+                      "subscribeToMore": [Function],
+                      "updateQuery": [Function],
+                      "variables": Object {},
+                    }
+                  }
+                  remoteRooms={
+                    Object {
+                      "error": undefined,
+                      "fetchMore": [Function],
+                      "loading": true,
+                      "networkStatus": 1,
+                      "refetch": [Function],
+                      "startPolling": [Function],
+                      "stopPolling": [Function],
+                      "subscribeToMore": [Function],
+                      "updateQuery": [Function],
+                      "variables": Object {},
                     }
                   }
                 >
-                  <ModalPortal
-                    ariaHideApp={false}
-                    bodyOpenClassName="ReactModal__Body--open"
+                  <MrmModal
+                    buttonText="St Catherines"
                     className="nbo-add-room-modal button addRoomBtn"
-                    closeTimeoutMS={0}
-                    contentLabel="Parent Modal"
-                    defaultStyles={
-                      Object {
-                        "content": Object {
-                          "WebkitOverflowScrolling": "touch",
-                          "background": "#fff",
-                          "border": "1px solid #ccc",
-                          "borderRadius": "4px",
-                          "bottom": "40px",
-                          "left": "40px",
-                          "outline": "none",
-                          "overflow": "auto",
-                          "padding": "20px",
-                          "position": "absolute",
-                          "right": "40px",
-                          "top": "40px",
-                        },
-                        "overlay": Object {
-                          "backgroundColor": "rgba(255, 255, 255, 0.75)",
-                          "bottom": 0,
-                          "left": 0,
-                          "position": "fixed",
-                          "right": 0,
-                          "top": 0,
-                        },
+                    closeModal={false}
+                    handleCloseRequest={[Function]}
+                    modalButtonClassName="button"
+                    title="ADD ROOM"
+                  >
+                    <IconButtons
+                      buttonText="St Catherines"
+                      disabled={false}
+                      modalButtonClassName="button"
+                      openModal={[Function]}
+                    >
+                      <button
+                        className="button"
+                        disabled={false}
+                        id="modal-button"
+                        onClick={[Function]}
+                      >
+                        St Catherines
+                      </button>
+                    </IconButtons>
+                    <Modal
+                      ariaHideApp={false}
+                      bodyOpenClassName="ReactModal__Body--open"
+                      className="nbo-add-room-modal button addRoomBtn"
+                      closeTimeoutMS={0}
+                      contentLabel="Parent Modal"
+                      isOpen={false}
+                      onAfterOpen={[Function]}
+                      onRequestClose={[Function]}
+                      parentSelector={[Function]}
+                      portalClassName="ReactModalPortal"
+                      shouldCloseOnEsc={true}
+                      shouldCloseOnOverlayClick={false}
+                      shouldFocusAfterRender={true}
+                      shouldReturnFocusAfterClose={true}
+                      style={
+                        Object {
+                          "content": Object {
+                            "backgroundColor": "#ffffff",
+                            "border": "1px solid #CCCCCC",
+                            "borderRadius": "4px",
+                            "bottom": "auto",
+                            "boxShadow": "0 2px 40px 10px rgba(185, 180, 180, 0.2)",
+                            "fontFamily": "DINPro-Regular",
+                            "left": "50%",
+                            "marginRight": "-50%",
+                            "outline": "none",
+                            "overflow": "auto",
+                            "position": "absolute",
+                            "right": "auto",
+                            "top": "50%",
+                            "transform": "translate(-50%, -50%)",
+                          },
+                        }
                       }
-                    }
-                    isOpen={false}
-                    onAfterOpen={[Function]}
-                    onRequestClose={[Function]}
-                    parentSelector={[Function]}
-                    portalClassName="ReactModalPortal"
-                    shouldCloseOnEsc={true}
-                    shouldCloseOnOverlayClick={false}
-                    shouldFocusAfterRender={true}
-                    shouldReturnFocusAfterClose={true}
-                    style={
-                      Object {
-                        "content": Object {
-                          "backgroundColor": "#ffffff",
-                          "border": "1px solid #CCCCCC",
-                          "borderRadius": "4px",
-                          "bottom": "auto",
-                          "boxShadow": "0 2px 40px 10px rgba(185, 180, 180, 0.2)",
-                          "fontFamily": "DINPro-Regular",
-                          "left": "50%",
-                          "marginRight": "-50%",
-                          "outline": "none",
-                          "overflow": "auto",
-                          "position": "absolute",
-                          "right": "auto",
-                          "top": "50%",
-                          "transform": "translate(-50%, -50%)",
-                        },
-                      }
-                    }
-                  />
-                </Modal>
-              </MrmModal>
-            </AddRoomNairobi>
-          </Mutation>
-        </Apollo(AddRoomNairobi)>
+                    >
+                      <ModalPortal
+                        ariaHideApp={false}
+                        bodyOpenClassName="ReactModal__Body--open"
+                        className="nbo-add-room-modal button addRoomBtn"
+                        closeTimeoutMS={0}
+                        contentLabel="Parent Modal"
+                        defaultStyles={
+                          Object {
+                            "content": Object {
+                              "WebkitOverflowScrolling": "touch",
+                              "background": "#fff",
+                              "border": "1px solid #ccc",
+                              "borderRadius": "4px",
+                              "bottom": "40px",
+                              "left": "40px",
+                              "outline": "none",
+                              "overflow": "auto",
+                              "padding": "20px",
+                              "position": "absolute",
+                              "right": "40px",
+                              "top": "40px",
+                            },
+                            "overlay": Object {
+                              "backgroundColor": "rgba(255, 255, 255, 0.75)",
+                              "bottom": 0,
+                              "left": 0,
+                              "position": "fixed",
+                              "right": 0,
+                              "top": 0,
+                            },
+                          }
+                        }
+                        isOpen={false}
+                        onAfterOpen={[Function]}
+                        onRequestClose={[Function]}
+                        parentSelector={[Function]}
+                        portalClassName="ReactModalPortal"
+                        shouldCloseOnEsc={true}
+                        shouldCloseOnOverlayClick={false}
+                        shouldFocusAfterRender={true}
+                        shouldReturnFocusAfterClose={true}
+                        style={
+                          Object {
+                            "content": Object {
+                              "backgroundColor": "#ffffff",
+                              "border": "1px solid #CCCCCC",
+                              "borderRadius": "4px",
+                              "bottom": "auto",
+                              "boxShadow": "0 2px 40px 10px rgba(185, 180, 180, 0.2)",
+                              "fontFamily": "DINPro-Regular",
+                              "left": "50%",
+                              "marginRight": "-50%",
+                              "outline": "none",
+                              "overflow": "auto",
+                              "position": "absolute",
+                              "right": "auto",
+                              "top": "50%",
+                              "transform": "translate(-50%, -50%)",
+                            },
+                          }
+                        }
+                      />
+                    </Modal>
+                  </MrmModal>
+                </AddRoomNairobi>
+              </Mutation>
+            </Apollo(AddRoomNairobi)>
+          </Query>
+        </Apollo(Apollo(AddRoomNairobi))>
       </Query>
-    </Apollo(Apollo(AddRoomNairobi))>
+    </Apollo(Apollo(Apollo(AddRoomNairobi)))>
   </ApolloProvider>
 </MockedProvider>
 `;

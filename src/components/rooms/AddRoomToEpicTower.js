@@ -9,6 +9,7 @@ import SelectImage from '../commons/SelectImage';
 import EpicTowerInputs from '../commons/EpicTowerInputs';
 import { ADD_ROOM_TO_EPIC_TOWER } from '../../graphql/mutations/rooms/AddRoomToEpicTower';
 import GET_EPIC_TOWER_DETAILS_QUERY from '../../graphql/queries/Offices';
+import { GET_ALL_REMOTE_ROOMS } from '../../graphql/queries/Rooms';
 import mapOfficeDetails from '../../graphql/mappers/Offices';
 import notification from '../../utils/notification';
 import getImageUrl from '../helpers/ImageUpload';
@@ -20,7 +21,7 @@ export class AddRoomToEpicTower extends Component {
     super(props);
     this.state = {
       roomType: 'meeting',
-      roomCalendar: 'andela.com_3137343432303133383637@resource.calendar.google.com',
+      roomCalendar: '',
       officeId: 1,
       imageUrl: '',
       roomName: '',
@@ -31,6 +32,7 @@ export class AddRoomToEpicTower extends Component {
       roomWing: 0,
       wingsObject: {},
       wingOptions: [],
+      allRemoteRooms: [],
       closeModal: false,
       thumbnailName: 'Upload a thumbnail',
       isLoading: false,
@@ -39,6 +41,7 @@ export class AddRoomToEpicTower extends Component {
 
   componentWillReceiveProps = (props) => {
     const { officeDetails } = props;
+    const { remoteRooms } = props;
 
     /* istanbul ignore next */
     if (officeDetails.getOfficeByName) {
@@ -49,6 +52,16 @@ export class AddRoomToEpicTower extends Component {
         floorOptions,
         wingsObject,
         officeId,
+      });
+    }
+    /* istanbul ignore next */
+    if (remoteRooms.allRemoteRooms) {
+      const { rooms: [{ calendarId, name }] } = remoteRooms.allRemoteRooms;
+      const { rooms } = remoteRooms.allRemoteRooms;
+      this.setState({
+        allRemoteRooms: rooms,
+        roomName: name,
+        roomCalendar: calendarId,
       });
     }
   };
@@ -231,7 +244,9 @@ export class AddRoomToEpicTower extends Component {
       thumbnailName,
       imageUrl,
       isLoading,
+      allRemoteRooms,
     } = this.state;
+
     let floorOptionsList = floorOptions;
     const { officeDetails } = this.props;
 
@@ -263,6 +278,7 @@ export class AddRoomToEpicTower extends Component {
             floorOptions={floorOptionsList}
             roomCapacity={roomCapacity}
             handleInputChange={this.handleInputChange}
+            allRemoteRooms={allRemoteRooms}
           />
           <ActionButtons
             withCancel
@@ -281,8 +297,24 @@ AddRoomToEpicTower.propTypes = {
     getOfficeByName: PropTypes.array,
   }).isRequired,
   epicTowerMutation: PropTypes.func.isRequired,
+  // eslint-disable-next-line
+  remoteRooms: PropTypes.shape({
+    allRemoteRooms: PropTypes.shape({
+      rooms: PropTypes.array,
+    }),
+  }),
 };
+
+AddRoomToEpicTower.defaultProps = {
+  remoteRooms: {
+    allRemoteRooms: {
+      rooms: [{}],
+    },
+  },
+};
+
 export default compose(
   graphql(GET_EPIC_TOWER_DETAILS_QUERY, { name: 'officeDetails' }),
+  graphql(GET_ALL_REMOTE_ROOMS, { name: 'remoteRooms' }),
   graphql(ADD_ROOM_TO_EPIC_TOWER, { name: 'epicTowerMutation' }),
 )(AddRoomToEpicTower);

@@ -16,16 +16,19 @@ const TheCrestInputs = ({
   floorOptionsList,
   roomCapacity,
   handleInputChange,
+  allRemoteRooms,
 }) => (
   <div className="kla-inputs">
-    <Input
-      id="roomName"
+    <Select
+      labelText="Select Room"
       name="roomName"
-      placeholder="Enter room name"
+      id="roomName"
       value={roomName}
-      labelName="Room Name"
+      options={allRemoteRooms}
       onChange={handleInputChange}
-      required
+      wrapperClassName="floor-wrapper"
+      placeholder="Select Room"
+      selectInputClassName="room-wrapper default-select"
     />
     <div className="two-inputs">
       <Select
@@ -61,8 +64,12 @@ TheCrestInputs.propTypes = {
   roomName: PropTypes.string.isRequired,
   roomFloor: PropTypes.number.isRequired,
   floorOptionsList: PropTypes.arrayOf(PropTypes.object).isRequired,
+  allRemoteRooms: PropTypes.arrayOf(PropTypes.object),
   roomCapacity: PropTypes.number.isRequired,
   handleInputChange: PropTypes.func.isRequired,
+};
+TheCrestInputs.defaultProps = {
+  allRemoteRooms: [{}],
 };
 
 export default TheCrestInputs;

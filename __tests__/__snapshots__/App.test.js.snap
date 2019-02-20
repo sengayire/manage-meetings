@@ -374,10 +374,10 @@ exports[`App component should not render Login if token is present but render An
                 },
               },
               "variables": Object {
-                "endDate": "Feb 19 2019",
+                "endDate": "Feb 20 2019",
                 "page": 1,
                 "perPage": 5,
-                "startDate": "Feb 19 2019",
+                "startDate": "Feb 20 2019",
               },
             },
           ],
@@ -608,8 +608,8 @@ exports[`App component should not render Login if token is present but render An
                 },
               },
               "variables": Object {
-                "endDate": "Feb 19 2019",
-                "startDate": "Feb 19 2019",
+                "endDate": "Feb 20 2019",
+                "startDate": "Feb 20 2019",
               },
             },
           ],
@@ -783,10 +783,10 @@ exports[`App component should not render Login if token is present but render An
                 },
               },
               "variables": Object {
-                "endDate": "Feb 19 2019",
+                "endDate": "Feb 20 2019",
                 "page": 1,
                 "perPage": 5,
-                "startDate": "Feb 19 2019",
+                "startDate": "Feb 20 2019",
               },
             },
           ],
@@ -1106,8 +1106,8 @@ exports[`App component should not render Login if token is present but render An
                 },
               },
               "variables": Object {
-                "endDate": "Feb 19 2019",
-                "startDate": "Feb 19 2019",
+                "endDate": "Feb 20 2019",
+                "startDate": "Feb 20 2019",
               },
             },
             Object {
@@ -1391,8 +1391,8 @@ exports[`App component should not render Login if token is present but render An
                 },
               },
               "variables": Object {
-                "endDate": "Feb 19 2019",
-                "startDate": "Feb 19 2019",
+                "endDate": "Feb 20 2019",
+                "startDate": "Feb 20 2019",
               },
             },
             Object {
@@ -1591,10 +1591,10 @@ exports[`App component should not render Login if token is present but render An
                 },
               },
               "variables": Object {
-                "endDate": "Feb 19 2019",
+                "endDate": "Feb 20 2019",
                 "page": 1,
                 "perPage": 5,
-                "startDate": "Feb 19 2019",
+                "startDate": "Feb 20 2019",
               },
             },
             Object {
@@ -1898,10 +1898,10 @@ exports[`App component should not render Login if token is present but render An
                 },
               },
               "variables": Object {
-                "endDate": "Feb 19 2019",
+                "endDate": "Feb 20 2019",
                 "page": 1,
                 "perPage": 5,
-                "startDate": "Feb 19 2019",
+                "startDate": "Feb 20 2019",
               },
             },
             Object {
@@ -2359,8 +2359,8 @@ query user ($email: String!) {
                     },
                   },
                   "variables": Object {
-                    "endDate": "Feb 19 2019",
-                    "startDate": "Feb 19 2019",
+                    "endDate": "Feb 20 2019",
+                    "startDate": "Feb 20 2019",
                   },
                 },
                 Object {
@@ -2644,8 +2644,8 @@ query user ($email: String!) {
                     },
                   },
                   "variables": Object {
-                    "endDate": "Feb 19 2019",
-                    "startDate": "Feb 19 2019",
+                    "endDate": "Feb 20 2019",
+                    "startDate": "Feb 20 2019",
                   },
                 },
                 Object {
@@ -2844,10 +2844,10 @@ query user ($email: String!) {
                     },
                   },
                   "variables": Object {
-                    "endDate": "Feb 19 2019",
+                    "endDate": "Feb 20 2019",
                     "page": 1,
                     "perPage": 5,
-                    "startDate": "Feb 19 2019",
+                    "startDate": "Feb 20 2019",
                   },
                 },
                 Object {
@@ -3151,10 +3151,10 @@ query user ($email: String!) {
                     },
                   },
                   "variables": Object {
-                    "endDate": "Feb 19 2019",
+                    "endDate": "Feb 20 2019",
                     "page": 1,
                     "perPage": 5,
-                    "startDate": "Feb 19 2019",
+                    "startDate": "Feb 20 2019",
                   },
                 },
                 Object {
@@ -3944,8 +3944,8 @@ query user ($email: String!) {
                       },
                     },
                     "variables": Object {
-                      "endDate": "Feb 19 2019",
-                      "startDate": "Feb 19 2019",
+                      "endDate": "Feb 20 2019",
+                      "startDate": "Feb 20 2019",
                     },
                   },
                   "queryId": "2",
@@ -3961,8 +3961,8 @@ query user ($email: String!) {
                   "shouldSubscribe": true,
                   "subscriptionHandles": Array [],
                   "variables": Object {
-                    "endDate": "Feb 19 2019",
-                    "startDate": "Feb 19 2019",
+                    "endDate": "Feb 20 2019",
+                    "startDate": "Feb 20 2019",
                   },
                 },
                 "subscriptions": Array [],
@@ -4568,8 +4568,8 @@ query user ($email: String!) {
                       },
                     },
                     "variables": Object {
-                      "endDate": "Feb 19 2019",
-                      "startDate": "Feb 19 2019",
+                      "endDate": "Feb 20 2019",
+                      "startDate": "Feb 20 2019",
                     },
                   },
                   "queryId": "4",
@@ -4585,8 +4585,8 @@ query user ($email: String!) {
                   "shouldSubscribe": true,
                   "subscriptionHandles": Array [],
                   "variables": Object {
-                    "endDate": "Feb 19 2019",
-                    "startDate": "Feb 19 2019",
+                    "endDate": "Feb 20 2019",
+                    "startDate": "Feb 20 2019",
                   },
                 },
                 "subscriptions": Array [],
@@ -4997,10 +4997,10 @@ query user ($email: String!) {
                       },
                     },
                     "variables": Object {
-                      "endDate": "Feb 19 2019",
+                      "endDate": "Feb 20 2019",
                       "page": 1,
                       "perPage": 5,
-                      "startDate": "Feb 19 2019",
+                      "startDate": "Feb 20 2019",
                     },
                   },
                   "queryId": "5",
@@ -5016,10 +5016,10 @@ query user ($email: String!) {
                   "shouldSubscribe": true,
                   "subscriptionHandles": Array [],
                   "variables": Object {
-                    "endDate": "Feb 19 2019",
+                    "endDate": "Feb 20 2019",
                     "page": 1,
                     "perPage": 5,
-                    "startDate": "Feb 19 2019",
+                    "startDate": "Feb 20 2019",
                   },
                 },
                 "subscriptions": Array [],
@@ -5625,10 +5625,10 @@ query user ($email: String!) {
                       },
                     },
                     "variables": Object {
-                      "endDate": "Feb 19 2019",
+                      "endDate": "Feb 20 2019",
                       "page": 1,
                       "perPage": 5,
-                      "startDate": "Feb 19 2019",
+                      "startDate": "Feb 20 2019",
                     },
                   },
                   "queryId": "6",
@@ -5644,10 +5644,10 @@ query user ($email: String!) {
                   "shouldSubscribe": true,
                   "subscriptionHandles": Array [],
                   "variables": Object {
-                    "endDate": "Feb 19 2019",
+                    "endDate": "Feb 20 2019",
                     "page": 1,
                     "perPage": 5,
-                    "startDate": "Feb 19 2019",
+                    "startDate": "Feb 20 2019",
                   },
                 },
                 "subscriptions": Array [],
@@ -6390,8 +6390,8 @@ query user ($email: String!) {
                 "networkStatus": 1,
                 "previousVariables": null,
                 "variables": Object {
-                  "endDate": "Feb 19 2019",
-                  "startDate": "Feb 19 2019",
+                  "endDate": "Feb 20 2019",
+                  "startDate": "Feb 20 2019",
                 },
               },
               "3": Object {
@@ -6687,8 +6687,8 @@ query user ($email: String!) {
                 "networkStatus": 1,
                 "previousVariables": null,
                 "variables": Object {
-                  "endDate": "Feb 19 2019",
-                  "startDate": "Feb 19 2019",
+                  "endDate": "Feb 20 2019",
+                  "startDate": "Feb 20 2019",
                 },
               },
               "5": Object {
@@ -6893,10 +6893,10 @@ query user ($email: String!) {
                 "networkStatus": 1,
                 "previousVariables": null,
                 "variables": Object {
-                  "endDate": "Feb 19 2019",
+                  "endDate": "Feb 20 2019",
                   "page": 1,
                   "perPage": 5,
-                  "startDate": "Feb 19 2019",
+                  "startDate": "Feb 20 2019",
                 },
               },
               "6": Object {
@@ -7206,10 +7206,10 @@ query user ($email: String!) {
                 "networkStatus": 1,
                 "previousVariables": null,
                 "variables": Object {
-                  "endDate": "Feb 19 2019",
+                  "endDate": "Feb 20 2019",
                   "page": 1,
                   "perPage": 5,
-                  "startDate": "Feb 19 2019",
+                  "startDate": "Feb 20 2019",
                 },
               },
             },
@@ -7543,8 +7543,8 @@ query user ($email: String!) {
                   },
                 },
                 "variables": Object {
-                  "endDate": "Feb 19 2019",
-                  "startDate": "Feb 19 2019",
+                  "endDate": "Feb 20 2019",
+                  "startDate": "Feb 20 2019",
                 },
               },
               Object {
@@ -7828,8 +7828,8 @@ query user ($email: String!) {
                   },
                 },
                 "variables": Object {
-                  "endDate": "Feb 19 2019",
-                  "startDate": "Feb 19 2019",
+                  "endDate": "Feb 20 2019",
+                  "startDate": "Feb 20 2019",
                 },
               },
               Object {
@@ -8028,10 +8028,10 @@ query user ($email: String!) {
                   },
                 },
                 "variables": Object {
-                  "endDate": "Feb 19 2019",
+                  "endDate": "Feb 20 2019",
                   "page": 1,
                   "perPage": 5,
-                  "startDate": "Feb 19 2019",
+                  "startDate": "Feb 20 2019",
                 },
               },
               Object {
@@ -8335,10 +8335,10 @@ query user ($email: String!) {
                   },
                 },
                 "variables": Object {
-                  "endDate": "Feb 19 2019",
+                  "endDate": "Feb 20 2019",
                   "page": 1,
                   "perPage": 5,
-                  "startDate": "Feb 19 2019",
+                  "startDate": "Feb 20 2019",
                 },
               },
               Object {
@@ -9144,7 +9144,7 @@ query user ($email: String!) {
                                       classProp="calendarIconBtn"
                                       handleClick={[Function]}
                                       isDisabled={false}
-                                      title="Feb 18 2019 - Feb 18 2019"
+                                      title="Feb 20 2019 - Feb 20 2019"
                                       type={2}
                                     >
                                       <button
@@ -9153,7 +9153,7 @@ query user ($email: String!) {
                                         onClick={[Function]}
                                       >
                                         <span>
-                                          Feb 18 2019 - Feb 18 2019
+                                          Feb 20 2019 - Feb 20 2019
                                         </span>
                                       </button>
                                     </Button>
@@ -9163,1307 +9163,56 @@ query user ($email: String!) {
                               <AnalyticsOverview
                                 dateValue={
                                   Object {
-                                    "endDate": "Feb 18 2019",
-                                    "startDate": "Feb 18 2019",
+                                    "endDate": "Feb 20 2019",
+                                    "startDate": "Feb 20 2019",
                                   }
                                 }
                               >
                                 <AveragePieChartList
                                   dateValue={
                                     Object {
-                                      "endDate": "Feb 18 2019",
-                                      "startDate": "Feb 18 2019",
+                                      "endDate": "Feb 20 2019",
+                                      "startDate": "Feb 20 2019",
                                     }
                                   }
                                 >
                                   <div
                                     className="pie-chart-container"
                                   >
-                                    <MeetingDurationPieChart
+                                    <Apollo(AverageMeetingDurationPieChart)
                                       dateValue={
                                         Object {
-                                          "endDate": "Feb 18 2019",
-                                          "startDate": "Feb 18 2019",
+                                          "endDate": "Feb 20 2019",
+                                          "startDate": "Feb 20 2019",
                                         }
                                       }
                                     >
-                                      <article
-                                        className="pie-chart"
-                                      >
-                                        <section
-                                          className="chart-header"
-                                        >
-                                          <p
-                                            className="chart-title"
-                                          >
-                                            Average Meeting Duration [%]
-                                          </p>
-                                          <ThemedTooltippedComponent
-                                            className=""
-                                            composeTheme="deeply"
-                                            mapThemrProps={[Function]}
-                                            theme={null}
-                                            tooltip="The percentage representation of the average amount of time people spend in all booked meeting rooms in a set time period"
-                                            tooltipDelay={0}
-                                            tooltipHideOnClick={true}
-                                            tooltipPosition="top"
-                                            tooltipShowOnClick={true}
-                                          >
-                                            <TooltippedComponent
-                                              className=""
-                                              theme={
-                                                Object {
-                                                  "tooltipInner": "tooltipInner",
-                                                }
-                                              }
-                                              tooltip="The percentage representation of the average amount of time people spend in all booked meeting rooms in a set time period"
-                                              tooltipDelay={0}
-                                              tooltipHideOnClick={true}
-                                              tooltipPosition="top"
-                                              tooltipShowOnClick={true}
-                                            >
-<<<<<<< HEAD
-                                              <FontIcon
-                                                alt=""
-                                                className=""
-                                                value={
-                                                  <div
-                                                    className="overViewBtn"
-                                                  >
-                                                    <span
-                                                      id="overview-span"
-                                                    >
-                                                      OVERVIEW
-                                                    </span>
-                                                  </div>
-                                                }
-                                              >
-                                                <span
-                                                  aria-label=""
-                                                  className=""
-                                                  data-react-toolbox="font-icon"
-                                                >
-                                                  <div
-                                                    className="overViewBtn"
-                                                  >
-                                                    <span
-                                                      id="overview-span"
-                                                    >
-                                                      OVERVIEW
-                                                    </span>
-                                                  </div>
-                                                </span>
-                                              </FontIcon>
-                                            </button>
-                                          </Button>
-                                        </RippledComponent>
-                                      </ThemedRippledComponent>
-                                    </ThemedThemed>
-                                    <ThemedThemed
-                                      className="overview-btn  analysis-btn btn "
-                                      composeTheme="deeply"
-                                      disabled={false}
-                                      icon={
-                                        <div
-                                          className="activityIconBtn"
-                                        >
-                                          <span
-                                            id="activity-span"
-                                          >
-                                            ACTIVITY
-                                          </span>
-                                        </div>
-                                      }
-                                      mapThemrProps={[Function]}
-                                      onClick={[Function]}
-                                      ripple={true}
-                                      rippleCentered={false}
-                                      rippleClassName=""
-                                      rippleMultiple={true}
-                                      rippleSpread={2}
-                                    >
-                                      <ThemedRippledComponent
-                                        className="overview-btn  analysis-btn btn "
-                                        composeTheme="deeply"
-                                        disabled={false}
-                                        icon={
-                                          <div
-                                            className="activityIconBtn"
-                                          >
-                                            <span
-                                              id="activity-span"
-                                            >
-                                              ACTIVITY
-                                            </span>
-                                          </div>
-                                        }
-                                        mapThemrProps={[Function]}
-                                        onClick={[Function]}
-                                        ripple={true}
-                                        rippleCentered={false}
-                                        rippleClassName=""
-                                        rippleMultiple={true}
-                                        rippleSpread={2}
-                                        theme={
+                                      <Query
+                                        displayName="Apollo(AverageMeetingDurationPieChart)"
+                                        query={
                                           Object {
-                                            "tooltipInner": "tooltipInner",
-                                          }
-                                        }
-                                      >
-                                        <RippledComponent
-                                          className="overview-btn  analysis-btn btn "
-                                          disabled={false}
-                                          icon={
-                                            <div
-                                              className="activityIconBtn"
-                                            >
-                                              <span
-                                                id="activity-span"
-                                              >
-                                                ACTIVITY
-                                              </span>
-                                            </div>
-                                          }
-                                          onClick={[Function]}
-                                          ripple={true}
-                                          rippleCentered={false}
-                                          rippleClassName=""
-                                          rippleMultiple={true}
-                                          rippleSpread={2}
-                                          theme={
-                                            Object {
-                                              "tooltipInner": "tooltipInner",
-                                            }
-                                          }
-                                        >
-                                          <Button
-                                            accent={false}
-                                            className="overview-btn  analysis-btn btn "
-                                            disabled={false}
-                                            flat={false}
-                                            floating={false}
-                                            icon={
-                                              <div
-                                                className="activityIconBtn"
-                                              >
-                                                <span
-                                                  id="activity-span"
-                                                >
-                                                  ACTIVITY
-                                                </span>
-                                              </div>
-                                            }
-                                            mini={false}
-                                            neutral={true}
-                                            onClick={[Function]}
-                                            onMouseDown={[Function]}
-                                            onTouchStart={[Function]}
-                                            primary={false}
-                                            raised={false}
-                                            theme={
+                                            "definitions": Array [
                                               Object {
-                                                "tooltipInner": "tooltipInner",
-                                              }
-                                            }
-                                            type="button"
-                                          >
-                                            <button
-                                              className=" overview-btn  analysis-btn btn "
-                                              data-react-toolbox="button"
-                                              disabled={false}
-                                              onClick={[Function]}
-                                              onMouseDown={[Function]}
-                                              onMouseLeave={[Function]}
-                                              onMouseUp={[Function]}
-                                              onTouchStart={[Function]}
-                                              type="button"
-                                            >
-                                              <FontIcon
-                                                alt=""
-                                                className=""
-                                                value={
-                                                  <div
-                                                    className="activityIconBtn"
-                                                  >
-                                                    <span
-                                                      id="activity-span"
-                                                    >
-                                                      ACTIVITY
-                                                    </span>
-                                                  </div>
-                                                }
-                                              >
-                                                <span
-                                                  aria-label=""
-                                                  className=""
-                                                  data-react-toolbox="font-icon"
-                                                >
-                                                  <div
-                                                    className="activityIconBtn"
-                                                  >
-                                                    <span
-                                                      id="activity-span"
-                                                    >
-                                                      ACTIVITY
-                                                    </span>
-                                                  </div>
-                                                </span>
-                                              </FontIcon>
-                                            </button>
-                                          </Button>
-                                        </RippledComponent>
-                                      </ThemedRippledComponent>
-                                    </ThemedThemed>
-                                  </div>
-                                  <div
-                                    className="btn-right"
-                                  >
-                                    <ThemedThemed
-                                      className="location-btn analysis-btn "
-                                      composeTheme="deeply"
-                                      disabled={false}
-                                      icon={
-                                        <div
-                                          className="locationIconBtn"
-                                        >
-                                          <span>
-                                            Kampala
-                                          </span>
-                                        </div>
-                                      }
-                                      id="location-btn"
-                                      mapThemrProps={[Function]}
-                                      ripple={true}
-                                      rippleCentered={false}
-                                      rippleClassName=""
-                                      rippleMultiple={true}
-                                      rippleSpread={2}
-                                    >
-                                      <ThemedRippledComponent
-                                        className="location-btn analysis-btn "
-                                        composeTheme="deeply"
-                                        disabled={false}
-                                        icon={
-                                          <div
-                                            className="locationIconBtn"
-                                          >
-                                            <span>
-                                              Kampala
-                                            </span>
-                                          </div>
-                                        }
-                                        id="location-btn"
-                                        mapThemrProps={[Function]}
-                                        ripple={true}
-                                        rippleCentered={false}
-                                        rippleClassName=""
-                                        rippleMultiple={true}
-                                        rippleSpread={2}
-                                        theme={
-                                          Object {
-                                            "tooltipInner": "tooltipInner",
-                                          }
-                                        }
-                                      >
-                                        <RippledComponent
-                                          className="location-btn analysis-btn "
-                                          disabled={false}
-                                          icon={
-                                            <div
-                                              className="locationIconBtn"
-                                            >
-                                              <span>
-                                                Kampala
-                                              </span>
-                                            </div>
-                                          }
-                                          id="location-btn"
-                                          ripple={true}
-                                          rippleCentered={false}
-                                          rippleClassName=""
-                                          rippleMultiple={true}
-                                          rippleSpread={2}
-                                          theme={
-                                            Object {
-                                              "tooltipInner": "tooltipInner",
-                                            }
-                                          }
-                                        >
-                                          <Button
-                                            accent={false}
-                                            className="location-btn analysis-btn "
-                                            disabled={false}
-                                            flat={false}
-                                            floating={false}
-                                            icon={
-                                              <div
-                                                className="locationIconBtn"
-                                              >
-                                                <span>
-                                                  Kampala
-                                                </span>
-                                              </div>
-                                            }
-                                            id="location-btn"
-                                            mini={false}
-                                            neutral={true}
-                                            onMouseDown={[Function]}
-                                            onTouchStart={[Function]}
-                                            primary={false}
-                                            raised={false}
-                                            theme={
-                                              Object {
-                                                "tooltipInner": "tooltipInner",
-                                              }
-                                            }
-                                            type="button"
-                                          >
-                                            <button
-                                              className=" location-btn analysis-btn "
-                                              data-react-toolbox="button"
-                                              disabled={false}
-                                              id="location-btn"
-                                              onMouseDown={[Function]}
-                                              onMouseLeave={[Function]}
-                                              onMouseUp={[Function]}
-                                              onTouchStart={[Function]}
-                                              type="button"
-                                            >
-                                              <FontIcon
-                                                alt=""
-                                                className=""
-                                                value={
-                                                  <div
-                                                    className="locationIconBtn"
-                                                  >
-                                                    <span>
-                                                      Kampala
-                                                    </span>
-                                                  </div>
-                                                }
-                                              >
-                                                <span
-                                                  aria-label=""
-                                                  className=""
-                                                  data-react-toolbox="font-icon"
-                                                >
-                                                  <div
-                                                    className="locationIconBtn"
-                                                  >
-                                                    <span>
-                                                      Kampala
-                                                    </span>
-                                                  </div>
-                                                </span>
-                                              </FontIcon>
-                                            </button>
-                                          </Button>
-                                        </RippledComponent>
-                                      </ThemedRippledComponent>
-                                    </ThemedThemed>
-                                    <ThemedThemed
-                                      className="analysis-btn calendar-btn"
-                                      composeTheme="deeply"
-                                      disabled={false}
-                                      icon={
-                                        <div
-                                          className="calendarIconBtn"
-                                        >
-                                          <span>
-                                            Feb 19 2019 - Feb 19 2019
-                                          </span>
-                                        </div>
-                                      }
-                                      id="calendar-btn"
-                                      mapThemrProps={[Function]}
-                                      onClick={[Function]}
-                                      ripple={true}
-                                      rippleCentered={false}
-                                      rippleClassName=""
-                                      rippleMultiple={true}
-                                      rippleSpread={2}
-                                    >
-                                      <ThemedRippledComponent
-                                        className="analysis-btn calendar-btn"
-                                        composeTheme="deeply"
-                                        disabled={false}
-                                        icon={
-                                          <div
-                                            className="calendarIconBtn"
-                                          >
-                                            <span>
-                                              Feb 19 2019 - Feb 19 2019
-                                            </span>
-                                          </div>
-                                        }
-                                        id="calendar-btn"
-                                        mapThemrProps={[Function]}
-                                        onClick={[Function]}
-                                        ripple={true}
-                                        rippleCentered={false}
-                                        rippleClassName=""
-                                        rippleMultiple={true}
-                                        rippleSpread={2}
-                                        theme={
-                                          Object {
-                                            "tooltipInner": "tooltipInner",
-                                          }
-                                        }
-                                      >
-                                        <RippledComponent
-                                          className="analysis-btn calendar-btn"
-                                          disabled={false}
-                                          icon={
-                                            <div
-                                              className="calendarIconBtn"
-                                            >
-                                              <span>
-                                                Feb 19 2019 - Feb 19 2019
-                                              </span>
-                                            </div>
-                                          }
-                                          id="calendar-btn"
-                                          onClick={[Function]}
-                                          ripple={true}
-                                          rippleCentered={false}
-                                          rippleClassName=""
-                                          rippleMultiple={true}
-                                          rippleSpread={2}
-                                          theme={
-                                            Object {
-                                              "tooltipInner": "tooltipInner",
-                                            }
-                                          }
-                                        >
-                                          <Button
-                                            accent={false}
-                                            className="analysis-btn calendar-btn"
-                                            disabled={false}
-                                            flat={false}
-                                            floating={false}
-                                            icon={
-                                              <div
-                                                className="calendarIconBtn"
-                                              >
-                                                <span>
-                                                  Feb 19 2019 - Feb 19 2019
-                                                </span>
-                                              </div>
-                                            }
-                                            id="calendar-btn"
-                                            mini={false}
-                                            neutral={true}
-                                            onClick={[Function]}
-                                            onMouseDown={[Function]}
-                                            onTouchStart={[Function]}
-                                            primary={false}
-                                            raised={false}
-                                            theme={
-                                              Object {
-                                                "tooltipInner": "tooltipInner",
-                                              }
-                                            }
-                                            type="button"
-                                          >
-                                            <button
-                                              className=" analysis-btn calendar-btn"
-                                              data-react-toolbox="button"
-                                              disabled={false}
-                                              id="calendar-btn"
-                                              onClick={[Function]}
-                                              onMouseDown={[Function]}
-                                              onMouseLeave={[Function]}
-                                              onMouseUp={[Function]}
-                                              onTouchStart={[Function]}
-                                              type="button"
-                                            >
-                                              <FontIcon
-                                                alt=""
-                                                className=""
-                                                value={
-                                                  <div
-                                                    className="calendarIconBtn"
-                                                  >
-                                                    <span>
-                                                      Feb 19 2019 - Feb 19 2019
-                                                    </span>
-                                                  </div>
-                                                }
-                                              >
-                                                <span
-                                                  aria-label=""
-                                                  className=""
-                                                  data-react-toolbox="font-icon"
-                                                >
-                                                  <div
-                                                    className="calendarIconBtn"
-                                                  >
-                                                    <span>
-                                                      Feb 19 2019 - Feb 19 2019
-                                                    </span>
-                                                  </div>
-                                                </span>
-                                              </FontIcon>
-                                            </button>
-                                          </Button>
-                                        </RippledComponent>
-                                      </ThemedRippledComponent>
-                                    </ThemedThemed>
-                                    <div
-                                      className="dropdown"
-                                    >
-                                      <div
-                                        className="dropdown-content-null"
-                                      >
-                                        <span
-                                          className="download-dropdown-label"
-                                        >
-                                          Export options 
-                                        </span>
-                                        <span
-                                          onClick={[Function]}
-                                        >
-                                          CSV
-                                        </span>
-                                        <span
-                                          onClick={[Function]}
-                                        >
-                                          JPEG
-                                        </span>
-                                        <span
-                                          onClick={[Function]}
-                                        >
-                                          PDF
-                                        </span>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <AnalyticsOverview
-                                  dateValue={
-                                    Object {
-                                      "endDate": "Feb 19 2019",
-                                      "startDate": "Feb 19 2019",
-                                    }
-                                  }
-                                >
-                                  <AveragePieChartList
-                                    dateValue={
-                                      Object {
-                                        "endDate": "Feb 19 2019",
-                                        "startDate": "Feb 19 2019",
-                                      }
-                                    }
-                                  >
-                                    <div
-                                      className="pie-chart-container"
-                                    >
-                                      <Apollo(AverageMeetingDurationPieChart)
-                                        dateValue={
-                                          Object {
-                                            "endDate": "Feb 19 2019",
-                                            "startDate": "Feb 19 2019",
-                                          }
-                                        }
-                                      >
-                                        <Query
-                                          displayName="Apollo(AverageMeetingDurationPieChart)"
-                                          query={
-                                            Object {
-                                              "definitions": Array [
-                                                Object {
-                                                  "directives": Array [],
-                                                  "kind": "OperationDefinition",
-                                                  "name": Object {
-                                                    "kind": "Name",
-                                                    "value": "durationOfMeetingsPerMeetingRoom",
-                                                  },
-                                                  "operation": "query",
-                                                  "selectionSet": Object {
-                                                    "kind": "SelectionSet",
-                                                    "selections": Array [
-                                                      Object {
-                                                        "alias": undefined,
-                                                        "arguments": Array [
-                                                          Object {
-                                                            "kind": "Argument",
-                                                            "name": Object {
-                                                              "kind": "Name",
-                                                              "value": "startDate",
-                                                            },
-                                                            "value": Object {
-                                                              "kind": "Variable",
-                                                              "name": Object {
-                                                                "kind": "Name",
-                                                                "value": "startDate",
-                                                              },
-                                                            },
-                                                          },
-                                                          Object {
-                                                            "kind": "Argument",
-                                                            "name": Object {
-                                                              "kind": "Name",
-                                                              "value": "endDate",
-                                                            },
-                                                            "value": Object {
-                                                              "kind": "Variable",
-                                                              "name": Object {
-                                                                "kind": "Name",
-                                                                "value": "endDate",
-                                                              },
-                                                            },
-                                                          },
-                                                          Object {
-                                                            "kind": "Argument",
-                                                            "name": Object {
-                                                              "kind": "Name",
-                                                              "value": "page",
-                                                            },
-                                                            "value": Object {
-                                                              "kind": "Variable",
-                                                              "name": Object {
-                                                                "kind": "Name",
-                                                                "value": "page",
-                                                              },
-                                                            },
-                                                          },
-                                                          Object {
-                                                            "kind": "Argument",
-                                                            "name": Object {
-                                                              "kind": "Name",
-                                                              "value": "perPage",
-                                                            },
-                                                            "value": Object {
-                                                              "kind": "Variable",
-                                                              "name": Object {
-                                                                "kind": "Name",
-                                                                "value": "perPage",
-                                                              },
-                                                            },
-                                                          },
-                                                        ],
-                                                        "directives": Array [],
-                                                        "kind": "Field",
-                                                        "name": Object {
-                                                          "kind": "Name",
-                                                          "value": "analyticsForMeetingsDurations",
-                                                        },
-                                                        "selectionSet": Object {
-                                                          "kind": "SelectionSet",
-                                                          "selections": Array [
-                                                            Object {
-                                                              "alias": undefined,
-                                                              "arguments": Array [],
-                                                              "directives": Array [],
-                                                              "kind": "Field",
-                                                              "name": Object {
-                                                                "kind": "Name",
-                                                                "value": "hasPrevious",
-                                                              },
-                                                              "selectionSet": undefined,
-                                                            },
-                                                            Object {
-                                                              "alias": undefined,
-                                                              "arguments": Array [],
-                                                              "directives": Array [],
-                                                              "kind": "Field",
-                                                              "name": Object {
-                                                                "kind": "Name",
-                                                                "value": "hasNext",
-                                                              },
-                                                              "selectionSet": undefined,
-                                                            },
-                                                            Object {
-                                                              "alias": undefined,
-                                                              "arguments": Array [],
-                                                              "directives": Array [],
-                                                              "kind": "Field",
-                                                              "name": Object {
-                                                                "kind": "Name",
-                                                                "value": "pages",
-                                                              },
-                                                              "selectionSet": undefined,
-                                                            },
-                                                            Object {
-                                                              "alias": undefined,
-                                                              "arguments": Array [],
-                                                              "directives": Array [],
-                                                              "kind": "Field",
-                                                              "name": Object {
-                                                                "kind": "Name",
-                                                                "value": "MeetingsDurationaAnalytics",
-                                                              },
-                                                              "selectionSet": Object {
-                                                                "kind": "SelectionSet",
-                                                                "selections": Array [
-                                                                  Object {
-                                                                    "alias": undefined,
-                                                                    "arguments": Array [],
-                                                                    "directives": Array [],
-                                                                    "kind": "Field",
-                                                                    "name": Object {
-                                                                      "kind": "Name",
-                                                                      "value": "roomName",
-                                                                    },
-                                                                    "selectionSet": undefined,
-                                                                  },
-                                                                  Object {
-                                                                    "alias": undefined,
-                                                                    "arguments": Array [],
-                                                                    "directives": Array [],
-                                                                    "kind": "Field",
-                                                                    "name": Object {
-                                                                      "kind": "Name",
-                                                                      "value": "count",
-                                                                    },
-                                                                    "selectionSet": undefined,
-                                                                  },
-                                                                  Object {
-                                                                    "alias": undefined,
-                                                                    "arguments": Array [],
-                                                                    "directives": Array [],
-                                                                    "kind": "Field",
-                                                                    "name": Object {
-                                                                      "kind": "Name",
-                                                                      "value": "totalDuration",
-                                                                    },
-                                                                    "selectionSet": undefined,
-                                                                  },
-                                                                ],
-                                                              },
-                                                            },
-                                                          ],
-                                                        },
-                                                      },
-                                                    ],
-                                                  },
-                                                  "variableDefinitions": Array [
+                                                "directives": Array [],
+                                                "kind": "OperationDefinition",
+                                                "name": Object {
+                                                  "kind": "Name",
+                                                  "value": "durationOfMeetingsPerMeetingRoom",
+                                                },
+                                                "operation": "query",
+                                                "selectionSet": Object {
+                                                  "kind": "SelectionSet",
+                                                  "selections": Array [
                                                     Object {
-                                                      "defaultValue": undefined,
-                                                      "kind": "VariableDefinition",
-                                                      "type": Object {
-                                                        "kind": "NonNullType",
-                                                        "type": Object {
-                                                          "kind": "NamedType",
+                                                      "alias": undefined,
+                                                      "arguments": Array [
+                                                        Object {
+                                                          "kind": "Argument",
                                                           "name": Object {
                                                             "kind": "Name",
-                                                            "value": "String",
+                                                            "value": "startDate",
                                                           },
-                                                        },
-                                                      },
-                                                      "variable": Object {
-                                                        "kind": "Variable",
-                                                        "name": Object {
-                                                          "kind": "Name",
-                                                          "value": "startDate",
-                                                        },
-                                                      },
-                                                    },
-                                                    Object {
-                                                      "defaultValue": undefined,
-                                                      "kind": "VariableDefinition",
-                                                      "type": Object {
-                                                        "kind": "NonNullType",
-                                                        "type": Object {
-                                                          "kind": "NamedType",
-                                                          "name": Object {
-                                                            "kind": "Name",
-                                                            "value": "String",
-                                                          },
-                                                        },
-                                                      },
-                                                      "variable": Object {
-                                                        "kind": "Variable",
-                                                        "name": Object {
-                                                          "kind": "Name",
-                                                          "value": "endDate",
-                                                        },
-                                                      },
-                                                    },
-                                                    Object {
-                                                      "defaultValue": undefined,
-                                                      "kind": "VariableDefinition",
-                                                      "type": Object {
-                                                        "kind": "NamedType",
-                                                        "name": Object {
-                                                          "kind": "Name",
-                                                          "value": "Int",
-                                                        },
-                                                      },
-                                                      "variable": Object {
-                                                        "kind": "Variable",
-                                                        "name": Object {
-                                                          "kind": "Name",
-                                                          "value": "page",
-                                                        },
-                                                      },
-                                                    },
-                                                    Object {
-                                                      "defaultValue": undefined,
-                                                      "kind": "VariableDefinition",
-                                                      "type": Object {
-                                                        "kind": "NamedType",
-                                                        "name": Object {
-                                                          "kind": "Name",
-                                                          "value": "Int",
-                                                        },
-                                                      },
-                                                      "variable": Object {
-                                                        "kind": "Variable",
-                                                        "name": Object {
-                                                          "kind": "Name",
-                                                          "value": "perPage",
-                                                        },
-                                                      },
-                                                    },
-                                                  ],
-                                                },
-                                              ],
-                                              "kind": "Document",
-                                              "loc": Object {
-                                                "end": 391,
-                                                "start": 0,
-                                              },
-                                            }
-                                          }
-                                          skip={false}
-                                          variables={
-                                            Object {
-                                              "endDate": "Feb 19 2019",
-                                              "startDate": "Feb 19 2019",
-                                            }
-                                          }
-                                          warnUnhandledError={true}
-                                        >
-                                          <AverageMeetingDurationPieChart
-                                            data={
-                                              Object {
-                                                "error": undefined,
-                                                "fetchMore": [Function],
-                                                "loading": true,
-                                                "networkStatus": 1,
-                                                "refetch": [Function],
-                                                "startPolling": [Function],
-                                                "stopPolling": [Function],
-                                                "subscribeToMore": [Function],
-                                                "updateQuery": [Function],
-                                                "variables": Object {
-                                                  "endDate": "Feb 19 2019",
-                                                  "startDate": "Feb 19 2019",
-                                                },
-                                              }
-                                            }
-                                            dateValue={
-                                              Object {
-                                                "endDate": "Feb 19 2019",
-                                                "startDate": "Feb 19 2019",
-                                              }
-                                            }
-                                          >
-                                            <article
-                                              className="pie-chart"
-                                            >
-                                              <section
-                                                className="chart-header"
-                                              >
-                                                <p
-                                                  className="chart-title"
-                                                >
-                                                  Average Meetings Duration [%]
-                                                </p>
-                                                <ThemedTooltippedComponent
-                                                  className=""
-                                                  composeTheme="deeply"
-                                                  mapThemrProps={[Function]}
-                                                  theme={null}
-                                                  tooltip="The percentage representation of the average amount of time people spend in all booked meeting rooms in a set time period"
-                                                  tooltipDelay={0}
-                                                  tooltipHideOnClick={true}
-                                                  tooltipPosition="top"
-                                                  tooltipShowOnClick={true}
-                                                >
-                                                  <TooltippedComponent
-                                                    className=""
-                                                    theme={
-                                                      Object {
-                                                        "tooltipInner": "tooltipInner",
-                                                      }
-                                                    }
-                                                    tooltip="The percentage representation of the average amount of time people spend in all booked meeting rooms in a set time period"
-                                                    tooltipDelay={0}
-                                                    tooltipHideOnClick={true}
-                                                    tooltipPosition="top"
-                                                    tooltipShowOnClick={true}
-                                                  >
-                                                    <ThemedLink
-                                                      active={false}
-                                                      className=""
-                                                      composeTheme="deeply"
-                                                      mapThemrProps={[Function]}
-                                                      onClick={[Function]}
-                                                      onMouseEnter={[Function]}
-                                                      onMouseLeave={[Function]}
-                                                      theme={
-                                                        Object {
-                                                          "tooltipInner": "tooltipInner",
-                                                        }
-                                                      }
-                                                    >
-                                                      <Link
-                                                        active={false}
-                                                        className=""
-                                                        onClick={[Function]}
-                                                        onMouseEnter={[Function]}
-                                                        onMouseLeave={[Function]}
-                                                        theme={
-                                                          Object {
-                                                            "tooltipInner": "tooltipInner",
-                                                          }
-                                                        }
-                                                      >
-                                                        <a
-                                                          className=""
-                                                          data-react-toolbox="link"
-                                                          onClick={[Function]}
-                                                          onMouseEnter={[Function]}
-                                                          onMouseLeave={[Function]}
-                                                        >
-                                                          <img
-                                                            alt="help icon"
-                                                            src="test-file-stub"
-                                                          />
-                                                        </a>
-                                                      </Link>
-                                                    </ThemedLink>
-                                                  </TooltippedComponent>
-                                                </ThemedTooltippedComponent>
-                                              </section>
-                                              <Spinner
-                                                size=""
-                                              >
-                                                <div
-                                                  className="centered"
-                                                >
-                                                  <div
-                                                    className="spinner"
-                                                  />
-                                                </div>
-                                              </Spinner>
-                                            </article>
-                                          </AverageMeetingDurationPieChart>
-                                        </Query>
-                                      </Apollo(AverageMeetingDurationPieChart)>
-                                      <Apollo(GetAverageRoomCapacityComponent)>
-                                        <Query
-                                          displayName="Apollo(GetAverageRoomCapacityComponent)"
-                                          query={
-                                            Object {
-                                              "definitions": Array [
-                                                Object {
-                                                  "directives": Array [],
-                                                  "kind": "OperationDefinition",
-                                                  "name": undefined,
-                                                  "operation": "query",
-                                                  "selectionSet": Object {
-                                                    "kind": "SelectionSet",
-                                                    "selections": Array [
-                                                      Object {
-                                                        "alias": undefined,
-                                                        "arguments": Array [],
-                                                        "directives": Array [],
-                                                        "kind": "Field",
-                                                        "name": Object {
-                                                          "kind": "Name",
-                                                          "value": "allRooms",
-                                                        },
-                                                        "selectionSet": Object {
-                                                          "kind": "SelectionSet",
-                                                          "selections": Array [
-                                                            Object {
-                                                              "alias": undefined,
-                                                              "arguments": Array [],
-                                                              "directives": Array [],
-                                                              "kind": "Field",
-                                                              "name": Object {
-                                                                "kind": "Name",
-                                                                "value": "rooms",
-                                                              },
-                                                              "selectionSet": Object {
-                                                                "kind": "SelectionSet",
-                                                                "selections": Array [
-                                                                  Object {
-                                                                    "alias": undefined,
-                                                                    "arguments": Array [],
-                                                                    "directives": Array [],
-                                                                    "kind": "Field",
-                                                                    "name": Object {
-                                                                      "kind": "Name",
-                                                                      "value": "id",
-                                                                    },
-                                                                    "selectionSet": undefined,
-                                                                  },
-                                                                  Object {
-                                                                    "alias": undefined,
-                                                                    "arguments": Array [],
-                                                                    "directives": Array [],
-                                                                    "kind": "Field",
-                                                                    "name": Object {
-                                                                      "kind": "Name",
-                                                                      "value": "name",
-                                                                    },
-                                                                    "selectionSet": undefined,
-                                                                  },
-                                                                  Object {
-                                                                    "alias": undefined,
-                                                                    "arguments": Array [],
-                                                                    "directives": Array [],
-                                                                    "kind": "Field",
-                                                                    "name": Object {
-                                                                      "kind": "Name",
-                                                                      "value": "capacity",
-                                                                    },
-                                                                    "selectionSet": undefined,
-=======
-                                              <ThemedLink
-                                                active={false}
-                                                className=""
-                                                composeTheme="deeply"
-                                                mapThemrProps={[Function]}
-                                                onClick={[Function]}
-                                                onMouseEnter={[Function]}
-                                                onMouseLeave={[Function]}
-                                                theme={
-                                                  Object {
-                                                    "tooltipInner": "tooltipInner",
-                                                  }
-                                                }
-                                              >
-                                                <Link
-                                                  active={false}
-                                                  className=""
-                                                  onClick={[Function]}
-                                                  onMouseEnter={[Function]}
-                                                  onMouseLeave={[Function]}
-                                                  theme={
-                                                    Object {
-                                                      "tooltipInner": "tooltipInner",
-                                                    }
-                                                  }
-                                                >
-                                                  <a
-                                                    className=""
-                                                    data-react-toolbox="link"
-                                                    onClick={[Function]}
-                                                    onMouseEnter={[Function]}
-                                                    onMouseLeave={[Function]}
-                                                  >
-                                                    <img
-                                                      alt="help icon"
-                                                      src="test-file-stub"
-                                                    />
-                                                  </a>
-                                                </Link>
-                                              </ThemedLink>
-                                            </TooltippedComponent>
-                                          </ThemedTooltippedComponent>
-                                        </section>
-                                        <section
-                                          className="chart-content"
-                                        >
-                                          <Apollo(AverageMeetingDurationPieChart)
-                                            dateValue={
-                                              Object {
-                                                "endDate": "Feb 18 2019",
-                                                "startDate": "Feb 18 2019",
-                                              }
-                                            }
-                                          >
-                                            <Query
-                                              displayName="Apollo(AverageMeetingDurationPieChart)"
-                                              query={
-                                                Object {
-                                                  "definitions": Array [
-                                                    Object {
-                                                      "directives": Array [],
-                                                      "kind": "OperationDefinition",
-                                                      "name": Object {
-                                                        "kind": "Name",
-                                                        "value": "durationOfMeetingsPerMeetingRoom",
-                                                      },
-                                                      "operation": "query",
-                                                      "selectionSet": Object {
-                                                        "kind": "SelectionSet",
-                                                        "selections": Array [
-                                                          Object {
-                                                            "alias": undefined,
-                                                            "arguments": Array [
-                                                              Object {
-                                                                "kind": "Argument",
-                                                                "name": Object {
-                                                                  "kind": "Name",
-                                                                  "value": "startDate",
-                                                                },
-                                                                "value": Object {
-                                                                  "kind": "Variable",
-                                                                  "name": Object {
-                                                                    "kind": "Name",
-                                                                    "value": "startDate",
-                                                                  },
-                                                                },
-                                                              },
-                                                              Object {
-                                                                "kind": "Argument",
-                                                                "name": Object {
-                                                                  "kind": "Name",
-                                                                  "value": "endDate",
-                                                                },
-                                                                "value": Object {
-                                                                  "kind": "Variable",
-                                                                  "name": Object {
-                                                                    "kind": "Name",
-                                                                    "value": "endDate",
-                                                                  },
-                                                                },
-                                                              },
-                                                              Object {
-                                                                "kind": "Argument",
-                                                                "name": Object {
-                                                                  "kind": "Name",
-                                                                  "value": "page",
-                                                                },
-                                                                "value": Object {
-                                                                  "kind": "Variable",
-                                                                  "name": Object {
-                                                                    "kind": "Name",
-                                                                    "value": "page",
-                                                                  },
-                                                                },
-                                                              },
-                                                              Object {
-                                                                "kind": "Argument",
-                                                                "name": Object {
-                                                                  "kind": "Name",
-                                                                  "value": "perPage",
-                                                                },
-                                                                "value": Object {
-                                                                  "kind": "Variable",
-                                                                  "name": Object {
-                                                                    "kind": "Name",
-                                                                    "value": "perPage",
-                                                                  },
-                                                                },
-                                                              },
-                                                            ],
-                                                            "directives": Array [],
-                                                            "kind": "Field",
-                                                            "name": Object {
-                                                              "kind": "Name",
-                                                              "value": "analyticsForMeetingsDurations",
-                                                            },
-                                                            "selectionSet": Object {
-                                                              "kind": "SelectionSet",
-                                                              "selections": Array [
-                                                                Object {
-                                                                  "alias": undefined,
-                                                                  "arguments": Array [],
-                                                                  "directives": Array [],
-                                                                  "kind": "Field",
-                                                                  "name": Object {
-                                                                    "kind": "Name",
-                                                                    "value": "hasPrevious",
-                                                                  },
-                                                                  "selectionSet": undefined,
-                                                                },
-                                                                Object {
-                                                                  "alias": undefined,
-                                                                  "arguments": Array [],
-                                                                  "directives": Array [],
-                                                                  "kind": "Field",
-                                                                  "name": Object {
-                                                                    "kind": "Name",
-                                                                    "value": "hasNext",
-                                                                  },
-                                                                  "selectionSet": undefined,
-                                                                },
-                                                                Object {
-                                                                  "alias": undefined,
-                                                                  "arguments": Array [],
-                                                                  "directives": Array [],
-                                                                  "kind": "Field",
-                                                                  "name": Object {
-                                                                    "kind": "Name",
-                                                                    "value": "pages",
-                                                                  },
-                                                                  "selectionSet": undefined,
-                                                                },
-                                                                Object {
-                                                                  "alias": undefined,
-                                                                  "arguments": Array [],
-                                                                  "directives": Array [],
-                                                                  "kind": "Field",
-                                                                  "name": Object {
-                                                                    "kind": "Name",
-                                                                    "value": "MeetingsDurationaAnalytics",
-                                                                  },
-                                                                  "selectionSet": Object {
-                                                                    "kind": "SelectionSet",
-                                                                    "selections": Array [
-                                                                      Object {
-                                                                        "alias": undefined,
-                                                                        "arguments": Array [],
-                                                                        "directives": Array [],
-                                                                        "kind": "Field",
-                                                                        "name": Object {
-                                                                          "kind": "Name",
-                                                                          "value": "roomName",
-                                                                        },
-                                                                        "selectionSet": undefined,
-                                                                      },
-                                                                      Object {
-                                                                        "alias": undefined,
-                                                                        "arguments": Array [],
-                                                                        "directives": Array [],
-                                                                        "kind": "Field",
-                                                                        "name": Object {
-                                                                          "kind": "Name",
-                                                                          "value": "count",
-                                                                        },
-                                                                        "selectionSet": undefined,
-                                                                      },
-                                                                      Object {
-                                                                        "alias": undefined,
-                                                                        "arguments": Array [],
-                                                                        "directives": Array [],
-                                                                        "kind": "Field",
-                                                                        "name": Object {
-                                                                          "kind": "Name",
-                                                                          "value": "totalDuration",
-                                                                        },
-                                                                        "selectionSet": undefined,
-                                                                      },
-                                                                    ],
-                                                                  },
-                                                                },
-                                                              ],
-                                                            },
-                                                          },
-                                                        ],
-                                                      },
-                                                      "variableDefinitions": Array [
-                                                        Object {
-                                                          "defaultValue": undefined,
-                                                          "kind": "VariableDefinition",
-                                                          "type": Object {
-                                                            "kind": "NonNullType",
-                                                            "type": Object {
-                                                              "kind": "NamedType",
-                                                              "name": Object {
-                                                                "kind": "Name",
-                                                                "value": "String",
-                                                              },
-                                                            },
-                                                          },
-                                                          "variable": Object {
+                                                          "value": Object {
                                                             "kind": "Variable",
                                                             "name": Object {
                                                               "kind": "Name",
@@ -10472,19 +9221,12 @@ query user ($email: String!) {
                                                           },
                                                         },
                                                         Object {
-                                                          "defaultValue": undefined,
-                                                          "kind": "VariableDefinition",
-                                                          "type": Object {
-                                                            "kind": "NonNullType",
-                                                            "type": Object {
-                                                              "kind": "NamedType",
-                                                              "name": Object {
-                                                                "kind": "Name",
-                                                                "value": "String",
-                                                              },
-                                                            },
+                                                          "kind": "Argument",
+                                                          "name": Object {
+                                                            "kind": "Name",
+                                                            "value": "endDate",
                                                           },
-                                                          "variable": Object {
+                                                          "value": Object {
                                                             "kind": "Variable",
                                                             "name": Object {
                                                               "kind": "Name",
@@ -10493,16 +9235,12 @@ query user ($email: String!) {
                                                           },
                                                         },
                                                         Object {
-                                                          "defaultValue": undefined,
-                                                          "kind": "VariableDefinition",
-                                                          "type": Object {
-                                                            "kind": "NamedType",
-                                                            "name": Object {
-                                                              "kind": "Name",
-                                                              "value": "Int",
-                                                            },
+                                                          "kind": "Argument",
+                                                          "name": Object {
+                                                            "kind": "Name",
+                                                            "value": "page",
                                                           },
-                                                          "variable": Object {
+                                                          "value": Object {
                                                             "kind": "Variable",
                                                             "name": Object {
                                                               "kind": "Name",
@@ -10511,16 +9249,12 @@ query user ($email: String!) {
                                                           },
                                                         },
                                                         Object {
-                                                          "defaultValue": undefined,
-                                                          "kind": "VariableDefinition",
-                                                          "type": Object {
-                                                            "kind": "NamedType",
-                                                            "name": Object {
-                                                              "kind": "Name",
-                                                              "value": "Int",
-                                                            },
+                                                          "kind": "Argument",
+                                                          "name": Object {
+                                                            "kind": "Name",
+                                                            "value": "perPage",
                                                           },
-                                                          "variable": Object {
+                                                          "value": Object {
                                                             "kind": "Variable",
                                                             "name": Object {
                                                               "kind": "Name",
@@ -10529,187 +9263,12 @@ query user ($email: String!) {
                                                           },
                                                         },
                                                       ],
-                                                    },
-                                                  ],
-                                                  "kind": "Document",
-                                                  "loc": Object {
-                                                    "end": 391,
-                                                    "start": 0,
-                                                  },
-                                                }
-                                              }
-                                              skip={false}
-                                              variables={
-                                                Object {
-                                                  "endDate": "Feb 18 2019",
-                                                  "startDate": "Feb 18 2019",
-                                                }
-                                              }
-                                              warnUnhandledError={true}
-                                            >
-                                              <AverageMeetingDurationPieChart
-                                                data={
-                                                  Object {
-                                                    "error": undefined,
-                                                    "fetchMore": [Function],
-                                                    "loading": true,
-                                                    "networkStatus": 1,
-                                                    "refetch": [Function],
-                                                    "startPolling": [Function],
-                                                    "stopPolling": [Function],
-                                                    "subscribeToMore": [Function],
-                                                    "updateQuery": [Function],
-                                                    "variables": Object {
-                                                      "endDate": "Feb 18 2019",
-                                                      "startDate": "Feb 18 2019",
-                                                    },
-                                                  }
-                                                }
-                                                dateValue={
-                                                  Object {
-                                                    "endDate": "Feb 18 2019",
-                                                    "startDate": "Feb 18 2019",
-                                                  }
-                                                }
-                                              >
-                                                <Spinner
-                                                  size=""
-                                                >
-                                                  <div
-                                                    className="centered"
-                                                  >
-                                                    <div
-                                                      className="spinner"
-                                                    />
-                                                  </div>
-                                                </Spinner>
-                                              </AverageMeetingDurationPieChart>
-                                            </Query>
-                                          </Apollo(AverageMeetingDurationPieChart)>
-                                          <section
-                                            className="chart-details"
-                                          >
-                                            <p
-                                              className="duration-first-circle"
-                                            >
-                                              <span />
-                                              Above 60 Minutes
-                                            </p>
-                                            <p
-                                              className="duration-second-circle"
-                                            >
-                                              <span />
-                                              45 - 60 Minutes
-                                            </p>
-                                            <p
-                                              className="duration-third-circle"
-                                            >
-                                              <span />
-                                              30 - 45 Minutes
-                                            </p>
-                                            <p
-                                              className="duration-forth-circle"
-                                            >
-                                              <span />
-                                              Below 30 Minutes
-                                            </p>
-                                          </section>
-                                        </section>
-                                      </article>
-                                    </MeetingDurationPieChart>
-                                    <RoomCapacityPieChart>
-                                      <article
-                                        className="pie-chart"
-                                      >
-                                        <section
-                                          className="chart-header"
-                                        >
-                                          <p
-                                            className="chart-title"
-                                          >
-                                            Average Room Capacity [%]
-                                          </p>
-                                          <ThemedTooltippedComponent
-                                            className=""
-                                            composeTheme="deeply"
-                                            mapThemrProps={[Function]}
-                                            theme={null}
-                                            tooltip="The percentage representation of the average rooms' capacity "
-                                            tooltipDelay={0}
-                                            tooltipHideOnClick={true}
-                                            tooltipPosition="top"
-                                            tooltipShowOnClick={true}
-                                          >
-                                            <TooltippedComponent
-                                              className=""
-                                              theme={
-                                                Object {
-                                                  "tooltipInner": "tooltipInner",
-                                                }
-                                              }
-                                              tooltip="The percentage representation of the average rooms' capacity "
-                                              tooltipDelay={0}
-                                              tooltipHideOnClick={true}
-                                              tooltipPosition="top"
-                                              tooltipShowOnClick={true}
-                                            >
-                                              <ThemedLink
-                                                active={false}
-                                                className=""
-                                                composeTheme="deeply"
-                                                mapThemrProps={[Function]}
-                                                onClick={[Function]}
-                                                onMouseEnter={[Function]}
-                                                onMouseLeave={[Function]}
-                                                theme={
-                                                  Object {
-                                                    "tooltipInner": "tooltipInner",
-                                                  }
-                                                }
-                                              >
-                                                <Link
-                                                  active={false}
-                                                  className=""
-                                                  onClick={[Function]}
-                                                  onMouseEnter={[Function]}
-                                                  onMouseLeave={[Function]}
-                                                  theme={
-                                                    Object {
-                                                      "tooltipInner": "tooltipInner",
-                                                    }
-                                                  }
-                                                >
-                                                  <a
-                                                    className=""
-                                                    data-react-toolbox="link"
-                                                    onClick={[Function]}
-                                                    onMouseEnter={[Function]}
-                                                    onMouseLeave={[Function]}
-                                                  >
-                                                    <img
-                                                      alt="help icon"
-                                                      src="test-file-stub"
-                                                    />
-                                                  </a>
-                                                </Link>
-                                              </ThemedLink>
-                                            </TooltippedComponent>
-                                          </ThemedTooltippedComponent>
-                                        </section>
-                                        <section
-                                          className="chart-content"
-                                        >
-                                          <Apollo(GetAverageRoomCapacityComponent)>
-                                            <Query
-                                              displayName="Apollo(GetAverageRoomCapacityComponent)"
-                                              query={
-                                                Object {
-                                                  "definitions": Array [
-                                                    Object {
                                                       "directives": Array [],
-                                                      "kind": "OperationDefinition",
-                                                      "name": undefined,
-                                                      "operation": "query",
+                                                      "kind": "Field",
+                                                      "name": Object {
+                                                        "kind": "Name",
+                                                        "value": "analyticsForMeetingsDurations",
+                                                      },
                                                       "selectionSet": Object {
                                                         "kind": "SelectionSet",
                                                         "selections": Array [
@@ -10720,7 +9279,40 @@ query user ($email: String!) {
                                                             "kind": "Field",
                                                             "name": Object {
                                                               "kind": "Name",
-                                                              "value": "allRooms",
+                                                              "value": "hasPrevious",
+                                                            },
+                                                            "selectionSet": undefined,
+                                                          },
+                                                          Object {
+                                                            "alias": undefined,
+                                                            "arguments": Array [],
+                                                            "directives": Array [],
+                                                            "kind": "Field",
+                                                            "name": Object {
+                                                              "kind": "Name",
+                                                              "value": "hasNext",
+                                                            },
+                                                            "selectionSet": undefined,
+                                                          },
+                                                          Object {
+                                                            "alias": undefined,
+                                                            "arguments": Array [],
+                                                            "directives": Array [],
+                                                            "kind": "Field",
+                                                            "name": Object {
+                                                              "kind": "Name",
+                                                              "value": "pages",
+                                                            },
+                                                            "selectionSet": undefined,
+                                                          },
+                                                          Object {
+                                                            "alias": undefined,
+                                                            "arguments": Array [],
+                                                            "directives": Array [],
+                                                            "kind": "Field",
+                                                            "name": Object {
+                                                              "kind": "Name",
+                                                              "value": "MeetingsDurationaAnalytics",
                                                             },
                                                             "selectionSet": Object {
                                                               "kind": "SelectionSet",
@@ -10732,125 +9324,215 @@ query user ($email: String!) {
                                                                   "kind": "Field",
                                                                   "name": Object {
                                                                     "kind": "Name",
-                                                                    "value": "rooms",
+                                                                    "value": "roomName",
                                                                   },
-                                                                  "selectionSet": Object {
-                                                                    "kind": "SelectionSet",
-                                                                    "selections": Array [
-                                                                      Object {
-                                                                        "alias": undefined,
-                                                                        "arguments": Array [],
-                                                                        "directives": Array [],
-                                                                        "kind": "Field",
-                                                                        "name": Object {
-                                                                          "kind": "Name",
-                                                                          "value": "id",
-                                                                        },
-                                                                        "selectionSet": undefined,
-                                                                      },
-                                                                      Object {
-                                                                        "alias": undefined,
-                                                                        "arguments": Array [],
-                                                                        "directives": Array [],
-                                                                        "kind": "Field",
-                                                                        "name": Object {
-                                                                          "kind": "Name",
-                                                                          "value": "name",
-                                                                        },
-                                                                        "selectionSet": undefined,
-                                                                      },
-                                                                      Object {
-                                                                        "alias": undefined,
-                                                                        "arguments": Array [],
-                                                                        "directives": Array [],
-                                                                        "kind": "Field",
-                                                                        "name": Object {
-                                                                          "kind": "Name",
-                                                                          "value": "capacity",
-                                                                        },
-                                                                        "selectionSet": undefined,
-                                                                      },
-                                                                    ],
->>>>>>> feat(roomfeedback): admin should be able to toggle between the list of questions and responses
+                                                                  "selectionSet": undefined,
+                                                                },
+                                                                Object {
+                                                                  "alias": undefined,
+                                                                  "arguments": Array [],
+                                                                  "directives": Array [],
+                                                                  "kind": "Field",
+                                                                  "name": Object {
+                                                                    "kind": "Name",
+                                                                    "value": "count",
                                                                   },
+                                                                  "selectionSet": undefined,
+                                                                },
+                                                                Object {
+                                                                  "alias": undefined,
+                                                                  "arguments": Array [],
+                                                                  "directives": Array [],
+                                                                  "kind": "Field",
+                                                                  "name": Object {
+                                                                    "kind": "Name",
+                                                                    "value": "totalDuration",
+                                                                  },
+                                                                  "selectionSet": undefined,
                                                                 },
                                                               ],
                                                             },
-<<<<<<< HEAD
-                                                          ],
+                                                          },
+                                                        ],
+                                                      },
+                                                    },
+                                                  ],
+                                                },
+                                                "variableDefinitions": Array [
+                                                  Object {
+                                                    "defaultValue": undefined,
+                                                    "kind": "VariableDefinition",
+                                                    "type": Object {
+                                                      "kind": "NonNullType",
+                                                      "type": Object {
+                                                        "kind": "NamedType",
+                                                        "name": Object {
+                                                          "kind": "Name",
+                                                          "value": "String",
                                                         },
                                                       },
-                                                    ],
+                                                    },
+                                                    "variable": Object {
+                                                      "kind": "Variable",
+                                                      "name": Object {
+                                                        "kind": "Name",
+                                                        "value": "startDate",
+                                                      },
+                                                    },
                                                   },
-                                                  "variableDefinitions": Array [],
-                                                },
-                                              ],
-                                              "kind": "Document",
-                                              "loc": Object {
-                                                "end": 92,
-                                                "start": 0,
+                                                  Object {
+                                                    "defaultValue": undefined,
+                                                    "kind": "VariableDefinition",
+                                                    "type": Object {
+                                                      "kind": "NonNullType",
+                                                      "type": Object {
+                                                        "kind": "NamedType",
+                                                        "name": Object {
+                                                          "kind": "Name",
+                                                          "value": "String",
+                                                        },
+                                                      },
+                                                    },
+                                                    "variable": Object {
+                                                      "kind": "Variable",
+                                                      "name": Object {
+                                                        "kind": "Name",
+                                                        "value": "endDate",
+                                                      },
+                                                    },
+                                                  },
+                                                  Object {
+                                                    "defaultValue": undefined,
+                                                    "kind": "VariableDefinition",
+                                                    "type": Object {
+                                                      "kind": "NamedType",
+                                                      "name": Object {
+                                                        "kind": "Name",
+                                                        "value": "Int",
+                                                      },
+                                                    },
+                                                    "variable": Object {
+                                                      "kind": "Variable",
+                                                      "name": Object {
+                                                        "kind": "Name",
+                                                        "value": "page",
+                                                      },
+                                                    },
+                                                  },
+                                                  Object {
+                                                    "defaultValue": undefined,
+                                                    "kind": "VariableDefinition",
+                                                    "type": Object {
+                                                      "kind": "NamedType",
+                                                      "name": Object {
+                                                        "kind": "Name",
+                                                        "value": "Int",
+                                                      },
+                                                    },
+                                                    "variable": Object {
+                                                      "kind": "Variable",
+                                                      "name": Object {
+                                                        "kind": "Name",
+                                                        "value": "perPage",
+                                                      },
+                                                    },
+                                                  },
+                                                ],
+                                              },
+                                            ],
+                                            "kind": "Document",
+                                            "loc": Object {
+                                              "end": 391,
+                                              "start": 0,
+                                            },
+                                          }
+                                        }
+                                        skip={false}
+                                        variables={
+                                          Object {
+                                            "endDate": "Feb 20 2019",
+                                            "startDate": "Feb 20 2019",
+                                          }
+                                        }
+                                        warnUnhandledError={true}
+                                      >
+                                        <AverageMeetingDurationPieChart
+                                          data={
+                                            Object {
+                                              "error": undefined,
+                                              "fetchMore": [Function],
+                                              "loading": true,
+                                              "networkStatus": 1,
+                                              "refetch": [Function],
+                                              "startPolling": [Function],
+                                              "stopPolling": [Function],
+                                              "subscribeToMore": [Function],
+                                              "updateQuery": [Function],
+                                              "variables": Object {
+                                                "endDate": "Feb 20 2019",
+                                                "startDate": "Feb 20 2019",
                                               },
                                             }
                                           }
-                                          skip={false}
-                                          warnUnhandledError={true}
-                                        >
-                                          <GetAverageRoomCapacityComponent
-                                            data={
-                                              Object {
-                                                "error": undefined,
-                                                "fetchMore": [Function],
-                                                "loading": true,
-                                                "networkStatus": 1,
-                                                "refetch": [Function],
-                                                "startPolling": [Function],
-                                                "stopPolling": [Function],
-                                                "subscribeToMore": [Function],
-                                                "updateQuery": [Function],
-                                                "variables": Object {},
-                                              }
+                                          dateValue={
+                                            Object {
+                                              "endDate": "Feb 20 2019",
+                                              "startDate": "Feb 20 2019",
                                             }
+                                          }
+                                        >
+                                          <article
+                                            className="pie-chart"
                                           >
-                                            <article
-                                              className="pie-chart"
+                                            <section
+                                              className="chart-header"
                                             >
-                                              <section
-                                                className="chart-header"
+                                              <p
+                                                className="chart-title"
                                               >
-                                                <p
-                                                  className="chart-title"
-                                                >
-                                                  Average Rooms Capacity [%]
-                                                </p>
-                                                <ThemedTooltippedComponent
+                                                Average Meetings Duration [%]
+                                              </p>
+                                              <ThemedTooltippedComponent
+                                                className=""
+                                                composeTheme="deeply"
+                                                mapThemrProps={[Function]}
+                                                theme={null}
+                                                tooltip="The percentage representation of the average amount of time people spend in all booked meeting rooms in a set time period"
+                                                tooltipDelay={0}
+                                                tooltipHideOnClick={true}
+                                                tooltipPosition="top"
+                                                tooltipShowOnClick={true}
+                                              >
+                                                <TooltippedComponent
                                                   className=""
-                                                  composeTheme="deeply"
-                                                  mapThemrProps={[Function]}
-                                                  theme={null}
-                                                  tooltip="The percentage representation of the average rooms' capacity "
+                                                  theme={
+                                                    Object {
+                                                      "tooltipInner": "tooltipInner",
+                                                    }
+                                                  }
+                                                  tooltip="The percentage representation of the average amount of time people spend in all booked meeting rooms in a set time period"
                                                   tooltipDelay={0}
                                                   tooltipHideOnClick={true}
                                                   tooltipPosition="top"
                                                   tooltipShowOnClick={true}
                                                 >
-                                                  <TooltippedComponent
+                                                  <ThemedLink
+                                                    active={false}
                                                     className=""
+                                                    composeTheme="deeply"
+                                                    mapThemrProps={[Function]}
+                                                    onClick={[Function]}
+                                                    onMouseEnter={[Function]}
+                                                    onMouseLeave={[Function]}
                                                     theme={
                                                       Object {
                                                         "tooltipInner": "tooltipInner",
                                                       }
                                                     }
-                                                    tooltip="The percentage representation of the average rooms' capacity "
-                                                    tooltipDelay={0}
-                                                    tooltipHideOnClick={true}
-                                                    tooltipPosition="top"
-                                                    tooltipShowOnClick={true}
                                                   >
-                                                    <ThemedLink
+                                                    <Link
                                                       active={false}
                                                       className=""
-                                                      composeTheme="deeply"
-                                                      mapThemrProps={[Function]}
                                                       onClick={[Function]}
                                                       onMouseEnter={[Function]}
                                                       onMouseLeave={[Function]}
@@ -10860,139 +9542,244 @@ query user ($email: String!) {
                                                         }
                                                       }
                                                     >
-                                                      <Link
-                                                        active={false}
+                                                      <a
                                                         className=""
+                                                        data-react-toolbox="link"
                                                         onClick={[Function]}
                                                         onMouseEnter={[Function]}
                                                         onMouseLeave={[Function]}
-                                                        theme={
-                                                          Object {
-                                                            "tooltipInner": "tooltipInner",
-                                                          }
-                                                        }
                                                       >
-                                                        <a
-                                                          className=""
-                                                          data-react-toolbox="link"
-                                                          onClick={[Function]}
-                                                          onMouseEnter={[Function]}
-                                                          onMouseLeave={[Function]}
-                                                        >
-                                                          <img
-                                                            alt="help icon"
-                                                            src="test-file-stub"
-                                                          />
-                                                        </a>
-                                                      </Link>
-                                                    </ThemedLink>
-                                                  </TooltippedComponent>
-                                                </ThemedTooltippedComponent>
-                                              </section>
-                                              <Spinner
-                                                size=""
+                                                        <img
+                                                          alt="help icon"
+                                                          src="test-file-stub"
+                                                        />
+                                                      </a>
+                                                    </Link>
+                                                  </ThemedLink>
+                                                </TooltippedComponent>
+                                              </ThemedTooltippedComponent>
+                                            </section>
+                                            <Spinner
+                                              size=""
+                                            >
+                                              <div
+                                                className="centered"
                                               >
                                                 <div
-                                                  className="centered"
-                                                >
-                                                  <div
-                                                    className="spinner"
-                                                  />
-                                                </div>
-                                              </Spinner>
-                                            </article>
-                                          </GetAverageRoomCapacityComponent>
-                                        </Query>
-                                      </Apollo(GetAverageRoomCapacityComponent)>
-                                      <BookingsCountBarGraph
-                                        dateValue={
+                                                  className="spinner"
+                                                />
+                                              </div>
+                                            </Spinner>
+                                          </article>
+                                        </AverageMeetingDurationPieChart>
+                                      </Query>
+                                    </Apollo(AverageMeetingDurationPieChart)>
+                                    <Apollo(GetAverageRoomCapacityComponent)>
+                                      <Query
+                                        displayName="Apollo(GetAverageRoomCapacityComponent)"
+                                        query={
                                           Object {
-                                            "endDate": "Feb 19 2019",
-                                            "startDate": "Feb 19 2019",
-                                          }
-                                        }
-                                      >
-                                        <article
-                                          className="bar-graph"
-                                        >
-=======
+                                            "definitions": Array [
+                                              Object {
+                                                "directives": Array [],
+                                                "kind": "OperationDefinition",
+                                                "name": undefined,
+                                                "operation": "query",
+                                                "selectionSet": Object {
+                                                  "kind": "SelectionSet",
+                                                  "selections": Array [
+                                                    Object {
+                                                      "alias": undefined,
+                                                      "arguments": Array [],
+                                                      "directives": Array [],
+                                                      "kind": "Field",
+                                                      "name": Object {
+                                                        "kind": "Name",
+                                                        "value": "allRooms",
+                                                      },
+                                                      "selectionSet": Object {
+                                                        "kind": "SelectionSet",
+                                                        "selections": Array [
+                                                          Object {
+                                                            "alias": undefined,
+                                                            "arguments": Array [],
+                                                            "directives": Array [],
+                                                            "kind": "Field",
+                                                            "name": Object {
+                                                              "kind": "Name",
+                                                              "value": "rooms",
+                                                            },
+                                                            "selectionSet": Object {
+                                                              "kind": "SelectionSet",
+                                                              "selections": Array [
+                                                                Object {
+                                                                  "alias": undefined,
+                                                                  "arguments": Array [],
+                                                                  "directives": Array [],
+                                                                  "kind": "Field",
+                                                                  "name": Object {
+                                                                    "kind": "Name",
+                                                                    "value": "id",
+                                                                  },
+                                                                  "selectionSet": undefined,
+                                                                },
+                                                                Object {
+                                                                  "alias": undefined,
+                                                                  "arguments": Array [],
+                                                                  "directives": Array [],
+                                                                  "kind": "Field",
+                                                                  "name": Object {
+                                                                    "kind": "Name",
+                                                                    "value": "name",
+                                                                  },
+                                                                  "selectionSet": undefined,
+                                                                },
+                                                                Object {
+                                                                  "alias": undefined,
+                                                                  "arguments": Array [],
+                                                                  "directives": Array [],
+                                                                  "kind": "Field",
+                                                                  "name": Object {
+                                                                    "kind": "Name",
+                                                                    "value": "capacity",
+                                                                  },
+                                                                  "selectionSet": undefined,
+                                                                },
+                                                              ],
+                                                            },
                                                           },
                                                         ],
                                                       },
-                                                      "variableDefinitions": Array [],
                                                     },
                                                   ],
-                                                  "kind": "Document",
-                                                  "loc": Object {
-                                                    "end": 92,
-                                                    "start": 0,
-                                                  },
-                                                }
-                                              }
-                                              skip={false}
-                                              warnUnhandledError={true}
-                                            >
-                                              <GetAverageRoomCapacityComponent
-                                                data={
-                                                  Object {
-                                                    "error": undefined,
-                                                    "fetchMore": [Function],
-                                                    "loading": true,
-                                                    "networkStatus": 1,
-                                                    "refetch": [Function],
-                                                    "startPolling": [Function],
-                                                    "stopPolling": [Function],
-                                                    "subscribeToMore": [Function],
-                                                    "updateQuery": [Function],
-                                                    "variables": Object {},
-                                                  }
-                                                }
-                                              >
-                                                <Spinner
-                                                  size=""
-                                                >
-                                                  <div
-                                                    className="centered"
-                                                  >
-                                                    <div
-                                                      className="spinner"
-                                                    />
-                                                  </div>
-                                                </Spinner>
-                                              </GetAverageRoomCapacityComponent>
-                                            </Query>
-                                          </Apollo(GetAverageRoomCapacityComponent)>
->>>>>>> feat(roomfeedback): admin should be able to toggle between the list of questions and responses
-                                          <section
-                                            className="chart-details"
+                                                },
+                                                "variableDefinitions": Array [],
+                                              },
+                                            ],
+                                            "kind": "Document",
+                                            "loc": Object {
+                                              "end": 92,
+                                              "start": 0,
+                                            },
+                                          }
+                                        }
+                                        skip={false}
+                                        warnUnhandledError={true}
+                                      >
+                                        <GetAverageRoomCapacityComponent
+                                          data={
+                                            Object {
+                                              "error": undefined,
+                                              "fetchMore": [Function],
+                                              "loading": true,
+                                              "networkStatus": 1,
+                                              "refetch": [Function],
+                                              "startPolling": [Function],
+                                              "stopPolling": [Function],
+                                              "subscribeToMore": [Function],
+                                              "updateQuery": [Function],
+                                              "variables": Object {},
+                                            }
+                                          }
+                                        >
+                                          <article
+                                            className="pie-chart"
                                           >
-                                            <p
-                                              className="room-capacity-first-circle"
+                                            <section
+                                              className="chart-header"
                                             >
-                                              <span />
-                                              Less than 10
-                                            </p>
-                                            <p
-                                              className="room-capacity-second-circle"
+                                              <p
+                                                className="chart-title"
+                                              >
+                                                Average Rooms Capacity [%]
+                                              </p>
+                                              <ThemedTooltippedComponent
+                                                className=""
+                                                composeTheme="deeply"
+                                                mapThemrProps={[Function]}
+                                                theme={null}
+                                                tooltip="The percentage representation of the average rooms' capacity "
+                                                tooltipDelay={0}
+                                                tooltipHideOnClick={true}
+                                                tooltipPosition="top"
+                                                tooltipShowOnClick={true}
+                                              >
+                                                <TooltippedComponent
+                                                  className=""
+                                                  theme={
+                                                    Object {
+                                                      "tooltipInner": "tooltipInner",
+                                                    }
+                                                  }
+                                                  tooltip="The percentage representation of the average rooms' capacity "
+                                                  tooltipDelay={0}
+                                                  tooltipHideOnClick={true}
+                                                  tooltipPosition="top"
+                                                  tooltipShowOnClick={true}
+                                                >
+                                                  <ThemedLink
+                                                    active={false}
+                                                    className=""
+                                                    composeTheme="deeply"
+                                                    mapThemrProps={[Function]}
+                                                    onClick={[Function]}
+                                                    onMouseEnter={[Function]}
+                                                    onMouseLeave={[Function]}
+                                                    theme={
+                                                      Object {
+                                                        "tooltipInner": "tooltipInner",
+                                                      }
+                                                    }
+                                                  >
+                                                    <Link
+                                                      active={false}
+                                                      className=""
+                                                      onClick={[Function]}
+                                                      onMouseEnter={[Function]}
+                                                      onMouseLeave={[Function]}
+                                                      theme={
+                                                        Object {
+                                                          "tooltipInner": "tooltipInner",
+                                                        }
+                                                      }
+                                                    >
+                                                      <a
+                                                        className=""
+                                                        data-react-toolbox="link"
+                                                        onClick={[Function]}
+                                                        onMouseEnter={[Function]}
+                                                        onMouseLeave={[Function]}
+                                                      >
+                                                        <img
+                                                          alt="help icon"
+                                                          src="test-file-stub"
+                                                        />
+                                                      </a>
+                                                    </Link>
+                                                  </ThemedLink>
+                                                </TooltippedComponent>
+                                              </ThemedTooltippedComponent>
+                                            </section>
+                                            <Spinner
+                                              size=""
                                             >
-                                              <span />
-                                              10 - 20
-                                            </p>
-                                            <p
-                                              className="room-capacity-third-circle"
-                                            >
-                                              <span />
-                                              More than 20
-                                            </p>
-                                          </section>
-                                        </section>
-                                      </article>
-                                    </RoomCapacityPieChart>
+                                              <div
+                                                className="centered"
+                                              >
+                                                <div
+                                                  className="spinner"
+                                                />
+                                              </div>
+                                            </Spinner>
+                                          </article>
+                                        </GetAverageRoomCapacityComponent>
+                                      </Query>
+                                    </Apollo(GetAverageRoomCapacityComponent)>
                                     <BookingsCountBarGraph
                                       dateValue={
                                         Object {
-                                          "endDate": "Feb 18 2019",
-                                          "startDate": "Feb 18 2019",
+                                          "endDate": "Feb 20 2019",
+                                          "startDate": "Feb 20 2019",
                                         }
                                       }
                                     >
@@ -11080,8 +9867,8 @@ query user ($email: String!) {
                                           <QueryBookingsCount
                                             dateValue={
                                               Object {
-                                                "endDate": "Feb 18 2019",
-                                                "startDate": "Feb 18 2019",
+                                                "endDate": "Feb 20 2019",
+                                                "startDate": "Feb 20 2019",
                                               }
                                             }
                                           >
@@ -11089,34 +9876,6 @@ query user ($email: String!) {
                                               notifyOnNetworkStatusChange={true}
                                               query={
                                                 Object {
-<<<<<<< HEAD
-                                                  "endDate": "Feb 19 2019",
-                                                  "startDate": "Feb 19 2019",
-                                                }
-                                              }
-                                            >
-                                              <Query
-                                                notifyOnNetworkStatusChange={true}
-                                                query={
-                                                  Object {
-                                                    "definitions": Array [
-                                                      Object {
-                                                        "directives": Array [],
-                                                        "kind": "OperationDefinition",
-                                                        "name": Object {
-                                                          "kind": "Name",
-                                                          "value": "AnalyticsBookingsCount",
-                                                        },
-                                                        "operation": "query",
-                                                        "selectionSet": Object {
-                                                          "kind": "SelectionSet",
-                                                          "selections": Array [
-                                                            Object {
-                                                              "alias": undefined,
-                                                              "arguments": Array [
-                                                                Object {
-                                                                  "kind": "Argument",
-=======
                                                   "definitions": Array [
                                                     Object {
                                                       "directives": Array [],
@@ -11140,7 +9899,6 @@ query user ($email: String!) {
                                                                 },
                                                                 "value": Object {
                                                                   "kind": "Variable",
->>>>>>> feat(roomfeedback): admin should be able to toggle between the list of questions and responses
                                                                   "name": Object {
                                                                     "kind": "Name",
                                                                     "value": "startDate",
@@ -11250,19 +10008,11 @@ query user ($email: String!) {
                                                     "start": 0,
                                                   },
                                                 }
-<<<<<<< HEAD
-                                                variables={
-                                                  Object {
-                                                    "endDate": "Feb 19 2019",
-                                                    "startDate": "Feb 19 2019",
-                                                  }
-=======
                                               }
                                               variables={
                                                 Object {
-                                                  "endDate": "Feb 18 2019",
-                                                  "startDate": "Feb 18 2019",
->>>>>>> feat(roomfeedback): admin should be able to toggle between the list of questions and responses
+                                                  "endDate": "Feb 20 2019",
+                                                  "startDate": "Feb 20 2019",
                                                 }
                                               }
                                             >
@@ -11273,28 +10023,6 @@ query user ($email: String!) {
                                                   className="centered"
                                                 >
                                                   <div
-<<<<<<< HEAD
-                                                    className="centered"
-                                                  >
-                                                    <div
-                                                      className="spinner"
-                                                    />
-                                                  </div>
-                                                </Spinner>
-                                              </Query>
-                                            </QueryBookingsCount>
-                                          </section>
-                                        </article>
-                                      </BookingsCountBarGraph>
-                                    </div>
-                                  </AveragePieChartList>
-                                  <ComposedBookedRooms
-                                    dateValue={
-                                      Object {
-                                        "endDate": "Feb 19 2019",
-                                        "startDate": "Feb 19 2019",
-                                      }
-=======
                                                     className="spinner"
                                                   />
                                                 </div>
@@ -11309,38 +10037,22 @@ query user ($email: String!) {
                                 <ComposedBookedRooms
                                   dateValue={
                                     Object {
-                                      "endDate": "Feb 18 2019",
-                                      "startDate": "Feb 18 2019",
->>>>>>> feat(roomfeedback): admin should be able to toggle between the list of questions and responses
+                                      "endDate": "Feb 20 2019",
+                                      "startDate": "Feb 20 2019",
                                     }
                                   }
                                 >
                                   <div
                                     className="wrap-composed-rooms"
                                   >
-<<<<<<< HEAD
-                                    <div
-                                      className="wrap-composed-rooms"
-                                    >
-                                      <div>
-                                        <ComposedBooked
-                                          bookedRoomText="Most Booked Rooms"
-                                          component={[Function]}
-                                          date={
-                                            Object {
-                                              "endDate": "Feb 19 2019",
-                                              "startDate": "Feb 19 2019",
-                                            }
-=======
                                     <div>
                                       <ComposedBooked
                                         bookedRoomText="Most Booked Rooms"
                                         component={[Function]}
                                         date={
                                           Object {
-                                            "endDate": "Feb 18 2019",
-                                            "startDate": "Feb 18 2019",
->>>>>>> feat(roomfeedback): admin should be able to toggle between the list of questions and responses
+                                            "endDate": "Feb 20 2019",
+                                            "startDate": "Feb 20 2019",
                                           }
                                         }
                                       >
@@ -11532,30 +10244,19 @@ query user ($email: String!) {
                                         component={[Function]}
                                         date={
                                           Object {
-                                            "endDate": "Feb 18 2019",
-                                            "startDate": "Feb 18 2019",
+                                            "endDate": "Feb 20 2019",
+                                            "startDate": "Feb 20 2019",
                                           }
                                         }
                                         tip=""
                                       >
                                         <BookedRooms
                                           bookedRoomText="Least Booked Rooms"
-<<<<<<< HEAD
-                                          component={[Function]}
-                                          date={
-                                            Object {
-                                              "endDate": "Feb 19 2019",
-                                              "startDate": "Feb 19 2019",
-                                            }
-                                          }
-                                          tip=""
-=======
                                           bookedRoomsList={Array []}
                                           error={null}
                                           fetching={true}
                                           pollIcon="test-file-stub"
                                           tip="The least number of times meeting rooms were booked in a set time period"
->>>>>>> feat(roomfeedback): admin should be able to toggle between the list of questions and responses
                                         >
                                           <div
                                             className="wrap-booked-room"
@@ -11729,23 +10430,13 @@ query user ($email: String!) {
                                         </BookedRooms>
                                       </ComposedBooked>
                                     </div>
-<<<<<<< HEAD
-                                  </ComposedBookedRooms>
-                                  <Apollo(Checkins)
-                                    dateValue={
-                                      Object {
-                                        "endDate": "Feb 19 2019",
-                                        "startDate": "Feb 19 2019",
-                                      }
-=======
                                   </div>
                                 </ComposedBookedRooms>
                                 <Apollo(Checkins)
                                   dateValue={
                                     Object {
-                                      "endDate": "Feb 18 2019",
-                                      "startDate": "Feb 18 2019",
->>>>>>> feat(roomfeedback): admin should be able to toggle between the list of questions and responses
+                                      "endDate": "Feb 20 2019",
+                                      "startDate": "Feb 20 2019",
                                     }
                                   }
                                 >
@@ -11922,10 +10613,10 @@ query user ($email: String!) {
                                     skip={false}
                                     variables={
                                       Object {
-                                        "endDate": "Feb 18 2019",
+                                        "endDate": "Feb 20 2019",
                                         "page": 1,
                                         "perPage": 5,
-                                        "startDate": "Feb 18 2019",
+                                        "startDate": "Feb 20 2019",
                                       }
                                     }
                                     warnUnhandledError={true}
@@ -11943,58 +10634,22 @@ query user ($email: String!) {
                                           "subscribeToMore": [Function],
                                           "updateQuery": [Function],
                                           "variables": Object {
-                                            "endDate": "Feb 18 2019",
+                                            "endDate": "Feb 20 2019",
                                             "page": 1,
                                             "perPage": 5,
-                                            "startDate": "Feb 18 2019",
+                                            "startDate": "Feb 20 2019",
                                           },
                                         }
                                       }
                                       dateValue={
                                         Object {
-<<<<<<< HEAD
-                                          "endDate": "Feb 19 2019",
-                                          "page": 1,
-                                          "perPage": 5,
-                                          "startDate": "Feb 19 2019",
-=======
-                                          "endDate": "Feb 18 2019",
-                                          "startDate": "Feb 18 2019",
->>>>>>> feat(roomfeedback): admin should be able to toggle between the list of questions and responses
+                                          "endDate": "Feb 20 2019",
+                                          "startDate": "Feb 20 2019",
                                         }
                                       }
                                     >
-<<<<<<< HEAD
-                                      <Checkins
-                                        data={
-                                          Object {
-                                            "error": undefined,
-                                            "fetchMore": [Function],
-                                            "loading": true,
-                                            "networkStatus": 1,
-                                            "refetch": [Function],
-                                            "startPolling": [Function],
-                                            "stopPolling": [Function],
-                                            "subscribeToMore": [Function],
-                                            "updateQuery": [Function],
-                                            "variables": Object {
-                                              "endDate": "Feb 19 2019",
-                                              "page": 1,
-                                              "perPage": 5,
-                                              "startDate": "Feb 19 2019",
-                                            },
-                                          }
-                                        }
-                                        dateValue={
-                                          Object {
-                                            "endDate": "Feb 19 2019",
-                                            "startDate": "Feb 19 2019",
-                                          }
-                                        }
-=======
                                       <div
                                         className="checkins"
->>>>>>> feat(roomfeedback): admin should be able to toggle between the list of questions and responses
                                       >
                                         <DonutChart
                                           chartColor={
@@ -12366,19 +11021,6 @@ query user ($email: String!) {
                                                 </Spinner>
                                               </div>
                                             </div>
-<<<<<<< HEAD
-                                          </DonutChart>
-                                        </div>
-                                      </Checkins>
-                                    </Query>
-                                  </Apollo(Checkins)>
-                                  <Apollo(AverageMeetingList)
-                                    dateValue={
-                                      Object {
-                                        "endDate": "Feb 19 2019",
-                                        "startDate": "Feb 19 2019",
-                                      }
-=======
                                           </div>
                                         </DonutChart>
                                       </div>
@@ -12388,9 +11030,8 @@ query user ($email: String!) {
                                 <Apollo(AverageMeetingList)
                                   dateValue={
                                     Object {
-                                      "endDate": "Feb 18 2019",
-                                      "startDate": "Feb 18 2019",
->>>>>>> feat(roomfeedback): admin should be able to toggle between the list of questions and responses
+                                      "endDate": "Feb 20 2019",
+                                      "startDate": "Feb 20 2019",
                                     }
                                   }
                                 >
@@ -12657,10 +11298,10 @@ query user ($email: String!) {
                                     skip={false}
                                     variables={
                                       Object {
-                                        "endDate": "Feb 18 2019",
+                                        "endDate": "Feb 20 2019",
                                         "page": 1,
                                         "perPage": 5,
-                                        "startDate": "Feb 18 2019",
+                                        "startDate": "Feb 20 2019",
                                       }
                                     }
                                     warnUnhandledError={true}
@@ -12678,62 +11319,24 @@ query user ($email: String!) {
                                           "subscribeToMore": [Function],
                                           "updateQuery": [Function],
                                           "variables": Object {
-                                            "endDate": "Feb 18 2019",
+                                            "endDate": "Feb 20 2019",
                                             "page": 1,
                                             "perPage": 5,
-                                            "startDate": "Feb 18 2019",
+                                            "startDate": "Feb 20 2019",
                                           },
                                         }
                                       }
                                       dateValue={
                                         Object {
-<<<<<<< HEAD
-                                          "endDate": "Feb 19 2019",
-                                          "page": 1,
-                                          "perPage": 5,
-                                          "startDate": "Feb 19 2019",
-=======
-                                          "endDate": "Feb 18 2019",
-                                          "startDate": "Feb 18 2019",
->>>>>>> feat(roomfeedback): admin should be able to toggle between the list of questions and responses
+                                          "endDate": "Feb 20 2019",
+                                          "startDate": "Feb 20 2019",
                                         }
                                       }
                                     >
-<<<<<<< HEAD
-                                      <AverageMeetingList
-                                        data={
-                                          Object {
-                                            "error": undefined,
-                                            "fetchMore": [Function],
-                                            "loading": true,
-                                            "networkStatus": 1,
-                                            "refetch": [Function],
-                                            "startPolling": [Function],
-                                            "stopPolling": [Function],
-                                            "subscribeToMore": [Function],
-                                            "updateQuery": [Function],
-                                            "variables": Object {
-                                              "endDate": "Feb 19 2019",
-                                              "page": 1,
-                                              "perPage": 5,
-                                              "startDate": "Feb 19 2019",
-                                            },
-                                          }
-                                        }
-                                        dateValue={
-                                          Object {
-                                            "endDate": "Feb 19 2019",
-                                            "startDate": "Feb 19 2019",
-                                          }
-                                        }
-                                      >
-                                        <QueryAnalyticsLoading>
-=======
                                       <QueryAnalyticsLoading>
                                         <div
                                           className="average-meeting"
                                         >
->>>>>>> feat(roomfeedback): admin should be able to toggle between the list of questions and responses
                                           <div
                                             className="average-meeting-control"
                                           >

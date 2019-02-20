@@ -100,4 +100,14 @@ const GET_ROOM_BY_NAME = gql`
     }
   }`;
 
-export { GET_ROOMS_QUERY as default, GET_LOCATIONS_QUERY, GET_ROOM_BY_NAME };
+const GET_ALL_REMOTE_ROOMS = gql`
+  query {
+    allRemoteRooms {
+      rooms {
+        calendarId
+        name
+      }
+    }
+}`;
+
+export { GET_ROOMS_QUERY as default, GET_LOCATIONS_QUERY, GET_ROOM_BY_NAME, GET_ALL_REMOTE_ROOMS };

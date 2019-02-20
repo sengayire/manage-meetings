@@ -80,7 +80,7 @@ module.exports = merge(common, {
       asset: '[path].gz[query]',
       cache: true,
       algorithm: 'gzip',
-      test: /\.js$|\.css$|\.scss$|\.html$|\.svg$|\.woff$|\.otf$/,
+      test: /\.js$|\.css$|\.scss$|\.html$|\.svg$|\.png$|\.ico$|\.woff$|\.otf$/,
       threshold: 10240,
       minRatio: 0.8,
     }),

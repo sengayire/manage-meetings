@@ -9,6 +9,7 @@ import '../../assets/styles/addRoomNairobi.scss';
 import SelectImage from '../commons/SelectImage';
 import ADD_ROOM_TO_THE_DOJO from '../../graphql/mutations/rooms/AddRoomToDojo';
 import { GET_NAIROBI_DETAILS } from '../../graphql/queries/Offices';
+import { GET_ALL_REMOTE_ROOMS } from '../../graphql/queries/Rooms';
 import notification from '../../utils/notification';
 import getImageUrl from '../helpers/ImageUpload';
 import hasInvalidInputs from '../helpers/InputValidators';
@@ -20,13 +21,14 @@ export class AddRoomNairobi extends Component {
     this.state = {
       roomName: '',
       roomType: 'meeting',
-      roomCalendar: 'andela.com_3137343432303133383637@resource.calendar.google.com',
+      roomCalendar: '',
       officeId: 0,
       roomCapacity: 0,
       officeBlock: '',
       blockOptions: [],
       officeFloor: '',
       floorObject: {},
+      allRemoteRooms: [],
       floorOptions: [],
       uploading: false,
       thumbnailName: 'Upload a thumbnail',
@@ -38,6 +40,7 @@ export class AddRoomNairobi extends Component {
 
   componentWillReceiveProps = (props) => {
     const { officeDetails } = props;
+    const { remoteRooms } = props;
     /* istanbul ignore next */
     if (officeDetails.getOfficeByName) {
       const {
@@ -65,6 +68,16 @@ export class AddRoomNairobi extends Component {
         blockOptions,
         floorObject,
         officeId,
+      });
+    }
+    /* istanbul ignore next */
+    if (remoteRooms.allRemoteRooms) {
+      const { rooms: [{ calendarId, name }] } = remoteRooms.allRemoteRooms;
+      const { rooms } = remoteRooms.allRemoteRooms;
+      this.setState({
+        allRemoteRooms: rooms,
+        roomName: name,
+        roomCalendar: calendarId,
       });
     }
   };
@@ -216,6 +229,7 @@ export class AddRoomNairobi extends Component {
       thumbnailName,
       imageUrl,
       isLoading,
+      allRemoteRooms,
     } = this.state;
     let blockOptionsList = blockOptions;
     const { officeDetails } = this.props;
@@ -246,6 +260,7 @@ export class AddRoomNairobi extends Component {
             blockOptions={blockOptionsList}
             floorOptions={floorOptions}
             handleInputChange={this.handleInputChange}
+            allRemoteRooms={allRemoteRooms}
           />
           <ActionButtons
             withCancel
@@ -265,9 +280,24 @@ AddRoomNairobi.propTypes = {
   officeDetails: PropTypes.shape({
     getOfficeByName: PropTypes.array,
   }).isRequired,
+  // eslint-disable-next-line
+  remoteRooms: PropTypes.shape({
+    allRemoteRooms: PropTypes.shape({
+      rooms: PropTypes.array,
+    }),
+  }),
+};
+
+AddRoomNairobi.defaultProps = {
+  remoteRooms: {
+    allRemoteRooms: {
+      rooms: [{}],
+    },
+  },
 };
 
 export default compose(
   graphql(GET_NAIROBI_DETAILS, { name: 'officeDetails' }),
+  graphql(GET_ALL_REMOTE_ROOMS, { name: 'remoteRooms' }),
   graphql(ADD_ROOM_TO_THE_DOJO, { name: 'dojoMutation' }),
 )(AddRoomNairobi);

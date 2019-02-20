@@ -783,6 +783,82 @@ exports[`AddRoomEpicTower should render properly 1`] = `
             },
             "variables": undefined,
           },
+          "data" => Object {
+            "query": Object {
+              "definitions": Array [
+                Object {
+                  "directives": Array [],
+                  "kind": "OperationDefinition",
+                  "name": undefined,
+                  "operation": "query",
+                  "selectionSet": Object {
+                    "kind": "SelectionSet",
+                    "selections": Array [
+                      Object {
+                        "alias": undefined,
+                        "arguments": Array [],
+                        "directives": Array [],
+                        "kind": "Field",
+                        "name": Object {
+                          "kind": "Name",
+                          "value": "allRemoteRooms",
+                        },
+                        "selectionSet": Object {
+                          "kind": "SelectionSet",
+                          "selections": Array [
+                            Object {
+                              "alias": undefined,
+                              "arguments": Array [],
+                              "directives": Array [],
+                              "kind": "Field",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "rooms",
+                              },
+                              "selectionSet": Object {
+                                "kind": "SelectionSet",
+                                "selections": Array [
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "calendarId",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "name",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
+                                ],
+                              },
+                            },
+                          ],
+                        },
+                      },
+                    ],
+                  },
+                  "variableDefinitions": Array [],
+                },
+              ],
+              "kind": "Document",
+              "loc": Object {
+                "end": 93,
+                "start": 0,
+              },
+            },
+            "variables": undefined,
+          },
         },
         "cache": InMemoryCache {
           "addTypename": false,
@@ -847,6 +923,85 @@ exports[`AddRoomEpicTower should render properly 1`] = `
           "optimistic": Array [],
           "silenceBroadcast": false,
           "watches": Array [
+            Object {
+              "callback": [Function],
+              "optimistic": true,
+              "previousResult": [Function],
+              "query": Object {
+                "definitions": Array [
+                  Object {
+                    "directives": Array [],
+                    "kind": "OperationDefinition",
+                    "name": undefined,
+                    "operation": "query",
+                    "selectionSet": Object {
+                      "kind": "SelectionSet",
+                      "selections": Array [
+                        Object {
+                          "alias": undefined,
+                          "arguments": Array [],
+                          "directives": Array [],
+                          "kind": "Field",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "allRemoteRooms",
+                          },
+                          "selectionSet": Object {
+                            "kind": "SelectionSet",
+                            "selections": Array [
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "rooms",
+                                },
+                                "selectionSet": Object {
+                                  "kind": "SelectionSet",
+                                  "selections": Array [
+                                    Object {
+                                      "alias": undefined,
+                                      "arguments": Array [],
+                                      "directives": Array [],
+                                      "kind": "Field",
+                                      "name": Object {
+                                        "kind": "Name",
+                                        "value": "calendarId",
+                                      },
+                                      "selectionSet": undefined,
+                                    },
+                                    Object {
+                                      "alias": undefined,
+                                      "arguments": Array [],
+                                      "directives": Array [],
+                                      "kind": "Field",
+                                      "name": Object {
+                                        "kind": "Name",
+                                        "value": "name",
+                                      },
+                                      "selectionSet": undefined,
+                                    },
+                                  ],
+                                },
+                              },
+                            ],
+                          },
+                        },
+                      ],
+                    },
+                    "variableDefinitions": Array [],
+                  },
+                ],
+                "kind": "Document",
+                "loc": Object {
+                  "end": 93,
+                  "start": 0,
+                },
+              },
+              "variables": undefined,
+            },
             Object {
               "callback": [Function],
               "optimistic": true,
@@ -1100,6 +1255,85 @@ exports[`AddRoomEpicTower should render properly 1`] = `
                       Object {
                         "directives": Array [],
                         "kind": "OperationDefinition",
+                        "name": undefined,
+                        "operation": "query",
+                        "selectionSet": Object {
+                          "kind": "SelectionSet",
+                          "selections": Array [
+                            Object {
+                              "alias": undefined,
+                              "arguments": Array [],
+                              "directives": Array [],
+                              "kind": "Field",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "allRemoteRooms",
+                              },
+                              "selectionSet": Object {
+                                "kind": "SelectionSet",
+                                "selections": Array [
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "rooms",
+                                    },
+                                    "selectionSet": Object {
+                                      "kind": "SelectionSet",
+                                      "selections": Array [
+                                        Object {
+                                          "alias": undefined,
+                                          "arguments": Array [],
+                                          "directives": Array [],
+                                          "kind": "Field",
+                                          "name": Object {
+                                            "kind": "Name",
+                                            "value": "calendarId",
+                                          },
+                                          "selectionSet": undefined,
+                                        },
+                                        Object {
+                                          "alias": undefined,
+                                          "arguments": Array [],
+                                          "directives": Array [],
+                                          "kind": "Field",
+                                          "name": Object {
+                                            "kind": "Name",
+                                            "value": "name",
+                                          },
+                                          "selectionSet": undefined,
+                                        },
+                                      ],
+                                    },
+                                  },
+                                ],
+                              },
+                            },
+                          ],
+                        },
+                        "variableDefinitions": Array [],
+                      },
+                    ],
+                    "kind": "Document",
+                    "loc": Object {
+                      "end": 93,
+                      "start": 0,
+                    },
+                  },
+                  "variables": undefined,
+                },
+                Object {
+                  "callback": [Function],
+                  "optimistic": true,
+                  "previousResult": [Function],
+                  "query": Object {
+                    "definitions": Array [
+                      Object {
+                        "directives": Array [],
+                        "kind": "OperationDefinition",
                         "name": Object {
                           "kind": "Name",
                           "value": "officeDetails",
@@ -1267,7 +1501,7 @@ exports[`AddRoomEpicTower should render properly 1`] = `
             "request": [Function],
           },
           "fetchQueryPromises": Map {},
-          "idCounter": 3,
+          "idCounter": 5,
           "link": ApolloLink {
             "request": [Function],
           },
@@ -1276,6 +1510,218 @@ exports[`AddRoomEpicTower should render properly 1`] = `
           },
           "onBroadcast": [Function],
           "queries": Map {
+            "2" => Object {
+              "cancel": [Function],
+              "document": Object {
+                "definitions": Array [
+                  Object {
+                    "directives": Array [],
+                    "kind": "OperationDefinition",
+                    "name": undefined,
+                    "operation": "query",
+                    "selectionSet": Object {
+                      "kind": "SelectionSet",
+                      "selections": Array [
+                        Object {
+                          "alias": undefined,
+                          "arguments": Array [],
+                          "directives": Array [],
+                          "kind": "Field",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "allRemoteRooms",
+                          },
+                          "selectionSet": Object {
+                            "kind": "SelectionSet",
+                            "selections": Array [
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "rooms",
+                                },
+                                "selectionSet": Object {
+                                  "kind": "SelectionSet",
+                                  "selections": Array [
+                                    Object {
+                                      "alias": undefined,
+                                      "arguments": Array [],
+                                      "directives": Array [],
+                                      "kind": "Field",
+                                      "name": Object {
+                                        "kind": "Name",
+                                        "value": "calendarId",
+                                      },
+                                      "selectionSet": undefined,
+                                    },
+                                    Object {
+                                      "alias": undefined,
+                                      "arguments": Array [],
+                                      "directives": Array [],
+                                      "kind": "Field",
+                                      "name": Object {
+                                        "kind": "Name",
+                                        "value": "name",
+                                      },
+                                      "selectionSet": undefined,
+                                    },
+                                  ],
+                                },
+                              },
+                            ],
+                          },
+                        },
+                      ],
+                    },
+                    "variableDefinitions": Array [],
+                  },
+                ],
+                "kind": "Document",
+                "loc": Object {
+                  "end": 93,
+                  "start": 0,
+                },
+              },
+              "invalidate": false,
+              "invalidated": false,
+              "lastRequestId": 3,
+              "listeners": Array [
+                [Function],
+              ],
+              "newData": Object {
+                "complete": false,
+                "result": Object {
+                  Symbol(id): "ROOT_QUERY",
+                },
+              },
+              "observableQuery": ObservableQuery {
+                "_subscriber": [Function],
+                "isCurrentlyPolling": false,
+                "isTornDown": false,
+                "lastError": [Error: Network error: No more mocked responses for the query: {
+  allRemoteRooms {
+    rooms {
+      calendarId
+      name
+    }
+  }
+}
+, variables: {}],
+                "lastResult": undefined,
+                "observers": Array [
+                  SubscriptionObserver {
+                    "_subscription": Subscription {
+                      "_cleanup": [Function],
+                      "_observer": Object {
+                        "error": [Function],
+                        "next": [Function],
+                      },
+                      "_queue": undefined,
+                      "_state": "ready",
+                    },
+                  },
+                ],
+                "options": Object {
+                  "context": Object {},
+                  "metadata": Object {
+                    "reactComponent": Object {
+                      "displayName": "Apollo(Apollo(AddRoomToEpicTower))",
+                    },
+                  },
+                  "notifyOnNetworkStatusChange": false,
+                  "query": Object {
+                    "definitions": Array [
+                      Object {
+                        "directives": Array [],
+                        "kind": "OperationDefinition",
+                        "name": undefined,
+                        "operation": "query",
+                        "selectionSet": Object {
+                          "kind": "SelectionSet",
+                          "selections": Array [
+                            Object {
+                              "alias": undefined,
+                              "arguments": Array [],
+                              "directives": Array [],
+                              "kind": "Field",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "allRemoteRooms",
+                              },
+                              "selectionSet": Object {
+                                "kind": "SelectionSet",
+                                "selections": Array [
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "rooms",
+                                    },
+                                    "selectionSet": Object {
+                                      "kind": "SelectionSet",
+                                      "selections": Array [
+                                        Object {
+                                          "alias": undefined,
+                                          "arguments": Array [],
+                                          "directives": Array [],
+                                          "kind": "Field",
+                                          "name": Object {
+                                            "kind": "Name",
+                                            "value": "calendarId",
+                                          },
+                                          "selectionSet": undefined,
+                                        },
+                                        Object {
+                                          "alias": undefined,
+                                          "arguments": Array [],
+                                          "directives": Array [],
+                                          "kind": "Field",
+                                          "name": Object {
+                                            "kind": "Name",
+                                            "value": "name",
+                                          },
+                                          "selectionSet": undefined,
+                                        },
+                                      ],
+                                    },
+                                  },
+                                ],
+                              },
+                            },
+                          ],
+                        },
+                        "variableDefinitions": Array [],
+                      },
+                    ],
+                    "kind": "Document",
+                    "loc": Object {
+                      "end": 93,
+                      "start": 0,
+                    },
+                  },
+                },
+                "queryId": "2",
+                "queryManager": [Circular],
+                "scheduler": QueryScheduler {
+                  "inFlightQueries": Object {},
+                  "intervalQueries": Object {},
+                  "pollingTimers": Object {},
+                  "queryManager": [Circular],
+                  "registeredQueries": Object {},
+                  "ssrMode": false,
+                },
+                "shouldSubscribe": true,
+                "subscriptionHandles": Array [],
+                "variables": Object {},
+              },
+              "subscriptions": Array [],
+            },
             "1" => Object {
               "cancel": [Function],
               "document": Object {
@@ -1443,7 +1889,7 @@ exports[`AddRoomEpicTower should render properly 1`] = `
               },
               "invalidate": false,
               "invalidated": false,
-              "lastRequestId": 2,
+              "lastRequestId": 4,
               "listeners": Array [
                 [Function],
               ],
@@ -1503,7 +1949,7 @@ exports[`AddRoomEpicTower should render properly 1`] = `
                   "context": Object {},
                   "metadata": Object {
                     "reactComponent": Object {
-                      "displayName": "Apollo(Apollo(AddRoomToEpicTower))",
+                      "displayName": "Apollo(Apollo(Apollo(AddRoomToEpicTower)))",
                     },
                   },
                   "notifyOnNetworkStatusChange": false,
@@ -1863,11 +2309,104 @@ exports[`AddRoomEpicTower should render properly 1`] = `
                 "graphQLErrors": Array [],
                 "metadata": Object {
                   "reactComponent": Object {
-                    "displayName": "Apollo(Apollo(AddRoomToEpicTower))",
+                    "displayName": "Apollo(Apollo(Apollo(AddRoomToEpicTower)))",
                   },
                 },
                 "networkError": null,
                 "networkStatus": 7,
+                "previousVariables": null,
+                "variables": Object {},
+              },
+              "2": Object {
+                "document": Object {
+                  "definitions": Array [
+                    Object {
+                      "directives": Array [],
+                      "kind": "OperationDefinition",
+                      "name": undefined,
+                      "operation": "query",
+                      "selectionSet": Object {
+                        "kind": "SelectionSet",
+                        "selections": Array [
+                          Object {
+                            "alias": undefined,
+                            "arguments": Array [],
+                            "directives": Array [],
+                            "kind": "Field",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "allRemoteRooms",
+                            },
+                            "selectionSet": Object {
+                              "kind": "SelectionSet",
+                              "selections": Array [
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "rooms",
+                                  },
+                                  "selectionSet": Object {
+                                    "kind": "SelectionSet",
+                                    "selections": Array [
+                                      Object {
+                                        "alias": undefined,
+                                        "arguments": Array [],
+                                        "directives": Array [],
+                                        "kind": "Field",
+                                        "name": Object {
+                                          "kind": "Name",
+                                          "value": "calendarId",
+                                        },
+                                        "selectionSet": undefined,
+                                      },
+                                      Object {
+                                        "alias": undefined,
+                                        "arguments": Array [],
+                                        "directives": Array [],
+                                        "kind": "Field",
+                                        "name": Object {
+                                          "kind": "Name",
+                                          "value": "name",
+                                        },
+                                        "selectionSet": undefined,
+                                      },
+                                    ],
+                                  },
+                                },
+                              ],
+                            },
+                          },
+                        ],
+                      },
+                      "variableDefinitions": Array [],
+                    },
+                  ],
+                  "kind": "Document",
+                  "loc": Object {
+                    "end": 93,
+                    "start": 0,
+                  },
+                },
+                "graphQLErrors": Array [],
+                "metadata": Object {
+                  "reactComponent": Object {
+                    "displayName": "Apollo(Apollo(AddRoomToEpicTower))",
+                  },
+                },
+                "networkError": [Error: No more mocked responses for the query: {
+  allRemoteRooms {
+    rooms {
+      calendarId
+      name
+    }
+  }
+}
+, variables: {}],
+                "networkStatus": 8,
                 "previousVariables": null,
                 "variables": Object {},
               },
@@ -1950,6 +2489,85 @@ exports[`AddRoomEpicTower should render properly 1`] = `
             "optimistic": Array [],
             "silenceBroadcast": false,
             "watches": Array [
+              Object {
+                "callback": [Function],
+                "optimistic": true,
+                "previousResult": [Function],
+                "query": Object {
+                  "definitions": Array [
+                    Object {
+                      "directives": Array [],
+                      "kind": "OperationDefinition",
+                      "name": undefined,
+                      "operation": "query",
+                      "selectionSet": Object {
+                        "kind": "SelectionSet",
+                        "selections": Array [
+                          Object {
+                            "alias": undefined,
+                            "arguments": Array [],
+                            "directives": Array [],
+                            "kind": "Field",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "allRemoteRooms",
+                            },
+                            "selectionSet": Object {
+                              "kind": "SelectionSet",
+                              "selections": Array [
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "rooms",
+                                  },
+                                  "selectionSet": Object {
+                                    "kind": "SelectionSet",
+                                    "selections": Array [
+                                      Object {
+                                        "alias": undefined,
+                                        "arguments": Array [],
+                                        "directives": Array [],
+                                        "kind": "Field",
+                                        "name": Object {
+                                          "kind": "Name",
+                                          "value": "calendarId",
+                                        },
+                                        "selectionSet": undefined,
+                                      },
+                                      Object {
+                                        "alias": undefined,
+                                        "arguments": Array [],
+                                        "directives": Array [],
+                                        "kind": "Field",
+                                        "name": Object {
+                                          "kind": "Name",
+                                          "value": "name",
+                                        },
+                                        "selectionSet": undefined,
+                                      },
+                                    ],
+                                  },
+                                },
+                              ],
+                            },
+                          },
+                        ],
+                      },
+                      "variableDefinitions": Array [],
+                    },
+                  ],
+                  "kind": "Document",
+                  "loc": Object {
+                    "end": 93,
+                    "start": 0,
+                  },
+                },
+                "variables": undefined,
+              },
               Object {
                 "callback": [Function],
                 "optimistic": true,
@@ -2127,7 +2745,7 @@ exports[`AddRoomEpicTower should render properly 1`] = `
       }
     }
   >
-    <Apollo(Apollo(AddRoomToEpicTower))
+    <Apollo(Apollo(Apollo(AddRoomToEpicTower)))
       locations={
         Array [
           Object {
@@ -2149,7 +2767,7 @@ exports[`AddRoomEpicTower should render properly 1`] = `
       }
     >
       <Query
-        displayName="Apollo(Apollo(AddRoomToEpicTower))"
+        displayName="Apollo(Apollo(Apollo(AddRoomToEpicTower)))"
         query={
           Object {
             "definitions": Array [
@@ -2318,7 +2936,7 @@ exports[`AddRoomEpicTower should render properly 1`] = `
         skip={false}
         warnUnhandledError={true}
       >
-        <Apollo(AddRoomToEpicTower)
+        <Apollo(Apollo(AddRoomToEpicTower))
           locations={
             Array [
               Object {
@@ -2380,143 +2998,27 @@ exports[`AddRoomEpicTower should render properly 1`] = `
             }
           }
         >
-          <Mutation
-            ignoreResults={true}
-            mutation={
+          <Query
+            displayName="Apollo(Apollo(AddRoomToEpicTower))"
+            query={
               Object {
                 "definitions": Array [
                   Object {
                     "directives": Array [],
                     "kind": "OperationDefinition",
-                    "name": Object {
-                      "kind": "Name",
-                      "value": "CreateRoom",
-                    },
-                    "operation": "mutation",
+                    "name": undefined,
+                    "operation": "query",
                     "selectionSet": Object {
                       "kind": "SelectionSet",
                       "selections": Array [
                         Object {
                           "alias": undefined,
-                          "arguments": Array [
-                            Object {
-                              "kind": "Argument",
-                              "name": Object {
-                                "kind": "Name",
-                                "value": "roomType",
-                              },
-                              "value": Object {
-                                "kind": "Variable",
-                                "name": Object {
-                                  "kind": "Name",
-                                  "value": "roomType",
-                                },
-                              },
-                            },
-                            Object {
-                              "kind": "Argument",
-                              "name": Object {
-                                "kind": "Name",
-                                "value": "wingId",
-                              },
-                              "value": Object {
-                                "kind": "Variable",
-                                "name": Object {
-                                  "kind": "Name",
-                                  "value": "roomWingId",
-                                },
-                              },
-                            },
-                            Object {
-                              "kind": "Argument",
-                              "name": Object {
-                                "kind": "Name",
-                                "value": "name",
-                              },
-                              "value": Object {
-                                "kind": "Variable",
-                                "name": Object {
-                                  "kind": "Name",
-                                  "value": "roomName",
-                                },
-                              },
-                            },
-                            Object {
-                              "kind": "Argument",
-                              "name": Object {
-                                "kind": "Name",
-                                "value": "floorId",
-                              },
-                              "value": Object {
-                                "kind": "Variable",
-                                "name": Object {
-                                  "kind": "Name",
-                                  "value": "roomFloorId",
-                                },
-                              },
-                            },
-                            Object {
-                              "kind": "Argument",
-                              "name": Object {
-                                "kind": "Name",
-                                "value": "capacity",
-                              },
-                              "value": Object {
-                                "kind": "Variable",
-                                "name": Object {
-                                  "kind": "Name",
-                                  "value": "roomCapacity",
-                                },
-                              },
-                            },
-                            Object {
-                              "kind": "Argument",
-                              "name": Object {
-                                "kind": "Name",
-                                "value": "calendarId",
-                              },
-                              "value": Object {
-                                "kind": "Variable",
-                                "name": Object {
-                                  "kind": "Name",
-                                  "value": "roomCalendar",
-                                },
-                              },
-                            },
-                            Object {
-                              "kind": "Argument",
-                              "name": Object {
-                                "kind": "Name",
-                                "value": "imageUrl",
-                              },
-                              "value": Object {
-                                "kind": "Variable",
-                                "name": Object {
-                                  "kind": "Name",
-                                  "value": "roomImageUrl",
-                                },
-                              },
-                            },
-                            Object {
-                              "kind": "Argument",
-                              "name": Object {
-                                "kind": "Name",
-                                "value": "officeId",
-                              },
-                              "value": Object {
-                                "kind": "Variable",
-                                "name": Object {
-                                  "kind": "Name",
-                                  "value": "office_id",
-                                },
-                              },
-                            },
-                          ],
+                          "arguments": Array [],
                           "directives": Array [],
                           "kind": "Field",
                           "name": Object {
                             "kind": "Name",
-                            "value": "createRoom",
+                            "value": "allRemoteRooms",
                           },
                           "selectionSet": Object {
                             "kind": "SelectionSet",
@@ -2528,7 +3030,7 @@ exports[`AddRoomEpicTower should render properly 1`] = `
                                 "kind": "Field",
                                 "name": Object {
                                   "kind": "Name",
-                                  "value": "room",
+                                  "value": "rooms",
                                 },
                                 "selectionSet": Object {
                                   "kind": "SelectionSet",
@@ -2540,7 +3042,7 @@ exports[`AddRoomEpicTower should render properly 1`] = `
                                       "kind": "Field",
                                       "name": Object {
                                         "kind": "Name",
-                                        "value": "id",
+                                        "value": "calendarId",
                                       },
                                       "selectionSet": undefined,
                                     },
@@ -2555,39 +3057,6 @@ exports[`AddRoomEpicTower should render properly 1`] = `
                                       },
                                       "selectionSet": undefined,
                                     },
-                                    Object {
-                                      "alias": undefined,
-                                      "arguments": Array [],
-                                      "directives": Array [],
-                                      "kind": "Field",
-                                      "name": Object {
-                                        "kind": "Name",
-                                        "value": "roomType",
-                                      },
-                                      "selectionSet": undefined,
-                                    },
-                                    Object {
-                                      "alias": undefined,
-                                      "arguments": Array [],
-                                      "directives": Array [],
-                                      "kind": "Field",
-                                      "name": Object {
-                                        "kind": "Name",
-                                        "value": "capacity",
-                                      },
-                                      "selectionSet": undefined,
-                                    },
-                                    Object {
-                                      "alias": undefined,
-                                      "arguments": Array [],
-                                      "directives": Array [],
-                                      "kind": "Field",
-                                      "name": Object {
-                                        "kind": "Name",
-                                        "value": "imageUrl",
-                                      },
-                                      "selectionSet": undefined,
-                                    },
                                   ],
                                 },
                               },
@@ -2596,182 +3065,20 @@ exports[`AddRoomEpicTower should render properly 1`] = `
                         },
                       ],
                     },
-                    "variableDefinitions": Array [
-                      Object {
-                        "defaultValue": undefined,
-                        "kind": "VariableDefinition",
-                        "type": Object {
-                          "kind": "NonNullType",
-                          "type": Object {
-                            "kind": "NamedType",
-                            "name": Object {
-                              "kind": "Name",
-                              "value": "String",
-                            },
-                          },
-                        },
-                        "variable": Object {
-                          "kind": "Variable",
-                          "name": Object {
-                            "kind": "Name",
-                            "value": "roomType",
-                          },
-                        },
-                      },
-                      Object {
-                        "defaultValue": undefined,
-                        "kind": "VariableDefinition",
-                        "type": Object {
-                          "kind": "NamedType",
-                          "name": Object {
-                            "kind": "Name",
-                            "value": "Int",
-                          },
-                        },
-                        "variable": Object {
-                          "kind": "Variable",
-                          "name": Object {
-                            "kind": "Name",
-                            "value": "roomWingId",
-                          },
-                        },
-                      },
-                      Object {
-                        "defaultValue": undefined,
-                        "kind": "VariableDefinition",
-                        "type": Object {
-                          "kind": "NonNullType",
-                          "type": Object {
-                            "kind": "NamedType",
-                            "name": Object {
-                              "kind": "Name",
-                              "value": "String",
-                            },
-                          },
-                        },
-                        "variable": Object {
-                          "kind": "Variable",
-                          "name": Object {
-                            "kind": "Name",
-                            "value": "roomName",
-                          },
-                        },
-                      },
-                      Object {
-                        "defaultValue": undefined,
-                        "kind": "VariableDefinition",
-                        "type": Object {
-                          "kind": "NonNullType",
-                          "type": Object {
-                            "kind": "NamedType",
-                            "name": Object {
-                              "kind": "Name",
-                              "value": "Int",
-                            },
-                          },
-                        },
-                        "variable": Object {
-                          "kind": "Variable",
-                          "name": Object {
-                            "kind": "Name",
-                            "value": "roomFloorId",
-                          },
-                        },
-                      },
-                      Object {
-                        "defaultValue": undefined,
-                        "kind": "VariableDefinition",
-                        "type": Object {
-                          "kind": "NonNullType",
-                          "type": Object {
-                            "kind": "NamedType",
-                            "name": Object {
-                              "kind": "Name",
-                              "value": "Int",
-                            },
-                          },
-                        },
-                        "variable": Object {
-                          "kind": "Variable",
-                          "name": Object {
-                            "kind": "Name",
-                            "value": "roomCapacity",
-                          },
-                        },
-                      },
-                      Object {
-                        "defaultValue": undefined,
-                        "kind": "VariableDefinition",
-                        "type": Object {
-                          "kind": "NonNullType",
-                          "type": Object {
-                            "kind": "NamedType",
-                            "name": Object {
-                              "kind": "Name",
-                              "value": "String",
-                            },
-                          },
-                        },
-                        "variable": Object {
-                          "kind": "Variable",
-                          "name": Object {
-                            "kind": "Name",
-                            "value": "roomCalendar",
-                          },
-                        },
-                      },
-                      Object {
-                        "defaultValue": undefined,
-                        "kind": "VariableDefinition",
-                        "type": Object {
-                          "kind": "NonNullType",
-                          "type": Object {
-                            "kind": "NamedType",
-                            "name": Object {
-                              "kind": "Name",
-                              "value": "Int",
-                            },
-                          },
-                        },
-                        "variable": Object {
-                          "kind": "Variable",
-                          "name": Object {
-                            "kind": "Name",
-                            "value": "office_id",
-                          },
-                        },
-                      },
-                      Object {
-                        "defaultValue": undefined,
-                        "kind": "VariableDefinition",
-                        "type": Object {
-                          "kind": "NamedType",
-                          "name": Object {
-                            "kind": "Name",
-                            "value": "String",
-                          },
-                        },
-                        "variable": Object {
-                          "kind": "Variable",
-                          "name": Object {
-                            "kind": "Name",
-                            "value": "roomImageUrl",
-                          },
-                        },
-                      },
-                    ],
+                    "variableDefinitions": Array [],
                   },
                 ],
                 "kind": "Document",
                 "loc": Object {
-                  "end": 471,
+                  "end": 93,
                   "start": 0,
                 },
               }
             }
+            skip={false}
+            warnUnhandledError={true}
           >
-            <AddRoomToEpicTower
-              epicTowerMutation={[Function]}
+            <Apollo(AddRoomToEpicTower)
               locations={
                 Array [
                   Object {
@@ -2832,135 +3139,634 @@ exports[`AddRoomEpicTower should render properly 1`] = `
                   Symbol(id): "ROOT_QUERY",
                 }
               }
+              remoteRooms={
+                Object {
+                  "error": [Error: Network error: No more mocked responses for the query: {
+  allRemoteRooms {
+    rooms {
+      calendarId
+      name
+    }
+  }
+}
+, variables: {}],
+                  "fetchMore": [Function],
+                  "loading": false,
+                  "networkStatus": 8,
+                  "refetch": [Function],
+                  "startPolling": [Function],
+                  "stopPolling": [Function],
+                  "subscribeToMore": [Function],
+                  "updateQuery": [Function],
+                  "variables": Object {},
+                }
+              }
             >
-              <MrmModal
-                buttonText="Epic Tower"
-                className="add-room-modal"
-                closeModal={false}
-                handleCloseRequest={[Function]}
-                modalButtonClassName="button"
-                title="ADD ROOM"
-              >
-                <IconButtons
-                  buttonText="Epic Tower"
-                  disabled={false}
-                  modalButtonClassName="button"
-                  openModal={[Function]}
-                >
-                  <button
-                    className="button"
-                    disabled={false}
-                    id="modal-button"
-                    onClick={[Function]}
-                  >
-                    Epic Tower
-                  </button>
-                </IconButtons>
-                <Modal
-                  ariaHideApp={false}
-                  bodyOpenClassName="ReactModal__Body--open"
-                  className="add-room-modal"
-                  closeTimeoutMS={0}
-                  contentLabel="Parent Modal"
-                  isOpen={false}
-                  onAfterOpen={[Function]}
-                  onRequestClose={[Function]}
-                  parentSelector={[Function]}
-                  portalClassName="ReactModalPortal"
-                  shouldCloseOnEsc={true}
-                  shouldCloseOnOverlayClick={false}
-                  shouldFocusAfterRender={true}
-                  shouldReturnFocusAfterClose={true}
-                  style={
-                    Object {
-                      "content": Object {
-                        "backgroundColor": "#ffffff",
-                        "border": "1px solid #CCCCCC",
-                        "borderRadius": "4px",
-                        "bottom": "auto",
-                        "boxShadow": "0 2px 40px 10px rgba(185, 180, 180, 0.2)",
-                        "fontFamily": "DINPro-Regular",
-                        "left": "50%",
-                        "marginRight": "-50%",
-                        "outline": "none",
-                        "overflow": "auto",
-                        "position": "absolute",
-                        "right": "auto",
-                        "top": "50%",
-                        "transform": "translate(-50%, -50%)",
+              <Mutation
+                ignoreResults={true}
+                mutation={
+                  Object {
+                    "definitions": Array [
+                      Object {
+                        "directives": Array [],
+                        "kind": "OperationDefinition",
+                        "name": Object {
+                          "kind": "Name",
+                          "value": "CreateRoom",
+                        },
+                        "operation": "mutation",
+                        "selectionSet": Object {
+                          "kind": "SelectionSet",
+                          "selections": Array [
+                            Object {
+                              "alias": undefined,
+                              "arguments": Array [
+                                Object {
+                                  "kind": "Argument",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "roomType",
+                                  },
+                                  "value": Object {
+                                    "kind": "Variable",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "roomType",
+                                    },
+                                  },
+                                },
+                                Object {
+                                  "kind": "Argument",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "wingId",
+                                  },
+                                  "value": Object {
+                                    "kind": "Variable",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "roomWingId",
+                                    },
+                                  },
+                                },
+                                Object {
+                                  "kind": "Argument",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "name",
+                                  },
+                                  "value": Object {
+                                    "kind": "Variable",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "roomName",
+                                    },
+                                  },
+                                },
+                                Object {
+                                  "kind": "Argument",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "floorId",
+                                  },
+                                  "value": Object {
+                                    "kind": "Variable",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "roomFloorId",
+                                    },
+                                  },
+                                },
+                                Object {
+                                  "kind": "Argument",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "capacity",
+                                  },
+                                  "value": Object {
+                                    "kind": "Variable",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "roomCapacity",
+                                    },
+                                  },
+                                },
+                                Object {
+                                  "kind": "Argument",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "calendarId",
+                                  },
+                                  "value": Object {
+                                    "kind": "Variable",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "roomCalendar",
+                                    },
+                                  },
+                                },
+                                Object {
+                                  "kind": "Argument",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "imageUrl",
+                                  },
+                                  "value": Object {
+                                    "kind": "Variable",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "roomImageUrl",
+                                    },
+                                  },
+                                },
+                                Object {
+                                  "kind": "Argument",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "officeId",
+                                  },
+                                  "value": Object {
+                                    "kind": "Variable",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "office_id",
+                                    },
+                                  },
+                                },
+                              ],
+                              "directives": Array [],
+                              "kind": "Field",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "createRoom",
+                              },
+                              "selectionSet": Object {
+                                "kind": "SelectionSet",
+                                "selections": Array [
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "room",
+                                    },
+                                    "selectionSet": Object {
+                                      "kind": "SelectionSet",
+                                      "selections": Array [
+                                        Object {
+                                          "alias": undefined,
+                                          "arguments": Array [],
+                                          "directives": Array [],
+                                          "kind": "Field",
+                                          "name": Object {
+                                            "kind": "Name",
+                                            "value": "id",
+                                          },
+                                          "selectionSet": undefined,
+                                        },
+                                        Object {
+                                          "alias": undefined,
+                                          "arguments": Array [],
+                                          "directives": Array [],
+                                          "kind": "Field",
+                                          "name": Object {
+                                            "kind": "Name",
+                                            "value": "name",
+                                          },
+                                          "selectionSet": undefined,
+                                        },
+                                        Object {
+                                          "alias": undefined,
+                                          "arguments": Array [],
+                                          "directives": Array [],
+                                          "kind": "Field",
+                                          "name": Object {
+                                            "kind": "Name",
+                                            "value": "roomType",
+                                          },
+                                          "selectionSet": undefined,
+                                        },
+                                        Object {
+                                          "alias": undefined,
+                                          "arguments": Array [],
+                                          "directives": Array [],
+                                          "kind": "Field",
+                                          "name": Object {
+                                            "kind": "Name",
+                                            "value": "capacity",
+                                          },
+                                          "selectionSet": undefined,
+                                        },
+                                        Object {
+                                          "alias": undefined,
+                                          "arguments": Array [],
+                                          "directives": Array [],
+                                          "kind": "Field",
+                                          "name": Object {
+                                            "kind": "Name",
+                                            "value": "imageUrl",
+                                          },
+                                          "selectionSet": undefined,
+                                        },
+                                      ],
+                                    },
+                                  },
+                                ],
+                              },
+                            },
+                          ],
+                        },
+                        "variableDefinitions": Array [
+                          Object {
+                            "defaultValue": undefined,
+                            "kind": "VariableDefinition",
+                            "type": Object {
+                              "kind": "NonNullType",
+                              "type": Object {
+                                "kind": "NamedType",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "String",
+                                },
+                              },
+                            },
+                            "variable": Object {
+                              "kind": "Variable",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "roomType",
+                              },
+                            },
+                          },
+                          Object {
+                            "defaultValue": undefined,
+                            "kind": "VariableDefinition",
+                            "type": Object {
+                              "kind": "NamedType",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "Int",
+                              },
+                            },
+                            "variable": Object {
+                              "kind": "Variable",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "roomWingId",
+                              },
+                            },
+                          },
+                          Object {
+                            "defaultValue": undefined,
+                            "kind": "VariableDefinition",
+                            "type": Object {
+                              "kind": "NonNullType",
+                              "type": Object {
+                                "kind": "NamedType",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "String",
+                                },
+                              },
+                            },
+                            "variable": Object {
+                              "kind": "Variable",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "roomName",
+                              },
+                            },
+                          },
+                          Object {
+                            "defaultValue": undefined,
+                            "kind": "VariableDefinition",
+                            "type": Object {
+                              "kind": "NonNullType",
+                              "type": Object {
+                                "kind": "NamedType",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "Int",
+                                },
+                              },
+                            },
+                            "variable": Object {
+                              "kind": "Variable",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "roomFloorId",
+                              },
+                            },
+                          },
+                          Object {
+                            "defaultValue": undefined,
+                            "kind": "VariableDefinition",
+                            "type": Object {
+                              "kind": "NonNullType",
+                              "type": Object {
+                                "kind": "NamedType",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "Int",
+                                },
+                              },
+                            },
+                            "variable": Object {
+                              "kind": "Variable",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "roomCapacity",
+                              },
+                            },
+                          },
+                          Object {
+                            "defaultValue": undefined,
+                            "kind": "VariableDefinition",
+                            "type": Object {
+                              "kind": "NonNullType",
+                              "type": Object {
+                                "kind": "NamedType",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "String",
+                                },
+                              },
+                            },
+                            "variable": Object {
+                              "kind": "Variable",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "roomCalendar",
+                              },
+                            },
+                          },
+                          Object {
+                            "defaultValue": undefined,
+                            "kind": "VariableDefinition",
+                            "type": Object {
+                              "kind": "NonNullType",
+                              "type": Object {
+                                "kind": "NamedType",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "Int",
+                                },
+                              },
+                            },
+                            "variable": Object {
+                              "kind": "Variable",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "office_id",
+                              },
+                            },
+                          },
+                          Object {
+                            "defaultValue": undefined,
+                            "kind": "VariableDefinition",
+                            "type": Object {
+                              "kind": "NamedType",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "String",
+                              },
+                            },
+                            "variable": Object {
+                              "kind": "Variable",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "roomImageUrl",
+                              },
+                            },
+                          },
+                        ],
                       },
+                    ],
+                    "kind": "Document",
+                    "loc": Object {
+                      "end": 471,
+                      "start": 0,
+                    },
+                  }
+                }
+              >
+                <AddRoomToEpicTower
+                  epicTowerMutation={[Function]}
+                  locations={
+                    Array [
+                      Object {
+                        "__typename": "Location",
+                        "id": "1",
+                        "name": "Kampala",
+                      },
+                      Object {
+                        "__typename": "Location",
+                        "id": "2",
+                        "name": "Lagos",
+                      },
+                      Object {
+                        "__typename": "Location",
+                        "id": "3",
+                        "name": "Nairobi",
+                      },
+                    ]
+                  }
+                  officeDetails={
+                    Object {
+                      "error": undefined,
+                      "fetchMore": [Function],
+                      "getOfficeByName": Array [
+                        Object {
+                          "blocks": Array [
+                            Object {
+                              "floors": Array [
+                                Object {
+                                  "id": "1",
+                                  "name": "fourth floor",
+                                  "wings": Array [
+                                    Object {
+                                      "id": "1",
+                                      "name": "Big Apple",
+                                      Symbol(id): "ROOT_QUERY.getOfficeByName({\\"name\\":\\"EPIC Tower\\"}).0.blocks.0.floors.0.wings.0",
+                                    },
+                                  ],
+                                  Symbol(id): "ROOT_QUERY.getOfficeByName({\\"name\\":\\"EPIC Tower\\"}).0.blocks.0.floors.0",
+                                },
+                              ],
+                              "id": "1",
+                              Symbol(id): "ROOT_QUERY.getOfficeByName({\\"name\\":\\"EPIC Tower\\"}).0.blocks.0",
+                            },
+                          ],
+                          "id": "1",
+                          Symbol(id): "ROOT_QUERY.getOfficeByName({\\"name\\":\\"EPIC Tower\\"}).0",
+                        },
+                      ],
+                      "loading": false,
+                      "networkStatus": 7,
+                      "refetch": [Function],
+                      "startPolling": [Function],
+                      "stopPolling": [Function],
+                      "subscribeToMore": [Function],
+                      "updateQuery": [Function],
+                      "variables": Object {},
+                      Symbol(id): "ROOT_QUERY",
+                    }
+                  }
+                  remoteRooms={
+                    Object {
+                      "error": [Error: Network error: No more mocked responses for the query: {
+  allRemoteRooms {
+    rooms {
+      calendarId
+      name
+    }
+  }
+}
+, variables: {}],
+                      "fetchMore": [Function],
+                      "loading": false,
+                      "networkStatus": 8,
+                      "refetch": [Function],
+                      "startPolling": [Function],
+                      "stopPolling": [Function],
+                      "subscribeToMore": [Function],
+                      "updateQuery": [Function],
+                      "variables": Object {},
                     }
                   }
                 >
-                  <ModalPortal
-                    ariaHideApp={false}
-                    bodyOpenClassName="ReactModal__Body--open"
+                  <MrmModal
+                    buttonText="Epic Tower"
                     className="add-room-modal"
-                    closeTimeoutMS={0}
-                    contentLabel="Parent Modal"
-                    defaultStyles={
-                      Object {
-                        "content": Object {
-                          "WebkitOverflowScrolling": "touch",
-                          "background": "#fff",
-                          "border": "1px solid #ccc",
-                          "borderRadius": "4px",
-                          "bottom": "40px",
-                          "left": "40px",
-                          "outline": "none",
-                          "overflow": "auto",
-                          "padding": "20px",
-                          "position": "absolute",
-                          "right": "40px",
-                          "top": "40px",
-                        },
-                        "overlay": Object {
-                          "backgroundColor": "rgba(255, 255, 255, 0.75)",
-                          "bottom": 0,
-                          "left": 0,
-                          "position": "fixed",
-                          "right": 0,
-                          "top": 0,
-                        },
+                    closeModal={false}
+                    handleCloseRequest={[Function]}
+                    modalButtonClassName="button"
+                    title="ADD ROOM"
+                  >
+                    <IconButtons
+                      buttonText="Epic Tower"
+                      disabled={false}
+                      modalButtonClassName="button"
+                      openModal={[Function]}
+                    >
+                      <button
+                        className="button"
+                        disabled={false}
+                        id="modal-button"
+                        onClick={[Function]}
+                      >
+                        Epic Tower
+                      </button>
+                    </IconButtons>
+                    <Modal
+                      ariaHideApp={false}
+                      bodyOpenClassName="ReactModal__Body--open"
+                      className="add-room-modal"
+                      closeTimeoutMS={0}
+                      contentLabel="Parent Modal"
+                      isOpen={false}
+                      onAfterOpen={[Function]}
+                      onRequestClose={[Function]}
+                      parentSelector={[Function]}
+                      portalClassName="ReactModalPortal"
+                      shouldCloseOnEsc={true}
+                      shouldCloseOnOverlayClick={false}
+                      shouldFocusAfterRender={true}
+                      shouldReturnFocusAfterClose={true}
+                      style={
+                        Object {
+                          "content": Object {
+                            "backgroundColor": "#ffffff",
+                            "border": "1px solid #CCCCCC",
+                            "borderRadius": "4px",
+                            "bottom": "auto",
+                            "boxShadow": "0 2px 40px 10px rgba(185, 180, 180, 0.2)",
+                            "fontFamily": "DINPro-Regular",
+                            "left": "50%",
+                            "marginRight": "-50%",
+                            "outline": "none",
+                            "overflow": "auto",
+                            "position": "absolute",
+                            "right": "auto",
+                            "top": "50%",
+                            "transform": "translate(-50%, -50%)",
+                          },
+                        }
                       }
-                    }
-                    isOpen={false}
-                    onAfterOpen={[Function]}
-                    onRequestClose={[Function]}
-                    parentSelector={[Function]}
-                    portalClassName="ReactModalPortal"
-                    shouldCloseOnEsc={true}
-                    shouldCloseOnOverlayClick={false}
-                    shouldFocusAfterRender={true}
-                    shouldReturnFocusAfterClose={true}
-                    style={
-                      Object {
-                        "content": Object {
-                          "backgroundColor": "#ffffff",
-                          "border": "1px solid #CCCCCC",
-                          "borderRadius": "4px",
-                          "bottom": "auto",
-                          "boxShadow": "0 2px 40px 10px rgba(185, 180, 180, 0.2)",
-                          "fontFamily": "DINPro-Regular",
-                          "left": "50%",
-                          "marginRight": "-50%",
-                          "outline": "none",
-                          "overflow": "auto",
-                          "position": "absolute",
-                          "right": "auto",
-                          "top": "50%",
-                          "transform": "translate(-50%, -50%)",
-                        },
-                      }
-                    }
-                  />
-                </Modal>
-              </MrmModal>
-            </AddRoomToEpicTower>
-          </Mutation>
-        </Apollo(AddRoomToEpicTower)>
+                    >
+                      <ModalPortal
+                        ariaHideApp={false}
+                        bodyOpenClassName="ReactModal__Body--open"
+                        className="add-room-modal"
+                        closeTimeoutMS={0}
+                        contentLabel="Parent Modal"
+                        defaultStyles={
+                          Object {
+                            "content": Object {
+                              "WebkitOverflowScrolling": "touch",
+                              "background": "#fff",
+                              "border": "1px solid #ccc",
+                              "borderRadius": "4px",
+                              "bottom": "40px",
+                              "left": "40px",
+                              "outline": "none",
+                              "overflow": "auto",
+                              "padding": "20px",
+                              "position": "absolute",
+                              "right": "40px",
+                              "top": "40px",
+                            },
+                            "overlay": Object {
+                              "backgroundColor": "rgba(255, 255, 255, 0.75)",
+                              "bottom": 0,
+                              "left": 0,
+                              "position": "fixed",
+                              "right": 0,
+                              "top": 0,
+                            },
+                          }
+                        }
+                        isOpen={false}
+                        onAfterOpen={[Function]}
+                        onRequestClose={[Function]}
+                        parentSelector={[Function]}
+                        portalClassName="ReactModalPortal"
+                        shouldCloseOnEsc={true}
+                        shouldCloseOnOverlayClick={false}
+                        shouldFocusAfterRender={true}
+                        shouldReturnFocusAfterClose={true}
+                        style={
+                          Object {
+                            "content": Object {
+                              "backgroundColor": "#ffffff",
+                              "border": "1px solid #CCCCCC",
+                              "borderRadius": "4px",
+                              "bottom": "auto",
+                              "boxShadow": "0 2px 40px 10px rgba(185, 180, 180, 0.2)",
+                              "fontFamily": "DINPro-Regular",
+                              "left": "50%",
+                              "marginRight": "-50%",
+                              "outline": "none",
+                              "overflow": "auto",
+                              "position": "absolute",
+                              "right": "auto",
+                              "top": "50%",
+                              "transform": "translate(-50%, -50%)",
+                            },
+                          }
+                        }
+                      />
+                    </Modal>
+                  </MrmModal>
+                </AddRoomToEpicTower>
+              </Mutation>
+            </Apollo(AddRoomToEpicTower)>
+          </Query>
+        </Apollo(Apollo(AddRoomToEpicTower))>
       </Query>
-    </Apollo(Apollo(AddRoomToEpicTower))>
+    </Apollo(Apollo(Apollo(AddRoomToEpicTower)))>
   </ApolloProvider>
 </MockedProvider>
 `;

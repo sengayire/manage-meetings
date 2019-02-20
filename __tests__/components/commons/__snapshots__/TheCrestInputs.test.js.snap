@@ -4,18 +4,23 @@ exports[`TheCrestInputs component should render correctly 1`] = `
 <div
   className="kla-inputs"
 >
-  <Input
-    controlsClass=""
+  <SelectInput
     id="roomName"
-    inputClass="mrm-input default-input"
-    labelClass="input1"
-    labelName="Room Name"
+    isValue={false}
+    labelText="Select Room"
     name="roomName"
     onChange={[MockFunction]}
-    placeholder="Enter room name"
-    required={true}
-    type="text"
+    options={
+      Array [
+        Object {},
+      ]
+    }
+    placeholder="Select Room"
+    placeholderValue=""
+    required={false}
+    selectInputClassName="room-wrapper default-select"
     value=""
+    wrapperClassName="floor-wrapper"
   />
   <div
     className="two-inputs"

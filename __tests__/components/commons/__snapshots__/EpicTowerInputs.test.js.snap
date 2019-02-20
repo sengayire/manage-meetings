@@ -4,18 +4,23 @@ exports[`EpicTowerInputs component should render correctly 1`] = `
 <div
   className="epic-tower-inputs"
 >
-  <Input
-    controlsClass=""
-    id="roomName"
-    inputClass="mrm-input epic-tower-input"
-    labelClass="input1"
-    labelName="Room Name"
+  <SelectInput
+    id="roomFloor"
+    isValue={false}
+    labelText="Select Room"
     name="roomName"
     onChange={[MockFunction]}
-    placeholder="Enter room name"
-    required={true}
-    type="text"
+    options={
+      Array [
+        Object {},
+      ]
+    }
+    placeholder="Select Room"
+    placeholderValue=""
+    required={false}
+    selectInputClassName="floor-wrapper default-select"
     value=""
+    wrapperClassName="floor-label"
   />
   <Input
     controlsClass=""

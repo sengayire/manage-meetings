@@ -67,8 +67,8 @@ describe('AddRoomNairobi', () => {
   });
 
   it('should have two select and two text input elements', () => {
-    expect(wrapper.find('Input').length).toBe(2);
-    expect(wrapper.find('SelectInput').length).toBe(2);
+    expect(wrapper.find('Input').length).toBe(1);
+    expect(wrapper.find('SelectInput').length).toBe(3);
   });
 
   it('should handle change in roomName', () => {

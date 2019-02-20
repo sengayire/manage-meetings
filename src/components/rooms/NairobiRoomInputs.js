@@ -13,18 +13,19 @@ import '../../assets/styles/addroom.scss';
  */
 const NairobiRoomInputs = ({
   roomName, roomCapacity, officeBlock, officeFloor, blockOptions, floorOptions, handleInputChange,
+  allRemoteRooms,
 }) => (
   <div className="form-inputs">
-    <Input
-      labelName="Room Name"
+    <Select
+      labelText="Select Room"
       name="roomName"
+      id="officeBlock"
       value={roomName}
-      placeholder="Enter room name"
-      id="roomName"
       onChange={handleInputChange}
+      wrapperClassName="input-wrapper"
+      placeholder="Select Room"
+      options={allRemoteRooms}
       required
-      pattern="^[a-zA-Z]+(([' .-][a-zA-Z ])?[a-zA-Z]*)*$"
-      title="Name cannot be numbers or any special characters"
     />
 
     <Input
@@ -73,6 +74,7 @@ NairobiRoomInputs.propTypes = {
   officeBlock: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
   blockOptions: PropTypes.array.isRequired,
   floorOptions: PropTypes.array.isRequired,
+  allRemoteRooms: PropTypes.arrayOf(PropTypes.object).isRequired,
   handleInputChange: PropTypes.func.isRequired,
 };
 

@@ -18,17 +18,20 @@ const EpicTowerInputs = ({
   roomWing,
   wingOptions,
   handleInputChange,
+  allRemoteRooms,
 }) => (
   <div className="epic-tower-inputs">
-    <Input
-      id="roomName"
+    <Select
+      labelText="Select Room"
       name="roomName"
-      inputClass="mrm-input epic-tower-input"
-      placeholder="Enter room name"
+      id="roomFloor"
       value={roomName}
-      labelName="Room Name"
       onChange={handleInputChange}
-      required
+      options={allRemoteRooms}
+      wrapperClassName="floor-label"
+      placeholder="Select Room"
+      placeholderValue=""
+      selectInputClassName="floor-wrapper default-select"
     />
     <Input
       id="roomCapacity"
@@ -78,8 +81,12 @@ EpicTowerInputs.propTypes = {
   floorOptions: PropTypes.arrayOf(PropTypes.object).isRequired,
   roomCapacity: PropTypes.number.isRequired,
   roomWing: PropTypes.number.isRequired,
+  allRemoteRooms: PropTypes.arrayOf(PropTypes.object),
   wingOptions: PropTypes.arrayOf(PropTypes.object).isRequired,
   handleInputChange: PropTypes.func.isRequired,
+};
+EpicTowerInputs.defaultProps = {
+  allRemoteRooms: [{}],
 };
 
 export default EpicTowerInputs;
