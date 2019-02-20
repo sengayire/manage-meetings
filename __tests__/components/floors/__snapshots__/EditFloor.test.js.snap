@@ -31,7 +31,6 @@ exports[`EditFloor Component renders properly 1`] = `
       cancelButtonText="CANCEL"
       isLoading={false}
       onClickCancel={[Function]}
-      onClickSubmit={[Function]}
       withCancel={true}
     />
   </form>

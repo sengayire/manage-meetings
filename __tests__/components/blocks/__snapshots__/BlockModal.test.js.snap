@@ -30,7 +30,6 @@ exports[`BlockModal Component renders properly 1`] = `
       cancelButtonText="CANCEL"
       isLoading={false}
       onClickCancel={[MockFunction]}
-      onClickSubmit={[Function]}
       withCancel={true}
     />
   </form>

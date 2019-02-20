@@ -1,49 +1,43 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { mount } from 'enzyme';
 import AddQuestion from '../../../src/components/roomFeedback/AddQuestion';
+import MrmModal from '../../../src/components/commons/Modal';
 
 describe('AddQuestion component', () => {
-  const wrapper = shallow(<AddQuestion />);
-  const questionWrapper = wrapper.instance();
+  const wrapper = mount(<AddQuestion />);
 
-  it('should be rendered without errors', () => {
-    expect(wrapper).toMatchSnapshot();
-  });
-
-  it('should have a div', () => {
-    const div = wrapper.find('div');
-    expect(div).toHaveLength(8);
+  it('should render a modal component with length of 1', () => {
+    expect(wrapper.find(MrmModal).length).toEqual(1);
   });
 
   it('should display the input fields in the modal', () => {
+    wrapper.find('#modal-button').simulate('click');
     expect(wrapper.find('input')).toHaveLength(3);
   });
 
-  it('should toggle modal visibility by changing state when cancel is clicked', () => {
+  it('should set the value of questionType to the option selected', () => {
+    const event = {
+      target: { name: 'questionType', value: 2 },
+    };
+
+    expect(wrapper.state().questionType).toEqual('');
+    wrapper.find('.default-select').simulate('change', event);
+    expect(wrapper.state().questionType).toEqual(2);
+  });
+
+  it('should call sendDateData', () => {
+    const spy = jest.spyOn(wrapper.instance(), 'sendDateData');
+    spy();
+    expect(spy).toHaveBeenCalled();
+  });
+
+  it('should close the question modal when closeModal is called', () => {
     expect(wrapper.state().closeModal).toBe(false);
-    wrapper.find('.button-container').childAt(1).simulate('click');
+    expect(wrapper.find('.question-form').length).toEqual(1);
+
+    wrapper.find('button').at(2).simulate('click');
+
     expect(wrapper.state().closeModal).toBe(true);
-  });
-
-  it('should toggle the calendar on button click', () => {
-    expect(wrapper.state().calenderOpen).toBe(false);
-    wrapper.find('#calendar-btn').at(0).simulate('click');
-    expect(wrapper.state().calenderOpen).toBe(true);
-  });
-
-  it('should set the date value to state when sendDateData is called', () => {
-    questionWrapper.sendDateData('05 Jan 2018', '06 Jan 2018');
-    expect(questionWrapper.state.startDate).toEqual('05 Jan 2018');
-  });
-
-  it('should change closeModal state to false', () => {
-    wrapper.instance().handleModalStateChange();
-    expect(wrapper.state('closeModal')).toEqual(false);
-  });
-
-  it('should change closeModal value in the state to false', () => {
-    const Input = wrapper.find('#selectType');
-    Input.simulate('change', { target: { name: 'questionType', value: '1' } });
-    expect(wrapper.instance().state.questionType).toEqual('1');
+    expect(wrapper.find('.question-form').length).toEqual(0);
   });
 });

@@ -1,7 +1,6 @@
 import Settings from './Settings';
 import Analytics from './Analytics';
-import Feedback from './Feedback';
 import Preference from './Preference';
-import RoomFeedbackResponseList from '../components/roomFeedback/RoomFeedbackResponseList';
+import RoomFeedbackPage from './RoomFeedbackPage';
 
-export { Settings, Feedback, Analytics, Preference, RoomFeedbackResponseList };
+export { Settings, Analytics, Preference, RoomFeedbackPage };

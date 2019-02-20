@@ -18,7 +18,7 @@ exports[`Checkins component should render properly 1`] = `
     hasInfo={true}
     hintText=""
     loading={false}
-    percentage={0}
+    percentage={NaN}
     tip="The number and % of check-ins of booked meeting rooms"
     total={10}
   />
@@ -54,7 +54,7 @@ exports[`Checkins component should render properly 1`] = `
     hasInfo={false}
     hintText=""
     loading={false}
-    percentage={0}
+    percentage={NaN}
     tip="Number and % of auto-cancelled meeting rooms"
     total={10}
   />

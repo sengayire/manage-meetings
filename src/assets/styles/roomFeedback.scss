@@ -1,9 +1,6 @@
 @import './variables';
 
 .room-feedback {
-  width: 90%;
-  margin: 0 auto;
-
   &__control {
     height: 70px;
     text-align: right;
@@ -16,9 +13,10 @@
     border-radius: 2px;
     font-size: 16px;
     color: $color-primary;
-    padding: 1% 3%;
     margin-left: 0;
     background-color: map-get($color-white, 000);
+    padding: 0 !important;
+    height: auto !important;
 
     @media screen and (max-width: 425px) {
       font-size: 1.05em;
@@ -80,6 +78,10 @@
         vertical-align: bottom;
         text-align: center;
         text-transform: capitalize;
+
+        button {
+          line-height: 0 !important;
+        }
 
         & img:nth-child(2) {
           padding-left: 20px;

@@ -9,6 +9,7 @@
   padding: 0.875em 1.875em;
   margin-bottom: 8px;
   color: map-get($color-black, 600);
+  border: 1px solid $color-border;
 
   &.active {
     background-color: $color-hover;
@@ -29,5 +30,9 @@
   a {
     text-decoration: none;
     color: $color-primary;
+  }
+
+  &:hover {
+    background-color: $color-hover;
   }
 }

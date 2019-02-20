@@ -1,0 +1,40 @@
+@import './variables.scss';
+
+.btn-secondary, .btn-primary {
+  margin: 0 10px;
+  line-height:  2.2em;
+  display: flex;
+}
+
+.btn-secondary {
+  color: $text-color;
+  border: 1px solid $color-border;
+  margin: 0 10px;
+  line-height:  2.2em;
+  display: flex;
+
+  &:hover {
+    background-color: $color-grey-light;
+  }
+
+  span {
+    font-weight: lighter !important;
+  }
+}
+
+.btn-primary {
+  color: map-get($color-white, 000);
+  background-color: $color-primary;
+
+  &:hover {
+    background-color: map-get($color-white, 000);
+    border: 1px solid $color-primary;
+    color: $color-primary;
+  }
+}
+
+button:disabled, button[disabled] {
+  color: map-get($color-white, 000) !important;
+  background-color: $color-primary !important;
+  border: none !important;
+}

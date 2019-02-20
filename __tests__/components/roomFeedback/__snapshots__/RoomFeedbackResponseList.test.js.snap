@@ -2,7 +2,6 @@
 
 exports[`Room feedback list should render correctly 1`] = `
 <React.Fragment>
-  <TopMenu />
   <div
     className="feedback-container"
   >
@@ -968,89 +967,25 @@ exports[`Room feedback list should render correctly 1`] = `
       showModal={[Function]}
       visible={false}
     />
-    <BackArrow
-      redirectUri="/feedback"
-    />
     <div
       className="feedback-card "
     >
       <RoomFeedbackCard
         key="0"
-        title="Total Views"
-        value="370"
-      />
-      <RoomFeedbackCard
-        key="1"
         title="Total Responses"
         value="300"
       />
       <RoomFeedbackCard
-        key="2"
-        title="Start Date"
-        value="07 Feb 2018"
+        key="1"
+        title="Rooms With Missing Items"
+        value="18"
       />
       <RoomFeedbackCard
-        key="3"
-        title="Duration"
-        value="1 Week"
+        key="2"
+        title="Average Ratings"
+        value="3.5"
       />
     </div>
-    <nav
-      id="feedback-nav"
-    >
-      <input
-        className="feedback-location-input"
-        disabled={true}
-        size="12"
-        type="text"
-        value="Nairobi"
-      />
-      <section
-        className="feedback-menu-buttons"
-      >
-        <span
-          className="feedback-filter-button"
-        >
-          Filter
-          <svg
-            className="svg-feedback-filter"
-            height="16"
-            width="18"
-          >
-            <path
-              d="M6.546 8.66L.195 1.316C-.255.796.123 0 .82 0h16.36c.697 0 1.075.797.625 1.316l-6.35 7.344V15.2c0 .595-.64.981-1.185.716l-3.272-1.6a.798.798 0 0 1-.452-.716V8.66zm8.871-7.06H2.583l5.406 6.25a.79.79 0 0 1 .193.517v4.738l1.636.8V8.367a.79.79 0 0 1 .193-.516L15.417 1.6z"
-              fillRule="nonzero"
-            />
-          </svg>
-        </span>
-        <Dropdown
-          content={
-            Array [
-              <span
-                className="dropdown-list"
-              >
-                <span>
-                  PDF
-                </span>
-                <span>
-                  JPEG
-                </span>
-                <span>
-                  CSV
-                </span>
-              </span>,
-            ]
-          }
-          icon={
-            <img
-              alt="download icon"
-              className="dropbtn-img"
-              src="test-file-stub"
-            />
-          }
-        />
-      </section>
-    </nav>
     <header
       className="room-feedback-list-container"
     >

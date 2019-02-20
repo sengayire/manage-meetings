@@ -1,0 +1,70 @@
+@import './variables.scss';
+
+.roomfeedback-container {
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 2%;
+  
+
+  &__control {
+    display: flex;
+    padding: 10px 0;
+    margin-bottom: 70px;
+  }
+
+  .tab-navigator {
+    margin-right: auto;
+    display: flex;
+
+    button {
+      line-height: 1.2em !important;
+    }
+  }
+
+  .responses-tab-nav, .questions-tab-nav {
+    display: flex;
+    &:before {
+      content: url('../images/response-icon.svg');
+    }
+    span {
+      margin: 10px 0 0 10px;
+    }
+  }
+
+  .questions-tab-nav {
+    &:before {
+      content: url('../images/question-icon.svg');
+    }
+  }
+
+  .feedback-filter-button {
+    display: flex;
+
+    &:after {
+      content: url('../images/filter_yellow.svg');
+      margin-left: 7px;
+    }
+    span {
+      margin: 13px 0 0 10px;
+    }
+  }
+
+  .dropdown-caret {
+    button {
+      height: 45px !important;
+      padding: 4px 20px !important;
+      top: 0 !important;
+    }
+  }
+
+  .dropdown-menu {
+    right: 0;
+    margin-right: 4.5rem;
+    width: 7rem;
+    margin-top: 3rem !important;
+  }
+
+  .spinner {
+    margin: 22% auto !important;
+  }
+}

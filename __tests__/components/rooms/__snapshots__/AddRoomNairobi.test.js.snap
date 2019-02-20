@@ -2715,18 +2715,40 @@ exports[`AddRoomNairobi should pop up a modal when modal button is clicked 1`] =
                             <div
                               className="form-action-buttons"
                             >
-                              <button
-                                className="cancel-button action-button"
-                                onClick={[Function]}
+                              <Button
+                                classProp={null}
+                                handleClick={[Function]}
+                                isDisabled={false}
+                                title="CANCEL"
+                                type={1}
                               >
-                                CANCEL
-                              </button>
-                              <button
-                                className="action-button"
-                                onClick={[Function]}
+                                <button
+                                  className="null btn-primary"
+                                  disabled={false}
+                                  onClick={[Function]}
+                                >
+                                  <span>
+                                    CANCEL
+                                  </span>
+                                </button>
+                              </Button>
+                              <Button
+                                classProp="main-button"
+                                handleClick={[Function]}
+                                isDisabled={false}
+                                title="ADD ROOM"
+                                type={1}
                               >
-                                ADD ROOM
-                              </button>
+                                <button
+                                  className="main-button btn-primary"
+                                  disabled={false}
+                                  onClick={[Function]}
+                                >
+                                  <span>
+                                    ADD ROOM
+                                  </span>
+                                </button>
+                              </Button>
                             </div>
                           </ActionButtons>
                         </form>

@@ -123,6 +123,7 @@ class EditFeedback extends Component {
           <ActionButtons
             withCancel
             onClickCancel={this.handleCloseModal}
+            onClickSubmit={this.handleCloseModal}
             actionButtonText="Save Changes"
           />
         </form>

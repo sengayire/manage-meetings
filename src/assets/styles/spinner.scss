@@ -4,12 +4,10 @@
   width: 5rem;
   height: 5rem;
   border-width: 6px;
-  border-top-color: $color-primary;
-  border-left-color: $color-primary;
-  border-style: solid;
-  border-width: 4px;
+  border-top: 2px solid $color-primary;
+  border-right: 2px solid transparent;
   border-radius: 50%;
-  animation: spinner 1s linear infinite;
+  animation: spinner .7s ease-out infinite;
   border-bottom-color: transparent;
   border-right-color: transparent;
   margin: 27%;

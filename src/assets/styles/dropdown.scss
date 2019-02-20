@@ -12,6 +12,10 @@
   z-index: 99;
 }
 
+.dropdown-menu span:hover {	
+  background-color: map-get($color-white, 300) !important;	
+}
+
 .dropdown-menu:before, .dropdown-menu:after {
   box-shadow:0 0 50px map-get($color-black, 600);
 }

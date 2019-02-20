@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
 import 'react-day-picker/lib/style.css';
-import '../../assets/styles/calendar.scss';
+import Button from '../commons/Button';
 import PickRange from '../helpers/RangePicker';
 
-const startingDate = moment().format('MMM DD Y');
-const endingDate = moment().format('MMM DD Y');
+// styles
+import '../../assets/styles/calendar.scss';
 
 /**
  * Reusable component for Calendar
@@ -17,13 +17,17 @@ const endingDate = moment().format('MMM DD Y');
  */
 class Calendar extends Component {
   static propTypes = {
-    handleCloseModal: PropTypes.func.isRequired,
-    sendDateData: PropTypes.func.isRequired,
+    sendData: PropTypes.func,
+  };
+
+  static defaultProps = {
+    sendData: null,
   };
 
   state = {
-    startDate: startingDate,
-    endDate: endingDate,
+    isCalendarOpen: false,
+    startDate: moment().format('MMM DD Y'),
+    endDate: moment().format('MMM DD Y'),
   };
 
   /**
@@ -36,9 +40,7 @@ class Calendar extends Component {
   handleChange = (value) => {
     const dateTo = value.to.toString().slice(4, 15);
     const dateFrom = value.from.toString().slice(4, 15);
-    if (dateFrom && dateTo) {
-      this.setState({ startDate: dateFrom, endDate: dateTo });
-    }
+    this.setState({ startDate: dateFrom, endDate: dateTo });
   };
 
   /**
@@ -48,43 +50,52 @@ class Calendar extends Component {
    */
   sendDate = () => {
     const { startDate, endDate } = this.state;
-    this.props.sendDateData(startDate, endDate);
+    this.props.sendData(startDate, endDate);
+    this.toggleCalendar();
   };
 
   /**
-   * Cancels the selected date
+   * It toggles the calendar view
    *
    * @returns {void}
    */
-  cancelDate = () => {
-    this.props.handleCloseModal();
+  toggleCalendar = () => {
+    this.setState({ isCalendarOpen: !this.state.isCalendarOpen });
   };
 
   render() {
+    const { isCalendarOpen, startDate, endDate } = this.state;
+
     return (
-      <div className="calender">
-        <PickRange handleChange={this.handleChange} />
-        <div className="calender__button">
-          <span
-            onClick={this.cancelDate}
-            role="presentation"
-            id="cancel_date_button"
-            className="calender__button__item"
-          >
-            {' '}
-            Cancel
-          </span>
-          <button
-            type="button"
-            onClick={this.sendDate}
-            id="apply_date_button"
-            className="calender__button__item apply_button"
-          >
-            {' '}
-            Apply{' '}
-          </button>
-        </div>
-      </div>
+      <Fragment>
+        <Button
+          title={`${startDate} - ${endDate}`}
+          classProp="calendarIconBtn"
+          type={2}
+          handleClick={this.toggleCalendar}
+        />
+        {
+          isCalendarOpen &&
+          <div className="calendar">
+            <PickRange handleChange={this.handleChange} />
+            <div className="calendar__button">
+              <button
+                onClick={this.toggleCalendar}
+                className="calendar__button__item cancel_button"
+              >
+                Cancel
+              </button>
+              <button
+                type="button"
+                onClick={this.sendDate}
+                className="calendar__button__item apply_button"
+              >
+                Apply
+              </button>
+            </div>
+          </div>
+        }
+      </Fragment>
     );
   }
 }

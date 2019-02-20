@@ -750,18 +750,40 @@ exports[`DeleteOffice Test Suite should pop up a modal when delete button is cli
                         <div
                           className="form-action-buttons"
                         >
-                          <button
-                            className="cancel-button action-button"
-                            onClick={[Function]}
+                          <Button
+                            classProp={null}
+                            handleClick={[Function]}
+                            isDisabled={false}
+                            title="CANCEL"
+                            type={1}
                           >
-                            CANCEL
-                          </button>
-                          <button
-                            className="action-button"
-                            onClick={[Function]}
+                            <button
+                              className="null btn-primary"
+                              disabled={false}
+                              onClick={[Function]}
+                            >
+                              <span>
+                                CANCEL
+                              </span>
+                            </button>
+                          </Button>
+                          <Button
+                            classProp="main-button"
+                            handleClick={[Function]}
+                            isDisabled={false}
+                            title="DELETE ROOM"
+                            type={1}
                           >
-                            DELETE ROOM
-                          </button>
+                            <button
+                              className="main-button btn-primary"
+                              disabled={false}
+                              onClick={[Function]}
+                            >
+                              <span>
+                                DELETE ROOM
+                              </span>
+                            </button>
+                          </Button>
                         </div>
                       </ActionButtons>
                     </div>

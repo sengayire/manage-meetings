@@ -159,18 +159,40 @@ exports[`RoomForm should render properly 1`] = `
       <div
         className="form-action-buttons"
       >
-        <button
-          className="cancel-button action-button"
-          onClick={[MockFunction]}
+        <Button
+          classProp={null}
+          handleClick={[MockFunction]}
+          isDisabled={false}
+          title="CANCEL"
+          type={1}
         >
-          CANCEL
-        </button>
-        <button
-          className="action-button"
-          onClick={[Function]}
+          <button
+            className="null btn-primary"
+            disabled={false}
+            onClick={[MockFunction]}
+          >
+            <span>
+              CANCEL
+            </span>
+          </button>
+        </Button>
+        <Button
+          classProp="main-button"
+          handleClick={[Function]}
+          isDisabled={false}
+          title="Save Changes"
+          type={1}
         >
-          Save Changes
-        </button>
+          <button
+            className="main-button btn-primary"
+            disabled={false}
+            onClick={[Function]}
+          >
+            <span>
+              Save Changes
+            </span>
+          </button>
+        </Button>
       </div>
     </ActionButtons>
   </form>

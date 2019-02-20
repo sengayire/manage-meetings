@@ -6112,18 +6112,40 @@ exports[`DeleteResource Test Suite should pop up a modal when delete button is c
                             <div
                               className="form-action-buttons"
                             >
-                              <button
-                                className="cancel-button action-button"
-                                onClick={[Function]}
+                              <Button
+                                classProp={null}
+                                handleClick={[Function]}
+                                isDisabled={false}
+                                title="CANCEL"
+                                type={1}
                               >
-                                CANCEL
-                              </button>
-                              <button
-                                className="action-button"
-                                onClick={[Function]}
+                                <button
+                                  className="null btn-primary"
+                                  disabled={false}
+                                  onClick={[Function]}
+                                >
+                                  <span>
+                                    CANCEL
+                                  </span>
+                                </button>
+                              </Button>
+                              <Button
+                                classProp="main-button"
+                                handleClick={[Function]}
+                                isDisabled={false}
+                                title="DELETE RESOURCE"
+                                type={1}
                               >
-                                DELETE RESOURCE
-                              </button>
+                                <button
+                                  className="main-button btn-primary"
+                                  disabled={false}
+                                  onClick={[Function]}
+                                >
+                                  <span>
+                                    DELETE RESOURCE
+                                  </span>
+                                </button>
+                              </Button>
                             </div>
                           </ActionButtons>
                         </div>

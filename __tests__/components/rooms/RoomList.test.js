@@ -165,8 +165,6 @@ describe('RoomList Component', () => {
 
   it('should render an error on failure to load locations', async () => {
     const errorWrapper = mount(locationErrorWrapper);
-
-    // await new Promise((resolve) => setTimeout(resolve));
     await wait(0);
     errorWrapper.update();
     expect(errorWrapper.find('RoomsList').props().locations.error).toBeTruthy();

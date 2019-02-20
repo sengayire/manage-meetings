@@ -28,6 +28,8 @@ export class Checkins extends Component {
     return {};
   }
 
+  roundNumber = num => Math.round(num * 100) / 100;
+
   render() {
     const { loading, error, analyticsRatios } = this.props.data;
     const {
@@ -37,13 +39,14 @@ export class Checkins extends Component {
       cancellationsPercentage,
       cancellations,
     } = this.formatAnalyticsData(analyticsRatios, loading, error);
+
     return (
       <div className="checkins">
         <DonutChart
           chartTitle="% of Checkins"
           entries={checkins}
           total={bookings}
-          percentage={checkinsPercentage}
+          percentage={this.roundNumber(checkinsPercentage)}
           loading={loading}
           error={error}
           chartColor={checkinsChart}
@@ -65,7 +68,7 @@ export class Checkins extends Component {
           chartTitle="% of Auto Cancellations"
           entries={cancellations}
           total={bookings}
-          percentage={cancellationsPercentage}
+          percentage={this.roundNumber(cancellationsPercentage)}
           loading={loading}
           error={error}
           chartColor={cancellationsChart}

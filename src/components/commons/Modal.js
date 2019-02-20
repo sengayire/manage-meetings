@@ -21,7 +21,6 @@ const customStyles = {
     boxShadow: '0 2px 40px 10px rgba(185, 180, 180, 0.2)',
     backgroundColor: '#ffffff',
     overflow: 'auto',
-    // width: '614px',
   },
 };
 
@@ -29,7 +28,7 @@ class MrmModal extends Component {
   static propTypes = {
     children: PropTypes.node.isRequired,
     title: PropTypes.string.isRequired,
-    handleCloseRequest: PropTypes.func.isRequired,
+    handleCloseRequest: PropTypes.func,
     closeModal: PropTypes.bool.isRequired,
     className: PropTypes.string,
     modalButtonClassName: PropTypes.string,
@@ -40,6 +39,7 @@ class MrmModal extends Component {
     className: 'modalClass',
     modalButtonClassName: 'button',
     buttonText: '',
+    handleCloseRequest: null,
   };
 
   state = {
@@ -49,7 +49,7 @@ class MrmModal extends Component {
   componentDidUpdate = (prevProps, prevState, snapshot) => {
     if (snapshot) {
       this.closeModal();
-      this.props.handleCloseRequest();
+      this.props.handleCloseRequest && this.props.handleCloseRequest();
     }
   };
 

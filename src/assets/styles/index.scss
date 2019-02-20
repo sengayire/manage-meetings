@@ -6,6 +6,31 @@ body{
   margin: 0;
 }
 
+button {
+  font-family: $font;
+  padding: 10px 20px;
+  height: 45px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.main-button {
+  color: $color-primary;
+  background-color: map-get($color-white, 000);
+}
+
+#modal-button {
+  line-height: 2.2em;
+}
+
+.edit-button {
+  height: 55px !important;
+}
+
+input {
+  font-family: $font;
+}
+
 h1 {
   color: $color-purple;
 }

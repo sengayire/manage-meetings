@@ -14,7 +14,7 @@ import IconSettings from '../../assets/images/settings_icon.svg';
 const menuItems = [
   { route: ROUTES.analytics, menu: 'Analytics', icon: IconAnalytics },
   { route: ROUTES.settings, icon: IconSettings, menu: 'Settings' },
-  { icon: IconFeedback, route: ROUTES.feedback, menu: 'Room Feedback' },
+  { icon: IconFeedback, route: ROUTES.roomfeedback, menu: 'Room Feedback' },
 ];
 
 /**

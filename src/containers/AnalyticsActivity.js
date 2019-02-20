@@ -3,7 +3,7 @@ import '../assets/styles/analyticsActivity.scss';
 import UsersIcon from '../assets/images/Group.svg';
 import meetings from '../utils/nonPersistentData';
 
-export class AnalyticsActivity extends Component {
+class AnalyticsActivity extends Component {
   constructor(props) {
     super(props);
     this.state = {

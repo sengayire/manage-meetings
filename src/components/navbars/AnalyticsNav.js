@@ -1,47 +1,44 @@
 /* eslint-disable new-cap */
-/* eslint-disable react/no-array-index-key */
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import toastr from 'toastr';
 import html2canvas from 'html2canvas';
 import jsxToString from 'jsx-to-string';
 import jsPDF from 'jspdf';
-import { Button } from 'react-toolbox/lib/button';
-import moment from 'moment';
 import PropTypes from 'prop-types';
 import { graphql } from 'react-apollo';
 import download from 'downloadjs';
+import moment from 'moment';
+import Button from '../commons/Button';
 import '../../assets/styles/custom.scss';
 import '../../assets/styles/topmenu.scss';
 import '../../../src/assets/styles/analyticsPage.scss';
 import Calendar from '../../components/commons/Calendar';
 import notification from '../../utils/notification';
-import AnalyticsAct from '../../containers/AnalyticsActivity';
+import AnalyticsActivity from '../../containers/AnalyticsActivity';
 import AnalyticsOverview from '../../containers/AnalyticsOverview';
-import IconNotifications from '../../assets/images/download_24px.svg';
+import ExportButton from '../commons/ExportButton';
 import { decodeTokenAndGetUserData } from '../../utils/Cookie';
 import { GET_USER_QUERY } from '../../graphql/queries/People';
 import { getMostUsedAndLeastUsedRooms } from '../../json_requests';
 import downloadFileString from '../../fixtures/downloadString';
 
 /**
- * Component for Analytics Activity
+ * Component for Analytics
  *
  * @extends React.Component
  *
  * @returns {JSX}
  *
  */
-export class AnalyticsActivity extends Component {
+export class AnalyticsNav extends Component {
   state = {
-    view: 'overview',
-    menuOpen: false,
+    isActivity: false,
+    location: 'Kampala',
     startDate: moment().format('MMM DD Y'),
     endDate: moment().format('MMM DD Y'),
-    calenderOpen: false,
-    location: 'Kampala',
-    fetching: false,
     leastUsedRooms: [],
     mostUsedRooms: [],
+    fetching: false,
   };
 
   componentDidMount() {
@@ -49,61 +46,14 @@ export class AnalyticsActivity extends Component {
   }
 
   /**
-   * 1. Updates the start and end date in the calendar
-   * 2. Toggles the calendar
-   *
-   * @param {date} start
-   * @param {date} end
-   *
-   * @returns {Function}
-   */
-  sendDateData = (start, end) => {
-    this.setState({ startDate: start, endDate: end });
-    this.calenderToggle();
-    this.fetchMostAndLeastUsedRooms();
-  };
-
-  /**
-   * It toggles the calendar view
-   *
-   * @returns {void}
-   */
-  calenderToggle = () => {
-    const { calenderOpen } = this.state;
-    this.setState({ calenderOpen: !calenderOpen });
-  };
-
-  /**
    * sets state of view to overview
    *
    * @returns {void}
    */
-  showOverview = () => {
+  toggleView = () => {
     this.setState({
-      view: 'overview',
+      isActivity: !this.state.isActivity,
     });
-  };
-
-  /**
-   * Invokes the call to fetch all the activities
-   *
-   * @returns {void}
-   */
-  showActivityView = () => {
-    this.setState({
-      view: 'activity',
-    });
-  };
-
-  /**
-   * It toggles the Menu to open and close
-   *
-   * @returns {void}
-   */
-  toggleMenu = () => {
-    this.setState(prevState => ({
-      menuOpen: !prevState.menuOpen,
-    }));
   };
 
   /**
@@ -160,7 +110,7 @@ export class AnalyticsActivity extends Component {
       jsxToString(
         <tbody>
           {rooms.map((room, index) => (
-            <tr key={index}>
+            <tr key={room.id}>
               <td>{room}</td>
               <td>{meetings[index].toString()}</td>
               <td>{`${meetingShares[index].toString()}%`}</td>
@@ -221,8 +171,7 @@ export class AnalyticsActivity extends Component {
     const {
       leastUsedRooms, mostUsedRooms,
     } = this.state;
-    const { toggleMenu } = this;
-    toggleMenu();
+
     notification(toastr, 'success', 'Your download will start shortly')();
     const csvRows = [];
     const toWriteData = [['Room', 'Meetings', '% Share of All Meetings'],
@@ -278,8 +227,6 @@ export class AnalyticsActivity extends Component {
    *
    */
   fetchDownload(type) {
-    const { toggleMenu } = this;
-    toggleMenu();
     notification(toastr, 'success', 'Your download will start shortly')();
 
     const div = document.createElement('div');
@@ -308,179 +255,75 @@ export class AnalyticsActivity extends Component {
     this.fetchDownload('pdf');
   };
 
+  /**
+   * It updates the state with the selected start and end date
+   *
+   * @returns {void}
+   */
+  sendDateData = (start, end) => {
+    this.setState({ startDate: start, endDate: end });
+    this.fetchMostAndLeastUsedRooms();
+  };
+
   render() {
-    const {
-      view, calenderOpen, startDate, endDate,
-    } = this.state;
-    const { user } = this.props;
-    //  The dates object is to contain the dates to be passed
-    //  to other analytics components
+    const { startDate, endDate, isActivity } = this.state;
+    const { user: { user } } = this.props;
     const dates = {
-      startDate: this.state.startDate,
-      endDate: this.state.endDate,
+      startDate,
+      endDate,
     };
 
-    /**
-     * Displays an icon for Overview button
-     *
-     * @returns {JSX}
-     */
-    const overViewIcon = () => (
-      <div className="overViewBtn">
-        <span id="overview-span">OVERVIEW</span>
-      </div>
-    );
-
-    /**
-     * A button toggler component for Overview Button
-     *
-     * @returns {JSX}
-     */
-    const overViewBtnToggle = () => (
-      <div className="overViewBtnToggle">
-        <span>OVERVIEW</span>
-      </div>
-    );
-
-    /**
-     * Shows the icon for the activity button
-     *
-     * @returns {JSX}
-     */
-    const activityIcon = () => (
-      <div className="activityIconBtn">
-        <span id="activity-span">ACTIVITY</span>
-      </div>
-    );
-
-    /**
-     * The button component for activity
-     *
-     * @returns {JSX}
-     */
-    const activityIconBtnToggle = () => (
-      <div className="activityIconBtnToggle">
-        <span>ACTIVITY</span>
-      </div>
-    );
-
-    /**
-     * Returns the location icon based
-     * on whether the user is logged in or not
-     *
-     * @returns {JSX}
-     */
-    const locationIcon = () => (
-      <div className="locationIconBtn">
-        {user.user ? (
-          <span>{user.user.location}</span>
-        ) : (
-          <span>{this.state.location}</span>
-        )}
-      </div>
-    );
-
-    /**
-     *  1. Displays an icon for calendar
-     *  2. Shows duration = (Start Date - End date)
-     *
-     *  @returns {JSX}
-     */
-    const calendarIcon = () => (
-      <div className="calendarIconBtn">
-        <span>{`${startDate} - ${endDate}`}</span>
-      </div>
-    );
-
     return (
-      <div>
+      <Fragment>
         <div className="analytics-cover ">
           <div className="btn-left">
             <Button
-              className={
-                view === 'activity'
-                  ? 'activity-btn pad-top analysis-btn btn'
-                  : 'activity-btn pad-top analysis-btn btn btn-color'
-              }
-              icon={view === 'activity' ? overViewBtnToggle() : overViewIcon()}
-              onClick={this.showOverview}
-              type="button"
-              id="overview-button"
+              classProp="overviewIconBtn"
+              handleClick={this.toggleView}
+              title="OVERVIEW"
+              type={!isActivity ? null : 2}
+              isDisabled={!isActivity}
             />
             <Button
-              className={
-                view === 'overview'
-                  ? 'overview-btn  analysis-btn btn '
-                  : 'overview-btn  analysis-btn btn btn-color'
-              }
-              icon={
-                view === 'overview' ? activityIcon() : activityIconBtnToggle()
-              }
-              onClick={this.showActivityView}
+              classProp="activityIconBtn"
+              handleClick={this.toggleView}
+              title="ACTIVITY"
+              type={isActivity ? null : 2}
+              isDisabled={isActivity}
             />
           </div>
           <div className="btn-right">
             <Button
-              className="location-btn analysis-btn "
-              icon={locationIcon()}
-              id="location-btn"
+              classProp="location-btn"
+              title={
+                user ? user.location : this.state.location
+              }
+              type={2}
             />
-
-            <Button
-              icon={calendarIcon()}
-              className="analysis-btn calendar-btn"
-              id="calendar-btn"
-              onClick={this.calenderToggle}
+            <Calendar
+              sendData={this.sendDateData}
             />
-
-            {calenderOpen && (
-              <Calendar
-                sendDateData={this.sendDateData}
-                handleCloseModal={this.calenderToggle}
+            {
+              !this.state.fetching && !this.state.error &&
+              <ExportButton
+                jpegHandler={this.downloadJpeg}
+                csvHandler={this.downloadCSV}
+                pdfHandler={this.downloadPdf}
               />
-            )}
-            <div className="dropdown">
-              {!this.state.fetching && !this.state.error && (
-                <button
-                  className="dropbtn"
-                  id="btnControl"
-                  onClick={this.toggleMenu}
-                >
-                  <img
-                    className="dropbtn-img"
-                    src={IconNotifications}
-                    alt="download icon"
-                  />
-                </button>
-              )}
-              <div
-                className={
-                  this.state.menuOpen
-                    ? 'dropdown-content'
-                    : 'dropdown-content-null'
-                }
-              >
-                {/* eslint-disable */}
-                <span className="download-dropdown-label">Export options </span>
-                <span onClick={this.downloadCSV}>CSV</span>
-                <span onClick={this.downloadJpeg}>JPEG</span>
-                <span onClick={this.downloadPdf}>PDF</span>
-              </div>
-            </div>
+            }
           </div>
         </div>
-        {view === "overview" && <AnalyticsOverview dateValue={dates} />}
-        {view === "activity" && <AnalyticsAct dateValue={dates} />}
-      </div>
-
+        {!isActivity && <AnalyticsOverview dateValue={dates} />}
+        {isActivity && <AnalyticsActivity dateValue={dates} />}
+      </Fragment>
     );
   }
 }
 
-AnalyticsActivity.propTypes = {
+AnalyticsNav.propTypes = {
   user: PropTypes.shape({
-    user: PropTypes.object
-  }).isRequired
+    user: PropTypes.object,
+  }).isRequired,
 };
 
 /* This gets the token from the localstorage and select the user
@@ -488,14 +331,14 @@ email to pass as a parameter to the query being sent */
 const { UserInfo: userData } = decodeTokenAndGetUserData() || {};
 
 export default graphql(GET_USER_QUERY, {
-  name: "user",
+  name: 'user',
   options: /* istanbul ignore next */ () => ({
     variables: {
       // Added the test email in order to pass the variable to the test environment
       email:
-        process.env.NODE_ENV === "test"
-          ? "sammy.muriuki@andela.com"
-          : userData.email
-    }
-  })
-})(AnalyticsActivity);
+        process.env.NODE_ENV === 'test'
+          ? 'sammy.muriuki@andela.com'
+          : userData.email,
+    },
+  }),
+})(AnalyticsNav);

@@ -24,6 +24,8 @@
       font-size: 95%;
       font-weight: 300;
       margin-bottom: 1px;
+      line-height: 2em;
+      margin-top: 6px;
 
       @media screen and (max-width: 630px) {
         width: 90%;
@@ -66,7 +68,7 @@
       margin: 30px 0;
     }
 
-    .calender {
+    .calendar {
       display: flex;
       flex-direction: column;
       right: 7vw;
@@ -79,7 +81,7 @@
       z-index: 2;
     }
 
-    .calender__button .apply_button {
+    .calendar__button .apply_button {
       background-color: $color-primary;
       color: map-get($color-white, 000);
       height: 13px;
@@ -139,69 +141,8 @@
       color: $color-text;
     }
 
-    button {
-      cursor: pointer;
-      text-transform: uppercase;
-      bottom: 4%;
-      right: 4%;
-      padding: 0% 1.5%;
-
-      @media screen and (min-width: 640px) and (max-width: 1023px) and (orientation: landscape) {
-        right: 0%;
-      }
-
-      @media screen and (min-width: 1024) and (orientation: landscape) {
-        right: 1.75%;
-      }
-
-      @media screen and (min-width: 768px) and (orientation: portrait) {
-        right: 1.5%;
-      }
-    }
-
-    .button-container {
-      margin-bottom: 30px;
-      margin-top: 50px;
-
-      button:nth-child(1) {
-        background-color: $color-primary;
-        height: 44px;
-        float: right;
-        color: map-get($color-white, 000);
-
-        @media screen and (max-width: 867px) {
-          margin-right: 5%;
-        }
-      }
-
-      button:nth-child(2) {
-        border: 1px solid $color-primary;
-        background-color: map-get($color-white, 000);
-        height: 44px;
-        float: right;
-        width: 137px;
-        margin-right: 5%;
-      }
-
-      & button:nth-child(2):hover {
-        background-color: $color-primary;
-        color: map-get($color-white, 000);
-      }
-    }
-
     .calendarIconBtn {
-
-      &:hover {
-        background-color: map-get($color-blue, 400) !important;
-        color: $color-primary !important;
-      }
-
-      &:after {
-        content: url('../images/date_range_24px.svg');
-        margin-left: 380px;
-        position: auto;
-        vertical-align: sub !important;
-      }
+      margin: 23px 0;
     }
 
     ::placeholder {
@@ -217,7 +158,6 @@
       color: $color-placeholder;
     }
   }
-
 
   @media screen and (max-width: 639px) {
     height: 33%;

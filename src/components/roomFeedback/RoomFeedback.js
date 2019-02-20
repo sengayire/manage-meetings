@@ -3,8 +3,6 @@ import { graphql, compose } from 'react-apollo';
 import PropTypes from 'prop-types';
 import ColGroup from '../helpers/ColGroup';
 import TableHead from '../helpers/TableHead';
-import MenuTitle from '../commons/MenuTitle';
-import AddQuestion from './AddQuestion';
 import Feedback from './Feedback';
 import { GET_USER_ROLE } from '../../graphql/queries/People';
 import { decodeTokenAndGetUserData } from '../../utils/Cookie';
@@ -104,10 +102,6 @@ export class RoomFeedback extends Component {
 
     return (
       <div className="room-feedback">
-        <div className="room-feedback__control">
-          <MenuTitle title="ROOM FEEDBACK" />
-          <AddQuestion />
-        </div>
         <div className="room-feedback__list">
           <table>
             <ColGroup />

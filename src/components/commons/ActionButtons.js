@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Spinner from './Spinner';
+import Button from '../commons/Button';
 
 import '../../assets/styles/actionbuttons.scss';
 
@@ -13,16 +14,12 @@ import '../../assets/styles/actionbuttons.scss';
  * @returns {JSX}
  */
 const ActionButtons = props => (
-  props.isLoading ? <Spinner size="small" /> :
-  <div className="form-action-buttons">
-    <button className="cancel-button action-button" onClick={props.onClickCancel}>
-      {props.cancelButtonText}
-    </button>
-    <button className="action-button" onClick={props.onClickSubmit}>
-      {props.actionButtonText}
-    </button>
-  </div>
-
+  props.isLoading
+    ? <Spinner size="small" /> :
+    <div className="form-action-buttons">
+      <Button handleClick={props.onClickCancel} title={props.cancelButtonText} />
+      <Button handleClick={props.onClickSubmit} title={props.actionButtonText} classProp="main-button" />
+    </div>
 );
 
 ActionButtons.propTypes = {
@@ -30,14 +27,13 @@ ActionButtons.propTypes = {
   cancelButtonText: PropTypes.string,
   actionButtonText: PropTypes.string,
   isLoading: PropTypes.bool,
-  onClickSubmit: PropTypes.func,
+  onClickSubmit: PropTypes.func.isRequired,
 };
 
 ActionButtons.defaultProps = {
   cancelButtonText: 'CANCEL',
   actionButtonText: 'SAVE CHANGES',
   isLoading: false,
-  onClickSubmit: PropTypes.func,
 };
 
 export default ActionButtons;

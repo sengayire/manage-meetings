@@ -5,28 +5,6 @@
   flex-direction: row;
   justify-content: flex-end;
 
-  button {
-    margin: 0;
-    display: inline-flex;
-    width: fit-content;
-    justify-content: center;
-    letter-spacing: 0.3px;
-    line-height: 20px;
-    padding: 10px 20px;
-    text-transform: uppercase;
-    cursor: pointer;
-    border: 1px solid $color-primary;
-    border-radius: 2px;
-    font-size: 16px;
-    color: $color-primary;
-    margin-left: 0;
-    background-color: map-get($color-white, 000);
-
-    @media screen and (max-width: 425px) {
-      font-size: 1.05em;
-    }
-  }
-
   .disable-btn {
     pointer-events: none;
   }
@@ -41,16 +19,5 @@
 
   button:last-child {
     margin-left: 4%;
-  }
-
-  .action-button {
-    background-color: $color-primary;
-    color: map-get($color-white, 000);
-  }
-
-  .cancel-button {
-    color: $color-primary;
-    background-color: map-get($color-white, 000);
-    border: 1px solid $color-primary;
   }
 }
