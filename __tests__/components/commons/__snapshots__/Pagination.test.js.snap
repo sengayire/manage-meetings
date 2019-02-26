@@ -12,6 +12,8 @@ exports[`Pagination Component renders without crashing 1`] = `
     >
       <select
         className="page-select"
+        disabled={false}
+        id="perPage"
         name="perPage"
         onChange={[Function]}
         value={5}
@@ -67,6 +69,8 @@ exports[`Pagination Component renders without crashing 1`] = `
           </span>
           <select
             className="totalPage"
+            disabled={false}
+            id="totalPage"
             name="page"
             onChange={[Function]}
             value={1}

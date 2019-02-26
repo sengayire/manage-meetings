@@ -84,6 +84,7 @@ class Pagination extends Component {
       hasNext,
       hasPrevious,
       reverse,
+      isFetching,
     } = this.props;
 
     return (
@@ -91,10 +92,12 @@ class Pagination extends Component {
         <div className="perPageBlock">
           <ul className="pagination">
             <select
-              className="page-select"
               name="perPage"
               value={perPage}
+              id="perPage"
+              className="page-select"
               onChange={this.handleChange}
+              disabled={isFetching}
             >
               {options(itemsPerPage)}
             </select>
@@ -107,7 +110,7 @@ class Pagination extends Component {
               <button
                 id="previous"
                 onClick={this.handlePrevious}
-                className={hasPrevious ? 'enabled' : 'disabled'}
+                className={!isFetching && hasPrevious ? 'enabled' : 'disabled'}
               >
                 Previous
               </button>
@@ -117,9 +120,11 @@ class Pagination extends Component {
                 <span>Showing {reverse ? '' : 'page'}</span>
                 <select
                   className="totalPage"
+                  id="totalPage"
                   name="page"
                   value={page}
                   onChange={this.handleChange}
+                  disabled={isFetching}
                 >
                   {[...Array(totalPages).keys()].map(item => (
                     <option key={item}>{item + 1}</option>
@@ -138,7 +143,7 @@ class Pagination extends Component {
               <button
                 id="next"
                 onClick={this.handleNext}
-                className={hasNext ? 'enabled' : 'disabled'}
+                className={hasNext && !isFetching ? 'enabled' : 'disabled'}
               >
                 Next
               </button>
@@ -159,6 +164,7 @@ Pagination.propTypes = {
   reverse: PropTypes.bool,
   currentPage: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   dataFetched: PropTypes.bool,
+  isFetching: PropTypes.bool,
 };
 
 Pagination.defaultProps = {
@@ -169,6 +175,7 @@ Pagination.defaultProps = {
   hasPrevious: false,
   reverse: false,
   dataFetched: true,
+  isFetching: false,
 };
 
 export default Pagination;

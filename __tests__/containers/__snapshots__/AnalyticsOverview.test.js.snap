@@ -1,38 +1,38 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`AnalyticsOverview Component renders properly 1`] = `
-<React.Fragment>
+<Fragment>
   <AveragePieChartList
     dateValue={
       Object {
-        "endDate": "\\"Feb 20 2019\\"",
-        "startDate": "\\"Feb 20 2019\\"",
+        "endDate": "\\"Feb 21 2019\\"",
+        "startDate": "\\"Feb 21 2019\\"",
       }
     }
   />
   <ComposedBookedRooms
     dateValue={
       Object {
-        "endDate": "\\"Feb 20 2019\\"",
-        "startDate": "\\"Feb 20 2019\\"",
+        "endDate": "\\"Feb 21 2019\\"",
+        "startDate": "\\"Feb 21 2019\\"",
       }
     }
   />
   <Apollo(Checkins)
     dateValue={
       Object {
-        "endDate": "\\"Feb 20 2019\\"",
-        "startDate": "\\"Feb 20 2019\\"",
+        "endDate": "\\"Feb 21 2019\\"",
+        "startDate": "\\"Feb 21 2019\\"",
       }
     }
   />
   <Apollo(AverageMeetingList)
     dateValue={
       Object {
-        "endDate": "\\"Feb 20 2019\\"",
-        "startDate": "\\"Feb 20 2019\\"",
+        "endDate": "\\"Feb 21 2019\\"",
+        "startDate": "\\"Feb 21 2019\\"",
       }
     }
   />
-</React.Fragment>
+</Fragment>
 `;

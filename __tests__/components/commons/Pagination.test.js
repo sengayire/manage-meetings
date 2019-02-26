@@ -60,5 +60,22 @@ describe('Pagination Component', () => {
     const newPaginationWrapper = shallow(<Pagination {...newProps} />);
     expect(newPaginationWrapper.instance().props.hasNext).toEqual(false);
   });
-});
 
+
+  it('disables paginator buttons on fetching data after click', () => {
+    const newProps = {
+      totalPages: 4,
+      hasNext: true,
+      hasPrevious: true,
+      isFetching: true,
+      handleData: jest.fn(),
+    };
+
+    const newPaginationWrapper = shallow(<Pagination {...newProps} />);
+    expect(newPaginationWrapper.instance().props.isFetching).toEqual(true);
+    expect(newPaginationWrapper.find('#next').hasClass('disabled')).toEqual(true);
+    expect(newPaginationWrapper.find('#previous').hasClass('disabled')).toEqual(true);
+    expect(newPaginationWrapper.find('#totalPage').is('[disabled]')).toBe(true);
+    expect(newPaginationWrapper.find('#perPage').is('[disabled]')).toBe(true);
+  });
+});
