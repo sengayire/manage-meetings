@@ -2,8 +2,6 @@ import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { compose, graphql } from 'react-apollo';
 import '../../assets/styles/SingelRoomSideModel.scss';
-import greenStar from '../../assets/images/green_star.svg';
-import greyStar from '../../assets/images/grey_star.svg';
 import Spinner from '../commons/Spinner';
 import ErrorIcon from '../commons/ErrorIcon';
 import SINGLE_ROOM_FEEDBACK from '../../graphql/queries/RoomFeedback';
@@ -29,70 +27,6 @@ export class SingleRoomFeedBack extends Component {
     const date = new Date(dateString);
     return `${allMonths[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
   }
-
-  /**
-   * Loops through the room responses
-   * and calculates the total number of missing
-   * items
-   *
-   * @param {array} roomResponses
-   *
-   * @return {integer}
-   */
-  totalMissingItemsCount = (roomResponses) => {
-    let missingItemsList = [];
-    roomResponses.filter(response => ((response.missingItems).length !== 0))
-      .forEach((response) => {
-        missingItemsList = [...new Set(response.missingItems)];
-      });
-    return missingItemsList.length;
-  }
-
-  /**
-   * Loops through the room responses
-   * and calculates the total cleanliness
-   * rating and grade
-   *
-   * @param {array} roomResponses
-   *
-   * @return {integer, string}
-   */
-  totalCleanlinessRating = (roomResponses) => {
-    let totalRating = 0;
-    const gradeList = ['Poor', 'Fair', 'Good', 'Very Good', 'Excellent'];
-    if (roomResponses.length > 0) {
-      const ratingResponses = roomResponses.filter(response => response.rating !== null);
-      ratingResponses.forEach((singleResponse) => { totalRating += singleResponse.rating; });
-      totalRating = Math.round(totalRating / (ratingResponses.length));
-      const grade = gradeList[(totalRating - 1)];
-      return { totalRating, grade };
-    }
-    return { totalRating };
-  }
-
-  /**
-   * Loops through the room cleanliness
-   * ratings and determines how to render
-   * the green and grey Stars.
-   *
-   * @param {integer} rating
-   *
-   * @return {JSX}
-   */
-  roomCleanlinessRating = (rating) => {
-    let rated = rating;
-    const data = [];
-    while (rated > 0) {
-      data.push(<img key={rated} src={greenStar} alt="" />);
-      rated -= 1;
-    }
-    let unRated = 5 - rating;
-    while (unRated > 0) {
-      data.push(<img key={5 + unRated} src={greyStar} alt="" />);
-      unRated -= 1;
-    }
-    return data;
-  };
 
   /**
    * Loops through the room responses
@@ -130,8 +64,16 @@ export class SingleRoomFeedBack extends Component {
    * @return {JSX}
    */
   renderRoomFeeback = (response) => {
-    const { getResourcesByRoomId: resources } = this.props.roomResources;
-    const resourcesList = resources.map(resource => resource.name);
+    const { roomResources: { error }, roomCleanlinessRating } = this.props;
+    let resourcesList;
+    if (error) {
+      resourcesList = [];
+    } else {
+      const {
+        roomResources: { getResourcesByRoomId: resources },
+      } = this.props;
+      resourcesList = resources.map(resource => resource.name);
+    }
     if (response.suggestion) {
       return (
         <div className="response-item">
@@ -165,7 +107,7 @@ export class SingleRoomFeedBack extends Component {
       <div className="item-list response-item">
         <div className="item-list-heading">Cleanliness</div>
         <div />
-        <div className="cleanliness">{this.roomCleanlinessRating(response.rating)}</div>
+        <div className="cleanliness">{roomCleanlinessRating(response.rating)}</div>
       </div>
     );
   }
@@ -194,13 +136,20 @@ export class SingleRoomFeedBack extends Component {
       return <div className="modal-spinner"><Spinner /></div>;
     }
     const {
-      roomName,
-      totalResponses,
-      totalRoomResources,
-      response,
-    } = this.props.data.roomResponse;
-    const totalMissingItems = this.totalMissingItemsCount(response);
-    const { totalRating, grade } = this.totalCleanlinessRating(response);
+      data: {
+        roomResponse: {
+          roomName,
+          totalResponses,
+          totalRoomResources,
+          response,
+        },
+      },
+      totalCleanlinessRating,
+      roomCleanlinessRating,
+      totalMissingItemsCount,
+    } = this.props;
+    const totalMissingItems = totalMissingItemsCount(response);
+    const { totalRating, grade } = totalCleanlinessRating(response);
     return (
       <Fragment>
         <div className="modal-header">
@@ -217,7 +166,7 @@ export class SingleRoomFeedBack extends Component {
           <div className="row-1-data">
             <div>{`${totalMissingItems} out of ${totalRoomResources}`}</div>
             <div>
-              {this.roomCleanlinessRating(totalRating)}
+              {roomCleanlinessRating(totalRating)}
               <br />
               <div className="row-1-grade">
                 {grade}
@@ -250,6 +199,9 @@ SingleRoomFeedBack.propTypes = {
     loading: PropTypes.bool,
     error: PropTypes.object,
   }).isRequired,
+  roomCleanlinessRating: PropTypes.func.isRequired,
+  totalCleanlinessRating: PropTypes.func.isRequired,
+  totalMissingItemsCount: PropTypes.func.isRequired,
   roomResources: PropTypes.instanceOf(Object),
   visible: PropTypes.bool.isRequired,
   showModal: PropTypes.func,
@@ -262,10 +214,11 @@ SingleRoomFeedBack.defaultProps = {
   showModal: PropTypes.func,
 };
 
-const queryVariables = () => ({
+const queryVariables = props => ({
   variables: {
-    roomId: 174,
+    roomId: props.roomId,
   },
+  fetchPolicy: 'cache-and-network',
 });
 
 export default compose(

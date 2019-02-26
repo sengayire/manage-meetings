@@ -17088,31 +17088,17 @@ exports[`FloorList Component renders correctly from memory 1`] = `
                     },
                     "key": null,
                   },
-                  Object {
-                    "kind": "SelectionSet",
-                    "selections": Array [
-                      Object {
-                        "alias": undefined,
-                        "arguments": Array [],
-                        "directives": Array [],
-                        "kind": "Field",
-                        "name": Object {
-                          "kind": "Name",
-                          "value": "id",
-                        },
-                        "selectionSet": undefined,
-                      },
-                      Object {
-                        "alias": undefined,
-                        "arguments": Array [],
-                        "directives": Array [],
-                        "kind": "Field",
-                        "name": Object {
-                          "kind": "Name",
-                          "value": "name",
-                        },
-                        "selectionSet": undefined,
-                      },
+                ],
+                "options": Object {
+                  "context": Object {},
+                  "metadata": Object {
+                    "reactComponent": Object {
+                      "displayName": "Apollo(AddFloorMenu)",
+                    },
+                  },
+                  "notifyOnNetworkStatusChange": false,
+                  "query": Object {
+                    "definitions": Array [
                       Object {
                         "alias": undefined,
                         "arguments": Array [],

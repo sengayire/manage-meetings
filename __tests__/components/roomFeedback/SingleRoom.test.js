@@ -2,6 +2,7 @@ import React from 'react';
 import { mount, shallow } from 'enzyme';
 import { MockedProvider } from 'react-apollo/test-utils';
 import SingleRoom, { SingleRoomFeedBack } from '../../../src/components/roomFeedback/SingleRoom';
+import { roomCleanlinessRating, totalCleanlinessRating, totalMissingItemsCount } from '../../../src/components/roomFeedback/RoomFeedbackResponseList';
 import rooms from '../../../src/fixtures/roomFeedbackList';
 
 const props = {
@@ -44,6 +45,9 @@ const props = {
   roomId: 1,
   visible: true,
   showModal: jest.fn(() => true),
+  totalMissingItemsCount,
+  totalCleanlinessRating,
+  roomCleanlinessRating,
 };
 
 const emptyProps = {
@@ -58,6 +62,37 @@ const emptyProps = {
   roomId: 1,
   visible: true,
   showModal: jest.fn(() => true),
+  totalMissingItemsCount,
+  totalCleanlinessRating,
+  roomCleanlinessRating,
+};
+
+const errorProps = {
+  data: {
+    loading: false,
+    roomResponse: {
+      roomName: 'Udi',
+      totalResponses: 3,
+      response: [
+        {
+          createdDate: '2019-02-05T15:27:37.236820',
+          missingItems: [],
+          rating: null,
+          responseId: 5,
+          suggestion: 'I have a complaint',
+        },
+      ],
+    },
+  },
+  roomResources: {
+    error: {},
+  },
+  roomId: 1,
+  visible: true,
+  showModal: jest.fn(() => true),
+  totalMissingItemsCount,
+  totalCleanlinessRating,
+  roomCleanlinessRating,
 };
 
 describe('SingleRoom test', () => {
@@ -67,6 +102,9 @@ describe('SingleRoom test', () => {
       roomId: 1,
       visible: true,
       showModal: jest.fn(() => true),
+      totalMissingItemsCount,
+      totalCleanlinessRating,
+      roomCleanlinessRating,
     };
     const wrapper = mount(
       <MockedProvider>
@@ -82,6 +120,9 @@ describe('SingleRoom test', () => {
       roomId: 1,
       visible: false,
       showModal: jest.fn(() => true),
+      totalMissingItemsCount,
+      totalCleanlinessRating,
+      roomCleanlinessRating,
     };
     const wrapper = mount(
       <MockedProvider>
@@ -105,6 +146,11 @@ describe('SingleRoom test', () => {
 
     it('renders correctly when there are no responses', () => {
       expect(emptyComponent.find('.item-list-empty')).toHaveLength(1);
+    });
+
+    it('renders correctly when a room has no resources', () => {
+      const errorComponent = shallow(<SingleRoomFeedBack {...errorProps} />);
+      expect(errorComponent.find('.response-item')).toHaveLength(1);
     });
   });
 });

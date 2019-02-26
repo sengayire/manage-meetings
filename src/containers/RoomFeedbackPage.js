@@ -4,6 +4,7 @@ import Button from '../components/commons/Button';
 import Calendar from '../components/commons/Calendar';
 import ExportButton from '../components/commons/ExportButton';
 import RoomQuestions from '../components/roomFeedback/RoomFeedback';
+// eslint-disable-next-line import/no-named-as-default
 import RoomFeedbackResponseList from '../components/roomFeedback/RoomFeedbackResponseList';
 import { NavBar } from '../components';
 

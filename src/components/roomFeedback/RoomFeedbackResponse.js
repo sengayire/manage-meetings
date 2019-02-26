@@ -1,104 +1,6 @@
 import React, { Component } from 'react';
-import uuidv4 from 'uuid/v4';
 import PropTypes from 'prop-types';
-import greyStar from '../../../src/assets/images/star_grey.svg';
-import greenStar from '../../../src/assets/images/star_green.svg';
 import '../../../src/assets/styles/roomFeedbackResponse.scss';
-
-/**
- * Creates stars
- *
- * @param {Integer} rating
- *
- * @returns {{starImage: Array, rateText: string}}
- */
-export const starRate = (rating = 0) => {
-  const starImage = [];
-  let rateText;
-
-  // check star rating values and assign them to the list
-  switch (rating) {
-    case 1:
-      for (let step = 0; step < rating; step += 1) {
-        starImage.push(
-          <img
-            src={greenStar}
-            alt={`star rating of ${rating}`}
-            key={uuidv4()}
-          />,
-        );
-      }
-      rateText = 'Very Poor';
-      break;
-
-    case 2:
-      for (let step = 0; step < rating; step += 1) {
-        starImage.push(
-          <img
-            src={greenStar}
-            alt={`star rating of ${rating}`}
-            key={uuidv4()}
-          />,
-        );
-      }
-      rateText = 'Poor';
-      break;
-
-    case 3:
-      for (let step = 0; step < rating; step += 1) {
-        starImage.push(
-          <img
-            src={greenStar}
-            alt={`star rating of ${rating}`}
-            key={uuidv4()}
-          />,
-        );
-      }
-      rateText = 'Good';
-      break;
-
-    case 4:
-      for (let step = 0; step < rating; step += 1) {
-        starImage.push(
-          <img
-            src={greenStar}
-            alt={`star rating of ${rating}`}
-            key={uuidv4()}
-          />,
-        );
-      }
-      rateText = 'Very Good';
-      break;
-
-    case 5:
-      for (let step = 0; step < rating; step += 1) {
-        starImage.push(
-          <img
-            src={greenStar}
-            alt={`star rating of ${rating}`}
-            key={uuidv4()}
-          />,
-        );
-      }
-      rateText = 'Excellent';
-      break;
-
-    default:
-      for (let step = 0; step < 5; step += 1) {
-        starImage.push(
-          <img src={greyStar} alt="star rating of 0" key={uuidv4()} />,
-        );
-      }
-      rateText = 'Not Rated';
-      break;
-  }
-  for (let i = 0; starImage.length < 5; i += 1) {
-    starImage.push(
-      <img src={greyStar} alt="star rating of 0" key={uuidv4()} />,
-    );
-  }
-  return { starImage, rateText };
-};
 
 /**
  * Represents a single feedback
@@ -109,40 +11,52 @@ export const starRate = (rating = 0) => {
  *
  */
 class RoomFeedbackResponse extends Component {
+  getResponseSuggestion = (roomResponses) => {
+    const suggestionResponseList = roomResponses.filter(response => (response.suggestion !== null));
+    if (suggestionResponseList.length > 0) {
+      const { suggestion } = suggestionResponseList[0];
+      return suggestion;
+    }
+    return '';
+  };
+
   showModal = (e) => {
     const {
-      roomFeedbackResponse: { id },
+      roomFeedbackResponse: { roomId },
       viewSingleFeed,
     } = this.props;
-    viewSingleFeed(e, id);
+    viewSingleFeed(e, roomId);
   };
 
   render() {
     const {
       activeRoomId,
+      roomCleanlinessRating,
+      totalCleanlinessRating,
+      totalMissingItemsCount,
       roomFeedbackResponse: {
-        id,
-        room,
-        responses,
-        rating,
-        missingItems,
-        suggestion,
+        roomId,
+        roomName,
+        totalResponses,
+        totalRoomResources,
+        response,
       },
     } = this.props;
-    const { starImage, rateText } = starRate(rating);
-    const allStars = starImage.map(star => star);
+    const totalMissingItems = totalMissingItemsCount(response);
+    const { totalRating, grade } = totalCleanlinessRating(response);
+    const suggestion = this.getResponseSuggestion(response);
     return (
-      <div className={`room-feedback-container ${(activeRoomId === id) ? 'active' : ''}`}>
+      <div className={`room-feedback-container ${(activeRoomId === roomId) ? 'active' : ''}`}>
         <span>
           <a href="/" onClick={this.showModal}>
-            {room}
+            {roomName}
           </a>
         </span>
-        <span>{responses}</span>
+        <span>{totalResponses}</span>
         <span>
-          {allStars} <span className="star-text">{rateText}</span>
+          {roomCleanlinessRating(totalRating)} <span className="star-text">{grade}</span>
         </span>
-        <span>{missingItems}</span>
+        <span>{`${totalMissingItems} out of ${totalRoomResources}`}</span>
         <span>{suggestion.substring(0, 20)}...</span>
       </div>
     );
@@ -151,14 +65,17 @@ class RoomFeedbackResponse extends Component {
 
 RoomFeedbackResponse.propTypes = {
   roomFeedbackResponse: PropTypes.shape({
-    room: PropTypes.string.isRequired,
-    responses: PropTypes.number.isRequired,
-    rating: PropTypes.number.isRequired,
-    missingItems: PropTypes.string.isRequired,
-    suggestion: PropTypes.string.isRequired,
+    roomId: PropTypes.number.isRequired,
+    roomName: PropTypes.string.isRequired,
+    response: PropTypes.array.isRequired,
+    totalResponses: PropTypes.number.isRequired,
+    totalRoomResources: PropTypes.number.isRequired,
   }).isRequired,
   activeRoomId: PropTypes.number,
   viewSingleFeed: PropTypes.func.isRequired,
+  roomCleanlinessRating: PropTypes.func.isRequired,
+  totalCleanlinessRating: PropTypes.func.isRequired,
+  totalMissingItemsCount: PropTypes.func.isRequired,
 };
 
 RoomFeedbackResponse.defaultProps = {

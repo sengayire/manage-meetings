@@ -17,4 +17,24 @@ const SINGLE_ROOM_FEEDBACK = gql`
   }
 `;
 
-export default SINGLE_ROOM_FEEDBACK;
+const ALL_ROOM_FEEDBACK = gql`
+  query {
+    allRoomResponses{
+      responses {
+        roomId
+        roomName
+        totalResponses
+        totalRoomResources
+        response {
+          suggestion
+          responseId
+          missingItems
+          createdDate
+          rating
+        }
+      }
+    }
+  }
+`;
+
+export { SINGLE_ROOM_FEEDBACK as default, ALL_ROOM_FEEDBACK };

@@ -3,6 +3,8 @@
 exports[`Room feedback Card Component should render correctly 1`] = `
 <section>
   <p />
-  <p />
+  <p>
+    0
+  </p>
 </section>
 `;

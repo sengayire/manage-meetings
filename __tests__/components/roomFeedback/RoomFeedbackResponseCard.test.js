@@ -4,7 +4,7 @@ import RoomFeedbackResponseCard from '../../../src/components/roomFeedback/RoomF
 
 const initProps = {
   title: '',
-  value: '',
+  value: 0,
 };
 
 describe('Room feedback Card Component', () => {
