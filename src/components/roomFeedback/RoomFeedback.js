@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { graphql, compose } from 'react-apollo';
 import PropTypes from 'prop-types';
+import ColGroup from '../helpers/ColGroup';
 import TableHead from '../helpers/TableHead';
 import Feedback from './Feedback';
 import { GET_USER_ROLE } from '../../graphql/queries/People';
@@ -18,7 +19,7 @@ import Spinner from '../commons/Spinner';
 export class RoomFeedback extends Component {
   state = {
     allQuestions: [],
-  };
+  }
 
   componentWillMount() {
     this.setAllQuestionsToState(this.props);
@@ -84,12 +85,9 @@ export class RoomFeedback extends Component {
    */
   formatStartDate = (startDate) => {
     const theDate = new Date(startDate).getDate();
-    const theMonth = new Date(startDate).toLocaleString(
-      'en-us',
-      {
-        month: 'short',
-      },
-    );
+    const theMonth = new Date(startDate).toLocaleString('en-us', {
+      month: 'short',
+    });
     const theYear = new Date(startDate).getFullYear();
     const finalDate = `${theDate} ${theMonth}, ${theYear}`;
     return finalDate;
@@ -104,7 +102,8 @@ export class RoomFeedback extends Component {
     return (
       <div className="room-feedback">
         <div className="room-feedback__list">
-          <div className="table">
+          <table>
+            <ColGroup />
             <TableHead
               titles={[
                 'Question',
@@ -116,7 +115,7 @@ export class RoomFeedback extends Component {
                 'Status',
               ]}
             />
-            <div className="table__body">
+            <tbody>
               {
                 <Feedback
                   feedback={allQuestions}
@@ -124,8 +123,8 @@ export class RoomFeedback extends Component {
                   startDateFormatter={this.formatStartDate}
                 />
               }
-            </div>
-          </div>
+            </tbody>
+          </table>
         </div>
       </div>
     );
@@ -161,7 +160,10 @@ export default compose(
     name: 'user',
     options: /* istanbul ignore next */ () => ({
       variables: {
-        email: process.env.NODE_ENV === 'test' ? 'sammy.muriuki@andela.com' : userData.email,
+        email:
+          process.env.NODE_ENV === 'test'
+            ? 'sammy.muriuki@andela.com'
+            : userData.email,
       },
     }),
   }),

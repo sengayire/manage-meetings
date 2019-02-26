@@ -45,13 +45,13 @@ const People = ({
       );
   };
   return (
-    <div className="table__row">
-      <span>
+    <tr>
+      <td>
         <img className="profilePic" src={picture} alt="profilePicture" />
         {name}
-      </span>
-      <span>{location}</span>
-      <span>
+      </td>
+      <td>{location}</td>
+      <td>
         <span>
           {accessLevel}
           <IconMenu
@@ -71,8 +71,8 @@ const People = ({
             ))}
           </IconMenu>
         </span>
-      </span>
-    </div>
+      </td>
+    </tr>
   );
 };
 

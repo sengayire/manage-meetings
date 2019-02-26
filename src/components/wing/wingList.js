@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql, compose } from 'react-apollo';
-import Wing from './wings'; // eslint-disable-line
+import Wing from "./wings"; // eslint-disable-line
 import AddWing from './addWing'; // eslint-disable-line
 import '../../assets/styles/officelist.scss';
+import ColGroup from '../helpers/ColGroup';
 import TableHead from '../helpers/TableHead';
 import MenuTitle from '../commons/MenuTitle';
 import Spinner from '../commons/Spinner';
@@ -14,7 +15,7 @@ import Errors from '../commons/Errors';
 
 /**
  * Get user data from token
- */
+*/
 const { UserInfo: userData } = decodeTokenAndGetUserData() || {};
 
 /**
@@ -39,13 +40,16 @@ export const WingList = (props) => {
             <AddWing userLocation={props.data.loading ? '' : props.data.user.location} />
           </div>
           <div className="settings-offices-list">
-            <div className="table">
+            <table>
+              <ColGroup />
               <TableHead titles={['Wing', 'Block', 'Floor', 'Action']} />
-              <div className="table__body">
+              <tbody>
                 {allWings &&
-                  allWings.map(wing => <Wing wing={wing} key={wing.name} wingId={wing.id} />)}
-              </div>
-            </div>
+                  allWings.map(wing => (
+                    <Wing wing={wing} key={wing.name} wingId={wing.id} />
+                  ))}
+              </tbody>
+            </table>
           </div>
         </div>
       </div>

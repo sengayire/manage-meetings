@@ -11,13 +11,22 @@ import WrappedEditResource from './EditResource';
  * @returns {JSX}
  */
 const Resource = ({ resource, refetch, currentPage }) => (
-  <div className="table__row">
-    <span>{resource.name}</span>
-    <span>
-      <WrappedEditResource resource={resource} refetch={refetch} currentPage={currentPage} /> &nbsp;
-      <WrappedDeleteResource toDelete={resource} refetch={refetch} currentPage={currentPage} />
-    </span>
-  </div>
+  <tr>
+    <td>{resource.name}</td>
+    <td>
+      <WrappedEditResource
+        resource={resource}
+        refetch={refetch}
+        currentPage={currentPage}
+      />{' '}
+      &nbsp;
+      <WrappedDeleteResource
+        toDelete={resource}
+        refetch={refetch}
+        currentPage={currentPage}
+      />
+    </td>
+  </tr>
 );
 
 Resource.propTypes = {

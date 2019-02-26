@@ -10,12 +10,17 @@ const formatBlockData = block => ({
 });
 
 const BlockTableBody = props => (
-  <div className="table__body">
-    {props.blocks &&
-      props.blocks.map(block => (
-        <SingleBlock block={formatBlockData(block)} key={block.id} refetch={props.refetch} />
-      ))}
-  </div>
+  <tbody className="bundle">
+    {
+      props.blocks && props.blocks.map(block => (
+        <SingleBlock
+          block={formatBlockData(block)}
+          key={block.id}
+          refetch={props.refetch}
+        />
+        ))
+}
+  </tbody>
 );
 
 BlockTableBody.propTypes = {

@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import { compose, graphql } from 'react-apollo';
 import toastr from 'toastr';
 import Office from './Office';
-import AddOffice from './AddOffice'; // eslint-disable-line
+import AddOffice from "./AddOffice"; // eslint-disable-line
 import '../../assets/styles/officelist.scss';
-import '../../assets/styles/table.scss';
+import ColGroup from '../helpers/ColGroup';
 import TableHead from '../helpers/TableHead';
 import Pagination from '../commons/Pagination';
 import notification from '../../utils/notification';
@@ -73,7 +73,11 @@ export class OfficeList extends React.Component {
       .then(() => this.setState({ dataFetched: true, isFetching: false }))
       .catch(() => {
         this.setState({ dataFetched: false, isFetching: false });
-        notification(toastr, 'error', 'You seem to be offline, check your internet connection.')();
+        notification(
+          toastr,
+          'error',
+          'You seem to be offline, check your internet connection.',
+        )();
       });
   };
 
@@ -90,43 +94,46 @@ export class OfficeList extends React.Component {
 
     return (
       <div className="settings-offices">
-        <div className={`settings-offices-control ${isFetching ? 'disabled-buttons' : null}`}>
+        <div
+          className={`settings-offices-control ${
+            isFetching ? 'disabled-buttons' : null
+          }`}
+        >
           <MenuTitle title="Offices" />
           <AddOffice refetch={refetch} currentPage={currentPage} />
         </div>
         <div className="settings-offices-list">
           {isFetching ? <Overlay /> : null}
-          {!error ? (
-            <div className="table">
+          {!error ?
+            <table>
+              <ColGroup />
               <TableHead titles={['Office', 'Center', 'Timezone', 'Action']} />
-              <div className="table__body">
-                {allOffices.offices &&
-                  allOffices.offices.map(office => (
-                    <Office
-                      office={office}
-                      key={office.name}
-                      refetch={refetch}
-                      officeId={office.id}
-                      currentPage={currentPage}
-                    />
-                  ))}
-              </div>
-            </div>
-          ) : (
-            <Errors message="Data cannot be returned at the moment" />
-          )}
+              <tbody>
+                {
+                allOffices.offices && allOffices.offices.map(office => (
+                  <Office
+                    office={office}
+                    key={office.name}
+                    refetch={refetch}
+                    officeId={office.id}
+                    currentPage={currentPage}
+                  />
+                ))
+                }
+              </tbody>
+            </table>
+          : <Errors message="Data cannot be returned at the moment" />
+          }
         </div>
-        {!error && (
-          <Pagination
-            totalPages={allOffices.pages}
-            hasNext={allOffices.hasNext}
-            hasPrevious={allOffices.hasPrevious}
-            handleData={this.handleData}
-            currentPage={currentPage}
-            dataFetched={dataFetched}
-            isFetching={isFetching}
-          />
-        )}
+        {!error && <Pagination
+          totalPages={allOffices.pages}
+          hasNext={allOffices.hasNext}
+          hasPrevious={allOffices.hasPrevious}
+          handleData={this.handleData}
+          currentPage={currentPage}
+          dataFetched={dataFetched}
+          isFetching={isFetching}
+        />}
       </div>
     );
   }
@@ -165,23 +172,24 @@ OfficeList.defaultProps = {
 
 const { UserInfo: userData } = decodeTokenAndGetUserData() || {};
 
-export default compose(
-  graphql(GET_ALL_OFFICES, {
-    options: () => ({
-      /* istanbul ignore next */
-      /* Reasoning: no explicit way of testing configuration options */
-      variables: {
-        page: 1,
-        perPage: 5,
-      },
-    }),
+export default compose(graphql(GET_ALL_OFFICES, {
+  options: () => ({
+    /* istanbul ignore next */
+    /* Reasoning: no explicit way of testing configuration options */
+    variables: {
+      page: 1,
+      perPage: 5,
+    },
   }),
-  graphql(GET_USER_ROLE, {
-    name: 'user',
-    options: /* istanbul ignore next */ () => ({
-      variables: {
-        email: process.env.NODE_ENV === 'test' ? 'sammy.muriuki@andela.com' : userData.email,
-      },
-    }),
+}),
+graphql(GET_USER_ROLE, {
+  name: 'user',
+  options: /* istanbul ignore next */ () => ({
+    variables: {
+      email:
+        process.env.NODE_ENV === 'test'
+          ? 'sammy.muriuki@andela.com'
+          : userData.email,
+    },
   }),
-)(OfficeList);
+}))(OfficeList);

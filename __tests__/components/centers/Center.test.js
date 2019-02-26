@@ -14,7 +14,7 @@ describe('Location Component', () => {
   const roomWrapper = shallow(<Center location={location} refetch={refetch} />);
 
   it('renders the correct content', () => {
-    const td = roomWrapper.find('span');
+    const td = roomWrapper.find('td');
     expect(td).toHaveLength(4);
   });
 });

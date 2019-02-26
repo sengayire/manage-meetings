@@ -9,6 +9,7 @@ import {
   GET_LOCATIONS_QUERY,
   GET_ROOM_BY_NAME,
 } from '../../graphql/queries/Rooms';
+import ColGroup from '../helpers/ColGroup';
 import TableHead from '../helpers/TableHead';
 import TableBody from '../helpers/TableBody';
 import Pagination from '../commons/Pagination';
@@ -235,7 +236,8 @@ export class RoomsList extends React.Component {
           <div className="settings-rooms-list">
             {isFetching ? <Overlay /> : null}
             {!(locationsError || error) ?
-              <div className="table">
+              <table>
+                <ColGroup />
                 <TableHead titles={['Room', 'Location', 'Office', 'Action']} />
                 <TableBody
                   rooms={allRooms.rooms}
@@ -243,7 +245,7 @@ export class RoomsList extends React.Component {
                   currentPage={currentPage}
                   refetch={refetch}
                 />
-              </div>
+              </table>
             : <Errors message="Data cannot be returned at the moment" />
             }
           </div>

@@ -18,11 +18,11 @@ const Room = ({
   currentPage,
   refetch,
 }) => (
-  <div className="table__row">
-    <span>{name}</span>
-    <span>{location}</span>
-    <span>{office}</span>
-    <span>
+  <tr>
+    <td>{name}</td>
+    <td>{location}</td>
+    <td>{office}</td>
+    <td>
       <EditRoomFunc
         roomName={name}
         roomLocation={locationId}
@@ -39,8 +39,8 @@ const Room = ({
         currentPage={currentPage}
         refetch={refetch}
       />
-    </span>
-  </div>
+    </td>
+  </tr>
 );
 
 Room.propTypes = {
@@ -48,7 +48,8 @@ Room.propTypes = {
     name: PropTypes.string.isRequired,
     location: PropTypes.string.isRequired,
     office: PropTypes.string.isRequired,
-    locationId: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+    locationId: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+      .isRequired,
   }).isRequired,
   locations: PropTypes.arrayOf(
     PropTypes.shape({

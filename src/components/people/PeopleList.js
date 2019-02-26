@@ -3,6 +3,7 @@ import { graphql, compose } from 'react-apollo';
 import PropTypes from 'prop-types';
 import toastr from 'toastr';
 import '../../assets/styles/peopleList.scss';
+import ColGroup from '../helpers/ColGroup';
 import TableHead from '../helpers/TableHead';
 import People from './People';
 import Pagination from '../commons/Pagination';
@@ -136,9 +137,10 @@ export class PeopleList extends Component {
         <div className="settings-people-list">
           {isFetching ? <Overlay /> : null}
           {!(error || locationsError || rolesError) ?
-            <div className="table">
+            <table>
+              <ColGroup />
               <TableHead titles={['Name', 'Location', 'Access Level']} />
-              <div className="table__body">
+              <tbody>
                 {this.props.people.users &&
                 users.users.map(person => (
                   <People
@@ -150,8 +152,8 @@ export class PeopleList extends Component {
                     editRole={editRole}
                   />
                 ))}
-              </div>
-            </div>
+              </tbody>
+            </table>
           : <Errors message="Data cannot be returned at the moment" />
           }
         </div>

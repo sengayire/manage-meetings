@@ -1,13 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Tests for Resource Component renders correctly from memory 1`] = `
-<div
-  className="table__row"
->
-  <span>
+<tr>
+  <td>
     Marker
-  </span>
-  <span>
+  </td>
+  <td>
     <Apollo(Apollo(EditResource))
       currentPage={1}
       refetch={null}
@@ -18,7 +16,8 @@ exports[`Tests for Resource Component renders correctly from memory 1`] = `
         }
       }
     />
-      
+     
+     
     <Apollo(Apollo(DeleteResource))
       currentPage={1}
       refetch={null}
@@ -29,6 +28,6 @@ exports[`Tests for Resource Component renders correctly from memory 1`] = `
         }
       }
     />
-  </span>
-</div>
+  </td>
+</tr>
 `;

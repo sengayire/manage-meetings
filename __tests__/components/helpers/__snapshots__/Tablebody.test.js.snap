@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Pagination Component renders without crashing 1`] = `
-<div
-  className="table_body"
+<tbody
+  className="bundle"
 >
   <Room
     currentPage={1}
@@ -19,12 +19,12 @@ exports[`Pagination Component renders without crashing 1`] = `
       }
     }
   />
-</div>
+</tbody>
 `;
 
 exports[`Pagination Component renders without crashing 2`] = `
-<div
-  className="table_body"
+<tbody
+  className="bundle"
 >
   <Room
     currentPage={1}
@@ -41,5 +41,5 @@ exports[`Pagination Component renders without crashing 2`] = `
       }
     }
   />
-</div>
+</tbody>
 `;

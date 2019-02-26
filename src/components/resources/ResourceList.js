@@ -7,6 +7,7 @@ import AddResourceComponent from './AddResource';
 import '../../assets/styles/resourcelist.scss';
 import { GET_RESOURCES_QUERY } from '../../graphql/queries/Resources';
 import { formatResourceData } from '../../graphql/mappers/Resources';
+import ColGroup from '../helpers/ColGroup';
 import TableHead from '../helpers/TableHead';
 import Pagination from '../commons/Pagination';
 import MenuTitle from '../commons/MenuTitle';
@@ -72,7 +73,11 @@ export class ResourceList extends React.Component {
       .then(() => this.setState({ dataFetched: true, isFetching: false }))
       .catch(() => {
         this.setState({ dataFetched: false, isFetching: false });
-        notification(toastr, 'error', 'You seem to be offline, check your internet connection.')();
+        notification(
+          toastr,
+          'error',
+          'You seem to be offline, check your internet connection.',
+        )();
       });
   };
 
@@ -85,42 +90,47 @@ export class ResourceList extends React.Component {
     else if (user) saveItemInLocalStorage('access', user.roles[0].id);
     return (
       <div className="settings-resource">
-        <div className={`settings-resource-control ${isFetching ? 'disabled-buttons' : null}`}>
+        <div
+          className={`settings-resource-control ${
+            isFetching ? 'disabled-buttons' : null
+          }`}
+        >
           <MenuTitle title="Resources" />
-          <AddResourceComponent userLocation={this.props.userLocation.user} refetch={refetch} />
+          <AddResourceComponent
+            userLocation={this.props.userLocation.user}
+            refetch={refetch}
+          />
         </div>
         <div className="settings-resource-list">
           {isFetching ? <Overlay /> : null}
-          {!error ? (
-            <div className="table">
+          {!error ?
+            <table>
+              <ColGroup />
               <TableHead titles={['Resource', 'Action']} />
-              <div className="table__body">
-                {allResources &&
-                  allResources.resources.map(resource => (
-                    <Resource
-                      currentPage={currentPage}
-                      resource={formatResourceData(resource)}
-                      refetch={refetch}
-                      key={resource.id}
-                    />
-                  ))}
-              </div>
-            </div>
-          ) : (
-            <Errors message="Data cannot be returned at the moment" />
-          )}
+              <tbody>
+                {
+                allResources && allResources.resources.map(resource => (
+                  <Resource
+                    currentPage={currentPage}
+                    resource={formatResourceData(resource)}
+                    refetch={refetch}
+                    key={resource.id}
+                  />
+              ))}
+              </tbody>
+            </table>
+          : <Errors message="Data cannot be returned at the moment" />
+          }
         </div>
-        {!error && (
-          <Pagination
-            currentPage={currentPage}
-            totalPages={allResources.pages}
-            hasNext={allResources.hasNext}
-            hasPrevious={allResources.hasPrevious}
-            handleData={this.handleData}
-            dataFetched={this.state.dataFetched}
-            isFetching={isFetching}
-          />
-        )}
+        {!error && <Pagination
+          currentPage={currentPage}
+          totalPages={allResources.pages}
+          hasNext={allResources.hasNext}
+          hasPrevious={allResources.hasPrevious}
+          handleData={this.handleData}
+          dataFetched={this.state.dataFetched}
+          isFetching={isFetching}
+        />}
       </div>
     );
   }
@@ -158,8 +168,8 @@ const { UserInfo: userData } = decodeTokenAndGetUserData() || {};
 export default compose(
   graphql(GET_RESOURCES_QUERY, {
     options: () => ({
-      /* istanbul ignore next */
-      /* Reasoning: no explicit way of testing configuration options */
+    /* istanbul ignore next */
+    /* Reasoning: no explicit way of testing configuration options */
       variables: {
         page: 1,
         perPage: 5,
@@ -170,7 +180,10 @@ export default compose(
     name: 'user',
     options: /* istanbul ignore next */ () => ({
       variables: {
-        email: process.env.NODE_ENV === 'test' ? 'sammy.muriuki@andela.com' : userData.email,
+        email:
+          process.env.NODE_ENV === 'test'
+            ? 'sammy.muriuki@andela.com'
+            : userData.email,
       },
     }),
   }),
@@ -178,7 +191,10 @@ export default compose(
     name: 'userLocation',
     options: /* istanbul ignore next */ () => ({
       variables: {
-        email: process.env.NODE_ENV === 'test' ? 'sammy.muriuki@andela.com' : userData.email,
+        email:
+          process.env.NODE_ENV === 'test'
+            ? 'sammy.muriuki@andela.com'
+            : userData.email,
       },
     }),
   }),

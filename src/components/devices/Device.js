@@ -14,13 +14,13 @@ const Device = ({
     name, type, date, last, location,
   },
 }) => (
-  <div className="table__row">
-    <span>{name}</span>
-    <span>{type}</span>
-    <span>{date}</span>
-    <span>{last}</span>
-    <span>{location}</span>
-  </div>
+  <tr>
+    <td>{name}</td>
+    <td>{type}</td>
+    <td>{date}</td>
+    <td>{last}</td>
+    <td>{location}</td>
+  </tr>
 );
 
 Device.propTypes = {

@@ -13,11 +13,11 @@ const Center = (props) => {
   } = props.location;
   const { refetch } = props;
   return (
-    <div className="table__row">
-      <span>{name}</span>
-      <span>{country.split('.')[1]}</span>
-      <span>{abbreviation}</span>
-      <span>
+    <tr>
+      <td>{name}</td>
+      <td>{country.split('.')[1]}</td>
+      <td>{abbreviation}</td>
+      <td>
         <EditCenter
           id="edit-modal"
           centerName={name}
@@ -26,10 +26,15 @@ const Center = (props) => {
           centerId={id}
           refetch={refetch}
         />
-        &nbsp;
-        <DeleteCenter centerName={name} centerId={id} refetch={refetch} id="delete-modal" />
-      </span>
-    </div>
+      &nbsp;
+        <DeleteCenter
+          centerName={name}
+          centerId={id}
+          refetch={refetch}
+          id="delete-modal"
+        />
+      </td>
+    </tr>
   );
 };
 

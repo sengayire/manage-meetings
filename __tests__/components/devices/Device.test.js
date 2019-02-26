@@ -9,7 +9,7 @@ describe('Device Component', () => {
     expect(shallow(<Device device={deviceData} />)).toMatchSnapshot();
   });
   it('renders the correct content', () => {
-    const td = deviceWrappper.find('span');
+    const td = deviceWrappper.find('td');
     const dev = [
       'Samsung Galaxy',
       'Internal Display',

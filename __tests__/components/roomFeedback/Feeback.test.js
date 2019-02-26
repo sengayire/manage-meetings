@@ -14,7 +14,7 @@ describe('RoomFeeback Component', () => {
     </MockedProvider>,
   );
   it('should render table row property while rendering the component', () => {
-    expect(wrapper.find('.table__row')).toHaveLength(1);
+    expect(wrapper.find('tr')).toHaveLength(2);
   });
 
   it('should has empty user prop', () => {

@@ -14,7 +14,7 @@ describe('Room Component', () => {
   const roomWrapper = shallow(<Room room={room} locations={roomLocations} />);
 
   it('renders the correct content', () => {
-    const td = roomWrapper.find('span');
+    const td = roomWrapper.find('td');
     const rm = ['Kampala', 'Kampala', 'The Oak', 'Edit', 'Delete'];
     let i = 0;
     expect(td).toHaveLength(4);

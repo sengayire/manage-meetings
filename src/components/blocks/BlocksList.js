@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { compose, graphql } from 'react-apollo';
 import Spinner from '../commons/Spinner';
+import ColGroup from '../helpers/ColGroup';
 import TableHead from '../helpers/TableHead';
 import BlockTableBody from './BlockTbody';
 import GET_ALL_BLOCKS from '../../graphql/queries/Blocks';
@@ -35,10 +36,11 @@ export const BlocksList = (props) => {
       </div>
       <div className="settings-rooms-list">
         {!error ?
-          <div className="table">
+          <table>
+            <ColGroup />
             <TableHead titles={['SingleBlock', 'Location', 'Office', 'Action']} />
             <BlockTableBody blocks={allBlocks.allBlocks} refetch={allBlocks.allBlocks.refetch} />
-          </div>
+          </table>
         : <Errors message="Data cannot be returned at the moment" />
         }
       </div>

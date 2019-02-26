@@ -1,17 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Tests for SettingOffices renders correctly from memory 1`] = `
-<div
-  className="table__row"
->
-  <span>
+<tr>
+  <td>
     EPIC Tower
-  </span>
-  <span />
-  <span>
+  </td>
+  <td />
+  <td>
     GMT +3
-  </span>
-  <span>
+  </td>
+  <td>
     <Apollo(Apollo(EditOffice))
       currentPage={1}
       id="edit-modal"
@@ -27,22 +25,20 @@ exports[`Tests for SettingOffices renders correctly from memory 1`] = `
       officeName="EPIC Tower"
       refetch={[MockFunction]}
     />
-  </span>
-</div>
+  </td>
+</tr>
 `;
 
 exports[`Tests for SettingOffices renders correctly from memory 2`] = `
-<div
-  className="table__row"
->
-  <span>
+<tr>
+  <td>
     EPIC Tower
-  </span>
-  <span />
-  <span>
+  </td>
+  <td />
+  <td>
     GMT +1
-  </span>
-  <span>
+  </td>
+  <td>
     <Apollo(Apollo(EditOffice))
       currentPage={1}
       id="edit-modal"
@@ -58,6 +54,6 @@ exports[`Tests for SettingOffices renders correctly from memory 2`] = `
       officeName="EPIC Tower"
       refetch={[MockFunction]}
     />
-  </span>
-</div>
+  </td>
+</tr>
 `;

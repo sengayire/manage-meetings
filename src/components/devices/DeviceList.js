@@ -1,11 +1,14 @@
 import React from 'react';
 import '../../assets/styles/devicelist.scss';
+import ColGroup from '../helpers/ColGroup';
 import TableHead from '../helpers/TableHead';
 import Device from './Device';
 import devices from '../../fixtures/devices';
 import MenuTitle from '../commons/MenuTitle';
 
-const deviceListItems = devices.map(device => <Device device={device} key={device.name} />);
+const deviceListItems = devices.map(device => (
+  <Device device={device} key={device.name} />
+));
 
 /**
  * Device List Component
@@ -17,10 +20,13 @@ const DeviceList = () => (
     <div className="settings-devices-control">
       <MenuTitle title="Devices" />
     </div>
-    <div className="table">
-      <TableHead titles={['Name', 'Type', 'Date Added', 'Last Seen', 'Location']} />
-      <div className="table__body">{deviceListItems}</div>
-    </div>
+    <table>
+      <ColGroup />
+      <TableHead
+        titles={['Name', 'Type', 'Date Added', 'Last Seen', 'Location']}
+      />
+      <tbody>{deviceListItems}</tbody>
+    </table>
   </div>
 );
 
