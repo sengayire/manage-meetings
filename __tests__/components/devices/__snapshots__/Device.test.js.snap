@@ -1,21 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Device Component renders without crashing 1`] = `
-<tr>
-  <td>
+<div
+  className="table__row"
+>
+  <span>
     Samsung Galaxy
-  </td>
-  <td>
+  </span>
+  <span>
     Internal Display
-  </td>
-  <td>
+  </span>
+  <span>
     14 Aug 2018
-  </td>
-  <td>
+  </span>
+  <span>
     16 Feb 2018
-  </td>
-  <td>
+  </span>
+  <span>
     Nairobi
-  </td>
-</tr>
+  </span>
+</div>
 `;

@@ -1,6 +1,7 @@
 @import "./variables.scss";
 
-.btn-secondary, .btn-primary {
+.btn-secondary,
+.btn-primary {
   margin: 0 10px;
   line-height: 2.2em;
   display: flex;
@@ -31,4 +32,10 @@
     border: 1px solid $color-primary;
     color: $color-primary;
   }
+}
+button:disabled,
+button[disabled] {
+  color: map-get($color-white, 000) !important;
+  background-color: $color-primary !important;
+  border: none !important;
 }

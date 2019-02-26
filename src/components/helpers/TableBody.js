@@ -11,9 +11,9 @@ import Room from '../rooms/Room';
  * @returns {JSX}
  */
 const TableBody = props => (
-  <tbody className="bundle">
-    {
-      props.rooms && props.rooms.map(room => (
+  <div className="table_body">
+    {props.rooms &&
+      props.rooms.map(room => (
         <Room
           currentPage={props.currentPage}
           room={formatRoomData(room)}
@@ -21,9 +21,8 @@ const TableBody = props => (
           locations={props.location}
           refetch={props.refetch}
         />
-    ))
-  }
-  </tbody>
+      ))}
+  </div>
 );
 TableBody.propTypes = {
   rooms: PropTypes.arrayOf(PropTypes.object).isRequired,

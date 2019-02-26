@@ -15992,25 +15992,25 @@ query user ($email: String!) {
                                                               ]
                                                             }
                                                           >
-                                                            <thead>
-                                                              <tr>
-                                                                <th
-                                                                  key="Room"
-                                                                >
-                                                                  Room
-                                                                </th>
-                                                                <th
-                                                                  key="Meetings"
-                                                                >
-                                                                  Meetings
-                                                                </th>
-                                                                <th
-                                                                  key="% Share of All Meetings"
-                                                                >
-                                                                  % Share of All Meetings
-                                                                </th>
-                                                              </tr>
-                                                            </thead>
+                                                            <div
+                                                              className="table__headers"
+                                                            >
+                                                              <span
+                                                                key="Room"
+                                                              >
+                                                                Room
+                                                              </span>
+                                                              <span
+                                                                key="Meetings"
+                                                              >
+                                                                Meetings
+                                                              </span>
+                                                              <span
+                                                                key="% Share of All Meetings"
+                                                              >
+                                                                % Share of All Meetings
+                                                              </span>
+                                                            </div>
                                                           </TableHead>
                                                           <tbody>
                                                             <tr>
@@ -16354,25 +16354,25 @@ query user ($email: String!) {
                                                               ]
                                                             }
                                                           >
-                                                            <thead>
-                                                              <tr>
-                                                                <th
-                                                                  key="Room"
-                                                                >
-                                                                  Room
-                                                                </th>
-                                                                <th
-                                                                  key="Meetings"
-                                                                >
-                                                                  Meetings
-                                                                </th>
-                                                                <th
-                                                                  key="% Share of All Meetings"
-                                                                >
-                                                                  % Share of All Meetings
-                                                                </th>
-                                                              </tr>
-                                                            </thead>
+                                                            <div
+                                                              className="table__headers"
+                                                            >
+                                                              <span
+                                                                key="Room"
+                                                              >
+                                                                Room
+                                                              </span>
+                                                              <span
+                                                                key="Meetings"
+                                                              >
+                                                                Meetings
+                                                              </span>
+                                                              <span
+                                                                key="% Share of All Meetings"
+                                                              >
+                                                                % Share of All Meetings
+                                                              </span>
+                                                            </div>
                                                           </TableHead>
                                                           <tbody>
                                                             <tr>
@@ -17363,25 +17363,25 @@ query user ($email: String!) {
                                                           ]
                                                         }
                                                       >
-                                                        <thead>
-                                                          <tr>
-                                                            <th
-                                                              key="Room"
-                                                            >
-                                                              Room
-                                                            </th>
-                                                            <th
-                                                              key="No. of meetings"
-                                                            >
-                                                              No. of meetings
-                                                            </th>
-                                                            <th
-                                                              key="Average Meeting Duration"
-                                                            >
-                                                              Average Meeting Duration
-                                                            </th>
-                                                          </tr>
-                                                        </thead>
+                                                        <div
+                                                          className="table__headers"
+                                                        >
+                                                          <span
+                                                            key="Room"
+                                                          >
+                                                            Room
+                                                          </span>
+                                                          <span
+                                                            key="No. of meetings"
+                                                          >
+                                                            No. of meetings
+                                                          </span>
+                                                          <span
+                                                            key="Average Meeting Duration"
+                                                          >
+                                                            Average Meeting Duration
+                                                          </span>
+                                                        </div>
                                                       </TableHead>
                                                       <tbody>
                                                         <tr>

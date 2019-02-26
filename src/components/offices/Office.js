@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import DeleteOffice from "./DeleteOffice"; //eslint-disable-line
-import EditOffice from "./EditOffice"; //eslint-disable-line
+import DeleteOffice from './DeleteOffice'; //eslint-disable-line
+import EditOffice from './EditOffice'; //eslint-disable-line
 
 /**
  * shows offices data in a table
@@ -18,11 +18,11 @@ const Office = ({ office: { id, location, name }, refetch, currentPage }) => {
     gmt = 'GMT +3';
   }
   return (
-    <tr>
-      <td>{name}</td>
-      <td>{location.name}</td>
-      <td>{gmt}</td>
-      <td>
+    <div className="table__row">
+      <span>{name}</span>
+      <span>{location.name}</span>
+      <span>{gmt}</span>
+      <span>
         <EditOffice
           id="edit-modal"
           officeName={name}
@@ -39,8 +39,8 @@ const Office = ({ office: { id, location, name }, refetch, currentPage }) => {
           refetch={refetch}
           currentPage={currentPage}
         />
-      </td>
-    </tr>
+      </span>
+    </div>
   );
 };
 

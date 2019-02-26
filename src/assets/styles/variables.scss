@@ -32,56 +32,49 @@ $color-background: #f5f9fa;
 $color-placeholder: #aca5a5;
 $color-input-border: #d6dee4;
 $color-border: #ebebeb;
-$color-text:  #6d6d6d;
-$color-title: rgba(174,189,212,0.521);
+$color-text: #6d6d6d;
+$color-title: rgba(174, 189, 212, 0.521);
 $transparent-background:rgba(0, 0, 0, .5);
 $color-shadow: rgba(0, 0, 0, 0.2);
 
-$color-amber: (
-  50: #eff3c6,
- 100: #FFE9C6,
- 200: #FAC56F,
- 300: #FFAF30
+$color-amber: (50: #eff3c6,
+100: #FFE9C6,
+200: #FAC56F,
+300: #FFAF30);
+
+$color-blue: (100: #C7D1F7,
+200: #808fa3,
+300: #7A94EB,
+400: #0000ff,
 );
 
-$color-blue: (
-  100: #C7D1F7,
-  200: #808fa3,
-  300: #7A94EB,
-  400: #0000ff,
-);
+$color-black: (100: #999999,
+200: #aba6a6,
+300: #65696d,
+400: #4F4F4F,
+500: #434343,
+600: #333e44,
+900: #000000);
 
-$color-black: (
-  100: #999999,
-  200: #aba6a6,
-  300: #65696d,
-  400: #4F4F4F,
-  500: #434343,
-  600: #333e44,
-  900: #000000
-);
+$color-white: (000: #ffffff,
+100: #f1f0f0,
+200: #f8f8f8,
+300: #f9f9f9,
+400: #c3c1c1,
+500: #e4e4e4,
+600: #dddddd,
+700: #c7c6c6,
+800: #f4f8f9,
+900: rgba(255, 255, 255, 0));
 
-$color-white: (
-  000: #ffffff,
-  100: #f1f0f0,
-  200: #f8f8f8,
-  300: #f9f9f9,
-  400: #c3c1c1,
-  500: #e4e4e4,
-  600: #dddddd,
-  700: #c7c6c6,
-  800: #f4f8f9,
-  900: rgba(255,255,255,0)
-);
-
-$color-calendar: (
-  calendar-text: #2a598f,
-  calendar-selected-text: #F0F8FF,
-  calendar-highlight: #c2cedd,
-  calendar-nav-button: #8B9898,
+$color-calendar: (calendar-text: #2a598f,
+calendar-selected-text: #F0F8FF,
+calendar-highlight: #c2cedd,
+calendar-nav-button: #8B9898,
 );
 
 $icon_size: 1em;
 $color-grey-light: #cccccc;
 $color-grey-dark: #666666;
 $color-hover: rgba(51, 89, 219, 0.06);
+$color-border: #ebebeb;

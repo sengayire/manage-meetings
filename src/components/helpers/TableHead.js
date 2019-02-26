@@ -10,13 +10,9 @@ import PropTypes from 'prop-types';
  * @returns {JSX}
  */
 const TableHead = props => (
-  <thead>
-    <tr>
-      {props.titles.map(title => (
-        <th key={title}>{title}</th>
-      ))}
-    </tr>
-  </thead>
+  <div className="table__headers">
+    {props.titles.map(title => <span key={title}>{title}</span>)}
+  </div>
 );
 
 TableHead.propTypes = {

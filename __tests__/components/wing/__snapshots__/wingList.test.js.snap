@@ -18,10 +18,9 @@ exports[`Tests for SettingOffices renders the snapshot correctly 1`] = `
     <div
       className="settings-offices-list"
     >
-      <table>
-        <ColGroup
-          numberOfMiddleColumns={2}
-        />
+      <div
+        className="table"
+      >
         <TableHead
           titles={
             Array [
@@ -32,7 +31,9 @@ exports[`Tests for SettingOffices renders the snapshot correctly 1`] = `
             ]
           }
         />
-        <tbody>
+        <div
+          className="table__body"
+        >
           <Wing
             key="epic"
             wing={
@@ -43,8 +44,8 @@ exports[`Tests for SettingOffices renders the snapshot correctly 1`] = `
             }
             wingId={1}
           />
-        </tbody>
-      </table>
+        </div>
+      </div>
     </div>
   </div>
 </div>

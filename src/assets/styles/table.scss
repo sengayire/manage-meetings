@@ -1,0 +1,64 @@
+ @import './variables';
+
+ .table {
+   clear: left;
+   table-layout: fixed;
+   width: 100%;
+   border-collapse: collapse;
+   text-align: left;
+
+   &__row {
+     display: grid;
+     padding: 0.875em 1.875em;
+     font-weight: 50;
+     border-radius: 4px;
+     background-color: map-get($color-white, 000);
+     margin-bottom: 8px;
+     border: 1px solid $color-border;
+
+     span {
+       font-family: $font-light;
+     }
+
+     &:hover {
+       background-color: $color-hover;
+     }
+   }
+
+   &__headers {
+     display: grid;
+     color: $color-header;
+     font-size: 97%;
+     font-weight: inherit;
+     margin-bottom: 8px;
+     padding: 0.875em 1.875em;
+   }
+
+   &__headers>span {
+     font-size: 105% !important;
+     color: map-get($color-black, 100) !important;
+   }
+
+   span {
+     color: map-get($color-black, 600);
+     font-size: 95%;
+   }
+
+
+   span>button {
+     padding: 2px;
+     background-color: transparent;
+     height: auto !important;
+     margin-top: -5px;
+   }
+
+
+   @media screen and (max-width: 425px) {
+     width: 100%;
+     margin-right: 0;
+   }
+
+   @media screen and (min-width: 768) and (max-width: 1023px) {
+     width: 100%;
+   }
+ }

@@ -11,10 +11,9 @@ exports[`DeviceList Component renders correctly from memory 1`] = `
       title="Devices"
     />
   </div>
-  <table>
-    <ColGroup
-      numberOfMiddleColumns={2}
-    />
+  <div
+    className="table"
+  >
     <TableHead
       titles={
         Array [
@@ -26,7 +25,9 @@ exports[`DeviceList Component renders correctly from memory 1`] = `
         ]
       }
     />
-    <tbody>
+    <div
+      className="table__body"
+    >
       <Device
         device={
           Object {
@@ -75,7 +76,7 @@ exports[`DeviceList Component renders correctly from memory 1`] = `
         }
         key="Samsung Note"
       />
-    </tbody>
-  </table>
+    </div>
+  </div>
 </div>
 `;

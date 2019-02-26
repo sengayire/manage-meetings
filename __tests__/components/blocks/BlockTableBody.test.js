@@ -8,7 +8,7 @@ describe('BlockTableBody Component', () => {
   const blockWrapper = shallow(<BlockTableBody blocks={blocks} />);
 
   it('renders the correct content', () => {
-    const td = blockWrapper.find('tbody');
+    const td = blockWrapper.find('.table__body');
     expect(td).toHaveLength(1);
   });
 });
