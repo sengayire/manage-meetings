@@ -17,18 +17,28 @@ const TheCrestInputs = ({
   roomCapacity,
   handleInputChange,
   allRemoteRooms,
+  remoteRoomName,
 }) => (
   <div className="kla-inputs">
     <Select
-      labelText="Select Room"
-      name="roomName"
-      id="roomName"
-      value={roomName}
+      labelText="Select Google Calendar Room"
+      name="remoteRoomName"
+      id="remoteRoomName"
+      value={remoteRoomName}
       options={allRemoteRooms}
       onChange={handleInputChange}
       wrapperClassName="floor-wrapper"
-      placeholder="Select Room"
+      placeholder="Select Google Calendar Room"
       selectInputClassName="room-wrapper default-select"
+    />
+    <Input
+      id="roomName"
+      name="roomName"
+      placeholder="Enter room name"
+      value={roomName}
+      labelName="Room Name"
+      onChange={handleInputChange}
+      required
     />
     <div className="two-inputs">
       <Select
@@ -62,6 +72,7 @@ const TheCrestInputs = ({
 
 TheCrestInputs.propTypes = {
   roomName: PropTypes.string.isRequired,
+  remoteRoomName: PropTypes.string,
   roomFloor: PropTypes.number.isRequired,
   floorOptionsList: PropTypes.arrayOf(PropTypes.object).isRequired,
   allRemoteRooms: PropTypes.arrayOf(PropTypes.object),
@@ -70,6 +81,7 @@ TheCrestInputs.propTypes = {
 };
 TheCrestInputs.defaultProps = {
   allRemoteRooms: [{}],
+  remoteRoomName: '',
 };
 
 export default TheCrestInputs;

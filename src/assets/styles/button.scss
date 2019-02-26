@@ -1,8 +1,8 @@
-@import './variables.scss';
+@import "./variables.scss";
 
 .btn-secondary, .btn-primary {
   margin: 0 10px;
-  line-height:  2.2em;
+  line-height: 2.2em;
   display: flex;
 }
 
@@ -10,7 +10,7 @@
   color: $text-color;
   border: 1px solid $color-border;
   margin: 0 10px;
-  line-height:  2.2em;
+  line-height: 2.2em;
   display: flex;
 
   &:hover {
@@ -31,10 +31,4 @@
     border: 1px solid $color-primary;
     color: $color-primary;
   }
-}
-
-button:disabled, button[disabled] {
-  color: map-get($color-white, 000) !important;
-  background-color: $color-primary !important;
-  border: none !important;
 }

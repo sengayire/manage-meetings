@@ -22,6 +22,7 @@ export class AddRoomToTheCrest extends Component {
     officeId: 0,
     imageUrl: '',
     roomName: '',
+    remoteRoomName: '',
     roomFloor: 0,
     uploading: false,
     floorOptions: [],
@@ -58,7 +59,7 @@ export class AddRoomToTheCrest extends Component {
       const { rooms } = remoteRooms.allRemoteRooms;
       this.setState({
         allRemoteRooms: rooms,
-        roomName: name,
+        remoteRoomName: name,
         roomCalendar: calendarId,
       });
     }
@@ -112,7 +113,9 @@ export class AddRoomToTheCrest extends Component {
       case 'roomName':
         this.setState({ [name]: value.trim() });
         break;
-
+      case 'remoteRoomName':
+        this.setState({ [name]: value.trim() });
+        break;
       case 'roomFloor':
         intValue = parseInt(value, 10);
         this.setState({ [name]: intValue });
@@ -217,6 +220,7 @@ export class AddRoomToTheCrest extends Component {
       floorOptions,
       isLoading,
       allRemoteRooms,
+      remoteRoomName,
     } = this.state;
     let floorOptionsList = floorOptions;
     const { officeDetails } = this.props;
@@ -241,6 +245,7 @@ export class AddRoomToTheCrest extends Component {
           />
           <TheCrestInputs
             roomName={roomName}
+            remoteRoomName={remoteRoomName}
             roomFloor={roomFloor}
             floorOptionsList={floorOptionsList}
             roomCapacity={roomCapacity}
@@ -275,7 +280,7 @@ AddRoomToTheCrest.propTypes = {
 AddRoomToTheCrest.defaultProps = {
   remoteRooms: {
     allRemoteRooms: {
-      rooms: [{}],
+      rooms: [],
     },
   },
 };

@@ -20,6 +20,7 @@ export class AddRoomNairobi extends Component {
     super(props);
     this.state = {
       roomName: '',
+      remoteRoomName: '',
       roomType: 'meeting',
       roomCalendar: '',
       officeId: 0,
@@ -76,7 +77,7 @@ export class AddRoomNairobi extends Component {
       const { rooms } = remoteRooms.allRemoteRooms;
       this.setState({
         allRemoteRooms: rooms,
-        roomName: name,
+        remoteRoomName: name,
         roomCalendar: calendarId,
       });
     }
@@ -132,6 +133,9 @@ export class AddRoomNairobi extends Component {
         });
         break;
       case 'roomName':
+        this.setState({ [name]: value.trim() });
+        break;
+      case 'remoteRoomName':
         this.setState({ [name]: value.trim() });
         break;
       case 'roomCapacity':
@@ -230,6 +234,7 @@ export class AddRoomNairobi extends Component {
       imageUrl,
       isLoading,
       allRemoteRooms,
+      remoteRoomName,
     } = this.state;
     let blockOptionsList = blockOptions;
     const { officeDetails } = this.props;
@@ -254,6 +259,7 @@ export class AddRoomNairobi extends Component {
           />
           <NairobiRoomInputs
             roomName={roomName}
+            remoteRoomName={remoteRoomName}
             roomCapacity={roomCapacity}
             officeBlock={officeBlock}
             officeFloor={officeFloor}
@@ -291,7 +297,7 @@ AddRoomNairobi.propTypes = {
 AddRoomNairobi.defaultProps = {
   remoteRooms: {
     allRemoteRooms: {
-      rooms: [{}],
+      rooms: [],
     },
   },
 };

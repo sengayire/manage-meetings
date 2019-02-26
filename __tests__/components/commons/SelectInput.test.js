@@ -63,7 +63,7 @@ describe('SelectInput component', () => {
   });
 
 
-  it('should render plaveholder when provided', () => {
+  it('should render placeholder when provided', () => {
     emptyWrapper.setProps({ placeholder: 'Hello' });
     emptyWrapper.update();
     const option = emptyWrapper.find('option');
@@ -81,6 +81,25 @@ describe('SelectInput component', () => {
       expect(option.props().children).toEqual(newOptions[index].value)
     ));
     expect(optionsWrapper).toMatchSnapshot();
+  });
+
+  it('should use \'calendarId\' incase \'id\' is not given in option', () => {
+    const newOptions = [{ calendarId: 4, name: 'Nairobi' }, { calendarId: 5, name: 'Kampala' }];
+    const newOptionsWrapper = shallow(<SelectInput
+      name="testSelect"
+      id="testSelect"
+      value="Nairobi"
+      onChange={handleOptionsSelectChange}
+      labelText="Select Something"
+      options={newOptions}
+    />);
+    newOptionsWrapper.setProps({ options: newOptions });
+    newOptionsWrapper.update();
+    const options = newOptionsWrapper.find('options');
+    options.map((option, index) => (
+      expect(option.props().children).toEqual(newOptions[index].value)
+    ));
+    expect(newOptionsWrapper).toMatchSnapshot();
   });
 });
 

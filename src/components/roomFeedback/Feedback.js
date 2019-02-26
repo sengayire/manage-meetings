@@ -1,9 +1,7 @@
 /* eslint react/no-array-index-key: 0 */
 import React from 'react';
 import PropTypes from 'prop-types';
-import { NavLink } from 'react-router-dom';
 import { graphql } from 'react-apollo';
-import ROUTES from '../../utils/routes';
 import CheckboxSlide from '../commons/CheckboxSlide';
 import EditFeedback from './EditFeedback';
 import DeleteFeedback from './DeleteFeedback';
@@ -32,9 +30,7 @@ const Feedback = props => (
     ) => (
       <tr key={index}>
         <td>
-          <NavLink to={ROUTES.roomResponses} className="questions">
-            {question}
-          </NavLink>
+          {question}
         </td>
         <td>{questionType}</td>
         <td>{questionResponseCount}</td>

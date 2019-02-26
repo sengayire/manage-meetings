@@ -45,6 +45,7 @@ describe('AddRoomToKampala', () => {
     crestShallowWrapper.setState({
       imageUrl: '',
       roomName: '',
+      remoteRoomName: '',
       roomFloor: 0,
       roomType: 'meeting',
       roomCalendar: 'andela.com1',
@@ -64,6 +65,11 @@ describe('AddRoomToKampala', () => {
   it('should add room name to state', () => {
     crestShallowWrapper.instance().handleInputChange({ target: { name: 'roomName', value: 'room1' } });
     expect(crestShallowWrapper.state().roomName).toEqual('room1');
+  });
+
+  it('should handle change in remoteRoomName', () => {
+    crestShallowWrapper.instance().handleInputChange({ target: { name: 'remoteRoomName', value: 'Nairobi' } });
+    expect(crestShallowWrapper.instance().state.remoteRoomName).toEqual('Nairobi');
   });
   it('should add room floor to state', () => {
     crestShallowWrapper.instance().handleInputChange({ target: { name: 'roomFloor', value: '1' } });

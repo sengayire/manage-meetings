@@ -5,10 +5,10 @@ exports[`EpicTowerInputs component should render correctly 1`] = `
   className="epic-tower-inputs"
 >
   <SelectInput
-    id="roomFloor"
+    id="remoteRoomName"
     isValue={false}
-    labelText="Select Room"
-    name="roomName"
+    labelText="Select Google Calendar Room"
+    name="remoteRoomName"
     onChange={[MockFunction]}
     options={
       Array [
@@ -18,9 +18,22 @@ exports[`EpicTowerInputs component should render correctly 1`] = `
     placeholder="Select Room"
     placeholderValue=""
     required={false}
-    selectInputClassName="floor-wrapper default-select"
+    selectInputClassName="room-select-wrapper default-select"
     value=""
-    wrapperClassName="floor-label"
+    wrapperClassName="input1"
+  />
+  <Input
+    controlsClass=""
+    id="roomName"
+    inputClass="mrm-input epic-tower-input"
+    labelClass="input1"
+    labelName="Room Name"
+    name="roomName"
+    onChange={[MockFunction]}
+    placeholder="Enter room name"
+    required={true}
+    type="text"
+    value=""
   />
   <Input
     controlsClass=""

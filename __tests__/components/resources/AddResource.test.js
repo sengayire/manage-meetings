@@ -15,7 +15,7 @@ describe('AddResource Component', () => {
     addResourceMutation: jest.fn(),
     data: {
       allRooms: {
-        rooms: [{}],
+        rooms: [],
       },
     },
     userLocation: {

@@ -40,6 +40,7 @@ describe('AddRoomEpicTower', () => {
     epicTower.instance().state = {
       imageUrl: '',
       roomName: '',
+      remoteRoomName: '',
       roomFloor: 0,
       roomType: 'meeting',
       roomCalendar: 'andela.com1',
@@ -76,6 +77,11 @@ describe('AddRoomEpicTower', () => {
   it('should change room name', () => {
     epicTower.instance().handleInputChange({ target: { name: 'roomName', value: 'room2' } });
     expect(epicTower.instance().state.roomName).toEqual('room2');
+  });
+
+  it('should handle change in remoteRoomName', () => {
+    epicTower.instance().handleInputChange({ target: { name: 'remoteRoomName', value: 'Nairobi' } });
+    expect(epicTower.instance().state.remoteRoomName).toEqual('Nairobi');
   });
 
   it('should change room capacity', () => {

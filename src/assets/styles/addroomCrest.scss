@@ -20,10 +20,10 @@
   }
 
   .kla-form{
-    padding-right: 2rem; 
+    padding-right: 3rem; 
     width: 33rem;
     #roomName{
-      width: 30.5em;
+      width: 32em;
     }
     .form-action-buttons{
       padding-right: 15px;
@@ -51,12 +51,20 @@
   .room-wrapper {
     margin-top: 5%;
     margin-bottom: 4%;
-    width: 32rem !important;
+    width: 33.5rem !important;
   }
 
   .capacity-wrapper {
     margin-top: 8%;
     margin-bottom: 14%;
     width: 12em !important;
+  }
+
+  #roomCapacity {
+    width: 215px !important;
+    font-size: 16px;
+    color: map-get($color-black, 900);
+    height: 24px;
+    border-radius: 3px;
   }
 }

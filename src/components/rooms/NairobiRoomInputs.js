@@ -11,21 +11,40 @@ import '../../assets/styles/addroom.scss';
  *
  * @returns {JSX}
  */
+
 const NairobiRoomInputs = ({
-  roomName, roomCapacity, officeBlock, officeFloor, blockOptions, floorOptions, handleInputChange,
+  roomName,
+  roomCapacity,
+  officeBlock,
+  officeFloor,
+  blockOptions,
+  floorOptions,
+  handleInputChange,
   allRemoteRooms,
+  remoteRoomName,
 }) => (
   <div className="form-inputs">
     <Select
-      labelText="Select Room"
-      name="roomName"
-      id="officeBlock"
-      value={roomName}
-      onChange={handleInputChange}
-      wrapperClassName="input-wrapper"
-      placeholder="Select Room"
+      labelText="Select Google Calendar Room"
+      name="remoteRoomName"
+      id="remoteRoomName"
+      value={remoteRoomName}
       options={allRemoteRooms}
+      onChange={handleInputChange}
+      placeholder="Select Google Calendar Room"
+      selectInputClassName=" default-select"
+    />
+    <Input
+      labelName="Room Name"
+      name="roomName"
+      inputClass="mrm-input epic-tower-input"
+      value={roomName}
+      placeholder="Enter room name"
+      id="roomName"
+      onChange={handleInputChange}
       required
+      pattern="^[a-zA-Z]+(([' .-][a-zA-Z ])?[a-zA-Z]*)*$"
+      title="Name cannot be numbers or any special characters"
     />
 
     <Input
@@ -47,7 +66,6 @@ const NairobiRoomInputs = ({
       value={officeBlock}
       key={officeBlock}
       onChange={handleInputChange}
-      wrapperClassName="input-wrapper"
       placeholder="Select block"
       options={blockOptions}
       required
@@ -64,14 +82,18 @@ const NairobiRoomInputs = ({
       options={floorOptions}
       required
     />
+
   </div>
 );
 
 NairobiRoomInputs.propTypes = {
   roomName: PropTypes.string.isRequired,
-  officeFloor: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+  remoteRoomName: PropTypes.string.isRequired,
+  officeFloor: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+    .isRequired,
   roomCapacity: PropTypes.number.isRequired,
-  officeBlock: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+  officeBlock: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+    .isRequired,
   blockOptions: PropTypes.array.isRequired,
   floorOptions: PropTypes.array.isRequired,
   allRemoteRooms: PropTypes.arrayOf(PropTypes.object).isRequired,

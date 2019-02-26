@@ -31,6 +31,7 @@ describe('AddRoomNairobi', () => {
     theDojo.instance().state = {
       imageUrl: '',
       roomName: '',
+      remoteRoomName: '',
       roomFloor: 0,
       roomType: 'meeting',
       roomCalendar: 'andela.com1',
@@ -67,13 +68,18 @@ describe('AddRoomNairobi', () => {
   });
 
   it('should have two select and two text input elements', () => {
-    expect(wrapper.find('Input').length).toBe(1);
+    expect(wrapper.find('Input').length).toBe(2);
     expect(wrapper.find('SelectInput').length).toBe(3);
   });
 
   it('should handle change in roomName', () => {
     theDojo.instance().handleInputChange({ target: { name: 'roomName', value: 'room2' } });
     expect(theDojo.instance().state.roomName).toEqual('room2');
+  });
+
+  it('should handle change in remoteRoomName', () => {
+    theDojo.instance().handleInputChange({ target: { name: 'remoteRoomName', value: 'Nairobi' } });
+    expect(theDojo.instance().state.remoteRoomName).toEqual('Nairobi');
   });
 
   it('should change in roomCapacity', () => {

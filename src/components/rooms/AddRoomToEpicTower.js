@@ -25,6 +25,7 @@ export class AddRoomToEpicTower extends Component {
       officeId: 1,
       imageUrl: '',
       roomName: '',
+      remoteRoomName: '',
       roomFloor: 0,
       uploading: false,
       floorOptions: [],
@@ -60,7 +61,7 @@ export class AddRoomToEpicTower extends Component {
       const { rooms } = remoteRooms.allRemoteRooms;
       this.setState({
         allRemoteRooms: rooms,
-        roomName: name,
+        remoteRoomName: name,
         roomCalendar: calendarId,
       });
     }
@@ -75,6 +76,7 @@ export class AddRoomToEpicTower extends Component {
     this.setState({
       imageUrl: '',
       roomName: '',
+      remoteRoomName: '',
       roomFloor: 0,
       roomWing: 0,
       closeModal: true,
@@ -124,7 +126,9 @@ export class AddRoomToEpicTower extends Component {
       case 'roomName':
         this.setState({ [name]: value.trim() });
         break;
-
+      case 'remoteRoomName':
+        this.setState({ [name]: value.trim() });
+        break;
       case 'roomFloor':
         intValue = parseInt(value, 10);
         this.setState(
@@ -245,6 +249,7 @@ export class AddRoomToEpicTower extends Component {
       imageUrl,
       isLoading,
       allRemoteRooms,
+      remoteRoomName,
     } = this.state;
 
     let floorOptionsList = floorOptions;
@@ -272,6 +277,7 @@ export class AddRoomToEpicTower extends Component {
           />
           <EpicTowerInputs
             roomName={roomName}
+            remoteRoomName={remoteRoomName}
             roomWing={roomWing}
             wingOptions={wingOptions}
             roomFloor={roomFloor}
@@ -308,7 +314,7 @@ AddRoomToEpicTower.propTypes = {
 AddRoomToEpicTower.defaultProps = {
   remoteRooms: {
     allRemoteRooms: {
-      rooms: [{}],
+      rooms: [],
     },
   },
 };

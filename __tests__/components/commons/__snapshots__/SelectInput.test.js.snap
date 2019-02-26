@@ -51,7 +51,7 @@ exports[`SelectInput component should display value if displayText isn't given i
 </div>
 `;
 
-exports[`SelectInput component should render plaveholder when provided 1`] = `
+exports[`SelectInput component should render placeholder when provided 1`] = `
 <div
   className="input1"
 >
@@ -132,6 +132,37 @@ exports[`SelectInput component should render properly when given options prop 1`
       </option>
       <option>
         how are you
+      </option>
+    </select>
+  </label>
+</div>
+`;
+
+exports[`SelectInput component should use 'calendarId' incase 'id' is not given in option 1`] = `
+<div
+  className="input1"
+>
+  <label
+    htmlFor="testSelect"
+  >
+    Select Something
+    <select
+      className="default-select"
+      id="testSelect"
+      name="testSelect"
+      onChange={[MockFunction]}
+      required={false}
+      value="Nairobi"
+    >
+      <option
+        key="4"
+      >
+        Nairobi
+      </option>
+      <option
+        key="5"
+      >
+        Kampala
       </option>
     </select>
   </label>

@@ -3306,6 +3306,7 @@ exports[`AddRoomNairobi should pop up a modal when modal button is clicked 1`] =
                                 handleInputChange={[Function]}
                                 officeBlock=""
                                 officeFloor=""
+                                remoteRoomName=""
                                 roomCapacity={0}
                                 roomName=""
                               >
@@ -3313,44 +3314,81 @@ exports[`AddRoomNairobi should pop up a modal when modal button is clicked 1`] =
                                   className="form-inputs"
                                 >
                                   <SelectInput
-                                    id="officeBlock"
+                                    id="remoteRoomName"
                                     isValue={false}
-                                    labelText="Select Room"
-                                    name="roomName"
+                                    labelText="Select Google Calendar Room"
+                                    name="remoteRoomName"
                                     onChange={[Function]}
                                     options={Array []}
-                                    placeholder="Select Room"
+                                    placeholder="Select Google Calendar Room"
                                     placeholderValue=""
-                                    required={true}
-                                    selectInputClassName="default-select"
+                                    required={false}
+                                    selectInputClassName=" default-select"
                                     value=""
-                                    wrapperClassName="input-wrapper"
+                                    wrapperClassName="input1"
                                   >
                                     <div
-                                      className="input-wrapper"
+                                      className="input1"
                                     >
                                       <label
-                                        htmlFor="officeBlock"
+                                        htmlFor="remoteRoomName"
                                       >
-                                        Select Room
+                                        Select Google Calendar Room
                                         <select
-                                          className="default-select"
-                                          id="officeBlock"
-                                          name="roomName"
+                                          className=" default-select"
+                                          id="remoteRoomName"
+                                          name="remoteRoomName"
                                           onChange={[Function]}
-                                          required={true}
+                                          required={false}
                                           value=""
                                         >
                                           <option
                                             value=""
                                           >
-                                            Select Room
+                                            Select Google Calendar Room
                                           </option>
                                           0
                                         </select>
                                       </label>
                                     </div>
                                   </SelectInput>
+                                  <Input
+                                    controlsClass=""
+                                    id="roomName"
+                                    inputClass="mrm-input epic-tower-input"
+                                    labelClass="input1"
+                                    labelName="Room Name"
+                                    name="roomName"
+                                    onChange={[Function]}
+                                    pattern="^[a-zA-Z]+(([' .-][a-zA-Z ])?[a-zA-Z]*)*$"
+                                    placeholder="Enter room name"
+                                    required={true}
+                                    title="Name cannot be numbers or any special characters"
+                                    type="text"
+                                    value=""
+                                  >
+                                    <div
+                                      className="input1"
+                                    >
+                                      <label
+                                        htmlFor="roomName"
+                                      >
+                                        Room Name
+                                        <input
+                                          className="mrm-input epic-tower-input"
+                                          id="roomName"
+                                          name="roomName"
+                                          onChange={[Function]}
+                                          pattern="^[a-zA-Z]+(([' .-][a-zA-Z ])?[a-zA-Z]*)*$"
+                                          placeholder="Enter room name"
+                                          required={true}
+                                          title="Name cannot be numbers or any special characters"
+                                          type="text"
+                                          value=""
+                                        />
+                                      </label>
+                                    </div>
+                                  </Input>
                                   <Input
                                     controlsClass=""
                                     id="roomCapacity"
@@ -3429,10 +3467,10 @@ exports[`AddRoomNairobi should pop up a modal when modal button is clicked 1`] =
                                     required={true}
                                     selectInputClassName="default-select"
                                     value=""
-                                    wrapperClassName="input-wrapper"
+                                    wrapperClassName="input1"
                                   >
                                     <div
-                                      className="input-wrapper"
+                                      className="input1"
                                     >
                                       <label
                                         htmlFor="officeBlock"

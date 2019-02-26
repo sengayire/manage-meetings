@@ -124,9 +124,7 @@ export class AddResource extends React.Component {
       room,
       isLoading,
     } = this.state;
-
     const { allRooms } = this.props.data;
-
     return (
       <MrmModal
         title="ADD RESOURCE"

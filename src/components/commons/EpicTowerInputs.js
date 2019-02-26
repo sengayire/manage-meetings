@@ -19,19 +19,28 @@ const EpicTowerInputs = ({
   wingOptions,
   handleInputChange,
   allRemoteRooms,
+  remoteRoomName,
 }) => (
   <div className="epic-tower-inputs">
     <Select
-      labelText="Select Room"
-      name="roomName"
-      id="roomFloor"
-      value={roomName}
-      onChange={handleInputChange}
+      labelText="Select Google Calendar Room"
+      name="remoteRoomName"
+      id="remoteRoomName"
+      value={remoteRoomName}
       options={allRemoteRooms}
-      wrapperClassName="floor-label"
+      onChange={handleInputChange}
       placeholder="Select Room"
-      placeholderValue=""
-      selectInputClassName="floor-wrapper default-select"
+      selectInputClassName="room-select-wrapper default-select"
+    />
+    <Input
+      id="roomName"
+      name="roomName"
+      inputClass="mrm-input epic-tower-input"
+      placeholder="Enter room name"
+      value={roomName}
+      labelName="Room Name"
+      onChange={handleInputChange}
+      required
     />
     <Input
       id="roomCapacity"
@@ -77,6 +86,7 @@ const EpicTowerInputs = ({
 
 EpicTowerInputs.propTypes = {
   roomName: PropTypes.string.isRequired,
+  remoteRoomName: PropTypes.string,
   roomFloor: PropTypes.number.isRequired,
   floorOptions: PropTypes.arrayOf(PropTypes.object).isRequired,
   roomCapacity: PropTypes.number.isRequired,
@@ -87,6 +97,7 @@ EpicTowerInputs.propTypes = {
 };
 EpicTowerInputs.defaultProps = {
   allRemoteRooms: [{}],
+  remoteRoomName: '',
 };
 
 export default EpicTowerInputs;

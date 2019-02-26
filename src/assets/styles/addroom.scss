@@ -1,4 +1,4 @@
-@import './variables';
+@import "./variables";
 
 .add-room-modal {
   font-family: $font-light;
@@ -14,7 +14,7 @@
   .wing-wrapper {
     margin-top: 5%;
     margin-bottom: 4%;
-    width: 15.5em!important;
+    width: 16em !important;
   }
 
   .mrm-input {
@@ -22,7 +22,8 @@
     margin-top: 0.7em;
     margin-bottom: 0.7em;
   }
-  .epic-tower-form{
+
+  .epic-tower-form {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -30,24 +31,29 @@
     box-sizing: border-box;
     padding-right: 2% !important;
 
-    .form-action-buttons{
+    .form-action-buttons {
       padding-right: 33px;
-      button{
-        line-height: 10px;
+      button {
+        line-height: none;
       }
     }
-    .epic-tower-inputs{
+    .epic-tower-inputs {
       display: flex;
       flex-wrap: wrap;
       padding-right: 4%;
       margin-bottom: 10px;
+
+      #roomCapacity {
+        width: 185px !important;
+        height: 1.5rem;
+      }
 
       .capacity-wrapper {
         margin-top: 5.5%;
       }
 
       .capacity-label {
-        margin-left: 8%;
+        margin-left: 3%;
       }
       .wing-label {
         margin-left: 7%;
@@ -55,13 +61,18 @@
       }
       .floor-label {
         margin-bottom: 4%;
-        width: 14em!important;
+        width: 14em !important;
       }
-      .epic-tower-input{
+      .epic-tower-input {
         width: 14rem;
       }
-      input[type=number]{
+      input[type="number"] {
         width: 12rem;
+      }
+      .room-select-wrapper {
+        margin-top: 5%;
+        margin-bottom: 4%;
+        width: 32.3rem !important;
       }
     }
   }

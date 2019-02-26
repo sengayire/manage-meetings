@@ -9,9 +9,7 @@ exports[`AddResource Component renders properly 1`] = `
     data={
       Object {
         "allRooms": Object {
-          "rooms": Array [
-            Object {},
-          ],
+          "rooms": Array [],
         },
       }
     }
