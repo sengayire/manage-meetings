@@ -2,7 +2,6 @@ import React from 'react';
 import { Query } from 'react-apollo';
 import PropTypes from 'prop-types';
 import { HorizontalBar } from 'react-chartjs-2';
-
 import { ANALYTICS_BOOKINGS_COUNT } from '../../graphql/queries/analytics';
 import ErrorBoundary from '../commons/ErrorBoundary';
 import graphColor from '../../fixtures/graphColor';

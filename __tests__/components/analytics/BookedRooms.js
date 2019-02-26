@@ -1,11 +1,11 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 import BookedRooms from '../../../src/components/analytics/BookedRooms';
-import bookedRoomsList from '../../../__mocks__/rooms/bookedRoomsList';
+import roomUsage from '../../../__mocks__/rooms/mostUsedRooms';
 
 describe('BookedRooms component', () => {
   const props = {
-    bookedRoomsList,
+    bookedRoomsList: roomUsage,
     pollIcon: '',
     moreIcon: '',
     bookedRoomText: '',
@@ -13,33 +13,42 @@ describe('BookedRooms component', () => {
     error: null,
     tip: '',
   };
-  const rooms = bookedRoomsList.length ? Object.values(bookedRoomsList[0]) : [];
-  const meetings = bookedRoomsList.length
-    ? Object.values(bookedRoomsList[1])
-    : [];
-  const meetingShares = bookedRoomsList.length
-    ? Object.values(bookedRoomsList[2])
-    : [];
+
   const wrapper = shallow(<BookedRooms {...props} />);
   it('should render correctly', () => {
     expect(wrapper).toMatchSnapshot();
-  });
-
-  it('should have a single room ', () => {
-    expect(rooms).toContain('Asmara');
   });
 
   it(' should render rooms data in  Rooms table', () => {
     const tableWrapper = mount(
       <BookedRooms
         {...props}
-        rooms={rooms}
-        meetings={meetings}
-        meetingShares={meetingShares}
+        bookedRoomsList={roomUsage}
       />);
     expect(tableWrapper.find('table')
       .children().find('tbody').children()
       .find('tr').length)
-      .toBe(5);
+      .toBe(3);
+  });
+
+  it('should render error div', () => {
+    const bookedRoomsComponent = mount(
+      <BookedRooms
+        {...props}
+        error={{ error: 'this error occurred' }}
+        bookedRoomsList={[]}
+        fetching
+      />);
+    expect(bookedRoomsComponent.find('.error_msg')).toHaveLength(1);
+  });
+
+  it('should load ProgressBar div', () => {
+    const bookedRoomsComponent = mount(
+      <BookedRooms
+        {...props}
+        bookedRoomsList={[]}
+        fetching
+      />);
+    expect(bookedRoomsComponent.find('ProgressBar')).toHaveLength(1);
   });
 });

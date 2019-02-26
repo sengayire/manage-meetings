@@ -1,11 +1,12 @@
-/* eslint-disable new-cap */
+/* eslint-disable new-cap,react/prop-types */
+/* eslint-disable react/no-array-index-key */
 import React, { Component, Fragment } from 'react';
 import toastr from 'toastr';
 import html2canvas from 'html2canvas';
 import jsxToString from 'jsx-to-string';
 import jsPDF from 'jspdf';
 import PropTypes from 'prop-types';
-import { graphql } from 'react-apollo';
+import { graphql, compose } from 'react-apollo';
 import download from 'downloadjs';
 import moment from 'moment';
 import Button from '../commons/Button';
@@ -19,8 +20,8 @@ import AnalyticsOverview from '../../containers/AnalyticsOverview';
 import ExportButton from '../commons/ExportButton';
 import { decodeTokenAndGetUserData } from '../../utils/Cookie';
 import { GET_USER_QUERY } from '../../graphql/queries/People';
-import { getMostUsedAndLeastUsedRooms } from '../../json_requests';
 import downloadFileString from '../../fixtures/downloadString';
+import { LEAST_BOOKED_ROOMS_ANALYTICS, MOST_BOOKED_ROOMS_ANALYTICS } from '../../graphql/queries/analytics';
 
 /**
  * Component for Analytics
@@ -36,14 +37,50 @@ export class AnalyticsNav extends Component {
     location: 'Kampala',
     startDate: moment().format('MMM DD Y'),
     endDate: moment().format('MMM DD Y'),
-    leastUsedRooms: [],
-    mostUsedRooms: [],
+    leastBookedRooms: [],
+    mostBookedRooms: [],
     fetching: false,
   };
 
-  componentDidMount() {
-    this.fetchMostAndLeastUsedRooms();
+  componentWillReceiveProps(props) {
+    this.setState({ fetching: true });
+    const { loading, error } = props.leastBookedAnalytics;
+    if (!loading && !error) {
+      const { analytics } = props.leastBookedAnalytics.analyticsForLeastBookedRooms;
+      this.setState({ leastBookedRooms: analytics, fetching: false });
+    }
+
+    if (!props.mostBookedAnalytics.loading && !props.mostBookedAnalytics.error) {
+      const { analytics } = props.mostBookedAnalytics.analyticsForMostBookedRooms;
+      this.setState({ mostBookedRooms: analytics, fetching: false });
+    }
   }
+
+  /**
+   * 1. Updates the start and end date in the calendar
+   * 2. Toggles the calendar
+   *
+   * @param {date} start
+   * @param {date} end
+   *
+   * @returns {Function}
+   */
+  sendDateData = (start, end) => {
+    this.setState({ startDate: start, endDate: end, fetching: true });
+    this.calenderToggle();
+    this.props.leastBookedAnalytics.refetch({ startDate: start, endDate: end });
+    this.props.mostBookedAnalytics.refetch({ startDate: start, endDate: end });
+  };
+
+  /**
+   * It toggles the calendar view
+   *
+   * @returns {void}
+   */
+  calenderToggle = () => {
+    const { calenderOpen } = this.state;
+    this.setState({ calenderOpen: !calenderOpen });
+  };
 
   /**
    * sets state of view to overview
@@ -57,38 +94,6 @@ export class AnalyticsNav extends Component {
   };
 
   /**
-   * fetches Analytics data for a specified date range
-   *
-   * @returns {Function}
-   */
-  fetchMostAndLeastUsedRooms = () => {
-    const { startDate, endDate } = this.state;
-    this.setState({ fetching: true });
-
-    return (getMostUsedAndLeastUsedRooms(startDate, endDate)
-      .then((response) => {
-        const meetingShares = response.data['Least Used Rooms']['% Share of All Meetings'];
-        const meetings = response.data['Least Used Rooms'].Meetings;
-        const rooms = response.data['Least Used Rooms'].Room;
-        const mostUsedMeetings = response.data['Most Used Rooms'].Meetings;
-        const mostUsedRooms = response.data['Most Used Rooms'].Room;
-        const mostUsedMeetingShares =
-            response.data['Most Used Rooms']['% Share of All Meetings'];
-        this.setState({
-          leastUsedRooms: [rooms, meetings, meetingShares],
-          mostUsedRooms: [
-            mostUsedRooms,
-            mostUsedMeetings,
-            mostUsedMeetingShares,
-          ],
-          fetching: false,
-        });
-      })
-      .catch(error => this.setState({ fetching: false, error }))
-    );
-  };
-
-  /**
    * generates jsx from bookedRoomsList and converts it to a string
    *
    * @param bookedRoomsList Object
@@ -96,29 +101,18 @@ export class AnalyticsNav extends Component {
    * @returns String
    *
    */
-  bookedRooms = ({ bookedRoomsList }) => {
-    const rooms = bookedRoomsList.length ?
-      Object.values(bookedRoomsList[0]) : [];
-    const meetings = bookedRoomsList.length
-      ? Object.values(bookedRoomsList[1])
-      : [];
-    const meetingShares = bookedRoomsList.length
-      ? Object.values(bookedRoomsList[2])
-      : [];
-
-    return (
-      jsxToString(
-        <tbody>
-          {rooms.map((room, index) => (
-            <tr key={room.id}>
-              <td>{room}</td>
-              <td>{meetings[index].toString()}</td>
-              <td>{`${meetingShares[index].toString()}%`}</td>
-            </tr>
+  bookedRooms = ({ bookedRoomsList }) => (
+    jsxToString(
+      <tbody>
+        {bookedRoomsList.map((room, index) => (
+          <tr key={index}>
+            <td>{room.roomName}</td>
+            <td>{room.meetings.toString()}</td>
+            <td>{`${room.percentage.toString()}%`}</td>
+          </tr>
         ))}
-        </tbody>)
-    );
-  };
+      </tbody>)
+  );
 
   /**
    * generates an array of booked rooms with their meetings and % share of meetings
@@ -129,20 +123,12 @@ export class AnalyticsNav extends Component {
    *
    */
   bookedRoomsList = ({ bookedRooms }) => {
-    const rooms = bookedRooms.length ?
-      Object.values(bookedRooms[0]) : [];
-    const meetings = bookedRooms.length
-      ? Object.values(bookedRooms[1])
-      : [];
-    const meetingShares = bookedRooms.length
-      ? Object.values(bookedRooms[2])
-      : [];
     const rows = [];
-    for (let i = 0; i < rooms.length; i += 1) {
+    for (let i = 0; i < bookedRooms.length; i += 1) {
       rows.push({
-        room: rooms[i],
-        meetings: meetings[i].toString(),
-        share: meetingShares[i].toString(),
+        room: bookedRooms[i].roomName,
+        meetings: bookedRooms[i].meetings.toString(),
+        share: bookedRooms[i].percentage.toString(),
       });
     }
     return rows;
@@ -169,7 +155,7 @@ export class AnalyticsNav extends Component {
    */
   downloadCSV = () => {
     const {
-      leastUsedRooms, mostUsedRooms,
+      leastBookedRooms, mostBookedRooms,
     } = this.state;
 
     notification(toastr, 'success', 'Your download will start shortly')();
@@ -177,12 +163,12 @@ export class AnalyticsNav extends Component {
     const toWriteData = [['Room', 'Meetings', '% Share of All Meetings'],
       ['Most Booked Rooms'],
     ];
-    const mostUsedRoomsList = this.bookedRoomsList({ bookedRooms: mostUsedRooms });
+    const mostUsedRoomsList = this.bookedRoomsList({ bookedRooms: mostBookedRooms });
     for (let i = 0; i < mostUsedRoomsList.length; i += 1) {
       toWriteData.push(this.createMeetingArray(mostUsedRoomsList[i]));
     }
     toWriteData.push(['Least Booked Rooms']);
-    const leatUsedRoomsList = this.bookedRoomsList({ bookedRooms: leastUsedRooms });
+    const leatUsedRoomsList = this.bookedRoomsList({ bookedRooms: leastBookedRooms });
     for (let i = 0; i < leatUsedRoomsList.length; i += 1) {
       toWriteData.push(this.createMeetingArray(leatUsedRoomsList[i]));
     }
@@ -205,15 +191,15 @@ export class AnalyticsNav extends Component {
    */
   createDownloadString = () => {
     const {
-      startDate, endDate, leastUsedRooms, mostUsedRooms,
+      startDate, endDate, leastBookedRooms, mostBookedRooms,
     } = this.state;
-    const leastUsedRoomsTbody = this.bookedRooms({ bookedRoomsList: leastUsedRooms });
-    const mostUsedRoomsTBody = this.bookedRooms({ bookedRoomsList: mostUsedRooms });
+    const leastBookedRoomsTbody = this.bookedRooms({ bookedRoomsList: leastBookedRooms });
+    const mostBookedRoomsTBody = this.bookedRooms({ bookedRoomsList: mostBookedRooms });
     let downloadString = downloadFileString;
     downloadString = downloadString.replace(/startDate/g, startDate);
     downloadString = downloadString.replace(/endDate/g, endDate);
-    downloadString = downloadString.replace(/innerMostBookedRooms/g, mostUsedRoomsTBody);
-    downloadString = downloadString.replace(/innerLeastBookedRooms/g, leastUsedRoomsTbody);
+    downloadString = downloadString.replace(/innerMostBookedRooms/g, mostBookedRoomsTBody);
+    downloadString = downloadString.replace(/innerLeastBookedRooms/g, leastBookedRoomsTbody);
     return downloadString;
   };
 
@@ -253,16 +239,6 @@ export class AnalyticsNav extends Component {
 
   downloadPdf = () => {
     this.fetchDownload('pdf');
-  };
-
-  /**
-   * It updates the state with the selected start and end date
-   *
-   * @returns {void}
-   */
-  sendDateData = (start, end) => {
-    this.setState({ startDate: start, endDate: end });
-    this.fetchMostAndLeastUsedRooms();
   };
 
   render() {
@@ -324,21 +300,52 @@ AnalyticsNav.propTypes = {
   user: PropTypes.shape({
     user: PropTypes.object,
   }).isRequired,
+  mostBookedAnalytics: PropTypes.shape({
+    loading: PropTypes.bool,
+    refetch: PropTypes.func,
+    analyticsForMostBookedRooms: PropTypes.shape({
+      analytics: PropTypes.array,
+    }),
+  }).isRequired,
+  leastBookedAnalytics: PropTypes.shape({
+    loading: PropTypes.bool,
+    refetch: PropTypes.func,
+    analyticsForLeastBookedRooms: PropTypes.shape({
+      analytics: PropTypes.array,
+    }),
+  }).isRequired,
 };
 
 /* This gets the token from the localstorage and select the user
 email to pass as a parameter to the query being sent */
 const { UserInfo: userData } = decodeTokenAndGetUserData() || {};
 
-export default graphql(GET_USER_QUERY, {
-  name: 'user',
-  options: /* istanbul ignore next */ () => ({
-    variables: {
+const bookedRoomsOptions = () => ({
+  variables: {
+    startDate: moment().format('MMM DD Y'),
+    endDate: moment().format('MMM DD Y'),
+  },
+});
+
+export default compose(
+  graphql(GET_USER_QUERY, {
+    name: 'user',
+    options: /* istanbul ignore next */ () => ({
+      variables: {
       // Added the test email in order to pass the variable to the test environment
-      email:
+        email:
         process.env.NODE_ENV === 'test'
           ? 'sammy.muriuki@andela.com'
           : userData.email,
-    },
+      },
+    }),
   }),
-})(AnalyticsNav);
+  graphql(MOST_BOOKED_ROOMS_ANALYTICS, {
+    name: 'mostBookedAnalytics',
+    options: bookedRoomsOptions,
+  }),
+  graphql(LEAST_BOOKED_ROOMS_ANALYTICS, {
+    name: 'leastBookedAnalytics',
+    options: bookedRoomsOptions,
+  }),
+)(AnalyticsNav);

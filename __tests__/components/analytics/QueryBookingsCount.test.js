@@ -2,7 +2,6 @@ import React from 'react';
 import { mount } from 'enzyme';
 import wait from 'waait';
 import { MockedProvider } from 'react-apollo/test-utils';
-
 import QueryBookingsCount from '../../../src/components/analytics/QueryBookingsCount';
 import ErrorBoundary from '../../../src/components/commons/ErrorBoundary';
 import { queryBookingsCountMockData, queryBookingsCountMocksData } from '../../../__mocks__/analytics/queryBookingsCountMockData';

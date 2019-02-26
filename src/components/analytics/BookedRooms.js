@@ -1,3 +1,4 @@
+/* eslint-disable react/no-array-index-key */
 import React from 'react';
 import PropTypes from 'prop-types';
 import ProgressBar from 'react-toolbox/lib/progress_bar';
@@ -21,52 +22,43 @@ const BookedRooms = ({
   fetching,
   error,
   tip,
-}) => {
-  const rooms = bookedRoomsList.length ? Object.values(bookedRoomsList[0]) : [];
-  const meetings = bookedRoomsList.length
-    ? Object.values(bookedRoomsList[1])
-    : [];
-  const meetingShares = bookedRoomsList.length
-    ? Object.values(bookedRoomsList[2])
-    : [];
-
-  return (
-    <div className="wrap-booked-room">
-      <div className="booked-room-header">
-        <img src={pollIcon} alt="Pull" />
-        <h4>{bookedRoomText}</h4>
-        {Tip(tip)}
-      </div>
-      <div className="booked-room-list">
-        <table>
-          <TableHead titles={['Room', 'Meetings', '% Share of All Meetings']} />
-          {!fetching && error === null ? (
-            <tbody>
-              {rooms.map((room, index) => (
-                <tr key={room}>
-                  <td>{room}</td>
-                  <td>{meetings[index]}</td>
-                  <td>{meetingShares[index]}%</td>
-                </tr>
-              ))}
-            </tbody>
+}) => (
+  <div className="wrap-booked-room">
+    <div className="booked-room-header">
+      <img src={pollIcon} alt="Pull" />
+      <h4>{bookedRoomText}</h4>
+      {Tip(tip)}
+    </div>
+    <div className="booked-room-list">
+      <table>
+        <TableHead titles={['Room', 'Meetings', '% Share of All Meetings']} />
+        {error !== null && Object.values(error).length > 0 ? (
+          <tbody>
+            <tr>
+              <td className="error_class">
+                <img
+                  className="error_icon"
+                  src={Warning}
+                  alt="error_icon"
+                />
+                <b>
+                  <p className="error_msg">
+                  An error occurred, cannot fetch data
+                  </p>
+                </b>
+              </td>
+            </tr>
+          </tbody>
           ) : (
             <tbody>
-              {error !== null ? (
-                <tr>
-                  <td className="error_class">
-                    <img
-                      className="error_icon"
-                      src={Warning}
-                      alt="error_icon"
-                    />
-                    <b>
-                      <p className="error_msg">
-                        An error occurred, cannot fetch data
-                      </p>
-                    </b>
-                  </td>
-                </tr>
+              {!fetching ? (
+                bookedRoomsList.map((room, index) => (
+                  <tr key={index}>
+                    <td>{room.roomName}</td>
+                    <td>{room.meetings}</td>
+                    <td>{room.percentage}%</td>
+                  </tr>
+                ))
               ) : (
                 <tr>
                   <td colSpan="3">
@@ -76,11 +68,10 @@ const BookedRooms = ({
               )}
             </tbody>
           )}
-        </table>
-      </div>
+      </table>
     </div>
-  );
-};
+  </div>
+);
 
 BookedRooms.propTypes = {
   pollIcon: PropTypes.string.isRequired,

@@ -1,8 +1,8 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
-import BookedRoomsHOC from './BookedRoomsHOC';
-import BookedRooms from './BookedRooms';
 import '../../assets/styles/composed-rooms.scss';
+import QueryMostBookedRooms from './QueryMostBookedRooms';
+import QueryLeastBookedRooms from './QueryLeastBookedRooms';
 
 /**
  * Component for composed booked rooms
@@ -15,21 +15,12 @@ const ComposedBookedRooms = ({ dateValue }) => (
   <div className="wrap-composed-rooms">
     <div>
       {
-        <BookedRoomsHOC
-          bookedRoomText="Most Booked Rooms"
-          component={BookedRooms}
-          date={dateValue}
-        />
+        <QueryMostBookedRooms dateValue={dateValue} />
       }
     </div>
     <div id="booked-room-margin">
       {
-        <BookedRoomsHOC
-          bookedRoomText="Least Booked Rooms"
-          tip=""
-          component={BookedRooms}
-          date={dateValue}
-        />
+        <QueryLeastBookedRooms dateValue={dateValue} />
       }
     </div>
   </div>

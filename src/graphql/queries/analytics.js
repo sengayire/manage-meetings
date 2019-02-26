@@ -41,8 +41,34 @@ const CHECKINS_BOOKINGS_CANCELLATIONS_PERCENTAGES = gql`
   }
 `;
 
+const MOST_BOOKED_ROOMS_ANALYTICS = gql`
+  query analyticsForMostBookedRooms($startDate: String!, $endDate: String!){
+    analyticsForMostBookedRooms(startDate: $startDate, endDate: $endDate){
+      analytics{
+        roomName
+        meetings
+        percentage
+      }
+    }
+  }
+`;
+
+const LEAST_BOOKED_ROOMS_ANALYTICS = gql`
+  query analyticsForLeastBookedRooms($startDate: String!, $endDate: String!){
+    analyticsForLeastBookedRooms(startDate: $startDate, endDate: $endDate){
+      analytics{
+        roomName
+        meetings
+        percentage
+      }
+    }
+  }
+`;
+
 export {
   MEETING_DURATION_ANALYTICS as default,
   ANALYTICS_BOOKINGS_COUNT,
   CHECKINS_BOOKINGS_CANCELLATIONS_PERCENTAGES,
+  MOST_BOOKED_ROOMS_ANALYTICS,
+  LEAST_BOOKED_ROOMS_ANALYTICS,
 };
