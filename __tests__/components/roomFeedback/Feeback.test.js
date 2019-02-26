@@ -10,10 +10,9 @@ describe('RoomFeeback Component', () => {
     <MockedProvider>
       <Router>
         <RoomFeedback user={defaultUserRole} />
-      </Router>
+      </Router>,
     </MockedProvider>,
   );
-
   it('should render table row property while rendering the component', () => {
     expect(wrapper.find('tr')).toHaveLength(2);
   });

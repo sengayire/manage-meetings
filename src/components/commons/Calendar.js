@@ -18,11 +18,14 @@ import '../../assets/styles/calendar.scss';
 class Calendar extends Component {
   static propTypes = {
     sendData: PropTypes.func,
+    classProp: PropTypes.string,
   };
 
   static defaultProps = {
     sendData: null,
+    classProp: '',
   };
+
 
   state = {
     isCalendarOpen: false,
@@ -70,7 +73,7 @@ class Calendar extends Component {
       <Fragment>
         <Button
           title={`${startDate} - ${endDate}`}
-          classProp="calendarIconBtn"
+          classProp={this.props.classProp}
           type={2}
           handleClick={this.toggleCalendar}
         />

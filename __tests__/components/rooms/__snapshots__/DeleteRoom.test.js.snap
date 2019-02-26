@@ -194,7 +194,7 @@ exports[`DeleteOffice Test Suite renders as expected 1`] = `
             ],
             "kind": "Document",
             "loc": Object {
-              "end": 128,
+              "end": 127,
               "start": 0,
             },
           }
@@ -539,7 +539,7 @@ exports[`DeleteOffice Test Suite should pop up a modal when delete button is cli
             ],
             "kind": "Document",
             "loc": Object {
-              "end": 128,
+              "end": 127,
               "start": 0,
             },
           }

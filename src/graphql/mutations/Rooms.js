@@ -7,8 +7,7 @@ const EDIT_ROOM_DETAILS_MUTATION = gql`
                    name
                }
            }
-       }
-`;
+       }`;
 
 const DELETE_ROOM = gql`
   mutation DeleteRoom($roomId: Int!) {
@@ -18,7 +17,6 @@ const DELETE_ROOM = gql`
        name
        }
      }
-   }
-`;
+   }`;
 
 export { EDIT_ROOM_DETAILS_MUTATION, DELETE_ROOM };

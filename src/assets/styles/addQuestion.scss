@@ -16,16 +16,18 @@
     padding: 20px 0;
 
     input {
-      border-radius: 5px;
+      border-radius: 4px;
       right: 3%;
-      padding: 2.5%;
+      padding: 0;
+      padding-left: 10px;
       width: 95%;
       border: none;
       font-size: 95%;
       font-weight: 300;
+      font-family: $font-light;
       margin-bottom: 1px;
       line-height: 2em;
-      margin-top: 6px;
+      margin-top: 0;
 
       @media screen and (max-width: 630px) {
         width: 90%;
@@ -50,7 +52,50 @@
       display: flex;
       border: 1px solid $color-input-border;
       border-radius: 5px;
-      margin: 30px 0;
+      margin: 20px 0;
+    }
+
+    .span-error {
+      color: $color-danger;
+    }
+
+    .input-error {
+      color: $color-danger;
+      cursor: auto;
+      border: 1px solid $color-danger;
+      margin-top: 10px;
+      border-radius: 4px;
+      right: 3%;
+      padding: 5px;
+      padding-left: 1px;
+      width: 99%;
+      font-size: 95%;
+      font-weight: 300;
+      margin-bottom: 10px;
+      @media screen and (max-width: 630px) {
+        width: 90%;
+      }
+    }
+
+    #selectType-error{
+      border: 1px solid $color-danger;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .calendarIconBtn-error {
+      border: 1px solid $color-danger;
+      margin-left: 0;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+    .select-error {
+      color: $color-danger;
+      border: 1px solid $color-danger;
+      border-radius: 3px;
+      padding: 1.5%;
+      margin-top: 0;
     }
 
     select {
@@ -60,7 +105,7 @@
     select,
     select:focus {
       right: 5%;
-      padding: 1.8%;
+      padding: 1.5%;
       width: 39.6rem !important;
       box-sizing: border-box;
       font-size: 95%;
@@ -86,7 +131,7 @@
       color: map-get($color-white, 000);
       height: 13px;
       width: 50px;
-      padding: 4px 50px 16px 12px;
+      padding: 4px 50px 12px 12px;
       line-height: 14px;
       font-weight: 500;
     }
@@ -179,3 +224,10 @@
     height: 33.5%
   }
 }
+
+.add-question-button:hover {
+  cursor: pointer;
+  background-color: $color-primary;
+  color: map-get($color-white, 000);
+}
+

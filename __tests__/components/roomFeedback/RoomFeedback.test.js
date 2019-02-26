@@ -38,6 +38,11 @@ describe('Tests for RoomFeedback Component', () => {
     expect(testData.data.allQuestions).toHaveLength(1);
   });
 
+  it('should call durationInWeeks method when duration is exactly 1 Day', () => {
+    const endDate = new Date('2019-02-22 23:42:43');
+    expect(wrapper.instance().durationInWeeks(startDate, endDate)).toBeTruthy();
+  });
+
   it('should call durationInWeeks method when duration is exactly 1 week', () => {
     const endDate = new Date('2019-02-29 23:42:43');
     expect(wrapper.instance().durationInWeeks(startDate, endDate)).toBeTruthy();

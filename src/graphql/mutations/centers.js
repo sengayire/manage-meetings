@@ -8,8 +8,7 @@ const ADD_CENTER_MUTATION = gql`
         name
       }
     }
-  }
-`;
+  }`;
 
 const EDIT_CENTER_MUTATION = gql`
   mutation updateLocation($locationId: Int!, $name: String!, $country: String!, $abbreviation: String!){

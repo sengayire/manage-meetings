@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import AddQuestion from '../../src/components/roomFeedback/AddQuestion';
+import AddQuestionComponent from '../../src/components/roomFeedback/AddQuestion';
 import RoomFeedbackPage from '../../src/containers/RoomFeedbackPage';
 import Button from '../../src/components/commons/Button';
 
@@ -12,7 +12,7 @@ describe('RoomFeedback component', () => {
   });
 
   it('should display the addQuestion button', () => {
-    expect(wrapper.find(AddQuestion).length).toEqual(1);
+    expect(wrapper.find(AddQuestionComponent).length).toEqual(1);
   });
 
   it('should  change the value of isResponsePageVisible to true', () => {

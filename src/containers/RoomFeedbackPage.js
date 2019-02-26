@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import AddQuestion from '../components/roomFeedback/AddQuestion';
+import AddQuestionComponent from '../components/roomFeedback/AddQuestion';
 import Button from '../components/commons/Button';
 import Calendar from '../components/commons/Calendar';
 import ExportButton from '../components/commons/ExportButton';
@@ -7,8 +7,6 @@ import RoomQuestions from '../components/roomFeedback/RoomFeedback';
 // eslint-disable-next-line import/no-named-as-default
 import RoomFeedbackResponseList from '../components/roomFeedback/RoomFeedbackResponseList';
 import { NavBar } from '../components';
-
-// styles
 import '../assets/styles/roomFeedbackContainer.scss';
 
 class RoomFeedbackPage extends Component {
@@ -29,7 +27,6 @@ class RoomFeedbackPage extends Component {
 
   render() {
     const { isResponsePageVisible } = this.state;
-
     return (
       <Fragment>
         <NavBar />
@@ -51,7 +48,7 @@ class RoomFeedbackPage extends Component {
                 isDisabled={isResponsePageVisible}
               />
             </div>
-            {!isResponsePageVisible && <AddQuestion />}
+            {!isResponsePageVisible && <AddQuestionComponent />}
             {
               isResponsePageVisible &&
               <Fragment>

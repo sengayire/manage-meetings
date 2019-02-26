@@ -66,9 +66,9 @@ export class RoomFeedback extends Component {
     const numberOfDays = differenceInMiliSeconds / oneDayInMiliSeconds;
     if (Math.round(numberOfDays / 7) < 1) {
       if (Math.round(numberOfDays <= 1)) {
-        return `${numberOfDays} Day`;
+        return `${Math.round(numberOfDays)} Day`;
       }
-      return `${numberOfDays} Days`;
+      return `${Math.round(numberOfDays)} Days`;
     }
     if (Math.round(numberOfDays / 7) === 1) {
       return '1 Week';
@@ -99,7 +99,6 @@ export class RoomFeedback extends Component {
     if (loading) {
       return <Spinner />;
     }
-
     return (
       <div className="room-feedback">
         <div className="room-feedback__list">
@@ -135,17 +134,11 @@ export class RoomFeedback extends Component {
 RoomFeedback.defaultProps = {
   data: {
     allQuestions: [
-      {
-        question: 'There is no question so far',
-        questionType: 'Input',
-        startDate: '2019-02-21 23:42:43',
-        endDate: '2019-02-21 23:42:43',
-        questionResponseCount: 0,
-        isActive: false,
-      },
+      {},
     ],
     loading: false,
     error: {},
+    refetch: null,
   },
 };
 
@@ -154,6 +147,7 @@ RoomFeedback.propTypes = {
     allQuestions: PropTypes.array,
     loading: PropTypes.bool,
     error: PropTypes.object,
+    refetch: PropTypes.func,
   }),
   user: PropTypes.shape({
     user: PropTypes.object,
