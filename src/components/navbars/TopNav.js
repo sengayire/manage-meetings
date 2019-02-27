@@ -69,7 +69,7 @@ class TopNav extends React.Component {
                 className="converge-link"
               >
                 <span>
-                  <img src={item.icon} alt={item.menu} />
+                  <img src={item.icon} alt={item.menu} className="svg-nav" />
                 </span>
                 {item.menu}
               </Link>

@@ -44,7 +44,6 @@
   }
 
   .converge-menu li a {
-    font-family: $font-light, sans-serif;
     height: 45px;
     cursor: pointer;
     padding-top: 17px;
@@ -82,10 +81,16 @@
 
   .converge-menu li.active a {
     color: $color-primary !important;
+    .svg-nav {
+      filter: invert(0.53) sepia(1) saturate(142) hue-rotate(218deg);
+    }
   }
 
   .converge-menu li:hover a {
     color: $color-primary !important;
+    .svg-nav {
+      filter: invert(0.53) sepia(1) saturate(142) hue-rotate(218deg);
+    }
   }
 
 
