@@ -16,6 +16,11 @@ import roomUsage from '../../../__mocks__/rooms/mostUsedRooms';
 
 jest.mock('html2canvas');
 jest.mock('jspdf');
+jest.mock('moment', () => () => ({
+  format: () => jest.fn(),
+  diff: jest.fn(() => 1),
+}));
+
 const { MRM_API_URL } = process.env || {};
 const httpLink = createHttpLink({
   uri: MRM_API_URL,
@@ -37,6 +42,10 @@ const props = {
     refetch: jest.fn(() => new Promise(resolve => resolve())),
     analyticsForMostBookedRooms: { analytics: roomUsage },
   },
+  dateValue: {
+    startDate: 'start date',
+    endDate: 'end date',
+  },
 };
 
 const newProps = {
@@ -50,6 +59,10 @@ const newProps = {
     refetch: jest.fn(() => new Promise(resolve => resolve())),
     analyticsForMostBookedRooms: { analytics: roomUsage },
   },
+  dateValue: {
+    startDate: 'start date',
+    endDate: 'end date',
+  },
 };
 
 describe('AnalyticsNav Component', () => {
@@ -60,7 +73,6 @@ describe('AnalyticsNav Component', () => {
   };
   let analyticNavWrapper;
   let wrapper;
-
   beforeEach(() => {
     wrapper = mount(
       <ApolloProvider client={client}>
@@ -84,13 +96,18 @@ describe('AnalyticsNav Component', () => {
   });
 
   it('should display the location of the user', () => {
-    expect(wrapper.find('.location-btn').text()).toEqual('Kampala');
+    expect(wrapper.find('.location-btn').text()).toEqual('Fetching location...');
   });
 
   it('should call sendDateData once and update the state value of start and end date', () => {
     analyticNavWrapper.sendDateData('05 Nov 2018', '06 Nov 2018');
     expect(analyticNavWrapper.state.endDate).toEqual('06 Nov 2018');
     expect(analyticNavWrapper.state.startDate).toEqual('05 Nov 2018');
+  });
+
+  it('should update isFutureDateSelected to true when a future date is selected', () => {
+    analyticNavWrapper.sendDateData('05 Nov 2018', '06 Nov 2018');
+    expect(analyticNavWrapper.state.isFutureDateSelected).toEqual(true);
   });
 });
 
@@ -101,7 +118,6 @@ describe('AnalyticsNav state and download', () => {
       location: 'Nairobi',
     },
   };
-
   it('should update the state with least and most used rooms', () => {
     const wrapper = shallow(<AnalyticComponent
       user={user}
@@ -129,6 +145,16 @@ describe('AnalyticsNav state and download', () => {
     wrapper.instance().componentWillReceiveProps({ ...newProps });
     expect(wrapper.state().leastBookedRooms).toEqual([]);
     expect(wrapper.state().mostBookedRooms).toEqual([]);
+  });
+
+  it('should show the calendar when all three components have finish loading', () => {
+    const wrapper = shallow(<AnalyticComponent
+      user={user}
+      leastBookedAnalytics={props}
+      mostBookedAnalytics={props}
+    />);
+    wrapper.setState({ componentsDoneLoading: ['component1', 'component2', 'component3'] });
+    expect(wrapper.find('Calendar').length).toEqual(1);
   });
 
   it('should call downloadCSV', () => {

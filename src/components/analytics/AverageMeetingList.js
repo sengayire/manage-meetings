@@ -9,7 +9,7 @@ import MEETING_DURATION_ANALYTICS from '../../graphql/queries/analytics';
 import Pagination from '../commons/Pagination';
 import QueryAnalyticsLoading from './AverageMeetingList/QueryAnalyticsLoading';
 import Overlay from '../commons/Overlay';
-import ErrorIcon from '../commons/ErrorIcon';
+import Warning from '../../assets/images/warning_icon.svg';
 
 /**
  * Component for the average meeting list
@@ -51,8 +51,8 @@ export class AverageMeetingList extends Component {
     this.props.data
       .fetchMore({
         variables: {
-          startDate: this.props.dateValue.startDate,
-          endDate: this.props.dateValue.endDate,
+          startDate: this.props.dateValue.validatedStartDate,
+          endDate: this.props.dateValue.validatedEndDate,
           page,
           perPage,
         },
@@ -66,13 +66,33 @@ export class AverageMeetingList extends Component {
       .catch(() => this.setState({ isFetching: false }));
   };
 
+  showErrorMessage = message => (
+    <tr className="average-table-error">
+      <td className="error_class">
+        <img
+          className="error_icon"
+          src={Warning}
+          alt="error_icon"
+        />
+        <b>
+          <p className="error_msg">
+            {message || 'An error occurred, cannot fetch data'}
+          </p>
+        </b>
+      </td>
+    </tr>
+  );
   render() {
     const tip =
       'The number of meetings in a room,  the average number of attendees to these meetings as well as the average duration of the meetings.';
     /* eslint no-param-reassign: "error" */
     const { analyticsForMeetingsDurations, isFetching } = this.state;
     const { loading, error } = this.props.data;
+    const { queryCompleted } = this.props;
+    const { isFutureDateSelected } = this.props.dateValue;
+
     if (loading) return <QueryAnalyticsLoading />;
+    queryCompleted('AverageMeetingList');
     return (
       <div className="average-meeting">
         <div className="average-meeting-control">
@@ -81,30 +101,34 @@ export class AverageMeetingList extends Component {
         </div>
         <div className="average-meeting-list">
           {isFetching ? <Overlay id="average-meeting" /> : null}
-          <div className="table">
-            <TableHead titles={['Room', 'No. of meetings', 'Average Meeting Duration']} />
-            <div className="table__body">
-              {error ? (
-                <div className="table__row--analytics">
-                  <ErrorIcon />
-                </div>
-              ) : (
-                <QueryAnalyticsPerMeetingRoom data={analyticsForMeetingsDurations} />
-              )}
-            </div>
-          </div>
+          <table>
+            <TableHead
+              titles={['Room', 'No. of meetings', 'Average Meeting Duration']}
+            />
+            <tbody>
+              {
+                isFutureDateSelected ?
+                this.showErrorMessage('You cannot fetch data beyond today')
+                : (
+                error ?
+                  (this.showErrorMessage())
+                : <QueryAnalyticsPerMeetingRoom
+                  data={analyticsForMeetingsDurations}
+                />
+                )
+              }
+            </tbody>
+          </table>
         </div>
         <div className="average-meeting-pagination">
           <div>
-            {!error && (
-              <Pagination
-                totalPages={analyticsForMeetingsDurations.pages}
-                hasNext={analyticsForMeetingsDurations.hasNext}
-                hasPrevious={analyticsForMeetingsDurations.hasPrevious}
-                handleData={this.handleData}
-                isFetching={isFetching}
-              />
-            )}
+            { !isFutureDateSelected && !error && <Pagination
+              totalPages={analyticsForMeetingsDurations.pages}
+              hasNext={analyticsForMeetingsDurations.hasNext}
+              hasPrevious={analyticsForMeetingsDurations.hasPrevious}
+              handleData={this.handleData}
+              isFetching={isFetching}
+            />}
           </div>
         </div>
       </div>
@@ -114,8 +138,9 @@ export class AverageMeetingList extends Component {
 
 AverageMeetingList.propTypes = {
   dateValue: PropTypes.shape({
-    startDate: PropTypes.string,
-    endDate: PropTypes.string,
+    validatedStartDate: PropTypes.string,
+    validatedEndDate: PropTypes.string,
+    isFutureDateSelected: PropTypes.bool.isRequired,
   }),
   data: PropTypes.shape({
     analyticsForMeetingsDurations: PropTypes.object,
@@ -123,6 +148,7 @@ AverageMeetingList.propTypes = {
     loading: PropTypes.bool,
     error: PropTypes.any,
   }).isRequired,
+  queryCompleted: PropTypes.func.isRequired,
 };
 AverageMeetingList.defaultProps = {
   dateValue: {},
@@ -133,8 +159,8 @@ export default compose(
     name: 'data',
     options: props => ({
       variables: {
-        startDate: props.dateValue.startDate,
-        endDate: props.dateValue.endDate,
+        startDate: props.dateValue.validatedStartDate,
+        endDate: props.dateValue.validatedEndDate,
         page: 1,
         perPage: 5,
       },

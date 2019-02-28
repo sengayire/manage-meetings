@@ -8,12 +8,21 @@ import AverageMeetingListComponent from '../components/analytics/AverageMeetingL
 import ComposedBookedRooms from '../components/analytics/ComposedBookedRooms';
 import AveragePieChartList from '../components/analytics/averagePieChart/AveragePieChartList';
 
-const AnalyticsOverview = ({ dateValue }) => (
+const AnalyticsOverview = ({ dateValue, queryCompleted }) => (
   <Fragment>
-    <AveragePieChartList dateValue={dateValue} />
+    <AveragePieChartList
+      dateValue={dateValue}
+      queryCompleted={queryCompleted}
+    />
     <ComposedBookedRooms dateValue={dateValue} />
-    <Checkins dateValue={dateValue} />
-    <AverageMeetingListComponent dateValue={dateValue} />
+    <Checkins
+      dateValue={dateValue}
+      queryCompleted={queryCompleted}
+    />
+    <AverageMeetingListComponent
+      dateValue={dateValue}
+      queryCompleted={queryCompleted}
+    />
   </Fragment>
 );
 
@@ -21,7 +30,10 @@ AnalyticsOverview.propTypes = {
   dateValue: PropTypes.shape({
     startDate: PropTypes.string,
     endDate: PropTypes.string,
+    validatedEndDate: PropTypes.string,
+    validatedStartDate: PropTypes.string,
   }),
+  queryCompleted: PropTypes.func.isRequired,
 };
 
 AnalyticsOverview.defaultProps = {

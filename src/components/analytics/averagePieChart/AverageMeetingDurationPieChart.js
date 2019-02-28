@@ -8,7 +8,7 @@ import Spinner from '../../commons/Spinner';
 import Tip from '../../commons/Tooltip';
 import '../../../../src/assets/styles/pieChartBaseStyle.scss';
 import '../../../../src/assets/styles/meetingDurationPieChart.scss';
-import AnalyticsError from '../../commons/AnalayticsError';
+import ErrorIcon from '../../commons/ErrorIcon';
 
 /**
  * AverageMeetingDurationPieChart Component
@@ -35,8 +35,8 @@ export class AverageMeetingDurationPieChart extends React.Component {
     /* Reasoning: no explicit way of testing configuration options */
     this.props.data.fetchMore({
       variables: {
-        startDate: this.props.dateValue.startDate,
-        endDate: this.props.dateValue.endDate,
+        startDate: this.props.dateValue.validatedStartDate,
+        endDate: this.props.dateValue.validatedEndDate,
       },
       updateQuery: (prev, { fetchMoreResult }) => {
         this.setState({
@@ -50,13 +50,12 @@ export class AverageMeetingDurationPieChart extends React.Component {
   renderPieChart = () => {
     const { MeetingsDurationaAnalytics = [] } = this.state.analyticsForMeetingsDurations;
     const { loading, error } = this.props.data;
+    const { queryCompleted } = this.props;
 
     if (loading) return <Spinner />;
-    else if (error) {
-      return (<AnalyticsError
-        title="Average Meeting Duration [%]"
-      />);
-    }
+    if (error) return (<ErrorIcon />);
+
+    queryCompleted('AverageMeetingDuration');
     const options = {
       legend: {
         display: false,
@@ -128,6 +127,7 @@ export class AverageMeetingDurationPieChart extends React.Component {
   }
 
   render() {
+    const { isFutureDateSelected } = this.props.dateValue;
     const tip =
       'The percentage representation of the average amount of time people spend in all booked meeting rooms in a set time period';
     return (
@@ -136,7 +136,9 @@ export class AverageMeetingDurationPieChart extends React.Component {
           <p className="chart-title">Average Meetings Duration [%]</p>
           {Tip(tip)}
         </section>
-        {this.renderPieChart()}
+        {
+          isFutureDateSelected ? <ErrorIcon message="You cannot fetch data beyond today" /> : this.renderPieChart()
+        }
       </article>
 
     );
@@ -151,6 +153,7 @@ AverageMeetingDurationPieChart.propTypes = {
     loading: PropTypes.bool,
     error: PropTypes.any,
   }).isRequired,
+  queryCompleted: PropTypes.func.isRequired,
 };
 AverageMeetingDurationPieChart.defaultProps = {
   dateValue: {},
@@ -161,8 +164,8 @@ export default compose(
     name: 'data',
     options: props => ({
       variables: {
-        startDate: props.dateValue.startDate,
-        endDate: props.dateValue.endDate,
+        startDate: props.dateValue.validatedStartDate,
+        endDate: props.dateValue.validatedEndDate,
       },
     }),
   }),

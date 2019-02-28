@@ -4,11 +4,12 @@ import { Checkins } from '../../../../src/components/analytics/checkins';
 
 describe('Checkins component', () => {
   const props = {
-    dateValue: { startDate: 'Nov 01 2018', endDate: 'Nov 03 2018' },
+    dateValue: { startDate: 'Nov 01 2018', endDate: 'Nov 03 2018', isFutureDateSelected: false },
     data: {
       loading: false,
       error: null,
     },
+    queryCompleted: jest.fn(),
   };
   const wrapper = shallow(<Checkins {...props} />);
 

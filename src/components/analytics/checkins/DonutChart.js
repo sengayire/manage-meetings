@@ -90,6 +90,7 @@ class DonutChart extends Component {
       chartTitle,
       hintText,
       tip,
+      isFutureDateSelected,
     } = this.props;
 
     return (
@@ -104,7 +105,11 @@ class DonutChart extends Component {
           </div>
         </div>
         <div className="chart-content">
-          {this.renderChart()}
+          {
+            isFutureDateSelected ?
+              <ErrorIcon message="You cannot fetch data beyond today" />
+            : this.renderChart()
+          }
         </div>
       </div>
     );
@@ -123,6 +128,7 @@ DonutChart.propTypes = {
   error: PropTypes.instanceOf(Object),
   chartColor: PropTypes.instanceOf(Object),
   dataName: PropTypes.string,
+  isFutureDateSelected: PropTypes.bool.isRequired,
 };
 DonutChart.defaultProps = {
   chartTitle: 'Pie Chart',

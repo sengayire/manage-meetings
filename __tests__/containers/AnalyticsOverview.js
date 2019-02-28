@@ -4,6 +4,13 @@ import AnalyticsOverview from '../../src/containers/AnalyticsOverview';
 
 describe('Analytics Overview Component', () => {
   it('renders correctly from memory', () => {
-    expect(shallow(<AnalyticsOverview />)).toMatchSnapshot();
+    const props = {
+      queryCompleted: jest.fn(),
+      dateValue: {
+        validatedStartDate: '',
+        validatedEndDate: '',
+      },
+    };
+    expect(shallow(<AnalyticsOverview {...props} />)).toMatchSnapshot();
   });
 });

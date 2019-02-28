@@ -7,7 +7,7 @@ describe('Checkins component', () => {
   let props;
   let wrapper;
 
-  props = { tip: '', loading: false };
+  props = { tip: '', loading: false, isFutureDateSelected: false };
   wrapper = shallow(<DonutChart {...props} />);
 
   it('should render properly', () => {
@@ -19,19 +19,24 @@ describe('Checkins component', () => {
   });
 
   it('should render properly when loading', () => {
-    props = { tip: '', loading: true };
+    props = { tip: '', loading: true, isFutureDateSelected: false };
     const wrapperLoading = shallow(<DonutChart {...props} />);
     expect(wrapperLoading.find('.chart-spinner')).toHaveLength(1);
   });
 
+  it('should render properly when loading', () => {
+    wrapper.setProps({ isFutureDateSelected: true });
+    expect(wrapper.find(ErrorIcon)).toHaveLength(1);
+  });
+
   it('should render properly when an error occurs', () => {
-    props = { tip: '', error: {} };
+    props = { tip: '', error: {}, isFutureDateSelected: false };
     const wrapperError = shallow(<DonutChart {...props} />);
     expect(wrapperError.find(ErrorIcon)).toHaveLength(1);
   });
 
   it('should display the cancellations doughnut chart properly', () => {
-    props = { tip: '', hasInfo: false };
+    props = { tip: '', hasInfo: false, isFutureDateSelected: false };
     wrapper = shallow(<DonutChart {...props} />);
     expect(wrapper).toMatchSnapshot();
   });

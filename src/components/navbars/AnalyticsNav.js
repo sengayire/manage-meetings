@@ -34,12 +34,14 @@ import { LEAST_BOOKED_ROOMS_ANALYTICS, MOST_BOOKED_ROOMS_ANALYTICS } from '../..
 export class AnalyticsNav extends Component {
   state = {
     isActivity: false,
-    location: 'Kampala',
+    location: 'Fetching location...',
     startDate: moment().format('MMM DD Y'),
     endDate: moment().format('MMM DD Y'),
-    leastBookedRooms: [],
-    mostBookedRooms: [],
-    fetching: false,
+    validatedStartDate: moment().format('MMM DD Y'),
+    validatedEndDate: moment().format('MMM DD Y'),
+    fetching: true,
+    isFutureDateSelected: false,
+    componentsDoneLoading: [],
   };
 
   componentWillReceiveProps(props) {
@@ -55,22 +57,6 @@ export class AnalyticsNav extends Component {
       this.setState({ mostBookedRooms: analytics, fetching: false });
     }
   }
-
-  /**
-   * 1. Updates the start and end date in the calendar
-   * 2. Toggles the calendar
-   *
-   * @param {date} start
-   * @param {date} end
-   *
-   * @returns {Function}
-   */
-  sendDateData = (start, end) => {
-    this.setState({ startDate: start, endDate: end, fetching: true });
-    this.calenderToggle();
-    this.props.leastBookedAnalytics.refetch({ startDate: start, endDate: end });
-    this.props.mostBookedAnalytics.refetch({ startDate: start, endDate: end });
-  };
 
   /**
    * It toggles the calendar view
@@ -241,12 +227,71 @@ export class AnalyticsNav extends Component {
     this.fetchDownload('pdf');
   };
 
+  /**
+   * It updates the array that holds a reference to components whose
+   * query has been completed.
+   *
+   * @param {String} component - name of the component whose query has completed
+   */
+  handleQueryCompleted = (component) => {
+    if (this.state.componentsDoneLoading.indexOf(component) === -1) {
+      this.setState(() => ({
+        componentsDoneLoading: [...this.state.componentsDoneLoading, component],
+      }));
+    }
+  }
+
+  /**
+   * 1. Updates the start and end date in the calendar
+   * 2. Toggles the calendar
+   *
+   * @param {date} start
+   * @param {date} end
+   *
+   * @returns {Function}
+   */
+  sendDateData = (start, end) => {
+    const endDateSelected = moment(end, 'MMM DD YYYY').diff(moment(), 'days', true);
+    const stateToUpdate = { startDate: start, endDate: end, fetching: true };
+    this.calenderToggle();
+    if (endDateSelected > 0) {
+      this.setState({ ...stateToUpdate, isFutureDateSelected: true }, () => {
+        this.props.leastBookedAnalytics.refetch({ startDate: start, endDate: end });
+        this.props.mostBookedAnalytics.refetch({ startDate: start, endDate: end });
+      });
+    } else {
+      this.setState({
+        ...stateToUpdate,
+        componentsDoneLoading: [],
+        isFutureDateSelected: false,
+        validatedStartDate: start,
+        validatedEndDate: end,
+      }, () => {
+        this.props.leastBookedAnalytics.refetch({ startDate: start, endDate: end });
+        this.props.mostBookedAnalytics.refetch({ startDate: start, endDate: end });
+      });
+    }
+  };
+
   render() {
-    const { startDate, endDate, isActivity } = this.state;
+    const {
+      startDate,
+      endDate,
+      isActivity,
+      fetching,
+      error,
+      isFutureDateSelected,
+      validatedStartDate,
+      validatedEndDate,
+      componentsDoneLoading,
+    } = this.state;
     const { user: { user } } = this.props;
     const dates = {
       startDate,
       endDate,
+      validatedEndDate,
+      validatedStartDate,
+      isFutureDateSelected,
     };
 
     return (
@@ -276,11 +321,15 @@ export class AnalyticsNav extends Component {
               }
               type={2}
             />
-            <Calendar
-              sendData={this.sendDateData}
-            />
             {
-              !this.state.fetching && !this.state.error &&
+              (componentsDoneLoading.length === 3) ?
+                <Calendar
+                  sendData={this.sendDateData}
+                />
+                : null
+            }
+            {
+              !fetching && !error &&
               <ExportButton
                 jpegHandler={this.downloadJpeg}
                 csvHandler={this.downloadCSV}
@@ -289,7 +338,11 @@ export class AnalyticsNav extends Component {
             }
           </div>
         </div>
-        {!isActivity && <AnalyticsOverview dateValue={dates} />}
+        {!isActivity && <AnalyticsOverview
+          dateValue={dates}
+          queryCompleted={this.handleQueryCompleted}
+        />
+        }
         {isActivity && <AnalyticsActivity dateValue={dates} />}
       </Fragment>
     );

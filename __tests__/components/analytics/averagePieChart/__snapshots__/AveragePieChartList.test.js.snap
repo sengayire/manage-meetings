@@ -5,11 +5,22 @@ exports[`Average Pie Chart Component renders correctly from memory 1`] = `
   className="pie-chart-container"
 >
   <Apollo(AverageMeetingDurationPieChart)
-    dateValue={Object {}}
+    dateValue={
+      Object {
+        "validatedEndDate": "",
+        "validatedStartDate": "",
+      }
+    }
+    queryCompleted={[MockFunction]}
   />
   <Apollo(GetAverageRoomCapacityComponent) />
   <BookingsCountBarGraph
-    dateValue={Object {}}
+    dateValue={
+      Object {
+        "validatedEndDate": "",
+        "validatedStartDate": "",
+      }
+    }
   />
 </div>
 `;

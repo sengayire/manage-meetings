@@ -23,6 +23,7 @@ export class Checkins extends Component {
    */
   formatAnalyticsData = (analyticsData, loading, error) => {
     if (!loading && !error) {
+      this.props.queryCompleted('Checkins');
       return { ...analyticsData };
     }
     return {};
@@ -31,6 +32,7 @@ export class Checkins extends Component {
   roundNumber = num => Math.round(num * 100) / 100;
 
   render() {
+    const { isFutureDateSelected } = this.props.dateValue;
     const { loading, error, analyticsRatios } = this.props.data;
     const {
       checkins,
@@ -52,6 +54,7 @@ export class Checkins extends Component {
           chartColor={checkinsChart}
           dataName="Checkins"
           tip="The number and % of check-ins of booked meeting rooms"
+          isFutureDateSelected={isFutureDateSelected}
         />
         <DonutChart
           chartTitle="% of App Bookings"
@@ -63,6 +66,7 @@ export class Checkins extends Component {
           chartColor={bookingsChart}
           dataName="Bookings"
           tip="The number and % of people who book directly from the app instead from google calendar"
+          isFutureDateSelected={isFutureDateSelected}
         />
         <DonutChart
           chartTitle="% of Auto Cancellations"
@@ -75,6 +79,7 @@ export class Checkins extends Component {
           dataName="Cancellations"
           hasInfo={false}
           tip="Number and % of auto-cancelled meeting rooms"
+          isFutureDateSelected={isFutureDateSelected}
         />
       </div>
     );
@@ -87,6 +92,10 @@ Checkins.propTypes = {
     loading: PropTypes.bool.isRequired,
     error: PropTypes.object,
   }).isRequired,
+  dateValue: PropTypes.shape({
+    isFutureDateSelected: PropTypes.bool.isRequired,
+  }).isRequired,
+  queryCompleted: PropTypes.func.isRequired,
 };
 
 export default compose(
@@ -94,8 +103,8 @@ export default compose(
     name: 'data',
     options: props => ({
       variables: {
-        startDate: props.dateValue.startDate,
-        endDate: props.dateValue.endDate,
+        startDate: props.dateValue.validatedStartDate,
+        endDate: props.dateValue.validatedEndDate,
         page: 1,
         perPage: 5,
       },

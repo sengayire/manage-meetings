@@ -5,34 +5,57 @@ exports[`AnalyticsOverview Component renders properly 1`] = `
   <AveragePieChartList
     dateValue={
       Object {
+<<<<<<< HEAD
         "endDate": "\\"Feb 28 2019\\"",
         "startDate": "\\"Feb 28 2019\\"",
+=======
+        "validatedEndDate": "",
+        "validatedStartDate": "",
+>>>>>>> feat(analytics): Validate date-picker
       }
     }
+    queryCompleted={[MockFunction]}
   />
   <ComposedBookedRooms
     dateValue={
       Object {
+<<<<<<< HEAD
         "endDate": "\\"Feb 28 2019\\"",
         "startDate": "\\"Feb 28 2019\\"",
+=======
+        "validatedEndDate": "",
+        "validatedStartDate": "",
+>>>>>>> feat(analytics): Validate date-picker
       }
     }
   />
   <Apollo(Checkins)
     dateValue={
       Object {
+<<<<<<< HEAD
         "endDate": "\\"Feb 28 2019\\"",
         "startDate": "\\"Feb 28 2019\\"",
+=======
+        "validatedEndDate": "",
+        "validatedStartDate": "",
+>>>>>>> feat(analytics): Validate date-picker
       }
     }
+    queryCompleted={[MockFunction]}
   />
   <Apollo(AverageMeetingList)
     dateValue={
       Object {
+<<<<<<< HEAD
         "endDate": "\\"Feb 28 2019\\"",
         "startDate": "\\"Feb 28 2019\\"",
+=======
+        "validatedEndDate": "",
+        "validatedStartDate": "",
+>>>>>>> feat(analytics): Validate date-picker
       }
     }
+    queryCompleted={[MockFunction]}
   />
 </React.Fragment>
 `;

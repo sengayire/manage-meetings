@@ -30,8 +30,8 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
             Object {
               "updateQuery": [Function],
               "variables": Object {
-                "endDate": "Jan 25 2019",
-                "startDate": "Jan 23 2019",
+                "endDate": undefined,
+                "startDate": undefined,
               },
             },
           ],
@@ -46,6 +46,15 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
     }
   }
   name="data"
+  queryCompleted={
+    [MockFunction] {
+      "calls": Array [
+        Array [
+          "AverageMeetingDuration",
+        ],
+      ],
+    }
+  }
 >
   <article
     className="pie-chart"

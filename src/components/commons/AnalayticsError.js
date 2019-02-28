@@ -1,28 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Warning from '../../assets/images/warning_icon.svg';
+import ErrorIcon from '../commons/ErrorIcon';
 
-const AnalyticsError = ({ title }) => (
+const AnalyticsError = ({ message }) => (
   <article className="pie-chart">
-    <section className="chart-header">
-      <p className="chart-title">{title}</p>
-    </section>
-    <section className="chart-content">
-      <div className="error-class">
-        <div className="icon-container">
-          <img className="error-icon" src={Warning} alt="error_icon" />
-        </div>
-        <b><p className="error-msg">An error occurred, cannot fetch data</p></b>
-      </div>
-    </section>
+    <ErrorIcon message={message} />
   </article>
 );
 
 AnalyticsError.propTypes = {
-  title: PropTypes.string,
+  message: PropTypes.string,
 };
 
 AnalyticsError.defaultProps = {
-  title: '',
+  message: '',
 };
 export default AnalyticsError;
