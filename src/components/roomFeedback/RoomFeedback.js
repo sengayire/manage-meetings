@@ -6,6 +6,7 @@ import Feedback from './Feedback';
 import { GET_USER_ROLE } from '../../graphql/queries/People';
 import { decodeTokenAndGetUserData } from '../../utils/Cookie';
 import { saveItemInLocalStorage } from '../../utils/Utilities';
+import Error from '../commons/Errors';
 import '../../../src/assets/styles/roomFeedback.scss';
 import GET_ROOM_FEEDBACK_QUESTIONS_QUERY from '../../../src/graphql/queries/questions';
 import Spinner from '../commons/Spinner';
@@ -16,34 +17,10 @@ import Spinner from '../commons/Spinner';
  * @returns {JSX}
  */
 export class RoomFeedback extends Component {
-  state = {
-    allQuestions: [],
-  };
-
-  componentWillMount() {
-    this.setAllQuestionsToState(this.props);
-  }
-
-  componentWillReceiveProps(props) {
-    const { user } = props.user;
+  componentWillReceiveProps() {
+    const { user } = this.props.user;
     if (user) saveItemInLocalStorage('access', user.roles[0].id);
-    this.setAllQuestionsToState(props);
   }
-
-  /**
-   * updates the state whenever the RoomFeedback component receives the props
-   * and also whenever the RoomFeedback component mounts
-   *
-   * @param {object} props
-   *
-   * @returns {void}
-   */
-  setAllQuestionsToState = (props) => {
-    const { allQuestions } = props.data;
-    this.setState({
-      allQuestions,
-    });
-  };
 
   /**
    * This function computes the duration in weeks
@@ -96,15 +73,17 @@ export class RoomFeedback extends Component {
   };
 
   render() {
-    const { allQuestions } = this.state;
     const { loading } = this.props.data;
     if (loading) {
       return <Spinner />;
     }
+    const { questions } = this.props.data.questions;
+
     return (
       <div className="room-feedback">
         <div className="room-feedback__list">
           <div className="table">
+            {!questions.length ? <Error message="No questions at the moment" /> :
             <TableHead
               titles={[
                 'Question',
@@ -115,15 +94,13 @@ export class RoomFeedback extends Component {
                 'Action',
                 'Status',
               ]}
-            />
+            />}
             <div className="table__body">
-              {
-                <Feedback
-                  feedback={allQuestions}
-                  durationFormatter={this.durationInWeeks}
-                  startDateFormatter={this.formatStartDate}
-                />
-              }
+              <Feedback
+                feedback={questions}
+                durationFormatter={this.durationInWeeks}
+                startDateFormatter={this.formatStartDate}
+              />
             </div>
           </div>
         </div>
@@ -134,18 +111,29 @@ export class RoomFeedback extends Component {
 
 RoomFeedback.defaultProps = {
   data: {
-    allQuestions: [
-      {},
-    ],
-    loading: false,
-    error: {},
-    refetch: null,
+    questions: {
+      questions: [
+        {
+          id: '1',
+          question: 'There is no question so far',
+          questionType: 'Input',
+          startDate: '2019-02-21 23:42:43',
+          endDate: '2019-02-21 23:42:43',
+          questionResponseCount: 0,
+          isActive: false,
+        },
+      ],
+      loading: false,
+      error: {},
+    },
   },
 };
 
 RoomFeedback.propTypes = {
   data: PropTypes.shape({
-    allQuestions: PropTypes.array,
+    questions: PropTypes.shape({
+      questions: PropTypes.array,
+    }),
     loading: PropTypes.bool,
     error: PropTypes.object,
     refetch: PropTypes.func,

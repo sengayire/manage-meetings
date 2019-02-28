@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { graphql, compose } from 'react-apollo';
+import toastr from 'toastr';
 import MrmModal from '../commons/Modal';
 import ActionButtons from '../commons/ActionButtons';
 import '../../assets/styles/deleteModal.scss';
+import notification from '../../utils/notification';
+import { DELETE_ROOM_FEEDBACK_QUESTION } from '../../graphql/mutations/Question';
+import GET_ROOM_FEEDBACK_QUESTIONS_QUERY from '../../graphql/queries/questions';
 
 /**
  * Delete Feedback Component
@@ -11,9 +16,10 @@ import '../../assets/styles/deleteModal.scss';
  *
  * @returns {JSX}
  */
-class DeleteFeedback extends Component {
+export class DeleteFeedback extends Component {
   state = {
     closeModal: false,
+    isDeleting: false,
   };
 
   /**
@@ -35,20 +41,46 @@ class DeleteFeedback extends Component {
   };
 
   /**
-   * Handles deleting feedback
-   *
-   * @param {object} event
+   * 1. change isLoading state to it's opposite value
+   * i.e true to false or vise verser
    *
    * @returns {void}
    */
-  handleDeleteFeedback = (event) => {
-    event.preventDefault();
-    // submit logic goes here
-    this.handleCloseModal();
+  toggleLoading = () => {
+    this.setState({
+      isDeleting: !this.state.isDeleting,
+    });
+  }
+
+  /**
+   * Handles deleting feedback
+   *
+   * @returns {void}
+   */
+  handleDeleteFeedback = () => {
+    const { id, question, deleteFeedback } = this.props;
+    this.toggleLoading();
+    deleteFeedback({
+      variables: {
+        questionId: id,
+      },
+      refetchQueries: [{ query: GET_ROOM_FEEDBACK_QUESTIONS_QUERY }],
+    })
+      .then(() => {
+        this.toggleLoading();
+        this.handleCloseModal();
+        notification(toastr, 'success', `${question} has been deleted successfully`)();
+      })
+      .catch((error) => {
+        this.toggleLoading();
+        this.handleCloseModal();
+        notification(toastr, 'error', error.graphQLErrors[0].message)();
+      });
   };
 
   render() {
-    const { closeModal } = this.state;
+    const { closeModal, isDeleting } = this.state;
+
     return (
       <MrmModal
         className="delete-modal"
@@ -59,14 +91,14 @@ class DeleteFeedback extends Component {
       >
         <div className="delete-modal-content">
           <p id="confirm-msg">
-            Are you sure you want to delete {`"${this.props.question}"`}?
+            Are you sure you want to delete {`"${this.props.question}"`} ?
             <br />
             This cannot be undone
           </p>
           <ActionButtons
             withCancel
             onClickCancel={this.handleCloseModal}
-            isLoading={false}
+            isLoading={isDeleting}
             actionButtonText="DELETE QUESTION"
             onClickSubmit={this.handleDeleteFeedback}
           />
@@ -78,6 +110,11 @@ class DeleteFeedback extends Component {
 
 DeleteFeedback.propTypes = {
   question: PropTypes.string.isRequired,
+  deleteFeedback: PropTypes.func.isRequired,
+  id: PropTypes.string.isRequired,
 };
 
-export default DeleteFeedback;
+export default compose(
+  graphql(DELETE_ROOM_FEEDBACK_QUESTION, { name: 'deleteFeedback' }),
+  graphql(GET_ROOM_FEEDBACK_QUESTIONS_QUERY, { name: 'allQuestions' }),
+)(DeleteFeedback);

@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 import { RoomFeedback } from '../../../src/components/roomFeedback/RoomFeedback';
 import defaultUserRole from '../../../src/fixtures/user';
 
@@ -22,20 +22,24 @@ describe('Tests for RoomFeedback Component', () => {
   };
   const testProps = {
     data: {
-      allQuestions: [{}],
+      questions: {
+        questions: [{}],
+      },
       loading: true,
       error: undefined,
-      user: defaultUserRole,
     },
+    user: defaultUserRole,
   };
   let wrapper;
 
   beforeEach(() => {
-    wrapper = shallow(<RoomFeedback user={defaultUserRole} {...testProps} />);
+    wrapper = mount(
+      <RoomFeedback {...testProps} />);
   });
 
-  it('should return the expected number of room feedback questions', () => {
-    expect(testData.data.allQuestions).toHaveLength(1);
+  it('should call durationInWeeks method with the same start and end date', () => {
+    const endDate = startDate;
+    expect(wrapper.instance().durationInWeeks(startDate, endDate)).toBeTruthy();
   });
 
   it('should call durationInWeeks method when duration is exactly 1 Day', () => {
@@ -62,12 +66,8 @@ describe('Tests for RoomFeedback Component', () => {
     wrapper.instance().formatStartDate('2019-03-23 23:42:43');
   });
 
-  it('should receive props and hands them over to the states', () => {
-    expect(wrapper.instance().componentWillReceiveProps(testData));
-  });
-
-  it('should update the state when the feedback component mounts', () => {
-    expect(wrapper.instance().componentWillMount());
+  it('should receive props', () => {
+    expect(wrapper.instance().componentWillReceiveProps(testProps));
   });
 
   it('should have empty user props', () => {
@@ -75,7 +75,7 @@ describe('Tests for RoomFeedback Component', () => {
       user: {},
       data: testData,
     };
-    const roomFeedback = shallow(<RoomFeedback user={{}} />);
+    const roomFeedback = shallow(<RoomFeedback user={{ user: false }} />);
     expect(roomFeedback.instance().componentWillReceiveProps(props)).toBeFalsy();
   });
 });

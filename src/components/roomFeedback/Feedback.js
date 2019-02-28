@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { graphql } from 'react-apollo';
 import CheckboxSlide from '../commons/CheckboxSlide';
 import EditFeedback from './EditFeedback';
-import DeleteFeedback from './DeleteFeedback';
+import DeleteFeedback from './DeleteFeedback'; // eslint-disable-line
 import UPDATE_QUESTION_MUTATION from '../../graphql/mutations/Question';
 
 /**
@@ -39,7 +39,7 @@ const Feedback = props =>
             startDate={startDate}
             duration={props.durationFormatter(startDate, endDate)}
           />
-          <DeleteFeedback id="delete-modal" question={question} />
+          <DeleteFeedback id={id} question={question} />
         </span>
         <span className="checkbox">
           <CheckboxSlide

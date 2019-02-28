@@ -23,4 +23,19 @@ mutation createQuestion($question: String!, $questionTitle: String!, $questionTy
   }
 }`;
 
-export { ADD_ROOM_FEEDBACK_QUESTIONS, UPDATE_QUESTION_MUTATION as default };
+const DELETE_ROOM_FEEDBACK_QUESTION = gql`
+ mutation deleteQuestion($questionId: Int!){
+   deleteQuestion(questionId: $questionId){
+     question{
+       id
+       question
+     }
+   }
+ }
+`;
+
+export {
+  UPDATE_QUESTION_MUTATION as default,
+  DELETE_ROOM_FEEDBACK_QUESTION,
+  ADD_ROOM_FEEDBACK_QUESTIONS,
+};
