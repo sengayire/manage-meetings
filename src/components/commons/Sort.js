@@ -9,7 +9,8 @@ class Sort extends Component {
   };
 
   componentWillReceiveProps() {
-    this.props.hideDropdownMenu && this.Dropdown.current.toggleVisibility();
+    // eslint-disable-next-line no-unused-expressions
+    this.props.hideDropdownMenu && this.Dropdown.current.toggleVisibility;
   }
 
   Dropdown = React.createRef();

@@ -17,8 +17,8 @@ describe('Sort Component', () => {
         },
       ],
     },
-    withChildren: false,
-    hideDropdownMenu: true,
+    withChildren: true,
+    hideDropdownMenu: false,
   };
 
   const wrapper = mount(<Sort {...props} />);
@@ -28,11 +28,18 @@ describe('Sort Component', () => {
   });
 
   it('should display the option in a dropdown menu component', () => {
-    wrapper.setProps({
-      ...props,
-      withChildren: true,
+    wrapper.find('.dropdown-caret button').simulate('mousedown', {
+      type: 'focus',
     });
     expect(wrapper.find('.filter-options').length).toEqual(1);
     expect(wrapper.find('.filter-options').text()).toEqual('role');
+  });
+
+  const newWrapper = mount(<Sort {...{ ...props, withChildren: false, hideDropdownMenu: true }} />);
+  it('should not display the option in a dropdown menu component', () => {
+    newWrapper.find('.dropdown-caret button').simulate('mousedown', {
+      type: 'focus',
+    });
+    expect(newWrapper.find('.filter-options').length).toEqual(0);
   });
 });

@@ -215,7 +215,7 @@ describe('PeopleList Component', () => {
   });
 
   it('should display options using the dropdown menu component', () => {
-    mountWrapper.find('Sort Dropdown .dropdown-caret button').simulate('click');
+    mountWrapper.find('Sort Dropdown .dropdown-caret button').simulate('mouseDown');
     expect(mountWrapper.find('.dropdown-menu').length).toEqual(1);
     expect(mountWrapper.find('.dropdown-menu span').length).toEqual(2);
     expect(mountWrapper.find('.dropdown-menu span').at(1).text()).toEqual('access');

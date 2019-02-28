@@ -3,7 +3,7 @@
 exports[`Sort Component should render component without errors 1`] = `
 <Sort
   fetchSortedData={[MockFunction]}
-  hideDropdownMenu={true}
+  hideDropdownMenu={false}
   sortOptions={
     Object {
       "role": Array [
@@ -18,7 +18,7 @@ exports[`Sort Component should render component without errors 1`] = `
       ],
     }
   }
-  withChildren={false}
+  withChildren={true}
 >
   <div
     className="filter-options-container"
@@ -30,14 +30,23 @@ exports[`Sort Component should render component without errors 1`] = `
         Sort by:
       </span>
       <Dropdown
-        content={<div />}
+        content={
+          Array [
+            <span
+              className="filter-options"
+              onClick={[Function]}
+            >
+              role
+            </span>,
+          ]
+        }
         icon="⇵"
       >
         <div
           className="dropdown-caret"
         >
           <button
-            onClick={[Function]}
+            onMouseDown={[Function]}
           >
             ⇵
           </button>

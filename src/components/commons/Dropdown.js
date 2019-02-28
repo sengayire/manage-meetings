@@ -14,12 +14,25 @@ class Dropdown extends React.Component {
     isVisible: false,
   };
 
+  componentDidUpdate() {
+    if (this.state.isVisible) {
+      this.dropdownMenu.current.focus();
+    }
+  }
+
+  dropdownMenu = React.createRef();
+
   /**
    * It toggles the visibility of the Dropdown
-   *
+   * @param {object} props
    * @returns {void}
    */
-  toggleVisibility = () => {
+  toggleVisibility = (event) => {
+    if (event.type === 'blur' && event.relatedTarget !== null
+      && event.target.contains(event.relatedTarget)) {
+      return;
+    }
+    event.preventDefault();
     this.setState({ isVisible: !this.state.isVisible });
   };
 
@@ -27,7 +40,7 @@ class Dropdown extends React.Component {
     return (
       <React.Fragment>
         <div className="dropdown-caret">
-          <button onClick={this.toggleVisibility}>
+          <button onMouseDown={this.toggleVisibility}>
             {this.props.icon ? this.props.icon : <span> &#x2304; </span>}
           </button>
         </div>
@@ -38,6 +51,7 @@ class Dropdown extends React.Component {
             role="button"
             onBlur={this.toggleVisibility}
             tabIndex={0}
+            ref={this.dropdownMenu}
           >
             {this.props.content}
           </div>

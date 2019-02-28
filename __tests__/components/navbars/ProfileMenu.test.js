@@ -12,9 +12,10 @@ describe('ProfileMenu', () => {
   });
 
   it('should respond to click events properly and render the child components correctly', () => {
-    const list = wrapper.find('span');
     window.location.reload = jest.fn();
-    list.simulate('click');
+    wrapper.find('.dropdown-caret button').simulate('mousedown', {
+      type: 'focus',
+    });
     const span = wrapper.find('button').last();
     span.simulate('click');
     expect(window.location.reload).toHaveBeenCalled();

@@ -6,7 +6,7 @@ exports[`Sort Component should render component without errors 1`] = `
     className="dropdown-caret"
   >
     <button
-      onClick={[Function]}
+      onMouseDown={[Function]}
     >
       <span>
          ⌄ 

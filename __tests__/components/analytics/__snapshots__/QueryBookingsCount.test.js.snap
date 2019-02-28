@@ -1774,8 +1774,8 @@ exports[`Query Bookings Count Component should render without error 1`] = `
             },
           },
           "variables": Object {
-            "endDate": "Feb 27 2019",
-            "startDate": "Feb 27 2019",
+            "endDate": "Feb 28 2019",
+            "startDate": "Feb 28 2019",
           },
         },
       },
