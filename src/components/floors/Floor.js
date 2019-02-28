@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import DeleteFloor from "./DeleteFloor"; //eslint-disable-line
-import EditFloor from "./EditFloor"; //eslint-disable-line
+import DeleteFloor from './DeleteFloor'; //eslint-disable-line
+import EditFloor from './EditFloor'; //eslint-disable-line
 
 /**
  * Floor Component
@@ -11,10 +11,10 @@ import EditFloor from "./EditFloor"; //eslint-disable-line
  * @returns {JSX}
  */
 export const Floor = ({ floor, refetch }) => (
-  <tr>
-    <td>{floor.name}</td>
-    <td>{floor.block}</td>
-    <td>
+  <div className="table__row">
+    <span>{floor.name}</span>
+    <span>{floor.block}</span>
+    <span>
       <EditFloor
         id="edit-modal"
         floorName={floor.name}
@@ -22,14 +22,9 @@ export const Floor = ({ floor, refetch }) => (
         floorLocation={floor.office}
       />
       &nbsp;
-      <DeleteFloor
-        floorName={floor.name}
-        id="delete-modal"
-        floorId={floor.id}
-        refetch={refetch}
-      />
-    </td>
-  </tr>
+      <DeleteFloor floorName={floor.name} id="delete-modal" floorId={floor.id} refetch={refetch} />
+    </span>
+  </div>
 );
 
 Floor.propTypes = {

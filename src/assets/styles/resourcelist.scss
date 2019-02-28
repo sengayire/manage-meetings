@@ -10,77 +10,33 @@
   }
 
   .settings-resource-list {
-    table {
-      width: 100%;
-      clear: left;
-      border-collapse: collapse;
-      text-align: left;
-
-      .first-col {
-        width: 60%;
-
-        @media screen and (max-width: 425px) {
-          width: 35%;
-        }
-
-        @media screen and (min-width: 500px) and (max-width: 1023px) {
-          width: 45%;
-        }
+    .table {
+      &__row {
+        grid-template-columns: repeat(2, 1fr);
       }
 
-      .last-col {
-        @media screen and (max-width: 425px) {
-          width: 38%;
-        }
-
-        @media screen and (min-width: 500px) and (max-width: 1023px) {
-          width: 33%;
-        }
+      &__headers {
+        grid-template-columns: repeat(2, 1fr);
       }
 
-      tr {
-        font-weight: 50;
-        border-bottom: 10px solid map-get($color-white, 800);
-
-        td:nth-child(2) {
-          width: 13.2%;
-        }
+      &__row>span:nth-child(2n) {
+        text-align: center;
       }
 
-      th {
-        color: map-get($color-black, 100);
-        font-size: 97%;
-        font-weight: inherit;
+      &__headers>span:nth-child(2n) {
+        text-align: center;
+      }
+    }
+  }
 
-        &:first-child {
-          padding-left: 4%;
-        }
+  .settings-floors-list {
+    .table {
+      &__row {
+        grid-template-columns: repeat(3, 1fr);
       }
 
-      td {
-        background: map-get($color-white, 000);
-        color: map-get($color-black, 600);
-        font-size: 95%;
-        height: 52px;
-        font-family: $font-light;
-
-        #modal-button {
-          margin-left: -2px;
-        }
-      }
-
-      td:nth-of-type(1) {
-        width: auto;
-        padding-left: 4%;
-      }
-
-      @media screen and (max-width: 425px) {
-        width: 100%;
-        margin-right: 0;
-      }
-
-      @media screen and (min-width: 768) and (max-width: 1023px) {
-        width: 95%;
+      &__headers {
+        grid-template-columns: repeat(3, 1fr);
       }
     }
   }
@@ -145,18 +101,18 @@ button {
     cursor: pointer;
   }
 
-.modal-content{
-  .modal-text {
-    margin-top: 3em;
-    margin-left: 50px;
-  }
+  .modal-content {
+    .modal-text {
+      margin-top: 3em;
+      margin-left: 50px;
+    }
   }
 
   .button-container {
     position: absolute;
     width: 100%;
     right: 0;
-     bottom: 50px;
+    bottom: 50px;
 
     .modal-cancel {
       margin-right: 50px;
@@ -167,6 +123,3 @@ button {
     }
   }
 }
-
-
-

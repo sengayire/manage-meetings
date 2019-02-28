@@ -14,18 +14,16 @@ const QueryAnalyticsLoading = () => (
       <h4 className="header-title">Average time spent/Meeting Room</h4>
     </div>
     <div className="average-meeting-list">
-      <table>
+      <div className="table">
         <TableHead
           titles={['Room', 'No. of meetings', 'Average Meeting Duration']}
         />
-        <tbody>
-          <tr>
-            <th colSpan="3">
-              <ProgressBar type="linear" mode="indeterminate" />
-            </th>
-          </tr>
-        </tbody>
-      </table>
+        <div className="table__body">
+          <div className="table__row--loading">
+            <ProgressBar type="linear" mode="indeterminate" />
+          </div>
+        </div>
+      </div>
       <br />
     </div>
   </div>

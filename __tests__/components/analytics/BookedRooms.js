@@ -20,15 +20,15 @@ describe('BookedRooms component', () => {
   });
 
   it(' should render rooms data in  Rooms table', () => {
-    const tableWrapper = mount(
-      <BookedRooms
-        {...props}
-        bookedRoomsList={roomUsage}
-      />);
-    expect(tableWrapper.find('table')
-      .children().find('tbody').children()
-      .find('tr').length)
-      .toBe(3);
+    const tableWrapper = mount(<BookedRooms {...props} bookedRoomsList={roomUsage} />);
+    expect(
+      tableWrapper
+        .find('.table')
+        .children()
+        .find('.table__body')
+        .children()
+        .find('.table__row--analytics').length,
+    ).toBe(3);
   });
 
   it('should render error div', () => {
@@ -38,17 +38,13 @@ describe('BookedRooms component', () => {
         error={{ error: 'this error occurred' }}
         bookedRoomsList={[]}
         fetching
-      />);
-    expect(bookedRoomsComponent.find('.error_msg')).toHaveLength(1);
+      />,
+    );
+    expect(bookedRoomsComponent.find('.error-msg')).toHaveLength(1);
   });
 
   it('should load ProgressBar div', () => {
-    const bookedRoomsComponent = mount(
-      <BookedRooms
-        {...props}
-        bookedRoomsList={[]}
-        fetching
-      />);
+    const bookedRoomsComponent = mount(<BookedRooms {...props} bookedRoomsList={[]} fetching />);
     expect(bookedRoomsComponent.find('ProgressBar')).toHaveLength(1);
   });
 });

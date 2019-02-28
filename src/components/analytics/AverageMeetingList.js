@@ -9,7 +9,7 @@ import MEETING_DURATION_ANALYTICS from '../../graphql/queries/analytics';
 import Pagination from '../commons/Pagination';
 import QueryAnalyticsLoading from './AverageMeetingList/QueryAnalyticsLoading';
 import Overlay from '../commons/Overlay';
-import Warning from '../../assets/images/warning_icon.svg';
+import ErrorIcon from '../commons/ErrorIcon';
 
 /**
  * Component for the average meeting list
@@ -58,8 +58,7 @@ export class AverageMeetingList extends Component {
         },
         updateQuery: (prev, { fetchMoreResult }) => {
           this.setState({
-            analyticsForMeetingsDurations:
-              fetchMoreResult.analyticsForMeetingsDurations,
+            analyticsForMeetingsDurations: fetchMoreResult.analyticsForMeetingsDurations,
           });
         },
       })
@@ -82,43 +81,30 @@ export class AverageMeetingList extends Component {
         </div>
         <div className="average-meeting-list">
           {isFetching ? <Overlay id="average-meeting" /> : null}
-          <table>
-            <TableHead
-              titles={['Room', 'No. of meetings', 'Average Meeting Duration']}
-            />
-            <tbody>
-              {
-                error ?
-                  <tr className="average-table-error">
-                    <td className="error_class">
-                      <img
-                        className="error_icon"
-                        src={Warning}
-                        alt="error_icon"
-                      />
-                      <b>
-                        <p className="error_msg">
-                        An error occurred, cannot fetch data
-                        </p>
-                      </b>
-                    </td>
-                  </tr> :
-                  <QueryAnalyticsPerMeetingRoom
-                    data={analyticsForMeetingsDurations}
-                  />
-              }
-            </tbody>
-          </table>
+          <div className="table">
+            <TableHead titles={['Room', 'No. of meetings', 'Average Meeting Duration']} />
+            <div className="table__body">
+              {error ? (
+                <div className="table__row--analytics">
+                  <ErrorIcon />
+                </div>
+              ) : (
+                <QueryAnalyticsPerMeetingRoom data={analyticsForMeetingsDurations} />
+              )}
+            </div>
+          </div>
         </div>
         <div className="average-meeting-pagination">
           <div>
-            { !error && <Pagination
-              totalPages={analyticsForMeetingsDurations.pages}
-              hasNext={analyticsForMeetingsDurations.hasNext}
-              hasPrevious={analyticsForMeetingsDurations.hasPrevious}
-              handleData={this.handleData}
-              isFetching={isFetching}
-            />}
+            {!error && (
+              <Pagination
+                totalPages={analyticsForMeetingsDurations.pages}
+                hasNext={analyticsForMeetingsDurations.hasNext}
+                hasPrevious={analyticsForMeetingsDurations.hasPrevious}
+                handleData={this.handleData}
+                isFetching={isFetching}
+              />
+            )}
           </div>
         </div>
       </div>

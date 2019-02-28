@@ -6,15 +6,15 @@ import Block from './BlockActions';
 const SingleBlockDetails = (props) => {
   const { name, office, location } = props.block;
   return (
-    <tr>
-      <td>{name}</td>
-      <td>{location}</td>
-      <td>{office.name}</td>
-      <td>
+    <div className="table__row">
+      <span>{name}</span>
+      <span>{location}</span>
+      <span>{office.name}</span>
+      <span>
         <Block office={office} block={props.block} editing /> &nbsp;
         <Block block={props.block} office={office} refetch={props.refetch} deleting /> &nbsp;
-      </td>
-    </tr>
+      </span>
+    </div>
   );
 };
 

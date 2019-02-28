@@ -7,7 +7,7 @@ describe('SingleBlockDetails Component', () => {
   const blockWrapper = shallow(<SingleBlockDetails block={singleBlockData} />);
 
   it('renders the correct content', () => {
-    const td = blockWrapper.find('td');
+    const td = blockWrapper.find('span');
     expect(td).toHaveLength(4);
   });
 });

@@ -4,7 +4,10 @@
   width: 90%;
   margin: 0 auto;
   margin-top: 2%;
-  
+
+  .btn-primary {
+    color: map-get($color-white, 000) !important;
+  }
 
   &__control {
     display: flex;

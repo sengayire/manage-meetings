@@ -10,14 +10,16 @@ import { GET_ALL_OFFICES } from '../../../src/graphql/queries/Offices';
 const props = {
   allOffices: {
     allOffices: {
-      offices: [{
-        id: '11',
-        name: 'Epic Tower',
-        location: {
-          name: 'LAGOS',
-          timeZone: 'WEST',
+      offices: [
+        {
+          id: '11',
+          name: 'Epic Tower',
+          location: {
+            name: 'LAGOS',
+            timeZone: 'WEST',
+          },
         },
-      }],
+      ],
     },
   },
   data: {
@@ -70,7 +72,8 @@ describe('Tests for SettingOffices', () => {
                   name: 'Kampala',
                   timeZone: 'TimeZoneType.EAST_AFRICA_TIME',
                 },
-              }],
+              },
+            ],
             hasNext: false,
             hasPrevious: true,
             pages: 1,
@@ -84,10 +87,10 @@ describe('Tests for SettingOffices', () => {
     const wrapper = renderer.create(
       <MockedProvider mocks={[officeMocks]} addTypename={false}>
         <SettingsOffices {...props} />
-      </MockedProvider>);
+      </MockedProvider>,
+    );
     await wait(0);
-
-    expect(wrapper.toJSON().children[1].children[0].children[2].children.length).toBe(1);
+    expect(wrapper.toJSON().children[1].children[0].children[1].children.length).toBe(1);
   });
 
   it('should toggle the state when handleData is called', () => {
@@ -104,7 +107,8 @@ describe('Tests for SettingOffices', () => {
                 name: 'Kampala',
                 timeZone: 'TimeZoneType.EAST_AFRICA_TIME',
               },
-            }],
+            },
+          ],
           hasNext: false,
           hasPrevious: true,
         },

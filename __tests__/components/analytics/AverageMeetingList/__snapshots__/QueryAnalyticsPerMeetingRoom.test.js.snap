@@ -2,7 +2,8 @@
 
 exports[`QueryAnalyticsPerMeetingRoom component renders correctly 1`] = `
 Array [
-  <tr
+  <div
+    className="table__row--analytics"
     key="Malabo"
   />,
 ]

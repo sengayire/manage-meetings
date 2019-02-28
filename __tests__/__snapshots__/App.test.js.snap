@@ -277,8 +277,8 @@ exports[`App component should not render Login if token is present but render An
                 },
               },
               "variables": Object {
-                "endDate": "Feb 26 2019",
-                "startDate": "Feb 26 2019",
+                "endDate": "Feb 27 2019",
+                "startDate": "Feb 27 2019",
               },
             },
           ],
@@ -445,8 +445,8 @@ exports[`App component should not render Login if token is present but render An
                 },
               },
               "variables": Object {
-                "endDate": "Feb 26 2019",
-                "startDate": "Feb 26 2019",
+                "endDate": "Feb 27 2019",
+                "startDate": "Feb 27 2019",
               },
             },
           ],
@@ -710,10 +710,10 @@ exports[`App component should not render Login if token is present but render An
                 },
               },
               "variables": Object {
-                "endDate": "Feb 26 2019",
+                "endDate": "Feb 27 2019",
                 "page": 1,
                 "perPage": 5,
-                "startDate": "Feb 26 2019",
+                "startDate": "Feb 27 2019",
               },
             },
           ],
@@ -944,8 +944,8 @@ exports[`App component should not render Login if token is present but render An
                 },
               },
               "variables": Object {
-                "endDate": "Feb 26 2019",
-                "startDate": "Feb 26 2019",
+                "endDate": "Feb 27 2019",
+                "startDate": "Feb 27 2019",
               },
             },
           ],
@@ -1119,10 +1119,10 @@ exports[`App component should not render Login if token is present but render An
                 },
               },
               "variables": Object {
-                "endDate": "Feb 26 2019",
+                "endDate": "Feb 27 2019",
                 "page": 1,
                 "perPage": 5,
-                "startDate": "Feb 26 2019",
+                "startDate": "Feb 27 2019",
               },
             },
           ],
@@ -1442,8 +1442,8 @@ exports[`App component should not render Login if token is present but render An
                 },
               },
               "variables": Object {
-                "endDate": "Feb 26 2019",
-                "startDate": "Feb 26 2019",
+                "endDate": "Feb 27 2019",
+                "startDate": "Feb 27 2019",
               },
             },
             Object {
@@ -1727,8 +1727,8 @@ exports[`App component should not render Login if token is present but render An
                 },
               },
               "variables": Object {
-                "endDate": "Feb 26 2019",
-                "startDate": "Feb 26 2019",
+                "endDate": "Feb 27 2019",
+                "startDate": "Feb 27 2019",
               },
             },
             Object {
@@ -1927,8 +1927,8 @@ exports[`App component should not render Login if token is present but render An
                 },
               },
               "variables": Object {
-                "endDate": "Feb 26 2019",
-                "startDate": "Feb 26 2019",
+                "endDate": "Feb 27 2019",
+                "startDate": "Feb 27 2019",
               },
             },
             Object {
@@ -2127,8 +2127,8 @@ exports[`App component should not render Login if token is present but render An
                 },
               },
               "variables": Object {
-                "endDate": "Feb 26 2019",
-                "startDate": "Feb 26 2019",
+                "endDate": "Feb 27 2019",
+                "startDate": "Feb 27 2019",
               },
             },
             Object {
@@ -2327,10 +2327,10 @@ exports[`App component should not render Login if token is present but render An
                 },
               },
               "variables": Object {
-                "endDate": "Feb 26 2019",
+                "endDate": "Feb 27 2019",
                 "page": 1,
                 "perPage": 5,
-                "startDate": "Feb 26 2019",
+                "startDate": "Feb 27 2019",
               },
             },
             Object {
@@ -2634,10 +2634,10 @@ exports[`App component should not render Login if token is present but render An
                 },
               },
               "variables": Object {
-                "endDate": "Feb 26 2019",
+                "endDate": "Feb 27 2019",
                 "page": 1,
                 "perPage": 5,
-                "startDate": "Feb 26 2019",
+                "startDate": "Feb 27 2019",
               },
             },
             Object {
@@ -2836,8 +2836,8 @@ exports[`App component should not render Login if token is present but render An
                 },
               },
               "variables": Object {
-                "endDate": "Feb 26 2019",
-                "startDate": "Feb 26 2019",
+                "endDate": "Feb 27 2019",
+                "startDate": "Feb 27 2019",
               },
             },
             Object {
@@ -3036,8 +3036,8 @@ exports[`App component should not render Login if token is present but render An
                 },
               },
               "variables": Object {
-                "endDate": "Feb 26 2019",
-                "startDate": "Feb 26 2019",
+                "endDate": "Feb 27 2019",
+                "startDate": "Feb 27 2019",
               },
             },
             Object {
@@ -3495,8 +3495,8 @@ query user ($email: String!) {
                     },
                   },
                   "variables": Object {
-                    "endDate": "Feb 26 2019",
-                    "startDate": "Feb 26 2019",
+                    "endDate": "Feb 27 2019",
+                    "startDate": "Feb 27 2019",
                   },
                 },
                 Object {
@@ -3780,8 +3780,8 @@ query user ($email: String!) {
                     },
                   },
                   "variables": Object {
-                    "endDate": "Feb 26 2019",
-                    "startDate": "Feb 26 2019",
+                    "endDate": "Feb 27 2019",
+                    "startDate": "Feb 27 2019",
                   },
                 },
                 Object {
@@ -3980,8 +3980,8 @@ query user ($email: String!) {
                     },
                   },
                   "variables": Object {
-                    "endDate": "Feb 26 2019",
-                    "startDate": "Feb 26 2019",
+                    "endDate": "Feb 27 2019",
+                    "startDate": "Feb 27 2019",
                   },
                 },
                 Object {
@@ -4180,8 +4180,8 @@ query user ($email: String!) {
                     },
                   },
                   "variables": Object {
-                    "endDate": "Feb 26 2019",
-                    "startDate": "Feb 26 2019",
+                    "endDate": "Feb 27 2019",
+                    "startDate": "Feb 27 2019",
                   },
                 },
                 Object {
@@ -4380,10 +4380,10 @@ query user ($email: String!) {
                     },
                   },
                   "variables": Object {
-                    "endDate": "Feb 26 2019",
+                    "endDate": "Feb 27 2019",
                     "page": 1,
                     "perPage": 5,
-                    "startDate": "Feb 26 2019",
+                    "startDate": "Feb 27 2019",
                   },
                 },
                 Object {
@@ -4687,10 +4687,10 @@ query user ($email: String!) {
                     },
                   },
                   "variables": Object {
-                    "endDate": "Feb 26 2019",
+                    "endDate": "Feb 27 2019",
                     "page": 1,
                     "perPage": 5,
-                    "startDate": "Feb 26 2019",
+                    "startDate": "Feb 27 2019",
                   },
                 },
                 Object {
@@ -4889,8 +4889,8 @@ query user ($email: String!) {
                     },
                   },
                   "variables": Object {
-                    "endDate": "Feb 26 2019",
-                    "startDate": "Feb 26 2019",
+                    "endDate": "Feb 27 2019",
+                    "startDate": "Feb 27 2019",
                   },
                 },
                 Object {
@@ -5089,8 +5089,8 @@ query user ($email: String!) {
                     },
                   },
                   "variables": Object {
-                    "endDate": "Feb 26 2019",
-                    "startDate": "Feb 26 2019",
+                    "endDate": "Feb 27 2019",
+                    "startDate": "Feb 27 2019",
                   },
                 },
                 Object {
@@ -5897,8 +5897,8 @@ query user ($email: String!) {
                       },
                     },
                     "variables": Object {
-                      "endDate": "Feb 26 2019",
-                      "startDate": "Feb 26 2019",
+                      "endDate": "Feb 27 2019",
+                      "startDate": "Feb 27 2019",
                     },
                   },
                   "queryId": "4",
@@ -5914,8 +5914,8 @@ query user ($email: String!) {
                   "shouldSubscribe": true,
                   "subscriptionHandles": Array [],
                   "variables": Object {
-                    "endDate": "Feb 26 2019",
-                    "startDate": "Feb 26 2019",
+                    "endDate": "Feb 27 2019",
+                    "startDate": "Feb 27 2019",
                   },
                 },
                 "subscriptions": Array [],
@@ -6499,8 +6499,8 @@ query user ($email: String!) {
                       },
                     },
                     "variables": Object {
-                      "endDate": "Feb 26 2019",
-                      "startDate": "Feb 26 2019",
+                      "endDate": "Feb 27 2019",
+                      "startDate": "Feb 27 2019",
                     },
                   },
                   "queryId": "6",
@@ -6516,8 +6516,8 @@ query user ($email: String!) {
                   "shouldSubscribe": true,
                   "subscriptionHandles": Array [],
                   "variables": Object {
-                    "endDate": "Feb 26 2019",
-                    "startDate": "Feb 26 2019",
+                    "endDate": "Feb 27 2019",
+                    "startDate": "Feb 27 2019",
                   },
                 },
                 "subscriptions": Array [],
@@ -6910,8 +6910,8 @@ query user ($email: String!) {
                       },
                     },
                     "variables": Object {
-                      "endDate": "Feb 26 2019",
-                      "startDate": "Feb 26 2019",
+                      "endDate": "Feb 27 2019",
+                      "startDate": "Feb 27 2019",
                     },
                   },
                   "queryId": "7",
@@ -6927,8 +6927,8 @@ query user ($email: String!) {
                   "shouldSubscribe": true,
                   "subscriptionHandles": Array [],
                   "variables": Object {
-                    "endDate": "Feb 26 2019",
-                    "startDate": "Feb 26 2019",
+                    "endDate": "Feb 27 2019",
+                    "startDate": "Feb 27 2019",
                   },
                 },
                 "subscriptions": Array [],
@@ -7321,8 +7321,8 @@ query user ($email: String!) {
                       },
                     },
                     "variables": Object {
-                      "endDate": "Feb 26 2019",
-                      "startDate": "Feb 26 2019",
+                      "endDate": "Feb 27 2019",
+                      "startDate": "Feb 27 2019",
                     },
                   },
                   "queryId": "8",
@@ -7338,8 +7338,8 @@ query user ($email: String!) {
                   "shouldSubscribe": true,
                   "subscriptionHandles": Array [],
                   "variables": Object {
-                    "endDate": "Feb 26 2019",
-                    "startDate": "Feb 26 2019",
+                    "endDate": "Feb 27 2019",
+                    "startDate": "Feb 27 2019",
                   },
                 },
                 "subscriptions": Array [],
@@ -7739,10 +7739,10 @@ query user ($email: String!) {
                       },
                     },
                     "variables": Object {
-                      "endDate": "Feb 26 2019",
+                      "endDate": "Feb 27 2019",
                       "page": 1,
                       "perPage": 5,
-                      "startDate": "Feb 26 2019",
+                      "startDate": "Feb 27 2019",
                     },
                   },
                   "queryId": "9",
@@ -7758,10 +7758,10 @@ query user ($email: String!) {
                   "shouldSubscribe": true,
                   "subscriptionHandles": Array [],
                   "variables": Object {
-                    "endDate": "Feb 26 2019",
+                    "endDate": "Feb 27 2019",
                     "page": 1,
                     "perPage": 5,
-                    "startDate": "Feb 26 2019",
+                    "startDate": "Feb 27 2019",
                   },
                 },
                 "subscriptions": Array [],
@@ -8356,10 +8356,10 @@ query user ($email: String!) {
                       },
                     },
                     "variables": Object {
-                      "endDate": "Feb 26 2019",
+                      "endDate": "Feb 27 2019",
                       "page": 1,
                       "perPage": 5,
-                      "startDate": "Feb 26 2019",
+                      "startDate": "Feb 27 2019",
                     },
                   },
                   "queryId": "10",
@@ -8375,10 +8375,10 @@ query user ($email: String!) {
                   "shouldSubscribe": true,
                   "subscriptionHandles": Array [],
                   "variables": Object {
-                    "endDate": "Feb 26 2019",
+                    "endDate": "Feb 27 2019",
                     "page": 1,
                     "perPage": 5,
-                    "startDate": "Feb 26 2019",
+                    "startDate": "Feb 27 2019",
                   },
                 },
                 "subscriptions": Array [],
@@ -8771,8 +8771,8 @@ query user ($email: String!) {
                       },
                     },
                     "variables": Object {
-                      "endDate": "Feb 26 2019",
-                      "startDate": "Feb 26 2019",
+                      "endDate": "Feb 27 2019",
+                      "startDate": "Feb 27 2019",
                     },
                   },
                   "queryId": "3",
@@ -8788,8 +8788,8 @@ query user ($email: String!) {
                   "shouldSubscribe": true,
                   "subscriptionHandles": Array [],
                   "variables": Object {
-                    "endDate": "Feb 26 2019",
-                    "startDate": "Feb 26 2019",
+                    "endDate": "Feb 27 2019",
+                    "startDate": "Feb 27 2019",
                   },
                 },
                 "subscriptions": Array [],
@@ -9182,8 +9182,8 @@ query user ($email: String!) {
                       },
                     },
                     "variables": Object {
-                      "endDate": "Feb 26 2019",
-                      "startDate": "Feb 26 2019",
+                      "endDate": "Feb 27 2019",
+                      "startDate": "Feb 27 2019",
                     },
                   },
                   "queryId": "2",
@@ -9199,8 +9199,8 @@ query user ($email: String!) {
                   "shouldSubscribe": true,
                   "subscriptionHandles": Array [],
                   "variables": Object {
-                    "endDate": "Feb 26 2019",
-                    "startDate": "Feb 26 2019",
+                    "endDate": "Feb 27 2019",
+                    "startDate": "Feb 27 2019",
                   },
                 },
                 "subscriptions": Array [],
@@ -9951,10 +9951,10 @@ query user ($email: String!) {
                 "networkStatus": 1,
                 "previousVariables": null,
                 "variables": Object {
-                  "endDate": "Feb 26 2019",
+                  "endDate": "Feb 27 2019",
                   "page": 1,
                   "perPage": 5,
-                  "startDate": "Feb 26 2019",
+                  "startDate": "Feb 27 2019",
                 },
               },
               "2": Object {
@@ -10159,8 +10159,8 @@ query user ($email: String!) {
                 "networkStatus": 1,
                 "previousVariables": null,
                 "variables": Object {
-                  "endDate": "Feb 26 2019",
-                  "startDate": "Feb 26 2019",
+                  "endDate": "Feb 27 2019",
+                  "startDate": "Feb 27 2019",
                 },
               },
               "3": Object {
@@ -10365,8 +10365,8 @@ query user ($email: String!) {
                 "networkStatus": 1,
                 "previousVariables": null,
                 "variables": Object {
-                  "endDate": "Feb 26 2019",
-                  "startDate": "Feb 26 2019",
+                  "endDate": "Feb 27 2019",
+                  "startDate": "Feb 27 2019",
                 },
               },
               "4": Object {
@@ -10676,8 +10676,8 @@ query user ($email: String!) {
                 "networkStatus": 1,
                 "previousVariables": null,
                 "variables": Object {
-                  "endDate": "Feb 26 2019",
-                  "startDate": "Feb 26 2019",
+                  "endDate": "Feb 27 2019",
+                  "startDate": "Feb 27 2019",
                 },
               },
               "5": Object {
@@ -10973,8 +10973,8 @@ query user ($email: String!) {
                 "networkStatus": 1,
                 "previousVariables": null,
                 "variables": Object {
-                  "endDate": "Feb 26 2019",
-                  "startDate": "Feb 26 2019",
+                  "endDate": "Feb 27 2019",
+                  "startDate": "Feb 27 2019",
                 },
               },
               "7": Object {
@@ -11179,8 +11179,8 @@ query user ($email: String!) {
                 "networkStatus": 1,
                 "previousVariables": null,
                 "variables": Object {
-                  "endDate": "Feb 26 2019",
-                  "startDate": "Feb 26 2019",
+                  "endDate": "Feb 27 2019",
+                  "startDate": "Feb 27 2019",
                 },
               },
               "8": Object {
@@ -11385,8 +11385,8 @@ query user ($email: String!) {
                 "networkStatus": 1,
                 "previousVariables": null,
                 "variables": Object {
-                  "endDate": "Feb 26 2019",
-                  "startDate": "Feb 26 2019",
+                  "endDate": "Feb 27 2019",
+                  "startDate": "Feb 27 2019",
                 },
               },
               "9": Object {
@@ -11591,10 +11591,10 @@ query user ($email: String!) {
                 "networkStatus": 1,
                 "previousVariables": null,
                 "variables": Object {
-                  "endDate": "Feb 26 2019",
+                  "endDate": "Feb 27 2019",
                   "page": 1,
                   "perPage": 5,
-                  "startDate": "Feb 26 2019",
+                  "startDate": "Feb 27 2019",
                 },
               },
             },
@@ -11928,8 +11928,8 @@ query user ($email: String!) {
                   },
                 },
                 "variables": Object {
-                  "endDate": "Feb 26 2019",
-                  "startDate": "Feb 26 2019",
+                  "endDate": "Feb 27 2019",
+                  "startDate": "Feb 27 2019",
                 },
               },
               Object {
@@ -12213,8 +12213,8 @@ query user ($email: String!) {
                   },
                 },
                 "variables": Object {
-                  "endDate": "Feb 26 2019",
-                  "startDate": "Feb 26 2019",
+                  "endDate": "Feb 27 2019",
+                  "startDate": "Feb 27 2019",
                 },
               },
               Object {
@@ -12413,8 +12413,8 @@ query user ($email: String!) {
                   },
                 },
                 "variables": Object {
-                  "endDate": "Feb 26 2019",
-                  "startDate": "Feb 26 2019",
+                  "endDate": "Feb 27 2019",
+                  "startDate": "Feb 27 2019",
                 },
               },
               Object {
@@ -12613,8 +12613,8 @@ query user ($email: String!) {
                   },
                 },
                 "variables": Object {
-                  "endDate": "Feb 26 2019",
-                  "startDate": "Feb 26 2019",
+                  "endDate": "Feb 27 2019",
+                  "startDate": "Feb 27 2019",
                 },
               },
               Object {
@@ -12813,10 +12813,10 @@ query user ($email: String!) {
                   },
                 },
                 "variables": Object {
-                  "endDate": "Feb 26 2019",
+                  "endDate": "Feb 27 2019",
                   "page": 1,
                   "perPage": 5,
-                  "startDate": "Feb 26 2019",
+                  "startDate": "Feb 27 2019",
                 },
               },
               Object {
@@ -13120,10 +13120,10 @@ query user ($email: String!) {
                   },
                 },
                 "variables": Object {
-                  "endDate": "Feb 26 2019",
+                  "endDate": "Feb 27 2019",
                   "page": 1,
                   "perPage": 5,
-                  "startDate": "Feb 26 2019",
+                  "startDate": "Feb 27 2019",
                 },
               },
               Object {
@@ -13322,8 +13322,8 @@ query user ($email: String!) {
                   },
                 },
                 "variables": Object {
-                  "endDate": "Feb 26 2019",
-                  "startDate": "Feb 26 2019",
+                  "endDate": "Feb 27 2019",
+                  "startDate": "Feb 27 2019",
                 },
               },
               Object {
@@ -13522,8 +13522,8 @@ query user ($email: String!) {
                   },
                 },
                 "variables": Object {
-                  "endDate": "Feb 26 2019",
-                  "startDate": "Feb 26 2019",
+                  "endDate": "Feb 27 2019",
+                  "startDate": "Feb 27 2019",
                 },
               },
               Object {
@@ -14066,6 +14066,7 @@ query user ($email: String!) {
                                         <span>
                                           <img
                                             alt="Analytics"
+                                            className="svg-nav"
                                             src="test-file-stub"
                                           />
                                         </span>
@@ -14091,6 +14092,7 @@ query user ($email: String!) {
                                         <span>
                                           <img
                                             alt="Settings"
+                                            className="svg-nav"
                                             src="test-file-stub"
                                           />
                                         </span>
@@ -14116,6 +14118,7 @@ query user ($email: String!) {
                                         <span>
                                           <img
                                             alt="Room Feedback"
+                                            className="svg-nav"
                                             src="test-file-stub"
                                           />
                                         </span>
@@ -14427,8 +14430,8 @@ query user ($email: String!) {
                                 skip={false}
                                 variables={
                                   Object {
-                                    "endDate": "Feb 26 2019",
-                                    "startDate": "Feb 26 2019",
+                                    "endDate": "Feb 27 2019",
+                                    "startDate": "Feb 27 2019",
                                   }
                                 }
                                 warnUnhandledError={true}
@@ -14446,8 +14449,8 @@ query user ($email: String!) {
                                       "subscribeToMore": [Function],
                                       "updateQuery": [Function],
                                       "variables": Object {
-                                        "endDate": "Feb 26 2019",
-                                        "startDate": "Feb 26 2019",
+                                        "endDate": "Feb 27 2019",
+                                        "startDate": "Feb 27 2019",
                                       },
                                     }
                                   }
@@ -14634,8 +14637,8 @@ query user ($email: String!) {
                                     skip={false}
                                     variables={
                                       Object {
-                                        "endDate": "Feb 26 2019",
-                                        "startDate": "Feb 26 2019",
+                                        "endDate": "Feb 27 2019",
+                                        "startDate": "Feb 27 2019",
                                       }
                                     }
                                     warnUnhandledError={true}
@@ -14653,8 +14656,8 @@ query user ($email: String!) {
                                           "subscribeToMore": [Function],
                                           "updateQuery": [Function],
                                           "variables": Object {
-                                            "endDate": "Feb 26 2019",
-                                            "startDate": "Feb 26 2019",
+                                            "endDate": "Feb 27 2019",
+                                            "startDate": "Feb 27 2019",
                                           },
                                         }
                                       }
@@ -14670,8 +14673,8 @@ query user ($email: String!) {
                                           "subscribeToMore": [Function],
                                           "updateQuery": [Function],
                                           "variables": Object {
-                                            "endDate": "Feb 26 2019",
-                                            "startDate": "Feb 26 2019",
+                                            "endDate": "Feb 27 2019",
+                                            "startDate": "Feb 27 2019",
                                           },
                                         }
                                       }
@@ -14761,7 +14764,7 @@ query user ($email: String!) {
                                               classProp=""
                                               handleClick={[Function]}
                                               isDisabled={false}
-                                              title="Feb 26 2019 - Feb 26 2019"
+                                              title="Feb 27 2019 - Feb 27 2019"
                                               type={2}
                                             >
                                               <button
@@ -14770,7 +14773,7 @@ query user ($email: String!) {
                                                 onClick={[Function]}
                                               >
                                                 <span>
-                                                  Feb 26 2019 - Feb 26 2019
+                                                  Feb 27 2019 - Feb 27 2019
                                                 </span>
                                               </button>
                                             </Button>
@@ -14830,16 +14833,16 @@ query user ($email: String!) {
                                       <AnalyticsOverview
                                         dateValue={
                                           Object {
-                                            "endDate": "Feb 26 2019",
-                                            "startDate": "Feb 26 2019",
+                                            "endDate": "Feb 27 2019",
+                                            "startDate": "Feb 27 2019",
                                           }
                                         }
                                       >
                                         <AveragePieChartList
                                           dateValue={
                                             Object {
-                                              "endDate": "Feb 26 2019",
-                                              "startDate": "Feb 26 2019",
+                                              "endDate": "Feb 27 2019",
+                                              "startDate": "Feb 27 2019",
                                             }
                                           }
                                         >
@@ -14849,8 +14852,8 @@ query user ($email: String!) {
                                             <Apollo(AverageMeetingDurationPieChart)
                                               dateValue={
                                                 Object {
-                                                  "endDate": "Feb 26 2019",
-                                                  "startDate": "Feb 26 2019",
+                                                  "endDate": "Feb 27 2019",
+                                                  "startDate": "Feb 27 2019",
                                                 }
                                               }
                                             >
@@ -15117,8 +15120,8 @@ query user ($email: String!) {
                                                 skip={false}
                                                 variables={
                                                   Object {
-                                                    "endDate": "Feb 26 2019",
-                                                    "startDate": "Feb 26 2019",
+                                                    "endDate": "Feb 27 2019",
+                                                    "startDate": "Feb 27 2019",
                                                   }
                                                 }
                                                 warnUnhandledError={true}
@@ -15136,15 +15139,15 @@ query user ($email: String!) {
                                                       "subscribeToMore": [Function],
                                                       "updateQuery": [Function],
                                                       "variables": Object {
-                                                        "endDate": "Feb 26 2019",
-                                                        "startDate": "Feb 26 2019",
+                                                        "endDate": "Feb 27 2019",
+                                                        "startDate": "Feb 27 2019",
                                                       },
                                                     }
                                                   }
                                                   dateValue={
                                                     Object {
-                                                      "endDate": "Feb 26 2019",
-                                                      "startDate": "Feb 26 2019",
+                                                      "endDate": "Feb 27 2019",
+                                                      "startDate": "Feb 27 2019",
                                                     }
                                                   }
                                                 >
@@ -15445,8 +15448,8 @@ query user ($email: String!) {
                                             <BookingsCountBarGraph
                                               dateValue={
                                                 Object {
-                                                  "endDate": "Feb 26 2019",
-                                                  "startDate": "Feb 26 2019",
+                                                  "endDate": "Feb 27 2019",
+                                                  "startDate": "Feb 27 2019",
                                                 }
                                               }
                                             >
@@ -15534,8 +15537,8 @@ query user ($email: String!) {
                                                   <QueryBookingsCount
                                                     dateValue={
                                                       Object {
-                                                        "endDate": "Feb 26 2019",
-                                                        "startDate": "Feb 26 2019",
+                                                        "endDate": "Feb 27 2019",
+                                                        "startDate": "Feb 27 2019",
                                                       }
                                                     }
                                                   >
@@ -15678,8 +15681,8 @@ query user ($email: String!) {
                                                       }
                                                       variables={
                                                         Object {
-                                                          "endDate": "Feb 26 2019",
-                                                          "startDate": "Feb 26 2019",
+                                                          "endDate": "Feb 27 2019",
+                                                          "startDate": "Feb 27 2019",
                                                         }
                                                       }
                                                     >
@@ -15704,8 +15707,8 @@ query user ($email: String!) {
                                         <ComposedBookedRooms
                                           dateValue={
                                             Object {
-                                              "endDate": "Feb 26 2019",
-                                              "startDate": "Feb 26 2019",
+                                              "endDate": "Feb 27 2019",
+                                              "startDate": "Feb 27 2019",
                                             }
                                           }
                                         >
@@ -15716,8 +15719,8 @@ query user ($email: String!) {
                                               <QueryMostBookedRooms
                                                 dateValue={
                                                   Object {
-                                                    "endDate": "Feb 26 2019",
-                                                    "startDate": "Feb 26 2019",
+                                                    "endDate": "Feb 27 2019",
+                                                    "startDate": "Feb 27 2019",
                                                   }
                                                 }
                                               >
@@ -15886,8 +15889,8 @@ query user ($email: String!) {
                                                   }
                                                   variables={
                                                     Object {
-                                                      "endDate": "Feb 26 2019",
-                                                      "startDate": "Feb 26 2019",
+                                                      "endDate": "Feb 27 2019",
+                                                      "startDate": "Feb 27 2019",
                                                     }
                                                   }
                                                 >
@@ -15982,7 +15985,9 @@ query user ($email: String!) {
                                                       <div
                                                         className="booked-room-list"
                                                       >
-                                                        <table>
+                                                        <div
+                                                          className="table"
+                                                        >
                                                           <TableHead
                                                             titles={
                                                               Array [
@@ -15992,80 +15997,80 @@ query user ($email: String!) {
                                                               ]
                                                             }
                                                           >
-                                                            <thead>
-                                                              <tr>
-                                                                <th
-                                                                  key="Room"
-                                                                >
-                                                                  Room
-                                                                </th>
-                                                                <th
-                                                                  key="Meetings"
-                                                                >
-                                                                  Meetings
-                                                                </th>
-                                                                <th
-                                                                  key="% Share of All Meetings"
-                                                                >
-                                                                  % Share of All Meetings
-                                                                </th>
-                                                              </tr>
-                                                            </thead>
-                                                          </TableHead>
-                                                          <tbody>
-                                                            <tr>
-                                                              <td
-                                                                colSpan="3"
+                                                            <div
+                                                              className="table__headers"
+                                                            >
+                                                              <span
+                                                                key="Room"
                                                               >
-                                                                <ThemedProgressBar
+                                                                Room
+                                                              </span>
+                                                              <span
+                                                                key="Meetings"
+                                                              >
+                                                                Meetings
+                                                              </span>
+                                                              <span
+                                                                key="% Share of All Meetings"
+                                                              >
+                                                                % Share of All Meetings
+                                                              </span>
+                                                            </div>
+                                                          </TableHead>
+                                                          <div
+                                                            className="table__body"
+                                                          >
+                                                            <div
+                                                              className="table__row--loading"
+                                                            >
+                                                              <ThemedProgressBar
+                                                                buffer={0}
+                                                                className=""
+                                                                composeTheme="deeply"
+                                                                mapThemrProps={[Function]}
+                                                                max={100}
+                                                                min={0}
+                                                                mode="indeterminate"
+                                                                multicolor={false}
+                                                                type="linear"
+                                                                value={0}
+                                                              >
+                                                                <ProgressBar
                                                                   buffer={0}
                                                                   className=""
-                                                                  composeTheme="deeply"
-                                                                  mapThemrProps={[Function]}
                                                                   max={100}
                                                                   min={0}
                                                                   mode="indeterminate"
                                                                   multicolor={false}
+                                                                  theme={
+                                                                    Object {
+                                                                      "tooltipInner": "tooltipInner",
+                                                                    }
+                                                                  }
                                                                   type="linear"
                                                                   value={0}
                                                                 >
-                                                                  <ProgressBar
-                                                                    buffer={0}
+                                                                  <div
+                                                                    aria-valuemax={100}
+                                                                    aria-valuemin={0}
+                                                                    aria-valuenow={0}
                                                                     className=""
-                                                                    max={100}
-                                                                    min={0}
-                                                                    mode="indeterminate"
-                                                                    multicolor={false}
-                                                                    theme={
-                                                                      Object {
-                                                                        "tooltipInner": "tooltipInner",
-                                                                      }
-                                                                    }
-                                                                    type="linear"
-                                                                    value={0}
+                                                                    data-react-toolbox="progress-bar"
                                                                   >
-                                                                    <div
-                                                                      aria-valuemax={100}
-                                                                      aria-valuemin={0}
-                                                                      aria-valuenow={0}
-                                                                      className=""
-                                                                      data-react-toolbox="progress-bar"
-                                                                    >
-                                                                      <div>
-                                                                        <span
-                                                                          data-ref="buffer"
-                                                                        />
-                                                                        <span
-                                                                          data-ref="value"
-                                                                        />
-                                                                      </div>
+                                                                    <div>
+                                                                      <span
+                                                                        data-ref="buffer"
+                                                                      />
+                                                                      <span
+                                                                        data-ref="value"
+                                                                      />
                                                                     </div>
-                                                                  </ProgressBar>
-                                                                </ThemedProgressBar>
-                                                              </td>
-                                                            </tr>
-                                                          </tbody>
-                                                        </table>
+                                                                  </div>
+                                                                </ProgressBar>
+                                                              </ThemedProgressBar>
+                                                            </div>
+                                                          </div>
+                                                        </div>
                                                       </div>
                                                     </div>
                                                   </BookedRooms>
@@ -16078,8 +16083,8 @@ query user ($email: String!) {
                                               <QueryLeastBookedRooms
                                                 dateValue={
                                                   Object {
-                                                    "endDate": "Feb 26 2019",
-                                                    "startDate": "Feb 26 2019",
+                                                    "endDate": "Feb 27 2019",
+                                                    "startDate": "Feb 27 2019",
                                                   }
                                                 }
                                               >
@@ -16248,8 +16253,8 @@ query user ($email: String!) {
                                                   }
                                                   variables={
                                                     Object {
-                                                      "endDate": "Feb 26 2019",
-                                                      "startDate": "Feb 26 2019",
+                                                      "endDate": "Feb 27 2019",
+                                                      "startDate": "Feb 27 2019",
                                                     }
                                                   }
                                                 >
@@ -16344,7 +16349,9 @@ query user ($email: String!) {
                                                       <div
                                                         className="booked-room-list"
                                                       >
-                                                        <table>
+                                                        <div
+                                                          className="table"
+                                                        >
                                                           <TableHead
                                                             titles={
                                                               Array [
@@ -16354,80 +16361,80 @@ query user ($email: String!) {
                                                               ]
                                                             }
                                                           >
-                                                            <thead>
-                                                              <tr>
-                                                                <th
-                                                                  key="Room"
-                                                                >
-                                                                  Room
-                                                                </th>
-                                                                <th
-                                                                  key="Meetings"
-                                                                >
-                                                                  Meetings
-                                                                </th>
-                                                                <th
-                                                                  key="% Share of All Meetings"
-                                                                >
-                                                                  % Share of All Meetings
-                                                                </th>
-                                                              </tr>
-                                                            </thead>
-                                                          </TableHead>
-                                                          <tbody>
-                                                            <tr>
-                                                              <td
-                                                                colSpan="3"
+                                                            <div
+                                                              className="table__headers"
+                                                            >
+                                                              <span
+                                                                key="Room"
                                                               >
-                                                                <ThemedProgressBar
+                                                                Room
+                                                              </span>
+                                                              <span
+                                                                key="Meetings"
+                                                              >
+                                                                Meetings
+                                                              </span>
+                                                              <span
+                                                                key="% Share of All Meetings"
+                                                              >
+                                                                % Share of All Meetings
+                                                              </span>
+                                                            </div>
+                                                          </TableHead>
+                                                          <div
+                                                            className="table__body"
+                                                          >
+                                                            <div
+                                                              className="table__row--loading"
+                                                            >
+                                                              <ThemedProgressBar
+                                                                buffer={0}
+                                                                className=""
+                                                                composeTheme="deeply"
+                                                                mapThemrProps={[Function]}
+                                                                max={100}
+                                                                min={0}
+                                                                mode="indeterminate"
+                                                                multicolor={false}
+                                                                type="linear"
+                                                                value={0}
+                                                              >
+                                                                <ProgressBar
                                                                   buffer={0}
                                                                   className=""
-                                                                  composeTheme="deeply"
-                                                                  mapThemrProps={[Function]}
                                                                   max={100}
                                                                   min={0}
                                                                   mode="indeterminate"
                                                                   multicolor={false}
+                                                                  theme={
+                                                                    Object {
+                                                                      "tooltipInner": "tooltipInner",
+                                                                    }
+                                                                  }
                                                                   type="linear"
                                                                   value={0}
                                                                 >
-                                                                  <ProgressBar
-                                                                    buffer={0}
+                                                                  <div
+                                                                    aria-valuemax={100}
+                                                                    aria-valuemin={0}
+                                                                    aria-valuenow={0}
                                                                     className=""
-                                                                    max={100}
-                                                                    min={0}
-                                                                    mode="indeterminate"
-                                                                    multicolor={false}
-                                                                    theme={
-                                                                      Object {
-                                                                        "tooltipInner": "tooltipInner",
-                                                                      }
-                                                                    }
-                                                                    type="linear"
-                                                                    value={0}
+                                                                    data-react-toolbox="progress-bar"
                                                                   >
-                                                                    <div
-                                                                      aria-valuemax={100}
-                                                                      aria-valuemin={0}
-                                                                      aria-valuenow={0}
-                                                                      className=""
-                                                                      data-react-toolbox="progress-bar"
-                                                                    >
-                                                                      <div>
-                                                                        <span
-                                                                          data-ref="buffer"
-                                                                        />
-                                                                        <span
-                                                                          data-ref="value"
-                                                                        />
-                                                                      </div>
+                                                                    <div>
+                                                                      <span
+                                                                        data-ref="buffer"
+                                                                      />
+                                                                      <span
+                                                                        data-ref="value"
+                                                                      />
                                                                     </div>
-                                                                  </ProgressBar>
-                                                                </ThemedProgressBar>
-                                                              </td>
-                                                            </tr>
-                                                          </tbody>
-                                                        </table>
+                                                                  </div>
+                                                                </ProgressBar>
+                                                              </ThemedProgressBar>
+                                                            </div>
+                                                          </div>
+                                                        </div>
                                                       </div>
                                                     </div>
                                                   </BookedRooms>
@@ -16439,8 +16446,8 @@ query user ($email: String!) {
                                         <Apollo(Checkins)
                                           dateValue={
                                             Object {
-                                              "endDate": "Feb 26 2019",
-                                              "startDate": "Feb 26 2019",
+                                              "endDate": "Feb 27 2019",
+                                              "startDate": "Feb 27 2019",
                                             }
                                           }
                                         >
@@ -16617,10 +16624,10 @@ query user ($email: String!) {
                                             skip={false}
                                             variables={
                                               Object {
-                                                "endDate": "Feb 26 2019",
+                                                "endDate": "Feb 27 2019",
                                                 "page": 1,
                                                 "perPage": 5,
-                                                "startDate": "Feb 26 2019",
+                                                "startDate": "Feb 27 2019",
                                               }
                                             }
                                             warnUnhandledError={true}
@@ -16638,17 +16645,17 @@ query user ($email: String!) {
                                                   "subscribeToMore": [Function],
                                                   "updateQuery": [Function],
                                                   "variables": Object {
-                                                    "endDate": "Feb 26 2019",
+                                                    "endDate": "Feb 27 2019",
                                                     "page": 1,
                                                     "perPage": 5,
-                                                    "startDate": "Feb 26 2019",
+                                                    "startDate": "Feb 27 2019",
                                                   },
                                                 }
                                               }
                                               dateValue={
                                                 Object {
-                                                  "endDate": "Feb 26 2019",
-                                                  "startDate": "Feb 26 2019",
+                                                  "endDate": "Feb 27 2019",
+                                                  "startDate": "Feb 27 2019",
                                                 }
                                               }
                                             >
@@ -17034,8 +17041,8 @@ query user ($email: String!) {
                                         <Apollo(AverageMeetingList)
                                           dateValue={
                                             Object {
-                                              "endDate": "Feb 26 2019",
-                                              "startDate": "Feb 26 2019",
+                                              "endDate": "Feb 27 2019",
+                                              "startDate": "Feb 27 2019",
                                             }
                                           }
                                         >
@@ -17302,10 +17309,10 @@ query user ($email: String!) {
                                             skip={false}
                                             variables={
                                               Object {
-                                                "endDate": "Feb 26 2019",
+                                                "endDate": "Feb 27 2019",
                                                 "page": 1,
                                                 "perPage": 5,
-                                                "startDate": "Feb 26 2019",
+                                                "startDate": "Feb 27 2019",
                                               }
                                             }
                                             warnUnhandledError={true}
@@ -17323,17 +17330,17 @@ query user ($email: String!) {
                                                   "subscribeToMore": [Function],
                                                   "updateQuery": [Function],
                                                   "variables": Object {
-                                                    "endDate": "Feb 26 2019",
+                                                    "endDate": "Feb 27 2019",
                                                     "page": 1,
                                                     "perPage": 5,
-                                                    "startDate": "Feb 26 2019",
+                                                    "startDate": "Feb 27 2019",
                                                   },
                                                 }
                                               }
                                               dateValue={
                                                 Object {
-                                                  "endDate": "Feb 26 2019",
-                                                  "startDate": "Feb 26 2019",
+                                                  "endDate": "Feb 27 2019",
+                                                  "startDate": "Feb 27 2019",
                                                 }
                                               }
                                             >
@@ -17353,7 +17360,9 @@ query user ($email: String!) {
                                                   <div
                                                     className="average-meeting-list"
                                                   >
-                                                    <table>
+                                                    <div
+                                                      className="table"
+                                                    >
                                                       <TableHead
                                                         titles={
                                                           Array [
@@ -17363,80 +17372,80 @@ query user ($email: String!) {
                                                           ]
                                                         }
                                                       >
-                                                        <thead>
-                                                          <tr>
-                                                            <th
-                                                              key="Room"
-                                                            >
-                                                              Room
-                                                            </th>
-                                                            <th
-                                                              key="No. of meetings"
-                                                            >
-                                                              No. of meetings
-                                                            </th>
-                                                            <th
-                                                              key="Average Meeting Duration"
-                                                            >
-                                                              Average Meeting Duration
-                                                            </th>
-                                                          </tr>
-                                                        </thead>
-                                                      </TableHead>
-                                                      <tbody>
-                                                        <tr>
-                                                          <th
-                                                            colSpan="3"
+                                                        <div
+                                                          className="table__headers"
+                                                        >
+                                                          <span
+                                                            key="Room"
                                                           >
-                                                            <ThemedProgressBar
+                                                            Room
+                                                          </span>
+                                                          <span
+                                                            key="No. of meetings"
+                                                          >
+                                                            No. of meetings
+                                                          </span>
+                                                          <span
+                                                            key="Average Meeting Duration"
+                                                          >
+                                                            Average Meeting Duration
+                                                          </span>
+                                                        </div>
+                                                      </TableHead>
+                                                      <div
+                                                        className="table__body"
+                                                      >
+                                                        <div
+                                                          className="table__row--loading"
+                                                        >
+                                                          <ThemedProgressBar
+                                                            buffer={0}
+                                                            className=""
+                                                            composeTheme="deeply"
+                                                            mapThemrProps={[Function]}
+                                                            max={100}
+                                                            min={0}
+                                                            mode="indeterminate"
+                                                            multicolor={false}
+                                                            type="linear"
+                                                            value={0}
+                                                          >
+                                                            <ProgressBar
                                                               buffer={0}
                                                               className=""
-                                                              composeTheme="deeply"
-                                                              mapThemrProps={[Function]}
                                                               max={100}
                                                               min={0}
                                                               mode="indeterminate"
                                                               multicolor={false}
+                                                              theme={
+                                                                Object {
+                                                                  "tooltipInner": "tooltipInner",
+                                                                }
+                                                              }
                                                               type="linear"
                                                               value={0}
                                                             >
-                                                              <ProgressBar
-                                                                buffer={0}
+                                                              <div
+                                                                aria-valuemax={100}
+                                                                aria-valuemin={0}
+                                                                aria-valuenow={0}
                                                                 className=""
-                                                                max={100}
-                                                                min={0}
-                                                                mode="indeterminate"
-                                                                multicolor={false}
-                                                                theme={
-                                                                  Object {
-                                                                    "tooltipInner": "tooltipInner",
-                                                                  }
-                                                                }
-                                                                type="linear"
-                                                                value={0}
+                                                                data-react-toolbox="progress-bar"
                                                               >
-                                                                <div
-                                                                  aria-valuemax={100}
-                                                                  aria-valuemin={0}
-                                                                  aria-valuenow={0}
-                                                                  className=""
-                                                                  data-react-toolbox="progress-bar"
-                                                                >
-                                                                  <div>
-                                                                    <span
-                                                                      data-ref="buffer"
-                                                                    />
-                                                                    <span
-                                                                      data-ref="value"
-                                                                    />
-                                                                  </div>
+                                                                <div>
+                                                                  <span
+                                                                    data-ref="buffer"
+                                                                  />
+                                                                  <span
+                                                                    data-ref="value"
+                                                                  />
                                                                 </div>
-                                                              </ProgressBar>
-                                                            </ThemedProgressBar>
-                                                          </th>
-                                                        </tr>
-                                                      </tbody>
-                                                    </table>
+                                                              </div>
+                                                            </ProgressBar>
+                                                          </ThemedProgressBar>
+                                                        </div>
+                                                      </div>
+                                                    </div>
                                                     <br />
                                                   </div>
                                                 </div>

@@ -2,11 +2,13 @@
 
 .settings-people {
   width: 85%;
-  .action-menu{
+
+  .action-menu {
     height: 70px;
     padding-top: 4%;
     text-align: right;
   }
+
   .dropdown-caret button {
     margin-top: 7px !important;
     padding: 0 !important;
@@ -19,7 +21,7 @@
     min-width: 50px !important;
     right: 0;
   }
-  
+
   .settings-people-list {
     .action-menu {
       height: 70px;
@@ -97,35 +99,24 @@
       }
     }
 
-    table {
-      clear: left;
-      width: 100%;
-      border-collapse: collapse;
-      text-align: left;
+    .table {
 
-      tr {
-        height: 40px;
-        padding: 1%;
-        border-bottom: 10px solid map-get($color-white, 800);
-        font-weight: 50;
+      &__row {
+        grid-template-columns: repeat(3, 1fr);
       }
-      th:nth-child(4) {
+
+      &__headers {
+        grid-template-columns: repeat(3, 1fr);
+        color: map-get($color-black, 100);
+      }
+
+      &__headers:nth-child(4) {
         padding-left: 48px;
       }
 
-      th {
-        color: map-get($color-black, 100);
-        font-weight: 50;
-        padding-left: 4%;
-        font-size: 97%;
-      }
-
-      td {
-        background: map-get($color-white, 000);
+      span {
         color: map-get($color-black, 600);
         font-size: 95%;
-        font-family: $font-light;
-        padding: 15px 40px;
 
         .access-by-caret {
           content: url('../images/three-dots.svg');
@@ -143,6 +134,7 @@
             border: 0.5px solid $color-border;
             border-radius: 2px;
           }
+
           button {
             height: auto;
             margin: 0;

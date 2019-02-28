@@ -16,7 +16,9 @@ exports[`QueryAnalyticsLoading component renders correctly 1`] = `
   <div
     className="average-meeting-list"
   >
-    <table>
+    <div
+      className="table"
+    >
       <TableHead
         titles={
           Array [
@@ -26,27 +28,27 @@ exports[`QueryAnalyticsLoading component renders correctly 1`] = `
           ]
         }
       />
-      <tbody>
-        <tr>
-          <th
-            colSpan="3"
-          >
-            <ThemedProgressBar
-              buffer={0}
-              className=""
-              composeTheme="deeply"
-              mapThemrProps={[Function]}
-              max={100}
-              min={0}
-              mode="indeterminate"
-              multicolor={false}
-              type="linear"
-              value={0}
-            />
-          </th>
-        </tr>
-      </tbody>
-    </table>
+      <div
+        className="table__body"
+      >
+        <div
+          className="table__row--loading"
+        >
+          <ThemedProgressBar
+            buffer={0}
+            className=""
+            composeTheme="deeply"
+            mapThemrProps={[Function]}
+            max={100}
+            min={0}
+            mode="indeterminate"
+            multicolor={false}
+            type="linear"
+            value={0}
+          />
+        </div>
+      </div>
+    </div>
     <br />
   </div>
 </div>

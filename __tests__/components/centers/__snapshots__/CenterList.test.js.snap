@@ -17,10 +17,9 @@ exports[`Tests for CenterList renders correctly from memory 1`] = `
   <div
     className="settings-locations-list"
   >
-    <table>
-      <ColGroup
-        numberOfMiddleColumns={2}
-      />
+    <div
+      className="table"
+    >
       <TableHead
         titles={
           Array [
@@ -31,7 +30,9 @@ exports[`Tests for CenterList renders correctly from memory 1`] = `
           ]
         }
       />
-      <tbody>
+      <div
+        className="table__body"
+      >
         <Center
           key="1"
           location={
@@ -45,8 +46,8 @@ exports[`Tests for CenterList renders correctly from memory 1`] = `
           }
           refetch={[MockFunction]}
         />
-      </tbody>
-    </table>
+      </div>
+    </div>
   </div>
 </div>
 `;

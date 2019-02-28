@@ -8,7 +8,6 @@ import Overlay from '../commons/Overlay';
 import notification from '../../utils/notification';
 import Spinner from '../commons/Spinner';
 import { GET_PAGINATED_FLOORS_QUERY } from '../../graphql/queries/Floors';
-import ColGroup from '../helpers/ColGroup';
 import TableHead from '../helpers/TableHead';
 import { formatFloorData } from '../../graphql/mappers/Floors';
 import { GET_USER_ROLE } from '../../graphql/queries/People';
@@ -72,18 +71,12 @@ export class FloorList extends Component {
       .then(() => this.setState({ dataFetched: true, isFetching: false }))
       .catch(() => {
         this.setState({ dataFetched: false, isFetching: false });
-        notification(
-          toastr,
-          'error',
-          'You seem to be offline, check your internet connection.',
-        )();
+        notification(toastr, 'error', 'You seem to be offline, check your internet connection.')();
       });
   };
 
   render() {
-    const {
-      loading, error, refetch,
-    } = this.props.data;
+    const { loading, error, refetch } = this.props.data;
     const {
       isFetching, dataFetched, currentPage, allFloors,
     } = this.state;
@@ -104,35 +97,33 @@ export class FloorList extends Component {
           <MenuTitle title="Floors" />
           <AddFloorMenuComp refetch={refetch} />
         </div>
-        <div className="settings-resource-list">
+        <div className="settings-floors-list">
           {isFetching ? <Overlay id="floors-table" /> : null}
-          { !error ?
-            <table className="test-One">
-              <ColGroup />
+          {!error ? (
+            <div className="table">
               <TableHead titles={['Floor', 'Block', 'Action']} />
-              <tbody>
-                {
-                allFloors && allFloors.floors.map(floor => (
-                  <Floor
-                    floor={formatFloorData(floor)}
-                    key={floor.id}
-                    refetch={refetch}
-                  />
-              ))}
-              </tbody>
-            </table>
-          : <Errors message="Data cannot be returned at the moment" />
-          }
+              <div className="table__body">
+                {allFloors &&
+                  allFloors.floors.map(floor => (
+                    <Floor floor={formatFloorData(floor)} key={floor.id} refetch={refetch} />
+                  ))}
+              </div>
+            </div>
+          ) : (
+            <Errors message="Data cannot be returned at the moment" />
+          )}
         </div>
-        { !error && <Pagination
-          totalPages={allFloors.pages}
-          hasNext={allFloors.hasNext}
-          hasPrevious={allFloors.hasPrevious}
-          handleData={this.handleData}
-          currentPage={currentPage}
-          isFetching={isFetching}
-          dataFetched={dataFetched}
-        />}
+        {!error && (
+          <Pagination
+            totalPages={allFloors.pages}
+            hasNext={allFloors.hasNext}
+            hasPrevious={allFloors.hasPrevious}
+            handleData={this.handleData}
+            currentPage={currentPage}
+            isFetching={isFetching}
+            dataFetched={dataFetched}
+          />
+        )}
       </div>
     );
   }
@@ -174,10 +165,7 @@ export default compose(
     name: 'user',
     options: /* istanbul ignore next */ () => ({
       variables: {
-        email:
-          process.env.NODE_ENV === 'test'
-            ? 'sammy.muriuki@andela.com'
-            : userData.email,
+        email: process.env.NODE_ENV === 'test' ? 'sammy.muriuki@andela.com' : userData.email,
       },
     }),
   }),

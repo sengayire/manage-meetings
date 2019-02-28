@@ -1,12 +1,13 @@
 @import './variables';
 
-td {
+span {
   #modal-button {
     border: none;
     color: map-get($color-black, 600);
     font-family: $font-light;
     cursor: pointer;
     margin-left: 6px;
+    line-height: 0em;
   }
 
   #modal-button:focus {
@@ -41,8 +42,8 @@ td {
 }
 
 .delete-modal-content {
-  margin-left:2em;
-  margin-right:2em;
+  margin-left: 2em;
+  margin-right: 2em;
 }
 
 .modal-actions {

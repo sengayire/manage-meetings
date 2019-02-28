@@ -84,4 +84,8 @@
       padding: 25px!important;
     }
   }
+
+  .btn-primary {
+    color: map-get($color-white, 000) !important;
+  }
 }

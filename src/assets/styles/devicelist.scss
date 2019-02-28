@@ -10,31 +10,13 @@
     margin-top: 4%;
   }
 
-  table {
-    clear: left;
-    width: 100%;
-    border-collapse: collapse;
-    text-align: left;
-
-    tr {
-      border-bottom: 10px solid map-get($color-white, 800);
-      height: 64px;
+  .table {
+    &__row {
+      grid-template-columns: repeat(5, 1fr);
     }
 
-    th {
-      color: map-get($color-black, 100);
-      padding: 1%;
-      padding-left: 2%;
-      font-size: 97%;
-      font-weight: inherit;
-    }
-
-    td {
-      background: map-get($color-white, 000);
-      padding: 1.37% 1.37% 1.35% 2%;
-      color: map-get($color-black, 600);
-      font-size: 95%;
-      font-family: $font-light;
+    &__headers {
+      grid-template-columns: repeat(5, 1fr) !important;
     }
 
     @media screen and (max-width: 425px) {

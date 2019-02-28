@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 import ProgressBar from 'react-toolbox/lib/progress_bar';
 import TableHead from '../helpers/TableHead';
 import '../../assets/styles/bookedroom.scss';
-import Warning from '../../assets/images/warning_icon.svg';
 import Tip from '../commons/Tooltip';
+import ErrorIcon from '../commons/ErrorIcon';
 
 /**
  *
@@ -16,12 +16,7 @@ import Tip from '../commons/Tooltip';
  * @returns {JSX}
  */
 const BookedRooms = ({
-  pollIcon,
-  bookedRoomText,
-  bookedRoomsList,
-  fetching,
-  error,
-  tip,
+  pollIcon, bookedRoomText, bookedRoomsList, fetching, error, tip,
 }) => (
   <div className="wrap-booked-room">
     <div className="booked-room-header">
@@ -30,45 +25,32 @@ const BookedRooms = ({
       {Tip(tip)}
     </div>
     <div className="booked-room-list">
-      <table>
+      <div className="table">
         <TableHead titles={['Room', 'Meetings', '% Share of All Meetings']} />
         {error !== null && Object.values(error).length > 0 ? (
-          <tbody>
-            <tr>
-              <td className="error_class">
-                <img
-                  className="error_icon"
-                  src={Warning}
-                  alt="error_icon"
-                />
-                <b>
-                  <p className="error_msg">
-                  An error occurred, cannot fetch data
-                  </p>
-                </b>
-              </td>
-            </tr>
-          </tbody>
-          ) : (
-            <tbody>
-              {!fetching ? (
-                bookedRoomsList.map((room, index) => (
-                  <tr key={index}>
-                    <td>{room.roomName}</td>
-                    <td>{room.meetings}</td>
-                    <td>{room.percentage}%</td>
-                  </tr>
-                ))
-              ) : (
-                <tr>
-                  <td colSpan="3">
-                    <ProgressBar type="linear" mode="indeterminate" />
-                  </td>
-                </tr>
-              )}
-            </tbody>
-          )}
-      </table>
+          <div className="table__body">
+            <div className="table__row--analytics">
+              <ErrorIcon />
+            </div>
+          </div>
+        ) : (
+          <div className="table__body">
+            {!fetching ? (
+              bookedRoomsList.map((room, index) => (
+                <div className="table__row--analytics" key={index}>
+                  <span>{room.roomName}</span>
+                  <span>{room.meetings}</span>
+                  <span>{room.percentage}%</span>
+                </div>
+              ))
+            ) : (
+              <div className="table__row--loading">
+                <ProgressBar type="linear" mode="indeterminate" />
+              </div>
+            )}
+          </div>
+        )}
+      </div>
     </div>
   </div>
 );

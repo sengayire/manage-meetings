@@ -1,9 +1,11 @@
 @import './variables';
 
-.settings-rooms, .settings-locations {
+.settings-rooms,
+.settings-locations {
   width: 85%;
 
-  .settings-rooms-control, .settings-locations-control {
+  .settings-rooms-control,
+  .settings-locations-control {
     height: 80px;
     text-align: right;
     margin-top: 2%;
@@ -15,73 +17,15 @@
     }
   }
 
-  .settings-rooms-list, .settings-locations-list {
-    table {
-      clear: left;
-      table-layout: fixed;
-      width: 100%;
-      border-collapse: collapse;
-      text-align: left;
-
-      .first-col {
-        width: 50%;
-
-        @media screen and (max-width: 425px) {
-          width: 24%;
-        }
-
-        @media screen and (min-width: 500px) and (max-width: 1023px) {
-          width: 35%;
-        }
+  .settings-rooms-list,
+  .settings-locations-list {
+    .table {
+      &__row {
+        grid-template-columns: repeat(4, 1fr);
       }
 
-      .last-col {
-        @media screen and (max-width: 425px) {
-          width: 30%;
-        }
-
-        @media screen and (min-width: 500px) and (max-width: 1023px) {
-          width: 33%;
-        }
-      }
-
-      tr {
-        padding: 1%;
-        border-bottom: 10px solid map-get($color-white, 800);
-        font-weight: 50;
-      }
-
-      th {
-        color: map-get($color-black, 100);
-        padding: 1%;
-        padding-left: 2%;
-        font-weight: inherit;
-
-        &:first-child {
-          height: 20px !important;
-        }
-      }
-
-      td {
-        background: map-get($color-white, 000);
-        padding: 2%;
-        color: map-get($color-black, 600);
-        font-size: 95%;
-        font-family: $font-light;
-      }
-
-      td:nth-of-type(4) {
-        width: auto;
-        padding: 0 25px 0 5px;
-      }
-
-      @media screen and (max-width: 425px) {
-        width: 100%;
-        margin-right: 0;
-      }
-
-      @media screen and (min-width: 768) and (max-width: 1023px) {
-        width: 100%;
+      &__headers {
+        grid-template-columns: repeat(4, 1fr) !important;
       }
     }
   }

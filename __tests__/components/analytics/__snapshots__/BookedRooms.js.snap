@@ -32,7 +32,9 @@ exports[`BookedRooms component should render correctly 1`] = `
   <div
     className="booked-room-list"
   >
-    <table>
+    <div
+      className="table"
+    >
       <TableHead
         titles={
           Array [
@@ -42,51 +44,56 @@ exports[`BookedRooms component should render correctly 1`] = `
           ]
         }
       />
-      <tbody>
-        <tr
+      <div
+        className="table__body"
+      >
+        <div
+          className="table__row--analytics"
           key="0"
         >
-          <td>
+          <span>
             Nairobi - 1st Floor SingleBlock A Dodoma (1)
-          </td>
-          <td>
+          </span>
+          <span>
             20
-          </td>
-          <td>
+          </span>
+          <span>
             30
             %
-          </td>
-        </tr>
-        <tr
+          </span>
+        </div>
+        <div
+          className="table__row--analytics"
           key="1"
         >
-          <td>
+          <span>
             Nairobi - 2nd A Dodoma (1)
-          </td>
-          <td>
+          </span>
+          <span>
             10
-          </td>
-          <td>
+          </span>
+          <span>
             20
             %
-          </td>
-        </tr>
-        <tr
+          </span>
+        </div>
+        <div
+          className="table__row--analytics"
           key="2"
         >
-          <td>
+          <span>
             Nairobi - 3rd A Dodoma (2)
-          </td>
-          <td>
+          </span>
+          <span>
             5
-          </td>
-          <td>
+          </span>
+          <span>
             10
             %
-          </td>
-        </tr>
-      </tbody>
-    </table>
+          </span>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 `;

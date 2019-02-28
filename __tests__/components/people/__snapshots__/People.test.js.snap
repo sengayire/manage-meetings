@@ -1,19 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`People Component renders properly 1`] = `
-<tr>
-  <td>
+<div
+  className="table__row"
+>
+  <span>
     <img
       alt="profilePicture"
       className="profilePic"
       src="http://no-url"
     />
     Edward Barton
-  </td>
-  <td>
+  </span>
+  <span>
     Nairobi
-  </td>
-  <td>
+  </span>
+  <span>
     <span>
       Admin
       <ThemedIconMenu
@@ -60,6 +62,6 @@ exports[`People Component renders properly 1`] = `
         />
       </ThemedIconMenu>
     </span>
-  </td>
-</tr>
+  </span>
+</div>
 `;

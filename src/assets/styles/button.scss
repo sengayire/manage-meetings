@@ -1,6 +1,7 @@
 @import "./variables.scss";
 
-.btn-secondary, .btn-primary {
+.btn-secondary,
+.btn-primary {
   margin: 0 10px;
   line-height: 2.2em;
   display: flex;
@@ -23,8 +24,9 @@
 }
 
 .btn-primary {
-  color: map-get($color-white, 000);
   background-color: $color-primary;
+  color: map-get($color-white, 000);
+  border: 1px solid $color-primary;
 
   &:hover {
     background-color: map-get($color-white, 000);

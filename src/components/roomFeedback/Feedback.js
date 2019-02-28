@@ -14,29 +14,24 @@ import UPDATE_QUESTION_MUTATION from '../../graphql/mutations/Question';
  *
  * @returns {JSX}
  */
-const Feedback = props => (
+const Feedback = props =>
   props.feedback.map(
     (
       {
-        id,
-        question,
-        startDate,
-        endDate,
-        questionResponseCount,
-        questionType,
-        isActive,
+        id, question, startDate, endDate, questionResponseCount, questionType, isActive,
       },
       index,
     ) => (
-      <tr key={index}>
-        <td>
+
+      <div className="table__row" key={index}>
+        <span>
           {question}
-        </td>
-        <td>{questionType}</td>
-        <td>{questionResponseCount}</td>
-        <td>{props.startDateFormatter(startDate)}</td>
-        <td>{props.durationFormatter(startDate, endDate)}</td>
-        <td>
+        </span>
+        <span>{questionType}</span>
+        <span>{questionResponseCount}</span>
+        <span>{props.startDateFormatter(startDate)}</span>
+        <span>{props.durationFormatter(startDate, endDate)}</span>
+        <span>
           <EditFeedback
             id="edit-modal"
             question={question}
@@ -45,18 +40,17 @@ const Feedback = props => (
             duration={props.durationFormatter(startDate, endDate)}
           />
           <DeleteFeedback id="delete-modal" question={question} />
-        </td>
-        <td>
+        </span>
+        <span className="checkbox">
           <CheckboxSlide
             questionId={parseInt(id, 10)}
             checked={isActive}
             updateQuestion={props.updateQuestion}
           />
-        </td>
-      </tr>
+        </span>
+      </div>
     ),
-  )
-);
+  );
 
 Feedback.defaultProps = {
   feedback: [
