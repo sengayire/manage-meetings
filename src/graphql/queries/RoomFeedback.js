@@ -18,8 +18,12 @@ const SINGLE_ROOM_FEEDBACK = gql`
 `;
 
 const ALL_ROOM_FEEDBACK = gql`
-  query {
-    allRoomResponses{
+  query allRoomResponses($page: Int, $perPage: Int, $upperLimit: Int, $lowerLimit: Int) {
+    allRoomResponses(page: $page, perPage: $perPage, lowerLimit: $lowerLimit, upperLimit: $upperLimit){
+      pages
+      hasPrevious
+      hasNext
+      queryTotal
       responses {
         roomId
         roomName

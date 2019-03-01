@@ -186,7 +186,7 @@ export class SingleRoomFeedBack extends Component {
     const { roomId } = this.props;
     const { loading, error } = this.props.data;
     return !this.props.visible || !roomId ? null : (
-      <div className="modal-wrapper">
+      <div className="side-modal">
         {this.renderModalContent({ loading, error })}
       </div>
     );

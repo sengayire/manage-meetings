@@ -32,59 +32,81 @@ exports[`Room feedback list should render correctly 1`] = `
         value={2}
       />
     </div>
-    <header
-      className="room-feedback-list-container"
+    <div
+      className="feedback-reponses-list"
     >
-      <span>
-        Meeting Room
-      </span>
-      <span>
-        Responses
-      </span>
-      <span>
-        Cleanliness Rating
-      </span>
-      <span>
-        Missing Items
-      </span>
-      <span>
-        Suggestion on how to improve
-      </span>
-    </header>
-    <RoomFeedbackResponse
-      activeRoomId={null}
-      key="1"
-      roomCleanlinessRating={[Function]}
-      roomFeedbackResponse={
-        Object {
-          "response": Array [
-            Object {
-              "missingItems": Array [],
-              "responseId": 1,
-              "suggestion": "This is a suggestion",
-            },
-            Object {
-              "missingItems": Array [],
-              "rating": 2,
-              "responseId": 2,
-            },
-            Object {
-              "missingItems": Array [
-                "Tissue box",
-                "Ethernet Cable",
-              ],
-              "responseId": 3,
-            },
-          ],
-          "roomId": 1,
-          "roomName": "Olkaria",
-          "totalResponses": 25,
-          "totalRoomResources": 5,
+      <header
+        className="room-feedback-list-container"
+      >
+        <span>
+          Meeting Room
+        </span>
+        <span>
+          Responses
+        </span>
+        <span>
+          Cleanliness Rating
+        </span>
+        <span>
+          Missing Items
+        </span>
+        <span>
+          Suggestion on how to improve
+        </span>
+      </header>
+      <RoomFeedbackResponse
+        activeRoomId={null}
+        key="1"
+        roomCleanlinessRating={[Function]}
+        roomFeedbackResponse={
+          Object {
+            "response": Array [
+              Object {
+                "missingItems": Array [],
+                "responseId": 1,
+                "suggestion": "This is a suggestion",
+              },
+              Object {
+                "missingItems": Array [],
+                "rating": 2,
+                "responseId": 2,
+              },
+              Object {
+                "missingItems": Array [
+                  "Tissue box",
+                  "Ethernet Cable",
+                ],
+                "responseId": 3,
+              },
+            ],
+            "roomId": 1,
+            "roomName": "Olkaria",
+            "totalResponses": 25,
+            "totalRoomResources": 5,
+          }
         }
+        totalCleanlinessRating={[Function]}
+        totalMissingItemsCount={[Function]}
+        viewSingleFeed={[Function]}
+      />
+    </div>
+    <Pagination
+      currentPage={1}
+      dataFetched={true}
+      handleData={[Function]}
+      hasNext={true}
+      hasPrevious={false}
+      isFetching={false}
+      itemsPerPage={
+        Array [
+          5,
+          10,
+          20,
+          50,
+        ]
       }
-      totalCleanlinessRating={[Function]}
-      totalMissingItemsCount={[Function]}
-      viewSingleFeed={[Function]}
+      reverse={false}
+      totalPages={4}
     />
   </div>
 </React.Fragment>

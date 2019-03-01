@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AnalyticsOverview Component renders properly 1`] = `
+exports[`Analytics Overview Component renders correctly from memory 1`] = `
 <React.Fragment>
   <AveragePieChartList
     dateValue={

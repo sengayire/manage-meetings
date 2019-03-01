@@ -39,6 +39,7 @@ const responseListProps = {
   data: {
     loading: false,
     error: null,
+    fetchMore: jest.fn(() => Promise.resolve()),
     allRoomResponses: {
       responses: [
         {
@@ -80,6 +81,37 @@ describe('Room Feedback', () => {
     expect(text).toEqual('Olkaria');
   });
 
+  it('componentWillReceiveProps', () => {
+    const ResponseListComponent = shallow(<RoomFeedbackResponseList {...responseListProps} />);
+    const allRoomResponses = {
+      responses: [
+        {
+          roomId: 1,
+          roomName: 'Olkaria',
+          totalResponses: 25,
+          totalRoomResources: 5,
+          response: [
+            {
+              responseId: 1,
+              suggestion: 'This is a suggestion',
+              missingItems: [],
+            },
+          ],
+        },
+      ],
+    };
+
+    ResponseListComponent.setProps({ allRoomResponses });
+    ResponseListComponent.update();
+    expect(ResponseListComponent.state().allRoomResponses.responses).toHaveLength(1);
+  });
+
+  it('should handle pagination', () => {
+    const ResponseListComponent = shallow(<RoomFeedbackResponseList {...responseListProps} />);
+    ResponseListComponent.instance().handleData();
+    expect(ResponseListComponent.state('isFetching')).toBe(true);
+  });
+
   it('should be able to toggle modal state', () => {
     const ResponseListComponent = shallow(<RoomFeedbackResponseList {...responseListProps} />);
     const ResponseComponent = shallow(<RoomFeedbackResponse {...props} />);
@@ -88,7 +120,8 @@ describe('Room Feedback', () => {
     const fakeEvent = { preventDefault: () => {} };
     ResponseListInstance.showModal(fakeEvent);
     ResponseInstance.showModal(fakeEvent);
-    expect(ResponseListComponent.state()).toEqual({ roomId: null, visible: true });
+    expect(ResponseListComponent.state().roomId).toEqual(null);
+    expect(ResponseListComponent.state().visible).toEqual(true);
   });
 
   it('should change modal visibility to true', () => {
@@ -96,7 +129,8 @@ describe('Room Feedback', () => {
     const ResponseListInstance = ResponseListComponent.instance();
     const fakeEvent = { preventDefault: () => {} };
     ResponseListInstance.showModal(fakeEvent, 1);
-    expect(ResponseListComponent.state()).toEqual({ roomId: 1, visible: true });
+    expect(ResponseListComponent.state().roomId).toEqual(1);
+    expect(ResponseListComponent.state().visible).toEqual(true);
   });
 
   it('should change modal visibility to false', () => {
@@ -105,7 +139,8 @@ describe('Room Feedback', () => {
     const fakeEvent = { preventDefault: () => {} };
     ResponseListInstance.setState({ roomId: 1 });
     ResponseListInstance.showModal(fakeEvent, 1);
-    expect(ResponseListComponent.state()).toEqual({ roomId: null, visible: false });
+    expect(ResponseListComponent.state().roomId).toEqual(null);
+    expect(ResponseListComponent.state().visible).toEqual(false);
   });
 
   it('should not have an active class on initial page load', () => {

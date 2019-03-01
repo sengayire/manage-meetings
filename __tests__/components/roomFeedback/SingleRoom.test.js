@@ -111,7 +111,7 @@ describe('SingleRoom test', () => {
         <SingleRoom {...propsWithTrueVisibleProp} />
       </MockedProvider>,
     );
-    expect(wrapper.find('.modal-wrapper')).toHaveLength(1);
+    expect(wrapper.find('.side-modal')).toHaveLength(1);
   });
 
   it('renders correctly when "visible" prop is "false" ', () => {
@@ -129,7 +129,7 @@ describe('SingleRoom test', () => {
         <SingleRoom {...propsWithFalseVisibleProp} />
       </MockedProvider>,
     );
-    expect(wrapper.find('.modal-wrapper')).toHaveLength(0);
+    expect(wrapper.find('.side-modal')).toHaveLength(0);
   });
 
   describe('SingleRoomFeedBack test', () => {

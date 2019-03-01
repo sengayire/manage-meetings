@@ -11,6 +11,8 @@ import ErrorIcon from '../commons/ErrorIcon';
 import RoomFeedbackCard from './RoomFeedbackResponseCard';
 import SingleRoom from './SingleRoom';
 import { ALL_ROOM_FEEDBACK } from '../../graphql/queries/RoomFeedback';
+import Pagination from '../../../src/components/commons/Pagination';
+import Overlay from '../commons/Overlay';
 
 /**
  * Loops through the room responses
@@ -81,11 +83,23 @@ export const totalMissingItemsCount = (roomResponses) => {
  * @returns {JSX}
  */
 export class RoomFeedbackResponseList extends React.Component {
-  state = {
-    visible: false,
-    roomId: null,
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      allRoomResponses: { ...props.data.allRoomResponses },
+      visible: false,
+      roomId: null,
+      currentPage: 1,
+      isFetching: false,
+    };
+  }
 
+  componentWillReceiveProps(props) {
+    const { allRoomResponses } = props.data;
+    this.setState({
+      allRoomResponses,
+    });
+  }
   /**
    * Loops through the room responses
    * and calculates the total number of responses
@@ -188,6 +202,37 @@ export class RoomFeedbackResponseList extends React.Component {
   };
 
   /**
+   * Queries resources list
+   *
+   * @param {Integer} perPage
+   * @param {Integer} page
+   *
+   * @returns {void}
+   */
+  handleData = (perPage, page) => {
+    this.setState({ isFetching: true });
+    /* istanbul ignore next */
+    /* Reasoning: find explicit way of testing configuration options */
+    this.props.data
+      .fetchMore({
+        variables: {
+          page,
+          perPage,
+          lowerLimit: 1,
+          upperLimit: 10000,
+        },
+        updateQuery: (prev, { fetchMoreResult }) => {
+          this.setState({
+            allRoomResponses: fetchMoreResult.allRoomResponses,
+            currentPage: page,
+          });
+        },
+      })
+      .then(() => this.setState({ isFetching: false }))
+      .catch(() => this.setState({ isFetching: false }));
+  };
+
+  /**
    * Renders a card
    *
    * @returns {JSX}
@@ -215,15 +260,16 @@ export class RoomFeedbackResponseList extends React.Component {
   };
 
   render() {
-    const { roomId } = this.state;
+    const {
+      roomId, isFetching, currentPage, allRoomResponses,
+    } = this.state;
     const { loading, error } = this.props.data;
     if (error) {
       return <ErrorIcon />;
     } else if (loading) {
       return <Spinner />;
     }
-    const { responses } = this.props.data.allRoomResponses;
-    const feedbackData = this.formatAllRoomFeedbackData(responses);
+    const feedbackData = this.formatAllRoomFeedbackData(allRoomResponses.responses);
     if ((feedbackData.roomsResponses).length > 0) {
       return (
         <Fragment>
@@ -237,24 +283,35 @@ export class RoomFeedbackResponseList extends React.Component {
               totalMissingItemsCount={totalMissingItemsCount}
             />
             <div className="feedback-card ">{this.renderCard(feedbackData)}</div>
-            <header className="room-feedback-list-container">
-              <span>Meeting Room</span>
-              <span>Responses</span>
-              <span>Cleanliness Rating</span>
-              <span>Missing Items</span>
-              <span>Suggestion on how to improve</span>
-            </header>
-            {(feedbackData.roomsResponses).map(feedback => (
-              <RoomFeedbackResponse
-                activeRoomId={roomId}
-                roomFeedbackResponse={feedback}
-                key={feedback.roomId}
-                viewSingleFeed={this.showModal}
-                totalCleanlinessRating={totalCleanlinessRating}
-                roomCleanlinessRating={roomCleanlinessRating}
-                totalMissingItemsCount={totalMissingItemsCount}
-              />
+            <div className="feedback-reponses-list">
+              {isFetching ? <Overlay /> : null}
+              <header className="room-feedback-list-container">
+                <span>Meeting Room</span>
+                <span>Responses</span>
+                <span>Cleanliness Rating</span>
+                <span>Missing Items</span>
+                <span>Suggestion on how to improve</span>
+              </header>
+              {(feedbackData.roomsResponses).map(feedback => (
+                <RoomFeedbackResponse
+                  activeRoomId={roomId}
+                  roomFeedbackResponse={feedback}
+                  key={feedback.roomId}
+                  viewSingleFeed={this.showModal}
+                  totalCleanlinessRating={totalCleanlinessRating}
+                  roomCleanlinessRating={roomCleanlinessRating}
+                  totalMissingItemsCount={totalMissingItemsCount}
+                />
             ))}
+            </div>
+            { !error && <Pagination
+              totalPages={allRoomResponses.pages}
+              hasNext={allRoomResponses.hasNext}
+              hasPrevious={allRoomResponses.hasPrevious}
+              handleData={this.handleData}
+              currentPage={currentPage}
+              isFetching={isFetching}
+            />}
           </div>
         </Fragment>
       );
@@ -272,7 +329,18 @@ RoomFeedbackResponseList.propTypes = {
     allRoomResponses: PropTypes.object,
     loading: PropTypes.bool,
     error: PropTypes.object,
+    fetchMore: PropTypes.func,
   }).isRequired,
 };
 
-export default graphql(ALL_ROOM_FEEDBACK)(RoomFeedbackResponseList);
+export default graphql(ALL_ROOM_FEEDBACK, {
+  options: /* istanbul ignore next */ () => ({
+    variables: {
+      page: 1,
+      perPage: 5,
+      lowerLimit: 1,
+      upperLimit: 10000,
+    },
+  }),
+},
+)(RoomFeedbackResponseList);
