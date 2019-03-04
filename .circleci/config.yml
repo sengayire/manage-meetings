@@ -1,51 +1,47 @@
-# Javascript Node CircleCI 2.0 configuration file
+default: &defaults
+  docker:
+  - image: circleci/node:8.9
+  working_directory: ~/repo
+
+gcloud_auth: &gcloud_auth
+  run:
+    name: setup gcloud
+    command: |
+      bash ~/repo/.circleci/bin/setup_gcloud.sh
 
 version: 2
 jobs:
   test:
-    docker:
-      # Node versions used
-      - image: circleci/node:8.9
-
-    working_directory: ~/repo
-
+    <<: *defaults
     steps:
       - checkout
-
       # Download and cache dependencies
       - restore_cache:
           keys:
           - v1-dependencies-{{ checksum "package.json" }}
           # Fallback to using the latest cache if no exact match is found
           - v1-dependencies-
-
       - run:
           name: Installing Packages
           command: yarn install
-
       - save_cache:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
-
       - run:
           name: CodeClimate test reported Setup
           command: |
             curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
             chmod +x ./cc-test-reporter
-
       - run:
           name: Running Linter
           command: yarn lint
-
       - run:
           name: Code Climate Pretest
           command: ./cc-test-reporter before-build
-
       - run:
          name: Running Tests with Coverage
          command: yarn test:coveralls
-
       - run:
          name: Reporting Coverage to CodeClimate
          command: ./cc-test-reporter after-build --exit-code $EXIT_CODE
@@ -54,101 +50,110 @@ jobs:
           name: Notifying slack channel (succeeded)
           when: on_success
           command: |
-            bash ~/repo/.circleci/notify_slack.sh success
+            bash ~/repo/.circleci/bin/notify_slack.sh success
       - run:
           name: Notifying slack channel (failed)
           when: on_fail
           command: |
-            bash ~/repo/.circleci/notify_slack.sh fail
+            bash ~/repo/.circleci/bin/notify_slack.sh fail
+
+  build:
+    <<: *defaults
+    steps:
+      - checkout
+      - *gcloud_auth
+      - setup_remote_docker:
+          docker_layer_caching: true
+      - run:
+          name: Installing Packages
+          command: yarn install
+      - run:
+          name: Load Environment Variables
+          command: |
+            bash ~/repo/.circleci/bin/load_env_variables.sh
+      - run:
+          name: Build Application
+          command: yarn build
+      - run:
+          name: Build Docker Image
+          command: |
+            bash ~/repo/.circleci/bin/build_docker_image.sh
+      - run:
+          name: Notifying slack channel (succeeded)
+          when: on_success
+          command: |
+            bash ~/repo/.circleci/bin/notify_slack.sh success
+      - run:
+          name: Notifying slack channel (failed)
+          when: on_fail
+          command: |
+            bash ~/repo/.circleci/bin/notify_slack.sh fail
 
   deploy-job:
     docker:
-      - image: google/cloud-sdk
+      - image: ${CIRCLECI_IMAGE}
+        auth:
+          username: _json_key
+          password: ${GOOGLE_CREDS}
         environment:
-          GOOGLE_APPLICATION_CREDENTIALS: ${HOME}/gcloud-service-key.json
-          GOOGLE_PROJECT_ID: ${GOOGLE_PROJECT_ID}
-          GOOGLE_COMPUTE_ZONE: ${GOOGLE_COMPUTE_ZONE}
+          GOOGLE_APPLICATION_CREDENTIALS: ${HOME}/google-service-key.json
     steps:
       - checkout
       - run:
-          name: Store Service Account Key into file
-          command: echo $GCLOUD_SERVICE_KEY > ${HOME}/gcloud-service-key.json
-      - run:
-          name: Authenticate on gcloud
+          name: setup gcloud
           command: |
-            gcloud auth activate-service-account --key-file ${HOME}/gcloud-service-key.json
-            gcloud --quiet config set project ${GOOGLE_PROJECT_ID}
-            gcloud --quiet config set compute/zone ${GOOGLE_COMPUTE_ZONE}
-      - run:
-          name: Deploy to gcloud
-          command: |
-            if [[ ${CIRCLE_BRANCH} == 'develop' ]]; then
-              gcloud beta compute instance-groups managed rolling-action replace mrm-prod-frontend-instance-group-staging --zone europe-west1-b
-            elif [[ ${CIRCLE_BRANCH} == 'master' ]]; then
-              gcloud beta compute instance-groups managed rolling-action replace mrm-prod-frontend-instance-group-prod --zone europe-west1-b
+            if [ "$CIRCLE_BRANCH" == master ] || [ "$CIRCLE_BRANCH" == develop ]; then
+              touch google-service-key.json
+              echo $GOOGLE_CREDENTIALS_STAGING | base64 --decode >> google-service-key.json
+              gcloud auth activate-service-account --key-file google-service-key.json
+              gcloud --quiet config set project ${GOOGLE_PROJECT_ID_STAGING}
+              gcloud --quiet config set compute/zone ${GOOGLE_COMPUTE_ZONE}
+            else
+              touch google-service-key.json
+              echo $GOOGLE_CREDENTIALS_SANDBOX | base64 --decode >> google-service-key.json
+              gcloud auth activate-service-account --key-file google-service-key.json
+              gcloud --quiet config set project ${GOOGLE_PROJECT_ID_SANDBOX}
+              gcloud --quiet config set compute/zone ${GOOGLE_COMPUTE_ZONE}
             fi
       - run:
-          name: Register deployment status and notify slack channel (succeeded)
+          name: Deploy to kubernetes
+          command: |
+            . .circleci/bin/deploy_to_k8s.sh
+      - run:
+          name: Notifying slack channel (succeeded)
           when: on_success
           command: |
-                bash ~/project/.circleci/gcloud_bucket.sh succeeded
-                bash ~/project/.circleci/notify_slack.sh success
+            bash .circleci/bin/notify_slack.sh success
       - run:
-            name: Register deployment status (failed)
-            when: on_fail
-            command: |
-                bash ~/project/.circleci/gcloud_bucket.sh failed
-                bash ~/project/.circleci/notify_slack.sh fail
+          name: Notifying slack channel (failed)
+          when: on_fail
+          command: |
+            bash .circleci/bin/notify_slack.sh fail
 
-  deployement-report:
-    docker:
-      - image: google/cloud-sdk
-        environment:
-          GOOGLE_APPLICATION_CREDENTIALS: ${HOME}/gcloud-service-key.json
-          GOOGLE_PROJECT_ID: ${GOOGLE_PROJECT_ID}
-          GOOGLE_COMPUTE_ZONE: ${GOOGLE_COMPUTE_ZONE}
-    steps:
-      - checkout
-      - run:
-          name: Store Service Account Key into file
-          command: echo $GCLOUD_SERVICE_KEY > ${HOME}/gcloud-service-key.json
-      - run:
-          name: Authenticate on gcloud
-          command: |
-            gcloud auth activate-service-account --key-file ${HOME}/gcloud-service-key.json
-            gcloud --quiet config set project ${GOOGLE_PROJECT_ID}
-            gcloud --quiet config set compute/zone ${GOOGLE_COMPUTE_ZONE}
-      - run:
-          name: Install querycsv depencency
-          command: |
-              pip install querycsv
-      - run:
-          name: Get deployment report
-          command: |
-              bash ~/project/.circleci/deployment_report.sh
+
 
 workflows:
   version: 2
   build-then-deploy:
     jobs:
       - test
-      - deploy-job:
+      - build:
           requires:
             - test
           filters:
             branches:
               only:
-                - develop
                 - master
-    #cron job set to run e very friday on 15:00
-  schedule-workflow:
-    triggers:
-      - schedule:
-          cron: "0 15 * * 5"
+                - develop
+                - v2
+      - deploy-job:
+          requires:
+            - build
           filters:
             branches:
               only:
-                - develop
                 - master
-    jobs:
-      - deployement-report
+                - develop
+                - v2
+
+

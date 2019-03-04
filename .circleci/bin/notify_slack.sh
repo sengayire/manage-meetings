@@ -1,11 +1,17 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
+ROOT_DIR=$(pwd)
+
+source $ROOT_DIR/.circleci/bin/utils.sh
 
 # get build status and branch
 # send notification
 
 STATUS=$1 #job status
 
+
 get_build_report() {
+
   if [ "$CIRCLE_JOB" == 'test' -a  "$STATUS" == 'success' ]; then
 
     MESSAGE_TEXT="Test Phase Passed! :smiley:"
@@ -19,6 +25,20 @@ get_build_report() {
     ACTION_BUTTON="$(echo \
           "{\"type\": \"button\", \"text\": \"Rebuild\", \"url\": \"${REBUILD_URL}\"}", \
       )"
+
+  elif [ "$CIRCLE_JOB" == 'build' -a "$STATUS" == 'success' ]; then
+
+    MESSAGE_TEXT="Build Phase Succeeded :rocket:"
+    COLOR="good"
+
+  elif [ "$CIRCLE_JOB" == 'build' -a  "$STATUS" == 'fail' ]; then
+
+    MESSAGE_TEXT="Deployment Phase Failed  :scream:"
+    REBUILD_URL="https://circleci.com/actions/retry/github/andela/mrm_front/${CIRCLE_BUILD_NUM}"
+    ACTION_BUTTON="$(echo \
+          "{\"type\": \"button\", \"text\": \"Rebuild\", \"url\": \"${REBUILD_URL}\"}", \
+      )"
+    COLOR="danger"
 
 
   elif [ "$CIRCLE_JOB" == 'deploy-job' -a "$STATUS" == 'success' ]; then
@@ -39,10 +59,10 @@ get_build_report() {
 
   # prepare template for slack messaging
   COMMIT_LINK="https://github.com/${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME}/commit/${CIRCLE_SHA1}"
-  IMG_TAG="$(git rev-parse --short HEAD)"
+  # IMG_TAG="$(git rev-parse --short HEAD)"
   CIRCLE_WORKFLOW_URL="https://circleci.com/workflow-run/${CIRCLE_WORKFLOW_ID}"
   SLACK_TEXT_TITLE="CircleCI Build #$CIRCLE_BUILD_NUM"
-  SLACK_DEPLOYMENT_TEXT="Executed Git Commit <$COMMIT_LINK|${IMG_TAG}>: ${MESSAGE_TEXT}"
+  SLACK_DEPLOYMENT_TEXT="Executed Git Commit <$COMMIT_LINK|${IMAGE_TAG}>: ${MESSAGE_TEXT}"
 
 }
 
