@@ -76,7 +76,6 @@ form{
 button:disabled,
 button[disabled]{
   border: 1px solid $color-input-border;
-  border-radius: 2px;
   color: $color-text;
   pointer-events: none;
 }

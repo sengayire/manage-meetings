@@ -1,12 +1,14 @@
 const merge = require('webpack-merge');
 const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
 const common = require('./webpack.common.js');
 
 
 module.exports = merge(common, {
+  output: {
+    filename: '[name].js',
+  },
   mode: 'development',
   devServer: {
     contentBase: path.resolve(__dirname, '../public'),
@@ -15,10 +17,6 @@ module.exports = merge(common, {
     historyApiFallback: true,
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      inject: true,
-      template: path.resolve(__dirname, '../public/index.html'),
-    }),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
   ],

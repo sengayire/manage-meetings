@@ -3385,28 +3385,6 @@ exports[`FloorList Component renders correctly from memory 1`] = `
                       "_state": "ready",
                     },
                   },
-                  SubscriptionObserver {
-                    "_subscription": Subscription {
-                      "_cleanup": [Function],
-                      "_observer": Object {
-                        "error": [Function],
-                        "next": [Function],
-                      },
-                      "_queue": Array [
-                        Object {
-                          "type": "error",
-                          "value": [Error: Network error: No more mocked responses for the query: query user($email: String!) {
-  user(email: $email) {
-    id
-    location
-  }
-}
-, variables: {"email":"test.email@gmail.com"}],
-                        },
-                      ],
-                      "_state": "buffering",
-                    },
-                  },
                 ],
                 "options": Object {
                   "context": Object {},

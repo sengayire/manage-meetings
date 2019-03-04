@@ -19,6 +19,7 @@ module.exports = {
     '!**/postcss.config.js',
     '!**/setupTests.js',
     '!**/jest.config.js',
+    '!**/server.js',
     '!**/src/utils/ApolloClient.js',
     '!**/src/utils/FirebaseConfig.js',
   ],

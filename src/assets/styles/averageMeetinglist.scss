@@ -37,41 +37,45 @@
 
   .average-meeting-list {
     padding: 0 32px;
-        .table {
-          padding-top: 10px;
+      table {
+        width: 100% !important;
+      }
+      
+      .table {
+        padding-top: 10px;
 
-          &__row--analytics {
-            display: grid;
-            padding: 0.275em 1.75em;
-            font-size: 15px !important;
-            grid-template-columns: repeat(3, 1fr);
-            border-top: 1px solid map-get($color-white, 500) !important;
+        &__row--analytics {
+          display: grid;
+          padding: 0.275em 1.75em;
+          font-size: 15px !important;
+          grid-template-columns: repeat(3, 1fr);
+          border-top: 1px solid map-get($color-white, 500) !important;
 
-            span {
-              padding: 20px 0;
-            }
-
-            span:nth-child(2n) {
-              margin-left: 20px;
-            }
+          span {
+            padding: 20px 0;
           }
 
-          &__row--loading {
-            display: grid;
-            padding: 0.275em 1.75em;
-            font-size: 15px !important;
+          span:nth-child(2n) {
+            margin-left: 20px;
           }
+        }
 
-          &__headers {
-            grid-template-columns: repeat(3, 1fr) !important;
-            margin-top: 20px;
+        &__row--loading {
+          display: grid;
+          padding: 0.275em 1.75em;
+          font-size: 15px !important;
+        }
 
-            span {
-              font-weight: 900;
-            }
+        &__headers {
+          grid-template-columns: repeat(3, 1fr) !important;
+          margin-top: 20px;
+
+          span {
+            font-weight: 900;
           }
         }
       }
+    }
 
 
   .average-meeting-pagination {

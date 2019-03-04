@@ -40,6 +40,10 @@
     }
   }
 
+  .btn-primary {
+    color: map-get($color-white, 000) !important;
+  }
+
   .feedback-filter-button {
     display: flex;
 
