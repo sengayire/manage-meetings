@@ -1,8 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
 const dotenv = require('dotenv');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 /**
  * Parses environment variables into a format acceptable by the webpack DefinePlugin
@@ -19,10 +17,9 @@ const systemEnvVariables = parseConfigs(process.env);
 
 // fetch environment variables from the dotenv file
 const { parsed: dotenvConfigs } = dotenv.config();
+
 // process the environment variables inorder to be able to pass them to react
 const processedDotenvConfigs = parseConfigs(dotenvConfigs);
-
-const miniCssExtract = new MiniCssExtractPlugin();
 
 module.exports = {
   entry: {
@@ -61,7 +58,7 @@ module.exports = {
       {
         test: /\.scss$/,
         use: [
-          process.env.NODE_ENV === 'development' ? 'style-loader' : miniCssExtract.loader,
+          'style-loader',
           {
             loader: 'css-loader',
             options: {
@@ -89,10 +86,6 @@ module.exports = {
   plugins: [
     new webpack.DefinePlugin({
       'process.env': { ...processedDotenvConfigs, ...systemEnvVariables },
-    }),
-    new HtmlWebpackPlugin({
-      inject: true,
-      template: path.resolve(__dirname, '../public/index.html'),
     }),
   ],
 };

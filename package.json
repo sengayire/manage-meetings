@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start:dev": "webpack-dev-server --config config/webpack.dev.js --mode development --host 0.0.0.0",
-    "start": "yarn build && node app.js",
+    "start": "yarn build && node server.js",
     "build": "webpack --config config/webpack.prod.js --mode production",
     "test:coveralls": "yarn test-ci && cat ./coverage/lcov.info | coveralls",
     "test": "jest --watch --config jest.config.js",

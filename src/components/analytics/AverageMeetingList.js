@@ -101,7 +101,7 @@ export class AverageMeetingList extends Component {
         </div>
         <div className="average-meeting-list">
           {isFetching ? <Overlay id="average-meeting" /> : null}
-          <table>
+          <table className="table">
             <TableHead
               titles={['Room', 'No. of meetings', 'Average Meeting Duration']}
             />
