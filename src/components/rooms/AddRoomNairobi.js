@@ -13,7 +13,6 @@ import { GET_ALL_REMOTE_ROOMS } from '../../graphql/queries/Rooms';
 import notification from '../../utils/notification';
 import getImageUrl from '../helpers/ImageUpload';
 import hasInvalidInputs from '../helpers/InputValidators';
-import getThumbnailName from '../helpers/thumbnailName';
 
 export class AddRoomNairobi extends Component {
   constructor(props) {
@@ -36,6 +35,7 @@ export class AddRoomNairobi extends Component {
       closeModal: false,
       imageUrl: '',
       isLoading: false,
+      files: [],
     };
   }
 
@@ -107,31 +107,11 @@ export class AddRoomNairobi extends Component {
    * @param  {number} number
    */
   handleInputChange = (event, number) => {
-    const { target: { name, value, files } } = event;
-    let thumbnailName;
+    const { target: { name, value } } = event;
     let intValue;
-    let imageUrl;
     const { floorObject } = this.state;
 
     switch (name) {
-      case 'selectImage':
-        /* Shorten the length of the thumbnail name in case its too long */
-        thumbnailName = getThumbnailName(files);
-        this.setState({ thumbnailName, uploading: true }, () => {
-          /** pass a folder name and the file object to the getImageUrl function
-           *  and expect a url to be returned from firebase
-           */
-          getImageUrl('upload/', files[0]).then((url) => {
-            imageUrl = url;
-            if (typeof imageUrl === 'string') {
-              this.setState({
-                imageUrl,
-                uploading: false,
-              });
-            }
-          });
-        });
-        break;
       case 'roomName':
         this.setState({ [name]: value.trim() });
         break;
@@ -182,30 +162,47 @@ export class AddRoomNairobi extends Component {
   handleAddRoom = (event) => {
     event.preventDefault();
     const {
-      roomCalendar, roomCapacity, roomName, roomType, imageUrl, officeBlock, officeFloor, officeId,
+      roomCalendar,
+      roomCapacity,
+      roomName,
+      roomType,
+      imageUrl,
+      officeBlock,
+      officeFloor,
+      officeId,
+      files,
     } = this.state;
+    const { dojoMutation } = this.props;
     if (!hasInvalidInputs(this.state)) {
       this.toggleLoading();
-      this.props.dojoMutation({
-        variables: {
-          roomType,
-          roomName,
-          roomCalendar,
-          roomCapacity,
-          officeBlock,
-          roomFloorId: officeFloor,
-          office_id: officeId,
-          imageUrl,
-        },
-      }).then((res) => {
-        this.toggleLoading();
-        this.handleCloseModal();
-        notification(toastr, 'success', `${res.data.createRoom.room.name} Successfully added`)();
-      }).catch((err) => {
-        this.toggleLoading();
-        this.handleCloseModal();
-        notification(toastr, 'error', err.message)();
-      });
+      getImageUrl('upload/', files[0])
+        .then((url) => {
+          this.setState({
+            imageUrl: url,
+            uploading: false,
+          }, () => {
+            dojoMutation({
+              variables: {
+                roomType,
+                roomName,
+                roomCalendar,
+                roomCapacity,
+                officeBlock,
+                roomFloorId: officeFloor,
+                office_id: officeId,
+                imageUrl,
+              },
+            }).then((res) => {
+              this.toggleLoading();
+              this.handleCloseModal();
+              notification(toastr, 'success', `${res.data.createRoom.room.name} Successfully added`)();
+            }).catch((err) => {
+              this.toggleLoading();
+              this.handleCloseModal();
+              notification(toastr, 'error', err.message)();
+            });
+          });
+        });
     }
   };
 
@@ -219,6 +216,16 @@ export class AddRoomNairobi extends Component {
     this.setState({
       isLoading: !this.state.isLoading,
     });
+  }
+
+  /**
+   *It updates the state value of the
+   * thumbnail, image and imageUrl
+   *
+   * @returns {void}
+   */
+  updateThumbnailState = (files, imageUrl, thumbnailName) => {
+    this.setState({ files, imageUrl, thumbnailName });
   }
 
   render() {
@@ -253,7 +260,7 @@ export class AddRoomNairobi extends Component {
       >
         <form className="modal-form" onSubmit={this.handleAddRoom}>
           <SelectImage
-            onChange={this.handleInputChange}
+            updateThumbnailState={this.updateThumbnailState}
             thumbnailName={thumbnailName}
             imageUrl={imageUrl}
           />

@@ -12,7 +12,6 @@ import SelectImage from '../commons/SelectImage';
 import '../../assets/styles/addroomCrest.scss';
 import notification from '../../utils/notification';
 import getImageUrl from '../helpers/ImageUpload';
-import getThumbnailName from '../helpers/thumbnailName';
 import hasInvalidInputs from '../helpers/InputValidators';
 
 export class AddRoomToTheCrest extends Component {
@@ -31,6 +30,7 @@ export class AddRoomToTheCrest extends Component {
     closeModal: false,
     thumbnailName: 'Upload a thumbnail',
     isLoading: false,
+    files: [],
   };
 
   componentWillReceiveProps = (props) => {
@@ -88,28 +88,9 @@ export class AddRoomToTheCrest extends Component {
    * @param {Object} target
    * @returns {function}
    */
-  handleInputChange = ({ target: { name, value, files } }, num) => {
-    let thumbnailName;
+  handleInputChange = ({ target: { name, value } }, num) => {
     let intValue;
-    let imageUrl;
-
     switch (name) {
-      case 'selectImage':
-        /* Shorten the length of the thumbnail name in case its too long */
-        thumbnailName = getThumbnailName(files);
-        this.setState({ thumbnailName, uploading: true }, () => {
-          getImageUrl('upload/', files[0]).then((url) => {
-            imageUrl = url;
-            if (typeof imageUrl === 'string') {
-              this.setState({
-                imageUrl,
-                uploading: false,
-              });
-            }
-          });
-        });
-        break;
-
       case 'roomName':
         this.setState({ [name]: value.trim() });
         break;
@@ -155,7 +136,15 @@ export class AddRoomToTheCrest extends Component {
       isLoading: !this.state.isLoading,
     });
   }
-
+  /**
+   *It updates the state value of the
+   * thumbnail, image and imageUrl
+   *
+   * @returns {void}
+   */
+  updateThumbnailState = (files, imageUrl, thumbnailName) => {
+    this.setState({ files, imageUrl, thumbnailName });
+  }
   /**
    * Adds a room
    *
@@ -173,39 +162,47 @@ export class AddRoomToTheCrest extends Component {
       roomCapacity,
       roomCalendar,
       officeId,
-      imageUrl,
+      files,
     } = this.state;
-
+    const { crestMutation } = this.props;
     if (!hasInvalidInputs(this.state)) {
       this.toggleLoading();
-      this.props
-        .crestMutation({
-          variables: {
-            roomType,
-            roomName,
-            roomFloorId: roomFloor,
-            roomCapacity,
-            roomCalendar,
-            roomImageUrl: imageUrl,
-            office_id: officeId,
-          },
-        })
-        .then((res) => {
-          /** Notify user of sucess of adding of room */
-          this.toggleLoading();
-          this.handleCloseModal();
-          notification(
-            toastr,
-            'success',
-            `${res.data.createRoom.room.name} Sucessfully added`,
-          )();
-          /** Clear the state and restore default values */
-        })
-        .catch((err) => {
-          /** Notify user on failure to add room */
-          this.toggleLoading();
-          this.handleCloseModal();
-          notification(toastr, 'error', err.message)();
+      this.setState({ uploading: true });
+      getImageUrl('upload/', files[0])
+        .then((url) => {
+          this.setState({
+            imageUrl: url,
+            uploading: false,
+          }, () => {
+            crestMutation({
+              variables: {
+                roomType,
+                roomName,
+                roomFloorId: roomFloor,
+                roomCapacity,
+                roomCalendar,
+                roomImageUrl: this.state.imageUrl,
+                office_id: officeId,
+              },
+            })
+              .then((res) => {
+                /** Notify user of sucess of adding of room */
+                this.toggleLoading();
+                this.handleCloseModal();
+                notification(
+                  toastr,
+                  'success',
+                  `${res.data.createRoom.room.name} Sucessfully added`,
+                )();
+                /** Clear the state and restore default values */
+              })
+              .catch((err) => {
+                /** Notify user on failure to add room */
+                this.toggleLoading();
+                this.handleCloseModal();
+                notification(toastr, 'error', err.message)();
+              });
+          });
         });
     }
   };
@@ -239,7 +236,7 @@ export class AddRoomToTheCrest extends Component {
       >
         <form className="modal-form kla-form">
           <SelectImage
-            onChange={this.handleInputChange}
+            updateThumbnailState={this.updateThumbnailState}
             imageUrl={imageUrl}
             thumbnailName={thumbnailName}
           />

@@ -43,11 +43,8 @@ describe('AddRoomNairobi', () => {
       closeModal: true,
       thumbnailName: 'Upload a thumbnail',
       officeId: 1,
+      files: [],
     };
-  });
-
-  it('should render properly', () => {
-    expect(wrapper).toMatchSnapshot();
   });
 
   it('should not have a form before modal pops up', () => {
@@ -151,6 +148,14 @@ describe('AddRoomNairobi', () => {
 
   it('should make a mutation', async () => {
     const preventDefault = jest.fn();
+    const files = [
+      {
+        name: 'image-name.jpeg',
+        type: 'image/jpeg',
+        size: 1024,
+        webKitRelativePath: '',
+      },
+    ];
     theDojo.instance().state = {
       ...theDojo.instance().state,
       imageUrl: 'path/to/image.jpg',
@@ -158,6 +163,7 @@ describe('AddRoomNairobi', () => {
       roomFloor: 1,
       roomCapacity: 10,
       roomBlock: 1,
+      files,
     };
     await theDojo.instance().handleAddRoom({ preventDefault });
     await new Promise(resolve => setTimeout(resolve));
@@ -172,7 +178,14 @@ describe('AddRoomNairobi', () => {
       officeDetails: {},
       dojoMutation: jest.fn(() => Promise.resolve(response)),
     };
-
+    const files = [
+      {
+        name: 'image-name.jpeg',
+        type: 'image/jpeg',
+        size: 1024,
+        webKitRelativePath: '',
+      },
+    ];
     const dojoWrapper = shallow(<AddRoomNairobi {...mockProps} />);
     dojoWrapper.instance().state = {
       ...dojoWrapper.instance().state,
@@ -181,10 +194,11 @@ describe('AddRoomNairobi', () => {
       roomFloor: 1,
       roomCapacity: 10,
       roomWing: 1,
+      files,
     };
     await dojoWrapper.instance().handleAddRoom({ preventDefault });
     wrapper.update();
-    expect(mockProps.dojoMutation).toHaveBeenCalled();
+    expect(dojoWrapper.state().imageUrl).toEqual('path/to/image.jpg');
   });
 
   it('should not make a mutation', async () => {
@@ -194,24 +208,33 @@ describe('AddRoomNairobi', () => {
       officeDetails: {},
       dojoMutation: jest.fn(() => Promise.resolve(response)),
     };
-
     const dojoWrapper = shallow(<AddRoomNairobi {...mockProps} />);
     await dojoWrapper.instance().handleAddRoom({ preventDefault });
     wrapper.update();
     expect(mockProps.dojoMutation).not.toHaveBeenCalled();
   });
 
-  it('should display image name', () => {
-    const imageFiles = [
+  it('should add image to state', async () => {
+    let response;
+    const mockProps = {
+      officeDetails: {},
+      epicTowerMutation: jest.fn(() => Promise.resolve(response)),
+    };
+    const epicTowerWrapper = shallow(<AddRoomNairobi {...mockProps} />);
+    window.URL.createObjectURL = jest.fn(() => 'upload/image-name');
+    const files = [
       {
-        name: 'image-name',
+        name: 'image-name.jpeg',
         type: 'image/jpeg',
         size: 1024,
         webKitRelativePath: '',
       },
     ];
-    theDojo.instance().handleInputChange({ target: { name: 'selectImage', files: imageFiles } });
-    expect(theDojo.instance().state.thumbnailName).toEqual('image-name');
+    const imageUrl = 'upload/image-name.jpeg';
+    const thumbnailName = 'image-name.jpeg';
+    epicTowerWrapper.instance().updateThumbnailState(files, imageUrl, thumbnailName);
+    expect(epicTowerWrapper.state().thumbnailName).toEqual('image-name.jpeg');
+    expect(epicTowerWrapper.state().imageUrl).toEqual('upload/image-name.jpeg');
   });
 
   it('should display error on failure to upload', () => {
@@ -223,20 +246,7 @@ describe('AddRoomNairobi', () => {
         webKitRelativePath: '',
       },
     ];
-    theDojo.instance().handleInputChange({ target: { name: 'selectImage', files: imageFiles } });
-    expect(theDojo.instance().state.thumbnailName).toEqual('fail');
-  });
-
-  it('should trim image name if it is too long', () => {
-    const imageFiles = [
-      {
-        name: 'thisIsAVeryLongFileNameFeelFreeToReduceXters',
-        type: 'image/jpeg',
-        size: 1024,
-        webKitRelativePath: '',
-      },
-    ];
-    theDojo.instance().handleInputChange({ target: { name: 'selectImage', files: imageFiles } });
-    expect(theDojo.instance().state.thumbnailName.length).toEqual(25);
+    theDojo.instance().handleAddRoom({ preventDefault: jest.fn(), target: { files: imageFiles } });
+    expect(theDojo.instance().state.thumbnailName).toEqual('Upload a thumbnail');
   });
 });
