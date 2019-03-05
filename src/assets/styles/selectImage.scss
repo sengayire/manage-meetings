@@ -1,4 +1,6 @@
 @import './variables';
+@import '../../utils/images/images';
+
 
 .image-select {
   display: flex;
@@ -27,7 +29,7 @@
       width: 88px;
       border-radius: 50%;
       background: map-get($color-white, 000);
-      background-image: url('../images/placeholder.svg');
+      background-image: url($place-holder);
       background-repeat: no-repeat;
       background-position: center;
     }

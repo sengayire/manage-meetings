@@ -1,4 +1,5 @@
 @import './variables';
+@import '../../utils/images/images';
 
 .side-modal {
   z-index: 9999;
@@ -25,7 +26,7 @@
     .icon-container {
       text-align: center;
 
-      .error-icon {
+      .error-icon{
         font-size: 20px;
         height: 30px;
         width: 22px;
@@ -80,7 +81,7 @@
     font-size: 20px;
 
     .green-star {
-      content: url('../images/green_star.svg');
+      content: url($green-star);
     }
   }
 
@@ -148,7 +149,7 @@
     font-family: $font-regular;
 
     &:before {
-      content: url('../images/responses.svg');
+      content: url($responses);
       display: block;
       width: 25px;
       height: 10px;
@@ -157,7 +158,7 @@
   }
 
   .cancel {
-    content: url('../images/Cancel.svg');
+    content: url($cancel-image);
     float: right;
     padding-right: 5%;
   }

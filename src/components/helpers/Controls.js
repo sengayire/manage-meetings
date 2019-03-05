@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import '../../assets/styles/input.scss';
-import chevron from '../../assets/images/chevron.svg';
-
+import { chevron } from '../../utils/images/images';
 /**
  *
  * The controls component

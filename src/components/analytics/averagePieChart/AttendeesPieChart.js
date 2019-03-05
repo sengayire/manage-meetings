@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 // import svg files
-import attendeesChart from '../../../../src/assets/images/chart_attendees.svg';
+import { attendeesChart } from '../../../../src/utils/images/images';
 
 // import styles
 import '../../../../src/assets/styles/pieChartBaseStyle.scss';

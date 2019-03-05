@@ -14,7 +14,7 @@ import FloorList from '../components/floors/FloorList'; //eslint-disable-line
 import WingList from '../components/wing/wingList'; //eslint-disable-line
 import CenterList from '../components/centers/CenterList'; //eslint-disable-line
 import { decodeTokenAndGetUserData } from '../utils/Cookie';
-import Maintenance from '../assets/images/maintenance.svg';
+import { maintenance } from '../utils/images/images';
 
 const { UserInfo: userData } = decodeTokenAndGetUserData() || {};
 
@@ -53,7 +53,7 @@ const SettingsContent = () => (
     /* istanbul ignore next */
       <div className="overlay-div">
         <div className="overlay-div__content">
-          <img src={Maintenance} alt="Notice" /><br />
+          <img src={maintenance} alt="Notice" /><br />
           <span>Oops!!! Page is under maintenance</span>
         </div>
       </div>

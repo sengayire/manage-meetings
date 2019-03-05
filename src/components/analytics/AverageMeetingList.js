@@ -9,7 +9,7 @@ import MEETING_DURATION_ANALYTICS from '../../graphql/queries/analytics';
 import Pagination from '../commons/Pagination';
 import QueryAnalyticsLoading from './AverageMeetingList/QueryAnalyticsLoading';
 import Overlay from '../commons/Overlay';
-import Warning from '../../assets/images/warning_icon.svg';
+import { warningIcon } from '../../utils/images/images';
 
 /**
  * Component for the average meeting list
@@ -71,7 +71,7 @@ export class AverageMeetingList extends Component {
       <td className="error_class">
         <img
           className="error_icon"
-          src={Warning}
+          src={warningIcon}
           alt="error_icon"
         />
         <b>
@@ -84,7 +84,7 @@ export class AverageMeetingList extends Component {
   );
   render() {
     const tip =
-      'The number of meetings in a room,  the average number of attendees to these meetings as well as the average duration of the meetings.';
+     'The number of meetings in a room,  the average number of attendees to these meetings as well as the average duration of the meetings.';
     /* eslint no-param-reassign: "error" */
     const { analyticsForMeetingsDurations, isFetching } = this.state;
     const { loading, error } = this.props.data;
@@ -128,7 +128,8 @@ export class AverageMeetingList extends Component {
               hasPrevious={analyticsForMeetingsDurations.hasPrevious}
               handleData={this.handleData}
               isFetching={isFetching}
-            />}
+            />
+           }
           </div>
         </div>
       </div>

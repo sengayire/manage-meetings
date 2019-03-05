@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../../assets/styles/cancelledEvent.scss';
-import Logo from '../../../assets/images/converge_logo.svg';
+import { convergeLogoIcon } from '../../../utils/images/images';
 
 /**
  * Component that notifies a user about
@@ -12,7 +12,7 @@ const cancelledEvent = () => (
   <div className="email">
     <div className="email-header">
       <div className="email-header-content">
-        <img src={Logo} alt="" className="email-logo" />
+        <img src={convergeLogoIcon} alt="" className="email-logo" />
         <p className="email-header-title">Converge</p>
       </div>
     </div>

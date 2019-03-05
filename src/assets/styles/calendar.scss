@@ -1,4 +1,5 @@
 @import './variables';
+@import '../../utils/images/images';
 
 .Selectable{
     line-height: 15px;
@@ -28,7 +29,7 @@
 
   .calendarIconBtn {
     &:before {
-      content: url('../images/date_range_24px.svg');
+      content: url($date-range);
       margin-right: 15px;
     }
   }
@@ -44,19 +45,19 @@
     padding: 20px 15px 8px;
     margin-top: 46px;
     z-index: 2;
-    
+
     &__button {
       z-index: 10000;
       align-self: flex-end;
       margin-top: 10px;
-      
+
       .apply_button {
-        background-color:$color-primary; 
+        background-color:$color-primary;
         color: map-get($color-white, 000);
         line-height: 9px;
         margin: 0 10px;
         height: 0 !important;
-        padding-bottom: 12px; 
+        padding-bottom: 12px;
       }
 
       .cancel_button {
@@ -64,7 +65,7 @@
         padding: 0;
         height: 20px;
       }
-      
+
       &__item {
         border-radius: 2px;
         font-size: 13px;
@@ -94,7 +95,7 @@
     float: right;
     margin-right: 150px;
     border-radius: 10px;
-    background-color: map-get($color-amber, 300);  
+    background-color: map-get($color-amber, 300);
     span {
       height: 15px;
       width: 31px;
@@ -146,7 +147,7 @@
   font-size: 1.15em;
   text-align: center;
 }
-.DayPicker{ 
+.DayPicker{
   font-size: 0.9rem !important;
   font-weight: 200;
 }

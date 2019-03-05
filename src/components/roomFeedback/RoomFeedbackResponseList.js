@@ -2,8 +2,7 @@ import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'react-apollo';
 import RoomFeedbackResponse from './RoomFeedbackResponse';
-import greyStar from '../../../src/assets/images/star_grey.svg';
-import greenStar from '../../../src/assets/images/star_green.svg';
+import { greenStarIcon, greyStarIcon } from '../../utils/images/images';
 import '../../../src/assets/styles/roomFeedbackResponseList.scss';
 import '../../../src/assets/styles/feedbackContainer.scss';
 import Spinner from '../commons/Spinner';
@@ -27,12 +26,12 @@ export const roomCleanlinessRating = (rating) => {
   let rated = rating;
   const data = [];
   while (rated > 0) {
-    data.push(<img key={rated} src={greenStar} alt="" />);
+    data.push(<img key={rated} src={greenStarIcon} alt="" />);
     rated -= 1;
   }
   let unRated = 5 - rating;
   while (unRated > 0) {
-    data.push(<img key={5 + unRated} src={greyStar} alt="" />);
+    data.push(<img key={5 + unRated} src={greyStarIcon} alt="" />);
     unRated -= 1;
   }
   return data;

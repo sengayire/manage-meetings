@@ -7,14 +7,12 @@ import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import ROUTES from '../../utils/routes';
 import '../../assets/styles/topnav.scss';
-import IconAnalytics from '../../assets/images/analytics_icon.svg';
-import IconFeedback from '../../assets/images/feedback_icon.svg';
-import IconSettings from '../../assets/images/settings_icon.svg';
+import { analyticsIcon, feedbackIcon, settingsIcon } from '../../utils/images/images';
 
 const menuItems = [
-  { route: ROUTES.analytics, menu: 'Analytics', icon: IconAnalytics },
-  { route: ROUTES.settings, icon: IconSettings, menu: 'Settings' },
-  { icon: IconFeedback, route: ROUTES.roomfeedback, menu: 'Room Feedback' },
+  { route: ROUTES.analytics, menu: 'Analytics', icon: analyticsIcon },
+  { route: ROUTES.settings, icon: settingsIcon, menu: 'Settings' },
+  { icon: feedbackIcon, route: ROUTES.roomfeedback, menu: 'Room Feedback' },
 ];
 
 /**

@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import ProgressBar from 'react-toolbox/lib/progress_bar';
 import TableHead from '../helpers/TableHead';
 import '../../assets/styles/bookedroom.scss';
+import { pollRed } from '../../utils/images/images';
 import Tip from '../commons/Tooltip';
 import ErrorIcon from '../commons/ErrorIcon';
 
@@ -16,11 +17,11 @@ import ErrorIcon from '../commons/ErrorIcon';
  * @returns {JSX}
  */
 const BookedRooms = ({
-  pollIcon, bookedRoomText, bookedRoomsList, fetching, error, tip,
+  bookedRoomText, bookedRoomsList, fetching, error, tip,
 }) => (
   <div className="wrap-booked-room">
     <div className="booked-room-header">
-      <img src={pollIcon} alt="Pull" />
+      <img src={pollRed} alt="Pull" />
       <h4>{bookedRoomText}</h4>
       {Tip(tip)}
     </div>
@@ -33,30 +34,29 @@ const BookedRooms = ({
               <ErrorIcon />
             </div>
           </div>
-        ) : (
-          <div className="table__body">
-            {!fetching ? (
-              bookedRoomsList.map((room, index) => (
-                <div className="table__row--analytics" key={index}>
-                  <span>{room.roomName}</span>
-                  <span>{room.meetings}</span>
-                  <span>{room.percentage}%</span>
-                </div>
-              ))
-            ) : (
-              <div className="table__row--loading">
-                <ProgressBar type="linear" mode="indeterminate" />
-              </div>
-            )}
-          </div>
-        )}
+         ) : (
+           <div className="table__body">
+             {!fetching ? (
+               bookedRoomsList.map((room, index) => (
+                 <div className="table__row--analytics" key={index}>
+                   <span>{room.roomName}</span>
+                   <span>{room.meetings}</span>
+                   <span>{room.percentage}%</span>
+                 </div>
+               ))
+             ) : (
+               <div className="table__row--loading">
+                 <ProgressBar type="linear" mode="indeterminate" />
+               </div>
+             )}
+           </div>
+         )}
       </div>
     </div>
   </div>
 );
 
 BookedRooms.propTypes = {
-  pollIcon: PropTypes.string.isRequired,
   bookedRoomText: PropTypes.string.isRequired,
   tip: PropTypes.string.isRequired,
   bookedRoomsList: PropTypes.instanceOf(Array).isRequired,

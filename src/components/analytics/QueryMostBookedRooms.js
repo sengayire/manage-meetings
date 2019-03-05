@@ -2,7 +2,7 @@ import React from 'react';
 import { Query } from 'react-apollo';
 import PropTypes from 'prop-types';
 import { MOST_BOOKED_ROOMS_ANALYTICS } from '../../graphql/queries/analytics';
-import RedPollIcon from '../../assets/images/poll_red.svg';
+import { pollRedIcon } from '../../utils/images/images';
 import BookedRooms from './BookedRooms';
 
 /**
@@ -28,7 +28,7 @@ const QueryMostBookedRooms = ({ dateValue }) => (
 
       return (
         <BookedRooms
-          pollIcon={RedPollIcon}
+          pollIcon={pollRedIcon}
           tip="The highest number of times meeting rooms were booked in a set time period"
           bookedRoomText="Most Booked Rooms"
           fetching={loading}

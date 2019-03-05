@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Dropdown from '../commons/Dropdown';
-import IconNotifications from '../../assets/images/download_24px.svg';
+import { download24pxIcon } from '../../utils/images/images';
 
 // styles
 import '../../assets/styles/exportButton.scss';
@@ -34,7 +34,7 @@ const ExportButton = ({ jpegHandler, csvHandler, pdfHandler }) => (
   <Dropdown
     icon={<img
       className="dropbtn-img"
-      src={IconNotifications}
+      src={download24pxIcon}
       alt="download icon"
     />}
     content={renderDropdownOptions(jpegHandler, csvHandler, pdfHandler)}

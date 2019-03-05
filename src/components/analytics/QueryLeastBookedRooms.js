@@ -2,7 +2,6 @@ import React from 'react';
 import { Query } from 'react-apollo';
 import PropTypes from 'prop-types';
 import { LEAST_BOOKED_ROOMS_ANALYTICS } from '../../graphql/queries/analytics';
-import RedPollIcon from '../../assets/images/poll_red.svg';
 import BookedRooms from './BookedRooms';
 
 /**
@@ -28,7 +27,6 @@ const QueryLeastBookedRooms = ({ dateValue }) => (
 
       return (
         <BookedRooms
-          pollIcon={RedPollIcon}
           tip="The least number of times meeting rooms were booked in a set time period"
           bookedRoomText="Least Booked Rooms"
           fetching={loading}

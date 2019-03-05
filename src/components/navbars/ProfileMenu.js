@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import Dropdown from '../commons/Dropdown';
 import '../../assets/styles/topmenu.scss';
-import LogoutIcon from '../../assets/images/settings_gears.svg';
+import { settingsGearsIcon } from '../../utils/images/images';
 import { removeItemFromLocalStorage } from '../../utils/Utilities';
 import Constants from '../../utils/Constants';
 import { clearCookies } from '../../utils/Cookie';
@@ -44,7 +44,7 @@ class ProfileMenu extends React.Component {
               Preferences
           </li>
         </div>
-        <img type="image" alt="logout" src={LogoutIcon} className="preference-icon" />
+        <img type="image" alt="logout" src={settingsGearsIcon} className="preference-icon" />
       </NavLink>
       <div className="preference-border" />
       <button

@@ -7,7 +7,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import { Login } from '../../../src/components/login/Login';
-import ProfileIcon from '../../../src/assets/images/profile_icon.svg';
+import { profileIcon } from '../../../src/utils/images/images';
 
 // creating mock names to use
 const mockFirstName = 'MockFirstName';
@@ -32,7 +32,7 @@ describe('Login component', () => {
     // implementing the method mock for decoding user data and make it return mock user data
     cookieFunctions.decodeTokenAndGetUserData.mockImplementation(() => ({
       UserInfo: {
-        picture: ProfileIcon,
+        picture: profileIcon,
         first_name: mockFirstName,
         last_name: mockLastName,
       },

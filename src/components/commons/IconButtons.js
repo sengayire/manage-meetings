@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import IconDelete from '../../assets/images/delete.svg';
-import IconEdit from '../../assets/images/edit.svg';
+import { deleteIcon, editIcon } from '../../utils/images/images';
 
 class IconButtons extends Component {
   static propTypes = {
@@ -26,9 +25,9 @@ class IconButtons extends Component {
   onButtonTextChange = (text) => {
     let buttonText;
     if (text === 'Delete') {
-      buttonText = <img src={IconDelete} alt="Delete" />;
+      buttonText = <img src={deleteIcon} alt="Delete" />;
     } else if (text === 'Edit') {
-      buttonText = <img src={IconEdit} alt="Edit" />;
+      buttonText = <img src={editIcon} alt="Edit" />;
     } else {
       buttonText = text;
     }

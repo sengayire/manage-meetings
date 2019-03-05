@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import TopMenu from '../../../src/components/navbars/TopMenu';
-import ProfileIcon from '../../../src/assets/images/profile_icon.svg';
+import { profileIcon } from '../../../src/utils/images/images';
 // mocking the decodeTokenAndGetUserData method to return something in the TopMenu component
 jest.mock('../../../src/utils/Cookie');
 const cookieFunctions = require('../../../src/utils/Cookie');
@@ -13,7 +13,7 @@ const mockLastName = 'MockLastName';
 // implementing the method mock
 cookieFunctions.decodeTokenAndGetUserData.mockImplementation(() => ({
   UserInfo: {
-    picture: ProfileIcon,
+    picture: profileIcon,
     first_name: mockFirstName,
     last_name: mockLastName,
   },
@@ -47,7 +47,7 @@ describe('TopMenu Component', () => {
   });
 
   it('should render the correct name and logo', () => {
-    expect(wrapper.find('.profile>img').prop('src')).toBe('test-file-stub');
+    expect(wrapper.find('.profile>img').prop('src')).toBe(profileIcon);
     expect(wrapper.find('.username').text()).toBe(`${mockFirstName} ${mockLastName}`);
   });
 });

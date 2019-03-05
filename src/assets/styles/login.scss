@@ -1,10 +1,11 @@
 /* Importing the font */
 @import './variables';
+@import '../../utils/images/images';
 
 /* body */
 
 body.home-bg {
-  background-image: url('../images/LandingBackground.svg');
+  background-image: url($land-background);
   background-repeat: no-repeat;
   background-size: 100%;
   text-align: center;

@@ -1,8 +1,6 @@
 import React from 'react';
 import ProfileMenu from './ProfileMenu';
-import Logo from '../../assets/images/converge_logo.svg';
-import IconSearch from '../../assets/images/search_icon.svg';
-import IconNotifications from '../../assets/images/notifications_icon.svg';
+import { convergeLogoIcon, notificationsIcon, searchIcon } from '../../utils/images/images';
 import { decodeTokenAndGetUserData } from '../../utils/Cookie';
 import '../../assets/styles/topmenu.scss';
 
@@ -29,7 +27,7 @@ class TopMenu extends React.Component {
           <div className="container content-start nav-left">
             <ul className="inline nav-brand">
               <li className="logo">
-                <img src={Logo} alt="Logo" />
+                <img src={convergeLogoIcon} alt="Logo" />
               </li>
               <li className="logo-text">
                 <h1>CONVERGE</h1>
@@ -42,14 +40,14 @@ class TopMenu extends React.Component {
                 <input className="search-bar" type="text" />
                 <img
                   className="search-icon"
-                  src={IconSearch}
+                  src={searchIcon}
                   alt="Search icon"
                 />
               </form>
             </div>
             <div className="container side-nav">
               <div className="notifications">
-                <img src={IconNotifications} alt="Notification icon" />
+                <img src={notificationsIcon} alt="Notification icon" />
               </div>
               <div className="profile">
                 <img src={picture} className="menu-icon" alt="Profile icon" />

@@ -1,4 +1,5 @@
 @import './variables';
+@import '../../utils/images/images';
 
 .form-action-buttons {
   display: flex;
@@ -8,7 +9,7 @@
   .disable-btn {
     pointer-events: none;
   }
-  
+
   .loading-div {
     display: flex;
   }

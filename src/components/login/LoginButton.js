@@ -1,5 +1,5 @@
 import React from 'react';
-import loginButton from '../../assets/images/Button.png';
+import { loginButtonIcon } from '../../utils/images/images';
 
 /**
  * Login Button component
@@ -14,7 +14,7 @@ const LoginButton = () => {
     <a href={`${ANDELA_LOGIN_URL}=${MRM_URL}`}>
       <input
         type="image"
-        src={loginButton}
+        src={loginButtonIcon}
         alt="Login With Your Email"
         className="btn-signin"
       />

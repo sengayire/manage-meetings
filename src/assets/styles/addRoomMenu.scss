@@ -1,4 +1,5 @@
 @import './variables';
+@import '../../utils/images/images';
 
 .add-room-menu, .add-block-menu{
   height: 100%;
@@ -19,7 +20,7 @@
         }
 
         &:after{
-          content: url('../images/caret_white.svg');
+          content: url($caret-white);
           height: 18px;
           width: 18px;
           margin-left: 7px;
@@ -32,7 +33,7 @@
 
   .addRoomBtn, .addBlockBtn{
     &:after {
-      content: url('../images/caret_blue.svg');
+      content: url($caret-blue);
       height: 18px;
       width: 18px;
       margin-left: 7px;

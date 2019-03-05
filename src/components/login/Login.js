@@ -5,7 +5,7 @@ import { withRouter } from 'react-router-dom';
 
 import ROUTES from '../../utils/routes';
 import '../../assets/styles/login.scss';
-import darkTabletImage from '../../assets/images/DarkTablet.png';
+import { darkTabletIcon } from '../../utils/images/images';
 import LoginButton from '../login/LoginButton';
 import MRMIntro from '../login/MRMIntro';
 import { decodeTokenAndGetUserData, getToken } from '../../utils/Cookie';
@@ -140,7 +140,7 @@ export class Login extends Component {
         <MRMIntro />
         <LoginButton />
 
-        <img src={darkTabletImage} alt="Dark Tablet" id="dark-tablet" />
+        <img src={darkTabletIcon} alt="Dark Tablet" id="dark-tablet" />
 
         {/* display login errors */}
         {loginError && (

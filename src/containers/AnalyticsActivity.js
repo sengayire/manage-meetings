@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../assets/styles/analyticsActivity.scss';
-import UsersIcon from '../assets/images/Group.svg';
+import { groupIcon } from '../utils/images/images';
 import meetings from '../utils/nonPersistentData';
 
 class AnalyticsActivity extends Component {
@@ -38,7 +38,7 @@ class AnalyticsActivity extends Component {
               )}
 
             <div className="participants">
-              <img src={UsersIcon} alt="" />
+              <img src={groupIcon} alt="" />
               <span>{meeting.participants}</span>
             </div>
           </div>

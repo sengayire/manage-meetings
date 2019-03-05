@@ -2,7 +2,7 @@ import React from 'react';
 import Tooltip from 'react-toolbox/lib/tooltip';
 import Link from 'react-toolbox/lib/link';
 
-import helpIcon from '../../assets/images/help_outline_24px.svg';
+import { helpOutline } from '../../utils/images/images';
 
 import theme from '../../assets/styles/toolTipStyles.scss';
 
@@ -24,7 +24,7 @@ const Tip = tip => (
     tooltipShowOnClick
     tooltip={tip}
   >
-    <img src={helpIcon} alt="help icon" />
+    <img src={helpOutline} alt="help icon" />
   </TooltipLink>
 );
 

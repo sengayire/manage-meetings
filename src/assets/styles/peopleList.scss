@@ -1,4 +1,5 @@
 @import './variables';
+@import '../../utils/images/images';
 
 .settings-people {
   width: 85%;
@@ -84,7 +85,7 @@
           }
 
           .sort-by-caret {
-            content: url('../images/caret_blue.svg');
+            content: url($caret-blue);
             width: 14.4px;
             margin-left: 6px;
             display: inline-block;
@@ -119,7 +120,7 @@
         font-size: 95%;
 
         .access-by-caret {
-          content: url('../images/three-dots.svg');
+          content: url($three-dots);
           width: 14.4px;
           display: inline-block;
           vertical-align: top;
@@ -173,7 +174,7 @@
                   }
 
                   &.selected:before {
-                    content: url('../images/blue_tick.svg');
+                    content: url($blue-tick);
                   }
                 }
               }

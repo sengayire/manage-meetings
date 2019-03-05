@@ -1,12 +1,13 @@
 import React from 'react';
 import PropType from 'prop-types';
-import Warning from '../../assets/images/warning_icon.svg';
+import { warningIcon } from '../../utils/images/images';
+
 
 const ErrorIcon = ({ message }) => (
   <div className="error-class">
     <div>
       <div className="icon-container">
-        <img className="error-icon" src={Warning} alt="error_icon" />
+        <img className="error-icon" alt="error_icon" src={warningIcon} />
       </div>
       <b>
         <p className="error-msg">

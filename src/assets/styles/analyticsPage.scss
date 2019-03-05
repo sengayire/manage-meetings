@@ -1,4 +1,5 @@
 @import './variables';
+@import '../../utils/images/images';
 
 .analytics-cover {
   display: flex;
@@ -27,7 +28,7 @@
 
   .location-btn {
     &:before {
-      content: url('../images/location_icon.svg');
+      content: url($location-icon);
       margin-right: 15px;
     }
   }
@@ -49,14 +50,14 @@
 
   .overviewIconBtn {
     &:before {
-      content: url('../images/timeline_yellow_24px.svg');
+      content: url($timeline-yellow);
       margin-right: 15px;
     }
   }
 
   .activityIconBtn{
     &:before {
-      content: url('../images/calendar_today_24px.svg');
+      content: url($calendar-today);
       margin-right: 15px;
     }
   }
