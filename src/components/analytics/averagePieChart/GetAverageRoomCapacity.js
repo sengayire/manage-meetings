@@ -55,7 +55,7 @@ export class GetAverageRoomCapacityComponent extends Component {
       responsive: false,
     };
     const graphData = {
-      labels: ['Less than 10 ', '10-20 ', 'More than 20 '],
+      labels: ['Less than 10 in %', '10-20 in %', 'More than 20 in %'],
       datasets: [{
         label: 'Average Meetings Duration',
         data: [lessThanTenData, betweenTenandTwentyData, greaterThanTwentyData],

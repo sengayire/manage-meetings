@@ -25,6 +25,45 @@ export class AverageMeetingDurationPieChart extends React.Component {
     };
     this.reFetchQuery();
   }
+
+  /**
+   * Calculates the percentage of a particular meeting duration range.
+   *
+   * @param {number} range - meeting duration range e.g. between30And45
+   * @param {number} numberOfMeetingDurations - number of total meeting duration
+   * for the date range selected
+   * @returns {number} - percentage of the meeting duration range
+   */
+  getPercentageDuration = (range, numberOfMeetingDurations) => Math
+    .round((range * 100) / numberOfMeetingDurations);
+
+  /**
+   * Calculates the width of each sectors in the pie chart
+   *
+   * @param {Array} MeetingsDurationAnalytics - An array of all the meting durations
+   * for the date range selected
+   * @returns {Array} - Array of various sector widths to be used by the pie chart
+   */
+  getSectorWidths = (MeetingsDurationAnalytics) => {
+    const durations = Array.from(MeetingsDurationAnalytics, duration =>
+      duration.totalDuration / duration.count);
+    let greaterThan60 = 0;
+    let between45And60 = 0;
+    let between30And45 = 0;
+    let thirtyAndBelow = 0;
+    durations.forEach((duration) => {
+      if (duration > 60) greaterThan60 += 1;
+      if ((duration > 45) && (duration <= 60)) between45And60 += 1;
+      if ((duration > 30) && (duration <= 45)) between30And45 += 1;
+      if (duration < 30) thirtyAndBelow += 1;
+    });
+    greaterThan60 = this.getPercentageDuration(greaterThan60, durations.length);
+    between45And60 = this.getPercentageDuration(between45And60, durations.length);
+    between30And45 = this.getPercentageDuration(between30And45, durations.length);
+    thirtyAndBelow = this.getPercentageDuration(thirtyAndBelow, durations.length);
+
+    return [greaterThan60, between45And60, between30And45, thirtyAndBelow];
+  }
   /**
    * Re-fetches the query when the variables are available in the props
    *
@@ -63,32 +102,11 @@ export class AverageMeetingDurationPieChart extends React.Component {
       maintainAspectRatio: false,
       responsive: false,
     };
-    const durations = Array.from(MeetingsDurationaAnalytics, duration =>
-      duration.totalDuration / duration.count);
-    let greaterThan60 = 0;
-    let between45And60 = 0;
-    let between30And45 = 0;
-    let thirtyAndBelow = 0;
-    for (let index = 0; index < durations.length; index += 1) {
-      if (durations[index] > 60) {
-        greaterThan60 += 1;
-      } else if ((durations[index] > 45) && (durations[index] <= 60)) {
-        between45And60 += 1;
-      } else if ((durations[index] > 30) && (durations[index] <= 45)) {
-        between30And45 += 1;
-      } else {
-        thirtyAndBelow += 1;
-      }
-    }
-    greaterThan60 = Math.round((greaterThan60 * 100) / durations.length);
-    between45And60 = Math.round((between45And60 * 100) / durations.length);
-    between30And45 = Math.round((between30And45 * 100) / durations.length);
-    thirtyAndBelow = Math.round((thirtyAndBelow * 100) / durations.length);
     const graphData = {
-      labels: ['Above 60 Minutes', '45-60 Minutes', '30-45 Minutes', 'Below 30 minutes'],
+      labels: ['Above 60 Minutes in %', '45-60 Minutes in %', '30-45 Minutes in %', 'Below 30 minutes in %'],
       datasets: [{
         label: 'Average Meeting Duration',
-        data: [greaterThan60, between45And60, between30And45, thirtyAndBelow],
+        data: this.getSectorWidths(MeetingsDurationaAnalytics),
         backgroundColor: meetingDurationBackground,
         borderColor,
         borderWidth: 4,
