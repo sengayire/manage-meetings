@@ -1,5 +1,6 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
+import { ApolloError } from 'apollo-client';
 import { AddQuestion } from '../../../src/components/roomFeedback/AddQuestion';
 import MrmModal from '../../../src/components/commons/Modal';
 
@@ -170,7 +171,7 @@ describe('AddQuestion component', () => {
 
   it('should call createQuestion when submit is clicked', () => {
     const props = {
-      addQuestion: jest.fn(() => Promise.reject()),
+      addQuestion: jest.fn(() => Promise.reject(new ApolloError({ graphQLErrors: [new Error('error')] }))),
     };
     wrapper = shallow(<AddQuestion {...props} refetch={jest.fn} />);
     wrapper.setState({

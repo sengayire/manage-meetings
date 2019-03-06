@@ -6,6 +6,7 @@ exports[`DeleteOffice Test Suite renders as expected 1`] = `
   mocks={
     Array [
       Object {
+        "error": [Error: GraphQL error: error instance],
         "request": Object {
           "query": undefined,
           "variables": Object {
@@ -351,6 +352,7 @@ exports[`DeleteOffice Test Suite should pop up a modal when delete button is cli
   mocks={
     Array [
       Object {
+        "error": [Error: GraphQL error: error instance],
         "request": Object {
           "query": undefined,
           "variables": Object {

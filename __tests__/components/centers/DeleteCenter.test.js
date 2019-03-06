@@ -1,6 +1,9 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import toastr from 'toastr';
+import wait from 'waait';
 import { DeleteCenter } from '../../../src/components/centers/DeleteCenter';
+import * as notification from '../../../src/utils/notification';
 
 describe('Edit center component', () => {
   const refetch = jest.fn();
@@ -39,5 +42,24 @@ describe('Edit center component', () => {
     newWrapper.setState({ closeModal: false });
     newWrapper.instance().handleDeleteCenter();
     expect(newProps.deleteCenter).toHaveBeenCalled();
+  });
+
+  it('should show error notification when delete center is unsuccesful', async () => {
+    jest.clearAllMocks();
+
+    const notificationSpy = jest.spyOn(notification, 'default');
+    const error = {
+      graphQLErrors: [{
+        message: 'Center cannot be deleted',
+      }],
+    };
+    wrapper.setProps({
+      deleteCenter: jest.fn(() => Promise.reject(error)),
+    });
+    wrapper.instance().handleDeleteCenter();
+    await wait();
+
+    expect(notificationSpy).toHaveBeenCalled();
+    expect(notificationSpy).toHaveBeenCalledWith(toastr, 'error', 'Center cannot be deleted');
   });
 });

@@ -1,5 +1,6 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
+import { ApolloError } from 'apollo-client';
 import { BlockActions } from '../../../src/components/blocks/BlockActions';
 import blockData from '../../../src/fixtures/blocksData';
 import officeData from '../../../src/fixtures/officeData';
@@ -27,9 +28,7 @@ describe('BlockActions Component', () => {
   let mountedInstance;
 
   beforeEach(() => {
-    wrapper = shallow(
-      <BlockActions {...props} />,
-    );
+    wrapper = shallow(<BlockActions {...props} />);
     instance = wrapper.instance();
     jest.spyOn(instance, 'handleCloseModal');
     jest.spyOn(instance, 'handleDeleteBlock');
@@ -46,14 +45,17 @@ describe('BlockActions Component', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('renders form modal', () => {
-    const modal = wrapper.dive().find('form');
+  it('renders div modal', () => {
+    const modal = wrapper.dive().find('.modal-form');
     expect(modal).toHaveLength(1);
   });
 
   it('should set blockName to state on click', () => {
     const toTarget = { target: { name: 'blockName', value: 'block Test' } };
-    wrapper.dive().find('#blockName').simulate('change', toTarget);
+    wrapper
+      .dive()
+      .find('#blockName')
+      .simulate('change', toTarget);
     expect(wrapper.state('blockName')).toBe('block Test');
   });
 
@@ -74,7 +76,7 @@ describe('BlockActions Component', () => {
   it('should render Editing Modal', () => {
     wrapper.setProps({ editing: true });
     wrapper.update();
-    const form = wrapper.dive().find('form');
+    const form = wrapper.dive().find('.modal-form');
     expect(form).toHaveLength(1);
   });
 
@@ -87,7 +89,7 @@ describe('BlockActions Component', () => {
 
   it('should close the modal when the addBlock call fails and blockName is not provided', () => {
     wrapper.setProps({
-      addBlock: jest.fn(() => Promise.reject()),
+      addBlock: jest.fn(() => Promise.reject(new ApolloError({ graphQLErrors: [new Error('error')] }))),
       office: {},
     });
     wrapper.setState({
@@ -100,7 +102,7 @@ describe('BlockActions Component', () => {
 
   it('should close the modal when the addBlock call fails and blockName is provided', () => {
     wrapper.setProps({
-      addBlock: jest.fn(() => Promise.reject()),
+      addBlock: jest.fn(() => Promise.reject(new ApolloError({ graphQLErrors: [new Error('error')] }))),
     });
     wrapper.setState({
       blockName: 'Test SingleBlock',
@@ -130,7 +132,7 @@ describe('BlockActions Component', () => {
 
   it('should close the modal when the editBlock call fails and blockName is not provided', () => {
     wrapper.setProps({
-      editBlock: jest.fn(() => Promise.reject()),
+      editBlock: jest.fn(() => Promise.reject().catch(() => {})),
       office: {},
       block: {},
     });
@@ -145,8 +147,8 @@ describe('BlockActions Component', () => {
   it('should close the modal when the editBlock call fails and office is not provided', () => {
     notification.default = jest.fn();
     wrapper.setProps({
-      editBlock: jest.fn(() => Promise.reject()),
-      office: { },
+      editBlock: jest.fn(() => Promise.reject(new ApolloError({ graphQLErrors: [new Error('error')] }))),
+      office: {},
     });
     wrapper.setState({
       blockName: 'Test SingleBlock',

@@ -1,6 +1,9 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import toastr from 'toastr';
+import wait from 'waait';
 import { AddCenter } from '../../../src/components/centers/AddCenter';
+import * as notification from '../../../src/utils/notification';
 
 describe('AddCenter Component', () => {
   const initProps = {
@@ -29,7 +32,9 @@ describe('AddCenter Component', () => {
   });
 
   it('should change centerName to KAMPALA', () => {
-    wrapper.find('#centerName').simulate('change', { target: { name: 'centerName', value: 'KAMPALA' } });
+    wrapper
+      .find('#centerName')
+      .simulate('change', { target: { name: 'centerName', value: 'KAMPALA' } });
     expect(wrapper.find('#centerName').props().value).toBe('KAMPALA');
   });
 
@@ -47,8 +52,7 @@ describe('AddCenter Component', () => {
     const modalForm = wrapper.find('form');
     wrapper.setState({ centerName: '' });
     modalForm.simulate('submit', {
-      preventDefault: () => {
-      },
+      preventDefault: () => {},
     });
     wrapper.instance().handleAddCenter({ preventDefault });
     expect(wrapper.state('closeModal')).toEqual(false);
@@ -62,7 +66,10 @@ describe('AddCenter Component', () => {
 
   it('should not close modal when abbreviation validation fails', () => {
     wrapper.setState({
-      centerName: 'Kampala', country: 'Uganda', timeZone: 'UTC +1', abbreviation: '',
+      centerName: 'Kampala',
+      country: 'Uganda',
+      timeZone: 'UTC +1',
+      abbreviation: '',
     });
     wrapper.instance().handleAddCenter({ preventDefault });
     expect(wrapper.state('closeModal')).toEqual(false);
@@ -70,7 +77,7 @@ describe('AddCenter Component', () => {
 
   it('should call addCenter with set variables when promise is rejected', () => {
     const props = {
-      addCenter: jest.fn(() => Promise.reject()),
+      addCenter: jest.fn(() => Promise.reject().catch(() => {})),
       refetch: jest.fn(),
       user: { user: { location: 'kampala' } },
     };
@@ -111,5 +118,24 @@ describe('AddCenter Component', () => {
     wrapper.instance().handleAddCenter({ preventDefault });
     expect(wrapper.state('closeModal')).toEqual(false);
     expect(props.addCenter).toHaveBeenCalledWith({ variables });
+  });
+
+  it('should show error notification when add center is unsuccesful', async () => {
+    jest.clearAllMocks();
+
+    const notificationSpy = jest.spyOn(notification, 'default');
+    const error = {
+      graphQLErrors: [{
+        message: 'Center cannot be added',
+      }],
+    };
+    wrapper.setProps({
+      addCenter: jest.fn(() => Promise.reject(error)),
+    });
+    wrapper.instance().createCenter();
+    await wait();
+
+    expect(notificationSpy).toHaveBeenCalled();
+    expect(notificationSpy).toHaveBeenCalledWith(toastr, 'error', 'Center cannot be added');
   });
 });

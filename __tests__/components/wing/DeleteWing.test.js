@@ -1,5 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import { ApolloError } from 'apollo-client';
 import { DeleteWing } from '../../../src/components/wing/DeleteWing';
 
 describe('Delete Wing Test Suite', () => {
@@ -36,7 +37,7 @@ describe('Delete Wing Test Suite', () => {
 
   it('It should initiate a call to deleteWing when handleDeleteWing is called', () => {
     const props = {
-      deleteWing: jest.fn(() => Promise.reject()),
+      deleteWing: jest.fn(() => Promise.reject(new ApolloError({ graphQLErrors: [new Error('error')] }))), // TODO
       notification: jest.fn(),
       wingName: 'ABUJA WING',
       id: 'delete-modal',

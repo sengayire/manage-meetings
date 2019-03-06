@@ -1,5 +1,6 @@
 import React from 'react';
 import { mount, shallow } from 'enzyme';
+import { ApolloError } from 'apollo-client';
 import { MockedProvider } from 'react-apollo/test-utils';
 import WrappedEditResource, { EditResource } from '../../../src/components/resources/EditResource';
 import allResourcesReturnData from '../../../__mocks__/resources/Resources';
@@ -86,7 +87,7 @@ describe('EditRoom', () => {
           name: 'Gulu',
           roomId: 1,
         },
-        editResource: jest.fn(() => Promise.reject(new Error('An error occurred'))),
+        editResource: jest.fn(() => Promise.reject(new ApolloError({ graphQLErrors: [new Error('An error occurred')] }))), // TODO
       };
       const newWrapper = shallow(<EditResource {...errorProps} />);
       newWrapper.instance().handleEditResource(event);

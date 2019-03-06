@@ -16,7 +16,7 @@ const accessMenuCaret = () => <span className="access-by-caret" />;
  *
  * @param {Object} people - name, email, accessLevel, location, and picture
  * @param {Object} allRoles
- * @param {Object} editRole
+ * @param {function} editRole
  *
  * @returns {void}
  */
@@ -40,9 +40,9 @@ const People = ({
         )();
         refetch({ page: currentPage });
       })
-      .catch(err =>
-        notification(toastr, 'error', err.graphQLErrors[0].message)(),
-      );
+      .catch((err) => {
+        notification(toastr, 'error', err.graphQLErrors[0].message)();
+      });
   };
   return (
     <div className="table__row">

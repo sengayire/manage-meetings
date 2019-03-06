@@ -67,8 +67,8 @@ export class AverageMeetingList extends Component {
   };
 
   showErrorMessage = message => (
-    <tr className="average-table-error">
-      <td className="error_class">
+    <div className="average-table-error">
+      <div className="error_class">
         <img
           className="error_icon"
           src={warningIcon}
@@ -79,8 +79,8 @@ export class AverageMeetingList extends Component {
             {message || 'An error occurred, cannot fetch data'}
           </p>
         </b>
-      </td>
-    </tr>
+      </div>
+    </div>
   );
   render() {
     const tip =
@@ -101,11 +101,11 @@ export class AverageMeetingList extends Component {
         </div>
         <div className="average-meeting-list">
           {isFetching ? <Overlay id="average-meeting" /> : null}
-          <table className="table">
+          <div>
             <TableHead
               titles={['Room', 'No. of meetings', 'Average Meeting Duration']}
             />
-            <tbody>
+            <div>
               {
                 isFutureDateSelected ?
                 this.showErrorMessage('You cannot fetch data beyond today')
@@ -117,8 +117,8 @@ export class AverageMeetingList extends Component {
                 />
                 )
               }
-            </tbody>
-          </table>
+            </div>
+          </div>
         </div>
         <div className="average-meeting-pagination">
           <div>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import { ApolloError } from 'apollo-client';
 import { EditOffice } from '../../../src/components/offices/EditOffice';
 
 describe('EditOffice Component', () => {
@@ -45,7 +46,7 @@ describe('EditOffice Component', () => {
 
   it('should handle handleEditOffice() when editOffice is rejected', () => {
     wrapper.setProps({
-      editOffice: jest.fn(() => Promise.reject()),
+      editOffice: jest.fn(() => Promise.reject(new ApolloError({ graphQLErrors: [new Error('error')] }))),
     });
     wrapper.setState({
       officeName: 'Epic Tower',

@@ -1,5 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import { ApolloError } from 'apollo-client';
 import { DeleteFloor } from '../../../src/components/floors/DeleteFloor';
 
 describe('DeleteFloor Test Suite', () => {
@@ -38,7 +39,7 @@ describe('DeleteFloor Test Suite', () => {
 
   it('should handle handleDeleteOffice() when deleteOffice is rejected', () => {
     const props = {
-      deleteFloor: jest.fn(() => Promise.reject()),
+      deleteFloor: jest.fn(() => Promise.reject(new ApolloError({ graphQLErrors: [new Error('error')] }))),
       notification: jest.fn(),
       floorName: 'Fourth Floor',
       id: 'delete-modal',

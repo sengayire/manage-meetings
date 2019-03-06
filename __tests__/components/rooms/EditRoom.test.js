@@ -1,5 +1,6 @@
 import React from 'react';
 import { mount, shallow } from 'enzyme';
+import { ApolloError } from 'apollo-client';
 import { MockedProvider } from 'react-apollo/test-utils';
 import WrappedEditRoom, { EditRoom } from '../../../src/components/rooms/EditRoom';
 import allRoomsReturnData, { locationData } from '../../../__mocks__/rooms/Rooms';
@@ -100,7 +101,7 @@ describe('EditRoom', () => {
         roomName: 'HighLan',
         roomId: '1',
         locations: locationData.data,
-        editRoom: jest.fn(() => Promise.reject(new Error('Please supply a valid room name'))),
+        editRoom: jest.fn(() => Promise.reject(new ApolloError({ graphQLErrors: [new Error('Please supply a valid room name')] }))),
       };
       const newWrapper = shallow(<EditRoom {...errorProps} />);
       newWrapper.instance().handleEditRoom();
@@ -114,6 +115,8 @@ describe('EditRoom', () => {
         roomId: '1',
         locations: locationData.data,
         editRoom: jest.fn(() => Promise.resolve(mutationResult)),
+        currentPage: 1,
+        refetch: jest.fn(),
       };
       const newWrapper = shallow(<EditRoom {...newProps} />);
       const newState = {

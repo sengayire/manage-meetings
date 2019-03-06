@@ -71,10 +71,10 @@ export class DeleteFeedback extends Component {
         this.handleCloseModal();
         notification(toastr, 'success', `${question} has been deleted successfully`)();
       })
-      .catch((error) => {
+      .catch((err) => {
         this.toggleLoading();
         this.handleCloseModal();
-        notification(toastr, 'error', error.graphQLErrors[0].message)();
+        notification(toastr, 'error', err.graphQLErrors[0].message)();
       });
   };
 

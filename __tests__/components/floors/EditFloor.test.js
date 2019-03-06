@@ -1,5 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import { ApolloError } from 'apollo-client';
 import { EditFloor } from '../../../src/components/floors/EditFloor';
 
 describe('EditFloor Component', () => {
@@ -23,7 +24,7 @@ describe('EditFloor Component', () => {
   });
 
   it('should have a form', () => {
-    const modalForm = wrapper.find('form');
+    const modalForm = wrapper.find('.modal-form');
     expect(modalForm).toHaveLength(1);
   });
 
@@ -47,7 +48,7 @@ describe('EditFloor Component', () => {
 
   it('should handle handleEditFloor() when editFloor is rejected', () => {
     wrapper.setProps({
-      editFloor: jest.fn(() => Promise.reject()),
+      editFloor: jest.fn(() => Promise.reject(new ApolloError({ graphQLErrors: [new Error('Errors in tests')] }))),
     });
     wrapper.update();
     wrapper.instance().handleEditFloor(event);

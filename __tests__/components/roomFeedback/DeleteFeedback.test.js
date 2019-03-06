@@ -1,9 +1,10 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import toastr from 'toastr';
+import { ApolloError } from 'apollo-client';
+import wait from 'waait';
 import { DeleteFeedback } from '../../../src/components/roomFeedback/DeleteFeedback';
-import notification from '../../../src/utils/notification';
-
-jest.mock('../../../src/utils/notification');
+import * as notification from '../../../src/utils/notification';
 
 describe('DeleteFeedback Component', () => {
   const initProps = {
@@ -11,8 +12,11 @@ describe('DeleteFeedback Component', () => {
     question: 'Test question',
     deleteFeedback: jest.fn(),
   };
-  const wrapper = shallow(<DeleteFeedback {...initProps} />);
+  const errorMessage = 'The room was not deleted successfully';
+  const error = new ApolloError({ graphQLErrors: [new Error(errorMessage)] });
+  const notificationSpy = jest.spyOn(notification, 'default');
 
+  const wrapper = shallow(<DeleteFeedback {...initProps} />);
   it('should handleCloseModal()', () => {
     wrapper.instance().handleCloseModal();
     expect(wrapper.state('closeModal')).toEqual(true);
@@ -23,20 +27,24 @@ describe('DeleteFeedback Component', () => {
     expect(wrapper.state('closeModal')).toBe(false);
   });
 
-  it('should call notification with a success message', () => {
+  it('should call notification with a success message', async () => {
     wrapper.setProps({
-      deleteFeedback: jest.fn(() => Promise.resolve(notification('success'))),
+      deleteFeedback: jest.fn(() => Promise.resolve()),
     });
     wrapper.instance().handleDeleteFeedback();
-    expect(notification.mock.calls[0][0]).toBe('success');
+    await wait();
+    expect(notificationSpy).toHaveBeenCalled();
+    expect(notificationSpy).toHaveBeenCalledWith(toastr, 'success', `${initProps.question} has been deleted successfully`);
   });
 
-  it('should call notification with an error message', () => {
+  it('should call notification with an error message', async () => {
     jest.clearAllMocks();
     wrapper.setProps({
-      deleteFeedback: jest.fn(() => Promise.reject(notification('error'))),
+      deleteFeedback: jest.fn(() => Promise.reject(error)),
     });
     wrapper.instance().handleDeleteFeedback();
-    expect(notification.mock.calls[0][0]).toBe('error');
+    await wait();
+    expect(notificationSpy).toHaveBeenCalled();
+    expect(notificationSpy).toHaveBeenCalledWith(toastr, 'error', errorMessage);
   });
 });

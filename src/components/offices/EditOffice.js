@@ -79,7 +79,7 @@ export class EditOffice extends React.Component {
         notification(toastr,
           'success', `${officeName} office has been updated successfully`)();
         this.handleCloseModal();
-        this.toggles();
+        this.toggleLoading();
         /* istanbul ignore next */
         refetch({ page: currentPage });
       })
@@ -166,7 +166,7 @@ EditOffice.propTypes = {
 };
 
 EditOffice.defaultProps = {
-  refetch: PropTypes.func,
+  refetch: () => {},
   currentPage: null,
 };
 

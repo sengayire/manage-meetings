@@ -102,4 +102,3 @@ describe('SelectInput component', () => {
     expect(newOptionsWrapper).toMatchSnapshot();
   });
 });
-

@@ -1,5 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import { ApolloError } from 'apollo-client';
 import { AddFloor } from '../../../src/components/floors/AddFloor';
 
 describe('AddFloor Component', () => {
@@ -8,10 +9,12 @@ describe('AddFloor Component', () => {
     allBlocks: { loading: false, allBlocks: [{ offices: { name: 'block A' } }] },
     theOffice: 'The crest',
     refetch: jest.fn(),
-    blocks: [{
-      name: 'blockA',
-      id: '12',
-    }],
+    blocks: [
+      {
+        name: 'blockA',
+        id: '12',
+      },
+    ],
   };
   let wrapper = shallow(<AddFloor {...initProps} />);
   const preventDefault = jest.fn();
@@ -39,7 +42,9 @@ describe('AddFloor Component', () => {
   });
 
   it('inputs should respond to state changes', () => {
-    wrapper.find('#floorName').simulate('change', { target: { name: 'floorName', value: 'first floor' } });
+    wrapper
+      .find('#floorName')
+      .simulate('change', { target: { name: 'floorName', value: 'first floor' } });
     expect(wrapper.find('#floorName').props().value).toBe('first floor');
   });
 
@@ -63,14 +68,16 @@ describe('AddFloor Component', () => {
 
   it('should call addFloor with the correct variables', () => {
     const props = {
-      addFloor: jest.fn(() => Promise.reject()),
+      addFloor: jest.fn(() => Promise.reject(new ApolloError({ graphQLErrors: [new Error('error')] }))),
       allBlocks: { loading: true, allBlocks: [{ offices: { name: 'block A' } }] },
       theOffice: 'The crest',
       refetch: jest.fn(),
-      blocks: [{
-        name: 'blockA',
-        id: '12',
-      }],
+      blocks: [
+        {
+          name: 'blockA',
+          id: '12',
+        },
+      ],
     };
     wrapper = shallow(<AddFloor {...props} />);
     wrapper.setState({
@@ -101,10 +108,12 @@ describe('AddFloor Component', () => {
       allBlocks: { loading: false, allBlocks: [{ offices: { name: 'block A' } }] },
       theOffice: 'The crest',
       refetch: jest.fn(),
-      blocks: [{
-        name: 'blockA',
-        id: '12',
-      }],
+      blocks: [
+        {
+          name: 'blockA',
+          id: '12',
+        },
+      ],
     };
     wrapper = shallow(<AddFloor {...props} />);
     wrapper.setState({

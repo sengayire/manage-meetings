@@ -1,5 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import { ApolloError } from 'apollo-client';
 import People from '../../../src/components/people/People';
 
 describe('People Component', () => {
@@ -15,15 +16,13 @@ describe('People Component', () => {
     { id: 1, role: 'Admin' },
     { id: 2, role: 'Default User' },
   ];
-  const props = {
-    editRole: jest.fn(() => Promise.resolve(result)),
-  };
+  const editRole = jest.fn(() => Promise.resolve(result));
 
   const wrapper = shallow(<People
     people={person}
     refetch={jest.fn()}
     allRoles={allRoles}
-    {...props}
+    editRole={editRole}
     currentPage={1}
   />);
 
@@ -42,17 +41,17 @@ describe('People Component', () => {
   it('should change role succesfully', () => {
     const iconMenu = wrapper.find('ThemedThemed').at(1);
     iconMenu.simulate('click');
-    expect(props.editRole).toBeCalled();
-    expect(props.editRole).toBeCalledWith({ variables: { email: person.email, roleId: 2 } });
+    expect(editRole).toBeCalled();
+    expect(editRole).toBeCalledWith({ variables: { email: person.email, roleId: 2 } });
   });
 
   it('should return an error when changing role', () => {
     wrapper.setProps({
-      editRole: jest.fn(() => Promise.reject()),
+      editRole: jest.fn(() => Promise.reject(new ApolloError({ graphQLErrors: [new Error('error')] }))),
     });
     const iconMenu = wrapper.find('ThemedThemed').at(1);
     iconMenu.simulate('click');
-    expect(props.editRole).toBeCalled();
-    expect(props.editRole).toBeCalledWith({ variables: { email: person.email, roleId: 2 } });
+    expect(editRole).toBeCalled();
+    expect(editRole).toBeCalledWith({ variables: { email: person.email, roleId: 2 } });
   });
 });

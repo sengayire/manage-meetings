@@ -72,11 +72,7 @@ export class EditFloor extends React.Component {
         },
       })
       .then(() => {
-        notification(
-          toastr,
-          'success',
-          `${floorName} Floor has been updated successfully`,
-        )();
+        notification(toastr, 'success', `${floorName} Floor has been updated successfully`)();
       })
       .catch((err) => {
         notification(toastr, 'error', err.graphQLErrors[0].message)();
@@ -96,7 +92,7 @@ export class EditFloor extends React.Component {
         className="edit-office-modal"
         modalButtonClassName="edit-button"
       >
-        <form className="modal-form" onSubmit={this.handleEditFloor}>
+        <div className="modal-form">
           <Input
             labelName="Floor Name"
             labelClass="label1"
@@ -107,13 +103,13 @@ export class EditFloor extends React.Component {
             onChange={this.handleInputChange}
             required
           />
-
           <ActionButtons
             withCancel
             onClickCancel={this.handleCloseModal}
+            onClickSubmit={this.handleEditFloor}
             actionButtonText="SAVE CHANGES"
           />
-        </form>
+        </div>
       </MrmModal>
     );
   }

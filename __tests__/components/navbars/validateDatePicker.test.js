@@ -5,7 +5,7 @@ import roomUsage from '../../../__mocks__/rooms/mostUsedRooms';
 import { AnalyticsNav as AnalyticComponent } from '../../../src/components/navbars/AnalyticsNav';
 
 jest.mock('moment', () => () => ({
-  format: () => jest.fn(),
+  format: () => 'time',
   diff: jest.fn(() => -1),
 }));
 

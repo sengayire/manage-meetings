@@ -117,7 +117,7 @@ DeleteOffice.propTypes = {
 };
 
 DeleteOffice.defaultProps = {
-  refetch: PropTypes.func,
+  refetch: () => {},
 };
 
 export default compose(

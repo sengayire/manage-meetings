@@ -1,5 +1,6 @@
 import React from 'react';
 import { mount, shallow } from 'enzyme';
+import { ApolloError } from 'apollo-client';
 import { MockedProvider } from 'react-apollo/test-utils';
 import DeleteResourceComponent, { DeleteResource } from '../../../src/components/resources/DeleteResource';
 import { DELETE_RESOURCE_MUTATION } from '../../../src/graphql/mutations/resources';
@@ -23,10 +24,7 @@ describe('DeleteResource Test Suite', () => {
   };
 
   const wrapperCode = (
-    <MockedProvider
-      mocks={[{ request, result }]}
-      addTypename={false}
-    >
+    <MockedProvider mocks={[{ request, result }]} addTypename={false}>
       <DeleteResourceComponent {...props} />
     </MockedProvider>
   );
@@ -61,6 +59,7 @@ describe('DeleteResource Test Suite', () => {
         id: '1',
         name: 'Duster',
       },
+      refetch: jest.fn(),
     };
     const newWrapper = shallow(<DeleteResource {...newProps} />);
     newWrapper.setState({ closeModal: false });
@@ -71,8 +70,8 @@ describe('DeleteResource Test Suite', () => {
   it('should return an error when deleting resource', () => {
     const preventDefault = jest.fn();
     const newProps = {
-      deleteResource: jest.fn(() =>
-        Promise.reject(new Error('You are not authorized to perform this action'))),
+      deleteResource: jest
+        .fn(() => Promise.reject(new ApolloError({ graphQLErrors: [new Error('You are not authorized to perform this action')] }))), // TODO
       toDelete: {
         id: '1',
         name: 'Duster',

@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import { ApolloError } from 'apollo-client';
 import { DeleteOffice } from '../../../src/components/offices/DeleteOffice';
-import { AddOffice } from '../../../src/components/offices/AddOffice'; //eslint-disable-line
 
 describe('DeleteOffice Test Suite', () => {
   const initProps = {
@@ -38,7 +38,7 @@ describe('DeleteOffice Test Suite', () => {
 
   it('should handle handleDeleteOffice() when deleteOffice is rejected', () => {
     const props = {
-      deleteOffice: jest.fn(() => Promise.reject()),
+      deleteOffice: jest.fn(() => Promise.reject(new ApolloError({ graphQLErrors: [new Error('error')] }))),
       notification: jest.fn(),
       officeName: 'EPIC TOWER',
       id: 'delete-modal',

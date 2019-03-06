@@ -46,6 +46,7 @@ describe('RoomFeeback Component', () => {
       loading: false,
       error: undefined,
       data: { questions: { questions: [] } },
+      user: {},
     };
     const roomFeedback = shallow(<RoomFeedback {...newProps} />);
     expect(roomFeedback.find(Error)).toHaveLength(1);

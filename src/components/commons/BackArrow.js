@@ -10,6 +10,8 @@ import '../../assets/styles/backArrow.scss';
  *
  * @returns {JSX}
  */
+
+/* eslint-disable jsx-a11y/accessible-emoji */
 const BackArrow = ({ redirectUri }) => (
   <NavLink to={redirectUri} className="arrow">
     <span className="arrow-symbol">&#11013;</span>

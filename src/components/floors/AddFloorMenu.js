@@ -63,7 +63,7 @@ export class AddFloorMenu extends React.Component {
             refetch={this.props.refetch}
             blocks={block.offices.location.name === 'Nairobi' && allBlocks}
             currentPage={this.props.currentPage}
-            officeId={block.id}
+            officeId={parseInt(block.id, 10)}
           />
         </MenuItem>
       ))

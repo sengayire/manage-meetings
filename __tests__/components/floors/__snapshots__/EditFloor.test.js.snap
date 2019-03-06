@@ -9,9 +9,8 @@ exports[`EditFloor Component renders properly 1`] = `
   modalButtonClassName="edit-button"
   title="EDIT FLOOR"
 >
-  <form
+  <div
     className="modal-form"
-    onSubmit={[Function]}
   >
     <Input
       controlsClass=""
@@ -31,8 +30,9 @@ exports[`EditFloor Component renders properly 1`] = `
       cancelButtonText="CANCEL"
       isLoading={false}
       onClickCancel={[Function]}
+      onClickSubmit={[Function]}
       withCancel={true}
     />
-  </form>
+  </div>
 </MrmModal>
 `;

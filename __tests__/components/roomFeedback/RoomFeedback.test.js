@@ -75,7 +75,7 @@ describe('Tests for RoomFeedback Component', () => {
       user: {},
       data: testData,
     };
-    const roomFeedback = shallow(<RoomFeedback user={{ user: false }} />);
+    const roomFeedback = shallow(<RoomFeedback user={{}} />);
     expect(roomFeedback.instance().componentWillReceiveProps(props)).toBeFalsy();
   });
 });

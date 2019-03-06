@@ -117,7 +117,7 @@ export class DeleteCenter extends React.Component {
 }
 
 DeleteCenter.defaultProps = {
-  refetch: PropTypes.func,
+  refetch: () => {},
 };
 
 export default compose(

@@ -1,10 +1,14 @@
 import React from 'react';
 import { mount, shallow } from 'enzyme';
 import { MockedProvider } from 'react-apollo/test-utils';
+import { ApolloError } from 'apollo-client';
 import DeleteRoomComponent, { DeleteRoom } from '../../../src/components/rooms/DeleteRoom';
 import DELETE_ROOM from '../../../src/graphql/mutations/Rooms';
 
 describe('DeleteOffice Test Suite', () => {
+  const error = new ApolloError({
+    graphQLErrors: [new Error('error instance')],
+  });
   const request = {
     query: DELETE_ROOM,
     variables: { roomId: 1 },
@@ -13,10 +17,7 @@ describe('DeleteOffice Test Suite', () => {
   const result = { data: { deletedRoom } };
 
   const wrapperCode = (
-    <MockedProvider
-      mocks={[{ request, result }]}
-      addTypename={false}
-    >
+    <MockedProvider mocks={[{ request, result, error }]} addTypename={false}>
       <DeleteRoomComponent roomName="Rabat" roomId="1" refetch={jest.fn(() => Promise.resolve())} />
     </MockedProvider>
   );
@@ -46,6 +47,7 @@ describe('DeleteOffice Test Suite', () => {
   it('should delete room succesfully', () => {
     const newProps = {
       deleteRoom: jest.fn(() => Promise.resolve(result)),
+      refetch: jest.fn(),
     };
     const newWrapper = shallow(<DeleteRoom roomName="Rabat" roomId="1" {...newProps} />);
 
@@ -57,7 +59,8 @@ describe('DeleteOffice Test Suite', () => {
   it('should return an error when deleting room', () => {
     const newProps = {
       deleteRoom: jest.fn(() =>
-        Promise.reject(new Error('You are not authorized to perform this action'))),
+        Promise.reject(error),
+      ),
     };
     const newWrapper = shallow(<DeleteRoom roomName="Rabat" roomId="1" {...newProps} />);
 

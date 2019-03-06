@@ -9,9 +9,8 @@ exports[`BlockModal Component renders properly 1`] = `
   modalButtonClassName="button"
   title="Udi"
 >
-  <form
+  <div
     className="modal-form"
-    onSubmit={[MockFunction]}
   >
     <Input
       controlsClass=""
@@ -30,8 +29,9 @@ exports[`BlockModal Component renders properly 1`] = `
       cancelButtonText="CANCEL"
       isLoading={false}
       onClickCancel={[MockFunction]}
+      onClickSubmit={[MockFunction]}
       withCancel={true}
     />
-  </form>
+  </div>
 </MrmModal>
 `;

@@ -1,5 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import { ApolloError } from 'apollo-client';
 import { EditCenter } from '../../../src/components/centers/EditCenter';
 
 describe('Edit center component', () => {
@@ -28,7 +29,9 @@ describe('Edit center component', () => {
   });
 
   it('should change state for centerName to LAGOS', () => {
-    wrapper.find('#centerName').simulate('change', { target: { name: 'centerName', value: 'LAGOS' } });
+    wrapper
+      .find('#centerName')
+      .simulate('change', { target: { name: 'centerName', value: 'LAGOS' } });
     expect(wrapper.find('#centerName').props().value).toBe('LAGOS');
   });
 
@@ -58,7 +61,7 @@ describe('Edit center component', () => {
 
   it('should call editLocation with set variables when promise is rejected', () => {
     const editProps = {
-      editCenter: jest.fn(() => Promise.reject()),
+      editCenter: jest.fn(() => Promise.reject(new ApolloError({ graphQLErrors: [new Error('error')] }))),
       refetch: jest.fn(),
       user: { user: { location: 'kampala' } },
       centerId: '1',
@@ -95,7 +98,9 @@ describe('Edit center component', () => {
 
   it('should not close modal when abbreviation validation fails', () => {
     wrapper.setState({
-      centerName: 'Kampala', abbreviation: '', centerId: '1',
+      centerName: 'Kampala',
+      abbreviation: '',
+      centerId: '1',
     });
     wrapper.instance().handleEditCenter({ preventDefault });
     expect(wrapper.state('closeModal')).toEqual(false);

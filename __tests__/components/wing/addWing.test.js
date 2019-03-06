@@ -1,4 +1,5 @@
 import React from 'react';
+import { ApolloError } from 'apollo-client';
 import { MockedProvider } from 'react-apollo/test-utils';
 import { shallow, mount } from 'enzyme';
 import AddWings, { AddWing } from '../../../src/components/wing/addWing';
@@ -140,7 +141,7 @@ describe('AddWing Component', () => {
 
   it('handles handleAddWing() when addWing is rejected', () => {
     const props = {
-      addWing: jest.fn(() => Promise.reject()),
+      addWing: jest.fn(() => Promise.reject(new ApolloError({ graphQLErrors: [new Error('error')] }))),
       allFloors: { allFloors: [] },
     };
     wrapper = shallow(<AddWing {...props} />);

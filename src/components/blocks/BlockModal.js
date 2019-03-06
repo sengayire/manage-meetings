@@ -13,7 +13,7 @@ const BlockModal = props => (
     className="add-office-modal"
     // modalButton="add-button"
   >
-    <form className="modal-form" onSubmit={props.handleSubmit}>
+    <div className="modal-form">
       <Input
         labelName="Block Name"
         name="blockName"
@@ -26,9 +26,10 @@ const BlockModal = props => (
         withCancel
         isLoading={props.isLoading}
         onClickCancel={props.handleCloseModal}
+        onClickSubmit={props.handleSubmit}
         actionButtonText={props.editing ? 'SAVE CHANGES' : 'ADD BLOCK'}
       />
-    </form>
+    </div>
   </Modal>
 );
 

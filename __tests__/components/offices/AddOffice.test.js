@@ -1,5 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import { ApolloError } from 'apollo-client';
 import { AddOffice } from '../../../src/components/offices/AddOffice';
 
 describe('AddOffice Component', () => {
@@ -55,7 +56,7 @@ describe('AddOffice Component', () => {
 
   it('handles handleAddOffice() when addOffice is rejected', () => {
     const props = {
-      addOffice: jest.fn(() => Promise.reject()),
+      addOffice: jest.fn(() => Promise.reject(new ApolloError({ graphQLErrors: [new Error('error')] }))),
     };
     wrapper = shallow(<AddOffice {...props} />);
 

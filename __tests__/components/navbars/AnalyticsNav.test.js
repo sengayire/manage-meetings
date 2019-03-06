@@ -17,7 +17,7 @@ import roomUsage from '../../../__mocks__/rooms/mostUsedRooms';
 jest.mock('html2canvas');
 jest.mock('jspdf');
 jest.mock('moment', () => () => ({
-  format: () => jest.fn(),
+  format: () => 'time',
   diff: jest.fn(() => 1),
 }));
 
@@ -30,6 +30,8 @@ const client = new ApolloClient({
   link: httpLink,
   cache: new InMemoryCache(),
 });
+global.URL.createObjectURL = jest.fn();
+
 
 const props = {
   leastBookedAnalytics: {
@@ -118,6 +120,7 @@ describe('AnalyticsNav state and download', () => {
       location: 'Nairobi',
     },
   };
+
   it('should update the state with least and most used rooms', () => {
     const wrapper = shallow(<AnalyticComponent
       user={user}

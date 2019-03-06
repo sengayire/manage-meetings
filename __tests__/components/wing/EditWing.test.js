@@ -1,5 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import { ApolloError } from 'apollo-client';
 import { EditWing } from '../../../src/components/wing/EditWing';
 
 describe('EditWing Component', () => {
@@ -44,7 +45,7 @@ describe('EditWing Component', () => {
 
   it('should handle handleEdit wing() when editWing is rejected', () => {
     wrapper.setProps({
-      editWing: jest.fn(() => Promise.reject()),
+      editWing: jest.fn(() => Promise.reject(new ApolloError({ graphQLErrors: [new Error('Error message')] }))),
     });
     wrapper.setState({
       wingName: 'Epic Wing',

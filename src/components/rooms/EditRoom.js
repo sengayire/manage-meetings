@@ -33,7 +33,7 @@ export class EditRoom extends Component {
   };
 
   static defaultProps = {
-    editRoom: PropTypes.func,
+    editRoom: () => {},
     refetch: null,
     currentPage: null,
   };
@@ -94,7 +94,7 @@ export class EditRoom extends Component {
     }).then(() => {
       this.toggleLoading();
       this.handleCloseModal();
-      notification(toastr, 'success', `Room name editted successfully to ${roomName}`)();
+      notification(toastr, 'success', `Room name edited successfully to ${roomName}`)();
       refetch({ page: currentPage });
     }).catch((err) => {
       this.toggleLoading();
