@@ -43,7 +43,7 @@ class Calendar extends Component {
   handleChange = (value) => {
     const dateTo = value.to.toString().slice(4, 15);
     const dateFrom = value.from.toString().slice(4, 15);
-    this.setState({ startDate: dateFrom, endDate: dateTo });
+    this.setState({ startDate: dateFrom, endDate: dateTo || dateFrom });
   };
 
   /**

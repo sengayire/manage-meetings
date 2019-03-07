@@ -26,6 +26,12 @@ export class AverageMeetingDurationPieChart extends React.Component {
     this.reFetchQuery();
   }
 
+  componentDidUpdate() {
+    if (!this.props.data.error && !this.props.data.loading) {
+      this.props.queryCompleted('AverageMeetingDuration');
+    }
+  }
+
   /**
    * Calculates the percentage of a particular meeting duration range.
    *
@@ -64,6 +70,7 @@ export class AverageMeetingDurationPieChart extends React.Component {
 
     return [greaterThan60, between45And60, between30And45, thirtyAndBelow];
   }
+
   /**
    * Re-fetches the query when the variables are available in the props
    *
@@ -89,12 +96,10 @@ export class AverageMeetingDurationPieChart extends React.Component {
   renderPieChart = () => {
     const { MeetingsDurationaAnalytics = [] } = this.state.analyticsForMeetingsDurations;
     const { loading, error } = this.props.data;
-    const { queryCompleted } = this.props;
 
     if (loading) return <Spinner />;
     if (error) return (<ErrorIcon />);
 
-    queryCompleted('AverageMeetingDuration');
     const options = {
       legend: {
         display: false,

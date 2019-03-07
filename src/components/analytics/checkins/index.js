@@ -13,6 +13,12 @@ import { checkinsChart, bookingsChart, cancellationsChart } from '../../../fixtu
  * @returns {JSX}
  */
 export class Checkins extends Component {
+  componentDidUpdate() {
+    if (!this.props.data.error && !this.props.data.loading) {
+      this.props.queryCompleted('Checkins');
+    }
+  }
+
   /**
    * Returns analytics data when there are no errors or
    * component is done loading
@@ -23,7 +29,6 @@ export class Checkins extends Component {
    */
   formatAnalyticsData = (analyticsData, loading, error) => {
     if (!loading && !error) {
-      this.props.queryCompleted('Checkins');
       return { ...analyticsData };
     }
     return {};

@@ -98,4 +98,26 @@ describe('Average Meeting List Component', () => {
     const component = shallow(<AverageMeetingList {...initialProps} />);
     expect(component.find('.average-table-error').text()).toBe('You cannot fetch data beyond today');
   });
+  it('should call queryCompleted when the component updates', () => {
+    const initialProps = {
+      data: {
+        error: false,
+        loading: false,
+        fetchMore: jest.fn(() => Promise.resolve()),
+        variables: {
+          startDate: 'Nov 02 2018',
+          endDate: 'Nov 03 2018',
+          page: 1,
+          perPage: 5,
+        },
+      },
+      dateValue: { isFutureDateSelected: true },
+      queryCompleted: jest.fn(),
+    };
+    jest.spyOn(AverageMeetingList.prototype, 'componentDidUpdate');
+    const component = shallow(<AverageMeetingList {...initialProps} />);
+    component.instance().componentDidUpdate();
+    expect(initialProps.queryCompleted.mock.calls.length).toBe(1);
+    expect(AverageMeetingList.prototype.componentDidUpdate.mock.calls.length).toBe(1);
+  });
 });

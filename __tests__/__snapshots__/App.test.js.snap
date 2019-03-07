@@ -14845,6 +14845,36 @@ query user ($email: String!) {
                                               </span>
                                             </button>
                                           </Button>
+                                          <div
+                                            style={
+                                              Object {
+                                                "display": "none",
+                                              }
+                                            }
+                                          >
+                                            <Calendar
+                                              classProp=""
+                                              sendData={[Function]}
+                                            >
+                                              <Button
+                                                classProp=""
+                                                handleClick={[Function]}
+                                                isDisabled={false}
+                                                title="Mar 07 2019 - Mar 07 2019"
+                                                type={2}
+                                              >
+                                                <button
+                                                  className=" btn-secondary"
+                                                  disabled={false}
+                                                  onClick={[Function]}
+                                                >
+                                                  <span>
+                                                    Mar 07 2019 - Mar 07 2019
+                                                  </span>
+                                                </button>
+                                              </Button>
+                                            </Calendar>
+                                          </div>
                                         </div>
                                       </div>
                                       <AnalyticsOverview

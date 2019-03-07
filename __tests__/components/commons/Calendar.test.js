@@ -28,6 +28,15 @@ describe('it renders correctly', () => {
     expect(wrapper.state('startDate')).toEqual(dates.from.slice(4, 15));
   });
 
+  it('should set the value of end date to start date when handleChange is called with no end date', () => {
+    const dates = {
+      from: ' Wed Nov 6 2018',
+      to: '',
+    };
+    wrapperInstance.handleChange(dates);
+    expect(wrapper.state('endDate')).toEqual(dates.from.slice(4, 15));
+  });
+
   it('should call sendDate with the right arguments', () => {
     const startDate = 'Nov 19 2018';
     const endDate = 'Nov 26 2018';

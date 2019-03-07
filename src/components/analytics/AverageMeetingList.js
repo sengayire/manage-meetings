@@ -36,6 +36,12 @@ export class AverageMeetingList extends Component {
     });
   }
 
+  componentDidUpdate() {
+    if (!this.props.data.error && !this.props.data.loading) {
+      this.props.queryCompleted('AverageMeetingList');
+    }
+  }
+
   /**
    * fetches data for the given number of pages
    *
@@ -88,11 +94,10 @@ export class AverageMeetingList extends Component {
     /* eslint no-param-reassign: "error" */
     const { analyticsForMeetingsDurations, isFetching } = this.state;
     const { loading, error } = this.props.data;
-    const { queryCompleted } = this.props;
     const { isFutureDateSelected } = this.props.dateValue;
 
     if (loading) return <QueryAnalyticsLoading />;
-    queryCompleted('AverageMeetingList');
+
     return (
       <div className="average-meeting">
         <div className="average-meeting-control">

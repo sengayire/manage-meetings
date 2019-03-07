@@ -293,7 +293,8 @@ export class AnalyticsNav extends Component {
       validatedStartDate,
       isFutureDateSelected,
     };
-
+    const style = {};
+    style.display = componentsDoneLoading.length === 3 ? 'block' : 'none';
     return (
       <Fragment>
         <div className="analytics-cover ">
@@ -321,13 +322,11 @@ export class AnalyticsNav extends Component {
               }
               type={2}
             />
-            {
-              (componentsDoneLoading.length === 3) ?
-                <Calendar
-                  sendData={this.sendDateData}
-                />
-                : null
-            }
+            <div style={style}>
+              <Calendar
+                sendData={this.sendDateData}
+              />
+            </div>
             {
               !fetching && !error &&
               <ExportButton

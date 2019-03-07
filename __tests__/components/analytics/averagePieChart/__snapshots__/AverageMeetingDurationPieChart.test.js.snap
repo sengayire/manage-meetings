@@ -46,15 +46,7 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
     }
   }
   name="data"
-  queryCompleted={
-    [MockFunction] {
-      "calls": Array [
-        Array [
-          "AverageMeetingDuration",
-        ],
-      ],
-    }
-  }
+  queryCompleted={[MockFunction]}
 >
   <article
     className="pie-chart"

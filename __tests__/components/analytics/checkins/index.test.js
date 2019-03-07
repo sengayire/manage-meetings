@@ -20,5 +20,13 @@ describe('Checkins component', () => {
   it('contains three doughnut charts', () => {
     expect(wrapper.find('.checkins').children()).toHaveLength(3);
   });
+
+  it('should call queryCompleted when the component updates', () => {
+    jest.spyOn(Checkins.prototype, 'componentDidUpdate');
+    const component = shallow(<Checkins {...props} />);
+    component.instance().componentDidUpdate();
+    expect(props.queryCompleted.mock.calls.length).toBe(1);
+    expect(Checkins.prototype.componentDidUpdate.mock.calls.length).toBe(1);
+  });
 });
 
