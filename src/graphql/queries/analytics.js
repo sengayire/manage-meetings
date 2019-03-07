@@ -43,7 +43,7 @@ const CHECKINS_BOOKINGS_CANCELLATIONS_PERCENTAGES = gql`
 
 const MOST_BOOKED_ROOMS_ANALYTICS = gql`
   query analyticsForMostBookedRooms($startDate: String!, $endDate: String!){
-    analyticsForMostBookedRooms(startDate: $startDate, endDate: $endDate){
+    analyticsForBookedRooms(startDate: $startDate, endDate: $endDate, limit:10, criteria:"most_booked"){
       analytics{
         roomName
         meetings
@@ -55,7 +55,7 @@ const MOST_BOOKED_ROOMS_ANALYTICS = gql`
 
 const LEAST_BOOKED_ROOMS_ANALYTICS = gql`
   query analyticsForLeastBookedRooms($startDate: String!, $endDate: String!){
-    analyticsForLeastBookedRooms(startDate: $startDate, endDate: $endDate){
+    analyticsForBookedRooms(startDate: $startDate, endDate: $endDate, limit:10, criteria:"least_booked"){
       analytics{
         roomName
         meetings

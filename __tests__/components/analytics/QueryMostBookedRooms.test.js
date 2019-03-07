@@ -14,7 +14,7 @@ const mock =
     },
     result: {
       data: {
-        analyticsForMostBookedRooms: {
+        analyticsForBookedRooms: {
           analytics: roomUsage,
         },
       },

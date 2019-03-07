@@ -48,12 +48,12 @@ export class AnalyticsNav extends Component {
     this.setState({ fetching: true });
     const { loading, error } = props.leastBookedAnalytics;
     if (!loading && !error) {
-      const { analytics } = props.leastBookedAnalytics.analyticsForLeastBookedRooms;
+      const { analytics } = props.leastBookedAnalytics.analyticsForBookedRooms;
       this.setState({ leastBookedRooms: analytics, fetching: false });
     }
 
     if (!props.mostBookedAnalytics.loading && !props.mostBookedAnalytics.error) {
-      const { analytics } = props.mostBookedAnalytics.analyticsForMostBookedRooms;
+      const { analytics } = props.mostBookedAnalytics.analyticsForBookedRooms;
       this.setState({ mostBookedRooms: analytics, fetching: false });
     }
   }

@@ -22,7 +22,7 @@ const QueryMostBookedRooms = ({ dateValue }) => (
       let bookedRoomsList = [];
 
       if (!loading && !error) {
-        const { analytics } = data.analyticsForMostBookedRooms;
+        const { analytics } = data.analyticsForBookedRooms;
         bookedRoomsList = analytics;
       }
 

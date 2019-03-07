@@ -37,12 +37,12 @@ const props = {
   leastBookedAnalytics: {
     loading: false,
     refetch: jest.fn(() => new Promise(resolve => resolve())),
-    analyticsForLeastBookedRooms: { analytics: roomUsage },
+    analyticsForBookedRooms: { analytics: roomUsage },
   },
   mostBookedAnalytics: {
     loading: false,
     refetch: jest.fn(() => new Promise(resolve => resolve())),
-    analyticsForMostBookedRooms: { analytics: roomUsage },
+    analyticsForBookedRooms: { analytics: roomUsage },
   },
   dateValue: {
     startDate: 'start date',
@@ -54,12 +54,12 @@ const newProps = {
   leastBookedAnalytics: {
     loading: true,
     refetch: jest.fn(() => new Promise(resolve => resolve())),
-    analyticsForLeastBookedRooms: { analytics: roomUsage },
+    analyticsForBookedRooms: { analytics: roomUsage },
   },
   mostBookedAnalytics: {
     loading: true,
     refetch: jest.fn(() => new Promise(resolve => resolve())),
-    analyticsForMostBookedRooms: { analytics: roomUsage },
+    analyticsForBookedRooms: { analytics: roomUsage },
   },
   dateValue: {
     startDate: 'start date',
