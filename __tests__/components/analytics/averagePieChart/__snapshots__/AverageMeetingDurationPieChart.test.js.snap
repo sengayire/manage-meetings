@@ -126,7 +126,7 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
               >
                 <img
                   alt="help icon"
-                  src="test-file-stub"
+                  src="https://firebasestorage.googleapis.com/v0/b/learning-map-app.appspot.com/o/MrmFrontImages%2Fhelp_outline_24px.svg?alt=media&token=839e3137-c29e-463d-9a68-361e28794911"
                 />
               </a>
             </Link>
@@ -262,7 +262,7 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
                                   "index": 0,
                                   "lineWidth": 4,
                                   "strokeStyle": "#ffffff",
-                                  "text": "Above 60 Minutes",
+                                  "text": "Above 60 Minutes in %",
                                 },
                                 Object {
                                   "fillStyle": "#fbcc7a",
@@ -270,7 +270,7 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
                                   "index": 1,
                                   "lineWidth": 4,
                                   "strokeStyle": "#fff",
-                                  "text": "45-60 Minutes",
+                                  "text": "45-60 Minutes in %",
                                 },
                                 Object {
                                   "fillStyle": "#ffebcd",
@@ -278,7 +278,7 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
                                   "index": 2,
                                   "lineWidth": 4,
                                   "strokeStyle": "#fff",
-                                  "text": "30-45 Minutes",
+                                  "text": "30-45 Minutes in %",
                                 },
                                 Object {
                                   "fillStyle": "#eff3c6",
@@ -286,7 +286,7 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
                                   "index": 3,
                                   "lineWidth": 4,
                                   "strokeStyle": "#fff",
-                                  "text": "Below 30 minutes",
+                                  "text": "Below 30 minutes in %",
                                 },
                               ],
                               "margins": Object {
@@ -698,7 +698,7 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
                                 "index": 0,
                                 "lineWidth": 4,
                                 "strokeStyle": "#ffffff",
-                                "text": "Above 60 Minutes",
+                                "text": "Above 60 Minutes in %",
                               },
                               Object {
                                 "fillStyle": "#fbcc7a",
@@ -706,7 +706,7 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
                                 "index": 1,
                                 "lineWidth": 4,
                                 "strokeStyle": "#fff",
-                                "text": "45-60 Minutes",
+                                "text": "45-60 Minutes in %",
                               },
                               Object {
                                 "fillStyle": "#ffebcd",
@@ -714,7 +714,7 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
                                 "index": 2,
                                 "lineWidth": 4,
                                 "strokeStyle": "#fff",
-                                "text": "30-45 Minutes",
+                                "text": "30-45 Minutes in %",
                               },
                               Object {
                                 "fillStyle": "#eff3c6",
@@ -722,7 +722,7 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
                                 "index": 3,
                                 "lineWidth": 4,
                                 "strokeStyle": "#fff",
-                                "text": "Below 30 minutes",
+                                "text": "Below 30 minutes in %",
                               },
                             ],
                             "margins": Object {
@@ -1208,7 +1208,7 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
                                     "index": 0,
                                     "lineWidth": 4,
                                     "strokeStyle": "#ffffff",
-                                    "text": "Above 60 Minutes",
+                                    "text": "Above 60 Minutes in %",
                                   },
                                   Object {
                                     "fillStyle": "#fbcc7a",
@@ -1216,7 +1216,7 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
                                     "index": 1,
                                     "lineWidth": 4,
                                     "strokeStyle": "#fff",
-                                    "text": "45-60 Minutes",
+                                    "text": "45-60 Minutes in %",
                                   },
                                   Object {
                                     "fillStyle": "#ffebcd",
@@ -1224,7 +1224,7 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
                                     "index": 2,
                                     "lineWidth": 4,
                                     "strokeStyle": "#fff",
-                                    "text": "30-45 Minutes",
+                                    "text": "30-45 Minutes in %",
                                   },
                                   Object {
                                     "fillStyle": "#eff3c6",
@@ -1232,7 +1232,7 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
                                     "index": 3,
                                     "lineWidth": 4,
                                     "strokeStyle": "#fff",
-                                    "text": "Below 30 minutes",
+                                    "text": "Below 30 minutes in %",
                                   },
                                 ],
                                 "margins": Object {
@@ -1644,7 +1644,7 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
                                   "index": 0,
                                   "lineWidth": 4,
                                   "strokeStyle": "#ffffff",
-                                  "text": "Above 60 Minutes",
+                                  "text": "Above 60 Minutes in %",
                                 },
                                 Object {
                                   "fillStyle": "#fbcc7a",
@@ -1652,7 +1652,7 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
                                   "index": 1,
                                   "lineWidth": 4,
                                   "strokeStyle": "#fff",
-                                  "text": "45-60 Minutes",
+                                  "text": "45-60 Minutes in %",
                                 },
                                 Object {
                                   "fillStyle": "#ffebcd",
@@ -1660,7 +1660,7 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
                                   "index": 2,
                                   "lineWidth": 4,
                                   "strokeStyle": "#fff",
-                                  "text": "30-45 Minutes",
+                                  "text": "30-45 Minutes in %",
                                 },
                                 Object {
                                   "fillStyle": "#eff3c6",
@@ -1668,7 +1668,7 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
                                   "index": 3,
                                   "lineWidth": 4,
                                   "strokeStyle": "#fff",
-                                  "text": "Below 30 minutes",
+                                  "text": "Below 30 minutes in %",
                                 },
                               ],
                               "margins": Object {
@@ -2180,7 +2180,7 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
                                     "index": 0,
                                     "lineWidth": 4,
                                     "strokeStyle": "#ffffff",
-                                    "text": "Above 60 Minutes",
+                                    "text": "Above 60 Minutes in %",
                                   },
                                   Object {
                                     "fillStyle": "#fbcc7a",
@@ -2188,7 +2188,7 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
                                     "index": 1,
                                     "lineWidth": 4,
                                     "strokeStyle": "#fff",
-                                    "text": "45-60 Minutes",
+                                    "text": "45-60 Minutes in %",
                                   },
                                   Object {
                                     "fillStyle": "#ffebcd",
@@ -2196,7 +2196,7 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
                                     "index": 2,
                                     "lineWidth": 4,
                                     "strokeStyle": "#fff",
-                                    "text": "30-45 Minutes",
+                                    "text": "30-45 Minutes in %",
                                   },
                                   Object {
                                     "fillStyle": "#eff3c6",
@@ -2204,7 +2204,7 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
                                     "index": 3,
                                     "lineWidth": 4,
                                     "strokeStyle": "#fff",
-                                    "text": "Below 30 minutes",
+                                    "text": "Below 30 minutes in %",
                                   },
                                 ],
                                 "margins": Object {
@@ -2616,7 +2616,7 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
                                   "index": 0,
                                   "lineWidth": 4,
                                   "strokeStyle": "#ffffff",
-                                  "text": "Above 60 Minutes",
+                                  "text": "Above 60 Minutes in %",
                                 },
                                 Object {
                                   "fillStyle": "#fbcc7a",
@@ -2624,7 +2624,7 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
                                   "index": 1,
                                   "lineWidth": 4,
                                   "strokeStyle": "#fff",
-                                  "text": "45-60 Minutes",
+                                  "text": "45-60 Minutes in %",
                                 },
                                 Object {
                                   "fillStyle": "#ffebcd",
@@ -2632,7 +2632,7 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
                                   "index": 2,
                                   "lineWidth": 4,
                                   "strokeStyle": "#fff",
-                                  "text": "30-45 Minutes",
+                                  "text": "30-45 Minutes in %",
                                 },
                                 Object {
                                   "fillStyle": "#eff3c6",
@@ -2640,7 +2640,7 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
                                   "index": 3,
                                   "lineWidth": 4,
                                   "strokeStyle": "#fff",
-                                  "text": "Below 30 minutes",
+                                  "text": "Below 30 minutes in %",
                                 },
                               ],
                               "margins": Object {
@@ -3152,7 +3152,7 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
                                     "index": 0,
                                     "lineWidth": 4,
                                     "strokeStyle": "#ffffff",
-                                    "text": "Above 60 Minutes",
+                                    "text": "Above 60 Minutes in %",
                                   },
                                   Object {
                                     "fillStyle": "#fbcc7a",
@@ -3160,7 +3160,7 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
                                     "index": 1,
                                     "lineWidth": 4,
                                     "strokeStyle": "#fff",
-                                    "text": "45-60 Minutes",
+                                    "text": "45-60 Minutes in %",
                                   },
                                   Object {
                                     "fillStyle": "#ffebcd",
@@ -3168,7 +3168,7 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
                                     "index": 2,
                                     "lineWidth": 4,
                                     "strokeStyle": "#fff",
-                                    "text": "30-45 Minutes",
+                                    "text": "30-45 Minutes in %",
                                   },
                                   Object {
                                     "fillStyle": "#eff3c6",
@@ -3176,7 +3176,7 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
                                     "index": 3,
                                     "lineWidth": 4,
                                     "strokeStyle": "#fff",
-                                    "text": "Below 30 minutes",
+                                    "text": "Below 30 minutes in %",
                                   },
                                 ],
                                 "margins": Object {
@@ -3588,7 +3588,7 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
                                   "index": 0,
                                   "lineWidth": 4,
                                   "strokeStyle": "#ffffff",
-                                  "text": "Above 60 Minutes",
+                                  "text": "Above 60 Minutes in %",
                                 },
                                 Object {
                                   "fillStyle": "#fbcc7a",
@@ -3596,7 +3596,7 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
                                   "index": 1,
                                   "lineWidth": 4,
                                   "strokeStyle": "#fff",
-                                  "text": "45-60 Minutes",
+                                  "text": "45-60 Minutes in %",
                                 },
                                 Object {
                                   "fillStyle": "#ffebcd",
@@ -3604,7 +3604,7 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
                                   "index": 2,
                                   "lineWidth": 4,
                                   "strokeStyle": "#fff",
-                                  "text": "30-45 Minutes",
+                                  "text": "30-45 Minutes in %",
                                 },
                                 Object {
                                   "fillStyle": "#eff3c6",
@@ -3612,7 +3612,7 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
                                   "index": 3,
                                   "lineWidth": 4,
                                   "strokeStyle": "#fff",
-                                  "text": "Below 30 minutes",
+                                  "text": "Below 30 minutes in %",
                                 },
                               ],
                               "margins": Object {
@@ -4124,7 +4124,7 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
                                     "index": 0,
                                     "lineWidth": 4,
                                     "strokeStyle": "#ffffff",
-                                    "text": "Above 60 Minutes",
+                                    "text": "Above 60 Minutes in %",
                                   },
                                   Object {
                                     "fillStyle": "#fbcc7a",
@@ -4132,7 +4132,7 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
                                     "index": 1,
                                     "lineWidth": 4,
                                     "strokeStyle": "#fff",
-                                    "text": "45-60 Minutes",
+                                    "text": "45-60 Minutes in %",
                                   },
                                   Object {
                                     "fillStyle": "#ffebcd",
@@ -4140,7 +4140,7 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
                                     "index": 2,
                                     "lineWidth": 4,
                                     "strokeStyle": "#fff",
-                                    "text": "30-45 Minutes",
+                                    "text": "30-45 Minutes in %",
                                   },
                                   Object {
                                     "fillStyle": "#eff3c6",
@@ -4148,7 +4148,7 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
                                     "index": 3,
                                     "lineWidth": 4,
                                     "strokeStyle": "#fff",
-                                    "text": "Below 30 minutes",
+                                    "text": "Below 30 minutes in %",
                                   },
                                 ],
                                 "margins": Object {
@@ -4560,7 +4560,7 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
                                   "index": 0,
                                   "lineWidth": 4,
                                   "strokeStyle": "#ffffff",
-                                  "text": "Above 60 Minutes",
+                                  "text": "Above 60 Minutes in %",
                                 },
                                 Object {
                                   "fillStyle": "#fbcc7a",
@@ -4568,7 +4568,7 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
                                   "index": 1,
                                   "lineWidth": 4,
                                   "strokeStyle": "#fff",
-                                  "text": "45-60 Minutes",
+                                  "text": "45-60 Minutes in %",
                                 },
                                 Object {
                                   "fillStyle": "#ffebcd",
@@ -4576,7 +4576,7 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
                                   "index": 2,
                                   "lineWidth": 4,
                                   "strokeStyle": "#fff",
-                                  "text": "30-45 Minutes",
+                                  "text": "30-45 Minutes in %",
                                 },
                                 Object {
                                   "fillStyle": "#eff3c6",
@@ -4584,7 +4584,7 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
                                   "index": 3,
                                   "lineWidth": 4,
                                   "strokeStyle": "#fff",
-                                  "text": "Below 30 minutes",
+                                  "text": "Below 30 minutes in %",
                                 },
                               ],
                               "margins": Object {
@@ -5015,10 +5015,10 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
                 },
               ],
               "labels": Array [
-                "Above 60 Minutes",
-                "45-60 Minutes",
-                "30-45 Minutes",
-                "Below 30 minutes",
+                "Above 60 Minutes in %",
+                "45-60 Minutes in %",
+                "30-45 Minutes in %",
+                "Below 30 minutes in %",
               ],
             }
           }
@@ -5157,7 +5157,7 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
                                     "index": 0,
                                     "lineWidth": 4,
                                     "strokeStyle": "#ffffff",
-                                    "text": "Above 60 Minutes",
+                                    "text": "Above 60 Minutes in %",
                                   },
                                   Object {
                                     "fillStyle": "#fbcc7a",
@@ -5165,7 +5165,7 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
                                     "index": 1,
                                     "lineWidth": 4,
                                     "strokeStyle": "#fff",
-                                    "text": "45-60 Minutes",
+                                    "text": "45-60 Minutes in %",
                                   },
                                   Object {
                                     "fillStyle": "#ffebcd",
@@ -5173,7 +5173,7 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
                                     "index": 2,
                                     "lineWidth": 4,
                                     "strokeStyle": "#fff",
-                                    "text": "30-45 Minutes",
+                                    "text": "30-45 Minutes in %",
                                   },
                                   Object {
                                     "fillStyle": "#eff3c6",
@@ -5181,7 +5181,7 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
                                     "index": 3,
                                     "lineWidth": 4,
                                     "strokeStyle": "#fff",
-                                    "text": "Below 30 minutes",
+                                    "text": "Below 30 minutes in %",
                                   },
                                 ],
                                 "margins": Object {
@@ -5593,7 +5593,7 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
                                   "index": 0,
                                   "lineWidth": 4,
                                   "strokeStyle": "#ffffff",
-                                  "text": "Above 60 Minutes",
+                                  "text": "Above 60 Minutes in %",
                                 },
                                 Object {
                                   "fillStyle": "#fbcc7a",
@@ -5601,7 +5601,7 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
                                   "index": 1,
                                   "lineWidth": 4,
                                   "strokeStyle": "#fff",
-                                  "text": "45-60 Minutes",
+                                  "text": "45-60 Minutes in %",
                                 },
                                 Object {
                                   "fillStyle": "#ffebcd",
@@ -5609,7 +5609,7 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
                                   "index": 2,
                                   "lineWidth": 4,
                                   "strokeStyle": "#fff",
-                                  "text": "30-45 Minutes",
+                                  "text": "30-45 Minutes in %",
                                 },
                                 Object {
                                   "fillStyle": "#eff3c6",
@@ -5617,7 +5617,7 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
                                   "index": 3,
                                   "lineWidth": 4,
                                   "strokeStyle": "#fff",
-                                  "text": "Below 30 minutes",
+                                  "text": "Below 30 minutes in %",
                                 },
                               ],
                               "margins": Object {
@@ -6103,7 +6103,7 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
                                       "index": 0,
                                       "lineWidth": 4,
                                       "strokeStyle": "#ffffff",
-                                      "text": "Above 60 Minutes",
+                                      "text": "Above 60 Minutes in %",
                                     },
                                     Object {
                                       "fillStyle": "#fbcc7a",
@@ -6111,7 +6111,7 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
                                       "index": 1,
                                       "lineWidth": 4,
                                       "strokeStyle": "#fff",
-                                      "text": "45-60 Minutes",
+                                      "text": "45-60 Minutes in %",
                                     },
                                     Object {
                                       "fillStyle": "#ffebcd",
@@ -6119,7 +6119,7 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
                                       "index": 2,
                                       "lineWidth": 4,
                                       "strokeStyle": "#fff",
-                                      "text": "30-45 Minutes",
+                                      "text": "30-45 Minutes in %",
                                     },
                                     Object {
                                       "fillStyle": "#eff3c6",
@@ -6127,7 +6127,7 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
                                       "index": 3,
                                       "lineWidth": 4,
                                       "strokeStyle": "#fff",
-                                      "text": "Below 30 minutes",
+                                      "text": "Below 30 minutes in %",
                                     },
                                   ],
                                   "margins": Object {
@@ -6539,7 +6539,7 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
                                     "index": 0,
                                     "lineWidth": 4,
                                     "strokeStyle": "#ffffff",
-                                    "text": "Above 60 Minutes",
+                                    "text": "Above 60 Minutes in %",
                                   },
                                   Object {
                                     "fillStyle": "#fbcc7a",
@@ -6547,7 +6547,7 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
                                     "index": 1,
                                     "lineWidth": 4,
                                     "strokeStyle": "#fff",
-                                    "text": "45-60 Minutes",
+                                    "text": "45-60 Minutes in %",
                                   },
                                   Object {
                                     "fillStyle": "#ffebcd",
@@ -6555,7 +6555,7 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
                                     "index": 2,
                                     "lineWidth": 4,
                                     "strokeStyle": "#fff",
-                                    "text": "30-45 Minutes",
+                                    "text": "30-45 Minutes in %",
                                   },
                                   Object {
                                     "fillStyle": "#eff3c6",
@@ -6563,7 +6563,7 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
                                     "index": 3,
                                     "lineWidth": 4,
                                     "strokeStyle": "#fff",
-                                    "text": "Below 30 minutes",
+                                    "text": "Below 30 minutes in %",
                                   },
                                 ],
                                 "margins": Object {
@@ -7075,7 +7075,7 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
                                       "index": 0,
                                       "lineWidth": 4,
                                       "strokeStyle": "#ffffff",
-                                      "text": "Above 60 Minutes",
+                                      "text": "Above 60 Minutes in %",
                                     },
                                     Object {
                                       "fillStyle": "#fbcc7a",
@@ -7083,7 +7083,7 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
                                       "index": 1,
                                       "lineWidth": 4,
                                       "strokeStyle": "#fff",
-                                      "text": "45-60 Minutes",
+                                      "text": "45-60 Minutes in %",
                                     },
                                     Object {
                                       "fillStyle": "#ffebcd",
@@ -7091,7 +7091,7 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
                                       "index": 2,
                                       "lineWidth": 4,
                                       "strokeStyle": "#fff",
-                                      "text": "30-45 Minutes",
+                                      "text": "30-45 Minutes in %",
                                     },
                                     Object {
                                       "fillStyle": "#eff3c6",
@@ -7099,7 +7099,7 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
                                       "index": 3,
                                       "lineWidth": 4,
                                       "strokeStyle": "#fff",
-                                      "text": "Below 30 minutes",
+                                      "text": "Below 30 minutes in %",
                                     },
                                   ],
                                   "margins": Object {
@@ -7511,7 +7511,7 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
                                     "index": 0,
                                     "lineWidth": 4,
                                     "strokeStyle": "#ffffff",
-                                    "text": "Above 60 Minutes",
+                                    "text": "Above 60 Minutes in %",
                                   },
                                   Object {
                                     "fillStyle": "#fbcc7a",
@@ -7519,7 +7519,7 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
                                     "index": 1,
                                     "lineWidth": 4,
                                     "strokeStyle": "#fff",
-                                    "text": "45-60 Minutes",
+                                    "text": "45-60 Minutes in %",
                                   },
                                   Object {
                                     "fillStyle": "#ffebcd",
@@ -7527,7 +7527,7 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
                                     "index": 2,
                                     "lineWidth": 4,
                                     "strokeStyle": "#fff",
-                                    "text": "30-45 Minutes",
+                                    "text": "30-45 Minutes in %",
                                   },
                                   Object {
                                     "fillStyle": "#eff3c6",
@@ -7535,7 +7535,7 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
                                     "index": 3,
                                     "lineWidth": 4,
                                     "strokeStyle": "#fff",
-                                    "text": "Below 30 minutes",
+                                    "text": "Below 30 minutes in %",
                                   },
                                 ],
                                 "margins": Object {
@@ -8047,7 +8047,7 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
                                       "index": 0,
                                       "lineWidth": 4,
                                       "strokeStyle": "#ffffff",
-                                      "text": "Above 60 Minutes",
+                                      "text": "Above 60 Minutes in %",
                                     },
                                     Object {
                                       "fillStyle": "#fbcc7a",
@@ -8055,7 +8055,7 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
                                       "index": 1,
                                       "lineWidth": 4,
                                       "strokeStyle": "#fff",
-                                      "text": "45-60 Minutes",
+                                      "text": "45-60 Minutes in %",
                                     },
                                     Object {
                                       "fillStyle": "#ffebcd",
@@ -8063,7 +8063,7 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
                                       "index": 2,
                                       "lineWidth": 4,
                                       "strokeStyle": "#fff",
-                                      "text": "30-45 Minutes",
+                                      "text": "30-45 Minutes in %",
                                     },
                                     Object {
                                       "fillStyle": "#eff3c6",
@@ -8071,7 +8071,7 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
                                       "index": 3,
                                       "lineWidth": 4,
                                       "strokeStyle": "#fff",
-                                      "text": "Below 30 minutes",
+                                      "text": "Below 30 minutes in %",
                                     },
                                   ],
                                   "margins": Object {
@@ -8483,7 +8483,7 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
                                     "index": 0,
                                     "lineWidth": 4,
                                     "strokeStyle": "#ffffff",
-                                    "text": "Above 60 Minutes",
+                                    "text": "Above 60 Minutes in %",
                                   },
                                   Object {
                                     "fillStyle": "#fbcc7a",
@@ -8491,7 +8491,7 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
                                     "index": 1,
                                     "lineWidth": 4,
                                     "strokeStyle": "#fff",
-                                    "text": "45-60 Minutes",
+                                    "text": "45-60 Minutes in %",
                                   },
                                   Object {
                                     "fillStyle": "#ffebcd",
@@ -8499,7 +8499,7 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
                                     "index": 2,
                                     "lineWidth": 4,
                                     "strokeStyle": "#fff",
-                                    "text": "30-45 Minutes",
+                                    "text": "30-45 Minutes in %",
                                   },
                                   Object {
                                     "fillStyle": "#eff3c6",
@@ -8507,7 +8507,7 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
                                     "index": 3,
                                     "lineWidth": 4,
                                     "strokeStyle": "#fff",
-                                    "text": "Below 30 minutes",
+                                    "text": "Below 30 minutes in %",
                                   },
                                 ],
                                 "margins": Object {
@@ -9019,7 +9019,7 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
                                       "index": 0,
                                       "lineWidth": 4,
                                       "strokeStyle": "#ffffff",
-                                      "text": "Above 60 Minutes",
+                                      "text": "Above 60 Minutes in %",
                                     },
                                     Object {
                                       "fillStyle": "#fbcc7a",
@@ -9027,7 +9027,7 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
                                       "index": 1,
                                       "lineWidth": 4,
                                       "strokeStyle": "#fff",
-                                      "text": "45-60 Minutes",
+                                      "text": "45-60 Minutes in %",
                                     },
                                     Object {
                                       "fillStyle": "#ffebcd",
@@ -9035,7 +9035,7 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
                                       "index": 2,
                                       "lineWidth": 4,
                                       "strokeStyle": "#fff",
-                                      "text": "30-45 Minutes",
+                                      "text": "30-45 Minutes in %",
                                     },
                                     Object {
                                       "fillStyle": "#eff3c6",
@@ -9043,7 +9043,7 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
                                       "index": 3,
                                       "lineWidth": 4,
                                       "strokeStyle": "#fff",
-                                      "text": "Below 30 minutes",
+                                      "text": "Below 30 minutes in %",
                                     },
                                   ],
                                   "margins": Object {
@@ -9455,7 +9455,7 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
                                     "index": 0,
                                     "lineWidth": 4,
                                     "strokeStyle": "#ffffff",
-                                    "text": "Above 60 Minutes",
+                                    "text": "Above 60 Minutes in %",
                                   },
                                   Object {
                                     "fillStyle": "#fbcc7a",
@@ -9463,7 +9463,7 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
                                     "index": 1,
                                     "lineWidth": 4,
                                     "strokeStyle": "#fff",
-                                    "text": "45-60 Minutes",
+                                    "text": "45-60 Minutes in %",
                                   },
                                   Object {
                                     "fillStyle": "#ffebcd",
@@ -9471,7 +9471,7 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
                                     "index": 2,
                                     "lineWidth": 4,
                                     "strokeStyle": "#fff",
-                                    "text": "30-45 Minutes",
+                                    "text": "30-45 Minutes in %",
                                   },
                                   Object {
                                     "fillStyle": "#eff3c6",
@@ -9479,7 +9479,7 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
                                     "index": 3,
                                     "lineWidth": 4,
                                     "strokeStyle": "#fff",
-                                    "text": "Below 30 minutes",
+                                    "text": "Below 30 minutes in %",
                                   },
                                 ],
                                 "margins": Object {
@@ -9910,10 +9910,10 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
                   },
                 ],
                 "labels": Array [
-                  "Above 60 Minutes",
-                  "45-60 Minutes",
-                  "30-45 Minutes",
-                  "Below 30 minutes",
+                  "Above 60 Minutes in %",
+                  "45-60 Minutes in %",
+                  "30-45 Minutes in %",
+                  "Below 30 minutes in %",
                 ],
               }
             }

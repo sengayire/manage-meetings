@@ -218,9 +218,9 @@ describe('AddRoomNairobi', () => {
     let response;
     const mockProps = {
       officeDetails: {},
-      epicTowerMutation: jest.fn(() => Promise.resolve(response)),
+      dojoMutation: jest.fn(() => Promise.resolve(response)),
     };
-    const epicTowerWrapper = shallow(<AddRoomNairobi {...mockProps} />);
+    const dojoMutationWrapper = shallow(<AddRoomNairobi {...mockProps} />);
     window.URL.createObjectURL = jest.fn(() => 'upload/image-name');
     const files = [
       {
@@ -232,9 +232,9 @@ describe('AddRoomNairobi', () => {
     ];
     const imageUrl = 'upload/image-name.jpeg';
     const thumbnailName = 'image-name.jpeg';
-    epicTowerWrapper.instance().updateThumbnailState(files, imageUrl, thumbnailName);
-    expect(epicTowerWrapper.state().thumbnailName).toEqual('image-name.jpeg');
-    expect(epicTowerWrapper.state().imageUrl).toEqual('upload/image-name.jpeg');
+    dojoMutationWrapper.instance().updateThumbnailState(files, imageUrl, thumbnailName);
+    expect(dojoMutationWrapper.state().thumbnailName).toEqual('image-name.jpeg');
+    expect(dojoMutationWrapper.state().imageUrl).toEqual('upload/image-name.jpeg');
   });
 
   it('should display error on failure to upload', () => {

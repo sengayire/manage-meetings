@@ -48,7 +48,7 @@ exports[`Login component should redirect to another page when a token is present
       <input
         alt="Login With Your Email"
         className="btn-signin"
-        src="test-file-stub"
+        src="https://firebasestorage.googleapis.com/v0/b/learning-map-app.appspot.com/o/MrmFrontImages%2FButton.png?alt=media&token=fb7692b6-1465-47c5-94f6-c94aff31c275"
         type="image"
       />
     </a>
@@ -56,7 +56,7 @@ exports[`Login component should redirect to another page when a token is present
   <img
     alt="Dark Tablet"
     id="dark-tablet"
-    src="test-file-stub"
+    src="https://firebasestorage.googleapis.com/v0/b/learning-map-app.appspot.com/o/MrmFrontImages%2FDark%20Tablet.png?alt=media&token=75ad56c4-f7f1-4322-91ce-b4850fa0eeb3"
   />
 </Login>
 `;
@@ -103,7 +103,7 @@ exports[`Login component should redirect to another page when a user successfull
       <input
         alt="Login With Your Email"
         className="btn-signin"
-        src="test-file-stub"
+        src="https://firebasestorage.googleapis.com/v0/b/learning-map-app.appspot.com/o/MrmFrontImages%2FButton.png?alt=media&token=fb7692b6-1465-47c5-94f6-c94aff31c275"
         type="image"
       />
     </a>
@@ -111,7 +111,7 @@ exports[`Login component should redirect to another page when a user successfull
   <img
     alt="Dark Tablet"
     id="dark-tablet"
-    src="test-file-stub"
+    src="https://firebasestorage.googleapis.com/v0/b/learning-map-app.appspot.com/o/MrmFrontImages%2FDark%20Tablet.png?alt=media&token=75ad56c4-f7f1-4322-91ce-b4850fa0eeb3"
   />
 </Login>
 `;

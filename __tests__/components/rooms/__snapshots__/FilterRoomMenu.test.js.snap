@@ -7319,7 +7319,6 @@ exports[`FilterButton renders correctly from memory 1`] = `
                                               <img
                                                 alt="up"
                                                 name="up"
-                                                src="test-file-stub"
                                               />
                                             </button>
                                             <button
@@ -7330,7 +7329,6 @@ exports[`FilterButton renders correctly from memory 1`] = `
                                               <img
                                                 alt="down"
                                                 name="down"
-                                                src="test-file-stub"
                                               />
                                             </button>
                                           </div>

@@ -7,7 +7,7 @@ exports[`LoginButton should should render properly 1`] = `
   <input
     alt="Login With Your Email"
     className="btn-signin"
-    src="test-file-stub"
+    src="https://firebasestorage.googleapis.com/v0/b/learning-map-app.appspot.com/o/MrmFrontImages%2FButton.png?alt=media&token=fb7692b6-1465-47c5-94f6-c94aff31c275"
     type="image"
   />
 </a>
@@ -20,7 +20,7 @@ exports[`LoginButton should should render undefined when no environment variable
   <input
     alt="Login With Your Email"
     className="btn-signin"
-    src="test-file-stub"
+    src="https://firebasestorage.googleapis.com/v0/b/learning-map-app.appspot.com/o/MrmFrontImages%2FButton.png?alt=media&token=fb7692b6-1465-47c5-94f6-c94aff31c275"
     type="image"
   />
 </a>

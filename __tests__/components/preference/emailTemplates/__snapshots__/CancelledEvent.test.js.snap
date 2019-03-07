@@ -13,7 +13,7 @@ exports[`Cancelled Event Component should render properly 1`] = `
       <img
         alt=""
         className="email-logo"
-        src="test-file-stub"
+        src="https://firebasestorage.googleapis.com/v0/b/learning-map-app.appspot.com/o/MrmFrontImages%2Fconverge_logo.svg?alt=media&token=cd6a1244-91bb-4a1b-8d74-696bd42053ac"
       />
       <p
         className="email-header-title"

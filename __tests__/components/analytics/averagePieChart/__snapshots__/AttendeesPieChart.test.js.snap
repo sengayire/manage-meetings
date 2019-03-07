@@ -25,7 +25,7 @@ exports[`Attendees Pie Chart Component renders correctly from memory 1`] = `
     >
       <img
         alt="help icon"
-        src="test-file-stub"
+        src="https://firebasestorage.googleapis.com/v0/b/learning-map-app.appspot.com/o/MrmFrontImages%2Fhelp_outline_24px.svg?alt=media&token=839e3137-c29e-463d-9a68-361e28794911"
       />
     </ThemedTooltippedComponent>
   </section>
@@ -34,7 +34,6 @@ exports[`Attendees Pie Chart Component renders correctly from memory 1`] = `
   >
     <img
       alt="average meeting chart"
-      src="test-file-stub"
     />
     <section
       className="chart-details"
@@ -87,7 +86,7 @@ exports[`Attendees Pie Chart Component should be able to hover 1`] = `
     >
       <img
         alt="help icon"
-        src="test-file-stub"
+        src="https://firebasestorage.googleapis.com/v0/b/learning-map-app.appspot.com/o/MrmFrontImages%2Fhelp_outline_24px.svg?alt=media&token=839e3137-c29e-463d-9a68-361e28794911"
       />
     </ThemedTooltippedComponent>
   </section>
@@ -96,7 +95,6 @@ exports[`Attendees Pie Chart Component should be able to hover 1`] = `
   >
     <img
       alt="average meeting chart"
-      src="test-file-stub"
     />
     <section
       className="chart-details"
@@ -149,7 +147,7 @@ exports[`Attendees Pie Chart Component should be able to hover 2`] = `
     >
       <img
         alt="help icon"
-        src="test-file-stub"
+        src="https://firebasestorage.googleapis.com/v0/b/learning-map-app.appspot.com/o/MrmFrontImages%2Fhelp_outline_24px.svg?alt=media&token=839e3137-c29e-463d-9a68-361e28794911"
       />
     </ThemedTooltippedComponent>
   </section>
@@ -158,7 +156,6 @@ exports[`Attendees Pie Chart Component should be able to hover 2`] = `
   >
     <img
       alt="average meeting chart"
-      src="test-file-stub"
     />
     <section
       className="chart-details"

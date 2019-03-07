@@ -18,7 +18,7 @@ exports[`TopMenu Component renders correctly in memory 1`] = `
         >
           <img
             alt="Logo"
-            src="test-file-stub"
+            src="https://firebasestorage.googleapis.com/v0/b/learning-map-app.appspot.com/o/MrmFrontImages%2Fconverge_logo.svg?alt=media&token=cd6a1244-91bb-4a1b-8d74-696bd42053ac"
           />
         </li>
         <li
@@ -46,7 +46,7 @@ exports[`TopMenu Component renders correctly in memory 1`] = `
           <img
             alt="Search icon"
             className="search-icon"
-            src="test-file-stub"
+            src="https://firebasestorage.googleapis.com/v0/b/learning-map-app.appspot.com/o/MrmFrontImages%2Fsearch_icon.svg?alt=media&token=ef28a273-f3ea-4370-9720-845bae1cd05e"
           />
         </form>
       </div>
@@ -58,7 +58,7 @@ exports[`TopMenu Component renders correctly in memory 1`] = `
         >
           <img
             alt="Notification icon"
-            src="test-file-stub"
+            src="https://firebasestorage.googleapis.com/v0/b/learning-map-app.appspot.com/o/MrmFrontImages%2Fnotifications_icon.svg?alt=media&token=23b8d4c8-1c47-4591-bb55-2a97807675fd"
           />
         </div>
         <div
@@ -67,7 +67,7 @@ exports[`TopMenu Component renders correctly in memory 1`] = `
           <img
             alt="Profile icon"
             className="menu-icon"
-            src="test-file-stub"
+            src="https://firebasestorage.googleapis.com/v0/b/learning-map-app.appspot.com/o/MrmFrontImages%2Fprofile.svg?alt=media&token=7be801d0-a155-49ae-97ea-5ae6f606b09f"
           />
         </div>
         <div

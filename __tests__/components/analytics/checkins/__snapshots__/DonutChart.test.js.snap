@@ -26,7 +26,7 @@ exports[`Checkins component should display the cancellations doughnut chart prop
       >
         <img
           alt="help icon"
-          src="test-file-stub"
+          src="https://firebasestorage.googleapis.com/v0/b/learning-map-app.appspot.com/o/MrmFrontImages%2Fhelp_outline_24px.svg?alt=media&token=839e3137-c29e-463d-9a68-361e28794911"
         />
       </ThemedTooltippedComponent>
       <div
@@ -111,7 +111,7 @@ exports[`Checkins component should render properly 1`] = `
       >
         <img
           alt="help icon"
-          src="test-file-stub"
+          src="https://firebasestorage.googleapis.com/v0/b/learning-map-app.appspot.com/o/MrmFrontImages%2Fhelp_outline_24px.svg?alt=media&token=839e3137-c29e-463d-9a68-361e28794911"
         />
       </ThemedTooltippedComponent>
       <div

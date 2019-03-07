@@ -1,0 +1,87 @@
+@import './variables';
+
+.welcome {
+  margin: 0 auto;
+  padding: 70px 0;
+  margin-top: 20px;
+  width: 70%;
+  border-radius: 8px;
+  background-color: map-get($color-white, 000);
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+
+  @media screen and(max-width: 1024px) {
+    width: 85%;
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    width: 85%;
+  }
+
+  @media screen and (min-width: 623px) and (max-width: 767px) {
+    width: 98%;
+    min-height: 60vh;
+  }
+
+  @media screen and (max-width: 622px) {
+    width: 100%;
+    min-height: 60vh;
+  }
+}
+
+.message {
+  display: grid;
+  text-align: center;
+
+  .welcome__message {
+    padding-bottom: 20px;
+    color: map-get($color-black, 900) !important;
+  }
+
+  span {
+    font-size: 18px;
+    color: $text-color !important;
+    font-weight: 200 !important;
+    margin-bottom: 10px;
+  }
+}
+
+.image {
+  width: 50%;
+  margin: 0 auto;
+
+  @media screen and (max-width: 1024px) {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    width: 70%;
+    margin-bottom: 30px;
+  }
+
+  @media screen and (min-width: 623px) and (max-width: 767px) {
+    width: 80%;
+    margin-bottom: 30px;
+  }
+
+  @media screen and (max-width: 622px) {
+    width: 90%;
+    margin-bottom: 30px;
+  }
+
+  img {
+    width: 100%
+  }
+}
+
+.welcome__button {
+  .button {
+    margin: 0 auto;
+    width: 147px;
+    justify-content: center;
+  }
+}
+
+.setup__spinner {
+  margin-left: 20%;
+}

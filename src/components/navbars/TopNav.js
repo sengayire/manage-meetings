@@ -12,6 +12,7 @@ import { analyticsIcon, feedbackIcon, settingsIcon } from '../../utils/images/im
 const menuItems = [
   { route: ROUTES.analytics, menu: 'Analytics', icon: analyticsIcon },
   { route: ROUTES.settings, icon: settingsIcon, menu: 'Settings' },
+  { route: ROUTES.setup, icon: settingsIcon, menu: 'Setup' },
   { icon: feedbackIcon, route: ROUTES.roomfeedback, menu: 'Room Feedback' },
 ];
 
@@ -57,10 +58,7 @@ class TopNav extends React.Component {
       <div className="top-nav">
         <ul className="converge-menu">
           {menuItems.map(item => (
-            <li
-              key={item.menu}
-              className={activeMenu === item.menu ? 'active' : ''}
-            >
+            <li key={item.menu} className={activeMenu === item.menu ? 'active' : ''}>
               <Link
                 to={item.menu === 'Settings' ? ROUTES.settingsCenters : item.route}
                 onClick={this.handleClick(item.menu)}

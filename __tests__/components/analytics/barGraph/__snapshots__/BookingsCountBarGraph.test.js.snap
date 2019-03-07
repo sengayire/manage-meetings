@@ -1508,7 +1508,7 @@ exports[`Bookings Count Bar Graph Component renders correctly 1`] = `
                   >
                     <img
                       alt="help icon"
-                      src="test-file-stub"
+                      src="https://firebasestorage.googleapis.com/v0/b/learning-map-app.appspot.com/o/MrmFrontImages%2Fhelp_outline_24px.svg?alt=media&token=839e3137-c29e-463d-9a68-361e28794911"
                     />
                   </a>
                 </Link>
@@ -3199,7 +3199,7 @@ exports[`Bookings Count Bar Graph Component should be able to hover 1`] = `
                   >
                     <img
                       alt="help icon"
-                      src="test-file-stub"
+                      src="https://firebasestorage.googleapis.com/v0/b/learning-map-app.appspot.com/o/MrmFrontImages%2Fhelp_outline_24px.svg?alt=media&token=839e3137-c29e-463d-9a68-361e28794911"
                     />
                   </a>
                 </Link>
@@ -3371,7 +3371,7 @@ exports[`Bookings Count Bar Graph Component should be able to hover 1`] = `
                   <img
                     alt="error_icon"
                     className="error-icon"
-                    src="test-file-stub"
+                    src="https://firebasestorage.googleapis.com/v0/b/learning-map-app.appspot.com/o/MrmFrontImages%2Fwarning_icon.svg?alt=media&token=38fa5d2e-595c-4032-a709-9d11c0554b62"
                   />
                 </div>
                 <b>
@@ -4899,7 +4899,7 @@ exports[`Bookings Count Bar Graph Component should be able to hover 2`] = `
                   >
                     <img
                       alt="help icon"
-                      src="test-file-stub"
+                      src="https://firebasestorage.googleapis.com/v0/b/learning-map-app.appspot.com/o/MrmFrontImages%2Fhelp_outline_24px.svg?alt=media&token=839e3137-c29e-463d-9a68-361e28794911"
                     />
                   </a>
                 </Link>
@@ -5071,7 +5071,7 @@ exports[`Bookings Count Bar Graph Component should be able to hover 2`] = `
                   <img
                     alt="error_icon"
                     className="error-icon"
-                    src="test-file-stub"
+                    src="https://firebasestorage.googleapis.com/v0/b/learning-map-app.appspot.com/o/MrmFrontImages%2Fwarning_icon.svg?alt=media&token=38fa5d2e-595c-4032-a709-9d11c0554b62"
                   />
                 </div>
                 <b>

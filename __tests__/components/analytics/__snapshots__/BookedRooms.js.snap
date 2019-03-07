@@ -9,7 +9,7 @@ exports[`BookedRooms component should render correctly 1`] = `
   >
     <img
       alt="Pull"
-      src=""
+      src="https://firebasestorage.googleapis.com/v0/b/learning-map-app.appspot.com/o/MrmFrontImages%2Fpoll_red.svg?alt=media&token=f162d826-43a7-4bcb-aac8-0077ea6a4885"
     />
     <h4 />
     <ThemedTooltippedComponent
@@ -25,7 +25,7 @@ exports[`BookedRooms component should render correctly 1`] = `
     >
       <img
         alt="help icon"
-        src="test-file-stub"
+        src="https://firebasestorage.googleapis.com/v0/b/learning-map-app.appspot.com/o/MrmFrontImages%2Fhelp_outline_24px.svg?alt=media&token=839e3137-c29e-463d-9a68-361e28794911"
       />
     </ThemedTooltippedComponent>
   </div>

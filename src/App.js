@@ -3,6 +3,7 @@ import { withRouter, Route, Switch, Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import ROUTES from './utils/routes';
 import { Settings, Analytics, Preference, RoomFeedbackPage } from './containers';
+import Setup from './containers/Setup';
 import { LoginPage } from './components';
 import Constants from './utils/Constants';
 import '../src/assets/styles/toastr.scss';
@@ -56,6 +57,7 @@ class App extends Component {
           <Route path={ROUTES.analytics} component={Analytics} />
           <Route path={ROUTES.roomfeedback} component={RoomFeedbackPage} />
           <Route path={ROUTES.preference} component={Preference} />
+          <Route path={ROUTES.setup} component={Setup} />
         </Switch>
       </ErrorBoundary>
     );

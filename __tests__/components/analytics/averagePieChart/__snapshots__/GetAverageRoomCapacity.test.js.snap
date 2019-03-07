@@ -25,7 +25,7 @@ exports[`Get Average Room Capacity Component renders correctly from memory 1`] =
     >
       <img
         alt="help icon"
-        src="test-file-stub"
+        src="https://firebasestorage.googleapis.com/v0/b/learning-map-app.appspot.com/o/MrmFrontImages%2Fhelp_outline_24px.svg?alt=media&token=839e3137-c29e-463d-9a68-361e28794911"
       />
     </ThemedTooltippedComponent>
   </section>
@@ -52,9 +52,9 @@ exports[`Get Average Room Capacity Component renders correctly from memory 1`] =
             },
           ],
           "labels": Array [
-            "Less than 10 ",
-            "10-20 ",
-            "More than 20 ",
+            "Less than 10 in %",
+            "10-20 in %",
+            "More than 20 in %",
           ],
         }
       }

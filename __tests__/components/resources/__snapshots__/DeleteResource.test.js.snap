@@ -2896,7 +2896,7 @@ exports[`DeleteResource Test Suite renders as expected 1`] = `
                   >
                     <img
                       alt="Delete"
-                      src="test-file-stub"
+                      src="https://firebasestorage.googleapis.com/v0/b/learning-map-app.appspot.com/o/MrmFrontImages%2Fdelete.svg?alt=media&token=ac2828f2-841e-48bf-8c51-82ffabe54c58"
                     />
                   </button>
                 </IconButtons>
@@ -5941,7 +5941,7 @@ exports[`DeleteResource Test Suite should pop up a modal when delete button is c
                   >
                     <img
                       alt="Delete"
-                      src="test-file-stub"
+                      src="https://firebasestorage.googleapis.com/v0/b/learning-map-app.appspot.com/o/MrmFrontImages%2Fdelete.svg?alt=media&token=ac2828f2-841e-48bf-8c51-82ffabe54c58"
                     />
                   </button>
                 </IconButtons>

@@ -50,3 +50,4 @@ export const timeline24Icon = 'https://firebasestorage.googleapis.com/v0/b/learn
 export const timelineYellowIcon = 'https://firebasestorage.googleapis.com/v0/b/learning-map-app.appspot.com/o/MrmFrontImages%2Ftimeline_yellow_24px.svg?alt=media&token=b1250514-d1ab-45a3-8e16-e33556f71657';
 export const timerBlueIcon = 'https://firebasestorage.googleapis.com/v0/b/learning-map-app.appspot.com/o/MrmFrontImages%2Ftimer_blue.svg?alt=media&token=a6e2b74b-986e-4d5e-a6b1-b644387aaec4';
 export const warningIcon = 'https://firebasestorage.googleapis.com/v0/b/learning-map-app.appspot.com/o/MrmFrontImages%2Fwarning_icon.svg?alt=media&token=38fa5d2e-595c-4032-a709-9d11c0554b62';
+export const welcomeImage = 'https://firebasestorage.googleapis.com/v0/b/learning-map-app.appspot.com/o/MrmFrontImages%2Fwelcome.png?alt=media&token=1665ecda-2592-485d-8f23-b3973dd9905a';
