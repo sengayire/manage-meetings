@@ -18,7 +18,7 @@ import { decodeTokenAndGetUserData } from '../../utils/Cookie';
 import { saveItemInLocalStorage } from '../../utils/Utilities';
 import defaultUserRole from '../../fixtures/user';
 import DataNotFound from '../commons/DataNotFound';
-import Errors from '../commons/Errors';
+import ErrorIcon from '../../components/commons/ErrorIcon';
 
 /**
  * Offices List component
@@ -113,7 +113,7 @@ export class OfficeList extends React.Component {
               </div>
             </div>
           ) : (
-            <Errors message="Data cannot be returned at the moment" />
+            <ErrorIcon />
           )}
         </div>
         {!error && (

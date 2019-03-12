@@ -57,6 +57,6 @@ describe('NotificationsList Component', () => {
     const errorWrapper = mount(errorSetup);
 
     await wait(0); // wait for response
-    expect(errorWrapper.text()).toContain('Error');
+    expect(errorWrapper.text()).toContain('An error occurred, cannot fetch data');
   });
 });

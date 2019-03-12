@@ -10,12 +10,22 @@ import Spinner from '../commons/Spinner';
 import { decodeTokenAndGetUserData } from '../../utils/Cookie';
 import { GET_USER_QUERY } from '../../graphql/queries/People';
 import { GET_ALL_WINGS } from '../../graphql/queries/wings';
-import Errors from '../commons/Errors';
+import ErrorIcon from '../../components/commons/ErrorIcon';
 
 /**
  * Get user data from token
  */
 const { UserInfo: userData } = decodeTokenAndGetUserData() || {};
+
+/**
+ * Loop through a list of wings and render correctly
+ *
+ * @param {array} allWings
+ *
+ * @returns {JSX}
+ */
+const renderWingList = allWings => (allWings &&
+    allWings.map(wing => <Wing wing={wing} key={wing.name} wingId={wing.id} />));
 
 /**
  * Wing list component
@@ -26,30 +36,29 @@ const { UserInfo: userData } = decodeTokenAndGetUserData() || {};
  */
 export const WingList = (props) => {
   const { allWings, loading, error } = props.allWings;
-  if (error) return <Errors message="Data cannot be returned at the moment" />;
+  if (loading) {
+    return <Spinner />;
+  }
   return (
-    /* istanbul ignore next */
-    loading ? (
-      <Spinner />
-    ) : (
-      <div>
-        <div className="settings-offices">
-          <div className="settings-offices-control">
-            <MenuTitle title="Wings" />
-            <AddWing userLocation={props.data.loading ? '' : props.data.user.location} />
-          </div>
-          <div className="settings-offices-list">
+    <div>
+      <div className="settings-offices">
+        <div className="settings-offices-control">
+          <MenuTitle title="Wings" />
+          <AddWing userLocation={(props.data.loading || error) ? '' : props.data.user.location} />
+        </div>
+        <div className="settings-offices-list">
+          {!error ?
             <div className="table">
               <TableHead titles={['Wing', 'Block', 'Floor', 'Action']} />
               <div className="table__body">
-                {allWings &&
-                  allWings.map(wing => <Wing wing={wing} key={wing.name} wingId={wing.id} />)}
+                {renderWingList(allWings)}
               </div>
             </div>
-          </div>
+            : <ErrorIcon />
+          }
         </div>
       </div>
-    )
+    </div>
   );
 };
 

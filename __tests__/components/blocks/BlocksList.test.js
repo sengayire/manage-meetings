@@ -6,6 +6,7 @@ import { MockedProvider } from 'react-apollo/test-utils';
 // eslint-disable-next-line
 import BlocksList, { BlocksList as ListOfBlocks } from '../../../src/components/blocks/BlocksList';
 import defaultUserRole from '../../../src/fixtures/user';
+import ErrorIcon from '../../../src/components/commons/ErrorIcon';
 
 const blocks = {
   allBlocks: [
@@ -111,6 +112,6 @@ describe('blockslist Component', () => {
     };
     const blocksList = shallow(<ListOfBlocks {...props} />,
     );
-    expect(blocksList.find('Errors')).toHaveLength(1);
+    expect(blocksList.find(ErrorIcon)).toHaveLength(1);
   });
 });

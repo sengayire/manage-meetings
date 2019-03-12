@@ -36,30 +36,29 @@
       width: 150px;
       height: 150px;
     }
-    .error-class{
-      position: relative;
-      .icon-container{
-        position: relative;
-        left: 48%;
-        width: 10%;
-        height: 10%;
-        img{
-          width: 26px;
-          height: 29px;
-        }
-      }
-      p{
-        position: relative;
-        left: -7%;
-        font-weight: bold;
-        color: map-get($color-black, 100);
-        width: 106%;
-      }
+  }
+}
+
+.error-class{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 30px;
+
+  .icon-container {
+    text-align: center;
+
+    .error-icon{
+      font-size: 20px;
+      height: 30px;
+      width: 22px;
     }
   }
 
-  .error-class{
-    margin: 2em auto;
+  .error-msg{
+    padding-top: 7px;
+    text-align: center;
+    color: map-get($color-black, 100);
   }
 }
 

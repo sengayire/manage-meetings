@@ -13,7 +13,7 @@ import { GET_USER_ROLE } from '../../graphql/queries/People';
 import { decodeTokenAndGetUserData } from '../../utils/Cookie';
 import { saveItemInLocalStorage } from '../../utils/Utilities';
 import DataNotFound from '../commons/DataNotFound';
-import Errors from '../commons/Errors';
+import ErrorIcon from '../../components/commons/ErrorIcon';
 
 export const BlocksList = (props) => {
   const { allOffices, user, allBlocks } = props;
@@ -39,7 +39,7 @@ export const BlocksList = (props) => {
             <TableHead titles={['SingleBlock', 'Location', 'Office', 'Action']} />
             <BlockTableBody blocks={allBlocks.allBlocks} refetch={allBlocks.allBlocks.refetch} />
           </div>
-        : <Errors message="Data cannot be returned at the moment" />
+        : <ErrorIcon />
         }
       </div>
     </div>

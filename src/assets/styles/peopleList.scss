@@ -6,7 +6,7 @@
 
   .action-menu {
     height: 70px;
-    padding-top: 4%;
+    padding-top: 2%;
     text-align: right;
   }
 
@@ -226,6 +226,10 @@
       @media screen and (min-width: 768) and (max-width: 1023px) {
         width: 100%;
       }
+    }
+
+    .error-class {
+      height: 40vh;
     }
   }
 }

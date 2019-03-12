@@ -19,6 +19,7 @@ const QueryLeastBookedRooms = ({ dateValue }) => (
   >
     {({ loading, error, data }) => {
       let bookedRoomsList = [];
+
       if (!loading && !error) {
         const { analytics } = data.analyticsForBookedRooms;
         bookedRoomsList = analytics;

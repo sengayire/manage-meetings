@@ -19,7 +19,7 @@ import Sort from '../commons/Sort';
 import notification from '../../utils/notification';
 import Overlay from '../commons/Overlay';
 import DataNotFound from '../commons/DataNotFound';
-import Errors from '../commons/Errors';
+import ErrorIcon from '../../components/commons/ErrorIcon';
 
 export class PeopleList extends Component {
   constructor(props) {
@@ -152,7 +152,7 @@ export class PeopleList extends Component {
                 ))}
               </div>
             </div>
-          : <Errors message="Data cannot be returned at the moment" />
+          : <ErrorIcon />
           }
         </div>
         {!error && <Pagination

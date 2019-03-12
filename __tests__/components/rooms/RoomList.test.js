@@ -12,6 +12,7 @@ import allRooms, {
   getRoomByNameData,
 } from '../../../__mocks__/rooms/Rooms';
 import RoomsLists, { RoomsList } from '../../../src/components/rooms/RoomsList';
+import ErrorIcon from '../../../src/components/commons/ErrorIcon';
 
 describe('RoomList Component', () => {
   const request = {
@@ -150,7 +151,7 @@ describe('RoomList Component', () => {
     expect(wrapper.find('RoomsList').props().data.error).toBe(undefined);
     await new Promise(resolve => setTimeout(resolve));
     wrapper.update();
-    expect(wrapper.find('.error-occurred').text()).toBe('Data cannot be returned at the moment');
+    expect(wrapper.find(ErrorIcon)).toHaveLength(1);
     // check whether an error occurs after loading
     expect(wrapper.find('RoomsList').props().data.error).toBeTruthy();
   });
@@ -196,7 +197,7 @@ describe('RoomList Component', () => {
     await wait(0);
     wrapper.update();
     expect(wrapper.find('RoomsList').props().locations.error).toBeTruthy();
-    expect(wrapper.find('.error-occurred').text()).toBe('Data cannot be returned at the moment');
+    expect(wrapper.find(ErrorIcon)).toHaveLength(1);
   });
 
   it('should render the DataNotFound component when there is no data in the database', () => {

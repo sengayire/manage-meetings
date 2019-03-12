@@ -4,7 +4,7 @@ import { MockedProvider } from 'react-apollo/test-utils';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { RoomFeedback } from '../../../src/components/roomFeedback/RoomFeedback';
 import defaultUserRole from '../../../src/fixtures/user';
-import Error from '../../../src/components/commons/Errors';
+import ErrorIcon from '../../../src/components/commons/ErrorIcon';
 
 describe('RoomFeeback Component', () => {
   const testProps = {
@@ -49,6 +49,6 @@ describe('RoomFeeback Component', () => {
       user: {},
     };
     const roomFeedback = shallow(<RoomFeedback {...newProps} />);
-    expect(roomFeedback.find(Error)).toHaveLength(1);
+    expect(roomFeedback.find(ErrorIcon)).toHaveLength(1);
   });
 });

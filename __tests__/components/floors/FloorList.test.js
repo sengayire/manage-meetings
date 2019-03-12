@@ -7,6 +7,7 @@ import defaultUserRole from '../../../src/fixtures/user';
 import FloorLists, { FloorList } from '../../../src/components/floors/FloorList';
 import { GET_PAGINATED_FLOORS_QUERY } from '../../../src/graphql/queries/Floors';
 import { GET_USER_QUERY } from '../../../src/graphql/queries/People';
+import ErrorIcon from '../../../src/components/commons/ErrorIcon';
 
 describe('FloorList Component', () => {
   const floorListMocks = {
@@ -137,6 +138,6 @@ describe('FloorList Component', () => {
       },
     };
     const component = shallow(<FloorList user={defaultUserRole} {...props} />);
-    expect(component.find('Errors')).toHaveLength(1);
+    expect(component.find(ErrorIcon)).toHaveLength(1);
   });
 });

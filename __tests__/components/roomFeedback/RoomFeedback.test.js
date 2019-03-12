@@ -78,4 +78,19 @@ describe('Tests for RoomFeedback Component', () => {
     const roomFeedback = shallow(<RoomFeedback user={{}} />);
     expect(roomFeedback.instance().componentWillReceiveProps(props)).toBeFalsy();
   });
+
+  it('should show the ErrorIcon component when an error occurs', () => {
+    const errorProps = {
+      data: {
+        questions: {
+          questions: [{}],
+        },
+        loading: false,
+        error: {},
+      },
+      user: defaultUserRole,
+    };
+    const roomFeedback = shallow(<RoomFeedback {...errorProps} />);
+    expect(roomFeedback.find('ErrorIcon')).toHaveLength(1);
+  });
 });

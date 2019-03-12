@@ -7,6 +7,7 @@ import MeetingNotifications from './MeetingNotifications';
 import DeviceNotifications from './DeviceNotifications';
 import CheckInWindowSettings from '../eventCustomisation/checkInWindowSettings';
 import Spinner from '../../commons/Spinner';
+import ErrorIcon from '../../../components/commons/ErrorIcon';
 
 /**
  * notification preferences
@@ -17,7 +18,7 @@ const NotificationSettingsList = () => (
   <Query query={GET_NOTIFICATION_STATUS}>
     {({ loading, error, data }) => {
       if (loading) return <Spinner />;
-      if (error) return <h2>Error...</h2>;
+      if (error) return <ErrorIcon />;
 
       const {
         deviceHealthNotification,

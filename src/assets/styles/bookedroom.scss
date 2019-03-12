@@ -72,21 +72,7 @@
       }
     }
   }
-  .error_class {
-    position: relative;
-  }
-  .error_icon {
-    font-size: 20px;
-    height: 30px;
-    width: 22px;
-    position: relative;
-    left: 130%;
-  }
-  .error_msg {
-    position: relative;
-    text-align: center;
-    left: 90%;
-  }
+  
   @media screen and (min-width: 768) and (max-width: 1023px) {
     width: 100%;
   }

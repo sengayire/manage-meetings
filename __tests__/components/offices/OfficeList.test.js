@@ -6,6 +6,7 @@ import renderer from 'react-test-renderer';
 
 import SettingsOffices, { OfficeList } from '../../../src/components/offices/OfficeList';
 import { GET_ALL_OFFICES } from '../../../src/graphql/queries/Offices';
+import ErrorIcon from '../../../src/components/commons/ErrorIcon';
 
 const props = {
   allOffices: {
@@ -49,7 +50,7 @@ describe('Tests for SettingOffices', () => {
       },
     };
     const errorWrapper = shallow(<OfficeList {...officeProps} />);
-    expect(errorWrapper.find('Errors')).toHaveLength(1);
+    expect(errorWrapper.find(ErrorIcon)).toHaveLength(1);
   });
 
   it('renders the offices', async () => {

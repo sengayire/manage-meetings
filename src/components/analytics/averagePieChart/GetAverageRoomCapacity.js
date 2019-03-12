@@ -7,7 +7,7 @@ import { GET_ALL_ROOMS } from '../../../graphql/queries/Rooms';
 import Spinner from '../../commons/Spinner';
 import Tip from '../../commons/Tooltip';
 import '../../../../src/assets/styles/roomCapacityPieChart.scss';
-import AnalyticsError from '../../commons/AnalayticsError';
+import ErrorIcon from '../../../components/commons/ErrorIcon';
 
 export class GetAverageRoomCapacityComponent extends Component {
   constructor(props) {
@@ -39,9 +39,7 @@ export class GetAverageRoomCapacityComponent extends Component {
   renderPieChart = () => {
     const { loading, error } = this.props.data;
     if (error) {
-      return (<AnalyticsError
-        title="Average Rooms Capacity [%]"
-      />);
+      return <ErrorIcon />;
     } else if (loading) {
       return <Spinner />;
     }

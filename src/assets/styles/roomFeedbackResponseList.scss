@@ -129,33 +129,33 @@
   }
 }
 
-.error-class{
-  height: 30vh;
-  align-items: center;
-  justify-content: center;
-  padding-top: 30px;
-
-  .icon-container {
-    text-align: center;
-
-    .error-icon{
-      font-size: 20px;
-      height: 30px;
-      width: 22px;
-    }
-  }
-
-  .error-msg{
-    padding-top: 7px;
-    text-align: center;
-    color: map-get($color-black, 100);
-  }
-}
-
 .item-list-empty {
   height: 50vh;
   display: flex;
   align-items: center;
   justify-content: center;
   color: $color-text;
+
+  .error-class{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 30px;
+  
+    .icon-container {
+      text-align: center;
+  
+      .error-icon{
+        font-size: 20px;
+        height: 30px;
+        width: 22px;
+      }
+    }
+  
+    .error-msg{
+      padding-top: 7px;
+      text-align: center;
+      color: map-get($color-black, 100);
+    }
+  }
 }

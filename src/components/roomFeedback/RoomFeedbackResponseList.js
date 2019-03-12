@@ -264,7 +264,12 @@ export class RoomFeedbackResponseList extends React.Component {
     } = this.state;
     const { loading, error } = this.props.data;
     if (error) {
-      return <ErrorIcon />;
+      const errorString = 'You are not authorized to perform this action';
+      const errorMessage = (error.message === `GraphQL error: ${errorString}` ? errorString : '');
+      return (
+        <div className="item-list-empty">
+          <ErrorIcon message={errorMessage} />
+        </div>);
     } else if (loading) {
       return <Spinner />;
     }

@@ -16,7 +16,7 @@ import { saveItemInLocalStorage } from '../../utils/Utilities';
 import MenuTitle from '../commons/MenuTitle';
 import Pagination from '../commons/Pagination';
 import DataNotFound from '../commons/DataNotFound';
-import Errors from '../commons/Errors';
+import ErrorIcon from '../../components/commons/ErrorIcon';
 
 /**
  * Floor List Component
@@ -110,7 +110,7 @@ export class FloorList extends Component {
               </div>
             </div>
           ) : (
-            <Errors message="Data cannot be returned at the moment" />
+            <ErrorIcon />
           )}
         </div>
         {!error && (

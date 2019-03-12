@@ -7,6 +7,7 @@ import Spinner from '../commons/Spinner';
 import GET_ALL_BLOCKS from '../../graphql/queries/Blocks';
 import { decodeTokenAndGetUserData } from '../../utils/Cookie';
 import { GET_USER_QUERY } from '../../graphql/queries/People';
+import ErrorIcon from '../../components/commons/ErrorIcon';
 
 /* This gets the token from the localstorage and select the user
 email to pass as a parameter to the query being sent */
@@ -53,7 +54,7 @@ export class AddFloorMenu extends React.Component {
     const { loading, allBlocks, error } = this.props.allBlocks;
     const { user: { user } } = this.props;
     if (loading) return <Spinner />;
-    if (error) return <div>{error.message}</div>;
+    if (error) return <ErrorIcon message="cannot fetch data" />;
     const allBlocksList = allBlocks.filter(block => block.offices.location.name === user.location);
     return (
       allBlocksList.map(block => (

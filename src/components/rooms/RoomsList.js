@@ -24,7 +24,7 @@ import { decodeTokenAndGetUserData } from '../../utils/Cookie';
 import { saveItemInLocalStorage } from '../../utils/Utilities';
 import defaultUserRole from '../../fixtures/user';
 import DataNotFound from '../commons/DataNotFound';
-import Errors from '../commons/Errors';
+import ErrorIcon from '../../components/commons/ErrorIcon';
 
 /**
  * Rooms List Component
@@ -244,7 +244,7 @@ export class RoomsList extends React.Component {
                   refetch={refetch}
                 />
               </div>
-            : <Errors message="Data cannot be returned at the moment" />
+            : <ErrorIcon />
             }
           </div>
         ) : (

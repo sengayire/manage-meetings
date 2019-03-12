@@ -30,9 +30,7 @@ const BookedRooms = ({
         <TableHead titles={['Room', 'Meetings', '% Share of All Meetings']} />
         {error !== null && Object.values(error).length > 0 ? (
           <div className="table__body">
-            <div className="table__row--analytics">
-              <ErrorIcon />
-            </div>
+            <ErrorIcon />
           </div>
          ) : (
            <div className="table__body">

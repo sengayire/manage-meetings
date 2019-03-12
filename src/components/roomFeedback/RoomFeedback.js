@@ -6,10 +6,10 @@ import Feedback from './Feedback';
 import { GET_USER_ROLE } from '../../graphql/queries/People';
 import { decodeTokenAndGetUserData } from '../../utils/Cookie';
 import { saveItemInLocalStorage } from '../../utils/Utilities';
-import Error from '../commons/Errors';
 import '../../../src/assets/styles/roomFeedback.scss';
 import GET_ROOM_FEEDBACK_QUESTIONS_QUERY from '../../../src/graphql/queries/questions';
 import Spinner from '../commons/Spinner';
+import ErrorIcon from '../../components/commons/ErrorIcon';
 
 /**
  * Component for Room Feedback
@@ -73,7 +73,13 @@ export class RoomFeedback extends Component {
   };
 
   render() {
-    const { loading } = this.props.data;
+    const { loading, error } = this.props.data;
+    if (error) {
+      return (
+        <div className="item-list-empty">
+          <ErrorIcon />
+        </div>);
+    }
     if (loading) {
       return <Spinner />;
     }
@@ -83,18 +89,22 @@ export class RoomFeedback extends Component {
       <div className="room-feedback">
         <div className="room-feedback__list">
           <div className="table">
-            {!questions.length ? <Error message="No questions at the moment" /> :
-            <TableHead
-              titles={[
-                'Question',
-                'Type',
-                'Responses',
-                'Start Date',
-                'Duration',
-                'Action',
-                'Status',
-              ]}
-            />}
+            {!questions.length ? (
+              <div className="item-list-empty">
+                <ErrorIcon message="No questions at the moment" />
+              </div>
+            ) :
+              <TableHead
+                titles={[
+                  'Question',
+                  'Type',
+                  'Responses',
+                  'Start Date',
+                  'Duration',
+                  'Action',
+                  'Status',
+                ]}
+              />}
             <div className="table__body">
               <Feedback
                 feedback={questions}

@@ -104,6 +104,21 @@ describe('Room feedback list', () => {
     expect(wrapper.find(ErrorIcon)).toHaveLength(1);
   });
 
+  it('should render the correct error message when a role error is returned', () => {
+    const errorProps = {
+      data: {
+        loading: false,
+        error: {
+          message: 'GraphQL error: You are not authorized to perform this action',
+        },
+      },
+    };
+    const wrapper = shallow(<RoomFeedbackResponseList {...errorProps} />);
+    const ErrorComponent = wrapper.find(ErrorIcon);
+    expect(ErrorComponent).toHaveLength(1);
+    expect(ErrorComponent.dive().text()).toContain('You are not authorized to perform this action');
+  });
+
   it('should render correctly when no room has an error response', () => {
     const emptyComponent = shallow(<RoomFeedbackResponseList {...propsWithoutResponses} />);
     expect(emptyComponent.find('.item-list-empty')).toHaveLength(1);
