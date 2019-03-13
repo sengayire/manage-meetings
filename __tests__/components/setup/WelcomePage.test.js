@@ -26,9 +26,11 @@ describe('Admin welcome page component', () => {
     },
   ];
 
+  const handleClick = jest.fn();
+
   const wrappedComponent = mount(
     <MockedProvider mocks={mocks} addTypename={false}>
-      <WelcomePage />
+      <WelcomePage handleClick={handleClick} />
     </MockedProvider>,
   );
 
@@ -56,6 +58,13 @@ describe('Admin welcome page component', () => {
   it('should render an active button if user is an admin', () => {
     const button = wrappedComponent.find('Button');
     expect(button.find('[disabled=false]')).toHaveLength(1);
+  });
+
+  it('should call click event handler on clicking the button', () => {
+    const button = wrappedComponent.find('.button .btn-primary');
+    const func = wrappedComponent.instance().props.children.props.handleClick;
+    button.simulate('click');
+    expect(func).toHaveBeenCalled();
   });
 
   it('should render an in-active button if user is a default user', async () => {

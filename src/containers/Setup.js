@@ -1,11 +1,12 @@
 import React, { Fragment } from 'react';
-import WelcomePage from '../components/setup/WelcomePage';
+import SetupPage from '../components/setup/Setup';
 import { NavBar } from '../components';
 
 const Setup = () => (
   <Fragment>
     <NavBar />
-    <WelcomePage />
+    <SetupPage />
   </Fragment>
 );
+
 export default Setup;

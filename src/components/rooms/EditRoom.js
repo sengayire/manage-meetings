@@ -33,7 +33,7 @@ export class EditRoom extends Component {
   };
 
   static defaultProps = {
-    editRoom: () => {},
+    editRoom: /* istanbul ignore next */ () => {},
     refetch: null,
     currentPage: null,
   };

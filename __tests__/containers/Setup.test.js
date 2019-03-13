@@ -6,7 +6,7 @@ describe('Setup component', () => {
   const wrapper = shallow(<Setup />);
 
   it('should find an instance of Apollo(WelcomePage)', () => {
-    expect(wrapper.find('Apollo(WelcomePage)').exists()).toBeTruthy();
+    expect(wrapper.find('Setup').exists()).toBeTruthy();
   });
 
   it('should find an instance of a NavBar component', () => {

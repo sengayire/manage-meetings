@@ -1,0 +1,434 @@
+@import './variables';
+
+.form-card {
+  width: 50%;
+  border-radius: 8px;
+  background-color: map-get($color-white , 000);
+  box-shadow: $box-shadow;
+  text-align: center;
+  font-family: $font-regular;
+  &:nth-child(2){
+    margin-left: 20px;
+  }
+}
+
+.level-container {
+  margin: 0 auto;
+  margin-top: 20px;
+  width: 80%;
+  display: flex;
+}
+
+.form-area {
+  width: 80%;
+  margin: 0 auto;
+  padding-bottom: 5%;
+}
+
+.form-area h4, .preview-area h4 {
+  color: $color-level-setup-heading;
+  font-size: 24px;
+  font-weight: 500px;
+  letter-spacing: -0.7px;
+  line-height: 31px;
+  text-align: center;
+  margin-bottom: 0px;
+}
+
+.form-header p, .preview-area p {
+  color: $color-level-setup-subheading;
+}
+
+.level-form {
+  width: 65%;
+  margin: 0 auto;
+  padding-top: 5px;
+  display: grid;
+  justify-content: center;
+}
+
+input[type="text"] {
+  color: $color-level-setup-heading;
+}
+
+.level-input {
+  height: 46px;
+  width: 248px;
+  font-family: $font-regular;
+  font-size: 16px;
+  border: 1px solid $color-input-border;
+  color: map-get($color-black , 600);
+  border-radius: 4px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  display: block;
+  padding-left: 10px;
+}
+
+label {
+  color: $color-label;
+}
+
+.level-btn {
+  color: $color-primary;
+  background-color: map-get($color-white , 000);
+  width: 148px;
+  height: 45px;
+  border-radius: 6px;
+  padding-left: 52px;
+}
+
+.add-room-btn {
+  width: 300px;
+  text-align: center;
+  border: 1px dashed $color-primary;
+  padding-bottom: 10px;
+  height: 42px;
+  margin-bottom: 30px;
+}
+
+#level-input-building-name{
+  color: $color-placeholder;
+}
+
+.level-subheading {
+  margin-bottom: 30px;
+}
+
+.num-controls {
+  top: -44px;
+  left: -61px;
+}
+
+.num-input {
+  height: 42px;
+}
+
+.back-btn {
+  margin-left: 25%;
+  margin-right: 0;
+}
+
+.save-structure {
+  position: absolute;
+  margin-top: 20%;
+  left: 41%;
+}
+
+.levels-desc {
+  border-radius: 25px;
+  background-color: $color-desc-background;
+  margin-bottom: 25px;
+  justify-content: center;
+  display: flex;
+  padding: 5px;
+}
+
+.levels-add-options {
+  margin-bottom: 25px;
+}
+
+.levels-desc p{
+  height: 18px;
+  width: 375px;
+  color: $color-desc-text;
+  font-weight: 200;
+  margin: 4px 14px 8px 21px;
+  font-size: 14px;
+  line-height: 18px;
+  text-align: center;
+}
+
+.level-btns {
+  width:100px;
+  height:50px;
+  color: map-get($color-white , 000);
+  text-align: center;
+  background-color: $color-primary;
+  position: relative;
+  text-align: center;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.form-options-list {
+  list-style: none;
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+}
+
+.form-option, .form-option-preview {
+  padding: 9px 34.2px 9.5px 25.5px;
+  background: $color-primary;
+  position: relative;
+  color: map-get($color-white , 000);
+  cursor: pointer;
+}
+
+.form-option {
+  margin-right: 12px;
+}
+
+.form-option:nth-child(1),
+.form-option-preview{
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+}
+
+.form-option:last-child:before,
+.form-option:last-child:after,
+.form-option:after {
+  content: '';
+  display: inline-block;
+  height: 28.5px;
+  width: 26.8px;
+  position: absolute;
+  right: -13.5px;
+  background-color: $color-primary;
+}
+
+.form-option:after {
+  bottom: 5.5px;
+  transform: rotate(138deg);
+  border-top-left-radius: 5px;
+  position: absolute;
+  z-index: 1;
+}
+
+.form-option:last-child {
+  width: 60px;
+  font-size: 12px;
+  background-color: map-get($color-white , 000);
+  border: 1px dashed $color-primary;
+  color: $color-primary;
+  border-left: transparent;
+  border-right: transparent;
+  padding: 10.5px 18px 10.5px 30px;
+}
+
+.form-option:last-child:after{
+  right: -15px;
+  height: 25px;
+  width: 23px;
+  border: 1px dashed $color-primary;
+  border-bottom: transparent;
+  border-right: transparent;
+  background-color: map-get($color-white , 000);
+  transform: rotate(139deg);
+}
+
+.form-option:last-child:before {
+  right: 90%;
+  height: 27px;
+  width: 25px;
+  position: absolute;
+  border: 1px dashed $color-primary;
+  border-top-right-radius: 5px;
+  border-bottom: transparent;
+  border-left: transparent;
+  background-color: map-get($color-white , 000);
+  top: 5px;
+  transform: rotate(47deg);
+}
+
+.form-option-preview {
+  background-color: map-get($color-white , 000);
+  border: 1px solid $color-primary;
+  border-right: transparent;
+  color: $color-primary;
+  margin-left: 10%;
+  margin-top: 9px;
+}
+
+.form-option-preview:before,
+.form-option-preview:after{
+  content: '';
+  display: inline-block;
+  position: absolute;
+  border-top: 1px solid $color-primary;
+  width: 27px;
+  height: 10px;
+  right: -18.8px;
+}
+
+.form-option-preview:before {
+  top: 7px;
+  border-top-right-radius: 5px;
+  transform: rotate(46deg);
+}
+
+.form-option-preview:after {
+  bottom: 7px;
+  border-top-left-radius: 5px;
+  transform: rotate(132deg);
+}
+
+.pull-left{
+  float: left;
+}
+
+.preview-btn {
+  margin-left: 38%;
+  position: relative;
+  width: 139px;
+  height: 55px;
+  padding: 13.5px 29px 23.49px 30px;
+  border-radius: 5px;
+  color: map-get($color-black, 900);
+  background: $color-gradient;
+  border: 1px solid $color-primary;
+  cursor: pointer;
+}
+
+.preview-btn:after {
+  content: '';
+  width: 8px;
+  height: 8px;
+  bottom: -5px;
+  right: 48%;
+  position: absolute;
+  transform: rotate(135deg);
+  border: 1px solid $color-primary;
+  border-top-right-radius: 5px;
+  border-bottom: transparent;
+  border-left: transparent;
+  background: $color-gradient;
+}
+
+.structure-preview {
+  margin: 0 auto;
+}
+
+.form-header {
+  display: flex;
+  justify-content: center;
+}
+
+.form-header img{
+  margin-left: 2px;
+  margin-top: 4px;
+}
+
+/* 
+  Device = Tablets, Ipads (portrait)
+  Screen = B/w 768px to 1024px
+*/
+@media (min-width: 768px) and (max-width: 1024px) {
+  .level-container {
+    display: block;
+    overflow: auto;
+    margin-top: 5px;
+  }
+
+  .form-card {
+    width: 100%;
+    margin-bottom: 5px;
+    padding-top: 5px;
+    &:nth-child(2){
+      margin: 0 auto;
+    }
+  }
+
+  .save-structure {
+    position: relative;
+    margin-top: 50%;
+    margin-left: 0px;
+  }
+
+  .num-controls {
+    left: -88px;
+  }
+}
+
+/* 
+  Device = Most of the Smartphones Mobiles (Portrait)
+  Screen = B/w 360px to 640px
+*/
+@media (min-width: 360px) and (max-width: 640px) {
+  body {
+    width: 580px;
+  }
+
+  .level-container {
+    display: block;
+    overflow: auto;
+    width: 100%;
+    margin-left: 10px;
+  }
+
+  .form-card {
+    width: 100%;
+    margin-bottom: 5%;
+    padding-top: 5%;
+    &:nth-child(2){
+      margin: 0 auto;
+    }
+  }
+
+  .save-structure {
+    position: relative;
+    margin-top: 50%;
+    margin-left: 0px;
+  }
+
+  .preview-btn {
+    width: 150px;
+  }
+}
+
+/* 
+  Device = Iphone 5/SE
+  Screen = B/w 320px to 568px
+*/
+@media (min-width: 320px) and (max-width: 568px) {
+  .level-container {
+    display: block;
+    overflow: auto;
+    margin-top: 5px;
+    width: 100%;
+  }
+
+  .form-card {
+    width: 100%;
+    margin-bottom: 5%;
+    padding-top: 5%;
+    &:nth-child(2){
+      margin: 0 auto;
+    }
+  }
+  .save-structure {
+    position: relative;
+    margin-top: 50%;
+    margin-left: 0px;
+  }
+
+  .preview-btn {
+    width: 150px;
+  }
+}
+
+/* 
+  Device = Ipad Pro
+  Screen = B/w 1024px to 1366px
+*/
+@media (min-width: 1024px) and (max-width: 1366px)  {
+  .form-card {
+    margin-bottom: 5% !important;
+    padding-top: 5%;
+  }
+}
+
+
+/* 
+  Device = Extra large desktops
+  Screen = B/w 1920px to 3840px
+*/
+@media (min-width: 1920px) and (max-width: 3840px) { 
+  .num-controls {
+    left: -164px;
+  }
+}

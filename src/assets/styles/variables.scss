@@ -20,12 +20,15 @@ $text-color: #6d6d6d;
 $time-color:#808080;
 $toast-success:#030303;
 $toast-error: #ffffff;
+$box-shadow: 0 2px 10px 0 rgba(0,0,0,0.1);
 
 $color-primary: #3359DB;
 $color-danger: #FF5359;
 $color-success: #72D11F;
 $color-purple: #551a8b;
 $color-grey: #bcbcbc;
+$color-level-setup-heading: #333E44;
+$color-level-setup-subheading: #6D6D6D;
 
 $color-header: #787878;
 $color-background: #f5f9fa;
@@ -36,6 +39,7 @@ $color-text: #6d6d6d;
 $color-title: rgba(174, 189, 212, 0.521);
 $transparent-background:rgba(0, 0, 0, .5);
 $color-shadow: rgba(0, 0, 0, 0.2);
+$color-label: #303030;
 
 $color-amber: (50: #eff3c6,
 100: #FFE9C6,
@@ -78,3 +82,6 @@ $color-grey-light: #cccccc;
 $color-grey-dark: #666666;
 $color-hover: rgba(51, 89, 219, 0.06);
 $color-border: #ebebeb;
+$color-gradient: linear-gradient(180deg, #FFFFFF 0%, #F3F5F7 100%);
+$color-desc-background: #FBFCFD;
+$color-desc-text: #808FA3;

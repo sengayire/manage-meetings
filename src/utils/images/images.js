@@ -51,3 +51,5 @@ export const timelineYellowIcon = 'https://firebasestorage.googleapis.com/v0/b/l
 export const timerBlueIcon = 'https://firebasestorage.googleapis.com/v0/b/learning-map-app.appspot.com/o/MrmFrontImages%2Ftimer_blue.svg?alt=media&token=a6e2b74b-986e-4d5e-a6b1-b644387aaec4';
 export const warningIcon = 'https://firebasestorage.googleapis.com/v0/b/learning-map-app.appspot.com/o/MrmFrontImages%2Fwarning_icon.svg?alt=media&token=38fa5d2e-595c-4032-a709-9d11c0554b62';
 export const welcomeImage = 'https://firebasestorage.googleapis.com/v0/b/learning-map-app.appspot.com/o/MrmFrontImages%2Fwelcome.png?alt=media&token=1665ecda-2592-485d-8f23-b3973dd9905a';
+export const walkingIcon = 'https://firebasestorage.googleapis.com/v0/b/learning-map-app.appspot.com/o/MrmFrontImages%2FWalkingIcon.svg?alt=media&token=04cb5833-46fd-464d-b8c8-6cca7156a2a9';
+export const ellipses = 'https://firebasestorage.googleapis.com/v0/b/learning-map-app.appspot.com/o/MrmFrontImages%2FEllipses.svg?alt=media&token=25a2ecb1-801e-4b9a-bb9d-8399faaee938';

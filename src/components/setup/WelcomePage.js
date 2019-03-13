@@ -37,6 +37,7 @@ const WelcomePage = (props) => {
           classProp="button"
           title="Get Started"
           isDisabled={user.roles[0].role === 'Default User'}
+          handleClick={props.handleClick}
         />
       </div>
     </div>
@@ -46,7 +47,13 @@ WelcomePage.propTypes = {
   data: PropTypes.shape({
     user: PropTypes.object,
   }).isRequired,
+  handleClick: PropTypes.func,
 };
+
+WelcomePage.defaultProps = {
+  handleClick: /* istanbul ignore next */ () => {},
+};
+
 export default graphql(GET_USER_ROLE, {
   options: /* istanbul ignore next */ () => ({
     variables: { email: process.env.NODE_ENV === 'test' ? 'davis.kimame@andela.com' : email },
