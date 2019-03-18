@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import '../../assets/styles/buildingSetup.scss';
 import { Input } from '../commons';
 import Button from '../commons/Button';
@@ -17,6 +18,7 @@ class BuildingSetup extends Component {
   };
 
   render() {
+    const { handleClickBuilding } = this.props;
     const { building, number, buildingName } = this.state;
     return (
       <div className="level-container">
@@ -102,6 +104,7 @@ class BuildingSetup extends Component {
             <Button
               title="Save & Submit"
               classProp="back-btn save-structure"
+              handleClick={handleClickBuilding}
             />
           </div>
         </div>
@@ -109,5 +112,8 @@ class BuildingSetup extends Component {
     );
   }
 }
+BuildingSetup.propTypes = {
+  handleClickBuilding: PropTypes.func.isRequired,
+};
 
 export default BuildingSetup;

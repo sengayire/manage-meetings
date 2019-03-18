@@ -15,4 +15,10 @@ describe('setup component', () => {
     wrapper.instance().handleClick();
     expect(wrapper.state().isBuildingLevelVisible).toEqual(true);
   });
+
+  it('should  change the value of isActive to true', () => {
+    expect(wrapper.state().isActive).toEqual(false);
+    wrapper.instance().handleClickBuilding();
+    expect(wrapper.state().isActive).toEqual(true);
+  });
 });

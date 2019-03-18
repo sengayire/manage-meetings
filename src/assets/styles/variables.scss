@@ -21,6 +21,7 @@ $time-color:#808080;
 $toast-success:#030303;
 $toast-error: #ffffff;
 $box-shadow: 0 2px 10px 0 rgba(0,0,0,0.1);
+$box-shadow-setup: 0 3px 6px 0 rgba(0, 0, 0, 0.05);
 
 $color-primary: #3359DB;
 $color-danger: #FF5359;
@@ -29,6 +30,8 @@ $color-purple: #551a8b;
 $color-grey: #bcbcbc;
 $color-level-setup-heading: #333E44;
 $color-level-setup-subheading: #6D6D6D;
+$color-setup-main-container: rgba(0,0,0,0.1);
+$color-room-details: rgba(214,222,228,0.5);
 
 $color-header: #787878;
 $color-background: #f5f9fa;
@@ -78,6 +81,7 @@ calendar-nav-button: #8B9898,
 );
 
 $icon_size: 1em;
+$icon-filter-color:invert(0.53) sepia(1) saturate(142) hue-rotate(218deg);
 $color-grey-light: #cccccc;
 $color-grey-dark: #666666;
 $color-hover: rgba(51, 89, 219, 0.06);
@@ -85,3 +89,5 @@ $color-border: #ebebeb;
 $color-gradient: linear-gradient(180deg, #FFFFFF 0%, #F3F5F7 100%);
 $color-desc-background: #FBFCFD;
 $color-desc-text: #808FA3;
+
+$font-size-small-screen: 25px;

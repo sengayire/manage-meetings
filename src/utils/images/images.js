@@ -53,3 +53,8 @@ export const warningIcon = 'https://firebasestorage.googleapis.com/v0/b/learning
 export const welcomeImage = 'https://firebasestorage.googleapis.com/v0/b/learning-map-app.appspot.com/o/MrmFrontImages%2Fwelcome.png?alt=media&token=1665ecda-2592-485d-8f23-b3973dd9905a';
 export const walkingIcon = 'https://firebasestorage.googleapis.com/v0/b/learning-map-app.appspot.com/o/MrmFrontImages%2FWalkingIcon.svg?alt=media&token=04cb5833-46fd-464d-b8c8-6cca7156a2a9';
 export const ellipses = 'https://firebasestorage.googleapis.com/v0/b/learning-map-app.appspot.com/o/MrmFrontImages%2FEllipses.svg?alt=media&token=25a2ecb1-801e-4b9a-bb9d-8399faaee938';
+export const roomIcon = 'https://firebasestorage.googleapis.com/v0/b/andelamrm.appspot.com/o/MrmFrontImagesRoom%20Icon.svg?alt=media&token=d2ed6ade-acb5-4f62-a599-ebc752e245c8';
+export const resourcesIcom = 'https://firebasestorage.googleapis.com/v0/b/andelamrm.appspot.com/o/MrmFrontImagesResources%20Icon_Inactive.svg?alt=media&token=478d170d-fd35-4ff4-94b7-e7ab88830bf9';
+export const structureIcon = 'https://firebasestorage.googleapis.com/v0/b/andelamrm.appspot.com/o/MrmFrontImagesStructure%20Icon.svg?alt=media&token=4c54d430-6b3d-4a76-a3d8-393fb2633f39';
+export const deviceIcon = 'https://firebasestorage.googleapis.com/v0/b/andelamrm.appspot.com/o/MrmFrontImagesDevice%20Icon.svg?alt=media&token=0a614b7b-6263-4083-abf7-e7a17ae467c9';
+export const peopleIcon = 'https://firebasestorage.googleapis.com/v0/b/andelamrm.appspot.com/o/MrmFrontImagesPeople%20Icon.svg?alt=media&token=4decf368-0c30-44ae-af46-e7be23c981fd';
