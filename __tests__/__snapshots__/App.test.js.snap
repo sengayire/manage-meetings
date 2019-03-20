@@ -300,11 +300,11 @@ exports[`App component should not render Login if token is present but render An
                 },
               },
               "variables": Object {
-                "endDate": "Mar 17 2019",
+                "endDate": "Mar 20 2019",
                 "isFutureDateSelected": false,
-                "startDate": "Mar 17 2019",
-                "validatedEndDate": "Mar 17 2019",
-                "validatedStartDate": "Mar 17 2019",
+                "startDate": "Mar 20 2019",
+                "validatedEndDate": "Mar 20 2019",
+                "validatedStartDate": "Mar 20 2019",
               },
             },
           ],
@@ -494,11 +494,11 @@ exports[`App component should not render Login if token is present but render An
                 },
               },
               "variables": Object {
-                "endDate": "Mar 17 2019",
+                "endDate": "Mar 20 2019",
                 "isFutureDateSelected": false,
-                "startDate": "Mar 17 2019",
-                "validatedEndDate": "Mar 17 2019",
-                "validatedStartDate": "Mar 17 2019",
+                "startDate": "Mar 20 2019",
+                "validatedEndDate": "Mar 20 2019",
+                "validatedStartDate": "Mar 20 2019",
               },
             },
           ],
@@ -762,10 +762,10 @@ exports[`App component should not render Login if token is present but render An
                 },
               },
               "variables": Object {
-                "endDate": "Mar 17 2019",
+                "endDate": "Mar 20 2019",
                 "page": 1,
                 "perPage": 5,
-                "startDate": "Mar 17 2019",
+                "startDate": "Mar 20 2019",
               },
             },
           ],
@@ -996,11 +996,11 @@ exports[`App component should not render Login if token is present but render An
                 },
               },
               "variables": Object {
-                "endDate": "Mar 17 2019",
+                "endDate": "Mar 20 2019",
                 "isFutureDateSelected": false,
-                "startDate": "Mar 17 2019",
-                "validatedEndDate": "Mar 17 2019",
-                "validatedStartDate": "Mar 17 2019",
+                "startDate": "Mar 20 2019",
+                "validatedEndDate": "Mar 20 2019",
+                "validatedStartDate": "Mar 20 2019",
               },
             },
           ],
@@ -1174,10 +1174,10 @@ exports[`App component should not render Login if token is present but render An
                 },
               },
               "variables": Object {
-                "endDate": "Mar 17 2019",
+                "endDate": "Mar 20 2019",
                 "page": 1,
                 "perPage": 5,
-                "startDate": "Mar 17 2019",
+                "startDate": "Mar 20 2019",
               },
             },
           ],
@@ -1497,8 +1497,8 @@ exports[`App component should not render Login if token is present but render An
                 },
               },
               "variables": Object {
-                "endDate": "Mar 17 2019",
-                "startDate": "Mar 17 2019",
+                "endDate": "Mar 20 2019",
+                "startDate": "Mar 20 2019",
               },
             },
             Object {
@@ -1782,11 +1782,11 @@ exports[`App component should not render Login if token is present but render An
                 },
               },
               "variables": Object {
-                "endDate": "Mar 17 2019",
+                "endDate": "Mar 20 2019",
                 "isFutureDateSelected": false,
-                "startDate": "Mar 17 2019",
-                "validatedEndDate": "Mar 17 2019",
-                "validatedStartDate": "Mar 17 2019",
+                "startDate": "Mar 20 2019",
+                "validatedEndDate": "Mar 20 2019",
+                "validatedStartDate": "Mar 20 2019",
               },
             },
             Object {
@@ -2008,11 +2008,11 @@ exports[`App component should not render Login if token is present but render An
                 },
               },
               "variables": Object {
-                "endDate": "Mar 17 2019",
+                "endDate": "Mar 20 2019",
                 "isFutureDateSelected": false,
-                "startDate": "Mar 17 2019",
-                "validatedEndDate": "Mar 17 2019",
-                "validatedStartDate": "Mar 17 2019",
+                "startDate": "Mar 20 2019",
+                "validatedEndDate": "Mar 20 2019",
+                "validatedStartDate": "Mar 20 2019",
               },
             },
             Object {
@@ -2234,11 +2234,11 @@ exports[`App component should not render Login if token is present but render An
                 },
               },
               "variables": Object {
-                "endDate": "Mar 17 2019",
+                "endDate": "Mar 20 2019",
                 "isFutureDateSelected": false,
-                "startDate": "Mar 17 2019",
-                "validatedEndDate": "Mar 17 2019",
-                "validatedStartDate": "Mar 17 2019",
+                "startDate": "Mar 20 2019",
+                "validatedEndDate": "Mar 20 2019",
+                "validatedStartDate": "Mar 20 2019",
               },
             },
             Object {
@@ -2437,10 +2437,10 @@ exports[`App component should not render Login if token is present but render An
                 },
               },
               "variables": Object {
-                "endDate": "Mar 17 2019",
+                "endDate": "Mar 20 2019",
                 "page": 1,
                 "perPage": 5,
-                "startDate": "Mar 17 2019",
+                "startDate": "Mar 20 2019",
               },
             },
             Object {
@@ -2744,10 +2744,10 @@ exports[`App component should not render Login if token is present but render An
                 },
               },
               "variables": Object {
-                "endDate": "Mar 17 2019",
+                "endDate": "Mar 20 2019",
                 "page": 1,
                 "perPage": 5,
-                "startDate": "Mar 17 2019",
+                "startDate": "Mar 20 2019",
               },
             },
             Object {
@@ -2969,8 +2969,8 @@ exports[`App component should not render Login if token is present but render An
                 },
               },
               "variables": Object {
-                "endDate": "Mar 17 2019",
-                "startDate": "Mar 17 2019",
+                "endDate": "Mar 20 2019",
+                "startDate": "Mar 20 2019",
               },
             },
             Object {
@@ -3192,8 +3192,8 @@ exports[`App component should not render Login if token is present but render An
                 },
               },
               "variables": Object {
-                "endDate": "Mar 17 2019",
-                "startDate": "Mar 17 2019",
+                "endDate": "Mar 20 2019",
+                "startDate": "Mar 20 2019",
               },
             },
             Object {
@@ -3651,8 +3651,8 @@ query user ($email: String!) {
                     },
                   },
                   "variables": Object {
-                    "endDate": "Mar 17 2019",
-                    "startDate": "Mar 17 2019",
+                    "endDate": "Mar 20 2019",
+                    "startDate": "Mar 20 2019",
                   },
                 },
                 Object {
@@ -3936,11 +3936,11 @@ query user ($email: String!) {
                     },
                   },
                   "variables": Object {
-                    "endDate": "Mar 17 2019",
+                    "endDate": "Mar 20 2019",
                     "isFutureDateSelected": false,
-                    "startDate": "Mar 17 2019",
-                    "validatedEndDate": "Mar 17 2019",
-                    "validatedStartDate": "Mar 17 2019",
+                    "startDate": "Mar 20 2019",
+                    "validatedEndDate": "Mar 20 2019",
+                    "validatedStartDate": "Mar 20 2019",
                   },
                 },
                 Object {
@@ -4162,11 +4162,11 @@ query user ($email: String!) {
                     },
                   },
                   "variables": Object {
-                    "endDate": "Mar 17 2019",
+                    "endDate": "Mar 20 2019",
                     "isFutureDateSelected": false,
-                    "startDate": "Mar 17 2019",
-                    "validatedEndDate": "Mar 17 2019",
-                    "validatedStartDate": "Mar 17 2019",
+                    "startDate": "Mar 20 2019",
+                    "validatedEndDate": "Mar 20 2019",
+                    "validatedStartDate": "Mar 20 2019",
                   },
                 },
                 Object {
@@ -4388,11 +4388,11 @@ query user ($email: String!) {
                     },
                   },
                   "variables": Object {
-                    "endDate": "Mar 17 2019",
+                    "endDate": "Mar 20 2019",
                     "isFutureDateSelected": false,
-                    "startDate": "Mar 17 2019",
-                    "validatedEndDate": "Mar 17 2019",
-                    "validatedStartDate": "Mar 17 2019",
+                    "startDate": "Mar 20 2019",
+                    "validatedEndDate": "Mar 20 2019",
+                    "validatedStartDate": "Mar 20 2019",
                   },
                 },
                 Object {
@@ -4591,10 +4591,10 @@ query user ($email: String!) {
                     },
                   },
                   "variables": Object {
-                    "endDate": "Mar 17 2019",
+                    "endDate": "Mar 20 2019",
                     "page": 1,
                     "perPage": 5,
-                    "startDate": "Mar 17 2019",
+                    "startDate": "Mar 20 2019",
                   },
                 },
                 Object {
@@ -4898,10 +4898,10 @@ query user ($email: String!) {
                     },
                   },
                   "variables": Object {
-                    "endDate": "Mar 17 2019",
+                    "endDate": "Mar 20 2019",
                     "page": 1,
                     "perPage": 5,
-                    "startDate": "Mar 17 2019",
+                    "startDate": "Mar 20 2019",
                   },
                 },
                 Object {
@@ -5123,8 +5123,8 @@ query user ($email: String!) {
                     },
                   },
                   "variables": Object {
-                    "endDate": "Mar 17 2019",
-                    "startDate": "Mar 17 2019",
+                    "endDate": "Mar 20 2019",
+                    "startDate": "Mar 20 2019",
                   },
                 },
                 Object {
@@ -5346,8 +5346,8 @@ query user ($email: String!) {
                     },
                   },
                   "variables": Object {
-                    "endDate": "Mar 17 2019",
-                    "startDate": "Mar 17 2019",
+                    "endDate": "Mar 20 2019",
+                    "startDate": "Mar 20 2019",
                   },
                 },
                 Object {
@@ -6154,8 +6154,8 @@ query user ($email: String!) {
                       },
                     },
                     "variables": Object {
-                      "endDate": "Mar 17 2019",
-                      "startDate": "Mar 17 2019",
+                      "endDate": "Mar 20 2019",
+                      "startDate": "Mar 20 2019",
                     },
                   },
                   "queryId": "4",
@@ -6171,8 +6171,8 @@ query user ($email: String!) {
                   "shouldSubscribe": true,
                   "subscriptionHandles": Array [],
                   "variables": Object {
-                    "endDate": "Mar 17 2019",
-                    "startDate": "Mar 17 2019",
+                    "endDate": "Mar 20 2019",
+                    "startDate": "Mar 20 2019",
                   },
                 },
                 "subscriptions": Array [],
@@ -6756,11 +6756,11 @@ query user ($email: String!) {
                       },
                     },
                     "variables": Object {
-                      "endDate": "Mar 17 2019",
+                      "endDate": "Mar 20 2019",
                       "isFutureDateSelected": false,
-                      "startDate": "Mar 17 2019",
-                      "validatedEndDate": "Mar 17 2019",
-                      "validatedStartDate": "Mar 17 2019",
+                      "startDate": "Mar 20 2019",
+                      "validatedEndDate": "Mar 20 2019",
+                      "validatedStartDate": "Mar 20 2019",
                     },
                   },
                   "queryId": "6",
@@ -6776,11 +6776,11 @@ query user ($email: String!) {
                   "shouldSubscribe": true,
                   "subscriptionHandles": Array [],
                   "variables": Object {
-                    "endDate": "Mar 17 2019",
+                    "endDate": "Mar 20 2019",
                     "isFutureDateSelected": false,
-                    "startDate": "Mar 17 2019",
-                    "validatedEndDate": "Mar 17 2019",
-                    "validatedStartDate": "Mar 17 2019",
+                    "startDate": "Mar 20 2019",
+                    "validatedEndDate": "Mar 20 2019",
+                    "validatedStartDate": "Mar 20 2019",
                   },
                 },
                 "subscriptions": Array [],
@@ -7219,11 +7219,11 @@ query user ($email: String!) {
                       },
                     },
                     "variables": Object {
-                      "endDate": "Mar 17 2019",
+                      "endDate": "Mar 20 2019",
                       "isFutureDateSelected": false,
-                      "startDate": "Mar 17 2019",
-                      "validatedEndDate": "Mar 17 2019",
-                      "validatedStartDate": "Mar 17 2019",
+                      "startDate": "Mar 20 2019",
+                      "validatedEndDate": "Mar 20 2019",
+                      "validatedStartDate": "Mar 20 2019",
                     },
                   },
                   "queryId": "7",
@@ -7239,11 +7239,11 @@ query user ($email: String!) {
                   "shouldSubscribe": true,
                   "subscriptionHandles": Array [],
                   "variables": Object {
-                    "endDate": "Mar 17 2019",
+                    "endDate": "Mar 20 2019",
                     "isFutureDateSelected": false,
-                    "startDate": "Mar 17 2019",
-                    "validatedEndDate": "Mar 17 2019",
-                    "validatedStartDate": "Mar 17 2019",
+                    "startDate": "Mar 20 2019",
+                    "validatedEndDate": "Mar 20 2019",
+                    "validatedStartDate": "Mar 20 2019",
                   },
                 },
                 "subscriptions": Array [],
@@ -7682,11 +7682,11 @@ query user ($email: String!) {
                       },
                     },
                     "variables": Object {
-                      "endDate": "Mar 17 2019",
+                      "endDate": "Mar 20 2019",
                       "isFutureDateSelected": false,
-                      "startDate": "Mar 17 2019",
-                      "validatedEndDate": "Mar 17 2019",
-                      "validatedStartDate": "Mar 17 2019",
+                      "startDate": "Mar 20 2019",
+                      "validatedEndDate": "Mar 20 2019",
+                      "validatedStartDate": "Mar 20 2019",
                     },
                   },
                   "queryId": "8",
@@ -7702,11 +7702,11 @@ query user ($email: String!) {
                   "shouldSubscribe": true,
                   "subscriptionHandles": Array [],
                   "variables": Object {
-                    "endDate": "Mar 17 2019",
+                    "endDate": "Mar 20 2019",
                     "isFutureDateSelected": false,
-                    "startDate": "Mar 17 2019",
-                    "validatedEndDate": "Mar 17 2019",
-                    "validatedStartDate": "Mar 17 2019",
+                    "startDate": "Mar 20 2019",
+                    "validatedEndDate": "Mar 20 2019",
+                    "validatedStartDate": "Mar 20 2019",
                   },
                 },
                 "subscriptions": Array [],
@@ -8106,10 +8106,10 @@ query user ($email: String!) {
                       },
                     },
                     "variables": Object {
-                      "endDate": "Mar 17 2019",
+                      "endDate": "Mar 20 2019",
                       "page": 1,
                       "perPage": 5,
-                      "startDate": "Mar 17 2019",
+                      "startDate": "Mar 20 2019",
                     },
                   },
                   "queryId": "9",
@@ -8125,10 +8125,10 @@ query user ($email: String!) {
                   "shouldSubscribe": true,
                   "subscriptionHandles": Array [],
                   "variables": Object {
-                    "endDate": "Mar 17 2019",
+                    "endDate": "Mar 20 2019",
                     "page": 1,
                     "perPage": 5,
-                    "startDate": "Mar 17 2019",
+                    "startDate": "Mar 20 2019",
                   },
                 },
                 "subscriptions": Array [],
@@ -8723,10 +8723,10 @@ query user ($email: String!) {
                       },
                     },
                     "variables": Object {
-                      "endDate": "Mar 17 2019",
+                      "endDate": "Mar 20 2019",
                       "page": 1,
                       "perPage": 5,
-                      "startDate": "Mar 17 2019",
+                      "startDate": "Mar 20 2019",
                     },
                   },
                   "queryId": "10",
@@ -8742,10 +8742,10 @@ query user ($email: String!) {
                   "shouldSubscribe": true,
                   "subscriptionHandles": Array [],
                   "variables": Object {
-                    "endDate": "Mar 17 2019",
+                    "endDate": "Mar 20 2019",
                     "page": 1,
                     "perPage": 5,
-                    "startDate": "Mar 17 2019",
+                    "startDate": "Mar 20 2019",
                   },
                 },
                 "subscriptions": Array [],
@@ -9184,8 +9184,8 @@ query user ($email: String!) {
                       },
                     },
                     "variables": Object {
-                      "endDate": "Mar 17 2019",
-                      "startDate": "Mar 17 2019",
+                      "endDate": "Mar 20 2019",
+                      "startDate": "Mar 20 2019",
                     },
                   },
                   "queryId": "3",
@@ -9201,8 +9201,8 @@ query user ($email: String!) {
                   "shouldSubscribe": true,
                   "subscriptionHandles": Array [],
                   "variables": Object {
-                    "endDate": "Mar 17 2019",
-                    "startDate": "Mar 17 2019",
+                    "endDate": "Mar 20 2019",
+                    "startDate": "Mar 20 2019",
                   },
                 },
                 "subscriptions": Array [],
@@ -9641,8 +9641,8 @@ query user ($email: String!) {
                       },
                     },
                     "variables": Object {
-                      "endDate": "Mar 17 2019",
-                      "startDate": "Mar 17 2019",
+                      "endDate": "Mar 20 2019",
+                      "startDate": "Mar 20 2019",
                     },
                   },
                   "queryId": "2",
@@ -9658,8 +9658,8 @@ query user ($email: String!) {
                   "shouldSubscribe": true,
                   "subscriptionHandles": Array [],
                   "variables": Object {
-                    "endDate": "Mar 17 2019",
-                    "startDate": "Mar 17 2019",
+                    "endDate": "Mar 20 2019",
+                    "startDate": "Mar 20 2019",
                   },
                 },
                 "subscriptions": Array [],
@@ -10410,10 +10410,10 @@ query user ($email: String!) {
                 "networkStatus": 1,
                 "previousVariables": null,
                 "variables": Object {
-                  "endDate": "Mar 17 2019",
+                  "endDate": "Mar 20 2019",
                   "page": 1,
                   "perPage": 5,
-                  "startDate": "Mar 17 2019",
+                  "startDate": "Mar 20 2019",
                 },
               },
               "2": Object {
@@ -10641,8 +10641,8 @@ query user ($email: String!) {
                 "networkStatus": 1,
                 "previousVariables": null,
                 "variables": Object {
-                  "endDate": "Mar 17 2019",
-                  "startDate": "Mar 17 2019",
+                  "endDate": "Mar 20 2019",
+                  "startDate": "Mar 20 2019",
                 },
               },
               "3": Object {
@@ -10870,8 +10870,8 @@ query user ($email: String!) {
                 "networkStatus": 1,
                 "previousVariables": null,
                 "variables": Object {
-                  "endDate": "Mar 17 2019",
-                  "startDate": "Mar 17 2019",
+                  "endDate": "Mar 20 2019",
+                  "startDate": "Mar 20 2019",
                 },
               },
               "4": Object {
@@ -11181,8 +11181,8 @@ query user ($email: String!) {
                 "networkStatus": 1,
                 "previousVariables": null,
                 "variables": Object {
-                  "endDate": "Mar 17 2019",
-                  "startDate": "Mar 17 2019",
+                  "endDate": "Mar 20 2019",
+                  "startDate": "Mar 20 2019",
                 },
               },
               "5": Object {
@@ -11478,11 +11478,11 @@ query user ($email: String!) {
                 "networkStatus": 1,
                 "previousVariables": null,
                 "variables": Object {
-                  "endDate": "Mar 17 2019",
+                  "endDate": "Mar 20 2019",
                   "isFutureDateSelected": false,
-                  "startDate": "Mar 17 2019",
-                  "validatedEndDate": "Mar 17 2019",
-                  "validatedStartDate": "Mar 17 2019",
+                  "startDate": "Mar 20 2019",
+                  "validatedEndDate": "Mar 20 2019",
+                  "validatedStartDate": "Mar 20 2019",
                 },
               },
               "7": Object {
@@ -11710,11 +11710,11 @@ query user ($email: String!) {
                 "networkStatus": 1,
                 "previousVariables": null,
                 "variables": Object {
-                  "endDate": "Mar 17 2019",
+                  "endDate": "Mar 20 2019",
                   "isFutureDateSelected": false,
-                  "startDate": "Mar 17 2019",
-                  "validatedEndDate": "Mar 17 2019",
-                  "validatedStartDate": "Mar 17 2019",
+                  "startDate": "Mar 20 2019",
+                  "validatedEndDate": "Mar 20 2019",
+                  "validatedStartDate": "Mar 20 2019",
                 },
               },
               "8": Object {
@@ -11942,11 +11942,11 @@ query user ($email: String!) {
                 "networkStatus": 1,
                 "previousVariables": null,
                 "variables": Object {
-                  "endDate": "Mar 17 2019",
+                  "endDate": "Mar 20 2019",
                   "isFutureDateSelected": false,
-                  "startDate": "Mar 17 2019",
-                  "validatedEndDate": "Mar 17 2019",
-                  "validatedStartDate": "Mar 17 2019",
+                  "startDate": "Mar 20 2019",
+                  "validatedEndDate": "Mar 20 2019",
+                  "validatedStartDate": "Mar 20 2019",
                 },
               },
               "9": Object {
@@ -12151,10 +12151,10 @@ query user ($email: String!) {
                 "networkStatus": 1,
                 "previousVariables": null,
                 "variables": Object {
-                  "endDate": "Mar 17 2019",
+                  "endDate": "Mar 20 2019",
                   "page": 1,
                   "perPage": 5,
-                  "startDate": "Mar 17 2019",
+                  "startDate": "Mar 20 2019",
                 },
               },
             },
@@ -12488,8 +12488,8 @@ query user ($email: String!) {
                   },
                 },
                 "variables": Object {
-                  "endDate": "Mar 17 2019",
-                  "startDate": "Mar 17 2019",
+                  "endDate": "Mar 20 2019",
+                  "startDate": "Mar 20 2019",
                 },
               },
               Object {
@@ -12773,11 +12773,11 @@ query user ($email: String!) {
                   },
                 },
                 "variables": Object {
-                  "endDate": "Mar 17 2019",
+                  "endDate": "Mar 20 2019",
                   "isFutureDateSelected": false,
-                  "startDate": "Mar 17 2019",
-                  "validatedEndDate": "Mar 17 2019",
-                  "validatedStartDate": "Mar 17 2019",
+                  "startDate": "Mar 20 2019",
+                  "validatedEndDate": "Mar 20 2019",
+                  "validatedStartDate": "Mar 20 2019",
                 },
               },
               Object {
@@ -12999,11 +12999,11 @@ query user ($email: String!) {
                   },
                 },
                 "variables": Object {
-                  "endDate": "Mar 17 2019",
+                  "endDate": "Mar 20 2019",
                   "isFutureDateSelected": false,
-                  "startDate": "Mar 17 2019",
-                  "validatedEndDate": "Mar 17 2019",
-                  "validatedStartDate": "Mar 17 2019",
+                  "startDate": "Mar 20 2019",
+                  "validatedEndDate": "Mar 20 2019",
+                  "validatedStartDate": "Mar 20 2019",
                 },
               },
               Object {
@@ -13225,11 +13225,11 @@ query user ($email: String!) {
                   },
                 },
                 "variables": Object {
-                  "endDate": "Mar 17 2019",
+                  "endDate": "Mar 20 2019",
                   "isFutureDateSelected": false,
-                  "startDate": "Mar 17 2019",
-                  "validatedEndDate": "Mar 17 2019",
-                  "validatedStartDate": "Mar 17 2019",
+                  "startDate": "Mar 20 2019",
+                  "validatedEndDate": "Mar 20 2019",
+                  "validatedStartDate": "Mar 20 2019",
                 },
               },
               Object {
@@ -13428,10 +13428,10 @@ query user ($email: String!) {
                   },
                 },
                 "variables": Object {
-                  "endDate": "Mar 17 2019",
+                  "endDate": "Mar 20 2019",
                   "page": 1,
                   "perPage": 5,
-                  "startDate": "Mar 17 2019",
+                  "startDate": "Mar 20 2019",
                 },
               },
               Object {
@@ -13735,10 +13735,10 @@ query user ($email: String!) {
                   },
                 },
                 "variables": Object {
-                  "endDate": "Mar 17 2019",
+                  "endDate": "Mar 20 2019",
                   "page": 1,
                   "perPage": 5,
-                  "startDate": "Mar 17 2019",
+                  "startDate": "Mar 20 2019",
                 },
               },
               Object {
@@ -13960,8 +13960,8 @@ query user ($email: String!) {
                   },
                 },
                 "variables": Object {
-                  "endDate": "Mar 17 2019",
-                  "startDate": "Mar 17 2019",
+                  "endDate": "Mar 20 2019",
+                  "startDate": "Mar 20 2019",
                 },
               },
               Object {
@@ -14183,8 +14183,8 @@ query user ($email: String!) {
                   },
                 },
                 "variables": Object {
-                  "endDate": "Mar 17 2019",
-                  "startDate": "Mar 17 2019",
+                  "endDate": "Mar 20 2019",
+                  "startDate": "Mar 20 2019",
                 },
               },
               Object {
@@ -15140,8 +15140,8 @@ query user ($email: String!) {
                                 skip={false}
                                 variables={
                                   Object {
-                                    "endDate": "Mar 17 2019",
-                                    "startDate": "Mar 17 2019",
+                                    "endDate": "Mar 20 2019",
+                                    "startDate": "Mar 20 2019",
                                   }
                                 }
                                 warnUnhandledError={true}
@@ -15159,8 +15159,8 @@ query user ($email: String!) {
                                       "subscribeToMore": [Function],
                                       "updateQuery": [Function],
                                       "variables": Object {
-                                        "endDate": "Mar 17 2019",
-                                        "startDate": "Mar 17 2019",
+                                        "endDate": "Mar 20 2019",
+                                        "startDate": "Mar 20 2019",
                                       },
                                     }
                                   }
@@ -15370,8 +15370,8 @@ query user ($email: String!) {
                                     skip={false}
                                     variables={
                                       Object {
-                                        "endDate": "Mar 17 2019",
-                                        "startDate": "Mar 17 2019",
+                                        "endDate": "Mar 20 2019",
+                                        "startDate": "Mar 20 2019",
                                       }
                                     }
                                     warnUnhandledError={true}
@@ -15389,8 +15389,8 @@ query user ($email: String!) {
                                           "subscribeToMore": [Function],
                                           "updateQuery": [Function],
                                           "variables": Object {
-                                            "endDate": "Mar 17 2019",
-                                            "startDate": "Mar 17 2019",
+                                            "endDate": "Mar 20 2019",
+                                            "startDate": "Mar 20 2019",
                                           },
                                         }
                                       }
@@ -15406,8 +15406,8 @@ query user ($email: String!) {
                                           "subscribeToMore": [Function],
                                           "updateQuery": [Function],
                                           "variables": Object {
-                                            "endDate": "Mar 17 2019",
-                                            "startDate": "Mar 17 2019",
+                                            "endDate": "Mar 20 2019",
+                                            "startDate": "Mar 20 2019",
                                           },
                                         }
                                       }
@@ -15504,7 +15504,7 @@ query user ($email: String!) {
                                                 classProp=""
                                                 handleClick={[Function]}
                                                 isDisabled={false}
-                                                title="Mar 17 2019 - Mar 17 2019"
+                                                title="Mar 20 2019 - Mar 20 2019"
                                                 type={2}
                                               >
                                                 <button
@@ -15513,7 +15513,7 @@ query user ($email: String!) {
                                                   onClick={[Function]}
                                                 >
                                                   <span>
-                                                    Mar 17 2019 - Mar 17 2019
+                                                    Mar 20 2019 - Mar 20 2019
                                                   </span>
                                                 </button>
                                               </Button>
@@ -15524,11 +15524,11 @@ query user ($email: String!) {
                                       <AnalyticsOverview
                                         dateValue={
                                           Object {
-                                            "endDate": "Mar 17 2019",
+                                            "endDate": "Mar 20 2019",
                                             "isFutureDateSelected": false,
-                                            "startDate": "Mar 17 2019",
-                                            "validatedEndDate": "Mar 17 2019",
-                                            "validatedStartDate": "Mar 17 2019",
+                                            "startDate": "Mar 20 2019",
+                                            "validatedEndDate": "Mar 20 2019",
+                                            "validatedStartDate": "Mar 20 2019",
                                           }
                                         }
                                         queryCompleted={[Function]}
@@ -15536,11 +15536,11 @@ query user ($email: String!) {
                                         <AveragePieChartList
                                           dateValue={
                                             Object {
-                                              "endDate": "Mar 17 2019",
+                                              "endDate": "Mar 20 2019",
                                               "isFutureDateSelected": false,
-                                              "startDate": "Mar 17 2019",
-                                              "validatedEndDate": "Mar 17 2019",
-                                              "validatedStartDate": "Mar 17 2019",
+                                              "startDate": "Mar 20 2019",
+                                              "validatedEndDate": "Mar 20 2019",
+                                              "validatedStartDate": "Mar 20 2019",
                                             }
                                           }
                                           queryCompleted={[Function]}
@@ -15551,11 +15551,11 @@ query user ($email: String!) {
                                             <Apollo(AverageMeetingDurationPieChart)
                                               dateValue={
                                                 Object {
-                                                  "endDate": "Mar 17 2019",
+                                                  "endDate": "Mar 20 2019",
                                                   "isFutureDateSelected": false,
-                                                  "startDate": "Mar 17 2019",
-                                                  "validatedEndDate": "Mar 17 2019",
-                                                  "validatedStartDate": "Mar 17 2019",
+                                                  "startDate": "Mar 20 2019",
+                                                  "validatedEndDate": "Mar 20 2019",
+                                                  "validatedStartDate": "Mar 20 2019",
                                                 }
                                               }
                                               queryCompleted={[Function]}
@@ -15823,8 +15823,8 @@ query user ($email: String!) {
                                                 skip={false}
                                                 variables={
                                                   Object {
-                                                    "endDate": "Mar 17 2019",
-                                                    "startDate": "Mar 17 2019",
+                                                    "endDate": "Mar 20 2019",
+                                                    "startDate": "Mar 20 2019",
                                                   }
                                                 }
                                                 warnUnhandledError={true}
@@ -15842,18 +15842,18 @@ query user ($email: String!) {
                                                       "subscribeToMore": [Function],
                                                       "updateQuery": [Function],
                                                       "variables": Object {
-                                                        "endDate": "Mar 17 2019",
-                                                        "startDate": "Mar 17 2019",
+                                                        "endDate": "Mar 20 2019",
+                                                        "startDate": "Mar 20 2019",
                                                       },
                                                     }
                                                   }
                                                   dateValue={
                                                     Object {
-                                                      "endDate": "Mar 17 2019",
+                                                      "endDate": "Mar 20 2019",
                                                       "isFutureDateSelected": false,
-                                                      "startDate": "Mar 17 2019",
-                                                      "validatedEndDate": "Mar 17 2019",
-                                                      "validatedStartDate": "Mar 17 2019",
+                                                      "startDate": "Mar 20 2019",
+                                                      "validatedEndDate": "Mar 20 2019",
+                                                      "validatedStartDate": "Mar 20 2019",
                                                     }
                                                   }
                                                   queryCompleted={[Function]}
@@ -16155,11 +16155,11 @@ query user ($email: String!) {
                                             <BookingsCountBarGraph
                                               dateValue={
                                                 Object {
-                                                  "endDate": "Mar 17 2019",
+                                                  "endDate": "Mar 20 2019",
                                                   "isFutureDateSelected": false,
-                                                  "startDate": "Mar 17 2019",
-                                                  "validatedEndDate": "Mar 17 2019",
-                                                  "validatedStartDate": "Mar 17 2019",
+                                                  "startDate": "Mar 20 2019",
+                                                  "validatedEndDate": "Mar 20 2019",
+                                                  "validatedStartDate": "Mar 20 2019",
                                                 }
                                               }
                                             >
@@ -16247,11 +16247,11 @@ query user ($email: String!) {
                                                   <QueryBookingsCount
                                                     dateValue={
                                                       Object {
-                                                        "endDate": "Mar 17 2019",
+                                                        "endDate": "Mar 20 2019",
                                                         "isFutureDateSelected": false,
-                                                        "startDate": "Mar 17 2019",
-                                                        "validatedEndDate": "Mar 17 2019",
-                                                        "validatedStartDate": "Mar 17 2019",
+                                                        "startDate": "Mar 20 2019",
+                                                        "validatedEndDate": "Mar 20 2019",
+                                                        "validatedStartDate": "Mar 20 2019",
                                                       }
                                                     }
                                                   >
@@ -16394,11 +16394,11 @@ query user ($email: String!) {
                                                       }
                                                       variables={
                                                         Object {
-                                                          "endDate": "Mar 17 2019",
+                                                          "endDate": "Mar 20 2019",
                                                           "isFutureDateSelected": false,
-                                                          "startDate": "Mar 17 2019",
-                                                          "validatedEndDate": "Mar 17 2019",
-                                                          "validatedStartDate": "Mar 17 2019",
+                                                          "startDate": "Mar 20 2019",
+                                                          "validatedEndDate": "Mar 20 2019",
+                                                          "validatedStartDate": "Mar 20 2019",
                                                         }
                                                       }
                                                     >
@@ -16423,11 +16423,11 @@ query user ($email: String!) {
                                         <ComposedBookedRooms
                                           dateValue={
                                             Object {
-                                              "endDate": "Mar 17 2019",
+                                              "endDate": "Mar 20 2019",
                                               "isFutureDateSelected": false,
-                                              "startDate": "Mar 17 2019",
-                                              "validatedEndDate": "Mar 17 2019",
-                                              "validatedStartDate": "Mar 17 2019",
+                                              "startDate": "Mar 20 2019",
+                                              "validatedEndDate": "Mar 20 2019",
+                                              "validatedStartDate": "Mar 20 2019",
                                             }
                                           }
                                         >
@@ -16438,11 +16438,11 @@ query user ($email: String!) {
                                               <QueryMostBookedRooms
                                                 dateValue={
                                                   Object {
-                                                    "endDate": "Mar 17 2019",
+                                                    "endDate": "Mar 20 2019",
                                                     "isFutureDateSelected": false,
-                                                    "startDate": "Mar 17 2019",
-                                                    "validatedEndDate": "Mar 17 2019",
-                                                    "validatedStartDate": "Mar 17 2019",
+                                                    "startDate": "Mar 20 2019",
+                                                    "validatedEndDate": "Mar 20 2019",
+                                                    "validatedStartDate": "Mar 20 2019",
                                                   }
                                                 }
                                               >
@@ -16634,11 +16634,11 @@ query user ($email: String!) {
                                                   }
                                                   variables={
                                                     Object {
-                                                      "endDate": "Mar 17 2019",
+                                                      "endDate": "Mar 20 2019",
                                                       "isFutureDateSelected": false,
-                                                      "startDate": "Mar 17 2019",
-                                                      "validatedEndDate": "Mar 17 2019",
-                                                      "validatedStartDate": "Mar 17 2019",
+                                                      "startDate": "Mar 20 2019",
+                                                      "validatedEndDate": "Mar 20 2019",
+                                                      "validatedStartDate": "Mar 20 2019",
                                                     }
                                                   }
                                                 >
@@ -16830,11 +16830,11 @@ query user ($email: String!) {
                                               <QueryLeastBookedRooms
                                                 dateValue={
                                                   Object {
-                                                    "endDate": "Mar 17 2019",
+                                                    "endDate": "Mar 20 2019",
                                                     "isFutureDateSelected": false,
-                                                    "startDate": "Mar 17 2019",
-                                                    "validatedEndDate": "Mar 17 2019",
-                                                    "validatedStartDate": "Mar 17 2019",
+                                                    "startDate": "Mar 20 2019",
+                                                    "validatedEndDate": "Mar 20 2019",
+                                                    "validatedStartDate": "Mar 20 2019",
                                                   }
                                                 }
                                               >
@@ -17026,11 +17026,11 @@ query user ($email: String!) {
                                                   }
                                                   variables={
                                                     Object {
-                                                      "endDate": "Mar 17 2019",
+                                                      "endDate": "Mar 20 2019",
                                                       "isFutureDateSelected": false,
-                                                      "startDate": "Mar 17 2019",
-                                                      "validatedEndDate": "Mar 17 2019",
-                                                      "validatedStartDate": "Mar 17 2019",
+                                                      "startDate": "Mar 20 2019",
+                                                      "validatedEndDate": "Mar 20 2019",
+                                                      "validatedStartDate": "Mar 20 2019",
                                                     }
                                                   }
                                                 >
@@ -17221,11 +17221,11 @@ query user ($email: String!) {
                                         <Apollo(Checkins)
                                           dateValue={
                                             Object {
-                                              "endDate": "Mar 17 2019",
+                                              "endDate": "Mar 20 2019",
                                               "isFutureDateSelected": false,
-                                              "startDate": "Mar 17 2019",
-                                              "validatedEndDate": "Mar 17 2019",
-                                              "validatedStartDate": "Mar 17 2019",
+                                              "startDate": "Mar 20 2019",
+                                              "validatedEndDate": "Mar 20 2019",
+                                              "validatedStartDate": "Mar 20 2019",
                                             }
                                           }
                                           queryCompleted={[Function]}
@@ -17403,10 +17403,10 @@ query user ($email: String!) {
                                             skip={false}
                                             variables={
                                               Object {
-                                                "endDate": "Mar 17 2019",
+                                                "endDate": "Mar 20 2019",
                                                 "page": 1,
                                                 "perPage": 5,
-                                                "startDate": "Mar 17 2019",
+                                                "startDate": "Mar 20 2019",
                                               }
                                             }
                                             warnUnhandledError={true}
@@ -17424,20 +17424,20 @@ query user ($email: String!) {
                                                   "subscribeToMore": [Function],
                                                   "updateQuery": [Function],
                                                   "variables": Object {
-                                                    "endDate": "Mar 17 2019",
+                                                    "endDate": "Mar 20 2019",
                                                     "page": 1,
                                                     "perPage": 5,
-                                                    "startDate": "Mar 17 2019",
+                                                    "startDate": "Mar 20 2019",
                                                   },
                                                 }
                                               }
                                               dateValue={
                                                 Object {
-                                                  "endDate": "Mar 17 2019",
+                                                  "endDate": "Mar 20 2019",
                                                   "isFutureDateSelected": false,
-                                                  "startDate": "Mar 17 2019",
-                                                  "validatedEndDate": "Mar 17 2019",
-                                                  "validatedStartDate": "Mar 17 2019",
+                                                  "startDate": "Mar 20 2019",
+                                                  "validatedEndDate": "Mar 20 2019",
+                                                  "validatedStartDate": "Mar 20 2019",
                                                 }
                                               }
                                               queryCompleted={[Function]}
@@ -17827,11 +17827,11 @@ query user ($email: String!) {
                                         <Apollo(AverageMeetingList)
                                           dateValue={
                                             Object {
-                                              "endDate": "Mar 17 2019",
+                                              "endDate": "Mar 20 2019",
                                               "isFutureDateSelected": false,
-                                              "startDate": "Mar 17 2019",
-                                              "validatedEndDate": "Mar 17 2019",
-                                              "validatedStartDate": "Mar 17 2019",
+                                              "startDate": "Mar 20 2019",
+                                              "validatedEndDate": "Mar 20 2019",
+                                              "validatedStartDate": "Mar 20 2019",
                                             }
                                           }
                                           queryCompleted={[Function]}
@@ -18099,10 +18099,10 @@ query user ($email: String!) {
                                             skip={false}
                                             variables={
                                               Object {
-                                                "endDate": "Mar 17 2019",
+                                                "endDate": "Mar 20 2019",
                                                 "page": 1,
                                                 "perPage": 5,
-                                                "startDate": "Mar 17 2019",
+                                                "startDate": "Mar 20 2019",
                                               }
                                             }
                                             warnUnhandledError={true}
@@ -18120,20 +18120,20 @@ query user ($email: String!) {
                                                   "subscribeToMore": [Function],
                                                   "updateQuery": [Function],
                                                   "variables": Object {
-                                                    "endDate": "Mar 17 2019",
+                                                    "endDate": "Mar 20 2019",
                                                     "page": 1,
                                                     "perPage": 5,
-                                                    "startDate": "Mar 17 2019",
+                                                    "startDate": "Mar 20 2019",
                                                   },
                                                 }
                                               }
                                               dateValue={
                                                 Object {
-                                                  "endDate": "Mar 17 2019",
+                                                  "endDate": "Mar 20 2019",
                                                   "isFutureDateSelected": false,
-                                                  "startDate": "Mar 17 2019",
-                                                  "validatedEndDate": "Mar 17 2019",
-                                                  "validatedStartDate": "Mar 17 2019",
+                                                  "startDate": "Mar 20 2019",
+                                                  "validatedEndDate": "Mar 20 2019",
+                                                  "validatedStartDate": "Mar 20 2019",
                                                 }
                                               }
                                               queryCompleted={[Function]}

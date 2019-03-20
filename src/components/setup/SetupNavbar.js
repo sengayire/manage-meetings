@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
-import React, { Component } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import navBarItems from '../../fixtures/setupNavBarData';
 
 /**
@@ -9,42 +10,28 @@ import navBarItems from '../../fixtures/setupNavBarData';
  *
  * @returns {JSX}
  */
-class SetupNavbar extends Component {
-  state = {
-    currentNavItem: 'meeting-rooms',
-  };
+const SetupNavbar = (props) => {
+  const { handleSelectedItem, currentNavItem } = props;
 
-  /**
-   * It updates the state
-   *
-   * @param {Object} event
-   *
-   * @returns {void}
-   */
-  handleSelectedItem = (event) => {
-    const { id } = event.currentTarget;
-    this.setState({ currentNavItem: id });
-  };
+  const navBarItemToDisplay = navBarItems.map(navItem => (
+  // eslint-disable-next-line jsx-a11y/click-events-have-key-events
+    <div
+      key={navItem.id}
+      onClick={handleSelectedItem}
+      id={navItem.id}
+      className={`setup-nav-item ${currentNavItem === navItem.id ? 'active-nav-item' : ''}`}
+    >
+      <img className="setup-nav-icon" src={navItem.src} alt={navItem.alt} />
+      &nbsp;
+      {navItem.text}
+    </div>
+  ));
+  return <div className="setup-navbar">{navBarItemToDisplay}</div>;
+};
 
-  render() {
-    const { currentNavItem } = this.state;
-    const navBarItemToDisplay = navBarItems.map(navItem => (
-      // eslint-disable-next-line jsx-a11y/click-events-have-key-events
-      <div
-        key={navItem.id}
-        onClick={this.handleSelectedItem}
-        id={navItem.id}
-        className={`setup-nav-item ${
-          currentNavItem === navItem.id ? 'active-nav-item' : ''
-        }`}
-      >
-        <img className="setup-nav-icon" src={navItem.src} alt={navItem.alt} />
-        &nbsp;
-        {navItem.text}
-      </div>
-    ));
-    return <div className="setup-navbar">{navBarItemToDisplay}</div>;
-  }
-}
+SetupNavbar.propTypes = {
+  handleSelectedItem: PropTypes.func.isRequired,
+  currentNavItem: PropTypes.string.isRequired,
+};
 
 export default SetupNavbar;

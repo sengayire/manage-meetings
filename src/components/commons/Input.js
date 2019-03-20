@@ -69,7 +69,7 @@ export class Input extends Component {
             type={type}
             className={inputClass}
             name={name}
-            value={value}
+            defaultValue={value}
             onChange={onChange}
             placeholder={placeholder}
             id={id}

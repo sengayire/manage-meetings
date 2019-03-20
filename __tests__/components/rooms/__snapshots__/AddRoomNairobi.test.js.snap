@@ -3376,6 +3376,7 @@ exports[`AddRoomNairobi should pop up a modal when modal button is clicked 1`] =
                                         Room Name
                                         <input
                                           className="mrm-input epic-tower-input"
+                                          defaultValue=""
                                           id="roomName"
                                           name="roomName"
                                           onChange={[Function]}
@@ -3384,7 +3385,6 @@ exports[`AddRoomNairobi should pop up a modal when modal button is clicked 1`] =
                                           required={true}
                                           title="Name cannot be numbers or any special characters"
                                           type="text"
-                                          value=""
                                         />
                                       </label>
                                     </div>
@@ -3412,6 +3412,7 @@ exports[`AddRoomNairobi should pop up a modal when modal button is clicked 1`] =
                                         Room Capacity
                                         <input
                                           className="mrm-input default-input"
+                                          defaultValue={0}
                                           id="roomCapacity"
                                           min="1"
                                           name="roomCapacity"
@@ -3419,7 +3420,6 @@ exports[`AddRoomNairobi should pop up a modal when modal button is clicked 1`] =
                                           placeholder="1"
                                           required={true}
                                           type="number"
-                                          value={0}
                                         />
                                         <Controls
                                           controlsClass=""
