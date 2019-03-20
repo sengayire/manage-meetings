@@ -5,7 +5,6 @@ import { welcomeImage } from '../../utils/images/images';
 import { decodeTokenAndGetUserData } from '../../utils/Cookie';
 import Spinner from '../commons/Spinner';
 import Button from '../commons/Button';
-import '../../assets/styles/setupWelcomePage.scss';
 import { GET_USER_ROLE } from '../../graphql/queries/People';
 
 const { UserInfo: userData } = decodeTokenAndGetUserData() || {};
@@ -20,9 +19,10 @@ const WelcomePage = (props) => {
       </div>
     );
   }
+  const { handleClick } = props;
   const { user } = props.data;
   return (
-    <div className="welcome">
+    <div className="setup_container">
       <div className="message">
         <h1 className="welcome__message"> Welcome To Room Setup </h1>
         <span>
@@ -37,7 +37,7 @@ const WelcomePage = (props) => {
           classProp="button"
           title="Get Started"
           isDisabled={user.roles[0].role === 'Default User'}
-          handleClick={props.handleClick}
+          handleClick={handleClick('isSetupInfoVisible')}
         />
       </div>
     </div>

@@ -1,9 +1,8 @@
 @import './variables';
 
-.welcome {
-  margin: 0 auto;
+.setup_container {
+  margin: 20px auto 0 auto;
   padding: 70px 0;
-  margin-top: 20px;
   width: 70%;
   border-radius: 8px;
   background-color: map-get($color-white, 000);

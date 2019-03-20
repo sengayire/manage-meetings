@@ -10,7 +10,7 @@ class BuildingSetup extends Component {
     building: '',
     number: 0,
     buildingName: '',
-  }
+  };
 
   handleInputChange = (event, quantity = 0) => {
     const { name, value } = event.target;
@@ -18,7 +18,7 @@ class BuildingSetup extends Component {
   };
 
   render() {
-    const { handleClickBuilding } = this.props;
+    const { handleClick } = this.props;
     const { building, number, buildingName } = this.state;
     return (
       <div className="level-container">
@@ -76,10 +76,12 @@ class BuildingSetup extends Component {
               <Button
                 title="Add Rooms within Building 1"
                 classProp="level-btn add-room-btn"
+                handleClick={handleClick('isRoomSetupViewVisible')}
               />
               <Button
                 title="Back"
                 classProp="level-btn back-btn"
+                handleClick={handleClick('isSetupInfoVisible')}
               />
             </form>
           </div>
@@ -104,7 +106,7 @@ class BuildingSetup extends Component {
             <Button
               title="Save & Submit"
               classProp="back-btn save-structure"
-              handleClick={handleClickBuilding}
+              handleClick={handleClick('isRoomSetupViewVisible')}
             />
           </div>
         </div>
@@ -113,7 +115,7 @@ class BuildingSetup extends Component {
   }
 }
 BuildingSetup.propTypes = {
-  handleClickBuilding: PropTypes.func.isRequired,
+  handleClick: PropTypes.func.isRequired,
 };
 
 export default BuildingSetup;

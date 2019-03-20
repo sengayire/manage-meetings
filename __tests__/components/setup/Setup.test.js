@@ -1,24 +1,30 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Setup from '../../../src/components/setup/Setup';
-
+import SetupPage from '../../../src/components/setup/Setup';
 
 describe('setup component', () => {
-  const wrapper = shallow(<Setup handleClick={jest.fn()} />);
+  const handleClick = () => jest.fn();
+  const wrapper = shallow(<SetupPage handleClick={handleClick} />);
 
-  it('should find an instance of Apollo(WelcomePage)', () => {
+  it('should find an instance of Apollo(WelcomePage) when the component renders.', () => {
     expect(wrapper.find('Apollo(WelcomePage)').exists()).toBeTruthy();
   });
 
-  it('should  change the value of isResponsePageVisible to true', () => {
+  it('should  change the value of isBuildingLevelVisible to true when the handleClick function is called', () => {
     expect(wrapper.state().isBuildingLevelVisible).toEqual(false);
-    wrapper.instance().handleClick();
+    wrapper.instance().handleClick('isBuildingLevelVisible')();
     expect(wrapper.state().isBuildingLevelVisible).toEqual(true);
   });
 
-  it('should  change the value of isActive to true', () => {
-    expect(wrapper.state().isActive).toEqual(false);
-    wrapper.instance().handleClickBuilding();
-    expect(wrapper.state().isActive).toEqual(true);
+  it('should  change the value of isSetupInfoVisible to true when the handleClick function is called', () => {
+    expect(wrapper.state().isSetupInfoVisible).toEqual(false);
+    wrapper.instance().handleClick('isSetupInfoVisible')();
+    expect(wrapper.state().isSetupInfoVisible).toEqual(true);
+  });
+
+  it('should  change the value of isRoomSetupViewVisible to true when the handleClick function is called', () => {
+    expect(wrapper.state().isRoomSetupViewVisible).toEqual(false);
+    wrapper.instance().handleClick()();
+    expect(wrapper.state().isRoomSetupViewVisible).toEqual(true);
   });
 });

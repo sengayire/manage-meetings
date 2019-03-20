@@ -1,13 +1,14 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 import BuildingSetup from '../../../src/components/setup/BuildingLevel';
 
 describe('building setup component', () => {
   let wrapper;
   let button;
+  const handleClick = jest.fn();
 
   beforeEach(() => {
-    wrapper = shallow(<BuildingSetup />);
+    wrapper = mount(<BuildingSetup handleClick={handleClick} />);
   });
 
   it('renders with the level container', () => {
@@ -66,11 +67,30 @@ describe('building setup component', () => {
   });
 
   it('calls handleInputChange to capture data on input field and update state', () => {
+    wrapper = shallow(<BuildingSetup handleClick={handleClick} />);
     expect(wrapper.state().building).toBe('');
     const event = {
       target: { name: 'building', value: 'epic tower' },
     };
     wrapper.find('#level-input-1').simulate('change', event);
     expect(wrapper.state().building).toBe('epic tower');
+  });
+
+  it('should call handleClick function with isSetupInfoVisible when back button is clicked', () => {
+    const backButton = wrapper.find('.level-btn.back-btn');
+    backButton.simulate('click');
+    expect(handleClick).toHaveBeenCalledWith('isSetupInfoVisible');
+  });
+
+  it('should call handleClick function with isRoomSetupViewVisible when Add Room button is clicked', () => {
+    const backButton = wrapper.find('.level-btn.add-room-btn');
+    backButton.simulate('click');
+    expect(handleClick).toHaveBeenCalledWith('isRoomSetupViewVisible');
+  });
+
+  it('should call handleClick function with isRoomSetupViewVisible when Save & Submit button is clicked', () => {
+    const backButton = wrapper.find('.back-btn.save-structure');
+    backButton.simulate('click');
+    expect(handleClick).toHaveBeenCalledWith('isRoomSetupViewVisible');
   });
 });
