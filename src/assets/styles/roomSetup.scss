@@ -15,13 +15,16 @@
     justify-content: center;
   }
 
+  .resource-picker {
+    width: 42% !important;
+  }
+
   .room-select {
     &-input {
     display: flex;
-    margin: 0 auto;
+    margin: 0 auto 20px auto;
     width: 40%;
     justify-content: space-around;
-    margin-bottom: 20px;
     }
     &-sub {
       border: 1px solid $color-input-border;
@@ -34,6 +37,7 @@
       }
     }
   }
+
   label {
     position: relative;
     &:after {
@@ -94,7 +98,7 @@
 }
 .setup-container {
   width: 100%;
-  margin: 0px;
+  margin: 0;
   .room-setup-header {
     font-size: 24px;
     font-weight: 500;
@@ -141,7 +145,7 @@
         .number-of-Seats {
           font-size: 12px;
           color: map-get($color-black, 100);
-          padding: 2px 0px;
+          padding: 2px 0;
         }
         .number-of-resources {
           font-size: 12px;
@@ -161,8 +165,7 @@
             width: 45%;
             height: 20px;
             padding: 5px;
-            margin: 5px;
-            margin-left: 0px;
+            margin: 5px 0 0;
             font-size: 10px;
             font-weight: bolder;
             border-radius: 3px;

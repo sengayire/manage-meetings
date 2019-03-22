@@ -55,16 +55,18 @@ class Resources extends React.Component {
 
   render() {
     return (
-      <div className="resource-box">
-        <div className="room-setup-header"><p>EPIC Tower&apos;s Resources </p></div>
-        <div className="room-select-input">
-          {this.createSelectInputs()}
-        </div>
-        <div className="add-new-resource">
-          <AddResource />
-        </div>
-        <div>
-          {resources.map(resource => this.resourceList(resource))}
+      <div className="setup-container">
+        <div className="resource-box">
+          <div className="room-setup-header"><p>EPIC Tower&apos;s Resources </p></div>
+          <div className="room-select-input resource-picker">
+            {this.createSelectInputs()}
+          </div>
+          <div className="add-new-resource">
+            <AddResource />
+          </div>
+          <div>
+            {resources.map(resource => this.resourceList(resource))}
+          </div>
         </div>
       </div>
     );

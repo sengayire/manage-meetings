@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import RoomSetup from './RoomSetup';
 import Resources from '../components/setup/resources/Resources';
+import DevicesList from '../components/devices/DeviceList';
 import SetupNavbar from '../components/setup/SetupNavbar';
 // eslint-disable-next-line import/no-named-as-default
 import PeopleList from '../components/people/PeopleList';
+import SelectInput from '../components/commons/SelectInput';
+import { selectMockData } from '../utils/roomSetupMock';
 
 /* Styles */
 import '../assets/styles/roomSetup.scss';
@@ -16,10 +19,58 @@ class RoomSetupOverView extends Component {
     };
   }
 
+  handleInputChange = () => {};
+
+  /**
+  * It handles creating of select input
+  *
+  * @returns {jsx}
+  */
+  createSelectInputs = () => {
+    const selectInputs = selectMockData && selectMockData.map(({
+      name, id, value, placeholder,
+    }) => (
+      <div key={id} className="room-select-sub">
+        <SelectInput
+          labelText=""
+          wrapperClassName="setup-select-input-wrapper"
+          name={name}
+          id={id}
+          value={value}
+          onChange={this.handleInputChange}
+          selectInputClassName="setup-select-input"
+          placeholder={placeholder}
+          options={null}
+        />
+      </div>
+    ));
+    return selectInputs;
+  }
+
+  /**
+  * It handles  item selected fucntion
+  *
+  * @returns {void}
+  */
   handleSelectedItem = (event) => {
     const { id } = event.currentTarget;
     this.setState({ currentNavItem: id });
   };
+
+  /**
+   * It renders devicelist
+   *
+   * @returns {jsx}
+   */
+  renderDeviceList = () => (
+    <div className="setup-container">
+      <div className="room-setup-header"><p>EPIC Tower&apos;s Devices</p></div>
+      <div className="room-select-input">
+        {this.createSelectInputs()}
+      </div>
+      <DevicesList />
+    </div>);
+
 
   renderNavItems = () => {
     const { currentNavItem } = this.state;
@@ -29,6 +80,8 @@ class RoomSetupOverView extends Component {
       /* istanbul ignore next */
       case 'people':
         return <PeopleList />;
+      case 'devices':
+        return this.renderDeviceList();
       default:
         return <RoomSetup />;
     }
@@ -44,4 +97,5 @@ class RoomSetupOverView extends Component {
     );
   }
 }
+
 export default RoomSetupOverView;

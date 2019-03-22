@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Sort Component should render component without errors 1`] = `
-<Fragment>
+<React.Fragment>
   <div
     className="dropdown-caret"
   >
@@ -13,5 +13,5 @@ exports[`Sort Component should render component without errors 1`] = `
       </span>
     </button>
   </div>
-</Fragment>
+</React.Fragment>
 `;

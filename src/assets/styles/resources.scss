@@ -1,10 +1,9 @@
 @import './variables';
 .resource {
   &-box {
-    margin: 0 auto;
     width: 95%;
-    border-radius: 8px;
-    background-color: map-get($color-white, 000);
+    margin: 0 auto;
+
     .room-setup {
       &-header {
         font-size: 24px;

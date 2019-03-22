@@ -6,11 +6,7 @@ exports[`DeviceList Component renders correctly from memory 1`] = `
 >
   <div
     className="settings-devices-control"
-  >
-    <MenuTitle
-      title="Devices"
-    />
-  </div>
+  />
   <div
     className="table"
   >
