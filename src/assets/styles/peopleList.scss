@@ -2,12 +2,36 @@
 @import '../../utils/images/images';
 
 .settings-people {
-  width: 85%;
+  width: 95%;
+  margin: 0 auto;
+
+  .dropdown-caret{
+    margin-top: -18px !important;
+  }
+
+  .filter-options {
+
+    &__children {
+      padding-top: 7px;
+      margin-bottom: -10px;
+    }
+
+    &__disable {
+      padding: 4px 10px;
+      text-transform: capitalize;
+    }
+  }
 
   .action-menu {
-    height: 70px;
-    padding-top: 2%;
-    text-align: right;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    .room-setup-header {
+       grid-column: 2/3;
+       align-self: baseline;
+       justify-self: center;
+       color: map-get($color-black, 900);
+    }
   }
 
   .dropdown-caret button {
@@ -18,9 +42,8 @@
   }
 
   .dropdown-menu {
-    margin-right: 167px !important;
-    min-width: 50px !important;
-    right: 0;
+    line-height: 12px;
+    padding-top: 10px;
   }
 
   .settings-people-list {
@@ -233,3 +256,4 @@
     }
   }
 }
+

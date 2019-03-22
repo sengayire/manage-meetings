@@ -125,7 +125,7 @@ export class PeopleList extends Component {
         <div
           className={`action-menu ${isFetching ? 'disabled-buttons' : null}`}
         >
-          <MenuTitle title="People" />
+          <MenuTitle title="EPIC Tower's People" />
           <Sort
             sortOptions={{ location: allLocations, access: roles }}
             fetchSortedData={this.sortPeople}

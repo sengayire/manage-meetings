@@ -168,9 +168,7 @@ exports[`Toggle True NotificationSetting Component renders correctly from memory
       },
     }
   }
->
-  <Component />
-</Mutation>
+/>
 `;
 
 exports[`Toggle True NotificationSetting Component renders correctly from memory again 1`] = `
@@ -341,7 +339,5 @@ exports[`Toggle True NotificationSetting Component renders correctly from memory
       },
     }
   }
->
-  <Component />
-</Mutation>
+/>
 `;

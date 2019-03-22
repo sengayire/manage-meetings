@@ -9,6 +9,12 @@
   padding: 50px;
   border-radius: 8px;
   box-shadow: 0 2px 10px 0 $color-setup-main-container;
+
+  .centered {
+    display: flex;
+    justify-content: center;
+  }
+
   .room-select {
     &-input {
     display: flex;
@@ -39,7 +45,7 @@
       padding: 10px 10px;
     }
   }
-  select {
+  .setup-select-input {
     width: 110px !important;
     border: none;
     color: map-get($color-blue, 200) !important;
@@ -206,7 +212,7 @@
     .room-select-input {
       width: 50% !important;
       @media (min-width: 769px) and (max-width: 950px) {
-        width: 60% !important; 
+        width: 60% !important;
       }
     }
     .room-setup-container {
@@ -336,7 +342,6 @@
             }
           }
         }
-         
       }
       .addroom-setup {
         height: 450px !important;

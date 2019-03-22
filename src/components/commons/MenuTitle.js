@@ -10,7 +10,9 @@ import '../../assets/styles/sidebar.scss';
  * @returns {JSX}
  */
 const MenuTitle = props => (
-  <span className="menu-title">{props.title.toUpperCase()}</span>
+  <span className="room-setup-header  menu-title">
+    <p>{props.title}</p>
+  </span>
 );
 
 MenuTitle.propTypes = {

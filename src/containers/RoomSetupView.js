@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import RoomSetup from './RoomSetup';
 import Resources from '../components/setup/resources/Resources';
 import SetupNavbar from '../components/setup/SetupNavbar';
+// eslint-disable-next-line import/no-named-as-default
+import PeopleList from '../components/people/PeopleList';
 
 /* Styles */
 import '../assets/styles/roomSetup.scss';
@@ -19,15 +21,27 @@ class RoomSetupOverView extends Component {
     this.setState({ currentNavItem: id });
   };
 
+  renderNavItems = () => {
+    const { currentNavItem } = this.state;
+    switch (currentNavItem) {
+      case 'resources':
+        return <Resources />;
+      /* istanbul ignore next */
+      case 'people':
+        return <PeopleList />;
+      default:
+        return <RoomSetup />;
+    }
+  };
+
   render() {
     const { currentNavItem } = this.state;
     return (
       <div className="setup-main-container">
         <SetupNavbar currentNavItem={currentNavItem} handleSelectedItem={this.handleSelectedItem} />
-        {currentNavItem === 'resources' ? <Resources /> : <RoomSetup />}
+        {this.renderNavItems()}
       </div>
     );
   }
 }
-
 export default RoomSetupOverView;
