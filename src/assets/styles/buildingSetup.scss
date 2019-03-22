@@ -11,29 +11,24 @@
     margin-left: 20px;
   }
 }
-
 .level-container {
   margin: 0 auto;
   margin-top: 20px;
   width: 80%;
   display: flex;
 }
-
 .form-area {
   width: 80%;
   margin: 0 auto;
   padding-bottom: 5%;
 }
-
 .structure-preview {
   padding: 0 30px;
 }
-
 .preview-levels {
   display: flex;
   margin-bottom: 25px;
 }
-
 .form-area h4, .preview-area h4 {
   color: $color-level-setup-heading;
   font-size: 24px;
@@ -43,15 +38,12 @@
   text-align: center;
   margin-bottom: 0px;
 }
-
 .form-header p, .preview-area p {
   color: $color-level-setup-subheading;
 }
-
 .form-input {
   margin-bottom: 10px;
 }
-
 .level-form {
   width: 65%;
   margin: 0 auto;
@@ -69,11 +61,9 @@
     }
   }
 }
-
 input[type="text"] {
   color: $color-level-setup-heading;
 }
-
 .level-input {
   height: 46px;
   width: 80%;
@@ -88,7 +78,6 @@ input[type="text"] {
   display: block;
   padding-left: 10px;
 }
-
 .select-parent {
   border: 1px dashed $color-primary;
   margin: 0 auto;
@@ -100,9 +89,8 @@ input[type="text"] {
   padding: 2px 0;
   width: 85%;
 }
-
 .parent-list, .active-parent {
-  background: #ccc;
+  background: $color-grey;
   color: white;
   padding: 2px 12px;
   border-radius: 20px;
@@ -113,7 +101,6 @@ input[type="text"] {
   top: 0;
   font-weight: 900
 }
-
 .active-parent {
   background-color: map-get($color-amber, 300);
   color: map-get($color-black, 500);
@@ -122,26 +109,21 @@ input[type="text"] {
   margin: 0 auto;
   top: -11px;
   padding-bottom: 4px;
-
   span {
     margin-right: 15px;
   }
 }
-
 .error {
   border: 1px solid $color-danger !important;
   background-color: transparent !important;
 }
-
 .error-text {
   font-size: 13px;
   color: $color-danger;
 }
-
 label {
   color: $color-label;
 }
-
 .back-button {
   color: $color-primary;
   background-color: map-get($color-white , 000);
@@ -151,12 +133,10 @@ label {
   border: 1px solid $color-primary;
   margin: 0 auto;
   justify-content: center;
-
   &:hover {
     background: transparent;
   }
 }
-
 .add-room-btn {
   width: 300px;
   text-align: center;
@@ -165,15 +145,12 @@ label {
   height: 42px;
   margin-bottom: 30px;
 }
-
 .level-subheading {
   margin-bottom: 30px;
 }
-
 .num-input {
   height: 42px;
 }
-
 .controls {
   float: none;
   top: 0;
@@ -181,13 +158,11 @@ label {
   top: -44px;
   left: 25%;
 }
-
 .save-structure {
   position: absolute;
   margin-top: 20%;
   left: 41%;
 }
-
 .levels-desc {
   border-radius: 25px;
   background-color: $color-desc-background;
@@ -196,12 +171,11 @@ label {
   display: flex;
   padding: 5px;
 }
-
 .levels-add-options {
-  display: grid;
+  display: flex;
+  flex-direction: row;
   margin-bottom: 25px;
   justify-content: space-evenly;
-  grid-template-columns: 1fr 4fr 1fr;
 
   .left,
   .right {
@@ -210,10 +184,6 @@ label {
     align-self: center;
     color: map_get($color-blue, 200);
     cursor: pointer;
-  }
-
-  .left {
-    margin-left: 29px;
   }
 
   .right img {
@@ -230,7 +200,6 @@ label {
     border-radius: 50%;
   }
 }
-
 .levels-desc p{
   height: 18px;
   width: 375px;
@@ -241,7 +210,6 @@ label {
   line-height: 18px;
   text-align: center;
 }
-
 .level-btns {
   width:100px;
   height:50px;
@@ -254,129 +222,20 @@ label {
   border-bottom-left-radius: 5px;
 }
 
-.form-options-list {
-  list-style: none;
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  padding: 0;
-  overflow-x: scroll;
-  overflow-y: hidden;
-  padding-bottom: 25px;
-  position: relative;
-  z-index: 1;
-}
-
-.form-option, .form-option-preview {
-  padding: 9px 23px;
+.form-option-preview {
+  padding: 9px 25px;
   background: $color-primary;
   position: relative;
   color: map-get($color-white , 000);
   cursor: pointer;
   margin-top: 12px;
 }
-
-.form-option {
-  margin-right: 12px;
-  // animation: moveInRight .7s ease-out;
-}
-
-.levels-controls li {
-  animation: moveInRight .7s ease-out;
-}
-.levels-controls li,
-.levels-controls li ~ li {
-    animation: moveInRight .7s ease-out;
-}
-
-// .form-option ~ li, .form-option + li {
-//   background: yellow;
-//   animation: moveInRight .7s ease-out;
-// }
-
-@keyframes moveInRight {
-  0% {
-    transform: translateX(100px);
-  }
-
-  80% {
-    transform: translateX(-10px);
-  }
-
-  100% {
-    transform: translate(0);
-  }
-}
-
-.form-option:nth-child(1),
-.form-option-preview{
-  border-bottom-left-radius: 5px;
-  border-top-left-radius: 5px;
-}
-
-.form-option:last-child:before,
-.form-option:last-child:after,
-.form-option:after {
-  content: '';
-  display: inline-block;
-  height: 28.5px;
-  width: 26.8px;
-  position: absolute;
-  right: -13.5px;
-  background-color: $color-primary;
-}
-
-.form-option:after {
-  bottom: 5.5px;
-  transform: rotate(138deg);
-  border-top-left-radius: 5px;
-  position: absolute;
-  z-index: 1;
-}
-
-.form-option:last-child {
-  width: 60px;
-  font-size: 12px;
-  background-color: map-get($color-white , 000);
-  border: 1px dashed $color-primary;
-  color: $color-primary;
-  border-left: transparent;
-  border-right: transparent;
-  padding: 10.5px 18px 10.5px 30px;
-}
-
-.form-option:last-child:after{
-  right: -15px;
-  height: 25px;
-  width: 23px;
-  border: 1px dashed $color-primary;
-  border-bottom: transparent;
-  border-right: transparent;
-  background-color: map-get($color-white , 000);
-  transform: rotate(139deg);
-}
-
-.form-option:last-child:before {
-  right: 90%;
-  height: 27px;
-  width: 25px;
-  position: absolute;
-  border: 1px dashed $color-primary;
-  border-top-right-radius: 5px;
-  border-bottom: transparent;
-  border-left: transparent;
-  background-color: map-get($color-white , 000);
-  top: 5px;
-  transform: rotate(47deg);
-}
-
 .form-option-preview {
   background-color: map-get($color-white , 000);
   border: 1px solid $color-primary;
   border-right: transparent;
   color: $color-primary;
 }
-
 .form-option-preview:before,
 .form-option-preview:after{
   content: '';
@@ -387,13 +246,11 @@ label {
   height: 10px;
   right: -18.8px;
 }
-
 .form-option-preview:before {
   top: 7px;
   border-top-right-radius: 5px;
   transform: rotate(46deg);
 }
-
 .form-option-preview:after {
   bottom: 7px;
   border-top-left-radius: 5px;
@@ -411,7 +268,7 @@ label {
   background: $color-gradient;
   border: 1px solid $color-primary;
   cursor: pointer;
-  padding: 15px;
+  padding: 10px 5px;
   margin: 0 5px;
   font-weight: 500;
   min-width: 75px;
@@ -465,7 +322,6 @@ label {
   cursor: pointer;
   line-height: 1;
 }
-
 .remove-parent {
   color: $color-danger;
   width: 15px;
@@ -475,46 +331,37 @@ label {
   margin-top: 6px;
   margin-right: 0px !important;
 }
-
 .remove-level:hover {
   background: red;
   color: white !important;
 }
-
 .form-card {
   position: relative;
 }
-
 .save-btn-container {
   display: flex;
   justify-content: center;
-
   .btn-primary {
     margin-bottom: 5%;
     margin-top: 10%;
   }
 }
-
 .levels {
   width: 75%;
 }
-
 .levels-grp {
   display: flex;
   line-height: 55px;
   margin: 0 auto;
 }
-
 .form-header {
   display: flex;
   justify-content: center;
 }
-
 .form-header img{
   margin-left: 2px;
   margin-top: 4px;
 }
-
 /* 
   Device = Tablets, Ipads (portrait)
   Screen = B/w 768px to 1024px
@@ -525,7 +372,6 @@ label {
     overflow: auto;
     margin-top: 5px;
   }
-
   .form-card {
     width: 100%;
     margin-bottom: 5px;
@@ -534,14 +380,12 @@ label {
       margin: 0 auto;
     }
   }
-
   .save-structure {
     position: relative;
     margin-top: 50%;
     margin-left: 0px;
   }
 }
-
 /* 
   Device = Most of the Smartphones Mobiles (Portrait)
   Screen = B/w 360px to 640px
@@ -550,14 +394,12 @@ label {
   body {
     width: 580px;
   }
-
   .level-container {
     display: block;
     overflow: auto;
     width: 100%;
     margin-left: 10px;
   }
-
   .form-card {
     width: 100%;
     margin-bottom: 5%;
@@ -566,18 +408,15 @@ label {
       margin: 0 auto;
     }
   }
-
   .save-structure {
     position: relative;
     margin-top: 50%;
     margin-left: 0px;
   }
-
   .preview-btn {
     width: 150px;
   }
 }
-
 /* 
   Device = Iphone 5/SE
   Screen = B/w 320px to 568px
@@ -589,7 +428,6 @@ label {
     margin-top: 5px;
     width: 100%;
   }
-
   .form-card {
     width: 100%;
     margin-bottom: 5%;
@@ -603,12 +441,10 @@ label {
     margin-top: 50%;
     margin-left: 0px;
   }
-
   .preview-btn {
     width: 150px;
   }
 }
-
 /* 
   Device = Ipad Pro
   Screen = B/w 1024px to 1366px
@@ -620,63 +456,125 @@ label {
   }
 }
 
-#levels-controls {
+.form-options-list {
+  padding: 20px;
+  overflow: hidden;
+  margin: 0;
   list-style: none;
   display: inline-block;
   padding-left: 0;
   justify-content: center;
   cursor: pointer;
-}
-#levels-controls li {
-  float: left;
+  font-size: 14px;
 }
 
-#levels-controls li {
-  color: map-get($color-white, 000);
-  display: block;
-  background-color: $color-primary;
+.form-options-list li {
+  float: left;
+  margin: 0 0.8em 0 0;
+  padding: 0.7em 1.5em 0.7em 2em;
+  float: left;
   text-decoration: none;
+  color: $text-color;
+  background: $color-gradient;
   position: relative;
-  height: 40px;
-  line-height: 40px;
-  padding: 0 10px 0 5px;
-  text-align: center;
-  margin-right: 23px;
+  border: 1px solid $color-grey;
+  border-radius: 0.4em 0 0 0.4em;
+  border-bottom-right-radius: 2px;
+  border-top-right-radius: 2px;
 }
-#levels-controls li:first-child {
-  padding-left: 15px;
-  -moz-border-radius: 4px 0 0 4px;
-  -webkit-border-radius: 4px;
-  border-radius: 4px 0 0 4px;
+
+.form-options-list li:hover {
+  background: $color-primary;
+  color: map-get($color-white, 000);
 }
-#levels-controls li:first-child:before {
-  border: none;
-}
-#levels-controls li:before, #levels-controls li:after {
+
+.form-options-list li::after {
+  background: $color-gradient;
   content: "";
+  height: 2.1em;
+  margin-top: -1.04em;
   position: absolute;
-  top: 0;
-  border: 0 solid $color-primary;
-  border-width: 20px 10px;
-  width: 0;
-  height: 0;
+  right: -1em;
+  top: 50%;
+  width: 2.1em;
+  z-index: 1;
+  transform: rotate(45deg);
+  border-radius: 0.3em 0.4em 0.3em 0.3em;
+  border: 1px solid $color-grey;
+  border-left: transparent;
+  border-bottom: transparent;
 }
-#levels-controls li:before {
-  left: -20px;
+
+.form-options-list li:nth-child(n+2):nth-last-child(n+2) {
+  border-radius: 0;
+}
+
+.form-options-list li:nth-child(n+2):nth-last-child(n+2)::before {
+  border: 1px solid $color-grey;
+  border-left: transparent;
+  border-bottom: transparent;
+}
+
+.form-options-list li.add-level-button::before,
+.form-options-list li:nth-child(n+2):nth-last-child(n+2)::before {
+  background: map-get($color-white, 000);
+  content: "";
+  height: 1.85em;
+  margin-top: -0.9em;
+  position: absolute;
+  right: 86%;
+  top: 50%;
+  width: 1.85em;
+  transform: rotate(45deg);
+  border-radius: 0 0.4em 0 0;
+}
+
+.form-options-list li.add-level-button:hover::after,
+.form-options-list li.add-level-button:hover {
+  background: map-get($color-white, 000);
+  color: $color-primary;
+}
+
+.form-options-list li.add-level-button::before {
+  margin-top: -0.95em;
+  right: 89%;
+}
+
+.form-options-list li.add-level-button {
+  border: 1px dashed $color-primary;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+  color: $color-primary;
+}
+
+.form-options-list li.add-level-button::after {
+  border: 1px dashed $color-primary;
+  border-left: transparent;
+  border-bottom: transparent;
+}
+
+.form-options-list li.add-level-button::before {
+  border: 1px dashed $color-primary;
+  border-left: transparent;
+  border-bottom: transparent;
+}
+
+.form-options-list li:hover::after {
+  background: $color-primary;
+}
+
+.active-level {
+  background: $color-primary !important;
+  color: map-get($color-white, 000) !important;
+  border-color: transparent !important;
+ }
+ .active-level:before {
+  border-color: transparent !important;
+  border-color: $color-primary !important;
   border-left-color: transparent;
-}
-#levels-controls li:after {
-  left: 100%;
-  border-color: transparent;
-  border-left-color: $color-primary;
-}
-#levels-controls .active-level {
-  background-color: map-get($color-amber, 300);;
-}
-#levels-controls .active-level:before {
-  border-color: map-get($color-amber, 300);;
-  border-left-color: transparent;
-}
-#levels-controls .active-level:after {
-  border-left-color: map-get($color-amber, 300);;
-}
+ }
+ .active-level:after {
+  border-color: transparent !important;
+  border-left-color: $color-primary !important;
+  background: $color-primary !important;
+ }

@@ -117,9 +117,10 @@ class BuildingLevel extends Component {
               <div className="left" onClick={this.toggleDirections}>
                 {(numberOfLevels >= 3 && activeLevel > 2) && <img src={chevronIcon} alt="left scroll icon" />}
               </div>
-              <div><ul id="levels-controls">
+              <div>
+                <ul className="form-options-list">
                 {this.displayLevelsControl()}
-                {showAddLevel && <li className="add-level"onClick={this.addNewLevel}>
+                {showAddLevel && <li className="add-level-button" onClick={this.addNewLevel}>
                   Add Level
                 </li>}
               </ul>
