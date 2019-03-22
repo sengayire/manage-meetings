@@ -39,48 +39,46 @@ exports[`Checkins component should display the cancellations doughnut chart prop
   <div
     className="chart-content"
   >
-    <React.Fragment>
-      <div
-        className="diagram"
-      >
-        <Doughnut
-          data={
-            Object {
-              "datasets": Array [
-                Object {
-                  "backgroundColor": null,
-                  "data": Array [
-                    0,
-                    10,
-                  ],
-                },
-              ],
-              "labels": Array [
-                "Checkins",
-                "Bookings",
-              ],
-              "text": "23%",
-            }
-          }
-          height={160}
-          options={
-            Object {
-              "cutoutPercentage": 70,
-              "legend": Object {
-                "display": false,
+    <div
+      className="diagram"
+    >
+      <Doughnut
+        data={
+          Object {
+            "datasets": Array [
+              Object {
+                "backgroundColor": null,
+                "data": Array [
+                  0,
+                  10,
+                ],
               },
-            }
+            ],
+            "labels": Array [
+              "Checkins",
+              "Bookings",
+            ],
+            "text": "23%",
           }
-          width={160}
-        />
-        <p
-          className="no-info-percentage"
-        >
-          0
-          %
-        </p>
-      </div>
-    </React.Fragment>
+        }
+        height={160}
+        options={
+          Object {
+            "cutoutPercentage": 70,
+            "legend": Object {
+              "display": false,
+            },
+          }
+        }
+        width={160}
+      />
+      <p
+        className="no-info-percentage"
+      >
+        0
+        %
+      </p>
+    </div>
   </div>
 </div>
 `;
@@ -124,60 +122,58 @@ exports[`Checkins component should render properly 1`] = `
   <div
     className="chart-content"
   >
-    <React.Fragment>
-      <div
-        className="diagram"
-      >
-        <Doughnut
-          data={
-            Object {
-              "datasets": Array [
-                Object {
-                  "backgroundColor": null,
-                  "data": Array [
-                    0,
-                    10,
-                  ],
-                },
-              ],
-              "labels": Array [
-                "Checkins",
-                "Bookings",
-              ],
-              "text": "23%",
-            }
-          }
-          height={160}
-          options={
-            Object {
-              "cutoutPercentage": 70,
-              "legend": Object {
-                "display": false,
+    <div
+      className="diagram"
+    >
+      <Doughnut
+        data={
+          Object {
+            "datasets": Array [
+              Object {
+                "backgroundColor": null,
+                "data": Array [
+                  0,
+                  10,
+                ],
               },
-            }
+            ],
+            "labels": Array [
+              "Checkins",
+              "Bookings",
+            ],
+            "text": "23%",
           }
-          width={160}
-        />
-        <p
-          className="chart-percentage"
-        >
-          0
-          %
-        </p>
-      </div>
-      <div
-        className="chart-text"
+        }
+        height={160}
+        options={
+          Object {
+            "cutoutPercentage": 70,
+            "legend": Object {
+              "display": false,
+            },
+          }
+        }
+        width={160}
+      />
+      <p
+        className="chart-percentage"
       >
-        <p>
-          0
-          /
-          10
-        </p>
-        <p>
-          Meeting
-        </p>
-      </div>
-    </React.Fragment>
+        0
+        %
+      </p>
+    </div>
+    <div
+      className="chart-text"
+    >
+      <p>
+        0
+        /
+        10
+      </p>
+      <p>
+        Meeting
+      </p>
+    </div>
   </div>
 </div>
 `;

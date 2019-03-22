@@ -7,13 +7,13 @@ exports[`Login component should redirect to another page when a token is present
       "push": [MockFunction] {
         "calls": Array [
           Array [
-            "/settings",
+            "/analytics",
           ],
           Array [
-            "/settings",
+            "/analytics",
           ],
           Array [
-            "/settings",
+            undefined,
           ],
         ],
       },
@@ -68,7 +68,7 @@ exports[`Login component should redirect to another page when a user successfull
       "push": [MockFunction] {
         "calls": Array [
           Array [
-            "/settings",
+            "/analytics",
           ],
         ],
       },

@@ -15,60 +15,49 @@ exports[`Tests for SettingsContent renders correctly in memory 1`] = `
         <Route
           component={[Function]}
           exact={true}
-          path="/settings/centers"
         />
         <Route
           component={[Function]}
           exact={true}
-          path="/settings/offices"
         />
         <Route
           component={[Function]}
           exact={true}
-          path="/settings/floors"
         />
         <Route
           component={[Function]}
           exact={true}
-          path="/settings/rooms"
         />
         <Route
           component={[Function]}
           exact={true}
-          path="/settings/blocks"
         />
         <Route
           component={[Function]}
           exact={true}
-          path="/settings/resources"
         />
         <Route
           component={[Function]}
           exact={true}
-          path="/settings/people"
         />
         <Route
           component={[Function]}
           exact={true}
-          path="/settings/devices"
         />
         <Route
           component={[Function]}
           exact={true}
-          path="/settings/integrations"
         />
         <Route
           component={[Function]}
           exact={true}
-          path="/settings/integrations"
         />
         <Route
           component={[Function]}
           exact={true}
-          path="/settings/wings"
         />
         <Redirect
-          from="/settings"
+          from=""
           push={false}
           to="/analytics"
         />

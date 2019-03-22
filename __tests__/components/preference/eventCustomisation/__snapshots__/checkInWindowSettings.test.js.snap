@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Tests for CheckInWindowSettings Component renders correctly from memory 1`] = `
-<React.Fragment>
+<Fragment>
   <h1>
     Event Customizations
   </h1>
@@ -90,5 +90,5 @@ exports[`Tests for CheckInWindowSettings Component renders correctly from memory
       </ThemedIconMenu>
     </section>
   </div>
-</React.Fragment>
+</Fragment>
 `;

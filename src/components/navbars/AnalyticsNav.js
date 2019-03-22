@@ -13,6 +13,7 @@ import Button from '../commons/Button';
 import '../../assets/styles/custom.scss';
 import '../../assets/styles/topmenu.scss';
 import '../../../src/assets/styles/analyticsPage.scss';
+import '../../assets/styles/table.scss';
 import Calendar from '../../components/commons/Calendar';
 import notification from '../../utils/notification';
 import AnalyticsActivity from '../../containers/AnalyticsActivity';

@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Analytics Overview Component renders correctly from memory 1`] = `
-<React.Fragment>
+<Fragment>
   <AveragePieChartList
     dateValue={
       Object {
@@ -37,5 +37,5 @@ exports[`Analytics Overview Component renders correctly from memory 1`] = `
     }
     queryCompleted={[MockFunction]}
   />
-</React.Fragment>
+</Fragment>
 `;

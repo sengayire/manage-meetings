@@ -60,7 +60,7 @@ export class Login extends Component {
     // if user is logged in
     if (token) {
       // redirect user to settings page
-      push(ROUTES.settings);
+      push(ROUTES.analytics);
     }
     // returning null since no state updates
     return null;

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { withRouter, Route, Switch, Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import ROUTES from './utils/routes';
-import { Settings, Analytics, Preference, RoomFeedbackPage } from './containers';
+import { Analytics, Preference, RoomFeedbackPage } from './containers';
 import { LoginPage } from './components';
 import Constants from './utils/Constants';
 import '../src/assets/styles/toastr.scss';
@@ -53,7 +53,6 @@ class App extends Component {
       <ErrorBoundary isAuthError>
         <Switch>
           <Route exact path={ROUTES.home} component={LoginPage} />
-          <Route path={ROUTES.settings} component={Settings} />
           <Route path={ROUTES.analytics} component={Analytics} />
           <Route path={ROUTES.roomfeedback} component={RoomFeedbackPage} />
           <Route path={ROUTES.preference} component={Preference} />
