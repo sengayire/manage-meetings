@@ -5,12 +5,14 @@
 
   input {
     color: $color-primary;
-    padding: 20px 10px 0;
+    padding: 15px 10px 0;
     text-decoration: none;
     cursor: pointer;
+    text-align: left;
     border: none;
     font-size: 18px;
     line-height: 20px;
+    min-width: 80px;
 
     &:hover {
       background-color: $color-hover;
@@ -22,4 +24,23 @@
   button {
     height: 45px;
   }
+}
+
+.heading {
+  padding: 25px 20px 15px 10px;
+  color: $color-text;
+  opacity: 0.5;
+  text-align: left;
+}
+
+.heading:hover {
+  background-color: $color-hover
+}
+
+.horizontal-line {
+  width: 100%;
+  color: $color-hover;
+  margin-top: 0;
+  margin-bottom: 0;
+  opacity: 0.2;
 }

@@ -52,13 +52,13 @@ exports[`BookedRooms component should render correctly 1`] = `
           key="0"
         >
           <span>
-            Nairobi - 1st Floor SingleBlock A Dodoma (1)
+            Kampala
           </span>
           <span>
-            20
+            10
           </span>
           <span>
-            30
+            50
             %
           </span>
         </div>
@@ -67,28 +67,13 @@ exports[`BookedRooms component should render correctly 1`] = `
           key="1"
         >
           <span>
-            Nairobi - 2nd A Dodoma (1)
+            Gulu
           </span>
           <span>
             10
           </span>
           <span>
-            20
-            %
-          </span>
-        </div>
-        <div
-          className="table__row--analytics"
-          key="2"
-        >
-          <span>
-            Nairobi - 3rd A Dodoma (2)
-          </span>
-          <span>
-            5
-          </span>
-          <span>
-            10
+            50
             %
           </span>
         </div>

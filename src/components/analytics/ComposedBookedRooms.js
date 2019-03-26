@@ -11,16 +11,22 @@ import QueryLeastBookedRooms from './QueryLeastBookedRooms';
  *
  * @returns {JSX}
  */
-const ComposedBookedRooms = ({ dateValue }) => (
+const ComposedBookedRooms = ({ dateValue, updateParent }) => (
   <div className="wrap-composed-rooms">
     <div>
       {
-        <QueryMostBookedRooms dateValue={dateValue} />
+        <QueryMostBookedRooms
+          dateValue={dateValue}
+          updateParent={updateParent}
+        />
       }
     </div>
     <div id="booked-room-margin">
       {
-        <QueryLeastBookedRooms dateValue={dateValue} />
+        <QueryLeastBookedRooms
+          dateValue={dateValue}
+          updateParent={updateParent}
+        />
       }
     </div>
   </div>
@@ -30,9 +36,11 @@ ComposedBookedRooms.propTypes = {
     startDate: PropTypes.string,
     endDate: PropTypes.string,
   }),
+  updateParent: PropTypes.func,
 };
 
 ComposedBookedRooms.defaultProps = {
   dateValue: {},
+  updateParent: null,
 };
 export default ComposedBookedRooms;

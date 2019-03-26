@@ -56,7 +56,7 @@ export class AddRoomToEpicTower extends Component {
       });
     }
     /* istanbul ignore next */
-    if (remoteRooms.allRemoteRooms) {
+    if (remoteRooms.allRemoteRooms && remoteRooms.allRemoteRooms.rooms[0]) {
       const { rooms: [{ calendarId, name }] } = remoteRooms.allRemoteRooms;
       const { rooms } = remoteRooms.allRemoteRooms;
       this.setState({

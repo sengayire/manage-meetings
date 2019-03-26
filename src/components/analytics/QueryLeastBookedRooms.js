@@ -11,7 +11,7 @@ import BookedRooms from './BookedRooms';
  *
  * @returns {JSX}
  */
-const QueryLeastBookedRooms = ({ dateValue }) => (
+const QueryLeastBookedRooms = ({ dateValue, updateParent }) => (
   <Query
     query={LEAST_BOOKED_ROOMS_ANALYTICS}
     variables={dateValue}
@@ -23,16 +23,18 @@ const QueryLeastBookedRooms = ({ dateValue }) => (
       if (!loading && !error) {
         const { analytics } = data.analyticsForBookedRooms;
         bookedRoomsList = analytics;
+        updateParent('leastBookedRooms', bookedRoomsList);
       }
-
       return (
-        <BookedRooms
-          tip="The least number of times meeting rooms were booked in a set time period"
-          bookedRoomText="Least Booked Rooms"
-          fetching={loading}
-          error={error}
-          bookedRoomsList={bookedRoomsList}
-        />
+        <div>
+          <BookedRooms
+            tip="The least number of times meeting rooms were booked in a set time period"
+            bookedRoomText="Least Booked Rooms"
+            fetching={loading}
+            error={error}
+            bookedRoomsList={bookedRoomsList}
+          />
+        </div>
       );
     }}
   </Query>
@@ -40,6 +42,10 @@ const QueryLeastBookedRooms = ({ dateValue }) => (
 
 QueryLeastBookedRooms.propTypes = {
   dateValue: PropTypes.instanceOf(Object).isRequired,
+  updateParent: PropTypes.func,
 };
 
+QueryLeastBookedRooms.defaultProps = {
+  updateParent: null,
+};
 export default QueryLeastBookedRooms;

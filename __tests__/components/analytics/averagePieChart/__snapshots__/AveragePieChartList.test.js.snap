@@ -12,8 +12,11 @@ exports[`Average Pie Chart Component renders correctly from memory 1`] = `
       }
     }
     queryCompleted={[MockFunction]}
+    updateParent={null}
   />
-  <Apollo(GetAverageRoomCapacityComponent) />
+  <Apollo(GetAverageRoomCapacityComponent)
+    updateParent={null}
+  />
   <BookingsCountBarGraph
     dateValue={
       Object {
@@ -21,6 +24,7 @@ exports[`Average Pie Chart Component renders correctly from memory 1`] = `
         "validatedStartDate": "",
       }
     }
+    updateParent={null}
   />
 </div>
 `;

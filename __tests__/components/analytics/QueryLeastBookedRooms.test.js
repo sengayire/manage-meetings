@@ -33,7 +33,7 @@ describe('Query Least Booked Rooms Component', () => {
   it('should load progressBar', async () => {
     const wrapper = mount(
       <MockedProvider mocks={mock} addTypename={false}>
-        <QueryLeastBookedRooms {...props} />
+        <QueryLeastBookedRooms {...props} updateParent={jest.fn()} />
       </MockedProvider>,
     );
     await wait(0);

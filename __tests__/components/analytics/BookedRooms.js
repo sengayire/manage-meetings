@@ -23,12 +23,16 @@ describe('BookedRooms component', () => {
     const tableWrapper = mount(<BookedRooms {...props} bookedRoomsList={roomUsage} />);
     expect(
       tableWrapper
+        .find('.table').length,
+    ).toBe(1);
+    expect(
+      tableWrapper
         .find('.table')
         .children()
         .find('.table__body')
         .children()
         .find('.table__row--analytics').length,
-    ).toBe(3);
+    ).toBe(2);
   });
 
   it('should render error div', () => {

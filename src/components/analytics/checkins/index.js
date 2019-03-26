@@ -46,7 +46,8 @@ export class Checkins extends Component {
       cancellationsPercentage,
       cancellations,
     } = this.formatAnalyticsData(analyticsRatios, loading, error);
-
+    const { updateParent } = this.props;
+    updateParent('checkinsAndCancellations', analyticsRatios);
     return (
       <div className="checkins">
         <DonutChart
@@ -101,6 +102,11 @@ Checkins.propTypes = {
     isFutureDateSelected: PropTypes.bool.isRequired,
   }).isRequired,
   queryCompleted: PropTypes.func.isRequired,
+  updateParent: PropTypes.func,
+};
+
+Checkins.defaultProps = {
+  updateParent: null,
 };
 
 export default compose(

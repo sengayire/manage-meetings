@@ -1460,6 +1460,32 @@ exports[`Query Bookings Count Component should render analytics data 1`] = `
             "startDate": "Nov 01 2018",
           }
         }
+        updateParent={
+          [MockFunction] {
+            "calls": Array [
+              Array [
+                "totalBookingsCount",
+                Array [
+                  Object {
+                    "bookings": 21,
+                    "period": "Nov 01 2018",
+                    Symbol(id): "ROOT_QUERY.bookingsAnalyticsCount({\\"startDate\\":\\"Nov 01 2018\\",\\"endDate\\":\\"Nov 03 2018\\"}).0",
+                  },
+                  Object {
+                    "bookings": 30,
+                    "period": "Nov 02 2018",
+                    Symbol(id): "ROOT_QUERY.bookingsAnalyticsCount({\\"startDate\\":\\"Nov 01 2018\\",\\"endDate\\":\\"Nov 03 2018\\"}).1",
+                  },
+                  Object {
+                    "bookings": 33,
+                    "period": "Nov 03 2018",
+                    Symbol(id): "ROOT_QUERY.bookingsAnalyticsCount({\\"startDate\\":\\"Nov 01 2018\\",\\"endDate\\":\\"Nov 03 2018\\"}).2",
+                  },
+                ],
+              ],
+            ],
+          }
+        }
       >
         <Query
           notifyOnNetworkStatusChange={true}
@@ -3064,6 +3090,7 @@ exports[`Query Bookings Count Component should render without error 1`] = `
             "startDate": "Nov 01 2018",
           }
         }
+        updateParent={[MockFunction]}
       >
         <Query
           notifyOnNetworkStatusChange={true}

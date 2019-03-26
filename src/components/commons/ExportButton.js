@@ -2,8 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Dropdown from '../commons/Dropdown';
 import { download24pxIcon } from '../../utils/images/images';
-
-// styles
 import '../../assets/styles/exportButton.scss';
 
 /**
@@ -17,6 +15,8 @@ import '../../assets/styles/exportButton.scss';
  */
 const renderDropdownOptions = (downloadJPG, downloadCSV, downloadPDF) => (
   <div className="dropdown-list">
+    <div className="heading">Export Options</div>
+    <hr size="1" className="horizontal-line" />
     <input type="button" onClick={downloadPDF} key="pdf" value="PDF" />
     <input type="button" onClick={downloadJPG} key="jpg" value="JPEG" />
     <input type="button" onClick={downloadCSV} key="csv" value="CSV" />

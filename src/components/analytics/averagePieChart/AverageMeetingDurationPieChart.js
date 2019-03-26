@@ -67,7 +67,6 @@ export class AverageMeetingDurationPieChart extends React.Component {
     between45And60 = this.getPercentageDuration(between45And60, durations.length);
     between30And45 = this.getPercentageDuration(between30And45, durations.length);
     thirtyAndBelow = this.getPercentageDuration(thirtyAndBelow, durations.length);
-
     return [greaterThan60, between45And60, between30And45, thirtyAndBelow];
   }
 
@@ -150,7 +149,10 @@ export class AverageMeetingDurationPieChart extends React.Component {
   }
 
   render() {
+    const { MeetingsDurationaAnalytics = [] } = this.state.analyticsForMeetingsDurations;
     const { isFutureDateSelected } = this.props.dateValue;
+    const { updateParent } = this.props;
+    updateParent('averageMeetingDuration', this.getSectorWidths(MeetingsDurationaAnalytics));
     const tip =
       'The percentage representation of the average amount of time people spend in all booked meeting rooms in a set time period';
     return (
@@ -177,9 +179,12 @@ AverageMeetingDurationPieChart.propTypes = {
     error: PropTypes.any,
   }).isRequired,
   queryCompleted: PropTypes.func.isRequired,
+  updateParent: PropTypes.func,
 };
+
 AverageMeetingDurationPieChart.defaultProps = {
   dateValue: {},
+  updateParent: null,
 };
 
 export default compose(

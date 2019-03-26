@@ -27,35 +27,29 @@ describe('Average Meeting List Component', () => {
           perPage: 5,
         },
       },
-      result: {
-        data: {
-          analyticsForMeetingsDurations: {
-            hasPrevious: false,
-            hasNext: true,
-            pages: 7,
-            MeetingsDurationaAnalytics: [
-              {
-                roomName: 'Entebbe',
-                count: 62,
-                totalDuration: 2440,
-              },
-            ],
-          },
+      averageMeetingDurations: [
+        {
+          roomName: 'Entebbe',
+          count: 62,
+          totalDuration: 2440,
         },
-      },
+      ],
     },
   ];
 
   const setup = (
     <MockedProvider mocks={mocks} addTypename={false}>
-      <AverageMeetingComponent {...props} />
+      <AverageMeetingComponent {...props} updateParent={jest.fn()} />
     </MockedProvider>
   );
 
   const wrapper = mount(setup);
 
   it('renders correctly from memory', () => {
-    expect(shallow(<AverageMeetingComponent {...props} />)).toMatchSnapshot();
+    expect(shallow(<AverageMeetingComponent
+      {...props}
+      updateParent={jest.fn()}
+    />)).toMatchSnapshot();
   });
 
   it('Should render <AverageMeetingList />', async () => {
@@ -77,7 +71,7 @@ describe('Average Meeting List Component', () => {
       dateValue: { isFutureDateSelected: false },
       queryCompleted: jest.fn(),
     };
-    const component = shallow(<AverageMeetingList {...initialProps} />);
+    const component = shallow(<AverageMeetingList {...initialProps} updateParent={jest.fn()} />);
     component.instance().handleData();
     expect(component.state('isFetching')).toBe(true);
   });
@@ -95,7 +89,7 @@ describe('Average Meeting List Component', () => {
       dateValue: { isFutureDateSelected: true },
       queryCompleted: jest.fn(),
     };
-    const component = shallow(<AverageMeetingList {...initialProps} />);
+    const component = shallow(<AverageMeetingList {...initialProps} updateParent={jest.fn()} />);
     expect(component.find('.average-table-error').text()).toBe('You cannot fetch data beyond today');
   });
   it('should call queryCompleted when the component updates', () => {
@@ -115,7 +109,7 @@ describe('Average Meeting List Component', () => {
       queryCompleted: jest.fn(),
     };
     jest.spyOn(AverageMeetingList.prototype, 'componentDidUpdate');
-    const component = shallow(<AverageMeetingList {...initialProps} />);
+    const component = shallow(<AverageMeetingList {...initialProps} updateParent={jest.fn()} />);
     component.instance().componentDidUpdate();
     expect(initialProps.queryCompleted.mock.calls.length).toBe(1);
     expect(AverageMeetingList.prototype.componentDidUpdate.mock.calls.length).toBe(1);

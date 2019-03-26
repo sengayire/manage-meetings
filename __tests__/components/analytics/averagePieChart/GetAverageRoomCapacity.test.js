@@ -20,7 +20,7 @@ const props = {
 };
 
 describe('Get Average Room Capacity Component', () => {
-  const wrapper = shallow(<GetAverageRoomCapacityComponent {...props} />);
+  const wrapper = shallow(<GetAverageRoomCapacityComponent {...props} updateParent={jest.fn()} />);
   it('renders correctly from memory', () => {
     expect(wrapper).toMatchSnapshot();
     expect(wrapper).toHaveLength(1);

@@ -79,6 +79,7 @@ exports[`RoomForm should render properly 1`] = `
       disabled={true}
       id="roomLocation"
       isValue={false}
+      key=""
       labelText="Select Room Location"
       name="roomLocation"
       onChange={[MockFunction]}

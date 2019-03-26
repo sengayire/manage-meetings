@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Analytics Overview Component renders correctly from memory 1`] = `
-<React.Fragment>
+<Fragment>
   <AveragePieChartList
     dateValue={
       Object {
@@ -10,6 +10,7 @@ exports[`Analytics Overview Component renders correctly from memory 1`] = `
       }
     }
     queryCompleted={[MockFunction]}
+    updateParent={null}
   />
   <ComposedBookedRooms
     dateValue={
@@ -18,6 +19,7 @@ exports[`Analytics Overview Component renders correctly from memory 1`] = `
         "validatedStartDate": "",
       }
     }
+    updateParent={null}
   />
   <Apollo(Checkins)
     dateValue={
@@ -27,6 +29,7 @@ exports[`Analytics Overview Component renders correctly from memory 1`] = `
       }
     }
     queryCompleted={[MockFunction]}
+    updateParent={null}
   />
   <Apollo(AverageMeetingList)
     dateValue={
@@ -36,6 +39,7 @@ exports[`Analytics Overview Component renders correctly from memory 1`] = `
       }
     }
     queryCompleted={[MockFunction]}
+    updateParent={null}
   />
-</React.Fragment>
+</Fragment>
 `;

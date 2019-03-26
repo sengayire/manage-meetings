@@ -37,8 +37,9 @@ export class AverageMeetingList extends Component {
   }
 
   componentDidUpdate() {
-    if (!this.props.data.error && !this.props.data.loading) {
-      this.props.queryCompleted('AverageMeetingList');
+    const { queryCompleted, data: { error, loading } } = this.props;
+    if (!error && !loading) {
+      queryCompleted('AverageMeetingList');
     }
   }
 
@@ -95,9 +96,9 @@ export class AverageMeetingList extends Component {
     const { analyticsForMeetingsDurations, isFetching } = this.state;
     const { loading, error } = this.props.data;
     const { isFutureDateSelected } = this.props.dateValue;
-
     if (loading) return <QueryAnalyticsLoading />;
-
+    const { updateParent } = this.props;
+    updateParent('averageMeetingTime', analyticsForMeetingsDurations);
     return (
       <div className="average-meeting">
         <div className="average-meeting-control">
@@ -155,9 +156,12 @@ AverageMeetingList.propTypes = {
     error: PropTypes.any,
   }).isRequired,
   queryCompleted: PropTypes.func.isRequired,
+  updateParent: PropTypes.func,
 };
+
 AverageMeetingList.defaultProps = {
   dateValue: {},
+  updateParent: null,
 };
 
 export default compose(

@@ -13,6 +13,7 @@ import AnalyticsNav, { AnalyticsNav as AnalyticComponent } from '../../../src/co
 import AnalyticsActivity from '../../../src/containers/AnalyticsActivity';
 import AnalyticsOverview from '../../../src/containers/AnalyticsOverview';
 import roomUsage from '../../../__mocks__/rooms/mostUsedRooms';
+import mockDataForAnalytics from '../../../__mocks__/analytics/mockAnalyticsDataState';
 
 jest.mock('html2canvas');
 jest.mock('jspdf');
@@ -32,7 +33,6 @@ const client = new ApolloClient({
 });
 global.URL.createObjectURL = jest.fn();
 
-
 const props = {
   leastBookedAnalytics: {
     loading: false,
@@ -50,23 +50,6 @@ const props = {
   },
 };
 
-const newProps = {
-  leastBookedAnalytics: {
-    loading: true,
-    refetch: jest.fn(() => new Promise(resolve => resolve())),
-    analyticsForBookedRooms: { analytics: roomUsage },
-  },
-  mostBookedAnalytics: {
-    loading: true,
-    refetch: jest.fn(() => new Promise(resolve => resolve())),
-    analyticsForBookedRooms: { analytics: roomUsage },
-  },
-  dateValue: {
-    startDate: 'start date',
-    endDate: 'end date',
-  },
-};
-
 describe('AnalyticsNav Component', () => {
   const user = {
     user: {
@@ -75,13 +58,15 @@ describe('AnalyticsNav Component', () => {
   };
   let analyticNavWrapper;
   let wrapper;
+  let componentWrapper;
+
   beforeEach(() => {
     wrapper = mount(
       <ApolloProvider client={client}>
-        <AnalyticsNav user={user} />
+        <AnalyticsNav user={user} {...props} />
       </ApolloProvider>,
     );
-    const componentWrapper = shallow(<AnalyticComponent
+    componentWrapper = shallow(<AnalyticComponent
       user={user}
       {...props}
     />);
@@ -120,65 +105,30 @@ describe('AnalyticsNav state and download', () => {
       location: 'Nairobi',
     },
   };
-
-  it('should update the state with least and most used rooms', () => {
-    const wrapper = shallow(<AnalyticComponent
-      user={user}
-      leastBookedAnalytics={props}
-      mostBookedAnalytics={props}
-    />);
-    wrapper.instance().componentWillReceiveProps({ ...props });
-    const leastBookedRoomsData = roomUsage;
-    const mostBokedRoomsData = roomUsage;
-    expect(wrapper.state().leastBookedRooms).toEqual(leastBookedRoomsData);
-    expect(wrapper.state().mostBookedRooms).toEqual(mostBokedRoomsData);
+  const wrapper = shallow(<AnalyticComponent
+    user={user}
+  />);
+  wrapper.setState({
+    ...mockDataForAnalytics,
   });
 
-  it('should keep state for least and most used rooms as null', () => {
-    const wrapper = shallow(<AnalyticComponent
-      user={user}
-      leastBookedAnalytics={props}
-      mostBookedAnalytics={props}
-    />);
-    wrapper.setState({
-      leastBookedRooms: [],
-      mostBookedRooms: [],
-    });
-    wrapper.update();
-    wrapper.instance().componentWillReceiveProps({ ...newProps });
-    expect(wrapper.state().leastBookedRooms).toEqual([]);
-    expect(wrapper.state().mostBookedRooms).toEqual([]);
+  it('should update the state with least and most used rooms', () => {
+    expect(wrapper.state().leastBookedRooms).toEqual(mockDataForAnalytics.leastBookedRooms);
+    expect(wrapper.state().mostBookedRooms).toEqual(mockDataForAnalytics.mostBookedRooms);
   });
 
   it('should show the calendar when all three components have finish loading', () => {
-    const wrapper = shallow(<AnalyticComponent
-      user={user}
-      leastBookedAnalytics={props}
-      mostBookedAnalytics={props}
-    />);
     wrapper.setState({ componentsDoneLoading: ['component1', 'component2', 'component3'] });
     expect(wrapper.find('Calendar').length).toEqual(1);
   });
 
   it('should call downloadCSV', () => {
-    const wrapper = shallow(<AnalyticComponent
-      user={user}
-      leastBookedAnalytics={props}
-      mostBookedAnalytics={props}
-    />);
     const downloadCSV = jest.spyOn(wrapper.instance(), 'downloadCSV');
-    wrapper.instance().componentWillReceiveProps({ ...props });
     wrapper.instance().downloadCSV();
     expect(downloadCSV).toBeCalled();
   });
 
   it('should call fetchDownload with pdf', () => {
-    const wrapper = shallow(<AnalyticComponent
-      user={user}
-      leastBookedAnalytics={props}
-      mostBookedAnalytics={props}
-    />);
-    wrapper.instance().componentWillReceiveProps({ ...props });
     const fetchDownload = jest.spyOn(wrapper.instance(), 'fetchDownload');
     html2canvas.mockImplementation(() => Promise.resolve({ data: { data: '<p>test</p>' }, toDataURL: jest.fn() }));
     jsPDF.mockImplementation(() => ({ save: jest.fn(), addImage: jest.fn() }));
@@ -187,15 +137,10 @@ describe('AnalyticsNav state and download', () => {
   });
 
   it('should call fetchDownload with jpeg', () => {
-    const wrapper = shallow(<AnalyticComponent
-      user={user}
-      leastBookedAnalytics={props}
-      mostBookedAnalytics={props}
-    />);
     const fetchDownload = jest.spyOn(wrapper.instance(), 'fetchDownload');
-    wrapper.instance().componentWillReceiveProps({ ...props });
     html2canvas.mockImplementation(() => Promise.resolve({ data: { data: '<p>test</p>' }, toDataURL: jest.fn() }));
     jsPDF.mockImplementation(() => ({ save: jest.fn(), addImage: jest.fn() }));
+    wrapper.instance().userRole();
     wrapper.instance().downloadJpeg('jpeg');
     expect(fetchDownload).toBeCalledWith('jpeg');
   });

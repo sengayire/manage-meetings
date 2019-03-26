@@ -271,5 +271,7 @@ exports[`Average Meeting List Component renders correctly from memory 1`] = `
     }
   }
   warnUnhandledError={true}
-/>
+>
+  <Component />
+</Query>
 `;

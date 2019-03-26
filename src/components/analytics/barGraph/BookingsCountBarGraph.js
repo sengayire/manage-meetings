@@ -14,7 +14,7 @@ import '../../../../src/assets/styles/barGraphBaseStyle.scss';
  *
  * @returns {JSX}
  */
-const BookingsCountBarGraph = ({ dateValue }) => {
+const BookingsCountBarGraph = ({ dateValue, updateParent }) => {
   const tip = 'Total count of bookings in a given time';
   return (
     <article className="bar-graph">
@@ -23,7 +23,10 @@ const BookingsCountBarGraph = ({ dateValue }) => {
         {Tip(tip)}
       </section>
       <section className="graph-content">
-        <QueryBookingsCount dateValue={dateValue} />
+        <QueryBookingsCount
+          dateValue={dateValue}
+          updateParent={updateParent}
+        />
       </section>
     </article>
   );
@@ -34,10 +37,12 @@ BookingsCountBarGraph.propTypes = {
     startDate: PropTypes.string,
     endDate: PropTypes.string,
   }),
+  updateParent: PropTypes.func,
 };
 
 BookingsCountBarGraph.defaultProps = {
   dateValue: {},
+  updateParent: null,
 };
 
 export default BookingsCountBarGraph;

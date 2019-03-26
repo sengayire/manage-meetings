@@ -8,20 +8,26 @@ import AverageMeetingListComponent from '../components/analytics/AverageMeetingL
 import ComposedBookedRooms from '../components/analytics/ComposedBookedRooms';
 import AveragePieChartList from '../components/analytics/averagePieChart/AveragePieChartList';
 
-const AnalyticsOverview = ({ dateValue, queryCompleted }) => (
+const AnalyticsOverview = ({ dateValue, queryCompleted, updateParent }) => (
   <Fragment>
     <AveragePieChartList
       dateValue={dateValue}
       queryCompleted={queryCompleted}
+      updateParent={updateParent}
     />
-    <ComposedBookedRooms dateValue={dateValue} />
+    <ComposedBookedRooms
+      dateValue={dateValue}
+      updateParent={updateParent}
+    />
     <Checkins
       dateValue={dateValue}
       queryCompleted={queryCompleted}
+      updateParent={updateParent}
     />
     <AverageMeetingListComponent
       dateValue={dateValue}
       queryCompleted={queryCompleted}
+      updateParent={updateParent}
     />
   </Fragment>
 );
@@ -34,6 +40,7 @@ AnalyticsOverview.propTypes = {
     validatedStartDate: PropTypes.string,
   }),
   queryCompleted: PropTypes.func.isRequired,
+  updateParent: PropTypes.func,
 };
 
 AnalyticsOverview.defaultProps = {
@@ -41,6 +48,7 @@ AnalyticsOverview.defaultProps = {
     startDate: `"${getTodaysDate()}"`,
     endDate: `"${getTodaysDate()}"`,
   },
+  updateParent: null,
 };
 
 export default AnalyticsOverview;

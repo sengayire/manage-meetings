@@ -11,7 +11,7 @@ describe('Checkins component', () => {
     },
     queryCompleted: jest.fn(),
   };
-  const wrapper = shallow(<Checkins {...props} />);
+  const wrapper = shallow(<Checkins {...props} updateParent={jest.fn()} />);
 
   it('should render properly', () => {
     expect(wrapper).toMatchSnapshot();
@@ -23,7 +23,7 @@ describe('Checkins component', () => {
 
   it('should call queryCompleted when the component updates', () => {
     jest.spyOn(Checkins.prototype, 'componentDidUpdate');
-    const component = shallow(<Checkins {...props} />);
+    const component = shallow(<Checkins {...props} updateParent={jest.fn()} />);
     component.instance().componentDidUpdate();
     expect(props.queryCompleted.mock.calls.length).toBe(1);
     expect(Checkins.prototype.componentDidUpdate.mock.calls.length).toBe(1);

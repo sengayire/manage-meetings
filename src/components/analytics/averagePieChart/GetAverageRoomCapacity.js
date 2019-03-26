@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { graphql, compose } from 'react-apollo';
 import PropTypes from 'prop-types';
 import { Pie } from 'react-chartjs-2';
@@ -15,11 +15,24 @@ export class GetAverageRoomCapacityComponent extends Component {
     this.state = { };
   }
 
+  /**
+   * converts to percentage
+   *
+   * @param {Integer} capacity
+   * @param {Integer} total
+   *
+   * @returns {Integer}
+   */
   getPercentage = (capacity, total) => {
     const result = (capacity / total) * 100;
     return Math.round(result);
   }
 
+  /**
+   * formats room data
+   *
+   * @returns {Object}
+   */
   getRoomData = () => {
     const roomsLength = this.props.data.allRooms.rooms.length;
     const allRoomsData = this.props.data.allRooms.rooms;
@@ -36,6 +49,11 @@ export class GetAverageRoomCapacityComponent extends Component {
     return { lessThanTenData, betweenTenandTwentyData, greaterThanTwentyData };
   }
 
+  /**
+   * renders pie chart for room data
+   *
+   * @returns {JSX}
+   */
   renderPieChart = () => {
     const { loading, error } = this.props.data;
     if (error) {
@@ -43,6 +61,8 @@ export class GetAverageRoomCapacityComponent extends Component {
     } else if (loading) {
       return <Spinner />;
     }
+    const { updateParent } = this.props;
+    updateParent('roomCapacity', this.getRoomData());
 
     const { lessThanTenData, betweenTenandTwentyData, greaterThanTwentyData } = this.getRoomData();
     const options = {
@@ -63,34 +83,35 @@ export class GetAverageRoomCapacityComponent extends Component {
     };
 
     return (
-      <section className="chart-content">
-        <Pie
-          data={graphData}
-          options={options}
-          height={168}
-          width={230}
-        />
-        <section className="chart-details">
-          <p className="room-capacity-first-circle">
-            <span>{}</span>
+      <Fragment>
+        <section className="chart-content">
+          <Pie
+            data={graphData}
+            options={options}
+            height={168}
+            width={230}
+          />
+          <section className="chart-details">
+            <p className="room-capacity-first-circle">
+              <span>{}</span>
             Less than 10
-          </p>
-          <p className="room-capacity-second-circle">
-            <span>{}</span>
+            </p>
+            <p className="room-capacity-second-circle">
+              <span>{}</span>
             10 - 20
-          </p>
-          <p className="room-capacity-third-circle">
-            <span>{}</span>
+            </p>
+            <p className="room-capacity-third-circle">
+              <span>{}</span>
             More than 20
-          </p>
+            </p>
+          </section>
         </section>
-      </section>
+      </Fragment>
     );
   }
 
   render() {
     const tip = 'The percentage representation of the average rooms\' capacity ';
-
     return (
       <article className="pie-chart">
         <section className="chart-header">
@@ -112,6 +133,11 @@ GetAverageRoomCapacityComponent.propTypes = {
     loading: PropTypes.bool,
     error: PropTypes.object,
   }).isRequired,
+  updateParent: PropTypes.func,
+};
+
+GetAverageRoomCapacityComponent.defaultProps = {
+  updateParent: null,
 };
 
 export default compose(

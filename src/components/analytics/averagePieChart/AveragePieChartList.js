@@ -14,14 +14,20 @@ import GetAverageRoomCapacity from './GetAverageRoomCapacity';
  *
  * @returns {JSX}
  */
-const AveragePieChartList = ({ dateValue, queryCompleted }) => (
+const AveragePieChartList = ({ dateValue, queryCompleted, updateParent }) => (
   <div className="pie-chart-container">
     <AverageMeetingDurationPieCharts
       dateValue={dateValue}
       queryCompleted={queryCompleted}
+      updateParent={updateParent}
     />
-    <GetAverageRoomCapacity />
-    <BookingsCountBarGraph dateValue={dateValue} />
+    <GetAverageRoomCapacity
+      updateParent={updateParent}
+    />
+    <BookingsCountBarGraph
+      dateValue={dateValue}
+      updateParent={updateParent}
+    />
   </div>
 );
 
@@ -33,10 +39,12 @@ AveragePieChartList.propTypes = {
     validatedEndDate: PropTypes.string.isRequired,
   }),
   queryCompleted: PropTypes.func.isRequired,
+  updateParent: PropTypes.func,
 };
 
 AveragePieChartList.defaultProps = {
   dateValue: {},
+  updateParent: null,
 };
 
 export default AveragePieChartList;

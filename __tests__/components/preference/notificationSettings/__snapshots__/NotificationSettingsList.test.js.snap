@@ -84,5 +84,7 @@ exports[`NotificationsList Component renders correctly from memory 1`] = `
       },
     }
   }
-/>
+>
+  <Component />
+</Query>
 `;

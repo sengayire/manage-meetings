@@ -17,7 +17,7 @@ describe('Query Bookings Count Component', () => {
     const tree = mount(
       <MockedProvider mocks={analyticsGraphMock}>
         <ErrorBoundary >
-          <QueryBookingsCount {...props} />
+          <QueryBookingsCount {...props} updateParent={jest.fn()} />
         </ErrorBoundary>
       </MockedProvider>,
     );
@@ -30,7 +30,7 @@ describe('Query Bookings Count Component', () => {
     const tree = mount(
       <MockedProvider mocks={[analyticsGraphMockData]} addTypename={false}>
         <ErrorBoundary >
-          <QueryBookingsCount {...props} />
+          <QueryBookingsCount {...props} updateParent={jest.fn()} />
         </ErrorBoundary>
       </MockedProvider>,
     );

@@ -22,7 +22,7 @@ import ExportButton from '../commons/ExportButton';
 import { decodeTokenAndGetUserData } from '../../utils/Cookie';
 import { GET_USER_QUERY } from '../../graphql/queries/People';
 import downloadFileString from '../../fixtures/downloadString';
-import { LEAST_BOOKED_ROOMS_ANALYTICS, MOST_BOOKED_ROOMS_ANALYTICS } from '../../graphql/queries/analytics';
+import timeConvert from '../../components/helpers/timeConverter';
 
 /**
  * Component for Analytics
@@ -40,23 +40,211 @@ export class AnalyticsNav extends Component {
     endDate: moment().format('MMM DD Y'),
     validatedStartDate: moment().format('MMM DD Y'),
     validatedEndDate: moment().format('MMM DD Y'),
-    fetching: true,
     isFutureDateSelected: false,
+    fetching: false,
+    error: '',
     componentsDoneLoading: [],
+    leastBookedRooms: [],
+    mostBookedRooms: [],
+    roomCapacity: [],
+    averageMeetingDuration: [],
+    averageMeetingTime: {},
+    checkinsAndCancellations: [],
+    totalBookingsCount: [],
   };
 
   componentWillReceiveProps(props) {
-    this.setState({ fetching: true });
-    const { loading, error } = props.leastBookedAnalytics;
-    if (!loading && !error) {
-      const { analytics } = props.leastBookedAnalytics.analyticsForBookedRooms;
-      this.setState({ leastBookedRooms: analytics, fetching: false });
-    }
+    this.setState({ fetching: true, error: props.error });
+  }
 
-    if (!props.mostBookedAnalytics.loading && !props.mostBookedAnalytics.error) {
-      const { analytics } = props.mostBookedAnalytics.analyticsForBookedRooms;
-      this.setState({ mostBookedRooms: analytics, fetching: false });
+  /**
+   * Updates the state with the data coming from the children
+   * components
+   *
+   * @param {string} type
+   * @param {object} analytics
+   *
+   * @returns {void}
+   */
+  updateParent = (type, analytics) => {
+    this.setState((prevState) => {
+      const stateParameter = prevState;
+      stateParameter[`${type}`] = analytics;
+      stateParameter.fetching = false;
+    });
+  }
+
+  /**
+   * Formats the CSV data for Least and Most Booked Rooms
+   * Inserts the formatted data into the csv spreadsheet
+   *
+   * @param {array} csvRows
+   *
+   * @returns {void}
+   */
+  leastAndMostBookedRoomsCSV = (csvRows) => {
+    const {
+      leastBookedRooms, mostBookedRooms,
+    } = this.state;
+    const percentOfShare = '% SHARE OF ALL MEETINGS'.replace(/ /g, '%20');
+    const mostBookedTitle = 'Most Booked Rooms'.replace(/ /g, '%20');
+    const leastBookedTitle = 'Least Booked Rooms'.replace(/ /g, '%20');
+    const toWriteData = [['ROOM', 'MEETINGS', percentOfShare], [mostBookedTitle]];
+    const mostUsedRoomsList = this.bookedRoomsList({ bookedRooms: mostBookedRooms });
+    for (let i = 0; i < mostUsedRoomsList.length; i += 1) {
+      toWriteData.push(this.createMeetingArray(mostUsedRoomsList[i]));
     }
+    toWriteData.push([leastBookedTitle]);
+    const leatUsedRoomsList = this.bookedRoomsList({ bookedRooms: leastBookedRooms });
+    for (let i = 0; i < leatUsedRoomsList.length; i += 1) {
+      toWriteData.push(this.createMeetingArray(leatUsedRoomsList[i]));
+    }
+    for (let i = 0; i < toWriteData.length; i += 1) {
+      csvRows.push(toWriteData[i].join(','));
+    }
+  }
+
+  /**
+   * Formats the CSV data for Checkins and Cancellations Data
+   * Inserts the formatted data into the csv spreadsheet
+   *
+   * @param {array} csvRows
+   *
+   * @returns {void}
+   */
+  percentageCheckinsAndCancellationsCSV = (csvRows) => {
+    const checkinsHeaderTitle = 'ANALYTICS FOR CHECKINS'.replace(/ /g, '%20');
+    const checkinsAnalyticsTitle = [[checkinsHeaderTitle]];
+    csvRows.push([]);
+    const { checkins, bookings, checkinsPercentage } =
+    this.state.checkinsAndCancellations;
+    let checkinsData = [];
+    checkinsData = [`${bookings.toString()}`, `${checkins.toString()}`,
+      `${Math.round(checkinsPercentage, 1).toString()}%`];
+    csvRows.push(checkinsAnalyticsTitle.join(','));
+    const bookingsTitle = 'Total Bookings'.replace(/ /g, '%20');
+    const checkinsTitle = 'Total Checkins'.replace(/ /g, '%20');
+    const percentageCheckinsTitle = 'Percentage Checkins'.replace(/ /g, '%20');
+    csvRows.push([[bookingsTitle, checkinsTitle, percentageCheckinsTitle]]);
+    csvRows.push(checkinsData.join(','));
+    const cancellationsHeaderTitle = 'ANALYTICS FOR CANCELLATIONS'.replace(/ /g, '%20');
+    const cancellationsAnalyticsTitle = [[cancellationsHeaderTitle]];
+    csvRows.push([]);
+    const { cancellations, cancellationsPercentage } =
+    this.state.checkinsAndCancellations;
+    const cancellationsData = [`${bookings.toString()}`, `${cancellations.toString()}`,
+      `${Math.round(cancellationsPercentage, 1).toString()}%`];
+    csvRows.push(cancellationsAnalyticsTitle.join(','));
+    const cancellationsTitle = 'Total Auto Cancellations'.replace(/ /g, '%20');
+    const percentageCancellationsTitle = 'Percentage of Auto Cancellations'.replace(/ /g, '%20');
+    csvRows.push([[bookingsTitle, cancellationsTitle, percentageCancellationsTitle]]);
+    csvRows.push(cancellationsData.join(','));
+  }
+
+  /**
+   * Formats the CSV data for Total Bookings
+   * Inserts the formatted data into the csv spreadsheet
+   *
+   * @param {array} csvRows
+   *
+   * @returns {void}
+   */
+  totalBookingsCountCSV = (csvRows) => {
+    const totalBookingsCountTitle = 'ANALYTICS FOR TOTAL BOOKINGS COUNT'.replace(/ /g, '%20');
+    const totalBookingsCountAnalyticsTitle = [[totalBookingsCountTitle]];
+    csvRows.push([]);
+    const { totalBookingsCount } = this.state;
+    let totalBookingsCountData = [];
+    csvRows.push(totalBookingsCountAnalyticsTitle.join(','));
+    const roomTitle = 'Date';
+    const meetingsCount = 'Number of Bookings'.replace(/ /g, '%20');
+    csvRows.push([[roomTitle, meetingsCount]]);
+    totalBookingsCount.forEach((element) => {
+      totalBookingsCountData = [`${element.period.toString()}`.replace(/ /g, '%20'),
+        `${element.bookings.toString()}`];
+      csvRows.push(totalBookingsCountData.join(','));
+    });
+  }
+
+  /**
+   * Formats the CSV data for Average Meeting Times
+   * Inserts the formatted data into the csv spreadsheet
+   *
+   * @param {array} csvRows
+   *
+   * @returns {void}
+   */
+  averageMeetingTimeCSV = (csvRows) => {
+    const averageMeetingTimeTitle = 'ANALYTICS FOR AVERAGE MEETING TIME'.replace(/ /g, '%20');
+    const averageMeetingTimeAnalyticsTitle = [[averageMeetingTimeTitle]];
+    csvRows.push([]);
+    const { averageMeetingTime } = this.state;
+    let averageMeetingTimeData = [];
+    csvRows.push(averageMeetingTimeAnalyticsTitle.join(','));
+    const roomTitle = 'Meeting Room'.replace(/ /g, '%20');
+    const meetingsCount = 'Number of Meetings'.replace(/ /g, '%20');
+    const averageMeetingTimeTitleString = 'Average Meeting Time'.replace(/ /g, '%20');
+    csvRows.push([[roomTitle, meetingsCount, averageMeetingTimeTitleString]]);
+    averageMeetingTime.MeetingsDurationaAnalytics.forEach((element) => {
+      averageMeetingTimeData = [`${element.roomName.toString()}`.replace(/ /g, '%20'), `${element.count.toString()}`,
+        `${timeConvert(element.totalDuration)}`.replace(/ /g, '%20')];
+      csvRows.push(averageMeetingTimeData.join(','));
+    });
+  }
+
+  /**
+   * Formats the CSV data for Average Room Capacity
+   * Inserts the formatted data into the csv spreadsheet
+   *
+   * @param {array} csvRows
+   *
+   * @returns {void}
+   */
+  averageRoomCapacityCSV = (csvRows) => {
+    const averageRoomCapacityTitle = 'ANALYTICS FOR AVERAGE ROOM CAPACITY'.replace(/ /g, '%20');
+    const averageRoomCapacityAnalyticsTitle = [[averageRoomCapacityTitle]];
+    csvRows.push([]);
+    const { lessThanTenData, betweenTenandTwentyData, greaterThanTwentyData } =
+    this.state.roomCapacity;
+    let averageRoomCapacityData = [];
+    averageRoomCapacityData = [`${lessThanTenData.toString()}%`,
+      `${betweenTenandTwentyData.toString()}%`,
+      `${greaterThanTwentyData.toString()}%`];
+    csvRows.push(averageRoomCapacityAnalyticsTitle.join(','));
+    const lessThanTenTitle = 'Less Than 10 People'.replace(/ /g, '%20');
+    const between10And20Title = 'Between 10 and 20 People'.replace(/ /g, '%20');
+    const greaterThan20Title = 'Greater Than 20 People'.replace(/ /g, '%20');
+    csvRows.push([[lessThanTenTitle, between10And20Title, greaterThan20Title]]);
+    csvRows.push(averageRoomCapacityData.join(','));
+  }
+
+  /**
+   * Formats the CSV data for Average Meeting Duration
+   * Inserts the formatted data into the csv spreadsheet
+   *
+   * @param {array} csvRows
+   *
+   * @returns {void}
+   */
+  averageMeetingDurationsCSV = (csvRows) => {
+    const averageMeetingDurationTitle = 'ANALYTICS FOR AVERAGE MEETING DURATIONS'.replace(/ /g, '%20');
+    const averageMeetingDurationAnalyticsTitle = [[averageMeetingDurationTitle]];
+    csvRows.push([]);
+    const {
+      averageMeetingDuration,
+    } = this.state;
+    let averageMeetingDurationData = [];
+    averageMeetingDurationData = [`${averageMeetingDuration[0].toString()}%`,
+      `${averageMeetingDuration[1].toString()}%`,
+      `${averageMeetingDuration[2].toString()}%`, `${averageMeetingDuration[3].toString()}%`];
+    csvRows.push(averageMeetingDurationAnalyticsTitle.join(','));
+    const greaterThan60MinutesTitle = 'More Than 60 Minutes'.replace(/ /g, '%20');
+    const between45And60MinutesTitle = 'Between 45 and 60 Minutes'.replace(/ /g, '%20');
+    const between30And45MinutesTitle = 'Between 30 and 45 Minutes'.replace(/ /g, '%20');
+    const below30MinutesTitle = 'Below 30 Minutes'.replace(/ /g, '%20');
+    csvRows.push([[greaterThan60MinutesTitle, between45And60MinutesTitle,
+      between30And45MinutesTitle, below30MinutesTitle]]);
+    csvRows.push(averageMeetingDurationData.join(','));
   }
 
   /**
@@ -141,45 +329,33 @@ export class AnalyticsNav extends Component {
    *
    */
   downloadCSV = () => {
-    const {
-      leastBookedRooms, mostBookedRooms,
-    } = this.state;
-
     notification(toastr, 'success', 'Your download will start shortly')();
     const csvRows = [];
-    const toWriteData = [['Room', 'Meetings', '% Share of All Meetings'],
-      ['Most Booked Rooms'],
-    ];
-    const mostUsedRoomsList = this.bookedRoomsList({ bookedRooms: mostBookedRooms });
-    for (let i = 0; i < mostUsedRoomsList.length; i += 1) {
-      toWriteData.push(this.createMeetingArray(mostUsedRoomsList[i]));
-    }
-    toWriteData.push(['Least Booked Rooms']);
-    const leatUsedRoomsList = this.bookedRoomsList({ bookedRooms: leastBookedRooms });
-    for (let i = 0; i < leatUsedRoomsList.length; i += 1) {
-      toWriteData.push(this.createMeetingArray(leatUsedRoomsList[i]));
-    }
-    for (let i = 0; i < toWriteData.length; i += 1) {
-      csvRows.push(toWriteData[i].join(','));
-    }
-    const csvString = csvRows.join('%0A'); // add new line return at end of each line
-    const a = document.createElement('a');
-    a.href = `data:attachment/csv,${csvString}`;
-    a.download = 'analytics.csv';
-    document.body.append(a);
-    a.click();
+    this.leastAndMostBookedRoomsCSV(csvRows);
+    this.totalBookingsCountCSV(csvRows);
+    this.percentageCheckinsAndCancellationsCSV(csvRows);
+    this.averageRoomCapacityCSV(csvRows);
+    this.averageMeetingTimeCSV(csvRows);
+    this.averageMeetingDurationsCSV(csvRows);
+    const csvString = csvRows.join('%0A');
+    const anchorElement = document.createElement('a');
+    anchorElement.href = `data:attachment/csv,${csvString}`;
+    anchorElement.download = 'analytics.csv';
+    anchorElement.target = '_blank';
+    document.body.append(anchorElement);
+    anchorElement.click();
   };
 
   /**
    * generates html string to be downloaded
    *
    * @returns {String}
-   *
    */
   createDownloadString = () => {
     const {
-      startDate, endDate, leastBookedRooms, mostBookedRooms,
+      leastBookedRooms, mostBookedRooms,
     } = this.state;
+    const { startDate, endDate } = this.state;
     const leastBookedRoomsTbody = this.bookedRooms({ bookedRoomsList: leastBookedRooms });
     const mostBookedRoomsTBody = this.bookedRooms({ bookedRoomsList: mostBookedRooms });
     let downloadString = downloadFileString;
@@ -187,6 +363,13 @@ export class AnalyticsNav extends Component {
     downloadString = downloadString.replace(/endDate/g, endDate);
     downloadString = downloadString.replace(/innerMostBookedRooms/g, mostBookedRoomsTBody);
     downloadString = downloadString.replace(/innerLeastBookedRooms/g, leastBookedRoomsTbody);
+    downloadString = downloadString.replace(/averageRoomCapacityData/g, this.averageRoomCapacityData());
+    downloadString = downloadString.replace(/averageMeetingsDuration/g, this.averageMeetingDurationData());
+    downloadString = downloadString.replace(/totalBookingsCount/g, this.totalBookingsCountData());
+    downloadString = downloadString.replace(/percentageCheckins/g, this.checkinsData());
+    downloadString = downloadString.replace(/percentageAppBookings/g, this.appBookingsData());
+    downloadString = downloadString.replace(/percentageAutoCancellations/g, this.cancellationsData());
+    downloadString = downloadString.replace(/averageTimeSpentDuringMeetings/g, this.averageMeetingTime());
     return downloadString;
   };
 
@@ -220,10 +403,20 @@ export class AnalyticsNav extends Component {
       });
   }
 
+  /**
+   * downloads a jpeg format of the analytics data
+   *
+   * @return {void}
+   */
   downloadJpeg = () => {
     this.fetchDownload('jpeg');
   };
 
+  /**
+   * downloads a pdf format of the analytics data
+   *
+   * @return {void}
+   */
   downloadPdf = () => {
     this.fetchDownload('pdf');
   };
@@ -253,12 +446,10 @@ export class AnalyticsNav extends Component {
    */
   sendDateData = (start, end) => {
     const endDateSelected = moment(end, 'MMM DD YYYY').diff(moment(), 'days', true);
-    const stateToUpdate = { startDate: start, endDate: end, fetching: true };
+    const stateToUpdate = { startDate: start, endDate: end };
     this.calenderToggle();
     if (endDateSelected > 0) {
       this.setState({ ...stateToUpdate, isFutureDateSelected: true }, () => {
-        this.props.leastBookedAnalytics.refetch({ startDate: start, endDate: end });
-        this.props.mostBookedAnalytics.refetch({ startDate: start, endDate: end });
       });
     } else {
       this.setState({
@@ -267,26 +458,168 @@ export class AnalyticsNav extends Component {
         isFutureDateSelected: false,
         validatedStartDate: start,
         validatedEndDate: end,
+        fetching: true,
       }, () => {
-        this.props.leastBookedAnalytics.refetch({ startDate: start, endDate: end });
-        this.props.mostBookedAnalytics.refetch({ startDate: start, endDate: end });
       });
     }
   };
+
+  /**
+   * Fills the average room capacity table with data
+   *
+   * @returns {JSX}
+   */
+  averageRoomCapacityData = () => {
+    const { lessThanTenData, betweenTenandTwentyData, greaterThanTwentyData } =
+    this.state.roomCapacity;
+    return jsxToString(
+      <tbody>
+        <tr>
+          <td>{`${lessThanTenData.toString()}`}</td>
+          <td>{`${betweenTenandTwentyData.toString()}`}</td>
+          <td>{`${greaterThanTwentyData.toString()}`}</td>
+        </tr>
+      </tbody>);
+  }
+
+  /**
+   * Fills the average meeting duration table with data
+   *
+   * @returns {JSX}
+   */
+  averageMeetingDurationData = () => {
+    const {
+      averageMeetingDuration,
+    } = this.state;
+    return jsxToString(
+      <tbody>
+        <tr>
+          <td>{`${averageMeetingDuration[0].toString()}%`}</td>
+          <td>{`${averageMeetingDuration[1].toString()}%`}</td>
+          <td>{`${averageMeetingDuration[2].toString()}%`}</td>
+          <td>{`${averageMeetingDuration[3].toString()}%`}</td>
+        </tr>
+      </tbody>);
+  }
+
+  /**
+   * Fills the average meeting times table with data
+   *
+   * @returns {JSX}
+   */
+  averageMeetingTime = () => {
+    const { MeetingsDurationaAnalytics } = this.state.averageMeetingTime;
+    return jsxToString(
+      <tbody>
+        {MeetingsDurationaAnalytics.map((meeting, index) => (
+          <tr key={index}>
+            <td>{meeting.roomName.toString()}</td>
+            <td>{meeting.count.toString()}</td>
+            <td>{timeConvert(meeting.totalDuration)}</td>
+          </tr>
+      ))}
+      </tbody>);
+  }
+
+  /**
+   * Fills the total booking counts table with data
+   *
+   * @returns {JSX}
+   */
+  totalBookingsCountData = () => {
+    const { totalBookingsCount } = this.state;
+    return jsxToString(
+      <tbody>
+        {totalBookingsCount.map((totalBookings, index) => (
+          <tr key={index}>
+            <td>{totalBookings.period}</td>
+            <td>{totalBookings.bookings}</td>
+          </tr>
+        ))}
+      </tbody>);
+  };
+
+  /**
+   * Fills the checkins table with data
+   *
+   * @returns {JSX}
+   */
+  checkinsData = () => {
+    const { checkins, bookings, checkinsPercentage } =
+    this.state.checkinsAndCancellations;
+    return jsxToString(
+      <tbody>
+        <tr>
+          <td>{`${bookings.toString()}`}</td>
+          <td>{`${checkins.toString()}`}</td>
+          <td>{`${Math.round(checkinsPercentage, 2).toString()}%`}</td>
+        </tr>
+      </tbody>);
+  };
+
+  /**
+   * Fills the app bookings table with data,
+   * currently it renders dummy data until backend
+   * endpoint is modified to return this data
+   *
+   * @returns {JSX}
+   */
+  appBookingsData = () => {
+    const { bookings } =
+    this.state.checkinsAndCancellations;
+    return jsxToString(
+      <tbody>
+        <tr>
+          <td>{`${bookings.toString()}`}</td>
+          <td>0</td>
+          <td>0%</td>
+        </tr>
+      </tbody>);
+  };
+
+  /**
+   * Fills the auto-cancellations table with data
+   *
+   * @returns {JSX}
+   */
+  cancellationsData = () => {
+    const { cancellations, bookings, cancellationsPercentage } =
+    this.state.checkinsAndCancellations;
+    return jsxToString(
+      <tbody>
+        <tr>
+          <td>{`${bookings.toString()}`}</td>
+          <td>{`${cancellations.toString()}`}</td>
+          <td>{`${Math.round(cancellationsPercentage, 2).toString()}%`}</td>
+        </tr>
+      </tbody>);
+  };
+
+  /**
+   * gets user access.
+   *
+   * @returns {string}
+   */
+  userRole = () => {
+    try {
+      return JSON.parse(localStorage.access);
+    } catch (e) {
+      return null;
+    }
+  }
 
   render() {
     const {
       startDate,
       endDate,
       isActivity,
-      fetching,
-      error,
       isFutureDateSelected,
       validatedStartDate,
       validatedEndDate,
       componentsDoneLoading,
+      fetching,
     } = this.state;
-    const { user: { user } } = this.props;
+    const { user: { user }, error } = this.props;
     const dates = {
       startDate,
       endDate,
@@ -328,57 +661,37 @@ export class AnalyticsNav extends Component {
                 sendData={this.sendDateData}
               />
             </div>
-            {
-              !fetching && !error &&
-              <ExportButton
-                jpegHandler={this.downloadJpeg}
-                csvHandler={this.downloadCSV}
-                pdfHandler={this.downloadPdf}
-              />
+            {!fetching && !error &&
+             this.userRole() !== '1' &&
+             <ExportButton
+               jpegHandler={this.downloadJpeg}
+               csvHandler={this.downloadCSV}
+               pdfHandler={this.downloadPdf}
+             />
             }
           </div>
         </div>
-        {!isActivity && <AnalyticsOverview
-          dateValue={dates}
-          queryCompleted={this.handleQueryCompleted}
-        />
+        {!isActivity &&
+          <AnalyticsOverview
+            dateValue={dates}
+            queryCompleted={this.handleQueryCompleted}
+            updateParent={this.updateParent}
+          />
         }
         {isActivity && <AnalyticsActivity dateValue={dates} />}
       </Fragment>
     );
   }
 }
-
 AnalyticsNav.propTypes = {
   user: PropTypes.shape({
     user: PropTypes.object,
-  }).isRequired,
-  mostBookedAnalytics: PropTypes.shape({
-    loading: PropTypes.bool,
-    refetch: PropTypes.func,
-    analyticsForMostBookedRooms: PropTypes.shape({
-      analytics: PropTypes.array,
-    }),
-  }).isRequired,
-  leastBookedAnalytics: PropTypes.shape({
-    loading: PropTypes.bool,
-    refetch: PropTypes.func,
-    analyticsForLeastBookedRooms: PropTypes.shape({
-      analytics: PropTypes.array,
-    }),
   }).isRequired,
 };
 
 /* This gets the token from the localstorage and select the user
 email to pass as a parameter to the query being sent */
 const { UserInfo: userData } = decodeTokenAndGetUserData() || {};
-
-const bookedRoomsOptions = () => ({
-  variables: {
-    startDate: moment().format('MMM DD Y'),
-    endDate: moment().format('MMM DD Y'),
-  },
-});
 
 export default compose(
   graphql(GET_USER_QUERY, {
@@ -392,13 +705,5 @@ export default compose(
           : userData.email,
       },
     }),
-  }),
-  graphql(MOST_BOOKED_ROOMS_ANALYTICS, {
-    name: 'mostBookedAnalytics',
-    options: bookedRoomsOptions,
-  }),
-  graphql(LEAST_BOOKED_ROOMS_ANALYTICS, {
-    name: 'leastBookedAnalytics',
-    options: bookedRoomsOptions,
   }),
 )(AnalyticsNav);

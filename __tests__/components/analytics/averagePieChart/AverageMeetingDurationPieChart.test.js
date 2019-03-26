@@ -31,7 +31,7 @@ describe('Average Meetings Duration PieChart Component', () => {
     },
     queryCompleted: jest.fn(),
   };
-  const wrapper = mount(<AverageMeetingDurationPieChart {...props} name="data" />);
+  const wrapper = mount(<AverageMeetingDurationPieChart {...props} name="data" updateParent={jest.fn()} />);
 
   it('renders correctly from memory', () => {
     expect(wrapper).toMatchSnapshot();
@@ -49,7 +49,7 @@ describe('Average Meetings Duration PieChart Component', () => {
 
   it('should show an error when a future date is selected', () => {
     props.dateValue.isFutureDateSelected = true;
-    const myWrapper = mount(<AverageMeetingDurationPieChart {...props} name="data" />);
+    const myWrapper = mount(<AverageMeetingDurationPieChart {...props} name="data" updateParent={jest.fn()} />);
     expect(myWrapper.find('ErrorIcon').length).toEqual(1);
     expect(myWrapper.find('ErrorIcon').text()).toEqual('You cannot fetch data beyond today');
   });

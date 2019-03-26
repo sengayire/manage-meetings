@@ -15,7 +15,7 @@ import ErrorIcon from '../../components/commons/ErrorIcon';
  *
  * @returns {JSX}
  */
-const QueryBookingsCount = ({ dateValue }) => (
+const QueryBookingsCount = ({ dateValue, updateParent }) => (
   <Query
     query={ANALYTICS_BOOKINGS_COUNT}
     variables={dateValue}
@@ -49,11 +49,13 @@ const QueryBookingsCount = ({ dateValue }) => (
           },
         ],
       };
-
+      updateParent('totalBookingsCount', bookings);
       return (
-        <ErrorBoundary>
-          <HorizontalBar data={graphData} options={options} height={300} />
-        </ErrorBoundary>
+        <div>
+          <ErrorBoundary>
+            <HorizontalBar data={graphData} options={options} height={300} />
+          </ErrorBoundary>
+        </div>
       );
     }}
   </Query>
@@ -61,6 +63,11 @@ const QueryBookingsCount = ({ dateValue }) => (
 
 QueryBookingsCount.propTypes = {
   dateValue: PropTypes.instanceOf(Object).isRequired,
+  updateParent: PropTypes.func,
+};
+
+QueryBookingsCount.defaultProps = {
+  updateParent: null,
 };
 
 export default QueryBookingsCount;
