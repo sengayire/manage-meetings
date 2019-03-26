@@ -19,18 +19,22 @@ class Calendar extends Component {
   static propTypes = {
     sendData: PropTypes.func,
     classProp: PropTypes.string,
+    startDate: PropTypes.string,
+    endDate: PropTypes.string,
   };
 
   static defaultProps = {
     sendData: null,
     classProp: '',
+    startDate: '',
+    endDate: '',
   };
 
 
   state = {
     isCalendarOpen: false,
-    startDate: moment().format('MMM DD Y'),
-    endDate: moment().format('MMM DD Y'),
+    startDate: this.props.startDate || moment().format('MMM DD Y'),
+    endDate: this.props.endDate || moment().format('MMM DD Y'),
   };
 
   /**
@@ -68,7 +72,6 @@ class Calendar extends Component {
 
   render() {
     const { isCalendarOpen, startDate, endDate } = this.state;
-
     return (
       <Fragment>
         <Button

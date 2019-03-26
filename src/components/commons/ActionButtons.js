@@ -18,7 +18,9 @@ const ActionButtons = props => (
     ? <Spinner size="small" /> :
     <div className="form-action-buttons">
       <Button handleClick={props.onClickCancel} title={props.cancelButtonText} />
+      { props.showActionButton &&
       <Button handleClick={props.onClickSubmit} title={props.actionButtonText} classProp="main-button" />
+      }
     </div>
 );
 
@@ -28,12 +30,14 @@ ActionButtons.propTypes = {
   actionButtonText: PropTypes.string,
   isLoading: PropTypes.bool,
   onClickSubmit: PropTypes.func.isRequired,
+  showActionButton: PropTypes.bool,
 };
 
 ActionButtons.defaultProps = {
   cancelButtonText: 'CANCEL',
   actionButtonText: 'SAVE CHANGES',
   isLoading: false,
+  showActionButton: true,
 };
 
 export default ActionButtons;

@@ -26,6 +26,7 @@ exports[`Delete Wing Test Suite renders as expected 1`] = `
       isLoading={false}
       onClickCancel={[Function]}
       onClickSubmit={[Function]}
+      showActionButton={true}
       withCancel={true}
     />
   </div>

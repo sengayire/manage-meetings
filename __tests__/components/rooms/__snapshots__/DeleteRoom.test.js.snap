@@ -812,6 +812,7 @@ exports[`DeleteOffice Test Suite should pop up a modal when delete button is cli
                           isLoading={false}
                           onClickCancel={[Function]}
                           onClickSubmit={[Function]}
+                          showActionButton={true}
                           withCancel={true}
                         >
                           <div

@@ -6172,6 +6172,7 @@ exports[`DeleteResource Test Suite should pop up a modal when delete button is c
                               isLoading={false}
                               onClickCancel={[Function]}
                               onClickSubmit={[Function]}
+                              showActionButton={true}
                               withCancel={true}
                             >
                               <div

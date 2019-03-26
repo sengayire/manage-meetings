@@ -7,6 +7,7 @@ const GET_ROOM_FEEDBACK_QUESTIONS_QUERY = gql`
         id
         question
         questionType
+        questionTitle
         startDate
         endDate
         questionResponseCount

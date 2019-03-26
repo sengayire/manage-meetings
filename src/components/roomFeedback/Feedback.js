@@ -3,9 +3,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'react-apollo';
 import CheckboxSlide from '../commons/CheckboxSlide';
-import EditFeedback from './EditFeedback';
+import EditFeedbackComponent from './EditFeedback';
 import DeleteFeedback from './DeleteFeedback'; // eslint-disable-line
-import UPDATE_QUESTION_MUTATION from '../../graphql/mutations/Question';
+import UPDATE_QUESTION_STATUS_MUTATION from '../../graphql/mutations/Question';
 
 /**
  * Feedback Component
@@ -18,12 +18,11 @@ const Feedback = props =>
   props.feedback.map(
     (
       {
-        id, question, startDate, endDate, questionResponseCount, questionType, isActive,
+        id, question, startDate, endDate, questionTitle,
+        questionResponseCount, questionType, isActive,
       },
-      index,
     ) => (
-
-      <div className="table__row" key={index}>
+      <div className="table__row" key={id}>
         <span>
           {question}
         </span>
@@ -32,13 +31,17 @@ const Feedback = props =>
         <span>{props.startDateFormatter(startDate)}</span>
         <span>{props.durationFormatter(startDate, endDate)}</span>
         <span>
-          <EditFeedback
-            id="edit-modal"
-            question={question}
-            type={questionType}
-            startDate={startDate}
-            duration={props.durationFormatter(startDate, endDate)}
-          />
+          { !isActive &&
+            <EditFeedbackComponent
+              id="edit-modal"
+              questionId={id}
+              question={question}
+              questionType={questionType}
+              questionTitle={questionTitle}
+              startDate={startDate}
+              endDate={endDate}
+            />
+          }
           <DeleteFeedback id={id} question={question} />
         </span>
         <span className="checkbox">
@@ -49,8 +52,7 @@ const Feedback = props =>
           />
         </span>
       </div>
-    ),
-  );
+    ));
 
 Feedback.defaultProps = {
   feedback: [
@@ -69,4 +71,4 @@ Feedback.propTypes = {
   feedback: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
-export default graphql(UPDATE_QUESTION_MUTATION, { name: 'updateQuestion' })(Feedback);
+export default graphql(UPDATE_QUESTION_STATUS_MUTATION, { name: 'updateQuestion' })(Feedback);

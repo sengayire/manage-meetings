@@ -155,6 +155,7 @@ exports[`RoomForm should render properly 1`] = `
       isLoading={false}
       onClickCancel={[MockFunction]}
       onClickSubmit={[Function]}
+      showActionButton={true}
       withCancel={true}
     >
       <div

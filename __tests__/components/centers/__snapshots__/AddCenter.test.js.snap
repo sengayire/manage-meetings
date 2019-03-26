@@ -43,6 +43,7 @@ exports[`AddCenter Component renders AddCenter Component 1`] = `
       isLoading={false}
       onClickCancel={[Function]}
       onClickSubmit={[Function]}
+      showActionButton={true}
       withCancel={true}
     />
   </form>

@@ -12,7 +12,9 @@ describe('RoomFeeback Component', () => {
       questions: {
         questions: [{
           id: '1',
+          questionId: '3',
           question: 'test question',
+          questionTitle: 'my title',
           startDate: '2019-05-21 13:32:15.753',
           endDate: '2019-05-22 13:32:15.753',
           questionResponseCount: 2,

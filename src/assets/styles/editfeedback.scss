@@ -1,36 +1,238 @@
 @import './variables';
 
-.edit-feedback-modal{
-  padding: 1em 1em 2.5em 1em;
+.edit-question-modal {
+  padding: 3%;
+  color: map-get($color-black, 300);
+  border-radius: 4px;
+  background-color: map-get($color-white, 100);
+  box-shadow: 0 2px 40px 10px rgba(0, 0, 0, 0.2);
 
-  .modal-form {
-    text-align: left;
-    color: map-get($color-black, 900);
-    margin-top: 2em;
-    margin-left: 2em;
-    margin-right: 2em;
+  h2 {
+    margin: 1%;
+    margin-left: 0;
   }
 
-  .label1 {
-    display: block;
-    margin-bottom: 2em;
+  .question-form {
+    padding: 20px 0;
+
+    input {
+      border-radius: 4px;
+      right: 3%;
+      padding: 0;
+      padding-left: 10px;
+      width: 95%;
+      border: none;
+      font-size: 95%;
+      font-weight: 300;
+      font-family: $font-light;
+      margin-bottom: 1px;
+      line-height: 2em;
+      margin-top: 0;
+
+      @media screen and (max-width: 630px) {
+        width: 90%;
+      }
+    }
+
+    input[type="text"] {
+      color: $color-text;
+    }
+
+    &__sections {
+      font-weight: bold;
+    }
+
+    &__add {
+      color: $color-primary;
+    }
+
+    .inputs {
+      height: 40px;
+      display: flex;
+      border: 1px solid $color-input-border;
+      border-radius: 5px;
+      margin: 20px 0;
+    }
+
+    .span-error {
+      color: $color-danger;
+    }
+
+    .input-error {
+      color: $color-danger;
+      cursor: auto;
+      border: 1px solid $color-danger;
+      margin-top: 10px;
+      border-radius: 4px;
+      right: 3%;
+      padding: 5px;
+      padding-left: 1px;
+      width: 99%;
+      font-size: 95%;
+      font-weight: 300;
+      margin-bottom: 10px;
+
+      @media screen and (max-width: 630px) {
+        width: 90%;
+      }
+    }
+
+    #selectType-error{
+      border: 1px solid $color-danger;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .calendarIconBtn-error {
+      border: 1px solid $color-danger;
+      margin-left: 0;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+    .select-error {
+      color: $color-danger;
+      border: 1px solid $color-danger;
+      border-radius: 3px;
+      padding: 1.5%;
+      margin-top: 0;
+    }
+
+    select {
+      color: $color-text !important;
+    }
+
+    select,
+    select:focus {
+      right: 5%;
+      padding: 1.5%;
+      width: 100% !important;
+      box-sizing: border-box;
+      font-size: 95%;
+      font-weight: 300;
+      margin: 30px 0;
+    }
+
+    .calendar {
+      display: flex;
+      flex-direction: column;
+      right: 7vw;
+      position: absolute;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      background: map-get($color-white, 000);
+      justify-content: space-between;
+      margin-top: -25px;
+      margin-left: 5px;
+      z-index: 2;
+
+      .date_di {
+        display: grid;
+      }
+      
+      .DayPicker-Months {
+        flex-wrap: unset !important;
+      }
+
+      .DayPicker-Month {
+        margin: 0 0.3em !important;
+      }
+    }
+
+    .calendar__button .apply_button {
+      background-color: $color-primary;
+      color: map-get($color-white, 000);
+      height: 13px;
+      width: 50px;
+      padding: 4px 50px 12px 12px;
+      line-height: 14px;
+      font-weight: 500;
+    }
+
+    .number_of_days {
+      margin-top: 12px;
+      padding: 0px 5px 5px 5px;
+      margin-right: 150px;
+    }
+
+    .inputs-title {
+      min-width: 120px;
+      display: flex;
+      background-color: $color-title;
+
+      span {
+        margin: auto;
+        padding: 0 30px;
+        text-transform: capitalize;
+      }
+    }
+
+    .inputs-inline {
+      display: flex;
+
+      & div:nth-child(2),
+      & div:nth-child(1) {
+        width: 45%;
+      }
+
+      & div:nth-child(2) {
+        margin-left: auto;
+      }
+    }
+
+    input#timeField {
+      font-size: 16px;
+      color: $time-color;
+      font-weight: 100;
+      padding: 7.0%;
+      margin-right: 1px;
+    }
+
+    #calendar-btn {
+      height: 40px;
+      display: flex;
+      border: 1px solid $color-input-border;
+      border-radius: 5px;
+      margin: 30px 0;
+      width: 100%;
+      right: 0%;
+      color: $color-text;
+    }
+
+    .calendarIconBtn {
+      margin: 23px 0;
+    }
+
+    ::placeholder {
+      color: $color-placeholder;
+      opacity: 1;
+    }
+
+    :-ms-input-placeholder {
+      color: $color-placeholder;
+    }
+
+    ::-ms-input-placeholder {
+      color: $color-placeholder;
+    }
   }
 
-  .input1 {
-    display: block;
-    border-radius: 4px;
-    padding: 10px;
-    width: 28.1em;
-    height: 1.4em;
-    color: $color-text;
-    font-size: 1.1em;
-    border: 1px solid $color-input-border;
-    margin-top: 1em;
+  @media screen and (max-width: 639px) {
+    height: 33%;
+    width: 78%;
   }
 
-  .edit-feedback-select{
-    color: $color-text !important;
-    margin-top: 1em;
+  @media screen and (min-width: 640px) and (max-width: 1023px) and (orientation: landscape) {
+    max-height: 68%;
+    width: 60%;
   }
 
+  @media screen and (min-width: 768px) and (orientation: portrait) {
+    height: 20%;
+    width: 52.5%
+  }
+
+  @media screen and (min-width: 1024) and (orientation: landscape) {
+    width: 49%;
+    height: 33.5%
+  }
 }

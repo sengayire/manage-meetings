@@ -30,6 +30,7 @@ exports[`BlockModal Component renders properly 1`] = `
       isLoading={false}
       onClickCancel={[MockFunction]}
       onClickSubmit={[MockFunction]}
+      showActionButton={true}
       withCancel={true}
     />
   </div>

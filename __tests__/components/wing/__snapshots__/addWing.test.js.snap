@@ -3177,6 +3177,7 @@ exports[`AddWing Component renders the snapshot 1`] = `
       isLoading={false}
       onClickCancel={[Function]}
       onClickSubmit={[Function]}
+      showActionButton={true}
       withCancel={true}
     />
   </form>

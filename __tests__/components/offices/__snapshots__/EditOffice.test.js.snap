@@ -46,6 +46,7 @@ exports[`EditOffice Component renders properly 1`] = `
       isLoading={false}
       onClickCancel={[Function]}
       onClickSubmit={[Function]}
+      showActionButton={true}
       withCancel={true}
     />
   </form>
