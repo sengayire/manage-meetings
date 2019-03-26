@@ -37,7 +37,9 @@ class DonutChart extends Component {
     } = this.props;
 
     if (error) {
-      return <ErrorIcon />;
+      return (<ErrorIcon
+        message={error.graphQLErrors.length > 0 && error.graphQLErrors[0].message}
+      />);
     } else if (loading) {
       return (
         <div className="chart-spinner">

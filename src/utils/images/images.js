@@ -60,3 +60,5 @@ export const deviceIcon = 'https://firebasestorage.googleapis.com/v0/b/andelamrm
 export const peopleIcon = 'https://firebasestorage.googleapis.com/v0/b/andelamrm.appspot.com/o/MrmFrontImagesPeople%20Icon.svg?alt=media&token=4decf368-0c30-44ae-af46-e7be23c981fd';
 export const wingsIcon = 'https://firebasestorage.googleapis.com/v0/b/learning-map-app.appspot.com/o/MrmFrontImages%2FIllustration_wings.svg?alt=media&token=791562e1-9463-4e7f-9e55-152800bbe5ba';
 export const blockIcon = 'https://firebasestorage.googleapis.com/v0/b/learning-map-app.appspot.com/o/MrmFrontImages%2FIllustration_block.svg?alt=media&token=23a1b058-acc0-42e2-a0c2-b6cd4b655e30';
+export const notFoundIcon = 'https://firebasestorage.googleapis.com/v0/b/learning-map-app.appspot.com/o/MrmFrontImages%2FnotFoundIcon.svg?alt=media&token=7af53714-71a3-4c6f-bdf5-bbca9a170b8e';
+export const addIcon = 'https://firebasestorage.googleapis.com/v0/b/learning-map-app.appspot.com/o/MrmFrontImages%2FaddIcon.svg?alt=media&token=3bc40a49-1ded-4090-be03-f63f94b50eef';

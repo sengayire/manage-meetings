@@ -30,7 +30,7 @@ describe('Checkins component', () => {
   });
 
   it('should render properly when an error occurs', () => {
-    props = { tip: '', error: {}, isFutureDateSelected: false };
+    props = { tip: '', error: { graphQLErrors: [{ message: 'this error occurred' }] }, isFutureDateSelected: false };
     const wrapperError = shallow(<DonutChart {...props} />);
     expect(wrapperError.find(ErrorIcon)).toHaveLength(1);
   });

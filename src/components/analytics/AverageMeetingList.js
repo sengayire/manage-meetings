@@ -9,7 +9,8 @@ import MEETING_DURATION_ANALYTICS from '../../graphql/queries/analytics';
 import Pagination from '../commons/Pagination';
 import QueryAnalyticsLoading from './AverageMeetingList/QueryAnalyticsLoading';
 import Overlay from '../commons/Overlay';
-import { warningIcon } from '../../utils/images/images';
+import { notFoundIcon } from '../../utils/images/images';
+import ErrorIcon from '../commons/ErrorIcon';
 
 /**
  * Component for the average meeting list
@@ -78,7 +79,7 @@ export class AverageMeetingList extends Component {
       <div className="error_class">
         <img
           className="error_icon"
-          src={warningIcon}
+          src={notFoundIcon}
           alt="error_icon"
         />
         <b>
@@ -116,8 +117,11 @@ export class AverageMeetingList extends Component {
                 isFutureDateSelected ?
                 this.showErrorMessage('You cannot fetch data beyond today')
                 : (
-                error ?
-                  (this.showErrorMessage())
+                error ? (
+                  <ErrorIcon
+                    message={error.graphQLErrors.length > 0 && error.graphQLErrors[0].message}
+                  />
+                )
                 : <QueryAnalyticsPerMeetingRoom
                   data={analyticsForMeetingsDurations}
                 />

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Room from '../components/rooms/RoomSetup';
-import { darkTabletIcon } from '../utils/images/images';
-import image from '../assets/images/add-symbol.svg';
+import { darkTabletIcon, addIcon } from '../utils/images/images';
 import SelectInput from '../components/commons/SelectInput';
 import { selectMockData, roomsMockData } from '../utils/roomSetupMock';
 
@@ -70,7 +69,7 @@ class RoomSetup extends Component {
           {this.createRooms()}
           <div className="room-setup-card addroom-setup">
             <button className="setup-card-button">
-              <img src={image} alt="add-button" />
+              <img src={addIcon} alt="add-button" />
             </button>
             <h4>Add a Room</h4>
           </div>

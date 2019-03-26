@@ -95,9 +95,15 @@ export class AverageMeetingDurationPieChart extends React.Component {
   renderPieChart = () => {
     const { MeetingsDurationaAnalytics = [] } = this.state.analyticsForMeetingsDurations;
     const { loading, error } = this.props.data;
-
     if (loading) return <Spinner />;
-    if (error) return (<ErrorIcon />);
+    if (error) {
+      return (<ErrorIcon
+        message={error.graphQLErrors.length > 0 && error.graphQLErrors[0].message}
+      />);
+    } else if (error === undefined && MeetingsDurationaAnalytics.length === 0) {
+      return <ErrorIcon />;
+    }
+
 
     const options = {
       legend: {

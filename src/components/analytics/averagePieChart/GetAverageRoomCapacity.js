@@ -57,7 +57,9 @@ export class GetAverageRoomCapacityComponent extends Component {
   renderPieChart = () => {
     const { loading, error } = this.props.data;
     if (error) {
-      return <ErrorIcon />;
+      return (<ErrorIcon
+        message={error.graphQLErrors.length > 0 && error.graphQLErrors[0].message}
+      />);
     } else if (loading) {
       return <Spinner />;
     }

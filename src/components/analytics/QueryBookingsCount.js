@@ -22,14 +22,16 @@ const QueryBookingsCount = ({ dateValue, updateParent }) => (
     notifyOnNetworkStatusChange={true} // eslint-disable-line
   >
     {({ loading, error, data }) => {
-      if (error) {
-        return <ErrorIcon />;
-      }
       if (loading) {
         return <Spinner />;
       }
-      const bookings = data.bookingsAnalyticsCount;
+      if (error) {
+        return (<ErrorIcon
+          message={error.graphQLErrors.length > 0 && error.graphQLErrors[0].message}
+        />);
+      }
 
+      const bookings = data.bookingsAnalyticsCount;
       const options = {
         legend: {
           display: false,

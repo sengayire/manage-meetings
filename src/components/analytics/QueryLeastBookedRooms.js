@@ -17,9 +17,8 @@ const QueryLeastBookedRooms = ({ dateValue, updateParent }) => (
     variables={dateValue}
     notifyOnNetworkStatusChange={true} // eslint-disable-line
   >
-    {({ loading, error, data }) => {
+    {({ loading, error = {}, data }) => {
       let bookedRoomsList = [];
-
       if (!loading && !error) {
         const { analytics } = data.analyticsForBookedRooms;
         bookedRoomsList = analytics;

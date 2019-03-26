@@ -162,13 +162,7 @@ exports[`Query Bookings Count Component should render analytics data 1`] = `
               },
             ],
           },
-          "errors": Object {
-            "graphQLErrors": Array [
-              Object {
-                "message": "Error occured",
-              },
-            ],
-          },
+          "errors": null,
         },
       },
     ]
@@ -1791,13 +1785,7 @@ exports[`Query Bookings Count Component should render without error 1`] = `
           },
           "result": Object {
             "data": Array [],
-            "errors": Object {
-              "graphQLErrors": Array [
-                Object {
-                  "message": "Error occured",
-                },
-              ],
-            },
+            "errors": null,
           },
           "variables": Object {
             "endDate": "Mar 26 2019",

@@ -39,7 +39,7 @@ describe('BookedRooms component', () => {
     const bookedRoomsComponent = mount(
       <BookedRooms
         {...props}
-        error={{ error: 'this error occurred' }}
+        error={{ graphQLErrors: [{ message: 'Error occured' }] }}
         bookedRoomsList={[]}
         fetching
       />,

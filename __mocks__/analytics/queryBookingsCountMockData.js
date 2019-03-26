@@ -11,9 +11,7 @@ export const queryBookingsCountMockData = [
       },
       result: {
         data: [],
-        errors: {
-          graphQLErrors: [{ message: 'Error occured' }],
-        },
+        errors: null,
       },
     },
   },
@@ -41,9 +39,7 @@ export const queryBookingsCountMocksData = {
         },
       ],
     },
-    errors: {
-      graphQLErrors: [{ message: 'Error occured' }],
-    },
+    errors: null,
   },
 };
 
