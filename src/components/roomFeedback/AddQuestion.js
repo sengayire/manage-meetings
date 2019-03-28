@@ -323,7 +323,7 @@ export class AddQuestion extends Component {
    * @returns {JSX}
    */
   renderCalendarComponent = () => (
-    <div>
+    <div className="calendar-container">
       {this.state.error.date &&
         <span className="span-error">
           <br />{this.state.error.date}
@@ -393,7 +393,6 @@ export class AddQuestion extends Component {
         handleSubmit={this.validateInputFields}
         isLoading={this.state.isLoading}
       />
-
     );
   }
 }

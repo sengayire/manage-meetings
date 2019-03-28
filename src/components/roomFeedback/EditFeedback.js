@@ -6,8 +6,7 @@ import moment from 'moment';
 import notification from '../../utils/notification';
 import Select from '../commons/SelectInput';
 import Calendar from '../commons/Calendar';
-import MrmModal from '../commons/Modal';
-import ActionButtons from '../commons/ActionButtons';
+import MrmModal from '../commons/MrmModal';
 import { UPDATE_QUESTION_MUTATION } from '../../graphql/mutations/Question';
 import GET_ROOM_FEEDBACK_QUESTIONS_QUERY from '../../../src/graphql/queries/questions';
 import '../../assets/styles/editfeedback.scss';
@@ -280,7 +279,7 @@ export class EditFeedback extends Component {
    * @returns {JSX}
    */
   renderCalendarComponent = () => (
-    <div>
+    <div className="calendar-container">
       {this.state.error.date &&
         <span className="span-error">
           <br />{this.state.error.date}
@@ -402,25 +401,6 @@ export class EditFeedback extends Component {
     );
   }
 
-  /**
-   * It renders the action buttons
-   * for cancel and submit
-   *
-   * @returns {JSX}
-   */
-  renderActionButtons = () => (
-    <div>
-      <ActionButtons
-        withCancel
-        onClickCancel={this.handleCloseModal}
-        isLoading={this.state.isLoading}
-        actionButtonText="EDIT QUESTION"
-        onClickSubmit={this.validateInputFields}
-        showActionButton={this.state.showEditQuestionButton}
-      />
-    </div>
-  );
-
   renderQuestionValues = () => (
     <div className="question-form">
       <span className="question-form__sections">Date</span>
@@ -437,18 +417,18 @@ export class EditFeedback extends Component {
   );
 
   render() {
-    const { closeModal } = this.state;
     return (
       <MrmModal
         title="EDIT QUESTION"
         buttonText="Edit"
-        closeModal={closeModal}
-        handleCloseRequest={this.handleModalStateChange}
-        className="edit-question-modal"
         modalButtonClassName="edit-button"
-      >
-        {this.renderQuestionValues()}
-      </MrmModal>
+        modalContent={this.renderQuestionValues()}
+        cancelButtonText="CANCEL"
+        actionButtonText="EDIT QUESTION"
+        handleSubmit={this.validateInputFields}
+        isLoading={this.state.isLoading}
+        showActionButton={this.state.showEditQuestionButton}
+      />
     );
   }
 }

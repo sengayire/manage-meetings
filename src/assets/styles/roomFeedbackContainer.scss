@@ -6,6 +6,62 @@
   margin: 0 auto;
   margin-top: 2%;
 
+  .calendar-container {
+    position: relative;
+    
+    .calendar {
+      position: absolute;
+      margin-top: -22px;
+      z-index: 2;
+      right: auto;
+  
+      .date_di {
+        display: grid;
+      }
+      
+      .DayPicker-Months {
+        flex-wrap: unset !important;
+      }
+  
+      .DayPicker-Month {
+        margin: 0 0.3em !important;
+      }
+    }
+  
+    .calendar__button .apply_button {
+      background-color: $color-primary;
+      color: map-get($color-white, 000);
+      height: 13px;
+      width: 50px;
+      padding: 4px 50px 12px 12px;
+      line-height: 14px;
+      font-weight: 500;
+    }
+  
+    #calendar-btn {
+      height: 40px;
+      display: flex;
+      border: 1px solid $color-input-border;
+      border-radius: 5px;
+      margin: 30px 0;
+      width: 100%;
+      right: 0%;
+      color: $color-text;
+    }
+  
+    .calendarIconBtn {
+      margin: 23px 0;
+    }
+  
+    .calendarIconBtn-error {
+      border: 1px solid $color-danger;
+      margin-left: 0;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+  }
+
+
   .btn-primary {
     color: map-get($color-white, 000) !important;
   }

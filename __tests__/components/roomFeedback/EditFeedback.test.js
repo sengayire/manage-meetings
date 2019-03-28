@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import { EditFeedback } from '../../../src/components/roomFeedback/EditFeedback';
 
 describe('Unit tests for the EditFeedback Component', () => {
@@ -14,12 +14,12 @@ describe('Unit tests for the EditFeedback Component', () => {
     isActive: false,
   };
 
-  const wrapper = shallow(<EditFeedback {...props} />);
+  const wrapper = mount(<EditFeedback {...props} />);
 
   it('should render four input fields, a SelectInput component, a Calendar component and an Action button component', () => {
+    wrapper.find('button').simulate('click');
     expect(wrapper.find('input').length).toEqual(4);
     expect(wrapper.find('SelectInput').length).toEqual(1);
-    expect(wrapper.find('ActionButtons').length).toEqual(1);
     expect(wrapper.find('Calendar').length).toEqual(1);
   });
 

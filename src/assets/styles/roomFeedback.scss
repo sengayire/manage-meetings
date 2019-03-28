@@ -27,6 +27,9 @@
     .table {
       &__row {
         grid-template-columns: 40% 10% 10% 10% 10% 10% 10% !important;
+        span {
+          display: flex;
+        }
       }
 
       &__headers {

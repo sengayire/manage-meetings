@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow, mount } from 'enzyme';
 import { ApolloError } from 'apollo-client';
 import { AddQuestion } from '../../../src/components/roomFeedback/AddQuestion';
-import MrmModal from '../../../src/components/commons/Modal';
+import MrmModal from '../../../src/components/commons/MrmModal';
 
 describe('AddQuestion component', () => {
   const initProps = {

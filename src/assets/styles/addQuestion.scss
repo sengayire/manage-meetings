@@ -1,6 +1,10 @@
 @import './variables';
   .question-form {
     padding: 20px 0;
+    .btn-secondary {
+      color: $color-text !important;
+      border: 1px solid $color-input-border !important;
+    }
     input {
       border-radius: 5px;
       line-height: 25px;
@@ -78,35 +82,7 @@
       font-weight: 300;
       margin: 20px 0;
     }
-    // .calendar {
-    //   display: flex;
-    //   flex-direction: column;
-    //   right: 22.5vw;
-    //   position: absolute;
-    //   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    //   background: map-get($color-white, 000);
-    //   justify-content: space-between;
-    //   margin-top: -20px !important;
-    //   z-index: 2;
-    // }
-    // .calendar__button {
-    //   display: inline-flex !important;
-    // }
-    // .calendar__button .apply_button {
-    //   background-color: $color-primary;
-    //   color: map-get($color-white, 000);
-    //   height: 13px !important;
-    //   width: 50px;
-    //   margin-top: -5px;
-    //   padding: 4px 50px 16px 12px;
-    //   line-height: 22px !important;
-    //   font-weight: 500;
-    // }
-    // .number_of_days {
-    //   margin-top: 12px;
-    //   padding: 7px 5px 2px 5px;
-    //   margin-right: 150px;
-    // }
+
     .btn-secondary {
       line-height: 3.5em  !important;
     }
