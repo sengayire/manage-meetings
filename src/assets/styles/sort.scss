@@ -8,7 +8,7 @@
 .filter-options {
   cursor: pointer;
   display: block;
-  padding: 5px 10px;
+  padding: 10px 10px 5px;
   text-transform: capitalize;
 
   &__children {
@@ -52,7 +52,6 @@
 
 .dropdown-menu {
   margin-top: 2.5rem;
-  margin-left: 4rem;
 }
 
 .dropdown-caret {
