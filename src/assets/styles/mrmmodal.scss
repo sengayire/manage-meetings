@@ -1,0 +1,106 @@
+@import './variables';
+.modal-component {
+  .modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 990;
+  box-shadow: 0 2px 40px 10px $box-shadow;
+}
+.modal .overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 995;
+  background: $color-modal-backgorund;
+}
+.modal_content {
+  font-family: $font-regular;
+  z-index: 999;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 40%;
+  transform: translate(-50%, -50%);
+  overflow: auto;
+  background: map-get($color-white, 000);
+  box-sizing: border-box;
+  padding: 50px;
+  text-align: left;
+  border-radius: 4px;
+  h2 {
+    margin: 0;
+    margin-bottom: 25px;
+  }
+
+  .form-action-buttons {
+    .btn-primary:hover, .btn-primary:nth-child(2) {
+      color: $color-primary !important;
+    }
+
+    .btn-primary:first-child {
+      background-color: $color-primary;
+      color: map-get($color-white,000) !important;
+      span {
+        color: map-get($color-white,000) !important;
+      }
+    }
+
+    button:nth-child(2){
+    span {
+      color: $color-primary !important;
+    }
+  }
+
+  }
+  @media screen and (max-width: 360px) {
+    width: 60%;
+    margin: auto;
+  }
+  @media screen and (max-width: 414px) {
+    width: 70%;
+    margin: auto;
+  }
+  @media screen and (max-width: 520px) {
+    width: 70%;
+    margin: auto;
+  }
+  @media screen and (max-width: 320px) {
+    width: 70%;
+    margin: auto;
+  }
+  @media screen and (max-width: 375px) {
+    width: 80%;
+    margin: auto;
+  }
+  @media screen and (max-width: 768px) {
+    width: 70%;
+    margin: auto;
+  }
+  @media screen and (max-width: 400px) {
+    width: 70%;
+    margin: auto;
+  }
+  @media screen and (max-width: 1024px) {
+    width: 70%;
+    margin: auto;
+  }
+}
+h2 {
+  color: $color-primary !important ;
+  display: block;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+  button:first-child, button:first-child:hover{
+    background-color: map-get($color-white,000);
+    border: 1px solid $color-primary;
+    color: $color-primary;
+  }
+
+}

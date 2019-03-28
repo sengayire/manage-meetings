@@ -6,11 +6,10 @@ import toastr from 'toastr';
 import PropTypes from 'prop-types';
 import notification from '../../utils/notification';
 import Calendar from '../commons/Calendar';
-import MrmModal from '../commons/Modal';
+import MrmModal from '../commons/MrmModal';
 import { SelectInput as Select } from '../commons';
 import '../../assets/styles/addQuestion.scss';
 import { ADD_ROOM_FEEDBACK_QUESTIONS } from '../../graphql/mutations/Question';
-import ActionButtons from '../commons/ActionButtons';
 import GET_ROOM_FEEDBACK_QUESTIONS_QUERY from '../../../src/graphql/queries/questions';
 
 
@@ -363,24 +362,6 @@ export class AddQuestion extends Component {
   );
 
   /**
-   * It renders the action buttons
-   * for cancel and submit
-   *
-   * @returns {JSX}
-   */
-  renderActionButtons = () => (
-    <div>
-      <ActionButtons
-        withCancel
-        onClickCancel={this.handleCloseModal}
-        isLoading={this.state.isLoading}
-        actionButtonText="ADD QUESTION"
-        onClickSubmit={this.validateInputFields}
-      />
-    </div>
-  );
-
-  /**
    * It shows all the input fields required for creating a question
    *
    * @returns {JSX}
@@ -397,7 +378,6 @@ export class AddQuestion extends Component {
       {this.renderQuestionInputBox()}
       <span className="question-form__sections">Question Type</span>
       {this.rendersQuestionType()}
-      {this.renderActionButtons()}
     </div>
   );
 
@@ -406,13 +386,14 @@ export class AddQuestion extends Component {
       <MrmModal
         title="ADD QUESTION"
         buttonText="Add Question"
-        closeModal={this.state.closeModal}
-        handleCloseRequest={this.handleModalStateChange}
-        className="add-question-modal"
         modalButtonClassName="add-question-button"
-      >
-        {this.renderQuestionValues()}
-      </MrmModal>
+        modalContent={this.renderQuestionValues()}
+        cancelButtonText="CANCEL"
+        actionButtonText="ADD QUESTION"
+        handleSubmit={this.validateInputFields}
+        isLoading={this.state.isLoading}
+      />
+
     );
   }
 }

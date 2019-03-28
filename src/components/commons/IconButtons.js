@@ -24,6 +24,7 @@ class IconButtons extends Component {
    */
   onButtonTextChange = (text) => {
     let buttonText;
+    console.log(text);
     if (text === 'Delete') {
       buttonText = <img src={deleteIcon} alt="Delete" />;
     } else if (text === 'Edit') {

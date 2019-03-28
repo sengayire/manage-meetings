@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { graphql, compose } from 'react-apollo';
 import toastr from 'toastr';
-import MrmModal from '../commons/Modal';
-import ActionButtons from '../commons/ActionButtons';
+import Modal from '../commons/MrmModal';
 import '../../assets/styles/deleteModal.scss';
 import notification from '../../utils/notification';
 import { DELETE_ROOM_FEEDBACK_QUESTION } from '../../graphql/mutations/Question';
@@ -78,34 +77,39 @@ export class DeleteFeedback extends Component {
       });
   };
 
-  render() {
-    const { closeModal, isDeleting } = this.state;
+  /**
+   * renders model content for delete feedback
+   *
+   * @returns {JSX}
+   */
 
-    return (
-      <MrmModal
-        className="delete-modal"
-        title="Delete Question"
-        buttonText="Delete"
-        closeModal={closeModal}
-        handleCloseRequest={this.handleModalStateChange}
-      >
-        <div className="delete-modal-content">
-          <p id="confirm-msg">
-            Are you sure you want to delete {`"${this.props.question}"`} ?
-            <br />
-            This cannot be undone
-          </p>
-          <ActionButtons
-            withCancel
-            onClickCancel={this.handleCloseModal}
-            isLoading={isDeleting}
-            actionButtonText="DELETE QUESTION"
-            onClickSubmit={this.handleDeleteFeedback}
-          />
-        </div>
-      </MrmModal>
-    );
-  }
+   renderModalContent = () => (
+     <div className="delete-modal-content">
+       <p id="confirm-msg">
+         Are you sure you want to delete {`"${this.props.question}"`} ?
+         <br />
+         This cannot be undone
+       </p>
+     </div>
+   )
+
+   render() {
+     const { isDeleting } = this.state;
+
+     return (
+       <Modal
+         title="DELETE QUESTION"
+         buttonText="Delete"
+         actionButtonText="DELETE QUESTION"
+         modalContent={this.renderModalContent()}
+         isLoading={isDeleting}
+         handleSubmit={this.handleDeleteFeedback}
+         cancelButtonText="CANCEL"
+       />
+
+
+     );
+   }
 }
 
 DeleteFeedback.propTypes = {

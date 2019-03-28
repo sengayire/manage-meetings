@@ -433,7 +433,6 @@ export class EditFeedback extends Component {
       {this.renderQuestionInputBox()}
       <span className="question-form__sections">Question Type</span>
       {this.rendersQuestionType()}
-      {this.renderActionButtons()}
     </div>
   );
 
