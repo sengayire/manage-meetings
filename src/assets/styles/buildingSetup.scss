@@ -82,7 +82,7 @@ input[type="text"] {
   border: 1px dashed $color-primary;
   margin: 0 auto;
   border-radius: 4px;
-  overflow-x: scroll;
+  flex-wrap: wrap;
   justify-content: space-evenly;
   display: flex;
   margin-top: -15px;
@@ -99,7 +99,8 @@ input[type="text"] {
   font-size: 14px;
   position: relative;
   top: 0;
-  font-weight: 900
+  font-weight: 900;
+  margin: 1px 0;
 }
 .active-parent {
   background-color: map-get($color-amber, 300);
@@ -505,18 +506,18 @@ label {
   border-bottom: transparent;
 }
 
-.form-options-list li:nth-child(n+2):nth-last-child(n+2) {
+.form-options-list li:nth-child(n+2) {
   border-radius: 0;
 }
 
-.form-options-list li:nth-child(n+2):nth-last-child(n+2)::before {
+.form-options-list li:nth-child(n+2)::before {
   border: 1px solid $color-grey;
   border-left: transparent;
   border-bottom: transparent;
 }
 
 .form-options-list li.add-level-button::before,
-.form-options-list li:nth-child(n+2):nth-last-child(n+2)::before {
+.form-options-list li:nth-child(n+2)::before {
   background: map-get($color-white, 000);
   content: "";
   height: 1.85em;

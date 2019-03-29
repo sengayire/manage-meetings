@@ -242,7 +242,5 @@ exports[`Tests for SettingOffices renders correctly from memory 1`] = `
     }
   }
   warnUnhandledError={true}
->
-  <Component />
-</Query>
+/>
 `;

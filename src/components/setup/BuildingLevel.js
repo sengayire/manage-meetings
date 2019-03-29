@@ -59,9 +59,11 @@ class BuildingLevel extends Component {
   }
 
   toggleActiveLevel = ({ target: { id } }) => {
+    const { levelCounter } = this.state;
+    
     this.setState({
       activeLevel: Number(id),
-      showAddLevel: !(this.state.levelCounter - Number(id) >= 1),
+      showAddLevel: !(levelCounter - Number(id) >= 1) || (Number(id) === 1 && levelCounter === 2),
     });
   }
 

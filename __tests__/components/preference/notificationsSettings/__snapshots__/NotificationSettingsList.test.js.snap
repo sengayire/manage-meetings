@@ -84,7 +84,5 @@ exports[`Notification Settings Component should render properly 1`] = `
       },
     }
   }
->
-  <Component />
-</Query>
+/>
 `;

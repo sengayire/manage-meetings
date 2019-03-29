@@ -275,76 +275,68 @@ exports[`DeleteOffice Test Suite renders as expected 1`] = `
                 }
               }
             >
-              <Portal
-                containerInfo={
-                  <div
-                    class="ReactModalPortal"
-                  />
+              <ModalPortal
+                ariaHideApp={false}
+                bodyOpenClassName="ReactModal__Body--open"
+                className="delete-modal"
+                closeTimeoutMS={0}
+                contentLabel="Parent Modal"
+                defaultStyles={
+                  Object {
+                    "content": Object {
+                      "WebkitOverflowScrolling": "touch",
+                      "background": "#fff",
+                      "border": "1px solid #ccc",
+                      "borderRadius": "4px",
+                      "bottom": "40px",
+                      "left": "40px",
+                      "outline": "none",
+                      "overflow": "auto",
+                      "padding": "20px",
+                      "position": "absolute",
+                      "right": "40px",
+                      "top": "40px",
+                    },
+                    "overlay": Object {
+                      "backgroundColor": "rgba(255, 255, 255, 0.75)",
+                      "bottom": 0,
+                      "left": 0,
+                      "position": "fixed",
+                      "right": 0,
+                      "top": 0,
+                    },
+                  }
                 }
-              >
-                <ModalPortal
-                  ariaHideApp={false}
-                  bodyOpenClassName="ReactModal__Body--open"
-                  className="delete-modal"
-                  closeTimeoutMS={0}
-                  contentLabel="Parent Modal"
-                  defaultStyles={
-                    Object {
-                      "content": Object {
-                        "WebkitOverflowScrolling": "touch",
-                        "background": "#fff",
-                        "border": "1px solid #ccc",
-                        "borderRadius": "4px",
-                        "bottom": "40px",
-                        "left": "40px",
-                        "outline": "none",
-                        "overflow": "auto",
-                        "padding": "20px",
-                        "position": "absolute",
-                        "right": "40px",
-                        "top": "40px",
-                      },
-                      "overlay": Object {
-                        "backgroundColor": "rgba(255, 255, 255, 0.75)",
-                        "bottom": 0,
-                        "left": 0,
-                        "position": "fixed",
-                        "right": 0,
-                        "top": 0,
-                      },
-                    }
+                isOpen={false}
+                onAfterOpen={[Function]}
+                onRequestClose={[Function]}
+                parentSelector={[Function]}
+                portalClassName="ReactModalPortal"
+                shouldCloseOnEsc={true}
+                shouldCloseOnOverlayClick={false}
+                shouldFocusAfterRender={true}
+                shouldReturnFocusAfterClose={true}
+                style={
+                  Object {
+                    "content": Object {
+                      "backgroundColor": "#ffffff",
+                      "border": "1px solid #CCCCCC",
+                      "borderRadius": "4px",
+                      "bottom": "auto",
+                      "boxShadow": "0 2px 40px 10px rgba(185, 180, 180, 0.2)",
+                      "fontFamily": "DINPro-Regular",
+                      "left": "50%",
+                      "marginRight": "-50%",
+                      "outline": "none",
+                      "overflow": "auto",
+                      "position": "absolute",
+                      "right": "auto",
+                      "top": "50%",
+                      "transform": "translate(-50%, -50%)",
+                    },
                   }
-                  isOpen={false}
-                  onAfterOpen={[Function]}
-                  onRequestClose={[Function]}
-                  parentSelector={[Function]}
-                  portalClassName="ReactModalPortal"
-                  shouldCloseOnEsc={true}
-                  shouldCloseOnOverlayClick={false}
-                  shouldFocusAfterRender={true}
-                  shouldReturnFocusAfterClose={true}
-                  style={
-                    Object {
-                      "content": Object {
-                        "backgroundColor": "#ffffff",
-                        "border": "1px solid #CCCCCC",
-                        "borderRadius": "4px",
-                        "bottom": "auto",
-                        "boxShadow": "0 2px 40px 10px rgba(185, 180, 180, 0.2)",
-                        "fontFamily": "DINPro-Regular",
-                        "left": "50%",
-                        "marginRight": "-50%",
-                        "outline": "none",
-                        "overflow": "auto",
-                        "position": "absolute",
-                        "right": "auto",
-                        "top": "50%",
-                        "transform": "translate(-50%, -50%)",
-                      },
-                    }
-                  }
-                />
-              </Portal>
+                }
+              />
             </Modal>
           </MrmModal>
         </DeleteRoom>
@@ -629,107 +621,93 @@ exports[`DeleteOffice Test Suite should pop up a modal when delete button is cli
                 }
               }
             >
-              <Portal
-                containerInfo={
-                  <div
-                    class="ReactModalPortal"
-                  >
-                    <div
-                      aria-modal="true"
-                      class="ReactModal__Overlay ReactModal__Overlay--after-open"
-                      style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(255, 255, 255, 0.75);"
-                    >
-                      <div
-                        aria-label="Parent Modal"
-                        class="ReactModal__Content ReactModal__Content--after-open delete-modal"
-                        style="font-family: DINPro-Regular; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); margin-right: -50%; border: 1px solid #cccccc; border-radius: 4px; outline: none; box-shadow: 0 2px 40px 10px rgba(185, 180, 180, 0.2); background-color: rgb(255, 255, 255); overflow: auto;"
-                        tabindex="-1"
-                      >
-                        <h2
-                          style="color: rgb(255, 0, 0);"
-                        >
-                          DELETE ROOM
-                        </h2>
-                        <div
-                          class="delete-modal-content"
-                        >
-                          <p
-                            id="confirm-msg"
-                          >
-                            Are you sure you want to delete 
-                            "Rabat"
-                            ? 
-                            <br />
-                            This cannot be undone
-                          </p>
-                          <div
-                            class="form-action-buttons"
-                          >
-                            <button
-                              class="null btn-primary"
-                            >
-                              <span>
-                                CANCEL
-                              </span>
-                            </button>
-                            <button
-                              class="main-button btn-primary"
-                            >
-                              <span>
-                                DELETE ROOM
-                              </span>
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+              <ModalPortal
+                ariaHideApp={false}
+                bodyOpenClassName="ReactModal__Body--open"
+                className="delete-modal"
+                closeTimeoutMS={0}
+                contentLabel="Parent Modal"
+                defaultStyles={
+                  Object {
+                    "content": Object {
+                      "WebkitOverflowScrolling": "touch",
+                      "background": "#fff",
+                      "border": "1px solid #ccc",
+                      "borderRadius": "4px",
+                      "bottom": "40px",
+                      "left": "40px",
+                      "outline": "none",
+                      "overflow": "auto",
+                      "padding": "20px",
+                      "position": "absolute",
+                      "right": "40px",
+                      "top": "40px",
+                    },
+                    "overlay": Object {
+                      "backgroundColor": "rgba(255, 255, 255, 0.75)",
+                      "bottom": 0,
+                      "left": 0,
+                      "position": "fixed",
+                      "right": 0,
+                      "top": 0,
+                    },
+                  }
+                }
+                isOpen={true}
+                onAfterOpen={[Function]}
+                onRequestClose={[Function]}
+                parentSelector={[Function]}
+                portalClassName="ReactModalPortal"
+                shouldCloseOnEsc={true}
+                shouldCloseOnOverlayClick={false}
+                shouldFocusAfterRender={true}
+                shouldReturnFocusAfterClose={true}
+                style={
+                  Object {
+                    "content": Object {
+                      "backgroundColor": "#ffffff",
+                      "border": "1px solid #CCCCCC",
+                      "borderRadius": "4px",
+                      "bottom": "auto",
+                      "boxShadow": "0 2px 40px 10px rgba(185, 180, 180, 0.2)",
+                      "fontFamily": "DINPro-Regular",
+                      "left": "50%",
+                      "marginRight": "-50%",
+                      "outline": "none",
+                      "overflow": "auto",
+                      "position": "absolute",
+                      "right": "auto",
+                      "top": "50%",
+                      "transform": "translate(-50%, -50%)",
+                    },
+                  }
                 }
               >
-                <ModalPortal
-                  ariaHideApp={false}
-                  bodyOpenClassName="ReactModal__Body--open"
-                  className="delete-modal"
-                  closeTimeoutMS={0}
-                  contentLabel="Parent Modal"
-                  defaultStyles={
-                    Object {
-                      "content": Object {
-                        "WebkitOverflowScrolling": "touch",
-                        "background": "#fff",
-                        "border": "1px solid #ccc",
-                        "borderRadius": "4px",
-                        "bottom": "40px",
-                        "left": "40px",
-                        "outline": "none",
-                        "overflow": "auto",
-                        "padding": "20px",
-                        "position": "absolute",
-                        "right": "40px",
-                        "top": "40px",
-                      },
-                      "overlay": Object {
-                        "backgroundColor": "rgba(255, 255, 255, 0.75)",
-                        "bottom": 0,
-                        "left": 0,
-                        "position": "fixed",
-                        "right": 0,
-                        "top": 0,
-                      },
-                    }
-                  }
-                  isOpen={true}
-                  onAfterOpen={[Function]}
-                  onRequestClose={[Function]}
-                  parentSelector={[Function]}
-                  portalClassName="ReactModalPortal"
-                  shouldCloseOnEsc={true}
-                  shouldCloseOnOverlayClick={false}
-                  shouldFocusAfterRender={true}
-                  shouldReturnFocusAfterClose={true}
+                <div
+                  aria-modal="true"
+                  className="ReactModal__Overlay ReactModal__Overlay--after-open"
+                  onClick={[Function]}
+                  onMouseDown={[Function]}
                   style={
                     Object {
-                      "content": Object {
+                      "backgroundColor": "rgba(255, 255, 255, 0.75)",
+                      "bottom": 0,
+                      "left": 0,
+                      "position": "fixed",
+                      "right": 0,
+                      "top": 0,
+                    }
+                  }
+                >
+                  <div
+                    aria-label="Parent Modal"
+                    className="ReactModal__Content ReactModal__Content--after-open delete-modal"
+                    onClick={[Function]}
+                    onKeyDown={[Function]}
+                    onMouseDown={[Function]}
+                    onMouseUp={[Function]}
+                    style={
+                      Object {
                         "backgroundColor": "#ffffff",
                         "border": "1px solid #CCCCCC",
                         "borderRadius": "4px",
@@ -744,121 +722,77 @@ exports[`DeleteOffice Test Suite should pop up a modal when delete button is cli
                         "right": "auto",
                         "top": "50%",
                         "transform": "translate(-50%, -50%)",
-                      },
-                    }
-                  }
-                >
-                  <div
-                    aria-modal="true"
-                    className="ReactModal__Overlay ReactModal__Overlay--after-open"
-                    onClick={[Function]}
-                    onMouseDown={[Function]}
-                    style={
-                      Object {
-                        "backgroundColor": "rgba(255, 255, 255, 0.75)",
-                        "bottom": 0,
-                        "left": 0,
-                        "position": "fixed",
-                        "right": 0,
-                        "top": 0,
                       }
                     }
+                    tabIndex="-1"
                   >
+                    <h2>
+                      DELETE ROOM
+                    </h2>
                     <div
-                      aria-label="Parent Modal"
-                      className="ReactModal__Content ReactModal__Content--after-open delete-modal"
-                      onClick={[Function]}
-                      onKeyDown={[Function]}
-                      onMouseDown={[Function]}
-                      onMouseUp={[Function]}
-                      style={
-                        Object {
-                          "backgroundColor": "#ffffff",
-                          "border": "1px solid #CCCCCC",
-                          "borderRadius": "4px",
-                          "bottom": "auto",
-                          "boxShadow": "0 2px 40px 10px rgba(185, 180, 180, 0.2)",
-                          "fontFamily": "DINPro-Regular",
-                          "left": "50%",
-                          "marginRight": "-50%",
-                          "outline": "none",
-                          "overflow": "auto",
-                          "position": "absolute",
-                          "right": "auto",
-                          "top": "50%",
-                          "transform": "translate(-50%, -50%)",
-                        }
-                      }
-                      tabIndex="-1"
+                      className="delete-modal-content"
                     >
-                      <h2>
-                        DELETE ROOM
-                      </h2>
-                      <div
-                        className="delete-modal-content"
+                      <p
+                        id="confirm-msg"
                       >
-                        <p
-                          id="confirm-msg"
+                        Are you sure you want to delete 
+                        "Rabat"
+                        ? 
+                        <br />
+                        This cannot be undone
+                      </p>
+                      <ActionButtons
+                        actionButtonText="DELETE ROOM"
+                        cancelButtonText="CANCEL"
+                        isLoading={false}
+                        onClickCancel={[Function]}
+                        onClickSubmit={[Function]}
+                        showActionButton={true}
+                        withCancel={true}
+                      >
+                        <div
+                          className="form-action-buttons"
                         >
-                          Are you sure you want to delete 
-                          "Rabat"
-                          ? 
-                          <br />
-                          This cannot be undone
-                        </p>
-                        <ActionButtons
-                          actionButtonText="DELETE ROOM"
-                          cancelButtonText="CANCEL"
-                          isLoading={false}
-                          onClickCancel={[Function]}
-                          onClickSubmit={[Function]}
-                          showActionButton={true}
-                          withCancel={true}
-                        >
-                          <div
-                            className="form-action-buttons"
+                          <Button
+                            classProp={null}
+                            handleClick={[Function]}
+                            isDisabled={false}
+                            title="CANCEL"
+                            type={1}
                           >
-                            <Button
-                              classProp={null}
-                              handleClick={[Function]}
-                              isDisabled={false}
-                              title="CANCEL"
-                              type={1}
+                            <button
+                              className="null btn-primary"
+                              disabled={false}
+                              onClick={[Function]}
                             >
-                              <button
-                                className="null btn-primary"
-                                disabled={false}
-                                onClick={[Function]}
-                              >
-                                <span>
-                                  CANCEL
-                                </span>
-                              </button>
-                            </Button>
-                            <Button
-                              classProp="main-button"
-                              handleClick={[Function]}
-                              isDisabled={false}
-                              title="DELETE ROOM"
-                              type={1}
+                              <span>
+                                CANCEL
+                              </span>
+                            </button>
+                          </Button>
+                          <Button
+                            classProp="main-button"
+                            handleClick={[Function]}
+                            isDisabled={false}
+                            title="DELETE ROOM"
+                            type={1}
+                          >
+                            <button
+                              className="main-button btn-primary"
+                              disabled={false}
+                              onClick={[Function]}
                             >
-                              <button
-                                className="main-button btn-primary"
-                                disabled={false}
-                                onClick={[Function]}
-                              >
-                                <span>
-                                  DELETE ROOM
-                                </span>
-                              </button>
-                            </Button>
-                          </div>
-                        </ActionButtons>
-                      </div>
+                              <span>
+                                DELETE ROOM
+                              </span>
+                            </button>
+                          </Button>
+                        </div>
+                      </ActionButtons>
                     </div>
                   </div>
-                </ModalPortal>
-              </Portal>
+                </div>
+              </ModalPortal>
             </Modal>
           </MrmModal>
         </DeleteRoom>
