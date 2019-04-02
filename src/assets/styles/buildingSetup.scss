@@ -579,3 +579,64 @@ label {
   border-left-color: $color-primary !important;
   background: $color-primary !important;
  }
+ 
+.level-container .form-header {
+  .levels-modal-image {
+    margin-top: 14px;
+  }
+  button#modal-button  {
+    margin-top: 0px;
+    border-style: none;
+    padding-left: 1px;
+  }
+  .setup-levels {
+    .close-modal {
+      position: absolute;
+      top: 9px;
+      right: 14px;
+      color: map-get($color-white, 000);
+      font-weight: 900;
+      height: 12px;
+      width: 12px;
+      padding: 2px 0px 4px 6px;
+      size: 10px;
+      font-size: 12px;
+      border-radius: 50px;
+      line-height: 1;
+      background: $color-danger;
+      cursor: pointer;
+    }
+
+    .modal {
+      .modal_content {
+        border-radius: 14px;
+        height: auto;
+        width: auto;
+        .form-action-buttons button {
+          display: none;
+        }
+        .setup {
+          &_carousel_next {
+            border-radius: 70%;
+            padding: 15px 20px;
+          }
+          &_carousel_previous {
+            border-radius: 70%;
+            padding: 15px 20px;
+          }
+          &_carousel_navigator {
+            margin: 0;
+          }
+          &_carousel_navigator::before {
+            padding-right: 5px;
+            font-size: 1px;
+          }
+          &_carousel_navigator::after {
+            padding-right: 5px;
+            font-size: 1px;
+          }
+        }
+      }
+    }
+  }
+}

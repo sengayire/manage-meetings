@@ -57,8 +57,8 @@ describe('AddQuestion component', () => {
   });
 
   it('should format the date and time correctly', () => {
-    const instance = wrapper.instance().formatDateTime('2019-03-28', '15:42');
-    expect(instance).toEqual('2019-03-28T15:42:00');
+    const instance = wrapper.instance().formatDateTime('2020-03-28', '15:42');
+    expect(instance).toEqual('2020-03-28T15:42:00');
   });
 
   it('should contain an error when questionTitle is not provided', () => {
@@ -66,8 +66,8 @@ describe('AddQuestion component', () => {
       question: 'Something',
       questionTitle: '',
       questionType: 1,
-      startDate: '2019-03-28T15:42:43',
-      endDate: '2019-03-29T15:42:43',
+      startDate: '2020-03-28T15:42:43',
+      endDate: '2020-03-29T15:42:43',
     });
     wrapper
       .find('.btn-primary')
@@ -81,8 +81,8 @@ describe('AddQuestion component', () => {
       question: '',
       questionTitle: 'Something',
       questionType: 1,
-      startDate: '2019-03-28T15:42:43',
-      endDate: '2019-03-29T15:42:43',
+      startDate: '2020-03-28T15:42:43',
+      endDate: '2020-03-29T15:42:43',
     });
     wrapper
       .find('.btn-primary')
@@ -96,8 +96,8 @@ describe('AddQuestion component', () => {
       question: 'Something',
       questionTitle: 'Something',
       questionType: 0,
-      startDate: '2019-03-28T15:42:43',
-      endDate: '2019-03-29T15:42:43',
+      startDate: '2020-03-28T15:42:43',
+      endDate: '2020-03-29T15:42:43',
     });
     wrapper
       .find('.btn-primary')
@@ -185,10 +185,10 @@ describe('AddQuestion component', () => {
       question: 'Blabla',
       questionTitle: 'Something',
       questionType: 1,
-      startDate: '2019-03-28T15:42:43',
-      endDate: '2019-03-29T15:42:43',
+      startDate: '2020-03-28T15:42:43',
+      endDate: '2020-03-29T15:42:43',
     });
-    wrapper.instance().compareDates('2019-03-28', '2019-03-29');
+    wrapper.instance().compareDates('2020-03-28', '2020-03-29');
     const spy = jest.spyOn(wrapper.instance(), 'createQuestion');
     spy();
     expect(spy).toHaveBeenCalled();
@@ -205,8 +205,8 @@ describe('AddQuestion component', () => {
       question: 'Blabla',
       questionTitle: 'Something',
       questionType: 1,
-      startDate: '2019-03-28T15:42:43',
-      endDate: '2019-03-29T15:42:43',
+      startDate: '2020-03-28T15:42:43',
+      endDate: '2020-03-29T15:42:43',
     });
     const spy = jest.spyOn(wrapper.instance(), 'createQuestion');
     spy();

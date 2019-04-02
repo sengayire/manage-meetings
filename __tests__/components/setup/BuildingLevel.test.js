@@ -92,4 +92,12 @@ describe('building setup component', () => {
     backButton.simulate('click');
     expect(handleClick).toHaveBeenCalledWith('isRoomSetupViewVisible');
   });
+
+  it('should call the toggleModal function when the close icon is clicked', () => {
+    const toggleModalSpy = jest.spyOn(wrapper.instance(), 'toggleModal');
+    wrapper.find('.levels-modal-image').simulate('click');
+    wrapper.find('.close-modal').simulate('click');
+    wrapper.instance().toggleModal();
+    expect(toggleModalSpy).toHaveBeenCalled();
+  });
 });
