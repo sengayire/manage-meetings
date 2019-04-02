@@ -1,0 +1,120 @@
+@import './variables';
+
+.rooms-allocated-container {
+  width: 100% !important;
+  .modal {
+    &_content {
+      width: 45%;
+      h2 {
+        margin-left: 0;
+        text-transform: uppercase;
+      }
+      .number-of-rooms {
+        font-size: 1.1rem;
+        color: $color-text;
+        font-weight: 100;
+        margin-bottom: 25px;
+      }
+      .single-resource {
+        display: flex;
+        width: 98% !important;
+        height: 51px;
+        padding: 5px;
+        margin-bottom: 15px;
+        border: 1px solid $color-input-border;
+        border-radius: 4px;
+        &:hover {
+          background-color: $color-background-hover;
+        }
+
+        .room-name-resource {
+          width: 85%;
+          color: $color-level-setup-heading;
+          padding-left: 20px;
+          text-transform: capitalize;
+        }
+        .btn-primary {
+          padding-top: 15px;
+          background-color: transparent !important;
+          border: none !important;
+        }
+      }
+      .form-action-buttons {
+        margin-top: 8%;
+
+        .btn-primary:nth-child(2) {
+          background-color: map-get($color-amber, 300) !important;
+          border: none !important;
+          border-radius: 0;
+          span {
+            color: map-get($color-white, 000) !important;
+          }
+        }
+        .btn-primary:nth-child(1) {
+          border: 1px solid $color-primary;
+          border-radius: 0;
+          color: $color-primary !important;
+          background-color: map-get($color-white, 000);
+
+          span {
+            color: $color-primary !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .rooms-allocated-container {
+    .modal {
+      &_content {
+        width: 60%;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 768px) {
+  .rooms-allocated-container {
+    .modal {
+      &_content {
+        width: 70%;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 600px) {
+  .rooms-allocated-container {
+    .modal {
+      &_content {
+        width: 90%;
+        padding: 40px 30px;
+        transform: translate(-50.5%, -60%);
+        .h2 {
+          font-size: 1.8rem;
+        }
+        .number-of-rooms {
+          font-size: 0.7rem;
+        }
+        .single-resource {
+          .room-name-resource {
+            width: 85%;
+            padding-left: 10px;
+          }
+        }
+        .form-action-buttons {
+          button {
+            border-radius: 0;
+            font-size: 14px;
+            padding: 10px;
+          }
+        }
+        .cancel-button {
+          margin: 0 0;
+          width: 100px;
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}

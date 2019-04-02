@@ -69,7 +69,10 @@ describe('AddQuestion component', () => {
       startDate: '2019-03-28T15:42:43',
       endDate: '2019-03-29T15:42:43',
     });
-    wrapper.find('.btn-primary').at(1).simulate('click');
+    wrapper
+      .find('.btn-primary')
+      .at(1)
+      .simulate('click');
     expect(wrapper.state().error.questionTitle).toEqual('Please provide the title of the question');
   });
 
@@ -81,7 +84,10 @@ describe('AddQuestion component', () => {
       startDate: '2019-03-28T15:42:43',
       endDate: '2019-03-29T15:42:43',
     });
-    wrapper.find('.btn-primary').at(1).simulate('click');
+    wrapper
+      .find('.btn-primary')
+      .at(1)
+      .simulate('click');
     expect(wrapper.state().error.question).toEqual('Please provide the feedback question');
   });
 
@@ -93,7 +99,10 @@ describe('AddQuestion component', () => {
       startDate: '2019-03-28T15:42:43',
       endDate: '2019-03-29T15:42:43',
     });
-    wrapper.find('.btn-primary').at(1).simulate('click');
+    wrapper
+      .find('.btn-primary')
+      .at(1)
+      .simulate('click');
     expect(wrapper.state().error.type).toEqual('Please select the question type');
   });
 
@@ -102,12 +111,17 @@ describe('AddQuestion component', () => {
       question: 'Something',
       questionTitle: 'Something',
       questionType: 0,
-      startDate: '2019-03-28T15:42:43',
-      endDate: '2019-03-29T15:42:43',
+      startDate: '2020-03-28T15:42:43',
+      endDate: '2020-03-29T15:42:43',
     });
-    wrapper.instance().compareDates(new Date('2019-03-29'), new Date('2019-03-29'));
-    wrapper.find('.btn-primary').at(1).simulate('click');
-    expect(wrapper.state().error.date).toEqual('End date should be at least a day after start date');
+    wrapper.instance().compareDates(new Date('2020-03-29'), new Date('2020-03-29'));
+    wrapper
+      .find('.btn-primary')
+      .at(1)
+      .simulate('click');
+    expect(wrapper.state().error.date).toEqual(
+      'End date should be at least a day after start date',
+    );
   });
 
   it('should contain an error when start date is before today', () => {
@@ -115,11 +129,14 @@ describe('AddQuestion component', () => {
       question: 'Something',
       questionTitle: 'Something',
       questionType: 0,
-      startDate: '2019-03-28T15:42:43',
+      startDate: '2020-03-28T15:42:43',
       endDate: '2019-03-29T15:42:43',
     });
     wrapper.instance().compareDates(new Date('2019-01-29'), new Date('2019-03-29'));
-    wrapper.find('.btn-primary').at(1).simulate('click');
+    wrapper
+      .find('.btn-primary')
+      .at(1)
+      .simulate('click');
     expect(wrapper.state().error.date).toEqual('Start date cannot be past days');
   });
 
@@ -128,11 +145,14 @@ describe('AddQuestion component', () => {
       question: 'Something',
       questionTitle: 'Something',
       questionType: 0,
-      startDate: '2019-03-28T15:42:43',
-      endDate: '2019-03-29T15:42:43',
+      startDate: '2020-03-28T15:42:43',
+      endDate: '2020-03-29T15:42:43',
     });
-    wrapper.instance().compareDates(new Date('2019-03-29'), new Date('2019-01-29'));
-    wrapper.find('.btn-primary').at(1).simulate('click');
+    wrapper.instance().compareDates(new Date('2020-03-29'), new Date('2019-01-29'));
+    wrapper
+      .find('.btn-primary')
+      .at(1)
+      .simulate('click');
     expect(wrapper.state().error.date).toEqual('End date should be at least a day after today');
   });
 
@@ -144,11 +164,16 @@ describe('AddQuestion component', () => {
       question: 'Something',
       questionTitle: 'Something',
       questionType: 1,
-      startDate: '2019-03-30T15:42:43',
-      endDate: '2019-03-29T15:42:43',
+      startDate: '2020-03-30T15:42:43',
+      endDate: '2020-03-29T15:42:43',
     });
-    wrapper.find('.btn-primary').at(1).simulate('click');
-    expect(wrapper.instance().state.error.date).toEqual('End date should be at least a day after start date');
+    wrapper
+      .find('.btn-primary')
+      .at(1)
+      .simulate('click');
+    expect(wrapper.instance().state.error.date).toEqual(
+      'End date should be at least a day after start date',
+    );
   });
 
   it('should call createQuestion when all validations pass', () => {
@@ -171,7 +196,9 @@ describe('AddQuestion component', () => {
 
   it('should call createQuestion when submit is clicked', () => {
     const props = {
-      addQuestion: jest.fn(() => Promise.reject(new ApolloError({ graphQLErrors: [new Error('error')] }))),
+      addQuestion: jest.fn(() =>
+        Promise.reject(new ApolloError({ graphQLErrors: [new Error('error')] })),
+      ),
     };
     wrapper = shallow(<AddQuestion {...props} refetch={jest.fn} />);
     wrapper.setState({
