@@ -1,9 +1,14 @@
 import React from 'react';
 import { mount } from 'enzyme';
+import { MockedProvider } from 'react-apollo/test-utils';
 import RoomSetupView from '../../src/containers/RoomSetupView';
 
 describe('unit test for room setupView component', () => {
-  const wrapper = mount(<RoomSetupView />);
+  const wrapper = mount(
+    <MockedProvider>
+      <RoomSetupView client={{}} />
+    </MockedProvider>,
+  );
   const event = {
     currentTarget: {
       id: 'resources',
@@ -19,8 +24,10 @@ describe('unit test for room setupView component', () => {
 
   it('should toggle navbar item when user clicks on it', () => {
     const navItem = wrapper.find('#resources');
-    expect(wrapper.state().currentNavItem).toBe('meeting-rooms');
+    const component = wrapper.find('RoomSetupOverView');
+    expect(component.state().currentNavItem).toBe('meeting-rooms');
     navItem.simulate('click', event);
-    expect(wrapper.state().currentNavItem).toBe('resources');
+    component.update();
+    expect(component.state().currentNavItem).toBe('resources');
   });
 });

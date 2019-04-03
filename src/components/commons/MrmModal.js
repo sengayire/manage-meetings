@@ -1,8 +1,10 @@
 /* eslint-disable react/prop-types */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { withApollo } from 'react-apollo';
 import ActionButton from './ActionButtons';
 import IconButtons from './IconButtons';
+import getUserDetails from '../helpers/QueryHelper';
 import '../../assets/styles/mrmmodal.scss';
 
 class MrmModal extends Component {
@@ -11,6 +13,11 @@ class MrmModal extends Component {
     title: PropTypes.string,
     buttonText: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
     type: PropTypes.number,
+    client: PropTypes.oneOfType([
+      PropTypes.object,
+      PropTypes.array,
+      PropTypes.string,
+    ]).isRequired,
   };
 
   static defaultProps = {
@@ -22,7 +29,22 @@ class MrmModal extends Component {
 
   state = {
     isOpen: false,
+    role: '',
   }
+
+  componentDidMount() {
+    this.setUserRole();
+  }
+
+  /**
+   * Sets the role of the current user
+   * @returns {void}
+   */
+  setUserRole = async () => {
+    const user = await getUserDetails(this.props.client);
+    this.setState({ role: user.roles[0].id });
+  }
+
 
   /**
    * Toggle the visibility of the modal
@@ -48,6 +70,7 @@ class MrmModal extends Component {
     return (
       <div className="modal-component">
         { type === 1 &&
+        this.state.role === '2' &&
         <IconButtons
           buttonText={buttonText}
           openModal={this.toggleModal}
@@ -76,4 +99,4 @@ class MrmModal extends Component {
   }
 }
 
-export default MrmModal;
+export default withApollo(MrmModal);

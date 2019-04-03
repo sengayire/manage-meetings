@@ -24,6 +24,7 @@ const props = {
     startDate: 'start date',
     endDate: 'end date',
   },
+  client: {},
 };
 
 describe('AnalyticsNav Component', () => {

@@ -1,11 +1,11 @@
 /* eslint react/no-array-index-key: 0 */
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { graphql } from 'react-apollo';
-import CheckboxSlide from '../commons/CheckboxSlide';
+import CheckBoxSlide from '../commons/CheckboxSlide';
 import EditFeedbackComponent from './EditFeedback';
+import { UPDATE_QUESTION_STATUS_MUTATION } from '../../graphql/mutations/Question';
+import GET_ROOM_FEEDBACK_QUESTIONS_QUERY from '../../../src/graphql/queries/questions';
 import DeleteFeedback from './DeleteFeedback'; // eslint-disable-line
-import UPDATE_QUESTION_STATUS_MUTATION from '../../graphql/mutations/Question';
 
 /**
  * Feedback Component
@@ -14,14 +14,13 @@ import UPDATE_QUESTION_STATUS_MUTATION from '../../graphql/mutations/Question';
  *
  * @returns {JSX}
  */
-const Feedback = props =>
-  props.feedback.map(
-    (
-      {
-        id, question, startDate, endDate, questionTitle,
-        questionResponseCount, questionType, isActive,
-      },
-    ) => (
+const Feedback = (props) => {
+  const { role } = props;
+  return (
+    props.feedback.map(({
+      id, question, startDate, endDate, questionTitle,
+      questionResponseCount, questionType, isActive,
+    }) => (
       <div className="table__row" key={id}>
         <span>
           {question}
@@ -30,29 +29,36 @@ const Feedback = props =>
         <span>{questionResponseCount}</span>
         <span>{props.startDateFormatter(startDate)}</span>
         <span>{props.durationFormatter(startDate, endDate)}</span>
-        <span>
-          { !isActive &&
-            <EditFeedbackComponent
-              id="edit-modal"
-              questionId={id}
-              question={question}
-              questionType={questionType}
-              questionTitle={questionTitle}
-              startDate={startDate}
-              endDate={endDate}
-            />
-          }
-          <DeleteFeedback id={id} question={question} />
-        </span>
-        <span className="checkbox">
-          <CheckboxSlide
-            questionId={parseInt(id, 10)}
-            checked={isActive}
-            updateQuestion={props.updateQuestion}
-          />
-        </span>
+        {
+          role === '2' &&
+          <Fragment>
+            <span>
+              {!isActive &&
+                <EditFeedbackComponent
+                  id="edit-modal"
+                  questionId={id}
+                  question={question}
+                  questionType={questionType}
+                  questionTitle={questionTitle}
+                  startDate={startDate}
+                  endDate={endDate}
+                />}
+              <DeleteFeedback id={id} question={question} />
+            </span>
+            <span className="checkbox">
+              <CheckBoxSlide
+                questionId={parseInt(id, 10)}
+                isChecked={isActive}
+                actionToPerform="mutation"
+                mutationQuery={UPDATE_QUESTION_STATUS_MUTATION}
+                updateQuery={GET_ROOM_FEEDBACK_QUESTIONS_QUERY}
+              />
+            </span>
+          </Fragment>
+        }
       </div>
-    ));
+    )));
+};
 
 Feedback.defaultProps = {
   feedback: [
@@ -69,6 +75,7 @@ Feedback.defaultProps = {
 
 Feedback.propTypes = {
   feedback: PropTypes.arrayOf(PropTypes.object).isRequired,
+  role: PropTypes.string.isRequired,
 };
 
-export default graphql(UPDATE_QUESTION_STATUS_MUTATION, { name: 'updateQuestion' })(Feedback);
+export default Feedback;

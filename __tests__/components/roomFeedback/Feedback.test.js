@@ -1,7 +1,6 @@
 import React from 'react';
 import { mount, shallow } from 'enzyme';
 import { MockedProvider } from 'react-apollo/test-utils';
-import { BrowserRouter as Router } from 'react-router-dom';
 import { RoomFeedback } from '../../../src/components/roomFeedback/RoomFeedback';
 import defaultUserRole from '../../../src/fixtures/user';
 import ErrorIcon from '../../../src/components/commons/ErrorIcon';
@@ -26,16 +25,15 @@ describe('RoomFeeback Component', () => {
       error: undefined,
     },
     user: defaultUserRole,
+    client: {},
   };
   const wrapper = mount(
     <MockedProvider>
-      <Router>
-        <RoomFeedback user={defaultUserRole} {...testProps} />
-      </Router>
+      <RoomFeedback user={defaultUserRole} {...testProps} />
     </MockedProvider>,
   );
-  it('should render table row property while rendering the component', () => {
-    expect(wrapper.find('.table__row')).toHaveLength(1);
+  it('should render table headers property while rendering the component', () => {
+    expect(wrapper.find('.table__headers')).toHaveLength(1);
   });
 
   it('should have empty user prop', () => {
@@ -49,6 +47,7 @@ describe('RoomFeeback Component', () => {
       error: undefined,
       data: { questions: { questions: [] } },
       user: {},
+      client: {},
     };
     const roomFeedback = shallow(<RoomFeedback {...newProps} />);
     expect(roomFeedback.find(ErrorIcon)).toHaveLength(1);

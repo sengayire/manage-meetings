@@ -13,10 +13,7 @@ import MenuTitle from '../commons/MenuTitle';
 import Spinner from '../commons/Spinner';
 import notification from '../../utils/notification';
 import Overlay from '../commons/Overlay';
-import { GET_USER_QUERY } from '../../graphql/queries/People';
-import { decodeTokenAndGetUserData } from '../../utils/Cookie';
-import { saveItemInLocalStorage } from '../../utils/Utilities';
-import defaultUserRole from '../../fixtures/user';
+import getUserDetails from '../helpers/QueryHelper';
 import DataNotFound from '../commons/DataNotFound';
 import ErrorIcon from '../../components/commons/ErrorIcon';
 
@@ -33,7 +30,12 @@ export class ResourceList extends React.Component {
       dataFetched: true, // true when there is an active internet connection
       currentPage: 1,
       isFetching: false,
+      location: '',
     };
+  }
+
+  componentDidMount() {
+    this.setUserLocation();
   }
 
   componentWillReceiveProps(props) {
@@ -41,6 +43,16 @@ export class ResourceList extends React.Component {
     this.setState({
       allResources,
     });
+  }
+
+  /**
+   * Sets the current user's location
+   *
+   * @returns {void}
+   */
+  setUserLocation = async () => {
+    const user = await getUserDetails(this.props.client);
+    this.setState({ location: user.location });
   }
 
   /**
@@ -78,16 +90,16 @@ export class ResourceList extends React.Component {
 
   render() {
     const { loading, error, refetch } = this.props.data;
-    const { allResources, currentPage, isFetching } = this.state;
-    const { user } = this.props.user;
+    const {
+      allResources, currentPage, isFetching, location,
+    } = this.state;
     if (loading) return <Spinner />;
-    else if (error && error.message === 'GraphQL error: No more resources') return <DataNotFound />;
-    else if (user) saveItemInLocalStorage('access', user.roles[0].id);
+    if (error && error.message === 'GraphQL error: No more resources') return <DataNotFound />;
     return (
       <div className="settings-resource">
         <div className={`settings-resource-control ${isFetching ? 'disabled-buttons' : null}`}>
           <MenuTitle title="Resources" />
-          <AddResourceComponent userLocation={this.props.userLocation.user} refetch={refetch} />
+          <AddResourceComponent userLocation={location} refetch={refetch} />
         </div>
         <div className="settings-resource-list">
           {isFetching ? <Overlay /> : null}
@@ -136,24 +148,11 @@ ResourceList.propTypes = {
     error: PropTypes.object,
     fetchMore: PropTypes.func,
   }).isRequired,
-  user: PropTypes.shape({
-    user: PropTypes.object,
-  }),
-  userLocation: PropTypes.shape({
-    user: PropTypes.object,
-  }),
+  client: PropTypes.oneOfType([
+    PropTypes.object,
+    PropTypes.array,
+  ]).isRequired,
 };
-
-ResourceList.defaultProps = {
-  user: defaultUserRole,
-  userLocation: {
-    user: {
-      location: '',
-    },
-  },
-};
-
-const { UserInfo: userData } = decodeTokenAndGetUserData() || {};
 
 export default compose(
   graphql(GET_RESOURCES_QUERY, {
@@ -163,22 +162,6 @@ export default compose(
       variables: {
         page: 1,
         perPage: 5,
-      },
-    }),
-  }),
-  graphql(GET_USER_QUERY, {
-    name: 'user',
-    options: /* istanbul ignore next */ () => ({
-      variables: {
-        email: process.env.NODE_ENV === 'test' ? 'sammy.muriuki@andela.com' : userData.email,
-      },
-    }),
-  }),
-  graphql(GET_USER_QUERY, {
-    name: 'userLocation',
-    options: /* istanbul ignore next */ () => ({
-      variables: {
-        email: process.env.NODE_ENV === 'test' ? 'sammy.muriuki@andela.com' : userData.email,
       },
     }),
   }),

@@ -214,7 +214,7 @@ export default compose(
         page: 1,
         perPage: 1000,
         capacity: 0,
-        location: props.userLocation && /* istanbul ignore next */ props.userLocation.location,
+        location: props.userLocation,
         office: '',
       },
     }),

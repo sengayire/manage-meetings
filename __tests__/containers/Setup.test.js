@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 import Setup from '../../src/containers/Setup';
 
 describe('Setup component', () => {
-  const wrapper = shallow(<Setup />);
+  const wrapper = shallow(<Setup client={{}} />);
 
   it('should find an instance of Apollo(WelcomePage)', () => {
     expect(wrapper.find('Setup').exists()).toBeTruthy();

@@ -1,25 +1,10 @@
 import React from 'react';
-import { mount, shallow } from 'enzyme';
+import { shallow } from 'enzyme';
 import { RoomFeedback } from '../../../src/components/roomFeedback/RoomFeedback';
 import defaultUserRole from '../../../src/fixtures/user';
 
 describe('Tests for RoomFeedback Component', () => {
   const startDate = new Date('2019-02-21 23:42:43');
-  const testData = {
-    data: {
-      allQuestions: [
-        {
-          question: 'How do you enjoy our services?',
-          questionType: 'input',
-          startDate: '2019-02-20 23:42:43',
-          endDate: '2019-03-28 15:42:43',
-          questionResponseCount: 1,
-          isActive: false,
-        },
-      ],
-    },
-    user: defaultUserRole,
-  };
   const testProps = {
     data: {
       questions: {
@@ -29,11 +14,12 @@ describe('Tests for RoomFeedback Component', () => {
       error: undefined,
     },
     user: defaultUserRole,
+    client: { query: jest.fn() },
   };
   let wrapper;
 
   beforeEach(() => {
-    wrapper = mount(
+    wrapper = shallow(
       <RoomFeedback {...testProps} />);
   });
 
@@ -66,19 +52,6 @@ describe('Tests for RoomFeedback Component', () => {
     wrapper.instance().formatStartDate('2019-03-23 23:42:43');
   });
 
-  it('should receive props', () => {
-    expect(wrapper.instance().componentWillReceiveProps(testProps));
-  });
-
-  it('should have empty user props', () => {
-    const props = {
-      user: {},
-      data: testData,
-    };
-    const roomFeedback = shallow(<RoomFeedback user={{}} />);
-    expect(roomFeedback.instance().componentWillReceiveProps(props)).toBeFalsy();
-  });
-
   it('should show the ErrorIcon component when an error occurs', () => {
     const errorProps = {
       data: {
@@ -89,6 +62,7 @@ describe('Tests for RoomFeedback Component', () => {
         error: {},
       },
       user: defaultUserRole,
+      client: {},
     };
     const roomFeedback = shallow(<RoomFeedback {...errorProps} />);
     expect(roomFeedback.find('ErrorIcon')).toHaveLength(1);

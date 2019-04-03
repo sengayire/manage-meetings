@@ -56,10 +56,19 @@ class App extends Component {
           <ErrorBoundary isAuthError>
             <Switch>
               <Route exact path={ROUTES.home} component={LoginPage} />
-              <Route path={ROUTES.analytics} component={Analytics} />
-              <Route path={ROUTES.roomfeedback} component={RoomFeedbackPage} />
+              <Route
+                path={ROUTES.analytics}
+                render={props => <Analytics {...props} client={client} />}
+              />
+              <Route
+                path={ROUTES.roomfeedback}
+                render={props => <RoomFeedbackPage {...props} client={client} />}
+              />
               <Route path={ROUTES.preference} component={Preference} />
-              <Route path={ROUTES.setup} render={props => <Setup {...props} client={client} />} />
+              <Route
+                path={ROUTES.setup}
+                render={props => <Setup {...props} client={client} />}
+              />
             </Switch>
           </ErrorBoundary>
         )}

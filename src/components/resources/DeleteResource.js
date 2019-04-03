@@ -18,6 +18,21 @@ import '../../assets/styles/deleteModal.scss';
  * @returns {JSX}
  */
 export class DeleteResource extends Component {
+  static propTypes = {
+    toDelete: PropTypes.shape({
+      name: PropTypes.string,
+      id: PropTypes.string,
+    }).isRequired,
+    deleteResource: PropTypes.func.isRequired,
+    refetch: PropTypes.func,
+    currentPage: PropTypes.number,
+  };
+
+  static defaultProps = {
+    currentPage: 1,
+    refetch: null,
+  };
+
   state = {
     closeModal: false,
     isDeleting: false,
@@ -110,21 +125,6 @@ export class DeleteResource extends Component {
     );
   }
 }
-
-DeleteResource.propTypes = {
-  toDelete: PropTypes.shape({
-    name: PropTypes.string,
-    id: PropTypes.string,
-  }).isRequired,
-  deleteResource: PropTypes.func.isRequired,
-  refetch: PropTypes.func,
-  currentPage: PropTypes.number,
-};
-
-DeleteResource.defaultProps = {
-  currentPage: 1,
-  refetch: null,
-};
 
 export default compose(
   graphql(GET_RESOURCES_QUERY, {

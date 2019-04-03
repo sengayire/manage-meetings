@@ -6,7 +6,6 @@ import html2canvas from 'html2canvas';
 import jsxToString from 'jsx-to-string';
 import jsPDF from 'jspdf';
 import PropTypes from 'prop-types';
-import { graphql, compose } from 'react-apollo';
 import download from 'downloadjs';
 import moment from 'moment';
 import Button from '../commons/Button';
@@ -19,10 +18,9 @@ import notification from '../../utils/notification';
 import AnalyticsActivity from '../../containers/AnalyticsActivity';
 import AnalyticsOverview from '../../containers/AnalyticsOverview';
 import ExportButton from '../commons/ExportButton';
-import { decodeTokenAndGetUserData } from '../../utils/Cookie';
-import { GET_USER_QUERY } from '../../graphql/queries/People';
 import downloadFileString from '../../fixtures/downloadString';
 import timeConvert from '../../components/helpers/timeConverter';
+import getUserDetails from '../helpers/QueryHelper';
 
 /**
  * Component for Analytics
@@ -51,10 +49,25 @@ export class AnalyticsNav extends Component {
     averageMeetingTime: {},
     checkinsAndCancellations: [],
     totalBookingsCount: [],
+    role: 0,
   };
+
+  componentDidMount() {
+    this.setUserLocationAndRole();
+  }
 
   componentWillReceiveProps(props) {
     this.setState({ fetching: true, error: props.error });
+  }
+
+  /**
+   * Sets the current user's location and role
+   *
+   * @returns {void}
+   */
+  setUserLocationAndRole = async () => {
+    const user = await getUserDetails(this.props.client);
+    this.setState({ location: user.location, role: user.roles[0].id });
   }
 
   /**
@@ -595,19 +608,6 @@ export class AnalyticsNav extends Component {
       </tbody>);
   };
 
-  /**
-   * gets user access.
-   *
-   * @returns {string}
-   */
-  userRole = () => {
-    try {
-      return JSON.parse(localStorage.access);
-    } catch (e) {
-      return null;
-    }
-  }
-
   render() {
     const {
       startDate,
@@ -619,7 +619,6 @@ export class AnalyticsNav extends Component {
       componentsDoneLoading,
       fetching,
     } = this.state;
-    const { user: { user }, error } = this.props;
     const dates = {
       startDate,
       endDate,
@@ -651,9 +650,7 @@ export class AnalyticsNav extends Component {
           <div className="btn-right">
             <Button
               classProp="location-btn"
-              title={
-                user ? user.location : this.state.location
-              }
+              title={this.state.location}
               type={2}
             />
             <div style={style}>
@@ -661,13 +658,13 @@ export class AnalyticsNav extends Component {
                 sendData={this.sendDateData}
               />
             </div>
-            {!fetching && !error &&
-             this.userRole() !== '1' &&
-             <ExportButton
-               jpegHandler={this.downloadJpeg}
-               csvHandler={this.downloadCSV}
-               pdfHandler={this.downloadPdf}
-             />
+            {
+              !fetching && this.state.role !== '1' &&
+              <ExportButton
+                jpegHandler={this.downloadJpeg}
+                csvHandler={this.downloadCSV}
+                pdfHandler={this.downloadPdf}
+              />
             }
           </div>
         </div>
@@ -684,26 +681,10 @@ export class AnalyticsNav extends Component {
   }
 }
 AnalyticsNav.propTypes = {
-  user: PropTypes.shape({
-    user: PropTypes.object,
-  }).isRequired,
+  client: PropTypes.oneOfType([
+    PropTypes.object,
+    PropTypes.array,
+  ]).isRequired,
 };
 
-/* This gets the token from the localstorage and select the user
-email to pass as a parameter to the query being sent */
-const { UserInfo: userData } = decodeTokenAndGetUserData() || {};
-
-export default compose(
-  graphql(GET_USER_QUERY, {
-    name: 'user',
-    options: /* istanbul ignore next */ () => ({
-      variables: {
-      // Added the test email in order to pass the variable to the test environment
-        email:
-        process.env.NODE_ENV === 'test'
-          ? 'sammy.muriuki@andela.com'
-          : userData.email,
-      },
-    }),
-  }),
-)(AnalyticsNav);
+export default AnalyticsNav;

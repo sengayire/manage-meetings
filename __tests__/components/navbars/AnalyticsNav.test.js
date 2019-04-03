@@ -48,6 +48,7 @@ const props = {
     startDate: 'start date',
     endDate: 'end date',
   },
+  client: { query: jest.fn().mockImplementationOnce(() => Promise.resolve({ user: 'user' })) },
 };
 
 describe('AnalyticsNav Component', () => {
@@ -107,6 +108,7 @@ describe('AnalyticsNav state and download', () => {
   };
   const wrapper = shallow(<AnalyticComponent
     user={user}
+    client={{ query: jest.fn() }}
   />);
   wrapper.setState({
     ...mockDataForAnalytics,
@@ -140,7 +142,6 @@ describe('AnalyticsNav state and download', () => {
     const fetchDownload = jest.spyOn(wrapper.instance(), 'fetchDownload');
     html2canvas.mockImplementation(() => Promise.resolve({ data: { data: '<p>test</p>' }, toDataURL: jest.fn() }));
     jsPDF.mockImplementation(() => ({ save: jest.fn(), addImage: jest.fn() }));
-    wrapper.instance().userRole();
     wrapper.instance().downloadJpeg('jpeg');
     expect(fetchDownload).toBeCalledWith('jpeg');
   });

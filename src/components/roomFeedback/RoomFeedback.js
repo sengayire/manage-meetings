@@ -1,15 +1,13 @@
 import React, { Component } from 'react';
-import { graphql, compose } from 'react-apollo';
+import { graphql } from 'react-apollo';
 import PropTypes from 'prop-types';
 import TableHead from '../helpers/TableHead';
 import Feedback from './Feedback';
-import { GET_USER_QUERY } from '../../graphql/queries/People';
-import { decodeTokenAndGetUserData } from '../../utils/Cookie';
-import { saveItemInLocalStorage } from '../../utils/Utilities';
 import '../../../src/assets/styles/roomFeedback.scss';
 import GET_ROOM_FEEDBACK_QUESTIONS_QUERY from '../../../src/graphql/queries/questions';
 import Spinner from '../commons/Spinner';
 import ErrorIcon from '../../components/commons/ErrorIcon';
+import getUserDetails from '../helpers/QueryHelper';
 
 /**
  * Component for Room Feedback
@@ -17,9 +15,20 @@ import ErrorIcon from '../../components/commons/ErrorIcon';
  * @returns {JSX}
  */
 export class RoomFeedback extends Component {
-  componentWillReceiveProps() {
-    const { user } = this.props.user;
-    if (user) saveItemInLocalStorage('access', user.roles[0].id);
+  state = { role: '' };
+
+  componentDidMount() {
+    this.setUserRole();
+  }
+
+  /**
+   * Sets the current user's location and role
+   *
+   * @returns {void}
+   */
+  setUserRole = async () => {
+    const user = await getUserDetails(this.props.client);
+    this.setState({ role: user.roles[0].id });
   }
 
   /**
@@ -74,15 +83,15 @@ export class RoomFeedback extends Component {
 
   render() {
     const { loading, error } = this.props.data;
+    let tableTitles = ['Question', 'Type', 'Responses', 'Start Date', 'Duration'];
+    this.state.role === '2' && (tableTitles = [...tableTitles, 'Action', 'Status']);
     if (error) {
       return (
         <div className="item-list-empty">
           <ErrorIcon />
         </div>);
     }
-    if (loading) {
-      return <Spinner />;
-    }
+    if (loading) return <Spinner />;
     const { questions } = this.props.data.questions;
 
     return (
@@ -95,21 +104,14 @@ export class RoomFeedback extends Component {
               </div>
             ) :
               <TableHead
-                titles={[
-                  'Question',
-                  'Type',
-                  'Responses',
-                  'Start Date',
-                  'Duration',
-                  'Action',
-                  'Status',
-                ]}
+                titles={[...tableTitles]}
               />}
             <div className="table__body">
               <Feedback
                 feedback={questions}
                 durationFormatter={this.durationInWeeks}
                 startDateFormatter={this.formatStartDate}
+                role={this.state.role}
               />
             </div>
           </div>
@@ -148,20 +150,10 @@ RoomFeedback.propTypes = {
     error: PropTypes.object,
     refetch: PropTypes.func,
   }),
-  user: PropTypes.shape({
-    user: PropTypes.object,
-  }).isRequired,
+  client: PropTypes.oneOfType([
+    PropTypes.object,
+    PropTypes.array,
+  ]).isRequired,
 };
 
-const { UserInfo: userData } = decodeTokenAndGetUserData() || {};
-export default compose(
-  graphql(GET_USER_QUERY, {
-    name: 'user',
-    options: /* istanbul ignore next */ () => ({
-      variables: {
-        email: process.env.NODE_ENV === 'test' ? 'sammy.muriuki@andela.com' : userData.email,
-      },
-    }),
-  }),
-  graphql(GET_ROOM_FEEDBACK_QUESTIONS_QUERY),
-)(RoomFeedback);
+export default graphql(GET_ROOM_FEEDBACK_QUESTIONS_QUERY)(RoomFeedback);

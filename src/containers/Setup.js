@@ -11,10 +11,10 @@ const Setup = ({ client }) => (
 );
 
 Setup.propTypes = {
-  client: PropTypes.shape({}),
-};
-Setup.defaultProps = {
-  client: {},
+  client: PropTypes.oneOfType([
+    PropTypes.object,
+    PropTypes.array,
+  ]).isRequired,
 };
 
 export default Setup;

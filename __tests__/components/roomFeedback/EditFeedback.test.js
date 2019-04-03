@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import { EditFeedback } from '../../../src/components/roomFeedback/EditFeedback';
 
 describe('Unit tests for the EditFeedback Component', () => {
@@ -14,14 +14,7 @@ describe('Unit tests for the EditFeedback Component', () => {
     isActive: false,
   };
 
-  const wrapper = mount(<EditFeedback {...props} />);
-
-  it('should render four input fields, a SelectInput component, a Calendar component and an Action button component', () => {
-    wrapper.find('button').simulate('click');
-    expect(wrapper.find('input').length).toEqual(4);
-    expect(wrapper.find('SelectInput').length).toEqual(1);
-    expect(wrapper.find('Calendar').length).toEqual(1);
-  });
+  const wrapper = shallow(<EditFeedback {...props} />);
 
   it('should return the time when a date is passed to getTime method', () => {
     const expectedTime = EditFeedback.getTime(props.startDate);
@@ -172,24 +165,6 @@ describe('Unit tests for the EditFeedback Component', () => {
       .mockImplementationOnce(() => jest.fn());
     newWrapper.instance().editQuestion();
     expect(newWrapper.instance().toggleLoading.mock.calls.length).toBe(1);
-  });
-
-  it('should show an error message when any of the input fields in the modal is invalid', () => {
-    wrapper.setState({
-      error: {
-        date: 'custom error message for calendar',
-        questionTitle: 'custom error message for questionTitle',
-        question: 'custom error message for question',
-        questionType: 'custom error message for questionType',
-      },
-    });
-    wrapper.update();
-    expect(wrapper.find('span').at(1).exists('.span-error')).toBe(true);
-    expect(wrapper.find('Calendar').is('[classProp="calendarIconBtn-error"]')).toBe(true);
-    expect(wrapper.find('span').at(1).text()).toEqual('custom error message for calendar');
-    expect(wrapper.find('span.span-error').at(1).text()).toEqual('custom error message for questionTitle');
-    expect(wrapper.find('span.span-error').at(2).text()).toEqual('custom error message for question');
-    expect(wrapper.find('span.span-error').at(3).text()).toEqual('custom error message for questionType');
   });
 
   it('should make the "EDIT QUESTION" button not visible when no change is made in the modal', () => {

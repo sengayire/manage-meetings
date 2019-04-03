@@ -505,13 +505,10 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                     "defaultValue": undefined,
                     "kind": "VariableDefinition",
                     "type": Object {
-                      "kind": "NonNullType",
-                      "type": Object {
-                        "kind": "NamedType",
-                        "name": Object {
-                          "kind": "Name",
-                          "value": "Int",
-                        },
+                      "kind": "NamedType",
+                      "name": Object {
+                        "kind": "Name",
+                        "value": "Int",
                       },
                     },
                     "variable": Object {
@@ -611,7 +608,7 @@ exports[`RoomList Component renders correctly from memory 1`] = `
             ],
             "kind": "Document",
             "loc": Object {
-              "end": 567,
+              "end": 566,
               "start": 0,
             },
           },
@@ -1343,13 +1340,10 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                       "defaultValue": undefined,
                       "kind": "VariableDefinition",
                       "type": Object {
-                        "kind": "NonNullType",
-                        "type": Object {
-                          "kind": "NamedType",
-                          "name": Object {
-                            "kind": "Name",
-                            "value": "Int",
-                          },
+                        "kind": "NamedType",
+                        "name": Object {
+                          "kind": "Name",
+                          "value": "Int",
                         },
                       },
                       "variable": Object {
@@ -1449,7 +1443,7 @@ exports[`RoomList Component renders correctly from memory 1`] = `
               ],
               "kind": "Document",
               "loc": Object {
-                "end": 567,
+                "end": 566,
                 "start": 0,
               },
             },
@@ -1743,135 +1737,6 @@ exports[`RoomList Component renders correctly from memory 1`] = `
               "name": "",
             },
           },
-          "user" => Object {
-            "query": Object {
-              "definitions": Array [
-                Object {
-                  "directives": Array [],
-                  "kind": "OperationDefinition",
-                  "name": Object {
-                    "kind": "Name",
-                    "value": "user",
-                  },
-                  "operation": "query",
-                  "selectionSet": Object {
-                    "kind": "SelectionSet",
-                    "selections": Array [
-                      Object {
-                        "alias": undefined,
-                        "arguments": Array [
-                          Object {
-                            "kind": "Argument",
-                            "name": Object {
-                              "kind": "Name",
-                              "value": "email",
-                            },
-                            "value": Object {
-                              "kind": "Variable",
-                              "name": Object {
-                                "kind": "Name",
-                                "value": "email",
-                              },
-                            },
-                          },
-                        ],
-                        "directives": Array [],
-                        "kind": "Field",
-                        "name": Object {
-                          "kind": "Name",
-                          "value": "user",
-                        },
-                        "selectionSet": Object {
-                          "kind": "SelectionSet",
-                          "selections": Array [
-                            Object {
-                              "alias": undefined,
-                              "arguments": Array [],
-                              "directives": Array [],
-                              "kind": "Field",
-                              "name": Object {
-                                "kind": "Name",
-                                "value": "id",
-                              },
-                              "selectionSet": undefined,
-                            },
-                            Object {
-                              "alias": undefined,
-                              "arguments": Array [],
-                              "directives": Array [],
-                              "kind": "Field",
-                              "name": Object {
-                                "kind": "Name",
-                                "value": "roles",
-                              },
-                              "selectionSet": Object {
-                                "kind": "SelectionSet",
-                                "selections": Array [
-                                  Object {
-                                    "alias": undefined,
-                                    "arguments": Array [],
-                                    "directives": Array [],
-                                    "kind": "Field",
-                                    "name": Object {
-                                      "kind": "Name",
-                                      "value": "id",
-                                    },
-                                    "selectionSet": undefined,
-                                  },
-                                  Object {
-                                    "alias": undefined,
-                                    "arguments": Array [],
-                                    "directives": Array [],
-                                    "kind": "Field",
-                                    "name": Object {
-                                      "kind": "Name",
-                                      "value": "role",
-                                    },
-                                    "selectionSet": undefined,
-                                  },
-                                ],
-                              },
-                            },
-                          ],
-                        },
-                      },
-                    ],
-                  },
-                  "variableDefinitions": Array [
-                    Object {
-                      "defaultValue": undefined,
-                      "kind": "VariableDefinition",
-                      "type": Object {
-                        "kind": "NonNullType",
-                        "type": Object {
-                          "kind": "NamedType",
-                          "name": Object {
-                            "kind": "Name",
-                            "value": "String",
-                          },
-                        },
-                      },
-                      "variable": Object {
-                        "kind": "Variable",
-                        "name": Object {
-                          "kind": "Name",
-                          "value": "email",
-                        },
-                      },
-                    },
-                  ],
-                },
-              ],
-              "kind": "Document",
-              "loc": Object {
-                "end": 107,
-                "start": 0,
-              },
-            },
-            "variables": Object {
-              "email": "sammy.muriuki@andela.com",
-            },
-          },
         },
         "cache": InMemoryCache {
           "addTypename": false,
@@ -1887,138 +1752,6 @@ exports[`RoomList Component renders correctly from memory 1`] = `
           "optimistic": Array [],
           "silenceBroadcast": false,
           "watches": Array [
-            Object {
-              "callback": [Function],
-              "optimistic": true,
-              "previousResult": [Function],
-              "query": Object {
-                "definitions": Array [
-                  Object {
-                    "directives": Array [],
-                    "kind": "OperationDefinition",
-                    "name": Object {
-                      "kind": "Name",
-                      "value": "user",
-                    },
-                    "operation": "query",
-                    "selectionSet": Object {
-                      "kind": "SelectionSet",
-                      "selections": Array [
-                        Object {
-                          "alias": undefined,
-                          "arguments": Array [
-                            Object {
-                              "kind": "Argument",
-                              "name": Object {
-                                "kind": "Name",
-                                "value": "email",
-                              },
-                              "value": Object {
-                                "kind": "Variable",
-                                "name": Object {
-                                  "kind": "Name",
-                                  "value": "email",
-                                },
-                              },
-                            },
-                          ],
-                          "directives": Array [],
-                          "kind": "Field",
-                          "name": Object {
-                            "kind": "Name",
-                            "value": "user",
-                          },
-                          "selectionSet": Object {
-                            "kind": "SelectionSet",
-                            "selections": Array [
-                              Object {
-                                "alias": undefined,
-                                "arguments": Array [],
-                                "directives": Array [],
-                                "kind": "Field",
-                                "name": Object {
-                                  "kind": "Name",
-                                  "value": "id",
-                                },
-                                "selectionSet": undefined,
-                              },
-                              Object {
-                                "alias": undefined,
-                                "arguments": Array [],
-                                "directives": Array [],
-                                "kind": "Field",
-                                "name": Object {
-                                  "kind": "Name",
-                                  "value": "roles",
-                                },
-                                "selectionSet": Object {
-                                  "kind": "SelectionSet",
-                                  "selections": Array [
-                                    Object {
-                                      "alias": undefined,
-                                      "arguments": Array [],
-                                      "directives": Array [],
-                                      "kind": "Field",
-                                      "name": Object {
-                                        "kind": "Name",
-                                        "value": "id",
-                                      },
-                                      "selectionSet": undefined,
-                                    },
-                                    Object {
-                                      "alias": undefined,
-                                      "arguments": Array [],
-                                      "directives": Array [],
-                                      "kind": "Field",
-                                      "name": Object {
-                                        "kind": "Name",
-                                        "value": "role",
-                                      },
-                                      "selectionSet": undefined,
-                                    },
-                                  ],
-                                },
-                              },
-                            ],
-                          },
-                        },
-                      ],
-                    },
-                    "variableDefinitions": Array [
-                      Object {
-                        "defaultValue": undefined,
-                        "kind": "VariableDefinition",
-                        "type": Object {
-                          "kind": "NonNullType",
-                          "type": Object {
-                            "kind": "NamedType",
-                            "name": Object {
-                              "kind": "Name",
-                              "value": "String",
-                            },
-                          },
-                        },
-                        "variable": Object {
-                          "kind": "Variable",
-                          "name": Object {
-                            "kind": "Name",
-                            "value": "email",
-                          },
-                        },
-                      },
-                    ],
-                  },
-                ],
-                "kind": "Document",
-                "loc": Object {
-                  "end": 107,
-                  "start": 0,
-                },
-              },
-              "variables": Object {
-                "email": "sammy.muriuki@andela.com",
-              },
-            },
             Object {
               "callback": [Function],
               "optimistic": true,
@@ -2591,13 +2324,10 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                         "defaultValue": undefined,
                         "kind": "VariableDefinition",
                         "type": Object {
-                          "kind": "NonNullType",
-                          "type": Object {
-                            "kind": "NamedType",
-                            "name": Object {
-                              "kind": "Name",
-                              "value": "Int",
-                            },
+                          "kind": "NamedType",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "Int",
                           },
                         },
                         "variable": Object {
@@ -2697,7 +2427,7 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                 ],
                 "kind": "Document",
                 "loc": Object {
-                  "end": 567,
+                  "end": 566,
                   "start": 0,
                 },
               },
@@ -2735,138 +2465,6 @@ exports[`RoomList Component renders correctly from memory 1`] = `
               "optimistic": Array [],
               "silenceBroadcast": false,
               "watches": Array [
-                Object {
-                  "callback": [Function],
-                  "optimistic": true,
-                  "previousResult": [Function],
-                  "query": Object {
-                    "definitions": Array [
-                      Object {
-                        "directives": Array [],
-                        "kind": "OperationDefinition",
-                        "name": Object {
-                          "kind": "Name",
-                          "value": "user",
-                        },
-                        "operation": "query",
-                        "selectionSet": Object {
-                          "kind": "SelectionSet",
-                          "selections": Array [
-                            Object {
-                              "alias": undefined,
-                              "arguments": Array [
-                                Object {
-                                  "kind": "Argument",
-                                  "name": Object {
-                                    "kind": "Name",
-                                    "value": "email",
-                                  },
-                                  "value": Object {
-                                    "kind": "Variable",
-                                    "name": Object {
-                                      "kind": "Name",
-                                      "value": "email",
-                                    },
-                                  },
-                                },
-                              ],
-                              "directives": Array [],
-                              "kind": "Field",
-                              "name": Object {
-                                "kind": "Name",
-                                "value": "user",
-                              },
-                              "selectionSet": Object {
-                                "kind": "SelectionSet",
-                                "selections": Array [
-                                  Object {
-                                    "alias": undefined,
-                                    "arguments": Array [],
-                                    "directives": Array [],
-                                    "kind": "Field",
-                                    "name": Object {
-                                      "kind": "Name",
-                                      "value": "id",
-                                    },
-                                    "selectionSet": undefined,
-                                  },
-                                  Object {
-                                    "alias": undefined,
-                                    "arguments": Array [],
-                                    "directives": Array [],
-                                    "kind": "Field",
-                                    "name": Object {
-                                      "kind": "Name",
-                                      "value": "roles",
-                                    },
-                                    "selectionSet": Object {
-                                      "kind": "SelectionSet",
-                                      "selections": Array [
-                                        Object {
-                                          "alias": undefined,
-                                          "arguments": Array [],
-                                          "directives": Array [],
-                                          "kind": "Field",
-                                          "name": Object {
-                                            "kind": "Name",
-                                            "value": "id",
-                                          },
-                                          "selectionSet": undefined,
-                                        },
-                                        Object {
-                                          "alias": undefined,
-                                          "arguments": Array [],
-                                          "directives": Array [],
-                                          "kind": "Field",
-                                          "name": Object {
-                                            "kind": "Name",
-                                            "value": "role",
-                                          },
-                                          "selectionSet": undefined,
-                                        },
-                                      ],
-                                    },
-                                  },
-                                ],
-                              },
-                            },
-                          ],
-                        },
-                        "variableDefinitions": Array [
-                          Object {
-                            "defaultValue": undefined,
-                            "kind": "VariableDefinition",
-                            "type": Object {
-                              "kind": "NonNullType",
-                              "type": Object {
-                                "kind": "NamedType",
-                                "name": Object {
-                                  "kind": "Name",
-                                  "value": "String",
-                                },
-                              },
-                            },
-                            "variable": Object {
-                              "kind": "Variable",
-                              "name": Object {
-                                "kind": "Name",
-                                "value": "email",
-                              },
-                            },
-                          },
-                        ],
-                      },
-                    ],
-                    "kind": "Document",
-                    "loc": Object {
-                      "end": 107,
-                      "start": 0,
-                    },
-                  },
-                  "variables": Object {
-                    "email": "sammy.muriuki@andela.com",
-                  },
-                },
                 Object {
                   "callback": [Function],
                   "optimistic": true,
@@ -3439,13 +3037,10 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                             "defaultValue": undefined,
                             "kind": "VariableDefinition",
                             "type": Object {
-                              "kind": "NonNullType",
-                              "type": Object {
-                                "kind": "NamedType",
-                                "name": Object {
-                                  "kind": "Name",
-                                  "value": "Int",
-                                },
+                              "kind": "NamedType",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "Int",
                               },
                             },
                             "variable": Object {
@@ -3545,7 +3140,7 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                     ],
                     "kind": "Document",
                     "loc": Object {
-                      "end": 567,
+                      "end": 566,
                       "start": 0,
                     },
                   },
@@ -3564,6 +3159,10 @@ exports[`RoomList Component renders correctly from memory 1`] = `
             "request": [Function],
           },
           "fetchQueryPromises": Map {
+            "4" => Object {
+              "reject": [Function],
+              "resolve": [Function],
+            },
             "5" => Object {
               "reject": [Function],
               "resolve": [Function],
@@ -3572,16 +3171,8 @@ exports[`RoomList Component renders correctly from memory 1`] = `
               "reject": [Function],
               "resolve": [Function],
             },
-            "7" => Object {
-              "reject": [Function],
-              "resolve": [Function],
-            },
-            "8" => Object {
-              "reject": [Function],
-              "resolve": [Function],
-            },
           },
-          "idCounter": 9,
+          "idCounter": 7,
           "link": ApolloLink {
             "request": [Function],
           },
@@ -3590,310 +3181,6 @@ exports[`RoomList Component renders correctly from memory 1`] = `
           },
           "onBroadcast": [Function],
           "queries": Map {
-            "4" => Object {
-              "cancel": [Function],
-              "document": Object {
-                "definitions": Array [
-                  Object {
-                    "directives": Array [],
-                    "kind": "OperationDefinition",
-                    "name": Object {
-                      "kind": "Name",
-                      "value": "user",
-                    },
-                    "operation": "query",
-                    "selectionSet": Object {
-                      "kind": "SelectionSet",
-                      "selections": Array [
-                        Object {
-                          "alias": undefined,
-                          "arguments": Array [
-                            Object {
-                              "kind": "Argument",
-                              "name": Object {
-                                "kind": "Name",
-                                "value": "email",
-                              },
-                              "value": Object {
-                                "kind": "Variable",
-                                "name": Object {
-                                  "kind": "Name",
-                                  "value": "email",
-                                },
-                              },
-                            },
-                          ],
-                          "directives": Array [],
-                          "kind": "Field",
-                          "name": Object {
-                            "kind": "Name",
-                            "value": "user",
-                          },
-                          "selectionSet": Object {
-                            "kind": "SelectionSet",
-                            "selections": Array [
-                              Object {
-                                "alias": undefined,
-                                "arguments": Array [],
-                                "directives": Array [],
-                                "kind": "Field",
-                                "name": Object {
-                                  "kind": "Name",
-                                  "value": "id",
-                                },
-                                "selectionSet": undefined,
-                              },
-                              Object {
-                                "alias": undefined,
-                                "arguments": Array [],
-                                "directives": Array [],
-                                "kind": "Field",
-                                "name": Object {
-                                  "kind": "Name",
-                                  "value": "roles",
-                                },
-                                "selectionSet": Object {
-                                  "kind": "SelectionSet",
-                                  "selections": Array [
-                                    Object {
-                                      "alias": undefined,
-                                      "arguments": Array [],
-                                      "directives": Array [],
-                                      "kind": "Field",
-                                      "name": Object {
-                                        "kind": "Name",
-                                        "value": "id",
-                                      },
-                                      "selectionSet": undefined,
-                                    },
-                                    Object {
-                                      "alias": undefined,
-                                      "arguments": Array [],
-                                      "directives": Array [],
-                                      "kind": "Field",
-                                      "name": Object {
-                                        "kind": "Name",
-                                        "value": "role",
-                                      },
-                                      "selectionSet": undefined,
-                                    },
-                                  ],
-                                },
-                              },
-                            ],
-                          },
-                        },
-                      ],
-                    },
-                    "variableDefinitions": Array [
-                      Object {
-                        "defaultValue": undefined,
-                        "kind": "VariableDefinition",
-                        "type": Object {
-                          "kind": "NonNullType",
-                          "type": Object {
-                            "kind": "NamedType",
-                            "name": Object {
-                              "kind": "Name",
-                              "value": "String",
-                            },
-                          },
-                        },
-                        "variable": Object {
-                          "kind": "Variable",
-                          "name": Object {
-                            "kind": "Name",
-                            "value": "email",
-                          },
-                        },
-                      },
-                    ],
-                  },
-                ],
-                "kind": "Document",
-                "loc": Object {
-                  "end": 107,
-                  "start": 0,
-                },
-              },
-              "invalidate": false,
-              "invalidated": false,
-              "lastRequestId": 5,
-              "listeners": Array [
-                [Function],
-              ],
-              "newData": null,
-              "observableQuery": ObservableQuery {
-                "_subscriber": [Function],
-                "isCurrentlyPolling": false,
-                "isTornDown": false,
-                "observers": Array [
-                  SubscriptionObserver {
-                    "_subscription": Subscription {
-                      "_cleanup": [Function],
-                      "_observer": Object {
-                        "error": [Function],
-                        "next": [Function],
-                      },
-                      "_queue": undefined,
-                      "_state": "ready",
-                    },
-                  },
-                ],
-                "options": Object {
-                  "context": Object {},
-                  "metadata": Object {
-                    "reactComponent": Object {
-                      "displayName": "Apollo(RoomsList)",
-                    },
-                  },
-                  "notifyOnNetworkStatusChange": false,
-                  "query": Object {
-                    "definitions": Array [
-                      Object {
-                        "directives": Array [],
-                        "kind": "OperationDefinition",
-                        "name": Object {
-                          "kind": "Name",
-                          "value": "user",
-                        },
-                        "operation": "query",
-                        "selectionSet": Object {
-                          "kind": "SelectionSet",
-                          "selections": Array [
-                            Object {
-                              "alias": undefined,
-                              "arguments": Array [
-                                Object {
-                                  "kind": "Argument",
-                                  "name": Object {
-                                    "kind": "Name",
-                                    "value": "email",
-                                  },
-                                  "value": Object {
-                                    "kind": "Variable",
-                                    "name": Object {
-                                      "kind": "Name",
-                                      "value": "email",
-                                    },
-                                  },
-                                },
-                              ],
-                              "directives": Array [],
-                              "kind": "Field",
-                              "name": Object {
-                                "kind": "Name",
-                                "value": "user",
-                              },
-                              "selectionSet": Object {
-                                "kind": "SelectionSet",
-                                "selections": Array [
-                                  Object {
-                                    "alias": undefined,
-                                    "arguments": Array [],
-                                    "directives": Array [],
-                                    "kind": "Field",
-                                    "name": Object {
-                                      "kind": "Name",
-                                      "value": "id",
-                                    },
-                                    "selectionSet": undefined,
-                                  },
-                                  Object {
-                                    "alias": undefined,
-                                    "arguments": Array [],
-                                    "directives": Array [],
-                                    "kind": "Field",
-                                    "name": Object {
-                                      "kind": "Name",
-                                      "value": "roles",
-                                    },
-                                    "selectionSet": Object {
-                                      "kind": "SelectionSet",
-                                      "selections": Array [
-                                        Object {
-                                          "alias": undefined,
-                                          "arguments": Array [],
-                                          "directives": Array [],
-                                          "kind": "Field",
-                                          "name": Object {
-                                            "kind": "Name",
-                                            "value": "id",
-                                          },
-                                          "selectionSet": undefined,
-                                        },
-                                        Object {
-                                          "alias": undefined,
-                                          "arguments": Array [],
-                                          "directives": Array [],
-                                          "kind": "Field",
-                                          "name": Object {
-                                            "kind": "Name",
-                                            "value": "role",
-                                          },
-                                          "selectionSet": undefined,
-                                        },
-                                      ],
-                                    },
-                                  },
-                                ],
-                              },
-                            },
-                          ],
-                        },
-                        "variableDefinitions": Array [
-                          Object {
-                            "defaultValue": undefined,
-                            "kind": "VariableDefinition",
-                            "type": Object {
-                              "kind": "NonNullType",
-                              "type": Object {
-                                "kind": "NamedType",
-                                "name": Object {
-                                  "kind": "Name",
-                                  "value": "String",
-                                },
-                              },
-                            },
-                            "variable": Object {
-                              "kind": "Variable",
-                              "name": Object {
-                                "kind": "Name",
-                                "value": "email",
-                              },
-                            },
-                          },
-                        ],
-                      },
-                    ],
-                    "kind": "Document",
-                    "loc": Object {
-                      "end": 107,
-                      "start": 0,
-                    },
-                  },
-                  "variables": Object {
-                    "email": "sammy.muriuki@andela.com",
-                  },
-                },
-                "queryId": "4",
-                "queryManager": [Circular],
-                "scheduler": QueryScheduler {
-                  "inFlightQueries": Object {},
-                  "intervalQueries": Object {},
-                  "pollingTimers": Object {},
-                  "queryManager": [Circular],
-                  "registeredQueries": Object {},
-                  "ssrMode": false,
-                },
-                "shouldSubscribe": true,
-                "subscriptionHandles": Array [],
-                "variables": Object {
-                  "email": "sammy.muriuki@andela.com",
-                },
-              },
-              "subscriptions": Array [],
-            },
             "3" => Object {
               "cancel": [Function],
               "document": Object {
@@ -4111,7 +3398,7 @@ exports[`RoomList Component renders correctly from memory 1`] = `
               },
               "invalidate": false,
               "invalidated": false,
-              "lastRequestId": 6,
+              "lastRequestId": 4,
               "listeners": Array [
                 [Function],
               ],
@@ -4137,7 +3424,7 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                   "context": Object {},
                   "metadata": Object {
                     "reactComponent": Object {
-                      "displayName": "Apollo(Apollo(RoomsList))",
+                      "displayName": "Apollo(RoomsList)",
                     },
                   },
                   "notifyOnNetworkStatusChange": false,
@@ -4441,7 +3728,7 @@ exports[`RoomList Component renders correctly from memory 1`] = `
               },
               "invalidate": false,
               "invalidated": false,
-              "lastRequestId": 7,
+              "lastRequestId": 5,
               "listeners": Array [
                 [Function],
               ],
@@ -4467,7 +3754,7 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                   "context": Object {},
                   "metadata": Object {
                     "reactComponent": Object {
-                      "displayName": "Apollo(Apollo(Apollo(RoomsList)))",
+                      "displayName": "Apollo(Apollo(RoomsList))",
                     },
                   },
                   "notifyOnNetworkStatusChange": false,
@@ -4842,13 +4129,10 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                         "defaultValue": undefined,
                         "kind": "VariableDefinition",
                         "type": Object {
-                          "kind": "NonNullType",
-                          "type": Object {
-                            "kind": "NamedType",
-                            "name": Object {
-                              "kind": "Name",
-                              "value": "Int",
-                            },
+                          "kind": "NamedType",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "Int",
                           },
                         },
                         "variable": Object {
@@ -4948,13 +4232,13 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                 ],
                 "kind": "Document",
                 "loc": Object {
-                  "end": 567,
+                  "end": 566,
                   "start": 0,
                 },
               },
               "invalidate": false,
               "invalidated": false,
-              "lastRequestId": 8,
+              "lastRequestId": 6,
               "listeners": Array [
                 [Function],
               ],
@@ -4980,7 +4264,7 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                   "context": Object {},
                   "metadata": Object {
                     "reactComponent": Object {
-                      "displayName": "Apollo(Apollo(Apollo(Apollo(RoomsList))))",
+                      "displayName": "Apollo(Apollo(Apollo(RoomsList)))",
                     },
                   },
                   "notifyOnNetworkStatusChange": false,
@@ -5264,13 +4548,10 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                             "defaultValue": undefined,
                             "kind": "VariableDefinition",
                             "type": Object {
-                              "kind": "NonNullType",
-                              "type": Object {
-                                "kind": "NamedType",
-                                "name": Object {
-                                  "kind": "Name",
-                                  "value": "Int",
-                                },
+                              "kind": "NamedType",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "Int",
                               },
                             },
                             "variable": Object {
@@ -5370,7 +4651,7 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                     ],
                     "kind": "Document",
                     "loc": Object {
-                      "end": 567,
+                      "end": 566,
                       "start": 0,
                     },
                   },
@@ -5415,9 +4696,6 @@ exports[`RoomList Component renders correctly from memory 1`] = `
             ],
             "rooms": Array [
               "1",
-            ],
-            "user": Array [
-              "4",
             ],
           },
           "queryStore": QueryStore {
@@ -5703,13 +4981,10 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                           "defaultValue": undefined,
                           "kind": "VariableDefinition",
                           "type": Object {
-                            "kind": "NonNullType",
-                            "type": Object {
-                              "kind": "NamedType",
-                              "name": Object {
-                                "kind": "Name",
-                                "value": "Int",
-                              },
+                            "kind": "NamedType",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "Int",
                             },
                           },
                           "variable": Object {
@@ -5809,14 +5084,14 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                   ],
                   "kind": "Document",
                   "loc": Object {
-                    "end": 567,
+                    "end": 566,
                     "start": 0,
                   },
                 },
                 "graphQLErrors": Array [],
                 "metadata": Object {
                   "reactComponent": Object {
-                    "displayName": "Apollo(Apollo(Apollo(Apollo(RoomsList))))",
+                    "displayName": "Apollo(Apollo(Apollo(RoomsList)))",
                   },
                 },
                 "networkError": null,
@@ -5895,7 +5170,7 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                 "graphQLErrors": Array [],
                 "metadata": Object {
                   "reactComponent": Object {
-                    "displayName": "Apollo(Apollo(Apollo(RoomsList)))",
+                    "displayName": "Apollo(Apollo(RoomsList))",
                   },
                 },
                 "networkError": null,
@@ -6120,144 +5395,6 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                 "graphQLErrors": Array [],
                 "metadata": Object {
                   "reactComponent": Object {
-                    "displayName": "Apollo(Apollo(RoomsList))",
-                  },
-                },
-                "networkError": null,
-                "networkStatus": 1,
-                "previousVariables": null,
-                "variables": Object {
-                  "name": "",
-                },
-              },
-              "4": Object {
-                "document": Object {
-                  "definitions": Array [
-                    Object {
-                      "directives": Array [],
-                      "kind": "OperationDefinition",
-                      "name": Object {
-                        "kind": "Name",
-                        "value": "user",
-                      },
-                      "operation": "query",
-                      "selectionSet": Object {
-                        "kind": "SelectionSet",
-                        "selections": Array [
-                          Object {
-                            "alias": undefined,
-                            "arguments": Array [
-                              Object {
-                                "kind": "Argument",
-                                "name": Object {
-                                  "kind": "Name",
-                                  "value": "email",
-                                },
-                                "value": Object {
-                                  "kind": "Variable",
-                                  "name": Object {
-                                    "kind": "Name",
-                                    "value": "email",
-                                  },
-                                },
-                              },
-                            ],
-                            "directives": Array [],
-                            "kind": "Field",
-                            "name": Object {
-                              "kind": "Name",
-                              "value": "user",
-                            },
-                            "selectionSet": Object {
-                              "kind": "SelectionSet",
-                              "selections": Array [
-                                Object {
-                                  "alias": undefined,
-                                  "arguments": Array [],
-                                  "directives": Array [],
-                                  "kind": "Field",
-                                  "name": Object {
-                                    "kind": "Name",
-                                    "value": "id",
-                                  },
-                                  "selectionSet": undefined,
-                                },
-                                Object {
-                                  "alias": undefined,
-                                  "arguments": Array [],
-                                  "directives": Array [],
-                                  "kind": "Field",
-                                  "name": Object {
-                                    "kind": "Name",
-                                    "value": "roles",
-                                  },
-                                  "selectionSet": Object {
-                                    "kind": "SelectionSet",
-                                    "selections": Array [
-                                      Object {
-                                        "alias": undefined,
-                                        "arguments": Array [],
-                                        "directives": Array [],
-                                        "kind": "Field",
-                                        "name": Object {
-                                          "kind": "Name",
-                                          "value": "id",
-                                        },
-                                        "selectionSet": undefined,
-                                      },
-                                      Object {
-                                        "alias": undefined,
-                                        "arguments": Array [],
-                                        "directives": Array [],
-                                        "kind": "Field",
-                                        "name": Object {
-                                          "kind": "Name",
-                                          "value": "role",
-                                        },
-                                        "selectionSet": undefined,
-                                      },
-                                    ],
-                                  },
-                                },
-                              ],
-                            },
-                          },
-                        ],
-                      },
-                      "variableDefinitions": Array [
-                        Object {
-                          "defaultValue": undefined,
-                          "kind": "VariableDefinition",
-                          "type": Object {
-                            "kind": "NonNullType",
-                            "type": Object {
-                              "kind": "NamedType",
-                              "name": Object {
-                                "kind": "Name",
-                                "value": "String",
-                              },
-                            },
-                          },
-                          "variable": Object {
-                            "kind": "Variable",
-                            "name": Object {
-                              "kind": "Name",
-                              "value": "email",
-                            },
-                          },
-                        },
-                      ],
-                    },
-                  ],
-                  "kind": "Document",
-                  "loc": Object {
-                    "end": 107,
-                    "start": 0,
-                  },
-                },
-                "graphQLErrors": Array [],
-                "metadata": Object {
-                  "reactComponent": Object {
                     "displayName": "Apollo(RoomsList)",
                   },
                 },
@@ -6265,7 +5402,7 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                 "networkStatus": 1,
                 "previousVariables": null,
                 "variables": Object {
-                  "email": "sammy.muriuki@andela.com",
+                  "name": "",
                 },
               },
             },
@@ -6298,138 +5435,6 @@ exports[`RoomList Component renders correctly from memory 1`] = `
             "optimistic": Array [],
             "silenceBroadcast": false,
             "watches": Array [
-              Object {
-                "callback": [Function],
-                "optimistic": true,
-                "previousResult": [Function],
-                "query": Object {
-                  "definitions": Array [
-                    Object {
-                      "directives": Array [],
-                      "kind": "OperationDefinition",
-                      "name": Object {
-                        "kind": "Name",
-                        "value": "user",
-                      },
-                      "operation": "query",
-                      "selectionSet": Object {
-                        "kind": "SelectionSet",
-                        "selections": Array [
-                          Object {
-                            "alias": undefined,
-                            "arguments": Array [
-                              Object {
-                                "kind": "Argument",
-                                "name": Object {
-                                  "kind": "Name",
-                                  "value": "email",
-                                },
-                                "value": Object {
-                                  "kind": "Variable",
-                                  "name": Object {
-                                    "kind": "Name",
-                                    "value": "email",
-                                  },
-                                },
-                              },
-                            ],
-                            "directives": Array [],
-                            "kind": "Field",
-                            "name": Object {
-                              "kind": "Name",
-                              "value": "user",
-                            },
-                            "selectionSet": Object {
-                              "kind": "SelectionSet",
-                              "selections": Array [
-                                Object {
-                                  "alias": undefined,
-                                  "arguments": Array [],
-                                  "directives": Array [],
-                                  "kind": "Field",
-                                  "name": Object {
-                                    "kind": "Name",
-                                    "value": "id",
-                                  },
-                                  "selectionSet": undefined,
-                                },
-                                Object {
-                                  "alias": undefined,
-                                  "arguments": Array [],
-                                  "directives": Array [],
-                                  "kind": "Field",
-                                  "name": Object {
-                                    "kind": "Name",
-                                    "value": "roles",
-                                  },
-                                  "selectionSet": Object {
-                                    "kind": "SelectionSet",
-                                    "selections": Array [
-                                      Object {
-                                        "alias": undefined,
-                                        "arguments": Array [],
-                                        "directives": Array [],
-                                        "kind": "Field",
-                                        "name": Object {
-                                          "kind": "Name",
-                                          "value": "id",
-                                        },
-                                        "selectionSet": undefined,
-                                      },
-                                      Object {
-                                        "alias": undefined,
-                                        "arguments": Array [],
-                                        "directives": Array [],
-                                        "kind": "Field",
-                                        "name": Object {
-                                          "kind": "Name",
-                                          "value": "role",
-                                        },
-                                        "selectionSet": undefined,
-                                      },
-                                    ],
-                                  },
-                                },
-                              ],
-                            },
-                          },
-                        ],
-                      },
-                      "variableDefinitions": Array [
-                        Object {
-                          "defaultValue": undefined,
-                          "kind": "VariableDefinition",
-                          "type": Object {
-                            "kind": "NonNullType",
-                            "type": Object {
-                              "kind": "NamedType",
-                              "name": Object {
-                                "kind": "Name",
-                                "value": "String",
-                              },
-                            },
-                          },
-                          "variable": Object {
-                            "kind": "Variable",
-                            "name": Object {
-                              "kind": "Name",
-                              "value": "email",
-                            },
-                          },
-                        },
-                      ],
-                    },
-                  ],
-                  "kind": "Document",
-                  "loc": Object {
-                    "end": 107,
-                    "start": 0,
-                  },
-                },
-                "variables": Object {
-                  "email": "sammy.muriuki@andela.com",
-                },
-              },
               Object {
                 "callback": [Function],
                 "optimistic": true,
@@ -7002,13 +6007,10 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                           "defaultValue": undefined,
                           "kind": "VariableDefinition",
                           "type": Object {
-                            "kind": "NonNullType",
-                            "type": Object {
-                              "kind": "NamedType",
-                              "name": Object {
-                                "kind": "Name",
-                                "value": "Int",
-                              },
+                            "kind": "NamedType",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "Int",
                             },
                           },
                           "variable": Object {
@@ -7108,7 +6110,7 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                   ],
                   "kind": "Document",
                   "loc": Object {
-                    "end": 567,
+                    "end": 566,
                     "start": 0,
                   },
                 },
@@ -7128,9 +6130,9 @@ exports[`RoomList Component renders correctly from memory 1`] = `
       }
     }
   >
-    <Apollo(Apollo(Apollo(Apollo(RoomsList))))>
+    <Apollo(Apollo(Apollo(RoomsList)))>
       <Query
-        displayName="Apollo(Apollo(Apollo(Apollo(RoomsList))))"
+        displayName="Apollo(Apollo(Apollo(RoomsList)))"
         query={
           Object {
             "definitions": Array [
@@ -7412,13 +6414,10 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                     "defaultValue": undefined,
                     "kind": "VariableDefinition",
                     "type": Object {
-                      "kind": "NonNullType",
-                      "type": Object {
-                        "kind": "NamedType",
-                        "name": Object {
-                          "kind": "Name",
-                          "value": "Int",
-                        },
+                      "kind": "NamedType",
+                      "name": Object {
+                        "kind": "Name",
+                        "value": "Int",
                       },
                     },
                     "variable": Object {
@@ -7518,7 +6517,7 @@ exports[`RoomList Component renders correctly from memory 1`] = `
             ],
             "kind": "Document",
             "loc": Object {
-              "end": 567,
+              "end": 566,
               "start": 0,
             },
           }
@@ -7535,7 +6534,7 @@ exports[`RoomList Component renders correctly from memory 1`] = `
         }
         warnUnhandledError={true}
       >
-        <Apollo(Apollo(Apollo(RoomsList)))
+        <Apollo(Apollo(RoomsList))
           data={
             Object {
               "error": undefined,
@@ -7558,7 +6557,7 @@ exports[`RoomList Component renders correctly from memory 1`] = `
           }
         >
           <Query
-            displayName="Apollo(Apollo(Apollo(RoomsList)))"
+            displayName="Apollo(Apollo(RoomsList))"
             query={
               Object {
                 "definitions": Array [
@@ -7625,7 +6624,7 @@ exports[`RoomList Component renders correctly from memory 1`] = `
             skip={false}
             warnUnhandledError={true}
           >
-            <Apollo(Apollo(RoomsList))
+            <Apollo(RoomsList)
               data={
                 Object {
                   "error": undefined,
@@ -7662,7 +6661,7 @@ exports[`RoomList Component renders correctly from memory 1`] = `
               }
             >
               <Query
-                displayName="Apollo(Apollo(RoomsList))"
+                displayName="Apollo(RoomsList)"
                 query={
                   Object {
                     "definitions": Array [
@@ -7886,7 +6885,7 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                 }
                 warnUnhandledError={true}
               >
-                <Apollo(RoomsList)
+                <RoomsList
                   data={
                     Object {
                       "error": undefined,
@@ -7938,230 +6937,24 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                     }
                   }
                 >
-                  <Query
-                    displayName="Apollo(RoomsList)"
-                    query={
-                      Object {
-                        "definitions": Array [
-                          Object {
-                            "directives": Array [],
-                            "kind": "OperationDefinition",
-                            "name": Object {
-                              "kind": "Name",
-                              "value": "user",
-                            },
-                            "operation": "query",
-                            "selectionSet": Object {
-                              "kind": "SelectionSet",
-                              "selections": Array [
-                                Object {
-                                  "alias": undefined,
-                                  "arguments": Array [
-                                    Object {
-                                      "kind": "Argument",
-                                      "name": Object {
-                                        "kind": "Name",
-                                        "value": "email",
-                                      },
-                                      "value": Object {
-                                        "kind": "Variable",
-                                        "name": Object {
-                                          "kind": "Name",
-                                          "value": "email",
-                                        },
-                                      },
-                                    },
-                                  ],
-                                  "directives": Array [],
-                                  "kind": "Field",
-                                  "name": Object {
-                                    "kind": "Name",
-                                    "value": "user",
-                                  },
-                                  "selectionSet": Object {
-                                    "kind": "SelectionSet",
-                                    "selections": Array [
-                                      Object {
-                                        "alias": undefined,
-                                        "arguments": Array [],
-                                        "directives": Array [],
-                                        "kind": "Field",
-                                        "name": Object {
-                                          "kind": "Name",
-                                          "value": "id",
-                                        },
-                                        "selectionSet": undefined,
-                                      },
-                                      Object {
-                                        "alias": undefined,
-                                        "arguments": Array [],
-                                        "directives": Array [],
-                                        "kind": "Field",
-                                        "name": Object {
-                                          "kind": "Name",
-                                          "value": "roles",
-                                        },
-                                        "selectionSet": Object {
-                                          "kind": "SelectionSet",
-                                          "selections": Array [
-                                            Object {
-                                              "alias": undefined,
-                                              "arguments": Array [],
-                                              "directives": Array [],
-                                              "kind": "Field",
-                                              "name": Object {
-                                                "kind": "Name",
-                                                "value": "id",
-                                              },
-                                              "selectionSet": undefined,
-                                            },
-                                            Object {
-                                              "alias": undefined,
-                                              "arguments": Array [],
-                                              "directives": Array [],
-                                              "kind": "Field",
-                                              "name": Object {
-                                                "kind": "Name",
-                                                "value": "role",
-                                              },
-                                              "selectionSet": undefined,
-                                            },
-                                          ],
-                                        },
-                                      },
-                                    ],
-                                  },
-                                },
-                              ],
-                            },
-                            "variableDefinitions": Array [
-                              Object {
-                                "defaultValue": undefined,
-                                "kind": "VariableDefinition",
-                                "type": Object {
-                                  "kind": "NonNullType",
-                                  "type": Object {
-                                    "kind": "NamedType",
-                                    "name": Object {
-                                      "kind": "Name",
-                                      "value": "String",
-                                    },
-                                  },
-                                },
-                                "variable": Object {
-                                  "kind": "Variable",
-                                  "name": Object {
-                                    "kind": "Name",
-                                    "value": "email",
-                                  },
-                                },
-                              },
-                            ],
-                          },
-                        ],
-                        "kind": "Document",
-                        "loc": Object {
-                          "end": 107,
-                          "start": 0,
-                        },
-                      }
-                    }
-                    skip={false}
-                    variables={
-                      Object {
-                        "email": "sammy.muriuki@andela.com",
-                      }
-                    }
-                    warnUnhandledError={true}
+                  <Spinner
+                    size=""
                   >
-                    <RoomsList
-                      data={
-                        Object {
-                          "error": undefined,
-                          "fetchMore": [Function],
-                          "loading": true,
-                          "networkStatus": 1,
-                          "refetch": [Function],
-                          "startPolling": [Function],
-                          "stopPolling": [Function],
-                          "subscribeToMore": [Function],
-                          "updateQuery": [Function],
-                          "variables": Object {
-                            "capacity": 0,
-                            "location": "",
-                            "office": "",
-                            "page": 1,
-                            "perPage": 5,
-                          },
-                        }
-                      }
-                      getRoomByName={
-                        Object {
-                          "error": undefined,
-                          "fetchMore": [Function],
-                          "loading": true,
-                          "networkStatus": 1,
-                          "refetch": [Function],
-                          "startPolling": [Function],
-                          "stopPolling": [Function],
-                          "subscribeToMore": [Function],
-                          "updateQuery": [Function],
-                          "variables": Object {
-                            "name": "",
-                          },
-                        }
-                      }
-                      locations={
-                        Object {
-                          "error": undefined,
-                          "fetchMore": [Function],
-                          "loading": true,
-                          "networkStatus": 1,
-                          "refetch": [Function],
-                          "startPolling": [Function],
-                          "stopPolling": [Function],
-                          "subscribeToMore": [Function],
-                          "updateQuery": [Function],
-                          "variables": Object {},
-                        }
-                      }
-                      user={
-                        Object {
-                          "error": undefined,
-                          "fetchMore": [Function],
-                          "loading": true,
-                          "networkStatus": 1,
-                          "refetch": [Function],
-                          "startPolling": [Function],
-                          "stopPolling": [Function],
-                          "subscribeToMore": [Function],
-                          "updateQuery": [Function],
-                          "variables": Object {
-                            "email": "sammy.muriuki@andela.com",
-                          },
-                        }
-                      }
+                    <div
+                      className="centered"
                     >
-                      <Spinner
-                        size=""
-                      >
-                        <div
-                          className="centered"
-                        >
-                          <div
-                            className="spinner"
-                          />
-                        </div>
-                      </Spinner>
-                    </RoomsList>
-                  </Query>
-                </Apollo(RoomsList)>
+                      <div
+                        className="spinner"
+                      />
+                    </div>
+                  </Spinner>
+                </RoomsList>
               </Query>
-            </Apollo(Apollo(RoomsList))>
+            </Apollo(RoomsList)>
           </Query>
-        </Apollo(Apollo(Apollo(RoomsList)))>
+        </Apollo(Apollo(RoomsList))>
       </Query>
-    </Apollo(Apollo(Apollo(Apollo(RoomsList))))>
+    </Apollo(Apollo(Apollo(RoomsList)))>
   </ApolloProvider>
 </MockedProvider>
 `;

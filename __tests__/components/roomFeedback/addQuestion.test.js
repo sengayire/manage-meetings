@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import { ApolloError } from 'apollo-client';
 import { AddQuestion } from '../../../src/components/roomFeedback/AddQuestion';
 import MrmModal from '../../../src/components/commons/MrmModal';
@@ -7,26 +7,12 @@ import MrmModal from '../../../src/components/commons/MrmModal';
 describe('AddQuestion component', () => {
   const initProps = {
     addQuestion: jest.fn(),
+    client: { query: jest.fn() },
   };
-  let wrapper = mount(<AddQuestion {...initProps} />);
+  let wrapper = shallow(<AddQuestion {...initProps} />);
 
   it('should render a modal component with length of 1', () => {
     expect(wrapper.find(MrmModal).length).toEqual(1);
-  });
-
-  it('should display the input fields in the modal', () => {
-    wrapper.find('#modal-button').simulate('click');
-    expect(wrapper.find('input')).toHaveLength(4);
-  });
-
-  it('should set the value of questionType to the option selected', () => {
-    const event = {
-      target: { name: 'questionType', value: 2 },
-    };
-
-    expect(wrapper.state().questionType).toEqual(0);
-    wrapper.find('.default-select').simulate('change', event);
-    expect(wrapper.state().questionType).toEqual(2);
   });
 
   it('should call sendDateData', () => {
@@ -50,9 +36,9 @@ describe('AddQuestion component', () => {
   });
 
   it('should change the value of question in the state', () => {
-    const input = wrapper.find('input').at(1);
     expect(wrapper.instance().state.question).toEqual('');
-    input.simulate('change', { target: { name: 'question', value: 'Question' } });
+    const event = { target: { name: 'question', value: 'Question' } };
+    wrapper.instance().handleInputChange(event);
     expect(wrapper.instance().state.question).toEqual('Question');
   });
 
@@ -69,10 +55,7 @@ describe('AddQuestion component', () => {
       startDate: '2020-03-28T15:42:43',
       endDate: '2020-03-29T15:42:43',
     });
-    wrapper
-      .find('.btn-primary')
-      .at(1)
-      .simulate('click');
+    wrapper.instance().validateInputFields();
     expect(wrapper.state().error.questionTitle).toEqual('Please provide the title of the question');
   });
 
@@ -84,10 +67,7 @@ describe('AddQuestion component', () => {
       startDate: '2020-03-28T15:42:43',
       endDate: '2020-03-29T15:42:43',
     });
-    wrapper
-      .find('.btn-primary')
-      .at(1)
-      .simulate('click');
+    wrapper.instance().validateInputFields();
     expect(wrapper.state().error.question).toEqual('Please provide the feedback question');
   });
 
@@ -99,73 +79,28 @@ describe('AddQuestion component', () => {
       startDate: '2020-03-28T15:42:43',
       endDate: '2020-03-29T15:42:43',
     });
-    wrapper
-      .find('.btn-primary')
-      .at(1)
-      .simulate('click');
+    wrapper.instance().validateInputFields();
     expect(wrapper.state().error.type).toEqual('Please select the question type');
   });
 
   it('should contain an error when start date is the same as the end date', () => {
-    wrapper.setState({
-      question: 'Something',
-      questionTitle: 'Something',
-      questionType: 0,
-      startDate: '2020-03-28T15:42:43',
-      endDate: '2020-03-29T15:42:43',
-    });
-    wrapper.instance().compareDates(new Date('2020-03-29'), new Date('2020-03-29'));
-    wrapper.find('.btn-primary').at(1).simulate('click');
+    wrapper.instance().compareDates(Date.now(), (Date.now() - 20000));
     expect(wrapper.state().error.date).toEqual('End date should be at least a day after start date');
   });
 
   it('should contain an error when start date is before today', () => {
-    wrapper.setState({
-      question: 'Something',
-      questionTitle: 'Something',
-      questionType: 0,
-      startDate: '2020-03-28T15:42:43',
-      endDate: '2019-03-29T15:42:43',
-    });
     wrapper.instance().compareDates(new Date('2019-01-29'), new Date('2019-03-29'));
-    wrapper
-      .find('.btn-primary')
-      .at(1)
-      .simulate('click');
     expect(wrapper.state().error.date).toEqual('Start date cannot be past days');
   });
 
   it('should contain an error when end date is before today', () => {
-    wrapper.setState({
-      question: 'Something',
-      questionTitle: 'Something',
-      questionType: 0,
-      startDate: '2020-03-28T15:42:43',
-      endDate: '2020-03-29T15:42:43',
-    });
-    wrapper.instance().compareDates(new Date('2020-03-29'), new Date('2019-01-29'));
-    wrapper.find('.btn-primary').at(1).simulate('click');
+    wrapper.instance().compareDates(Date.now(), new Date('2019-01-29'));
     expect(wrapper.state().error.date).toEqual('End date should be at least a day after today');
   });
 
   it('should throw an error when start date is incorrect', () => {
-    wrapper.unmount();
-    wrapper = mount(<AddQuestion {...initProps} />);
-    wrapper.find('#modal-button').simulate('click');
-    wrapper.setState({
-      question: 'Something',
-      questionTitle: 'Something',
-      questionType: 1,
-      startDate: '2020-03-30T15:42:43',
-      endDate: '2020-03-29T15:42:43',
-    });
-    wrapper
-      .find('.btn-primary')
-      .at(1)
-      .simulate('click');
-    expect(wrapper.instance().state.error.date).toEqual(
-      'End date should be at least a day after start date',
-    );
+    wrapper.instance().compareDates(Date.now(), (Date.now() - 20000));
+    expect(wrapper.instance().state.error.date).toEqual('End date should be at least a day after start date');
   });
 
   it('should call createQuestion when all validations pass', () => {

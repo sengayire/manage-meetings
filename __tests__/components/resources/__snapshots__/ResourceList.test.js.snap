@@ -574,109 +574,6 @@ exports[`Tests for ResourceList Component renders correctly from memory 1`] = `
               "perPage": 5,
             },
           },
-          "user" => Object {
-            "query": Object {
-              "definitions": Array [
-                Object {
-                  "directives": Array [],
-                  "kind": "OperationDefinition",
-                  "name": Object {
-                    "kind": "Name",
-                    "value": "user",
-                  },
-                  "operation": "query",
-                  "selectionSet": Object {
-                    "kind": "SelectionSet",
-                    "selections": Array [
-                      Object {
-                        "alias": undefined,
-                        "arguments": Array [
-                          Object {
-                            "kind": "Argument",
-                            "name": Object {
-                              "kind": "Name",
-                              "value": "email",
-                            },
-                            "value": Object {
-                              "kind": "Variable",
-                              "name": Object {
-                                "kind": "Name",
-                                "value": "email",
-                              },
-                            },
-                          },
-                        ],
-                        "directives": Array [],
-                        "kind": "Field",
-                        "name": Object {
-                          "kind": "Name",
-                          "value": "user",
-                        },
-                        "selectionSet": Object {
-                          "kind": "SelectionSet",
-                          "selections": Array [
-                            Object {
-                              "alias": undefined,
-                              "arguments": Array [],
-                              "directives": Array [],
-                              "kind": "Field",
-                              "name": Object {
-                                "kind": "Name",
-                                "value": "id",
-                              },
-                              "selectionSet": undefined,
-                            },
-                            Object {
-                              "alias": undefined,
-                              "arguments": Array [],
-                              "directives": Array [],
-                              "kind": "Field",
-                              "name": Object {
-                                "kind": "Name",
-                                "value": "location",
-                              },
-                              "selectionSet": undefined,
-                            },
-                          ],
-                        },
-                      },
-                    ],
-                  },
-                  "variableDefinitions": Array [
-                    Object {
-                      "defaultValue": undefined,
-                      "kind": "VariableDefinition",
-                      "type": Object {
-                        "kind": "NonNullType",
-                        "type": Object {
-                          "kind": "NamedType",
-                          "name": Object {
-                            "kind": "Name",
-                            "value": "String",
-                          },
-                        },
-                      },
-                      "variable": Object {
-                        "kind": "Variable",
-                        "name": Object {
-                          "kind": "Name",
-                          "value": "email",
-                        },
-                      },
-                    },
-                  ],
-                },
-              ],
-              "kind": "Document",
-              "loc": Object {
-                "end": 83,
-                "start": 0,
-              },
-            },
-            "variables": Object {
-              "email": "sammy.muriuki@andela.com",
-            },
-          },
         },
         "cache": InMemoryCache {
           "addTypename": true,
@@ -692,298 +589,6 @@ exports[`Tests for ResourceList Component renders correctly from memory 1`] = `
           "optimistic": Array [],
           "silenceBroadcast": false,
           "watches": Array [
-            Object {
-              "callback": [Function],
-              "optimistic": true,
-              "previousResult": [Function],
-              "query": Object {
-                "definitions": Array [
-                  Object {
-                    "directives": Array [],
-                    "kind": "OperationDefinition",
-                    "name": Object {
-                      "kind": "Name",
-                      "value": "user",
-                    },
-                    "operation": "query",
-                    "selectionSet": Object {
-                      "kind": "SelectionSet",
-                      "selections": Array [
-                        Object {
-                          "alias": undefined,
-                          "arguments": Array [
-                            Object {
-                              "kind": "Argument",
-                              "name": Object {
-                                "kind": "Name",
-                                "value": "email",
-                              },
-                              "value": Object {
-                                "kind": "Variable",
-                                "name": Object {
-                                  "kind": "Name",
-                                  "value": "email",
-                                },
-                              },
-                            },
-                          ],
-                          "directives": Array [],
-                          "kind": "Field",
-                          "name": Object {
-                            "kind": "Name",
-                            "value": "user",
-                          },
-                          "selectionSet": Object {
-                            "kind": "SelectionSet",
-                            "selections": Array [
-                              Object {
-                                "alias": undefined,
-                                "arguments": Array [],
-                                "directives": Array [],
-                                "kind": "Field",
-                                "name": Object {
-                                  "kind": "Name",
-                                  "value": "id",
-                                },
-                                "selectionSet": undefined,
-                              },
-                              Object {
-                                "alias": undefined,
-                                "arguments": Array [],
-                                "directives": Array [],
-                                "kind": "Field",
-                                "name": Object {
-                                  "kind": "Name",
-                                  "value": "location",
-                                },
-                                "selectionSet": undefined,
-                              },
-                              Object {
-                                "kind": "Field",
-                                "name": Object {
-                                  "kind": "Name",
-                                  "value": "__typename",
-                                },
-                              },
-                            ],
-                          },
-                        },
-                      ],
-                    },
-                    "variableDefinitions": Array [
-                      Object {
-                        "defaultValue": undefined,
-                        "kind": "VariableDefinition",
-                        "type": Object {
-                          "kind": "NonNullType",
-                          "type": Object {
-                            "kind": "NamedType",
-                            "name": Object {
-                              "kind": "Name",
-                              "value": "String",
-                            },
-                          },
-                        },
-                        "variable": Object {
-                          "kind": "Variable",
-                          "name": Object {
-                            "kind": "Name",
-                            "value": "email",
-                          },
-                        },
-                      },
-                    ],
-                  },
-                ],
-                "kind": "Document",
-                "loc": Object {
-                  "end": 83,
-                  "source": Object {
-                    "body": "
-query user ($email: String!) {
-  user( email: $email) {
-    id
-    location
-  }
-}
-",
-                    "locationOffset": Object {
-                      "column": 1,
-                      "line": 1,
-                    },
-                    "name": "GraphQL request",
-                  },
-                  "start": 0,
-                },
-              },
-              "variables": Object {
-                "email": "sammy.muriuki@andela.com",
-              },
-            },
-            Object {
-              "callback": [Function],
-              "optimistic": true,
-              "previousResult": [Function],
-              "query": Object {
-                "definitions": Array [
-                  Object {
-                    "directives": Array [],
-                    "kind": "OperationDefinition",
-                    "name": Object {
-                      "kind": "Name",
-                      "value": "user",
-                    },
-                    "operation": "query",
-                    "selectionSet": Object {
-                      "kind": "SelectionSet",
-                      "selections": Array [
-                        Object {
-                          "alias": undefined,
-                          "arguments": Array [
-                            Object {
-                              "kind": "Argument",
-                              "name": Object {
-                                "kind": "Name",
-                                "value": "email",
-                              },
-                              "value": Object {
-                                "kind": "Variable",
-                                "name": Object {
-                                  "kind": "Name",
-                                  "value": "email",
-                                },
-                              },
-                            },
-                          ],
-                          "directives": Array [],
-                          "kind": "Field",
-                          "name": Object {
-                            "kind": "Name",
-                            "value": "user",
-                          },
-                          "selectionSet": Object {
-                            "kind": "SelectionSet",
-                            "selections": Array [
-                              Object {
-                                "alias": undefined,
-                                "arguments": Array [],
-                                "directives": Array [],
-                                "kind": "Field",
-                                "name": Object {
-                                  "kind": "Name",
-                                  "value": "id",
-                                },
-                                "selectionSet": undefined,
-                              },
-                              Object {
-                                "alias": undefined,
-                                "arguments": Array [],
-                                "directives": Array [],
-                                "kind": "Field",
-                                "name": Object {
-                                  "kind": "Name",
-                                  "value": "roles",
-                                },
-                                "selectionSet": Object {
-                                  "kind": "SelectionSet",
-                                  "selections": Array [
-                                    Object {
-                                      "alias": undefined,
-                                      "arguments": Array [],
-                                      "directives": Array [],
-                                      "kind": "Field",
-                                      "name": Object {
-                                        "kind": "Name",
-                                        "value": "id",
-                                      },
-                                      "selectionSet": undefined,
-                                    },
-                                    Object {
-                                      "alias": undefined,
-                                      "arguments": Array [],
-                                      "directives": Array [],
-                                      "kind": "Field",
-                                      "name": Object {
-                                        "kind": "Name",
-                                        "value": "role",
-                                      },
-                                      "selectionSet": undefined,
-                                    },
-                                    Object {
-                                      "kind": "Field",
-                                      "name": Object {
-                                        "kind": "Name",
-                                        "value": "__typename",
-                                      },
-                                    },
-                                  ],
-                                },
-                              },
-                              Object {
-                                "kind": "Field",
-                                "name": Object {
-                                  "kind": "Name",
-                                  "value": "__typename",
-                                },
-                              },
-                            ],
-                          },
-                        },
-                      ],
-                    },
-                    "variableDefinitions": Array [
-                      Object {
-                        "defaultValue": undefined,
-                        "kind": "VariableDefinition",
-                        "type": Object {
-                          "kind": "NonNullType",
-                          "type": Object {
-                            "kind": "NamedType",
-                            "name": Object {
-                              "kind": "Name",
-                              "value": "String",
-                            },
-                          },
-                        },
-                        "variable": Object {
-                          "kind": "Variable",
-                          "name": Object {
-                            "kind": "Name",
-                            "value": "email",
-                          },
-                        },
-                      },
-                    ],
-                  },
-                ],
-                "kind": "Document",
-                "loc": Object {
-                  "end": 107,
-                  "source": Object {
-                    "body": "
-query user ($email: String!) {
-  user( email: $email){
-    id
-    roles{
-      id
-      role
-    }
-  }
- }
-",
-                    "locationOffset": Object {
-                      "column": 1,
-                      "line": 1,
-                    },
-                    "name": "GraphQL request",
-                  },
-                  "start": 0,
-                },
-              },
-              "variables": Object {
-                "email": "sammy.muriuki@andela.com",
-              },
-            },
             Object {
               "callback": [Function],
               "optimistic": true,
@@ -1329,298 +934,6 @@ query user ($email: String!) {
                         "kind": "OperationDefinition",
                         "name": Object {
                           "kind": "Name",
-                          "value": "user",
-                        },
-                        "operation": "query",
-                        "selectionSet": Object {
-                          "kind": "SelectionSet",
-                          "selections": Array [
-                            Object {
-                              "alias": undefined,
-                              "arguments": Array [
-                                Object {
-                                  "kind": "Argument",
-                                  "name": Object {
-                                    "kind": "Name",
-                                    "value": "email",
-                                  },
-                                  "value": Object {
-                                    "kind": "Variable",
-                                    "name": Object {
-                                      "kind": "Name",
-                                      "value": "email",
-                                    },
-                                  },
-                                },
-                              ],
-                              "directives": Array [],
-                              "kind": "Field",
-                              "name": Object {
-                                "kind": "Name",
-                                "value": "user",
-                              },
-                              "selectionSet": Object {
-                                "kind": "SelectionSet",
-                                "selections": Array [
-                                  Object {
-                                    "alias": undefined,
-                                    "arguments": Array [],
-                                    "directives": Array [],
-                                    "kind": "Field",
-                                    "name": Object {
-                                      "kind": "Name",
-                                      "value": "id",
-                                    },
-                                    "selectionSet": undefined,
-                                  },
-                                  Object {
-                                    "alias": undefined,
-                                    "arguments": Array [],
-                                    "directives": Array [],
-                                    "kind": "Field",
-                                    "name": Object {
-                                      "kind": "Name",
-                                      "value": "location",
-                                    },
-                                    "selectionSet": undefined,
-                                  },
-                                  Object {
-                                    "kind": "Field",
-                                    "name": Object {
-                                      "kind": "Name",
-                                      "value": "__typename",
-                                    },
-                                  },
-                                ],
-                              },
-                            },
-                          ],
-                        },
-                        "variableDefinitions": Array [
-                          Object {
-                            "defaultValue": undefined,
-                            "kind": "VariableDefinition",
-                            "type": Object {
-                              "kind": "NonNullType",
-                              "type": Object {
-                                "kind": "NamedType",
-                                "name": Object {
-                                  "kind": "Name",
-                                  "value": "String",
-                                },
-                              },
-                            },
-                            "variable": Object {
-                              "kind": "Variable",
-                              "name": Object {
-                                "kind": "Name",
-                                "value": "email",
-                              },
-                            },
-                          },
-                        ],
-                      },
-                    ],
-                    "kind": "Document",
-                    "loc": Object {
-                      "end": 83,
-                      "source": Object {
-                        "body": "
-query user ($email: String!) {
-  user( email: $email) {
-    id
-    location
-  }
-}
-",
-                        "locationOffset": Object {
-                          "column": 1,
-                          "line": 1,
-                        },
-                        "name": "GraphQL request",
-                      },
-                      "start": 0,
-                    },
-                  },
-                  "variables": Object {
-                    "email": "sammy.muriuki@andela.com",
-                  },
-                },
-                Object {
-                  "callback": [Function],
-                  "optimistic": true,
-                  "previousResult": [Function],
-                  "query": Object {
-                    "definitions": Array [
-                      Object {
-                        "directives": Array [],
-                        "kind": "OperationDefinition",
-                        "name": Object {
-                          "kind": "Name",
-                          "value": "user",
-                        },
-                        "operation": "query",
-                        "selectionSet": Object {
-                          "kind": "SelectionSet",
-                          "selections": Array [
-                            Object {
-                              "alias": undefined,
-                              "arguments": Array [
-                                Object {
-                                  "kind": "Argument",
-                                  "name": Object {
-                                    "kind": "Name",
-                                    "value": "email",
-                                  },
-                                  "value": Object {
-                                    "kind": "Variable",
-                                    "name": Object {
-                                      "kind": "Name",
-                                      "value": "email",
-                                    },
-                                  },
-                                },
-                              ],
-                              "directives": Array [],
-                              "kind": "Field",
-                              "name": Object {
-                                "kind": "Name",
-                                "value": "user",
-                              },
-                              "selectionSet": Object {
-                                "kind": "SelectionSet",
-                                "selections": Array [
-                                  Object {
-                                    "alias": undefined,
-                                    "arguments": Array [],
-                                    "directives": Array [],
-                                    "kind": "Field",
-                                    "name": Object {
-                                      "kind": "Name",
-                                      "value": "id",
-                                    },
-                                    "selectionSet": undefined,
-                                  },
-                                  Object {
-                                    "alias": undefined,
-                                    "arguments": Array [],
-                                    "directives": Array [],
-                                    "kind": "Field",
-                                    "name": Object {
-                                      "kind": "Name",
-                                      "value": "roles",
-                                    },
-                                    "selectionSet": Object {
-                                      "kind": "SelectionSet",
-                                      "selections": Array [
-                                        Object {
-                                          "alias": undefined,
-                                          "arguments": Array [],
-                                          "directives": Array [],
-                                          "kind": "Field",
-                                          "name": Object {
-                                            "kind": "Name",
-                                            "value": "id",
-                                          },
-                                          "selectionSet": undefined,
-                                        },
-                                        Object {
-                                          "alias": undefined,
-                                          "arguments": Array [],
-                                          "directives": Array [],
-                                          "kind": "Field",
-                                          "name": Object {
-                                            "kind": "Name",
-                                            "value": "role",
-                                          },
-                                          "selectionSet": undefined,
-                                        },
-                                        Object {
-                                          "kind": "Field",
-                                          "name": Object {
-                                            "kind": "Name",
-                                            "value": "__typename",
-                                          },
-                                        },
-                                      ],
-                                    },
-                                  },
-                                  Object {
-                                    "kind": "Field",
-                                    "name": Object {
-                                      "kind": "Name",
-                                      "value": "__typename",
-                                    },
-                                  },
-                                ],
-                              },
-                            },
-                          ],
-                        },
-                        "variableDefinitions": Array [
-                          Object {
-                            "defaultValue": undefined,
-                            "kind": "VariableDefinition",
-                            "type": Object {
-                              "kind": "NonNullType",
-                              "type": Object {
-                                "kind": "NamedType",
-                                "name": Object {
-                                  "kind": "Name",
-                                  "value": "String",
-                                },
-                              },
-                            },
-                            "variable": Object {
-                              "kind": "Variable",
-                              "name": Object {
-                                "kind": "Name",
-                                "value": "email",
-                              },
-                            },
-                          },
-                        ],
-                      },
-                    ],
-                    "kind": "Document",
-                    "loc": Object {
-                      "end": 107,
-                      "source": Object {
-                        "body": "
-query user ($email: String!) {
-  user( email: $email){
-    id
-    roles{
-      id
-      role
-    }
-  }
- }
-",
-                        "locationOffset": Object {
-                          "column": 1,
-                          "line": 1,
-                        },
-                        "name": "GraphQL request",
-                      },
-                      "start": 0,
-                    },
-                  },
-                  "variables": Object {
-                    "email": "sammy.muriuki@andela.com",
-                  },
-                },
-                Object {
-                  "callback": [Function],
-                  "optimistic": true,
-                  "previousResult": [Function],
-                  "query": Object {
-                    "definitions": Array [
-                      Object {
-                        "directives": Array [],
-                        "kind": "OperationDefinition",
-                        "name": Object {
-                          "kind": "Name",
                           "value": "resources",
                         },
                         "operation": "query",
@@ -1925,12 +1238,12 @@ query user ($email: String!) {
             "request": [Function],
           },
           "fetchQueryPromises": Map {
-            "6" => Object {
+            "2" => Object {
               "reject": [Function],
               "resolve": [Function],
             },
           },
-          "idCounter": 7,
+          "idCounter": 3,
           "link": ApolloLink {
             "request": [Function],
           },
@@ -1939,638 +1252,6 @@ query user ($email: String!) {
           },
           "onBroadcast": [Function],
           "queries": Map {
-            "3" => Object {
-              "cancel": [Function],
-              "document": Object {
-                "definitions": Array [
-                  Object {
-                    "directives": Array [],
-                    "kind": "OperationDefinition",
-                    "name": Object {
-                      "kind": "Name",
-                      "value": "user",
-                    },
-                    "operation": "query",
-                    "selectionSet": Object {
-                      "kind": "SelectionSet",
-                      "selections": Array [
-                        Object {
-                          "alias": undefined,
-                          "arguments": Array [
-                            Object {
-                              "kind": "Argument",
-                              "name": Object {
-                                "kind": "Name",
-                                "value": "email",
-                              },
-                              "value": Object {
-                                "kind": "Variable",
-                                "name": Object {
-                                  "kind": "Name",
-                                  "value": "email",
-                                },
-                              },
-                            },
-                          ],
-                          "directives": Array [],
-                          "kind": "Field",
-                          "name": Object {
-                            "kind": "Name",
-                            "value": "user",
-                          },
-                          "selectionSet": Object {
-                            "kind": "SelectionSet",
-                            "selections": Array [
-                              Object {
-                                "alias": undefined,
-                                "arguments": Array [],
-                                "directives": Array [],
-                                "kind": "Field",
-                                "name": Object {
-                                  "kind": "Name",
-                                  "value": "id",
-                                },
-                                "selectionSet": undefined,
-                              },
-                              Object {
-                                "alias": undefined,
-                                "arguments": Array [],
-                                "directives": Array [],
-                                "kind": "Field",
-                                "name": Object {
-                                  "kind": "Name",
-                                  "value": "location",
-                                },
-                                "selectionSet": undefined,
-                              },
-                              Object {
-                                "kind": "Field",
-                                "name": Object {
-                                  "kind": "Name",
-                                  "value": "__typename",
-                                },
-                              },
-                            ],
-                          },
-                        },
-                      ],
-                    },
-                    "variableDefinitions": Array [
-                      Object {
-                        "defaultValue": undefined,
-                        "kind": "VariableDefinition",
-                        "type": Object {
-                          "kind": "NonNullType",
-                          "type": Object {
-                            "kind": "NamedType",
-                            "name": Object {
-                              "kind": "Name",
-                              "value": "String",
-                            },
-                          },
-                        },
-                        "variable": Object {
-                          "kind": "Variable",
-                          "name": Object {
-                            "kind": "Name",
-                            "value": "email",
-                          },
-                        },
-                      },
-                    ],
-                  },
-                ],
-                "kind": "Document",
-                "loc": Object {
-                  "end": 83,
-                  "source": Object {
-                    "body": "
-query user ($email: String!) {
-  user( email: $email) {
-    id
-    location
-  }
-}
-",
-                    "locationOffset": Object {
-                      "column": 1,
-                      "line": 1,
-                    },
-                    "name": "GraphQL request",
-                  },
-                  "start": 0,
-                },
-              },
-              "invalidate": false,
-              "invalidated": false,
-              "lastRequestId": 4,
-              "listeners": Array [
-                [Function],
-              ],
-              "newData": null,
-              "observableQuery": ObservableQuery {
-                "_subscriber": [Function],
-                "isCurrentlyPolling": false,
-                "isTornDown": false,
-                "lastError": [Error: Network error: No more mocked responses for the query: query user($email: String!) {
-  user(email: $email) {
-    id
-    location
-    __typename
-  }
-}
-, variables: {"email":"sammy.muriuki@andela.com"}],
-                "lastResult": undefined,
-                "observers": Array [
-                  SubscriptionObserver {
-                    "_subscription": Subscription {
-                      "_cleanup": [Function],
-                      "_observer": Object {
-                        "error": [Function],
-                        "next": [Function],
-                      },
-                      "_queue": undefined,
-                      "_state": "ready",
-                    },
-                  },
-                ],
-                "options": Object {
-                  "context": Object {},
-                  "metadata": Object {
-                    "reactComponent": Object {
-                      "displayName": "Apollo(ResourceList)",
-                    },
-                  },
-                  "notifyOnNetworkStatusChange": false,
-                  "query": Object {
-                    "definitions": Array [
-                      Object {
-                        "directives": Array [],
-                        "kind": "OperationDefinition",
-                        "name": Object {
-                          "kind": "Name",
-                          "value": "user",
-                        },
-                        "operation": "query",
-                        "selectionSet": Object {
-                          "kind": "SelectionSet",
-                          "selections": Array [
-                            Object {
-                              "alias": undefined,
-                              "arguments": Array [
-                                Object {
-                                  "kind": "Argument",
-                                  "name": Object {
-                                    "kind": "Name",
-                                    "value": "email",
-                                  },
-                                  "value": Object {
-                                    "kind": "Variable",
-                                    "name": Object {
-                                      "kind": "Name",
-                                      "value": "email",
-                                    },
-                                  },
-                                },
-                              ],
-                              "directives": Array [],
-                              "kind": "Field",
-                              "name": Object {
-                                "kind": "Name",
-                                "value": "user",
-                              },
-                              "selectionSet": Object {
-                                "kind": "SelectionSet",
-                                "selections": Array [
-                                  Object {
-                                    "alias": undefined,
-                                    "arguments": Array [],
-                                    "directives": Array [],
-                                    "kind": "Field",
-                                    "name": Object {
-                                      "kind": "Name",
-                                      "value": "id",
-                                    },
-                                    "selectionSet": undefined,
-                                  },
-                                  Object {
-                                    "alias": undefined,
-                                    "arguments": Array [],
-                                    "directives": Array [],
-                                    "kind": "Field",
-                                    "name": Object {
-                                      "kind": "Name",
-                                      "value": "location",
-                                    },
-                                    "selectionSet": undefined,
-                                  },
-                                ],
-                              },
-                            },
-                          ],
-                        },
-                        "variableDefinitions": Array [
-                          Object {
-                            "defaultValue": undefined,
-                            "kind": "VariableDefinition",
-                            "type": Object {
-                              "kind": "NonNullType",
-                              "type": Object {
-                                "kind": "NamedType",
-                                "name": Object {
-                                  "kind": "Name",
-                                  "value": "String",
-                                },
-                              },
-                            },
-                            "variable": Object {
-                              "kind": "Variable",
-                              "name": Object {
-                                "kind": "Name",
-                                "value": "email",
-                              },
-                            },
-                          },
-                        ],
-                      },
-                    ],
-                    "kind": "Document",
-                    "loc": Object {
-                      "end": 83,
-                      "start": 0,
-                    },
-                  },
-                  "variables": Object {
-                    "email": "sammy.muriuki@andela.com",
-                  },
-                },
-                "queryId": "3",
-                "queryManager": [Circular],
-                "scheduler": QueryScheduler {
-                  "inFlightQueries": Object {},
-                  "intervalQueries": Object {},
-                  "pollingTimers": Object {},
-                  "queryManager": [Circular],
-                  "registeredQueries": Object {},
-                  "ssrMode": false,
-                },
-                "shouldSubscribe": true,
-                "subscriptionHandles": Array [],
-                "variables": Object {
-                  "email": "sammy.muriuki@andela.com",
-                },
-              },
-              "subscriptions": Array [],
-            },
-            "2" => Object {
-              "cancel": [Function],
-              "document": Object {
-                "definitions": Array [
-                  Object {
-                    "directives": Array [],
-                    "kind": "OperationDefinition",
-                    "name": Object {
-                      "kind": "Name",
-                      "value": "user",
-                    },
-                    "operation": "query",
-                    "selectionSet": Object {
-                      "kind": "SelectionSet",
-                      "selections": Array [
-                        Object {
-                          "alias": undefined,
-                          "arguments": Array [
-                            Object {
-                              "kind": "Argument",
-                              "name": Object {
-                                "kind": "Name",
-                                "value": "email",
-                              },
-                              "value": Object {
-                                "kind": "Variable",
-                                "name": Object {
-                                  "kind": "Name",
-                                  "value": "email",
-                                },
-                              },
-                            },
-                          ],
-                          "directives": Array [],
-                          "kind": "Field",
-                          "name": Object {
-                            "kind": "Name",
-                            "value": "user",
-                          },
-                          "selectionSet": Object {
-                            "kind": "SelectionSet",
-                            "selections": Array [
-                              Object {
-                                "alias": undefined,
-                                "arguments": Array [],
-                                "directives": Array [],
-                                "kind": "Field",
-                                "name": Object {
-                                  "kind": "Name",
-                                  "value": "id",
-                                },
-                                "selectionSet": undefined,
-                              },
-                              Object {
-                                "alias": undefined,
-                                "arguments": Array [],
-                                "directives": Array [],
-                                "kind": "Field",
-                                "name": Object {
-                                  "kind": "Name",
-                                  "value": "roles",
-                                },
-                                "selectionSet": Object {
-                                  "kind": "SelectionSet",
-                                  "selections": Array [
-                                    Object {
-                                      "alias": undefined,
-                                      "arguments": Array [],
-                                      "directives": Array [],
-                                      "kind": "Field",
-                                      "name": Object {
-                                        "kind": "Name",
-                                        "value": "id",
-                                      },
-                                      "selectionSet": undefined,
-                                    },
-                                    Object {
-                                      "alias": undefined,
-                                      "arguments": Array [],
-                                      "directives": Array [],
-                                      "kind": "Field",
-                                      "name": Object {
-                                        "kind": "Name",
-                                        "value": "role",
-                                      },
-                                      "selectionSet": undefined,
-                                    },
-                                    Object {
-                                      "kind": "Field",
-                                      "name": Object {
-                                        "kind": "Name",
-                                        "value": "__typename",
-                                      },
-                                    },
-                                  ],
-                                },
-                              },
-                              Object {
-                                "kind": "Field",
-                                "name": Object {
-                                  "kind": "Name",
-                                  "value": "__typename",
-                                },
-                              },
-                            ],
-                          },
-                        },
-                      ],
-                    },
-                    "variableDefinitions": Array [
-                      Object {
-                        "defaultValue": undefined,
-                        "kind": "VariableDefinition",
-                        "type": Object {
-                          "kind": "NonNullType",
-                          "type": Object {
-                            "kind": "NamedType",
-                            "name": Object {
-                              "kind": "Name",
-                              "value": "String",
-                            },
-                          },
-                        },
-                        "variable": Object {
-                          "kind": "Variable",
-                          "name": Object {
-                            "kind": "Name",
-                            "value": "email",
-                          },
-                        },
-                      },
-                    ],
-                  },
-                ],
-                "kind": "Document",
-                "loc": Object {
-                  "end": 107,
-                  "source": Object {
-                    "body": "
-query user ($email: String!) {
-  user( email: $email){
-    id
-    roles{
-      id
-      role
-    }
-  }
- }
-",
-                    "locationOffset": Object {
-                      "column": 1,
-                      "line": 1,
-                    },
-                    "name": "GraphQL request",
-                  },
-                  "start": 0,
-                },
-              },
-              "invalidate": false,
-              "invalidated": false,
-              "lastRequestId": 5,
-              "listeners": Array [
-                [Function],
-              ],
-              "newData": null,
-              "observableQuery": ObservableQuery {
-                "_subscriber": [Function],
-                "isCurrentlyPolling": false,
-                "isTornDown": false,
-                "lastError": [Error: Network error: No more mocked responses for the query: query user($email: String!) {
-  user(email: $email) {
-    id
-    roles {
-      id
-      role
-      __typename
-    }
-    __typename
-  }
-}
-, variables: {"email":"sammy.muriuki@andela.com"}],
-                "lastResult": undefined,
-                "observers": Array [
-                  SubscriptionObserver {
-                    "_subscription": Subscription {
-                      "_cleanup": [Function],
-                      "_observer": Object {
-                        "error": [Function],
-                        "next": [Function],
-                      },
-                      "_queue": undefined,
-                      "_state": "ready",
-                    },
-                  },
-                ],
-                "options": Object {
-                  "context": Object {},
-                  "metadata": Object {
-                    "reactComponent": Object {
-                      "displayName": "Apollo(Apollo(ResourceList))",
-                    },
-                  },
-                  "notifyOnNetworkStatusChange": false,
-                  "query": Object {
-                    "definitions": Array [
-                      Object {
-                        "directives": Array [],
-                        "kind": "OperationDefinition",
-                        "name": Object {
-                          "kind": "Name",
-                          "value": "user",
-                        },
-                        "operation": "query",
-                        "selectionSet": Object {
-                          "kind": "SelectionSet",
-                          "selections": Array [
-                            Object {
-                              "alias": undefined,
-                              "arguments": Array [
-                                Object {
-                                  "kind": "Argument",
-                                  "name": Object {
-                                    "kind": "Name",
-                                    "value": "email",
-                                  },
-                                  "value": Object {
-                                    "kind": "Variable",
-                                    "name": Object {
-                                      "kind": "Name",
-                                      "value": "email",
-                                    },
-                                  },
-                                },
-                              ],
-                              "directives": Array [],
-                              "kind": "Field",
-                              "name": Object {
-                                "kind": "Name",
-                                "value": "user",
-                              },
-                              "selectionSet": Object {
-                                "kind": "SelectionSet",
-                                "selections": Array [
-                                  Object {
-                                    "alias": undefined,
-                                    "arguments": Array [],
-                                    "directives": Array [],
-                                    "kind": "Field",
-                                    "name": Object {
-                                      "kind": "Name",
-                                      "value": "id",
-                                    },
-                                    "selectionSet": undefined,
-                                  },
-                                  Object {
-                                    "alias": undefined,
-                                    "arguments": Array [],
-                                    "directives": Array [],
-                                    "kind": "Field",
-                                    "name": Object {
-                                      "kind": "Name",
-                                      "value": "roles",
-                                    },
-                                    "selectionSet": Object {
-                                      "kind": "SelectionSet",
-                                      "selections": Array [
-                                        Object {
-                                          "alias": undefined,
-                                          "arguments": Array [],
-                                          "directives": Array [],
-                                          "kind": "Field",
-                                          "name": Object {
-                                            "kind": "Name",
-                                            "value": "id",
-                                          },
-                                          "selectionSet": undefined,
-                                        },
-                                        Object {
-                                          "alias": undefined,
-                                          "arguments": Array [],
-                                          "directives": Array [],
-                                          "kind": "Field",
-                                          "name": Object {
-                                            "kind": "Name",
-                                            "value": "role",
-                                          },
-                                          "selectionSet": undefined,
-                                        },
-                                      ],
-                                    },
-                                  },
-                                ],
-                              },
-                            },
-                          ],
-                        },
-                        "variableDefinitions": Array [
-                          Object {
-                            "defaultValue": undefined,
-                            "kind": "VariableDefinition",
-                            "type": Object {
-                              "kind": "NonNullType",
-                              "type": Object {
-                                "kind": "NamedType",
-                                "name": Object {
-                                  "kind": "Name",
-                                  "value": "String",
-                                },
-                              },
-                            },
-                            "variable": Object {
-                              "kind": "Variable",
-                              "name": Object {
-                                "kind": "Name",
-                                "value": "email",
-                              },
-                            },
-                          },
-                        ],
-                      },
-                    ],
-                    "kind": "Document",
-                    "loc": Object {
-                      "end": 107,
-                      "start": 0,
-                    },
-                  },
-                  "variables": Object {
-                    "email": "sammy.muriuki@andela.com",
-                  },
-                },
-                "queryId": "2",
-                "queryManager": [Circular],
-                "scheduler": QueryScheduler {
-                  "inFlightQueries": Object {},
-                  "intervalQueries": Object {},
-                  "pollingTimers": Object {},
-                  "queryManager": [Circular],
-                  "registeredQueries": Object {},
-                  "ssrMode": false,
-                },
-                "shouldSubscribe": true,
-                "subscriptionHandles": Array [],
-                "variables": Object {
-                  "email": "sammy.muriuki@andela.com",
-                },
-              },
-              "subscriptions": Array [],
-            },
             "1" => Object {
               "cancel": [Function],
               "document": Object {
@@ -2874,7 +1555,7 @@ query user ($email: String!) {
               },
               "invalidate": false,
               "invalidated": false,
-              "lastRequestId": 6,
+              "lastRequestId": 2,
               "listeners": Array [
                 [Function],
               ],
@@ -2900,7 +1581,7 @@ query user ($email: String!) {
                   "context": Object {},
                   "metadata": Object {
                     "reactComponent": Object {
-                      "displayName": "Apollo(Apollo(Apollo(ResourceList)))",
+                      "displayName": "Apollo(ResourceList)",
                     },
                   },
                   "notifyOnNetworkStatusChange": false,
@@ -3195,10 +1876,6 @@ query user ($email: String!) {
           "queryIdsByName": Object {
             "resources": Array [
               "1",
-            ],
-            "user": Array [
-              "3",
-              "2",
             ],
           },
           "queryStore": QueryStore {
@@ -3506,7 +2183,7 @@ query user ($email: String!) {
                 "graphQLErrors": Array [],
                 "metadata": Object {
                   "reactComponent": Object {
-                    "displayName": "Apollo(Apollo(Apollo(ResourceList)))",
+                    "displayName": "Apollo(ResourceList)",
                   },
                 },
                 "networkError": null,
@@ -3515,328 +2192,6 @@ query user ($email: String!) {
                 "variables": Object {
                   "page": 1,
                   "perPage": 5,
-                },
-              },
-              "2": Object {
-                "document": Object {
-                  "definitions": Array [
-                    Object {
-                      "directives": Array [],
-                      "kind": "OperationDefinition",
-                      "name": Object {
-                        "kind": "Name",
-                        "value": "user",
-                      },
-                      "operation": "query",
-                      "selectionSet": Object {
-                        "kind": "SelectionSet",
-                        "selections": Array [
-                          Object {
-                            "alias": undefined,
-                            "arguments": Array [
-                              Object {
-                                "kind": "Argument",
-                                "name": Object {
-                                  "kind": "Name",
-                                  "value": "email",
-                                },
-                                "value": Object {
-                                  "kind": "Variable",
-                                  "name": Object {
-                                    "kind": "Name",
-                                    "value": "email",
-                                  },
-                                },
-                              },
-                            ],
-                            "directives": Array [],
-                            "kind": "Field",
-                            "name": Object {
-                              "kind": "Name",
-                              "value": "user",
-                            },
-                            "selectionSet": Object {
-                              "kind": "SelectionSet",
-                              "selections": Array [
-                                Object {
-                                  "alias": undefined,
-                                  "arguments": Array [],
-                                  "directives": Array [],
-                                  "kind": "Field",
-                                  "name": Object {
-                                    "kind": "Name",
-                                    "value": "id",
-                                  },
-                                  "selectionSet": undefined,
-                                },
-                                Object {
-                                  "alias": undefined,
-                                  "arguments": Array [],
-                                  "directives": Array [],
-                                  "kind": "Field",
-                                  "name": Object {
-                                    "kind": "Name",
-                                    "value": "roles",
-                                  },
-                                  "selectionSet": Object {
-                                    "kind": "SelectionSet",
-                                    "selections": Array [
-                                      Object {
-                                        "alias": undefined,
-                                        "arguments": Array [],
-                                        "directives": Array [],
-                                        "kind": "Field",
-                                        "name": Object {
-                                          "kind": "Name",
-                                          "value": "id",
-                                        },
-                                        "selectionSet": undefined,
-                                      },
-                                      Object {
-                                        "alias": undefined,
-                                        "arguments": Array [],
-                                        "directives": Array [],
-                                        "kind": "Field",
-                                        "name": Object {
-                                          "kind": "Name",
-                                          "value": "role",
-                                        },
-                                        "selectionSet": undefined,
-                                      },
-                                      Object {
-                                        "kind": "Field",
-                                        "name": Object {
-                                          "kind": "Name",
-                                          "value": "__typename",
-                                        },
-                                      },
-                                    ],
-                                  },
-                                },
-                                Object {
-                                  "kind": "Field",
-                                  "name": Object {
-                                    "kind": "Name",
-                                    "value": "__typename",
-                                  },
-                                },
-                              ],
-                            },
-                          },
-                        ],
-                      },
-                      "variableDefinitions": Array [
-                        Object {
-                          "defaultValue": undefined,
-                          "kind": "VariableDefinition",
-                          "type": Object {
-                            "kind": "NonNullType",
-                            "type": Object {
-                              "kind": "NamedType",
-                              "name": Object {
-                                "kind": "Name",
-                                "value": "String",
-                              },
-                            },
-                          },
-                          "variable": Object {
-                            "kind": "Variable",
-                            "name": Object {
-                              "kind": "Name",
-                              "value": "email",
-                            },
-                          },
-                        },
-                      ],
-                    },
-                  ],
-                  "kind": "Document",
-                  "loc": Object {
-                    "end": 107,
-                    "source": Object {
-                      "body": "
-query user ($email: String!) {
-  user( email: $email){
-    id
-    roles{
-      id
-      role
-    }
-  }
- }
-",
-                      "locationOffset": Object {
-                        "column": 1,
-                        "line": 1,
-                      },
-                      "name": "GraphQL request",
-                    },
-                    "start": 0,
-                  },
-                },
-                "graphQLErrors": Array [],
-                "metadata": Object {
-                  "reactComponent": Object {
-                    "displayName": "Apollo(Apollo(ResourceList))",
-                  },
-                },
-                "networkError": [Error: No more mocked responses for the query: query user($email: String!) {
-  user(email: $email) {
-    id
-    roles {
-      id
-      role
-      __typename
-    }
-    __typename
-  }
-}
-, variables: {"email":"sammy.muriuki@andela.com"}],
-                "networkStatus": 8,
-                "previousVariables": null,
-                "variables": Object {
-                  "email": "sammy.muriuki@andela.com",
-                },
-              },
-              "3": Object {
-                "document": Object {
-                  "definitions": Array [
-                    Object {
-                      "directives": Array [],
-                      "kind": "OperationDefinition",
-                      "name": Object {
-                        "kind": "Name",
-                        "value": "user",
-                      },
-                      "operation": "query",
-                      "selectionSet": Object {
-                        "kind": "SelectionSet",
-                        "selections": Array [
-                          Object {
-                            "alias": undefined,
-                            "arguments": Array [
-                              Object {
-                                "kind": "Argument",
-                                "name": Object {
-                                  "kind": "Name",
-                                  "value": "email",
-                                },
-                                "value": Object {
-                                  "kind": "Variable",
-                                  "name": Object {
-                                    "kind": "Name",
-                                    "value": "email",
-                                  },
-                                },
-                              },
-                            ],
-                            "directives": Array [],
-                            "kind": "Field",
-                            "name": Object {
-                              "kind": "Name",
-                              "value": "user",
-                            },
-                            "selectionSet": Object {
-                              "kind": "SelectionSet",
-                              "selections": Array [
-                                Object {
-                                  "alias": undefined,
-                                  "arguments": Array [],
-                                  "directives": Array [],
-                                  "kind": "Field",
-                                  "name": Object {
-                                    "kind": "Name",
-                                    "value": "id",
-                                  },
-                                  "selectionSet": undefined,
-                                },
-                                Object {
-                                  "alias": undefined,
-                                  "arguments": Array [],
-                                  "directives": Array [],
-                                  "kind": "Field",
-                                  "name": Object {
-                                    "kind": "Name",
-                                    "value": "location",
-                                  },
-                                  "selectionSet": undefined,
-                                },
-                                Object {
-                                  "kind": "Field",
-                                  "name": Object {
-                                    "kind": "Name",
-                                    "value": "__typename",
-                                  },
-                                },
-                              ],
-                            },
-                          },
-                        ],
-                      },
-                      "variableDefinitions": Array [
-                        Object {
-                          "defaultValue": undefined,
-                          "kind": "VariableDefinition",
-                          "type": Object {
-                            "kind": "NonNullType",
-                            "type": Object {
-                              "kind": "NamedType",
-                              "name": Object {
-                                "kind": "Name",
-                                "value": "String",
-                              },
-                            },
-                          },
-                          "variable": Object {
-                            "kind": "Variable",
-                            "name": Object {
-                              "kind": "Name",
-                              "value": "email",
-                            },
-                          },
-                        },
-                      ],
-                    },
-                  ],
-                  "kind": "Document",
-                  "loc": Object {
-                    "end": 83,
-                    "source": Object {
-                      "body": "
-query user ($email: String!) {
-  user( email: $email) {
-    id
-    location
-  }
-}
-",
-                      "locationOffset": Object {
-                        "column": 1,
-                        "line": 1,
-                      },
-                      "name": "GraphQL request",
-                    },
-                    "start": 0,
-                  },
-                },
-                "graphQLErrors": Array [],
-                "metadata": Object {
-                  "reactComponent": Object {
-                    "displayName": "Apollo(ResourceList)",
-                  },
-                },
-                "networkError": [Error: No more mocked responses for the query: query user($email: String!) {
-  user(email: $email) {
-    id
-    location
-    __typename
-  }
-}
-, variables: {"email":"sammy.muriuki@andela.com"}],
-                "networkStatus": 8,
-                "previousVariables": null,
-                "variables": Object {
-                  "email": "sammy.muriuki@andela.com",
                 },
               },
             },
@@ -3869,298 +2224,6 @@ query user ($email: String!) {
             "optimistic": Array [],
             "silenceBroadcast": false,
             "watches": Array [
-              Object {
-                "callback": [Function],
-                "optimistic": true,
-                "previousResult": [Function],
-                "query": Object {
-                  "definitions": Array [
-                    Object {
-                      "directives": Array [],
-                      "kind": "OperationDefinition",
-                      "name": Object {
-                        "kind": "Name",
-                        "value": "user",
-                      },
-                      "operation": "query",
-                      "selectionSet": Object {
-                        "kind": "SelectionSet",
-                        "selections": Array [
-                          Object {
-                            "alias": undefined,
-                            "arguments": Array [
-                              Object {
-                                "kind": "Argument",
-                                "name": Object {
-                                  "kind": "Name",
-                                  "value": "email",
-                                },
-                                "value": Object {
-                                  "kind": "Variable",
-                                  "name": Object {
-                                    "kind": "Name",
-                                    "value": "email",
-                                  },
-                                },
-                              },
-                            ],
-                            "directives": Array [],
-                            "kind": "Field",
-                            "name": Object {
-                              "kind": "Name",
-                              "value": "user",
-                            },
-                            "selectionSet": Object {
-                              "kind": "SelectionSet",
-                              "selections": Array [
-                                Object {
-                                  "alias": undefined,
-                                  "arguments": Array [],
-                                  "directives": Array [],
-                                  "kind": "Field",
-                                  "name": Object {
-                                    "kind": "Name",
-                                    "value": "id",
-                                  },
-                                  "selectionSet": undefined,
-                                },
-                                Object {
-                                  "alias": undefined,
-                                  "arguments": Array [],
-                                  "directives": Array [],
-                                  "kind": "Field",
-                                  "name": Object {
-                                    "kind": "Name",
-                                    "value": "location",
-                                  },
-                                  "selectionSet": undefined,
-                                },
-                                Object {
-                                  "kind": "Field",
-                                  "name": Object {
-                                    "kind": "Name",
-                                    "value": "__typename",
-                                  },
-                                },
-                              ],
-                            },
-                          },
-                        ],
-                      },
-                      "variableDefinitions": Array [
-                        Object {
-                          "defaultValue": undefined,
-                          "kind": "VariableDefinition",
-                          "type": Object {
-                            "kind": "NonNullType",
-                            "type": Object {
-                              "kind": "NamedType",
-                              "name": Object {
-                                "kind": "Name",
-                                "value": "String",
-                              },
-                            },
-                          },
-                          "variable": Object {
-                            "kind": "Variable",
-                            "name": Object {
-                              "kind": "Name",
-                              "value": "email",
-                            },
-                          },
-                        },
-                      ],
-                    },
-                  ],
-                  "kind": "Document",
-                  "loc": Object {
-                    "end": 83,
-                    "source": Object {
-                      "body": "
-query user ($email: String!) {
-  user( email: $email) {
-    id
-    location
-  }
-}
-",
-                      "locationOffset": Object {
-                        "column": 1,
-                        "line": 1,
-                      },
-                      "name": "GraphQL request",
-                    },
-                    "start": 0,
-                  },
-                },
-                "variables": Object {
-                  "email": "sammy.muriuki@andela.com",
-                },
-              },
-              Object {
-                "callback": [Function],
-                "optimistic": true,
-                "previousResult": [Function],
-                "query": Object {
-                  "definitions": Array [
-                    Object {
-                      "directives": Array [],
-                      "kind": "OperationDefinition",
-                      "name": Object {
-                        "kind": "Name",
-                        "value": "user",
-                      },
-                      "operation": "query",
-                      "selectionSet": Object {
-                        "kind": "SelectionSet",
-                        "selections": Array [
-                          Object {
-                            "alias": undefined,
-                            "arguments": Array [
-                              Object {
-                                "kind": "Argument",
-                                "name": Object {
-                                  "kind": "Name",
-                                  "value": "email",
-                                },
-                                "value": Object {
-                                  "kind": "Variable",
-                                  "name": Object {
-                                    "kind": "Name",
-                                    "value": "email",
-                                  },
-                                },
-                              },
-                            ],
-                            "directives": Array [],
-                            "kind": "Field",
-                            "name": Object {
-                              "kind": "Name",
-                              "value": "user",
-                            },
-                            "selectionSet": Object {
-                              "kind": "SelectionSet",
-                              "selections": Array [
-                                Object {
-                                  "alias": undefined,
-                                  "arguments": Array [],
-                                  "directives": Array [],
-                                  "kind": "Field",
-                                  "name": Object {
-                                    "kind": "Name",
-                                    "value": "id",
-                                  },
-                                  "selectionSet": undefined,
-                                },
-                                Object {
-                                  "alias": undefined,
-                                  "arguments": Array [],
-                                  "directives": Array [],
-                                  "kind": "Field",
-                                  "name": Object {
-                                    "kind": "Name",
-                                    "value": "roles",
-                                  },
-                                  "selectionSet": Object {
-                                    "kind": "SelectionSet",
-                                    "selections": Array [
-                                      Object {
-                                        "alias": undefined,
-                                        "arguments": Array [],
-                                        "directives": Array [],
-                                        "kind": "Field",
-                                        "name": Object {
-                                          "kind": "Name",
-                                          "value": "id",
-                                        },
-                                        "selectionSet": undefined,
-                                      },
-                                      Object {
-                                        "alias": undefined,
-                                        "arguments": Array [],
-                                        "directives": Array [],
-                                        "kind": "Field",
-                                        "name": Object {
-                                          "kind": "Name",
-                                          "value": "role",
-                                        },
-                                        "selectionSet": undefined,
-                                      },
-                                      Object {
-                                        "kind": "Field",
-                                        "name": Object {
-                                          "kind": "Name",
-                                          "value": "__typename",
-                                        },
-                                      },
-                                    ],
-                                  },
-                                },
-                                Object {
-                                  "kind": "Field",
-                                  "name": Object {
-                                    "kind": "Name",
-                                    "value": "__typename",
-                                  },
-                                },
-                              ],
-                            },
-                          },
-                        ],
-                      },
-                      "variableDefinitions": Array [
-                        Object {
-                          "defaultValue": undefined,
-                          "kind": "VariableDefinition",
-                          "type": Object {
-                            "kind": "NonNullType",
-                            "type": Object {
-                              "kind": "NamedType",
-                              "name": Object {
-                                "kind": "Name",
-                                "value": "String",
-                              },
-                            },
-                          },
-                          "variable": Object {
-                            "kind": "Variable",
-                            "name": Object {
-                              "kind": "Name",
-                              "value": "email",
-                            },
-                          },
-                        },
-                      ],
-                    },
-                  ],
-                  "kind": "Document",
-                  "loc": Object {
-                    "end": 107,
-                    "source": Object {
-                      "body": "
-query user ($email: String!) {
-  user( email: $email){
-    id
-    roles{
-      id
-      role
-    }
-  }
- }
-",
-                      "locationOffset": Object {
-                        "column": 1,
-                        "line": 1,
-                      },
-                      "name": "GraphQL request",
-                    },
-                    "start": 0,
-                  },
-                },
-                "variables": Object {
-                  "email": "sammy.muriuki@andela.com",
-                },
-              },
               Object {
                 "callback": [Function],
                 "optimistic": true,
@@ -4477,9 +2540,160 @@ query user ($email: String!) {
       }
     }
   >
-    <Apollo(Apollo(Apollo(ResourceList)))>
+    <Apollo(ResourceList)
+      client={
+        Object {
+          "query": [MockFunction] {
+            "calls": Array [
+              Array [
+                Object {
+                  "query": Object {
+                    "definitions": Array [
+                      Object {
+                        "directives": Array [],
+                        "kind": "OperationDefinition",
+                        "name": Object {
+                          "kind": "Name",
+                          "value": "user",
+                        },
+                        "operation": "query",
+                        "selectionSet": Object {
+                          "kind": "SelectionSet",
+                          "selections": Array [
+                            Object {
+                              "alias": undefined,
+                              "arguments": Array [
+                                Object {
+                                  "kind": "Argument",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "email",
+                                  },
+                                  "value": Object {
+                                    "kind": "Variable",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "email",
+                                    },
+                                  },
+                                },
+                              ],
+                              "directives": Array [],
+                              "kind": "Field",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "user",
+                              },
+                              "selectionSet": Object {
+                                "kind": "SelectionSet",
+                                "selections": Array [
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "id",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "location",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "roles",
+                                    },
+                                    "selectionSet": Object {
+                                      "kind": "SelectionSet",
+                                      "selections": Array [
+                                        Object {
+                                          "alias": undefined,
+                                          "arguments": Array [],
+                                          "directives": Array [],
+                                          "kind": "Field",
+                                          "name": Object {
+                                            "kind": "Name",
+                                            "value": "id",
+                                          },
+                                          "selectionSet": undefined,
+                                        },
+                                        Object {
+                                          "alias": undefined,
+                                          "arguments": Array [],
+                                          "directives": Array [],
+                                          "kind": "Field",
+                                          "name": Object {
+                                            "kind": "Name",
+                                            "value": "role",
+                                          },
+                                          "selectionSet": undefined,
+                                        },
+                                      ],
+                                    },
+                                  },
+                                ],
+                              },
+                            },
+                          ],
+                        },
+                        "variableDefinitions": Array [
+                          Object {
+                            "defaultValue": undefined,
+                            "kind": "VariableDefinition",
+                            "type": Object {
+                              "kind": "NonNullType",
+                              "type": Object {
+                                "kind": "NamedType",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "String",
+                                },
+                              },
+                            },
+                            "variable": Object {
+                              "kind": "Variable",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "email",
+                              },
+                            },
+                          },
+                        ],
+                      },
+                    ],
+                    "kind": "Document",
+                    "loc": Object {
+                      "end": 121,
+                      "start": 0,
+                    },
+                  },
+                  "variables": Object {
+                    "email": "sammy.muriuki@andela.com",
+                  },
+                },
+              ],
+            ],
+          },
+        }
+      }
+    >
       <Query
-        displayName="Apollo(Apollo(Apollo(ResourceList)))"
+        displayName="Apollo(ResourceList)"
         query={
           Object {
             "definitions": Array [
@@ -4742,7 +2956,157 @@ query user ($email: String!) {
         }
         warnUnhandledError={true}
       >
-        <Apollo(Apollo(ResourceList))
+        <ResourceList
+          client={
+            Object {
+              "query": [MockFunction] {
+                "calls": Array [
+                  Array [
+                    Object {
+                      "query": Object {
+                        "definitions": Array [
+                          Object {
+                            "directives": Array [],
+                            "kind": "OperationDefinition",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "user",
+                            },
+                            "operation": "query",
+                            "selectionSet": Object {
+                              "kind": "SelectionSet",
+                              "selections": Array [
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [
+                                    Object {
+                                      "kind": "Argument",
+                                      "name": Object {
+                                        "kind": "Name",
+                                        "value": "email",
+                                      },
+                                      "value": Object {
+                                        "kind": "Variable",
+                                        "name": Object {
+                                          "kind": "Name",
+                                          "value": "email",
+                                        },
+                                      },
+                                    },
+                                  ],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "user",
+                                  },
+                                  "selectionSet": Object {
+                                    "kind": "SelectionSet",
+                                    "selections": Array [
+                                      Object {
+                                        "alias": undefined,
+                                        "arguments": Array [],
+                                        "directives": Array [],
+                                        "kind": "Field",
+                                        "name": Object {
+                                          "kind": "Name",
+                                          "value": "id",
+                                        },
+                                        "selectionSet": undefined,
+                                      },
+                                      Object {
+                                        "alias": undefined,
+                                        "arguments": Array [],
+                                        "directives": Array [],
+                                        "kind": "Field",
+                                        "name": Object {
+                                          "kind": "Name",
+                                          "value": "location",
+                                        },
+                                        "selectionSet": undefined,
+                                      },
+                                      Object {
+                                        "alias": undefined,
+                                        "arguments": Array [],
+                                        "directives": Array [],
+                                        "kind": "Field",
+                                        "name": Object {
+                                          "kind": "Name",
+                                          "value": "roles",
+                                        },
+                                        "selectionSet": Object {
+                                          "kind": "SelectionSet",
+                                          "selections": Array [
+                                            Object {
+                                              "alias": undefined,
+                                              "arguments": Array [],
+                                              "directives": Array [],
+                                              "kind": "Field",
+                                              "name": Object {
+                                                "kind": "Name",
+                                                "value": "id",
+                                              },
+                                              "selectionSet": undefined,
+                                            },
+                                            Object {
+                                              "alias": undefined,
+                                              "arguments": Array [],
+                                              "directives": Array [],
+                                              "kind": "Field",
+                                              "name": Object {
+                                                "kind": "Name",
+                                                "value": "role",
+                                              },
+                                              "selectionSet": undefined,
+                                            },
+                                          ],
+                                        },
+                                      },
+                                    ],
+                                  },
+                                },
+                              ],
+                            },
+                            "variableDefinitions": Array [
+                              Object {
+                                "defaultValue": undefined,
+                                "kind": "VariableDefinition",
+                                "type": Object {
+                                  "kind": "NonNullType",
+                                  "type": Object {
+                                    "kind": "NamedType",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "String",
+                                    },
+                                  },
+                                },
+                                "variable": Object {
+                                  "kind": "Variable",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "email",
+                                  },
+                                },
+                              },
+                            ],
+                          },
+                        ],
+                        "kind": "Document",
+                        "loc": Object {
+                          "end": 121,
+                          "start": 0,
+                        },
+                      },
+                      "variables": Object {
+                        "email": "sammy.muriuki@andela.com",
+                      },
+                    },
+                  ],
+                ],
+              },
+            }
+          }
           data={
             Object {
               "error": undefined,
@@ -4761,356 +3125,20 @@ query user ($email: String!) {
             }
           }
         >
-          <Query
-            displayName="Apollo(Apollo(ResourceList))"
-            query={
-              Object {
-                "definitions": Array [
-                  Object {
-                    "directives": Array [],
-                    "kind": "OperationDefinition",
-                    "name": Object {
-                      "kind": "Name",
-                      "value": "user",
-                    },
-                    "operation": "query",
-                    "selectionSet": Object {
-                      "kind": "SelectionSet",
-                      "selections": Array [
-                        Object {
-                          "alias": undefined,
-                          "arguments": Array [
-                            Object {
-                              "kind": "Argument",
-                              "name": Object {
-                                "kind": "Name",
-                                "value": "email",
-                              },
-                              "value": Object {
-                                "kind": "Variable",
-                                "name": Object {
-                                  "kind": "Name",
-                                  "value": "email",
-                                },
-                              },
-                            },
-                          ],
-                          "directives": Array [],
-                          "kind": "Field",
-                          "name": Object {
-                            "kind": "Name",
-                            "value": "user",
-                          },
-                          "selectionSet": Object {
-                            "kind": "SelectionSet",
-                            "selections": Array [
-                              Object {
-                                "alias": undefined,
-                                "arguments": Array [],
-                                "directives": Array [],
-                                "kind": "Field",
-                                "name": Object {
-                                  "kind": "Name",
-                                  "value": "id",
-                                },
-                                "selectionSet": undefined,
-                              },
-                              Object {
-                                "alias": undefined,
-                                "arguments": Array [],
-                                "directives": Array [],
-                                "kind": "Field",
-                                "name": Object {
-                                  "kind": "Name",
-                                  "value": "roles",
-                                },
-                                "selectionSet": Object {
-                                  "kind": "SelectionSet",
-                                  "selections": Array [
-                                    Object {
-                                      "alias": undefined,
-                                      "arguments": Array [],
-                                      "directives": Array [],
-                                      "kind": "Field",
-                                      "name": Object {
-                                        "kind": "Name",
-                                        "value": "id",
-                                      },
-                                      "selectionSet": undefined,
-                                    },
-                                    Object {
-                                      "alias": undefined,
-                                      "arguments": Array [],
-                                      "directives": Array [],
-                                      "kind": "Field",
-                                      "name": Object {
-                                        "kind": "Name",
-                                        "value": "role",
-                                      },
-                                      "selectionSet": undefined,
-                                    },
-                                  ],
-                                },
-                              },
-                            ],
-                          },
-                        },
-                      ],
-                    },
-                    "variableDefinitions": Array [
-                      Object {
-                        "defaultValue": undefined,
-                        "kind": "VariableDefinition",
-                        "type": Object {
-                          "kind": "NonNullType",
-                          "type": Object {
-                            "kind": "NamedType",
-                            "name": Object {
-                              "kind": "Name",
-                              "value": "String",
-                            },
-                          },
-                        },
-                        "variable": Object {
-                          "kind": "Variable",
-                          "name": Object {
-                            "kind": "Name",
-                            "value": "email",
-                          },
-                        },
-                      },
-                    ],
-                  },
-                ],
-                "kind": "Document",
-                "loc": Object {
-                  "end": 107,
-                  "start": 0,
-                },
-              }
-            }
-            skip={false}
-            variables={
-              Object {
-                "email": "sammy.muriuki@andela.com",
-              }
-            }
-            warnUnhandledError={true}
+          <Spinner
+            size=""
           >
-            <Apollo(ResourceList)
-              data={
-                Object {
-                  "error": undefined,
-                  "fetchMore": [Function],
-                  "loading": true,
-                  "networkStatus": 1,
-                  "refetch": [Function],
-                  "startPolling": [Function],
-                  "stopPolling": [Function],
-                  "subscribeToMore": [Function],
-                  "updateQuery": [Function],
-                  "variables": Object {
-                    "page": 1,
-                    "perPage": 5,
-                  },
-                }
-              }
-              user={
-                Object {
-                  "error": undefined,
-                  "fetchMore": [Function],
-                  "loading": true,
-                  "networkStatus": 1,
-                  "refetch": [Function],
-                  "startPolling": [Function],
-                  "stopPolling": [Function],
-                  "subscribeToMore": [Function],
-                  "updateQuery": [Function],
-                  "variables": Object {
-                    "email": "sammy.muriuki@andela.com",
-                  },
-                }
-              }
+            <div
+              className="centered"
             >
-              <Query
-                displayName="Apollo(ResourceList)"
-                query={
-                  Object {
-                    "definitions": Array [
-                      Object {
-                        "directives": Array [],
-                        "kind": "OperationDefinition",
-                        "name": Object {
-                          "kind": "Name",
-                          "value": "user",
-                        },
-                        "operation": "query",
-                        "selectionSet": Object {
-                          "kind": "SelectionSet",
-                          "selections": Array [
-                            Object {
-                              "alias": undefined,
-                              "arguments": Array [
-                                Object {
-                                  "kind": "Argument",
-                                  "name": Object {
-                                    "kind": "Name",
-                                    "value": "email",
-                                  },
-                                  "value": Object {
-                                    "kind": "Variable",
-                                    "name": Object {
-                                      "kind": "Name",
-                                      "value": "email",
-                                    },
-                                  },
-                                },
-                              ],
-                              "directives": Array [],
-                              "kind": "Field",
-                              "name": Object {
-                                "kind": "Name",
-                                "value": "user",
-                              },
-                              "selectionSet": Object {
-                                "kind": "SelectionSet",
-                                "selections": Array [
-                                  Object {
-                                    "alias": undefined,
-                                    "arguments": Array [],
-                                    "directives": Array [],
-                                    "kind": "Field",
-                                    "name": Object {
-                                      "kind": "Name",
-                                      "value": "id",
-                                    },
-                                    "selectionSet": undefined,
-                                  },
-                                  Object {
-                                    "alias": undefined,
-                                    "arguments": Array [],
-                                    "directives": Array [],
-                                    "kind": "Field",
-                                    "name": Object {
-                                      "kind": "Name",
-                                      "value": "location",
-                                    },
-                                    "selectionSet": undefined,
-                                  },
-                                ],
-                              },
-                            },
-                          ],
-                        },
-                        "variableDefinitions": Array [
-                          Object {
-                            "defaultValue": undefined,
-                            "kind": "VariableDefinition",
-                            "type": Object {
-                              "kind": "NonNullType",
-                              "type": Object {
-                                "kind": "NamedType",
-                                "name": Object {
-                                  "kind": "Name",
-                                  "value": "String",
-                                },
-                              },
-                            },
-                            "variable": Object {
-                              "kind": "Variable",
-                              "name": Object {
-                                "kind": "Name",
-                                "value": "email",
-                              },
-                            },
-                          },
-                        ],
-                      },
-                    ],
-                    "kind": "Document",
-                    "loc": Object {
-                      "end": 83,
-                      "start": 0,
-                    },
-                  }
-                }
-                skip={false}
-                variables={
-                  Object {
-                    "email": "sammy.muriuki@andela.com",
-                  }
-                }
-                warnUnhandledError={true}
-              >
-                <ResourceList
-                  data={
-                    Object {
-                      "error": undefined,
-                      "fetchMore": [Function],
-                      "loading": true,
-                      "networkStatus": 1,
-                      "refetch": [Function],
-                      "startPolling": [Function],
-                      "stopPolling": [Function],
-                      "subscribeToMore": [Function],
-                      "updateQuery": [Function],
-                      "variables": Object {
-                        "page": 1,
-                        "perPage": 5,
-                      },
-                    }
-                  }
-                  user={
-                    Object {
-                      "error": undefined,
-                      "fetchMore": [Function],
-                      "loading": true,
-                      "networkStatus": 1,
-                      "refetch": [Function],
-                      "startPolling": [Function],
-                      "stopPolling": [Function],
-                      "subscribeToMore": [Function],
-                      "updateQuery": [Function],
-                      "variables": Object {
-                        "email": "sammy.muriuki@andela.com",
-                      },
-                    }
-                  }
-                  userLocation={
-                    Object {
-                      "error": undefined,
-                      "fetchMore": [Function],
-                      "loading": true,
-                      "networkStatus": 1,
-                      "refetch": [Function],
-                      "startPolling": [Function],
-                      "stopPolling": [Function],
-                      "subscribeToMore": [Function],
-                      "updateQuery": [Function],
-                      "variables": Object {
-                        "email": "sammy.muriuki@andela.com",
-                      },
-                    }
-                  }
-                >
-                  <Spinner
-                    size=""
-                  >
-                    <div
-                      className="centered"
-                    >
-                      <div
-                        className="spinner"
-                      />
-                    </div>
-                  </Spinner>
-                </ResourceList>
-              </Query>
-            </Apollo(ResourceList)>
-          </Query>
-        </Apollo(Apollo(ResourceList))>
+              <div
+                className="spinner"
+              />
+            </div>
+          </Spinner>
+        </ResourceList>
       </Query>
-    </Apollo(Apollo(Apollo(ResourceList)))>
+    </Apollo(ResourceList)>
   </ApolloProvider>
 </MockedProvider>
 `;

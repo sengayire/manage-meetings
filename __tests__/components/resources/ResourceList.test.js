@@ -17,7 +17,9 @@ describe('Tests for ResourceList Component', () => {
   const error = 'Something Went Wrong';
   const wrapper = (
     <MockedProvider mocks={[{ request, result }]} addTypename>
-      <ResourceLists />
+      <ResourceLists
+        client={{ query: jest.fn().mockImplementationOnce(() => Promise.resolve({ data: { user: 'userDetails' } })) }}
+      />
     </MockedProvider>);
   const mountWrapper = mount(wrapper);
 
@@ -32,7 +34,9 @@ describe('Tests for ResourceList Component', () => {
   it('should render an error screen', async () => {
     const errorWrapper = (
       <MockedProvider mocks={[{ request, error }]} addTypename>
-        <ResourceLists />
+        <ResourceLists
+          client={{ query: jest.fn().mockImplementationOnce(() => Promise.resolve({ data: { user: 'userDetails' } })) }}
+        />
       </MockedProvider>);
     const mountErrorWrapper = mount(errorWrapper);
     // check whether there is no error when loading
@@ -65,6 +69,7 @@ describe('Tests for ResourceList Component', () => {
       },
       loading: false,
       error: {},
+      client: { query: jest.fn() },
     };
     const wrapperCode = shallow(<ResourceList {...props} />);
     expect(wrapperCode.instance().handleData(5, 1));
@@ -77,6 +82,7 @@ describe('Tests for ResourceList Component', () => {
         error: { message: 'GraphQL error: No more resources' },
         fetchMore: jest.fn(() => Promise.resolve()),
       },
+      client: {},
     };
     const component = shallow(<ResourceList {...props} />);
     expect(component.find('DataNotFound')).toHaveLength(1);

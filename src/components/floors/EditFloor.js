@@ -5,7 +5,6 @@ import { graphql } from 'react-apollo';
 import MrmModal from '../commons/Modal';
 import ActionButtons from '../commons/ActionButtons';
 import { Input } from '../commons';
-// import '../assets/styles/editoffice.scss';
 import notification from '../../utils/notification';
 import { EDIT_FLOOR_MUTATION } from '../../graphql/mutations/Floors';
 

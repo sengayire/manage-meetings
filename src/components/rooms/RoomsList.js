@@ -19,10 +19,6 @@ import AddRoomMenu from './AddRoomMenu';
 import Spinner from '../commons/Spinner';
 import notification from '../../utils/notification';
 import Overlay from '../commons/Overlay';
-import { GET_USER_QUERY } from '../../graphql/queries/People';
-import { decodeTokenAndGetUserData } from '../../utils/Cookie';
-import { saveItemInLocalStorage } from '../../utils/Utilities';
-import defaultUserRole from '../../fixtures/user';
 import DataNotFound from '../commons/DataNotFound';
 import ErrorIcon from '../../components/commons/ErrorIcon';
 
@@ -183,14 +179,9 @@ export class RoomsList extends React.Component {
         updateQuery: (prev, { fetchMoreResult }) => ({ ...fetchMoreResult }),
       })
       .then((result) => {
-        if (result.data) {
-          this.handleSearchData(result.data.getRoomByName);
-        }
+        if (result.data) this.handleSearchData(result.data.getRoomByName);
       })
-      .catch(() => {
-        this.setState({ noResource: false });
-        this.setState({ isSearching: false });
-      });
+      .catch(() => this.setState({ noResource: false, isSearching: false }));
   };
 
   render() {
@@ -207,10 +198,8 @@ export class RoomsList extends React.Component {
       loading: loadingLocations,
       error: locationsError,
     } = this.props.locations;
-    const { user } = this.props.user;
     if (loading || loadingLocations) return <Spinner />;
-    else if (error && error.message === 'GraphQL error: No more resources') return <DataNotFound />;
-    else if (user) saveItemInLocalStorage('access', user.roles[0].id);
+    if (error && error.message === 'GraphQL error: No more resources') return <DataNotFound />;
     return (
       <div className="settings-rooms">
         <div
@@ -293,16 +282,8 @@ RoomsList.propTypes = {
   getRoomByName: PropTypes.shape({
     fetchMore: PropTypes.func.isRequired,
   }).isRequired,
-  user: PropTypes.shape({
-    user: PropTypes.object,
-  }),
 };
 
-RoomsList.defaultProps = {
-  user: defaultUserRole,
-};
-
-const { UserInfo: userData } = decodeTokenAndGetUserData() || {};
 export default compose(
   graphql(GET_ROOMS_QUERY, {
     name: 'data',
@@ -322,17 +303,6 @@ export default compose(
     options: () => ({
       variables: {
         name: '',
-      },
-    }),
-  }),
-  graphql(GET_USER_QUERY, {
-    name: 'user',
-    options: /* istanbul ignore next */ () => ({
-      variables: {
-        email:
-          process.env.NODE_ENV === 'test'
-            ? 'sammy.muriuki@andela.com'
-            : userData.email,
       },
     }),
   }),
