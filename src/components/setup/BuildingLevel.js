@@ -28,7 +28,7 @@ class BuildingLevel extends Component {
 
   componentDidMount = () => {
     this.getUsersLocation();
-  };
+  }
 
   /**
    * It queries the Apollo store to fetch user details and a list of all available locations

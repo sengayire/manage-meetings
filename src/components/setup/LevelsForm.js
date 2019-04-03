@@ -183,26 +183,29 @@ class LevelsForm extends Component {
     const isLevel = (levelsDetails.length && levelsDetails[levelCounter - 1]) || [];
     const { errorInput = [], quantity } = isLevel;
 
-    return [...Array(quantity || 0)].map((ind, index) => {
-      const error = errorInput && errorInput.includes(index + 1);
-      const id = (index + 1).toString();
-      return (
-        <div className="form-input" key={index + 1}>
-          {error && this.renderError()}
-          <Input
-            type="text"
-            placeholder="eg. Epic Tower"
-            labelName="Level Name"
-            id={id}
-            inputClass={`level-input ${error && 'error'}`}
-            name="levelName"
-            value={(isLevel.nameObj[index] && isLevel.nameObj[index].name) || ''}
-            onChange={this.handleInputChange}
-          />
-          {this.renderParents(index)}
-        </div>
-      );
-    });
+    return (
+      [...Array(quantity || 0)].map((ind, index) => {
+        const error = errorInput && errorInput.includes(index + 1);
+
+        return (
+          <div className="form-input">
+            {error && this.renderError()}
+            <Input
+              type="text"
+              placeholder="eg. Epic Tower"
+              labelName="Level Name"
+              key={index + levelCounter}
+              id={index + 1}
+              inputClass={`level-input ${error && 'error'}`}
+              name="levelName"
+              value={(isLevel.nameObj[index] && isLevel.nameObj[index].name) || ''}
+              onChange={this.handleInputChange}
+            />
+            {this.renderParents(index)}
+          </div>
+        );
+      })
+    );
   };
 
   addNewObject = () => {};

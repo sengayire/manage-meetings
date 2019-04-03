@@ -93,7 +93,10 @@ Input.propTypes = {
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   inputClass: PropTypes.string,
   controlsClass: PropTypes.string,
-  id: PropTypes.string.isRequired,
+  id: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number,
+  ]),
   labelName: PropTypes.string.isRequired,
   labelClass: PropTypes.string,
   onChange: PropTypes.func.isRequired,
@@ -108,6 +111,7 @@ Input.defaultProps = {
   labelClass: 'input1',
   controlsClass: '',
   placeholder: '',
+  id: '',
 };
 
 export default Input;
