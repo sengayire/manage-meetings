@@ -122,7 +122,7 @@ class Preview extends Component {
             {isLocationStructure && this.renderPreviews(locationStructure, counter)}
             {isLocationStructure && (
               <div className="save-btn-container">
-                <Button title="Save & Submit" handleClick={handleClick('isRoomSetupViewVisible')} />
+                <Button title="Save & Submit" handleClick={handleClick('RoomSetupView')} />
               </div>
             )}
           </div>

@@ -1,5 +1,5 @@
 import { GET_USER_QUERY } from '../../graphql/queries/People';
-import { GET_LOCATIONS_QUERY } from '../../graphql/queries/Rooms';
+import { GET_LOCATIONS_QUERY, GET_ALL_ROOMS } from '../../graphql/queries/Rooms';
 import { decodeTokenAndGetUserData } from '../../utils/Cookie';
 
 const getUserDetails = async (client) => {
@@ -44,4 +44,19 @@ const getAllLocations = async (client) => {
   }
 };
 
-export { getUserDetails, getAllLocations };
+const getRoomList = async (client, userLocation) => {
+  const { data } = await client.query({
+    query: GET_ALL_ROOMS,
+    variables: {
+      location: userLocation,
+      office: '',
+      page: 1,
+      perPage: 5,
+    },
+  });
+
+  return data;
+};
+
+
+export { getUserDetails, getAllLocations, getRoomList };

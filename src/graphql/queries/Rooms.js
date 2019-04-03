@@ -2,7 +2,7 @@ import gql from 'graphql-tag';
 
 export const GET_ROOMS_QUERY = gql`
   query rooms(
-    $capacity: Int!
+    $capacity: Int
     $location: String!
     $office: String!
     $page: Int!

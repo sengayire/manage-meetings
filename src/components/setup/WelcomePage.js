@@ -50,7 +50,7 @@ class WelcomePage extends Component {
             classProp="button"
             title="Get Started"
             isDisabled={user.roles[0].role === 'Default User'}
-            handleClick={handleClick('isSetupInfoVisible')}
+            handleClick={handleClick('SetupInfoPage')}
           />
         </div>
       </div>

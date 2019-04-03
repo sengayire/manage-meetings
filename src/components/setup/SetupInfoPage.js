@@ -27,7 +27,7 @@ class SetupInfoPage extends Component {
         <Button
           title="Continue"
           classProp="setup_continue_button"
-          handleClick={handleClick('isBuildingLevelVisible')}
+          handleClick={handleClick('BuildingLevel')}
         />
       </div>
     );
