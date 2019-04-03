@@ -24,7 +24,7 @@ module.exports = {
     '!**/src/utils/FirebaseConfig.js',
     '!**/src/components/**',
     '!**/src/components/navbars/',
-    '!**/src/components/setup',
+    '!**/src/components/setup/',
     '!**/src/fixtures/Preview.js',
     '!**/src/containers/NavBar.js',
     '!**/src/containers/SettingsContent.js',

@@ -1,21 +1,30 @@
-/* eslint-disable react/forbid-prop-types */
+/* eslint-disable react/forbid-prop-types,jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/interactive-supports-focus */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
-import React, { Fragment, Component } from 'react';
+import React, { Fragment, Component, createRef } from 'react';
 import PropTypes from 'prop-types';
 import Button from '../commons/Button';
 import { walkingIcon } from '../../utils/images/images';
+import { previewData } from './../../fixtures/previewModal';
+import { MrmModal } from '../commons/MrmModal';
+import StructurePreviewTree from './StructurePreviewTree';
+import { checkboxSlideHTML } from '../commons/CheckboxSlide';
 
 class Preview extends Component {
-  state = {
-    activeLevel: '0',
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      activeLevel: '0',
+      isChecked: false,
+    };
+  }
+
 
   /**
    * gets user location id
    *
    *
-   * @returns {integer}
+   * @returns {number}
    */
   getUserLocationId = () => {
     const {
@@ -24,6 +33,19 @@ class Preview extends Component {
     } = this.props;
     const userLocation = allLocations.filter(local => local.name === location);
     return Number(userLocation[0].id);
+  };
+
+  structurePreview = createRef();
+
+  toggleModal = () => {
+    this.structurePreview.current.toggleModal();
+  };
+
+  toggleCheckbox = () => {
+    this.setState({
+      isChecked: !this.state.isChecked,
+    });
+    this.structurePreview.current.toggleModal();
   };
 
   makeLeveActive = (id, type) => () => this.setState({ activeLevel: type === 'active' ? id : '0' });
@@ -108,11 +130,31 @@ class Preview extends Component {
     });
 
   render() {
+    const { isChecked } = this.state;
     const { counter, locationStructure, handleClick } = this.props;
     const isLocationStructure = locationStructure.length > 0;
     return (
       <div className="form-card">
-        <div className="preview-area">
+        {checkboxSlideHTML(isChecked, this.toggleCheckbox)}
+        <MrmModal
+          ref={this.structurePreview}
+          title="OFFICE STRUCTURE"
+          type={2}
+          styleClassName="preview-structure-modal"
+          modalContent={
+            <div>
+              <StructurePreviewTree data={previewData} />
+              <span
+                onClick={this.toggleCheckbox}
+                className="close-structure-preview"
+              >
+              x
+              </span>
+            </div>
+          }
+          withButton={false}
+        />
+        <div className="form-area">
           <h4>Preview your structure</h4>
           <p>Click any level to expand</p>
           <span>

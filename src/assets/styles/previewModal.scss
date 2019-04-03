@@ -1,0 +1,151 @@
+@import "variables";
+
+.preview-structure-modal {
+  width: 80% !important;
+}
+
+.close-structure-preview {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: map_get($color-blue, 400);
+  color: map_get($color-white, 000);
+  border-radius: 50%;
+  margin: .5em;
+  padding: 5px 8px;
+  line-height: 1;
+  cursor: pointer;
+  font-family: sans-serif;
+
+  &:hover {
+    background: map_get($color-amber, 300);
+    color: map_get($color-black, 900);
+  }
+}
+
+.tree-preview {
+  text-align: center;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1em;
+
+  &>h2{
+    margin: 0;
+  }
+}
+
+.preview-structure-tree {
+  width: 95%;
+  margin: 0 auto;
+
+  .setup-structure-header {
+    font-size: 24px;
+    font-weight: 500;
+    letter-spacing: -0.7px;
+    line-height: 31px;
+    text-align: center;
+  }
+}
+
+.tree {
+  font-family: DINPro-Regular;
+  line-height: 1;
+  border: 1px solid $color-border;
+  border-radius: 5px;
+  margin-bottom: 1em;
+  overflow: hidden;
+  overflow-x: scroll;
+  overflow-y: scroll;
+  padding-top: 1em;
+}
+
+.tree ul {
+  position: relative;
+  padding: 1em 0;
+  white-space: nowrap;
+  margin: 0 auto;
+  text-align: center;
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+.tree li {
+  display: inline-block;
+  vertical-align: top;
+  text-align: center;
+  list-style-type: none;
+  position: relative;
+  padding: 1em .5em 0.5em;
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 50%;
+    border-top: $border-width solid $color-grey-light;
+    width: 58%;
+    height: 1em;
+  }
+  &::after {
+    right: auto;
+    left: 50%;
+    border-left: $border-width solid $color-grey-light;
+  }
+  &:only-child::after,
+  &:only-child::before {
+    display: none;
+  }
+  &:only-child {
+    padding-top: 0;
+  }
+  &:first-child::before,
+  &:last-child::after {
+    border: 0 none;
+  }
+  &:last-child::before{
+    border-right: $border-width solid $color-grey-light;
+    border-radius: 0 5px 0 0;
+  }
+  &:first-child::after{
+    border-radius: 5px 0 0 0;
+  }
+}
+
+.tree ul ul::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  border-left: $border-width solid $color-grey-light;
+  width: 0;
+  height: 1em;
+}
+
+.tree li a {
+  border: $border-width solid $color-grey-light;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 5px;
+  color: #333;
+  position: relative;
+  padding: 0.5em;
+}
+
+.tree li a:hover,
+.tree li a:hover+ul li a {
+  background: map_get($color-amber, 300);
+  color: map_get($color-white, 000);
+  border: $border-width solid map_get($color-amber, 300);
+}
+
+.tree li a:hover + ul li::after,
+.tree li a:hover + ul li::before,
+.tree li a:hover + ul::before,
+.tree li a:hover + ul ul::before{
+  border-color: map_get($color-amber, 300);
+}

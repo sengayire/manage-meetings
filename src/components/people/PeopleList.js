@@ -13,7 +13,6 @@ import {
   GET_ROLES_QUERY,
 } from '../../graphql/queries/People';
 import { formatPeopleData } from '../../graphql/mappers/People';
-import MenuTitle from '../commons/MenuTitle';
 import Spinner from '../commons/Spinner';
 import Sort from '../commons/Sort';
 import notification from '../../utils/notification';
@@ -125,7 +124,9 @@ export class PeopleList extends Component {
         <div
           className={`action-menu ${isFetching ? 'disabled-buttons' : null}`}
         >
-          <MenuTitle title="EPIC Tower's People" />
+          <div className="room-setup-header">
+            <p>EPIC Tower&apos;s Resources </p>
+          </div>
           <Sort
             sortOptions={{ location: allLocations, access: roles }}
             fetchSortedData={this.sortPeople}

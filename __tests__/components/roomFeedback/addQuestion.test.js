@@ -2,6 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { ApolloError } from 'apollo-client';
 import { AddQuestion } from '../../../src/components/roomFeedback/AddQuestion';
+// eslint-disable-next-line import/no-named-as-default
 import MrmModal from '../../../src/components/commons/MrmModal';
 
 describe('AddQuestion component', () => {

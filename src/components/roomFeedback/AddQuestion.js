@@ -1,3 +1,4 @@
+/* eslint-disable import/no-named-as-default */
 /* eslint react/no-array-index-key: 0 */
 import React, { Component } from 'react';
 import moment from 'moment';

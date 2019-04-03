@@ -41,7 +41,7 @@ export const updateCache = (store, dataReturned, Id, updateQuery) => {
  * @param {Object} event - event object of the DOM element
  * @param {method} mutation - the mutation function provided by react-apollo
  */
-export const updateStatus = (event, mutation) => {
+export const updateStatus = (event, mutation = null) => {
   const checkbox = event.target.nextSibling;
   if (checkbox.classList.contains('checked')) {
     checkbox.classList.remove('checked');
@@ -50,7 +50,7 @@ export const updateStatus = (event, mutation) => {
     checkbox.classList.remove('false');
     checkbox.classList.add('checked');
   }
-  mutation();
+  mutation && mutation();
 };
 
 /**
@@ -60,7 +60,7 @@ export const updateStatus = (event, mutation) => {
  * should be added to the checkbox tag
  * @param {method} mutation - The mutation we want to execute when an action is performed
  */
-const checkboxSlideHTML = (isChecked, mutation) => (
+export const checkboxSlideHTML = (isChecked, mutation) => (
   <label className="switch" htmlFor="CheckboxSlide">
     <input
       type="checkbox"

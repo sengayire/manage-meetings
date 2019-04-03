@@ -4,16 +4,12 @@ h2 {
   color: $color-primary !important ;
   display: block;
   font-size: 22px;
-  -webkit-margin-before: 0.83em;
-  -webkit-margin-after: 0.83em;
-  -webkit-margin-start: 0em;
-  -webkit-margin-end: 0em;
   font-weight: bold;
-  margin-left: 1.4em;
 }
 
 .ReactModal__Overlay {
   background-color:  rgba(0, 0, 0, 0.5) !important;
+  z-index: 999;
 }
 
 .modalClass {

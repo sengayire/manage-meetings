@@ -10,7 +10,7 @@ import '../../assets/styles/sidebar.scss';
  * @returns {JSX}
  */
 const MenuTitle = props => (
-  <span className="room-setup-header  menu-title">
+  <span className="menu-title">
     <p>{props.title}</p>
   </span>
 );

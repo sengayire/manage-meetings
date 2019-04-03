@@ -7,7 +7,7 @@ import IconButtons from './IconButtons';
 import getUserDetails from '../helpers/QueryHelper';
 import '../../assets/styles/mrmmodal.scss';
 
-class MrmModal extends Component {
+export class MrmModal extends Component {
   static propTypes = {
     modalContent: PropTypes.node,
     title: PropTypes.string,
@@ -17,7 +17,9 @@ class MrmModal extends Component {
       PropTypes.object,
       PropTypes.array,
       PropTypes.string,
-    ]).isRequired,
+    ]),
+    withButton: PropTypes.bool,
+    styleClassName: PropTypes.string,
   };
 
   static defaultProps = {
@@ -25,6 +27,9 @@ class MrmModal extends Component {
     buttonText: '',
     title: '',
     type: 1,
+    client: {},
+    withButton: true,
+    styleClassName: '',
   };
 
   state = {
@@ -33,7 +38,7 @@ class MrmModal extends Component {
   }
 
   componentDidMount() {
-    this.setUserRole();
+    this.props.withButton && this.setUserRole();
   }
 
   /**
@@ -66,6 +71,8 @@ class MrmModal extends Component {
       modalContent,
       isLoading,
       iconButtonClass,
+      withButton,
+      styleClassName,
     } = this.props;
     return (
       <div className="modal-component">
@@ -81,16 +88,20 @@ class MrmModal extends Component {
         {this.state.isOpen &&
           <div className="modal">
             <div className="overlay" />
-            <div className="modal_content">
+            <div className={`modal_content ${styleClassName}`}>
               <h2>{title}</h2>
               {modalContent}
-              <ActionButton
-                cancelButtonText={cancelButtonText}
-                actionButtonText={actionButtonText}
-                onClickSubmit={handleSubmit}
-                onClickCancel={this.toggleModal}
-                isLoading={isLoading}
-              />
+              {
+                withButton
+                  && <ActionButton
+                    cancelButtonText={cancelButtonText}
+                    actionButtonText={actionButtonText}
+                    onClickSubmit={handleSubmit}
+                    onClickCancel={this.toggleModal}
+                    isLoading={isLoading}
+                  />
+              }
+
             </div>
           </div>
         }

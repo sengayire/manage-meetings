@@ -64,6 +64,7 @@ class BuildingLevel extends Component {
   toggleModal = () => {
     this.levelsModal.current.toggleModal();
   };
+
   updateLevelsRelationship = () => {
     const {
       state: { levelsDetails },
@@ -97,6 +98,7 @@ class BuildingLevel extends Component {
       addNewObject,
     } = this.levels.current;
     const { levelCounter } = this.state;
+
     if (!levelsDetails.length || levelsDetails[levelCounter - 1] === undefined) {
       return notification(toastr, 'error', `Please fill the form for level ${levelCounter}`)();
     }
@@ -118,6 +120,7 @@ class BuildingLevel extends Component {
 
   toggleActiveLevel = ({ target: { id } }) => {
     const { levelCounter } = this.state;
+
     this.setState({
       activeLevel: Number(id),
       showAddLevel: !(levelCounter - Number(id) >= 1) || (Number(id) === 1 && levelCounter === 2),
@@ -167,71 +170,71 @@ class BuildingLevel extends Component {
       user,
       allLocations,
     } = this.state;
+
     return (
-      <div className="level-container">
-        <div className="form-card">
-          <div className="form-area">
-            <h4>Setup your building</h4>
-            <div className="form-header">
-              <p>Plan the Levels within your building </p>
-              <div className="setup-levels" tabIndex="0">
-                <Modal
-                  ref={this.levelsModal}
-                  type={1}
-                  buttonText={
-                    <img src={ellipses} alt="level-desc" className="levels-modal-image" />
+      <div>
+        <div className="level-container">
+          <div className="form-card">
+            <div className="form-area">
+              <h4>Setup your building</h4>
+              <div className="form-header">
+                <p>Plan the Levels within your building </p>
+                <div className="setup-levels" tabIndex="0">
+                  <Modal
+                    ref={this.levelsModal}
+                    type={1}
+                    buttonText={
+                      <img src={ellipses} alt="level-desc" className="levels-modal-image" />
                   }
-                  modalContent={
-                    <div>
-                      <SetupLevel />
-                      <span onClick={this.toggleModal} className="close-modal">
-                        x
-                      </span>
-                    </div>
+                    modalContent={
+                      <div>
+                        <SetupLevel />
+                        <span onClick={this.toggleModal} className="close-modal">x</span>
+                      </div>
                   }
-                  className="levels-modal"
-                />
+                    className="levels-modal"
+                  />
+                </div>
               </div>
-            </div>
-            <div className="levels-desc">
-              <p>Levels can be Buildings, Blocks, Floors, Wings, Rooms, etc</p>
-            </div>
-            <div className="levels-add-options">
-              <div className="left" onClick={this.toggleDirections}>
-                {numberOfLevels >= 3 &&
-                  activeLevel > 2 && <img src={chevronIcon} alt="left scroll icon" />}
+              <div className="levels-desc">
+                <p>Levels can be Buildings, Blocks, Floors, Wings, Rooms, etc</p>
               </div>
-              <div>
-                <ul className="form-options-list">
-                  {this.displayLevelsControl()}
-                  {showAddLevel && (
+              <div className="levels-add-options">
+                <div className="left" onClick={this.toggleDirections}>
+                  {(numberOfLevels >= 3 && activeLevel > 2) && <img src={chevronIcon} alt="left scroll icon" />}
+                </div>
+                <div>
+                  <ul className="form-options-list">
+                    {this.displayLevelsControl()}
+                    {showAddLevel && (
                     <li className="add-level-button" onClick={this.addNewLevel}>
-                      Add Level
+                  Add Level
                     </li>
                   )}
-                </ul>
+                  </ul>
+                </div>
+                <div className="right">
+                  {!showAddLevel && <img src={chevronIcon} alt="right scroll icon" />}
+                </div>
               </div>
-              <div className="right">
-                {!showAddLevel && <img src={chevronIcon} alt="right scroll icon" />}
-              </div>
+              <LevelsForm
+                ref={this.levels}
+                activeLevel={this.state.activeLevel}
+                updateRelationship={this.updateLevelsRelationship}
+                updateCounter={this.updateCounter}
+              />
             </div>
-            <LevelsForm
-              ref={this.levels}
-              activeLevel={this.state.activeLevel}
-              updateRelationship={this.updateLevelsRelationship}
-              updateCounter={this.updateCounter}
-            />
           </div>
+          <Preview
+            locationStructure={locationStructure}
+            removeLevel={this.removeLevel}
+            saveStructure={this.saveLevelStructure}
+            counter={levelCounter}
+            user={user}
+            allLocations={allLocations}
+            handleClick={this.props.handleClick}
+          />
         </div>
-        <Preview
-          locationStructure={locationStructure}
-          removeLevel={this.removeLevel}
-          saveStructure={this.saveLevelStructure}
-          counter={levelCounter}
-          user={user}
-          allLocations={allLocations}
-          handleClick={this.props.handleClick}
-        />
       </div>
     );
   }

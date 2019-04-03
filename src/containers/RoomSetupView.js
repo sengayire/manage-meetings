@@ -10,6 +10,8 @@ import { selectMockData } from '../utils/roomSetupMock';
 
 /* Styles */
 import '../assets/styles/roomSetup.scss';
+import StructurePreviewTree from '../components/setup/StructurePreviewTree';
+import { previewData } from '../fixtures/previewModal';
 
 class RoomSetupOverView extends Component {
   constructor(props) {
@@ -82,6 +84,8 @@ class RoomSetupOverView extends Component {
         return <PeopleList />;
       case 'devices':
         return this.renderDeviceList();
+      case 'structure':
+        return <StructurePreviewTree data={previewData} />;
       default:
         return <RoomSetup />;
     }
