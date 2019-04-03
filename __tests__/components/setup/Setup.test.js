@@ -6,8 +6,8 @@ describe('setup component', () => {
   const handleClick = () => jest.fn();
   const wrapper = shallow(<SetupPage handleClick={handleClick} />);
 
-  it('should find an instance of Apollo(WelcomePage) when the component renders.', () => {
-    expect(wrapper.find('Apollo(WelcomePage)').exists()).toBeTruthy();
+  it('should find an instance of WelcomePage when the component renders.', () => {
+    expect(wrapper.find('WelcomePage').exists()).toBeTruthy();
   });
 
   it('should  change the value of isBuildingLevelVisible to true when the handleClick function is called', () => {

@@ -12,14 +12,13 @@ class LevelsForm extends Component {
   };
 
   componentWillReceiveProps(prevProps) {
-    this.props.activeLevel !== prevProps.activeLevel && this.setState({ levelCounter: prevProps.activeLevel });
+    this.props.activeLevel !== prevProps.activeLevel &&
+      this.setState({ levelCounter: prevProps.activeLevel });
   }
 
   populateLevelDetails = (val, type, index) => {
     const { levelCounter, levelsDetails } = this.state;
-    const {
-      tag, quantity, id, nameObj,
-    } = levelsDetails[levelCounter - 1] || {};
+    const { tag, quantity, id, nameObj } = levelsDetails[levelCounter - 1] || {};
 
     return {
       nameObj: type === 'levelName' ? this.updateChildArray(index, val) : nameObj || [],
@@ -28,9 +27,9 @@ class LevelsForm extends Component {
       parentId: levelCounter == 1 ? null : '',
       parentTitle: '',
       tag: type === 'levelTagName' ? val : tag || '',
-      quantity: type === 'up' ? val += 1 : type === 'down' && val !== 0 ? val -= 1 : quantity,
+      quantity: type === 'up' ? (val += 1) : type === 'down' && val !== 0 ? (val -= 1) : quantity,
     };
-  }
+  };
 
   updateChildArray = (index, val) => {
     const { levelCounter, levelsDetails } = this.state;
@@ -46,29 +45,34 @@ class LevelsForm extends Component {
         parentTitle: '',
         level: levelCounter,
       };
-      return detailsPosition = arr;
+      return (detailsPosition = arr);
     };
 
     return !detailsPosition.length
-      ? detailsPosition[index - 1] = [{
-        name: val,
-        id: detailsPosition && detailsPosition.id || uuid(),
-        parentId: '',
-        parentTitle: '',
-        level: levelCounter,
-      }]
+      ? (detailsPosition[index - 1] = [
+          {
+            name: val,
+            id: (detailsPosition && detailsPosition.id) || uuid(),
+            parentId: '',
+            parentTitle: '',
+            level: levelCounter,
+          },
+        ])
       : nameObj.length >= index
         ? updateObj() // modify existing entry
-        : [...detailsPosition, {
-          name: val,
-          id: uuid(),
-          parentId: '',
-          parentTitle: '',
-          level: levelCounter,
-        }]; // new entry
-  }
+        : [
+            ...detailsPosition,
+            {
+              name: val,
+              id: uuid(),
+              parentId: '',
+              parentTitle: '',
+              level: levelCounter,
+            },
+          ]; // new entry
+  };
 
-  updateErrorState = (highestLevel) => {
+  updateErrorState = highestLevel => {
     const { levelsDetails } = this.state;
     const { tag, quantity, nameObj } = levelsDetails[highestLevel - 1];
     const errorState = levelsDetails;
@@ -86,7 +90,7 @@ class LevelsForm extends Component {
     this.setState({
       levelsDetails: errorState,
     });
-  }
+  };
 
   handleInputChange = event => {
     event.preventDefault();
@@ -96,7 +100,10 @@ class LevelsForm extends Component {
     const arr = this.state.levelsDetails;
 
     arr[levelCounter - 1] = ['up', 'down'].includes(name)
-      ? this.populateLevelDetails(arr[levelCounter - 1] && arr[levelCounter - 1] .quantity || 0, name)
+      ? this.populateLevelDetails(
+          (arr[levelCounter - 1] && arr[levelCounter - 1].quantity) || 0,
+          name,
+        )
       : this.populateLevelDetails(value, name, id);
 
     this.setState({
@@ -109,10 +116,10 @@ class LevelsForm extends Component {
     const { level, id } = levelData;
     const { levelsDetails } = this.state;
     let arr = levelsDetails;
-    const position = level -1;
+    const position = level - 1;
 
     if (arr[position].quantity === 1) {
-      arr.splice(position, 1)
+      arr.splice(position, 1);
     } else {
       const newArr = arr[position].nameObj.filter(child => child.id !== id);
       arr[position].nameObj = newArr;
@@ -123,7 +130,7 @@ class LevelsForm extends Component {
       levelsDetails: arr,
     });
     this.props.updateCounter(arr.length);
-  }
+  };
 
   toggleParentSelection = (parent, childPosition, type) => () => {
     const { levelCounter, levelsDetails } = this.state;
@@ -136,77 +143,72 @@ class LevelsForm extends Component {
     this.setState({
       levelsDetails: levels,
     });
-  }
+  };
 
-  renderParents = (index) => {
+  renderParents = index => {
     const { levelsDetails, levelCounter } = this.state;
     const level = levelsDetails[levelCounter - 1] && levelsDetails[levelCounter - 1].nameObj;
     const parentLevels = levelsDetails[levelCounter - 2];
 
     if (levelCounter != 1) {
-      return (
-        !level.length || !level[index] || !level[index].parentId
-          ? (
-            <div className="select-parent">
-              {parentLevels.nameObj.map(parent => (
-                <span
-                  className="parent-list"
-                  onClick={this.toggleParentSelection(parent, index + 1, 'add')}
-                >{parent.name}
-                </span>
-              ))}
-            </div>)
-          : (
-            <div className="active-parent">
-              <span>{ level[index].parentTitle}</span>
-              <span
-                className="remove-parent"
-                onClick={this.toggleParentSelection(parent, index + 1, 'remove')}
-              >x
-              </span>
-            </div>)
+      return !level.length || !level[index] || !level[index].parentId ? (
+        <div className="select-parent">
+          {parentLevels.nameObj.map((parent, i) => (
+            <span
+              key={(i + 1).toString()}
+              className="parent-list"
+              onClick={this.toggleParentSelection(parent, index + 1, 'add')}
+            >
+              {parent.name}
+            </span>
+          ))}
+        </div>
+      ) : (
+        <div className="active-parent">
+          <span>{level[index].parentTitle}</span>
+          <span
+            className="remove-parent"
+            onClick={this.toggleParentSelection(parent, index + 1, 'remove')}
+          >
+            x
+          </span>
+        </div>
       );
     }
   };
 
-  renderError = () => <span className="error-text">This field cannot be blank</span>
+  renderError = () => <span className="error-text">This field cannot be blank</span>;
 
   displayLevelsInput = ({ levelCounter, levelsDetails }) => {
     const isLevel = (levelsDetails.length && levelsDetails[levelCounter - 1]) || [];
     const { errorInput = [], quantity } = isLevel;
 
-    return (
-      [...Array(quantity || 0)].map((ind, index) => {
-        const error = errorInput && errorInput.includes(index + 1);
-
-        return (
-          <div className="form-input">
-            {error && this.renderError()}
-            <Input
-              type="text"
-              placeholder="eg. Epic Tower"
-              labelName="Level Name"
-              id={index + 1}
-              inputClass={`level-input ${error && 'error'}`}
-              name="levelName"
-              value={(isLevel.nameObj[index] && isLevel.nameObj[index].name) || ''}
-              onChange={this.handleInputChange}
-            />
-            {this.renderParents(index)}
-          </div>
-        );
-      })
-    );
+    return [...Array(quantity || 0)].map((ind, index) => {
+      const error = errorInput && errorInput.includes(index + 1);
+      const id = (index + 1).toString();
+      return (
+        <div className="form-input" key={index + 1}>
+          {error && this.renderError()}
+          <Input
+            type="text"
+            placeholder="eg. Epic Tower"
+            labelName="Level Name"
+            id={id}
+            inputClass={`level-input ${error && 'error'}`}
+            name="levelName"
+            value={(isLevel.nameObj[index] && isLevel.nameObj[index].name) || ''}
+            onChange={this.handleInputChange}
+          />
+          {this.renderParents(index)}
+        </div>
+      );
+    });
   };
 
-  addNewObject = () => {
-    
-  }
+  addNewObject = () => {};
 
   render() {
-    const {
-      levelCounter, levelsDetails,
-    } = this.state;
+    const { levelCounter, levelsDetails } = this.state;
     const details = (levelsDetails.length && levelsDetails[levelCounter - 1]) || {};
 
     return (
@@ -232,17 +234,10 @@ class LevelsForm extends Component {
             value={details.quantity || ''}
             className="level-input"
           />
-          <Controls
-            controlsClass="num-controls"
-            handleIncrement={this.handleInputChange}
-          />
+          <Controls controlsClass="num-controls" handleIncrement={this.handleInputChange} />
         </div>
         {this.displayLevelsInput(this.state)}
-        <Button
-          title="Back"
-          type={2}
-          classProp="back-button"
-        />
+        <Button title="Back" type={2} classProp="back-button" />
       </form>
     );
   }

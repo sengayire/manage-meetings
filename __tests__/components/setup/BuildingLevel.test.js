@@ -1,17 +1,93 @@
 import React from 'react';
-import { mount, shallow } from 'enzyme';
+import { mount } from 'enzyme';
 import BuildingSetup from '../../../src/components/setup/BuildingLevel';
+import * as QueryHelper from '../../../src/components/helpers/QueriesHelpers';
+import { user, allLocations, level } from '../../../__mocks__/setup/BuildingLevel';
 
 describe('building setup component', () => {
   let wrapper;
-  let mountWrapper;
   let button;
   const handleClick = jest.fn();
 
+  const mockedClient = {
+    readQuery: jest.fn().mockImplementationOnce(() => user),
+    query: jest.fn(),
+  };
   beforeEach(() => {
-    wrapper = mount(<BuildingSetup handleClick={handleClick} />);
+    wrapper = mount(<BuildingSetup handleClick={handleClick} client={mockedClient} />);
   });
 
+  it('should update the state when getUsersLocation is called', async () => {
+    jest.spyOn(QueryHelper, 'getUserDetails').mockImplementationOnce(() => user);
+    jest.spyOn(QueryHelper, 'getAllLocations').mockImplementationOnce(() => allLocations);
+    expect(wrapper.state('user')).toEqual({});
+    expect(wrapper.state('allLocations').length).toBe(0);
+    await wrapper.instance().getUsersLocation();
+    expect(wrapper.state('user')).toBe(user);
+    expect(wrapper.state('allLocations').length).toBe(4);
+  });
+
+  it('should toggle active level', () => {
+    expect(wrapper.instance().state.activeLevel).toBe(1);
+    wrapper.instance().toggleActiveLevel({ target: { id: 2 } });
+    expect(wrapper.instance().state.activeLevel).toBe(2);
+  });
+
+  it('should set initial state of levelsDetails property in LevelsForm to an empty array', () => {
+    const {
+      state: { levelsDetails },
+    } = wrapper.instance().levels.current;
+    expect(levelsDetails).toEqual([]);
+  });
+
+  it('should update state with levelDetails in LevelsForm', () => {
+    expect(wrapper.instance().levels.current.state.levelsDetails.length).toBe(0);
+    wrapper
+      .find('.level-form')
+      .childAt(0)
+      .find('.level-input')
+      .simulate('change', { target: { name: 'levelTagName', value: 'Building' } });
+    wrapper
+      .find('.level-form')
+      .childAt(1)
+      .find('.level-input')
+      .simulate('change', { target: { name: 'up', value: 1 } });
+    wrapper
+      .find('.level-form')
+      .find('.form-input .input1')
+      .childAt(0)
+      .find('.level-input')
+      .simulate('change', { target: { name: 'levelName', value: 'Epic Tower' } });
+    wrapper.find('.add-level-button').simulate('click');
+    expect(wrapper.instance().levels.current.state.levelsDetails.length).toBe(1);
+  });
+
+  it('should remove Level Details', () => {
+    wrapper
+      .find('.level-form')
+      .childAt(0)
+      .find('.level-input')
+      .simulate('change', { target: { name: 'levelTagName', value: 'Building' } });
+    wrapper
+      .find('.level-form')
+      .childAt(1)
+      .find('.level-input')
+      .simulate('change', { target: { name: 'up', value: 1 } });
+    wrapper
+      .find('.level-form')
+      .find('.form-input .input1')
+      .childAt(0)
+      .find('.level-input')
+      .simulate('change', { target: { name: 'levelName', value: 'Epic Tower' } });
+    wrapper.find('.add-level-button').simulate('click');
+    expect(wrapper.instance().levels.current.state.levelsDetails.length).toBe(1);
+    wrapper.instance().removeLevel(level)();
+    expect(wrapper.instance().levels.current.state.levelsDetails.length).toBe(0);
+  });
+  it('should not update the state with empty level details', () => {
+    wrapper.find('.add-level-button').simulate('click');
+    expect(wrapper.instance().levels.current.state.levelsDetails.length).toBe(0);
+  });
   it('renders with the level container', () => {
     const levelContainer = wrapper.find('.level-container');
     expect(levelContainer).toHaveLength(1);
@@ -19,7 +95,7 @@ describe('building setup component', () => {
 
   it('renders with two cards', () => {
     const formCard = wrapper.find('.form-card');
-    expect(formCard).toHaveLength(1);
+    expect(formCard).toHaveLength(2);
   });
 
   it('renders with a form section with a heading and subheading', () => {
@@ -33,7 +109,9 @@ describe('building setup component', () => {
 
   it('renders with a level description', () => {
     const levelDescription = wrapper.find('.levels-desc p');
-    expect(levelDescription.text()).toContain('Levels can be Buildings, Blocks, Floors, Wings, Rooms, etc');
+    expect(levelDescription.text()).toContain(
+      'Levels can be Buildings, Blocks, Floors, Wings, Rooms, etc',
+    );
   });
 
   it('renders with a list of level add options', () => {
@@ -44,60 +122,11 @@ describe('building setup component', () => {
   });
 
   it('renders with form, 3 input fields and 2 buttons', () => {
-    const form = mountWrapper.find('form');
-    const input = mountWrapper.find('Input');
-    button = mountWrapper.find('.level-form Button');
+    const form = wrapper.find('form');
+    const input = wrapper.find('input');
+    button = wrapper.find('.level-form Button');
     expect(form).toHaveLength(1);
     expect(input).toHaveLength(2);
     expect(button).toHaveLength(1);
-  });
-
-  it('renders with preview area, walking icon, heading, subheading and buttons', () => {
-    const previewArea = mountWrapper.find('.preview-area');
-    const heading = mountWrapper.find('.preview-area h4');
-    const subHeading = mountWrapper.find('.preview-area p').first();
-    const walkingIcon = mountWrapper.find('.preview-area img');
-    button = mountWrapper.find('.preview-area Button');
-    expect(previewArea).toHaveLength(1);
-    expect(walkingIcon).toHaveLength(1);
-    expect(heading.text()).toContain('Preview your structure');
-    expect(subHeading.text()).toContain('Click any level to expand');
-    expect(button).toHaveLength(1);
-  });
-
-  it('calls handleInputChange to capture data on input field and update state', () => {
-    wrapper = shallow(<BuildingSetup handleClick={handleClick} />);
-    expect(wrapper.state().building).toBe('');
-    const event = {
-      target: { name: 'building', value: 'epic tower' },
-    };
-    wrapper.find('#level-input-1').simulate('change', event);
-    expect(wrapper.state().building).toBe('epic tower');
-  });
-
-  it('should call handleClick function with isSetupInfoVisible when back button is clicked', () => {
-    const backButton = wrapper.find('.level-btn.back-btn');
-    backButton.simulate('click');
-    expect(handleClick).toHaveBeenCalledWith('isSetupInfoVisible');
-  });
-
-  it('should call handleClick function with isRoomSetupViewVisible when Add Room button is clicked', () => {
-    const backButton = wrapper.find('.level-btn.add-room-btn');
-    backButton.simulate('click');
-    expect(handleClick).toHaveBeenCalledWith('isRoomSetupViewVisible');
-  });
-
-  it('should call handleClick function with isRoomSetupViewVisible when Save & Submit button is clicked', () => {
-    const backButton = wrapper.find('.back-btn.save-structure');
-    backButton.simulate('click');
-    expect(handleClick).toHaveBeenCalledWith('isRoomSetupViewVisible');
-  });
-
-  it('should call the toggleModal function when the close icon is clicked', () => {
-    const toggleModalSpy = jest.spyOn(wrapper.instance(), 'toggleModal');
-    wrapper.find('.levels-modal-image').simulate('click');
-    wrapper.find('.close-modal').simulate('click');
-    wrapper.instance().toggleModal();
-    expect(toggleModalSpy).toHaveBeenCalled();
   });
 });

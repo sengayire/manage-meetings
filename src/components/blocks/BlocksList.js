@@ -9,7 +9,7 @@ import GET_ALL_BLOCKS from '../../graphql/queries/Blocks';
 import AddBlockMenu from './AddBlockMenu';
 import { GET_ALL_OFFICES } from '../../graphql/queries/Offices';
 import MenuTitle from '../commons/MenuTitle';
-import { GET_USER_ROLE } from '../../graphql/queries/People';
+import { GET_USER_QUERY } from '../../graphql/queries/People';
 import { decodeTokenAndGetUserData } from '../../utils/Cookie';
 import { saveItemInLocalStorage } from '../../utils/Utilities';
 import DataNotFound from '../commons/DataNotFound';
@@ -83,7 +83,7 @@ export default compose(
         },
       }),
     }),
-  graphql(GET_USER_ROLE, {
+  graphql(GET_USER_QUERY, {
     name: 'user',
     options: /* istanbul ignore next */ () => ({
       variables: {

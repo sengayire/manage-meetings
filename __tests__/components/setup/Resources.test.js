@@ -2,11 +2,11 @@ import React from 'react';
 import { mount } from 'enzyme';
 import Resources from '../../../src/components/setup/resources/Resources';
 
-fdescribe('Resources list component', () => {
+describe('Resources list component', () => {
   const wrapper = mount(<Resources />);
 
   it('should render div elements', () => {
-    expect(wrapper.find('div')).toHaveLength(17);
+    expect(wrapper.find('div')).toHaveLength(20);
   });
 
   it('should render buttons', () => {

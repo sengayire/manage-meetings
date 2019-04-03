@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import WelcomePage from './WelcomePage';
 import SetupInfoPage from './SetupInfoPage';
 import BuildingLevel from './BuildingLevel';
@@ -31,21 +32,28 @@ class Setup extends Component {
           isSetupInfoVisible: false,
           isBuildingLevelVisible: false,
           isRoomSetupViewVisible: true,
-        }))
-  ;
+        }));
 
   render() {
+    const { client } = this.props;
     const { isSetupInfoVisible, isBuildingLevelVisible, isRoomSetupViewVisible } = this.state;
     return isSetupInfoVisible ? (
       <SetupInfoPage handleClick={this.handleClick} />
     ) : isBuildingLevelVisible ? (
-      <BuildingLevel handleClick={this.handleClick} />
+      <BuildingLevel handleClick={this.handleClick} client={client} />
     ) : isRoomSetupViewVisible ? (
       <RoomSetupView handleClick={this.handleClick} />
     ) : (
-      (<WelcomePage handleClick={this.handleClick} />)
+      <WelcomePage handleClick={this.handleClick} client={client} />
     );
   }
 }
+
+Setup.propTypes = {
+  client: PropTypes.shape({}),
+};
+Setup.defaultProps = {
+  client: {},
+};
 
 export default Setup;

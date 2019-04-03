@@ -7,7 +7,7 @@ import { GET_ALL_CENTERS } from '../../graphql/queries/centers';
 import TableHead from '../helpers/TableHead';
 import Location from './Center';
 import Spinner from '../commons/Spinner';
-import { GET_USER_ROLE } from '../../graphql/queries/People';
+import { GET_USER_QUERY } from '../../graphql/queries/People';
 import { decodeTokenAndGetUserData } from '../../utils/Cookie';
 import { saveItemInLocalStorage } from '../../utils/Utilities';
 import DataNotFound from '../commons/DataNotFound';
@@ -74,7 +74,7 @@ const { UserInfo: userData } = decodeTokenAndGetUserData() || {};
 
 export default compose(
   graphql(GET_ALL_CENTERS),
-  graphql(GET_USER_ROLE, {
+  graphql(GET_USER_QUERY, {
     name: 'user',
     options: /* istanbul ignore next */ () => ({
       variables: {

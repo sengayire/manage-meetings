@@ -10,7 +10,7 @@ import Spinner from '../commons/Spinner';
 import { GET_PAGINATED_FLOORS_QUERY } from '../../graphql/queries/Floors';
 import TableHead from '../helpers/TableHead';
 import { formatFloorData } from '../../graphql/mappers/Floors';
-import { GET_USER_ROLE } from '../../graphql/queries/People';
+import { GET_USER_QUERY } from '../../graphql/queries/People';
 import { decodeTokenAndGetUserData } from '../../utils/Cookie';
 import { saveItemInLocalStorage } from '../../utils/Utilities';
 import MenuTitle from '../commons/MenuTitle';
@@ -161,7 +161,7 @@ export default compose(
       },
     }),
   }),
-  graphql(GET_USER_ROLE, {
+  graphql(GET_USER_QUERY, {
     name: 'user',
     options: /* istanbul ignore next */ () => ({
       variables: {

@@ -1,5 +1,10 @@
-/* eslint-disable */
+/* eslint-disable jsx-a11y/no-noninteractive-tabindex */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
+/* eslint-disable no-multi-assign */
 import React, { Component, createRef } from 'react';
+import PropTypes from 'prop-types';
 import toastr from 'toastr';
 import '../../assets/styles/buildingSetup.scss';
 import Preview from './Preview';
@@ -8,35 +13,65 @@ import notification from '../../../src/utils/notification';
 import { ellipses, chevronIcon } from '../../utils/images/images';
 import Modal from '../commons/MrmModal';
 import SetupLevel from '../setup/SetupLevel';
+import { getUserDetails, getAllLocations } from '../helpers/QueriesHelpers';
 
 class BuildingLevel extends Component {
   state = {
     levelCounter: 1,
     activeLevel: 1,
-    locationStructure: {},
+    locationStructure: [],
     numberOfLevels: 0,
     showAddLevel: true,
-    isSetupInfoVisible: false,
-    isBuildingLevelVisible: false,
-    isRoomSetupViewVisible: false,
-  };
-/** 
- * It creates a reference to the modal element and Component and toggle it to close when the close icon is clicked
- *
- */
-levelsModal = createRef();
-  toggleModal = () => {
-      this.levelsModal.current.toggleModal();
+    user: {},
+    allLocations: [],
   };
 
+  componentDidMount = () => {
+    this.getUsersLocation();
+  };
+
+  /**
+   * It queries the Apollo store to fetch user details and a list of all available locations
+   *  @returns {Object}
+   * @returns {array}
+   */
+  getUsersLocation = async () => {
+    const { client } = this.props;
+    const { allLocations } = this.state;
+    const user = await getUserDetails(client);
+    const Locations = await getAllLocations(client);
+    let locations = Object.assign({}, allLocations);
+    locations = Locations;
+    this.setState({
+      user,
+      allLocations: locations,
+    });
+  };
+
+  /**
+   * It creates a reference to the levelsForm component
+   *
+   */
+  levels = createRef();
+
+  /**
+   * It creates a reference to the modal element and Component
+   * and toggle it to close when the close icon is clicked
+   *
+   */
+  levelsModal = createRef();
+
+  toggleModal = () => {
+    this.levelsModal.current.toggleModal();
+  };
   updateLevelsRelationship = () => {
     const {
       state: { levelsDetails },
-    } = this.refs.levels;
+    } = this.levels.current;
     this.setState({ locationStructure: levelsDetails });
   };
 
-  updateCounter = counter => {
+  updateCounter = (counter) => {
     const num = (this.state.levelCounter += 1);
     this.setState({
       levelCounter: counter !== undefined ? (counter !== 0 ? counter : 1) : num,
@@ -48,20 +83,20 @@ levelsModal = createRef();
   validateLevelsDetails = () => {
     const {
       state: { levelsDetails },
-    } = this.refs.levels;
+    } = this.levels.current;
     const { nameObj, tag, quantity } = levelsDetails[this.state.levelCounter - 1] || {};
 
     return tag && nameObj.length === quantity && nameObj.some(elem => elem.name);
   };
 
+  // eslint-disable-next-line consistent-return
   addNewLevel = () => {
     const {
       updateErrorState,
       state: { levelsDetails },
       addNewObject,
-    } = this.refs.levels;
+    } = this.levels.current;
     const { levelCounter } = this.state;
-
     if (!levelsDetails.length || levelsDetails[levelCounter - 1] === undefined) {
       return notification(toastr, 'error', `Please fill the form for level ${levelCounter}`)();
     }
@@ -69,7 +104,9 @@ levelsModal = createRef();
     const isValid = this.validateLevelsDetails();
     if (isValid) {
       this.updateCounter();
-      const childrenLength = document.getElementById('levels-controls').childElementCount;
+      const childrenLength =
+        document.getElementById('levels-controls') !== null &&
+        document.getElementById('levels-controls').childElementCount;
       addNewObject(levelCounter);
       this.setState({
         numberOfLevels: childrenLength,
@@ -81,7 +118,6 @@ levelsModal = createRef();
 
   toggleActiveLevel = ({ target: { id } }) => {
     const { levelCounter } = this.state;
-    
     this.setState({
       activeLevel: Number(id),
       showAddLevel: !(levelCounter - Number(id) >= 1) || (Number(id) === 1 && levelCounter === 2),
@@ -92,7 +128,7 @@ levelsModal = createRef();
     activeLevel === index + 2 ||
     activeLevel === index + 1 ||
     activeLevel === index ||
-    (activeLevel === 1 && activeLevel + 1 == index);
+    (activeLevel === 1 && activeLevel + 1 === index);
 
   displayLevelsControl = () => {
     const { levelCounter, activeLevel } = this.state;
@@ -102,8 +138,9 @@ levelsModal = createRef();
         this.sortControls(activeLevel, index) && (
           <li
             onClick={this.toggleActiveLevel}
-            className={activeLevel === index + 1 && 'active-level'}
+            className={activeLevel === index + 1 ? 'active-level' : ''}
             id={index + 1}
+            key={index.toString()}
           >
             Level {index + 1}
           </li>
@@ -111,9 +148,7 @@ levelsModal = createRef();
     );
   };
 
-  removeLevel = data => () => this.refs.levels.removeLevelDetails(data);
-
-  saveLevelStructure = () => {};
+  removeLevel = data => () => this.levels.current.removeLevelDetails(data);
 
   show = () => {
     this.setState({
@@ -129,8 +164,9 @@ levelsModal = createRef();
       numberOfLevels,
       activeLevel,
       showAddLevel,
+      user,
+      allLocations,
     } = this.state;
-
     return (
       <div className="level-container">
         <div className="form-card">
@@ -147,13 +183,14 @@ levelsModal = createRef();
                   }
                   modalContent={
                     <div>
-                  <SetupLevel />
-                  <span onClick={this.toggleModal} className="close-modal">x</span>
-                  </div>
+                      <SetupLevel />
+                      <span onClick={this.toggleModal} className="close-modal">
+                        x
+                      </span>
+                    </div>
                   }
                   className="levels-modal"
-                >
-                </Modal>
+                />
               </div>
             </div>
             <div className="levels-desc">
@@ -179,7 +216,7 @@ levelsModal = createRef();
               </div>
             </div>
             <LevelsForm
-              ref="levels"
+              ref={this.levels}
               activeLevel={this.state.activeLevel}
               updateRelationship={this.updateLevelsRelationship}
               updateCounter={this.updateCounter}
@@ -191,6 +228,8 @@ levelsModal = createRef();
           removeLevel={this.removeLevel}
           saveStructure={this.saveLevelStructure}
           counter={levelCounter}
+          user={user}
+          allLocations={allLocations}
           handleClick={this.props.handleClick}
         />
       </div>
@@ -198,4 +237,11 @@ levelsModal = createRef();
   }
 }
 
+BuildingLevel.propTypes = {
+  handleClick: PropTypes.func.isRequired,
+  client: PropTypes.shape({}),
+};
+BuildingLevel.defaultProps = {
+  client: {},
+};
 export default BuildingLevel;

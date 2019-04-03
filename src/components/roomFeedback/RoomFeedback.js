@@ -3,7 +3,7 @@ import { graphql, compose } from 'react-apollo';
 import PropTypes from 'prop-types';
 import TableHead from '../helpers/TableHead';
 import Feedback from './Feedback';
-import { GET_USER_ROLE } from '../../graphql/queries/People';
+import { GET_USER_QUERY } from '../../graphql/queries/People';
 import { decodeTokenAndGetUserData } from '../../utils/Cookie';
 import { saveItemInLocalStorage } from '../../utils/Utilities';
 import '../../../src/assets/styles/roomFeedback.scss';
@@ -155,7 +155,7 @@ RoomFeedback.propTypes = {
 
 const { UserInfo: userData } = decodeTokenAndGetUserData() || {};
 export default compose(
-  graphql(GET_USER_ROLE, {
+  graphql(GET_USER_QUERY, {
     name: 'user',
     options: /* istanbul ignore next */ () => ({
       variables: {

@@ -1,38 +1,22 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import wait from 'waait';
-import { MockedProvider } from 'react-apollo/test-utils';
-import { GET_USER_ROLE } from '../../../src/graphql/queries/People';
 import WelcomePage from '../../../src/components/setup/WelcomePage';
+import * as QueryHelper from '../../../src/components/helpers/QueriesHelpers';
 
 describe('Admin welcome page component', () => {
-  const mocks = [
-    {
-      request: {
-        query: GET_USER_ROLE,
-        name: 'user',
-        variables: {
-          email: 'davis.kimame@andela.com',
-        },
-      },
-      result: {
-        data: {
-          user: {
-            id: '214',
-            roles: [{ id: 2, role: 'Admin' }],
-          },
-        },
-      },
+  const user = {
+    user: {
+      id: '214',
+      roles: [{ id: 2, role: 'Admin' }],
     },
-  ];
+  };
+  const mockedClient = {
+    readQuery: jest.fn().mockImplementationOnce(() => user),
+    query: jest.fn(),
+  };
 
   const handleClick = jest.fn();
-
-  const wrappedComponent = mount(
-    <MockedProvider mocks={mocks} addTypename={false}>
-      <WelcomePage handleClick={handleClick} />
-    </MockedProvider>,
-  );
+  const wrappedComponent = mount(<WelcomePage handleClick={handleClick} client={mockedClient} />);
 
   it('should first render a spinner', () => {
     expect(wrappedComponent.find('Spinner').exists()).toBeTruthy();
@@ -42,10 +26,21 @@ describe('Admin welcome page component', () => {
     expect(wrappedComponent.find('div')).toHaveLength(3);
   });
 
-  it('should render button', async () => {
-    await wait();
-    wrappedComponent.update();
+  it('should render button', () => {
+    wrappedComponent.setState({
+      user: {
+        id: '214',
+        roles: [{ id: 2, role: 'Admin' }],
+      },
+    });
     expect(wrappedComponent.find('button')).toHaveLength(1);
+  });
+
+  it('should call update the state when getUserInformation is called', async () => {
+    jest.spyOn(QueryHelper, 'getUserDetails').mockImplementationOnce(() => user.user);
+    await wrappedComponent.instance().getUsersInformation();
+    wrappedComponent.update();
+    expect(wrappedComponent.state('user')).toBe(user.user);
   });
 
   it('should render the image served from firebase', () => {
@@ -61,23 +56,18 @@ describe('Admin welcome page component', () => {
   });
 
   it('should call click event handler on clicking the button', () => {
-    const button = wrappedComponent.find('.button .btn-primary');
-    const func = wrappedComponent.instance().props.children.props.handleClick;
+    const button = wrappedComponent.find('Button');
+    const func = wrappedComponent.instance().props.handleClick;
     button.simulate('click');
     expect(func).toHaveBeenCalled();
   });
 
   it('should render an in-active button if user is a default user', async () => {
-    const defaultUserMock = mocks;
-    defaultUserMock[0].result.data.user.roles[0].role = 'Default User';
-    const wrapper = mount(
-      <MockedProvider mocks={defaultUserMock} addTypename={false}>
-        <WelcomePage />
-      </MockedProvider>,
-    );
-    await wait();
-    wrapper.update();
-    const button = wrapper.find('Button');
+    user.user.roles[0].role = 'Default User';
+    jest.spyOn(QueryHelper, 'getUserDetails').mockImplementationOnce(() => user.user);
+    await wrappedComponent.instance().getUsersInformation();
+    wrappedComponent.update();
+    const button = wrappedComponent.find('Button');
     expect(button.find('[disabled=true]')).toHaveLength(1);
   });
 });

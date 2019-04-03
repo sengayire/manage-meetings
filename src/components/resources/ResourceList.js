@@ -13,7 +13,7 @@ import MenuTitle from '../commons/MenuTitle';
 import Spinner from '../commons/Spinner';
 import notification from '../../utils/notification';
 import Overlay from '../commons/Overlay';
-import { GET_USER_ROLE, GET_USER_QUERY } from '../../graphql/queries/People';
+import { GET_USER_QUERY } from '../../graphql/queries/People';
 import { decodeTokenAndGetUserData } from '../../utils/Cookie';
 import { saveItemInLocalStorage } from '../../utils/Utilities';
 import defaultUserRole from '../../fixtures/user';
@@ -166,7 +166,7 @@ export default compose(
       },
     }),
   }),
-  graphql(GET_USER_ROLE, {
+  graphql(GET_USER_QUERY, {
     name: 'user',
     options: /* istanbul ignore next */ () => ({
       variables: {
