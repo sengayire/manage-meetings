@@ -42,7 +42,7 @@ class App extends Component {
       return (
         <Redirect
           to={{
-            pathname: ROUTES.setup,
+            pathname: ROUTES.home,
             state: { errorMessage: authenticationError },
           }}
         />

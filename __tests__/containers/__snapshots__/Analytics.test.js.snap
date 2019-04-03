@@ -1,12 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Analytics component renders correctly in memory 1`] = `
-<React.Fragment>
+<Fragment>
   <NavBar />
   <div
     className="analytics-container"
   >
     <Apollo(AnalyticsNav) />
   </div>
-</React.Fragment>
+</Fragment>
 `;

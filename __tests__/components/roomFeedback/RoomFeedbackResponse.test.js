@@ -73,7 +73,8 @@ const responseListProps = {
 
 describe('Room Feedback', () => {
   it('should find Olkaria', () => {
-    const wrapper = shallow(<RoomFeedbackResponse {...props} />);
+    const wrapper = shallow(
+      <RoomFeedbackResponse {...props} checkData={jest.fn()} />);
     const text = wrapper
       .find('span')
       .first()
@@ -82,7 +83,8 @@ describe('Room Feedback', () => {
   });
 
   it('componentWillReceiveProps', () => {
-    const ResponseListComponent = shallow(<RoomFeedbackResponseList {...responseListProps} />);
+    const ResponseListComponent = shallow(
+      <RoomFeedbackResponseList {...responseListProps} checkData={jest.fn()} />);
     const allRoomResponses = {
       responses: [
         {
@@ -107,14 +109,17 @@ describe('Room Feedback', () => {
   });
 
   it('should handle pagination', () => {
-    const ResponseListComponent = shallow(<RoomFeedbackResponseList {...responseListProps} />);
+    const ResponseListComponent = shallow(
+      <RoomFeedbackResponseList {...responseListProps} checkData={jest.fn()} />);
     ResponseListComponent.instance().handleData();
     expect(ResponseListComponent.state('isFetching')).toBe(true);
   });
 
   it('should be able to toggle modal state', () => {
-    const ResponseListComponent = shallow(<RoomFeedbackResponseList {...responseListProps} />);
-    const ResponseComponent = shallow(<RoomFeedbackResponse {...props} />);
+    const ResponseListComponent = shallow(
+      <RoomFeedbackResponseList {...responseListProps} checkData={jest.fn()} />);
+    const ResponseComponent = shallow(
+      <RoomFeedbackResponse {...props} />);
     const ResponseListInstance = ResponseListComponent.instance();
     const ResponseInstance = ResponseComponent.instance();
     const fakeEvent = { preventDefault: () => {} };
@@ -125,7 +130,8 @@ describe('Room Feedback', () => {
   });
 
   it('should change modal visibility to true', () => {
-    const ResponseListComponent = shallow(<RoomFeedbackResponseList {...responseListProps} />);
+    const ResponseListComponent = shallow(
+      <RoomFeedbackResponseList {...responseListProps} checkData={jest.fn()} />);
     const ResponseListInstance = ResponseListComponent.instance();
     const fakeEvent = { preventDefault: () => {} };
     ResponseListInstance.showModal(fakeEvent, 1);
@@ -134,7 +140,8 @@ describe('Room Feedback', () => {
   });
 
   it('should change modal visibility to false', () => {
-    const ResponseListComponent = shallow(<RoomFeedbackResponseList {...responseListProps} />);
+    const ResponseListComponent = shallow(
+      <RoomFeedbackResponseList {...responseListProps} checkData={jest.fn()} />);
     const ResponseListInstance = ResponseListComponent.instance();
     const fakeEvent = { preventDefault: () => {} };
     ResponseListInstance.setState({ roomId: 1 });
@@ -144,7 +151,8 @@ describe('Room Feedback', () => {
   });
 
   it('should not have an active class on initial page load', () => {
-    const unClickedRoomFeedbackResponse = shallow(<RoomFeedbackResponse {...props} />);
+    const unClickedRoomFeedbackResponse = shallow(
+      <RoomFeedbackResponse {...props} checkData={jest.fn()} />);
     expect(unClickedRoomFeedbackResponse.find('.active')).toHaveLength(0);
   });
 
@@ -166,7 +174,8 @@ describe('Room Feedback', () => {
       },
     };
 
-    const activeRoomFeedbackResponse = shallow(<RoomFeedbackResponse {...activeProps} />);
+    const activeRoomFeedbackResponse = shallow(
+      <RoomFeedbackResponse {...activeProps} checkData={jest.fn()} />);
     expect(activeRoomFeedbackResponse.find('.active')).toHaveLength(1);
   });
 });

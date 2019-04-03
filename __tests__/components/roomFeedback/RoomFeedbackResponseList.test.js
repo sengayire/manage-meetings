@@ -78,7 +78,8 @@ const propsWithoutResponses = {
 
 describe('Room feedback list', () => {
   it('should render correctly', () => {
-    const wrapper = shallow(<RoomFeedbackResponseList {...responseListProps} />);
+    const wrapper = shallow(
+      <RoomFeedbackResponseList {...responseListProps} checkData={jest.fn()} />);
     expect(wrapper).toMatchSnapshot();
   });
 
@@ -89,7 +90,8 @@ describe('Room feedback list', () => {
         error: null,
       },
     };
-    const wrapper = shallow(<RoomFeedbackResponseList {...loadingProps} />);
+    const wrapper = shallow(
+      <RoomFeedbackResponseList {...loadingProps} checkData={jest.fn()} />);
     expect(wrapper.find(Spinner)).toHaveLength(1);
   });
 
@@ -100,7 +102,8 @@ describe('Room feedback list', () => {
         error: {},
       },
     };
-    const wrapper = shallow(<RoomFeedbackResponseList {...errorProps} />);
+    const wrapper = shallow(
+      <RoomFeedbackResponseList {...errorProps} checkData={jest.fn()} />);
     expect(wrapper.find(ErrorIcon)).toHaveLength(1);
   });
 
@@ -113,23 +116,26 @@ describe('Room feedback list', () => {
         },
       },
     };
-    const wrapper = shallow(<RoomFeedbackResponseList {...errorProps} />);
+    const wrapper = shallow(
+      <RoomFeedbackResponseList {...errorProps} checkData={jest.fn()} />);
     const ErrorComponent = wrapper.find(ErrorIcon);
     expect(ErrorComponent).toHaveLength(1);
     expect(ErrorComponent.dive().text()).toContain('You are not authorized to perform this action');
   });
 
   it('should render correctly when no room has an error response', () => {
-    const emptyComponent = shallow(<RoomFeedbackResponseList {...propsWithoutResponses} />);
+    const emptyComponent = shallow(
+      <RoomFeedbackResponseList {...propsWithoutResponses} checkData={jest.fn()} />);
     expect(emptyComponent.find('.item-list-empty')).toHaveLength(1);
   });
 
   it('should return the correct number of rooms with missing items', () => {
     const { data: { allRoomResponses: { responses } } } = responseListProps;
     const { data: { allRoomResponses: { responses: noMissingItems } } } = propsWithoutMissingItems;
-    const componentWithMissingItems = shallow(<RoomFeedbackResponseList {...responseListProps} />);
+    const componentWithMissingItems = shallow(
+      <RoomFeedbackResponseList {...responseListProps} checkData={jest.fn()} />);
     const componentWithoutMissingItems = shallow(
-      <RoomFeedbackResponseList {...propsWithoutMissingItems} />,
+      <RoomFeedbackResponseList {...propsWithoutMissingItems} checkData={jest.fn()} />,
     );
     const instanceWithMissingItems = componentWithMissingItems.instance();
     const instanceWithoutMissingItems = componentWithoutMissingItems.instance();

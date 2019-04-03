@@ -1,10 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`QueryAnalyticsPerMeetingRoom component renders correctly 1`] = `
-Array [
-  <div
-    className="table__row--analytics"
-    key="Malabo"
-  />,
-]
+<div
+  className="table__row--analytics"
+  key="Malabo"
+>
+  <span>
+    Malabo
+  </span>
+  <span>
+    63
+  </span>
+  <span>
+    72 Hours 35 Minutes
+  </span>
+</div>
 `;

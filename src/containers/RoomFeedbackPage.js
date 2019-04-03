@@ -12,6 +12,7 @@ import '../assets/styles/roomFeedbackContainer.scss';
 class RoomFeedbackPage extends Component {
   state = {
     isResponsePageVisible: false,
+    responseData: [],
   }
 
   /**
@@ -25,8 +26,26 @@ class RoomFeedbackPage extends Component {
     });
   };
 
+  /**
+   * calls data from the responses
+   * sets the data to state
+   * the data in the state determines
+   * whether or not to render downloads button
+   *
+   * @param {Object} data
+   *
+   * @returns {void}
+   */
+  checkData = (data) => {
+    const { responses } = data;
+    this.setState((prevState) => {
+      const stateParam = prevState;
+      stateParam.responseData = responses;
+    });
+  }
+
   render() {
-    const { isResponsePageVisible } = this.state;
+    const { isResponsePageVisible, responseData } = this.state;
     return (
       <Fragment>
         <NavBar />
@@ -53,13 +72,13 @@ class RoomFeedbackPage extends Component {
               isResponsePageVisible &&
               <Fragment>
                 <Calendar />
-                <ExportButton />
+                {responseData && <ExportButton />}
               </Fragment>
             }
           </div>
           {
             isResponsePageVisible
-            ? <div id="responses"><RoomFeedbackResponseList /></div>
+            ? <div id="responses"><RoomFeedbackResponseList checkData={this.checkData} /></div>
             : <div id="questions"><RoomQuestions /></div>
           }
         </div>

@@ -3084,93 +3084,264 @@ exports[`AddRoomNairobi should pop up a modal when modal button is clicked 1`] =
                         }
                       }
                     >
-                      <ModalPortal
-                        ariaHideApp={false}
-                        bodyOpenClassName="ReactModal__Body--open"
-                        className="nbo-add-room-modal button addRoomBtn"
-                        closeTimeoutMS={0}
-                        contentLabel="Parent Modal"
-                        defaultStyles={
-                          Object {
-                            "content": Object {
-                              "WebkitOverflowScrolling": "touch",
-                              "background": "#fff",
-                              "border": "1px solid #ccc",
-                              "borderRadius": "4px",
-                              "bottom": "40px",
-                              "left": "40px",
-                              "outline": "none",
-                              "overflow": "auto",
-                              "padding": "20px",
-                              "position": "absolute",
-                              "right": "40px",
-                              "top": "40px",
-                            },
-                            "overlay": Object {
-                              "backgroundColor": "rgba(255, 255, 255, 0.75)",
-                              "bottom": 0,
-                              "left": 0,
-                              "position": "fixed",
-                              "right": 0,
-                              "top": 0,
-                            },
-                          }
-                        }
-                        isOpen={true}
-                        onAfterOpen={[Function]}
-                        onRequestClose={[Function]}
-                        parentSelector={[Function]}
-                        portalClassName="ReactModalPortal"
-                        shouldCloseOnEsc={true}
-                        shouldCloseOnOverlayClick={false}
-                        shouldFocusAfterRender={true}
-                        shouldReturnFocusAfterClose={true}
-                        style={
-                          Object {
-                            "content": Object {
-                              "backgroundColor": "#ffffff",
-                              "border": "1px solid #CCCCCC",
-                              "borderRadius": "4px",
-                              "bottom": "auto",
-                              "boxShadow": "0 2px 40px 10px rgba(185, 180, 180, 0.2)",
-                              "fontFamily": "DINPro-Regular",
-                              "left": "50%",
-                              "marginRight": "-50%",
-                              "outline": "none",
-                              "overflow": "auto",
-                              "position": "absolute",
-                              "right": "auto",
-                              "top": "50%",
-                              "transform": "translate(-50%, -50%)",
-                            },
-                          }
+                      <Portal
+                        containerInfo={
+                          <div
+                            class="ReactModalPortal"
+                          >
+                            <div
+                              aria-modal="true"
+                              class="ReactModal__Overlay ReactModal__Overlay--after-open"
+                              style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(255, 255, 255, 0.75);"
+                            >
+                              <div
+                                aria-label="Parent Modal"
+                                class="ReactModal__Content ReactModal__Content--after-open nbo-add-room-modal button addRoomBtn"
+                                style="font-family: DINPro-Regular; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); margin-right: -50%; border: 1px solid #cccccc; border-radius: 4px; outline: none; box-shadow: 0 2px 40px 10px rgba(185, 180, 180, 0.2); background-color: rgb(255, 255, 255); overflow: auto;"
+                                tabindex="-1"
+                              >
+                                <h2
+                                  style="color: rgb(255, 0, 0);"
+                                >
+                                  ADD ROOM
+                                </h2>
+                                <form
+                                  class="modal-form"
+                                >
+                                  <div
+                                    class="image-select"
+                                  >
+                                    <div
+                                      class="thumbnail"
+                                    >
+                                      <div
+                                        class="placeholder"
+                                      />
+                                    </div>
+                                    <div
+                                      class="select-button"
+                                    >
+                                      <div>
+                                        Upload a thumbnail
+                                      </div>
+                                      <button
+                                        class=""
+                                        data-react-toolbox="button"
+                                        id="upload_widget_opener"
+                                        type="button"
+                                      >
+                                        Select Image
+                                      </button>
+                                      <div
+                                        class="invisible-input"
+                                      >
+                                        <input
+                                          name="selectImage"
+                                          type="file"
+                                        />
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="form-inputs"
+                                  >
+                                    <div
+                                      class="input1"
+                                    >
+                                      <label
+                                        for="remoteRoomName"
+                                      >
+                                        Select Google Calendar Room
+                                        <select
+                                          class=" default-select"
+                                          id="remoteRoomName"
+                                          name="remoteRoomName"
+                                        >
+                                          <option
+                                            value=""
+                                          >
+                                            Select Google Calendar Room
+                                          </option>
+                                          0
+                                        </select>
+                                      </label>
+                                    </div>
+                                    <div
+                                      class="input1"
+                                    >
+                                      <label
+                                        for="roomName"
+                                      >
+                                        Room Name
+                                        <input
+                                          class="mrm-input epic-tower-input"
+                                          id="roomName"
+                                          name="roomName"
+                                          pattern="^[a-zA-Z]+(([' .-][a-zA-Z ])?[a-zA-Z]*)*$"
+                                          placeholder="Enter room name"
+                                          required=""
+                                          title="Name cannot be numbers or any special characters"
+                                          type="text"
+                                          value=""
+                                        />
+                                      </label>
+                                    </div>
+                                    <div
+                                      class="input1"
+                                    >
+                                      <label
+                                        for="roomCapacity"
+                                      >
+                                        Room Capacity
+                                        <input
+                                          class="mrm-input default-input"
+                                          id="roomCapacity"
+                                          min="1"
+                                          name="roomCapacity"
+                                          placeholder="1"
+                                          required=""
+                                          type="number"
+                                          value="0"
+                                        />
+                                        <div
+                                          class="controls "
+                                        >
+                                          <button
+                                            class="control up"
+                                            name="up"
+                                          >
+                                            <img
+                                              alt="up"
+                                              name="up"
+                                              src="https://firebasestorage.googleapis.com/v0/b/learning-map-app.appspot.com/o/MrmFrontImages%2Fchevron.svg?alt=media&token=54c2d83a-0834-44dd-8195-53b5ac74e2ff"
+                                            />
+                                          </button>
+                                          <button
+                                            class="control down"
+                                            name="down"
+                                          >
+                                            <img
+                                              alt="down"
+                                              name="down"
+                                              src="https://firebasestorage.googleapis.com/v0/b/learning-map-app.appspot.com/o/MrmFrontImages%2Fchevron.svg?alt=media&token=54c2d83a-0834-44dd-8195-53b5ac74e2ff"
+                                            />
+                                          </button>
+                                        </div>
+                                      </label>
+                                    </div>
+                                    <div
+                                      class="input1"
+                                    >
+                                      <label
+                                        for="officeBlock"
+                                      >
+                                        Select Block
+                                        <select
+                                          class="default-select"
+                                          id="officeBlock"
+                                          name="officeBlock"
+                                          required=""
+                                        >
+                                          <option
+                                            value=""
+                                          >
+                                            Select block
+                                          </option>
+                                          0
+                                        </select>
+                                      </label>
+                                    </div>
+                                    <div
+                                      class="input-wrapper"
+                                    >
+                                      <label
+                                        for="officeFloor"
+                                      >
+                                        Select Floor
+                                        <select
+                                          class="default-select"
+                                          id="officeFloor"
+                                          name="officeFloor"
+                                          required=""
+                                        >
+                                          <option
+                                            value=""
+                                          >
+                                            Select floor
+                                          </option>
+                                          0
+                                        </select>
+                                      </label>
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="form-action-buttons"
+                                  >
+                                    <button
+                                      class="null btn-primary"
+                                    >
+                                      <span>
+                                        CANCEL
+                                      </span>
+                                    </button>
+                                    <button
+                                      class="main-button btn-primary"
+                                    >
+                                      <span>
+                                        ADD ROOM
+                                      </span>
+                                    </button>
+                                  </div>
+                                </form>
+                              </div>
+                            </div>
+                          </div>
                         }
                       >
-                        <div
-                          aria-modal="true"
-                          className="ReactModal__Overlay ReactModal__Overlay--after-open"
-                          onClick={[Function]}
-                          onMouseDown={[Function]}
-                          style={
+                        <ModalPortal
+                          ariaHideApp={false}
+                          bodyOpenClassName="ReactModal__Body--open"
+                          className="nbo-add-room-modal button addRoomBtn"
+                          closeTimeoutMS={0}
+                          contentLabel="Parent Modal"
+                          defaultStyles={
                             Object {
-                              "backgroundColor": "rgba(255, 255, 255, 0.75)",
-                              "bottom": 0,
-                              "left": 0,
-                              "position": "fixed",
-                              "right": 0,
-                              "top": 0,
+                              "content": Object {
+                                "WebkitOverflowScrolling": "touch",
+                                "background": "#fff",
+                                "border": "1px solid #ccc",
+                                "borderRadius": "4px",
+                                "bottom": "40px",
+                                "left": "40px",
+                                "outline": "none",
+                                "overflow": "auto",
+                                "padding": "20px",
+                                "position": "absolute",
+                                "right": "40px",
+                                "top": "40px",
+                              },
+                              "overlay": Object {
+                                "backgroundColor": "rgba(255, 255, 255, 0.75)",
+                                "bottom": 0,
+                                "left": 0,
+                                "position": "fixed",
+                                "right": 0,
+                                "top": 0,
+                              },
                             }
                           }
-                        >
-                          <div
-                            aria-label="Parent Modal"
-                            className="ReactModal__Content ReactModal__Content--after-open nbo-add-room-modal button addRoomBtn"
-                            onClick={[Function]}
-                            onKeyDown={[Function]}
-                            onMouseDown={[Function]}
-                            onMouseUp={[Function]}
-                            style={
-                              Object {
+                          isOpen={true}
+                          onAfterOpen={[Function]}
+                          onRequestClose={[Function]}
+                          parentSelector={[Function]}
+                          portalClassName="ReactModalPortal"
+                          shouldCloseOnEsc={true}
+                          shouldCloseOnOverlayClick={false}
+                          shouldFocusAfterRender={true}
+                          shouldReturnFocusAfterClose={true}
+                          style={
+                            Object {
+                              "content": Object {
                                 "backgroundColor": "#ffffff",
                                 "border": "1px solid #CCCCCC",
                                 "borderRadius": "4px",
@@ -3185,51 +3356,82 @@ exports[`AddRoomNairobi should pop up a modal when modal button is clicked 1`] =
                                 "right": "auto",
                                 "top": "50%",
                                 "transform": "translate(-50%, -50%)",
+                              },
+                            }
+                          }
+                        >
+                          <div
+                            aria-modal="true"
+                            className="ReactModal__Overlay ReactModal__Overlay--after-open"
+                            onClick={[Function]}
+                            onMouseDown={[Function]}
+                            style={
+                              Object {
+                                "backgroundColor": "rgba(255, 255, 255, 0.75)",
+                                "bottom": 0,
+                                "left": 0,
+                                "position": "fixed",
+                                "right": 0,
+                                "top": 0,
                               }
                             }
-                            tabIndex="-1"
                           >
-                            <h2>
-                              ADD ROOM
-                            </h2>
-                            <form
-                              className="modal-form"
-                              onSubmit={[Function]}
+                            <div
+                              aria-label="Parent Modal"
+                              className="ReactModal__Content ReactModal__Content--after-open nbo-add-room-modal button addRoomBtn"
+                              onClick={[Function]}
+                              onKeyDown={[Function]}
+                              onMouseDown={[Function]}
+                              onMouseUp={[Function]}
+                              style={
+                                Object {
+                                  "backgroundColor": "#ffffff",
+                                  "border": "1px solid #CCCCCC",
+                                  "borderRadius": "4px",
+                                  "bottom": "auto",
+                                  "boxShadow": "0 2px 40px 10px rgba(185, 180, 180, 0.2)",
+                                  "fontFamily": "DINPro-Regular",
+                                  "left": "50%",
+                                  "marginRight": "-50%",
+                                  "outline": "none",
+                                  "overflow": "auto",
+                                  "position": "absolute",
+                                  "right": "auto",
+                                  "top": "50%",
+                                  "transform": "translate(-50%, -50%)",
+                                }
+                              }
+                              tabIndex="-1"
                             >
-                              <SelectImage
-                                imageUrl=""
-                                thumbnailName="Upload a thumbnail"
-                                updateThumbnailState={[Function]}
+                              <h2>
+                                ADD ROOM
+                              </h2>
+                              <form
+                                className="modal-form"
+                                onSubmit={[Function]}
                               >
-                                <div
-                                  className="image-select"
+                                <SelectImage
+                                  imageUrl=""
+                                  thumbnailName="Upload a thumbnail"
+                                  updateThumbnailState={[Function]}
                                 >
                                   <div
-                                    className="thumbnail"
+                                    className="image-select"
                                   >
                                     <div
-                                      className="placeholder"
-                                    />
-                                  </div>
-                                  <div
-                                    className="select-button"
-                                  >
-                                    <div>
-                                      Upload a thumbnail
-                                    </div>
-                                    <ThemedThemed
-                                      composeTheme="deeply"
-                                      disabled={false}
-                                      id="upload_widget_opener"
-                                      label="Select Image"
-                                      mapThemrProps={[Function]}
-                                      ripple={true}
-                                      rippleCentered={false}
-                                      rippleClassName=""
-                                      rippleMultiple={true}
-                                      rippleSpread={2}
+                                      className="thumbnail"
                                     >
-                                      <ThemedRippledComponent
+                                      <div
+                                        className="placeholder"
+                                      />
+                                    </div>
+                                    <div
+                                      className="select-button"
+                                    >
+                                      <div>
+                                        Upload a thumbnail
+                                      </div>
+                                      <ThemedThemed
                                         composeTheme="deeply"
                                         disabled={false}
                                         id="upload_widget_opener"
@@ -3240,12 +3442,13 @@ exports[`AddRoomNairobi should pop up a modal when modal button is clicked 1`] =
                                         rippleClassName=""
                                         rippleMultiple={true}
                                         rippleSpread={2}
-                                        theme={Object {}}
                                       >
-                                        <RippledComponent
+                                        <ThemedRippledComponent
+                                          composeTheme="deeply"
                                           disabled={false}
                                           id="upload_widget_opener"
                                           label="Select Image"
+                                          mapThemrProps={[Function]}
                                           ripple={true}
                                           rippleCentered={false}
                                           rippleClassName=""
@@ -3253,340 +3456,353 @@ exports[`AddRoomNairobi should pop up a modal when modal button is clicked 1`] =
                                           rippleSpread={2}
                                           theme={Object {}}
                                         >
-                                          <Button
-                                            accent={false}
-                                            className=""
+                                          <RippledComponent
                                             disabled={false}
-                                            flat={false}
-                                            floating={false}
                                             id="upload_widget_opener"
                                             label="Select Image"
-                                            mini={false}
-                                            neutral={true}
-                                            onMouseDown={[Function]}
-                                            onTouchStart={[Function]}
-                                            primary={false}
-                                            raised={false}
+                                            ripple={true}
+                                            rippleCentered={false}
+                                            rippleClassName=""
+                                            rippleMultiple={true}
+                                            rippleSpread={2}
                                             theme={Object {}}
-                                            type="button"
                                           >
-                                            <button
+                                            <Button
+                                              accent={false}
                                               className=""
-                                              data-react-toolbox="button"
                                               disabled={false}
+                                              flat={false}
+                                              floating={false}
                                               id="upload_widget_opener"
+                                              label="Select Image"
+                                              mini={false}
+                                              neutral={true}
                                               onMouseDown={[Function]}
-                                              onMouseLeave={[Function]}
-                                              onMouseUp={[Function]}
                                               onTouchStart={[Function]}
+                                              primary={false}
+                                              raised={false}
+                                              theme={Object {}}
                                               type="button"
                                             >
-                                              Select Image
-                                            </button>
-                                          </Button>
-                                        </RippledComponent>
-                                      </ThemedRippledComponent>
-                                    </ThemedThemed>
-                                    <div
-                                      className="invisible-input"
-                                    >
-                                      <input
-                                        name="selectImage"
-                                        onChange={[Function]}
-                                        type="file"
-                                      />
+                                              <button
+                                                className=""
+                                                data-react-toolbox="button"
+                                                disabled={false}
+                                                id="upload_widget_opener"
+                                                onMouseDown={[Function]}
+                                                onMouseLeave={[Function]}
+                                                onMouseUp={[Function]}
+                                                onTouchStart={[Function]}
+                                                type="button"
+                                              >
+                                                Select Image
+                                              </button>
+                                            </Button>
+                                          </RippledComponent>
+                                        </ThemedRippledComponent>
+                                      </ThemedThemed>
+                                      <div
+                                        className="invisible-input"
+                                      >
+                                        <input
+                                          name="selectImage"
+                                          onChange={[Function]}
+                                          type="file"
+                                        />
+                                      </div>
                                     </div>
                                   </div>
-                                </div>
-                              </SelectImage>
-                              <NairobiRoomInputs
-                                allRemoteRooms={Array []}
-                                blockOptions={Array []}
-                                floorOptions={Array []}
-                                handleInputChange={[Function]}
-                                officeBlock=""
-                                officeFloor=""
-                                remoteRoomName=""
-                                roomCapacity={0}
-                                roomName=""
-                              >
-                                <div
-                                  className="form-inputs"
+                                </SelectImage>
+                                <NairobiRoomInputs
+                                  allRemoteRooms={Array []}
+                                  blockOptions={Array []}
+                                  floorOptions={Array []}
+                                  handleInputChange={[Function]}
+                                  officeBlock=""
+                                  officeFloor=""
+                                  remoteRoomName=""
+                                  roomCapacity={0}
+                                  roomName=""
                                 >
-                                  <SelectInput
-                                    id="remoteRoomName"
-                                    isValue={false}
-                                    labelText="Select Google Calendar Room"
-                                    name="remoteRoomName"
-                                    onChange={[Function]}
-                                    options={Array []}
-                                    placeholder="Select Google Calendar Room"
-                                    placeholderValue=""
-                                    required={false}
-                                    selectInputClassName=" default-select"
-                                    value=""
-                                    wrapperClassName="input1"
+                                  <div
+                                    className="form-inputs"
                                   >
-                                    <div
-                                      className="input1"
+                                    <SelectInput
+                                      id="remoteRoomName"
+                                      isValue={false}
+                                      labelText="Select Google Calendar Room"
+                                      name="remoteRoomName"
+                                      onChange={[Function]}
+                                      options={Array []}
+                                      placeholder="Select Google Calendar Room"
+                                      placeholderValue=""
+                                      required={false}
+                                      selectInputClassName=" default-select"
+                                      value=""
+                                      wrapperClassName="input1"
                                     >
-                                      <label
-                                        htmlFor="remoteRoomName"
+                                      <div
+                                        className="input1"
                                       >
-                                        Select Google Calendar Room
-                                        <select
-                                          className=" default-select"
-                                          id="remoteRoomName"
-                                          name="remoteRoomName"
-                                          onChange={[Function]}
-                                          required={false}
-                                          value=""
+                                        <label
+                                          htmlFor="remoteRoomName"
                                         >
-                                          <option
+                                          Select Google Calendar Room
+                                          <select
+                                            className=" default-select"
+                                            id="remoteRoomName"
+                                            name="remoteRoomName"
+                                            onChange={[Function]}
+                                            required={false}
                                             value=""
                                           >
-                                            Select Google Calendar Room
-                                          </option>
-                                          0
-                                        </select>
-                                      </label>
-                                    </div>
-                                  </SelectInput>
-                                  <Input
-                                    controlsClass=""
-                                    id="roomName"
-                                    inputClass="mrm-input epic-tower-input"
-                                    labelClass="input1"
-                                    labelName="Room Name"
-                                    name="roomName"
-                                    onChange={[Function]}
-                                    pattern="^[a-zA-Z]+(([' .-][a-zA-Z ])?[a-zA-Z]*)*$"
-                                    placeholder="Enter room name"
-                                    required={true}
-                                    title="Name cannot be numbers or any special characters"
-                                    type="text"
-                                    value=""
-                                  >
-                                    <div
-                                      className="input1"
-                                    >
-                                      <label
-                                        htmlFor="roomName"
-                                      >
-                                        Room Name
-                                        <input
-                                          className="mrm-input epic-tower-input"
-                                          defaultValue=""
-                                          id="roomName"
-                                          name="roomName"
-                                          onChange={[Function]}
-                                          pattern="^[a-zA-Z]+(([' .-][a-zA-Z ])?[a-zA-Z]*)*$"
-                                          placeholder="Enter room name"
-                                          required={true}
-                                          title="Name cannot be numbers or any special characters"
-                                          type="text"
-                                        />
-                                      </label>
-                                    </div>
-                                  </Input>
-                                  <Input
-                                    controlsClass=""
-                                    id="roomCapacity"
-                                    inputClass="mrm-input default-input"
-                                    labelClass="input1"
-                                    labelName="Room Capacity"
-                                    min="1"
-                                    name="roomCapacity"
-                                    onChange={[Function]}
-                                    placeholder="1"
-                                    required={true}
-                                    type="number"
-                                    value={0}
-                                  >
-                                    <div
-                                      className="input1"
-                                    >
-                                      <label
-                                        htmlFor="roomCapacity"
-                                      >
-                                        Room Capacity
-                                        <input
-                                          className="mrm-input default-input"
-                                          defaultValue={0}
-                                          id="roomCapacity"
-                                          min="1"
-                                          name="roomCapacity"
-                                          onChange={[Function]}
-                                          placeholder="1"
-                                          required={true}
-                                          type="number"
-                                        />
-                                        <Controls
-                                          controlsClass=""
-                                          handleIncrement={[Function]}
-                                        >
-                                          <div
-                                            className="controls "
-                                          >
-                                            <button
-                                              className="control up"
-                                              name="up"
-                                              onClick={[Function]}
+                                            <option
+                                              value=""
                                             >
-                                              <img
-                                                alt="up"
+                                              Select Google Calendar Room
+                                            </option>
+                                            0
+                                          </select>
+                                        </label>
+                                      </div>
+                                    </SelectInput>
+                                    <Input
+                                      controlsClass=""
+                                      id="roomName"
+                                      inputClass="mrm-input epic-tower-input"
+                                      labelClass="input1"
+                                      labelName="Room Name"
+                                      name="roomName"
+                                      onChange={[Function]}
+                                      pattern="^[a-zA-Z]+(([' .-][a-zA-Z ])?[a-zA-Z]*)*$"
+                                      placeholder="Enter room name"
+                                      required={true}
+                                      title="Name cannot be numbers or any special characters"
+                                      type="text"
+                                      value=""
+                                    >
+                                      <div
+                                        className="input1"
+                                      >
+                                        <label
+                                          htmlFor="roomName"
+                                        >
+                                          Room Name
+                                          <input
+                                            className="mrm-input epic-tower-input"
+                                            defaultValue=""
+                                            id="roomName"
+                                            name="roomName"
+                                            onChange={[Function]}
+                                            pattern="^[a-zA-Z]+(([' .-][a-zA-Z ])?[a-zA-Z]*)*$"
+                                            placeholder="Enter room name"
+                                            required={true}
+                                            title="Name cannot be numbers or any special characters"
+                                            type="text"
+                                          />
+                                        </label>
+                                      </div>
+                                    </Input>
+                                    <Input
+                                      controlsClass=""
+                                      id="roomCapacity"
+                                      inputClass="mrm-input default-input"
+                                      labelClass="input1"
+                                      labelName="Room Capacity"
+                                      min="1"
+                                      name="roomCapacity"
+                                      onChange={[Function]}
+                                      placeholder="1"
+                                      required={true}
+                                      type="number"
+                                      value={0}
+                                    >
+                                      <div
+                                        className="input1"
+                                      >
+                                        <label
+                                          htmlFor="roomCapacity"
+                                        >
+                                          Room Capacity
+                                          <input
+                                            className="mrm-input default-input"
+                                            defaultValue={0}
+                                            id="roomCapacity"
+                                            min="1"
+                                            name="roomCapacity"
+                                            onChange={[Function]}
+                                            placeholder="1"
+                                            required={true}
+                                            type="number"
+                                          />
+                                          <Controls
+                                            controlsClass=""
+                                            handleIncrement={[Function]}
+                                          >
+                                            <div
+                                              className="controls "
+                                            >
+                                              <button
+                                                className="control up"
                                                 name="up"
-                                                src="https://firebasestorage.googleapis.com/v0/b/learning-map-app.appspot.com/o/MrmFrontImages%2Fchevron.svg?alt=media&token=54c2d83a-0834-44dd-8195-53b5ac74e2ff"
-                                              />
-                                            </button>
-                                            <button
-                                              className="control down"
-                                              name="down"
-                                              onClick={[Function]}
-                                            >
-                                              <img
-                                                alt="down"
+                                                onClick={[Function]}
+                                              >
+                                                <img
+                                                  alt="up"
+                                                  name="up"
+                                                  src="https://firebasestorage.googleapis.com/v0/b/learning-map-app.appspot.com/o/MrmFrontImages%2Fchevron.svg?alt=media&token=54c2d83a-0834-44dd-8195-53b5ac74e2ff"
+                                                />
+                                              </button>
+                                              <button
+                                                className="control down"
                                                 name="down"
-                                                src="https://firebasestorage.googleapis.com/v0/b/learning-map-app.appspot.com/o/MrmFrontImages%2Fchevron.svg?alt=media&token=54c2d83a-0834-44dd-8195-53b5ac74e2ff"
-                                              />
-                                            </button>
-                                          </div>
-                                        </Controls>
-                                      </label>
-                                    </div>
-                                  </Input>
-                                  <SelectInput
-                                    id="officeBlock"
-                                    isValue={false}
-                                    labelText="Select Block"
-                                    name="officeBlock"
-                                    onChange={[Function]}
-                                    options={Array []}
-                                    placeholder="Select block"
-                                    placeholderValue=""
-                                    required={true}
-                                    selectInputClassName="default-select"
-                                    value=""
-                                    wrapperClassName="input1"
-                                  >
-                                    <div
-                                      className="input1"
+                                                onClick={[Function]}
+                                              >
+                                                <img
+                                                  alt="down"
+                                                  name="down"
+                                                  src="https://firebasestorage.googleapis.com/v0/b/learning-map-app.appspot.com/o/MrmFrontImages%2Fchevron.svg?alt=media&token=54c2d83a-0834-44dd-8195-53b5ac74e2ff"
+                                                />
+                                              </button>
+                                            </div>
+                                          </Controls>
+                                        </label>
+                                      </div>
+                                    </Input>
+                                    <SelectInput
+                                      id="officeBlock"
+                                      isValue={false}
+                                      key=""
+                                      labelText="Select Block"
+                                      name="officeBlock"
+                                      onChange={[Function]}
+                                      options={Array []}
+                                      placeholder="Select block"
+                                      placeholderValue=""
+                                      required={true}
+                                      selectInputClassName="default-select"
+                                      value=""
+                                      wrapperClassName="input1"
                                     >
-                                      <label
-                                        htmlFor="officeBlock"
+                                      <div
+                                        className="input1"
                                       >
-                                        Select Block
-                                        <select
-                                          className="default-select"
-                                          id="officeBlock"
-                                          name="officeBlock"
-                                          onChange={[Function]}
-                                          required={true}
-                                          value=""
+                                        <label
+                                          htmlFor="officeBlock"
                                         >
-                                          <option
+                                          Select Block
+                                          <select
+                                            className="default-select"
+                                            id="officeBlock"
+                                            name="officeBlock"
+                                            onChange={[Function]}
+                                            required={true}
                                             value=""
                                           >
-                                            Select block
-                                          </option>
-                                          0
-                                        </select>
-                                      </label>
-                                    </div>
-                                  </SelectInput>
-                                  <SelectInput
-                                    id="officeFloor"
-                                    isValue={false}
-                                    labelText="Select Floor"
-                                    name="officeFloor"
-                                    onChange={[Function]}
-                                    options={Array []}
-                                    placeholder="Select floor"
-                                    placeholderValue=""
-                                    required={true}
-                                    selectInputClassName="default-select"
-                                    value=""
-                                    wrapperClassName="input-wrapper"
-                                  >
-                                    <div
-                                      className="input-wrapper"
+                                            <option
+                                              value=""
+                                            >
+                                              Select block
+                                            </option>
+                                            0
+                                          </select>
+                                        </label>
+                                      </div>
+                                    </SelectInput>
+                                    <SelectInput
+                                      id="officeFloor"
+                                      isValue={false}
+                                      labelText="Select Floor"
+                                      name="officeFloor"
+                                      onChange={[Function]}
+                                      options={Array []}
+                                      placeholder="Select floor"
+                                      placeholderValue=""
+                                      required={true}
+                                      selectInputClassName="default-select"
+                                      value=""
+                                      wrapperClassName="input-wrapper"
                                     >
-                                      <label
-                                        htmlFor="officeFloor"
+                                      <div
+                                        className="input-wrapper"
                                       >
-                                        Select Floor
-                                        <select
-                                          className="default-select"
-                                          id="officeFloor"
-                                          name="officeFloor"
-                                          onChange={[Function]}
-                                          required={true}
-                                          value=""
+                                        <label
+                                          htmlFor="officeFloor"
                                         >
-                                          <option
+                                          Select Floor
+                                          <select
+                                            className="default-select"
+                                            id="officeFloor"
+                                            name="officeFloor"
+                                            onChange={[Function]}
+                                            required={true}
                                             value=""
                                           >
-                                            Select floor
-                                          </option>
-                                          0
-                                        </select>
-                                      </label>
-                                    </div>
-                                  </SelectInput>
-                                </div>
-                              </NairobiRoomInputs>
-                              <ActionButtons
-                                actionButtonText="ADD ROOM"
-                                cancelButtonText="CANCEL"
-                                isLoading={false}
-                                onClickCancel={[Function]}
-                                onClickSubmit={[Function]}
-                                showActionButton={true}
-                                withCancel={true}
-                              >
-                                <div
-                                  className="form-action-buttons"
+                                            <option
+                                              value=""
+                                            >
+                                              Select floor
+                                            </option>
+                                            0
+                                          </select>
+                                        </label>
+                                      </div>
+                                    </SelectInput>
+                                  </div>
+                                </NairobiRoomInputs>
+                                <ActionButtons
+                                  actionButtonText="ADD ROOM"
+                                  cancelButtonText="CANCEL"
+                                  isLoading={false}
+                                  onClickCancel={[Function]}
+                                  onClickSubmit={[Function]}
+                                  showActionButton={true}
+                                  withCancel={true}
                                 >
-                                  <Button
-                                    classProp={null}
-                                    handleClick={[Function]}
-                                    isDisabled={false}
-                                    title="CANCEL"
-                                    type={1}
+                                  <div
+                                    className="form-action-buttons"
                                   >
-                                    <button
-                                      className="null btn-primary"
-                                      disabled={false}
-                                      onClick={[Function]}
+                                    <Button
+                                      classProp={null}
+                                      handleClick={[Function]}
+                                      isDisabled={false}
+                                      title="CANCEL"
+                                      type={1}
                                     >
-                                      <span>
-                                        CANCEL
-                                      </span>
-                                    </button>
-                                  </Button>
-                                  <Button
-                                    classProp="main-button"
-                                    handleClick={[Function]}
-                                    isDisabled={false}
-                                    title="ADD ROOM"
-                                    type={1}
-                                  >
-                                    <button
-                                      className="main-button btn-primary"
-                                      disabled={false}
-                                      onClick={[Function]}
+                                      <button
+                                        className="null btn-primary"
+                                        disabled={false}
+                                        onClick={[Function]}
+                                      >
+                                        <span>
+                                          CANCEL
+                                        </span>
+                                      </button>
+                                    </Button>
+                                    <Button
+                                      classProp="main-button"
+                                      handleClick={[Function]}
+                                      isDisabled={false}
+                                      title="ADD ROOM"
+                                      type={1}
                                     >
-                                      <span>
-                                        ADD ROOM
-                                      </span>
-                                    </button>
-                                  </Button>
-                                </div>
-                              </ActionButtons>
-                            </form>
+                                      <button
+                                        className="main-button btn-primary"
+                                        disabled={false}
+                                        onClick={[Function]}
+                                      >
+                                        <span>
+                                          ADD ROOM
+                                        </span>
+                                      </button>
+                                    </Button>
+                                  </div>
+                                </ActionButtons>
+                              </form>
+                            </div>
                           </div>
-                        </div>
-                      </ModalPortal>
+                        </ModalPortal>
+                      </Portal>
                     </Modal>
                   </MrmModal>
                 </AddRoomNairobi>

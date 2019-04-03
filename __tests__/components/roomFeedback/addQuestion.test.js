@@ -115,13 +115,8 @@ describe('AddQuestion component', () => {
       endDate: '2020-03-29T15:42:43',
     });
     wrapper.instance().compareDates(new Date('2020-03-29'), new Date('2020-03-29'));
-    wrapper
-      .find('.btn-primary')
-      .at(1)
-      .simulate('click');
-    expect(wrapper.state().error.date).toEqual(
-      'End date should be at least a day after start date',
-    );
+    wrapper.find('.btn-primary').at(1).simulate('click');
+    expect(wrapper.state().error.date).toEqual('End date should be at least a day after start date');
   });
 
   it('should contain an error when start date is before today', () => {
@@ -149,10 +144,7 @@ describe('AddQuestion component', () => {
       endDate: '2020-03-29T15:42:43',
     });
     wrapper.instance().compareDates(new Date('2020-03-29'), new Date('2019-01-29'));
-    wrapper
-      .find('.btn-primary')
-      .at(1)
-      .simulate('click');
+    wrapper.find('.btn-primary').at(1).simulate('click');
     expect(wrapper.state().error.date).toEqual('End date should be at least a day after today');
   });
 

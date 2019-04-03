@@ -26,4 +26,20 @@ describe('RoomFeedback component', () => {
     wrapper.update();
     expect(wrapper.find('#responses').length).toEqual(1);
   });
+
+  it('should populate the state with the data for room feedback responses', () => {
+    const data = {
+      responses: [
+        {
+          roomId: 191,
+          roomName: 'Kigali',
+          totalResponses: 40,
+          totalRoomResources: 30,
+        },
+      ],
+    };
+    expect(wrapper.state().responseData).toEqual([]);
+    wrapper.instance().checkData(data);
+    expect(wrapper.state().responseData).toEqual(data.responses);
+  });
 });

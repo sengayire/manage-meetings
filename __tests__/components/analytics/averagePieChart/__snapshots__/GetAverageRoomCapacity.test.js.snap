@@ -29,71 +29,69 @@ exports[`Get Average Room Capacity Component renders correctly from memory 1`] =
       />
     </ThemedTooltippedComponent>
   </section>
-  <React.Fragment>
-    <section
-      className="chart-content"
-    >
-      <Pie
-        data={
-          Object {
-            "datasets": Array [
-              Object {
-                "backgroundColor": Array [
-                  "#3a63e0",
-                  "#859eee",
-                  "#cdd7f8",
-                ],
-                "borderWidth": 3,
-                "data": Array [
-                  100,
-                  0,
-                  0,
-                ],
-                "label": "Average Meetings Duration",
-              },
-            ],
-            "labels": Array [
-              "Less than 10 in %",
-              "10-20 in %",
-              "More than 20 in %",
-            ],
-          }
-        }
-        height={168}
-        options={
-          Object {
-            "legend": Object {
-              "display": false,
+  <section
+    className="chart-content"
+  >
+    <Pie
+      data={
+        Object {
+          "datasets": Array [
+            Object {
+              "backgroundColor": Array [
+                "#3a63e0",
+                "#859eee",
+                "#cdd7f8",
+              ],
+              "borderWidth": 3,
+              "data": Array [
+                100,
+                0,
+                0,
+              ],
+              "label": "Average Meetings Duration",
             },
-            "maintainAspectRatio": false,
-            "responsive": false,
-          }
+          ],
+          "labels": Array [
+            "Less than 10 in %",
+            "10-20 in %",
+            "More than 20 in %",
+          ],
         }
-        width={230}
-      />
-      <section
-        className="chart-details"
+      }
+      height={168}
+      options={
+        Object {
+          "legend": Object {
+            "display": false,
+          },
+          "maintainAspectRatio": false,
+          "responsive": false,
+        }
+      }
+      width={230}
+    />
+    <section
+      className="chart-details"
+    >
+      <p
+        className="room-capacity-first-circle"
       >
-        <p
-          className="room-capacity-first-circle"
-        >
-          <span />
-          Less than 10
-        </p>
-        <p
-          className="room-capacity-second-circle"
-        >
-          <span />
-          10 - 20
-        </p>
-        <p
-          className="room-capacity-third-circle"
-        >
-          <span />
-          More than 20
-        </p>
-      </section>
+        <span />
+        Less than 10
+      </p>
+      <p
+        className="room-capacity-second-circle"
+      >
+        <span />
+        10 - 20
+      </p>
+      <p
+        className="room-capacity-third-circle"
+      >
+        <span />
+        More than 20
+      </p>
     </section>
-  </React.Fragment>
+  </section>
 </article>
 `;

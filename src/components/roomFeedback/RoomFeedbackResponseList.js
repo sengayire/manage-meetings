@@ -262,6 +262,8 @@ export class RoomFeedbackResponseList extends React.Component {
     const {
       roomId, isFetching, currentPage, allRoomResponses,
     } = this.state;
+    const { checkData } = this.props;
+    allRoomResponses && checkData(allRoomResponses);
     const { loading, error } = this.props.data;
     if (error) {
       const errorString = 'You are not authorized to perform this action';
@@ -335,6 +337,7 @@ RoomFeedbackResponseList.propTypes = {
     error: PropTypes.object,
     fetchMore: PropTypes.func,
   }).isRequired,
+  checkData: PropTypes.func.isRequired,
 };
 
 export default graphql(ALL_ROOM_FEEDBACK, {
