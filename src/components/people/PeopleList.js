@@ -54,7 +54,7 @@ export class PeopleList extends Component {
    * @returns {void}
    */
   fetchPeople = (
-    perPage,
+    perPage = this.state.users.users.length,
     page,
     optionName = this.state.optionName,
     id = this.state.id,
@@ -95,13 +95,13 @@ export class PeopleList extends Component {
    *
    * @returns {void}
    */
-  sortPeople = (optionName, id) => () => {
+  sortPeople = (optionName, id, perPage = this.state.users.users.length) => () => {
     this.setState({
       id,
       optionName,
       hideDropdownMenu: true,
     });
-    this.fetchPeople(5, 1, optionName, id);
+    this.fetchPeople(perPage, 1, optionName, id);
   };
 
   render() {
@@ -142,6 +142,7 @@ export class PeopleList extends Component {
                 {this.props.people.users &&
                 users.users.map(person => (
                   <People
+                    perPage={users.users.length}
                     people={formatPeopleData(person)}
                     allRoles={roles}
                     key={person.id}
@@ -155,7 +156,9 @@ export class PeopleList extends Component {
           : <ErrorIcon />
           }
         </div>
-        {!error && <Pagination
+        {!error &&
+        <Pagination
+          perPage={users.users.length}
           totalPages={users.pages}
           hasNext={users.hasNext}
           hasPrevious={users.hasPrevious}

@@ -105,6 +105,7 @@ exports[`Room feedback list should render correctly 1`] = `
           50,
         ]
       }
+      perPage={5}
       reverse={false}
       totalPages={4}
     />

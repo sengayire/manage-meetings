@@ -25,6 +25,7 @@ const People = ({
     email, name, accessLevel, location, picture,
   },
   allRoles,
+  perPage,
   refetch,
   currentPage,
   editRole,
@@ -38,7 +39,7 @@ const People = ({
           'success',
           `'${name}' role has been changed successfully`,
         )();
-        refetch({ page: currentPage });
+        refetch({ page: currentPage, perPage });
       })
       .catch((err) => {
         notification(toastr, 'error', err.graphQLErrors[0].message)();
@@ -93,6 +94,7 @@ People.propTypes = {
   editRole: PropTypes.func.isRequired,
   refetch: PropTypes.func.isRequired,
   currentPage: PropTypes.number.isRequired,
+  perPage: PropTypes.number.isRequired,
 };
 
 export default People;

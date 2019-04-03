@@ -18,10 +18,15 @@ class Pagination extends Component {
     page: 1,
   };
 
-  componentWillMount = () => {
+  componentDidMount = () => {
     const { currentPage } = this.props;
     this.setState({ page: currentPage });
   };
+
+  componentWillReceiveProps = (nextProps) => {
+    const { perPage } = nextProps;
+    this.setState({ perPage });
+  }
 
   /**
    * Handles changes to the pagination field
@@ -77,7 +82,7 @@ class Pagination extends Component {
   };
 
   render() {
-    const { page, perPage } = this.state;
+    const { page } = this.state;
     const {
       itemsPerPage,
       totalPages,
@@ -85,6 +90,7 @@ class Pagination extends Component {
       hasPrevious,
       reverse,
       isFetching,
+      perPage,
     } = this.props;
 
     return (
@@ -156,6 +162,7 @@ class Pagination extends Component {
 }
 
 Pagination.propTypes = {
+  perPage: PropTypes.number, // eslint-disable-line
   itemsPerPage: PropTypes.arrayOf(PropTypes.number),
   hasNext: PropTypes.bool,
   hasPrevious: PropTypes.bool,
@@ -168,6 +175,7 @@ Pagination.propTypes = {
 };
 
 Pagination.defaultProps = {
+  perPage: 5,
   itemsPerPage: [5, 10, 20, 50],
   totalPages: 4,
   currentPage: 1,

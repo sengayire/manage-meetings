@@ -254,7 +254,7 @@ describe('PeopleList Component', () => {
     expect(peopleWrapper.instance().state.id).toEqual('2');
     expect(peopleWrapper.instance().state.hideDropdownMenu).toBe(true);
     expect(sortPeople).toHaveBeenCalledWith('access', '2');
-    expect(fetchPeople).toHaveBeenCalledWith(5, 1, 'access', '2');
+    expect(fetchPeople).toHaveBeenCalledWith(3, 1, 'access', '2');
 
     sortPeople.mockRestore();
     fetchPeople.mockRestore();
