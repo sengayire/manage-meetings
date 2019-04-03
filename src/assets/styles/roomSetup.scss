@@ -108,18 +108,18 @@
   }
   .room-setup-container {
     box-sizing: border-box;
-    width: 100%;
     height: auto;
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-column-gap: 2%;
     justify-content: center;
+    margin: 0 auto;
     .room-setup-card {
       box-sizing: border-box;
-      width: 20%;
+      width: 100%;
       height: auto;
       overflow: hidden;
-      margin: 10px;
+      margin: 10px auto;
       border: 1px solid $color-input-border;
       padding: 7px;
       border-radius: 10px;
@@ -218,9 +218,6 @@
       }
     }
     .room-setup-container {
-      .room-setup-card {
-        width: 30% !important;
-      }
       .addroom-setup {
         .setup-card-button {
           margin-top: 40% !important;
@@ -231,7 +228,6 @@
 }
 @media only screen and (max-width: 768px) {
   .setup-main-container {
-    width: 90%;
     padding: 20px 5px;
     .setup-navbar {
       width: 100% !important;
@@ -251,7 +247,6 @@
     }
     .room-setup-container {
       .room-setup-card {
-        width: 48% !important;
         height: auto !important;
         margin: 25px 5px;
         .room-image{
@@ -315,7 +310,6 @@
     }
     .room-setup-container {
       .room-setup-card {
-        width: 100% !important;
         height: auto !important;
         margin: 25px 10px;
         .room-image{

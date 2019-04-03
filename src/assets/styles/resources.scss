@@ -1,7 +1,6 @@
 @import './variables';
 .resource {
   &-box {
-    width: 95%;
     margin: 0 auto;
 
     .room-setup {
@@ -55,15 +54,17 @@
 }
 .add-new-resource {
   border-radius: 4px;
+  margin: 10px auto;
   background-color: $color-resource;
-  margin-bottom: 8px;
   height: 51px;
   border: 2px dashed $color-border;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   #modal-button {
     background-color: map-get($color-white, 000);
     color: $color-primary;
     border: 1px solid $color-border;
-    margin: 0.6% 36% 0% 40%;
     padding: 6px 10px;
     height: 34px;
     font-size: 13px;
@@ -80,11 +81,6 @@
 @media (min-width: 768px) and (max-width: 1024px) {
   .resource-list-item {
     grid-template-columns: 65% 35%;
-  }
-  .add-new-resource {
-    #modal-button {
-      margin: 2% 19% 0% 35%;
-    }
   }
 }
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
@@ -106,26 +102,9 @@
   .resource-list-item {
     grid-template-columns: 58% 42%;
   }
-  .add-new-resource {
-    #modal-button {
-      margin: 1% 30% 0% 38%;
-    }
-  }
 }
 @media (max-width: 633px) {
   .resource-list-item {
     grid-template-columns: 53% 47%;
-  }
-  .add-new-resource {
-    #modal-button {
-      margin: 1% 29% 0% 35%;
-    }
-  }
-}
-@media (max-width: 563px) {
-  .add-new-resource {
-    #modal-button {
-      margin: 2% 19% 0% 35%;
-    }
   }
 }
