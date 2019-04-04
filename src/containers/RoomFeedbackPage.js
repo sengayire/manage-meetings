@@ -1,5 +1,4 @@
 import React, { Component, Fragment } from 'react';
-import PropTypes from 'prop-types';
 import AddQuestionComponent from '../components/roomFeedback/AddQuestion';
 import Button from '../components/commons/Button';
 import Calendar from '../components/commons/Calendar';
@@ -80,19 +79,12 @@ class RoomFeedbackPage extends Component {
           {
             isResponsePageVisible
             ? <div id="responses"><RoomFeedbackResponseList checkData={this.checkData} /></div>
-            : <div id="questions"><RoomQuestions client={this.props.client} /></div>
+            : <div id="questions"><RoomQuestions /></div>
           }
         </div>
       </Fragment>
     );
   }
 }
-
-RoomFeedbackPage.propTypes = {
-  client: PropTypes.oneOfType([
-    PropTypes.object,
-    PropTypes.array,
-  ]).isRequired,
-};
 
 export default RoomFeedbackPage;

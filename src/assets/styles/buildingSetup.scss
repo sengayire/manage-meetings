@@ -10,6 +10,13 @@
   &:nth-child(2){
     margin-left: 20px;
   }
+  padding: 0 20px;
+}
+.preview {
+  display: flex;
+}
+.switch-view {
+  margin-top: 8%
 }
 .level-container {
   margin: 0 auto;
@@ -18,7 +25,6 @@
   display: flex;
 }
 .form-area {
-  width: 80%;
   margin: 0 auto;
   padding-bottom: 5%;
 }

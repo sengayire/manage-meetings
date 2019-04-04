@@ -5,8 +5,7 @@ import React, { Fragment, Component, createRef } from 'react';
 import PropTypes from 'prop-types';
 import Button from '../commons/Button';
 import { walkingIcon } from '../../utils/images/images';
-import { previewData } from './../../fixtures/previewModal';
-import { MrmModal } from '../commons/MrmModal';
+import MrmModal from '../commons/MrmModal';
 import StructurePreviewTree from './StructurePreviewTree';
 import { checkboxSlideHTML } from '../commons/CheckboxSlide';
 
@@ -134,8 +133,7 @@ class Preview extends Component {
     const { counter, locationStructure, handleClick } = this.props;
     const isLocationStructure = locationStructure.length > 0;
     return (
-      <div className="form-card">
-        {checkboxSlideHTML(isChecked, this.toggleCheckbox)}
+      <div className="form-card preview">
         <MrmModal
           ref={this.structurePreview}
           title="OFFICE STRUCTURE"
@@ -143,7 +141,7 @@ class Preview extends Component {
           styleClassName="preview-structure-modal"
           modalContent={
             <div>
-              <StructurePreviewTree data={previewData} />
+              <StructurePreviewTree data={locationStructure} />
               <span
                 onClick={this.toggleCheckbox}
                 className="close-structure-preview"
@@ -154,6 +152,9 @@ class Preview extends Component {
           }
           withButton={false}
         />
+        <div className="switch-view">
+          {isLocationStructure && checkboxSlideHTML(isChecked, this.toggleCheckbox)}
+        </div>
         <div className="form-area">
           <h4>Preview your structure</h4>
           <p>Click any level to expand</p>

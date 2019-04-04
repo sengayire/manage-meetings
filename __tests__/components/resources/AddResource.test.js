@@ -5,8 +5,6 @@ import { createHttpLink } from 'apollo-link-http';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 import { ApolloClient } from 'apollo-client';
 import { ApolloProvider } from 'react-apollo';
-// eslint-disable-next-line import/extensions
-import fetch from 'unfetch';
 
 import AddResourceComponent, { AddResource } from '../../../src/components/resources/AddResource';
 

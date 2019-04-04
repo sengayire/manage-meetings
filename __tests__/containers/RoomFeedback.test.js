@@ -5,7 +5,7 @@ import RoomFeedbackPage from '../../src/containers/RoomFeedbackPage';
 import Button from '../../src/components/commons/Button';
 
 describe('RoomFeedback component', () => {
-  const wrapper = shallow(<RoomFeedbackPage client={{}} />);
+  const wrapper = shallow(<RoomFeedbackPage />);
 
   it('should render RoomQuestions component with length of 1 ', () => {
     expect(wrapper.find('#questions').length).toEqual(1);

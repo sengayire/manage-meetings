@@ -20,7 +20,7 @@ class WelcomePage extends Component {
    * @returns {Object}
    */
   getUsersInformation = async () => {
-    const user = await getUserDetails(this.props.client);
+    const user = await getUserDetails();
     this.setState({
       user,
     });
@@ -59,7 +59,6 @@ class WelcomePage extends Component {
 }
 WelcomePage.propTypes = {
   handleClick: PropTypes.func,
-  client: PropTypes.shape({}).isRequired,
 };
 
 WelcomePage.defaultProps = {

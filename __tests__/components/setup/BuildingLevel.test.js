@@ -9,12 +9,8 @@ describe('building setup component', () => {
   let button;
   const handleClick = jest.fn();
 
-  const mockedClient = {
-    readQuery: jest.fn().mockImplementationOnce(() => user),
-    query: jest.fn(),
-  };
   beforeEach(() => {
-    wrapper = mount(<BuildingSetup handleClick={handleClick} client={mockedClient} />);
+    wrapper = mount(<BuildingSetup handleClick={handleClick} />);
   });
 
   it('should update the state when getUsersLocation is called', async () => {

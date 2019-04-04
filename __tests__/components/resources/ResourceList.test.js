@@ -14,12 +14,9 @@ describe('Tests for ResourceList Component', () => {
     },
   };
   const result = { ...allResources };
-  const error = 'Something Went Wrong';
   const wrapper = (
     <MockedProvider mocks={[{ request, result }]} addTypename>
-      <ResourceLists
-        client={{ query: jest.fn().mockImplementationOnce(() => Promise.resolve({ data: { user: 'userDetails' } })) }}
-      />
+      <ResourceLists props={result} />
     </MockedProvider>);
   const mountWrapper = mount(wrapper);
 
@@ -29,29 +26,6 @@ describe('Tests for ResourceList Component', () => {
 
   it('renders the loading screen', () => {
     expect(mountWrapper.find('ResourceList').props().data.loading).toBe(true);
-  });
-
-  it('should render an error screen', async () => {
-    const errorWrapper = (
-      <MockedProvider mocks={[{ request, error }]} addTypename>
-        <ResourceLists
-          client={{ query: jest.fn().mockImplementationOnce(() => Promise.resolve({ data: { user: 'userDetails' } })) }}
-        />
-      </MockedProvider>);
-    const mountErrorWrapper = mount(errorWrapper);
-    // check whether there is no error when loading
-    expect(mountErrorWrapper.find('ResourceList').props().data.error).toBe(undefined);
-    await new Promise(resolve => setTimeout(resolve));
-    mountErrorWrapper.update();
-    // check whether an error occurs after loading
-    expect(mountErrorWrapper.find('ResourceList').props().data.error).toBeTruthy();
-    expect(mountErrorWrapper.find('ResourceList').props().data.error.networkError).toBe(error);
-  });
-
-  it('should have all data passed as props', () => {
-    mountWrapper.update();
-    expect(mountWrapper.find('ResourceList')).toHaveLength(1);
-    expect(mountWrapper.find('ResourceList').prop('data').allResources.resources.length).toEqual(allResources.data.allResources.resources.length);
   });
 
   it('should handle handleData function', () => {

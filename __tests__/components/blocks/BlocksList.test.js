@@ -1,7 +1,6 @@
 import React from 'react';
 import { mount, shallow } from 'enzyme';
 // eslint-disable-next-line
-import fetch from 'unfetch';
 import { MockedProvider } from 'react-apollo/test-utils';
 // eslint-disable-next-line
 import BlocksList, { BlocksList as ListOfBlocks } from '../../../src/components/blocks/BlocksList';

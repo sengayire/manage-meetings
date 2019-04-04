@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import WelcomePage from './WelcomePage';
 import SetupInfoPage from './SetupInfoPage';
 import BuildingLevel from './BuildingLevel';
@@ -25,9 +24,8 @@ class Setup extends Component {
    * @return {void}
    */
   getRoomCount = async () => {
-    const { client } = this.props;
-    const user = await getUserDetails(client);
-    const rooms = await getRoomList(client, user.location);
+    const user = await getUserDetails();
+    const rooms = await getRoomList(null, user.location);
 
     this.setState({ centerRoomCount: rooms.allRooms.rooms.length });
   }
@@ -71,7 +69,7 @@ class Setup extends Component {
    *
    * @return {JSX}
    */
-  renderSetupContent = (level, client) => {
+  renderSetupContent = (level) => {
     const {
       centerRoomCount,
     } = this.state;
@@ -80,29 +78,21 @@ class Setup extends Component {
       case 'SetupInfoPage':
         return (<SetupInfoPage handleClick={this.handleClick} />);
       case 'BuildingLevel':
-        return (<BuildingLevel handleClick={this.handleClick} client={client} />);
+        return (<BuildingLevel handleClick={this.handleClick} />);
       case 'RoomSetupView':
         return (<RoomSetupView handleClick={this.handleClick} />);
       default:
-        return (centerRoomCount < 1
-          ? <WelcomePage handleClick={this.handleClick} client={client} />
+        return (centerRoomCount < 1000
+          ? <WelcomePage handleClick={this.handleClick} />
           : <RoomSetupView handleClick={this.handleClick} />);
     }
   }
 
   render() {
     const { visibleLevel } = this.state;
-    const { client } = this.props;
 
-    return this.renderSetupContent(visibleLevel, client);
+    return this.renderSetupContent(visibleLevel);
   }
 }
-
-Setup.propTypes = {
-  client: PropTypes.shape({}),
-};
-Setup.defaultProps = {
-  client: {},
-};
 
 export default Setup;

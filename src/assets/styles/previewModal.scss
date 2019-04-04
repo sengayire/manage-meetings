@@ -37,7 +37,6 @@
 }
 
 .preview-structure-tree {
-  width: 95%;
   margin: 0 auto;
 
   .setup-structure-header {
@@ -58,7 +57,7 @@
   overflow: hidden;
   overflow-x: scroll;
   overflow-y: scroll;
-  padding-top: 1em;
+  padding-top: 20px;
 }
 
 .tree ul {

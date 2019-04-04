@@ -264,7 +264,6 @@ exports[`DeleteOffice Test Suite renders as expected 1`] = `
                     "boxShadow": "0 2px 40px 10px rgba(185, 180, 180, 0.2)",
                     "fontFamily": "DINPro-Regular",
                     "left": "50%",
-                    "marginRight": "-50%",
                     "outline": "none",
                     "overflow": "auto",
                     "position": "absolute",
@@ -333,7 +332,6 @@ exports[`DeleteOffice Test Suite renders as expected 1`] = `
                         "boxShadow": "0 2px 40px 10px rgba(185, 180, 180, 0.2)",
                         "fontFamily": "DINPro-Regular",
                         "left": "50%",
-                        "marginRight": "-50%",
                         "outline": "none",
                         "overflow": "auto",
                         "position": "absolute",
@@ -618,7 +616,6 @@ exports[`DeleteOffice Test Suite should pop up a modal when delete button is cli
                     "boxShadow": "0 2px 40px 10px rgba(185, 180, 180, 0.2)",
                     "fontFamily": "DINPro-Regular",
                     "left": "50%",
-                    "marginRight": "-50%",
                     "outline": "none",
                     "overflow": "auto",
                     "position": "absolute",
@@ -642,7 +639,7 @@ exports[`DeleteOffice Test Suite should pop up a modal when delete button is cli
                       <div
                         aria-label="Parent Modal"
                         class="ReactModal__Content ReactModal__Content--after-open delete-modal"
-                        style="font-family: DINPro-Regular; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); margin-right: -50%; border: 1px solid #cccccc; border-radius: 4px; outline: none; box-shadow: 0 2px 40px 10px rgba(185, 180, 180, 0.2); background-color: rgb(255, 255, 255); overflow: auto;"
+                        style="font-family: DINPro-Regular; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); border: 1px solid #cccccc; border-radius: 4px; outline: none; box-shadow: 0 2px 40px 10px rgba(185, 180, 180, 0.2); background-color: rgb(255, 255, 255); overflow: auto;"
                         tabindex="-1"
                       >
                         <h2
@@ -737,7 +734,6 @@ exports[`DeleteOffice Test Suite should pop up a modal when delete button is cli
                         "boxShadow": "0 2px 40px 10px rgba(185, 180, 180, 0.2)",
                         "fontFamily": "DINPro-Regular",
                         "left": "50%",
-                        "marginRight": "-50%",
                         "outline": "none",
                         "overflow": "auto",
                         "position": "absolute",
@@ -780,7 +776,6 @@ exports[`DeleteOffice Test Suite should pop up a modal when delete button is cli
                           "boxShadow": "0 2px 40px 10px rgba(185, 180, 180, 0.2)",
                           "fontFamily": "DINPro-Regular",
                           "left": "50%",
-                          "marginRight": "-50%",
                           "outline": "none",
                           "overflow": "auto",
                           "position": "absolute",

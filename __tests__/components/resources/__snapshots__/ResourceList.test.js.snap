@@ -2541,153 +2541,51 @@ exports[`Tests for ResourceList Component renders correctly from memory 1`] = `
     }
   >
     <Apollo(ResourceList)
-      client={
+      props={
         Object {
-          "query": [MockFunction] {
-            "calls": Array [
-              Array [
+          "data": Object {
+            "allResources": Object {
+              "__typename": "Resources",
+              "hasNext": true,
+              "hasPrevious": false,
+              "pages": 2,
+              "queryTotal": 11,
+              "resources": Array [
                 Object {
-                  "query": Object {
-                    "definitions": Array [
-                      Object {
-                        "directives": Array [],
-                        "kind": "OperationDefinition",
-                        "name": Object {
-                          "kind": "Name",
-                          "value": "user",
-                        },
-                        "operation": "query",
-                        "selectionSet": Object {
-                          "kind": "SelectionSet",
-                          "selections": Array [
-                            Object {
-                              "alias": undefined,
-                              "arguments": Array [
-                                Object {
-                                  "kind": "Argument",
-                                  "name": Object {
-                                    "kind": "Name",
-                                    "value": "email",
-                                  },
-                                  "value": Object {
-                                    "kind": "Variable",
-                                    "name": Object {
-                                      "kind": "Name",
-                                      "value": "email",
-                                    },
-                                  },
-                                },
-                              ],
-                              "directives": Array [],
-                              "kind": "Field",
-                              "name": Object {
-                                "kind": "Name",
-                                "value": "user",
-                              },
-                              "selectionSet": Object {
-                                "kind": "SelectionSet",
-                                "selections": Array [
-                                  Object {
-                                    "alias": undefined,
-                                    "arguments": Array [],
-                                    "directives": Array [],
-                                    "kind": "Field",
-                                    "name": Object {
-                                      "kind": "Name",
-                                      "value": "id",
-                                    },
-                                    "selectionSet": undefined,
-                                  },
-                                  Object {
-                                    "alias": undefined,
-                                    "arguments": Array [],
-                                    "directives": Array [],
-                                    "kind": "Field",
-                                    "name": Object {
-                                      "kind": "Name",
-                                      "value": "location",
-                                    },
-                                    "selectionSet": undefined,
-                                  },
-                                  Object {
-                                    "alias": undefined,
-                                    "arguments": Array [],
-                                    "directives": Array [],
-                                    "kind": "Field",
-                                    "name": Object {
-                                      "kind": "Name",
-                                      "value": "roles",
-                                    },
-                                    "selectionSet": Object {
-                                      "kind": "SelectionSet",
-                                      "selections": Array [
-                                        Object {
-                                          "alias": undefined,
-                                          "arguments": Array [],
-                                          "directives": Array [],
-                                          "kind": "Field",
-                                          "name": Object {
-                                            "kind": "Name",
-                                            "value": "id",
-                                          },
-                                          "selectionSet": undefined,
-                                        },
-                                        Object {
-                                          "alias": undefined,
-                                          "arguments": Array [],
-                                          "directives": Array [],
-                                          "kind": "Field",
-                                          "name": Object {
-                                            "kind": "Name",
-                                            "value": "role",
-                                          },
-                                          "selectionSet": undefined,
-                                        },
-                                      ],
-                                    },
-                                  },
-                                ],
-                              },
-                            },
-                          ],
-                        },
-                        "variableDefinitions": Array [
-                          Object {
-                            "defaultValue": undefined,
-                            "kind": "VariableDefinition",
-                            "type": Object {
-                              "kind": "NonNullType",
-                              "type": Object {
-                                "kind": "NamedType",
-                                "name": Object {
-                                  "kind": "Name",
-                                  "value": "String",
-                                },
-                              },
-                            },
-                            "variable": Object {
-                              "kind": "Variable",
-                              "name": Object {
-                                "kind": "Name",
-                                "value": "email",
-                              },
-                            },
-                          },
-                        ],
-                      },
-                    ],
-                    "kind": "Document",
-                    "loc": Object {
-                      "end": 121,
-                      "start": 0,
-                    },
+                  "__typename": "Resource",
+                  "id": "3",
+                  "name": "Gulu",
+                  "quantity": 1,
+                  "room": Object {
+                    "__typename": "Room",
+                    "id": 1,
+                    "name": "Gulu",
                   },
-                  "variables": Object {
-                    "email": "sammy.muriuki@andela.com",
+                  "roomId": 3,
+                },
+                Object {
+                  "__typename": "Resource",
+                  "id": "12",
+                  "name": "Round Table",
+                  "quantity": 1,
+                  "room": Object {
+                    "__typename": "Room",
+                    "id": 12,
+                    "name": "Charley",
                   },
+                  "roomId": 12,
                 },
               ],
-            ],
+            },
+            "error": Object {},
+            "fetchMore": [MockFunction],
+            "loading": false,
+            "refetch": [MockFunction],
+            "userLocation": Object {
+              "user": Object {
+                "location": "Kampala",
+              },
+            },
           },
         }
       }
@@ -2957,156 +2855,6 @@ exports[`Tests for ResourceList Component renders correctly from memory 1`] = `
         warnUnhandledError={true}
       >
         <ResourceList
-          client={
-            Object {
-              "query": [MockFunction] {
-                "calls": Array [
-                  Array [
-                    Object {
-                      "query": Object {
-                        "definitions": Array [
-                          Object {
-                            "directives": Array [],
-                            "kind": "OperationDefinition",
-                            "name": Object {
-                              "kind": "Name",
-                              "value": "user",
-                            },
-                            "operation": "query",
-                            "selectionSet": Object {
-                              "kind": "SelectionSet",
-                              "selections": Array [
-                                Object {
-                                  "alias": undefined,
-                                  "arguments": Array [
-                                    Object {
-                                      "kind": "Argument",
-                                      "name": Object {
-                                        "kind": "Name",
-                                        "value": "email",
-                                      },
-                                      "value": Object {
-                                        "kind": "Variable",
-                                        "name": Object {
-                                          "kind": "Name",
-                                          "value": "email",
-                                        },
-                                      },
-                                    },
-                                  ],
-                                  "directives": Array [],
-                                  "kind": "Field",
-                                  "name": Object {
-                                    "kind": "Name",
-                                    "value": "user",
-                                  },
-                                  "selectionSet": Object {
-                                    "kind": "SelectionSet",
-                                    "selections": Array [
-                                      Object {
-                                        "alias": undefined,
-                                        "arguments": Array [],
-                                        "directives": Array [],
-                                        "kind": "Field",
-                                        "name": Object {
-                                          "kind": "Name",
-                                          "value": "id",
-                                        },
-                                        "selectionSet": undefined,
-                                      },
-                                      Object {
-                                        "alias": undefined,
-                                        "arguments": Array [],
-                                        "directives": Array [],
-                                        "kind": "Field",
-                                        "name": Object {
-                                          "kind": "Name",
-                                          "value": "location",
-                                        },
-                                        "selectionSet": undefined,
-                                      },
-                                      Object {
-                                        "alias": undefined,
-                                        "arguments": Array [],
-                                        "directives": Array [],
-                                        "kind": "Field",
-                                        "name": Object {
-                                          "kind": "Name",
-                                          "value": "roles",
-                                        },
-                                        "selectionSet": Object {
-                                          "kind": "SelectionSet",
-                                          "selections": Array [
-                                            Object {
-                                              "alias": undefined,
-                                              "arguments": Array [],
-                                              "directives": Array [],
-                                              "kind": "Field",
-                                              "name": Object {
-                                                "kind": "Name",
-                                                "value": "id",
-                                              },
-                                              "selectionSet": undefined,
-                                            },
-                                            Object {
-                                              "alias": undefined,
-                                              "arguments": Array [],
-                                              "directives": Array [],
-                                              "kind": "Field",
-                                              "name": Object {
-                                                "kind": "Name",
-                                                "value": "role",
-                                              },
-                                              "selectionSet": undefined,
-                                            },
-                                          ],
-                                        },
-                                      },
-                                    ],
-                                  },
-                                },
-                              ],
-                            },
-                            "variableDefinitions": Array [
-                              Object {
-                                "defaultValue": undefined,
-                                "kind": "VariableDefinition",
-                                "type": Object {
-                                  "kind": "NonNullType",
-                                  "type": Object {
-                                    "kind": "NamedType",
-                                    "name": Object {
-                                      "kind": "Name",
-                                      "value": "String",
-                                    },
-                                  },
-                                },
-                                "variable": Object {
-                                  "kind": "Variable",
-                                  "name": Object {
-                                    "kind": "Name",
-                                    "value": "email",
-                                  },
-                                },
-                              },
-                            ],
-                          },
-                        ],
-                        "kind": "Document",
-                        "loc": Object {
-                          "end": 121,
-                          "start": 0,
-                        },
-                      },
-                      "variables": Object {
-                        "email": "sammy.muriuki@andela.com",
-                      },
-                    },
-                  ],
-                ],
-              },
-            }
-          }
           data={
             Object {
               "error": undefined,
@@ -3121,6 +2869,54 @@ exports[`Tests for ResourceList Component renders correctly from memory 1`] = `
               "variables": Object {
                 "page": 1,
                 "perPage": 5,
+              },
+            }
+          }
+          props={
+            Object {
+              "data": Object {
+                "allResources": Object {
+                  "__typename": "Resources",
+                  "hasNext": true,
+                  "hasPrevious": false,
+                  "pages": 2,
+                  "queryTotal": 11,
+                  "resources": Array [
+                    Object {
+                      "__typename": "Resource",
+                      "id": "3",
+                      "name": "Gulu",
+                      "quantity": 1,
+                      "room": Object {
+                        "__typename": "Room",
+                        "id": 1,
+                        "name": "Gulu",
+                      },
+                      "roomId": 3,
+                    },
+                    Object {
+                      "__typename": "Resource",
+                      "id": "12",
+                      "name": "Round Table",
+                      "quantity": 1,
+                      "room": Object {
+                        "__typename": "Room",
+                        "id": 12,
+                        "name": "Charley",
+                      },
+                      "roomId": 12,
+                    },
+                  ],
+                },
+                "error": Object {},
+                "fetchMore": [MockFunction],
+                "loading": false,
+                "refetch": [MockFunction],
+                "userLocation": Object {
+                  "user": Object {
+                    "location": "Kampala",
+                  },
+                },
               },
             }
           }

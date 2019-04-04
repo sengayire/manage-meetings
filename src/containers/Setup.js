@@ -1,20 +1,12 @@
 import React, { Fragment } from 'react';
-import PropTypes from 'prop-types';
 import SetupPage from '../components/setup/Setup';
 import { NavBar } from '../components';
 
-const Setup = ({ client }) => (
+const Setup = () => (
   <Fragment>
     <NavBar />
-    <SetupPage client={client} />
+    <SetupPage />
   </Fragment>
 );
-
-Setup.propTypes = {
-  client: PropTypes.oneOfType([
-    PropTypes.object,
-    PropTypes.array,
-  ]).isRequired,
-};
 
 export default Setup;

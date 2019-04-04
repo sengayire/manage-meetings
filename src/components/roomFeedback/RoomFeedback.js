@@ -7,7 +7,7 @@ import '../../../src/assets/styles/roomFeedback.scss';
 import GET_ROOM_FEEDBACK_QUESTIONS_QUERY from '../../../src/graphql/queries/questions';
 import Spinner from '../commons/Spinner';
 import ErrorIcon from '../../components/commons/ErrorIcon';
-import getUserDetails from '../helpers/QueryHelper';
+import { getUserDetails } from '../helpers/QueriesHelpers';
 
 /**
  * Component for Room Feedback
@@ -27,7 +27,7 @@ export class RoomFeedback extends Component {
    * @returns {void}
    */
   setUserRole = async () => {
-    const user = await getUserDetails(this.props.client);
+    const user = await getUserDetails();
     this.setState({ role: user.roles[0].id });
   }
 
@@ -150,10 +150,6 @@ RoomFeedback.propTypes = {
     error: PropTypes.object,
     refetch: PropTypes.func,
   }),
-  client: PropTypes.oneOfType([
-    PropTypes.object,
-    PropTypes.array,
-  ]).isRequired,
 };
 
 export default graphql(GET_ROOM_FEEDBACK_QUESTIONS_QUERY)(RoomFeedback);

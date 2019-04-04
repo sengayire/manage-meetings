@@ -1,8 +1,9 @@
 import { GET_USER_QUERY } from '../../graphql/queries/People';
 import { GET_LOCATIONS_QUERY, GET_ALL_ROOMS } from '../../graphql/queries/Rooms';
 import { decodeTokenAndGetUserData } from '../../utils/Cookie';
+import apolloClient from '../../utils/ApolloClient';
 
-const getUserDetails = async (client) => {
+const getUserDetails = async (client = apolloClient) => {
   const { UserInfo: userData } = decodeTokenAndGetUserData() || {};
   const email = process.env.NODE_ENV === 'test' ? 'sammy.muriuki@andela.com' : userData.email;
   try {
@@ -27,7 +28,7 @@ const getUserDetails = async (client) => {
   }
 };
 
-const getAllLocations = async (client) => {
+const getAllLocations = async (client = apolloClient) => {
   try {
     const data = client.readQuery(
       {
@@ -44,7 +45,7 @@ const getAllLocations = async (client) => {
   }
 };
 
-const getRoomList = async (client, userLocation) => {
+const getRoomList = async (client = apolloClient, userLocation) => {
   const { data } = await client.query({
     query: GET_ALL_ROOMS,
     variables: {

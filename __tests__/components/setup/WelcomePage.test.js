@@ -10,13 +10,9 @@ describe('Admin welcome page component', () => {
       roles: [{ id: 2, role: 'Admin' }],
     },
   };
-  const mockedClient = {
-    readQuery: jest.fn().mockImplementationOnce(() => user),
-    query: jest.fn(),
-  };
 
   const handleClick = jest.fn();
-  const wrappedComponent = mount(<WelcomePage handleClick={handleClick} client={mockedClient} />);
+  const wrappedComponent = mount(<WelcomePage handleClick={handleClick} />);
 
   it('should first render a spinner', () => {
     expect(wrappedComponent.find('Spinner').exists()).toBeTruthy();

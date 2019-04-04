@@ -6,12 +6,13 @@
 import React, { Component, createRef } from 'react';
 import PropTypes from 'prop-types';
 import toastr from 'toastr';
+import { withApollo } from 'react-apollo';
 import '../../assets/styles/buildingSetup.scss';
 import Preview from './Preview';
 import LevelsForm from './LevelsForm';
 import notification from '../../../src/utils/notification';
 import { ellipses, chevronIcon } from '../../utils/images/images';
-import Modal from '../commons/MrmModal';
+import MrmModal from '../commons/MrmModal';
 import SetupLevel from '../setup/SetupLevel';
 import { getUserDetails, getAllLocations } from '../helpers/QueriesHelpers';
 
@@ -36,10 +37,9 @@ class BuildingLevel extends Component {
    * @returns {array}
    */
   getUsersLocation = async () => {
-    const { client } = this.props;
     const { allLocations } = this.state;
-    const user = await getUserDetails(client);
-    const Locations = await getAllLocations(client);
+    const user = await getUserDetails();
+    const Locations = await getAllLocations();
     let locations = Object.assign({}, allLocations);
     locations = Locations;
     this.setState({
@@ -170,7 +170,6 @@ class BuildingLevel extends Component {
       user,
       allLocations,
     } = this.state;
-
     return (
       <div>
         <div className="level-container">
@@ -180,12 +179,12 @@ class BuildingLevel extends Component {
               <div className="form-header">
                 <p>Plan the Levels within your building </p>
                 <div className="setup-levels" tabIndex="0">
-                  <Modal
+                  <MrmModal
                     ref={this.levelsModal}
                     type={1}
                     buttonText={
                       <img src={ellipses} alt="level-desc" className="levels-modal-image" />
-                  }
+                    }
                     modalContent={
                       <div>
                         <SetupLevel />
@@ -242,9 +241,6 @@ class BuildingLevel extends Component {
 
 BuildingLevel.propTypes = {
   handleClick: PropTypes.func.isRequired,
-  client: PropTypes.shape({}),
 };
-BuildingLevel.defaultProps = {
-  client: {},
-};
-export default BuildingLevel;
+
+export default withApollo(BuildingLevel);

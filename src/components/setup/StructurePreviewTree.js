@@ -75,13 +75,8 @@ class StructurePreviewTree extends Component {
     }
     return (
       <div className="preview-structure-tree">
-        <div className="setup-structure-header">
-          <p>EPIC Tower&apos;s Structure </p>
-        </div>
         <div className="tree">
-          { parsed !== null && parsed !== undefined
-              ? <ul>{this.renderLevels(parsed)}</ul>
-              : <h2>Set up your office structure to preview it</h2>}
+          <ul>{this.renderLevels(parsed)}</ul>
         </div>
       </div>
     );

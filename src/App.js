@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { withRouter, Route, Switch, Redirect } from 'react-router-dom';
-import { ApolloConsumer } from 'react-apollo';
 import PropTypes from 'prop-types';
 import ROUTES from './utils/routes';
 import { Analytics, Preference, RoomFeedbackPage } from './containers';
@@ -51,28 +50,15 @@ class App extends Component {
     }
 
     return (
-      <ApolloConsumer>
-        {client => (
-          <ErrorBoundary isAuthError>
-            <Switch>
-              <Route exact path={ROUTES.home} component={LoginPage} />
-              <Route
-                path={ROUTES.analytics}
-                render={props => <Analytics {...props} client={client} />}
-              />
-              <Route
-                path={ROUTES.roomfeedback}
-                render={props => <RoomFeedbackPage {...props} client={client} />}
-              />
-              <Route path={ROUTES.preference} component={Preference} />
-              <Route
-                path={ROUTES.setup}
-                render={props => <Setup {...props} client={client} />}
-              />
-            </Switch>
-          </ErrorBoundary>
-        )}
-      </ApolloConsumer>
+      <ErrorBoundary isAuthError>
+        <Switch>
+          <Route exact path={ROUTES.home} component={LoginPage} />
+          <Route path={ROUTES.analytics} component={Analytics} />
+          <Route path={ROUTES.roomfeedback} component={RoomFeedbackPage} />
+          <Route path={ROUTES.preference} component={Preference} />
+          <Route path={ROUTES.setup} component={Setup} />
+        </Switch>
+      </ErrorBoundary>
     );
   }
 }

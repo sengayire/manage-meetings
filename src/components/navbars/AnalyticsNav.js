@@ -5,7 +5,6 @@ import toastr from 'toastr';
 import html2canvas from 'html2canvas';
 import jsxToString from 'jsx-to-string';
 import jsPDF from 'jspdf';
-import PropTypes from 'prop-types';
 import download from 'downloadjs';
 import moment from 'moment';
 import Button from '../commons/Button';
@@ -20,7 +19,7 @@ import AnalyticsOverview from '../../containers/AnalyticsOverview';
 import ExportButton from '../commons/ExportButton';
 import downloadFileString from '../../fixtures/downloadString';
 import timeConvert from '../../components/helpers/timeConverter';
-import getUserDetails from '../helpers/QueryHelper';
+import { getUserDetails } from '../helpers/QueriesHelpers';
 
 /**
  * Component for Analytics
@@ -66,7 +65,7 @@ export class AnalyticsNav extends Component {
    * @returns {void}
    */
   setUserLocationAndRole = async () => {
-    const user = await getUserDetails(this.props.client);
+    const user = await getUserDetails();
     this.setState({ location: user.location, role: user.roles[0].id });
   }
 
@@ -680,11 +679,5 @@ export class AnalyticsNav extends Component {
     );
   }
 }
-AnalyticsNav.propTypes = {
-  client: PropTypes.oneOfType([
-    PropTypes.object,
-    PropTypes.array,
-  ]).isRequired,
-};
 
 export default AnalyticsNav;

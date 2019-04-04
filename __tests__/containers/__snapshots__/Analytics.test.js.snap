@@ -6,9 +6,7 @@ exports[`Analytics component renders correctly in memory 1`] = `
   <div
     className="analytics-container"
   >
-    <AnalyticsNav
-      client={Object {}}
-    />
+    <AnalyticsNav />
   </div>
 </Fragment>
 `;

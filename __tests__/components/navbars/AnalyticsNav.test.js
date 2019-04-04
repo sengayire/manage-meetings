@@ -7,7 +7,6 @@ import { createHttpLink } from 'apollo-link-http';
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
 // eslint-disable-next-line import/extensions
-import fetch from 'unfetch';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 import AnalyticsNav, { AnalyticsNav as AnalyticComponent } from '../../../src/components/navbars/AnalyticsNav';
 import AnalyticsActivity from '../../../src/containers/AnalyticsActivity';

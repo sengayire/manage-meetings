@@ -13,7 +13,7 @@ import MenuTitle from '../commons/MenuTitle';
 import Spinner from '../commons/Spinner';
 import notification from '../../utils/notification';
 import Overlay from '../commons/Overlay';
-import getUserDetails from '../helpers/QueryHelper';
+import { getUserDetails } from '../helpers/QueriesHelpers';
 import DataNotFound from '../commons/DataNotFound';
 import ErrorIcon from '../../components/commons/ErrorIcon';
 
@@ -51,7 +51,7 @@ export class ResourceList extends React.Component {
    * @returns {void}
    */
   setUserLocation = async () => {
-    const user = await getUserDetails(this.props.client);
+    const user = await getUserDetails();
     this.setState({ location: user.location });
   }
 
@@ -93,8 +93,10 @@ export class ResourceList extends React.Component {
     const {
       allResources, currentPage, isFetching, location,
     } = this.state;
+
     if (loading) return <Spinner />;
     if (error && error.message === 'GraphQL error: No more resources') return <DataNotFound />;
+
     return (
       <div className="settings-resource">
         <div className={`settings-resource-control ${isFetching ? 'disabled-buttons' : null}`}>
@@ -148,10 +150,6 @@ ResourceList.propTypes = {
     error: PropTypes.object,
     fetchMore: PropTypes.func,
   }).isRequired,
-  client: PropTypes.oneOfType([
-    PropTypes.object,
-    PropTypes.array,
-  ]).isRequired,
 };
 
 export default compose(

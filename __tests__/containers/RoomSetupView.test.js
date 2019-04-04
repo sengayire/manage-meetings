@@ -6,7 +6,7 @@ import RoomSetupView from '../../src/containers/RoomSetupView';
 describe('unit test for room setupView component', () => {
   const wrapper = mount(
     <MockedProvider>
-      <RoomSetupView client={{}} />
+      <RoomSetupView />
     </MockedProvider>,
   );
   const event = {

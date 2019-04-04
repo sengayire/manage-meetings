@@ -1,23 +1,17 @@
 /* eslint-disable react/prop-types */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { withApollo } from 'react-apollo';
 import ActionButton from './ActionButtons';
 import IconButtons from './IconButtons';
-import getUserDetails from '../helpers/QueryHelper';
+import { getUserDetails } from '../helpers/QueriesHelpers';
 import '../../assets/styles/mrmmodal.scss';
 
-export class MrmModal extends Component {
+class MrmModal extends Component {
   static propTypes = {
     modalContent: PropTypes.node,
     title: PropTypes.string,
     buttonText: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
     type: PropTypes.number,
-    client: PropTypes.oneOfType([
-      PropTypes.object,
-      PropTypes.array,
-      PropTypes.string,
-    ]),
     withButton: PropTypes.bool,
     styleClassName: PropTypes.string,
   };
@@ -27,7 +21,6 @@ export class MrmModal extends Component {
     buttonText: '',
     title: '',
     type: 1,
-    client: {},
     withButton: true,
     styleClassName: '',
   };
@@ -46,7 +39,7 @@ export class MrmModal extends Component {
    * @returns {void}
    */
   setUserRole = async () => {
-    const user = await getUserDetails(this.props.client);
+    const user = await getUserDetails();
     this.setState({ role: user.roles[0].id });
   }
 
@@ -77,14 +70,14 @@ export class MrmModal extends Component {
     return (
       <div className="modal-component">
         { type === 1 &&
-        this.state.role === '2' &&
-        <IconButtons
-          buttonText={buttonText}
-          openModal={this.toggleModal}
-          classProp={iconButtonClass}
+          this.state.role === '2' &&
+          <IconButtons
+            buttonText={buttonText}
+            openModal={this.toggleModal}
+            classProp={iconButtonClass}
 
-        />
-    }
+          />
+          }
         {this.state.isOpen &&
           <div className="modal">
             <div className="overlay" />
@@ -110,4 +103,4 @@ export class MrmModal extends Component {
   }
 }
 
-export default withApollo(MrmModal);
+export default MrmModal;
