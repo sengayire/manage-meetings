@@ -1,4 +1,4 @@
-export const props = {
+export const mockedProps = {
   removeLevel: jest.fn,
   handleClick: jest.fn,
   counter: 1,
@@ -234,3 +234,196 @@ export const flattenedData = [
     id: '4b446200-5d00-4ff3-99f8-1c7a1da0ce1a', level: 3, locationId: 3, name: 'Lamu', parentId: 'c444b7d0-a624-4ee0-9690-e85b97f57884', position: 6, tag: 'Room',
   },
 ];
+
+
+export const firstLevelPropsWithThreePreviewButtons = {
+  removeLevel: jest.fn,
+  handleClick: jest.fn,
+  counter: 1,
+  allLocations: [
+    { id: '229', name: 'Cairo' },
+    { id: '2', name: 'Kampala' },
+    { id: '1', name: 'Lagos' },
+    { id: '3', name: 'Nairobi' },
+  ],
+  locationStructure: [{
+    nameObj: [{
+      name: '1',
+      id: '29ccfb63-468e-4aa2-a0bd-959082844a60',
+      parentId: '',
+      parentTitle: '',
+      level: 1,
+    }, {
+      name: '2',
+      id: 'a0adf387-f8aa-456f-a4bc-c65f95dd04cd',
+      parentId: '',
+      parentTitle: '',
+      level: 1,
+    }, {
+      name: '3',
+      id: '4dd74c44-cd52-4c12-be99-37d9964f20cc',
+      parentId: '',
+      parentTitle: '',
+      level: 1,
+    }],
+    id: '56df2a52-0b08-47e5-ade9-5a0fe6b99945',
+    level: 1,
+    parentId: null,
+    parentTitle: '',
+    tag: 'Building',
+    quantity: 3,
+  }],
+};
+
+export const firstLevelPropsWithFivePreviewButtons = {
+  removeLevel: jest.fn,
+  handleClick: jest.fn,
+  counter: 1,
+  allLocations: [
+    { id: '229', name: 'Cairo' },
+    { id: '2', name: 'Kampala' },
+    { id: '1', name: 'Lagos' },
+    { id: '3', name: 'Nairobi' },
+  ],
+  locationStructure: [{
+    nameObj: [{
+      name: 'Epic tower',
+      id: 'a01226c2-7bda-4f4f-a9b7-dbb474716d0c',
+      parentId: '',
+      parentTitle: '',
+      level: 1,
+    }, {
+      name: 'Block A - Nairobi',
+      id: 'f9d8bda5-2a33-4c9e-8473-75995a8085f2',
+      parentId: '',
+      parentTitle: '',
+      level: 1,
+    }, {
+      name: 'Block B - Nairobi',
+      id: '342a33b1-df6a-423e-a666-516cfa35446f',
+      parentId: '',
+      parentTitle: '',
+      level: 1,
+    }, {
+      name: 'Block C - Nairobi',
+      id: '8bf0a701-fbce-4d9e-bdb3-1ce823c31679',
+      parentId: '',
+      parentTitle: '',
+      level: 1,
+    }, {
+      name: 'Block D - Nairobi',
+      id: 'a3a16984-2944-4a2f-a3c0-e489f2960eeb',
+      parentId: '',
+      parentTitle: '',
+      level: 1,
+    }],
+    id: '7d511d59-c470-4618-94f5-ce8b722b746d',
+    level: 1,
+    parentId: null,
+    parentTitle: '',
+    tag: 'Building',
+    quantity: 5,
+  }],
+};
+
+export const multipleLevelsProps = {
+  removeLevel: jest.fn,
+  handleClick: jest.fn,
+  counter: 1,
+  allLocations: [
+    { id: '229', name: 'Cairo' },
+    { id: '2', name: 'Kampala' },
+    { id: '1', name: 'Lagos' },
+    { id: '3', name: 'Nairobi' },
+  ],
+  locationStructure: [{
+    nameObj:
+    [{
+      name: 'Epic tower',
+      id: '6789668f-fe25-40de-9a08-f6d9b9f12e75',
+      parentId: '',
+      parentTitle: '',
+      level: 1,
+    }, {
+      name: 'Block A - Nairobi',
+      id: '49c3d017-9dda-4a63-9be6-210654130987',
+      parentId: '',
+      parentTitle: '',
+      level: 1,
+    }, {
+      name: 'Block B - Nairobi',
+      id: 'a2b28d82-e62c-4916-b2a2-2bbccadfe181',
+      parentId: '',
+      parentTitle: '',
+      level: 1,
+    }],
+    id: 'f9e0f1b8-a719-42da-a0a5-8557f1ff8f3e',
+    level: 1,
+    parentId: null,
+    parentTitle: '',
+    tag: 'Building',
+    quantity: 3,
+  }, {
+    nameObj: [{
+      name: '1',
+      id: '09786b7b-e2ef-4561-9f8f-dca14f9b68e6',
+      parentId: '6789668f-fe25-40de-9a08-f6d9b9f12e75',
+      parentTitle: 'Epic tower',
+      level: 2,
+    }, {
+      name: '2',
+      id: '0c893cb8-1704-4488-95fd-9ad13aa08b5d',
+      parentId: '49c3d017-9dda-4a63-9be6-210654130987',
+      parentTitle: 'Block A - Nairobi',
+      level: 2,
+    }, {
+      name: '3',
+      id: '3a3bdc31-9cbc-4e4a-99af-7f558bc30cbc',
+      parentId: 'a2b28d82-e62c-4916-b2a2-2bbccadfe181',
+      parentTitle: 'Block B - Nairobi',
+      level: 2,
+    }, {
+      name: '4',
+      id: '74ce8b7e-ac5e-41be-8863-7a50d29cd931',
+      parentId: '6789668f-fe25-40de-9a08-f6d9b9f12e75',
+      parentTitle: 'Epic tower',
+      level: 2,
+    }, {
+      name: '5',
+      id: '971c35f0-ea60-49ab-9fd3-0b3aa2d386eb',
+      parentId: '49c3d017-9dda-4a63-9be6-210654130987',
+      parentTitle: 'Block A - Nairobi',
+      level: 2,
+    }, {
+      name: '6',
+      id: '18f8cf3d-0495-4689-952a-44ceaae30d4d',
+      parentId: 'a2b28d82-e62c-4916-b2a2-2bbccadfe181',
+      parentTitle: 'Block B - Nairobi',
+      level: 2,
+    }, {
+      name: '7',
+      id: '865bb932-8226-4d84-abda-f1231f19e66c',
+      parentId: '6789668f-fe25-40de-9a08-f6d9b9f12e75',
+      parentTitle: 'Epic tower',
+      level: 2,
+    }, {
+      name: '8',
+      id: '326658dd-f4ba-4463-b354-fe6637b44b93',
+      parentId: '49c3d017-9dda-4a63-9be6-210654130987',
+      parentTitle: 'Block A - Nairobi',
+      level: 2,
+    }, {
+      name: '9',
+      id: '7615b0b2-ac5a-48b5-b339-9dc17c01bcba',
+      parentId: 'a2b28d82-e62c-4916-b2a2-2bbccadfe181',
+      parentTitle: 'Block B - Nairobi',
+      level: 2,
+    }],
+    id: '3f0ecb5a-fcad-4a40-bf7b-9e2c727d1444',
+    level: 2,
+    parentId: '',
+    parentTitle: '',
+    tag: 'Floor',
+    quantity: 9,
+  }],
+};

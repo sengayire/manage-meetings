@@ -61,7 +61,7 @@
     .control {
       height: 1.6rem;
     }
-    
+
     .controls {
       top: -47px;
     }
@@ -199,7 +199,7 @@ label {
     padding: 12px 10px;
     border-radius: 50%;
   }
-  
+
   .left img {
     border: 1px solid #ccc;
     transform: rotate(90deg);
@@ -207,6 +207,32 @@ label {
     border-radius: 50%;
   }
 }
+
+.arrow__right {
+  position: absolute;
+  border: none;
+  padding: 0;
+  img {
+    border: 1px solid $color-grey-light;
+    transform: rotate(-90deg);
+    padding: 12px 10px;
+    border-radius: 50%;
+    margin-bottom: -11px;
+  }
+}
+
+.arrow__left {
+  display: contents;
+  img {
+    border: 1px solid $color-grey-light;
+    transform: rotate(90deg);
+    padding: 12px 10px;
+    border-radius: 50%;
+    margin-bottom: -11px;
+    margin-left: -50px;
+  }
+}
+
 .levels-desc p{
   height: 18px;
   width: 375px;
@@ -245,7 +271,7 @@ label {
 }
 .form-option-preview:before,
 .form-option-preview:after{
-  content: '';
+  content: "";
   display: inline-block;
   position: absolute;
   border-top: 1px solid $color-primary;
@@ -275,7 +301,7 @@ label {
   background: $color-gradient;
   border: 1px solid $color-primary;
   cursor: pointer;
-  padding: 10px 5px;
+  padding: 15px 5px;
   margin: 0 5px;
   font-weight: 500;
   min-width: 75px;
@@ -288,7 +314,7 @@ label {
 }
 
 .preview-btn:after, .highlight-btn:after, .preview-active-btn:after {
-  content: '';
+  content: "";
   width: 8px;
   height: 8px;
   bottom: -5px;
@@ -309,14 +335,22 @@ label {
 .highlight-btn,  .highlight-btn:after{
   background: $highlight-gradient;
   border: 1px solid  map-get($color-amber, 300);
-  color: map-get($color-black, 900)
+  color: map-get($color-black, 900);
 }
 
-.highlight-btn:after {
-  background: map-get($color-amber, 300) !important;
+.highlight-arrow-btn{
+  border: 1px solid  map-get($color-amber, 300)!important;
 }
 
-.remove-level, .remove-parent {
+.highlight-btn:active {
+  transition: all 4s;
+  transition: 0s;
+  -webkit-transition-duration: 4s; /* Safari */
+  transition-duration: 4s;
+  background: $color-grey;
+}
+
+.remove-parent {
   color: transparent;
   width: 14px;
   position: absolute;
@@ -329,6 +363,23 @@ label {
   cursor: pointer;
   line-height: 1;
 }
+
+.remove-level {
+  color: transparent;
+  position: absolute;
+  border-radius: 50px;
+  top: -2px;
+  right: 0;
+  font-size: 11px;
+  z-index: 1;
+  padding: 9px;
+  cursor: pointer;
+  line-height: 1;
+  height: 26px;
+  background-color: transparent;
+  border: 1px solid transparent;
+}
+
 .remove-parent {
   color: $color-danger;
   width: 15px;
@@ -339,8 +390,8 @@ label {
   margin-right: 0px !important;
 }
 .remove-level:hover {
-  background: red;
-  color: white !important;
+  background: $color-danger;
+  color: map-get($color-white, 000);
 }
 .form-card {
   position: relative;
@@ -369,7 +420,8 @@ label {
   margin-left: 2px;
   margin-top: 4px;
 }
-/* 
+
+/*
   Device = Tablets, Ipads (portrait)
   Screen = B/w 768px to 1024px
 */
@@ -393,7 +445,8 @@ label {
     margin-left: 0px;
   }
 }
-/* 
+
+/*
   Device = Most of the Smartphones Mobiles (Portrait)
   Screen = B/w 360px to 640px
 */
@@ -424,7 +477,8 @@ label {
     width: 150px;
   }
 }
-/* 
+
+/*
   Device = Iphone 5/SE
   Screen = B/w 320px to 568px
 */
@@ -452,7 +506,8 @@ label {
     width: 150px;
   }
 }
-/* 
+
+/*
   Device = Ipad Pro
   Screen = B/w 1024px to 1366px
 */
@@ -585,7 +640,7 @@ label {
   border-left-color: $color-primary !important;
   background: $color-primary !important;
  }
- 
+
 .level-container .form-header {
   .levels-modal-image {
     margin-top: 14px;

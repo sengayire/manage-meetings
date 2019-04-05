@@ -188,7 +188,7 @@ class LevelsForm extends Component {
         const error = errorInput && errorInput.includes(index + 1);
 
         return (
-          <div className="form-input">
+          <div className="form-input" key={index}>
             {error && this.renderError()}
             <Input
               type="text"

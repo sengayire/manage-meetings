@@ -8,7 +8,7 @@
   position: absolute;
   top: 0;
   right: 0;
-  background: map_get($color-blue, 400);
+  background: $color-danger;
   color: map_get($color-white, 000);
   border-radius: 50%;
   margin: .5em;
@@ -16,11 +16,6 @@
   line-height: 1;
   cursor: pointer;
   font-family: sans-serif;
-
-  &:hover {
-    background: map_get($color-amber, 300);
-    color: map_get($color-black, 900);
-  }
 }
 
 .tree-preview {
