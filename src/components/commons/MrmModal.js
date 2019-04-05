@@ -28,7 +28,7 @@ class MrmModal extends Component {
   state = {
     isOpen: false,
     role: '',
-  }
+  };
 
   componentDidMount() {
     this.props.withButton && this.setUserRole();
@@ -41,8 +41,7 @@ class MrmModal extends Component {
   setUserRole = async () => {
     const user = await getUserDetails();
     this.setState({ role: user.roles[0].id });
-  }
-
+  };
 
   /**
    * Toggle the visibility of the modal
@@ -51,7 +50,8 @@ class MrmModal extends Component {
    */
   toggleModal = () => {
     this.setState({ isOpen: !this.state.isOpen });
-  }
+    this.props.handleCloseModal();
+  };
 
   render() {
     const {
@@ -75,7 +75,6 @@ class MrmModal extends Component {
             buttonText={buttonText}
             openModal={this.toggleModal}
             classProp={iconButtonClass}
-
           />
           }
         {this.state.isOpen &&
@@ -84,17 +83,15 @@ class MrmModal extends Component {
             <div className={`modal_content ${styleClassName}`}>
               <h2>{title}</h2>
               {modalContent}
-              {
-                withButton
-                  && <ActionButton
-                    cancelButtonText={cancelButtonText}
-                    actionButtonText={actionButtonText}
-                    onClickSubmit={handleSubmit}
-                    onClickCancel={this.toggleModal}
-                    isLoading={isLoading}
-                  />
-              }
-
+              {withButton && (
+                <ActionButton
+                  cancelButtonText={cancelButtonText}
+                  actionButtonText={actionButtonText}
+                  onClickSubmit={handleSubmit}
+                  onClickCancel={this.toggleModal}
+                  isLoading={isLoading}
+                />
+              )}
             </div>
           </div>
         }

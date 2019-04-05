@@ -29,11 +29,12 @@ ActionButtons.propTypes = {
   cancelButtonText: PropTypes.string,
   actionButtonText: PropTypes.string,
   isLoading: PropTypes.bool,
-  onClickSubmit: PropTypes.func.isRequired,
+  onClickSubmit: PropTypes.func,
   showActionButton: PropTypes.bool,
 };
 
 ActionButtons.defaultProps = {
+  onClickSubmit: PropTypes.func,
   cancelButtonText: 'CANCEL',
   actionButtonText: 'SAVE CHANGES',
   isLoading: false,

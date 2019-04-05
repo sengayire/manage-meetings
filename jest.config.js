@@ -26,6 +26,7 @@ module.exports = {
     '!**/src/components/navbars/',
     '!**/src/components/setup/',
     '!**/src/fixtures/Preview.js',
+    '!**/src/graphql/mappers/Resources.js',
     '!**/src/containers/NavBar.js',
     '!**/src/containers/SettingsContent.js',
     '!**/src/containers/RoomSetupView.js',

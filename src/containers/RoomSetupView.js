@@ -25,36 +25,38 @@ class RoomSetupOverView extends Component {
   handleInputChange = () => {};
 
   /**
-  * It handles creating of select input
-  *
-  * @returns {jsx}
-  */
+   * It handles creating of select input
+   *
+   * @returns {jsx}
+   */
   createSelectInputs = () => {
-    const selectInputs = selectMockData && selectMockData.map(({
-      name, id, value, placeholder,
-    }) => (
-      <div key={id} className="room-select-sub">
-        <SelectInput
-          labelText=""
-          wrapperClassName="setup-select-input-wrapper"
-          name={name}
-          id={id}
-          value={value}
-          onChange={this.handleInputChange}
-          selectInputClassName="setup-select-input"
-          placeholder={placeholder}
-          options={null}
-        />
-      </div>
-    ));
+    const selectInputs =
+      selectMockData &&
+      selectMockData.map(({
+        name, id, value, placeholder,
+      }) => (
+        <div key={id} className="room-select-sub">
+          <SelectInput
+            labelText=""
+            wrapperClassName="setup-select-input-wrapper"
+            name={name}
+            id={id}
+            value={value}
+            onChange={this.handleInputChange}
+            selectInputClassName="setup-select-input"
+            placeholder={placeholder}
+            options={null}
+          />
+        </div>
+      ));
     return selectInputs;
-  }
+  };
 
   /**
-  * It handles  item selected fucntion
-  *
-  * @returns {void}
-  */
+   * It handles  item selected fucntion
+   *
+   * @returns {void}
+   */
   handleSelectedItem = (event) => {
     const { id } = event.currentTarget;
     this.setState({ currentNavItem: id });
@@ -67,13 +69,13 @@ class RoomSetupOverView extends Component {
    */
   renderDeviceList = () => (
     <div className="setup-container">
-      <div className="room-setup-header"><p>EPIC Tower&apos;s Devices</p></div>
-      <div className="room-select-input">
-        {this.createSelectInputs()}
+      <div className="room-setup-header">
+        <p>EPIC Tower&apos;s Devices</p>
       </div>
+      <div className="room-select-input">{this.createSelectInputs()}</div>
       <DevicesList />
-    </div>);
-
+    </div>
+  );
 
   renderNavItems = () => {
     const { currentNavItem } = this.state;

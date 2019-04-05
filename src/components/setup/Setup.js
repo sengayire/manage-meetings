@@ -28,7 +28,7 @@ class Setup extends Component {
     const rooms = await getRoomList(null, user.location);
 
     this.setState({ centerRoomCount: rooms.allRooms.rooms.length });
-  }
+  };
 
   /**
    * Checks whether the parameter matches the state and switches it if not.
@@ -58,7 +58,7 @@ class Setup extends Component {
           visibleLevel: 'WelcomePage',
         });
     }
-  }
+  };
 
   /**
    * `Conditionally renders the content
@@ -70,28 +70,28 @@ class Setup extends Component {
    * @return {JSX}
    */
   renderSetupContent = (level) => {
-    const {
-      centerRoomCount,
-    } = this.state;
+    const { centerRoomCount } = this.state;
     switch (level) {
       case 'SetupInfoPage':
-        return (<SetupInfoPage handleClick={this.handleClick} />);
+        return <SetupInfoPage handleClick={this.handleClick} />;
       case 'BuildingLevel':
-        return (<BuildingLevel handleClick={this.handleClick} />);
+        return <BuildingLevel handleClick={this.handleClick} />;
       case 'RoomSetupView':
-        return (<RoomSetupView handleClick={this.handleClick} />);
+        return <RoomSetupView handleClick={this.handleClick} />;
       default:
-        return (centerRoomCount < 1000
-          ? <WelcomePage handleClick={this.handleClick} />
-          : <RoomSetupView handleClick={this.handleClick} />);
+        return centerRoomCount < 1000 ? (
+          <WelcomePage handleClick={this.handleClick} />
+        ) : (
+          <RoomSetupView handleClick={this.handleClick} />
+        );
     }
-  }
+  };
 
   render() {
     const { visibleLevel } = this.state;
-
     return this.renderSetupContent(visibleLevel);
   }
 }
+
 
 export default Setup;

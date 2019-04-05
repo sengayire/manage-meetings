@@ -117,7 +117,7 @@
     .room-setup-card {
       box-sizing: border-box;
       width: 20%;
-      height: 260px;
+      height: auto;
       overflow: hidden;
       margin: 10px;
       border: 1px solid $color-input-border;
@@ -135,7 +135,7 @@
       .room-details-container {
         padding: 5px;
         .room-name {
-          height: 20px;
+          height: auto;
           width: auto;
           color: map-get($color-black, 600);
           font-size: 20px;

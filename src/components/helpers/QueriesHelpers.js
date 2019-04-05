@@ -1,5 +1,10 @@
 import { GET_USER_QUERY } from '../../graphql/queries/People';
-import { GET_LOCATIONS_QUERY, GET_ROOMS_QUERY } from '../../graphql/queries/Rooms';
+import {
+  GET_LOCATIONS_QUERY,
+  GET_ROOMS_QUERY,
+  GET_ALL_REMOTE_ROOMS,
+} from '../../graphql/queries/Rooms';
+import { GET_RESOURCES_QUERY } from '../../graphql/queries/Resources';
 import { decodeTokenAndGetUserData } from '../../utils/Cookie';
 import apolloClient from '../../utils/ApolloClient';
 
@@ -61,5 +66,46 @@ const getRoomList = async (client = apolloClient, userLocation) => {
   return data;
 };
 
+const getAllResources = async (client = apolloClient) => {
+  try {
+    const data = client.readQuery(
+      {
+        query: GET_RESOURCES_QUERY,
+        variables: {
+          page: 1,
+          perPage: 5,
+        },
+      },
+      true,
+    );
+    return data.allResources;
+  } catch (err) {
+    const { data } = await client.query({
+      query: GET_RESOURCES_QUERY,
+      variables: {
+        page: 1,
+        perPage: 5,
+      },
+    });
+    return data.allResources;
+  }
+};
 
-export { getUserDetails, getAllLocations, getRoomList };
+const getAllRemoteRooms = async (client = apolloClient) => {
+  try {
+    const data = client.readQuery(
+      {
+        query: GET_ALL_REMOTE_ROOMS,
+      },
+      true,
+    );
+    return data.allRemoteRooms;
+  } catch (err) {
+    const { data } = await client.query({
+      query: GET_ALL_REMOTE_ROOMS,
+    });
+    return data.allRemoteRooms;
+  }
+};
+
+export { getUserDetails, getAllLocations, getAllResources, getAllRemoteRooms, getRoomList };

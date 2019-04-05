@@ -69,7 +69,7 @@ describe('SelectInput component', () => {
     const option = emptyWrapper.find('option');
     expect(emptyWrapper).toMatchSnapshot();
     expect(option).toHaveLength(1);
-    expect(option.prop('children')).toBe('Hello');
+    expect(option.prop('children')[0]).toBe('Hello');
   });
 
   it('should display value if displayText isn\'t given in options', () => {

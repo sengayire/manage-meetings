@@ -3,7 +3,6 @@ import { graphql, compose } from 'react-apollo';
 import toastr from 'toastr';
 import PropTypes from 'prop-types';
 import ActionButtons from '../commons/ActionButtons';
-
 import MrmModal from '../commons/Modal';
 import '../../assets/styles/addresource.scss';
 import { Input, SelectInput as Select } from '../commons';

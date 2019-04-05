@@ -6,17 +6,51 @@ import AddResource from './AddResources'; //eslint-disable-line
 import { editIcon, deleteIcon } from '../../../utils/images/images';
 import SelectInput from '../../../components/commons/SelectInput';
 import { selectMockData } from '../../../utils/roomSetupMock';
-import resources from '../../../fixtures/resourcesList';
 import AllocatedResources from '../../resources/AllocatedResources';
-import resourcesData from '../../../../src/fixtures/resourcesData';
+import Spinner from '../../commons/Spinner';
+import {
+  getAllResources,
+  getAllRemoteRooms,
+} from '../../../../src/components/helpers/QueriesHelpers';
 
 class Resources extends React.Component {
-  handleInputChange = () => {};
+  state = {
+    resources: [],
+    resourceDetails: {},
+    remoteRooms: [],
+  };
+
+  componentDidMount() {
+    this.getAllResources();
+  }
+
+  /**
+   * Queries the back-end for a list of resources and rooms;
+   * @params {null}
+   *
+   * @returns {array}
+   */
+  getAllResources = async () => {
+    const allResources = await getAllResources();
+    const allRemoteRooms = await getAllRemoteRooms();
+    const { resources, remoteRooms } = this.state;
+    let resourcesList = Object.assign({}, resources);
+    resourcesList = allResources.resources;
+    let remoteRoomsList = Object.assign({}, remoteRooms);
+    remoteRoomsList = allRemoteRooms.rooms;
+    this.setState({
+      resources: resourcesList,
+      remoteRooms: remoteRoomsList,
+    });
+  };
 
   AllocatedResourcesComponent = createRef();
 
-  handleClickOnResource = () => {
+  handleClickOnResource = (resource) => {
     this.AllocatedResourcesComponent.current.toggleModal();
+    this.setState({
+      resourceDetails: resource,
+    });
   };
 
   /**
@@ -29,7 +63,7 @@ class Resources extends React.Component {
       className="resource-list-item"
       key={resource.id}
       id={resource.id}
-      onClick={this.handleClickOnResource}
+      onClick={() => this.handleClickOnResource(resource)}
     >
       <span className="resource-list-item-text">{resource.name}</span>
       <span className="resource-list-item-buttons">
@@ -72,6 +106,10 @@ class Resources extends React.Component {
   };
 
   render() {
+    const { resources, resourceDetails, remoteRooms } = this.state;
+    if (resources.length === 0) {
+      return <Spinner />;
+    }
     return (
       <div className="setup-container">
         <div className="resource-box">
@@ -84,7 +122,11 @@ class Resources extends React.Component {
           </div>
           <div>{resources.map(resource => this.resourceList(resource))}</div>
         </div>
-        <AllocatedResources ref={this.AllocatedResourcesComponent} resourcesData={resourcesData} />
+        <AllocatedResources
+          ref={this.AllocatedResourcesComponent}
+          remoteRooms={remoteRooms}
+          resourceDetails={resourceDetails}
+        />
       </div>
     );
   }

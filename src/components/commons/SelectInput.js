@@ -32,13 +32,13 @@ const SelectInput = ({
         name={name}
         id={id}
         className={selectInputClassName}
-        value={value}
+        defaultValue={value}
         onChange={onChange}
         {...otherProps}
         required={required}
       >
         {/* render place holder in case its provided */}
-        {placeholder && <option value={placeholderValue}>{placeholder}</option>}
+        {placeholder && <option value={placeholderValue}>{placeholder} </option>}
 
         {/* Render the array options if provided.
          If you provide both options and children, details in the options will be rendered
@@ -78,7 +78,7 @@ SelectInput.propTypes = {
   wrapperClassName: PropTypes.string,
   labelText: PropTypes.string.isRequired,
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  onChange: PropTypes.func.isRequired,
+  onChange: PropTypes.func,
   placeholder: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   placeholderValue: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   required: PropTypes.bool,
@@ -92,6 +92,7 @@ SelectInput.propTypes = {
 };
 
 SelectInput.defaultProps = {
+  onChange: PropTypes.func,
   isValue: false,
   selectInputClassName: 'default-select',
   wrapperClassName: 'input1',

@@ -2,10 +2,14 @@ import React, { Component, Fragment, createRef } from 'react';
 import PropTypes from 'prop-types';
 import { deleteIcon } from '../../utils/images/images';
 import ButtonIcon from '../commons/Button';
-import Modal from '../commons/MrmModal';
+import { SelectInput as Select } from '../commons';
+import MrmModal from '../commons/MrmModal';
 import '../../assets/styles/resourcesAllocatedToRoom.scss';
 
 class roomsAllocatedToResources extends Component {
+  state = {
+    roomDetails: '',
+  };
   // Creating a ref to the modal component
   toggleModalComponent = createRef();
 
@@ -26,17 +30,18 @@ class roomsAllocatedToResources extends Component {
    *
    * @returns {jsx}
    */
-  displayRoomsAllocated = (arrayOfRoomsDetail) => {
-    const rooms =
-      arrayOfRoomsDetail &&
-      arrayOfRoomsDetail.map(roomName => (
-        <div key={roomName} className="single-resource">
-          <div className="room-name-resource">
-            <p>{roomName}</p>
-          </div>
-          <ButtonIcon title={<img src={deleteIcon} alt="Delete" />} />
+  displayRoomsAllocated = (room) => {
+    if (!room) {
+      return null;
+    }
+    const rooms = (
+      <div key={room.name} className="single-resource">
+        <div className="room-name-resource">
+          <p>{room.name}</p>
         </div>
-      ));
+        <ButtonIcon title={<img src={deleteIcon} alt="Delete" />} />
+      </div>
+    );
     return rooms;
   };
 
@@ -47,41 +52,90 @@ class roomsAllocatedToResources extends Component {
    *
    * @returns {jxs}
    */
-  displayModalContent = resourcesData => (
+  displayModalContent = resourceDetails => (
     <Fragment>
       <p className="number-of-rooms">
-        {resourcesData.resourceName} has been allocated to {resourcesData.numberOfRoom} Meeting
-        Rooms
+        {resourceDetails.name} has been allocated to {1} Meeting Room
       </p>
-      {this.displayRoomsAllocated(resourcesData.roomNames)}
+      {this.displayRoomsAllocated(resourceDetails.room)}
+      {this.renderRoomOptions()}
     </Fragment>
   );
+
+  /**
+   * updates the state with resource details
+   *
+   * @returns {null}
+   */
+
+  handleRoomDetails = (event) => {
+    const { name, value } = event.target;
+    this.setState({
+      [name]: value,
+    });
+  };
+
+  /**
+   * clears resource details from the state
+   *
+   * @returns {null}
+   */
+  handleCloseModal = () => {
+    this.setState({
+      roomDetails: '',
+    });
+  };
+
+  renderRoomOptions = () => {
+    const { remoteRooms } = this.props;
+    const { roomDetails } = this.state;
+    if (!remoteRooms) {
+      return null;
+    }
+    return (
+      <Select
+        placeholder="Select Rooms"
+        name="roomDetails"
+        value={roomDetails}
+        labelText="Room Name"
+        id="room"
+        onChange={this.handleRoomDetails}
+        options={remoteRooms}
+        wrapperClassName="modal--input"
+      />
+    );
+  };
+
   render() {
-    const { resourcesData } = this.props;
-    const modalContent = this.displayModalContent(resourcesData);
+    const { resourceDetails } = this.props;
+    const modalContent = this.displayModalContent(resourceDetails);
     return (
       <div className="rooms-allocated-container">
-        <Modal
+        <MrmModal
           type={2}
           ref={this.toggleModalComponent}
-          title={resourcesData.resourceName}
+          title={resourceDetails.name}
           modalContent={modalContent}
           isLoading={false}
           actionButtonText="ASSIGN TO ROOM"
           cancelButtonText="CANCEL"
+          handleCloseModal={this.handleCloseModal}
         />
       </div>
     );
   }
 }
 roomsAllocatedToResources.propTypes = {
-  resourcesData: PropTypes.shape({
-    resourceName: PropTypes.string,
-    numberOfRoom: PropTypes.number,
-    roomNames: PropTypes.arrayOf(PropTypes.string),
+  resourceDetails: PropTypes.shape({
+    name: PropTypes.string,
+    room: PropTypes.object,
   }),
+  // eslint-disable-next-line react/forbid-prop-types
+  remoteRooms: PropTypes.array,
 };
 roomsAllocatedToResources.defaultProps = {
-  resourcesData: {},
+  resourceDetails: {},
+  remoteRooms: [],
 };
+
 export default roomsAllocatedToResources;
