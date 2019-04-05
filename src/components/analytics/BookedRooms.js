@@ -33,7 +33,7 @@ const BookedRooms = ({
             <div className="table__body">
               {
                 <ErrorIcon
-                  message={error.graphQLErrors.length > 0 && error.graphQLErrors[0].message}
+                  message={error.graphQLErrors.length > 0 && 'No resource found'}
                 />
               }
             </div>

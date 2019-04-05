@@ -18,8 +18,11 @@ export const GET_ROOMS_QUERY = gql`
       rooms {
         id
         name
+        capacity
         floor {
+          name
           block {
+            name
             offices {
               name
               location {

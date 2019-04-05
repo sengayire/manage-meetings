@@ -5,8 +5,11 @@ const allRoomsReturnData = {
         {
           id: '3',
           name: 'Gulu',
+          capacity: 1,
           floor: {
+            name: 'Third floor',
             block: {
+              name: 'EPIC Center',
               offices: {
                 name: 'EPIC Center',
                 location: {
@@ -25,8 +28,11 @@ const allRoomsReturnData = {
         {
           id: '4',
           name: 'Entebbe',
+          capacity: 1,
           floor: {
+            name: 'First floor',
             block: {
+              name: 'EPIC Center',
               offices: {
                 name: 'EPIC Center',
                 location: {
@@ -45,8 +51,11 @@ const allRoomsReturnData = {
         {
           id: '5',
           name: 'Mbarara',
+          capacity: 1,
           floor: {
+            name: 'Third floor',
             block: {
+              name: 'EPIC Center',
               offices: {
                 name: 'EPIC Center',
                 location: {
@@ -65,8 +74,11 @@ const allRoomsReturnData = {
         {
           id: '6',
           name: 'Mbale',
+          capacity: 1,
           floor: {
+            name: 'Second floor',
             block: {
+              name: 'EPIC Center',
               offices: null,
               __typename: 'SingleBlock',
             },
@@ -77,8 +89,11 @@ const allRoomsReturnData = {
         {
           id: '8',
           name: 'Ocul',
+          capacity: 1,
           floor: {
+            name: 'Third floor',
             block: {
+              name: 'EPIC Center',
               offices: {
                 name: 'EPIC Center',
                 location: {

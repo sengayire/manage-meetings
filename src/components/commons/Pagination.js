@@ -57,8 +57,8 @@ class Pagination extends Component {
    * @returns {void}
    */
   handleNext = () => {
-    const { handleData, dataFetched } = this.props;
-    const { page, perPage } = this.state;
+    const { handleData, dataFetched, perPage } = this.props;
+    const { page } = this.state;
     handleData(perPage, page + 1);
     dataFetched &&
       this.setState({
@@ -92,7 +92,6 @@ class Pagination extends Component {
       isFetching,
       perPage,
     } = this.props;
-
     return (
       <nav className="page-navigation">
         <div className="perPageBlock">

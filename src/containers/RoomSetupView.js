@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import RoomSetup from './RoomSetup';
+// eslint-disable-next-line import/no-named-as-default
+import RoomSetup from '../components/rooms/RoomSetup';
 import Resources from '../components/setup/resources/Resources';
 import DevicesList from '../components/devices/DeviceList';
 import SetupNavbar from '../components/setup/SetupNavbar';

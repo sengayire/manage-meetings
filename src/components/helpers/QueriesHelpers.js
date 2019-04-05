@@ -1,11 +1,11 @@
 import { GET_USER_QUERY } from '../../graphql/queries/People';
-import { GET_LOCATIONS_QUERY, GET_ALL_ROOMS } from '../../graphql/queries/Rooms';
+import { GET_LOCATIONS_QUERY, GET_ROOMS_QUERY } from '../../graphql/queries/Rooms';
 import { decodeTokenAndGetUserData } from '../../utils/Cookie';
 import apolloClient from '../../utils/ApolloClient';
 
 const getUserDetails = async (client = apolloClient) => {
   const { UserInfo: userData } = decodeTokenAndGetUserData() || {};
-  const email = process.env.NODE_ENV === 'test' ? 'sammy.muriuki@andela.com' : userData.email;
+  const email = process.env.NODE_ENV === 'test' ? 'converge@andela.com' : userData.email;
   try {
     const data = client.readQuery(
       {
@@ -16,9 +16,11 @@ const getUserDetails = async (client = apolloClient) => {
       },
       true,
     );
-    return data.user;
+    const user = Object.assign({}, data.user);
+    user.firstName = userData.firstName;
+    return user;
   } catch (err) {
-    const { data } = await client.query({
+    const data = await client.query({
       query: GET_USER_QUERY,
       variables: { email },
     });
@@ -47,12 +49,12 @@ const getAllLocations = async (client = apolloClient) => {
 
 const getRoomList = async (client = apolloClient, userLocation) => {
   const { data } = await client.query({
-    query: GET_ALL_ROOMS,
+    query: GET_ROOMS_QUERY,
     variables: {
       location: userLocation,
       office: '',
       page: 1,
-      perPage: 5,
+      perPage: 8,
     },
   });
 

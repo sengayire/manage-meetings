@@ -27,7 +27,7 @@ const QueryBookingsCount = ({ dateValue, updateParent }) => (
       }
       if (error) {
         return (<ErrorIcon
-          message={error.graphQLErrors.length > 0 && error.graphQLErrors[0].message}
+          message={error.graphQLErrors.length > 0 && 'No resource found'}
         />);
       }
 

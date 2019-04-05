@@ -18,8 +18,8 @@ describe('unit test for room setupView component', () => {
   it('should render the setup page complete with nav bar', () => {
     expect(wrapper.find('.setup-main-container').exists()).toBe(true);
     expect(wrapper.find('.setup-main-container').children().length).toBe(2);
-    expect(wrapper.find('.setup-navbar').exists()).toBe(true);
-    expect(wrapper.find('.setup-container').exists()).toBe(true);
+    expect(wrapper.find('SetupNavbar').exists()).toBe(true);
+    expect(wrapper.find('Apollo(RoomSetup)').exists()).toBe(true);
   });
 
   it('should toggle navbar item when user clicks on it', () => {

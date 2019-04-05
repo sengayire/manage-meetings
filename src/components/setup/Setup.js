@@ -73,7 +73,6 @@ class Setup extends Component {
     const {
       centerRoomCount,
     } = this.state;
-
     switch (level) {
       case 'SetupInfoPage':
         return (<SetupInfoPage handleClick={this.handleClick} />);

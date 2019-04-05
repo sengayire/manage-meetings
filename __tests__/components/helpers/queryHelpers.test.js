@@ -4,7 +4,7 @@ describe('Unit test for the getUserDetails method', () => {
   it('should call only the readQuery method and return user details'
     + ' when the user details is in the store', async () => {
     const mockedClient = {
-      readQuery: jest.fn().mockImplementationOnce(() => ({ user: { data: 'user' } })),
+      readQuery: jest.fn().mockImplementationOnce(() => ({ user: { data: { email: 'converge@andela.com' } } })),
       query: jest.fn(),
     };
     const response = await getUserDetails(mockedClient);

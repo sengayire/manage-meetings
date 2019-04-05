@@ -119,7 +119,7 @@ export class AverageMeetingList extends Component {
                 : (
                 error ? (
                   <ErrorIcon
-                    message={error.graphQLErrors.length > 0 && error.graphQLErrors[0].message}
+                    message={error.graphQLErrors.length > 0 && 'No resource found'}
                   />
                 )
                 : <QueryAnalyticsPerMeetingRoom

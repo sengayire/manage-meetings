@@ -362,6 +362,17 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                                   "kind": "Field",
                                   "name": Object {
                                     "kind": "Name",
+                                    "value": "capacity",
+                                  },
+                                  "selectionSet": undefined,
+                                },
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
                                     "value": "floor",
                                   },
                                   "selectionSet": Object {
@@ -374,11 +385,33 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                                         "kind": "Field",
                                         "name": Object {
                                           "kind": "Name",
+                                          "value": "name",
+                                        },
+                                        "selectionSet": undefined,
+                                      },
+                                      Object {
+                                        "alias": undefined,
+                                        "arguments": Array [],
+                                        "directives": Array [],
+                                        "kind": "Field",
+                                        "name": Object {
+                                          "kind": "Name",
                                           "value": "block",
                                         },
                                         "selectionSet": Object {
                                           "kind": "SelectionSet",
                                           "selections": Array [
+                                            Object {
+                                              "alias": undefined,
+                                              "arguments": Array [],
+                                              "directives": Array [],
+                                              "kind": "Field",
+                                              "name": Object {
+                                                "kind": "Name",
+                                                "value": "name",
+                                              },
+                                              "selectionSet": undefined,
+                                            },
                                             Object {
                                               "alias": undefined,
                                               "arguments": Array [],
@@ -608,7 +641,7 @@ exports[`RoomList Component renders correctly from memory 1`] = `
             ],
             "kind": "Document",
             "loc": Object {
-              "end": 566,
+              "end": 615,
               "start": 0,
             },
           },
@@ -628,10 +661,12 @@ exports[`RoomList Component renders correctly from memory 1`] = `
               "rooms": Array [
                 Object {
                   "__typename": "Room",
+                  "capacity": 1,
                   "floor": Object {
                     "__typename": "Floor",
                     "block": Object {
                       "__typename": "SingleBlock",
+                      "name": "EPIC Center",
                       "offices": Object {
                         "__typename": "Offices",
                         "location": Object {
@@ -642,16 +677,19 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                         "name": "EPIC Center",
                       },
                     },
+                    "name": "Third floor",
                   },
                   "id": "3",
                   "name": "Gulu",
                 },
                 Object {
                   "__typename": "Room",
+                  "capacity": 1,
                   "floor": Object {
                     "__typename": "Floor",
                     "block": Object {
                       "__typename": "SingleBlock",
+                      "name": "EPIC Center",
                       "offices": Object {
                         "__typename": "Offices",
                         "location": Object {
@@ -662,16 +700,19 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                         "name": "EPIC Center",
                       },
                     },
+                    "name": "First floor",
                   },
                   "id": "4",
                   "name": "Entebbe",
                 },
                 Object {
                   "__typename": "Room",
+                  "capacity": 1,
                   "floor": Object {
                     "__typename": "Floor",
                     "block": Object {
                       "__typename": "SingleBlock",
+                      "name": "EPIC Center",
                       "offices": Object {
                         "__typename": "Offices",
                         "location": Object {
@@ -682,28 +723,34 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                         "name": "EPIC Center",
                       },
                     },
+                    "name": "Third floor",
                   },
                   "id": "5",
                   "name": "Mbarara",
                 },
                 Object {
                   "__typename": "Room",
+                  "capacity": 1,
                   "floor": Object {
                     "__typename": "Floor",
                     "block": Object {
                       "__typename": "SingleBlock",
+                      "name": "EPIC Center",
                       "offices": null,
                     },
+                    "name": "Second floor",
                   },
                   "id": "6",
                   "name": "Mbale",
                 },
                 Object {
                   "__typename": "Room",
+                  "capacity": 1,
                   "floor": Object {
                     "__typename": "Floor",
                     "block": Object {
                       "__typename": "SingleBlock",
+                      "name": "EPIC Center",
                       "offices": Object {
                         "__typename": "Offices",
                         "location": Object {
@@ -714,6 +761,7 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                         "name": "EPIC Center",
                       },
                     },
+                    "name": "Third floor",
                   },
                   "id": "8",
                   "name": "Ocul",
@@ -1197,6 +1245,17 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                                     "kind": "Field",
                                     "name": Object {
                                       "kind": "Name",
+                                      "value": "capacity",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
                                       "value": "floor",
                                     },
                                     "selectionSet": Object {
@@ -1209,11 +1268,33 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                                           "kind": "Field",
                                           "name": Object {
                                             "kind": "Name",
+                                            "value": "name",
+                                          },
+                                          "selectionSet": undefined,
+                                        },
+                                        Object {
+                                          "alias": undefined,
+                                          "arguments": Array [],
+                                          "directives": Array [],
+                                          "kind": "Field",
+                                          "name": Object {
+                                            "kind": "Name",
                                             "value": "block",
                                           },
                                           "selectionSet": Object {
                                             "kind": "SelectionSet",
                                             "selections": Array [
+                                              Object {
+                                                "alias": undefined,
+                                                "arguments": Array [],
+                                                "directives": Array [],
+                                                "kind": "Field",
+                                                "name": Object {
+                                                  "kind": "Name",
+                                                  "value": "name",
+                                                },
+                                                "selectionSet": undefined,
+                                              },
                                               Object {
                                                 "alias": undefined,
                                                 "arguments": Array [],
@@ -1443,7 +1524,7 @@ exports[`RoomList Component renders correctly from memory 1`] = `
               ],
               "kind": "Document",
               "loc": Object {
-                "end": 566,
+                "end": 615,
                 "start": 0,
               },
             },
@@ -2181,6 +2262,17 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                                       "kind": "Field",
                                       "name": Object {
                                         "kind": "Name",
+                                        "value": "capacity",
+                                      },
+                                      "selectionSet": undefined,
+                                    },
+                                    Object {
+                                      "alias": undefined,
+                                      "arguments": Array [],
+                                      "directives": Array [],
+                                      "kind": "Field",
+                                      "name": Object {
+                                        "kind": "Name",
                                         "value": "floor",
                                       },
                                       "selectionSet": Object {
@@ -2193,11 +2285,33 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                                             "kind": "Field",
                                             "name": Object {
                                               "kind": "Name",
+                                              "value": "name",
+                                            },
+                                            "selectionSet": undefined,
+                                          },
+                                          Object {
+                                            "alias": undefined,
+                                            "arguments": Array [],
+                                            "directives": Array [],
+                                            "kind": "Field",
+                                            "name": Object {
+                                              "kind": "Name",
                                               "value": "block",
                                             },
                                             "selectionSet": Object {
                                               "kind": "SelectionSet",
                                               "selections": Array [
+                                                Object {
+                                                  "alias": undefined,
+                                                  "arguments": Array [],
+                                                  "directives": Array [],
+                                                  "kind": "Field",
+                                                  "name": Object {
+                                                    "kind": "Name",
+                                                    "value": "name",
+                                                  },
+                                                  "selectionSet": undefined,
+                                                },
                                                 Object {
                                                   "alias": undefined,
                                                   "arguments": Array [],
@@ -2427,7 +2541,7 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                 ],
                 "kind": "Document",
                 "loc": Object {
-                  "end": 566,
+                  "end": 615,
                   "start": 0,
                 },
               },
@@ -2894,6 +3008,17 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                                           "kind": "Field",
                                           "name": Object {
                                             "kind": "Name",
+                                            "value": "capacity",
+                                          },
+                                          "selectionSet": undefined,
+                                        },
+                                        Object {
+                                          "alias": undefined,
+                                          "arguments": Array [],
+                                          "directives": Array [],
+                                          "kind": "Field",
+                                          "name": Object {
+                                            "kind": "Name",
                                             "value": "floor",
                                           },
                                           "selectionSet": Object {
@@ -2906,11 +3031,33 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                                                 "kind": "Field",
                                                 "name": Object {
                                                   "kind": "Name",
+                                                  "value": "name",
+                                                },
+                                                "selectionSet": undefined,
+                                              },
+                                              Object {
+                                                "alias": undefined,
+                                                "arguments": Array [],
+                                                "directives": Array [],
+                                                "kind": "Field",
+                                                "name": Object {
+                                                  "kind": "Name",
                                                   "value": "block",
                                                 },
                                                 "selectionSet": Object {
                                                   "kind": "SelectionSet",
                                                   "selections": Array [
+                                                    Object {
+                                                      "alias": undefined,
+                                                      "arguments": Array [],
+                                                      "directives": Array [],
+                                                      "kind": "Field",
+                                                      "name": Object {
+                                                        "kind": "Name",
+                                                        "value": "name",
+                                                      },
+                                                      "selectionSet": undefined,
+                                                    },
                                                     Object {
                                                       "alias": undefined,
                                                       "arguments": Array [],
@@ -3140,7 +3287,7 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                     ],
                     "kind": "Document",
                     "loc": Object {
-                      "end": 566,
+                      "end": 615,
                       "start": 0,
                     },
                   },
@@ -3986,6 +4133,17 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                                       "kind": "Field",
                                       "name": Object {
                                         "kind": "Name",
+                                        "value": "capacity",
+                                      },
+                                      "selectionSet": undefined,
+                                    },
+                                    Object {
+                                      "alias": undefined,
+                                      "arguments": Array [],
+                                      "directives": Array [],
+                                      "kind": "Field",
+                                      "name": Object {
+                                        "kind": "Name",
                                         "value": "floor",
                                       },
                                       "selectionSet": Object {
@@ -3998,11 +4156,33 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                                             "kind": "Field",
                                             "name": Object {
                                               "kind": "Name",
+                                              "value": "name",
+                                            },
+                                            "selectionSet": undefined,
+                                          },
+                                          Object {
+                                            "alias": undefined,
+                                            "arguments": Array [],
+                                            "directives": Array [],
+                                            "kind": "Field",
+                                            "name": Object {
+                                              "kind": "Name",
                                               "value": "block",
                                             },
                                             "selectionSet": Object {
                                               "kind": "SelectionSet",
                                               "selections": Array [
+                                                Object {
+                                                  "alias": undefined,
+                                                  "arguments": Array [],
+                                                  "directives": Array [],
+                                                  "kind": "Field",
+                                                  "name": Object {
+                                                    "kind": "Name",
+                                                    "value": "name",
+                                                  },
+                                                  "selectionSet": undefined,
+                                                },
                                                 Object {
                                                   "alias": undefined,
                                                   "arguments": Array [],
@@ -4232,7 +4412,7 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                 ],
                 "kind": "Document",
                 "loc": Object {
-                  "end": 566,
+                  "end": 615,
                   "start": 0,
                 },
               },
@@ -4405,6 +4585,17 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                                           "kind": "Field",
                                           "name": Object {
                                             "kind": "Name",
+                                            "value": "capacity",
+                                          },
+                                          "selectionSet": undefined,
+                                        },
+                                        Object {
+                                          "alias": undefined,
+                                          "arguments": Array [],
+                                          "directives": Array [],
+                                          "kind": "Field",
+                                          "name": Object {
+                                            "kind": "Name",
                                             "value": "floor",
                                           },
                                           "selectionSet": Object {
@@ -4417,11 +4608,33 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                                                 "kind": "Field",
                                                 "name": Object {
                                                   "kind": "Name",
+                                                  "value": "name",
+                                                },
+                                                "selectionSet": undefined,
+                                              },
+                                              Object {
+                                                "alias": undefined,
+                                                "arguments": Array [],
+                                                "directives": Array [],
+                                                "kind": "Field",
+                                                "name": Object {
+                                                  "kind": "Name",
                                                   "value": "block",
                                                 },
                                                 "selectionSet": Object {
                                                   "kind": "SelectionSet",
                                                   "selections": Array [
+                                                    Object {
+                                                      "alias": undefined,
+                                                      "arguments": Array [],
+                                                      "directives": Array [],
+                                                      "kind": "Field",
+                                                      "name": Object {
+                                                        "kind": "Name",
+                                                        "value": "name",
+                                                      },
+                                                      "selectionSet": undefined,
+                                                    },
                                                     Object {
                                                       "alias": undefined,
                                                       "arguments": Array [],
@@ -4651,7 +4864,7 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                     ],
                     "kind": "Document",
                     "loc": Object {
-                      "end": 566,
+                      "end": 615,
                       "start": 0,
                     },
                   },
@@ -4838,6 +5051,17 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                                         "kind": "Field",
                                         "name": Object {
                                           "kind": "Name",
+                                          "value": "capacity",
+                                        },
+                                        "selectionSet": undefined,
+                                      },
+                                      Object {
+                                        "alias": undefined,
+                                        "arguments": Array [],
+                                        "directives": Array [],
+                                        "kind": "Field",
+                                        "name": Object {
+                                          "kind": "Name",
                                           "value": "floor",
                                         },
                                         "selectionSet": Object {
@@ -4850,11 +5074,33 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                                               "kind": "Field",
                                               "name": Object {
                                                 "kind": "Name",
+                                                "value": "name",
+                                              },
+                                              "selectionSet": undefined,
+                                            },
+                                            Object {
+                                              "alias": undefined,
+                                              "arguments": Array [],
+                                              "directives": Array [],
+                                              "kind": "Field",
+                                              "name": Object {
+                                                "kind": "Name",
                                                 "value": "block",
                                               },
                                               "selectionSet": Object {
                                                 "kind": "SelectionSet",
                                                 "selections": Array [
+                                                  Object {
+                                                    "alias": undefined,
+                                                    "arguments": Array [],
+                                                    "directives": Array [],
+                                                    "kind": "Field",
+                                                    "name": Object {
+                                                      "kind": "Name",
+                                                      "value": "name",
+                                                    },
+                                                    "selectionSet": undefined,
+                                                  },
                                                   Object {
                                                     "alias": undefined,
                                                     "arguments": Array [],
@@ -5084,7 +5330,7 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                   ],
                   "kind": "Document",
                   "loc": Object {
-                    "end": 566,
+                    "end": 615,
                     "start": 0,
                   },
                 },
@@ -5864,6 +6110,17 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                                         "kind": "Field",
                                         "name": Object {
                                           "kind": "Name",
+                                          "value": "capacity",
+                                        },
+                                        "selectionSet": undefined,
+                                      },
+                                      Object {
+                                        "alias": undefined,
+                                        "arguments": Array [],
+                                        "directives": Array [],
+                                        "kind": "Field",
+                                        "name": Object {
+                                          "kind": "Name",
                                           "value": "floor",
                                         },
                                         "selectionSet": Object {
@@ -5876,11 +6133,33 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                                               "kind": "Field",
                                               "name": Object {
                                                 "kind": "Name",
+                                                "value": "name",
+                                              },
+                                              "selectionSet": undefined,
+                                            },
+                                            Object {
+                                              "alias": undefined,
+                                              "arguments": Array [],
+                                              "directives": Array [],
+                                              "kind": "Field",
+                                              "name": Object {
+                                                "kind": "Name",
                                                 "value": "block",
                                               },
                                               "selectionSet": Object {
                                                 "kind": "SelectionSet",
                                                 "selections": Array [
+                                                  Object {
+                                                    "alias": undefined,
+                                                    "arguments": Array [],
+                                                    "directives": Array [],
+                                                    "kind": "Field",
+                                                    "name": Object {
+                                                      "kind": "Name",
+                                                      "value": "name",
+                                                    },
+                                                    "selectionSet": undefined,
+                                                  },
                                                   Object {
                                                     "alias": undefined,
                                                     "arguments": Array [],
@@ -6110,7 +6389,7 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                   ],
                   "kind": "Document",
                   "loc": Object {
-                    "end": 566,
+                    "end": 615,
                     "start": 0,
                   },
                 },
@@ -6271,6 +6550,17 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                                   "kind": "Field",
                                   "name": Object {
                                     "kind": "Name",
+                                    "value": "capacity",
+                                  },
+                                  "selectionSet": undefined,
+                                },
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
                                     "value": "floor",
                                   },
                                   "selectionSet": Object {
@@ -6283,11 +6573,33 @@ exports[`RoomList Component renders correctly from memory 1`] = `
                                         "kind": "Field",
                                         "name": Object {
                                           "kind": "Name",
+                                          "value": "name",
+                                        },
+                                        "selectionSet": undefined,
+                                      },
+                                      Object {
+                                        "alias": undefined,
+                                        "arguments": Array [],
+                                        "directives": Array [],
+                                        "kind": "Field",
+                                        "name": Object {
+                                          "kind": "Name",
                                           "value": "block",
                                         },
                                         "selectionSet": Object {
                                           "kind": "SelectionSet",
                                           "selections": Array [
+                                            Object {
+                                              "alias": undefined,
+                                              "arguments": Array [],
+                                              "directives": Array [],
+                                              "kind": "Field",
+                                              "name": Object {
+                                                "kind": "Name",
+                                                "value": "name",
+                                              },
+                                              "selectionSet": undefined,
+                                            },
                                             Object {
                                               "alias": undefined,
                                               "arguments": Array [],
@@ -6517,7 +6829,7 @@ exports[`RoomList Component renders correctly from memory 1`] = `
             ],
             "kind": "Document",
             "loc": Object {
-              "end": 566,
+              "end": 615,
               "start": 0,
             },
           }
