@@ -12,20 +12,14 @@ import ErrorIcon from '../../../components/commons/ErrorIcon';
 export class GetAverageRoomCapacityComponent extends Component {
   constructor(props) {
     super(props);
-    this.state = { };
+    this.state = {};
   }
 
-  /**
-   * converts to percentage
-   *
-   * @param {Integer} capacity
-   * @param {Integer} total
-   *
-   * @returns {Integer}
-   */
-  getPercentage = (capacity, total) => {
-    const result = (capacity / total) * 100;
-    return Math.round(result);
+  componentDidCatch(prevProps) {
+    const { updateParent } = this.props;
+    if (prevProps.updateParent !== updateParent) {
+      updateParent('roomCapacity', this.getRoomData());
+    }
   }
 
   /**
@@ -47,7 +41,20 @@ export class GetAverageRoomCapacityComponent extends Component {
     const betweenTenandTwentyData = this.getPercentage(betweenTenandTwentyLength, roomsLength);
     const greaterThanTwentyData = this.getPercentage(greaterThanTwentyArrayLength, roomsLength);
     return { lessThanTenData, betweenTenandTwentyData, greaterThanTwentyData };
-  }
+  };
+
+  /**
+   * converts to percentage
+   *
+   * @param {Integer} capacity
+   * @param {Integer} total
+   *
+   * @returns {Integer}
+   */
+  getPercentage = (capacity, total) => {
+    const result = (capacity / total) * 100;
+    return Math.round(result);
+  };
 
   /**
    * renders pie chart for room data
@@ -57,14 +64,12 @@ export class GetAverageRoomCapacityComponent extends Component {
   renderPieChart = () => {
     const { loading, error } = this.props.data;
     if (error) {
-      return (<ErrorIcon
-        message={error.graphQLErrors.length > 0 && error.graphQLErrors[0].message}
-      />);
+      return (
+        <ErrorIcon message={error.graphQLErrors.length > 0 && error.graphQLErrors[0].message} />
+      );
     } else if (loading) {
       return <Spinner />;
     }
-    const { updateParent } = this.props;
-    updateParent('roomCapacity', this.getRoomData());
 
     const { lessThanTenData, betweenTenandTwentyData, greaterThanTwentyData } = this.getRoomData();
     const options = {
@@ -76,44 +81,41 @@ export class GetAverageRoomCapacityComponent extends Component {
     };
     const graphData = {
       labels: ['Less than 10 in %', '10-20 in %', 'More than 20 in %'],
-      datasets: [{
-        label: 'Average Meetings Duration',
-        data: [lessThanTenData, betweenTenandTwentyData, greaterThanTwentyData],
-        backgroundColor: roomCapacityBackground,
-        borderWidth: 3,
-      }],
+      datasets: [
+        {
+          label: 'Average Meetings Duration',
+          data: [lessThanTenData, betweenTenandTwentyData, greaterThanTwentyData],
+          backgroundColor: roomCapacityBackground,
+          borderWidth: 3,
+        },
+      ],
     };
 
     return (
       <Fragment>
         <section className="chart-content">
-          <Pie
-            data={graphData}
-            options={options}
-            height={168}
-            width={230}
-          />
+          <Pie data={graphData} options={options} height={168} width={230} />
           <section className="chart-details">
             <p className="room-capacity-first-circle">
               <span>{}</span>
-            Less than 10
+              Less than 10
             </p>
             <p className="room-capacity-second-circle">
               <span>{}</span>
-            10 - 20
+              10 - 20
             </p>
             <p className="room-capacity-third-circle">
               <span>{}</span>
-            More than 20
+              More than 20
             </p>
           </section>
         </section>
       </Fragment>
     );
-  }
+  };
 
   render() {
-    const tip = 'The percentage representation of the average rooms\' capacity ';
+    const tip = "The percentage representation of the average rooms' capacity ";
     return (
       <article className="pie-chart">
         <section className="chart-header">
@@ -142,6 +144,4 @@ GetAverageRoomCapacityComponent.defaultProps = {
   updateParent: null,
 };
 
-export default compose(
-  graphql(GET_ALL_ROOMS, { name: 'data' }),
-)(GetAverageRoomCapacityComponent);
+export default compose(graphql(GET_ALL_ROOMS, { name: 'data' }))(GetAverageRoomCapacityComponent);

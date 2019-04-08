@@ -5,6 +5,7 @@ import ButtonIcon from '../commons/Button';
 import { SelectInput as Select } from '../commons';
 import MrmModal from '../commons/MrmModal';
 import '../../assets/styles/resourcesAllocatedToRoom.scss';
+import ErrorIcon from '../../components/commons/ErrorIcon';
 
 class roomsAllocatedToResources extends Component {
   state = {
@@ -89,8 +90,8 @@ class roomsAllocatedToResources extends Component {
   renderRoomOptions = () => {
     const { remoteRooms } = this.props;
     const { roomDetails } = this.state;
-    if (!remoteRooms) {
-      return null;
+    if (remoteRooms.length === 0) {
+      return <ErrorIcon message="Error occurred, cannot fetch data" />;
     }
     return (
       <Select
@@ -127,7 +128,6 @@ class roomsAllocatedToResources extends Component {
 }
 roomsAllocatedToResources.propTypes = {
   resourceDetails: PropTypes.shape({
-    name: PropTypes.string,
     room: PropTypes.object,
   }),
   // eslint-disable-next-line react/forbid-prop-types

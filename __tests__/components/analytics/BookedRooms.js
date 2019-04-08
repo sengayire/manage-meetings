@@ -10,7 +10,6 @@ describe('BookedRooms component', () => {
     moreIcon: '',
     bookedRoomText: '',
     fetching: false,
-    error: null,
     tip: '',
   };
 
@@ -20,17 +19,13 @@ describe('BookedRooms component', () => {
   });
 
   it(' should render rooms data in  Rooms table', () => {
-    const tableWrapper = mount(<BookedRooms {...props} bookedRoomsList={roomUsage} />);
+    const tableWrapper = mount(<BookedRooms {...props} />);
     expect(
       tableWrapper
         .find('.table').length,
     ).toBe(1);
     expect(
       tableWrapper
-        .find('.table')
-        .children()
-        .find('.table__body')
-        .children()
         .find('.table__row--analytics').length,
     ).toBe(2);
   });
@@ -39,12 +34,10 @@ describe('BookedRooms component', () => {
     const bookedRoomsComponent = mount(
       <BookedRooms
         {...props}
-        error={{ graphQLErrors: [{ message: 'Error occured' }] }}
         bookedRoomsList={[]}
-        fetching
       />,
     );
-    expect(bookedRoomsComponent.find('.error-msg')).toHaveLength(1);
+    expect(bookedRoomsComponent.find('ErrorIcon').exists()).toBeTruthy();
   });
 
   it('should load ProgressBar div', () => {

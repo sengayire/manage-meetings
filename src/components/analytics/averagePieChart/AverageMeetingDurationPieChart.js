@@ -26,9 +26,16 @@ export class AverageMeetingDurationPieChart extends React.Component {
     this.reFetchQuery();
   }
 
-  componentDidUpdate() {
+  componentDidUpdate(prevProps, { MeetingsDurationaAnalytics }) {
+    const { updateParent } = this.props;
     if (!this.props.data.error && !this.props.data.loading) {
       this.props.queryCompleted('AverageMeetingDuration');
+    }
+    if (
+      MeetingsDurationaAnalytics !==
+      this.state.analyticsForMeetingsDurationsMeetingsDurationaAnalytics
+    ) {
+      updateParent('averageMeetingDuration', this.getSectorWidths());
     }
   }
 
@@ -40,8 +47,8 @@ export class AverageMeetingDurationPieChart extends React.Component {
    * for the date range selected
    * @returns {number} - percentage of the meeting duration range
    */
-  getPercentageDuration = (range, numberOfMeetingDurations) => Math
-    .round((range * 100) / numberOfMeetingDurations);
+  getPercentageDuration = (range, numberOfMeetingDurations) =>
+    Math.round((range * 100) / numberOfMeetingDurations);
 
   /**
    * Calculates the width of each sectors in the pie chart
@@ -51,16 +58,18 @@ export class AverageMeetingDurationPieChart extends React.Component {
    * @returns {Array} - Array of various sector widths to be used by the pie chart
    */
   getSectorWidths = (MeetingsDurationAnalytics) => {
-    const durations = Array.from(MeetingsDurationAnalytics, duration =>
-      duration.totalDuration / duration.count);
+    const durations = Array.from(
+      MeetingsDurationAnalytics,
+      duration => duration.totalDuration / duration.count,
+    );
     let greaterThan60 = 0;
     let between45And60 = 0;
     let between30And45 = 0;
     let thirtyAndBelow = 0;
     durations.forEach((duration) => {
       if (duration > 60) greaterThan60 += 1;
-      if ((duration > 45) && (duration <= 60)) between45And60 += 1;
-      if ((duration > 30) && (duration <= 45)) between30And45 += 1;
+      if (duration > 45 && duration <= 60) between45And60 += 1;
+      if (duration > 30 && duration <= 45) between30And45 += 1;
       if (duration < 30) thirtyAndBelow += 1;
     });
     greaterThan60 = this.getPercentageDuration(greaterThan60, durations.length);
@@ -68,7 +77,7 @@ export class AverageMeetingDurationPieChart extends React.Component {
     between30And45 = this.getPercentageDuration(between30And45, durations.length);
     thirtyAndBelow = this.getPercentageDuration(thirtyAndBelow, durations.length);
     return [greaterThan60, between45And60, between30And45, thirtyAndBelow];
-  }
+  };
 
   /**
    * Re-fetches the query when the variables are available in the props
@@ -78,17 +87,19 @@ export class AverageMeetingDurationPieChart extends React.Component {
   reFetchQuery = () => {
     /* istanbul ignore next */
     /* Reasoning: no explicit way of testing configuration options */
-    this.props.data.fetchMore({
-      variables: {
-        startDate: this.props.dateValue.validatedStartDate,
-        endDate: this.props.dateValue.validatedEndDate,
-      },
-      updateQuery: (prev, { fetchMoreResult }) => {
-        this.setState({
-          analyticsForMeetingsDurations: fetchMoreResult.analyticsForMeetingsDurations,
-        });
-      },
-    }).then(() => null)
+    this.props.data
+      .fetchMore({
+        variables: {
+          startDate: this.props.dateValue.validatedStartDate,
+          endDate: this.props.dateValue.validatedEndDate,
+        },
+        updateQuery: (prev, { fetchMoreResult }) => {
+          this.setState({
+            analyticsForMeetingsDurations: fetchMoreResult.analyticsForMeetingsDurations,
+          });
+        },
+      })
+      .then(() => null)
       .catch(() => null);
   };
 
@@ -97,13 +108,10 @@ export class AverageMeetingDurationPieChart extends React.Component {
     const { loading, error } = this.props.data;
     if (loading) return <Spinner />;
     if (error) {
-      return (<ErrorIcon
-        message={error.graphQLErrors.length > 0 && 'No resource found'}
-      />);
+      return <ErrorIcon message={error.graphQLErrors.length > 0 && 'No resource found'} />;
     } else if (error === undefined && MeetingsDurationaAnalytics.length === 0) {
       return <ErrorIcon />;
     }
-
 
     const options = {
       legend: {
@@ -113,52 +121,52 @@ export class AverageMeetingDurationPieChart extends React.Component {
       responsive: false,
     };
     const graphData = {
-      labels: ['Above 60 Minutes in %', '45-60 Minutes in %', '30-45 Minutes in %', 'Below 30 minutes in %'],
-      datasets: [{
-        label: 'Average Meeting Duration',
-        data: this.getSectorWidths(MeetingsDurationaAnalytics),
-        backgroundColor: meetingDurationBackground,
-        borderColor,
-        borderWidth: 4,
-      }],
+      labels: [
+        'Above 60 Minutes in %',
+        '45-60 Minutes in %',
+        '30-45 Minutes in %',
+        'Below 30 minutes in %',
+      ],
+      datasets: [
+        {
+          label: 'Average Meeting Duration',
+          data: this.getSectorWidths(MeetingsDurationaAnalytics),
+          backgroundColor: meetingDurationBackground,
+          borderColor,
+          borderWidth: 4,
+        },
+      ],
     };
 
     return (
       <section className="chart-content">
         <div>
-          <Pie
-            data={graphData}
-            options={options}
-            width={172}
-          />
+          <Pie data={graphData} options={options} width={172} />
         </div>
         <section className="chart-details">
           <p className="duration-first-circle">
             <span>{}</span>
-          Above 60 Minutes
+            Above 60 Minutes
           </p>
           <p className="duration-second-circle">
             <span>{}</span>
-          45 - 60 Minutes
+            45 - 60 Minutes
           </p>
           <p className="duration-third-circle">
             <span>{}</span>
-          30 - 45 Minutes
+            30 - 45 Minutes
           </p>
           <p className="duration-forth-circle">
             <span>{}</span>
-          Below 30 Minutes
+            Below 30 Minutes
           </p>
         </section>
       </section>
     );
-  }
+  };
 
   render() {
-    const { MeetingsDurationaAnalytics = [] } = this.state.analyticsForMeetingsDurations;
     const { isFutureDateSelected } = this.props.dateValue;
-    const { updateParent } = this.props;
-    updateParent('averageMeetingDuration', this.getSectorWidths(MeetingsDurationaAnalytics));
     const tip =
       'The percentage representation of the average amount of time people spend in all booked meeting rooms in a set time period';
     return (
@@ -167,11 +175,12 @@ export class AverageMeetingDurationPieChart extends React.Component {
           <p className="chart-title">Average Meetings Duration [%]</p>
           {Tip(tip)}
         </section>
-        {
-          isFutureDateSelected ? <ErrorIcon message="You cannot fetch data beyond today" /> : this.renderPieChart()
-        }
+        {isFutureDateSelected ? (
+          <ErrorIcon message="You cannot fetch data beyond today" />
+        ) : (
+          this.renderPieChart()
+        )}
       </article>
-
     );
   }
 }

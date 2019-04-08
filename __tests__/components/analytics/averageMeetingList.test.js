@@ -2,8 +2,7 @@ import React from 'react';
 import { mount, shallow } from 'enzyme';
 import wait from 'waait';
 import { MockedProvider } from 'react-apollo/test-utils';
-import AverageMeetingComponent, { AverageMeetingList }
-  from '../../../src/components/analytics/AverageMeetingList';
+import AverageMeetingComponent, { AverageMeetingList } from '../../../src/components/analytics/AverageMeetingList';
 import MEETING_DURATION_ANALYTICS from '../../../src/graphql/queries/analytics';
 
 describe('Average Meeting List Component', () => {
@@ -46,10 +45,9 @@ describe('Average Meeting List Component', () => {
   const wrapper = mount(setup);
 
   it('renders correctly from memory', () => {
-    expect(shallow(<AverageMeetingComponent
-      {...props}
-      updateParent={jest.fn()}
-    />)).toMatchSnapshot();
+    expect(
+      shallow(<AverageMeetingComponent {...props} updateParent={jest.fn()} />),
+    ).toMatchSnapshot();
   });
 
   it('Should render <AverageMeetingList />', async () => {
@@ -88,11 +86,14 @@ describe('Average Meeting List Component', () => {
       },
       dateValue: { isFutureDateSelected: true },
       queryCompleted: jest.fn(),
+      updateParent: jest.fn(),
     };
-    const component = shallow(<AverageMeetingList {...initialProps} updateParent={jest.fn()} />);
-    expect(component.find('.average-table-error').text()).toBe('You cannot fetch data beyond today');
+    const component = shallow(<AverageMeetingList {...initialProps} />);
+    expect(component.find('.average-table-error').text()).toBe(
+      'You cannot fetch data beyond today',
+    );
   });
-  it('should call queryCompleted when the component updates', () => {
+  it('should call queryCompleted and updateParent when the component updates', () => {
     const initialProps = {
       data: {
         error: false,
@@ -107,11 +108,13 @@ describe('Average Meeting List Component', () => {
       },
       dateValue: { isFutureDateSelected: true },
       queryCompleted: jest.fn(),
+      updateParent: jest.fn(),
     };
-    jest.spyOn(AverageMeetingList.prototype, 'componentDidUpdate');
-    const component = shallow(<AverageMeetingList {...initialProps} updateParent={jest.fn()} />);
-    component.instance().componentDidUpdate();
-    expect(initialProps.queryCompleted.mock.calls.length).toBe(1);
-    expect(AverageMeetingList.prototype.componentDidUpdate.mock.calls.length).toBe(1);
+    const component = shallow(<AverageMeetingList {...initialProps} />);
+    component.setState({
+      analyticsForMeetingsDurations: { duration: 'data' },
+    });
+    expect(initialProps.queryCompleted).toHaveBeenCalled();
+    expect(initialProps.updateParent).toHaveBeenCalled();
   });
 });

@@ -66,12 +66,14 @@ export class AnalyticsNav extends Component {
    */
   setUserLocationAndRole = async () => {
     const user = await getUserDetails();
-    this.setState({ location: user.location, role: user.roles[0].id });
+    if (user) {
+      this.setState({ location: user.location, role: user.roles[0].id });
+    }
   }
 
   /**
    * Updates the state with the data coming from the children
-   * components
+   * componentsu
    *
    * @param {string} type
    * @param {object} analytics

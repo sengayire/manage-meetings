@@ -38,7 +38,7 @@ Button.defaultProps = {
 };
 
 Button.propTypes = {
-  title: PropTypes.string.isRequired,
+  title: PropTypes.oneOfType([PropTypes.string, PropTypes.object]).isRequired,
   classProp: PropTypes.string,
   handleClick: PropTypes.func,
   isDisabled: PropTypes.bool,

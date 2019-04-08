@@ -17,7 +17,7 @@ import ErrorIcon from '../commons/ErrorIcon';
  * @returns {JSX}
  */
 const BookedRooms = ({
-  bookedRoomText, bookedRoomsList, fetching, error, tip,
+  bookedRoomText, bookedRoomsList, fetching, tip,
 }) => (
   <div className="wrap-booked-room">
     <div className="booked-room-header">
@@ -28,35 +28,27 @@ const BookedRooms = ({
     <div className="booked-room-list">
       <div className="table">
         <TableHead titles={['Room', 'Meetings', '% Share of All Meetings']} />
-        {
-          (error !== null && Object.values(error).length > 0) ? (
-            <div className="table__body">
-              {
-                <ErrorIcon
-                  message={error.graphQLErrors.length > 0 && 'No resource found'}
-                />
-              }
-            </div>
-           ) : (
-             <div className="table__body">
-               {!fetching ? (
-               (
-                  bookedRoomsList.map((room, index) => (
-                    <div className="table__row--analytics" key={index}>
-                      <span>{room.roomName}</span>
-                      <span>{room.meetings}</span>
-                      <span>{room.percentage}%</span>
-                    </div>
-                  ))
-                )
-               ) : (
-                 <div className="table__row--loading">
-                   <ProgressBar type="linear" mode="indeterminate" />
-                 </div>
-               )}
-             </div>
-            )
-        }
+        {bookedRoomsList.length === 0 && !fetching ? (
+          <div className="table__body">
+            {<ErrorIcon message={bookedRoomsList.length === 0 && 'No resource found'} />}
+          </div>
+        ) : (
+          <div className="table__body">
+            {!fetching ? (
+              bookedRoomsList.map((room, index) => (
+                <div className="table__row--analytics" key={index}>
+                  <span>{room.roomName}</span>
+                  <span>{room.meetings}</span>
+                  <span>{room.percentage}%</span>
+                </div>
+              ))
+            ) : (
+              <div className="table__row--loading">
+                <ProgressBar type="linear" mode="indeterminate" />
+              </div>
+            )}
+          </div>
+        )}
       </div>
     </div>
   </div>
@@ -65,15 +57,11 @@ const BookedRooms = ({
 BookedRooms.propTypes = {
   bookedRoomText: PropTypes.string.isRequired,
   tip: PropTypes.string.isRequired,
-  bookedRoomsList: PropTypes.instanceOf(Array).isRequired,
+  bookedRoomsList: PropTypes.instanceOf(Array),
   fetching: PropTypes.bool.isRequired,
-  error: PropTypes.shape({
-    error: PropTypes.string,
-  }),
 };
 
 BookedRooms.defaultProps = {
-  error: {},
+  bookedRoomsList: [],
 };
-
 export default BookedRooms;

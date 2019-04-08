@@ -1,8 +1,8 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
 import '../../assets/styles/composed-rooms.scss';
-import QueryMostBookedRooms from './QueryMostBookedRooms';
-import QueryLeastBookedRooms from './QueryLeastBookedRooms';
+import { QueryMostBookedRooms } from './QueryMostBookedRooms';
+import { QueryLeastBookedRooms } from './QueryLeastBookedRooms';
 
 /**
  * Component for composed booked rooms

@@ -79,7 +79,7 @@ class Setup extends Component {
       case 'RoomSetupView':
         return <RoomSetupView handleClick={this.handleClick} />;
       default:
-        return centerRoomCount < 1000 ? (
+        return centerRoomCount < 100 ? (
           <WelcomePage handleClick={this.handleClick} />
         ) : (
           <RoomSetupView handleClick={this.handleClick} />
@@ -92,6 +92,5 @@ class Setup extends Component {
     return this.renderSetupContent(visibleLevel);
   }
 }
-
 
 export default Setup;

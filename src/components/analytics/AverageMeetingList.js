@@ -37,10 +37,15 @@ export class AverageMeetingList extends Component {
     });
   }
 
-  componentDidUpdate() {
+  componentDidUpdate(prevProps, prevState) {
     const { queryCompleted, data: { error, loading } } = this.props;
+    const { analyticsForMeetingsDurations } = this.state;
     if (!error && !loading) {
       queryCompleted('AverageMeetingList');
+    }
+    if (prevState && prevState.analyticsForMeetingsDurations !== analyticsForMeetingsDurations) {
+      const { updateParent } = this.props;
+      updateParent('averageMeetingTime', analyticsForMeetingsDurations);
     }
   }
 
@@ -98,8 +103,6 @@ export class AverageMeetingList extends Component {
     const { loading, error } = this.props.data;
     const { isFutureDateSelected } = this.props.dateValue;
     if (loading) return <QueryAnalyticsLoading />;
-    const { updateParent } = this.props;
-    updateParent('averageMeetingTime', analyticsForMeetingsDurations);
     return (
       <div className="average-meeting">
         <div className="average-meeting-control">

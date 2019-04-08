@@ -98,8 +98,8 @@ describe('building setup component', () => {
     const formSection = wrapper.find('.form-area');
     const formSectionHeading = wrapper.find('.form-area h4');
     const formSectionSubHeading = wrapper.find('.form-header p');
-    expect(formSection).toHaveLength(1);
-    expect(formSectionHeading.text()).toContain('Setup your building');
+    expect(formSection).toHaveLength(2);
+    expect(formSectionHeading.first().text()).toContain('Setup your building');
     expect(formSectionSubHeading.text()).toContain('Plan the Levels within your building');
   });
 

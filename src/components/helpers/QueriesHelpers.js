@@ -5,6 +5,11 @@ import {
   GET_ALL_REMOTE_ROOMS,
 } from '../../graphql/queries/Rooms';
 import { GET_RESOURCES_QUERY } from '../../graphql/queries/Resources';
+import {
+  LEAST_BOOKED_ROOMS_ANALYTICS,
+  ANALYTICS_BOOKINGS_COUNT,
+  MOST_BOOKED_ROOMS_ANALYTICS,
+} from '../../graphql/queries/analytics';
 import { decodeTokenAndGetUserData } from '../../utils/Cookie';
 import apolloClient from '../../utils/ApolloClient';
 
@@ -122,5 +127,70 @@ const getAllRemoteRooms = async (client = apolloClient) => {
     return data.allRemoteRooms;
   }
 };
+const getLeastBookedRooms = async (dateValue, client = apolloClient) => {
+  try {
+    const data = client.readQuery(
+      {
+        query: LEAST_BOOKED_ROOMS_ANALYTICS,
+        variables: dateValue,
+      },
+      true,
+    );
+    return data;
+  } catch (err) {
+    const { data } = await client.query({
+      query: LEAST_BOOKED_ROOMS_ANALYTICS,
+      variables: dateValue,
+    });
+    return data;
+  }
+};
 
-export { getUserDetails, getAllLocations, getAllResources, getAllRemoteRooms, getRoomList };
+const getMostBookedRooms = async (dateValue, client = apolloClient) => {
+  try {
+    const data = client.readQuery(
+      {
+        query: MOST_BOOKED_ROOMS_ANALYTICS,
+        variables: dateValue,
+      },
+      true,
+    );
+    return data;
+  } catch (err) {
+    const { data } = await client.query({
+      query: MOST_BOOKED_ROOMS_ANALYTICS,
+      variables: dateValue,
+    });
+    return data;
+  }
+};
+
+const getBookingsCount = async (dateValue, client = apolloClient) => {
+  try {
+    const data = client.readQuery(
+      {
+        query: ANALYTICS_BOOKINGS_COUNT,
+        variables: dateValue,
+      },
+      true,
+    );
+    return data;
+  } catch (err) {
+    const { data } = await client.query({
+      query: ANALYTICS_BOOKINGS_COUNT,
+      variables: dateValue,
+    });
+    return data;
+  }
+};
+
+export {
+  getUserDetails,
+  getAllLocations,
+  getAllResources,
+  getAllRemoteRooms,
+  getRoomList,
+  getLeastBookedRooms,
+  getMostBookedRooms,
+  getBookingsCount,
+};

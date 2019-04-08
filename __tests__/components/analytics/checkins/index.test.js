@@ -8,10 +8,12 @@ describe('Checkins component', () => {
     data: {
       loading: false,
       error: null,
+      analyticsRatios: {},
     },
     queryCompleted: jest.fn(),
+    updateParent: jest.fn(),
   };
-  const wrapper = shallow(<Checkins {...props} updateParent={jest.fn()} />);
+  const wrapper = shallow(<Checkins {...props} />);
 
   it('should render properly', () => {
     expect(wrapper).toMatchSnapshot();
@@ -21,12 +23,20 @@ describe('Checkins component', () => {
     expect(wrapper.find('.checkins').children()).toHaveLength(3);
   });
 
-  it('should call queryCompleted when the component updates', () => {
-    jest.spyOn(Checkins.prototype, 'componentDidUpdate');
-    const component = shallow(<Checkins {...props} updateParent={jest.fn()} />);
-    component.instance().componentDidUpdate();
-    expect(props.queryCompleted.mock.calls.length).toBe(1);
-    expect(Checkins.prototype.componentDidUpdate.mock.calls.length).toBe(1);
+  it('should call queryCompleted and updateParent when the component updates', () => {
+    const component = shallow(<Checkins {...props} />);
+    component.setProps(
+      {
+        data: {
+          loading: false,
+          error: null,
+          analyticsRatios: { name: 'Kimame' },
+        },
+      },
+      () => {
+        expect(props.queryCompleted).toHaveBeenCalled();
+        expect(props.updateParent).toHaveBeenCalled();
+      },
+    );
   });
 });
-

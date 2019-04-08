@@ -4,7 +4,11 @@ import { graphql, compose } from 'react-apollo';
 import '../../../assets/styles/checkins.scss';
 import DonutChart from './DonutChart';
 import { CHECKINS_BOOKINGS_CANCELLATIONS_PERCENTAGES } from '../../../graphql/queries/analytics';
-import { checkinsChart, bookingsChart, cancellationsChart } from '../../../fixtures/donutChartColors';
+import {
+  checkinsChart,
+  bookingsChart,
+  cancellationsChart,
+} from '../../../fixtures/donutChartColors';
 
 // eslint-disable-next-line react/prefer-stateless-function
 /**
@@ -13,9 +17,13 @@ import { checkinsChart, bookingsChart, cancellationsChart } from '../../../fixtu
  * @returns {JSX}
  */
 export class Checkins extends Component {
-  componentDidUpdate() {
+  componentDidUpdate(prevProps) {
     if (!this.props.data.error && !this.props.data.loading) {
       this.props.queryCompleted('Checkins');
+    }
+    if (prevProps && this.props.data.analyticsRatios !== prevProps.data.analyticsRatios) {
+      const { updateParent, data: { analyticsRatios } } = this.props;
+      updateParent('checkinsAndCancellations', analyticsRatios);
     }
   }
 
@@ -32,7 +40,7 @@ export class Checkins extends Component {
       return { ...analyticsData };
     }
     return {};
-  }
+  };
 
   roundNumber = num => Math.round(num * 100) / 100;
 
@@ -46,8 +54,6 @@ export class Checkins extends Component {
       cancellationsPercentage,
       cancellations,
     } = this.formatAnalyticsData(analyticsRatios, loading, error);
-    const { updateParent } = this.props;
-    updateParent('checkinsAndCancellations', analyticsRatios);
     return (
       <div className="checkins">
         <DonutChart

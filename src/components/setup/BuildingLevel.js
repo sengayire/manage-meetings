@@ -6,7 +6,6 @@
 import React, { Component, createRef } from 'react';
 import PropTypes from 'prop-types';
 import toastr from 'toastr';
-import { withApollo } from 'react-apollo';
 import '../../assets/styles/buildingSetup.scss';
 import Preview from './Preview';
 import LevelsForm from './LevelsForm';
@@ -263,4 +262,4 @@ BuildingLevel.propTypes = {
   handleClick: PropTypes.func.isRequired,
 };
 
-export default withApollo(BuildingLevel);
+export default BuildingLevel;

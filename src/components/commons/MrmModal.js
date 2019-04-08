@@ -14,6 +14,7 @@ class MrmModal extends Component {
     type: PropTypes.number,
     withButton: PropTypes.bool,
     styleClassName: PropTypes.string,
+    handleCloseModal: PropTypes.func,
   };
 
   static defaultProps = {
@@ -23,6 +24,7 @@ class MrmModal extends Component {
     type: 1,
     withButton: true,
     styleClassName: '',
+    handleCloseModal: () => {},
   };
 
   state = {
@@ -69,15 +71,15 @@ class MrmModal extends Component {
     } = this.props;
     return (
       <div className="modal-component">
-        { type === 1 &&
-          this.state.role === '2' &&
-          <IconButtons
-            buttonText={buttonText}
-            openModal={this.toggleModal}
-            classProp={iconButtonClass}
-          />
-          }
-        {this.state.isOpen &&
+        {type === 1 &&
+          this.state.role === '2' && (
+            <IconButtons
+              buttonText={buttonText}
+              openModal={this.toggleModal}
+              classProp={iconButtonClass}
+            />
+          )}
+        {this.state.isOpen && (
           <div className="modal">
             <div className="overlay" />
             <div className={`modal_content ${styleClassName}`}>
@@ -94,7 +96,7 @@ class MrmModal extends Component {
               )}
             </div>
           </div>
-        }
+        )}
       </div>
     );
   }

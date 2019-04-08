@@ -2,7 +2,7 @@ import { getUserDetails, getRoomList } from '../../../src/components/helpers/Que
 import * as CookieHelper from '../../../src/utils/Cookie';
 import allRooms from '../../../__mocks__/rooms/Rooms';
 
-describe('Unit tests for the query helper methods', () => {
+describe('Unit test for the getUserDetails method', () => {
   it(
     'should call only the readQuery method and return user details' +
       ' when the user details is in the store',
@@ -16,10 +16,11 @@ describe('Unit tests for the query helper methods', () => {
       jest.spyOn(CookieHelper, 'decodeTokenAndGetUserData').mockImplementationOnce(() => ({
         UserInfo: {
           userData: {
-            firstName: 'Bill',
+            firstName: 'Kimame',
           },
         },
       }));
+      expect(mockedClient.readQuery.mock.calls.length).toBe(0);
       const response = await getUserDetails(mockedClient);
       expect(response.email).toBe('converge@andela.com');
       expect(mockedClient.readQuery.mock.calls.length).toBe(1);

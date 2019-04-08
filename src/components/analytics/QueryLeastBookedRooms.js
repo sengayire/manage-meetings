@@ -1,43 +1,57 @@
-import React from 'react';
-import { Query } from 'react-apollo';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { LEAST_BOOKED_ROOMS_ANALYTICS } from '../../graphql/queries/analytics';
 import BookedRooms from './BookedRooms';
+import { getLeastBookedRooms } from '../../../src/components/helpers/QueriesHelpers';
 
-/**
- * Component for Least Booked Rooms
- *
- * @param {Object} dateValue
- *
- * @returns {JSX}
- */
-const QueryLeastBookedRooms = ({ dateValue, updateParent }) => (
-  <Query
-    query={LEAST_BOOKED_ROOMS_ANALYTICS}
-    variables={dateValue}
-    notifyOnNetworkStatusChange={true} // eslint-disable-line
-  >
-    {({ loading, error, data }) => {
-      let bookedRoomsList = [];
-      if (!loading && !error) {
-        const { analytics } = data.analyticsForBookedRooms;
-        bookedRoomsList = analytics;
-        updateParent('leastBookedRooms', bookedRoomsList);
-      }
-      return (
-        <div>
-          <BookedRooms
-            tip="The least number of times meeting rooms were booked in a set time period"
-            bookedRoomText="Least Booked Rooms"
-            fetching={loading}
-            error={error}
-            bookedRoomsList={bookedRoomsList}
-          />
-        </div>
-      );
-    }}
-  </Query>
-);
+export class QueryLeastBookedRooms extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      bookedRoomsList: [],
+      loading: true,
+    };
+  }
+
+  componentDidMount() {
+    this.getLeastBookedRoomsAnalytics();
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    const { bookedRoomsList } = this.state;
+    const { updateParent } = this.props;
+    if (prevState.bookedRoomsList !== bookedRoomsList) {
+      updateParent('leastBookedRooms', bookedRoomsList);
+    }
+  }
+
+  getLeastBookedRoomsAnalytics = async () => {
+    const { dateValue } = this.props;
+    const { bookedRoomsList } = this.state;
+    const analyticsForBookedRooms = await getLeastBookedRooms(dateValue);
+    const { analytics } = analyticsForBookedRooms;
+    let bookedRooms = Object.assign({}, bookedRoomsList);
+    bookedRooms = analytics;
+    this.setState({
+      bookedRoomsList: bookedRooms,
+      loading: false,
+    });
+  };
+
+  render() {
+    const { bookedRoomsList, loading } = this.state;
+    return (
+      <div>
+        <BookedRooms
+          tip="The least number of times meeting rooms were booked in a set time period"
+          bookedRoomText="Least Booked Rooms"
+          fetching={loading}
+          error={bookedRoomsList}
+          bookedRoomsList={bookedRoomsList}
+        />
+      </div>
+    );
+  }
+}
 
 QueryLeastBookedRooms.propTypes = {
   dateValue: PropTypes.instanceOf(Object).isRequired,

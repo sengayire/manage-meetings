@@ -28,7 +28,7 @@ class WelcomePage extends Component {
 
   render() {
     const { user } = this.state;
-    if (!user) {
+    if (!user.roles) {
       return (
         <div className="setup__spinner">
           <Spinner />
