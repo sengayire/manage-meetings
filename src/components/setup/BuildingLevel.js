@@ -128,37 +128,56 @@ class BuildingLevel extends Component {
   };
 
   sortControls = (activeLevel, index) =>
-    activeLevel === index + 2 ||
+    (activeLevel === index + 2 ||
     activeLevel === index + 1 ||
     activeLevel === index ||
-    (activeLevel === 1 && activeLevel + 1 === index);
+    (activeLevel === 1 && activeLevel + 1 === index));
+
 
   displayLevelsControl = () => {
     const { levelCounter, activeLevel } = this.state;
-
     return [...Array(levelCounter)].map(
-      (ind, index) =>
-        this.sortControls(activeLevel, index) && (
-          <li
-            onClick={this.toggleActiveLevel}
-            className={activeLevel === index + 1 ? 'active-level' : ''}
-            id={index + 1}
-            key={index.toString()}
-          >
-            Level {index + 1}
-          </li>
-        ),
-    );
+      (ind, index) => (this.sortControls(activeLevel, index) && (
+        <li
+          onClick={this.toggleActiveLevel}
+          className={activeLevel === index + 1 ? 'active-level' : ''}
+          id={index + 1}
+          key={index.toString()}
+        >
+          Level {index + 1}
+        </li>
+      )));
   };
 
   removeLevel = data => () => this.levels.current.removeLevelDetails(data);
 
-  show = () => {
-    this.setState({
+  /**
+   * When called it shows the previous three levels
+   * @returns {void}
+   */
+  selectPreviousLevel = () => {
+    const { activeLevel } = this.state;
+    this.setState(prevState => ({
       showAddLevel: false,
-      activeLevel: this.state.activeLevel - 1,
-    });
-  };
+      activeLevel: prevState.activeLevel - ((activeLevel === 3) ? 1 : 3),
+    }));
+  }
+
+  /**
+   * When called it shows the next three levels
+   * @returns {void}
+   */
+  selectNextLevel = () => {
+    const { levelCounter, activeLevel } = this.state;
+    if ((levelCounter - activeLevel) <= 3) {
+      this.setState(prevState => ({
+        showAddLevel: true,
+        activeLevel: prevState.activeLevel + (levelCounter - activeLevel),
+      }));
+    } else {
+      this.setState(prevState => ({ activeLevel: prevState.activeLevel + 3 }));
+    }
+  }
 
   render() {
     const {
@@ -199,20 +218,21 @@ class BuildingLevel extends Component {
                 <p>Levels can be Buildings, Blocks, Floors, Wings, Rooms, etc</p>
               </div>
               <div className="levels-add-options">
-                <div className="left" onClick={this.toggleDirections}>
+                <div className="left" onClick={this.selectPreviousLevel}>
                   {(numberOfLevels >= 3 && activeLevel > 2) && <img src={chevronIcon} alt="left scroll icon" />}
                 </div>
                 <div>
-                  <ul className="form-options-list">
+                  <ul className="form-options-list" id="levels-controls">
                     {this.displayLevelsControl()}
-                    {showAddLevel && (
-                    <li className="add-level-button" onClick={this.addNewLevel}>
-                  Add Level
-                    </li>
-                  )}
+                    {
+                      showAddLevel && (
+                      <li className="add-level-button" onClick={this.addNewLevel}>
+                        Add Level
+                      </li>)
+                    }
                   </ul>
                 </div>
-                <div className="right">
+                <div className="right" onClick={this.selectNextLevel}>
                   {!showAddLevel && <img src={chevronIcon} alt="right scroll icon" />}
                 </div>
               </div>

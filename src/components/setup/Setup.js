@@ -25,7 +25,7 @@ class Setup extends Component {
    */
   getRoomCount = async () => {
     const user = await getUserDetails();
-    const rooms = await getRoomList(null, user.location);
+    const rooms = await getRoomList(user.location);
 
     this.setState({ centerRoomCount: rooms.allRooms.rooms.length });
   };
