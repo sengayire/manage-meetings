@@ -30,4 +30,11 @@ describe('unit test for room setupView component', () => {
     component.update();
     expect(component.state().currentNavItem).toBe('resources');
   });
+
+  it('should call the getUserLocation function when the component mounts', () => {
+    const component = wrapper.find('RoomSetupOverView');
+    const setUserLocationSpy = jest.spyOn(component.instance(), 'setUserLocation');
+    component.instance().componentDidMount();
+    expect(setUserLocationSpy).toBeCalled();
+  });
 });

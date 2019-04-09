@@ -58,13 +58,14 @@ export class PeopleList extends Component {
     optionName = this.state.optionName,
     id = this.state.id,
   ) => {
+    const { locationId } = this.props;
     this.setState({ isFetching: true });
     this.props.people
       .fetchMore({
         variables: {
           page,
           perPage,
-          locationId: optionName === 'location' ? id : 0,
+          locationId: optionName === 'location' ? id : locationId,
           roleId: optionName === 'access' ? id : 0,
         },
         updateQuery: /* istanbul ignore next */ (prev, { fetchMoreResult }) => {
@@ -203,18 +204,19 @@ PeopleList.propTypes = {
     PropTypes.object,
   ]).isRequired,
   editRole: PropTypes.func.isRequired,
+  locationId: PropTypes.string.isRequired,
 };
 
 export default compose(
   graphql(GET_PEOPLE_QUERY, {
     name: 'people',
-    options: () => ({
+    options: props => ({
       /* istanbul ignore next */
       /* Reasoning: no explicit way of testing configuration options */
       variables: {
         page: 1,
         perPage: 5,
-        locationId: 0,
+        locationId: props.locationId,
         roleId: 0,
       },
     }),

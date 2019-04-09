@@ -8,6 +8,10 @@ import SetupNavbar from '../components/setup/SetupNavbar';
 import PeopleList from '../components/people/PeopleList';
 import SelectInput from '../components/commons/SelectInput';
 import { selectMockData } from '../utils/roomSetupMock';
+import {
+  getUserDetails,
+  getAllLocations,
+} from '../components/helpers/QueriesHelpers';
 
 /* Styles */
 import '../assets/styles/roomSetup.scss';
@@ -19,7 +23,26 @@ class RoomSetupOverView extends Component {
     super(props);
     this.state = {
       currentNavItem: 'meeting-rooms',
+      locationId: '',
     };
+  }
+
+  componentDidMount() {
+    this.setUserLocation();
+  }
+  /**
+   * get the logged in user's location id and update the state with the id
+   *
+   *  @returns {void}
+   */
+  setUserLocation = async () => {
+    const user = await getUserDetails();
+    const allLocations = await getAllLocations();
+    const userLocation = allLocations.find(location => location.name === user.location);
+    const userLocationId = userLocation.id;
+    this.setState({
+      locationId: userLocationId,
+    });
   }
 
   handleInputChange = () => {};
@@ -78,13 +101,13 @@ class RoomSetupOverView extends Component {
   );
 
   renderNavItems = () => {
-    const { currentNavItem } = this.state;
+    const { currentNavItem, locationId } = this.state;
     switch (currentNavItem) {
       case 'resources':
         return <Resources />;
       /* istanbul ignore next */
       case 'people':
-        return <PeopleList />;
+        return <PeopleList locationId={locationId} />;
       case 'devices':
         return this.renderDeviceList();
       case 'structure':

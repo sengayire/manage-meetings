@@ -10,7 +10,9 @@
   }
 
   .filter-options {
-
+    color: $color-primary;
+    padding-bottom: 12px;
+  
     &__children {
       padding-top: 7px;
       margin-bottom: -10px;
@@ -19,6 +21,8 @@
     &__disable {
       padding: 4px 10px;
       text-transform: capitalize;
+      color: map-get($color-white, 000);
+      color: $color-primary;
     }
   }
 
@@ -46,6 +50,7 @@
 
   .dropdown-menu {
     line-height: 18px;
+    padding-top: 10px;
   }
 
   .settings-people-list {

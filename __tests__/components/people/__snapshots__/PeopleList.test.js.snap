@@ -4148,7 +4148,80 @@ exports[`PeopleList Component renders correctly from memory 1`] = `
       }
     }
   >
-    <Apollo(Apollo(Apollo(Apollo(PeopleList))))>
+    <Apollo(Apollo(Apollo(Apollo(PeopleList))))
+      editRole={[MockFunction]}
+      locationId={0}
+      locations={
+        Object {
+          "allLocations": Object {},
+        }
+      }
+      people={
+        Object {
+          "fetchMore": [MockFunction],
+          "refetch": [MockFunction],
+          "users": Object {
+            "__typename": "Users",
+            "hasNext": true,
+            "hasPrevious": false,
+            "pages": 2,
+            "queryTotal": 11,
+            "users": Array [
+              Object {
+                "__typename": "User",
+                "email": "michael.mukalo@andela.com",
+                "id": "5",
+                "location": "Nairobi",
+                "name": "Michael Mukalo",
+                "picture": "https://lh4.googleusercontent.com/-nvDSOOB7tuI/AAAAAAAAAAI/AAAAAAAAABA/otjsk3lztyc/photo.jpg?sz=50",
+                "roles": Array [
+                  Object {
+                    "__typename": "Role",
+                    "id": "2",
+                    "role": "Admin",
+                  },
+                ],
+              },
+              Object {
+                "__typename": "User",
+                "email": "marlone.akidiva@andela.com",
+                "id": "6",
+                "location": "Nairobi",
+                "name": "Marlone Akidiva",
+                "picture": "https://lh4.googleusercontent.com/-2TgU0EHynu8/AAAAAAAAAAI/AAAAAAAAAAc/ML95I5e2k_c/photo.jpg?sz=50",
+                "roles": Array [
+                  Object {
+                    "__typename": "Role",
+                    "id": "2",
+                    "role": "Admin",
+                  },
+                ],
+              },
+              Object {
+                "__typename": "User",
+                "email": "george.tibetegya@andela.com",
+                "id": "7",
+                "location": "Kampala",
+                "name": "George Tibetegya",
+                "picture": "https://lh3.googleusercontent.com/-yhiUccQX5FE/AAAAAAAAAAI/AAAAAAAAAAc/fsBnDfr2fu8/photo.jpg?sz=50",
+                "roles": Array [
+                  Object {
+                    "__typename": "Role",
+                    "id": "2",
+                    "role": "Admin",
+                  },
+                ],
+              },
+            ],
+          },
+        }
+      }
+      roles={
+        Object {
+          "roles": Array [],
+        }
+      }
+    >
       <Query
         displayName="Apollo(Apollo(Apollo(Apollo(PeopleList))))"
         query={
@@ -4491,6 +4564,13 @@ exports[`PeopleList Component renders correctly from memory 1`] = `
         warnUnhandledError={true}
       >
         <Apollo(Apollo(Apollo(PeopleList)))
+          editRole={[MockFunction]}
+          locationId={0}
+          locations={
+            Object {
+              "allLocations": Object {},
+            }
+          }
           people={
             Object {
               "error": undefined,
@@ -4508,6 +4588,11 @@ exports[`PeopleList Component renders correctly from memory 1`] = `
                 "perPage": 5,
                 "roleId": 0,
               },
+            }
+          }
+          roles={
+            Object {
+              "roles": Array [],
             }
           }
         >
@@ -4580,6 +4665,13 @@ exports[`PeopleList Component renders correctly from memory 1`] = `
             warnUnhandledError={true}
           >
             <Apollo(Apollo(PeopleList))
+              editRole={[MockFunction]}
+              locationId={0}
+              locations={
+                Object {
+                  "allLocations": Object {},
+                }
+              }
               people={
                 Object {
                   "error": undefined,
@@ -4683,6 +4775,8 @@ exports[`PeopleList Component renders correctly from memory 1`] = `
                 warnUnhandledError={true}
               >
                 <Apollo(PeopleList)
+                  editRole={[MockFunction]}
+                  locationId={0}
                   locations={
                     Object {
                       "error": undefined,
@@ -4934,6 +5028,7 @@ exports[`PeopleList Component renders correctly from memory 1`] = `
                   >
                     <PeopleList
                       editRole={[Function]}
+                      locationId={0}
                       locations={
                         Object {
                           "error": undefined,

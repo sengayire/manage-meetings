@@ -115,17 +115,18 @@ exports[`RoomForm should render properly 1`] = `
           Select Room Location
           <select
             className="default-select"
+            defaultValue=""
             disabled={true}
             id="roomLocation"
             name="roomLocation"
             onChange={[MockFunction]}
             required={false}
-            value=""
           >
             <option
               value=""
             >
               Select room location
+               
             </option>
             <option
               key="1"

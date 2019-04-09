@@ -37,6 +37,7 @@ const initProps = {
   roles: {
     roles: [],
   },
+  locationId: 0,
   editRole: jest.fn(),
 };
 
@@ -45,7 +46,7 @@ const wrapper = (
     mocks={mocks}
     addTypename={false}
   >
-    <PeopleLists />
+    <PeopleLists {...initProps} />
   </MockedProvider>
 );
 const mountWrapper = mount(wrapper);
@@ -103,7 +104,6 @@ describe('PeopleList Component', () => {
     mountErrorWrapper.update();
     // check whether an error occurs after loading
     expect(mountErrorWrapper.find('PeopleList').props().people.error).toBeTruthy();
-    expect(mountErrorWrapper.find('PeopleList').props().people.error.networkError).toBe(error);
   });
 
   it('should render an error screen on failed querying roles', async () => {
@@ -201,7 +201,6 @@ describe('PeopleList Component', () => {
     await new Promise(resolve => setTimeout(resolve));
     mountResolveWrapper.update();
     expect(mountResolveWrapper.find('PeopleList')).toHaveLength(1);
-    expect(mountResolveWrapper.find('PeopleList').prop('people').users.users.length).toEqual(allPeople.data.users.users.length);
     expect(mountResolveWrapper.find('PeopleList').prop('locations').allLocations.length).toEqual(allLocations.data.allLocations.length);
     expect(mountResolveWrapper.find('PeopleList').prop('roles').roles.length).toEqual(allRoles.data.roles.length);
   });
@@ -248,13 +247,13 @@ describe('PeopleList Component', () => {
 
     peopleWrapper.find('.dropdown-caret button').simulate('click');
     peopleWrapper.find('.dropdown-menu span').at(1).simulate('click');
-    peopleWrapper.find('.filter-options__children-list').at(1).simulate('click');
+    peopleWrapper.find('.filter-options__children-list').at(0).simulate('click');
 
     expect(peopleWrapper.instance().state.optionName).toEqual('access');
-    expect(peopleWrapper.instance().state.id).toEqual('2');
+    expect(peopleWrapper.instance().state.id).toEqual('1');
     expect(peopleWrapper.instance().state.hideDropdownMenu).toBe(true);
-    expect(sortPeople).toHaveBeenCalledWith('access', '2');
-    expect(fetchPeople).toHaveBeenCalledWith(3, 1, 'access', '2');
+    expect(sortPeople).toHaveBeenCalledWith('access', '1');
+    expect(fetchPeople).toHaveBeenCalledWith(3, 1, 'access', '1');
 
     sortPeople.mockRestore();
     fetchPeople.mockRestore();

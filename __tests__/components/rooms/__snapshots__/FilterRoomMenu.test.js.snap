@@ -7502,16 +7502,17 @@ exports[`FilterButton renders correctly from memory 1`] = `
                                         Location
                                         <select
                                           className="location-input default-select"
+                                          defaultValue=""
                                           id="location-filter"
                                           name="location"
                                           onChange={[Function]}
                                           required={true}
-                                          value=""
                                         >
                                           <option
                                             value=""
                                           >
                                             Select location
+                                             
                                           </option>
                                           You need to provide atleast children or options to the select element
                                         </select>
@@ -7541,16 +7542,17 @@ exports[`FilterButton renders correctly from memory 1`] = `
                                         Office
                                         <select
                                           className="office-input default-select"
+                                          defaultValue=""
                                           id="office-filter"
                                           name="office"
                                           onChange={[Function]}
                                           required={true}
-                                          value=""
                                         >
                                           <option
                                             value=""
                                           >
                                             Select office
+                                             
                                           </option>
                                           You need to provide atleast children or options to the select element
                                         </select>

@@ -3157,9 +3157,10 @@ exports[`AddRoomNairobi should pop up a modal when modal button is clicked 1`] =
                                           name="remoteRoomName"
                                         >
                                           <option
+                                            selected=""
                                             value=""
                                           >
-                                            Select Google Calendar Room
+                                            Select Google Calendar Room 
                                           </option>
                                           0
                                         </select>
@@ -3242,9 +3243,10 @@ exports[`AddRoomNairobi should pop up a modal when modal button is clicked 1`] =
                                           required=""
                                         >
                                           <option
+                                            selected=""
                                             value=""
                                           >
-                                            Select block
+                                            Select block 
                                           </option>
                                           0
                                         </select>
@@ -3264,9 +3266,10 @@ exports[`AddRoomNairobi should pop up a modal when modal button is clicked 1`] =
                                           required=""
                                         >
                                           <option
+                                            selected=""
                                             value=""
                                           >
-                                            Select floor
+                                            Select floor 
                                           </option>
                                           0
                                         </select>
@@ -3547,16 +3550,17 @@ exports[`AddRoomNairobi should pop up a modal when modal button is clicked 1`] =
                                           Select Google Calendar Room
                                           <select
                                             className=" default-select"
+                                            defaultValue=""
                                             id="remoteRoomName"
                                             name="remoteRoomName"
                                             onChange={[Function]}
                                             required={false}
-                                            value=""
                                           >
                                             <option
                                               value=""
                                             >
                                               Select Google Calendar Room
+                                               
                                             </option>
                                             0
                                           </select>
@@ -3690,16 +3694,17 @@ exports[`AddRoomNairobi should pop up a modal when modal button is clicked 1`] =
                                           Select Block
                                           <select
                                             className="default-select"
+                                            defaultValue=""
                                             id="officeBlock"
                                             name="officeBlock"
                                             onChange={[Function]}
                                             required={true}
-                                            value=""
                                           >
                                             <option
                                               value=""
                                             >
                                               Select block
+                                               
                                             </option>
                                             0
                                           </select>
@@ -3729,16 +3734,17 @@ exports[`AddRoomNairobi should pop up a modal when modal button is clicked 1`] =
                                           Select Floor
                                           <select
                                             className="default-select"
+                                            defaultValue=""
                                             id="officeFloor"
                                             name="officeFloor"
                                             onChange={[Function]}
                                             required={true}
-                                            value=""
                                           >
                                             <option
                                               value=""
                                             >
                                               Select floor
+                                               
                                             </option>
                                             0
                                           </select>
