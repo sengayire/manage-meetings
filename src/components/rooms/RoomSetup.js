@@ -1,15 +1,12 @@
 import React, { Component } from 'react';
-import { graphql, compose } from 'react-apollo';
-import PropTypes from 'prop-types';
 import Room from '../rooms/Rooms';
 import { darkTabletIcon } from '../../utils/images/images';
 import SelectInput from '../../components/commons/SelectInput';
 import { selectMockData } from '../../utils/roomSetupMock';
-import { GET_ROOMS_QUERY } from '../../graphql/queries/Rooms';
 import Pagination from '../../components/commons/Pagination';
 import Spinner from '../../components/commons/Spinner';
-import { getUserDetails } from '../../components/helpers/QueriesHelpers';
-import ErrorIcon from '../../components/commons/ErrorIcon';
+import { getUserDetails, getRoomList } from '../../components/helpers/QueriesHelpers';
+import ErrorIcon from '../commons/ErrorIcon';
 
 
 /**
@@ -19,35 +16,21 @@ import ErrorIcon from '../../components/commons/ErrorIcon';
  *
  * @returns {JSX}
  */
-export class RoomSetup extends Component {
+class RoomSetup extends Component {
   state = {
     location: '',
-    allRooms: { ...this.props.data.allRooms },
+    allRooms: {},
     isFetching: false,
     currentPage: 1,
     perPage: 8,
     dataFetched: false,
+    error: false,
   }
 
-  componentDidMount() {
+  componentDidMount = async () => {
     const { perPage, currentPage } = this.state;
-    this.getUserLocation().then(() => this.fetchRooms(perPage, currentPage),
-    );
+    await this.fetchRooms(perPage, currentPage);
   }
-
-  /**
-  * It gets current user location
-  * and updates state with the location
-  *
-  * @returns {void}
-  */
-  getUserLocation = async () => {
-    const user = await getUserDetails();
-    this.setState({
-      location: user.location,
-    });
-  }
-
 
   /**
   * It handles itemsPerPage array for pagination
@@ -58,46 +41,44 @@ export class RoomSetup extends Component {
   */
   getItemsPerPage = () => {
     const array = [8, 16, 32];
+    const { allRooms: { rooms } } = this.state.allRooms;
     /* istanbul ignore next */
-    if (array.includes(this.state.allRooms.rooms.length)) {
+    if (array.includes(rooms.length)) {
       return array;
     }
-    array.push(this.state.allRooms.rooms.length);
+    array.push(rooms.length);
     return array;
   }
 
   /**
-   * Handles fetching of rooms
-   *
-   * @param {number} perPage
-   * @param {number} page
-   *
-   * @returns {Function}
-   */
-
-  fetchRooms = (perPage, page) => {
-    const { location } = this.state;
-    const { data: { fetchMore } } = this.props;
+  * Fetches rooms based on user location
+  * and updates state with the location, allRooms,
+  * isFetching status, dataFetched status and currentPage.
+  * the catch block updates state with error status and isFetching status
+  *
+  * @param perPage
+  * @param page
+  *
+  * @returns {void}
+  */
+  fetchRooms = async (perPage, page) => {
     this.setState({ isFetching: true });
-    /* istanbul ignore next */
-    /* Reasoning: find explicit way of testing configuration options */
-    fetchMore({
-      variables: {
-        page,
-        perPage: (perPage < 8) ? 8 : perPage,
-        capacity: 0,
-        location,
-        office: '',
-      },
-      updateQuery: (prev, { fetchMoreResult }) => {
-        this.setState({
-          allRooms: fetchMoreResult.allRooms,
-          currentPage: page,
-          perPage: fetchMoreResult.allRooms.rooms.length,
-        });
-      },
-    }).then(() => this.setState({ dataFetched: true, isFetching: false }))
-      .catch(() => null);
+    try {
+      const user = await getUserDetails();
+      const { allRooms } = await getRoomList(user.location, (perPage < 8) ? 8 : perPage, page);
+      this.setState({
+        location: user.location,
+        allRooms: { ...this.state.allRooms, allRooms },
+        isFetching: false,
+        dataFetched: true,
+        currentPage: page,
+      });
+    } catch (error) {
+      this.setState({
+        error: true,
+        isFetching: false,
+      });
+    }
   }
 
   /**
@@ -106,7 +87,7 @@ export class RoomSetup extends Component {
   * @returns {jsx}
   */
   createRooms = () => {
-    const { rooms } = this.state.allRooms;
+    const { allRooms: { rooms } } = this.state.allRooms;
     const roomsRender = rooms && rooms.map(room => (
       <Room
         key={room.name}
@@ -149,10 +130,9 @@ export class RoomSetup extends Component {
   }
   render() {
     const {
-      isFetching, allRooms, currentPage, dataFetched, location,
+      isFetching, allRooms: { allRooms }, currentPage, dataFetched, location, error,
     } = this.state;
-    const { loading, error } = this.props.data;
-    if (loading) return <Spinner />;
+    if (isFetching) return <Spinner />;
     return (
       <div className="setup-container">
         {
@@ -168,16 +148,10 @@ export class RoomSetup extends Component {
                 {this.createRooms()}
               </div>
             </div>
-          ) : (
-            error ? (
-              <ErrorIcon
-                message={error.graphQLErrors.length > 0 && 'No resource found'}
-              />
-            ) : <Spinner />
-          )
+          ) : error ? <ErrorIcon message="Resource not found" /> : null
         }
         {
-          !isFetching && location ? (
+          !isFetching && location && allRooms ? (
             <Pagination
               perPage={allRooms.rooms.length}
               itemsPerPage={this.getItemsPerPage()}
@@ -197,34 +171,4 @@ export class RoomSetup extends Component {
   }
 }
 
-RoomSetup.propTypes = {
-  data: PropTypes.shape({
-    allRooms: PropTypes.shape({
-      rooms: PropTypes.array,
-      pages: PropTypes.number,
-    }),
-    variables: PropTypes.shape({
-      page: PropTypes.number,
-      perPage: PropTypes.number,
-    }),
-    loading: PropTypes.bool,
-    error: PropTypes.object,
-    fetchMore: PropTypes.func,
-    refetch: PropTypes.func,
-  }).isRequired,
-};
-
-export default compose(
-  graphql(GET_ROOMS_QUERY, {
-    name: 'data',
-    options: () => ({
-      variables: {
-        page: 1,
-        perPage: 8,
-        capacity: 0,
-        location: '',
-        office: '',
-      },
-    }),
-  }),
-)(RoomSetup);
+export default RoomSetup;

@@ -1,14 +1,9 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import { MockedProvider } from 'react-apollo/test-utils';
 import RoomSetupView from '../../src/containers/RoomSetupView';
 
 describe('unit test for room setupView component', () => {
-  const wrapper = mount(
-    <MockedProvider>
-      <RoomSetupView />
-    </MockedProvider>,
-  );
+  const wrapper = mount(<RoomSetupView />);
   const event = {
     currentTarget: {
       id: 'resources',
@@ -19,7 +14,7 @@ describe('unit test for room setupView component', () => {
     expect(wrapper.find('.setup-main-container').exists()).toBe(true);
     expect(wrapper.find('.setup-main-container').children().length).toBe(2);
     expect(wrapper.find('SetupNavbar').exists()).toBe(true);
-    expect(wrapper.find('Apollo(RoomSetup)').exists()).toBe(true);
+    expect(wrapper.find('RoomSetupOverView').exists()).toBe(true);
   });
 
   it('should toggle navbar item when user clicks on it', () => {

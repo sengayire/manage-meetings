@@ -7,6 +7,8 @@ describe('Pagination Component', () => {
     totalPages: 4,
     hasNext: true,
     hasPrevious: false,
+    perPage: 5,
+    currentPage: 1,
     handleData: jest.fn(),
   };
   const paginationWrapper = shallow(<Pagination {...props} />);
@@ -35,9 +37,18 @@ describe('Pagination Component', () => {
   });
 
   it('navigates to the previous page when previous button is clicked', () => {
-    paginationWrapper.setState({ page: 5 });
-    paginationWrapper.find('#previous').simulate('click');
-    expect(paginationWrapper.instance().state.page).toEqual(4);
+    const nextProps = {
+      totalPages: 4,
+      hasNext: true,
+      hasPrevious: true,
+      perPage: 5,
+      currentPage: 5,
+      handleData: jest.fn(),
+    };
+    const prevWrapper = shallow(<Pagination {...nextProps} />);
+    expect(prevWrapper.instance().state.page).toEqual(5);
+    prevWrapper.find('#previous').simulate('click');
+    expect(prevWrapper.instance().state.page).toEqual(4);
   });
   it('enables previous button if there is a next input', () => {
     const newProps = {
