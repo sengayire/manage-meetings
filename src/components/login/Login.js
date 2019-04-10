@@ -152,7 +152,7 @@ export class Login extends Component {
             active={Boolean(loginError)}
             onTimeout={this.handleSnackBarClose}
             onClick={this.handleSnackBarClose}
-            theme={{ snackbar: 'error', button: 'button-error' }}
+            theme={{ snackbar: 'error-theme', button: 'button-error' }}
           />
         )}
       </Fragment>
