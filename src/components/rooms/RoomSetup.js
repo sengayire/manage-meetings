@@ -157,15 +157,12 @@ export class RoomSetup extends Component {
       <div className="setup-container">
         {
           !isFetching && allRooms && location ? (
-            <div className="resource-box">
+            <div>
               <div className="room-setup-header"><p> {location} Meeting Rooms</p></div>
               <div className="room-select-input">
                 {
                   this.createSelectInputs()
                 }
-              </div>
-              <div className="add-new-resource">
-                <button id="modal-button">Add New Room</button>
               </div>
               <div className="room-setup-container">
                 {this.createRooms()}
