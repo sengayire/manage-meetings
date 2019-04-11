@@ -21,7 +21,7 @@ class Pagination extends Component {
   componentDidMount = () => {
     const { currentPage } = this.props;
     this.setState({ page: currentPage });
-  };
+  }
 
   componentWillReceiveProps = (nextProps) => {
     const { perPage } = nextProps;
@@ -57,12 +57,13 @@ class Pagination extends Component {
    * @returns {void}
    */
   handleNext = () => {
-    const { handleData, dataFetched, perPage } = this.props;
-    const { page } = this.state;
-    handleData(perPage, page + 1);
+    const {
+      handleData, dataFetched, perPage, currentPage,
+    } = this.props;
+    handleData(perPage, currentPage + 1);
     dataFetched &&
       this.setState({
-        page: page + 1,
+        page: currentPage + 1,
       });
   };
 
@@ -72,17 +73,17 @@ class Pagination extends Component {
    * @returns {Function} handleData
    */
   handlePrevious = () => {
-    const { page, perPage } = this.state;
-    const { handleData, dataFetched } = this.props;
-    handleData(perPage, page - 1);
+    const {
+      handleData, dataFetched, perPage, currentPage,
+    } = this.props;
+    handleData(perPage, currentPage - 1);
     dataFetched &&
       this.setState({
-        page: page - 1,
+        page: currentPage - 1,
       });
   };
 
   render() {
-    const { page } = this.state;
     const {
       itemsPerPage,
       totalPages,
@@ -92,6 +93,7 @@ class Pagination extends Component {
       isFetching,
       perPage,
     } = this.props;
+    const { page } = this.state;
     return (
       <nav className="page-navigation">
         <div className="perPageBlock">

@@ -12,7 +12,7 @@ const getUserDetails = async (client = apolloClient) => {
   const { UserInfo: userData } = decodeTokenAndGetUserData() || {};
   const email = process.env.NODE_ENV === 'test' ? 'converge@andela.com' : userData.email;
   try {
-    const { data } = client.readQuery(
+    const data = client.readQuery(
       {
         query: GET_USER_QUERY,
         variables: {
@@ -52,18 +52,33 @@ const getAllLocations = async (client = apolloClient) => {
   }
 };
 
-const getRoomList = async (userLocation, client = apolloClient) => {
-  const { data } = await client.query({
-    query: GET_ROOMS_QUERY,
-    variables: {
-      location: userLocation,
-      office: '',
-      page: 1,
-      perPage: 8,
-    },
-  });
-
-  return data;
+const getRoomList = async (userLocation, perPage, page, client = apolloClient) => {
+  try {
+    const data = client.readQuery(
+      {
+        query: GET_ROOMS_QUERY,
+        variables: {
+          location: userLocation,
+          office: '',
+          page,
+          perPage,
+        },
+      },
+      true,
+    );
+    return data;
+  } catch (error) {
+    const { data } = await client.query({
+      query: GET_ROOMS_QUERY,
+      variables: {
+        location: userLocation,
+        office: '',
+        page,
+        perPage,
+      },
+    });
+    return data;
+  }
 };
 
 const getAllResources = async (client = apolloClient) => {
