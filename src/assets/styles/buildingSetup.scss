@@ -86,7 +86,7 @@ input[type="text"] {
 }
 .select-parent {
   border: 1px dashed $color-primary;
-  margin: 0 auto;
+  margin: 0 auto 15px;
   border-radius: 4px;
   flex-wrap: wrap;
   justify-content: space-evenly;
@@ -131,6 +131,9 @@ input[type="text"] {
 label {
   color: $color-label;
 }
+.level-button-div {
+  display: inline-flex;
+}
 .back-button {
   color: $color-primary;
   background-color: map-get($color-white , 000);
@@ -143,6 +146,17 @@ label {
   &:hover {
     background: transparent;
   }
+}
+.save-button {
+  color: $color-primary;
+  color: map-get($color-white , 000);
+  width: 148px;
+  background: $color-primary;
+  height: 45px;
+  border-radius: 6px;
+  border: 1px solid $color-primary;
+  margin: 0 auto;
+  justify-content: center;
 }
 .add-room-btn {
   width: 300px;
@@ -297,7 +311,10 @@ label {
 .preview-btn, .preview-active-btn, .highlight-btn {
   position: relative;
   border-radius: 5px;
+  width: 120px;
   color: map-get($color-black, 900);
+  overflow: hidden;
+  text-overflow: ellipsis;
   background: $color-gradient;
   border: 1px solid $color-primary;
   cursor: pointer;

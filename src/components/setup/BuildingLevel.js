@@ -90,7 +90,9 @@ class BuildingLevel extends Component {
   };
 
   // eslint-disable-next-line consistent-return
-  addNewLevel = () => {
+  addNewLevel = (event) => {
+    event.preventDefault();
+    const { target: { className } } = event;
     const {
       updateErrorState,
       state: { levelsDetails },
@@ -104,7 +106,8 @@ class BuildingLevel extends Component {
 
     const isValid = this.validateLevelsDetails();
     if (isValid) {
-      this.updateCounter();
+      if (className === 'add-level-button') { this.updateCounter(); }
+      if (className !== 'add-level-button') { this.updateLevelsRelationship(); }
       const childrenLength =
         document.getElementById('levels-controls') !== null &&
         document.getElementById('levels-controls').childElementCount;
@@ -117,9 +120,28 @@ class BuildingLevel extends Component {
     }
   };
 
+  /**
+  * It cancels the current level setup
+  *
+  * @param {object} event
+  *
+  * @returns {void}
+  */
+  cancelCurrentLevelSetup = () => {
+    const { state: { levelsDetails } } = this.levels.current;
+    const { activeLevel, levelCounter } = this.state;
+    this.setState({
+      activeLevel: activeLevel - 1,
+      levelCounter: levelCounter - 1,
+    });
+    if (levelsDetails.length > 1) {
+      levelsDetails.pop();
+    }
+    this.displayLevelsControl();
+  }
+
   toggleActiveLevel = ({ target: { id } }) => {
     const { levelCounter } = this.state;
-
     this.setState({
       activeLevel: Number(id),
       showAddLevel: !(levelCounter - Number(id) >= 1) || (Number(id) === 1 && levelCounter === 2),
@@ -236,6 +258,8 @@ class BuildingLevel extends Component {
                 </div>
               </div>
               <LevelsForm
+                cancelCurrentLevelSetup={this.cancelCurrentLevelSetup}
+                addNewLevel={this.addNewLevel}
                 ref={this.levels}
                 activeLevel={this.state.activeLevel}
                 updateRelationship={this.updateLevelsRelationship}

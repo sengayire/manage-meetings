@@ -72,6 +72,30 @@ class LevelsForm extends Component {
           ]; // new entry
   };
 
+  /**
+   * It cancels the current level setup
+   *
+   * @param {object} event
+   *
+   * @returns {void}
+   */
+  cancelCurrentLevelSetup = (events)=>{
+    const{cancelCurrentLevelSetup} = this.props;
+    const {levelCounter} = this.state;
+    if(levelCounter>1){
+      events.preventDefault();
+      cancelCurrentLevelSetup()
+    }
+  }
+
+  /**
+   * It cancels the current level setup
+   *
+   * @param {int} highestLevel
+   *
+   * @returns {void}
+   */
+
   updateErrorState = highestLevel => {
     const { levelsDetails } = this.state;
     const { tag, quantity, nameObj } = levelsDetails[highestLevel - 1];
@@ -240,7 +264,10 @@ class LevelsForm extends Component {
           <Controls controlsClass="num-controls" handleIncrement={this.handleInputChange} />
         </div>
         {this.displayLevelsInput(this.state)}
-        <Button title="Back" type={2} classProp="back-button" />
+        <div className="level-button-div">
+        <Button handleClick={this.cancelCurrentLevelSetup} title="Back" type={2} classProp="back-button" />
+        <Button handleClick={this.props.addNewLevel} title="Save" type={1} classProp="save-button" />
+        </div>
       </form>
     );
   }
