@@ -24,6 +24,7 @@ class BuildingLevel extends Component {
     showAddLevel: true,
     user: {},
     allLocations: [],
+    erroredChild: '',
   };
 
   componentDidMount = () => {
@@ -90,8 +91,26 @@ class BuildingLevel extends Component {
   };
 
   /**
-   * Adds new level
+   * loops through the children within a level
+   * and checks if a parent has been selected
+   * @param {levelsDetails} - This are the details within a level
+   * @param {levelCounter} - This is the level count
+   * @returns {array}
    */
+  validateChild = (levelsDetails, levelCounter) => {
+    const error = [];
+    if (levelCounter !== 1) {
+      levelsDetails.forEach((currentItem) => {
+        currentItem.nameObj.forEach((child) => {
+          if (child.level !== 1 && !child.parentId) {
+            error.push(child.id);
+          }
+        });
+      });
+    }
+    return error;
+  }
+
   // eslint-disable-next-line consistent-return
   addNewLevel = (event) => {
     event.preventDefault();
@@ -105,6 +124,17 @@ class BuildingLevel extends Component {
 
     if (!levelsDetails.length || levelsDetails[levelCounter - 1] === undefined) {
       return notification(toastr, 'error', `Please fill the form for level ${levelCounter}`)();
+    }
+
+
+    const error = this.validateChild(levelsDetails, levelCounter);
+
+    if (error.length > 0) {
+      const prevLevel = levelCounter - 1;
+      this.setState({
+        erroredChild: 'missing-parent',
+      });
+      return notification(toastr, 'error', `Levels within level ${levelCounter} must have a parent from level ${prevLevel}`)();
     }
 
     const isValid = this.validateLevelsDetails();
@@ -212,6 +242,7 @@ class BuildingLevel extends Component {
       showAddLevel,
       user,
       allLocations,
+      erroredChild,
     } = this.state;
     return (
       <div>
@@ -267,6 +298,7 @@ class BuildingLevel extends Component {
                 activeLevel={this.state.activeLevel}
                 updateRelationship={this.updateLevelsRelationship}
                 updateCounter={this.updateCounter}
+                missingParent={erroredChild}
               />
             </div>
           </div>

@@ -149,7 +149,6 @@ class LevelsForm extends Component {
       arr[position].nameObj = newArr;
       arr[position].quantity -= 1;
     }
-
     this.setState({
       levelsDetails: arr,
     });
@@ -173,30 +172,30 @@ class LevelsForm extends Component {
     const { levelsDetails, levelCounter } = this.state;
     const level = levelsDetails[levelCounter - 1] && levelsDetails[levelCounter - 1].nameObj;
     const parentLevels = levelsDetails[levelCounter - 2];
-
+  
     if (levelCounter != 1) {
-      return !level.length || !level[index] || !level[index].parentId ? (
-        <div className="select-parent">
-          {parentLevels.nameObj.map((parent, i) => (
-            <span
-              key={(i + 1).toString()}
-              className="parent-list"
-              onClick={this.toggleParentSelection(parent, index + 1, 'add')}
-            >
-              {parent.name}
-            </span>
-          ))}
-        </div>
-      ) : (
-        <div className="active-parent">
-          <span>{level[index].parentTitle}</span>
-          <span
-            className="remove-parent"
-            onClick={this.toggleParentSelection(parent, index + 1, 'remove')}
-          >
-            x
-          </span>
-        </div>
+      return (
+        !level.length || !level[index] || !level[index].parentId
+          ? (
+            <div className={this.props.missingParent ? this.props.missingParent :'select-parent'}>
+              {parentLevels.nameObj.map((parent, i) => (
+                <span
+                  key={(i + 1).toString()}
+                  className="parent-list"
+                  onClick={this.toggleParentSelection(parent, index + 1, 'add')}
+                >{parent.name}
+                </span>
+              ))}
+            </div>)
+          : (
+            <div className="active-parent">
+              <span>{ level[index].parentTitle}</span>
+              <span
+                className="remove-parent"
+                onClick={this.toggleParentSelection(parent, index + 1, 'remove')}
+              >x
+              </span>
+            </div>)
       );
     }
   };

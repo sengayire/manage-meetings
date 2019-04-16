@@ -1,8 +1,8 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 import BuildingSetup from '../../../src/components/setup/BuildingLevel';
 import * as QueryHelper from '../../../src/components/helpers/QueriesHelpers';
-import { user, allLocations, level } from '../../../__mocks__/setup/BuildingLevel';
+import { user, allLocations, level, validLevel, invalidLevel } from '../../../__mocks__/setup/BuildingLevel';
 
 describe('building setup component', () => {
   let wrapper;
@@ -11,6 +11,18 @@ describe('building setup component', () => {
 
   beforeEach(() => {
     wrapper = mount(<BuildingSetup handleClick={handleClick} />);
+  });
+  describe('Validate child function', () => {
+    wrapper = shallow(<BuildingSetup handleClick={handleClick} />);
+    it('Should check that the child level is valid ', () => {
+      const error = wrapper.instance().validateChild(validLevel, 2);
+      expect(error).toEqual([]);
+    });
+
+    it('Should check that the child level is invalid', () => {
+      const error = wrapper.instance().validateChild(invalidLevel, 2);
+      expect(error).toEqual([]);
+    });
   });
 
   it('should update the state when getUsersLocation is called', async () => {

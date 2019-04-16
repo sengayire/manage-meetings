@@ -95,6 +95,17 @@ input[type="text"] {
   padding: 2px 0;
   width: 85%;
 }
+.missing-parent {
+  border: 1px dashed $color-danger;
+  margin: 0 auto;
+  border-radius: 4px;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  display: flex;
+  margin-top: -15px;
+  padding: 2px 0;
+  width: 85%;
+}
 .parent-list, .active-parent {
   background: $color-grey;
   color: white;
