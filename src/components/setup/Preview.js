@@ -147,7 +147,7 @@ class Preview extends Component {
       nameObj.forEach((child, i) => {
         const { id, name, parentId } = child;
         flattenData.push({
-          id,
+          structureId: id,
           name,
           level,
           parentId,

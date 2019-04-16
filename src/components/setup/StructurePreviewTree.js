@@ -33,11 +33,11 @@ class StructurePreviewTree extends Component {
         tree[index] = {
           name: value.tag,
           id: value.id,
-          children: value.nameObj,
+          children: value.children,
         }));
 
-      tree.map(item => item.children.map(child => subTree.push({
-        id: child.id,
+      tree.map(item => item.children && item.children.map(child => subTree.push({
+        id: child.structureId,
         name: child.name,
         parentId: child.parentId === '' ? data[0].id : child.parentId,
       })));
@@ -48,7 +48,7 @@ class StructurePreviewTree extends Component {
   };
 
   renderLevels = parsed => (
-    parsed.map((element) => {
+    parsed && parsed.map((element) => {
       if (element.children) {
         return (
           <li key={element.id}>
@@ -69,9 +69,9 @@ class StructurePreviewTree extends Component {
     const { data } = this.props;
     let structuredData;
     let parsed;
-    if (data.length > 0) {
+    if (data && data.length > 0) {
       structuredData = this.dataTree(data);
-      parsed = this.getNestedChildren(structuredData, data[0].id);
+      parsed = this.getNestedChildren(structuredData, structuredData[0].parentId);
     }
     return (
       <div className="preview-structure-tree">

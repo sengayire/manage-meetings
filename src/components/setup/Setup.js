@@ -11,6 +11,7 @@ class Setup extends Component {
   state = {
     visibleLevel: 'WelcomePage',
     centerRoomCount: 1,
+    location: '',
   };
 
   componentDidMount() {
@@ -25,10 +26,10 @@ class Setup extends Component {
    */
   getRoomCount = async () => {
     const user = await getUserDetails();
-    const rooms = await getRoomList(user.location, 8, 1);
-
-    this.setState({ centerRoomCount: rooms.allRooms.rooms.length });
-  };
+    const rooms = await getRoomList(user.location);
+    const { location } = user;
+    this.setState({ centerRoomCount: rooms.allRooms.rooms.length, location });
+  }
 
   /**
    * Checks whether the parameter matches the state and switches it if not.
@@ -70,20 +71,18 @@ class Setup extends Component {
    * @return {JSX}
    */
   renderSetupContent = (level) => {
-    const { centerRoomCount } = this.state;
+    const { centerRoomCount, location } = this.state;
     switch (level) {
       case 'SetupInfoPage':
         return <SetupInfoPage handleClick={this.handleClick} />;
       case 'BuildingLevel':
         return <BuildingLevel handleClick={this.handleClick} />;
       case 'RoomSetupView':
-        return <RoomSetupView handleClick={this.handleClick} />;
+        return (<RoomSetupView handleClick={this.handleClick} userLocation={location} />);
       default:
-        return centerRoomCount < 100 ? (
-          <WelcomePage handleClick={this.handleClick} />
-        ) : (
-          <RoomSetupView handleClick={this.handleClick} />
-        );
+        return (centerRoomCount < 1
+          ? <WelcomePage handleClick={this.handleClick} />
+          : <RoomSetupView handleClick={this.handleClick} userLocation={location} />);
     }
   };
 

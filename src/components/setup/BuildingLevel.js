@@ -89,6 +89,9 @@ class BuildingLevel extends Component {
     return tag && nameObj.length === quantity && nameObj.some(elem => elem.name);
   };
 
+  /**
+   * Adds new level
+   */
   // eslint-disable-next-line consistent-return
   addNewLevel = (event) => {
     event.preventDefault();

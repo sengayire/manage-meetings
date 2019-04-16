@@ -12,6 +12,7 @@ import {
 } from '../../graphql/queries/analytics';
 import { decodeTokenAndGetUserData } from '../../utils/Cookie';
 import apolloClient from '../../utils/ApolloClient';
+import GET_ALL_LEVELS from '../../graphql/queries/Levels';
 
 const getUserDetails = async (client = apolloClient) => {
   const { UserInfo: userData } = decodeTokenAndGetUserData() || {};
@@ -183,6 +184,15 @@ const getBookingsCount = async (dateValue, client = apolloClient) => {
     return data;
   }
 };
+const getRoomsStructure = async (client = apolloClient) => {
+  const { data } = await client.query(
+    {
+      query: GET_ALL_LEVELS,
+    },
+    true,
+  );
+  return data;
+};
 
 export {
   getUserDetails,
@@ -193,4 +203,6 @@ export {
   getLeastBookedRooms,
   getMostBookedRooms,
   getBookingsCount,
+  getRoomsStructure,
 };
+

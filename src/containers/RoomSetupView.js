@@ -11,12 +11,13 @@ import { selectMockData } from '../utils/roomSetupMock';
 import {
   getUserDetails,
   getAllLocations,
+  getRoomsStructure,
 } from '../components/helpers/QueriesHelpers';
 
 /* Styles */
 import '../assets/styles/roomSetup.scss';
 import StructurePreviewTree from '../components/setup/StructurePreviewTree';
-import { previewData } from '../fixtures/previewModal';
+import orderByLevel from '../utils/formatSetupData';
 
 class RoomSetupOverView extends Component {
   constructor(props) {
@@ -24,12 +25,14 @@ class RoomSetupOverView extends Component {
     this.state = {
       currentNavItem: 'meeting-rooms',
       locationId: '',
+      previewDataFromBackend: [],
     };
   }
 
   componentDidMount() {
     this.setUserLocation();
   }
+
   /**
    * get the logged in user's location id and update the state with the id
    *
@@ -38,11 +41,36 @@ class RoomSetupOverView extends Component {
   setUserLocation = async () => {
     const user = await getUserDetails();
     const allLocations = await getAllLocations();
+    const allTheStructures = await getRoomsStructure();
+    const { allStructures } = allTheStructures;
     const userLocation = allLocations.find(location => location.name === user.location);
-    const userLocationId = userLocation.id;
+    const formattedData = orderByLevel(this.stripTypenames(allStructures));
     this.setState({
-      locationId: userLocationId,
+      previewDataFromBackend: formattedData,
+      locationId: userLocation.id,
     });
+  }
+
+  /**
+   * Removes typename from returned objects
+   *
+   * @param {array} value
+   *
+   * @returns {array}
+   */
+  stripTypenames = (value) => {
+    if (Array.isArray(value)) {
+      return value.map(this.stripTypenames);
+    } else if (value !== null && typeof (value) === 'object') {
+      const newObject = {};
+      Object.keys(value).forEach((property) => {
+        if (property !== '__typename') {
+          newObject[property] = this.stripTypenames(value[property]);
+        }
+      });
+      return newObject;
+    }
+    return value;
   }
 
   handleInputChange = () => {};
@@ -101,7 +129,11 @@ class RoomSetupOverView extends Component {
   );
 
   renderNavItems = () => {
-    const { currentNavItem, locationId } = this.state;
+    const {
+      currentNavItem,
+      previewDataFromBackend,
+      locationId,
+    } = this.state;
     switch (currentNavItem) {
       case 'resources':
         return <Resources />;
@@ -111,7 +143,7 @@ class RoomSetupOverView extends Component {
       case 'devices':
         return this.renderDeviceList();
       case 'structure':
-        return <StructurePreviewTree data={previewData} />;
+        return <StructurePreviewTree data={previewDataFromBackend} />;
       default:
         return <RoomSetup />;
     }
