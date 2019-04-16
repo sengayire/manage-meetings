@@ -4,6 +4,7 @@ import { welcomeImage } from '../../utils/images/images';
 import Spinner from '../commons/Spinner';
 import Button from '../commons/Button';
 import { getUserDetails } from '../helpers/QueriesHelpers';
+import ImageLoader from '../commons/ImageLoader';
 
 // eslint-disable-next-line react/prefer-stateless-function
 class WelcomePage extends Component {
@@ -43,7 +44,10 @@ class WelcomePage extends Component {
           <span>{`Hi ${user.firstName}, no meeting rooms have been created in your centre.`}</span>
         </div>
         <div className="image">
-          <img src={welcomeImage} alt="" />
+          <ImageLoader
+            source={welcomeImage}
+            altText="welcome_page_illustration"
+          />
         </div>
         <div className="welcome__button">
           <Button

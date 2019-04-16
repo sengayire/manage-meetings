@@ -25,6 +25,19 @@
     width: 100%;
     min-height: 60vh;
   }
+
+  .image_loader_wrapper {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+
+    .loader {
+      .loader_animation {
+        height: 360px;
+        width: 500px;
+      }
+    }
+  }
 }
 
 .message {
@@ -32,8 +45,8 @@
   text-align: center;
 
   .welcome__message {
-    padding-bottom: 20px;
     color: map-get($color-black, 900) !important;
+    padding-bottom: 20px;
   }
 
   span {

@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import { buildingLayout, wingLayout } from '../../fixtures/setupInfoPage';
 import { blockIcon, wingsIcon } from '../../utils/images/images';
+import ImageLoader from '../commons/ImageLoader';
 
 class SetupLevel extends Component {
   state = {
@@ -31,10 +32,10 @@ class SetupLevel extends Component {
           <div className={carouselPage ? 'setup_carousel_previous disable-nav disabled' : 'setup_carousel_previous'} onClick={this.handleClick} />
           <div className="setup_carousel_box ">
             <div className="setup_carousel_box_image">
-              <img
+              <ImageLoader
                 className={carouselPage ? '' : 'illustration_two'}
-                src={carouselPage ? wingsIcon : blockIcon}
-                alt="carousel_illustration"
+                source={carouselPage ? wingsIcon : blockIcon}
+                altText="carousel_illustration"
               />
             </div>
             <div className={`${col}`}>

@@ -1,0 +1,31 @@
+@import "./variables.scss";
+@import "../../utils/images/images";
+
+.image_loader_wrapper {
+
+  .centered {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+
+  .loader {
+    padding: 12px;
+
+    .loader_animation {
+      background: map_get($color-white, 300);
+      overflow: hidden;
+      position: relative;
+
+      &::before {
+        background: map_get($color-white, 300);
+        background-image: url($image-placeholder-bg);
+        background-repeat: repeat-y;
+        background-size: 100% 1px;
+        content: ' ';
+        display: block;
+        height: 100%;
+      }
+    }
+  }
+}

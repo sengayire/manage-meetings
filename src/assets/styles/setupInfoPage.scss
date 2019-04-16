@@ -159,3 +159,16 @@
     content: ' ';
   }
 }
+
+.setup_carousel_box_image {
+  .image_loader_wrapper {
+    margin-left: 20px;
+
+    .loader {
+      .loader_animation {
+        height: 72px;
+        width: 364px;
+      }
+    }
+  }
+}

@@ -175,6 +175,18 @@
           }
         }
       }
+
+      .image_loader_wrapper {
+        height: 90px;
+
+        .loader {
+          padding: 0;
+
+          .loader_animation {
+            height: 90px;
+          }
+        }
+      }
     }
     .addroom-setup {
       color: $color-primary;
@@ -252,6 +264,15 @@
         .room-image{
           height: 150px;
         }
+        .image_loader_wrapper {
+          height: 150px;
+
+          .loader {
+            .loader_animation {
+              height: 150px;
+            }
+          }
+        }
         .room-details-container{
           .room-name{
             height: auto;
@@ -315,6 +336,16 @@
         .room-image{
           height: 250px;
         }
+        .image_loader_wrapper {
+          height: 250px;
+
+          .loader {
+            .loader_animation {
+              height: 250px;
+            }
+          }
+        }
+  
         .room-details-container{
           .room-name{
             font-size: 30px;

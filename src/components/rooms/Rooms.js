@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import ImageLoader from '../commons/ImageLoader';
 
 /**
  * It renders a single room setup
@@ -10,7 +11,11 @@ import PropTypes from 'prop-types';
  */
 const Room = props => (
   <div className="room-setup-card">
-    <img className="room-image" src={props.roomImage} alt={props.roomName} />
+    <ImageLoader
+      source={props.roomImage}
+      className="room-image"
+      altText={props.roomName}
+    />
     <div className="room-details-container">
       <div className="room-name">{props.roomName}</div>
       <div className="number-of-Seats">
