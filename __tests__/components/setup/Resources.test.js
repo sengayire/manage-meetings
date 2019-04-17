@@ -1,12 +1,11 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import Resources from '../../../src/components/setup/resources/Resources';
 import * as QueryHelpers from '../../../src/components/helpers/QueriesHelpers';
 import { remoteRooms, allResources } from '../../../src/fixtures/resourcesData';
 
 describe('Resources list component', () => {
   let wrapper;
-
   beforeEach(() => {
     wrapper = mount(<Resources />);
     jest
@@ -70,6 +69,42 @@ describe('Resources list component', () => {
       const resource = wrapped.find('.resource-list-item').first();
       resource.simulate('click');
       expect(wrapped.find('ErrorIcon').length).toBe(1);
+    });
+  });
+  describe('Unit test for the Resources component', () => {
+    let component;
+    const resources = [
+      {
+        id: '23',
+        name: 'resource-name',
+      },
+    ];
+    beforeEach(() => {
+      jest.spyOn(Resources.prototype, 'componentDidMount').mockImplementationOnce(() => true);
+      component = shallow(<Resources />);
+    });
+    afterEach(() => {
+      component.unmount();
+    });
+
+    it('should render a spinner while data is being fetched from the backend', () => {
+      component.setState({ isFetching: true });
+      expect(component.find('Spinner').length).toBe(1);
+    });
+
+    it('should render pagination component when data is returned from the backend', () => {
+      component.setState({ isFetching: false, resourcesData: { resources } });
+      expect(component.find('Pagination')).toHaveLength(1);
+    });
+
+    it('should render add resource button', () => {
+      component.setState({ isFetching: false });
+      expect(component.find('AddResource')).toHaveLength(1);
+    });
+
+    it('should render resource items', () => {
+      component.setState({ isFetching: false, resourcesData: { resources } });
+      expect(component.find('.resource-list-item')).toHaveLength(1);
     });
   });
 });

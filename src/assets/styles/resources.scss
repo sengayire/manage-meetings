@@ -20,6 +20,9 @@
         justify-content: space-between;
       }
     }
+    .pagination > select {
+      margin-top: 1em;
+    }
   }
   &-list-item {
     display: grid;

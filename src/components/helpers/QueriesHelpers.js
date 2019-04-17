@@ -87,14 +87,14 @@ const getRoomList = async (userLocation, perPage, page, client = apolloClient) =
   }
 };
 
-const getAllResources = async (client = apolloClient) => {
+const getAllResources = async (perPage, page, client = apolloClient) => {
   try {
     const data = client.readQuery(
       {
         query: GET_RESOURCES_QUERY,
         variables: {
-          page: 1,
-          perPage: 5,
+          page: page || 1,
+          perPage: perPage || 5,
         },
       },
       true,
@@ -104,8 +104,8 @@ const getAllResources = async (client = apolloClient) => {
     const { data } = await client.query({
       query: GET_RESOURCES_QUERY,
       variables: {
-        page: 1,
-        perPage: 5,
+        page: page || 1,
+        perPage: perPage || 5,
       },
     });
     return data.allResources;

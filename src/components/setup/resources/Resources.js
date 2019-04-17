@@ -7,6 +7,7 @@ import { editIcon, deleteIcon } from '../../../utils/images/images';
 import SelectInput from '../../../components/commons/SelectInput';
 import { selectMockData } from '../../../utils/roomSetupMock';
 import AllocatedResources from '../../resources/AllocatedResources';
+import Pagination from '../../commons/Pagination';
 import Spinner from '../../commons/Spinner';
 import {
   getAllResources,
@@ -15,9 +16,12 @@ import {
 
 class Resources extends React.Component {
   state = {
-    resources: [],
+    resourcesData: {},
     resourceDetails: {},
     remoteRooms: [],
+    dataFetched: false,
+    isFetching: false,
+    currentPage: 1,
   };
 
   componentDidMount() {
@@ -26,22 +30,25 @@ class Resources extends React.Component {
 
   /**
    * Queries the back-end for a list of resources and rooms;
-   * @params {null}
+   * @param {number} perPage - Number of resources to list at a time
+   * @param {number} page - Current page being viewed/listed
    *
    * @returns {array}
    */
-  getAllResources = async () => {
-    const allResources = await getAllResources();
+  getAllResources = async (perPage, page) => {
+    this.setState({ isFetching: true });
+    const resourcesData = await getAllResources(perPage, page);
     const allRemoteRooms = await getAllRemoteRooms();
-    const { resources, remoteRooms } = this.state;
-    let resourcesList = Object.assign({}, resources);
-    resourcesList = allResources.resources;
-    let remoteRoomsList = Object.assign({}, remoteRooms);
-    remoteRoomsList = allRemoteRooms.rooms;
-    this.setState({
-      resources: resourcesList,
-      remoteRooms: remoteRoomsList,
-    });
+    if (resourcesData.resources) {
+      this.setState(prevState => ({
+        resourcesData: { ...prevState.resourcesData, ...resourcesData },
+        remoteRooms: [...allRemoteRooms.rooms],
+        currentPage: page,
+        isFetching: false,
+        dataFetched: true,
+        perPage,
+      }));
+    }
   };
 
   AllocatedResourcesComponent = createRef();
@@ -106,8 +113,10 @@ class Resources extends React.Component {
   };
 
   render() {
-    const { resources, resourceDetails, remoteRooms } = this.state;
-    if (resources.length === 0) {
+    const {
+      resourcesData, resourceDetails, remoteRooms, dataFetched, isFetching, currentPage, perPage,
+    } = this.state;
+    if (isFetching) {
       return <Spinner />;
     }
     return (
@@ -120,7 +129,27 @@ class Resources extends React.Component {
           <div className="add-new-resource">
             <AddResource />
           </div>
-          <div>{resources.map(resource => this.resourceList(resource))}</div>
+          <div>
+            {
+              resourcesData.resources ?
+              resourcesData.resources.map(resource => this.resourceList(resource))
+              : null
+            }
+          </div>
+          {
+            resourcesData.resources ? (
+              <Pagination
+                currentPage={currentPage}
+                totalPages={resourcesData.pages}
+                hasNext={resourcesData.hasNext}
+                hasPrevious={resourcesData.hasPrevious}
+                handleData={this.getAllResources}
+                dataFetched={dataFetched}
+                isFetching={isFetching}
+                perPage={perPage ? parseInt(perPage, 10) : undefined}
+              />
+            ) : null
+          }
         </div>
         <AllocatedResources
           ref={this.AllocatedResourcesComponent}
