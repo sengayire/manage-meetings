@@ -324,8 +324,6 @@ label {
   border-radius: 5px;
   width: 120px;
   color: map-get($color-black, 900);
-  overflow: hidden;
-  text-overflow: ellipsis;
   background: $color-gradient;
   border: 1px solid $color-primary;
   cursor: pointer;
@@ -335,6 +333,10 @@ label {
   min-width: 75px;
   display: inline-grid;
   line-height: 26px;
+}
+
+.long-name {
+  padding: 11px 0px;
 }
 
 .preview-btn {

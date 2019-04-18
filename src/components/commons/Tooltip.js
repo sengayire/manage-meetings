@@ -6,7 +6,10 @@ import { helpOutline } from '../../utils/images/images';
 
 import theme from '../../assets/styles/toolTipStyles.scss';
 
+import levelTheme from '../../assets/styles/levelTipStyle.scss';
+
 theme.tooltipInner = 'tooltipInner';
+levelTheme.tooltipInner = 'tooltipInner';
 
 const TooltipLink = Tooltip(Link);
 
@@ -17,14 +20,14 @@ const TooltipLink = Tooltip(Link);
  *
  * @returns {JSX}
  */
-const Tip = tip => (
+const Tip = (tip, type) => (
   <TooltipLink
-    theme={theme}
+    theme={type === undefined ? theme : levelTheme}
     tooltipPosition="top"
     tooltipShowOnClick
     tooltip={tip}
   >
-    <img src={helpOutline} alt="help icon" />
+    {type === undefined ? <img src={helpOutline} alt="help icon" /> : type}
   </TooltipLink>
 );
 

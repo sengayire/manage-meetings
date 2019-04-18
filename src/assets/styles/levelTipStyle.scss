@@ -1,9 +1,9 @@
 @import './variables';
 
 .tooltipInner {
-	color: map-get($color-black, 400);
+	background-color: map-get($color-black, 400);
 	box-shadow: 0 2px 5px 0 $color-box-shadow-tooltip;
-	background-color: map-get($color-white, 000);
+	color: map-get($color-white, 000);
 	border-radius: 4px;
 	font-family: $font-regular;
 	font-size: 0.8rem;

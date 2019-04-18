@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import Button from '../commons/Button';
 import { walkingIcon, chevronIcon } from '../../utils/images/images';
 import MrmModal from '../commons/MrmModal';
+import Tip from '../commons/Tooltip';
 import StructurePreviewTree from './StructurePreviewTree';
 import { checkboxSlideHTML } from '../commons/CheckboxSlide';
 
@@ -247,14 +248,16 @@ class Preview extends Component {
                             activeLevel === child.id ||
                             (activeLevelHover === child.parentId && activeLevel === '0') ||
                             (activeLevelHover === child.id && activeLevel === '0')
-                              ? 'highlight-btn'
-                              : classProp
+                              ? child.name.toString().length > 12 ? 'highlight-btn long-name' : 'highlight-btn'
+                              : child.name.toString().length > 12 ? `${classProp} long-name` : classProp
                           }
                           onClick={this.makeLevelActiveClick(child.id, 'active')}
                           onMouseEnter={this.makeLevelActiveHover(child.id, 'active')}
                           onMouseLeave={this.makeLevelActiveHover(child.id)}
                         >
-                          {child.name.toString()}
+                          {child.name.toString().length > 12
+                            ? Tip(child.name.toString(),
+                            `${child.name.toString().substring(0, 8)} ...`) : child.name.toString()}
                         </button>
                         {(values.nameObj.length > 4 &&
                           index < values.nameObj.length - 1 &&
