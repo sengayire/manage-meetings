@@ -87,7 +87,7 @@ export class EditFeedback extends Component {
    *
    * @returns {void}
    */
-  handleCloseModal = () => this.setState({ ...this.initialState, closeModal: true, error: {} });
+  handleCloseModal = () => this.setState({ ...this.initialState(), closeModal: true, error: {} });
 
   /**
    * It changes the state of the modal
@@ -429,6 +429,7 @@ export class EditFeedback extends Component {
         handleSubmit={this.validateInputFields}
         isLoading={this.state.isLoading}
         showActionButton={this.state.showEditQuestionButton}
+        handleCloseModal={this.handleCloseModal}
       />
     );
   }

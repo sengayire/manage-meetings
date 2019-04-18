@@ -38,69 +38,73 @@
   }
 
   .form-action-buttons {
-    .btn-primary:hover, .btn-primary:nth-child(2) {
-      color: $color-primary !important;
-    }
-
-    .btn-primary:first-child {
-      background-color: $color-primary;
-      color: map-get($color-white,000) !important;
-      span {
-        color: map-get($color-white,000) !important;
+    .btn-primary span {
+      font-family: "DINPro";
+      font-size: 16px;
+      color: map-get($color-blue, 400);
+      &:hover {
+        color: $color-primary !important;
       }
     }
+    .btn-primary, .btn-secondary {
+      padding: 10px 15px 0 !important;
+    }
+    .btn-secondary {
+      background-color: map-get($color-blue, 400) !important;
+      span {
+        color: map-get($color-white, 000);
+        font-family: "DINPro";
+        font-size: 16px;
+      }
+      &:hover {
+        color: map-get($color-white, 000);
+        background-color: map-get($color-blue, 400);
+      }
+    }
+    @media screen and (max-width: 360px) {
+      width: 60%;
+      margin: auto;
+    }
+    @media screen and (max-width: 414px) {
+      width: 70%;
+      margin: auto;
+    }
+    @media screen and (max-width: 520px) {
+      width: 70%;
+      margin: auto;
+    }
+    @media screen and (max-width: 320px) {
+      width: 70%;
+      margin: auto;
+    }
+    @media screen and (max-width: 375px) {
+      width: 80%;
+      margin: auto;
+    }
+    @media screen and (max-width: 768px) {
+      width: 70%;
+      margin: auto;
+    }
+    @media screen and (max-width: 400px) {
+      width: 70%;
+      margin: auto;
+    }
+    @media screen and (max-width: 1024px) {
+      width: 70%;
+      margin: auto;
+    }
+    h2 {
+      color: $color-primary !important ;
+      display: block;
+      font-size: 22px;
+      font-weight: bold;
+    }
 
-    button:nth-child(2){
-    span {
-      color: $color-primary !important;
+    button:first-child, button:first-child:hover{
+      background-color: map-get($color-white,000);
+      border: 1px solid $color-primary;
+      color: $color-primary;
     }
   }
-
-  }
-  @media screen and (max-width: 360px) {
-    width: 60%;
-    margin: auto;
-  }
-  @media screen and (max-width: 414px) {
-    width: 70%;
-    margin: auto;
-  }
-  @media screen and (max-width: 520px) {
-    width: 70%;
-    margin: auto;
-  }
-  @media screen and (max-width: 320px) {
-    width: 70%;
-    margin: auto;
-  }
-  @media screen and (max-width: 375px) {
-    width: 80%;
-    margin: auto;
-  }
-  @media screen and (max-width: 768px) {
-    width: 70%;
-    margin: auto;
-  }
-  @media screen and (max-width: 400px) {
-    width: 70%;
-    margin: auto;
-  }
-  @media screen and (max-width: 1024px) {
-    width: 70%;
-    margin: auto;
-  }
 }
-h2 {
-  color: $color-primary !important ;
-  display: block;
-  font-size: 22px;
-  font-weight: bold;
-}
-
-  button:first-child, button:first-child:hover{
-    background-color: map-get($color-white,000);
-    border: 1px solid $color-primary;
-    color: $color-primary;
-  }
-
 }

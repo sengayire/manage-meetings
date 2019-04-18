@@ -6,38 +6,84 @@
   margin: 0 auto;
   margin-top: 2%;
 
+  #modal-button.modal-trigger {
+    color: map-get($color-blue, 400);
+    border: 1px solid map-get($color-blue, 400);
+  }
   .calendar-container {
     position: relative;
-    
+
+    button {
+      &.calendarIconBtn.btn-secondary:before {
+        margin: 12px 10px -5px 12px;
+      }
+
+      > span {
+        position: relative;
+        top: 12px;
+      }
+    }
+
     .calendar {
       position: absolute;
       margin-top: -22px;
       z-index: 2;
       right: auto;
-  
+
       .date_di {
         display: grid;
+
+        > div {
+          display: grid;
+
+          .date_nav {
+            grid-column: 1;
+            &.number_of_days {
+              grid-column: 2;
+              padding: 6px 12px !important;
+              border-radius: 6px;
+              margin: 0;
+              width: max-content;
+              height: min-content;
+              place-self: center start;
+
+              > span {
+                padding: 0;
+                width: max-content;
+              }
+            }
+          }
+        }
       }
-      
+
       .DayPicker-Months {
         flex-wrap: unset !important;
       }
-  
+
       .DayPicker-Month {
         margin: 0 0.3em !important;
       }
     }
-  
-    .calendar__button .apply_button {
-      background-color: $color-primary;
-      color: map-get($color-white, 000);
-      height: 13px;
-      width: 50px;
-      padding: 4px 50px 12px 12px;
-      line-height: 14px;
-      font-weight: 500;
+
+    .calendar__button {
+      .cancel_button {
+        padding: 15px 14px 5px !important;
+        font-family: "DINPro" !important;
+        color: map-get($color-black, 900) !important;
+      }
+      .apply_button {
+        padding: 12px 20px !important;
+        border-radius: 0;
+        margin-left: -3px;
+      }
+
+      .apply_button, .cancel_button {
+        font-size: 13px !important;
+        border: none;
+        text-transform: capitalize;
+      }
     }
-  
+
     #calendar-btn {
       height: 40px;
       display: flex;
@@ -48,11 +94,11 @@
       right: 0%;
       color: $color-text;
     }
-  
+
     .calendarIconBtn {
-      margin: 23px 0;
+       margin: 23px 0;
     }
-  
+
     .calendarIconBtn-error {
       border: 1px solid $color-danger;
       margin-left: 0;
@@ -61,9 +107,17 @@
     }
   }
 
+  .question-form {
+    line-height: unset;
 
-  .btn-primary {
-    color: map-get($color-white, 000) !important;
+    & .calendar-container > button > span {
+      font-family: 'DINPro';
+      margin-right: 10px;
+    }
+
+    .btn-secondary {
+      line-height: 2 !important;
+    }
   }
 
   &__control {
@@ -76,6 +130,14 @@
     margin-right: auto;
     display: flex;
 
+    .btn-secondary {
+      color: map-get($color-black, 500);
+    }
+
+    .btn-primary {
+      color: map-get($color-white, 000);
+      font-family: "DINPro";
+    }
     button {
       line-height: 1.2em !important;
     }
@@ -95,10 +157,6 @@
     &:before {
       content: url($question-icon);
     }
-  }
-
-  .btn-primary {
-    color: map-get($color-white, 000) !important;
   }
 
   .feedback-filter-button {

@@ -15,6 +15,7 @@ class MrmModal extends Component {
     withButton: PropTypes.bool,
     styleClassName: PropTypes.string,
     handleCloseModal: PropTypes.func,
+    showActionButton: PropTypes.bool,
   };
 
   static defaultProps = {
@@ -25,6 +26,7 @@ class MrmModal extends Component {
     withButton: true,
     styleClassName: '',
     handleCloseModal: () => {},
+    showActionButton: true,
   };
 
   state = {
@@ -68,6 +70,7 @@ class MrmModal extends Component {
       iconButtonClass,
       withButton,
       styleClassName,
+      showActionButton,
     } = this.props;
     return (
       <div className="modal-component">
@@ -76,7 +79,7 @@ class MrmModal extends Component {
             <IconButtons
               buttonText={buttonText}
               openModal={this.toggleModal}
-              classProp={iconButtonClass}
+              modalButtonClassName={iconButtonClass}
             />
           )}
         {this.state.isOpen && (
@@ -92,6 +95,7 @@ class MrmModal extends Component {
                   onClickSubmit={handleSubmit}
                   onClickCancel={this.toggleModal}
                   isLoading={isLoading}
+                  showActionButton={showActionButton}
                 />
               )}
             </div>

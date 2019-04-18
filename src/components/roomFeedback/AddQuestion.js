@@ -390,9 +390,9 @@ export class AddQuestion extends Component {
         modalButtonClassName="add-question-button"
         modalContent={this.renderQuestionValues()}
         cancelButtonText="CANCEL"
-        actionButtonText="ADD QUESTION"
         handleSubmit={this.validateInputFields}
         isLoading={this.state.isLoading}
+        iconButtonClass="modal-trigger"
       />
     );
   }

@@ -19,7 +19,7 @@ const ActionButtons = props => (
     <div className="form-action-buttons">
       <Button handleClick={props.onClickCancel} title={props.cancelButtonText} />
       { props.showActionButton &&
-      <Button handleClick={props.onClickSubmit} title={props.actionButtonText} classProp="main-button" />
+      <Button type={2} handleClick={props.onClickSubmit} title={props.actionButtonText} classProp="main-button" />
       }
     </div>
 );
