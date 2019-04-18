@@ -1,0 +1,75 @@
+@import './variables';
+
+.static-input {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px auto;
+  .static-input-field {
+    flex: 1;
+  }
+}
+
+.dynamic-input {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-column-gap: 2%;
+  margin: 15px auto;
+
+  .dynamic-input-field {
+    margin: 10px auto;
+    font-weight: lighter;
+  }
+}
+
+.remote-room-select {
+  margin: 10px auto;
+}
+
+.capacity-controls {
+  float: none;
+  top: -24px !important;
+  left: 157px !important;
+  button:first-child {
+    border: 1px solid $color-input-border;
+    &:hover {
+      border: 1px solid $color-input-border;
+    }
+  }
+}
+
+.floor-wrapper, .static-input-field {
+  label {
+    font-size: 16px;
+    font-weight: bolder;
+    &:after {
+      content: none !important;
+    }
+  }
+}
+
+/*
+  Screens that are 1024px wide or less
+*/
+@media screen and (max-width: 1024px) {
+  .static-input {
+    display: grid;
+    grid-template-columns: auto;
+  }
+
+  .dynamic-input {
+    grid-template-columns: auto;
+    .dynamic-input-field {
+      font-size: 15px;
+    }
+  }
+
+  .floor-wrapper, .static-input-field {
+    label {
+      font-size: 16px;
+    }
+  }
+
+  .thumbnail {
+    min-width: 200px !important;
+  }
+}

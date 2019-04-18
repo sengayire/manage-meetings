@@ -4,13 +4,13 @@
   display: block;
   border-radius: 4px;
   padding: 10px;
-  width: 29.1em;
+  width: auto;
   height: 1.49em;
   font-family: $font-regular;
   font-size: 16px;
   color: map-get($color-black, 900) !important;
   border: 1px solid $color-input-border;
-  margin-top: 1.3em;
+  margin-top: 10px;
   ::placeholder {
     color: map-get($color-black, 900) !important;
     opacity: 1;

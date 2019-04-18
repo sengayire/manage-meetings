@@ -7,7 +7,7 @@ import Pagination from '../../components/commons/Pagination';
 import Spinner from '../../components/commons/Spinner';
 import { getUserDetails, getRoomList } from '../../components/helpers/QueriesHelpers';
 import ErrorIcon from '../commons/ErrorIcon';
-
+import AddNewRoom from './addNewRoom';
 
 /**
  * Builds component for displaying roooms in setup
@@ -136,17 +136,21 @@ class RoomSetup extends Component {
     return (
       <div className="setup-container">
         {
+          <div>
+            <div className="room-setup-header"><p> {location} Meeting Rooms</p></div>
+            <div className="room-select-input">
+              {
+                this.createSelectInputs()
+              }
+            </div>
+            <div className="add-new-resource">
+              <AddNewRoom />
+            </div>
+          </div>
+        }
+        {
           !isFetching && allRooms && location ? (
             <div className="resource-box">
-              <div className="room-setup-header"><p> {location} Meeting Rooms</p></div>
-              <div className="room-select-input">
-                {
-                  this.createSelectInputs()
-                }
-              </div>
-              <div className="add-new-resource">
-                <button id="modal-button">Add New Room</button>
-              </div>
               <div className="room-setup-container">
                 {this.createRooms()}
               </div>

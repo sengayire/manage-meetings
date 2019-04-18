@@ -65,7 +65,7 @@ export class GetAverageRoomCapacityComponent extends Component {
     const { loading, error } = this.props.data;
     if (error) {
       return (
-        <ErrorIcon message={error.graphQLErrors.length > 0 && error.graphQLErrors[0].message} />
+        <ErrorIcon message={error.graphQLErrors.length > 0 && 'Resource not found'} />
       );
     } else if (loading) {
       return <Spinner />;

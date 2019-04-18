@@ -10,20 +10,17 @@ describe('Unit test for room setup Component', () => {
   let wrapper;
   const mockedClient1 = {
     readQuery: jest.fn().mockImplementationOnce(() => ({ user: { email: 'converge@andela.com' } })),
-    query: jest.fn(),
+    query: jest.fn(() => ({ data: { user: {} } })),
   };
 
   const mockedClient2 = {
     readQuery: jest
       .fn()
       .mockImplementationOnce(() => allRooms),
-    query: jest.fn(),
+    query: jest.fn(() => ({ data: 'rooms' })),
   };
 
   beforeEach(async () => {
-    const response1 = await getUserDetails(mockedClient1);
-    await getRoomList(response1.location, 8, 1, mockedClient2);
-    wrapper = await mount(<RoomSetup />);
     jest.spyOn(CookieHelper, 'decodeTokenAndGetUserData').mockImplementationOnce(() => ({
       UserInfo: {
         userData: {
@@ -31,17 +28,23 @@ describe('Unit test for room setup Component', () => {
         },
       },
     }));
+    const response1 = await getUserDetails(mockedClient1);
+    await getRoomList(response1.location, 8, 1, mockedClient2);
+    wrapper = await mount(<RoomSetup />);
     jest.spyOn(wrapper.instance(), 'fetchRooms').mockImplementationOnce(() => allRooms);
   });
-
-  it('should render the spinner when fetching data and error when no data is found', () => {
+  it('should render the spinner when fetching data', () => {
     expect(wrapper.find('.spinner').length).toBe(1);
+  });
+
+  it('should render the error component when no data is found', () => {
     wrapper.setState({
       error: true,
       isFetching: false,
     });
     expect(wrapper.find('ErrorIcon').length).toBe(1);
   });
+
   it('should render the meeting rooms page correctly', () => {
     wrapper.setState({
       location: 'Lagos',

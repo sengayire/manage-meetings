@@ -113,20 +113,13 @@ const getAllResources = async (perPage, page, client = apolloClient) => {
 };
 
 const getAllRemoteRooms = async (client = apolloClient) => {
-  try {
-    const data = client.readQuery(
-      {
-        query: GET_ALL_REMOTE_ROOMS,
-      },
-      true,
-    );
-    return data.allRemoteRooms;
-  } catch (err) {
-    const { data } = await client.query({
+  const { data } = await client.query(
+    {
       query: GET_ALL_REMOTE_ROOMS,
-    });
-    return data.allRemoteRooms;
-  }
+    },
+    true,
+  );
+  return data.allRemoteRooms;
 };
 const getLeastBookedRooms = async (dateValue, client = apolloClient) => {
   try {

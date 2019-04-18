@@ -264,7 +264,7 @@ class BuildingLevel extends Component {
                         <SetupLevel />
                         <span onClick={this.toggleModal} className="close-modal">x</span>
                       </div>
-                  }
+                    }
                     className="levels-modal"
                   />
                 </div>

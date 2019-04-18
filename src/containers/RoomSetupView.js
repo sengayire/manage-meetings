@@ -18,6 +18,7 @@ import {
 import '../assets/styles/roomSetup.scss';
 import StructurePreviewTree from '../components/setup/StructurePreviewTree';
 import orderByLevel from '../utils/formatSetupData';
+import stripTypenames from '../components/helpers/StripTypeNames';
 
 class RoomSetupOverView extends Component {
   constructor(props) {
@@ -44,33 +45,11 @@ class RoomSetupOverView extends Component {
     const allTheStructures = await getRoomsStructure();
     const { allStructures } = allTheStructures;
     const userLocation = allLocations.find(location => location.name === user.location);
-    const formattedData = orderByLevel(this.stripTypenames(allStructures));
+    const formattedData = orderByLevel(stripTypenames(allStructures));
     this.setState({
       previewDataFromBackend: formattedData,
       locationId: userLocation.id,
     });
-  }
-
-  /**
-   * Removes typename from returned objects
-   *
-   * @param {array} value
-   *
-   * @returns {array}
-   */
-  stripTypenames = (value) => {
-    if (Array.isArray(value)) {
-      return value.map(this.stripTypenames);
-    } else if (value !== null && typeof (value) === 'object') {
-      const newObject = {};
-      Object.keys(value).forEach((property) => {
-        if (property !== '__typename') {
-          newObject[property] = this.stripTypenames(value[property]);
-        }
-      });
-      return newObject;
-    }
-    return value;
   }
 
   handleInputChange = () => {};
