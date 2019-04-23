@@ -195,7 +195,7 @@ exports[`DeleteOffice Test Suite renders as expected 1`] = `
             ],
             "kind": "Document",
             "loc": Object {
-              "end": 127,
+              "end": 129,
               "start": 0,
             },
           }
@@ -547,7 +547,7 @@ exports[`DeleteOffice Test Suite should pop up a modal when delete button is cli
             ],
             "kind": "Document",
             "loc": Object {
-              "end": 127,
+              "end": 129,
               "start": 0,
             },
           }
@@ -670,7 +670,7 @@ exports[`DeleteOffice Test Suite should pop up a modal when delete button is cli
                               </span>
                             </button>
                             <button
-                              class="main-button btn-primary"
+                              class="main-button btn-secondary"
                             >
                               <span>
                                 DELETE ROOM
@@ -835,10 +835,10 @@ exports[`DeleteOffice Test Suite should pop up a modal when delete button is cli
                               handleClick={[Function]}
                               isDisabled={false}
                               title="DELETE ROOM"
-                              type={1}
+                              type={2}
                             >
                               <button
-                                className="main-button btn-primary"
+                                className="main-button btn-secondary"
                                 disabled={false}
                                 onClick={[Function]}
                               >

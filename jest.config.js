@@ -41,6 +41,12 @@ module.exports = {
     '__tests__/components/commons/Dropdown.test.js',
     '__tests__/App.test.js',
     '__tests__/components/login/Login.test.js',
+    '__tests__/components/rooms/AddRoom.test.js',
+    '__tests__/components/rooms/Rooms.test.js',
+    '__tests__/components/rooms/RoomSetup.test.js',
+    '__tests__/containers/RoomSetupView.test.js',
+    '__tests__/components/helpers/queryHelpers.test.js',
+
   ],
   setupTestFrameworkScriptFile: '<rootDir>/setupTests.js',
   snapshotSerializers: ['enzyme-to-json/serializer'],

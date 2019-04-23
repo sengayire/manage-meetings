@@ -1,3 +1,4 @@
+/* eslint-disable react/forbid-prop-types */
 import React from 'react';
 import PropTypes from 'prop-types';
 import ImageLoader from '../commons/ImageLoader';
@@ -25,15 +26,13 @@ const Room = props => (
         <p>{props.numberOfResources} Resources</p>
       </div>
       <div className="room-details">
-        <div className="details">
-          <p>{props.floorName}</p>
-        </div>
-        <div className="details">
-          <p>{props.wingName}</p>
-        </div>
-        <div className="details block-name">
-          <p>{props.blockName}</p>
-        </div>
+        {
+          props.roomLabels.map(label => (
+            <div className="details">
+              <p>{label}</p>
+            </div>
+            ))
+        }
       </div>
     </div>
   </div>
@@ -44,9 +43,7 @@ export default Room;
 Room.propTypes = {
   roomImage: PropTypes.string.isRequired,
   roomName: PropTypes.string.isRequired,
-  floorName: PropTypes.string.isRequired,
-  wingName: PropTypes.string.isRequired,
-  blockName: PropTypes.string.isRequired,
+  roomLabels: PropTypes.array.isRequired,
   numberOfSeats: PropTypes.number.isRequired,
   numberOfResources: PropTypes.number.isRequired,
 };

@@ -3287,7 +3287,7 @@ exports[`AddRoomNairobi should pop up a modal when modal button is clicked 1`] =
                                       </span>
                                     </button>
                                     <button
-                                      class="main-button btn-primary"
+                                      class="main-button btn-secondary"
                                     >
                                       <span>
                                         ADD ROOM
@@ -3787,10 +3787,10 @@ exports[`AddRoomNairobi should pop up a modal when modal button is clicked 1`] =
                                       handleClick={[Function]}
                                       isDisabled={false}
                                       title="ADD ROOM"
-                                      type={1}
+                                      type={2}
                                     >
                                       <button
-                                        className="main-button btn-primary"
+                                        className="main-button btn-secondary"
                                         disabled={false}
                                         onClick={[Function]}
                                       >

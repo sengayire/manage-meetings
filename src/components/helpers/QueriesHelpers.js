@@ -59,32 +59,16 @@ const getAllLocations = async (client = apolloClient) => {
 };
 
 const getRoomList = async (userLocation, perPage, page, client = apolloClient) => {
-  try {
-    const data = client.readQuery(
-      {
-        query: GET_ROOMS_QUERY,
-        variables: {
-          location: userLocation,
-          office: '',
-          page,
-          perPage,
-        },
-      },
-      true,
-    );
-    return data;
-  } catch (error) {
-    const { data } = await client.query({
-      query: GET_ROOMS_QUERY,
-      variables: {
-        location: userLocation,
-        office: '',
-        page,
-        perPage,
-      },
-    });
-    return data;
-  }
+  const { data } = await client.query({
+    query: GET_ROOMS_QUERY,
+    variables: {
+      location: userLocation,
+      office: '',
+      page,
+      perPage,
+    },
+  });
+  return data;
 };
 
 const getAllResources = async (perPage, page, client = apolloClient) => {

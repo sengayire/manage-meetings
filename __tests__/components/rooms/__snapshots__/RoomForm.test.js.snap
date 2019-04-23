@@ -184,10 +184,10 @@ exports[`RoomForm should render properly 1`] = `
           handleClick={[Function]}
           isDisabled={false}
           title="Save Changes"
-          type={1}
+          type={2}
         >
           <button
-            className="main-button btn-primary"
+            className="main-button btn-secondary"
             disabled={false}
             onClick={[Function]}
           >

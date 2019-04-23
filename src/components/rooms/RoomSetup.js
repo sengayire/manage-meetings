@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import Room from '../rooms/Rooms';
-import { darkTabletIcon } from '../../utils/images/images';
 import SelectInput from '../../components/commons/SelectInput';
 import { selectMockData } from '../../utils/roomSetupMock';
 import Pagination from '../../components/commons/Pagination';
 import Spinner from '../../components/commons/Spinner';
 import { getUserDetails, getRoomList } from '../../components/helpers/QueriesHelpers';
 import ErrorIcon from '../commons/ErrorIcon';
-import AddNewRoom from './addNewRoom';
+import AddNewRoomComponent from './AddRoom';
 
 /**
  * Builds component for displaying roooms in setup
@@ -91,11 +90,9 @@ class RoomSetup extends Component {
     const roomsRender = rooms && rooms.map(room => (
       <Room
         key={room.name}
-        roomImage={darkTabletIcon}
+        roomImage={room.imageUrl}
         roomName={room.name}
-        wingName="Wing-Name"
-        floorName={room.floor.name}
-        blockName={room.floor.block.name}
+        roomLabels={room.roomLabels}
         numberOfSeats={room.capacity}
         numberOfResources={6}
       />
@@ -132,6 +129,7 @@ class RoomSetup extends Component {
     const {
       isFetching, allRooms: { allRooms }, currentPage, dataFetched, location, error,
     } = this.state;
+
     if (isFetching) return <Spinner />;
     return (
       <div className="setup-container">
@@ -144,7 +142,7 @@ class RoomSetup extends Component {
               }
             </div>
             <div className="add-new-resource">
-              <AddNewRoom />
+              <AddNewRoomComponent />
             </div>
           </div>
         }
