@@ -30,7 +30,6 @@ class Calendar extends Component {
     endDate: '',
   };
 
-
   state = {
     isCalendarOpen: false,
     startDate: this.props.startDate || moment().format('MMM DD Y'),
@@ -76,12 +75,11 @@ class Calendar extends Component {
       <Fragment>
         <Button
           title={`${startDate} - ${endDate}`}
-          classProp={this.props.classProp}
+          classProp={`calendarIcon ${this.props.classProp}`}
           type={2}
           handleClick={this.toggleCalendar}
         />
-        {
-          isCalendarOpen &&
+        {isCalendarOpen && (
           <div className="calendar">
             <PickRange handleChange={this.handleChange} />
             <div className="calendar__button">
@@ -100,7 +98,7 @@ class Calendar extends Component {
               </button>
             </div>
           </div>
-        }
+        )}
       </Fragment>
     );
   }

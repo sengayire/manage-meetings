@@ -14,7 +14,7 @@ import '../../../src/assets/styles/analyticsPage.scss';
 import '../../assets/styles/table.scss';
 import Calendar from '../../components/commons/Calendar';
 import notification from '../../utils/notification';
-import AnalyticsActivity from '../../containers/AnalyticsActivity';
+import AnalyticsActivityComponent from '../../containers/AnalyticsActivity';
 import AnalyticsOverview from '../../containers/AnalyticsOverview';
 import ExportButton from '../commons/ExportButton';
 import downloadFileString from '../../fixtures/downloadString';
@@ -69,7 +69,7 @@ export class AnalyticsNav extends Component {
     if (user) {
       this.setState({ location: user.location, role: user.roles[0].id });
     }
-  }
+  };
 
   /**
    * Updates the state with the data coming from the children
@@ -86,7 +86,7 @@ export class AnalyticsNav extends Component {
       stateParameter[`${type}`] = analytics;
       stateParameter.fetching = false;
     });
-  }
+  };
 
   /**
    * Formats the CSV data for Least and Most Booked Rooms
@@ -97,9 +97,7 @@ export class AnalyticsNav extends Component {
    * @returns {void}
    */
   leastAndMostBookedRoomsCSV = (csvRows) => {
-    const {
-      leastBookedRooms, mostBookedRooms,
-    } = this.state;
+    const { leastBookedRooms, mostBookedRooms } = this.state;
     const percentOfShare = '% SHARE OF ALL MEETINGS'.replace(/ /g, '%20');
     const mostBookedTitle = 'Most Booked Rooms'.replace(/ /g, '%20');
     const leastBookedTitle = 'Least Booked Rooms'.replace(/ /g, '%20');
@@ -116,7 +114,7 @@ export class AnalyticsNav extends Component {
     for (let i = 0; i < toWriteData.length; i += 1) {
       csvRows.push(toWriteData[i].join(','));
     }
-  }
+  };
 
   /**
    * Formats the CSV data for Checkins and Cancellations Data
@@ -130,11 +128,13 @@ export class AnalyticsNav extends Component {
     const checkinsHeaderTitle = 'ANALYTICS FOR CHECKINS'.replace(/ /g, '%20');
     const checkinsAnalyticsTitle = [[checkinsHeaderTitle]];
     csvRows.push([]);
-    const { checkins, bookings, checkinsPercentage } =
-    this.state.checkinsAndCancellations;
+    const { checkins, bookings, checkinsPercentage } = this.state.checkinsAndCancellations;
     let checkinsData = [];
-    checkinsData = [`${bookings.toString()}`, `${checkins.toString()}`,
-      `${Math.round(checkinsPercentage, 1).toString()}%`];
+    checkinsData = [
+      `${bookings.toString()}`,
+      `${checkins.toString()}`,
+      `${Math.round(checkinsPercentage, 1).toString()}%`,
+    ];
     csvRows.push(checkinsAnalyticsTitle.join(','));
     const bookingsTitle = 'Total Bookings'.replace(/ /g, '%20');
     const checkinsTitle = 'Total Checkins'.replace(/ /g, '%20');
@@ -144,16 +144,18 @@ export class AnalyticsNav extends Component {
     const cancellationsHeaderTitle = 'ANALYTICS FOR CANCELLATIONS'.replace(/ /g, '%20');
     const cancellationsAnalyticsTitle = [[cancellationsHeaderTitle]];
     csvRows.push([]);
-    const { cancellations, cancellationsPercentage } =
-    this.state.checkinsAndCancellations;
-    const cancellationsData = [`${bookings.toString()}`, `${cancellations.toString()}`,
-      `${Math.round(cancellationsPercentage, 1).toString()}%`];
+    const { cancellations, cancellationsPercentage } = this.state.checkinsAndCancellations;
+    const cancellationsData = [
+      `${bookings.toString()}`,
+      `${cancellations.toString()}`,
+      `${Math.round(cancellationsPercentage, 1).toString()}%`,
+    ];
     csvRows.push(cancellationsAnalyticsTitle.join(','));
     const cancellationsTitle = 'Total Auto Cancellations'.replace(/ /g, '%20');
     const percentageCancellationsTitle = 'Percentage of Auto Cancellations'.replace(/ /g, '%20');
     csvRows.push([[bookingsTitle, cancellationsTitle, percentageCancellationsTitle]]);
     csvRows.push(cancellationsData.join(','));
-  }
+  };
 
   /**
    * Formats the CSV data for Total Bookings
@@ -174,11 +176,13 @@ export class AnalyticsNav extends Component {
     const meetingsCount = 'Number of Bookings'.replace(/ /g, '%20');
     csvRows.push([[roomTitle, meetingsCount]]);
     totalBookingsCount.forEach((element) => {
-      totalBookingsCountData = [`${element.period.toString()}`.replace(/ /g, '%20'),
-        `${element.bookings.toString()}`];
+      totalBookingsCountData = [
+        `${element.period.toString()}`.replace(/ /g, '%20'),
+        `${element.bookings.toString()}`,
+      ];
       csvRows.push(totalBookingsCountData.join(','));
     });
-  }
+  };
 
   /**
    * Formats the CSV data for Average Meeting Times
@@ -200,11 +204,14 @@ export class AnalyticsNav extends Component {
     const averageMeetingTimeTitleString = 'Average Meeting Time'.replace(/ /g, '%20');
     csvRows.push([[roomTitle, meetingsCount, averageMeetingTimeTitleString]]);
     averageMeetingTime.MeetingsDurationaAnalytics.forEach((element) => {
-      averageMeetingTimeData = [`${element.roomName.toString()}`.replace(/ /g, '%20'), `${element.count.toString()}`,
-        `${timeConvert(element.totalDuration)}`.replace(/ /g, '%20')];
+      averageMeetingTimeData = [
+        `${element.roomName.toString()}`.replace(/ /g, '%20'),
+        `${element.count.toString()}`,
+        `${timeConvert(element.totalDuration)}`.replace(/ /g, '%20'),
+      ];
       csvRows.push(averageMeetingTimeData.join(','));
     });
-  }
+  };
 
   /**
    * Formats the CSV data for Average Room Capacity
@@ -218,19 +225,24 @@ export class AnalyticsNav extends Component {
     const averageRoomCapacityTitle = 'ANALYTICS FOR AVERAGE ROOM CAPACITY'.replace(/ /g, '%20');
     const averageRoomCapacityAnalyticsTitle = [[averageRoomCapacityTitle]];
     csvRows.push([]);
-    const { lessThanTenData, betweenTenandTwentyData, greaterThanTwentyData } =
-    this.state.roomCapacity;
+    const {
+      lessThanTenData,
+      betweenTenandTwentyData,
+      greaterThanTwentyData,
+    } = this.state.roomCapacity;
     let averageRoomCapacityData = [];
-    averageRoomCapacityData = [`${lessThanTenData.toString()}%`,
+    averageRoomCapacityData = [
+      `${lessThanTenData.toString()}%`,
       `${betweenTenandTwentyData.toString()}%`,
-      `${greaterThanTwentyData.toString()}%`];
+      `${greaterThanTwentyData.toString()}%`,
+    ];
     csvRows.push(averageRoomCapacityAnalyticsTitle.join(','));
     const lessThanTenTitle = 'Less Than 10 People'.replace(/ /g, '%20');
     const between10And20Title = 'Between 10 and 20 People'.replace(/ /g, '%20');
     const greaterThan20Title = 'Greater Than 20 People'.replace(/ /g, '%20');
     csvRows.push([[lessThanTenTitle, between10And20Title, greaterThan20Title]]);
     csvRows.push(averageRoomCapacityData.join(','));
-  }
+  };
 
   /**
    * Formats the CSV data for Average Meeting Duration
@@ -241,25 +253,35 @@ export class AnalyticsNav extends Component {
    * @returns {void}
    */
   averageMeetingDurationsCSV = (csvRows) => {
-    const averageMeetingDurationTitle = 'ANALYTICS FOR AVERAGE MEETING DURATIONS'.replace(/ /g, '%20');
+    const averageMeetingDurationTitle = 'ANALYTICS FOR AVERAGE MEETING DURATIONS'.replace(
+      / /g,
+      '%20',
+    );
     const averageMeetingDurationAnalyticsTitle = [[averageMeetingDurationTitle]];
     csvRows.push([]);
-    const {
-      averageMeetingDuration,
-    } = this.state;
+    const { averageMeetingDuration } = this.state;
     let averageMeetingDurationData = [];
-    averageMeetingDurationData = [`${averageMeetingDuration[0].toString()}%`,
+    averageMeetingDurationData = [
+      `${averageMeetingDuration[0].toString()}%`,
       `${averageMeetingDuration[1].toString()}%`,
-      `${averageMeetingDuration[2].toString()}%`, `${averageMeetingDuration[3].toString()}%`];
+      `${averageMeetingDuration[2].toString()}%`,
+      `${averageMeetingDuration[3].toString()}%`,
+    ];
     csvRows.push(averageMeetingDurationAnalyticsTitle.join(','));
     const greaterThan60MinutesTitle = 'More Than 60 Minutes'.replace(/ /g, '%20');
     const between45And60MinutesTitle = 'Between 45 and 60 Minutes'.replace(/ /g, '%20');
     const between30And45MinutesTitle = 'Between 30 and 45 Minutes'.replace(/ /g, '%20');
     const below30MinutesTitle = 'Below 30 Minutes'.replace(/ /g, '%20');
-    csvRows.push([[greaterThan60MinutesTitle, between45And60MinutesTitle,
-      between30And45MinutesTitle, below30MinutesTitle]]);
+    csvRows.push([
+      [
+        greaterThan60MinutesTitle,
+        between45And60MinutesTitle,
+        between30And45MinutesTitle,
+        below30MinutesTitle,
+      ],
+    ]);
     csvRows.push(averageMeetingDurationData.join(','));
-  }
+  };
 
   /**
    * It toggles the calendar view
@@ -290,7 +312,7 @@ export class AnalyticsNav extends Component {
    * @returns String
    *
    */
-  bookedRooms = ({ bookedRoomsList }) => (
+  bookedRooms = ({ bookedRoomsList }) =>
     jsxToString(
       <tbody>
         {bookedRoomsList.map((room, index) => (
@@ -300,8 +322,8 @@ export class AnalyticsNav extends Component {
             <td>{`${room.percentage.toString()}%`}</td>
           </tr>
         ))}
-      </tbody>)
-  );
+      </tbody>,
+    );
 
   /**
    * generates an array of booked rooms with their meetings and % share of meetings
@@ -331,9 +353,11 @@ export class AnalyticsNav extends Component {
    * @returns {Array}
    *
    */
-  createMeetingArray = meetingListItem => ([meetingListItem.room,
+  createMeetingArray = meetingListItem => [
+    meetingListItem.room,
     meetingListItem.meetings,
-    meetingListItem.share]);
+    meetingListItem.share,
+  ];
 
   /**
    * Downloads a csv copy of the Analytics data
@@ -366,9 +390,7 @@ export class AnalyticsNav extends Component {
    * @returns {String}
    */
   createDownloadString = () => {
-    const {
-      leastBookedRooms, mostBookedRooms,
-    } = this.state;
+    const { leastBookedRooms, mostBookedRooms } = this.state;
     const { startDate, endDate } = this.state;
     const leastBookedRoomsTbody = this.bookedRooms({ bookedRoomsList: leastBookedRooms });
     const mostBookedRoomsTBody = this.bookedRooms({ bookedRoomsList: mostBookedRooms });
@@ -377,13 +399,25 @@ export class AnalyticsNav extends Component {
     downloadString = downloadString.replace(/endDate/g, endDate);
     downloadString = downloadString.replace(/innerMostBookedRooms/g, mostBookedRoomsTBody);
     downloadString = downloadString.replace(/innerLeastBookedRooms/g, leastBookedRoomsTbody);
-    downloadString = downloadString.replace(/averageRoomCapacityData/g, this.averageRoomCapacityData());
-    downloadString = downloadString.replace(/averageMeetingsDuration/g, this.averageMeetingDurationData());
+    downloadString = downloadString.replace(
+      /averageRoomCapacityData/g,
+      this.averageRoomCapacityData(),
+    );
+    downloadString = downloadString.replace(
+      /averageMeetingsDuration/g,
+      this.averageMeetingDurationData(),
+    );
     downloadString = downloadString.replace(/totalBookingsCount/g, this.totalBookingsCountData());
     downloadString = downloadString.replace(/percentageCheckins/g, this.checkinsData());
     downloadString = downloadString.replace(/percentageAppBookings/g, this.appBookingsData());
-    downloadString = downloadString.replace(/percentageAutoCancellations/g, this.cancellationsData());
-    downloadString = downloadString.replace(/averageTimeSpentDuringMeetings/g, this.averageMeetingTime());
+    downloadString = downloadString.replace(
+      /percentageAutoCancellations/g,
+      this.cancellationsData(),
+    );
+    downloadString = downloadString.replace(
+      /averageTimeSpentDuringMeetings/g,
+      this.averageMeetingTime(),
+    );
     return downloadString;
   };
 
@@ -402,19 +436,18 @@ export class AnalyticsNav extends Component {
     const div = document.createElement('div');
     div.innerHTML = this.createDownloadString();
     document.body.appendChild(div);
-    html2canvas(div)
-      .then((canvas) => {
-        if (type === 'pdf') {
-          const imgData = canvas.toDataURL('image/png');
-          div.remove();
-          const pdf = new jsPDF('p', 'pt', 'a4');
-          pdf.addImage(imgData, 'PNG', 20, 20, 550, 720);
-          pdf.save('analytics.pdf');
-        } else {
-          div.remove();
-          download(canvas.toDataURL(), 'report.jpeg');
-        }
-      });
+    html2canvas(div).then((canvas) => {
+      if (type === 'pdf') {
+        const imgData = canvas.toDataURL('image/png');
+        div.remove();
+        const pdf = new jsPDF('p', 'pt', 'a4');
+        pdf.addImage(imgData, 'PNG', 20, 20, 550, 720);
+        pdf.save('analytics.pdf');
+      } else {
+        div.remove();
+        download(canvas.toDataURL(), 'report.jpeg');
+      }
+    });
   }
 
   /**
@@ -447,7 +480,7 @@ export class AnalyticsNav extends Component {
         componentsDoneLoading: [...this.state.componentsDoneLoading, component],
       }));
     }
-  }
+  };
 
   /**
    * 1. Updates the start and end date in the calendar
@@ -463,18 +496,19 @@ export class AnalyticsNav extends Component {
     const stateToUpdate = { startDate: start, endDate: end };
     this.calenderToggle();
     if (endDateSelected > 0) {
-      this.setState({ ...stateToUpdate, isFutureDateSelected: true }, () => {
-      });
+      this.setState({ ...stateToUpdate, isFutureDateSelected: true }, () => {});
     } else {
-      this.setState({
-        ...stateToUpdate,
-        componentsDoneLoading: [],
-        isFutureDateSelected: false,
-        validatedStartDate: start,
-        validatedEndDate: end,
-        fetching: true,
-      }, () => {
-      });
+      this.setState(
+        {
+          ...stateToUpdate,
+          componentsDoneLoading: [],
+          isFutureDateSelected: false,
+          validatedStartDate: start,
+          validatedEndDate: end,
+          fetching: true,
+        },
+        () => {},
+      );
     }
   };
 
@@ -484,8 +518,11 @@ export class AnalyticsNav extends Component {
    * @returns {JSX}
    */
   averageRoomCapacityData = () => {
-    const { lessThanTenData, betweenTenandTwentyData, greaterThanTwentyData } =
-    this.state.roomCapacity;
+    const {
+      lessThanTenData,
+      betweenTenandTwentyData,
+      greaterThanTwentyData,
+    } = this.state.roomCapacity;
     return jsxToString(
       <tbody>
         <tr>
@@ -493,8 +530,9 @@ export class AnalyticsNav extends Component {
           <td>{`${betweenTenandTwentyData.toString()}`}</td>
           <td>{`${greaterThanTwentyData.toString()}`}</td>
         </tr>
-      </tbody>);
-  }
+      </tbody>,
+    );
+  };
 
   /**
    * Fills the average meeting duration table with data
@@ -502,9 +540,7 @@ export class AnalyticsNav extends Component {
    * @returns {JSX}
    */
   averageMeetingDurationData = () => {
-    const {
-      averageMeetingDuration,
-    } = this.state;
+    const { averageMeetingDuration } = this.state;
     return jsxToString(
       <tbody>
         <tr>
@@ -513,8 +549,9 @@ export class AnalyticsNav extends Component {
           <td>{`${averageMeetingDuration[2].toString()}%`}</td>
           <td>{`${averageMeetingDuration[3].toString()}%`}</td>
         </tr>
-      </tbody>);
-  }
+      </tbody>,
+    );
+  };
 
   /**
    * Fills the average meeting times table with data
@@ -531,9 +568,10 @@ export class AnalyticsNav extends Component {
             <td>{meeting.count.toString()}</td>
             <td>{timeConvert(meeting.totalDuration)}</td>
           </tr>
-      ))}
-      </tbody>);
-  }
+        ))}
+      </tbody>,
+    );
+  };
 
   /**
    * Fills the total booking counts table with data
@@ -550,7 +588,8 @@ export class AnalyticsNav extends Component {
             <td>{totalBookings.bookings}</td>
           </tr>
         ))}
-      </tbody>);
+      </tbody>,
+    );
   };
 
   /**
@@ -559,8 +598,7 @@ export class AnalyticsNav extends Component {
    * @returns {JSX}
    */
   checkinsData = () => {
-    const { checkins, bookings, checkinsPercentage } =
-    this.state.checkinsAndCancellations;
+    const { checkins, bookings, checkinsPercentage } = this.state.checkinsAndCancellations;
     return jsxToString(
       <tbody>
         <tr>
@@ -568,7 +606,8 @@ export class AnalyticsNav extends Component {
           <td>{`${checkins.toString()}`}</td>
           <td>{`${Math.round(checkinsPercentage, 2).toString()}%`}</td>
         </tr>
-      </tbody>);
+      </tbody>,
+    );
   };
 
   /**
@@ -579,8 +618,7 @@ export class AnalyticsNav extends Component {
    * @returns {JSX}
    */
   appBookingsData = () => {
-    const { bookings } =
-    this.state.checkinsAndCancellations;
+    const { bookings } = this.state.checkinsAndCancellations;
     return jsxToString(
       <tbody>
         <tr>
@@ -588,7 +626,8 @@ export class AnalyticsNav extends Component {
           <td>0</td>
           <td>0%</td>
         </tr>
-      </tbody>);
+      </tbody>,
+    );
   };
 
   /**
@@ -597,8 +636,11 @@ export class AnalyticsNav extends Component {
    * @returns {JSX}
    */
   cancellationsData = () => {
-    const { cancellations, bookings, cancellationsPercentage } =
-    this.state.checkinsAndCancellations;
+    const {
+      cancellations,
+      bookings,
+      cancellationsPercentage,
+    } = this.state.checkinsAndCancellations;
     return jsxToString(
       <tbody>
         <tr>
@@ -606,7 +648,8 @@ export class AnalyticsNav extends Component {
           <td>{`${cancellations.toString()}`}</td>
           <td>{`${Math.round(cancellationsPercentage, 2).toString()}%`}</td>
         </tr>
-      </tbody>);
+      </tbody>,
+    );
   };
 
   render() {
@@ -649,34 +692,28 @@ export class AnalyticsNav extends Component {
             />
           </div>
           <div className="btn-right">
-            <Button
-              classProp="location-btn"
-              title={this.state.location}
-              type={2}
-            />
+            <Button classProp="location-btn" title={this.state.location} type={2} />
             <div style={style}>
-              <Calendar
-                sendData={this.sendDateData}
-              />
+              <Calendar sendData={this.sendDateData} />
             </div>
-            {
-              !fetching && this.state.role !== '1' &&
-              <ExportButton
-                jpegHandler={this.downloadJpeg}
-                csvHandler={this.downloadCSV}
-                pdfHandler={this.downloadPdf}
-              />
-            }
+            {!fetching &&
+              this.state.role !== '1' && (
+                <ExportButton
+                  jpegHandler={this.downloadJpeg}
+                  csvHandler={this.downloadCSV}
+                  pdfHandler={this.downloadPdf}
+                />
+              )}
           </div>
         </div>
-        {!isActivity &&
+        {!isActivity && (
           <AnalyticsOverview
             dateValue={dates}
             queryCompleted={this.handleQueryCompleted}
             updateParent={this.updateParent}
           />
-        }
-        {isActivity && <AnalyticsActivity dateValue={dates} />}
+        )}
+        {isActivity && <AnalyticsActivityComponent dateValue={dates} />}
       </Fragment>
     );
   }

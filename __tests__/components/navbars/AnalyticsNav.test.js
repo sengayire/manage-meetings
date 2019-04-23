@@ -66,10 +66,7 @@ describe('AnalyticsNav Component', () => {
         <AnalyticsNav user={user} {...props} />
       </ApolloProvider>,
     );
-    componentWrapper = shallow(<AnalyticComponent
-      user={user}
-      {...props}
-    />);
+    componentWrapper = shallow(<AnalyticComponent user={user} {...props} />);
     analyticNavWrapper = componentWrapper.instance();
   });
 
@@ -105,10 +102,7 @@ describe('AnalyticsNav state and download', () => {
       location: 'Nairobi',
     },
   };
-  const wrapper = shallow(<AnalyticComponent
-    user={user}
-    client={{ query: jest.fn() }}
-  />);
+  const wrapper = shallow(<AnalyticComponent user={user} client={{ query: jest.fn() }} />);
   wrapper.setState({
     ...mockDataForAnalytics,
   });
@@ -131,7 +125,9 @@ describe('AnalyticsNav state and download', () => {
 
   it('should call fetchDownload with pdf', () => {
     const fetchDownload = jest.spyOn(wrapper.instance(), 'fetchDownload');
-    html2canvas.mockImplementation(() => Promise.resolve({ data: { data: '<p>test</p>' }, toDataURL: jest.fn() }));
+    html2canvas.mockImplementation(() =>
+      Promise.resolve({ data: { data: '<p>test</p>' }, toDataURL: jest.fn() }),
+    );
     jsPDF.mockImplementation(() => ({ save: jest.fn(), addImage: jest.fn() }));
     wrapper.instance().downloadPdf('pdf');
     expect(fetchDownload).toBeCalledWith('pdf');
@@ -139,7 +135,9 @@ describe('AnalyticsNav state and download', () => {
 
   it('should call fetchDownload with jpeg', () => {
     const fetchDownload = jest.spyOn(wrapper.instance(), 'fetchDownload');
-    html2canvas.mockImplementation(() => Promise.resolve({ data: { data: '<p>test</p>' }, toDataURL: jest.fn() }));
+    html2canvas.mockImplementation(() =>
+      Promise.resolve({ data: { data: '<p>test</p>' }, toDataURL: jest.fn() }),
+    );
     jsPDF.mockImplementation(() => ({ save: jest.fn(), addImage: jest.fn() }));
     wrapper.instance().downloadJpeg('jpeg');
     expect(fetchDownload).toBeCalledWith('jpeg');

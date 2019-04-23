@@ -7,10 +7,15 @@ const MEETING_DURATION_ANALYTICS = gql`
     $page: Int
     $perPage: Int
   ) {
-    analyticsForMeetingsDurations(startDate: $startDate, endDate: $endDate, page: $page, perPage: $perPage) {
-      hasPrevious,
-      hasNext,
-      pages,
+    analyticsForMeetingsDurations(
+      startDate: $startDate
+      endDate: $endDate
+      page: $page
+      perPage: $perPage
+    ) {
+      hasPrevious
+      hasNext
+      pages
       MeetingsDurationaAnalytics {
         roomName
         count
@@ -21,8 +26,8 @@ const MEETING_DURATION_ANALYTICS = gql`
 `;
 
 const ANALYTICS_BOOKINGS_COUNT = gql`
-  query AnalyticsBookingsCount($startDate: String!, $endDate: String!){
-    bookingsAnalyticsCount(startDate: $startDate, endDate: $endDate){
+  query AnalyticsBookingsCount($startDate: String!, $endDate: String!) {
+    bookingsAnalyticsCount(startDate: $startDate, endDate: $endDate) {
       period
       bookings
     }
@@ -30,8 +35,8 @@ const ANALYTICS_BOOKINGS_COUNT = gql`
 `;
 
 const CHECKINS_BOOKINGS_CANCELLATIONS_PERCENTAGES = gql`
-  query AnalyticsRatiosTotal($startDate: String!, $endDate: String!){
-    analyticsRatios(startDate: $startDate, endDate: $endDate){
+  query AnalyticsRatiosTotal($startDate: String!, $endDate: String!) {
+    analyticsRatios(startDate: $startDate, endDate: $endDate) {
       checkins
       checkinsPercentage
       bookings
@@ -42,9 +47,14 @@ const CHECKINS_BOOKINGS_CANCELLATIONS_PERCENTAGES = gql`
 `;
 
 const MOST_BOOKED_ROOMS_ANALYTICS = gql`
-  query analyticsForMostBookedRooms($startDate: String!, $endDate: String!){
-    analyticsForBookedRooms(startDate: $startDate, endDate: $endDate, limit:10, criteria:"most_booked"){
-      analytics{
+  query analyticsForMostBookedRooms($startDate: String!, $endDate: String!) {
+    analyticsForBookedRooms(
+      startDate: $startDate
+      endDate: $endDate
+      limit: 10
+      criteria: "most_booked"
+    ) {
+      analytics {
         roomName
         meetings
         percentage
@@ -54,12 +64,35 @@ const MOST_BOOKED_ROOMS_ANALYTICS = gql`
 `;
 
 const LEAST_BOOKED_ROOMS_ANALYTICS = gql`
-  query analyticsForLeastBookedRooms($startDate: String!, $endDate: String!){
-    analyticsForBookedRooms(startDate: $startDate, endDate: $endDate, limit:10, criteria:"least_booked"){
-      analytics{
+  query analyticsForLeastBookedRooms($startDate: String!, $endDate: String!) {
+    analyticsForBookedRooms(
+      startDate: $startDate
+      endDate: $endDate
+      limit: 10
+      criteria: "least_booked"
+    ) {
+      analytics {
         roomName
         meetings
         percentage
+      }
+    }
+  }
+`;
+
+const ANALYTICS_FOR_DAILY_ROOM_EVENTS = gql`
+  query analyticsForDailyRoomEvents($startDate: String!, $endDate: String!) {
+    analyticsForDailyRoomEvents(startDate: $startDate, endDate: $endDate) {
+      DailyRoomEvents {
+        day
+        events {
+          eventSummary
+          startTime
+          endTime
+          eventId
+          noOfParticipants
+          roomName
+        }
       }
     }
   }
@@ -71,4 +104,5 @@ export {
   CHECKINS_BOOKINGS_CANCELLATIONS_PERCENTAGES,
   MOST_BOOKED_ROOMS_ANALYTICS,
   LEAST_BOOKED_ROOMS_ANALYTICS,
+  ANALYTICS_FOR_DAILY_ROOM_EVENTS,
 };

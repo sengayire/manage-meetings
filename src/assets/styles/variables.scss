@@ -21,6 +21,7 @@ $time-color: #808080;
 $toast-success: #030303;
 $toast-error: #ffffff;
 $box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+$box-shadow-activity: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 $box-shadow-setup: 0 3px 6px 0 rgba(0, 0, 0, 0.05);
 
 $color-primary: #3359db;
@@ -110,5 +111,9 @@ $color-desc-text: #808fa3;
 $color-modal-backgorund: rgba(0, 0, 0, 0.5);
 $font-size-small-screen: 25px;
 
-$highlight-gradient: linear-gradient(180deg, rgba(255, 176, 48, 0.349) 0%, #FFAF30 100%);
+$highlight-gradient: linear-gradient(
+  180deg,
+  rgba(255, 176, 48, 0.349) 0%,
+  #ffaf30 100%
+);
 $border-width: 1px;

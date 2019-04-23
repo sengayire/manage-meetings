@@ -1,136 +1,142 @@
 @import './variables';
 @import '../../utils/images/images';
 
-.Selectable{
-    line-height: 15px;
+.calendarIcon {
+  &:after {
+    content: url($calendar-today);
+    margin-left: 15px;
+  }
 }
-.Selectable .DayPicker-Day--selected:not(.DayPicker-Day--start):not(.DayPicker-Day--end):not(.DayPicker-Day--outside) {
-    background-color: map-get($color-calendar, calendar-highlight) !important;
-    color: map-get($color-calendar, calendar-text);
-    border-radius: 2px !important;
+.Selectable {
+  line-height: 15px;
 }
-  .Selectable .DayPicker-Day {
-    height: 17px;
-    width: 7px;
-    font-size: 13px;
-    line-height: 17px;
-    text-align: center;
-  }
-  .Selectable .DayPicker-Day--start:visited {
-    border-top-left-radius: 50% !important;
-    border-bottom-left-radius: 50% !important;
-    color: $color-danger !important;
+.Selectable
+  .DayPicker-Day--selected:not(.DayPicker-Day--start):not(.DayPicker-Day--end):not(.DayPicker-Day--outside) {
+  background-color: map-get($color-calendar, calendar-highlight) !important;
+  color: map-get($color-calendar, calendar-text);
+  border-radius: 2px !important;
+}
+.Selectable .DayPicker-Day {
+  height: 17px;
+  width: 7px;
+  font-size: 13px;
+  line-height: 17px;
+  text-align: center;
+}
+.Selectable .DayPicker-Day--start:visited {
+  border-top-left-radius: 50% !important;
+  border-bottom-left-radius: 50% !important;
+  color: $color-danger !important;
+}
+.Selectable .DayPicker-Day--end {
+  border-top-right-radius: 50% !important;
+  border-bottom-right-radius: 50% !important;
+}
 
+.calendarIconBtn {
+  &:before {
+    content: url($date-range);
+    margin-right: 15px;
   }
-  .Selectable .DayPicker-Day--end {
-    border-top-right-radius: 50% !important;
-    border-bottom-right-radius: 50% !important;
-  }
+}
 
-  .calendarIconBtn {
-    &:before {
-      content: url($date-range);
-      margin-right: 15px;
+.calendar {
+  display: flex;
+  flex-direction: column;
+  right: 9.5vw;
+  position: absolute;
+  box-shadow: $box-shadow-activity;
+  background: map-get($color-white, 000);
+  justify-content: space-between;
+  padding: 20px 15px 8px;
+  margin-top: 46px;
+  z-index: 2;
+
+  &__button {
+    z-index: 10000;
+    align-self: flex-end;
+    margin-top: 10px;
+
+    .apply_button {
+      background-color: $color-primary;
+      color: map-get($color-white, 000);
+      line-height: 9px;
+      margin: 0 10px;
+      height: 0 !important;
+      padding-bottom: 12px;
+    }
+
+    .cancel_button {
+      border: none;
+      padding: 0;
+      height: 20px;
+    }
+
+    &__item {
+      border-radius: 2px;
+      font-size: 13px;
     }
   }
+}
 
-  .calendar {
-    display: flex;
-    flex-direction: column;
-    right: 9.5vw;
-    position: absolute;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    background: map-get($color-white, 000);
-    justify-content: space-between;
-    padding: 20px 15px 8px;
-    margin-top: 46px;
-    z-index: 2;
+.calendar-parent {
+  display: flex;
+  position: absolute;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  background: map-get($color-white, 000);
+}
+.date_nav {
+  float: left;
+}
 
-    &__button {
-      z-index: 10000;
-      align-self: flex-end;
-      margin-top: 10px;
-
-      .apply_button {
-        background-color:$color-primary;
-        color: map-get($color-white, 000);
-        line-height: 9px;
-        margin: 0 10px;
-        height: 0 !important;
-        padding-bottom: 12px;
-      }
-
-      .cancel_button {
-        border: none;
-        padding: 0;
-        height: 20px;
-      }
-
-      &__item {
-        border-radius: 2px;
-        font-size: 13px;
-      }
-    }
-  }
-
-  .calendar-parent{
-    display: flex;
-    position: absolute;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    background: map-get($color-white, 000);
-  }
- .date_nav {
-   float: left;
- }
-
- .input-error {
+.input-error {
   color: $color-danger;
   border: 1px solid $color-danger;
   border-radius: 5px;
   padding: 2.5%;
 }
 
-  .number_of_days{
-    padding: 7px 3px 0 3px;
-    float: right;
-    margin-right: 150px;
-    border-radius: 10px;
-    background-color: map-get($color-amber, 300);
-    span {
-      height: 15px;
-      width: 31px;
-      color: map-get($color-white, 000);
-      font-size: 12px;
-      font-weight: 500;
-      line-height: 15px;
-      padding: 10px 1px 5px 1px;
-    }
+.number_of_days {
+  padding: 7px 3px 0 3px;
+  float: right;
+  margin-right: 150px;
+  border-radius: 10px;
+  background-color: map-get($color-amber, 300);
+  span {
+    height: 15px;
+    width: 31px;
+    color: map-get($color-white, 000);
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 15px;
+    padding: 10px 1px 5px 1px;
   }
+}
 
-  .days_to_choose{
-    position: absolute;
-    top: 5px;
-    float: left;
-  }
+.days_to_choose {
+  position: absolute;
+  top: 5px;
+  float: left;
+}
 
-  #reset-button{
-    margin-top: 5px;
-  }
+#reset-button {
+  margin-top: 5px;
+}
 
-  .DayPicker-NavButton {
-    position: absolute;
-    top: 1em;
-    right: 1.5em;
-    left: auto;
-    display: inline-block;
-    margin-top: 2px;
-    width: 1.25em;
-    height: 1.25em;
-    background-position: center;
-    background-size: 50%;
-    background-repeat: no-repeat;
-    color: map-get($color-calendar, calendar-nav-button);
-    cursor: pointer;
+.DayPicker-NavButton {
+  position: absolute;
+  top: 1em;
+  right: 1.5em;
+  left: auto;
+  display: inline-block;
+  margin-top: 2px;
+  width: 1.25em;
+  height: 1.25em;
+  background-position: center;
+  background-size: 50%;
+  background-repeat: no-repeat;
+  color: map-get($color-calendar, calendar-nav-button);
+  cursor: pointer;
 }
 .DayPicker-NavButton--next {
   top: 0.5rem;
@@ -147,7 +153,7 @@
   font-size: 1.15em;
   text-align: center;
 }
-.DayPicker{
+.DayPicker {
   font-size: 0.9rem !important;
   font-weight: 200;
 }
@@ -159,7 +165,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-	border-radius: 2px;
+  border-radius: 2px;
   background-color: map-get($color-white, 200);
   padding: 7px 0;
   height: 235px;
@@ -167,15 +173,14 @@
 .DayPicker-wrapper {
   padding-bottom: 0px;
 }
-.selected_date{
+.selected_date {
   display: flex;
-
 }
-.selected_single_date{
+.selected_single_date {
   padding: 0 3px;
   font-weight: bold;
 }
-#chosen_days{
+#chosen_days {
   margin: 0;
 }
 
