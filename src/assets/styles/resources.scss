@@ -46,11 +46,12 @@
       cursor: pointer;
     }
     &-text {
-      margin: 27px 0 0 18px;
+      padding: 27px 0 0 18px;
       color: $color-primary
     }
     &-buttons {
       justify-self: end;
+      display: flex;
       margin-right: 4.2em;
     }
   }

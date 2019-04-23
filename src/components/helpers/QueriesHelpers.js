@@ -84,7 +84,7 @@ const getAllResources = async (perPage, page, client = apolloClient) => {
       true,
     );
     return data.allResources;
-  } catch (err) {
+  } catch (error) {
     const { data } = await client.query({
       query: GET_RESOURCES_QUERY,
       variables: {
@@ -182,4 +182,3 @@ export {
   getBookingsCount,
   getRoomsStructure,
 };
-

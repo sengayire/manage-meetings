@@ -61,11 +61,7 @@ class MrmModal extends Component {
    * @returns {Boolean}
    */
   getSnapshotBeforeUpdate(prevProps, prevState) {
-    if (
-      !prevProps.closeModal &&
-      prevState.modalIsOpen &&
-      this.props.closeModal
-    ) {
+    if (!prevProps.closeModal && prevState.modalIsOpen && this.props.closeModal) {
       return true;
     }
     return null;
@@ -101,11 +97,7 @@ class MrmModal extends Component {
 
   render() {
     const {
-      buttonText,
-      className,
-      title,
-      children,
-      modalButtonClassName,
+      buttonText, className, title, children, modalButtonClassName,
     } = this.props;
     const access = getItemFromLocalStorage('access');
 

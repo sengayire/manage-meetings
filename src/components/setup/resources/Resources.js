@@ -3,16 +3,18 @@
 import React, { createRef } from 'react';
 import '../../../assets/styles/resources.scss';
 import AddResource from './AddResources'; //eslint-disable-line
-import { editIcon, deleteIcon } from '../../../utils/images/images';
+import { editIcon } from '../../../utils/images/images';
 import SelectInput from '../../../components/commons/SelectInput';
 import { selectMockData } from '../../../utils/roomSetupMock';
 import AllocatedResources from '../../resources/AllocatedResources';
 import Pagination from '../../commons/Pagination';
 import Spinner from '../../commons/Spinner';
 import {
-  getAllResources,
   getAllRemoteRooms,
+  getAllResources,
+  getUserDetails,
 } from '../../../../src/components/helpers/QueriesHelpers';
+import DeleteResource from '../../setup/resources/DeleteResource';
 
 class Resources extends React.Component {
   state = {
@@ -22,6 +24,8 @@ class Resources extends React.Component {
     dataFetched: false,
     isFetching: false,
     currentPage: 1,
+    perPage: 5,
+    user: {},
   };
 
   componentDidMount() {
@@ -39,8 +43,10 @@ class Resources extends React.Component {
     this.setState({ isFetching: true });
     const resourcesData = await getAllResources(perPage, page);
     const allRemoteRooms = await getAllRemoteRooms();
+    const user = await getUserDetails();
     if (resourcesData.resources) {
       this.setState(prevState => ({
+        user,
         resourcesData: { ...prevState.resourcesData, ...resourcesData },
         remoteRooms: [...allRemoteRooms.rooms],
         currentPage: page,
@@ -59,6 +65,15 @@ class Resources extends React.Component {
       resourceDetails: resource,
     });
   };
+  /**
+   * It updates UI after deleting a resource
+   *
+   * @returns {}
+   */
+  handleOnDeleteResource = () => {
+    const { currentPage, perPage } = this.state;
+    this.getAllResources(perPage, currentPage);
+  };
 
   /**
    * It handles resource list items
@@ -66,24 +81,28 @@ class Resources extends React.Component {
    * @returns {jsx}
    */
   resourceList = resource => (
-    <div
-      className="resource-list-item"
-      key={resource.id}
-      id={resource.id}
-      onClick={() => this.handleClickOnResource(resource)}
-    >
-      <span className="resource-list-item-text">{resource.name}</span>
+    <div className="resource-list-item" key={resource.id} id={resource.id}>
+      <span
+        onClick={() => this.handleClickOnResource(resource)}
+        className="resource-list-item-text"
+      >
+        {resource.name}
+      </span>
       <span className="resource-list-item-buttons">
         <button>
           <img src={editIcon} alt="edit" />
         </button>
-        <button>
-          <img src={deleteIcon} alt="delete" />
-        </button>
+        {this.state.user.roles[0].id === '2' && !resource.roomId && (
+          <DeleteResource
+            resource={resource}
+            currentPage={this.state.currentPage}
+            perPage={this.state.perPage}
+            handleOnDeleteResource={this.handleOnDeleteResource}
+          />
+        )}
       </span>
     </div>
   );
-
   /**
    * It handles creating of select input
    *
@@ -114,7 +133,13 @@ class Resources extends React.Component {
 
   render() {
     const {
-      resourcesData, resourceDetails, remoteRooms, dataFetched, isFetching, currentPage, perPage,
+      resourcesData,
+      resourceDetails,
+      remoteRooms,
+      dataFetched,
+      isFetching,
+      currentPage,
+      perPage,
     } = this.state;
     if (isFetching) {
       return <Spinner />;
@@ -130,26 +155,22 @@ class Resources extends React.Component {
             <AddResource />
           </div>
           <div>
-            {
-              resourcesData.resources ?
-              resourcesData.resources.map(resource => this.resourceList(resource))
-              : null
-            }
+            {resourcesData.resources
+              ? resourcesData.resources.map(resource => this.resourceList(resource))
+              : null}
           </div>
-          {
-            resourcesData.resources ? (
-              <Pagination
-                currentPage={currentPage}
-                totalPages={resourcesData.pages}
-                hasNext={resourcesData.hasNext}
-                hasPrevious={resourcesData.hasPrevious}
-                handleData={this.getAllResources}
-                dataFetched={dataFetched}
-                isFetching={isFetching}
-                perPage={perPage ? parseInt(perPage, 10) : undefined}
-              />
-            ) : null
-          }
+          {resourcesData.resources ? (
+            <Pagination
+              currentPage={currentPage}
+              totalPages={resourcesData.pages}
+              hasNext={resourcesData.hasNext}
+              hasPrevious={resourcesData.hasPrevious}
+              handleData={this.getAllResources}
+              dataFetched={dataFetched}
+              isFetching={isFetching}
+              perPage={perPage ? parseInt(perPage, 10) : undefined}
+            />
+          ) : null}
         </div>
         <AllocatedResources
           ref={this.AllocatedResourcesComponent}

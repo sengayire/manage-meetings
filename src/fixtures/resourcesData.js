@@ -5,20 +5,23 @@ const resourcesData = {
   numberOfRoom: 3,
   roomNames: ['obudu', 'cognito', 'safari', 'Big apple'],
 };
-
+const user = {
+  user: {
+    id: '214',
+    roles: [{ id: '2', role: 'Admin' }],
+  },
+};
 const allResources = [
   {
     id: '93',
     name: '50 inch screen',
     quantity: 1,
-    roomId: 168,
     room: { id: '168', name: 'Conakry' },
   },
   {
     id: '1033',
     name: 'Cables',
     quantity: 1,
-    roomId: 235,
     room: { id: '164', name: 'Freetown' },
   },
   {
@@ -37,4 +40,4 @@ const remoteRooms = [
   },
 ];
 
-export { resourcesData, allResources, remoteRooms };
+export { resourcesData, allResources, remoteRooms, user };

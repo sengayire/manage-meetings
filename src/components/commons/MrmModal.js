@@ -11,6 +11,7 @@ class MrmModal extends Component {
     modalContent: PropTypes.node,
     title: PropTypes.string,
     buttonText: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+    btnImage: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
     type: PropTypes.number,
     withButton: PropTypes.bool,
     styleClassName: PropTypes.string,
@@ -22,6 +23,7 @@ class MrmModal extends Component {
     modalContent: '',
     buttonText: '',
     title: '',
+    btnImage: '',
     type: 1,
     withButton: true,
     styleClassName: '',
@@ -71,12 +73,14 @@ class MrmModal extends Component {
       withButton,
       styleClassName,
       showActionButton,
+      btnImage,
     } = this.props;
     return (
       <div className="modal-component">
         {type === 1 &&
           this.state.role === '2' && (
             <IconButtons
+              btnImage={btnImage}
               buttonText={buttonText}
               openModal={this.toggleModal}
               modalButtonClassName={iconButtonClass}

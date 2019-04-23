@@ -4,17 +4,17 @@ import { deleteIcon, editIcon } from '../../utils/images/images';
 
 class IconButtons extends Component {
   static propTypes = {
-    buttonText: PropTypes.oneOfType(
-      [PropTypes.string, PropTypes.object],
-    ).isRequired,
+    buttonText: PropTypes.oneOfType([PropTypes.string, PropTypes.object]).isRequired,
     modalButtonClassName: PropTypes.string,
     openModal: PropTypes.func.isRequired,
     disabled: PropTypes.bool,
+    btnImage: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
   };
 
   static defaultProps = {
     modalButtonClassName: 'button',
     disabled: false,
+    btnImage: '',
   };
 
   /**
@@ -36,7 +36,9 @@ class IconButtons extends Component {
     return buttonText;
   };
   render() {
-    const { buttonText, modalButtonClassName, disabled } = this.props;
+    const {
+      buttonText, modalButtonClassName, disabled, btnImage,
+    } = this.props;
     return (
       <button
         id="modal-button"
@@ -44,7 +46,7 @@ class IconButtons extends Component {
         onClick={this.props.openModal}
         disabled={disabled}
       >
-        {this.onButtonTextChange(buttonText)}
+        {btnImage || this.onButtonTextChange(buttonText)}
       </button>
     );
   }
