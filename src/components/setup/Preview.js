@@ -1,13 +1,17 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable  no-unused-expressions */
 import React, { Fragment, Component, createRef } from 'react';
 import PropTypes from 'prop-types';
+import toastr from 'toastr';
 import Button from '../commons/Button';
 import { walkingIcon, chevronIcon } from '../../utils/images/images';
 import MrmModal from '../commons/MrmModal';
 import Tip from '../commons/Tooltip';
 import StructurePreviewTree from './StructurePreviewTree';
 import { checkboxSlideHTML } from '../commons/CheckboxSlide';
+import notification from '../../utils/notification';
+import addLevelSetup from '../helpers/mutationHelpers/Preview';
 
 class Preview extends Component {
   constructor(props) {
@@ -18,6 +22,8 @@ class Preview extends Component {
       activeLevelHover: 0,
       activeLevelPagination: 0,
       indexHistory: {},
+      isSubmiting: false,
+      toastrStatus: {},
     };
   }
 
@@ -161,6 +167,42 @@ class Preview extends Component {
     return flattenData;
   };
 
+  /**
+   *
+   * Submits level structure data in the database
+   *
+   * @returns {void}
+   */
+  saveLevelStructure = () => {
+    let message;
+    const flattenedData = this.formatLocationStructureData();
+    const { handleClick } = this.props;
+
+    this.setState({
+      isSubmiting: true,
+    });
+
+    addLevelSetup({ flattenedData })
+      .then(() => {
+        /** Update state to Notify user of success of adding of level setup data */
+        flattenedData.length > 1
+          ? message = 'Structures added Successfully'
+          : message = 'Structure added Successfully';
+
+        this.setState({
+          toastrStatus: { success: message },
+        });
+        // show RoomSetupView
+        handleClick('RoomSetupView')();
+      })
+      .catch((err) => {
+        /** Update state to Notify user on failure to add level setup data */
+        this.setState({
+          toastrStatus: { error: err },
+        });
+      });
+  }
+
   renderDeleteIcon = (counter, values, data, child) => {
     // -1 if level does not have any child
     const checkLevelChild =
@@ -186,7 +228,9 @@ class Preview extends Component {
   renderPreviews = (data, counter) =>
     Object.entries(data).map(([key, values]) => {
       let { activeLevelPagination } = this.state;
-      const { indexHistory, activeLevel, activeLevelHover } = this.state;
+      const {
+        indexHistory, activeLevel, activeLevelHover, toastrStatus,
+      } = this.state;
 
       const level = Number(key) + 1;
       const levelKey = parseInt(key, 10) + 1;
@@ -205,6 +249,11 @@ class Preview extends Component {
         level,
         values.nameObj,
       );
+
+      // Display response after user clicks save & submit
+      toastrStatus.success
+        ? notification(toastr, 'success', toastrStatus.success)()
+        : notification(toastr, 'error', toastrStatus.error)();
 
       return (
         <Fragment key={level}>
@@ -287,9 +336,20 @@ class Preview extends Component {
     });
 
   render() {
-    const { isChecked } = this.state;
-    const { counter, locationStructure, handleClick } = this.props;
+    const { isChecked, isSubmiting } = this.state;
+    const { counter, locationStructure } = this.props;
     const isLocationStructure = locationStructure.length > 0;
+    let saveSubmitTitle = '';
+    let saveBtnContainer = '';
+
+    if (isSubmiting) {
+      saveSubmitTitle = 'Submiting';
+      saveBtnContainer = 'save-btn-container-disable';
+    } else {
+      saveSubmitTitle = 'Save & Submit';
+      saveBtnContainer = 'save-btn-container';
+    }
+
     return (
       <div className="form-card preview">
         <MrmModal
@@ -319,8 +379,8 @@ class Preview extends Component {
           <div className="structure-preview">
             {isLocationStructure && this.renderPreviews(locationStructure, counter)}
             {isLocationStructure && (
-              <div className="save-btn-container">
-                <Button title="Save & Submit" handleClick={handleClick('RoomSetupView')} />
+              <div className={saveBtnContainer}>
+                <Button title={saveSubmitTitle} handleClick={this.saveLevelStructure} />
               </div>
             )}
           </div>
@@ -329,6 +389,10 @@ class Preview extends Component {
     );
   }
 }
+
+Preview.defaultProps = {
+  user: {},
+};
 
 Preview.propTypes = {
   handleClick: PropTypes.func.isRequired,
@@ -339,8 +403,5 @@ Preview.propTypes = {
   locationStructure: PropTypes.instanceOf(Array).isRequired,
 };
 
-Preview.defaultProps = {
-  user: {},
-};
 
 export default Preview;

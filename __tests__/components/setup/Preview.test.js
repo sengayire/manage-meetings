@@ -3,6 +3,13 @@ import { shallow, mount } from 'enzyme';
 import PreviewComponent from '.../../../src/components/setup/Preview';
 import { mockedProps, flattenedData, firstLevelPropsWithThreePreviewButtons, firstLevelPropsWithFivePreviewButtons, multipleLevelsProps } from '../../../src/fixtures/Preview';
 
+jest.mock('../../../src/utils/ApolloClient', () => ({
+  mutate: () =>
+    new Promise((resolve) => {
+      resolve();
+    }),
+}));
+
 describe('Preview page component', () => {
   let button;
 
@@ -62,9 +69,9 @@ describe('Preview page component', () => {
       const fourthPreviewButton = wrapper.find('.preview-active-btn').last();
 
       expect(firstPreviewButton.text()).toContain('Epic tower');
-      expect(secondPreviewButton.text()).toContain('Block A - Nairobi');
-      expect(thirdPreviewButton.text()).toContain('Block B - Nairobi');
-      expect(fourthPreviewButton.text()).toContain('Block C - Nairobi');
+      expect(secondPreviewButton.text()).toContain('Block A  ...');
+      expect(thirdPreviewButton.text()).toContain('Block B  ...');
+      expect(fourthPreviewButton.text()).toContain('Block C  ...');
       expect(wrapper.find('.arrow__right')).toHaveLength(1);
     });
 
@@ -74,16 +81,16 @@ describe('Preview page component', () => {
       const thirdPreviewButton = wrapper.find('.preview-active-btn').at(2);
       const fourthPreviewButton = wrapper.find('.preview-active-btn').last();
       expect(firstPreviewButton.text()).toContain('Epic tower');
-      expect(secondPreviewButton.text()).toContain('Block A - Nairobi');
-      expect(thirdPreviewButton.text()).toContain('Block B - Nairobi');
-      expect(fourthPreviewButton.text()).toContain('Block C - Nairobi');
+      expect(secondPreviewButton.text()).toContain('Block A  ...');
+      expect(thirdPreviewButton.text()).toContain('Block B  ...');
+      expect(fourthPreviewButton.text()).toContain('Block C  ...');
     });
 
     it('it renders next preview button in a level when user clicks next icon', () => {
       wrapper.find('.arrow__right').simulate('click');
       expect(wrapper.state('activeLevelPagination')).toEqual(4);
       const previewButton = wrapper.find('.preview-active-btn');
-      expect(previewButton.text()).toContain('Block D - Nairobi');
+      expect(previewButton.text()).toContain('Block D  ...');
     });
 
     it('it renders previous preview button in a level when user clicks previous icon', () => {
@@ -95,9 +102,9 @@ describe('Preview page component', () => {
       const thirdPreviewButton = wrapper.find('.preview-active-btn').at(2);
       const fourthPreviewButton = wrapper.find('.preview-active-btn').last();
       expect(firstPreviewButton.text()).toContain('Epic tower');
-      expect(secondPreviewButton.text()).toContain('Block A - Nairobi');
-      expect(thirdPreviewButton.text()).toContain('Block B - Nairobi');
-      expect(fourthPreviewButton.text()).toContain('Block C - Nairobi');
+      expect(secondPreviewButton.text()).toContain('Block A  ...');
+      expect(thirdPreviewButton.text()).toContain('Block B  ...');
+      expect(fourthPreviewButton.text()).toContain('Block C  ...');
     });
 
     it('it renders remove level icon on all four preview buttons displayed', () => {
@@ -148,11 +155,26 @@ describe('Preview page component', () => {
     });
   });
 
-  it('should return flatten data when save & submit button is clicked ', () => {
+  it('should return flatten data when formatLocationStructureData is run', () => {
     const shallowWrapper = shallow(<PreviewComponent {...mockedProps} />);
     const locationId = shallowWrapper.instance().getUserLocationId();
     expect(locationId).toBe(3);
     const structuredData = shallowWrapper.instance().formatLocationStructureData();
     expect(flattenedData.length).toEqual(structuredData.length);
+  });
+
+  it('should disable button on clicking by adding class save-btn-container-disable', () => {
+    wrapper.setProps(mockedProps);
+    expect(wrapper.state('isSubmiting')).toEqual(false);
+    expect(wrapper.find('div').last().hasClass('save-btn-container-disable')).toBe(false);
+    expect(wrapper.find('div').last().hasClass('save-btn-container')).toBe(true);
+    wrapper.find('.save-btn-container Button').simulate('click');
+    expect(wrapper.state('isSubmiting')).toEqual(true);
+    expect(wrapper.find('div').last().hasClass('save-btn-container-disable')).toBe(true);
+    expect(wrapper.find('div').last().hasClass('save-btn-container')).toBe(false);
+  });
+
+  it('should update toastrStatus state to success:  Structures added Successfully a few seconds after clicking', () => {
+    expect(wrapper.state('toastrStatus').success).toEqual('Structures added Successfully');
   });
 });

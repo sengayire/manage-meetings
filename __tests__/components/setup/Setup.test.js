@@ -10,21 +10,21 @@ describe('setup component', () => {
     expect(wrapper.find('WelcomePage').exists()).toBeTruthy();
   });
 
-  it('should  change the value of isBuildingLevelVisible to true when the handleClick function is called', () => {
-    expect(wrapper.state().isBuildingLevelVisible).toEqual(false);
-    wrapper.instance().handleClick('isBuildingLevelVisible')();
-    expect(wrapper.state().isBuildingLevelVisible).toEqual(true);
+  it('should  change the value of visibleLevel to BuildingLevel when the handleClick function is called with argument BuildingLevel', () => {
+    expect(wrapper.state().visibleLevel).toEqual('WelcomePage');
+    wrapper.instance().handleClick('BuildingLevel')();
+    expect(wrapper.state().visibleLevel).toEqual('BuildingLevel');
   });
 
-  it('should  change the value of isSetupInfoVisible to true when the handleClick function is called', () => {
-    expect(wrapper.state().isSetupInfoVisible).toEqual(false);
-    wrapper.instance().handleClick('isSetupInfoVisible')();
-    expect(wrapper.state().isSetupInfoVisible).toEqual(true);
+  it('should  change the value of visibleLevel to SetupInfoPage when the handleClick function is called with argument SetupInfoPage', () => {
+    expect(wrapper.state().visibleLevel).toEqual('BuildingLevel');
+    wrapper.instance().handleClick('SetupInfoPage')();
+    expect(wrapper.state().visibleLevel).toEqual('SetupInfoPage');
   });
 
-  it('should  change the value of isRoomSetupViewVisible to true when the handleClick function is called', () => {
-    expect(wrapper.state().isRoomSetupViewVisible).toEqual(false);
-    wrapper.instance().handleClick()();
-    expect(wrapper.state().isRoomSetupViewVisible).toEqual(true);
+  it('should  change the value of visibleLevel to RoomSetupView when the handleClick function is called with argument RoomSetupView', () => {
+    expect(wrapper.state().visibleLevel).toEqual('SetupInfoPage');
+    wrapper.instance().handleClick('RoomSetupView')();
+    expect(wrapper.state().visibleLevel).toEqual('RoomSetupView');
   });
 });

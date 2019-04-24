@@ -3,32 +3,30 @@ import WelcomePage from './WelcomePage';
 import SetupInfoPage from './SetupInfoPage';
 import BuildingLevel from './BuildingLevel';
 import RoomSetupView from '../../containers/RoomSetupView';
-import { getUserDetails, getRoomList } from '../helpers/QueriesHelpers';
+import { getRoomsStructure } from '../helpers/QueriesHelpers';
 import '../../assets/styles/setupWelcomePage.scss';
 import '../../assets/styles/setupInfoPage.scss';
 
 class Setup extends Component {
   state = {
     visibleLevel: 'WelcomePage',
-    centerRoomCount: 0,
     location: '',
+    isStructureSetup: false,
   };
 
   componentDidMount() {
-    this.getRoomCount();
+    this.getStructures();
   }
 
   /**
-   * Gets the number of rooms for a center and
-   * updates value of centerRoomCount in state
+   * Gets the strcutures setup
    *
-   * @return {void}
+   * @returns {void}
    */
-  getRoomCount = async () => {
-    const user = await getUserDetails();
-    const rooms = await getRoomList(user.location, 8, 1);
-    const { location } = user;
-    this.setState({ centerRoomCount: rooms.allRooms.rooms.length, location });
+  getStructures = async () => {
+    const data = await getRoomsStructure();
+    const { allStructures } = data;
+    allStructures.length && this.setState({ isStructureSetup: true });
   }
 
   /**
@@ -71,7 +69,8 @@ class Setup extends Component {
    * @return {JSX}
    */
   renderSetupContent = (level) => {
-    const { centerRoomCount, location } = this.state;
+    const { location, isStructureSetup } = this.state;
+
     switch (level) {
       case 'SetupInfoPage':
         return <SetupInfoPage handleClick={this.handleClick} />;
@@ -80,7 +79,7 @@ class Setup extends Component {
       case 'RoomSetupView':
         return (<RoomSetupView handleClick={this.handleClick} userLocation={location} />);
       default:
-        return (centerRoomCount < 1
+        return (!isStructureSetup
           ? <WelcomePage handleClick={this.handleClick} />
           : <RoomSetupView handleClick={this.handleClick} userLocation={location} />);
     }

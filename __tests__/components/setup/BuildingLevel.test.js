@@ -135,6 +135,6 @@ describe('building setup component', () => {
     button = wrapper.find('.level-form Button');
     expect(form).toHaveLength(1);
     expect(input).toHaveLength(2);
-    expect(button).toHaveLength(1);
+    expect(button).toHaveLength(2);
   });
 });
