@@ -7,9 +7,9 @@ source $ROOT_DIR/.circleci/bin/utils.sh
 checkout_deployment_scripts() {
   info "Cloning deployment script"
   if [ "$CIRCLE_BRANCH" == "master" ]; then
-      git clone -b ft-deployments-pipeline-164163187 https://github.com/andela/mrm-deployment-scripts.git ${HOME}/deployments
+      git clone -b master https://github.com/andela/mrm-deployment-scripts.git ${HOME}/deployments
   elif [ "$CIRCLE_BRANCH" == "develop" ]; then
-      git clone -b ft-deployments-pipeline-164163187 https://github.com/andela/mrm-deployment-scripts.git ${HOME}/deployments
+      git clone -b develop https://github.com/andela/mrm-deployment-scripts.git ${HOME}/deployments
   else
       git clone -b k8s-sandbox https://github.com/andela/mrm-deployment-scripts.git ${HOME}/deployments
   fi
