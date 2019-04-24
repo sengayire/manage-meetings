@@ -58,6 +58,18 @@ a {
   overflow-x: scroll;
   overflow-y: scroll;
   padding-top: 20px;
+  .tree__edit-button {
+    text-align: right;
+    button {
+      border: none;
+      height: auto;
+      padding: 0;
+      padding-right: 20px;
+      img {
+        height: 18px;
+      }
+    }
+  }
 }
 
 .tree ul {

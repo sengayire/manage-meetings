@@ -4,6 +4,7 @@ jsx-a11y/click-events-have-key-events,jsx-a11y/anchor-is-valid */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import '../../assets/styles/previewModal.scss';
+import { editIcon } from '../../utils/images/images';
 
 
 class StructurePreviewTree extends Component {
@@ -66,7 +67,7 @@ class StructurePreviewTree extends Component {
   );
 
   render() {
-    const { data } = this.props;
+    const { data, handleClick } = this.props;
     let structuredData;
     let parsed;
     if (data && data.length > 0) {
@@ -76,6 +77,11 @@ class StructurePreviewTree extends Component {
     return (
       <div className="preview-structure-tree">
         <div className="tree">
+          <div className="tree__edit-button">
+            <button onClick={handleClick('SetupInfoPage')}>
+              <img src={editIcon} alt="edit" />
+            </button>
+          </div>
           <ul>{this.renderLevels(parsed)}</ul>
         </div>
       </div>
@@ -85,6 +91,7 @@ class StructurePreviewTree extends Component {
 
 StructurePreviewTree.propTypes = {
   data: PropTypes.any.isRequired,
+  handleClick: PropTypes.func.isRequired,
 };
 
 export default StructurePreviewTree;

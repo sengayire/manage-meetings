@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 // eslint-disable-next-line import/no-named-as-default
 import RoomSetup from '../components/rooms/RoomSetup';
 import Resources from '../components/setup/resources/Resources';
@@ -109,10 +110,13 @@ class RoomSetupOverView extends Component {
 
   renderNavItems = () => {
     const {
-      currentNavItem,
-      previewDataFromBackend,
-      locationId,
-    } = this.state;
+      props: { handleClick },
+      state: {
+        currentNavItem,
+        previewDataFromBackend,
+        locationId,
+      },
+    } = this;
     switch (currentNavItem) {
       case 'resources':
         return <Resources />;
@@ -122,7 +126,7 @@ class RoomSetupOverView extends Component {
       case 'devices':
         return this.renderDeviceList();
       case 'structure':
-        return <StructurePreviewTree data={previewDataFromBackend} />;
+        return <StructurePreviewTree data={previewDataFromBackend} handleClick={handleClick} />;
       default:
         return <RoomSetup />;
     }
@@ -138,5 +142,9 @@ class RoomSetupOverView extends Component {
     );
   }
 }
+
+RoomSetupOverView.propTypes = {
+  handleClick: PropTypes.func.isRequired,
+};
 
 export default RoomSetupOverView;
