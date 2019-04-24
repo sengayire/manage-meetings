@@ -27,6 +27,8 @@ export class AverageMeetingList extends Component {
         ...props.data.analyticsForMeetingsDurations,
       },
       isFetching: false,
+      currentPage: 1,
+      perPage: 5,
     };
   }
 
@@ -53,11 +55,11 @@ export class AverageMeetingList extends Component {
    * fetches data for the given number of pages
    *
    * @param {number} perPage
-   * @param {number} page
+   * @param {number} currentPage
    *
    * @returns {void}
    */
-  handleData = (perPage, page) => {
+  handleData = (perPage, currentPage) => {
     this.setState({ isFetching: true });
     /* istanbul ignore next */
     /* Reasoning: find explicit way of testing configuration options */
@@ -66,12 +68,13 @@ export class AverageMeetingList extends Component {
         variables: {
           startDate: this.props.dateValue.validatedStartDate,
           endDate: this.props.dateValue.validatedEndDate,
-          page,
+          page: currentPage,
           perPage,
         },
         updateQuery: (prev, { fetchMoreResult }) => {
           this.setState({
             analyticsForMeetingsDurations: fetchMoreResult.analyticsForMeetingsDurations,
+            currentPage,
           });
         },
       })
@@ -99,7 +102,12 @@ export class AverageMeetingList extends Component {
     const tip =
      'The number of meetings in a room,  the average number of attendees to these meetings as well as the average duration of the meetings.';
     /* eslint no-param-reassign: "error" */
-    const { analyticsForMeetingsDurations, isFetching } = this.state;
+    const {
+      analyticsForMeetingsDurations,
+      isFetching,
+      perPage,
+      currentPage,
+    } = this.state;
     const { loading, error } = this.props.data;
     const { isFutureDateSelected } = this.props.dateValue;
     if (loading) return <QueryAnalyticsLoading />;
@@ -141,6 +149,8 @@ export class AverageMeetingList extends Component {
               hasPrevious={analyticsForMeetingsDurations.hasPrevious}
               handleData={this.handleData}
               isFetching={isFetching}
+              perPage={perPage}
+              currentPage={currentPage}
             />
            }
           </div>

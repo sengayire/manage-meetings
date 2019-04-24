@@ -136,3 +136,9 @@
     color: map-get($color-black, 100);
   }
 }
+
+#average-meeting + .Pagination-spinner > .centered > .spinner {
+  margin: auto;
+  position: relative;
+  top: 8em;
+}
