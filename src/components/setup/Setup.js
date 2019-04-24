@@ -10,7 +10,7 @@ import '../../assets/styles/setupInfoPage.scss';
 class Setup extends Component {
   state = {
     visibleLevel: 'WelcomePage',
-    centerRoomCount: 1,
+    centerRoomCount: 0,
     location: '',
   };
 
@@ -26,7 +26,7 @@ class Setup extends Component {
    */
   getRoomCount = async () => {
     const user = await getUserDetails();
-    const rooms = await getRoomList(user.location);
+    const rooms = await getRoomList(user.location, 8, 1);
     const { location } = user;
     this.setState({ centerRoomCount: rooms.allRooms.rooms.length, location });
   }
