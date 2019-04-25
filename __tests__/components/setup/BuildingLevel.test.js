@@ -3,7 +3,7 @@ import { mount, shallow } from 'enzyme';
 import BuildingSetup from '../../../src/components/setup/BuildingLevel';
 import * as QueryHelper from '../../../src/components/helpers/QueriesHelpers';
 import { user, allLocations, level, validLevel, invalidLevel } from '../../../__mocks__/setup/BuildingLevel';
-import { previewData, previeDataWithoutTag, previeDataWithoutQuantity, previeDataWithNameObjLessThanQuantity } from '../../../src/fixtures/previewData';
+import { previewData, previeDataWithoutTag, previeDataWithoutQuantity, previeDataWithChildrenLessThanQuantity } from '../../../src/fixtures/previewData';
 
 describe('building setup component', () => {
   let wrapper;
@@ -169,7 +169,8 @@ describe('building setup component', () => {
     component.instance().levels.current.state.levelsDetails = previeDataWithoutQuantity;
     component.instance().addNewLevel({ preventDefault: jest.fn(), target: { className: 'add' } });
     expect(spy).toHaveBeenCalled();
-    component.instance().levels.current.state.levelsDetails = previeDataWithNameObjLessThanQuantity;
+    component.instance().levels.current.state.levelsDetails
+    = previeDataWithChildrenLessThanQuantity;
     component.instance().addNewLevel({ preventDefault: jest.fn(), target: { className: 'add' } });
     expect(spy).toHaveBeenCalled();
   });

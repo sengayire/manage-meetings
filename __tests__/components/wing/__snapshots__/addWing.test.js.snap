@@ -3001,6 +3001,7 @@ exports[`AddWing Component renders lists correctly 1`] = `
                 title="ADD WING"
               >
                 <IconButtons
+                  btnImage=""
                   buttonText="Add Wing"
                   disabled={false}
                   modalButtonClassName="button"

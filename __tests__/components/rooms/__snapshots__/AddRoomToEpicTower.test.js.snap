@@ -3646,6 +3646,7 @@ exports[`AddRoomEpicTower should render properly 1`] = `
                     title="ADD ROOM"
                   >
                     <IconButtons
+                      btnImage=""
                       buttonText="Epic Tower"
                       disabled={false}
                       modalButtonClassName="button"

@@ -18,10 +18,10 @@ class LevelsForm extends Component {
 
   populateLevelDetails = (val, type, index) => {
     const { levelCounter, levelsDetails } = this.state;
-    const { tag, quantity, id, nameObj } = levelsDetails[levelCounter - 1] || {};
+    const { tag, quantity, id, children } = levelsDetails[levelCounter - 1] || {};
 
     return {
-      nameObj: type === 'levelName' ? this.updateChildArray(index, val) : nameObj || [],
+      children: type === 'levelName' ? this.updateChildArray(index, val) : children || [],
       id: id || uuid(),
       level: levelCounter,
       parentId: levelCounter == 1 ? null : '',
@@ -34,14 +34,14 @@ class LevelsForm extends Component {
 
   updateChildArray = (index, val) => {
     const { levelCounter, levelsDetails } = this.state;
-    const { nameObj } = levelsDetails[levelCounter - 1] || /* istanbul ignore next */ {};
-    let detailsPosition = nameObj;
+    const { children } = levelsDetails[levelCounter - 1] || /* istanbul ignore next */ {};
+    let detailsPosition = children;
 
     const updateObj = () => {
       const arr = detailsPosition;
       arr[index - 1] = {
         name: val,
-        id: detailsPosition[index - 1].id,
+        structureId: detailsPosition[index - 1].structureId,
         parentId: '',
         parentTitle: '',
         level: levelCounter,
@@ -53,19 +53,19 @@ class LevelsForm extends Component {
       ? (detailsPosition[index - 1] = [
           {
             name: val,
-            id: (detailsPosition && detailsPosition.id) || uuid(),
+            structureId: (detailsPosition && detailsPosition.structureId) || uuid(),
             parentId: '',
             parentTitle: '',
             level: levelCounter,
           },
         ])
-      : nameObj.length >= index
+      : children.length >= index
         ? updateObj() // modify existing entry
         : /* istanbul ignore next */ [
             ...detailsPosition,
             {
               name: val,
-              id: uuid(),
+              structureId: uuid(),
               parentId: '',
               parentTitle: '',
               level: levelCounter,
@@ -100,7 +100,7 @@ class LevelsForm extends Component {
 
   updateErrorState = highestLevel => {
     const { levelsDetails } = this.state;
-    const { tag, quantity, nameObj } = levelsDetails[highestLevel - 1];
+    const { tag, quantity, children } = levelsDetails[highestLevel - 1];
     const errorState = levelsDetails;
     const position = highestLevel - 1;
     let errorArray = levelsDetails.errorInput;
@@ -109,7 +109,7 @@ class LevelsForm extends Component {
       errorState[position].input = (errorArray && /* istanbul ignore next */ [...errorArray, 'tag']) || ['tag'];
     } else if (!quantity) {
       errorState[position].input = (errorArray && /* istanbul ignore next */ [...errorArray, 'quantity']) || ['quantity'];
-    } else if (nameObj.length < quantity) {
+    } else if (children.length < quantity) {
       errorState[position].input = (errorArray && /* istanbul ignore next */ [...errorArray, quantity]) || [quantity];
     }
 
@@ -147,8 +147,8 @@ class LevelsForm extends Component {
     if (arr[position].quantity === 1) {
       arr.splice(position, 1);
     } else {
-      const newArr = arr[position].nameObj.filter(child => child.id !== id);
-      arr[position].nameObj = newArr;
+      const newArr = arr[position].children.filter(child => child.structureId !== id);
+      arr[position].children = newArr;
       arr[position].quantity -= 1;
     }
     this.setState({
@@ -159,11 +159,11 @@ class LevelsForm extends Component {
 
   toggleParentSelection = (parent, childPosition, type) => () => {
     const { levelCounter, levelsDetails } = this.state;
-    const { name, id } = parent;
+    const { name, structureId } = parent;
     const levels = levelsDetails;
 
-    levels[levelCounter - 1].nameObj[childPosition - 1].parentId = type === 'add' ? id : /* istanbul ignore next */ '';
-    levels[levelCounter - 1].nameObj[childPosition - 1].parentTitle = type === 'add' ? name : /* istanbul ignore next */ '';
+    levels[levelCounter - 1].children[childPosition - 1].parentId = type === 'add' ? structureId : /* istanbul ignore next */ '';
+    levels[levelCounter - 1].children[childPosition - 1].parentTitle = type === 'add' ? name : /* istanbul ignore next */ '';
 
     this.setState({
       levelsDetails: levels,
@@ -172,14 +172,14 @@ class LevelsForm extends Component {
 
   renderParents = index => {
     const { levelsDetails, levelCounter } = this.state;
-    const level = levelsDetails[levelCounter - 1] && levelsDetails[levelCounter - 1].nameObj;
+    const level = levelsDetails[levelCounter - 1] && levelsDetails[levelCounter - 1].children;
     const parentLevels = levelsDetails[levelCounter - 2];
     if (levelCounter != 1) {
       return (
         !level.length || !level[index] || !level[index].parentId
           ? (
             <div className={this.props.missingParent ? this.props.missingParent :'select-parent'}>
-              {parentLevels.nameObj.map((parent, i) => (
+              {parentLevels.children.map((parent, i) => (
                 <span
                   key={(i + 1).toString()}
                   className="parent-list"
@@ -222,7 +222,7 @@ class LevelsForm extends Component {
               id={index + 1}
               inputClass={`level-input ${error && /* istanbul ignore next */ 'error'}`}
               name="levelName"
-              value={(isLevel.nameObj[index] && isLevel.nameObj[index].name) || ''}
+              value={(isLevel.children[index] && isLevel.children[index].name) || ''}
               onChange={this.handleInputChange}
             />
             {this.renderParents(index)}

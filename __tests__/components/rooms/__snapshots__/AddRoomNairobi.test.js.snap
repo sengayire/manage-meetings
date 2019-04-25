@@ -3034,6 +3034,7 @@ exports[`AddRoomNairobi should pop up a modal when modal button is clicked 1`] =
                     title="ADD ROOM"
                   >
                     <IconButtons
+                      btnImage=""
                       buttonText="St Catherines"
                       disabled={false}
                       modalButtonClassName="button"

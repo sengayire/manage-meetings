@@ -28,7 +28,6 @@ module.exports = {
     '!**/src/components/analytics/averagePieChart/**',
     '!**/src/components/setup/BuildingLevel.js',
     '!**/src/components/setup/Preview.js',
-    '!**/src/components/setup/StructurePreviewTree.js',
     '!**/src/components/setup/resources/**',
     '!**/src/components/login/**',
     '!**/src/components/analytics/**',

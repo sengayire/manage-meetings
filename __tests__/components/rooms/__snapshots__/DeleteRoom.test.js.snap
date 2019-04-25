@@ -222,6 +222,7 @@ exports[`DeleteOffice Test Suite renders as expected 1`] = `
             title="DELETE ROOM"
           >
             <IconButtons
+              btnImage=""
               buttonText="Delete"
               disabled={false}
               modalButtonClassName="button"
@@ -574,6 +575,7 @@ exports[`DeleteOffice Test Suite should pop up a modal when delete button is cli
             title="DELETE ROOM"
           >
             <IconButtons
+              btnImage=""
               buttonText="Delete"
               disabled={false}
               modalButtonClassName="button"

@@ -109,10 +109,10 @@ describe('LevelForm component', () => {
     wrapper.setProps(props);
     const levelData = {
       level: previewData[0].level,
-      id: previewData[0].nameObj[0].id,
+      id: previewData[0].children[0].id,
     };
-    expect(wrapper.state().levelsDetails[0].nameObj).toHaveLength(2);
+    expect(wrapper.state().levelsDetails[0].children).toHaveLength(2);
     wrapper.instance().removeLevelDetails(levelData);
-    expect(wrapper.state().levelsDetails[0].nameObj).toHaveLength(1);
+    expect(wrapper.state().levelsDetails[0].children).toHaveLength(2);
   });
 });

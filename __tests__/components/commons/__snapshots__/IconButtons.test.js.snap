@@ -2,6 +2,7 @@
 
 exports[`IconButtons Component renders properly 1`] = `
 <IconButtons
+  btnImage=""
   buttonText="button"
   disabled={false}
   modalButtonClassName="button"

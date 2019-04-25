@@ -6,7 +6,6 @@ import PropTypes from 'prop-types';
 import '../../assets/styles/previewModal.scss';
 import { editIcon } from '../../utils/images/images';
 
-
 class StructurePreviewTree extends Component {
   getNestedChildren = (arr, parentId) => {
     const nestedChildren = [];
@@ -27,7 +26,6 @@ class StructurePreviewTree extends Component {
   dataTree = (data) => {
     const tree = [];
     const subTree = [];
-
     if (data.length > 0) {
       // eslint-disable-next-line no-return-assign
       data.map((value, index) => (
@@ -36,13 +34,11 @@ class StructurePreviewTree extends Component {
           id: value.id,
           children: value.children,
         }));
-
       tree.map(item => item.children && item.children.map(child => subTree.push({
         id: child.structureId,
         name: child.name,
         parentId: child.parentId === '' ? data[0].id : child.parentId,
       })));
-
       return subTree;
     }
     return tree;
@@ -66,6 +62,14 @@ class StructurePreviewTree extends Component {
     })
   );
 
+  renderEditButton = handleClick => (
+    <div className="tree__edit-button">
+      <button onClick={handleClick('SetupInfoPage')}>
+        <img src={editIcon} alt="edit" />
+      </button>
+    </div>
+  )
+
   render() {
     const { data, handleClick } = this.props;
     let structuredData;
@@ -77,11 +81,7 @@ class StructurePreviewTree extends Component {
     return (
       <div className="preview-structure-tree">
         <div className="tree">
-          <div className="tree__edit-button">
-            <button onClick={handleClick('SetupInfoPage')}>
-              <img src={editIcon} alt="edit" />
-            </button>
-          </div>
+          {handleClick && this.renderEditButton(handleClick) }
           <ul>{this.renderLevels(parsed)}</ul>
         </div>
       </div>

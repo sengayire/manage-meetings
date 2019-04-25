@@ -10,6 +10,7 @@ exports[`MrmModal Component renders properly 1`] = `
   title="hello"
 >
   <IconButtons
+    btnImage=""
     buttonText="button"
     disabled={false}
     modalButtonClassName="button"

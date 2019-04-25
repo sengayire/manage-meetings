@@ -128,9 +128,9 @@ class Preview extends Component {
     for (let i = 0; i < data.length; i += 1) {
       if (
         activeLevel === data[i].parentId ||
-        activeLevel === data[i].id ||
+        activeLevel === data[i].structureId ||
         (activeLevelHover === data[i].parentId && activeLevel === '0') ||
-        (activeLevelHover === data[i].id && activeLevel === '0')
+        (activeLevelHover === data[i].structureId && activeLevel === '0')
       ) {
         if (index + 3 < i) {
           iconClass.next = 'highlight-arrow-btn';
@@ -150,11 +150,11 @@ class Preview extends Component {
     const { locationStructure } = this.props;
     const flattenData = [];
     locationStructure.forEach((structure) => {
-      const { tag, level, nameObj } = structure;
-      nameObj.forEach((child, i) => {
-        const { id, name, parentId } = child;
+      const { tag, level, children } = structure;
+      children.forEach((child, i) => {
+        const { structureId, name, parentId } = child;
         flattenData.push({
-          structureId: id,
+          structureId,
           name,
           level,
           parentId,
@@ -207,7 +207,7 @@ class Preview extends Component {
     // -1 if level does not have any child
     const checkLevelChild =
       data[values.level] &&
-      data[values.level].nameObj.findIndex(elem => elem.parentId === child.id);
+      data[values.level].children.findIndex(elem => elem.parentId === child.structureId);
     // show delete icon if level does not have a child or its the current level
     const removeable =
       (counter - 1 === Number(values.level) && checkLevelChild === -1) ||
@@ -247,7 +247,7 @@ class Preview extends Component {
       const paginationIconClass = this.checkMoreHighlighted(
         activeLevelPagination,
         level,
-        values.nameObj,
+        values.children,
       );
 
       // Display response after user clicks save & submit
@@ -266,18 +266,18 @@ class Preview extends Component {
             <div className="preview-levels" id={level}>
               <div className="levels-grp">
                 {// identify level
-                values.nameObj.map(
+                values.children.map(
                   (child, index) =>
                     ((index >= 0 && index < 4 && activeLevelPagination === 0) ||
                       (activeLevelPagination === index && levelKey === level) ||
                       (activeLevelPagination + 1 === index && levelKey === level) ||
                       (activeLevelPagination + 2 === index && levelKey === level) ||
                       (activeLevelPagination + 3 === index && levelKey === level)) && (
-                      <div className="preview-btn-container" key={child.id}>
+                      <div className="preview-btn-container" key={child.structureId}>
                         {this.renderDeleteIcon(counter, values, data, child)}
                         {index >= 1 &&
                         activeLevelPagination === index &&
-                        values.nameObj.length > 4 ? (
+                        values.children.length > 4 ? (
                           <button
                             onClick={e => this.slide(e, index, level, 'previous')}
                             className="arrow__left"
@@ -294,24 +294,24 @@ class Preview extends Component {
                         <button
                           className={
                             activeLevel === child.parentId ||
-                            activeLevel === child.id ||
+                            activeLevel === child.structureId ||
                             (activeLevelHover === child.parentId && activeLevel === '0') ||
-                            (activeLevelHover === child.id && activeLevel === '0')
+                            (activeLevelHover === child.structureId && activeLevel === '0')
                               ? child.name.toString().length > 12 ? 'highlight-btn long-name' : 'highlight-btn'
                               : child.name.toString().length > 12 ? `${classProp} long-name` : classProp
                           }
-                          onClick={this.makeLevelActiveClick(child.id, 'active')}
-                          onMouseEnter={this.makeLevelActiveHover(child.id, 'active')}
-                          onMouseLeave={this.makeLevelActiveHover(child.id)}
+                          onClick={this.makeLevelActiveClick(child.structureId, 'active')}
+                          onMouseEnter={this.makeLevelActiveHover(child.structureId, 'active')}
+                          onMouseLeave={this.makeLevelActiveHover(child.structureId)}
                         >
                           {child.name.toString().length > 12
                             ? Tip(child.name.toString(),
                             `${child.name.toString().substring(0, 8)} ...`) : child.name.toString()}
                         </button>
-                        {(values.nameObj.length > 4 &&
-                          index < values.nameObj.length - 1 &&
+                        {(values.children.length > 4 &&
+                          index < values.children.length - 1 &&
                           index === activeLevelPagination + 3) ||
-                        (values.nameObj.length > 4 && index === 3) ? (
+                        (values.children.length > 4 && index === 3) ? (
                           <button
                             className="arrow__right"
                             onClick={e => this.slide(e, index, level, 'next')}

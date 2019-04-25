@@ -2899,6 +2899,7 @@ exports[`AddRoomToKampala should render properly 1`] = `
                     title="ADD ROOM"
                   >
                     <IconButtons
+                      btnImage=""
                       buttonText="The Crest"
                       disabled={false}
                       modalButtonClassName="button"

@@ -2883,6 +2883,7 @@ exports[`DeleteResource Test Suite renders as expected 1`] = `
                 title="DELETE RESOURCE"
               >
                 <IconButtons
+                  btnImage=""
                   buttonText="Delete"
                   disabled={false}
                   modalButtonClassName="button"
@@ -5934,6 +5935,7 @@ exports[`DeleteResource Test Suite should pop up a modal when delete button is c
                 title="DELETE RESOURCE"
               >
                 <IconButtons
+                  btnImage=""
                   buttonText="Delete"
                   disabled={false}
                   modalButtonClassName="button"

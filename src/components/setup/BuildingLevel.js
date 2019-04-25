@@ -85,9 +85,9 @@ class BuildingLevel extends Component {
     const {
       state: { levelsDetails },
     } = this.levels.current;
-    const { nameObj, tag, quantity } = levelsDetails[this.state.levelCounter - 1] || {};
+    const { children, tag, quantity } = levelsDetails[this.state.levelCounter - 1] || {};
 
-    return tag && nameObj.length === quantity && nameObj.some(elem => elem.name);
+    return tag && children.length === quantity && children.some(elem => elem.name);
   };
 
   /**
@@ -101,7 +101,7 @@ class BuildingLevel extends Component {
     const error = [];
     if (levelCounter !== 1) {
       levelsDetails.forEach((currentItem) => {
-        currentItem.nameObj.forEach((child) => {
+        currentItem.children.forEach((child) => {
           if (child.level !== 1 && !child.parentId) {
             error.push(child.id);
           }
