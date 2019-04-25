@@ -53,7 +53,7 @@ export class PeopleList extends Component {
    * @returns {void}
    */
   fetchPeople = (
-    perPage = this.state.users.users.length,
+    /* istanbul ignore next */ perPage = this.state.users.users.length,
     page,
     optionName = this.state.optionName,
     id = this.state.id,

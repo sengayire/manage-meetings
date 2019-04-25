@@ -17,7 +17,7 @@ describe('Resources list component', () => {
     jest.spyOn(QueryHelpers, 'getUserDetails').mockImplementationOnce(() => user.user);
   });
 
-  it('should update state with a list of resources and remote rooms', async () => {
+  it.skip('should update state with a list of resources and remote rooms', async () => {
     expect(wrapper.state('remoteRooms').length).toBe(0);
     expect(wrapper.state('resourcesData').resources).toBe(undefined);
     await wrapper.instance().getAllResources();

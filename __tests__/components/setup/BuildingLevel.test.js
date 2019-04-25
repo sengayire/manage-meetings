@@ -3,12 +3,12 @@ import { mount, shallow } from 'enzyme';
 import BuildingSetup from '../../../src/components/setup/BuildingLevel';
 import * as QueryHelper from '../../../src/components/helpers/QueriesHelpers';
 import { user, allLocations, level, validLevel, invalidLevel } from '../../../__mocks__/setup/BuildingLevel';
+import { previewData, previeDataWithoutTag, previeDataWithoutQuantity, previeDataWithNameObjLessThanQuantity } from '../../../src/fixtures/previewData';
 
 describe('building setup component', () => {
   let wrapper;
   let button;
   const handleClick = jest.fn();
-
   beforeEach(() => {
     wrapper = mount(<BuildingSetup handleClick={handleClick} />);
   });
@@ -68,6 +68,24 @@ describe('building setup component', () => {
       .simulate('change', { target: { name: 'levelName', value: 'Epic Tower' } });
     wrapper.find('.add-level-button').simulate('click');
     expect(wrapper.instance().levels.current.state.levelsDetails.length).toBe(1);
+    wrapper
+      .find('.level-form')
+      .childAt(0)
+      .find('.level-input')
+      .simulate('change', { target: { name: 'levelTagName', value: 'Floors' } });
+    wrapper
+      .find('.level-form')
+      .childAt(1)
+      .find('.level-input')
+      .simulate('change', { target: { name: 'up', value: 1 } });
+    wrapper
+      .find('.level-form')
+      .find('.form-input .input1')
+      .childAt(0)
+      .find('.level-input')
+      .simulate('change', { target: { name: 'levelName', value: 'One Floor' } });
+    wrapper.find('.add-level-button').simulate('click');
+    expect(wrapper.instance().levels.current.state.levelsDetails.length).toBe(2);
   });
 
   it('should remove Level Details', () => {
@@ -136,5 +154,23 @@ describe('building setup component', () => {
     expect(form).toHaveLength(1);
     expect(input).toHaveLength(2);
     expect(button).toHaveLength(2);
+  });
+
+  it('should call updateErrorState when addNewLevel is called', () => {
+    const component = mount(<BuildingSetup handleClick={handleClick} />);
+    const spy = jest.spyOn(component.instance().levels.current, 'updateErrorState');
+    jest.spyOn(component.instance(), 'validateLevelsDetails').mockReturnValue(false);
+    component.instance().levels.current.state.levelsDetails = previewData;
+    component.instance().addNewLevel({ preventDefault: jest.fn(), target: { className: 'add' } });
+    expect(spy).toHaveBeenCalled();
+    component.instance().levels.current.state.levelsDetails = previeDataWithoutTag;
+    component.instance().addNewLevel({ preventDefault: jest.fn(), target: { className: 'add' } });
+    expect(spy).toHaveBeenCalled();
+    component.instance().levels.current.state.levelsDetails = previeDataWithoutQuantity;
+    component.instance().addNewLevel({ preventDefault: jest.fn(), target: { className: 'add' } });
+    expect(spy).toHaveBeenCalled();
+    component.instance().levels.current.state.levelsDetails = previeDataWithNameObjLessThanQuantity;
+    component.instance().addNewLevel({ preventDefault: jest.fn(), target: { className: 'add' } });
+    expect(spy).toHaveBeenCalled();
   });
 });

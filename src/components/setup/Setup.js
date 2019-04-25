@@ -31,7 +31,6 @@ class Setup extends Component {
 
   /**
    * Checks whether the parameter matches the state and switches it if not.
-   *
    * @param event
    * @return {boolean}
    */

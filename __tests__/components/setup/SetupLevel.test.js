@@ -28,7 +28,7 @@ describe('unit test for setup level component', () => {
     nextButton.simulate('click');
     expect(wrapper.state().carouselPage).toBe(false);
     expect(wrapper.find('.three')).toHaveLength(0);
-    expect(wrapper.find('.illustration_two')).toHaveLength(1);
+    expect(wrapper.find('.illustration_two')).toHaveLength(2);
   });
 
   it('should change the class in the carousel to three and render with a length of 1 when the previous button is clicked', () => {

@@ -427,3 +427,35 @@ export const multipleLevelsProps = {
     quantity: 9,
   }],
 };
+
+
+export const noLevelsProps = {
+  removeLevel: jest.fn,
+  handleClick: jest.fn,
+  counter: 1,
+  allLocations: [
+    { id: '229', name: 'Cairo' },
+    { id: '2', name: 'Kampala' },
+    { id: '1', name: 'Lagos' },
+    { id: '3', name: 'Nairobi' },
+  ],
+  locationStructure: [],
+};
+
+export const oneLevelProp = [{
+  id: 'c1a63f0e-72dc-4924-9f31-4279a8936efe',
+  level: 1,
+  nameObj: [
+    {
+      id: '4ff98669-5ba0-4f2b-a858-a51df4109879',
+      level: 1,
+      name: 'Block A',
+      parentId: '',
+      parentTitle: '',
+    },
+  ],
+  parentId: null,
+  parentTitle: '',
+  quantity: 1,
+  tag: 'Dojo',
+}];
