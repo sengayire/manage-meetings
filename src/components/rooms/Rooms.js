@@ -1,9 +1,12 @@
+/* eslint-disable react/jsx-no-comment-textnodes */
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable react/forbid-prop-types */
 import React, { Component, createRef } from 'react';
 import PropTypes from 'prop-types';
 import toastr from 'toastr';
 import ImageLoader from '../commons/ImageLoader';
-import { deleteIcon } from '../../utils/images/images';
+import { deleteIcon, editIcon } from '../../utils/images/images';
 import MrmModal from '../commons/MrmModal';
 import '../../assets/styles/rooms.scss';
 import { deleteRoom } from '../helpers/mutationHelpers/rooms';
@@ -94,7 +97,18 @@ class Room extends Component {
         <ImageLoader source={roomImage} className="room-image" altText={roomName} />
         <div className="room-details-container">
           <div className="room-name">{roomName}</div>
-          <div className="delete-room">{this.renderDeleteIcon()}</div>
+          <div className="delete-room">
+            <span className="edit-icon">
+              {/* // eslint-disable-next-line jsx-a11y/click-events-have-key-events */}
+              <img
+                className="img"
+                src={editIcon}
+                alt="edit-icon"
+                onClick={() => this.props.handleClick(this.props)}
+              />
+            </span>
+            {this.renderDeleteIcon()}
+          </div>
           <div className="number-of-Seats">
             <p>Seats upto {numberOfSeats} people</p>
           </div>
@@ -124,4 +138,5 @@ Room.propTypes = {
   numberOfResources: PropTypes.number.isRequired,
   roomId: PropTypes.string.isRequired,
   updatedRoom: PropTypes.func.isRequired,
+  handleClick: PropTypes.func.isRequired,
 };

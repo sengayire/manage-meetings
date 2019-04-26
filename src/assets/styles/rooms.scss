@@ -16,6 +16,11 @@
         font-size: 12px;
         visibility: hidden;
       }
+      .edit-icon {
+        position: absolute;
+        top: -1.7rem;
+        visibility: hidden;
+      }
       h2 {
         text-transform: uppercase;
         font-size: 20px;
@@ -49,6 +54,9 @@
   .room-details-container {
     .delete-room {
       justify-content: flex-end;
+      .edit-icon {
+        visibility: visible;
+      }
       button#modal-button.button {
         visibility: visible;
         background: transparent;

@@ -61,6 +61,10 @@ class MrmModal extends Component {
     });
   };
 
+  toggleModalByRef = () => {
+    this.setState({ isOpen: !this.state.isOpen }, () => {});
+  };
+
   render() {
     const {
       actionButtonText,

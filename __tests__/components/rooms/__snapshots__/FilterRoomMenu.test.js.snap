@@ -181,6 +181,17 @@ exports[`FilterButton renders correctly from memory 1`] = `
                                   },
                                   "selectionSet": undefined,
                                 },
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "structureId",
+                                  },
+                                  "selectionSet": undefined,
+                                },
                               ],
                             },
                           },
@@ -341,7 +352,7 @@ exports[`FilterButton renders correctly from memory 1`] = `
             ],
             "kind": "Document",
             "loc": Object {
-              "end": 448,
+              "end": 445,
               "start": 0,
             },
           },
@@ -530,7 +541,7 @@ exports[`FilterButton renders correctly from memory 1`] = `
             ],
             "kind": "Document",
             "loc": Object {
-              "end": 69,
+              "end": 70,
               "start": 0,
             },
           },
@@ -999,6 +1010,17 @@ exports[`FilterButton renders correctly from memory 1`] = `
                                     },
                                     "selectionSet": undefined,
                                   },
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "structureId",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
                                 ],
                               },
                             },
@@ -1159,7 +1181,7 @@ exports[`FilterButton renders correctly from memory 1`] = `
               ],
               "kind": "Document",
               "loc": Object {
-                "end": 448,
+                "end": 445,
                 "start": 0,
               },
             },
@@ -1229,7 +1251,7 @@ exports[`FilterButton renders correctly from memory 1`] = `
               ],
               "kind": "Document",
               "loc": Object {
-                "end": 69,
+                "end": 70,
                 "start": 0,
               },
             },
@@ -1784,7 +1806,7 @@ exports[`FilterButton renders correctly from memory 1`] = `
                 ],
                 "kind": "Document",
                 "loc": Object {
-                  "end": 69,
+                  "end": 70,
                   "start": 0,
                 },
               },
@@ -1968,6 +1990,17 @@ exports[`FilterButton renders correctly from memory 1`] = `
                                       },
                                       "selectionSet": undefined,
                                     },
+                                    Object {
+                                      "alias": undefined,
+                                      "arguments": Array [],
+                                      "directives": Array [],
+                                      "kind": "Field",
+                                      "name": Object {
+                                        "kind": "Name",
+                                        "value": "structureId",
+                                      },
+                                      "selectionSet": undefined,
+                                    },
                                   ],
                                 },
                               },
@@ -2128,7 +2161,7 @@ exports[`FilterButton renders correctly from memory 1`] = `
                 ],
                 "kind": "Document",
                 "loc": Object {
-                  "end": 448,
+                  "end": 445,
                   "start": 0,
                 },
               },
@@ -2465,7 +2498,7 @@ exports[`FilterButton renders correctly from memory 1`] = `
                     ],
                     "kind": "Document",
                     "loc": Object {
-                      "end": 69,
+                      "end": 70,
                       "start": 0,
                     },
                   },
@@ -2649,6 +2682,17 @@ exports[`FilterButton renders correctly from memory 1`] = `
                                           },
                                           "selectionSet": undefined,
                                         },
+                                        Object {
+                                          "alias": undefined,
+                                          "arguments": Array [],
+                                          "directives": Array [],
+                                          "kind": "Field",
+                                          "name": Object {
+                                            "kind": "Name",
+                                            "value": "structureId",
+                                          },
+                                          "selectionSet": undefined,
+                                        },
                                       ],
                                     },
                                   },
@@ -2809,7 +2853,7 @@ exports[`FilterButton renders correctly from memory 1`] = `
                     ],
                     "kind": "Document",
                     "loc": Object {
-                      "end": 448,
+                      "end": 445,
                       "start": 0,
                     },
                   },
@@ -3425,7 +3469,7 @@ exports[`FilterButton renders correctly from memory 1`] = `
                 ],
                 "kind": "Document",
                 "loc": Object {
-                  "end": 69,
+                  "end": 70,
                   "start": 0,
                 },
               },
@@ -3518,7 +3562,7 @@ exports[`FilterButton renders correctly from memory 1`] = `
                     ],
                     "kind": "Document",
                     "loc": Object {
-                      "end": 69,
+                      "end": 70,
                       "start": 0,
                     },
                   },
@@ -3726,6 +3770,17 @@ exports[`FilterButton renders correctly from memory 1`] = `
                                       },
                                       "selectionSet": undefined,
                                     },
+                                    Object {
+                                      "alias": undefined,
+                                      "arguments": Array [],
+                                      "directives": Array [],
+                                      "kind": "Field",
+                                      "name": Object {
+                                        "kind": "Name",
+                                        "value": "structureId",
+                                      },
+                                      "selectionSet": undefined,
+                                    },
                                   ],
                                 },
                               },
@@ -3886,7 +3941,7 @@ exports[`FilterButton renders correctly from memory 1`] = `
                 ],
                 "kind": "Document",
                 "loc": Object {
-                  "end": 448,
+                  "end": 445,
                   "start": 0,
                 },
               },
@@ -4096,6 +4151,17 @@ exports[`FilterButton renders correctly from memory 1`] = `
                                           },
                                           "selectionSet": undefined,
                                         },
+                                        Object {
+                                          "alias": undefined,
+                                          "arguments": Array [],
+                                          "directives": Array [],
+                                          "kind": "Field",
+                                          "name": Object {
+                                            "kind": "Name",
+                                            "value": "structureId",
+                                          },
+                                          "selectionSet": undefined,
+                                        },
                                       ],
                                     },
                                   },
@@ -4256,7 +4322,7 @@ exports[`FilterButton renders correctly from memory 1`] = `
                     ],
                     "kind": "Document",
                     "loc": Object {
-                      "end": 448,
+                      "end": 445,
                       "start": 0,
                     },
                   },
@@ -4480,6 +4546,17 @@ exports[`FilterButton renders correctly from memory 1`] = `
                                         },
                                         "selectionSet": undefined,
                                       },
+                                      Object {
+                                        "alias": undefined,
+                                        "arguments": Array [],
+                                        "directives": Array [],
+                                        "kind": "Field",
+                                        "name": Object {
+                                          "kind": "Name",
+                                          "value": "structureId",
+                                        },
+                                        "selectionSet": undefined,
+                                      },
                                     ],
                                   },
                                 },
@@ -4640,7 +4717,7 @@ exports[`FilterButton renders correctly from memory 1`] = `
                   ],
                   "kind": "Document",
                   "loc": Object {
-                    "end": 448,
+                    "end": 445,
                     "start": 0,
                   },
                 },
@@ -4719,7 +4796,7 @@ exports[`FilterButton renders correctly from memory 1`] = `
                   ],
                   "kind": "Document",
                   "loc": Object {
-                    "end": 69,
+                    "end": 70,
                     "start": 0,
                   },
                 },
@@ -5307,7 +5384,7 @@ exports[`FilterButton renders correctly from memory 1`] = `
                   ],
                   "kind": "Document",
                   "loc": Object {
-                    "end": 69,
+                    "end": 70,
                     "start": 0,
                   },
                 },
@@ -5491,6 +5568,17 @@ exports[`FilterButton renders correctly from memory 1`] = `
                                         },
                                         "selectionSet": undefined,
                                       },
+                                      Object {
+                                        "alias": undefined,
+                                        "arguments": Array [],
+                                        "directives": Array [],
+                                        "kind": "Field",
+                                        "name": Object {
+                                          "kind": "Name",
+                                          "value": "structureId",
+                                        },
+                                        "selectionSet": undefined,
+                                      },
                                     ],
                                   },
                                 },
@@ -5651,7 +5739,7 @@ exports[`FilterButton renders correctly from memory 1`] = `
                   ],
                   "kind": "Document",
                   "loc": Object {
-                    "end": 448,
+                    "end": 445,
                     "start": 0,
                   },
                 },
@@ -5878,6 +5966,17 @@ exports[`FilterButton renders correctly from memory 1`] = `
                                   },
                                   "selectionSet": undefined,
                                 },
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "structureId",
+                                  },
+                                  "selectionSet": undefined,
+                                },
                               ],
                             },
                           },
@@ -6038,7 +6137,7 @@ exports[`FilterButton renders correctly from memory 1`] = `
             ],
             "kind": "Document",
             "loc": Object {
-              "end": 448,
+              "end": 445,
               "start": 0,
             },
           }
@@ -6157,7 +6256,7 @@ exports[`FilterButton renders correctly from memory 1`] = `
                 ],
                 "kind": "Document",
                 "loc": Object {
-                  "end": 69,
+                  "end": 70,
                   "start": 0,
                 },
               }
