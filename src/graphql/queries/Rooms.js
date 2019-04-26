@@ -1,13 +1,7 @@
 import gql from 'graphql-tag';
 
 export const GET_ROOMS_QUERY = gql`
-  query rooms(
-    $capacity: Int
-    $location: String!
-    $office: String!
-    $page: Int!
-    $perPage: Int!
-  ) {
+  query rooms($capacity: Int, $location: String!, $office: String!, $page: Int!, $perPage: Int!) {
     allRooms(
       page: $page
       perPage: $perPage
@@ -18,26 +12,22 @@ export const GET_ROOMS_QUERY = gql`
       rooms {
         id
         name
-        capacity,
-        roomLabels,
-        roomType,
-        imageUrl,
+        capacity
+        roomLabels
+        roomType
+        imageUrl
+        structureId
       }
       pages
       queryTotal
       hasNext
       hasPrevious
     }
-  }`;
+  }
+`;
 
 export const GET_ALL_ROOMS_QUERY = gql`
-  query rooms(
-    $capacity: Int!
-    $location: String!
-    $office: String!
-    $page: Int!
-    $perPage: Int!
-  ) {
+  query rooms($capacity: Int!, $location: String!, $office: String!, $page: Int!, $perPage: Int!) {
     allRooms(
       page: $page
       perPage: $perPage
@@ -51,7 +41,8 @@ export const GET_ALL_ROOMS_QUERY = gql`
         capacity
       }
     }
-  }`;
+  }
+`;
 
 export const GET_ALL_ROOMS = gql`
   {
@@ -62,7 +53,8 @@ export const GET_ALL_ROOMS = gql`
         capacity
       }
     }
-  }`;
+  }
+`;
 
 const GET_LOCATIONS_QUERY = gql`
   query locations {
@@ -70,7 +62,8 @@ const GET_LOCATIONS_QUERY = gql`
       id
       name
     }
-  }`;
+  }
+`;
 
 const GET_ROOM_BY_NAME = gql`
   query roomByName($name: String!) {
@@ -91,8 +84,21 @@ const GET_ROOM_BY_NAME = gql`
         }
       }
     }
-  }`;
+  }
+`;
 
+const GET_ROOM = gql`
+  query roomById($Id: Int) {
+    getRoomById(roomId: $Id) {
+      name
+      capacity
+      locationId
+      roomLabels
+      roomType
+      imageUrl
+    }
+  }
+`;
 const GET_ALL_REMOTE_ROOMS = gql`
   query {
     allRemoteRooms {
@@ -101,17 +107,19 @@ const GET_ALL_REMOTE_ROOMS = gql`
         name
       }
     }
-}`;
+  }
+`;
 
 const GET_REMOTE_ROOMS_ALL_LOCATIONS = gql`
-  query allRooms($returnAll: Boolean){
+  query allRooms($returnAll: Boolean) {
     allRemoteRooms(returnAll: $returnAll) {
       rooms {
         calendarId
         name
       }
     }
-}`;
+  }
+`;
 
 export {
   GET_ROOMS_QUERY as default,
@@ -119,4 +127,5 @@ export {
   GET_ROOM_BY_NAME,
   GET_ALL_REMOTE_ROOMS,
   GET_REMOTE_ROOMS_ALL_LOCATIONS,
+  GET_ROOM,
 };
