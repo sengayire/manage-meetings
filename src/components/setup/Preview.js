@@ -23,7 +23,6 @@ class Preview extends Component {
       activeLevelPagination: 0,
       indexHistory: {},
       isSubmiting: false,
-      toastrStatus: {},
     };
   }
 
@@ -189,17 +188,16 @@ class Preview extends Component {
           ? message = 'Structures added Successfully'
           : message = 'Structure added Successfully';
 
-        this.setState({
-          toastrStatus: { success: message },
-        });
+        notification(toastr, 'success', message)();
         // show RoomSetupView
         handleClick('RoomSetupView')();
       })
       .catch((err) => {
         /** Update state to Notify user on failure to add level setup data */
         this.setState({
-          toastrStatus: { error: err },
+          isSubmiting: false,
         });
+        notification(toastr, 'error', err)();
       });
   }
 
@@ -229,7 +227,7 @@ class Preview extends Component {
     Object.entries(data).map(([key, values]) => {
       let { activeLevelPagination } = this.state;
       const {
-        indexHistory, activeLevel, activeLevelHover, toastrStatus,
+        indexHistory, activeLevel, activeLevelHover,
       } = this.state;
 
       const level = Number(key) + 1;
@@ -249,11 +247,6 @@ class Preview extends Component {
         level,
         values.children,
       );
-
-      // Display response after user clicks save & submit
-      toastrStatus.success
-        ? notification(toastr, 'success', toastrStatus.success)()
-        : notification(toastr, 'error', toastrStatus.error)();
 
       return (
         <Fragment key={level}>

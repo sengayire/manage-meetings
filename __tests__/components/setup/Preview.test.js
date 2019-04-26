@@ -174,8 +174,4 @@ describe('Preview page component', () => {
     expect(wrapper.find('div').last().hasClass('save-btn-container-disable')).toBe(true);
     expect(wrapper.find('div').last().hasClass('save-btn-container')).toBe(false);
   });
-
-  it.skip('should update toastrStatus state to success:  Structures added Successfully a few seconds after clicking', () => {
-    expect(wrapper.state('toastrStatus').success).toEqual('Structures added Successfully');
-  });
 });

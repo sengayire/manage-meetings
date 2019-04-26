@@ -19,7 +19,7 @@ class Setup extends Component {
   }
 
   /**
-   * Gets the strcutures setup
+   * Gets the structures setup
    *
    * @returns {void}
    */
@@ -59,7 +59,7 @@ class Setup extends Component {
   };
 
   /**
-   * `Conditionally renders the content
+   * Conditionally renders the content
    * of the setup page
    *
    * @param level
