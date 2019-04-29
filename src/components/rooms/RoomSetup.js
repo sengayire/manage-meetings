@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import Room from '../rooms/Rooms';
 import SelectInput from '../../components/commons/SelectInput';
-import { selectMockData } from '../../utils/roomSetupMock';
+import { selectMockData, meetingRoomTabMockData } from '../../utils/roomSetupMock';
 import Pagination from '../../components/commons/Pagination';
-import Spinner from '../../components/commons/Spinner';
 import { getUserDetails, getRoomList } from '../../components/helpers/QueriesHelpers';
 import ErrorIcon from '../commons/ErrorIcon';
 import AddNewRoomComponent from './AddRoom';
+import Overlay from '../commons/Overlay';
 
 /**
  * Builds component for displaying roooms in setup
@@ -28,6 +28,7 @@ class RoomSetup extends Component {
 
   componentDidMount = async () => {
     const { perPage, currentPage } = this.state;
+    this.setState({ allRooms: { allRooms: { rooms: meetingRoomTabMockData } } });
     await this.fetchRooms(perPage, currentPage);
   }
 
@@ -62,6 +63,7 @@ class RoomSetup extends Component {
   */
   fetchRooms = async (perPage, page) => {
     this.setState({ isFetching: true });
+
     try {
       const user = await getUserDetails();
       const { allRooms } = await getRoomList(user.location, (perPage < 8) ? 8 : perPage, page);
@@ -130,7 +132,6 @@ class RoomSetup extends Component {
       isFetching, allRooms: { allRooms }, currentPage, dataFetched, location, error,
     } = this.state;
 
-    if (isFetching) return <Spinner />;
     return (
       <div className="setup-container">
         {
@@ -147,16 +148,17 @@ class RoomSetup extends Component {
           </div>
         }
         {
-          !isFetching && allRooms && location ? (
-            <div className="resource-box">
+          error ? <ErrorIcon message="Resource not found" /> : allRooms && (
+            <div className="resource-box overlay-container">
+              {isFetching && <Overlay />}
               <div className="room-setup-container">
                 {this.createRooms()}
               </div>
             </div>
-          ) : error ? <ErrorIcon message="Resource not found" /> : null
+          )
         }
         {
-          !isFetching && location && allRooms ? (
+          location && allRooms ? (
             <Pagination
               perPage={allRooms.rooms.length}
               itemsPerPage={this.getItemsPerPage()}

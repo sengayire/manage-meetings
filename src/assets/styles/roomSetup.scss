@@ -99,6 +99,21 @@
 .setup-container {
   width: 100%;
   margin: 0;
+  .overlay-container {
+    position: relative;
+    .overlay {
+      z-index: 1;
+    }
+    .Pagination-spinner {
+      height: auto;
+      .centered {
+        align-items: center;
+        height: 100%;
+        position: absolute;
+        width: 100%;
+      }
+    }
+  }
   .room-setup-header {
     font-size: 24px;
     font-weight: 500;
