@@ -4,6 +4,7 @@ import SetupInfoPage from './SetupInfoPage';
 import BuildingLevel from './BuildingLevel';
 import RoomSetupView from '../../containers/RoomSetupView';
 import { getRoomsStructure } from '../helpers/QueriesHelpers';
+import Spinner from '../commons/Spinner';
 import '../../assets/styles/setupWelcomePage.scss';
 import '../../assets/styles/setupInfoPage.scss';
 
@@ -12,6 +13,7 @@ class Setup extends Component {
     visibleLevel: 'WelcomePage',
     location: '',
     isStructureSetup: false,
+    loaded: false,
   };
 
   componentDidMount() {
@@ -27,6 +29,7 @@ class Setup extends Component {
     const data = await getRoomsStructure();
     const { allStructures } = data;
     allStructures.length && this.setState({ isStructureSetup: true });
+    this.setState({ loaded: true });
   }
 
   /**
@@ -68,20 +71,28 @@ class Setup extends Component {
    * @return {JSX}
    */
   renderSetupContent = (level) => {
-    const { location, isStructureSetup } = this.state;
+    const { location, isStructureSetup, loaded } = this.state;
 
-    switch (level) {
-      case 'SetupInfoPage':
-        return <SetupInfoPage handleClick={this.handleClick} />;
-      case 'BuildingLevel':
-        return <BuildingLevel handleClick={this.handleClick} />;
-      case 'RoomSetupView':
-        return (<RoomSetupView handleClick={this.handleClick} userLocation={location} />);
-      default:
-        return (!isStructureSetup
-          ? <WelcomePage handleClick={this.handleClick} />
-          : <RoomSetupView handleClick={this.handleClick} userLocation={location} />);
+    if (loaded) {
+      switch (level) {
+        case 'SetupInfoPage':
+          return <SetupInfoPage handleClick={this.handleClick} />;
+        case 'BuildingLevel':
+          return <BuildingLevel handleClick={this.handleClick} />;
+        case 'RoomSetupView':
+          return (<RoomSetupView handleClick={this.handleClick} userLocation={location} />);
+        default:
+          return (!isStructureSetup
+            ? <WelcomePage handleClick={this.handleClick} />
+            : <RoomSetupView handleClick={this.handleClick} userLocation={location} />);
+      }
     }
+    return (
+      <div className="setup_container">
+        <div className="setup__spinner">
+          <Spinner />
+        </div>
+      </div>);
   };
 
   render() {
