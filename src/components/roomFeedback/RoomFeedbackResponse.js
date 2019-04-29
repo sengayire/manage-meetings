@@ -11,7 +11,7 @@ import '../../../src/assets/styles/roomFeedbackResponse.scss';
  *
  */
 class RoomFeedbackResponse extends Component {
-  getResponseSuggestion = (roomResponses) => {
+  getResponseSuggestion = (roomResponses = []) => {
     const suggestionResponseList = roomResponses.filter(response => (response.suggestion !== null));
     if (suggestionResponseList.length > 0) {
       const { suggestion } = suggestionResponseList[0];
@@ -38,7 +38,7 @@ class RoomFeedbackResponse extends Component {
         roomId,
         roomName,
         totalResponses,
-        totalRoomResources,
+        totalRoomResources = 0,
         response,
       },
     } = this.props;

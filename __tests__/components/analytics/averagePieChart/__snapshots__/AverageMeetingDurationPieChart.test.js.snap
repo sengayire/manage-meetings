@@ -50,7 +50,7 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
   updateParent={[MockFunction]}
 >
   <article
-    className="pie-chart"
+    className="pie-chart overlay-container"
   >
     <section
       className="chart-header"

@@ -42,6 +42,6 @@ describe('BookedRooms component', () => {
 
   it('should load ProgressBar div', () => {
     const bookedRoomsComponent = mount(<BookedRooms {...props} bookedRoomsList={[]} fetching />);
-    expect(bookedRoomsComponent.find('ProgressBar')).toHaveLength(1);
+    expect(bookedRoomsComponent.find('Overlay')).toHaveLength(1);
   });
 });

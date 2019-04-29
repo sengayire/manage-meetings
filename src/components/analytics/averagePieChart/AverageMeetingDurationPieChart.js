@@ -4,11 +4,11 @@ import PropTypes from 'prop-types';
 import { Pie } from 'react-chartjs-2';
 import MEETING_DURATION_ANALYTICS from '../../../graphql/queries/analytics';
 import { meetingDurationBackground, borderColor } from '../../../fixtures/pieChartColors';
-import Spinner from '../../commons/Spinner';
 import Tip from '../../commons/Tooltip';
 import '../../../../src/assets/styles/pieChartBaseStyle.scss';
 import '../../../../src/assets/styles/meetingDurationPieChart.scss';
 import ErrorIcon from '../../commons/ErrorIcon';
+import Overlay from '../../commons/Overlay';
 
 /**
  * AverageMeetingDurationPieChart Component
@@ -106,12 +106,12 @@ export class AverageMeetingDurationPieChart extends React.Component {
   renderPieChart = () => {
     const { MeetingsDurationaAnalytics = [] } = this.state.analyticsForMeetingsDurations;
     const { loading, error } = this.props.data;
-    if (loading) return <Spinner />;
+
     if (error) {
       return <ErrorIcon message={error.graphQLErrors.length > 0 && 'No resource found'} />;
-    } else if (error === undefined && MeetingsDurationaAnalytics.length === 0) {
-      return <ErrorIcon />;
     }
+
+    const dummySectorWidths = ['100', '0', '0', '0'];
 
     const options = {
       legend: {
@@ -130,7 +130,7 @@ export class AverageMeetingDurationPieChart extends React.Component {
       datasets: [
         {
           label: 'Average Meeting Duration',
-          data: this.getSectorWidths(MeetingsDurationaAnalytics),
+          data: loading ? dummySectorWidths : this.getSectorWidths(MeetingsDurationaAnalytics),
           backgroundColor: meetingDurationBackground,
           borderColor,
           borderWidth: 4,
@@ -140,6 +140,7 @@ export class AverageMeetingDurationPieChart extends React.Component {
 
     return (
       <section className="chart-content">
+        {loading && <Overlay />}
         <div>
           <Pie data={graphData} options={options} width={172} />
         </div>
@@ -170,7 +171,7 @@ export class AverageMeetingDurationPieChart extends React.Component {
     const tip =
       'The percentage representation of the average amount of time people spend in all booked meeting rooms in a set time period';
     return (
-      <article className="pie-chart">
+      <article className="pie-chart overlay-container">
         <section className="chart-header">
           <p className="chart-title">Average Meetings Duration [%]</p>
           {Tip(tip)}

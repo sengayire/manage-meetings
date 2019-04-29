@@ -1,12 +1,12 @@
 /* eslint-disable react/no-array-index-key */
 import React from 'react';
 import PropTypes from 'prop-types';
-import ProgressBar from 'react-toolbox/lib/progress_bar';
 import TableHead from '../helpers/TableHead';
 import '../../assets/styles/bookedroom.scss';
 import { pollRed } from '../../utils/images/images';
 import Tip from '../commons/Tooltip';
 import ErrorIcon from '../commons/ErrorIcon';
+import Overlay from '../commons/Overlay';
 
 /**
  *
@@ -19,7 +19,8 @@ import ErrorIcon from '../commons/ErrorIcon';
 const BookedRooms = ({
   bookedRoomText, bookedRoomsList, fetching, tip,
 }) => (
-  <div className="wrap-booked-room">
+  <div className="wrap-booked-room overlay-container">
+    {fetching && <Overlay />}
     <div className="booked-room-header">
       <img src={pollRed} alt="Pull" />
       <h4>{bookedRoomText}</h4>
@@ -34,19 +35,19 @@ const BookedRooms = ({
           </div>
         ) : (
           <div className="table__body">
-            {!fetching ? (
-              bookedRoomsList.map((room, index) => (
+            {
+              (fetching ? [{
+                roomName: 'Room name',
+                meetings: 'Meetings',
+                percentage: '',
+              }] : bookedRoomsList).map((room, index) => (
                 <div className="table__row--analytics" key={index}>
                   <span>{room.roomName}</span>
                   <span>{room.meetings}</span>
                   <span>{room.percentage}%</span>
                 </div>
               ))
-            ) : (
-              <div className="table__row--loading">
-                <ProgressBar type="linear" mode="indeterminate" />
-              </div>
-            )}
+            }
           </div>
         )}
       </div>

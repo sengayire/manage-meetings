@@ -13,7 +13,7 @@ import { QueryLeastBookedRooms } from './QueryLeastBookedRooms';
  */
 const ComposedBookedRooms = ({ dateValue, updateParent }) => (
   <div className="wrap-composed-rooms">
-    <div>
+    <div className="query-booked-rooms">
       {
         <QueryMostBookedRooms
           dateValue={dateValue}
@@ -21,7 +21,7 @@ const ComposedBookedRooms = ({ dateValue, updateParent }) => (
         />
       }
     </div>
-    <div id="booked-room-margin">
+    <div id="booked-room-margin" className="query-booked-rooms">
       {
         <QueryLeastBookedRooms
           dateValue={dateValue}

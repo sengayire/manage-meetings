@@ -27,6 +27,7 @@ describe('RoomFeeback Component', () => {
     user: defaultUserRole,
     client: {},
   };
+  jest.spyOn(RoomFeedback.prototype, 'componentDidMount').mockImplementation(() => Promise.resolve());
   const wrapper = mount(
     <MockedProvider>
       <RoomFeedback user={defaultUserRole} {...testProps} />
@@ -50,6 +51,7 @@ describe('RoomFeeback Component', () => {
       client: {},
     };
     const roomFeedback = shallow(<RoomFeedback {...newProps} />);
+    roomFeedback.setState({ questions: [] });
     expect(roomFeedback.find(ErrorIcon)).toHaveLength(1);
   });
 });

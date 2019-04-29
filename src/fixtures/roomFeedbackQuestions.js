@@ -1,0 +1,46 @@
+const roomFeedbackQuestion = (
+  id,
+  question,
+  questionType,
+  questionTitle,
+  startDate,
+  endDate,
+  questionResponseCount,
+  isActive,
+  __typename,
+) => ({
+  id,
+  question,
+  questionType,
+  questionTitle,
+  startDate,
+  endDate,
+  questionResponseCount,
+  isActive,
+  __typename,
+});
+
+export default [
+  roomFeedbackQuestion(
+    '2',
+    'Isough',
+    'check',
+    'Cleanliness',
+    '2019-04-11 10:04:00',
+    '2019-05-29 11:04:00',
+    0,
+    false,
+    'Question',
+  ),
+  roomFeedbackQuestion(
+    '3',
+    'Thistest Question',
+    'rate',
+    'Test Qnn',
+    '2019-04-30 16:04:00',
+    '2019-05-03 17:04:00',
+    0,
+    false,
+    'Question',
+  ),
+];

@@ -57,14 +57,17 @@ a {
   overflow: hidden;
   overflow-x: scroll;
   overflow-y: scroll;
-  padding-top: 20px;
+  padding-top: 30px;
+  position: relative;
   .tree__edit-button {
-    text-align: right;
+    position: absolute;
+    right: 0;
+    top: 0;
     button {
       border: none;
       height: auto;
       padding: 0;
-      padding-right: 20px;
+      padding: 10px;
       img {
         height: 18px;
       }

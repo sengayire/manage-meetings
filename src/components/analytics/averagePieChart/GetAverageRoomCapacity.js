@@ -4,10 +4,10 @@ import PropTypes from 'prop-types';
 import { Pie } from 'react-chartjs-2';
 import roomCapacityBackground from '../../../fixtures/pieChartColors';
 import { GET_ALL_ROOMS } from '../../../graphql/queries/Rooms';
-import Spinner from '../../commons/Spinner';
 import Tip from '../../commons/Tooltip';
 import '../../../../src/assets/styles/roomCapacityPieChart.scss';
 import ErrorIcon from '../../../components/commons/ErrorIcon';
+import Overlay from '../../commons/Overlay';
 
 export class GetAverageRoomCapacityComponent extends Component {
   constructor(props) {
@@ -62,16 +62,14 @@ export class GetAverageRoomCapacityComponent extends Component {
    * @returns {JSX}
    */
   renderPieChart = () => {
-    const { loading, error } = this.props.data;
+    const { loading, error, allRooms } = this.props.data;
     if (error) {
       return (
         <ErrorIcon message={error.graphQLErrors.length > 0 && 'Resource not found'} />
       );
-    } else if (loading) {
-      return <Spinner />;
     }
 
-    const { lessThanTenData, betweenTenandTwentyData, greaterThanTwentyData } = this.getRoomData();
+    const { lessThanTenData = '100', betweenTenandTwentyData = '0', greaterThanTwentyData = '0' } = allRooms ? this.getRoomData() : {};
     const options = {
       legend: {
         display: false,
@@ -94,6 +92,7 @@ export class GetAverageRoomCapacityComponent extends Component {
     return (
       <Fragment>
         <section className="chart-content">
+          {loading && <Overlay />}
           <Pie data={graphData} options={options} height={168} width={230} />
           <section className="chart-details">
             <p className="room-capacity-first-circle">
@@ -117,7 +116,7 @@ export class GetAverageRoomCapacityComponent extends Component {
   render() {
     const tip = "The percentage representation of the average rooms' capacity ";
     return (
-      <article className="pie-chart">
+      <article className="pie-chart overlay-container">
         <section className="chart-header">
           <p className="chart-title">Average Rooms Capacity [%]</p>
           {Tip(tip)}

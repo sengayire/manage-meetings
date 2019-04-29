@@ -3,15 +3,14 @@ import PropTypes from 'prop-types';
 import { HorizontalBar } from 'react-chartjs-2';
 import ErrorBoundary from '../commons/ErrorBoundary';
 import graphColor from '../../fixtures/graphColor';
-import Spinner from '../commons/Spinner';
 import ErrorIcon from '../../components/commons/ErrorIcon';
 import { getBookingsCount } from '../../../src/components/helpers/QueriesHelpers';
+import Overlay from '../commons/Overlay';
 
 class QueryBookingsCount extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      bookings: [],
       loading: true,
     };
   }
@@ -40,10 +39,8 @@ class QueryBookingsCount extends Component {
   };
 
   render() {
-    const { loading, bookings } = this.state;
-    if (loading) {
-      return <Spinner />;
-    }
+    const { loading, bookings = [{ bookings: 10, period: 'Apr 30 2019' }] } = this.state;
+
     if (bookings.length === 0) {
       return <ErrorIcon message="No resource found" />;
     }
@@ -69,6 +66,7 @@ class QueryBookingsCount extends Component {
     };
     return (
       <div>
+        {loading && <Overlay />}
         <ErrorBoundary>
           <HorizontalBar data={graphData} options={options} height={300} />
         </ErrorBoundary>

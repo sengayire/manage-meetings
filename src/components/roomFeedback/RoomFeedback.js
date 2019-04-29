@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
-import { graphql } from 'react-apollo';
-import PropTypes from 'prop-types';
 import TableHead from '../helpers/TableHead';
 import Feedback from './Feedback';
 import '../../../src/assets/styles/roomFeedback.scss';
-import GET_ROOM_FEEDBACK_QUESTIONS_QUERY from '../../../src/graphql/queries/questions';
-import Spinner from '../commons/Spinner';
 import ErrorIcon from '../../components/commons/ErrorIcon';
-import { getUserDetails } from '../helpers/QueriesHelpers';
+import { getRoomFeedbackQuestions, getUserDetails } from '../helpers/QueriesHelpers';
+import dummyQuestions from '../../fixtures/roomFeedbackQuestions';
+import Overlay from '../commons/Overlay';
 
 /**
  * Component for Room Feedback
@@ -15,12 +13,24 @@ import { getUserDetails } from '../helpers/QueriesHelpers';
  * @returns {JSX}
  */
 export class RoomFeedback extends Component {
-  state = { role: '' };
+  state = {
+    role: '',
+    loading: true,
+  };
 
   componentDidMount() {
     this.setUserRole();
+    this.getFeedbackQuestions();
   }
 
+  getFeedbackQuestions = async () => {
+    this.setState({ loading: true });
+    const feedbackQuestions = await getRoomFeedbackQuestions();
+    if (feedbackQuestions) {
+      this.setState({ questions: feedbackQuestions.questions });
+      this.setState({ loading: false });
+    }
+  };
   /**
    * Sets the current user's location and role
    *
@@ -82,17 +92,11 @@ export class RoomFeedback extends Component {
   };
 
   render() {
-    const { loading, error } = this.props.data;
+    const { loading } = this.state;
     let tableTitles = ['Question', 'Type', 'Responses', 'Start Date', 'Duration'];
     this.state.role === '2' && (tableTitles = [...tableTitles, 'Action', 'Status']);
-    if (error) {
-      return (
-        <div className="item-list-empty">
-          <ErrorIcon />
-        </div>);
-    }
-    if (loading) return <Spinner />;
-    const { questions } = this.props.data.questions;
+
+    const { questions = dummyQuestions } = this.state;
 
     return (
       <div className="room-feedback">
@@ -106,7 +110,8 @@ export class RoomFeedback extends Component {
               <TableHead
                 titles={[...tableTitles]}
               />}
-            <div className="table__body">
+            <div className="table__body overlay-container">
+              {loading && <Overlay id="feedback_overlay" /> }
               <Feedback
                 feedback={questions}
                 durationFormatter={this.durationInWeeks}
@@ -127,7 +132,7 @@ RoomFeedback.defaultProps = {
       questions: [
         {
           id: '1',
-          question: 'There is no question so far',
+          question: 'There is default question',
           questionType: 'Input',
           startDate: '2019-02-21 23:42:43',
           endDate: '2019-02-21 23:42:43',
@@ -141,15 +146,4 @@ RoomFeedback.defaultProps = {
   },
 };
 
-RoomFeedback.propTypes = {
-  data: PropTypes.shape({
-    questions: PropTypes.shape({
-      questions: PropTypes.array,
-    }),
-    loading: PropTypes.bool,
-    error: PropTypes.object,
-    refetch: PropTypes.func,
-  }),
-};
-
-export default graphql(GET_ROOM_FEEDBACK_QUESTIONS_QUERY)(RoomFeedback);
+export default RoomFeedback;

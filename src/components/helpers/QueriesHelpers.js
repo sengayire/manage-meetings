@@ -14,6 +14,7 @@ import {
 import { decodeTokenAndGetUserData } from '../../utils/Cookie';
 import apolloClient from '../../utils/ApolloClient';
 import GET_ALL_LEVELS from '../../graphql/queries/Levels';
+import GET_ROOM_FEEDBACK_QUESTIONS_QUERY from '../../graphql/queries/questions';
 
 const getUserDetails = async (client = apolloClient) => {
   const { UserInfo: userData } = decodeTokenAndGetUserData() || {};
@@ -171,6 +172,22 @@ const getRoomsStructure = async (client = apolloClient) => {
   );
   return data;
 };
+const getRoomFeedbackQuestions = async (client = apolloClient) => {
+  try {
+    const data = client.readQuery(
+      {
+        query: GET_ROOM_FEEDBACK_QUESTIONS_QUERY,
+      },
+      true,
+    );
+    return data.questions;
+  } catch (err) {
+    const { data } = await client.query({
+      query: GET_ROOM_FEEDBACK_QUESTIONS_QUERY,
+    });
+    return data.questions;
+  }
+};
 
 const getAnalyticForDailyRoomsEvents = async ({ startDate, endDate }, client = apolloClient) => {
   try {
@@ -208,4 +225,5 @@ export {
   getBookingsCount,
   getRoomsStructure,
   getAnalyticForDailyRoomsEvents,
+  getRoomFeedbackQuestions,
 };

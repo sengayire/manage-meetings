@@ -2,7 +2,7 @@
 
 exports[`Checkins component should display the cancellations doughnut chart properly 1`] = `
 <div
-  className="donut-chart"
+  className="donut-chart overlay-container"
 >
   <div
     className="chart-header"
@@ -85,7 +85,7 @@ exports[`Checkins component should display the cancellations doughnut chart prop
 
 exports[`Checkins component should render properly 1`] = `
 <div
-  className="donut-chart"
+  className="donut-chart overlay-container"
 >
   <div
     className="chart-header"
@@ -166,9 +166,7 @@ exports[`Checkins component should render properly 1`] = `
       className="chart-text"
     >
       <p>
-        0
-        /
-        10
+        0/10
       </p>
       <p>
         Meeting

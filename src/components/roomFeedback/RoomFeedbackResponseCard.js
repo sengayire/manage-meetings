@@ -17,9 +17,14 @@ const RoomFeedbackCard = ({ title, value }) => (
   </section>
 );
 
+RoomFeedbackCard.defaultProps = {
+  title: 'Title',
+  value: 0,
+};
+
 RoomFeedbackCard.propTypes = {
-  title: PropTypes.string.isRequired,
-  value: PropTypes.number.isRequired,
+  title: PropTypes.string,
+  value: PropTypes.number,
 };
 
 export default RoomFeedbackCard;

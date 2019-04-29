@@ -1,6 +1,9 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import { QueryMostBookedRooms } from '../../../src/components/analytics/QueryMostBookedRooms';
+import { getMostBookedRooms } from '../../../src/components/helpers/QueriesHelpers';
+
+jest.mock('../../../src/components/helpers/QueriesHelpers');
 
 
 describe('Query Most Booked Rooms Component', () => {
@@ -12,9 +15,10 @@ describe('Query Most Booked Rooms Component', () => {
   };
 
   it('should load progressBar', () => {
+    getMostBookedRooms.mockResolvedValue({});
     const wrapper = mount(
       <QueryMostBookedRooms {...props} updateParent={jest.fn()} />,
     );
-    expect(wrapper.find('ThemedProgressBar')).toHaveLength(1);
+    expect(wrapper.find('Overlay')).toHaveLength(1);
   });
 });

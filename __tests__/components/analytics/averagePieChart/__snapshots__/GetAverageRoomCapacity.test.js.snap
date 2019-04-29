@@ -2,7 +2,7 @@
 
 exports[`Get Average Room Capacity Component renders correctly from memory 1`] = `
 <article
-  className="pie-chart"
+  className="pie-chart overlay-container"
 >
   <section
     className="chart-header"

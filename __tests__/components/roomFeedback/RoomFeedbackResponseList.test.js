@@ -1,7 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { RoomFeedbackResponseList, roomCleanlinessRating } from '../../../src/components/roomFeedback/RoomFeedbackResponseList';
-import Spinner from '../../../src/components/commons/Spinner';
 import ErrorIcon from '../../../src/components/commons/ErrorIcon';
 
 const responseListProps = {
@@ -92,7 +91,7 @@ describe('Room feedback list', () => {
     };
     const wrapper = shallow(
       <RoomFeedbackResponseList {...loadingProps} checkData={jest.fn()} />);
-    expect(wrapper.find(Spinner)).toHaveLength(1);
+    expect(wrapper.find('Overlay')).toHaveLength(1);
   });
 
   it('should render an error message when error prop is true', () => {

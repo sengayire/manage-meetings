@@ -21,7 +21,7 @@ describe('Checkins component', () => {
   it('should render properly when loading', () => {
     props = { tip: '', loading: true, isFutureDateSelected: false };
     const wrapperLoading = shallow(<DonutChart {...props} />);
-    expect(wrapperLoading.find('.chart-spinner')).toHaveLength(1);
+    expect(wrapperLoading.find('Overlay')).toHaveLength(1);
   });
 
   it('should render properly when loading', () => {

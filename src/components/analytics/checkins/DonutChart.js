@@ -2,11 +2,11 @@ import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { Doughnut } from 'react-chartjs-2';
 import '../../../assets/styles/donutchart.scss';
-import Spinner from '../../../../src/components/commons/Spinner';
 import ErrorIcon from '../../../../src/components/commons/ErrorIcon';
 
 // Import the tip
 import Tip from '../../commons/Tooltip';
+import Overlay from '../../commons/Overlay';
 
 // eslint-disable-next-line react/prefer-stateless-function
 /**
@@ -40,12 +40,6 @@ class DonutChart extends Component {
       return (<ErrorIcon
         message={error.graphQLErrors.length > 0 && 'No resource found'}
       />);
-    } else if (loading) {
-      return (
-        <div className="chart-spinner">
-          <Spinner />
-        </div>
-      );
     }
 
     const options = {
@@ -73,12 +67,12 @@ class DonutChart extends Component {
             height={160}
             options={options}
           />
-          <p className={hasInfo ? 'chart-percentage' : 'no-info-percentage'}>{percentage}%</p>
+          <p className={hasInfo ? 'chart-percentage' : 'no-info-percentage'}>{loading ? 45 : percentage}%</p>
         </div>
         {hasInfo && (
           <div className="chart-text">
             <p>
-              {entries}/{total}
+              {!loading && `${entries}/${total}`}
             </p>
             <p>Meeting</p>
           </div>
@@ -91,12 +85,14 @@ class DonutChart extends Component {
     const {
       chartTitle,
       hintText,
+      loading,
       tip,
       isFutureDateSelected,
     } = this.props;
 
     return (
-      <div className="donut-chart">
+      <div className="donut-chart overlay-container">
+        {loading && <Overlay />}
         <div className="chart-header">
           <p>{chartTitle}</p>
           <div className="hint">

@@ -7,10 +7,10 @@ import QueryAnalyticsPerMeetingRoom from './AverageMeetingList/QueryAnalyticsPer
 import Tip from '../commons/Tooltip';
 import MEETING_DURATION_ANALYTICS from '../../graphql/queries/analytics';
 import Pagination from '../commons/Pagination';
-import QueryAnalyticsLoading from './AverageMeetingList/QueryAnalyticsLoading';
 import Overlay from '../commons/Overlay';
 import { notFoundIcon } from '../../utils/images/images';
 import ErrorIcon from '../commons/ErrorIcon';
+import meetingDurationAnalyticsMock from '../../fixtures/meetingDurationAnalytics';
 
 /**
  * Component for the average meeting list
@@ -33,7 +33,7 @@ export class AverageMeetingList extends Component {
   }
 
   componentWillReceiveProps(props) {
-    const { analyticsForMeetingsDurations } = props.data;
+    const { analyticsForMeetingsDurations = {} } = props.data;
     this.setState({
       analyticsForMeetingsDurations,
     });
@@ -110,9 +110,12 @@ export class AverageMeetingList extends Component {
     } = this.state;
     const { loading, error } = this.props.data;
     const { isFutureDateSelected } = this.props.dateValue;
-    if (loading) return <QueryAnalyticsLoading />;
+    if (loading) {
+      analyticsForMeetingsDurations.MeetingsDurationaAnalytics = meetingDurationAnalyticsMock(3);
+    }
     return (
-      <div className="average-meeting">
+      <div className="average-meeting overlay-container">
+        {loading && <Overlay />}
         <div className="average-meeting-control">
           <h4 className="header-title">Average time spent/Meeting Room</h4>
           <span className="moreVerticalIcon">{Tip(tip)}</span>
@@ -141,20 +144,22 @@ export class AverageMeetingList extends Component {
             </div>
           </div>
         </div>
-        <div className="average-meeting-pagination">
-          <div>
-            { !isFutureDateSelected && !error && <Pagination
-              totalPages={analyticsForMeetingsDurations.pages}
-              hasNext={analyticsForMeetingsDurations.hasNext}
-              hasPrevious={analyticsForMeetingsDurations.hasPrevious}
-              handleData={this.handleData}
-              isFetching={isFetching}
-              perPage={perPage}
-              currentPage={currentPage}
-            />
-           }
+        {!loading &&
+          <div className="average-meeting-pagination">
+            <div>
+              { !isFutureDateSelected && !error && <Pagination
+                totalPages={analyticsForMeetingsDurations.pages}
+                hasNext={analyticsForMeetingsDurations.hasNext}
+                hasPrevious={analyticsForMeetingsDurations.hasPrevious}
+                handleData={this.handleData}
+                isFetching={isFetching}
+                perPage={perPage}
+                currentPage={currentPage}
+              />
+            }
+            </div>
           </div>
-        </div>
+        }
       </div>
     );
   }

@@ -5,7 +5,6 @@ import RoomFeedbackResponse from './RoomFeedbackResponse';
 import { greenStarIcon, greyStarIcon } from '../../utils/images/images';
 import '../../../src/assets/styles/roomFeedbackResponseList.scss';
 import '../../../src/assets/styles/feedbackContainer.scss';
-import Spinner from '../commons/Spinner';
 import ErrorIcon from '../commons/ErrorIcon';
 import RoomFeedbackCard from './RoomFeedbackResponseCard';
 import SingleRoom from './SingleRoom';
@@ -46,7 +45,7 @@ export const roomCleanlinessRating = (rating) => {
  *
  * @return {integer, string}
  */
-export const totalCleanlinessRating = (roomResponses) => {
+export const totalCleanlinessRating = (roomResponses = []) => {
   let totalRating = 0;
   const gradeList = ['Not Rated', 'Poor', 'Fair', 'Good', 'Very Good', 'Excellent'];
   const ratingResponses = roomResponses.filter(response => response.rating !== null);
@@ -65,7 +64,7 @@ export const totalCleanlinessRating = (roomResponses) => {
  *
  * @return {integer}
  */
-export const totalMissingItemsCount = (roomResponses) => {
+export const totalMissingItemsCount = (roomResponses = []) => {
   let missingItemsList = [];
   roomResponses.filter(response => ((response.missingItems).length !== 0))
     .forEach((response) => {
@@ -265,6 +264,7 @@ export class RoomFeedbackResponseList extends React.Component {
     const { checkData } = this.props;
     allRoomResponses && checkData(allRoomResponses);
     const { loading, error } = this.props.data;
+
     if (error) {
       const errorString = 'You are not authorized to perform this action';
       const errorMessage = (error.message === `GraphQL error: ${errorString}` ? errorString : '');
@@ -272,14 +272,16 @@ export class RoomFeedbackResponseList extends React.Component {
         <div className="item-list-empty">
           <ErrorIcon message={errorMessage} />
         </div>);
-    } else if (loading) {
-      return <Spinner />;
     }
-    const feedbackData = this.formatAllRoomFeedbackData(allRoomResponses.responses);
-    if ((feedbackData.roomsResponses).length > 0) {
+    const feedbackData = loading
+      ? { roomsResponses: [{}] }
+      : this.formatAllRoomFeedbackData(allRoomResponses.responses);
+
+    if (loading || (feedbackData.roomsResponses).length > 0) {
       return (
         <Fragment>
-          <div className="feedback-container">
+          <div className="feedback-container overlay-container">
+            { loading && <Overlay />}
             <SingleRoom
               roomId={roomId}
               visible={this.state.visible}

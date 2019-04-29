@@ -2,7 +2,7 @@
 
 exports[`BookedRooms component should render correctly 1`] = `
 <div
-  className="wrap-booked-room"
+  className="wrap-booked-room overlay-container"
 >
   <div
     className="booked-room-header"

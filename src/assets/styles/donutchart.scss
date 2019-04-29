@@ -131,6 +131,10 @@
       }
     }
   }
+  .chartjs-render-monitor {
+    height: 160px !important;
+    width: 160px !important;
+  }
 }
 
 @media (min-width: 1200px) and (max-width: 1400px) {

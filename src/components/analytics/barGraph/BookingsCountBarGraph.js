@@ -17,7 +17,7 @@ import '../../../../src/assets/styles/barGraphBaseStyle.scss';
 const BookingsCountBarGraph = ({ dateValue, updateParent }) => {
   const tip = 'Total count of bookings in a given time';
   return (
-    <article className="bar-graph">
+    <article className="bar-graph overlay-container">
       <section className="graph-header">
         <p className="graph-title">Total Bookings Count</p>
         {Tip(tip)}

@@ -1,11 +1,7 @@
 .wrap-composed-rooms {
   display: flex;
 
-  div:first-child {
-    flex: 1;
-  }
-
-  div:last-child {
+  .query-booked-rooms {
     flex: 1;
   }
 }

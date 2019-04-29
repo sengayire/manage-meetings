@@ -20,8 +20,7 @@ describe('setup component', () => {
   });
 
   it('should call componentDidMount once on render', () => {
-    wrapper.instance().getRoomCount = jest.fn();
-    spy = jest.spyOn(wrapper.instance(), 'getStructures');
+    spy = jest.spyOn(wrapper.instance(), 'getStructures').mockImplementationOnce(() => ({}));
     wrapper.instance().componentDidMount();
     expect(spy).toHaveBeenCalled();
     expect(spy).toHaveBeenCalledTimes(1);

@@ -63,6 +63,7 @@ const Feedback = (props) => {
 Feedback.defaultProps = {
   feedback: [
     {
+      id: '1',
       question: 'There is no question so far',
       questionType: 'Input',
       startDate: '2019-02-21 23:42:43',

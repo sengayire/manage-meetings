@@ -3,7 +3,7 @@
 exports[`Room feedback list should render correctly 1`] = `
 <Fragment>
   <div
-    className="feedback-container"
+    className="feedback-container overlay-container"
   >
     <Apollo(Apollo(SingleRoomFeedBack))
       roomCleanlinessRating={[Function]}
