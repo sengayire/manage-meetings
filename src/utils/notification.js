@@ -27,4 +27,4 @@ const notification = (toastr, notifyType, message) => {
   return () => toastr[notifyType](message);
 };
 
-export default notification; 
+export default notification;

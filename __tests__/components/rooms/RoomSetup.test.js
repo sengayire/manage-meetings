@@ -14,9 +14,7 @@ describe('Unit test for room setup Component', () => {
   };
 
   const mockedClient2 = {
-    readQuery: jest
-      .fn()
-      .mockImplementationOnce(() => allRooms),
+    readQuery: jest.fn().mockResolvedValue(() => allRooms),
     query: jest.fn(() => ({ data: 'rooms' })),
   };
 
@@ -55,5 +53,21 @@ describe('Unit test for room setup Component', () => {
     expect(wrapper.find('.room-details-container').length).toBe(5);
     expect(wrapper.find('.setup-container').exists()).toBe(true);
     expect(wrapper.find('.room-select-input').children().length).toBe(3);
+  });
+});
+
+describe('', () => {
+  const wrapper = mount(<RoomSetup />);
+  it('should update the allRooms state', () => {
+    const rooms = {
+      roomName: 'test room',
+    };
+    wrapper.setState({
+      allRooms: {},
+    });
+    const updateRoomDataSpy = jest.spyOn(wrapper.instance(), 'updateRoomData');
+    wrapper.instance().updateRoomData(rooms);
+    wrapper.update();
+    expect(updateRoomDataSpy).toHaveBeenCalled();
   });
 });

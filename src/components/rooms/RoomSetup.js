@@ -85,9 +85,9 @@ class RoomSetup extends Component {
   /**
    * This method updates the state of allRooms when a room is created
    *
-   * @param {object} roomCreated - An object containing details the rooms fetched from the backend
+   * @param {object} rooms - An object containing details the rooms fetched from the backend
    */
-  updateRoomData = roomCreated => this.setState({ allRooms: roomCreated });
+  updateRoomData = rooms => this.setState({ allRooms: rooms });
 
   /**
   * It handles creating of rooms
@@ -104,6 +104,8 @@ class RoomSetup extends Component {
         roomLabels={room.roomLabels}
         numberOfSeats={room.capacity}
         numberOfResources={6}
+        roomId={room.id}
+        updatedRoom={this.updateRoomData}
       />
     ));
     return roomsRender;

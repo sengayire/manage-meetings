@@ -1,6 +1,7 @@
 import apolloClient from '../../../utils/ApolloClient';
-import { ADD_ROOM } from '../../../graphql/mutations/Rooms';
+import { ADD_ROOM, DELETE_ROOM } from '../../../graphql/mutations/Rooms';
 import { GET_ROOMS_QUERY } from '../../../graphql/queries/Rooms';
+import { getUserDetails } from '../../helpers/QueriesHelpers';
 
 const addRoom = async (variables, location, client = apolloClient) => {
   let updatedData;
@@ -42,4 +43,42 @@ const addRoom = async (variables, location, client = apolloClient) => {
   return updatedData;
 };
 
-export default addRoom;
+const getRoomsQueryObj = (location, theData = undefined) => (
+  {
+    query: GET_ROOMS_QUERY,
+    variables: {
+      location,
+      office: '',
+      page: 1,
+      perPage: 8,
+    },
+    data: theData,
+  }
+);
+
+const deleteRoom = async (roomId, client = apolloClient) => {
+  const user = await getUserDetails();
+  const roomsQueryObject = getRoomsQueryObj(user.location);
+  let data;
+  await client.mutate({
+    mutation: DELETE_ROOM,
+    name: 'deleteRoom',
+    variables: {
+      roomId,
+    },
+    refetchQueries: [roomsQueryObject],
+    update: async (cache, { data: roomDelete }) => {
+      data = cache.readQuery(roomsQueryObject);
+      data.allRooms.rooms = data.allRooms.rooms.filter(
+        room => room.id !== roomDelete.deleteRoom.room.id,
+      );
+      cache.writeQuery(getRoomsQueryObj(user.location, data));
+    },
+  });
+  return data;
+};
+
+export {
+  deleteRoom,
+  addRoom,
+};

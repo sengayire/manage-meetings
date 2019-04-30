@@ -8,7 +8,7 @@ import { getAllRemoteRooms, getRoomsStructure, getUserDetails, getAllLocations, 
 import { orderByLevel } from '../../utils/formatSetupData';
 import notification from '../../utils/notification';
 import stripTypeNames from '../helpers/StripTypeNames';
-import addRoomMutation from '../helpers/mutationHelpers/rooms';
+import { addRoom } from '../helpers/mutationHelpers/rooms';
 import getImageUrl from '../helpers/ImageUpload';
 import '../../assets/styles/addNewRoom.scss';
 
@@ -172,7 +172,7 @@ export class AddNewRoom extends Component {
         .then((url) => {
           variables.imageUrl = url;
           this.setState({ imageUrl: url, uploading: false }, () => {
-            addRoomMutation(variables, this.state.location)
+            addRoom(variables, this.state.location)
               .then((data) => {
                 this.props.updateRoomData(data);
                 this.toggleLoading();

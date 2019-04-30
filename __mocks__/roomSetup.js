@@ -17,6 +17,7 @@ const result = {
         id: '3',
         name: 'Gulu',
         capacity: 1,
+        roomLabels: [],
         floor: {
           name: 'Third floor',
           block: {
@@ -40,6 +41,7 @@ const result = {
         id: '4',
         name: 'Entebbe',
         capacity: 1,
+        roomLabels: [],
         floor: {
           name: 'First floor',
           block: {
@@ -63,6 +65,7 @@ const result = {
         id: '5',
         name: 'Mbarara',
         capacity: 1,
+        roomLabels: [],
         floor: {
           name: 'Third floor',
           block: {
@@ -86,6 +89,7 @@ const result = {
         id: '6',
         name: 'Mbale',
         capacity: 1,
+        roomLabels: [],
         floor: {
           name: 'Second floor',
           block: {
@@ -101,6 +105,7 @@ const result = {
         id: '8',
         name: 'Ocul',
         capacity: 1,
+        roomLabels: [],
         floor: {
           name: 'Third floor',
           block: {
