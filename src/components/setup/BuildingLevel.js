@@ -28,11 +28,12 @@ class BuildingLevel extends Component {
     erroredChild: '',
     previewStructure: [],
     backendStructure: '',
+    flattenedStruct: [],
   };
 
   componentDidMount = () => {
     this.getUsersLocation();
-    this.previewBuildingStructure();
+    this.orderedStructure();
   }
 
   /**
@@ -52,18 +53,28 @@ class BuildingLevel extends Component {
     });
   };
 
-  previewBuildingStructure = async () => {
+  orderedStructure = async () => {
     const structure = await getRoomsStructure();
     const { allStructures } = structure;
     const formattedStructure = orderByLevel(stripTypeNames(allStructures));
-    const lastChild = formattedStructure[formattedStructure.length - 1];
-    const backendStructureLevel = lastChild.children[0].level;
+    this.previewBuildingStructure(formattedStructure, stripTypeNames(allStructures));
+  };
+
+  previewBuildingStructure = (formattedStructure, allStructures) => {
+    this.setState({
+      flattenedStruct: allStructures,
+    });
+
+    const lastChild = formattedStructure.length &&
+      formattedStructure[formattedStructure.length - 1];
+    const backendStructureLevel = lastChild ? lastChild.children[0].level : 1;
     this.setState({
       previewStructure: formattedStructure,
       levelCounter: backendStructureLevel,
       backendStructure: formattedStructure.length,
-    });
-    this.levels.current.setState({ levelsDetails: this.state.previewStructure });
+      activeLevel: backendStructureLevel,
+    },
+    () => this.levels.current.setState({ levelsDetails: this.state.previewStructure }));
   };
 
   /**
@@ -111,9 +122,9 @@ class BuildingLevel extends Component {
   /**
    * loops through the children within a level
    * and checks if a parent has been selected
-   * @param {levelsDetails} - This are the details within a level
-   * @param {levelCounter} - This is the level count
    * @returns {array}
+   * @param levelsDetails
+   * @param levelCounter
    */
   validateChild = (levelsDetails, levelCounter) => {
     const error = [];
@@ -225,7 +236,17 @@ class BuildingLevel extends Component {
       )));
   };
 
-  removeLevel = data => () => this.levels.current.removeLevelDetails(data);
+  removeLevel = data => (singleLevel) => {
+    if (singleLevel === 1) {
+      this.levels.current.setState({
+        showDeleteModal: true,
+      }, this.levels.current.removeLevelDetails(data));
+    } else {
+      this.levels.current.setState({
+        showDeleteModal: false,
+      }, this.levels.current.removeLevelDetails(data));
+    }
+  };
 
   /**
    * When called it shows the previous three levels
@@ -319,9 +340,10 @@ class BuildingLevel extends Component {
                 addNewLevel={this.addNewLevel}
                 ref={this.levels}
                 activeLevel={this.state.activeLevel}
-                updateRelationship={this.updateLevelsRelationship}
                 updateCounter={this.updateCounter}
                 missingParent={erroredChild}
+                previewBuildingStructure={this.previewBuildingStructure}
+                flattenedStruct={this.state.flattenedStruct}
               />
             </div>
           </div>

@@ -87,7 +87,7 @@ describe('EditRoom', () => {
           name: 'Gulu',
           roomId: 1,
         },
-        editResource: jest.fn(() => Promise.reject(new ApolloError({ graphQLErrors: [new Error('An error occurred')] }))), // TODO
+        editResource: jest.fn(() => Promise.reject(new ApolloError({ graphQLErrors: [new Error('An error occurred')] }))),
       };
       const newWrapper = shallow(<EditResource {...errorProps} />);
       newWrapper.instance().handleEditResource(event);

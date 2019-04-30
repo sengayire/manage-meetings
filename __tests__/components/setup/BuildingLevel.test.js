@@ -2,7 +2,7 @@ import React from 'react';
 import { mount, shallow } from 'enzyme';
 import BuildingSetup from '../../../src/components/setup/BuildingLevel';
 import * as QueryHelper from '../../../src/components/helpers/QueriesHelpers';
-import { user, allLocations, level, validLevel, invalidLevel, mockDataStructure } from '../../../__mocks__/setup/BuildingLevel';
+import { user, allLocations, validLevel, invalidLevel, mockDataStructure } from '../../../__mocks__/setup/BuildingLevel';
 import { previewData, previeDataWithoutTag, previeDataWithoutQuantity, previeDataWithChildrenLessThanQuantity, previeDataWithChildWithEmptyName } from '../../../src/fixtures/previewData';
 import * as orderByLevels from '../../../src/utils/formatSetupData';
 
@@ -53,12 +53,12 @@ describe('building setup component', () => {
     expect(wrapper.instance().levels.current.state.levelsDetails.length).toBe(0);
     wrapper
       .find('.level-form')
-      .childAt(0)
+      .childAt(1)
       .find('.level-input')
       .simulate('change', { target: { name: 'levelTagName', value: 'Building' } });
     wrapper
       .find('.level-form')
-      .childAt(1)
+      .childAt(2)
       .find('.level-input')
       .simulate('change', { target: { name: 'up', value: 1 } });
     wrapper
@@ -71,12 +71,12 @@ describe('building setup component', () => {
     expect(wrapper.instance().levels.current.state.levelsDetails.length).toBe(1);
     wrapper
       .find('.level-form')
-      .childAt(0)
+      .childAt(1)
       .find('.level-input')
       .simulate('change', { target: { name: 'levelTagName', value: 'Floors' } });
     wrapper
       .find('.level-form')
-      .childAt(1)
+      .childAt(2)
       .find('.level-input')
       .simulate('change', { target: { name: 'up', value: 1 } });
     wrapper
@@ -89,28 +89,6 @@ describe('building setup component', () => {
     expect(wrapper.instance().levels.current.state.levelsDetails.length).toBe(2);
   });
 
-  it('should remove Level Details', () => {
-    wrapper
-      .find('.level-form')
-      .childAt(0)
-      .find('.level-input')
-      .simulate('change', { target: { name: 'levelTagName', value: 'Building' } });
-    wrapper
-      .find('.level-form')
-      .childAt(1)
-      .find('.level-input')
-      .simulate('change', { target: { name: 'up', value: 1 } });
-    wrapper
-      .find('.level-form')
-      .find('.form-input .input1')
-      .childAt(0)
-      .find('.level-input')
-      .simulate('change', { target: { name: 'levelName', value: 'Epic Tower' } });
-    wrapper.find('.add-level-button').simulate('click');
-    expect(wrapper.instance().levels.current.state.levelsDetails.length).toBe(1);
-    wrapper.instance().removeLevel(level)();
-    expect(wrapper.instance().levels.current.state.levelsDetails.length).toBe(0);
-  });
   it('should not update the state with empty level details', () => {
     wrapper.find('.add-level-button').simulate('click');
     expect(wrapper.instance().levels.current.state.levelsDetails.length).toBe(0);
@@ -185,7 +163,7 @@ describe('building setup component', () => {
     expect(wrapper.state('previewStructure').length).toBe(0);
     expect(wrapper.state('levelCounter')).toBe(1);
     expect(wrapper.state('backendStructure').length).toBe(0);
-    await wrapper.instance().previewBuildingStructure();
+    await wrapper.instance().orderedStructure();
     expect(wrapper.state('previewStructure').length).toBe(1);
     expect(wrapper.state('levelCounter')).toBe(2);
     expect(wrapper.state('backendStructure')).toBe(1);

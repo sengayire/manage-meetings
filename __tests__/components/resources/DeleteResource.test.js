@@ -71,7 +71,7 @@ describe('DeleteResource Test Suite', () => {
     const preventDefault = jest.fn();
     const newProps = {
       deleteResource: jest
-        .fn(() => Promise.reject(new ApolloError({ graphQLErrors: [new Error('You are not authorized to perform this action')] }))), // TODO
+        .fn(() => Promise.reject(new ApolloError({ graphQLErrors: [new Error('You are not authorized to perform this action')] }))),
       toDelete: {
         id: '1',
         name: 'Duster',

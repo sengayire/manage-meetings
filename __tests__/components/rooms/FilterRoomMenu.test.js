@@ -141,7 +141,7 @@ describe('FilterButton', () => {
         allRooms: {
           rooms: [],
         },
-        fetchMore: jest.fn(() => Promise.reject()), // TODO
+        fetchMore: jest.fn(() => Promise.reject()),
         updateQuery: jest.fn(),
       },
     };

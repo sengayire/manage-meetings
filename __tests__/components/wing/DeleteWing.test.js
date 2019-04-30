@@ -37,7 +37,7 @@ describe('Delete Wing Test Suite', () => {
 
   it('It should initiate a call to deleteWing when handleDeleteWing is called', () => {
     const props = {
-      deleteWing: jest.fn(() => Promise.reject(new ApolloError({ graphQLErrors: [new Error('error')] }))), // TODO
+      deleteWing: jest.fn(() => Promise.reject(new ApolloError({ graphQLErrors: [new Error('error')] }))),
       notification: jest.fn(),
       wingName: 'ABUJA WING',
       id: 'delete-modal',

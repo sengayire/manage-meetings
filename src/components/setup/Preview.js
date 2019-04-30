@@ -120,7 +120,7 @@ class Preview extends Component {
    * @param {object} data
    * @returns {object}
    */
-  checkMoreHighlighted = (index, level, data) => {
+  checkMoreHighlighted = (index, level, data = []) => {
     const iconClass = {};
     const { activeLevel, activeLevelHover } = this.state;
 
@@ -205,29 +205,36 @@ class Preview extends Component {
       });
   }
 
-  renderDeleteIcon = (counter, values, data, child) => {
-    // -1 if level does not have any child
-    const checkLevelChild =
-      data[values.level] &&
-      data[values.level].children.findIndex(elem => elem.parentId === child.structureId);
-    // show delete icon if level does not have a child or its the current level
-    const removeable =
-      (counter - 1 === Number(values.level) && checkLevelChild === -1) ||
-      (checkLevelChild === -1 || checkLevelChild === undefined);
-    return (
-      removeable && (
-        <button className="remove-level" onClick={this.props.removeLevel(child)}>
-          x
-        </button>
-      )
-    );
+  listParentIds = (list) => {
+    const parentIds = [];
+    /* eslint-disable array-callback-return */
+    list.map((value) => {
+      value.children && value.children.map((child) => {
+        const id = child.parentId === '' ? list[0].structureId : child.parentId;
+        parentIds.push(id);
+      });
+    });
+    return [...new Set(parentIds)];
   };
+
+
+  checkIfParent = id => () => {
+    const { locationStructure, removeLevel } = this.props;
+    const parentIds = this.listParentIds(locationStructure);
+    if (parentIds.includes(id)) {
+      removeLevel(id)();
+    } else {
+      removeLevel(id)(1);
+    }
+  };
+
+  renderDeleteIcon = id => (<button className="remove-level" onClick={this.checkIfParent(id)} >x</button>);
 
   /**
    * renders the preview of the new added structure
    * @returns {void}
    */
-  renderPreviews = (data, counter) =>
+  renderPreviews = data =>
     Object.entries(data).map(([key, values]) => {
       let { activeLevelPagination } = this.state;
       const {
@@ -273,7 +280,7 @@ class Preview extends Component {
                       (activeLevelPagination + 2 === index && levelKey === level) ||
                       (activeLevelPagination + 3 === index && levelKey === level)) && (
                       <div className="preview-btn-container" key={child.structureId}>
-                        {this.renderDeleteIcon(counter, values, data, child)}
+                        {this.renderDeleteIcon(child.structureId)}
                         {index >= 1 &&
                         activeLevelPagination === index &&
                         values.children.length > 4 ? (

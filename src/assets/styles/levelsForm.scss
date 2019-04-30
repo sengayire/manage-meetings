@@ -1,0 +1,12 @@
+@import "./variables";
+
+.wrongLevelName {
+  color: $color-danger
+}
+
+.level-delete-modal {
+  width: 60%;
+  font-family: 'DINPro-Regular', serif;
+  font-size: 20px;
+  margin: 1em auto 2em;
+}

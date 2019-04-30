@@ -3,11 +3,17 @@ import { mount } from 'enzyme';
 import LevelsForm from '../../../src/components/setup/LevelsForm';
 import { oneLevelProp } from '../../../src/fixtures/Preview';
 import { previewData } from '../../../src/fixtures/previewData';
+import { mockProps, mockState } from '../../../__mocks__/setup/LevelForm';
 
 describe('LevelForm component', () => {
   let wrapper;
   beforeEach(() => {
     wrapper = mount(<LevelsForm />);
+    // eslint-disable-next-line no-extend-native
+    Object.defineProperty(Array.prototype, 'flat', {
+      value: () => ([]),
+      writable: true,
+    });
   });
 
   it('should render the LevelForm with a label "Set a name for this level"', () => {
@@ -114,5 +120,51 @@ describe('LevelForm component', () => {
     expect(wrapper.state().levelsDetails[0].children).toHaveLength(2);
     wrapper.instance().removeLevelDetails(levelData);
     expect(wrapper.state().levelsDetails[0].children).toHaveLength(2);
+  });
+
+  it('should call deleteLevel function with a value 1 when deleteSetup is called and' +
+    ' showDeleteModal is set to true', () => {
+    const state = { ...mockState };
+    wrapper.setState(state);
+    wrapper.setProps(mockProps);
+    jest.spyOn(Array.prototype, 'flat').mockReturnValueOnce([]);
+    const spy = jest.spyOn(wrapper.instance(), 'deleteLevel');
+    wrapper.instance().deleteSetup({ preventDefault: jest.fn() });
+    expect(spy).toHaveBeenCalled();
+    expect(spy).toHaveBeenCalledWith(1);
+  });
+
+  it('should call deleteLevel function with undefined when deleteSetup is called and' +
+    ' showDeleteModal is set to false', () => {
+    const state = { ...mockState };
+    state.showDeleteModal = false;
+    wrapper.setState(state);
+    wrapper.setProps(mockProps);
+
+    jest.spyOn(Array.prototype, 'flat').mockReturnValueOnce([]);
+    const spy = jest.spyOn(wrapper.instance(), 'deleteLevel');
+    wrapper.instance().deleteSetup({ preventDefault: jest.fn() });
+    expect(spy).toHaveBeenCalled();
+    expect(spy).toHaveBeenCalledWith();
+
+    state.levelName = 'wrong value';
+    wrapper.setState(state);
+    wrapper.instance().deleteSetup({ preventDefault: jest.fn() });
+    expect(spy).toHaveBeenCalled();
+    expect(spy).toHaveBeenCalledWith();
+  });
+
+  it('should change the wrongLevelName and levelName state when handleDeleteName is called', () => {
+    const LevelName = 'Testing';
+    wrapper.setState({
+      wrongLevelName: true,
+      levelName: '',
+    });
+    expect(wrapper.state().wrongLevelName).toBe(true);
+    expect(wrapper.state().levelName).toBe('');
+
+    wrapper.instance().handleDeleteName({ target: { value: LevelName } });
+    expect(wrapper.state().wrongLevelName).toBe(false);
+    expect(wrapper.state().levelName).toBe(LevelName);
   });
 });

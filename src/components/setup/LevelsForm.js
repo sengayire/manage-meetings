@@ -4,17 +4,27 @@ import uuid from 'uuid';
 import { Input } from '../commons';
 import Button from '../commons/Button';
 import Controls from '../helpers/Controls';
+import { orderByLevel, removeDeletedLevels, flattenLocationStructureData } from '../../utils/formatSetupData';
+import MrmModal from "../commons/MrmModal";
+import "../../assets/styles/levelsForm.scss";
 
 class LevelsForm extends Component {
   state = {
     levelCounter: 1,
     levelsDetails: [],
+    showDeleteModal: false,
+    wrongLevelName: false,
+    deleteLevel: null,
+    levelName: "",
+    nodesToBeDeleted: [],
   };
 
   componentWillReceiveProps(prevProps) {
     this.props.activeLevel !== prevProps.activeLevel &&
       this.setState({ levelCounter: prevProps.activeLevel });
   }
+
+  deleteModal = React.createRef();
 
   populateLevelDetails = (val, type, index) => {
     const { levelCounter, levelsDetails } = this.state;
@@ -110,11 +120,12 @@ class LevelsForm extends Component {
     const errorState = levelsDetails;
     const position = highestLevel - 1;
     let errorArray = levelsDetails.errorInput;
+
     if (!tag) {
       errorState[position].errorInput = (errorArray && /* istanbul ignore next */ [...errorArray, 'tag']) || ['tag'];
     } else if (children.length < quantity) {
       errorState[position].errorInput = (errorArray && /* istanbul ignore next */ [...errorArray, quantity]) || [quantity];
-    } 
+    }
     if (children.length === quantity) {
       children.forEach((child) => {
         !child.name.length ? child.childError = (errorArray && /* istanbul ignore next */[...errorArray, 'levelName']) || ['levelName'] : null;
@@ -146,23 +157,115 @@ class LevelsForm extends Component {
     });
   };
 
-  removeLevelDetails = levelData => {
-    const { level, structureId } = levelData;
+  removeLevelDetails = (id) => {
     const { levelsDetails } = this.state;
-    let arr = levelsDetails;
-    const position = level - 1;
-
-    if (arr[position].quantity === 1) {
-      arr.splice(position, 1);
-    } else {
-      const newArr = arr[position].children.filter(child => child.structureId !== structureId);
-      arr[position].children = newArr;
-      arr[position].quantity -= 1;
-    }
-    this.setState({
-      levelsDetails: arr,
+    let structureList = [];
+    levelsDetails.forEach((item) =>{
+      structureList.push(item.children);
     });
-    this.props.updateCounter(arr.length);
+    this.setState({
+      structureList,
+    });
+    let newList = [...levelsDetails].map((obj) => (
+      obj.children && obj.children.find((item) => (item.structureId === id))
+    )).filter((item) => (item !== undefined));
+    this.toggleDeleteModal(newList[0]);
+  };
+
+  deleteSetup = (event) => {
+    event.preventDefault();
+    const { showDeleteModal } = this.state;
+    showDeleteModal ? this.deleteLevel(1) : this.deleteLevel()
+  };
+
+  deleteLevel = (singleLevel = 0) => {
+    let newArray;
+    const { previewBuildingStructure, flattenedStruct } = this.props;
+    const { deleteLevel, structureList, levelName, levelsDetails } = this.state;
+    const { structureId, name } = deleteLevel;
+    const structureTree = flattenedStruct.length > 0
+      ? flattenedStruct
+      : flattenLocationStructureData(levelsDetails);
+    const nodesToBeDeleted =  this.deleteTree(structureId, structureList);
+    if(singleLevel === 1){
+      newArray = removeDeletedLevels(structureTree, nodesToBeDeleted);
+      previewBuildingStructure(orderByLevel(newArray), newArray);
+      this.toggleDeleteModal();
+    } else {
+      if (levelName === name) {
+        newArray = removeDeletedLevels(structureTree, nodesToBeDeleted);
+        previewBuildingStructure(orderByLevel(newArray), newArray);
+        this.toggleDeleteModal();
+        this.setState({
+          levelName: "",
+        })
+      } else {
+        this.setState({
+          wrongLevelName: true,
+        })
+      }
+    }
+  };
+
+  deleteTree = (parent, list) => {
+    const { nodesToBeDeleted } = this.state;
+    const newNodesToBeDeleted = [...nodesToBeDeleted].flat();
+    const _nodesToBeDeleted = [parent];
+    list.forEach(list => {
+      list.forEach(node => {
+        if (_nodesToBeDeleted.find(id => node.parentId === id))
+          _nodesToBeDeleted.push(node.structureId);
+      });
+    });
+    newNodesToBeDeleted.push(_nodesToBeDeleted);
+    this.setState({
+      nodesToBeDeleted: newNodesToBeDeleted.flat(),
+    });
+    return _nodesToBeDeleted;
+  };
+
+  toggleDeleteModal = (level = {}) => {
+    this.deleteModal.current.toggleModal();
+    this.setState({
+      deleteLevel: level,
+    });
+  };
+
+  closeDeleteStructureModal = () => {
+    this.setState({
+      wrongLevelName: false,
+      showDeleteModal: false,
+      levelName: "",
+    })
+  };
+
+  handleDeleteName = (event) => {
+    this.setState({
+      levelName: event.target.value,
+      wrongLevelName: false,
+    })
+  };
+
+  deleteModalContent = () => {
+    const { deleteLevel, wrongLevelName, showDeleteModal } = this.state;
+    const name = deleteLevel !== null ? deleteLevel.name : "";
+    const wrongLevelClass = wrongLevelName !== null ? wrongLevelName :/* istanbul ignore next */"";
+    return (
+      showDeleteModal ? (
+        <p>You are about to delete the level <b>{name}</b>.</p>
+      ) : (
+        <div>
+          <p>You are about to delete a parent level. Please enter the name <b>{name}</b> to delete it</p>
+          {wrongLevelClass && /* istanbul ignore next */ <p className='wrongLevelName'>That is not the correct level name please check again.</p>}
+          <input
+            className="level-delete-modal"
+            type="text"
+            value={this.state.levelName}
+            onChange={this.handleDeleteName}
+            readOnly={false}
+          />
+        </div>
+    ));
   };
 
   toggleParentSelection = (parent, childPosition, type) => () => {
@@ -221,7 +324,6 @@ class LevelsForm extends Component {
         const childErrors = errorChild && errorChild.includes('levelName');
         const inputFieldValue = isLevel.children[index] && isLevel.children[index].name;
         const error = !inputFieldValue || childErrors;
-        const id = index + 1;
         return (
           <div className="form-input" key={index.toString()}>
             {error && /* istanbul ignore next */  this.renderError('This field cannot be blank')}
@@ -233,7 +335,7 @@ class LevelsForm extends Component {
               id={index + 1}
               inputClass={`level-input ${error && /* istanbul ignore next */ 'error'}`}
               name="levelName"
-              value={(isLevel.children[index] && isLevel.children[index].name && isLevel.children[index].id === id + 1 ) || ''}
+              value={(isLevel.children[index] && isLevel.children[index].name) || ''}
               onChange={this.handleInputChange}
             />
             {this.renderParents(index)}
@@ -246,11 +348,22 @@ class LevelsForm extends Component {
   addNewObject = () => {};
 
   render() {
-    const { levelCounter, levelsDetails } = this.state;
+    const { levelCounter, levelsDetails, showDeleteModal } = this.state;
     const details = (levelsDetails.length && levelsDetails[levelCounter - 1]) || {};
 
     return (
       <form className="level-form">
+        <MrmModal
+          title="DELETE LEVEL"
+          type={2}
+          withButton
+          showActionButton
+          handleCloseModal={this.closeDeleteStructureModal}
+          modalContent={this.deleteModalContent()}
+          handleSubmit={this.deleteSetup}
+          actionButtonText="DELETE"
+          ref={this.deleteModal}
+        />
         <div className="level-form__input">
           <label>Set a name for this level</label>
           <input

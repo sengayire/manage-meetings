@@ -3,6 +3,7 @@
  * @param {object} structureData
  * @returns {object} formatedData
  */
+/* istanbul ignore next */
 const formatData = (dataArray, structureData) => {
   const formatedData = {
     id: '',
@@ -20,6 +21,7 @@ const formatData = (dataArray, structureData) => {
  * @param {array} sortedData
  * @param {object} child
  */
+/* istanbul ignore next */
 const getparentTitle = (sortedData, child) => {
   let parent;
   sortedData.forEach((element) => {
@@ -36,12 +38,13 @@ const getparentTitle = (sortedData, child) => {
  * @param {array} arrayToSort
  * @returns {array} sortedArray
  */
+/* istanbul ignore next */
 const sortArray = (arrayToSort) => {
   const sortedArray = arrayToSort.sort((a, b) => a.level - b.level);
   return sortedArray;
 };
 /**
- * @param {array} dataArray
+ * @param {Array} dataArray
  * @returns {object}
  */
 const orderByLevel = (dataArray) => {
@@ -51,10 +54,10 @@ const orderByLevel = (dataArray) => {
   sortedData.forEach((element) => {
     const newObj = Object.assign({}, element);
     const parentTitle = getparentTitle(sortedData, element);
-    newObj.parentTitle = parentTitle ? parentTitle.name : '';
+    newObj.parentTitle = parentTitle ? /* istanbul ignore next */ parentTitle.name : '';
     newArray[element.level - 1] =
       newArray[element.level - 1] !== undefined
-        ? formatData(newArray[element.level - 1], newObj, sortedData)
+        ? /* istanbul ignore next */ formatData(newArray[element.level - 1], newObj, sortedData)
         : {
           id: '',
           children: [newObj],
@@ -67,5 +70,36 @@ const orderByLevel = (dataArray) => {
   return newArray;
 };
 
+/* istanbul ignore next */
+const flattenLocationStructureData = (levelsDetails) => {
+  const flattenData = [];
+  [...levelsDetails].map(({ tag, level, children }) => (
+    children.map(({
+      structureId, name, parentId, parentTitle,
+    }) => (
+      flattenData.push({
+        level,
+        parentId,
+        parentTitle,
+        structureId,
+        name,
+        tag,
+      })
+    ))
+  ));
+  return flattenData;
+};
+
+const removeDeletedLevels = (flattenedStructure, nodesToBeDeleted) =>
+  flattenedStructure
+    .map(item => !nodesToBeDeleted.includes(item.structureId) && item)
+    .filter(item => item !== false);
+
 // eslint-disable-next-line import/prefer-default-export
-export { orderByLevel, formatData, getparentTitle };
+export {
+  orderByLevel,
+  formatData,
+  getparentTitle,
+  removeDeletedLevels,
+  flattenLocationStructureData,
+};
