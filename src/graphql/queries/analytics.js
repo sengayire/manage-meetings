@@ -92,6 +92,7 @@ const ANALYTICS_FOR_DAILY_ROOM_EVENTS = gql`
           eventId
           noOfParticipants
           roomName
+          cancelled
         }
       }
     }

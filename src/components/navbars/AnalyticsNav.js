@@ -73,7 +73,7 @@ export class AnalyticsNav extends Component {
 
   /**
    * Updates the state with the data coming from the children
-   * componentsu
+   * components
    *
    * @param {string} type
    * @param {object} analytics
@@ -300,6 +300,7 @@ export class AnalyticsNav extends Component {
    */
   toggleView = () => {
     this.setState({
+      componentsDoneLoading: [],
       isActivity: !this.state.isActivity,
     });
   };
@@ -651,7 +652,6 @@ export class AnalyticsNav extends Component {
       </tbody>,
     );
   };
-
   render() {
     const {
       startDate,
@@ -671,7 +671,13 @@ export class AnalyticsNav extends Component {
       isFutureDateSelected,
     };
     const style = {};
-    style.display = componentsDoneLoading.length === 3 ? 'block' : 'none';
+    if (componentsDoneLoading.length === 3) {
+      style.display = 'block';
+    } else if (componentsDoneLoading[0] === 'analyticsForDailyRoomEvents') {
+      style.display = 'block';
+    } else {
+      style.display = 'none';
+    }
     return (
       <Fragment>
         <div className="analytics-cover ">
@@ -713,7 +719,12 @@ export class AnalyticsNav extends Component {
             updateParent={this.updateParent}
           />
         )}
-        {isActivity && <AnalyticsActivityComponent dateValue={dates} />}
+        {isActivity &&
+        <AnalyticsActivityComponent
+          queryCompleted={this.handleQueryCompleted}
+          dateValue={dates}
+        />
+        }
       </Fragment>
     );
   }

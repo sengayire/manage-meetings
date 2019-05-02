@@ -9,6 +9,7 @@ import {
   LEAST_BOOKED_ROOMS_ANALYTICS,
   ANALYTICS_BOOKINGS_COUNT,
   MOST_BOOKED_ROOMS_ANALYTICS,
+  ANALYTICS_FOR_DAILY_ROOM_EVENTS,
 } from '../../graphql/queries/analytics';
 import { decodeTokenAndGetUserData } from '../../utils/Cookie';
 import apolloClient from '../../utils/ApolloClient';
@@ -171,6 +172,31 @@ const getRoomsStructure = async (client = apolloClient) => {
   return data;
 };
 
+const getAnalyticForDailyRoomsEvents = async ({ startDate, endDate }, client = apolloClient) => {
+  try {
+    const data = client.readQuery(
+      {
+        query: ANALYTICS_FOR_DAILY_ROOM_EVENTS,
+        variables: {
+          startDate,
+          endDate,
+        },
+      },
+      true,
+    );
+    return data;
+  } catch (error) {
+    const { data } = await client.query({
+      query: ANALYTICS_FOR_DAILY_ROOM_EVENTS,
+      variables: {
+        startDate,
+        endDate,
+      },
+    });
+    return data;
+  }
+};
+
 export {
   getUserDetails,
   getAllLocations,
@@ -181,4 +207,5 @@ export {
   getMostBookedRooms,
   getBookingsCount,
   getRoomsStructure,
+  getAnalyticForDailyRoomsEvents,
 };

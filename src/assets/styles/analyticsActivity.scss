@@ -1,147 +1,138 @@
 @import './variables';
 
-.meeting-title {
-  display: grid;
-  grid-template-columns: 2fr 1fr 2fr 1fr;
-  grid-template-rows: 80px 200px;
-  height: 21px;
+
+.room__events {
+  position: relative;
   width: 100%;
-  margin-left: 0px;
-  margin-top: 22px;
-  color: map-get($color-black, 600);
-  font-size: 16px;
-  font-weight: bold;
-  line-height: 21px;
-  .title-heading {
-    margin-left: 5%;
-  }
-  .room-heading {
-    margin-left: -19%;
-  }
-  .participant-heading {
-    margin-left: 1%;
-  }
-}
+  margin-top: 20px;
 
-.activity {
-  font-family: $font-light;
-  margin-top: 1%;
-  height: auto;
-  background-color: map-get($color-white, 000);
-  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.1);
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 23px;
-}
-.activity > .activity-info-row .title {
-  padding-left: 3%;
-}
-.activity-day {
-  margin-left: 20px;
-  color: $color-primary;
-  font-weight: bold;
-  padding-top: 30px;
-  padding-bottom: 10px;
-}
-
-.activity > .activity-info-row {
-  color: map-get($color-black, 600);
-  .title {
-    padding-left: 3%;
-  }
-}
-.activity > div:nth-child(5) {
-  height: 75px;
-  width: 1280px;
-  background-color: map-get($color-white, 000);
-  box-shadow: none;
-}
-
-.activity-info-row {
-  font-size: 16px;
-  display: grid;
-  grid-template-columns: 30% 15% 40% 10%;
-  background-color: map-get($color-white, 000);
-  box-shadow: inset 0 -1px 0 0 $color-border;
-  padding: 1.875em 0.875em;
-}
-
-.activity-info-row > div:nth-child(1) {
-  margin-left: 20%;
-}
-.activity-info-row > div:nth-child(4n) {
-  margin-left: 1%;
-}
-
-.title {
-  .time {
-    height: 18px;
-    width: 128px;
-    color: map-get($color-black, 100);
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 18px;
-  }
-}
-.room {
-  padding-left: 15px;
-}
-.status {
-  padding-left: 40px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  margin-top: -9px;
-  .started,
-  .ended,
-  .cancelled {
-    padding-left: 20px;
-    height: 34px;
-    width: 155px;
-    border: 1px solid $color-border;
-    border-radius: 17px;
-    background-color: map-get($color-white, 000);
-    line-height: 2.7;
-  }
-  .started {
-    bdi {
-      display: inline-block;
-      text-align: right;
-      height: 18px;
-      width: 70px;
-      color: $color-primary;
-      font-size: 14px;
+    .meeting-title {
+      display: grid;
+      grid-template-columns: 2fr 1fr 2fr 1fr;
+      text-align: start;
+      width: 100%;
+      height: 30px;
+      align-items: end;
+      font-family: $font;
+      font-size: 16px;
       font-weight: bold;
-      line-height: 18px;
+      line-height: 21px;
+      .title-heading{
+        padding-left: 1.175em;
+      }
+    }
+
+    .activity {
+      font-family: $font-light;
+      margin-top: 1%;
+      height: auto;
+      background-color: map-get($color-white, 000);
+      box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.1);
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 23px;
+      &-day {
+        display: flex;
+        color: $color-primary;
+        font-weight: bold;
+        padding: 30px 0 10px 0.975em;
+      }
+      &-info-row {
+      font-size: 16px;
+      display: grid;
+      grid-template-columns: 2fr 1fr 2fr 1fr;
+      align-items: center;
+      text-align: start;
+      background-color: map-get($color-white, 000);
+      box-shadow: inset 0 -1px 0 0 $color-border;
+      padding: 1.875em 0;
+
+    .title {
+      padding-left: 1.175em;
+
+      .time {
+        height: 18px;
+        width: 128px;
+        color: map-get($color-black, 100);
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 18px;
     }
   }
-  .ended {
-    bdi {
-      display: inline-block;
-      text-align: right;
-      height: 18px;
-      width: 70px;
-      color: $color-danger;
-      font-size: 14px;
-      font-weight: bold;
-      line-height: 18px;
+
+    .status {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      width: 90%;
+
+      .started,
+      .ended,
+      .cancelled {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        height: 34px;
+        width: 155px;
+        border: 1.2px solid $color-border;
+        border-radius: 17px;
+        background-color: map-get($color-white, 000);
+      }
+
+      .started {
+        bdi {
+          width: 70px;
+          color: $color-primary;
+          font-size: 14px;
+          font-weight: bold;
+        }
+      }
+
+      .ended {
+        bdi {
+          color: $color-danger;
+        }
+      }
+
+     .cancelled {
+       width: 95px;
+       color: $color-danger;
+       font-weight: bold;
+     }
+    }
+
+    .participants {
+      display: grid;
+      grid-template-columns: .4fr 1.9fr;
+
+      span {
+        color: map-get($color-black, 600);
+      }
     }
   }
-  .cancelled {
-    width: 95px;
-    color: $color-danger;
-    font-weight: bold;
+}
+  .overlay {
+    top: 5%;
+    height: 95%;
+
+    @media (min-width: 1080px) and (max-width: 1900px) {
+      top: 4.28%;
+      height: 96%;
+    }
+  }
+  .Pagination-spinner {
+    height: 0;
+  }
+
+  #average-meeting + .Pagination-spinner > .centered  >.spinner {
+    margin: auto;
+    top: 25em;
+    position: relative;
   }
 }
-
-.participants {
-  display: grid;
-  grid-template-columns: 1fr 1.9fr;
-  span {
-    display: inline-block;
-  }
-  img {
-    margin-left: 1px;
-  }
+.activity_error {
+  height: 50vh;
+  display: flex;
+  justify-content: center;
 }
 
 @media (min-width: 1200px) and (max-width: 1400px) {
@@ -149,7 +140,7 @@
     width: 1170px;
   }
 
-  .activity > div:nth-child(5) {
+  .activity>div:nth-child(5) {
     width: 1170px;
   }
 }

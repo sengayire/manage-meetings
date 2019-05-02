@@ -1,16 +1,52 @@
-import React, { Component, Fragment } from 'react';
-import { Query } from 'react-apollo';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import uuid from 'uuid';
 import '../assets/styles/analyticsActivity.scss';
 import { groupIcon } from '../utils/images/images';
 import dateChecker from '../utils/checkDate';
-import Spinner from '../components/commons/Spinner';
-import { ANALYTICS_FOR_DAILY_ROOM_EVENTS } from '../graphql/queries/analytics';
+import Overlay from '../components/commons/Overlay';
+import { getAnalyticForDailyRoomsEvents } from '../components/helpers/QueriesHelpers';
+import ErrorIcon from '../components/commons/ErrorIcon';
+import meetings from '../utils/activityData';
 
 export class AnalyticsActivity extends Component {
-  state = {};
+  state = {
+    analyticsForDailyRoomEvents: meetings,
+    loading: true,
+  };
 
+  componentDidMount() {
+    this.getAnalyticsForDailyRoomEvents();
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    const { analyticsForDailyRoomEvents } = this.state;
+    if (
+      analyticsForDailyRoomEvents.DailyRoomEvents &&
+      analyticsForDailyRoomEvents.DailyRoomEvents.length !== 0 &&
+      prevState.analyticsForDailyRoomEvents !== analyticsForDailyRoomEvents
+    ) {
+      this.props.queryCompleted('analyticsForDailyRoomEvents');
+    }
+
+    if (prevProps.dateValue !== this.props.dateValue) {
+      // eslint-disable-next-line react/no-did-update-set-state
+      this.setState({
+        loading: true,
+        analyticsForDailyRoomEvents: meetings,
+      });
+      this.getAnalyticsForDailyRoomEvents();
+    }
+  }
+
+  getAnalyticsForDailyRoomEvents = async () => {
+    const { dateValue } = this.props;
+    const { analyticsForDailyRoomEvents } = await getAnalyticForDailyRoomsEvents(dateValue);
+    this.setState({
+      analyticsForDailyRoomEvents,
+      loading: false,
+    });
+  };
   meetingsData = dailyActivityData => (
     <div>
       {dailyActivityData.map(meeting => (
@@ -23,14 +59,20 @@ export class AnalyticsActivity extends Component {
                   <div>{event.eventSummary}</div>
                 </div>
                 <div className="room">{event.roomName}</div>
-                <div className="status">
-                  <div className="started">
-                    Started <bdi>{event.startTime}</bdi>
+                {event.cancelled ? (
+                  <div className="status">
+                    <div className="cancelled">Cancelled</div>
                   </div>
-                  <div className="ended">
-                    Ended <bdi>{event.endTime}</bdi>
+                ) : (
+                  <div className="status">
+                    <div className="started">
+                      Started <bdi>{event.startTime}</bdi>
+                    </div>
+                    <div className="ended">
+                      Ended <bdi>{event.endTime}</bdi>
+                    </div>
                   </div>
-                </div>
+                )}
                 <div className="participants">
                   <img src={groupIcon} alt="" />
                   <span>{event.noOfParticipants}</span>
@@ -43,48 +85,47 @@ export class AnalyticsActivity extends Component {
     </div>
   );
 
-  render() {
-    const {
-      dateValue: { startDate, endDate },
-    } = this.props;
-    return (
-      <Query
-        query={ANALYTICS_FOR_DAILY_ROOM_EVENTS}
-        variables={{
-          startDate,
-          endDate,
-        }}
-      >
-        {({ data: { analyticsForDailyRoomEvents }, loading }) => {
-          if (loading) {
-            return (
-              <center>
-                <Spinner />
-              </center>
-            );
-          }
+  renderDailyRoomEvents = () => (
+    <div className="meeting-title">
+      <div className="title-heading">Meeting Title</div>
+      <div className="room-heading">Booked Room</div>
+      <div className="status-heading">Status</div>
+      <div className="participant-heading">Participants</div>
+    </div>
+  );
 
-          return (
-            <Fragment>
-              <div className="meeting-title">
-                <div className="title-heading">Meeting Title</div>
-                <div className="room-heading">Booked Room</div>
-                <div className="status-heading">Status</div>
-                <div className="participant-heading">Participants</div>
-              </div>
-              {this.meetingsData(analyticsForDailyRoomEvents.DailyRoomEvents)}
-            </Fragment>
-          );
-        }}
-      </Query>
+  render() {
+    const { loading, analyticsForDailyRoomEvents } = this.state;
+    if (loading && analyticsForDailyRoomEvents.DummyDailyRoomEvents) {
+      return (
+        <center className="room__events">
+          {this.renderDailyRoomEvents()}
+          <Overlay id="average-meeting" />
+          {this.meetingsData(analyticsForDailyRoomEvents.DummyDailyRoomEvents)}
+        </center>
+      );
+    } else if (analyticsForDailyRoomEvents.DailyRoomEvents.length === 0) {
+      return (
+        <div className="activity_error">
+          <ErrorIcon message="No resource found" />
+        </div>
+      );
+    }
+    return (
+      <center className="room__events">
+        {this.renderDailyRoomEvents()}
+        {this.meetingsData(analyticsForDailyRoomEvents.DailyRoomEvents)}
+      </center>
     );
   }
 }
-export default AnalyticsActivity;
 
 AnalyticsActivity.propTypes = {
+  queryCompleted: PropTypes.func.isRequired,
   dateValue: PropTypes.shape({
-    startDate: PropTypes.string,
-    endDate: PropTypes.string,
+    startDate: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+    endDate: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
   }).isRequired,
 };
+
+export default AnalyticsActivity;

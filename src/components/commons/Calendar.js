@@ -8,6 +8,8 @@ import PickRange from '../helpers/RangePicker';
 // styles
 import '../../assets/styles/calendar.scss';
 
+moment.suppressDeprecationWarnings = true;
+
 /**
  * Reusable component for Calendar
  *
@@ -32,8 +34,8 @@ class Calendar extends Component {
 
   state = {
     isCalendarOpen: false,
-    startDate: this.props.startDate || moment().format('MMM DD Y'),
-    endDate: this.props.endDate || moment().format('MMM DD Y'),
+    startDate: this.props.startDate || moment().format('MM-DD-YYYY'),
+    endDate: this.props.endDate || moment().format('MM-DD-YYYY'),
   };
 
   /**
@@ -91,7 +93,7 @@ class Calendar extends Component {
               </button>
               <button
                 type="button"
-                onClick={this.sendDate}
+                onClick={() => this.sendDate()}
                 className="calendar__button__item apply_button"
               >
                 Apply
