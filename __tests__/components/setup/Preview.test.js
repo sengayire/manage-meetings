@@ -48,7 +48,7 @@ describe('Preview page component', () => {
 
     it('it renders  This is your building on the first paragraph on the structure preview when one level is added.', () => {
       const structurePreviewParagraph = wrapper.find('.structure-preview p').first();
-      expect(structurePreviewParagraph.text()).toContain('This is your Building');
+      expect(structurePreviewParagraph.text()).toContain('These are your Building');
     });
 
     it('it renders next icon in a level when preview buttons are more than four and none when its not more.', () => {
@@ -119,7 +119,7 @@ describe('Preview page component', () => {
       wrapper.setProps(multipleLevelsProps);
       const structurePreviewParagraph1 = wrapper.find('.structure-preview p').at(0);
       const structurePreviewParagraph2 = wrapper.find('.structure-preview p').at(1);
-      expect(structurePreviewParagraph1.text()).toContain('This is your Building');
+      expect(structurePreviewParagraph1.text()).toContain('These are your Buildings');
       expect(structurePreviewParagraph2.text()).toContain(' Within Floor you can access');
     });
 

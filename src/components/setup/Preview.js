@@ -251,7 +251,9 @@ class Preview extends Component {
       return (
         <Fragment key={level}>
           {level === 1 ? (
-            <p>This is your {values.tag}</p>
+            values && values.quantity < 2 ?
+              <p>This is your {values.tag}</p> :
+              <p>These are your {values.tag}s</p>
           ) : (
             <p> Within {values.tag} you can access</p>
           )}
