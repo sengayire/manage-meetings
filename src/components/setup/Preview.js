@@ -183,7 +183,7 @@ class Preview extends Component {
 
     addLevelSetup({ flattenedData })
       .then(() => {
-        /** Update state to Notify user of success of adding of level setup data */
+        /** Notify user of success of adding of level setup data */
         flattenedData.length > 1
           ? message = 'Structures added Successfully'
           : message = 'Structure added Successfully';
@@ -193,7 +193,7 @@ class Preview extends Component {
         handleClick('RoomSetupView')();
       })
       .catch((err) => {
-        /** Update state to Notify user on failure to add level setup data */
+        /** Notify user on failure to add level setup data */
         this.setState({
           isSubmiting: false,
         });

@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable  no-unused-expressions */
 import React, { createRef } from 'react';
 import '../../../assets/styles/resources.scss';
 import AddResource from './AddResources'; //eslint-disable-line
@@ -15,6 +16,7 @@ import {
   getUserDetails,
 } from '../../../../src/components/helpers/QueriesHelpers';
 import DeleteResource from '../../setup/resources/DeleteResource';
+import ErrorIcon from '../../commons/ErrorIcon';
 
 class Resources extends React.Component {
   state = {
@@ -26,6 +28,7 @@ class Resources extends React.Component {
     currentPage: 1,
     perPage: 5,
     user: {},
+    error: false,
   };
 
   componentDidMount() {
@@ -41,19 +44,30 @@ class Resources extends React.Component {
    */
   getAllResources = async (perPage, page) => {
     this.setState({ isFetching: true });
-    const resourcesData = await getAllResources(perPage, page);
     const allRemoteRooms = await getAllRemoteRooms();
     const user = await getUserDetails();
-    if (resourcesData.resources) {
-      this.setState(prevState => ({
-        user,
-        resourcesData: { ...prevState.resourcesData, ...resourcesData },
-        remoteRooms: [...allRemoteRooms.rooms],
-        currentPage: page,
-        isFetching: false,
-        dataFetched: true,
-        perPage,
-      }));
+    try {
+      const resourcesData = await getAllResources(perPage, page);
+      if (resourcesData.resources) {
+        this.setState(prevState => ({
+          user,
+          resourcesData: { ...prevState.resourcesData, ...resourcesData },
+          remoteRooms: [...allRemoteRooms.rooms],
+          currentPage: page,
+          isFetching: false,
+          dataFetched: true,
+          perPage,
+        }));
+      }
+    } catch (e) {
+      e.graphQLErrors.map(res => (
+        res.message === 'No more resources'
+          ? this.setState({
+            isFetching: false,
+            error: true,
+          })
+          : ''
+      ));
     }
   };
 
@@ -140,10 +154,13 @@ class Resources extends React.Component {
       isFetching,
       currentPage,
       perPage,
+      error,
     } = this.state;
+
     if (isFetching) {
       return <Spinner />;
     }
+
     return (
       <div className="setup-container">
         <div className="resource-box">
@@ -157,7 +174,8 @@ class Resources extends React.Component {
           <div>
             {resourcesData.resources
               ? resourcesData.resources.map(resource => this.resourceList(resource))
-              : null}
+              : error ? <ErrorIcon message="No resource found" />
+              : ''}
           </div>
           {resourcesData.resources ? (
             <Pagination

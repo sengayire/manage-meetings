@@ -10,6 +10,7 @@
     top: -20px;
     left: 0px;
     height: 20px;
+    float: right;
   }
   .add-resource-controls {
     margin-top: 25px;
@@ -76,6 +77,21 @@
       }
     }
 
+    .form-action-buttons {
+      button:first-child, button:first-child:hover{
+        background-color: map-get($color-white,000);
+        border: 1px solid $color-primary;
+        color: $color-primary;
+      }
+
+      button:nth-child(2) , button:nth-child(2):hover {
+        background-color: map-get($color-amber, 300) !important;
+        border: 1px solid map-get($color-amber, 300);
+        color: map-get($color-white, 000);
+      }
+
+    }
+
     .loading-btn-div {
       margin-top: 1rem;
     }
@@ -118,7 +134,7 @@
 
   @media screen and (max-width: 639px) {
     width: 78%;
-    
+
     input[type='text'] {
       min-width: 29.3em;
     }
@@ -132,7 +148,7 @@
   @media screen and (min-width: 768px) and (orientation: portrait) {
     width: 52.5%;
   }
-  
+
   @media screen and (min-width: 1024) and (orientation: landscape) {
     width: 49%;
     height: 33.5%;

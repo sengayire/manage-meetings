@@ -7,11 +7,6 @@ export const GET_RESOURCES_QUERY = gql`
         id
         name
         quantity
-        roomId
-        room {
-          id
-          name
-        }
       }
       pages
       hasNext
