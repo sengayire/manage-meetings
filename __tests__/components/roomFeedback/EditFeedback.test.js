@@ -21,11 +21,6 @@ describe('Unit tests for the EditFeedback Component', () => {
     expect(expectedTime).toEqual('15:42');
   });
 
-  it('should handleCloseModal()', () => {
-    wrapper.instance().handleCloseModal();
-    expect(wrapper.state('closeModal')).toEqual(true);
-  });
-
   it('should handleModalStateChange()', () => {
     wrapper.instance().handleModalStateChange();
     expect(wrapper.state('closeModal')).toBe(false);

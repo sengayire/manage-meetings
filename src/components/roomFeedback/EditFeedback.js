@@ -1,5 +1,5 @@
 /* eslint-disable import/no-named-as-default */
-import React, { Component } from 'react';
+import React, { Component, createRef } from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'react-apollo';
 import toastr from 'toastr';
@@ -82,12 +82,17 @@ export class EditFeedback extends Component {
 
   state = { ...this.initialState() }; // eslint-disable-line react/sort-comp
 
+  modal = createRef();
+
   /**
    * It closes a modal
    *
    * @returns {void}
    */
-  handleCloseModal = () => this.setState({ ...this.initialState(), closeModal: true, error: {} });
+  handleCloseModal = () => {
+    this.modal.current.toggleModal();
+    this.setState({ ...this.initialState(), error: {} });
+  }
 
   /**
    * It changes the state of the modal
@@ -421,6 +426,7 @@ export class EditFeedback extends Component {
     return (
       <MrmModal
         title="EDIT QUESTION"
+        ref={this.modal}
         buttonText="Edit"
         modalButtonClassName="edit-button"
         modalContent={this.renderQuestionValues()}
@@ -429,7 +435,6 @@ export class EditFeedback extends Component {
         handleSubmit={this.validateInputFields}
         isLoading={this.state.isLoading}
         showActionButton={this.state.showEditQuestionButton}
-        handleCloseModal={this.handleCloseModal}
       />
     );
   }

@@ -1,15 +1,14 @@
 import React, { Component, createRef } from 'react';
-import { graphql } from 'react-apollo';
 import toastr from 'toastr';
 import PropTypes from 'prop-types';
 import MrmModal from '../commons/MrmModal';
 import SelectImage from '../commons/SelectImage';
 import { SelectInput, Input } from '../commons';
-import { ADD_ROOM } from '../../graphql/mutations/Rooms';
 import { getAllRemoteRooms, getRoomsStructure, getUserDetails, getAllLocations } from '../helpers/QueriesHelpers';
 import orderByLevel from '../../utils/formatSetupData';
 import notification from '../../utils/notification';
 import stripTypeNames from '../helpers/StripTypeNames';
+import addRoomMutation from '../helpers/mutationHelpers/rooms';
 import getImageUrl from '../helpers/ImageUpload';
 import '../../assets/styles/addNewRoom.scss';
 
@@ -41,6 +40,7 @@ export class AddNewRoom extends Component {
     const userLocation = allLocations.find(location => location.name === user.location);
     this.setState({
       locationId: userLocation.id,
+      location: user.location,
     });
   }
 
@@ -130,10 +130,12 @@ export class AddNewRoom extends Component {
   };
 
   isValidEntry = ({
-    rooms, remoteRoomName, roomName, roomType, files, roomCapacity,
+    rooms, remoteRoomName, roomName, roomType, files, roomCapacity, levels, levelInput,
   }) => {
     if (roomName && roomCapacity && roomType && remoteRoomName
-      && files.length && rooms.length) return true;
+      && files.length && rooms.length) {
+      if (levels.length === levelInput.length) return true;
+    }
     return false;
   }
 
@@ -145,28 +147,29 @@ export class AddNewRoom extends Component {
       } = this.state;
       const roomId = rooms.filter(room => room.name === remoteRoomName);
       const calendarId = roomId.length ? roomId[0].calendarId : null;
+      const variables = {
+        name: roomName,
+        capacity: roomCapacity,
+        roomType,
+        calendarId,
+        roomLabels: levelInput.map(level => level.value),
+        locationId: Number(locationId),
+      };
       getImageUrl('upload/', files[0])
         .then((url) => {
+          variables.imageUrl = url;
           this.setState({ imageUrl: url, uploading: false }, () => {
-            this.props.addRoom({
-              variables: {
-                imageUrl: url,
-                name: roomName,
-                capacity: roomCapacity,
-                roomType,
-                calendarId,
-                roomLabels: levelInput.map(level => level.value),
-                locationId: Number(locationId),
-              },
-            }).then((res) => {
-              this.toggleLoading();
-              this.handleCloseModal();
-              notification(toastr, 'success', `${res.data.createRoom.room.name} Successfully added`)();
-            }).catch((err) => {
-              this.toggleLoading();
-              this.handleCloseModal();
-              notification(toastr, 'error', err.message)();
-            });
+            addRoomMutation(variables, this.state.location)
+              .then((data) => {
+                this.props.updateRoomData(data);
+                this.toggleLoading();
+                this.handleCloseModal();
+                notification(toastr, 'success', `${roomName} Successfully added`)();
+              }).catch((err) => {
+                this.toggleLoading();
+                this.handleCloseModal();
+                notification(toastr, 'error', err.message)();
+              });
           });
         });
     } else notification(toastr, 'error', 'All fields are required')();
@@ -368,7 +371,7 @@ export class AddNewRoom extends Component {
 }
 
 AddNewRoom.propTypes = {
-  addRoom: PropTypes.func.isRequired,
+  updateRoomData: PropTypes.func.isRequired,
 };
 
-export default graphql(ADD_ROOM, { name: 'addRoom' })(AddNewRoom);
+export default AddNewRoom;

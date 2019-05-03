@@ -1,6 +1,6 @@
 /* eslint-disable import/no-named-as-default */
 /* eslint react/no-array-index-key: 0 */
-import React, { Component } from 'react';
+import React, { Component, createRef } from 'react';
 import moment from 'moment';
 import { graphql } from 'react-apollo';
 import toastr from 'toastr';
@@ -64,6 +64,8 @@ export class AddQuestion extends Component {
     });
   }
 
+  modal = createRef();
+
   /**
    * It toggles the visibility of the modal
    *
@@ -71,6 +73,7 @@ export class AddQuestion extends Component {
    */
   handleCloseModal = () => {
     this.setState({ closeModal: true });
+    this.modal.current.toggleModal();
   };
 
   /**
@@ -385,6 +388,7 @@ export class AddQuestion extends Component {
   render() {
     return (
       <MrmModal
+        ref={this.modal}
         title="ADD QUESTION"
         buttonText="Add Question"
         modalButtonClassName="add-question-button"

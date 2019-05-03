@@ -22,13 +22,6 @@ describe('AddQuestion component', () => {
     expect(spy).toHaveBeenCalled();
   });
 
-  it('should change closeModal to true when handleCloseModal is called', () => {
-    const shallowWrapper = shallow(<AddQuestion {...initProps} />);
-    expect(shallowWrapper.state('closeModal')).toEqual(false);
-    shallowWrapper.instance().handleCloseModal();
-    expect(shallowWrapper.state('closeModal')).toEqual(true);
-  });
-
   it('should change closeModal to false when handleModalStateChange is called', () => {
     const shallowWrapper = shallow(<AddQuestion {...initProps} />);
     shallowWrapper.setState({ closeModal: true });

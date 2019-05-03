@@ -83,6 +83,13 @@ class RoomSetup extends Component {
   }
 
   /**
+   * This method updates the state of allRooms when a room is created
+   *
+   * @param {object} roomCreated - An object containing details the rooms fetched from the backend
+   */
+  updateRoomData = roomCreated => this.setState({ allRooms: roomCreated });
+
+  /**
   * It handles creating of rooms
   *
   * @returns {jsx}
@@ -131,7 +138,6 @@ class RoomSetup extends Component {
     const {
       isFetching, allRooms: { allRooms }, currentPage, dataFetched, location, error,
     } = this.state;
-
     return (
       <div className="setup-container">
         {
@@ -143,7 +149,7 @@ class RoomSetup extends Component {
               }
             </div>
             <div className="add-new-resource">
-              <AddNewRoomComponent />
+              <AddNewRoomComponent updateRoomData={this.updateRoomData} />
             </div>
           </div>
         }
