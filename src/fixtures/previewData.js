@@ -222,6 +222,26 @@ export const previeDataWithoutTag = [
   },
 ];
 
+export const previeDataWithChildWithEmptyName = [
+  {
+    structureId: 'c1a63f0e-72dc-4924-9f31-4279a8936efe',
+    level: 1,
+    children: [
+      {
+        structureId: '4ff98669-5ba0-4f2b-a858-a51df4109879',
+        level: 1,
+        name: '',
+        parentId: '',
+        parentTitle: '',
+      },
+    ],
+    parentId: null,
+    parentTitle: '',
+    quantity: 1,
+    tag: '',
+  },
+];
+
 export const previeDataWithoutQuantity = [
   {
     structureId: 'c1a63f0e-72dc-4924-9f31-4279a8936efe',

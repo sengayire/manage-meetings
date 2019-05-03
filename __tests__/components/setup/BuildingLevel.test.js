@@ -3,7 +3,7 @@ import { mount, shallow } from 'enzyme';
 import BuildingSetup from '../../../src/components/setup/BuildingLevel';
 import * as QueryHelper from '../../../src/components/helpers/QueriesHelpers';
 import { user, allLocations, level, validLevel, invalidLevel, mockDataStructure } from '../../../__mocks__/setup/BuildingLevel';
-import { previewData, previeDataWithoutTag, previeDataWithoutQuantity, previeDataWithChildrenLessThanQuantity } from '../../../src/fixtures/previewData';
+import { previewData, previeDataWithoutTag, previeDataWithoutQuantity, previeDataWithChildrenLessThanQuantity, previeDataWithChildWithEmptyName } from '../../../src/fixtures/previewData';
 import * as orderByLevels from '../../../src/utils/formatSetupData';
 
 describe('building setup component', () => {
@@ -22,7 +22,7 @@ describe('building setup component', () => {
 
     it('Should check that the child level is invalid', () => {
       const error = wrapper.instance().validateChild(invalidLevel, 2);
-      expect(error).toEqual([]);
+      expect(error.length).toBe(1);
     });
   });
 
@@ -172,6 +172,9 @@ describe('building setup component', () => {
     expect(spy).toHaveBeenCalled();
     component.instance().levels.current.state.levelsDetails
     = previeDataWithChildrenLessThanQuantity;
+    component.instance().addNewLevel({ preventDefault: jest.fn(), target: { className: 'add' } });
+    expect(spy).toHaveBeenCalled();
+    component.instance().levels.current.state.levelsDetails = previeDataWithChildWithEmptyName;
     component.instance().addNewLevel({ preventDefault: jest.fn(), target: { className: 'add' } });
     expect(spy).toHaveBeenCalled();
   });

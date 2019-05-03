@@ -43,8 +43,10 @@ class LevelsForm extends Component {
         name: val,
         structureId: detailsPosition[index - 1].structureId,
         parentId: '',
+        id: index,
         parentTitle: '',
         level: levelCounter,
+        childError: null,
       };
       return (detailsPosition = arr);
     };
@@ -55,8 +57,10 @@ class LevelsForm extends Component {
             name: val,
             structureId: (detailsPosition && detailsPosition.structureId) || uuid(),
             parentId: '',
+            id: index,
             parentTitle: '',
             level: levelCounter,
+            childError: null,
           },
         ])
       : children.length >= index
@@ -67,8 +71,10 @@ class LevelsForm extends Component {
               name: val,
               structureId: uuid(),
               parentId: '',
+              id: index,
               parentTitle: '',
               level: levelCounter,
+              childError: null,
             },
           ]; // new entry
   };
@@ -99,18 +105,20 @@ class LevelsForm extends Component {
    */
 
   updateErrorState = highestLevel => {
-    const { levelsDetails } = this.state;
+    const { levelsDetails, levelCounter } = this.state;
     const { tag, quantity, children } = levelsDetails[highestLevel - 1];
     const errorState = levelsDetails;
     const position = highestLevel - 1;
     let errorArray = levelsDetails.errorInput;
-
     if (!tag) {
-      errorState[position].input = (errorArray && /* istanbul ignore next */ [...errorArray, 'tag']) || ['tag'];
-    } else if (!quantity) {
-      errorState[position].input = (errorArray && /* istanbul ignore next */ [...errorArray, 'quantity']) || ['quantity'];
+      errorState[position].errorInput = (errorArray && /* istanbul ignore next */ [...errorArray, 'tag']) || ['tag'];
     } else if (children.length < quantity) {
-      errorState[position].input = (errorArray && /* istanbul ignore next */ [...errorArray, quantity]) || [quantity];
+      errorState[position].errorInput = (errorArray && /* istanbul ignore next */ [...errorArray, quantity]) || [quantity];
+    } 
+    if (children.length === quantity) {
+      children.forEach((child) => {
+        !child.name.length ? child.childError = (errorArray && /* istanbul ignore next */[...errorArray, 'levelName']) || ['levelName'] : null;
+      });
     }
 
     this.setState({
@@ -178,7 +186,7 @@ class LevelsForm extends Component {
       return (
         !level.length || !level[index] || !level[index].parentId
           ? (
-            <div className={this.props.missingParent ? this.props.missingParent :'select-parent'}>
+            <div className={this.props.missingParent ? /* istanbul ignore next */ this.props.missingParent :'select-parent'}>
               {parentLevels.children.map((parent, i) => (
                 <span
                   key={(i + 1).toString()}
@@ -187,6 +195,7 @@ class LevelsForm extends Component {
                 >{parent.name}
                 </span>
               ))}
+              {this.props.missingParent &&/* istanbul ignore next */ this.renderError('Child level must belong to a parent level')}
             </div>)
           : (
             <div className="active-parent">
@@ -201,19 +210,21 @@ class LevelsForm extends Component {
     }
   };
 
-  renderError = () => <span className="error-text">This field cannot be blank</span>;
+  renderError = (message) => <span className="error-text">{message}</span>;
 
   displayLevelsInput = ({ levelCounter, levelsDetails }) => {
     const isLevel = (levelsDetails.length && levelsDetails[levelCounter - 1]) || [];
     const { errorInput = [], quantity } = isLevel;
-
     return (
       [...Array(quantity || 0)].map((ind, index) => {
-        const error = errorInput && errorInput.includes(index + 1);
-
+        const errorChild = isLevel.children[index] && isLevel.children[index].childError;
+        const childErrors = errorChild && errorChild.includes('levelName');
+        const inputFieldValue = isLevel.children[index] && isLevel.children[index].name;
+        const error = !inputFieldValue || childErrors;
+        const id = index + 1;
         return (
           <div className="form-input" key={index.toString()}>
-            {error && /* istanbul ignore next */  this.renderError()}
+            {error && /* istanbul ignore next */  this.renderError('This field cannot be blank')}
             <Input
               type="text"
               placeholder="eg. Epic Tower"
@@ -222,7 +233,7 @@ class LevelsForm extends Component {
               id={index + 1}
               inputClass={`level-input ${error && /* istanbul ignore next */ 'error'}`}
               name="levelName"
-              value={(isLevel.children[index] && isLevel.children[index].name) || ''}
+              value={(isLevel.children[index] && isLevel.children[index].name && isLevel.children[index].id === id + 1 ) || ''}
               onChange={this.handleInputChange}
             />
             {this.renderParents(index)}

@@ -105,7 +105,7 @@ class BuildingLevel extends Component {
     } = this.levels.current;
     const { children, tag, quantity } = levelsDetails[this.state.levelCounter - 1] || {};
 
-    return tag && children.length === quantity && children.some(elem => elem.name);
+    return tag && children.length === quantity && children.every(elem => elem.name.length);
   };
 
   /**
@@ -139,24 +139,25 @@ class BuildingLevel extends Component {
       addNewObject,
     } = this.levels.current;
     const { levelCounter } = this.state;
-
     if (!levelsDetails.length || levelsDetails[levelCounter - 1] === undefined) {
       return notification(toastr, 'error', `Please fill the form for level ${levelCounter}`)();
     }
 
+    const details = (levelsDetails.length && levelsDetails[levelCounter - 1]) || {};
+    if (details.quantity === undefined || !details.quantity) {
+      return notification(toastr, 'error', "You can't have 0 levels in your location")();
+    }
 
     const error = this.validateChild(levelsDetails, levelCounter);
 
     if (error.length > 0) {
-      const prevLevel = levelCounter - 1;
       this.setState({
         erroredChild: 'missing-parent',
       });
-      return notification(toastr, 'error', `Levels within level ${levelCounter} must have a parent from level ${prevLevel}`)();
     }
 
     const isValid = this.validateLevelsDetails();
-    if (isValid) {
+    if (isValid && !error.length) {
       if (className === 'add-level-button') { this.updateCounter(); }
       if (className !== 'add-level-button') { this.updateLevelsRelationship(); }
       const childrenLength =
@@ -168,6 +169,9 @@ class BuildingLevel extends Component {
       });
     } else {
       updateErrorState(this.state.levelCounter);
+      this.setState({
+        previewStructure: [],
+      });
     }
   };
 

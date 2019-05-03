@@ -46,9 +46,9 @@ const invalidLevel = [
     children: [
       {
         id: '4ff98669-5ba0-4f2b-a858-a51df4109879',
-        level: 1,
+        level: 0,
         name: 'Block A',
-        parentId: '',
+        parentId: null,
         parentTitle: '',
       },
     ],

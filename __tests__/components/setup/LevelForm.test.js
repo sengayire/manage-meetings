@@ -18,7 +18,7 @@ describe('LevelForm component', () => {
 
   it('should return a span with "This field cannot be blank" ' +
     'when the renderError function is called', () => {
-    const errorSpan = wrapper.instance().renderError();
+    const errorSpan = wrapper.instance().renderError('This field cannot be blank');
     expect(errorSpan.type).toEqual('span');
     expect(errorSpan.props.children).toEqual('This field cannot be blank');
   });

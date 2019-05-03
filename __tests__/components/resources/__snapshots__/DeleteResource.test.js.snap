@@ -251,54 +251,6 @@ exports[`DeleteResource Test Suite renders as expected 1`] = `
                                     },
                                     "selectionSet": undefined,
                                   },
-                                  Object {
-                                    "alias": undefined,
-                                    "arguments": Array [],
-                                    "directives": Array [],
-                                    "kind": "Field",
-                                    "name": Object {
-                                      "kind": "Name",
-                                      "value": "roomId",
-                                    },
-                                    "selectionSet": undefined,
-                                  },
-                                  Object {
-                                    "alias": undefined,
-                                    "arguments": Array [],
-                                    "directives": Array [],
-                                    "kind": "Field",
-                                    "name": Object {
-                                      "kind": "Name",
-                                      "value": "room",
-                                    },
-                                    "selectionSet": Object {
-                                      "kind": "SelectionSet",
-                                      "selections": Array [
-                                        Object {
-                                          "alias": undefined,
-                                          "arguments": Array [],
-                                          "directives": Array [],
-                                          "kind": "Field",
-                                          "name": Object {
-                                            "kind": "Name",
-                                            "value": "id",
-                                          },
-                                          "selectionSet": undefined,
-                                        },
-                                        Object {
-                                          "alias": undefined,
-                                          "arguments": Array [],
-                                          "directives": Array [],
-                                          "kind": "Field",
-                                          "name": Object {
-                                            "kind": "Name",
-                                            "value": "name",
-                                          },
-                                          "selectionSet": undefined,
-                                        },
-                                      ],
-                                    },
-                                  },
                                 ],
                               },
                             },
@@ -399,7 +351,7 @@ exports[`DeleteResource Test Suite renders as expected 1`] = `
               ],
               "kind": "Document",
               "loc": Object {
-                "end": 307,
+                "end": 239,
                 "start": 0,
               },
             },
@@ -526,54 +478,6 @@ exports[`DeleteResource Test Suite renders as expected 1`] = `
                                       },
                                       "selectionSet": undefined,
                                     },
-                                    Object {
-                                      "alias": undefined,
-                                      "arguments": Array [],
-                                      "directives": Array [],
-                                      "kind": "Field",
-                                      "name": Object {
-                                        "kind": "Name",
-                                        "value": "roomId",
-                                      },
-                                      "selectionSet": undefined,
-                                    },
-                                    Object {
-                                      "alias": undefined,
-                                      "arguments": Array [],
-                                      "directives": Array [],
-                                      "kind": "Field",
-                                      "name": Object {
-                                        "kind": "Name",
-                                        "value": "room",
-                                      },
-                                      "selectionSet": Object {
-                                        "kind": "SelectionSet",
-                                        "selections": Array [
-                                          Object {
-                                            "alias": undefined,
-                                            "arguments": Array [],
-                                            "directives": Array [],
-                                            "kind": "Field",
-                                            "name": Object {
-                                              "kind": "Name",
-                                              "value": "id",
-                                            },
-                                            "selectionSet": undefined,
-                                          },
-                                          Object {
-                                            "alias": undefined,
-                                            "arguments": Array [],
-                                            "directives": Array [],
-                                            "kind": "Field",
-                                            "name": Object {
-                                              "kind": "Name",
-                                              "value": "name",
-                                            },
-                                            "selectionSet": undefined,
-                                          },
-                                        ],
-                                      },
-                                    },
                                   ],
                                 },
                               },
@@ -674,7 +578,7 @@ exports[`DeleteResource Test Suite renders as expected 1`] = `
                 ],
                 "kind": "Document",
                 "loc": Object {
-                  "end": 307,
+                  "end": 239,
                   "start": 0,
                 },
               },
@@ -812,54 +716,6 @@ exports[`DeleteResource Test Suite renders as expected 1`] = `
                                           },
                                           "selectionSet": undefined,
                                         },
-                                        Object {
-                                          "alias": undefined,
-                                          "arguments": Array [],
-                                          "directives": Array [],
-                                          "kind": "Field",
-                                          "name": Object {
-                                            "kind": "Name",
-                                            "value": "roomId",
-                                          },
-                                          "selectionSet": undefined,
-                                        },
-                                        Object {
-                                          "alias": undefined,
-                                          "arguments": Array [],
-                                          "directives": Array [],
-                                          "kind": "Field",
-                                          "name": Object {
-                                            "kind": "Name",
-                                            "value": "room",
-                                          },
-                                          "selectionSet": Object {
-                                            "kind": "SelectionSet",
-                                            "selections": Array [
-                                              Object {
-                                                "alias": undefined,
-                                                "arguments": Array [],
-                                                "directives": Array [],
-                                                "kind": "Field",
-                                                "name": Object {
-                                                  "kind": "Name",
-                                                  "value": "id",
-                                                },
-                                                "selectionSet": undefined,
-                                              },
-                                              Object {
-                                                "alias": undefined,
-                                                "arguments": Array [],
-                                                "directives": Array [],
-                                                "kind": "Field",
-                                                "name": Object {
-                                                  "kind": "Name",
-                                                  "value": "name",
-                                                },
-                                                "selectionSet": undefined,
-                                              },
-                                            ],
-                                          },
-                                        },
                                       ],
                                     },
                                   },
@@ -960,7 +816,7 @@ exports[`DeleteResource Test Suite renders as expected 1`] = `
                     ],
                     "kind": "Document",
                     "loc": Object {
-                      "end": 307,
+                      "end": 239,
                       "start": 0,
                     },
                   },
@@ -1086,54 +942,6 @@ exports[`DeleteResource Test Suite renders as expected 1`] = `
                                       },
                                       "selectionSet": undefined,
                                     },
-                                    Object {
-                                      "alias": undefined,
-                                      "arguments": Array [],
-                                      "directives": Array [],
-                                      "kind": "Field",
-                                      "name": Object {
-                                        "kind": "Name",
-                                        "value": "roomId",
-                                      },
-                                      "selectionSet": undefined,
-                                    },
-                                    Object {
-                                      "alias": undefined,
-                                      "arguments": Array [],
-                                      "directives": Array [],
-                                      "kind": "Field",
-                                      "name": Object {
-                                        "kind": "Name",
-                                        "value": "room",
-                                      },
-                                      "selectionSet": Object {
-                                        "kind": "SelectionSet",
-                                        "selections": Array [
-                                          Object {
-                                            "alias": undefined,
-                                            "arguments": Array [],
-                                            "directives": Array [],
-                                            "kind": "Field",
-                                            "name": Object {
-                                              "kind": "Name",
-                                              "value": "id",
-                                            },
-                                            "selectionSet": undefined,
-                                          },
-                                          Object {
-                                            "alias": undefined,
-                                            "arguments": Array [],
-                                            "directives": Array [],
-                                            "kind": "Field",
-                                            "name": Object {
-                                              "kind": "Name",
-                                              "value": "name",
-                                            },
-                                            "selectionSet": undefined,
-                                          },
-                                        ],
-                                      },
-                                    },
                                   ],
                                 },
                               },
@@ -1234,7 +1042,7 @@ exports[`DeleteResource Test Suite renders as expected 1`] = `
                 ],
                 "kind": "Document",
                 "loc": Object {
-                  "end": 307,
+                  "end": 239,
                   "start": 0,
                 },
               },
@@ -1255,11 +1063,6 @@ exports[`DeleteResource Test Suite renders as expected 1`] = `
       id
       name
       quantity
-      roomId
-      room {
-        id
-        name
-      }
     }
     pages
     hasNext
@@ -1389,54 +1192,6 @@ exports[`DeleteResource Test Suite renders as expected 1`] = `
                                           },
                                           "selectionSet": undefined,
                                         },
-                                        Object {
-                                          "alias": undefined,
-                                          "arguments": Array [],
-                                          "directives": Array [],
-                                          "kind": "Field",
-                                          "name": Object {
-                                            "kind": "Name",
-                                            "value": "roomId",
-                                          },
-                                          "selectionSet": undefined,
-                                        },
-                                        Object {
-                                          "alias": undefined,
-                                          "arguments": Array [],
-                                          "directives": Array [],
-                                          "kind": "Field",
-                                          "name": Object {
-                                            "kind": "Name",
-                                            "value": "room",
-                                          },
-                                          "selectionSet": Object {
-                                            "kind": "SelectionSet",
-                                            "selections": Array [
-                                              Object {
-                                                "alias": undefined,
-                                                "arguments": Array [],
-                                                "directives": Array [],
-                                                "kind": "Field",
-                                                "name": Object {
-                                                  "kind": "Name",
-                                                  "value": "id",
-                                                },
-                                                "selectionSet": undefined,
-                                              },
-                                              Object {
-                                                "alias": undefined,
-                                                "arguments": Array [],
-                                                "directives": Array [],
-                                                "kind": "Field",
-                                                "name": Object {
-                                                  "kind": "Name",
-                                                  "value": "name",
-                                                },
-                                                "selectionSet": undefined,
-                                              },
-                                            ],
-                                          },
-                                        },
                                       ],
                                     },
                                   },
@@ -1537,7 +1292,7 @@ exports[`DeleteResource Test Suite renders as expected 1`] = `
                     ],
                     "kind": "Document",
                     "loc": Object {
-                      "end": 307,
+                      "end": 239,
                       "start": 0,
                     },
                   },
@@ -1674,54 +1429,6 @@ exports[`DeleteResource Test Suite renders as expected 1`] = `
                                         },
                                         "selectionSet": undefined,
                                       },
-                                      Object {
-                                        "alias": undefined,
-                                        "arguments": Array [],
-                                        "directives": Array [],
-                                        "kind": "Field",
-                                        "name": Object {
-                                          "kind": "Name",
-                                          "value": "roomId",
-                                        },
-                                        "selectionSet": undefined,
-                                      },
-                                      Object {
-                                        "alias": undefined,
-                                        "arguments": Array [],
-                                        "directives": Array [],
-                                        "kind": "Field",
-                                        "name": Object {
-                                          "kind": "Name",
-                                          "value": "room",
-                                        },
-                                        "selectionSet": Object {
-                                          "kind": "SelectionSet",
-                                          "selections": Array [
-                                            Object {
-                                              "alias": undefined,
-                                              "arguments": Array [],
-                                              "directives": Array [],
-                                              "kind": "Field",
-                                              "name": Object {
-                                                "kind": "Name",
-                                                "value": "id",
-                                              },
-                                              "selectionSet": undefined,
-                                            },
-                                            Object {
-                                              "alias": undefined,
-                                              "arguments": Array [],
-                                              "directives": Array [],
-                                              "kind": "Field",
-                                              "name": Object {
-                                                "kind": "Name",
-                                                "value": "name",
-                                              },
-                                              "selectionSet": undefined,
-                                            },
-                                          ],
-                                        },
-                                      },
                                     ],
                                   },
                                 },
@@ -1822,7 +1529,7 @@ exports[`DeleteResource Test Suite renders as expected 1`] = `
                   ],
                   "kind": "Document",
                   "loc": Object {
-                    "end": 307,
+                    "end": 239,
                     "start": 0,
                   },
                 },
@@ -1838,11 +1545,6 @@ exports[`DeleteResource Test Suite renders as expected 1`] = `
       id
       name
       quantity
-      roomId
-      room {
-        id
-        name
-      }
     }
     pages
     hasNext
@@ -1991,54 +1693,6 @@ exports[`DeleteResource Test Suite renders as expected 1`] = `
                                         },
                                         "selectionSet": undefined,
                                       },
-                                      Object {
-                                        "alias": undefined,
-                                        "arguments": Array [],
-                                        "directives": Array [],
-                                        "kind": "Field",
-                                        "name": Object {
-                                          "kind": "Name",
-                                          "value": "roomId",
-                                        },
-                                        "selectionSet": undefined,
-                                      },
-                                      Object {
-                                        "alias": undefined,
-                                        "arguments": Array [],
-                                        "directives": Array [],
-                                        "kind": "Field",
-                                        "name": Object {
-                                          "kind": "Name",
-                                          "value": "room",
-                                        },
-                                        "selectionSet": Object {
-                                          "kind": "SelectionSet",
-                                          "selections": Array [
-                                            Object {
-                                              "alias": undefined,
-                                              "arguments": Array [],
-                                              "directives": Array [],
-                                              "kind": "Field",
-                                              "name": Object {
-                                                "kind": "Name",
-                                                "value": "id",
-                                              },
-                                              "selectionSet": undefined,
-                                            },
-                                            Object {
-                                              "alias": undefined,
-                                              "arguments": Array [],
-                                              "directives": Array [],
-                                              "kind": "Field",
-                                              "name": Object {
-                                                "kind": "Name",
-                                                "value": "name",
-                                              },
-                                              "selectionSet": undefined,
-                                            },
-                                          ],
-                                        },
-                                      },
                                     ],
                                   },
                                 },
@@ -2139,7 +1793,7 @@ exports[`DeleteResource Test Suite renders as expected 1`] = `
                   ],
                   "kind": "Document",
                   "loc": Object {
-                    "end": 307,
+                    "end": 239,
                     "start": 0,
                   },
                 },
@@ -2274,54 +1928,6 @@ exports[`DeleteResource Test Suite renders as expected 1`] = `
                                         },
                                         "selectionSet": undefined,
                                       },
-                                      Object {
-                                        "alias": undefined,
-                                        "arguments": Array [],
-                                        "directives": Array [],
-                                        "kind": "Field",
-                                        "name": Object {
-                                          "kind": "Name",
-                                          "value": "roomId",
-                                        },
-                                        "selectionSet": undefined,
-                                      },
-                                      Object {
-                                        "alias": undefined,
-                                        "arguments": Array [],
-                                        "directives": Array [],
-                                        "kind": "Field",
-                                        "name": Object {
-                                          "kind": "Name",
-                                          "value": "room",
-                                        },
-                                        "selectionSet": Object {
-                                          "kind": "SelectionSet",
-                                          "selections": Array [
-                                            Object {
-                                              "alias": undefined,
-                                              "arguments": Array [],
-                                              "directives": Array [],
-                                              "kind": "Field",
-                                              "name": Object {
-                                                "kind": "Name",
-                                                "value": "id",
-                                              },
-                                              "selectionSet": undefined,
-                                            },
-                                            Object {
-                                              "alias": undefined,
-                                              "arguments": Array [],
-                                              "directives": Array [],
-                                              "kind": "Field",
-                                              "name": Object {
-                                                "kind": "Name",
-                                                "value": "name",
-                                              },
-                                              "selectionSet": undefined,
-                                            },
-                                          ],
-                                        },
-                                      },
                                     ],
                                   },
                                 },
@@ -2422,7 +2028,7 @@ exports[`DeleteResource Test Suite renders as expected 1`] = `
                   ],
                   "kind": "Document",
                   "loc": Object {
-                    "end": 307,
+                    "end": 239,
                     "start": 0,
                   },
                 },
@@ -2530,54 +2136,6 @@ exports[`DeleteResource Test Suite renders as expected 1`] = `
                                   },
                                   "selectionSet": undefined,
                                 },
-                                Object {
-                                  "alias": undefined,
-                                  "arguments": Array [],
-                                  "directives": Array [],
-                                  "kind": "Field",
-                                  "name": Object {
-                                    "kind": "Name",
-                                    "value": "roomId",
-                                  },
-                                  "selectionSet": undefined,
-                                },
-                                Object {
-                                  "alias": undefined,
-                                  "arguments": Array [],
-                                  "directives": Array [],
-                                  "kind": "Field",
-                                  "name": Object {
-                                    "kind": "Name",
-                                    "value": "room",
-                                  },
-                                  "selectionSet": Object {
-                                    "kind": "SelectionSet",
-                                    "selections": Array [
-                                      Object {
-                                        "alias": undefined,
-                                        "arguments": Array [],
-                                        "directives": Array [],
-                                        "kind": "Field",
-                                        "name": Object {
-                                          "kind": "Name",
-                                          "value": "id",
-                                        },
-                                        "selectionSet": undefined,
-                                      },
-                                      Object {
-                                        "alias": undefined,
-                                        "arguments": Array [],
-                                        "directives": Array [],
-                                        "kind": "Field",
-                                        "name": Object {
-                                          "kind": "Name",
-                                          "value": "name",
-                                        },
-                                        "selectionSet": undefined,
-                                      },
-                                    ],
-                                  },
-                                },
                               ],
                             },
                           },
@@ -2678,7 +2236,7 @@ exports[`DeleteResource Test Suite renders as expected 1`] = `
             ],
             "kind": "Document",
             "loc": Object {
-              "end": 307,
+              "end": 239,
               "start": 0,
             },
           }
@@ -3267,54 +2825,6 @@ exports[`DeleteResource Test Suite should pop up a modal when delete button is c
                                     },
                                     "selectionSet": undefined,
                                   },
-                                  Object {
-                                    "alias": undefined,
-                                    "arguments": Array [],
-                                    "directives": Array [],
-                                    "kind": "Field",
-                                    "name": Object {
-                                      "kind": "Name",
-                                      "value": "roomId",
-                                    },
-                                    "selectionSet": undefined,
-                                  },
-                                  Object {
-                                    "alias": undefined,
-                                    "arguments": Array [],
-                                    "directives": Array [],
-                                    "kind": "Field",
-                                    "name": Object {
-                                      "kind": "Name",
-                                      "value": "room",
-                                    },
-                                    "selectionSet": Object {
-                                      "kind": "SelectionSet",
-                                      "selections": Array [
-                                        Object {
-                                          "alias": undefined,
-                                          "arguments": Array [],
-                                          "directives": Array [],
-                                          "kind": "Field",
-                                          "name": Object {
-                                            "kind": "Name",
-                                            "value": "id",
-                                          },
-                                          "selectionSet": undefined,
-                                        },
-                                        Object {
-                                          "alias": undefined,
-                                          "arguments": Array [],
-                                          "directives": Array [],
-                                          "kind": "Field",
-                                          "name": Object {
-                                            "kind": "Name",
-                                            "value": "name",
-                                          },
-                                          "selectionSet": undefined,
-                                        },
-                                      ],
-                                    },
-                                  },
                                 ],
                               },
                             },
@@ -3415,7 +2925,7 @@ exports[`DeleteResource Test Suite should pop up a modal when delete button is c
               ],
               "kind": "Document",
               "loc": Object {
-                "end": 307,
+                "end": 239,
                 "start": 0,
               },
             },
@@ -3542,54 +3052,6 @@ exports[`DeleteResource Test Suite should pop up a modal when delete button is c
                                       },
                                       "selectionSet": undefined,
                                     },
-                                    Object {
-                                      "alias": undefined,
-                                      "arguments": Array [],
-                                      "directives": Array [],
-                                      "kind": "Field",
-                                      "name": Object {
-                                        "kind": "Name",
-                                        "value": "roomId",
-                                      },
-                                      "selectionSet": undefined,
-                                    },
-                                    Object {
-                                      "alias": undefined,
-                                      "arguments": Array [],
-                                      "directives": Array [],
-                                      "kind": "Field",
-                                      "name": Object {
-                                        "kind": "Name",
-                                        "value": "room",
-                                      },
-                                      "selectionSet": Object {
-                                        "kind": "SelectionSet",
-                                        "selections": Array [
-                                          Object {
-                                            "alias": undefined,
-                                            "arguments": Array [],
-                                            "directives": Array [],
-                                            "kind": "Field",
-                                            "name": Object {
-                                              "kind": "Name",
-                                              "value": "id",
-                                            },
-                                            "selectionSet": undefined,
-                                          },
-                                          Object {
-                                            "alias": undefined,
-                                            "arguments": Array [],
-                                            "directives": Array [],
-                                            "kind": "Field",
-                                            "name": Object {
-                                              "kind": "Name",
-                                              "value": "name",
-                                            },
-                                            "selectionSet": undefined,
-                                          },
-                                        ],
-                                      },
-                                    },
                                   ],
                                 },
                               },
@@ -3690,7 +3152,7 @@ exports[`DeleteResource Test Suite should pop up a modal when delete button is c
                 ],
                 "kind": "Document",
                 "loc": Object {
-                  "end": 307,
+                  "end": 239,
                   "start": 0,
                 },
               },
@@ -3828,54 +3290,6 @@ exports[`DeleteResource Test Suite should pop up a modal when delete button is c
                                           },
                                           "selectionSet": undefined,
                                         },
-                                        Object {
-                                          "alias": undefined,
-                                          "arguments": Array [],
-                                          "directives": Array [],
-                                          "kind": "Field",
-                                          "name": Object {
-                                            "kind": "Name",
-                                            "value": "roomId",
-                                          },
-                                          "selectionSet": undefined,
-                                        },
-                                        Object {
-                                          "alias": undefined,
-                                          "arguments": Array [],
-                                          "directives": Array [],
-                                          "kind": "Field",
-                                          "name": Object {
-                                            "kind": "Name",
-                                            "value": "room",
-                                          },
-                                          "selectionSet": Object {
-                                            "kind": "SelectionSet",
-                                            "selections": Array [
-                                              Object {
-                                                "alias": undefined,
-                                                "arguments": Array [],
-                                                "directives": Array [],
-                                                "kind": "Field",
-                                                "name": Object {
-                                                  "kind": "Name",
-                                                  "value": "id",
-                                                },
-                                                "selectionSet": undefined,
-                                              },
-                                              Object {
-                                                "alias": undefined,
-                                                "arguments": Array [],
-                                                "directives": Array [],
-                                                "kind": "Field",
-                                                "name": Object {
-                                                  "kind": "Name",
-                                                  "value": "name",
-                                                },
-                                                "selectionSet": undefined,
-                                              },
-                                            ],
-                                          },
-                                        },
                                       ],
                                     },
                                   },
@@ -3976,7 +3390,7 @@ exports[`DeleteResource Test Suite should pop up a modal when delete button is c
                     ],
                     "kind": "Document",
                     "loc": Object {
-                      "end": 307,
+                      "end": 239,
                       "start": 0,
                     },
                   },
@@ -4102,54 +3516,6 @@ exports[`DeleteResource Test Suite should pop up a modal when delete button is c
                                       },
                                       "selectionSet": undefined,
                                     },
-                                    Object {
-                                      "alias": undefined,
-                                      "arguments": Array [],
-                                      "directives": Array [],
-                                      "kind": "Field",
-                                      "name": Object {
-                                        "kind": "Name",
-                                        "value": "roomId",
-                                      },
-                                      "selectionSet": undefined,
-                                    },
-                                    Object {
-                                      "alias": undefined,
-                                      "arguments": Array [],
-                                      "directives": Array [],
-                                      "kind": "Field",
-                                      "name": Object {
-                                        "kind": "Name",
-                                        "value": "room",
-                                      },
-                                      "selectionSet": Object {
-                                        "kind": "SelectionSet",
-                                        "selections": Array [
-                                          Object {
-                                            "alias": undefined,
-                                            "arguments": Array [],
-                                            "directives": Array [],
-                                            "kind": "Field",
-                                            "name": Object {
-                                              "kind": "Name",
-                                              "value": "id",
-                                            },
-                                            "selectionSet": undefined,
-                                          },
-                                          Object {
-                                            "alias": undefined,
-                                            "arguments": Array [],
-                                            "directives": Array [],
-                                            "kind": "Field",
-                                            "name": Object {
-                                              "kind": "Name",
-                                              "value": "name",
-                                            },
-                                            "selectionSet": undefined,
-                                          },
-                                        ],
-                                      },
-                                    },
                                   ],
                                 },
                               },
@@ -4250,7 +3616,7 @@ exports[`DeleteResource Test Suite should pop up a modal when delete button is c
                 ],
                 "kind": "Document",
                 "loc": Object {
-                  "end": 307,
+                  "end": 239,
                   "start": 0,
                 },
               },
@@ -4271,11 +3637,6 @@ exports[`DeleteResource Test Suite should pop up a modal when delete button is c
       id
       name
       quantity
-      roomId
-      room {
-        id
-        name
-      }
     }
     pages
     hasNext
@@ -4405,54 +3766,6 @@ exports[`DeleteResource Test Suite should pop up a modal when delete button is c
                                           },
                                           "selectionSet": undefined,
                                         },
-                                        Object {
-                                          "alias": undefined,
-                                          "arguments": Array [],
-                                          "directives": Array [],
-                                          "kind": "Field",
-                                          "name": Object {
-                                            "kind": "Name",
-                                            "value": "roomId",
-                                          },
-                                          "selectionSet": undefined,
-                                        },
-                                        Object {
-                                          "alias": undefined,
-                                          "arguments": Array [],
-                                          "directives": Array [],
-                                          "kind": "Field",
-                                          "name": Object {
-                                            "kind": "Name",
-                                            "value": "room",
-                                          },
-                                          "selectionSet": Object {
-                                            "kind": "SelectionSet",
-                                            "selections": Array [
-                                              Object {
-                                                "alias": undefined,
-                                                "arguments": Array [],
-                                                "directives": Array [],
-                                                "kind": "Field",
-                                                "name": Object {
-                                                  "kind": "Name",
-                                                  "value": "id",
-                                                },
-                                                "selectionSet": undefined,
-                                              },
-                                              Object {
-                                                "alias": undefined,
-                                                "arguments": Array [],
-                                                "directives": Array [],
-                                                "kind": "Field",
-                                                "name": Object {
-                                                  "kind": "Name",
-                                                  "value": "name",
-                                                },
-                                                "selectionSet": undefined,
-                                              },
-                                            ],
-                                          },
-                                        },
                                       ],
                                     },
                                   },
@@ -4553,7 +3866,7 @@ exports[`DeleteResource Test Suite should pop up a modal when delete button is c
                     ],
                     "kind": "Document",
                     "loc": Object {
-                      "end": 307,
+                      "end": 239,
                       "start": 0,
                     },
                   },
@@ -4690,54 +4003,6 @@ exports[`DeleteResource Test Suite should pop up a modal when delete button is c
                                         },
                                         "selectionSet": undefined,
                                       },
-                                      Object {
-                                        "alias": undefined,
-                                        "arguments": Array [],
-                                        "directives": Array [],
-                                        "kind": "Field",
-                                        "name": Object {
-                                          "kind": "Name",
-                                          "value": "roomId",
-                                        },
-                                        "selectionSet": undefined,
-                                      },
-                                      Object {
-                                        "alias": undefined,
-                                        "arguments": Array [],
-                                        "directives": Array [],
-                                        "kind": "Field",
-                                        "name": Object {
-                                          "kind": "Name",
-                                          "value": "room",
-                                        },
-                                        "selectionSet": Object {
-                                          "kind": "SelectionSet",
-                                          "selections": Array [
-                                            Object {
-                                              "alias": undefined,
-                                              "arguments": Array [],
-                                              "directives": Array [],
-                                              "kind": "Field",
-                                              "name": Object {
-                                                "kind": "Name",
-                                                "value": "id",
-                                              },
-                                              "selectionSet": undefined,
-                                            },
-                                            Object {
-                                              "alias": undefined,
-                                              "arguments": Array [],
-                                              "directives": Array [],
-                                              "kind": "Field",
-                                              "name": Object {
-                                                "kind": "Name",
-                                                "value": "name",
-                                              },
-                                              "selectionSet": undefined,
-                                            },
-                                          ],
-                                        },
-                                      },
                                     ],
                                   },
                                 },
@@ -4838,7 +4103,7 @@ exports[`DeleteResource Test Suite should pop up a modal when delete button is c
                   ],
                   "kind": "Document",
                   "loc": Object {
-                    "end": 307,
+                    "end": 239,
                     "start": 0,
                   },
                 },
@@ -4854,11 +4119,6 @@ exports[`DeleteResource Test Suite should pop up a modal when delete button is c
       id
       name
       quantity
-      roomId
-      room {
-        id
-        name
-      }
     }
     pages
     hasNext
@@ -5007,54 +4267,6 @@ exports[`DeleteResource Test Suite should pop up a modal when delete button is c
                                         },
                                         "selectionSet": undefined,
                                       },
-                                      Object {
-                                        "alias": undefined,
-                                        "arguments": Array [],
-                                        "directives": Array [],
-                                        "kind": "Field",
-                                        "name": Object {
-                                          "kind": "Name",
-                                          "value": "roomId",
-                                        },
-                                        "selectionSet": undefined,
-                                      },
-                                      Object {
-                                        "alias": undefined,
-                                        "arguments": Array [],
-                                        "directives": Array [],
-                                        "kind": "Field",
-                                        "name": Object {
-                                          "kind": "Name",
-                                          "value": "room",
-                                        },
-                                        "selectionSet": Object {
-                                          "kind": "SelectionSet",
-                                          "selections": Array [
-                                            Object {
-                                              "alias": undefined,
-                                              "arguments": Array [],
-                                              "directives": Array [],
-                                              "kind": "Field",
-                                              "name": Object {
-                                                "kind": "Name",
-                                                "value": "id",
-                                              },
-                                              "selectionSet": undefined,
-                                            },
-                                            Object {
-                                              "alias": undefined,
-                                              "arguments": Array [],
-                                              "directives": Array [],
-                                              "kind": "Field",
-                                              "name": Object {
-                                                "kind": "Name",
-                                                "value": "name",
-                                              },
-                                              "selectionSet": undefined,
-                                            },
-                                          ],
-                                        },
-                                      },
                                     ],
                                   },
                                 },
@@ -5155,7 +4367,7 @@ exports[`DeleteResource Test Suite should pop up a modal when delete button is c
                   ],
                   "kind": "Document",
                   "loc": Object {
-                    "end": 307,
+                    "end": 239,
                     "start": 0,
                   },
                 },
@@ -5290,54 +4502,6 @@ exports[`DeleteResource Test Suite should pop up a modal when delete button is c
                                         },
                                         "selectionSet": undefined,
                                       },
-                                      Object {
-                                        "alias": undefined,
-                                        "arguments": Array [],
-                                        "directives": Array [],
-                                        "kind": "Field",
-                                        "name": Object {
-                                          "kind": "Name",
-                                          "value": "roomId",
-                                        },
-                                        "selectionSet": undefined,
-                                      },
-                                      Object {
-                                        "alias": undefined,
-                                        "arguments": Array [],
-                                        "directives": Array [],
-                                        "kind": "Field",
-                                        "name": Object {
-                                          "kind": "Name",
-                                          "value": "room",
-                                        },
-                                        "selectionSet": Object {
-                                          "kind": "SelectionSet",
-                                          "selections": Array [
-                                            Object {
-                                              "alias": undefined,
-                                              "arguments": Array [],
-                                              "directives": Array [],
-                                              "kind": "Field",
-                                              "name": Object {
-                                                "kind": "Name",
-                                                "value": "id",
-                                              },
-                                              "selectionSet": undefined,
-                                            },
-                                            Object {
-                                              "alias": undefined,
-                                              "arguments": Array [],
-                                              "directives": Array [],
-                                              "kind": "Field",
-                                              "name": Object {
-                                                "kind": "Name",
-                                                "value": "name",
-                                              },
-                                              "selectionSet": undefined,
-                                            },
-                                          ],
-                                        },
-                                      },
                                     ],
                                   },
                                 },
@@ -5438,7 +4602,7 @@ exports[`DeleteResource Test Suite should pop up a modal when delete button is c
                   ],
                   "kind": "Document",
                   "loc": Object {
-                    "end": 307,
+                    "end": 239,
                     "start": 0,
                   },
                 },
@@ -5546,54 +4710,6 @@ exports[`DeleteResource Test Suite should pop up a modal when delete button is c
                                   },
                                   "selectionSet": undefined,
                                 },
-                                Object {
-                                  "alias": undefined,
-                                  "arguments": Array [],
-                                  "directives": Array [],
-                                  "kind": "Field",
-                                  "name": Object {
-                                    "kind": "Name",
-                                    "value": "roomId",
-                                  },
-                                  "selectionSet": undefined,
-                                },
-                                Object {
-                                  "alias": undefined,
-                                  "arguments": Array [],
-                                  "directives": Array [],
-                                  "kind": "Field",
-                                  "name": Object {
-                                    "kind": "Name",
-                                    "value": "room",
-                                  },
-                                  "selectionSet": Object {
-                                    "kind": "SelectionSet",
-                                    "selections": Array [
-                                      Object {
-                                        "alias": undefined,
-                                        "arguments": Array [],
-                                        "directives": Array [],
-                                        "kind": "Field",
-                                        "name": Object {
-                                          "kind": "Name",
-                                          "value": "id",
-                                        },
-                                        "selectionSet": undefined,
-                                      },
-                                      Object {
-                                        "alias": undefined,
-                                        "arguments": Array [],
-                                        "directives": Array [],
-                                        "kind": "Field",
-                                        "name": Object {
-                                          "kind": "Name",
-                                          "value": "name",
-                                        },
-                                        "selectionSet": undefined,
-                                      },
-                                    ],
-                                  },
-                                },
                               ],
                             },
                           },
@@ -5694,7 +4810,7 @@ exports[`DeleteResource Test Suite should pop up a modal when delete button is c
             ],
             "kind": "Document",
             "loc": Object {
-              "end": 307,
+              "end": 239,
               "start": 0,
             },
           }
@@ -5717,11 +4833,6 @@ exports[`DeleteResource Test Suite should pop up a modal when delete button is c
       id
       name
       quantity
-      roomId
-      room {
-        id
-        name
-      }
     }
     pages
     hasNext
@@ -5891,11 +5002,6 @@ exports[`DeleteResource Test Suite should pop up a modal when delete button is c
       id
       name
       quantity
-      roomId
-      room {
-        id
-        name
-      }
     }
     pages
     hasNext
