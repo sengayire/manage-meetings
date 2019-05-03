@@ -18,8 +18,8 @@ const SINGLE_ROOM_FEEDBACK = gql`
 `;
 
 const ALL_ROOM_FEEDBACK = gql`
-  query allRoomResponses($page: Int, $perPage: Int, $upperLimit: Int, $lowerLimit: Int) {
-    allRoomResponses(page: $page, perPage: $perPage, lowerLimit: $lowerLimit, upperLimit: $upperLimit){
+  query allRoomResponses($page: Int, $perPage: Int, $startDate: String!, $endDate: String!, $upperLimitCount: Int, $lowerLimitCount: Int) {
+    allRoomResponses(page: $page, perPage: $perPage, startDate: $startDate, endDate: $endDate, lowerLimitCount: $lowerLimitCount, upperLimitCount: $upperLimitCount){
       pages
       hasPrevious
       hasNext
@@ -28,7 +28,6 @@ const ALL_ROOM_FEEDBACK = gql`
         roomId
         roomName
         totalResponses
-        totalRoomResources
         response {
           suggestion
           responseId

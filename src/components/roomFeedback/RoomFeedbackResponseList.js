@@ -217,8 +217,8 @@ export class RoomFeedbackResponseList extends React.Component {
         variables: {
           page,
           perPage,
-          lowerLimit: 1,
-          upperLimit: 10000,
+          lowerLimitCount: 0,
+          upperLimitCount: 100,
         },
         updateQuery: (prev, { fetchMoreResult }) => {
           this.setState({
@@ -341,12 +341,14 @@ RoomFeedbackResponseList.propTypes = {
 };
 
 export default graphql(ALL_ROOM_FEEDBACK, {
-  options: /* istanbul ignore next */ () => ({
+  options: /* istanbul ignore next */ props => ({
     variables: {
       page: 1,
-      perPage: 5,
-      lowerLimit: 1,
-      upperLimit: 10000,
+      perPage: 10,
+      startDate: props.startDate,
+      endDate: props.endDate,
+      upperLimitCount: props.upperLimitCount,
+      lowerLimitCount: props.lowerLimitCount,
     },
   }),
 },

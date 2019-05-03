@@ -8,11 +8,16 @@ import RoomQuestions from '../components/roomFeedback/RoomFeedback';
 import RoomFeedbackResponseList from '../components/roomFeedback/RoomFeedbackResponseList';
 import { NavBar } from '../components';
 import '../assets/styles/roomFeedbackContainer.scss';
+import { getTodaysDate } from '../utils/Utilities';
 
 class RoomFeedbackPage extends Component {
   state = {
     isResponsePageVisible: false,
     responseData: [],
+    upperLimitCount: 100,
+    lowerLimitCount: 0,
+    startDate: getTodaysDate(),
+    endDate: getTodaysDate(),
   }
 
   /**
@@ -45,7 +50,9 @@ class RoomFeedbackPage extends Component {
   }
 
   render() {
-    const { isResponsePageVisible, responseData } = this.state;
+    const {
+      isResponsePageVisible, responseData, lowerLimitCount, upperLimitCount, startDate, endDate,
+    } = this.state;
     return (
       <Fragment>
         <NavBar />
@@ -78,7 +85,16 @@ class RoomFeedbackPage extends Component {
           </div>
           {
             isResponsePageVisible
-            ? <div id="responses"><RoomFeedbackResponseList checkData={this.checkData} /></div>
+            ? (
+              <div id="responses">
+                <RoomFeedbackResponseList
+                  checkData={this.checkData}
+                  startDate={startDate}
+                  endDate={endDate}
+                  upperLimitCount={upperLimitCount}
+                  lowerLimitCount={lowerLimitCount}
+                />
+              </div>)
             : <div id="questions"><RoomQuestions /></div>
           }
         </div>
