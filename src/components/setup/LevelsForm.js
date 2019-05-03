@@ -139,7 +139,7 @@ class LevelsForm extends Component {
   };
 
   removeLevelDetails = levelData => {
-    const { level, id } = levelData;
+    const { level, structureId } = levelData;
     const { levelsDetails } = this.state;
     let arr = levelsDetails;
     const position = level - 1;
@@ -147,7 +147,7 @@ class LevelsForm extends Component {
     if (arr[position].quantity === 1) {
       arr.splice(position, 1);
     } else {
-      const newArr = arr[position].children.filter(child => child.structureId !== id);
+      const newArr = arr[position].children.filter(child => child.structureId !== structureId);
       arr[position].children = newArr;
       arr[position].quantity -= 1;
     }

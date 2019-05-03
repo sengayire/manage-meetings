@@ -23,7 +23,8 @@ const formatData = (dataArray, structureData) => {
 const getparentTitle = (sortedData, child) => {
   let parent;
   sortedData.forEach((element) => {
-    if (child.level - 1 && element.level === child.level - 1 && child.parentId === element.id) {
+    if (child.level - 1 && element.level === child.level - 1
+      && child.parentId === element.structureId) {
       parent = element;
       return parent;
     }
@@ -58,6 +59,7 @@ const orderByLevel = (dataArray) => {
           id: '',
           children: [newObj],
           parentId: element.parentId,
+          parentTitle: element.parentTitle,
           tag: element.tag,
           quantity: 1,
         };
@@ -65,4 +67,5 @@ const orderByLevel = (dataArray) => {
   return newArray;
 };
 
-export default orderByLevel;
+// eslint-disable-next-line import/prefer-default-export
+export { orderByLevel, formatData, getparentTitle };

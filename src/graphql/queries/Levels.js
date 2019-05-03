@@ -7,6 +7,7 @@ query {
         tag
         locationId
         parentId
+        parentTitle
         level
         position
         structureId

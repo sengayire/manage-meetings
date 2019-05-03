@@ -146,17 +146,21 @@ class Preview extends Component {
 
   formatLocationStructureData = () => {
     const locationId = this.getUserLocationId();
-    const { locationStructure } = this.props;
+    const { locationStructure, backendStructLength } = this.props;
+    const newLocationStructure = locationStructure.slice(backendStructLength);
     const flattenData = [];
-    locationStructure.forEach((structure) => {
+    newLocationStructure.forEach((structure) => {
       const { tag, level, children } = structure;
       children.forEach((child, i) => {
-        const { structureId, name, parentId } = child;
+        const {
+          structureId, name, parentId, parentTitle,
+        } = child;
         flattenData.push({
           structureId,
           name,
           level,
           parentId,
+          parentTitle,
           locationId,
           position: i + 1,
           tag,
@@ -396,6 +400,7 @@ Preview.propTypes = {
   allLocations: PropTypes.instanceOf(Array).isRequired,
   counter: PropTypes.number.isRequired,
   locationStructure: PropTypes.instanceOf(Array).isRequired,
+  backendStructLength: PropTypes.number.isRequired,
 };
 
 

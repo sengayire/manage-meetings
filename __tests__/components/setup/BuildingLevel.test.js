@@ -2,8 +2,9 @@ import React from 'react';
 import { mount, shallow } from 'enzyme';
 import BuildingSetup from '../../../src/components/setup/BuildingLevel';
 import * as QueryHelper from '../../../src/components/helpers/QueriesHelpers';
-import { user, allLocations, level, validLevel, invalidLevel } from '../../../__mocks__/setup/BuildingLevel';
+import { user, allLocations, level, validLevel, invalidLevel, mockDataStructure } from '../../../__mocks__/setup/BuildingLevel';
 import { previewData, previeDataWithoutTag, previeDataWithoutQuantity, previeDataWithChildrenLessThanQuantity } from '../../../src/fixtures/previewData';
+import * as orderByLevels from '../../../src/utils/formatSetupData';
 
 describe('building setup component', () => {
   let wrapper;
@@ -173,5 +174,17 @@ describe('building setup component', () => {
     = previeDataWithChildrenLessThanQuantity;
     component.instance().addNewLevel({ preventDefault: jest.fn(), target: { className: 'add' } });
     expect(spy).toHaveBeenCalled();
+  });
+
+  it('should update the state of previewStructure when previewBuildingStructure is called', async () => {
+    jest.spyOn(QueryHelper, 'getRoomsStructure').mockImplementationOnce(() => mockDataStructure);
+    jest.spyOn(orderByLevels, 'orderByLevel').mockImplementationOnce(() => mockDataStructure);
+    expect(wrapper.state('previewStructure').length).toBe(0);
+    expect(wrapper.state('levelCounter')).toBe(1);
+    expect(wrapper.state('backendStructure').length).toBe(0);
+    await wrapper.instance().previewBuildingStructure();
+    expect(wrapper.state('previewStructure').length).toBe(1);
+    expect(wrapper.state('levelCounter')).toBe(2);
+    expect(wrapper.state('backendStructure')).toBe(1);
   });
 });

@@ -13,22 +13,26 @@ import notification from '../../../src/utils/notification';
 import { ellipses, chevronIcon } from '../../utils/images/images';
 import MrmModal from '../commons/MrmModal';
 import SetupLevel from '../setup/SetupLevel';
-import { getUserDetails, getAllLocations } from '../helpers/QueriesHelpers';
+import { orderByLevel } from '../../utils/formatSetupData';
+import stripTypeNames from '../helpers/StripTypeNames';
+import { getUserDetails, getAllLocations, getRoomsStructure } from '../helpers/QueriesHelpers';
 
 class BuildingLevel extends Component {
   state = {
     levelCounter: 1,
     activeLevel: 1,
-    locationStructure: [],
     numberOfLevels: 0,
     showAddLevel: true,
     user: {},
     allLocations: [],
     erroredChild: '',
+    previewStructure: [],
+    backendStructure: '',
   };
 
   componentDidMount = () => {
     this.getUsersLocation();
+    this.previewBuildingStructure();
   }
 
   /**
@@ -46,6 +50,20 @@ class BuildingLevel extends Component {
       user,
       allLocations: locations,
     });
+  };
+
+  previewBuildingStructure = async () => {
+    const structure = await getRoomsStructure();
+    const { allStructures } = structure;
+    const formattedStructure = orderByLevel(stripTypeNames(allStructures));
+    const lastChild = formattedStructure[formattedStructure.length - 1];
+    const backendStructureLevel = lastChild.children[0].level;
+    this.setState({
+      previewStructure: formattedStructure,
+      levelCounter: backendStructureLevel,
+      backendStructure: formattedStructure.length,
+    });
+    this.levels.current.setState({ levelsDetails: this.state.previewStructure });
   };
 
   /**
@@ -69,7 +87,7 @@ class BuildingLevel extends Component {
     const {
       state: { levelsDetails },
     } = this.levels.current;
-    this.setState({ locationStructure: levelsDetails });
+    this.setState({ previewStructure: levelsDetails });
   };
 
   updateCounter = (counter) => {
@@ -236,7 +254,8 @@ class BuildingLevel extends Component {
   render() {
     const {
       levelCounter,
-      locationStructure,
+      previewStructure,
+      backendStructure,
       numberOfLevels,
       activeLevel,
       showAddLevel,
@@ -303,7 +322,8 @@ class BuildingLevel extends Component {
             </div>
           </div>
           <Preview
-            locationStructure={locationStructure}
+            locationStructure={previewStructure}
+            backendStructLength={backendStructure}
             removeLevel={this.removeLevel}
             saveStructure={this.saveLevelStructure}
             counter={levelCounter}

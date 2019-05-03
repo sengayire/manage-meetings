@@ -58,4 +58,26 @@ const invalidLevel = [
     tag: 'Dojo',
   },
 ];
-export { user, allLocations, level, validLevel, invalidLevel };
+const mockDataStructure = [
+  {
+    id: 'c1a63f0e-72dc-4924-9f31-4279a8936efe',
+    level: 2,
+    children: [
+      {
+        level: 2,
+        locationId: 1,
+        name: 'F 2',
+        parentId: '0ba3a2af-c8e8-406e-9d6d-034ce73d3cb4',
+        parentTitle: '',
+        position: 2,
+        structureId: '17bbd44d-02a4-460b-9c96-e7c4cf7b66cf',
+        tag: 'Block B',
+      },
+    ],
+    parentId: '26c33b43-3d35-4cc2-8d7f-3104d4d7e06b',
+    parentTitle: '',
+    quantity: 4,
+    tag: 'Block C',
+  },
+];
+export { user, allLocations, level, validLevel, invalidLevel, mockDataStructure };

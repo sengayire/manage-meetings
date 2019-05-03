@@ -18,7 +18,7 @@ import {
 /* Styles */
 import '../assets/styles/roomSetup.scss';
 import StructurePreviewTree from '../components/setup/StructurePreviewTree';
-import orderByLevel from '../utils/formatSetupData';
+import { orderByLevel } from '../utils/formatSetupData';
 import stripTypenames from '../components/helpers/StripTypeNames';
 
 class RoomSetupOverView extends Component {
