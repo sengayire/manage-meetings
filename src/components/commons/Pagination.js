@@ -6,7 +6,7 @@ const options = array =>
   array.map(item => <option key={item + 1}>{item}</option>);
 
 /**
- * Reusabel pagination component
+ * Reusable pagination component
  *
  * @extends Component
  *
@@ -23,11 +23,6 @@ class Pagination extends Component {
     this.setState({ page: currentPage });
   }
 
-  componentWillReceiveProps = (nextProps) => {
-    const { perPage } = nextProps;
-    this.setState({ perPage });
-  }
-
   /**
    * Handles changes to the pagination field
    *
@@ -38,7 +33,6 @@ class Pagination extends Component {
     const { name, value } = e.target;
     const { perPage } = this.state;
     const { handleData, dataFetched } = this.props;
-
     if (name === 'perPage' && dataFetched) {
       this.setState({ perPage: parseFloat(value), page: 1 }, () => {
         handleData(value, 1);
@@ -74,8 +68,9 @@ class Pagination extends Component {
    */
   handlePrevious = () => {
     const {
-      handleData, dataFetched, perPage, currentPage,
+      handleData, dataFetched, currentPage,
     } = this.props;
+    const { perPage } = this.state;
     handleData(perPage, currentPage - 1);
     dataFetched &&
       this.setState({

@@ -2,9 +2,9 @@
 @import '../../utils/images/images';
 
 .calendarIcon {
-  &:after {
-    content: url($calendar-today);
-    margin-left: 15px;
+   &:before {
+    content: url($date-range);
+    margin-right: 15px;
   }
 }
 .Selectable {
