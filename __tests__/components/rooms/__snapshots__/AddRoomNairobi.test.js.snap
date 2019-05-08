@@ -3530,10 +3530,12 @@ exports[`AddRoomNairobi should pop up a modal when modal button is clicked 1`] =
                                   >
                                     <SelectInput
                                       id="remoteRoomName"
+                                      isRemoteRoom={false}
                                       isValue={false}
                                       labelText="Select Google Calendar Room"
                                       name="remoteRoomName"
                                       onChange={[Function]}
+                                      onClick={[Function]}
                                       options={Array []}
                                       placeholder="Select Google Calendar Room"
                                       placeholderValue=""
@@ -3673,11 +3675,13 @@ exports[`AddRoomNairobi should pop up a modal when modal button is clicked 1`] =
                                     </Input>
                                     <SelectInput
                                       id="officeBlock"
+                                      isRemoteRoom={false}
                                       isValue={false}
                                       key=""
                                       labelText="Select Block"
                                       name="officeBlock"
                                       onChange={[Function]}
+                                      onClick={[Function]}
                                       options={Array []}
                                       placeholder="Select block"
                                       placeholderValue=""
@@ -3714,10 +3718,12 @@ exports[`AddRoomNairobi should pop up a modal when modal button is clicked 1`] =
                                     </SelectInput>
                                     <SelectInput
                                       id="officeFloor"
+                                      isRemoteRoom={false}
                                       isValue={false}
                                       labelText="Select Floor"
                                       name="officeFloor"
                                       onChange={[Function]}
+                                      onClick={[Function]}
                                       options={Array []}
                                       placeholder="Select floor"
                                       placeholderValue=""

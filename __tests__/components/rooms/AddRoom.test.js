@@ -40,6 +40,19 @@ describe('Unit test for the AddRoom component', () => {
       wrapper.update();
       expect(wrapper.state('rooms')).toEqual(['my-room']);
     });
+    it('should set the state of roomsAllLocations when fetchRemoteRooms method is called', async () => {
+      jest.spyOn(queryHelpers, 'getRemoteRoomsAllLocations').mockImplementationOnce(() => ({ rooms: ['new-room'] }));
+      expect(wrapper.state('roomsAllLocations')).toEqual([]);
+      await wrapper.instance().fetchRemoteRooms();
+      wrapper.update();
+      expect(wrapper.state('roomsAllLocations')).toEqual(['new-room']);
+    });
+
+    it('should toggle the value of isAllRemoteRooms in the state when handleClick method is called', () => {
+      expect(wrapper.state('isAllRemoteRooms')).toEqual(false);
+      wrapper.instance().handleClick();
+      expect(wrapper.state('isAllRemoteRooms')).toEqual(true);
+    });
   });
   it('should capitalize the first letter of a string when capitalizeFirstLetter method is called', () => {
     const addNewRoomInstance = new AddNewRoom();

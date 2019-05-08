@@ -25,6 +25,16 @@
   margin: 10px auto;
 }
 
+.remote-room-all {
+  margin-left: 5px;
+  padding: 5px 14px;
+  height: 40px;
+  &:hover {
+    background-color: $color-primary;
+    color: map-get($color-white, 000);
+  }
+}
+
 .capacity-controls {
   float: none;
   top: -24px !important;

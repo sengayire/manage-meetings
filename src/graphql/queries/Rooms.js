@@ -103,4 +103,20 @@ const GET_ALL_REMOTE_ROOMS = gql`
     }
 }`;
 
-export { GET_ROOMS_QUERY as default, GET_LOCATIONS_QUERY, GET_ROOM_BY_NAME, GET_ALL_REMOTE_ROOMS };
+const GET_REMOTE_ROOMS_ALL_LOCATIONS = gql`
+  query allRooms($returnAll: Boolean){
+    allRemoteRooms(returnAll: $returnAll) {
+      rooms {
+        calendarId
+        name
+      }
+    }
+}`;
+
+export {
+  GET_ROOMS_QUERY as default,
+  GET_LOCATIONS_QUERY,
+  GET_ROOM_BY_NAME,
+  GET_ALL_REMOTE_ROOMS,
+  GET_REMOTE_ROOMS_ALL_LOCATIONS,
+};

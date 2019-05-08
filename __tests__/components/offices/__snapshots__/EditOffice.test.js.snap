@@ -28,10 +28,12 @@ exports[`EditOffice Component renders properly 1`] = `
     <SelectInput
       disabled={true}
       id="officeLocation"
+      isRemoteRoom={false}
       isValue={false}
       labelText="Select location"
       name="officeLocation"
       onChange={[Function]}
+      onClick={[Function]}
       options={Array []}
       placeholder="Lagos"
       placeholderValue=""

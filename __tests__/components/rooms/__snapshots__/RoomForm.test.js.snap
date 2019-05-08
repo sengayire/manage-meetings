@@ -78,11 +78,13 @@ exports[`RoomForm should render properly 1`] = `
     <SelectInput
       disabled={true}
       id="roomLocation"
+      isRemoteRoom={false}
       isValue={false}
       key=""
       labelText="Select Room Location"
       name="roomLocation"
       onChange={[MockFunction]}
+      onClick={[Function]}
       options={
         Array [
           Object {

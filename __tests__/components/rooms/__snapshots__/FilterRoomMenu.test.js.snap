@@ -6743,10 +6743,12 @@ exports[`FilterButton renders correctly from memory 1`] = `
                                 >
                                   <SelectInput
                                     id="location-filter"
+                                    isRemoteRoom={false}
                                     isValue={true}
                                     labelText="Location"
                                     name="location"
                                     onChange={[Function]}
+                                    onClick={[Function]}
                                     options={null}
                                     placeholder="Select location"
                                     placeholderValue=""
@@ -6783,10 +6785,12 @@ exports[`FilterButton renders correctly from memory 1`] = `
                                   </SelectInput>
                                   <SelectInput
                                     id="office-filter"
+                                    isRemoteRoom={false}
                                     isValue={true}
                                     labelText="Office"
                                     name="office"
                                     onChange={[Function]}
+                                    onClick={[Function]}
                                     options={null}
                                     placeholder="Select office"
                                     placeholderValue=""

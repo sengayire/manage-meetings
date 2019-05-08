@@ -3158,10 +3158,12 @@ exports[`AddWing Component renders the snapshot 1`] = `
     />
     <SelectInput
       id="floorId"
+      isRemoteRoom={false}
       isValue={false}
       labelText="Select floor"
       name="floorId"
       onChange={[Function]}
+      onClick={[Function]}
       options={Array []}
       placeholder="Select floor"
       placeholderValue=""

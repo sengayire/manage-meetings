@@ -6,10 +6,12 @@ exports[`EpicTowerInputs component should render correctly 1`] = `
 >
   <SelectInput
     id="remoteRoomName"
+    isRemoteRoom={false}
     isValue={false}
     labelText="Select Google Calendar Room"
     name="remoteRoomName"
     onChange={[MockFunction]}
+    onClick={[Function]}
     options={
       Array [
         Object {},
@@ -51,10 +53,12 @@ exports[`EpicTowerInputs component should render correctly 1`] = `
   />
   <SelectInput
     id="roomFloor"
+    isRemoteRoom={false}
     isValue={false}
     labelText="Select Floor"
     name="roomFloor"
     onChange={[MockFunction]}
+    onClick={[Function]}
     options={Array []}
     placeholder="Select floor"
     placeholderValue=""
@@ -65,10 +69,12 @@ exports[`EpicTowerInputs component should render correctly 1`] = `
   />
   <SelectInput
     id="roomWing"
+    isRemoteRoom={false}
     isValue={false}
     labelText="Select Wing"
     name="roomWing"
     onChange={[MockFunction]}
+    onClick={[Function]}
     options={Array []}
     placeholder="Select Wing"
     placeholderValue=""

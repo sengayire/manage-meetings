@@ -3,6 +3,7 @@ import {
   GET_LOCATIONS_QUERY,
   GET_ROOMS_QUERY,
   GET_ALL_REMOTE_ROOMS,
+  GET_REMOTE_ROOMS_ALL_LOCATIONS,
 } from '../../graphql/queries/Rooms';
 import { GET_RESOURCES_QUERY } from '../../graphql/queries/Resources';
 import {
@@ -107,6 +108,20 @@ const getAllRemoteRooms = async (client = apolloClient) => {
   );
   return data.allRemoteRooms;
 };
+
+const getRemoteRoomsAllLocations = async (client = apolloClient) => {
+  const { data } = await client.query(
+    {
+      query: GET_REMOTE_ROOMS_ALL_LOCATIONS,
+      variables: {
+        returnAll: true,
+      },
+    },
+    true,
+  );
+  return data.allRemoteRooms;
+};
+
 const getLeastBookedRooms = async (dateValue, client = apolloClient) => {
   try {
     const data = client.readQuery(
@@ -226,4 +241,5 @@ export {
   getRoomsStructure,
   getAnalyticForDailyRoomsEvents,
   getRoomFeedbackQuestions,
+  getRemoteRoomsAllLocations,
 };

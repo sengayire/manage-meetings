@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import MrmModal from '../commons/MrmModal';
 import SelectImage from '../commons/SelectImage';
 import { SelectInput, Input } from '../commons';
-import { getAllRemoteRooms, getRoomsStructure, getUserDetails, getAllLocations } from '../helpers/QueriesHelpers';
+import { getAllRemoteRooms, getRoomsStructure, getUserDetails, getAllLocations, getRemoteRoomsAllLocations } from '../helpers/QueriesHelpers';
 import { orderByLevel } from '../../utils/formatSetupData';
 import notification from '../../utils/notification';
 import stripTypeNames from '../helpers/StripTypeNames';
@@ -17,6 +17,8 @@ export class AddNewRoom extends Component {
     thumbnailName: 'Upload a thumbnail',
     imageUrl: '',
     rooms: [],
+    roomsAllLocations: [],
+    isAllRemoteRooms: false,
     roomCapacity: 0,
     roomName: '',
     remoteRoomName: '',
@@ -67,8 +69,12 @@ export class AddNewRoom extends Component {
    */
   fetchRemoteRooms = async () => {
     const allRemoteRooms = await getAllRemoteRooms();
-    if (allRemoteRooms) {
-      this.setState({ rooms: allRemoteRooms.rooms });
+    const remoteRoomsAllLocations = await getRemoteRoomsAllLocations();
+    if (allRemoteRooms && remoteRoomsAllLocations) {
+      this.setState({
+        rooms: allRemoteRooms.rooms,
+        roomsAllLocations: remoteRoomsAllLocations.rooms,
+      });
     }
   }
 
@@ -191,6 +197,20 @@ export class AddNewRoom extends Component {
   }
 
   /**
+   * Handles click on button to toggle options under
+   * the remote room select component through changing
+   * the boolean value of isAllRemoteRooms
+   *
+   * @returns {void}
+   */
+  handleClick = () => {
+    const { isAllRemoteRooms } = this.state;
+    this.setState({
+      isAllRemoteRooms: !isAllRemoteRooms,
+    });
+  }
+
+  /**
    * It renders the SelectImage component
    * for thumbnail upload
    *
@@ -207,7 +227,6 @@ export class AddNewRoom extends Component {
     );
   }
 
-
   /**
    * It renders the SelectInput component
    * for selecting room from the Google calendar
@@ -215,14 +234,18 @@ export class AddNewRoom extends Component {
    * @returns {JSX}
    */
   renderRemoteRoomSelect = () => {
-    const { rooms, remoteRoomName } = this.state;
+    const {
+      rooms, remoteRoomName, isAllRemoteRooms, roomsAllLocations,
+    } = this.state;
     return (
       <SelectInput
-        labelText="Select Google Calendar Room"
+        labelText={isAllRemoteRooms ? 'Select Google Calendar Room from all locations' : 'Select Google Calendar Room'}
         name="remoteRoomName"
         id="remoteRoomName"
+        isRemoteRoom
+        onClick={this.handleClick}
         value={remoteRoomName}
-        options={rooms}
+        options={isAllRemoteRooms ? roomsAllLocations : rooms}
         onChange={this.handleInputChange}
         wrapperClassName="floor-wrapper"
         placeholder="Select Google Calendar Room"
