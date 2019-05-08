@@ -99,7 +99,7 @@ export class AddResource extends React.Component {
         /** Notify user on failure to add resource */
         this.toggleLoading();
         this.handleCloseModal();
-        notification(toastr, 'error', err)();
+        notification(toastr, 'error', err.graphQLErrors[0].message)();
       });
   };
 

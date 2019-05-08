@@ -196,12 +196,12 @@ class Preview extends Component {
         // show RoomSetupView
         handleClick('RoomSetupView')();
       })
-      .catch((err) => {
+      .catch(() => {
         /** Notify user on failure to add level setup data */
         this.setState({
           isSubmiting: false,
         });
-        notification(toastr, 'error', err)();
+        notification(toastr, 'error', `Could not add structure${flattenedData.length > 1 ? 's' : ''}`)();
       });
   }
 

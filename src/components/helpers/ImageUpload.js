@@ -20,7 +20,7 @@ const getImageUrl = (folderName, imageFile) => {
   return storageRef
     .put(imageFile)
     .then(() => storageRef.getDownloadURL().then(url => url))
-    .catch(err => notification(toastr, 'error', err)());
+    .catch(() => notification(toastr, 'error', 'Could not upload the image')());
 };
 
 export default getImageUrl;

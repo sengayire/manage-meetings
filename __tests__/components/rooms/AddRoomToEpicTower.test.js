@@ -36,7 +36,7 @@ describe('AddRoomEpicTower', () => {
   const wrapper = mount(wrapperCode);
   const epicTower = wrapper.find('AddRoomToEpicTower');
   beforeEach(() => {
-    epicTower.instance().state = {
+    epicTower.setState({
       imageUrl: '',
       roomName: '',
       remoteRoomName: '',
@@ -52,7 +52,7 @@ describe('AddRoomEpicTower', () => {
       thumbnailName: 'Upload a thumbnail',
       officeId: 1,
       files: [],
-    };
+    });
   });
 
   const event = {
@@ -79,108 +79,111 @@ describe('AddRoomEpicTower', () => {
 
   it('should close modal', () => {
     epicTower.instance().handleCloseModal();
-    expect(epicTower.instance().state.closeModal).toBeTruthy();
+    expect(epicTower.state('closeModal')).toBeTruthy();
   });
 
   it('should change modal state', () => {
-    epicTower.instance().state = {
+    epicTower.setState({
       closeModal: true,
-    };
+    });
     epicTower.instance().handleModalStateChange();
-    expect(epicTower.instance().state.closeModal).toBeFalsy();
+    expect(epicTower.state('closeModal')).toBeFalsy();
   });
 
   it('should change room name', () => {
     event.target.name = 'roomName';
     event.target.value = 'room2';
     epicTower.instance().handleInputChange(event);
-    expect(epicTower.instance().state.roomName).toEqual('room2');
+    expect(epicTower.state('roomName')).toEqual('room2');
   });
 
   it('should handle change in remoteRoomName', () => {
     epicTower.instance().handleInputChange({ target: { name: 'remoteRoomName', value: 'Nairobi' } });
-    expect(epicTower.instance().state.remoteRoomName).toEqual('Nairobi');
+    expect(epicTower.state('remoteRoomName')).toEqual('Nairobi');
   });
 
   it('should change room capacity', () => {
     epicTower.instance().handleInputChange({ target: { name: 'roomCapacity', value: '' } });
-    expect(epicTower.instance().state.roomCapacity).toEqual(0);
+    expect(epicTower.state('roomCapacity')).toEqual(0);
   });
 
   it('should change room capacity from clicking up button', () => {
     event.target.name = 'roomCapacity';
     event.target.value = 3;
     epicTower.instance().handleInputChange(event, 3);
-    expect(epicTower.instance().state.roomCapacity).toEqual(3);
+    expect(epicTower.state('roomCapacity')).toEqual(3);
   });
 
   it('should change room capacity by default', () => {
     event.target.name = '';
     event.target.value = 3;
     epicTower.instance().handleInputChange(event, 3);
-    expect(epicTower.instance().state.roomCapacity).toEqual(3);
+    expect(epicTower.state('roomCapacity')).toEqual(3);
   });
 
   it('should not change room capacity from clicking up button but empty string is passed', () => {
     event.target.name = 'up';
     event.target.value = '';
     epicTower.instance().handleInputChange(event);
-    expect(epicTower.instance().state.roomCapacity).toEqual(0);
+    expect(epicTower.state('roomCapacity')).toEqual(0);
   });
 
   it('should not change room capacity from clicking up button but number value not passed', () => {
     event.target.name = 'up';
     epicTower.instance().handleInputChange(event);
-    expect(epicTower.instance().state.roomCapacity).toEqual(0);
+    expect(epicTower.state('roomCapacity')).toEqual(0);
   });
 
   it('should change room capacity', () => {
     event.target.name = 'roomCapacity';
     event.target.value = 10;
     epicTower.instance().handleInputChange(event);
-    expect(epicTower.instance().state.roomCapacity).toEqual(10);
+    expect(epicTower.state('roomCapacity')).toEqual(10);
   });
 
   it('should change room floor', () => {
-    epicTower.instance().state = {
-      ...epicTower.instance().state,
+    epicTower.setState({
       wingsObject: {
         1: [{ name: 'wing1', id: 1 }],
       },
-    };
+    });
     event.target.name = 'roomFloor';
     event.target.value = 1;
     epicTower.instance().handleInputChange(event);
-    expect(epicTower.instance().state.roomFloor).toEqual(1);
+    expect(epicTower.state('roomFloor')).toEqual(1);
   });
 
   it('should change room wing', () => {
-    epicTower.instance().state = {
-      ...epicTower.instance().state,
+    epicTower.setState({
       wingsObject: {
         1: [{ name: 'wing1', id: 1 }],
       },
-    };
+    });
     event.target.name = 'roomWing';
     event.target.value = 1;
     epicTower.instance().handleInputChange(event);
-    expect(epicTower.instance().state.roomWing).toEqual(1);
+    expect(epicTower.state('roomWing')).toEqual(1);
   });
 
   it('should parse value to integer when an empty string is provided', () => {
-    epicTower.instance().state = {
-      ...epicTower.instance().state,
+    epicTower.setState({
       wingsObject: {
         1: [{ name: 'wing1', id: 1 }],
       },
-    };
+    });
     event.target.name = 'roomWing';
     event.target.value = '';
     epicTower.instance().handleInputChange(event);
-    expect(epicTower.instance().state.roomWing).toEqual(0);
+    expect(epicTower.state('roomWing')).toEqual(0);
   });
 
   it('should make a mutation', async () => {
+    const res = { data: { createRoom: { room: { name: 'roomName' } } } };
+    const mockProps = {
+      officeDetails: {},
+      epicTowerMutation: jest.fn(() => Promise.resolve(res)),
+    };
+    const component = shallow(<AddRoomToEpicTower {...mockProps} />);
     const preventDefault = jest.fn();
     const imageFiles = [
       {
@@ -190,18 +193,45 @@ describe('AddRoomEpicTower', () => {
         webKitRelativePath: '',
       },
     ];
-    epicTower.instance().state = {
-      ...epicTower.instance().state,
+    component.setState({
       imageUrl: 'path/to/image.jpg',
       roomName: 'room1',
       roomFloor: 1,
       roomCapacity: 10,
       roomWing: 1,
       files: imageFiles,
+    });
+    await component.instance().handleAddRoom({ preventDefault });
+    component.update();
+    expect(preventDefault).toHaveBeenCalled();
+  });
+
+  it('should show an error when addRoom mutation fails', async () => {
+    const res = { graphQLErrors: [{ message: 'my-message' }] };
+    const mockProps = {
+      officeDetails: {},
+      epicTowerMutation: jest.fn(() => Promise.reject(res)),
     };
-    await epicTower.instance().handleAddRoom({ preventDefault });
-    await new Promise(resolve => setTimeout(resolve));
-    wrapper.update();
+    const component = shallow(<AddRoomToEpicTower {...mockProps} />);
+    const preventDefault = jest.fn();
+    const imageFiles = [
+      {
+        name: 'fail',
+        type: 'image/jpeg',
+        size: 1024,
+        webKitRelativePath: '',
+      },
+    ];
+    component.setState({
+      imageUrl: 'path/to/image.jpg',
+      roomName: 'room1',
+      roomFloor: 1,
+      roomCapacity: 10,
+      roomWing: 1,
+      files: imageFiles,
+    });
+    await component.instance().handleAddRoom({ preventDefault });
+    component.update();
     expect(preventDefault).toHaveBeenCalled();
   });
 
@@ -221,17 +251,16 @@ describe('AddRoomEpicTower', () => {
         webKitRelativePath: '',
       },
     ];
-    epicTowerWrapper.instance().state = {
-      ...epicTowerWrapper.instance().state,
+    epicTowerWrapper.setState({
       imageUrl: 'path/to/image.jpg',
       roomName: 'room1',
       roomFloor: 1,
       roomCapacity: 10,
       roomWing: 1,
       files: imageFiles,
-    };
+    });
     await epicTowerWrapper.instance().handleAddRoom({ preventDefault });
-    wrapper.update();
+    epicTowerWrapper.update();
     expect(epicTowerWrapper.state().roomFloor).toBe(1);
   });
 
@@ -243,7 +272,7 @@ describe('AddRoomEpicTower', () => {
     };
     const epicTowerWrapper = shallow(<AddRoomToEpicTower {...mockProps} />);
     await epicTowerWrapper.instance().handleAddRoom(event);
-    wrapper.update();
+    epicTowerWrapper.update();
     expect(mockProps.epicTowerMutation).not.toHaveBeenCalled();
   });
 

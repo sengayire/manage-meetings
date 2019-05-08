@@ -199,7 +199,7 @@ export class AddRoomNairobi extends Component {
             }).catch((err) => {
               this.toggleLoading();
               this.handleCloseModal();
-              notification(toastr, 'error', err.message)();
+              notification(toastr, 'error', err.graphQLErrors[0].message)();
             });
           });
         });

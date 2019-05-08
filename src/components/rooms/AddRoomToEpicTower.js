@@ -205,7 +205,7 @@ export class AddRoomToEpicTower extends Component {
               /** Notify user on failure to add room */
                 this.toggleLoading();
                 this.handleCloseModal();
-                notification(toastr, 'error', err.message)();
+                notification(toastr, 'error', err.graphQLErrors[0].message)();
               });
           });
         });

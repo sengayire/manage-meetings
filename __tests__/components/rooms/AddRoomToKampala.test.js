@@ -1,12 +1,7 @@
 import React from 'react';
-import { mount, shallow } from 'enzyme';
-import { MockedProvider } from 'react-apollo/test-utils';
+import { shallow } from 'enzyme';
 import * as firebase from 'firebase';
-import AddRoomToKampala, { AddRoomToTheCrest } from '../../../src/components/rooms/AddRoomToKampala';
-import { GET_CREST_DETAILS } from '../../../src/graphql/queries/Offices';
-import { ADD_ROOM_TO_CREST } from '../../../src/graphql/mutations/rooms/AddRoomToCrest';
-import { crestOfficeDetails } from '../../../__mocks__/offices/Offices';
-import AddRoomToCrest, { variables } from '../../../__mocks__/rooms/AddRoomToCrest';
+import { AddRoomToTheCrest } from '../../../src/components/rooms/AddRoomToKampala';
 import getImageUrl from '../../../src/components/helpers/ImageUpload';
 
 jest.mock('../../../src/components/helpers/ImageUpload');
@@ -22,41 +17,15 @@ firebase.storage = jest.fn(() => ({
 getImageUrl.mockImplementation(arg => Promise.resolve(arg));
 
 describe('AddRoomToKampala', () => {
-  const MockedCrest = (
-    <MockedProvider
-      mocks={[
-        {
-          request: {
-            query: ADD_ROOM_TO_CREST,
-            variables: { ...variables },
-          },
-          result: {
-            ...AddRoomToCrest,
-          },
-      },
-      {
-        request: {
-          query: GET_CREST_DETAILS,
-        },
-        result: crestOfficeDetails,
-    },
-      ]}
-      addTypename={false}
-    >
-      <AddRoomToKampala />
-    </MockedProvider>);
-
-  const wrapper = mount(MockedCrest);
-  // const theCrest = wrapper.find('AddRoomToTheCrest');
   let response;
   const mockProps = {
     officeDetails: {},
     crestMutation: jest.fn(() => Promise.resolve(response)),
   };
-  const crestShallowWrapper = shallow(<AddRoomToTheCrest {...mockProps} />);
+  const wrapper = shallow(<AddRoomToTheCrest {...mockProps} />);
 
   beforeEach(() => {
-    crestShallowWrapper.setState({
+    wrapper.setState({
       imageUrl: '',
       roomName: '',
       remoteRoomName: '',
@@ -72,59 +41,55 @@ describe('AddRoomToKampala', () => {
     mockProps.crestMutation.mockClear();
   });
 
-  it('should render properly', () => {
-    expect(wrapper).toMatchSnapshot();
-  });
-
   it('should add room name to state', () => {
-    crestShallowWrapper.instance().handleInputChange({ target: { name: 'roomName', value: 'room1' } });
-    expect(crestShallowWrapper.state().roomName).toEqual('room1');
+    wrapper.instance().handleInputChange({ target: { name: 'roomName', value: 'room1' } });
+    expect(wrapper.state().roomName).toEqual('room1');
   });
 
   it('should handle change in remoteRoomName', () => {
-    crestShallowWrapper.instance().handleInputChange({ target: { name: 'remoteRoomName', value: 'Nairobi' } });
-    expect(crestShallowWrapper.instance().state.remoteRoomName).toEqual('Nairobi');
+    wrapper.instance().handleInputChange({ target: { name: 'remoteRoomName', value: 'Nairobi' } });
+    expect(wrapper.instance().state.remoteRoomName).toEqual('Nairobi');
   });
 
   it('should add room floor to state', () => {
-    crestShallowWrapper.instance().handleInputChange({ target: { name: 'roomFloor', value: '1' } });
-    expect(crestShallowWrapper.state().roomFloor).toEqual(1);
-    expect(crestShallowWrapper.state().roomFloor).not.toEqual('1');
+    wrapper.instance().handleInputChange({ target: { name: 'roomFloor', value: '1' } });
+    expect(wrapper.state().roomFloor).toEqual(1);
+    expect(wrapper.state().roomFloor).not.toEqual('1');
   });
 
   it('should close modal', () => {
-    crestShallowWrapper.instance().handleModalStateChange();
-    expect(crestShallowWrapper.state().closeModal).toBeFalsy();
+    wrapper.instance().handleModalStateChange();
+    expect(wrapper.state().closeModal).toBeFalsy();
   });
 
   it('should close modal', () => {
-    crestShallowWrapper.setState({
+    wrapper.setState({
       closeModal: true,
     });
-    crestShallowWrapper.instance().handleModalStateChange();
-    expect(crestShallowWrapper.state().closeModal).toBeFalsy();
+    wrapper.instance().handleModalStateChange();
+    expect(wrapper.state().closeModal).toBeFalsy();
   });
 
   it('should add room capacity to state', () => {
-    crestShallowWrapper.instance().handleInputChange({ target: { name: 'roomCapacity', value: '10' } });
-    expect(crestShallowWrapper.state().roomCapacity).toEqual(10);
-    expect(crestShallowWrapper.state().roomCapacity).not.toEqual('10');
+    wrapper.instance().handleInputChange({ target: { name: 'roomCapacity', value: '10' } });
+    expect(wrapper.state().roomCapacity).toEqual(10);
+    expect(wrapper.state().roomCapacity).not.toEqual('10');
   });
 
   it('should increment room capacity to state', () => {
-    crestShallowWrapper.instance().handleInputChange({ target: { name: 'up' } }, 12);
-    expect(crestShallowWrapper.state().roomCapacity).toEqual(12);
-    expect(crestShallowWrapper.state().roomCapacity).not.toEqual('12');
+    wrapper.instance().handleInputChange({ target: { name: 'up' } }, 12);
+    expect(wrapper.state().roomCapacity).toEqual(12);
+    expect(wrapper.state().roomCapacity).not.toEqual('12');
   });
 
   it('should not increment room capacity when num value is undefined', () => {
-    crestShallowWrapper.instance().handleInputChange({ target: { name: 'up' } }, undefined);
-    expect(crestShallowWrapper.state().roomCapacity).toEqual(0);
+    wrapper.instance().handleInputChange({ target: { name: 'up' } }, undefined);
+    expect(wrapper.state().roomCapacity).toEqual(0);
   });
 
   it('should add room capacity to state', () => {
-    crestShallowWrapper.instance().handleInputChange({ target: { name: 'roomCapacity', value: '' } });
-    expect(crestShallowWrapper.state().roomCapacity).toEqual(0);
+    wrapper.instance().handleInputChange({ target: { name: 'roomCapacity', value: '' } });
+    expect(wrapper.state().roomCapacity).toEqual(0);
   });
 
   it('should add image to state', async () => {
@@ -139,9 +104,9 @@ describe('AddRoomToKampala', () => {
     ];
     const imageUrl = 'upload/image-name.jpeg';
     const thumbnailName = 'image-name.jpeg';
-    crestShallowWrapper.instance().updateThumbnailState(files, imageUrl, thumbnailName);
-    expect(crestShallowWrapper.state().thumbnailName).toEqual('image-name.jpeg');
-    expect(crestShallowWrapper.state().imageUrl).toEqual('upload/image-name.jpeg');
+    wrapper.instance().updateThumbnailState(files, imageUrl, thumbnailName);
+    expect(wrapper.state().thumbnailName).toEqual('image-name.jpeg');
+    expect(wrapper.state().imageUrl).toEqual('upload/image-name.jpeg');
   });
 
   it('should not upload and image larger than 200k', async () => {
@@ -154,32 +119,50 @@ describe('AddRoomToKampala', () => {
         webKitRelativePath: '',
       },
     ];
-    await crestShallowWrapper.instance().handleAddRoom({ preventDefault: jest.fn(), target: { name: 'selectImage', files } });
+    await wrapper.instance().handleAddRoom({ preventDefault: jest.fn(), target: { name: 'selectImage', files } });
     await new Promise(resolve => setTimeout(resolve));
-    expect(crestShallowWrapper.state().imageUrl).toEqual('');
+    expect(wrapper.state().imageUrl).toEqual('');
   });
 
   it('should create room', async () => {
+    const res = { data: { createRoom: { room: { name: 'roomName' } } } };
+    mockProps.crestMutation = jest.fn(() => Promise.resolve(res));
+    const component = shallow(<AddRoomToTheCrest {...mockProps} />);
     const preventDefault = jest.fn();
-    crestShallowWrapper.setState({
+    wrapper.setState({
       imageUrl: 'path/to/image.jpg',
       roomName: 'room1',
       roomFloor: 1,
       roomCapacity: 10,
     });
-    await crestShallowWrapper.instance().handleAddRoom({ preventDefault });
-    await new Promise(resolve => setTimeout(resolve));
-    wrapper.update();
-    expect(mockProps.crestMutation).toHaveBeenCalled();
+    await component.instance().handleAddRoom({ preventDefault });
+    component.update();
+    expect(preventDefault).toHaveBeenCalled();
+  });
+
+  it('should show an error message when addRoom mutation was not successful', async () => {
+    const res = { graphQLErrors: [{ message: 'my-message' }] };
+    mockProps.dojoMutation = jest.fn(() => Promise.reject(res));
+    const component = shallow(<AddRoomToTheCrest {...mockProps} />);
+    const preventDefault = jest.fn();
+    wrapper.setState({
+      imageUrl: 'path/to/image.jpg',
+      roomName: 'room1',
+      roomFloor: 1,
+      roomCapacity: 10,
+    });
+    await component.instance().handleAddRoom({ preventDefault });
+    component.update();
+    expect(preventDefault).toHaveBeenCalled();
   });
 
   it('should not create room when some inputs are missing', async () => {
     const preventDefault = jest.fn();
-    crestShallowWrapper.setState({
+    wrapper.setState({
       imageUrl: 'path/to/image.jpg',
       roomName: 'room1',
     });
-    await crestShallowWrapper.instance().handleAddRoom({ preventDefault });
+    await wrapper.instance().handleAddRoom({ preventDefault });
     await new Promise(resolve => setTimeout(resolve));
     wrapper.update();
     expect(mockProps.crestMutation).not.toHaveBeenCalled();
