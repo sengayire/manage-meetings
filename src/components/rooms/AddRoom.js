@@ -5,7 +5,7 @@ import MrmModal from '../commons/MrmModal';
 import SelectImage from '../commons/SelectImage';
 import { SelectInput, Input } from '../commons';
 import { getAllRemoteRooms, getRoomsStructure, getUserDetails, getAllLocations } from '../helpers/QueriesHelpers';
-import orderByLevel from '../../utils/formatSetupData';
+import { orderByLevel } from '../../utils/formatSetupData';
 import notification from '../../utils/notification';
 import stripTypeNames from '../helpers/StripTypeNames';
 import addRoomMutation from '../helpers/mutationHelpers/rooms';
@@ -165,6 +165,7 @@ export class AddNewRoom extends Component {
                 this.toggleLoading();
                 this.handleCloseModal();
                 notification(toastr, 'success', `${roomName} Successfully added`)();
+                this.clearForm();
               }).catch((err) => {
                 this.toggleLoading();
                 this.handleCloseModal();
@@ -173,8 +174,21 @@ export class AddNewRoom extends Component {
           });
         });
     } else notification(toastr, 'error', 'All fields are required')();
+    this.clearForm();
   }
 
+  clearForm = () => {
+    this.setState({
+      rooms: [],
+      remoteRoomName: '',
+      roomName: '',
+      roomType: '',
+      levelInput: [],
+      locationId: '',
+      files: [],
+      roomCapacity: 0,
+    });
+  }
 
   /**
    * It renders the SelectImage component
@@ -193,28 +207,6 @@ export class AddNewRoom extends Component {
     );
   }
 
-  /**
-   * It renders the SelectInput component
-   * for selecting room from the Google calendar
-   *
-   * @returns {JSX}
-   */
-  renderRemoteRoomSelect = () => {
-    const { rooms, remoteRoomName } = this.state;
-    return (
-      <SelectInput
-        labelText="Select Google Calendar Room"
-        name="remoteRoomName"
-        id="remoteRoomName"
-        value={remoteRoomName}
-        options={rooms}
-        onChange={this.handleInputChange}
-        wrapperClassName="floor-wrapper"
-        placeholder="Select Google Calendar Room"
-        selectInputClassName="remote-room-select default-select"
-      />
-    );
-  }
 
   /**
    * It renders the SelectInput component
