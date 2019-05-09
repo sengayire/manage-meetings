@@ -2,25 +2,27 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { queryAllRoomsCapacity } from '../../../../__mocks__/analytics/queryBookingsCountMockData';
 import { GetAverageRoomCapacityComponent } from '../../../../src/components/analytics/averagePieChart/GetAverageRoomCapacity';
+import { getAllRooms } from '../../../../src/components/helpers/QueriesHelpers';
 
-const props = {
-  data: {
-    loading: false,
-    error: undefined,
-    allRooms: {
-      rooms: [
-        {
-          id: '1041',
-          name: 'Wasu',
-          capacity: 4,
-        },
-      ],
-    },
+jest.mock('../../../../src/components/helpers/QueriesHelpers');
+
+const state = {
+  loading: false,
+  error: undefined,
+  allRooms: {
+    rooms: [
+      {
+        id: '1041',
+        name: 'Wasu',
+        capacity: 4,
+      },
+    ],
   },
 };
 
 describe('Get Average Room Capacity Component', () => {
-  const wrapper = shallow(<GetAverageRoomCapacityComponent {...props} updateParent={jest.fn()} />);
+  getAllRooms.mockResolvedValue(state);
+  const wrapper = shallow(<GetAverageRoomCapacityComponent updateParent={jest.fn()} />);
   it('renders correctly from memory', () => {
     expect(wrapper).toMatchSnapshot();
     expect(wrapper).toHaveLength(1);

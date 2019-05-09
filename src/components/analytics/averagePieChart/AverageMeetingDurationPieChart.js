@@ -1,14 +1,13 @@
 import React from 'react';
-import { compose, graphql } from 'react-apollo';
 import PropTypes from 'prop-types';
 import { Pie } from 'react-chartjs-2';
-import MEETING_DURATION_ANALYTICS from '../../../graphql/queries/analytics';
 import { meetingDurationBackground, borderColor } from '../../../fixtures/pieChartColors';
 import Tip from '../../commons/Tooltip';
 import '../../../../src/assets/styles/pieChartBaseStyle.scss';
 import '../../../../src/assets/styles/meetingDurationPieChart.scss';
 import ErrorIcon from '../../commons/ErrorIcon';
 import Overlay from '../../commons/Overlay';
+import { getAnalyticForMeetingDurations } from '../../helpers/QueriesHelpers';
 
 /**
  * AverageMeetingDurationPieChart Component
@@ -18,25 +17,30 @@ import Overlay from '../../commons/Overlay';
  * @returns {JSX} - a pie chart for average meeting duration
  */
 export class AverageMeetingDurationPieChart extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      analyticsForMeetingsDurations: { ...props.data.analyticsForMeetingsDurations },
-    };
-    this.reFetchQuery();
+  state = {
+    analyticsForMeetingsDurations: {},
+    loading: true,
+  };
+
+  componentDidMount() {
+    this.getAnalyticForMeetingDurations();
   }
 
   componentDidUpdate(prevProps, { MeetingsDurationaAnalytics }) {
     const { updateParent } = this.props;
-    if (!this.props.data.error && !this.props.data.loading) {
-      this.props.queryCompleted('AverageMeetingDuration');
-    }
     if (
       MeetingsDurationaAnalytics !==
       this.state.analyticsForMeetingsDurationsMeetingsDurationaAnalytics
     ) {
       updateParent('averageMeetingDuration', this.getSectorWidths());
     }
+  }
+
+  async getAnalyticForMeetingDurations() {
+    const { dateValue } = this.props;
+    const { analyticsForMeetingsDurations } = await getAnalyticForMeetingDurations(dateValue);
+    this.props.queryCompleted('AverageMeetingDuration');
+    this.setState({ loading: false, analyticsForMeetingsDurations });
   }
 
   /**
@@ -79,36 +83,15 @@ export class AverageMeetingDurationPieChart extends React.Component {
     return [greaterThan60, between45And60, between30And45, thirtyAndBelow];
   };
 
-  /**
-   * Re-fetches the query when the variables are available in the props
-   *
-   * @returns {void}
-   */
-  reFetchQuery = () => {
-    /* istanbul ignore next */
-    /* Reasoning: no explicit way of testing configuration options */
-    this.props.data
-      .fetchMore({
-        variables: {
-          startDate: this.props.dateValue.validatedStartDate,
-          endDate: this.props.dateValue.validatedEndDate,
-        },
-        updateQuery: (prev, { fetchMoreResult }) => {
-          this.setState({
-            analyticsForMeetingsDurations: fetchMoreResult.analyticsForMeetingsDurations,
-          });
-        },
-      })
-      .then(() => null)
-      .catch(() => null);
-  };
-
   renderPieChart = () => {
-    const { MeetingsDurationaAnalytics = [] } = this.state.analyticsForMeetingsDurations;
-    const { loading, error } = this.props.data;
+    const {
+      analyticsForMeetingsDurations: {
+        MeetingsDurationaAnalytics = [],
+      } = {}, loading,
+    } = this.state;
 
-    if (error) {
-      return <ErrorIcon message={error.graphQLErrors.length > 0 && 'No resource found'} />;
+    if (!MeetingsDurationaAnalytics.length && !loading) {
+      return <ErrorIcon message="No resource found" />;
     }
 
     const dummySectorWidths = ['100', '0', '0', '0'];
@@ -188,12 +171,6 @@ export class AverageMeetingDurationPieChart extends React.Component {
 
 AverageMeetingDurationPieChart.propTypes = {
   dateValue: PropTypes.instanceOf(Object),
-  data: PropTypes.shape({
-    analyticsForMeetingsDurations: PropTypes.object,
-    fetchMore: PropTypes.func,
-    loading: PropTypes.bool,
-    error: PropTypes.any,
-  }).isRequired,
   queryCompleted: PropTypes.func.isRequired,
   updateParent: PropTypes.func,
 };
@@ -203,14 +180,4 @@ AverageMeetingDurationPieChart.defaultProps = {
   updateParent: null,
 };
 
-export default compose(
-  graphql(MEETING_DURATION_ANALYTICS, {
-    name: 'data',
-    options: props => ({
-      variables: {
-        startDate: props.dateValue.validatedStartDate,
-        endDate: props.dateValue.validatedEndDate,
-      },
-    }),
-  }),
-)(AverageMeetingDurationPieChart);
+export default AverageMeetingDurationPieChart;

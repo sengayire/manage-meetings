@@ -1,12 +1,13 @@
 import { GET_USER_QUERY } from '../../graphql/queries/People';
 import {
+  GET_ALL_ROOMS,
   GET_LOCATIONS_QUERY,
   GET_ROOMS_QUERY,
   GET_ALL_REMOTE_ROOMS,
   GET_REMOTE_ROOMS_ALL_LOCATIONS,
 } from '../../graphql/queries/Rooms';
 import { GET_RESOURCES_QUERY } from '../../graphql/queries/Resources';
-import {
+import MEETING_DURATION_ANALYTICS, {
   LEAST_BOOKED_ROOMS_ANALYTICS,
   ANALYTICS_BOOKINGS_COUNT,
   MOST_BOOKED_ROOMS_ANALYTICS,
@@ -205,11 +206,11 @@ const getRoomFeedbackQuestions = async (client = apolloClient) => {
   }
 };
 
-const getAnalyticForDailyRoomsEvents = async ({ startDate, endDate }, client = apolloClient) => {
+const getAnalytics = async ({ startDate, endDate }, query, client) => {
   try {
     const data = client.readQuery(
       {
-        query: ANALYTICS_FOR_DAILY_ROOM_EVENTS,
+        query,
         variables: {
           startDate,
           endDate,
@@ -220,7 +221,7 @@ const getAnalyticForDailyRoomsEvents = async ({ startDate, endDate }, client = a
     return data;
   } catch (error) {
     const { data } = await client.query({
-      query: ANALYTICS_FOR_DAILY_ROOM_EVENTS,
+      query,
       variables: {
         startDate,
         endDate,
@@ -258,8 +259,25 @@ const getCheckinsBookingsCancellationsPercentages = async (dateValue, client = a
   }
 };
 
+const getAnalyticForDailyRoomsEvents = (dateValue, client = apolloClient) =>
+  getAnalytics(dateValue, ANALYTICS_FOR_DAILY_ROOM_EVENTS, client);
+
+const getAnalyticForMeetingDurations = (dateValue, client = apolloClient) =>
+  getAnalytics(dateValue, MEETING_DURATION_ANALYTICS, client);
+
+const getAllRooms = async (client = apolloClient) => {
+  try {
+    const data = client.readQuery({ query: GET_ALL_ROOMS }, true);
+    return data;
+  } catch (error) {
+    const { data } = await client.query({ query: GET_ALL_ROOMS }, true);
+    return data;
+  }
+};
+
 
 export {
+  getAllRooms,
   getUserDetails,
   getAllLocations,
   getAllResources,
@@ -273,4 +291,5 @@ export {
   getRoomFeedbackQuestions,
   getRemoteRoomsAllLocations,
   getCheckinsBookingsCancellationsPercentages,
+  getAnalyticForMeetingDurations,
 };

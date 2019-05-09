@@ -1,18 +1,23 @@
 import React, { Component, Fragment } from 'react';
-import { graphql, compose } from 'react-apollo';
 import PropTypes from 'prop-types';
 import { Pie } from 'react-chartjs-2';
 import roomCapacityBackground from '../../../fixtures/pieChartColors';
-import { GET_ALL_ROOMS } from '../../../graphql/queries/Rooms';
 import Tip from '../../commons/Tooltip';
 import '../../../../src/assets/styles/roomCapacityPieChart.scss';
 import ErrorIcon from '../../../components/commons/ErrorIcon';
 import Overlay from '../../commons/Overlay';
+import { getAllRooms } from '../../helpers/QueriesHelpers';
 
 export class GetAverageRoomCapacityComponent extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
+  state = {
+    allRooms: {
+      rooms: [],
+    },
+    loading: true,
+  };
+
+  componentDidMount() {
+    this.getAllRooms();
   }
 
   componentDidCatch(prevProps) {
@@ -28,8 +33,8 @@ export class GetAverageRoomCapacityComponent extends Component {
    * @returns {Object}
    */
   getRoomData = () => {
-    const roomsLength = this.props.data.allRooms.rooms.length;
-    const allRoomsData = this.props.data.allRooms.rooms;
+    const roomsLength = this.state.allRooms.rooms.length;
+    const allRoomsData = this.state.allRooms.rooms;
     const capacity = allRoomsData.map(room => room.capacity);
     const lessThanTenArray = capacity.filter(num => num < 10);
     const greaterThanTwentyArray = capacity.filter(num => num > 20);
@@ -56,16 +61,24 @@ export class GetAverageRoomCapacityComponent extends Component {
     return Math.round(result);
   };
 
+
+  getAllRooms = async () => {
+    const { allRooms } = await getAllRooms();
+    this.setState({
+      allRooms, loading: false,
+    });
+  }
+
   /**
    * renders pie chart for room data
    *
    * @returns {JSX}
    */
   renderPieChart = () => {
-    const { loading, error, allRooms } = this.props.data;
-    if (error) {
+    const { loading, allRooms } = this.state;
+    if (!loading && !allRooms) {
       return (
-        <ErrorIcon message={error.graphQLErrors.length > 0 && 'Resource not found'} />
+        <ErrorIcon message="Resource not found" />
       );
     }
 
@@ -128,14 +141,6 @@ export class GetAverageRoomCapacityComponent extends Component {
 }
 
 GetAverageRoomCapacityComponent.propTypes = {
-  data: PropTypes.shape({
-    allRooms: PropTypes.shape({
-      rooms: PropTypes.array,
-      pages: PropTypes.number,
-    }),
-    loading: PropTypes.bool,
-    error: PropTypes.object,
-  }).isRequired,
   updateParent: PropTypes.func,
 };
 
@@ -143,4 +148,4 @@ GetAverageRoomCapacityComponent.defaultProps = {
   updateParent: null,
 };
 
-export default compose(graphql(GET_ALL_ROOMS, { name: 'data' }))(GetAverageRoomCapacityComponent);
+export default GetAverageRoomCapacityComponent;

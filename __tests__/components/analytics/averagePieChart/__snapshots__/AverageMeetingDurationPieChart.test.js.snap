@@ -2,43 +2,6 @@
 
 exports[`Average Meetings Duration PieChart Component renders correctly from memory 1`] = `
 <AverageMeetingDurationPieChart
-  data={
-    Object {
-      "analyticsForMeetingsDurations": Object {
-        "MeetingsDurationaAnalytics": Array [
-          Object {
-            "count": 4,
-            "totalDuration": 25,
-          },
-          Object {
-            "count": 1,
-            "totalDuration": 50,
-          },
-          Object {
-            "count": 1,
-            "totalDuration": 35,
-          },
-          Object {
-            "count": 1,
-            "totalDuration": 2440,
-          },
-        ],
-      },
-      "fetchMore": [MockFunction] {
-        "calls": Array [
-          Array [
-            Object {
-              "updateQuery": [Function],
-              "variables": Object {
-                "endDate": undefined,
-                "startDate": undefined,
-              },
-            },
-          ],
-        ],
-      },
-    }
-  }
   dateValue={
     Object {
       "endDate": "Jan 25 2019",
@@ -46,7 +9,15 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
     }
   }
   name="data"
-  queryCompleted={[MockFunction]}
+  queryCompleted={
+    [MockFunction] {
+      "calls": Array [
+        Array [
+          "AverageMeetingDuration",
+        ],
+      ],
+    }
+  }
   updateParent={[MockFunction]}
 >
   <article
@@ -130,6 +101,31 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
     <section
       className="chart-content"
     >
+      <Overlay
+        id=""
+      >
+        <div>
+          <div
+            className="overlay"
+            id=""
+          />
+          <div
+            className="Pagination-spinner"
+          >
+            <Spinner
+              size=""
+            >
+              <div
+                className="centered"
+              >
+                <div
+                  className="spinner"
+                />
+              </div>
+            </Spinner>
+          </div>
+        </div>
+      </Overlay>
       <div>
         <Pie
           data={
@@ -418,7 +414,15 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
                             "top": 0,
                           },
                           "config": Object {
-                            "data": [Circular],
+                            "data": Object {
+                              "datasets": [Circular],
+                              "labels": Array [
+                                "Above 60 Minutes in %",
+                                "45-60 Minutes in %",
+                                "30-45 Minutes in %",
+                                "Below 30 minutes in %",
+                              ],
+                            },
                             "options": Object {
                               "animation": Object {
                                 "animateRotate": true,
@@ -1002,7 +1006,15 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
                           "tooltip": Object {
                             "_chart": [Circular],
                             "_chartInstance": [Circular],
-                            "_data": [Circular],
+                            "_data": Object {
+                              "datasets": [Circular],
+                              "labels": Array [
+                                "Above 60 Minutes in %",
+                                "45-60 Minutes in %",
+                                "30-45 Minutes in %",
+                                "Below 30 minutes in %",
+                              ],
+                            },
                             "_lastActive": Array [],
                             "_model": Object {
                               "_bodyAlign": "left",
@@ -1364,7 +1376,15 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
                               "top": 0,
                             },
                             "config": Object {
-                              "data": [Circular],
+                              "data": Object {
+                                "datasets": [Circular],
+                                "labels": Array [
+                                  "Above 60 Minutes in %",
+                                  "45-60 Minutes in %",
+                                  "30-45 Minutes in %",
+                                  "Below 30 minutes in %",
+                                ],
+                              },
                               "options": Object {
                                 "animation": Object {
                                   "animateRotate": true,
@@ -1948,7 +1968,15 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
                             "tooltip": Object {
                               "_chart": [Circular],
                               "_chartInstance": [Circular],
-                              "_data": [Circular],
+                              "_data": Object {
+                                "datasets": [Circular],
+                                "labels": Array [
+                                  "Above 60 Minutes in %",
+                                  "45-60 Minutes in %",
+                                  "30-45 Minutes in %",
+                                  "Below 30 minutes in %",
+                                ],
+                              },
                               "_lastActive": Array [],
                               "_model": Object {
                                 "_bodyAlign": "left",
@@ -2336,7 +2364,15 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
                               "top": 0,
                             },
                             "config": Object {
-                              "data": [Circular],
+                              "data": Object {
+                                "datasets": [Circular],
+                                "labels": Array [
+                                  "Above 60 Minutes in %",
+                                  "45-60 Minutes in %",
+                                  "30-45 Minutes in %",
+                                  "Below 30 minutes in %",
+                                ],
+                              },
                               "options": Object {
                                 "animation": Object {
                                   "animateRotate": true,
@@ -2920,7 +2956,15 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
                             "tooltip": Object {
                               "_chart": [Circular],
                               "_chartInstance": [Circular],
-                              "_data": [Circular],
+                              "_data": Object {
+                                "datasets": [Circular],
+                                "labels": Array [
+                                  "Above 60 Minutes in %",
+                                  "45-60 Minutes in %",
+                                  "30-45 Minutes in %",
+                                  "Below 30 minutes in %",
+                                ],
+                              },
                               "_lastActive": Array [],
                               "_model": Object {
                                 "_bodyAlign": "left",
@@ -3308,7 +3352,15 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
                               "top": 0,
                             },
                             "config": Object {
-                              "data": [Circular],
+                              "data": Object {
+                                "datasets": [Circular],
+                                "labels": Array [
+                                  "Above 60 Minutes in %",
+                                  "45-60 Minutes in %",
+                                  "30-45 Minutes in %",
+                                  "Below 30 minutes in %",
+                                ],
+                              },
                               "options": Object {
                                 "animation": Object {
                                   "animateRotate": true,
@@ -3892,7 +3944,15 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
                             "tooltip": Object {
                               "_chart": [Circular],
                               "_chartInstance": [Circular],
-                              "_data": [Circular],
+                              "_data": Object {
+                                "datasets": [Circular],
+                                "labels": Array [
+                                  "Above 60 Minutes in %",
+                                  "45-60 Minutes in %",
+                                  "30-45 Minutes in %",
+                                  "Below 30 minutes in %",
+                                ],
+                              },
                               "_lastActive": Array [],
                               "_model": Object {
                                 "_bodyAlign": "left",
@@ -4280,7 +4340,15 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
                               "top": 0,
                             },
                             "config": Object {
-                              "data": [Circular],
+                              "data": Object {
+                                "datasets": [Circular],
+                                "labels": Array [
+                                  "Above 60 Minutes in %",
+                                  "45-60 Minutes in %",
+                                  "30-45 Minutes in %",
+                                  "Below 30 minutes in %",
+                                ],
+                              },
                               "options": Object {
                                 "animation": Object {
                                   "animateRotate": true,
@@ -4864,7 +4932,15 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
                             "tooltip": Object {
                               "_chart": [Circular],
                               "_chartInstance": [Circular],
-                              "_data": [Circular],
+                              "_data": Object {
+                                "datasets": [Circular],
+                                "labels": Array [
+                                  "Above 60 Minutes in %",
+                                  "45-60 Minutes in %",
+                                  "30-45 Minutes in %",
+                                  "Below 30 minutes in %",
+                                ],
+                              },
                               "_lastActive": Array [],
                               "_model": Object {
                                 "_bodyAlign": "left",
@@ -5313,7 +5389,15 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
                               "top": 0,
                             },
                             "config": Object {
-                              "data": [Circular],
+                              "data": Object {
+                                "datasets": [Circular],
+                                "labels": Array [
+                                  "Above 60 Minutes in %",
+                                  "45-60 Minutes in %",
+                                  "30-45 Minutes in %",
+                                  "Below 30 minutes in %",
+                                ],
+                              },
                               "options": Object {
                                 "animation": Object {
                                   "animateRotate": true,
@@ -5897,7 +5981,15 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
                             "tooltip": Object {
                               "_chart": [Circular],
                               "_chartInstance": [Circular],
-                              "_data": [Circular],
+                              "_data": Object {
+                                "datasets": [Circular],
+                                "labels": Array [
+                                  "Above 60 Minutes in %",
+                                  "45-60 Minutes in %",
+                                  "30-45 Minutes in %",
+                                  "Below 30 minutes in %",
+                                ],
+                              },
                               "_lastActive": Array [],
                               "_model": Object {
                                 "_bodyAlign": "left",
@@ -6259,7 +6351,15 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
                                 "top": 0,
                               },
                               "config": Object {
-                                "data": [Circular],
+                                "data": Object {
+                                  "datasets": [Circular],
+                                  "labels": Array [
+                                    "Above 60 Minutes in %",
+                                    "45-60 Minutes in %",
+                                    "30-45 Minutes in %",
+                                    "Below 30 minutes in %",
+                                  ],
+                                },
                                 "options": Object {
                                   "animation": Object {
                                     "animateRotate": true,
@@ -6843,7 +6943,15 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
                               "tooltip": Object {
                                 "_chart": [Circular],
                                 "_chartInstance": [Circular],
-                                "_data": [Circular],
+                                "_data": Object {
+                                  "datasets": [Circular],
+                                  "labels": Array [
+                                    "Above 60 Minutes in %",
+                                    "45-60 Minutes in %",
+                                    "30-45 Minutes in %",
+                                    "Below 30 minutes in %",
+                                  ],
+                                },
                                 "_lastActive": Array [],
                                 "_model": Object {
                                   "_bodyAlign": "left",
@@ -7231,7 +7339,15 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
                                 "top": 0,
                               },
                               "config": Object {
-                                "data": [Circular],
+                                "data": Object {
+                                  "datasets": [Circular],
+                                  "labels": Array [
+                                    "Above 60 Minutes in %",
+                                    "45-60 Minutes in %",
+                                    "30-45 Minutes in %",
+                                    "Below 30 minutes in %",
+                                  ],
+                                },
                                 "options": Object {
                                   "animation": Object {
                                     "animateRotate": true,
@@ -7815,7 +7931,15 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
                               "tooltip": Object {
                                 "_chart": [Circular],
                                 "_chartInstance": [Circular],
-                                "_data": [Circular],
+                                "_data": Object {
+                                  "datasets": [Circular],
+                                  "labels": Array [
+                                    "Above 60 Minutes in %",
+                                    "45-60 Minutes in %",
+                                    "30-45 Minutes in %",
+                                    "Below 30 minutes in %",
+                                  ],
+                                },
                                 "_lastActive": Array [],
                                 "_model": Object {
                                   "_bodyAlign": "left",
@@ -8203,7 +8327,15 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
                                 "top": 0,
                               },
                               "config": Object {
-                                "data": [Circular],
+                                "data": Object {
+                                  "datasets": [Circular],
+                                  "labels": Array [
+                                    "Above 60 Minutes in %",
+                                    "45-60 Minutes in %",
+                                    "30-45 Minutes in %",
+                                    "Below 30 minutes in %",
+                                  ],
+                                },
                                 "options": Object {
                                   "animation": Object {
                                     "animateRotate": true,
@@ -8787,7 +8919,15 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
                               "tooltip": Object {
                                 "_chart": [Circular],
                                 "_chartInstance": [Circular],
-                                "_data": [Circular],
+                                "_data": Object {
+                                  "datasets": [Circular],
+                                  "labels": Array [
+                                    "Above 60 Minutes in %",
+                                    "45-60 Minutes in %",
+                                    "30-45 Minutes in %",
+                                    "Below 30 minutes in %",
+                                  ],
+                                },
                                 "_lastActive": Array [],
                                 "_model": Object {
                                   "_bodyAlign": "left",
@@ -9175,7 +9315,15 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
                                 "top": 0,
                               },
                               "config": Object {
-                                "data": [Circular],
+                                "data": Object {
+                                  "datasets": [Circular],
+                                  "labels": Array [
+                                    "Above 60 Minutes in %",
+                                    "45-60 Minutes in %",
+                                    "30-45 Minutes in %",
+                                    "Below 30 minutes in %",
+                                  ],
+                                },
                                 "options": Object {
                                   "animation": Object {
                                     "animateRotate": true,
@@ -9759,7 +9907,15 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
                               "tooltip": Object {
                                 "_chart": [Circular],
                                 "_chartInstance": [Circular],
-                                "_data": [Circular],
+                                "_data": Object {
+                                  "datasets": [Circular],
+                                  "labels": Array [
+                                    "Above 60 Minutes in %",
+                                    "45-60 Minutes in %",
+                                    "30-45 Minutes in %",
+                                    "Below 30 minutes in %",
+                                  ],
+                                },
                                 "_lastActive": Array [],
                                 "_model": Object {
                                   "_bodyAlign": "left",
