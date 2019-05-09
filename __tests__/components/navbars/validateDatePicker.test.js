@@ -4,11 +4,6 @@ import { shallow } from 'enzyme';
 import roomUsage from '../../../__mocks__/rooms/mostUsedRooms';
 import { AnalyticsNav as AnalyticComponent } from '../../../src/components/navbars/AnalyticsNav';
 
-jest.mock('moment', () => () => ({
-  format: () => 'time',
-  diff: jest.fn(() => -1),
-}));
-
 const props = {
   leastBookedAnalytics: {
     loading: false,

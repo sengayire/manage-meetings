@@ -27,10 +27,10 @@ export class QueryLeastBookedRooms extends Component {
   getLeastBookedRoomsAnalytics = async () => {
     const { dateValue } = this.props;
     const { bookedRoomsList } = this.state;
-    const analyticsForBookedRooms = await getLeastBookedRooms(dateValue);
-    const { analytics } = analyticsForBookedRooms;
+    const analyticsForLeastBookedRooms = await getLeastBookedRooms(dateValue);
+    const { analyticsForBookedRooms } = analyticsForLeastBookedRooms;
     let bookedRooms = Object.assign({}, bookedRoomsList);
-    bookedRooms = analytics;
+    bookedRooms = analyticsForBookedRooms.analytics;
     this.setState({
       bookedRoomsList: bookedRooms,
       loading: false,

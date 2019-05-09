@@ -16,10 +16,6 @@ import mockDataForAnalytics from '../../../__mocks__/analytics/mockAnalyticsData
 
 jest.mock('html2canvas');
 jest.mock('jspdf');
-jest.mock('moment', () => () => ({
-  format: () => 'time',
-  diff: jest.fn(() => 1),
-}));
 
 const { MRM_API_URL } = process.env || {};
 const httpLink = createHttpLink({
@@ -90,7 +86,7 @@ describe('AnalyticsNav Component', () => {
   });
 
   it('should update isFutureDateSelected to true when a future date is selected', () => {
-    analyticNavWrapper.sendDateData('05 Nov 2018', '06 Nov 2018');
+    analyticNavWrapper.sendDateData('05 Nov 2018', '06 Nov 2020');
     expect(analyticNavWrapper.state.isFutureDateSelected).toEqual(true);
   });
 });

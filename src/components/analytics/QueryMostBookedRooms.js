@@ -23,10 +23,10 @@ export class QueryMostBookedRooms extends Component {
 
   getMostBookedRoomsAnalytics = async () => {
     const { dateValue } = this.props;
-    const analyticsForBookedRooms = await getMostBookedRooms(dateValue);
-    const { analytics } = analyticsForBookedRooms;
+    const analyticsForMostBookedRooms = await getMostBookedRooms(dateValue);
+    const { analyticsForBookedRooms } = analyticsForMostBookedRooms;
     this.setState({
-      bookedRoomsList: analytics,
+      bookedRoomsList: analyticsForBookedRooms.analytics,
       loading: false,
     });
   };
