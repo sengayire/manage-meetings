@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { graphql, compose } from 'react-apollo';
 import '../../../assets/styles/checkins.scss';
 import DonutChart from './DonutChart';
-import { CHECKINS_BOOKINGS_CANCELLATIONS_PERCENTAGES } from '../../../graphql/queries/analytics';
+import { getCheckinsBookingsCancellationsPercentages } from '../../helpers/QueriesHelpers';
 import {
   checkinsChart,
   bookingsChart,
@@ -17,12 +16,23 @@ import {
  * @returns {JSX}
  */
 export class Checkins extends Component {
-  componentDidUpdate(prevProps) {
-    if (!this.props.data.error && !this.props.data.loading) {
+  state = {
+    loading: false,
+    analyticsRatios: {},
+    error: null,
+  };
+
+  componentDidMount() {
+    this.fetchData();
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    const { error, loading, analyticsRatios } = this.state;
+    if (!error && !loading) {
       this.props.queryCompleted('Checkins');
     }
-    if (prevProps && this.props.data.analyticsRatios !== prevProps.data.analyticsRatios) {
-      const { updateParent, data: { analyticsRatios } } = this.props;
+    if (prevState && analyticsRatios !== prevState.analyticsRatios) {
+      const { updateParent } = this.props;
       updateParent('checkinsAndCancellations', analyticsRatios);
     }
   }
@@ -42,11 +52,34 @@ export class Checkins extends Component {
     return {};
   };
 
+  /**
+   *
+   * fetch data
+   *
+   * @returns {void}
+   */
+  fetchData = async () => {
+    const { dateValue } = this.props;
+    this.setState({ loading: true });
+    try {
+      const data = await getCheckinsBookingsCancellationsPercentages(dateValue);
+      this.setState({
+        loading: false,
+        analyticsRatios: data.analyticsRatios,
+      });
+    } catch (e) {
+      this.setState({
+        loading: false,
+        error: e,
+      });
+    }
+  }
+
   roundNumber = num => Math.round(num * 100) / 100;
 
   render() {
     const { isFutureDateSelected } = this.props.dateValue;
-    const { loading, error, analyticsRatios } = this.props.data;
+    const { loading, error, analyticsRatios } = this.state;
     const {
       checkins,
       checkinsPercentage,
@@ -99,11 +132,6 @@ export class Checkins extends Component {
 }
 
 Checkins.propTypes = {
-  data: PropTypes.shape({
-    analyticsRatios: PropTypes.object,
-    loading: PropTypes.bool.isRequired,
-    error: PropTypes.object,
-  }).isRequired,
   dateValue: PropTypes.shape({
     isFutureDateSelected: PropTypes.bool.isRequired,
   }).isRequired,
@@ -115,16 +143,5 @@ Checkins.defaultProps = {
   updateParent: null,
 };
 
-export default compose(
-  graphql(CHECKINS_BOOKINGS_CANCELLATIONS_PERCENTAGES, {
-    name: 'data',
-    options: props => ({
-      variables: {
-        startDate: props.dateValue.validatedStartDate,
-        endDate: props.dateValue.validatedEndDate,
-        page: 1,
-        perPage: 5,
-      },
-    }),
-  }),
-)(Checkins);
+
+export default Checkins;

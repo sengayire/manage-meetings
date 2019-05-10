@@ -21,7 +21,7 @@ exports[`AnalyticsOverview Component renders properly 1`] = `
     }
     updateParent={null}
   />
-  <Apollo(Checkins)
+  <Checkins
     dateValue={
       Object {
         "validatedEndDate": "",

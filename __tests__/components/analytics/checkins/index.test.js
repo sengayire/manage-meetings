@@ -5,11 +5,6 @@ import { Checkins } from '../../../../src/components/analytics/checkins';
 describe('Checkins component', () => {
   const props = {
     dateValue: { startDate: 'Nov 01 2018', endDate: 'Nov 03 2018', isFutureDateSelected: false },
-    data: {
-      loading: false,
-      error: null,
-      analyticsRatios: {},
-    },
     queryCompleted: jest.fn(),
     updateParent: jest.fn(),
   };
@@ -25,13 +20,11 @@ describe('Checkins component', () => {
 
   it('should call queryCompleted and updateParent when the component updates', () => {
     const component = shallow(<Checkins {...props} />);
-    component.setProps(
+    component.setState(
       {
-        data: {
-          loading: false,
-          error: null,
-          analyticsRatios: { name: 'Kimame' },
-        },
+        loading: false,
+        error: null,
+        analyticsRatios: { name: 'Kimame' },
       },
       () => {
         expect(props.queryCompleted).toHaveBeenCalled();

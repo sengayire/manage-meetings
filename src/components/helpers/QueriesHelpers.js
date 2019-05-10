@@ -11,6 +11,7 @@ import {
   ANALYTICS_BOOKINGS_COUNT,
   MOST_BOOKED_ROOMS_ANALYTICS,
   ANALYTICS_FOR_DAILY_ROOM_EVENTS,
+  CHECKINS_BOOKINGS_CANCELLATIONS_PERCENTAGES,
 } from '../../graphql/queries/analytics';
 import { decodeTokenAndGetUserData } from '../../utils/Cookie';
 import apolloClient from '../../utils/ApolloClient';
@@ -229,6 +230,35 @@ const getAnalyticForDailyRoomsEvents = async ({ startDate, endDate }, client = a
   }
 };
 
+const getCheckinsBookingsCancellationsPercentages = async (dateValue, client = apolloClient) => {
+  try {
+    const data = client.readQuery({
+      query: CHECKINS_BOOKINGS_CANCELLATIONS_PERCENTAGES,
+      variables: {
+        startDate: dateValue.validatedStartDate,
+        endDate: dateValue.validatedEndDate,
+        page: 1,
+        perPage: 5,
+      },
+    },
+    true,
+    );
+    return data;
+  } catch (error) {
+    const { data } = await client.query({
+      query: CHECKINS_BOOKINGS_CANCELLATIONS_PERCENTAGES,
+      variables: {
+        startDate: dateValue.validatedStartDate,
+        endDate: dateValue.validatedEndDate,
+        page: 1,
+        perPage: 5,
+      },
+    });
+    return data;
+  }
+};
+
+
 export {
   getUserDetails,
   getAllLocations,
@@ -242,4 +272,5 @@ export {
   getAnalyticForDailyRoomsEvents,
   getRoomFeedbackQuestions,
   getRemoteRoomsAllLocations,
+  getCheckinsBookingsCancellationsPercentages,
 };
