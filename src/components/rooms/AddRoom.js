@@ -242,7 +242,6 @@ export class AddNewRoom extends Component {
         labelText={isAllRemoteRooms ? 'Select Google Calendar Room from all locations' : 'Select Google Calendar Room'}
         name="remoteRoomName"
         id="remoteRoomName"
-        isRemoteRoom
         onClick={this.handleClick}
         value={remoteRoomName}
         options={isAllRemoteRooms ? roomsAllLocations : rooms}
@@ -359,17 +358,23 @@ export class AddNewRoom extends Component {
    *
    * @returns {JSX}
    */
-  renderModalContent = () => (
-    <div className="modal-form">
-      {this.renderImageUpload()}
-      {this.renderRemoteRoomSelect()}
-      {this.renderStaticInputFields()}
-      <div className="dynamic-input">
-        {this.renderRoomType()}
-        {this.renderLevelInputFields()}
+  renderModalContent = () => {
+    const { isAllRemoteRooms } = this.state;
+    return (
+      <div className="modal-form">
+        {this.renderImageUpload()}
+        <div className="remote-room-input">
+          {this.renderRemoteRoomSelect()}
+          <button className="remote-room-all" onClick={this.handleClick} tooltip={isAllRemoteRooms ? 'Load your rooms...' : 'Load all rooms...'}>...</button>
+        </div>
+        {this.renderStaticInputFields()}
+        <div className="dynamic-input">
+          {this.renderRoomType()}
+          {this.renderLevelInputFields()}
+        </div>
       </div>
-    </div>
-  )
+    );
+  }
 
   render() {
     return (

@@ -24,13 +24,11 @@ const SelectInput = ({
   children,
   placeholderValue,
   required,
-  isRemoteRoom,
   ...otherProps
 }) => (
   <div className={wrapperClassName}>
     <label htmlFor={id}>
       {labelText}
-      {isRemoteRoom && <button className="remote-room-all" onClick={onClick} title="Load remote rooms of all locations...">...</button>}
       <select
         name={name}
         id={id}
@@ -78,7 +76,6 @@ const SelectInput = ({
 SelectInput.propTypes = {
   name: PropTypes.string.isRequired,
   isValue: PropTypes.bool,
-  isRemoteRoom: PropTypes.bool,
   id: PropTypes.string.isRequired,
   selectInputClassName: PropTypes.string,
   wrapperClassName: PropTypes.string,
@@ -110,7 +107,6 @@ SelectInput.defaultProps = {
   children: null,
   value: '',
   required: false,
-  isRemoteRoom: false,
 };
 
 export default SelectInput;
