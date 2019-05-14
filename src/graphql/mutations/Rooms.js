@@ -22,9 +22,9 @@ const DELETE_ROOM = gql`
 `;
 
 const ADD_ROOM = gql`
-  mutation AddRoom($name: String!, $roomType: String!, $capacity: Int!, $imageUrl: String!, $locationId: Int!, $calendarId: String!,
+  mutation AddRoom($name: String!, $roomType: String!, $capacity: Int!, $imageUrl: String!, $locationId: Int!, $calendarId: String!, $structureId: String!,
     $roomLabels: [String]){
-    createRoom(name: $name, roomType: $roomType, capacity: $capacity, imageUrl: $imageUrl, locationId: $locationId, calendarId: $calendarId,
+    createRoom(name: $name, roomType: $roomType, capacity: $capacity, imageUrl: $imageUrl, locationId: $locationId, calendarId: $calendarId, structureId: $structureId
       roomLabels: $roomLabels){
         room {
           id
@@ -35,6 +35,7 @@ const ADD_ROOM = gql`
           imageUrl
           calendarId
           locationId
+          structureId
         }
     }
   }

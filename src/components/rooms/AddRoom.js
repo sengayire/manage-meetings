@@ -78,12 +78,17 @@ export class AddNewRoom extends Component {
     }
   }
 
-  handleInputChange = ({ target: { id, value, name } }, num) => {
+  handleInputChange = ({
+    target: {
+      id, value, name, options, selectedIndex,
+    },
+  }, num) => {
     const { levelInput } = this.state;
     const inputField = (name === 'up' || name === 'down') ? 'roomCapacity' : name;
     const arr = levelInput.find(level => level.id === id)
       ? levelInput : [...levelInput, { id, value }];
     this.setState({
+      ...(name === 'levelInput' && { structureId: value, structureName: options[selectedIndex].text }),
       [inputField]: name === 'levelInput' ? arr : value || num,
     });
   };
@@ -149,7 +154,8 @@ export class AddNewRoom extends Component {
     if (this.isValidEntry(this.state)) {
       this.toggleLoading();
       const {
-        rooms, remoteRoomName, roomName, roomType, levelInput, locationId, files, roomCapacity,
+        rooms, remoteRoomName, roomName, roomType, structureName,
+        locationId, files, roomCapacity, structureId,
       } = this.state;
       const roomId = rooms.filter(room => room.name === remoteRoomName);
       const calendarId = roomId.length ? roomId[0].calendarId : null;
@@ -158,8 +164,9 @@ export class AddNewRoom extends Component {
         capacity: roomCapacity,
         roomType,
         calendarId,
-        roomLabels: levelInput.map(level => level.value),
+        roomLabels: [structureName],
         locationId: Number(locationId),
+        structureId,
       };
       getImageUrl('upload/', files[0])
         .then((url) => {
@@ -189,6 +196,7 @@ export class AddNewRoom extends Component {
       remoteRoomName: '',
       roomName: '',
       roomType: '',
+      structureId: '',
       levelInput: [],
       locationId: '',
       files: [],

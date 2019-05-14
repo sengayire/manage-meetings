@@ -48,7 +48,7 @@ const SelectInput = ({
           options.length &&
           options.map(option => (
             <option
-              value={isValue ? option.name : option.id}
+              value={isValue ? option.name : (option.id || option.structureId)}
               key={option.id || option.calendarId || option.structureId}
             >
               {option.name}

@@ -5,13 +5,13 @@ import { GET_ROOMS_QUERY } from '../../../graphql/queries/Rooms';
 const addRoom = async (variables, location, client = apolloClient) => {
   let updatedData;
   const {
-    imageUrl, name, capacity, roomType, calendarId, roomLabels, locationId,
+    imageUrl, name, capacity, roomType, calendarId, roomLabels, locationId, structureId,
   } = variables;
   await client.mutate({
     mutation: ADD_ROOM,
     name: 'addRoom',
     variables: {
-      imageUrl, name, capacity, roomType, calendarId, roomLabels, locationId,
+      imageUrl, name, capacity, roomType, calendarId, roomLabels, locationId, structureId,
     },
     refetchQueries: [
       {
