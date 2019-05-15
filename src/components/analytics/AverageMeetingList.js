@@ -1,16 +1,15 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { graphql, compose } from 'react-apollo';
 import '../../assets/styles/averageMeetinglist.scss';
 import TableHead from '../helpers/TableHead';
 import QueryAnalyticsPerMeetingRoom from './AverageMeetingList/QueryAnalyticsPerMeetingRoom';
 import Tip from '../commons/Tooltip';
-import MEETING_DURATION_ANALYTICS from '../../graphql/queries/analytics';
 import Pagination from '../commons/Pagination';
 import Overlay from '../commons/Overlay';
 import { notFoundIcon } from '../../utils/images/images';
 import ErrorIcon from '../commons/ErrorIcon';
 import meetingDurationAnalyticsMock from '../../fixtures/meetingDurationAnalytics';
+import { getAnalyticForMeetingDurations } from '../helpers/QueriesHelpers';
 
 /**
  * Component for the average meeting list
@@ -23,25 +22,22 @@ export class AverageMeetingList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      analyticsForMeetingsDurations: {
-        ...props.data.analyticsForMeetingsDurations,
-      },
-      isFetching: false,
+      analyticsForMeetingsDurations: {},
+      isFetching: false, // fetching new page
       currentPage: 1,
       perPage: 5,
+      loading: true, // initial load
     };
   }
 
-  componentWillReceiveProps(props) {
-    const { analyticsForMeetingsDurations = {} } = props.data;
-    this.setState({
-      analyticsForMeetingsDurations,
-    });
+  componentDidMount() {
+    const { perPage, currentPage } = this.state;
+    this.getAnalyticForMeetingDurations(perPage, currentPage);
   }
 
   componentDidUpdate(prevProps, prevState) {
-    const { queryCompleted, data: { error, loading } } = this.props;
-    const { analyticsForMeetingsDurations } = this.state;
+    const { queryCompleted } = this.props;
+    const { analyticsForMeetingsDurations, error, loading } = this.state;
     if (!error && !loading) {
       queryCompleted('AverageMeetingList');
     }
@@ -51,36 +47,28 @@ export class AverageMeetingList extends Component {
     }
   }
 
-  /**
-   * fetches data for the given number of pages
-   *
-   * @param {number} perPage
-   * @param {number} currentPage
-   *
-   * @returns {void}
-   */
-  handleData = (perPage, currentPage) => {
-    this.setState({ isFetching: true });
-    /* istanbul ignore next */
-    /* Reasoning: find explicit way of testing configuration options */
-    this.props.data
-      .fetchMore({
-        variables: {
-          startDate: this.props.dateValue.validatedStartDate,
-          endDate: this.props.dateValue.validatedEndDate,
-          page: currentPage,
-          perPage,
-        },
-        updateQuery: (prev, { fetchMoreResult }) => {
-          this.setState({
-            analyticsForMeetingsDurations: fetchMoreResult.analyticsForMeetingsDurations,
-            currentPage,
-          });
-        },
-      })
-      .then(() => this.setState({ isFetching: false }))
-      .catch(() => this.setState({ isFetching: false }));
-  };
+
+  getAnalyticForMeetingDurations = async (perPage, currentPage) => {
+    const { dateValue } = this.props;
+    const { loading } = this.state;
+    const args = {
+      dateValue, perPage, currentPage,
+    };
+
+    if (!loading) {
+      this.setState({ isFetching: true });
+    }
+
+    const { analyticsForMeetingsDurations } = await getAnalyticForMeetingDurations(args);
+    this.props.queryCompleted('AverageMeetingDuration');
+    this.setState({
+      loading: false,
+      isFetching: false,
+      analyticsForMeetingsDurations,
+      error: analyticsForMeetingsDurations === null,
+      currentPage,
+    });
+  }
 
   showErrorMessage = message => (
     <div className="average-table-error">
@@ -98,30 +86,37 @@ export class AverageMeetingList extends Component {
       </div>
     </div>
   );
+
   render() {
     const tip =
      'The number of meetings in a room,  the average number of attendees to these meetings as well as the average duration of the meetings.';
     /* eslint no-param-reassign: "error" */
     const {
-      analyticsForMeetingsDurations,
       isFetching,
       perPage,
       currentPage,
+      error,
+      loading,
+      analyticsForMeetingsDurations,
     } = this.state;
-    const { loading, error } = this.props.data;
     const { isFutureDateSelected } = this.props.dateValue;
-    if (loading) {
-      analyticsForMeetingsDurations.MeetingsDurationaAnalytics = meetingDurationAnalyticsMock(3);
-    }
+
+    const analyticsForMeetingsDurationsMock = {
+      MeetingsDurationaAnalytics: meetingDurationAnalyticsMock(3),
+    };
+
+    const analyticsData = loading
+      ? analyticsForMeetingsDurationsMock
+      : analyticsForMeetingsDurations;
+
     return (
       <div className="average-meeting overlay-container">
-        {loading && <Overlay />}
+        {loading && isFetching && <Overlay />}
         <div className="average-meeting-control">
           <h4 className="header-title">Average time spent/Meeting Room</h4>
           <span className="moreVerticalIcon">{Tip(tip)}</span>
         </div>
         <div className="average-meeting-list">
-          {isFetching ? <Overlay id="average-meeting" /> : null}
           <div>
             <TableHead
               titles={['Room', 'No. of meetings', 'Average Meeting Duration']}
@@ -137,7 +132,7 @@ export class AverageMeetingList extends Component {
                   />
                 )
                 : <QueryAnalyticsPerMeetingRoom
-                  data={analyticsForMeetingsDurations}
+                  data={analyticsData}
                 />
                 )
               }
@@ -151,7 +146,7 @@ export class AverageMeetingList extends Component {
                 totalPages={analyticsForMeetingsDurations.pages}
                 hasNext={analyticsForMeetingsDurations.hasNext}
                 hasPrevious={analyticsForMeetingsDurations.hasPrevious}
-                handleData={this.handleData}
+                handleData={this.getAnalyticForMeetingDurations}
                 isFetching={isFetching}
                 perPage={perPage}
                 currentPage={currentPage}
@@ -171,12 +166,6 @@ AverageMeetingList.propTypes = {
     validatedEndDate: PropTypes.string,
     isFutureDateSelected: PropTypes.bool.isRequired,
   }),
-  data: PropTypes.shape({
-    analyticsForMeetingsDurations: PropTypes.object,
-    fetchMore: PropTypes.func,
-    loading: PropTypes.bool,
-    error: PropTypes.any,
-  }).isRequired,
   queryCompleted: PropTypes.func.isRequired,
   updateParent: PropTypes.func,
 };
@@ -186,16 +175,4 @@ AverageMeetingList.defaultProps = {
   updateParent: null,
 };
 
-export default compose(
-  graphql(MEETING_DURATION_ANALYTICS, {
-    name: 'data',
-    options: props => ({
-      variables: {
-        startDate: props.dateValue.validatedStartDate,
-        endDate: props.dateValue.validatedEndDate,
-        page: 1,
-        perPage: 5,
-      },
-    }),
-  }),
-)(AverageMeetingList);
+export default AverageMeetingList;

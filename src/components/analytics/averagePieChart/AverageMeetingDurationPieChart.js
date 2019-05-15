@@ -38,7 +38,7 @@ export class AverageMeetingDurationPieChart extends React.Component {
 
   async getAnalyticForMeetingDurations() {
     const { dateValue } = this.props;
-    const { analyticsForMeetingsDurations } = await getAnalyticForMeetingDurations(dateValue);
+    const { analyticsForMeetingsDurations } = await getAnalyticForMeetingDurations({ dateValue });
     this.props.queryCompleted('AverageMeetingDuration');
     this.setState({ loading: false, analyticsForMeetingsDurations });
   }

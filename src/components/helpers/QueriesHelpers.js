@@ -206,27 +206,21 @@ const getRoomFeedbackQuestions = async (client = apolloClient) => {
   }
 };
 
-const getAnalytics = async ({ startDate, endDate }, query, client) => {
+const getAnalytics = async ({
+  perPage, currentPage: page, dateValue: { startDate, endDate },
+}, query, client) => {
+  const variables = {
+    startDate,
+    endDate,
+    ...(perPage && { perPage }),
+    ...(page && { page }),
+  };
+
   try {
-    const data = client.readQuery(
-      {
-        query,
-        variables: {
-          startDate,
-          endDate,
-        },
-      },
-      true,
-    );
+    const data = client.readQuery({ query, variables }, true);
     return data;
   } catch (error) {
-    const { data } = await client.query({
-      query,
-      variables: {
-        startDate,
-        endDate,
-      },
-    });
+    const { data } = await client.query({ query, variables });
     return data;
   }
 };
@@ -260,10 +254,10 @@ const getCheckinsBookingsCancellationsPercentages = async (dateValue, client = a
 };
 
 const getAnalyticForDailyRoomsEvents = (dateValue, client = apolloClient) =>
-  getAnalytics(dateValue, ANALYTICS_FOR_DAILY_ROOM_EVENTS, client);
+  getAnalytics({ dateValue }, ANALYTICS_FOR_DAILY_ROOM_EVENTS, client);
 
-const getAnalyticForMeetingDurations = (dateValue, client = apolloClient) =>
-  getAnalytics(dateValue, MEETING_DURATION_ANALYTICS, client);
+const getAnalyticForMeetingDurations = (args, client = apolloClient) =>
+  getAnalytics(args, MEETING_DURATION_ANALYTICS, client);
 
 const getAllRooms = async (client = apolloClient) => {
   try {
