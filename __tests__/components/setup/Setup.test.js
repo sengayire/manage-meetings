@@ -3,9 +3,15 @@ import { shallow } from 'enzyme';
 import SetupPage from '../../../src/components/setup/Setup';
 import Spinner from '../../../src/components/commons/Spinner';
 import * as queryHelper from '../../../src/components/helpers/QueriesHelpers';
+import ErrorIcon from '../../../src/components/commons/ErrorIcon';
+
 
 describe('setup component', () => {
   const handleClick = () => jest.fn();
+  const user = {
+    id: '214',
+    roles: [{ id: 2, role: 'Admin' }],
+  };
   let wrapper;
   let spy;
 
@@ -13,6 +19,9 @@ describe('setup component', () => {
     spy = jest.spyOn(SetupPage.prototype, 'componentDidMount').mockImplementationOnce(() => Promise.resolve());
     wrapper = shallow(<SetupPage handleClick={handleClick} />);
     wrapper.setState({ centerRoomCount: 0 });
+    wrapper.setState({
+      user,
+    });
   });
 
   afterEach(() => {
@@ -38,7 +47,6 @@ describe('setup component', () => {
     const { visibleLevel } = wrapper.state();
     expect(visibleLevel).toEqual('WelcomePage');
     expect(wrapper.state().loaded).toEqual(false);
-    expect(wrapper.hasClass('setup_container')).toBe(true);
     expect(wrapper.contains(<Spinner />)).toBe(true);
   });
 
@@ -58,5 +66,26 @@ describe('setup component', () => {
     wrapper.instance().handleClick(page[3])();
     stateValue = wrapper.state().visibleLevel;
     expect(stateValue).toEqual(page[3]);
+  });
+
+  it('should call update the state when getUserInformation is called', async () => {
+    jest.spyOn(queryHelper, 'getUserDetails').mockImplementationOnce(() => user);
+    await wrapper.instance().getUsersInformation();
+    wrapper.update();
+    expect(wrapper.state('user')).toBe(user);
+  });
+
+  it('should show error message component for non-admin users', async () => {
+    const defaultUser = {
+      id: '214',
+      roles: [{ id: 2, role: 'Default User' }],
+    };
+    wrapper.setState({
+      user: defaultUser,
+    });
+    await wrapper.instance().componentDidMount();
+    const stateValue = wrapper.state().user;
+    expect(stateValue).toEqual(defaultUser);
+    expect(wrapper.contains(<ErrorIcon message="You are not authorized to perform this action" />)).toBe(true);
   });
 });

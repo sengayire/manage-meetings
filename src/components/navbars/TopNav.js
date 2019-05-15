@@ -25,21 +25,22 @@ const menuItems = [
 class TopNav extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      activeMenu: '',
+    };
     let { pathname } = props.location;
 
     if (pathname === '/' || pathname === '/analytics') {
       pathname = ROUTES.analytics;
     }
+  }
 
+  componentDidMount() {
     menuItems.forEach((router) => {
-      if (pathname.includes(router.route)) {
-        this.state = {
+      if (this.props.location.pathname.includes(router.route)) {
+        this.setState({
           activeMenu: router.menu,
-        };
-      } else {
-        this.state = {
-          activeMenu: router.menu,
-        };
+        });
       }
     });
   }

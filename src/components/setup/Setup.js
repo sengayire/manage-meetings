@@ -3,10 +3,11 @@ import WelcomePage from './WelcomePage';
 import SetupInfoPage from './SetupInfoPage';
 import BuildingLevel from './BuildingLevel';
 import RoomSetupView from '../../containers/RoomSetupView';
-import { getRoomsStructure } from '../helpers/QueriesHelpers';
+import { getRoomsStructure, getUserDetails } from '../helpers/QueriesHelpers';
 import Spinner from '../commons/Spinner';
 import '../../assets/styles/setupWelcomePage.scss';
 import '../../assets/styles/setupInfoPage.scss';
+import ErrorIcon from '../commons/ErrorIcon';
 
 class Setup extends Component {
   state = {
@@ -14,11 +15,24 @@ class Setup extends Component {
     location: '',
     isStructureSetup: false,
     loaded: false,
+    user: '',
   };
 
   componentDidMount() {
+    this.getUsersInformation();
     this.getStructures();
   }
+
+  /**
+   * It queries the Apollo store to fetch user details
+   * @returns {Object}
+   */
+  getUsersInformation = async () => {
+    const user = await getUserDetails();
+    this.setState({
+      user,
+    });
+  };
 
   /**
    * Gets the structures setup
@@ -71,7 +85,9 @@ class Setup extends Component {
    * @return {JSX}
    */
   renderSetupContent = (level) => {
-    const { location, isStructureSetup, loaded } = this.state;
+    const {
+      location, isStructureSetup, loaded, user,
+    } = this.state;
 
     if (loaded) {
       switch (level) {
@@ -83,7 +99,7 @@ class Setup extends Component {
           return (<RoomSetupView handleClick={this.handleClick} userLocation={location} />);
         default:
           return (!isStructureSetup
-            ? <WelcomePage handleClick={this.handleClick} />
+            ? <WelcomePage user={user} handleClick={this.handleClick} />
             : <RoomSetupView handleClick={this.handleClick} userLocation={location} />);
       }
     }
@@ -96,8 +112,18 @@ class Setup extends Component {
   };
 
   render() {
-    const { visibleLevel } = this.state;
-    return this.renderSetupContent(visibleLevel);
+    const { visibleLevel, user } = this.state;
+    return (
+      <div>
+        {user && user.roles[0].role === 'Admin' ? (
+          this.renderSetupContent(visibleLevel)
+        ) : (
+          <div className="item-list-empty">
+            <ErrorIcon message="You are not authorized to perform this action" />
+          </div>
+          )}
+      </div>
+    );
   }
 }
 

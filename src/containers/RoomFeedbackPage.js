@@ -9,6 +9,7 @@ import RoomFeedbackResponseList from '../components/roomFeedback/RoomFeedbackRes
 import { NavBar } from '../components';
 import '../assets/styles/roomFeedbackContainer.scss';
 import { getTodaysDate } from '../utils/Utilities';
+import { getUserDetails } from '../components/helpers/QueriesHelpers';
 
 class RoomFeedbackPage extends Component {
   state = {
@@ -18,7 +19,23 @@ class RoomFeedbackPage extends Component {
     lowerLimitCount: 0,
     startDate: getTodaysDate(),
     endDate: getTodaysDate(),
+    user: '',
   }
+
+  componentDidMount = () => {
+    this.getUsersInformation();
+  };
+
+  /**
+   * It queries the Apollo store to fetch user details
+   * @returns {Object}
+   */
+  getUsersInformation = async () => {
+    const user = await getUserDetails();
+    this.setState({
+      user,
+    });
+  };
 
   /**
    * It toggles the state properties vaule between true and false
@@ -49,10 +66,13 @@ class RoomFeedbackPage extends Component {
     });
   }
 
+
   render() {
     const {
-      isResponsePageVisible, responseData, lowerLimitCount, upperLimitCount, startDate, endDate,
+      isResponsePageVisible, responseData, lowerLimitCount,
+      upperLimitCount, startDate, endDate, user,
     } = this.state;
+    const showResponseButton = (user && user.roles[0].role === 'Admin');
     return (
       <Fragment>
         <NavBar />
@@ -66,13 +86,13 @@ class RoomFeedbackPage extends Component {
                 type={isResponsePageVisible ? 2 : null}
                 isDisabled={!isResponsePageVisible}
               />
-              <Button
+              {showResponseButton && <Button
                 title="RESPONSES"
                 handleClick={this.toggleVisibility}
                 classProp="responses-tab-nav"
                 type={!isResponsePageVisible ? 2 : null}
                 isDisabled={isResponsePageVisible}
-              />
+              />}
             </div>
             {!isResponsePageVisible && <AddQuestionComponent />}
             {
@@ -85,17 +105,17 @@ class RoomFeedbackPage extends Component {
           </div>
           {
             isResponsePageVisible
-            ? (
-              <div id="responses">
-                <RoomFeedbackResponseList
-                  checkData={this.checkData}
-                  startDate={startDate}
-                  endDate={endDate}
-                  upperLimitCount={upperLimitCount}
-                  lowerLimitCount={lowerLimitCount}
-                />
-              </div>)
-            : <div id="questions"><RoomQuestions /></div>
+              ? (
+                <div id="responses">
+                  <RoomFeedbackResponseList
+                    checkData={this.checkData}
+                    startDate={startDate}
+                    endDate={endDate}
+                    upperLimitCount={upperLimitCount}
+                    lowerLimitCount={lowerLimitCount}
+                  />
+                </div>)
+              : <div id="questions"><RoomQuestions /></div>
           }
         </div>
       </Fragment>
