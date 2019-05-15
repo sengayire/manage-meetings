@@ -33,7 +33,7 @@ export class AnalyticsNav extends Component {
   state = {
     isActivity: false,
     location: 'Fetching location...',
-    startDate: moment().subtract(7, 'days').format('MMM DD Y'),
+    startDate: moment().format('MMM DD Y'),
     endDate: moment().format('MMM DD Y'),
     validatedStartDate: moment().format('MMM DD Y'),
     validatedEndDate: moment().format('MMM DD Y'),
