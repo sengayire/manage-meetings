@@ -9,6 +9,7 @@ import '../src/assets/styles/toastr.scss';
 import ErrorBoundary from './components/commons/ErrorBoundary';
 import { getToken } from './utils/Cookie';
 import Setup from './containers/Setup';
+import PageNotFound from './containers/PageNotFound';
 
 // destruscture constants to be used
 const {
@@ -52,11 +53,12 @@ class App extends Component {
     return (
       <ErrorBoundary isAuthError>
         <Switch>
-          <Route exact path={ROUTES.home} component={LoginPage} />
-          <Route path={ROUTES.analytics} component={Analytics} />
-          <Route path={ROUTES.roomfeedback} component={RoomFeedbackPage} />
-          <Route path={ROUTES.preference} component={Preference} />
-          <Route path={ROUTES.setup} component={Setup} />
+          <Route path={ROUTES.home} exact component={LoginPage} />
+          <Route exact path={ROUTES.analytics} component={Analytics} />
+          <Route exact path={ROUTES.roomfeedback} component={RoomFeedbackPage} />
+          <Route exact path={ROUTES.preference} component={Preference} />
+          <Route exact path={ROUTES.setup} component={Setup} />
+          <Route component={PageNotFound} />
         </Switch>
       </ErrorBoundary>
     );

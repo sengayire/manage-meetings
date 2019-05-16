@@ -78,7 +78,6 @@ exports[`RoomForm should render properly 1`] = `
     <SelectInput
       disabled={true}
       id="roomLocation"
-      isRemoteRoom={false}
       isValue={false}
       key=""
       labelText="Select Room Location"

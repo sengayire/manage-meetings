@@ -36,6 +36,10 @@ class TopNav extends React.Component {
         this.state = {
           activeMenu: router.menu,
         };
+      } else {
+        this.state = {
+          activeMenu: router.menu,
+        };
       }
     });
   }

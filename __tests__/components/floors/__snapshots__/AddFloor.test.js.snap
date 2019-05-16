@@ -27,7 +27,6 @@ exports[`AddFloor Component renders the snapshot 1`] = `
     />
     <SelectInput
       id="block"
-      isRemoteRoom={false}
       isValue={false}
       labelText="Select Block "
       name="blockId"

@@ -6,7 +6,6 @@ exports[`EpicTowerInputs component should render correctly 1`] = `
 >
   <SelectInput
     id="remoteRoomName"
-    isRemoteRoom={false}
     isValue={false}
     labelText="Select Google Calendar Room"
     name="remoteRoomName"
@@ -53,7 +52,6 @@ exports[`EpicTowerInputs component should render correctly 1`] = `
   />
   <SelectInput
     id="roomFloor"
-    isRemoteRoom={false}
     isValue={false}
     labelText="Select Floor"
     name="roomFloor"
@@ -69,7 +67,6 @@ exports[`EpicTowerInputs component should render correctly 1`] = `
   />
   <SelectInput
     id="roomWing"
-    isRemoteRoom={false}
     isValue={false}
     labelText="Select Wing"
     name="roomWing"

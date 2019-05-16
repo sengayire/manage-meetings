@@ -31,7 +31,7 @@ exports[`AnalyticsOverview Component renders properly 1`] = `
     queryCompleted={[MockFunction]}
     updateParent={null}
   />
-  <Apollo(AverageMeetingList)
+  <AverageMeetingList
     dateValue={
       Object {
         "validatedEndDate": "",
