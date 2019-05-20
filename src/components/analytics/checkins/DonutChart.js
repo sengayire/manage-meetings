@@ -49,14 +49,26 @@ class DonutChart extends Component {
       cutoutPercentage: 70,
     };
 
-    const graphData = {
-      labels: [dataName, 'Bookings'],
-      datasets: [{
-        data: [entries, total],
-        backgroundColor: chartColor,
-      }],
-      text: '23%',
-    };
+    let graphData;
+    if (total === 0) {
+      graphData = {
+        labels: [dataName, 'Bookings'],
+        datasets: [{
+          data: [entries, 1],
+          backgroundColor: chartColor,
+        }],
+        text: '23%',
+      };
+    } else {
+      graphData = {
+        labels: [dataName, 'Bookings'],
+        datasets: [{
+          data: [entries, total],
+          backgroundColor: chartColor,
+        }],
+        text: '23%',
+      };
+    }
 
     return (
       <Fragment>

@@ -65,4 +65,16 @@ describe('Average Meetings Duration PieChart Component', () => {
     wrapper.setProps({ ...props });
     expect(wrapper.find('ErrorIcon').length).toEqual(1);
   });
+
+  it('should call the getSectorWidths function', () => {
+    const MeetingsDurationaAnalytics = [
+      {
+        count: 0,
+        totalDuration: 0,
+      },
+    ];
+    const getSectorWidthsSpy = jest.spyOn(wrapper.instance(), 'getSectorWidths');
+    wrapper.instance().getSectorWidths(MeetingsDurationaAnalytics);
+    expect(getSectorWidthsSpy).toHaveBeenCalled();
+  });
 });

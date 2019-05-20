@@ -52,7 +52,8 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
                   25,
                   25,
                   25,
-                  25,
+                  0,
+                  0,
                 ],
                 "label": "Average Meeting Duration",
               },
@@ -61,7 +62,8 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
               "Above 60 Minutes in %",
               "45-60 Minutes in %",
               "30-45 Minutes in %",
-              "Below 30 minutes in %",
+              "1 - 29 Minutes in %",
+              "0 in %",
             ],
           }
         }
@@ -102,7 +104,13 @@ exports[`Average Meetings Duration PieChart Component renders correctly from mem
         className="duration-forth-circle"
       >
         <span />
-        Below 30 Minutes
+        1 - 29 Minutes
+      </p>
+      <p
+        className="duration-fifth-circle"
+      >
+        <span />
+        Zero
       </p>
     </section>
   </section>

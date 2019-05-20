@@ -23,3 +23,14 @@
     background-color: map-get($color-amber, 50);
   }
 }
+.duration-fifth-circle {
+  span {
+    background-color: map-get($color-amber, 0);
+  }
+}
+
+.chart-details {
+  p {
+    justify-content: left;
+  }
+}

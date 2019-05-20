@@ -68,23 +68,31 @@ export class AverageMeetingDurationPieChart extends React.Component {
   getSectorWidths = (MeetingsDurationAnalytics) => {
     const durations = Array.from(
       MeetingsDurationAnalytics,
-      duration => duration.totalDuration / duration.count,
+      (duration) => {
+        if (duration.count === 0) {
+          return 0;
+        }
+        return duration.totalDuration / duration.count;
+      },
     );
     let greaterThan60 = 0;
     let between45And60 = 0;
     let between30And45 = 0;
-    let thirtyAndBelow = 0;
+    let between1And29 = 0;
+    let zero = 0;
     durations.forEach((duration) => {
       if (duration > 60) greaterThan60 += 1;
       if (duration > 45 && duration <= 60) between45And60 += 1;
-      if (duration > 30 && duration <= 45) between30And45 += 1;
-      if (duration < 30) thirtyAndBelow += 1;
+      if (duration > 29 && duration <= 45) between30And45 += 1;
+      if (duration > 0 && duration <= 29) between1And29 += 1;
+      if (duration === 0) zero += 1;
     });
     greaterThan60 = this.getPercentageDuration(greaterThan60, durations.length);
     between45And60 = this.getPercentageDuration(between45And60, durations.length);
     between30And45 = this.getPercentageDuration(between30And45, durations.length);
-    thirtyAndBelow = this.getPercentageDuration(thirtyAndBelow, durations.length);
-    return [greaterThan60, between45And60, between30And45, thirtyAndBelow];
+    between1And29 = this.getPercentageDuration(between1And29, durations.length);
+    zero = this.getPercentageDuration(zero, durations.length);
+    return [greaterThan60, between45And60, between30And45, between1And29, zero];
   };
 
   renderPieChart = () => {
@@ -98,7 +106,7 @@ export class AverageMeetingDurationPieChart extends React.Component {
       return <ErrorIcon message="No resource found" />;
     }
 
-    const dummySectorWidths = ['100', '0', '0', '0'];
+    const dummySectorWidths = ['100', '0', '0', '0', '0'];
 
     const options = {
       legend: {
@@ -112,7 +120,8 @@ export class AverageMeetingDurationPieChart extends React.Component {
         'Above 60 Minutes in %',
         '45-60 Minutes in %',
         '30-45 Minutes in %',
-        'Below 30 minutes in %',
+        '1 - 29 Minutes in %',
+        '0 in %',
       ],
       datasets: [
         {
@@ -146,7 +155,11 @@ export class AverageMeetingDurationPieChart extends React.Component {
           </p>
           <p className="duration-forth-circle">
             <span>{}</span>
-            Below 30 Minutes
+            1 - 29 Minutes
+          </p>
+          <p className="duration-fifth-circle">
+            <span>{}</span>
+            Zero
           </p>
         </section>
       </section>
