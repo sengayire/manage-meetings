@@ -22,21 +22,20 @@ export class AverageMeetingDurationPieChart extends React.Component {
     loading: true,
   };
 
-  componentDidMount() {
-    this.getAnalyticForMeetingDurations();
+  async componentDidMount() {
+    const { updateParent } = this.props;
+    await this.getAnalyticForMeetingDurations();
+    const { MeetingsDurationaAnalytics } = this.state.analyticsForMeetingsDurations;
+    updateParent('averageMeetingDuration', this.getSectorWidths(MeetingsDurationaAnalytics));
   }
 
-  componentDidUpdate(prevProps, { MeetingsDurationaAnalytics }) {
+  componentDidUpdate(prevProps) {
     const { updateParent, dateValue: { startDate, endDate } } = this.props;
+    const { analyticsForMeetingsDurations: { MeetingsDurationaAnalytics } } = this.state;
     const { startDate: prevStartDate, endDate: prevEndDate } = prevProps.dateValue;
     if (prevStartDate !== startDate || prevEndDate !== endDate) {
       this.getAnalyticForMeetingDurations();
-    }
-    if (
-      MeetingsDurationaAnalytics !==
-      this.state.analyticsForMeetingsDurationsMeetingsDurationaAnalytics
-    ) {
-      updateParent('averageMeetingDuration', this.getSectorWidths());
+      updateParent('averageMeetingDuration', this.getSectorWidths(MeetingsDurationaAnalytics));
     }
   }
 

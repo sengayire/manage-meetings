@@ -16,8 +16,10 @@ export class GetAverageRoomCapacityComponent extends Component {
     loading: true,
   };
 
-  componentDidMount() {
-    this.getAllRooms();
+  async componentDidMount() {
+    const { updateParent } = this.props;
+    await this.getAllRooms();
+    updateParent('roomCapacity', this.getRoomData());
   }
 
   componentDidCatch(prevProps) {
