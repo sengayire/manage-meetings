@@ -1,8 +1,13 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { Checkins } from '../../../../src/components/analytics/checkins';
+import { getCheckinsBookingsCancellationsPercentages } from '../../../../src/components/helpers/QueriesHelpers';
+
+
+jest.mock('../../../../src/components/helpers/QueriesHelpers');
 
 describe('Checkins component', () => {
+  getCheckinsBookingsCancellationsPercentages.mockResolvedValue({});
   const props = {
     dateValue: { startDate: 'Nov 01 2018', endDate: 'Nov 03 2018', isFutureDateSelected: false },
     queryCompleted: jest.fn(),

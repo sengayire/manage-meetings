@@ -18,7 +18,12 @@ export class QueryLeastBookedRooms extends Component {
 
   componentDidUpdate(prevProps, prevState) {
     const { bookedRoomsList } = this.state;
-    const { updateParent } = this.props;
+    const { updateParent, dateValue: { startDate, endDate } } = this.props;
+    const { startDate: prevStartDate, endDate: prevEndDate } = prevProps.dateValue;
+
+    if (prevStartDate !== startDate || prevEndDate !== endDate) {
+      this.getLeastBookedRoomsAnalytics();
+    }
     if (prevState.bookedRoomsList !== bookedRoomsList) {
       updateParent('leastBookedRooms', bookedRoomsList);
     }
@@ -26,7 +31,8 @@ export class QueryLeastBookedRooms extends Component {
 
   getLeastBookedRoomsAnalytics = async () => {
     const { dateValue } = this.props;
-    const { bookedRoomsList } = this.state;
+    const { bookedRoomsList, loading } = this.state;
+    if (!loading) this.setState({ loading: true });
     const analyticsForLeastBookedRooms = await getLeastBookedRooms(dateValue);
     const { analyticsForBookedRooms } = analyticsForLeastBookedRooms;
     let bookedRooms = Object.assign({}, bookedRoomsList);

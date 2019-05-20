@@ -19,7 +19,14 @@ class QueryBookingsCount extends Component {
     this.getBookingsCountAnalytics();
   }
   componentDidUpdate(prevProps, prevState) {
+    const { dateValue: { startDate, endDate } } = this.props;
+    const { startDate: prevStartDate, endDate: prevEndDate } = prevProps.dateValue;
     const { bookings } = this.state;
+
+    if (prevStartDate !== startDate || prevEndDate !== endDate) {
+      this.getBookingsCountAnalytics();
+    }
+
     if (prevState.bookings !== bookings) {
       const { updateParent } = this.props;
       updateParent('totalBookingsCount', bookings);
@@ -28,7 +35,8 @@ class QueryBookingsCount extends Component {
 
   getBookingsCountAnalytics = async () => {
     const { dateValue } = this.props;
-    const { bookings } = this.state;
+    const { bookings, loading } = this.state;
+    if (!loading) this.setState({ loading: true });
     const bookingsAnalytics = await getBookingsCount(dateValue);
     let bookingsCount = Object.assign({}, bookings);
     bookingsCount = bookingsAnalytics.bookingsAnalyticsCount;

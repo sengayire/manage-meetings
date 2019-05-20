@@ -27,9 +27,14 @@ export class Checkins extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
+    const { dateValue: { startDate, endDate } } = this.props;
+    const { startDate: prevStartDate, endDate: prevEndDate } = prevProps.dateValue;
     const { error, loading, analyticsRatios } = this.state;
     if (!error && !loading) {
       this.props.queryCompleted('Checkins');
+    }
+    if (prevStartDate !== startDate || prevEndDate !== endDate) {
+      this.fetchData();
     }
     if (prevState && analyticsRatios !== prevState.analyticsRatios) {
       const { updateParent } = this.props;

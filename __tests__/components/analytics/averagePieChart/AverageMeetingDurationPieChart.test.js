@@ -1,5 +1,5 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import { AverageMeetingDurationPieChart }
   from '../../../../src/components/analytics/averagePieChart/AverageMeetingDurationPieChart';
 import { getAnalyticForMeetingDurations } from '../../../../src/components/helpers/QueriesHelpers';
@@ -36,9 +36,9 @@ describe('Average Meetings Duration PieChart Component', () => {
   };
 
   let wrapper;
-  beforeEach(() => {
+  beforeAll(() => {
     getAnalyticForMeetingDurations.mockResolvedValue(analyticsForMeetingsDurations);
-    wrapper = mount(<AverageMeetingDurationPieChart {...props} name="data" updateParent={jest.fn()} />);
+    wrapper = shallow(<AverageMeetingDurationPieChart {...props} name="data" updateParent={jest.fn()} />);
   });
 
   it('renders correctly from memory', () => {
@@ -47,7 +47,7 @@ describe('Average Meetings Duration PieChart Component', () => {
 
   it('should have an initial state ', () => {
     jest.spyOn(AverageMeetingDurationPieChart.prototype, 'componentDidMount').mockImplementationOnce(() => {});
-    wrapper = mount(<AverageMeetingDurationPieChart {...props} name="data" updateParent={jest.fn()} />);
+    wrapper = shallow(<AverageMeetingDurationPieChart {...props} name="data" updateParent={jest.fn()} />);
     expect(wrapper.state())
       .toEqual({
         analyticsForMeetingsDurations: {},
@@ -62,8 +62,7 @@ describe('Average Meetings Duration PieChart Component', () => {
 
   it('should show an error when a future date is selected', () => {
     props.dateValue.isFutureDateSelected = true;
-    const myWrapper = mount(<AverageMeetingDurationPieChart {...props} name="data" updateParent={jest.fn()} />);
-    expect(myWrapper.find('ErrorIcon').length).toEqual(1);
-    expect(myWrapper.find('ErrorIcon').text()).toEqual('You cannot fetch data beyond today');
+    wrapper.setProps({ ...props });
+    expect(wrapper.find('ErrorIcon').length).toEqual(1);
   });
 });

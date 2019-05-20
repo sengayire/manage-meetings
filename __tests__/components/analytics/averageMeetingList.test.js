@@ -24,7 +24,6 @@ describe('Average Meeting List Component', () => {
   });
 
   it('renders correctly from memory', () => {
-    getAnalyticForMeetingDurations.mockResolvedValue({});
     expect(wrapper).toMatchSnapshot();
   });
 

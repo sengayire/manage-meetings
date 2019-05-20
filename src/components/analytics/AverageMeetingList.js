@@ -36,8 +36,15 @@ export class AverageMeetingList extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    const { queryCompleted } = this.props;
-    const { analyticsForMeetingsDurations, error, loading } = this.state;
+    const { queryCompleted, dateValue: { startDate, endDate } } = this.props;
+    const { startDate: prevStartDate, endDate: prevEndDate } = prevProps.dateValue;
+    const {
+      analyticsForMeetingsDurations, error, loading, perPage, currentPage,
+    } = this.state;
+
+    if (prevStartDate !== startDate || prevEndDate !== endDate) {
+      this.getAnalyticForMeetingDurations(perPage, currentPage);
+    }
     if (!error && !loading) {
       queryCompleted('AverageMeetingList');
     }
@@ -111,7 +118,7 @@ export class AverageMeetingList extends Component {
 
     return (
       <div className="average-meeting overlay-container">
-        {loading && isFetching && <Overlay />}
+        {(loading || isFetching) && <Overlay />}
         <div className="average-meeting-control">
           <h4 className="header-title">Average time spent/Meeting Room</h4>
           <span className="moreVerticalIcon">{Tip(tip)}</span>

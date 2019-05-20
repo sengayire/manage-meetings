@@ -4,6 +4,9 @@ exports[`Average Meeting List Component renders correctly from memory 1`] = `
 <div
   className="average-meeting overlay-container"
 >
+  <Overlay
+    id=""
+  />
   <div
     className="average-meeting-control"
   >
