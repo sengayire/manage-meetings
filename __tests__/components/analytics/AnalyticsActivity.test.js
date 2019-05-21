@@ -21,6 +21,13 @@ describe('AnalyticsActivity component', () => {
       DailyRoomEvents: [],
     },
   };
+
+  const userData = {
+    id: '41',
+    location: 'Nairobi',
+    firstName: 'James',
+  };
+
   beforeEach(() => {
     wrapper = mount(<AnalyticsActivityComponent {...props} />);
   });
@@ -59,5 +66,12 @@ describe('AnalyticsActivity component', () => {
     await wrapper.instance().getAnalyticsForDailyRoomEvents();
     wrapper.update();
     expect(wrapper.find('.activity-info-row').exists()).toBe(true);
+  });
+
+  it('should update the state of location with the logged in user location', async () => {
+    jest.spyOn(QueryHelper, 'getUserDetails').mockImplementationOnce(() => userData);
+    expect(wrapper.state('location').length).toBe(0);
+    await wrapper.instance().getLocation();
+    expect(wrapper.state('location').length).toBe(7);
   });
 });

@@ -5,7 +5,7 @@ import '../assets/styles/analyticsActivity.scss';
 import { groupIcon } from '../utils/images/images';
 import dateChecker from '../utils/checkDate';
 import Overlay from '../components/commons/Overlay';
-import { getAnalyticForDailyRoomsEvents } from '../components/helpers/QueriesHelpers';
+import { getAnalyticForDailyRoomsEvents, getUserDetails } from '../components/helpers/QueriesHelpers';
 import ErrorIcon from '../components/commons/ErrorIcon';
 import meetings from '../utils/activityData';
 
@@ -13,10 +13,12 @@ export class AnalyticsActivity extends Component {
   state = {
     analyticsForDailyRoomEvents: meetings,
     loading: true,
+    location: '',
   };
 
   componentDidMount() {
     this.getAnalyticsForDailyRoomEvents();
+    this.getLocation();
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -47,6 +49,15 @@ export class AnalyticsActivity extends Component {
       loading: false,
     });
   };
+
+
+  getLocation = async () => {
+    const user = await getUserDetails();
+    this.setState({
+      location: user.location,
+    });
+  }
+
   meetingsData = dailyActivityData => (
     <div>
       {dailyActivityData.map(meeting => (
@@ -66,10 +77,10 @@ export class AnalyticsActivity extends Component {
                 ) : (
                   <div className="status">
                     <div className="started">
-                      Started <bdi>{event.startTime}</bdi>
+                      Started <bdi>{event.startTime} { this.state.location === 'Lagos' ? 'WAT' : 'EAT'}</bdi>
                     </div>
                     <div className="ended">
-                      Ended <bdi>{event.endTime}</bdi>
+                      Ended <bdi>{event.endTime} { this.state.location === 'Lagos' ? 'WAT' : 'EAT'}</bdi>
                     </div>
                   </div>
                 )}
