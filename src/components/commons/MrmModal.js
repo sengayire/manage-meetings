@@ -55,8 +55,10 @@ class MrmModal extends Component {
    * @returns {void}
    */
   toggleModal = () => {
-    this.setState({ isOpen: !this.state.isOpen });
-    this.props.handleCloseModal();
+    this.setState(({ isOpen }) => {
+      if (isOpen) this.props.handleCloseModal();
+      return { isOpen: !this.state.isOpen };
+    });
   };
 
   render() {

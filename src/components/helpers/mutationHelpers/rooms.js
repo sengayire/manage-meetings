@@ -35,7 +35,6 @@ const addRoom = async (variables, location, client = apolloClient) => {
           perPage: 8,
         },
       });
-      data.allRooms.rooms.pop();
       data.allRooms.rooms.unshift(createRoom.room);
       updatedData = data;
     },

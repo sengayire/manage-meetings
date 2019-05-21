@@ -143,11 +143,17 @@ export class AddNewRoom extends Component {
   isValidEntry = ({
     rooms, remoteRoomName, roomName, roomType, files, roomCapacity, levels, levelInput,
   }) => {
-    if (roomName && roomCapacity && roomType && remoteRoomName
-      && files.length && rooms.length) {
-      if (levels.length === levelInput.length) return true;
-    }
-    return false;
+    const expectedLevelInputLength = levels.filter(({ children: { length } }) => length > 1).length;
+    const allLevelsCompleted = expectedLevelInputLength === levelInput.length;
+    return (
+      roomName
+      && roomCapacity
+      && roomType
+      && remoteRoomName
+      && files.length
+      && rooms.length
+      && allLevelsCompleted
+    );
   }
 
   createRoom = async () => {
@@ -187,20 +193,21 @@ export class AddNewRoom extends Component {
           });
         });
     } else notification(toastr, 'error', 'All fields are required')();
-    this.clearForm();
   }
 
   clearForm = () => {
     this.setState({
-      rooms: [],
-      remoteRoomName: '',
-      roomName: '',
-      roomType: '',
-      structureId: '',
-      levelInput: [],
-      locationId: '',
-      files: [],
+      thumbnailName: 'Upload a thumbnail',
+      imageUrl: '',
+      isAllRemoteRooms: false,
       roomCapacity: 0,
+      roomName: '',
+      remoteRoomName: '',
+      levels: [],
+      roomType: '',
+      files: [],
+      levelInput: [],
+      isLoading: false,
     });
   }
 
@@ -393,6 +400,7 @@ export class AddNewRoom extends Component {
         modalContent={this.renderModalContent()}
         handleSubmit={this.createRoom}
         isLoading={this.state.isLoading}
+        handleCloseModal={this.clearForm}
       />
     );
   }
