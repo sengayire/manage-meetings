@@ -54,11 +54,9 @@ exports[`BookedRooms component should render correctly 1`] = `
           <span>
             Kampala
           </span>
+          <span />
           <span>
-            10
-          </span>
-          <span>
-            50
+            NaN
             %
           </span>
         </div>
@@ -69,11 +67,9 @@ exports[`BookedRooms component should render correctly 1`] = `
           <span>
             Gulu
           </span>
+          <span />
           <span>
-            10
-          </span>
-          <span>
-            50
+            NaN
             %
           </span>
         </div>

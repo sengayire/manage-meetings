@@ -1,80 +1,374 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Average Meeting List Component renders correctly from memory 1`] = `
-<div
-  className="average-meeting overlay-container"
->
-  <Overlay
-    id=""
-  />
+<AverageMeetingList>
   <div
-    className="average-meeting-control"
+    className="average-meeting overlay-container"
   >
-    <h4
-      className="header-title"
+    <div
+      className="average-meeting-control"
     >
-      Average time spent/Meeting Room
-    </h4>
-    <span
-      className="moreVerticalIcon"
-    >
-      <ThemedTooltippedComponent
-        className=""
-        composeTheme="deeply"
-        mapThemrProps={[Function]}
-        theme={null}
-        tooltip="The number of meetings in a room,  the average number of attendees to these meetings as well as the average duration of the meetings."
-        tooltipDelay={0}
-        tooltipHideOnClick={true}
-        tooltipPosition="top"
-        tooltipShowOnClick={true}
+      <h4
+        className="header-title"
       >
-        <img
-          alt="help icon"
-          src="https://firebasestorage.googleapis.com/v0/b/learning-map-app.appspot.com/o/MrmFrontImages%2Fhelp_outline_24px.svg?alt=media&token=839e3137-c29e-463d-9a68-361e28794911"
-        />
-      </ThemedTooltippedComponent>
-    </span>
-  </div>
-  <div
-    className="average-meeting-list"
-  >
-    <div>
-      <TableHead
-        titles={
-          Array [
-            "Room",
-            "No. of meetings",
-            "Average Meeting Duration",
-          ]
-        }
-      />
-      <div>
-        <QueryAnalyticsPerMeetingRoom
-          data={
-            Object {
-              "MeetingsDurationaAnalytics": Array [
-                Object {
-                  "count": 0,
-                  "roomName": "Room name",
-                  "totalDuration": 0,
-                },
-                Object {
-                  "count": 0,
-                  "roomName": "Room name",
-                  "totalDuration": 0,
-                },
-                Object {
-                  "count": 0,
-                  "roomName": "Room name",
-                  "totalDuration": 0,
-                },
-              ],
+        Average time spent/Meeting Room
+      </h4>
+      <span
+        className="moreVerticalIcon"
+      >
+        <ThemedTooltippedComponent
+          className=""
+          composeTheme="deeply"
+          mapThemrProps={[Function]}
+          theme={null}
+          tooltip="The number of meetings in a room,  the average number of attendees to these meetings as well as the average duration of the meetings."
+          tooltipDelay={0}
+          tooltipHideOnClick={true}
+          tooltipPosition="top"
+          tooltipShowOnClick={true}
+        >
+          <TooltippedComponent
+            className=""
+            theme={
+              Object {
+                "tooltipInner": "tooltipInner",
+              }
             }
+            tooltip="The number of meetings in a room,  the average number of attendees to these meetings as well as the average duration of the meetings."
+            tooltipDelay={0}
+            tooltipHideOnClick={true}
+            tooltipPosition="top"
+            tooltipShowOnClick={true}
+          >
+            <ThemedLink
+              active={false}
+              className=""
+              composeTheme="deeply"
+              mapThemrProps={[Function]}
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              theme={
+                Object {
+                  "tooltipInner": "tooltipInner",
+                }
+              }
+            >
+              <Link
+                active={false}
+                className=""
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                theme={
+                  Object {
+                    "tooltipInner": "tooltipInner",
+                  }
+                }
+              >
+                <a
+                  className=""
+                  data-react-toolbox="link"
+                  onClick={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
+                >
+                  <img
+                    alt="help icon"
+                    src="https://firebasestorage.googleapis.com/v0/b/learning-map-app.appspot.com/o/MrmFrontImages%2Fhelp_outline_24px.svg?alt=media&token=839e3137-c29e-463d-9a68-361e28794911"
+                  />
+                </a>
+              </Link>
+            </ThemedLink>
+          </TooltippedComponent>
+        </ThemedTooltippedComponent>
+      </span>
+    </div>
+    <div
+      className="average-meeting-list"
+    >
+      <div>
+        <TableHead
+          titles={
+            Array [
+              "Room",
+              "No. of meetings",
+              "Average Meeting Duration",
+            ]
           }
-        />
+        >
+          <div
+            className="table__headers"
+          >
+            <span
+              key="Room"
+            >
+              Room
+            </span>
+            <span
+              key="No. of meetings"
+            >
+              No. of meetings
+            </span>
+            <span
+              key="Average Meeting Duration"
+            >
+              Average Meeting Duration
+            </span>
+          </div>
+        </TableHead>
+        <div>
+          <QueryAnalyticsPerMeetingRoom
+            data={
+              Object {
+                "hasNext": true,
+                "hasPrevious": false,
+                "meetingDurationAnalytics": Array [
+                  Object {
+                    "count": 0,
+                    "roomName": "Kampala",
+                    "totalDuration": 0,
+                  },
+                  Object {
+                    "count": 0,
+                    "roomName": "Kampala2",
+                    "totalDuration": 0,
+                  },
+                  Object {
+                    "count": 0,
+                    "roomName": "New York",
+                    "totalDuration": 0,
+                  },
+                  Object {
+                    "count": 0,
+                    "roomName": "Cafeteria",
+                    "totalDuration": 0,
+                  },
+                  Object {
+                    "count": 0,
+                    "roomName": "China Town",
+                    "totalDuration": 0,
+                  },
+                ],
+                "pages": 4,
+              }
+            }
+          >
+            <div
+              className="table__row--analytics"
+              key="1"
+            >
+              <span>
+                Kampala
+              </span>
+              <span>
+                0
+              </span>
+              <span>
+                0 Hour 0 Minute
+              </span>
+            </div>
+            <div
+              className="table__row--analytics"
+              key="2"
+            >
+              <span>
+                Kampala2
+              </span>
+              <span>
+                0
+              </span>
+              <span>
+                0 Hour 0 Minute
+              </span>
+            </div>
+            <div
+              className="table__row--analytics"
+              key="3"
+            >
+              <span>
+                New York
+              </span>
+              <span>
+                0
+              </span>
+              <span>
+                0 Hour 0 Minute
+              </span>
+            </div>
+            <div
+              className="table__row--analytics"
+              key="4"
+            >
+              <span>
+                Cafeteria
+              </span>
+              <span>
+                0
+              </span>
+              <span>
+                0 Hour 0 Minute
+              </span>
+            </div>
+            <div
+              className="table__row--analytics"
+              key="5"
+            >
+              <span>
+                China Town
+              </span>
+              <span>
+                0
+              </span>
+              <span>
+                0 Hour 0 Minute
+              </span>
+            </div>
+          </QueryAnalyticsPerMeetingRoom>
+        </div>
+      </div>
+    </div>
+    <div
+      className="average-meeting-pagination"
+    >
+      <div>
+        <Pagination
+          currentPage={1}
+          dataFetched={true}
+          handleData={[Function]}
+          hasNext={true}
+          hasPrevious={false}
+          isFetching={false}
+          itemsPerPage={
+            Array [
+              5,
+              10,
+              20,
+              50,
+            ]
+          }
+          perPage={5}
+          reverse={false}
+          totalPages={4}
+        >
+          <nav
+            className="page-navigation"
+          >
+            <div
+              className="perPageBlock"
+            >
+              <ul
+                className="pagination"
+              >
+                <select
+                  className="page-select"
+                  disabled={false}
+                  id="perPage"
+                  name="perPage"
+                  onChange={[Function]}
+                  value={5}
+                >
+                  <option
+                    key="6"
+                  >
+                    5
+                  </option>
+                  <option
+                    key="11"
+                  >
+                    10
+                  </option>
+                  <option
+                    key="21"
+                  >
+                    20
+                  </option>
+                  <option
+                    key="51"
+                  >
+                    50
+                  </option>
+                </select>
+                <li>
+                  Items per page
+                </li>
+              </ul>
+            </div>
+            <div
+              className="showingBlock"
+            >
+              <ul
+                className="pagination"
+              >
+                <li>
+                  <button
+                    className="disabled"
+                    id="previous"
+                    onClick={[Function]}
+                  >
+                    Previous
+                  </button>
+                </li>
+                <li
+                  className="results"
+                >
+                  <ul>
+                    <span>
+                      Showing 
+                      page
+                    </span>
+                    <select
+                      className="totalPage"
+                      disabled={false}
+                      id="totalPage"
+                      name="page"
+                      onChange={[Function]}
+                      value={1}
+                    >
+                      <option
+                        key="0"
+                      >
+                        1
+                      </option>
+                      <option
+                        key="1"
+                      >
+                        2
+                      </option>
+                      <option
+                        key="2"
+                      >
+                        3
+                      </option>
+                      <option
+                        key="3"
+                      >
+                        4
+                      </option>
+                    </select>
+                    <span
+                      className="pageNum"
+                    >
+                       of 
+                      4
+                    </span>
+                  </ul>
+                </li>
+                <li>
+                  <button
+                    className="enabled"
+                    id="next"
+                    onClick={[Function]}
+                  >
+                    Next
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </Pagination>
       </div>
     </div>
   </div>
-</div>
+</AverageMeetingList>
 `;

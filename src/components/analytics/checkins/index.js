@@ -1,152 +1,71 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React, { useContext } from 'react';
 import '../../../assets/styles/checkins.scss';
 import DonutChart from './DonutChart';
-import { getCheckinsBookingsCancellationsPercentages } from '../../helpers/QueriesHelpers';
 import {
   checkinsChart,
   bookingsChart,
   cancellationsChart,
 } from '../../../fixtures/donutChartColors';
+import AnalyticsContext from '../../helpers/AnalyticsContext';
+import getCheckinsStatistics from '../../helpers/analytics/Checkins';
 
-// eslint-disable-next-line react/prefer-stateless-function
-/**
- * Checkins component
- *
- * @returns {JSX}
- */
-export class Checkins extends Component {
-  state = {
-    loading: false,
-    analyticsRatios: {},
-    error: null,
-  };
+export const Checkins = () => {
+  const { analytics, fetching } = useContext(AnalyticsContext);
 
-  componentDidMount() {
-    this.fetchData();
+  const {
+    autoCancellationsPercentage,
+    checkinsPercentage,
+    appBookingsPercentage,
+  } = analytics || {};
+
+  let bookings;
+  let checkins;
+  let autoCancellations;
+  let appBookings;
+
+  if (!fetching) {
+    ({
+      bookings, checkins, autoCancellations, appBookings,
+    } = getCheckinsStatistics(analytics));
   }
 
-  componentDidUpdate(prevProps, prevState) {
-    const { dateValue: { startDate, endDate } } = this.props;
-    const { startDate: prevStartDate, endDate: prevEndDate } = prevProps.dateValue;
-    const { error, loading, analyticsRatios } = this.state;
-    if (!error && !loading) {
-      this.props.queryCompleted('Checkins');
-    }
-    if (prevStartDate !== startDate || prevEndDate !== endDate) {
-      this.fetchData();
-    }
-    if (prevState && analyticsRatios !== prevState.analyticsRatios) {
-      const { updateParent } = this.props;
-      updateParent('checkinsAndCancellations', analyticsRatios);
-    }
-  }
+  const roundNumber = num => Math.round(num);
 
-  /**
-   * Returns analytics data when there are no errors or
-   * component is done loading
-   *
-   * @param {analyticsData, loading, error} props
-   *
-   * @returns {void}
-   */
-  formatAnalyticsData = (analyticsData, loading, error) => {
-    if (!loading && !error) {
-      return { ...analyticsData };
-    }
-    return {};
-  };
 
-  /**
-   *
-   * fetch data
-   *
-   * @returns {void}
-   */
-  fetchData = async () => {
-    const { dateValue } = this.props;
-    this.setState({ loading: true });
-    try {
-      const data = await getCheckinsBookingsCancellationsPercentages(dateValue);
-      this.setState({
-        loading: false,
-        analyticsRatios: data.analyticsRatios,
-      });
-    } catch (e) {
-      this.setState({
-        loading: false,
-        error: e,
-      });
-    }
-  }
-
-  roundNumber = num => Math.round(num * 100) / 100;
-
-  render() {
-    const { isFutureDateSelected } = this.props.dateValue;
-    const { loading, error, analyticsRatios } = this.state;
-    const {
-      checkins,
-      checkinsPercentage,
-      bookings,
-      cancellationsPercentage,
-      cancellations,
-    } = this.formatAnalyticsData(analyticsRatios, loading, error);
-    return (
-      <div className="checkins">
-        <DonutChart
-          chartTitle="% of Checkins"
-          entries={checkins}
-          total={bookings}
-          percentage={this.roundNumber(checkinsPercentage)}
-          loading={loading}
-          error={error}
-          chartColor={checkinsChart}
-          dataName="Checkins"
-          tip="The number and % of check-ins of booked meeting rooms"
-          isFutureDateSelected={isFutureDateSelected}
-        />
-        <DonutChart
-          chartTitle="% of App Bookings"
-          entries={15}
-          total={20}
-          percentage={75}
-          loading={loading}
-          error={error}
-          chartColor={bookingsChart}
-          dataName="Bookings"
-          tip="The number and % of people who book directly from the app instead from google calendar"
-          isFutureDateSelected={isFutureDateSelected}
-        />
-        <DonutChart
-          chartTitle="% of Auto Cancellations"
-          entries={cancellations}
-          total={bookings}
-          percentage={this.roundNumber(cancellationsPercentage)}
-          loading={loading}
-          error={error}
-          chartColor={cancellationsChart}
-          dataName="Cancellations"
-          hasInfo={false}
-          tip="Number and % of auto-cancelled meeting rooms"
-          isFutureDateSelected={isFutureDateSelected}
-        />
-      </div>
-    );
-  }
-}
-
-Checkins.propTypes = {
-  dateValue: PropTypes.shape({
-    isFutureDateSelected: PropTypes.bool.isRequired,
-  }).isRequired,
-  queryCompleted: PropTypes.func.isRequired,
-  updateParent: PropTypes.func,
+  return (
+    <div className="checkins">
+      <DonutChart
+        chartTitle="% of Checkins"
+        entries={checkins}
+        total={bookings}
+        percentage={roundNumber(checkinsPercentage)}
+        loading={fetching}
+        chartColor={checkinsChart}
+        dataName="Checkins"
+        tip="The number and % of check-ins of booked meeting rooms"
+      />
+      <DonutChart
+        chartTitle="% of App Bookings"
+        entries={appBookings}
+        total={bookings}
+        percentage={roundNumber(appBookingsPercentage)}
+        loading={fetching}
+        chartColor={bookingsChart}
+        dataName="Bookings"
+        tip="The number and % of people who book directly from the app instead from google calendar"
+      />
+      <DonutChart
+        chartTitle="% of Auto Cancellations"
+        entries={autoCancellations}
+        total={bookings}
+        percentage={roundNumber(autoCancellationsPercentage)}
+        loading={fetching}
+        chartColor={cancellationsChart}
+        dataName="Cancellations"
+        tip="Number and % of auto-cancelled meeting rooms"
+      />
+    </div>
+  );
 };
-
-Checkins.defaultProps = {
-  updateParent: null,
-};
-
 
 export default Checkins;

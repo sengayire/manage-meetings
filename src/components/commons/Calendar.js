@@ -34,8 +34,8 @@ class Calendar extends Component {
 
   state = {
     isCalendarOpen: false,
-    startDate: this.props.startDate || moment().format('MM-DD-YYYY'),
-    endDate: this.props.endDate || moment().format('MM-DD-YYYY'),
+    startDate: this.props.startDate || moment().subtract(1, 'days').format('MMM DD Y'),
+    endDate: this.props.endDate || moment().format('MMM DD Y'),
   };
 
   /**

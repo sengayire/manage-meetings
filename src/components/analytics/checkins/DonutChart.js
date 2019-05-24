@@ -2,7 +2,6 @@ import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { Doughnut } from 'react-chartjs-2';
 import '../../../assets/styles/donutchart.scss';
-import ErrorIcon from '../../../../src/components/commons/ErrorIcon';
 
 // Import the tip
 import Tip from '../../commons/Tooltip';
@@ -27,7 +26,6 @@ class DonutChart extends Component {
   renderChart = () => {
     const {
       loading,
-      error,
       percentage,
       entries,
       total,
@@ -35,12 +33,6 @@ class DonutChart extends Component {
       hasInfo,
       dataName,
     } = this.props;
-
-    if (error) {
-      return (<ErrorIcon
-        message={error.graphQLErrors.length > 0 && 'No resource found'}
-      />);
-    }
 
     const options = {
       legend: {
@@ -86,7 +78,7 @@ class DonutChart extends Component {
             <p>
               {!loading && `${entries}/${total}`}
             </p>
-            <p>Meeting</p>
+            <p>Meetings</p>
           </div>
         )}
       </Fragment>
@@ -99,7 +91,6 @@ class DonutChart extends Component {
       hintText,
       loading,
       tip,
-      isFutureDateSelected,
     } = this.props;
 
     return (
@@ -116,9 +107,7 @@ class DonutChart extends Component {
         </div>
         <div className="chart-content">
           {
-            isFutureDateSelected ?
-              <ErrorIcon message="You cannot fetch data beyond today" />
-            : this.renderChart()
+            this.renderChart()
           }
         </div>
       </div>
@@ -135,10 +124,8 @@ DonutChart.propTypes = {
   hasInfo: PropTypes.bool,
   tip: PropTypes.string.isRequired,
   loading: PropTypes.bool,
-  error: PropTypes.instanceOf(Object),
   chartColor: PropTypes.instanceOf(Object),
   dataName: PropTypes.string,
-  isFutureDateSelected: PropTypes.bool.isRequired,
 };
 DonutChart.defaultProps = {
   chartTitle: 'Pie Chart',
@@ -147,7 +134,6 @@ DonutChart.defaultProps = {
   entries: 0,
   total: 10,
   hasInfo: true,
-  error: null,
   loading: null,
   chartColor: null,
   dataName: 'Checkins',

@@ -46,7 +46,10 @@ export default class PickRange extends React.Component {
    *
    * @returns {void}
    */
-  handleDayClick = (day) => {
+  handleDayClick = (day, modifiers = {}) => {
+    if (modifiers.disabled) {
+      return;
+    }
     const range = DateUtils.addDayToRange(day, this.state);
     this.setState(range);
     this.props.handleChange(range);
@@ -101,6 +104,7 @@ export default class PickRange extends React.Component {
           selectedDays={[from, { from, to }]}
           modifiers={modifiers}
           onDayClick={this.handleDayClick}
+          disabledDays={day => day > (new Date())}
         />
       </div>
     );

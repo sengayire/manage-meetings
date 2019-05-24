@@ -5,7 +5,7 @@ import QueryAnalyticsPerMeetingRoom from '../../../../src/components/analytics/A
 describe('QueryAnalyticsPerMeetingRoom component', () => {
   const props = {
     data: {
-      MeetingsDurationaAnalytics: [
+      meetingDurationAnalytics: [
         {
           roomName: 'Malabo',
           count: 63,

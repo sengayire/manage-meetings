@@ -7,8 +7,8 @@ describe('Analytics Overview Component', () => {
     const props = {
       queryCompleted: jest.fn(),
       dateValue: {
-        validatedStartDate: '',
-        validatedEndDate: '',
+        startDate: '',
+        endDate: '',
       },
     };
     expect(shallow(<AnalyticsOverview {...props} />)).toMatchSnapshot();

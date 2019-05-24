@@ -2,44 +2,9 @@
 
 exports[`AnalyticsOverview Component renders properly 1`] = `
 <Fragment>
-  <AveragePieChartList
-    dateValue={
-      Object {
-        "validatedEndDate": "",
-        "validatedStartDate": "",
-      }
-    }
-    queryCompleted={[MockFunction]}
-    updateParent={null}
-  />
-  <ComposedBookedRooms
-    dateValue={
-      Object {
-        "validatedEndDate": "",
-        "validatedStartDate": "",
-      }
-    }
-    updateParent={null}
-  />
-  <Checkins
-    dateValue={
-      Object {
-        "validatedEndDate": "",
-        "validatedStartDate": "",
-      }
-    }
-    queryCompleted={[MockFunction]}
-    updateParent={null}
-  />
-  <AverageMeetingList
-    dateValue={
-      Object {
-        "validatedEndDate": "",
-        "validatedStartDate": "",
-      }
-    }
-    queryCompleted={[MockFunction]}
-    updateParent={null}
-  />
+  <AveragePieChartList />
+  <ComposedBookedRooms />
+  <Checkins />
+  <AverageMeetingList />
 </Fragment>
 `;

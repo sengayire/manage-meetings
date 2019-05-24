@@ -43,8 +43,8 @@ const BookedRooms = ({
               }] : bookedRoomsList).map((room, index) => (
                 <div className="table__row--analytics" key={index}>
                   <span>{room.roomName}</span>
-                  <span>{room.meetings}</span>
-                  <span>{room.percentage}%</span>
+                  <span>{room.numberOfBookings}</span>
+                  <span>{Math.round(room.bookingsPercentageShare)}%</span>
                 </div>
               ))
             }

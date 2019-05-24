@@ -1,0 +1,266 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Query Most Booked Rooms Component should load progressBar 1`] = `
+<QueryMostBookedRooms>
+  <BookedRooms
+    bookedRoomText="Most Booked Rooms"
+    bookedRoomsList={
+      Array [
+        Object {
+          "appBookings": 0,
+          "appBookingsPercentage": 0,
+          "autoCancellations": 0,
+          "bookingsPercentageShare": 0,
+          "cancellations": 0,
+          "cancellationsPercentage": 0,
+          "checkins": 0,
+          "checkinsPercentage": 0,
+          "events": Array [
+            Object {
+              "durationInMinutes": 0,
+            },
+          ],
+          "numberOfBookings": 0,
+          "roomName": "Kampala",
+        },
+        Object {
+          "appBookings": 0,
+          "appBookingsPercentage": 0,
+          "autoCancellations": 0,
+          "bookingsPercentageShare": 0,
+          "cancellations": 0,
+          "cancellationsPercentage": 0,
+          "checkins": 0,
+          "checkinsPercentage": 0,
+          "events": Array [
+            Object {
+              "durationInMinutes": 0,
+            },
+          ],
+          "numberOfBookings": 0,
+          "roomName": "Kampala2",
+        },
+        Object {
+          "appBookings": 0,
+          "appBookingsPercentage": 0,
+          "autoCancellations": 0,
+          "bookingsPercentageShare": 0,
+          "cancellations": 0,
+          "cancellationsPercentage": 0,
+          "checkins": 0,
+          "checkinsPercentage": 0,
+          "events": Array [
+            Object {
+              "durationInMinutes": 0,
+            },
+          ],
+          "numberOfBookings": 0,
+          "roomName": "New York",
+        },
+        Object {
+          "appBookings": 0,
+          "appBookingsPercentage": 0,
+          "autoCancellations": 0,
+          "bookingsPercentageShare": 0,
+          "cancellations": 0,
+          "cancellationsPercentage": 0,
+          "checkins": 0,
+          "checkinsPercentage": 0,
+          "events": Array [
+            Object {
+              "durationInMinutes": 0,
+            },
+          ],
+          "numberOfBookings": 0,
+          "roomName": "Cafeteria",
+        },
+      ]
+    }
+    fetching={false}
+    tip="The highest number of times meeting rooms were booked in a set time period"
+  >
+    <div
+      className="wrap-booked-room overlay-container"
+    >
+      <div
+        className="booked-room-header"
+      >
+        <img
+          alt="Pull"
+          src="https://firebasestorage.googleapis.com/v0/b/learning-map-app.appspot.com/o/MrmFrontImages%2Fpoll_red.svg?alt=media&token=f162d826-43a7-4bcb-aac8-0077ea6a4885"
+        />
+        <h4>
+          Most Booked Rooms
+        </h4>
+        <ThemedTooltippedComponent
+          className=""
+          composeTheme="deeply"
+          mapThemrProps={[Function]}
+          theme={null}
+          tooltip="The highest number of times meeting rooms were booked in a set time period"
+          tooltipDelay={0}
+          tooltipHideOnClick={true}
+          tooltipPosition="top"
+          tooltipShowOnClick={true}
+        >
+          <TooltippedComponent
+            className=""
+            theme={
+              Object {
+                "tooltipInner": "tooltipInner",
+              }
+            }
+            tooltip="The highest number of times meeting rooms were booked in a set time period"
+            tooltipDelay={0}
+            tooltipHideOnClick={true}
+            tooltipPosition="top"
+            tooltipShowOnClick={true}
+          >
+            <ThemedLink
+              active={false}
+              className=""
+              composeTheme="deeply"
+              mapThemrProps={[Function]}
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              theme={
+                Object {
+                  "tooltipInner": "tooltipInner",
+                }
+              }
+            >
+              <Link
+                active={false}
+                className=""
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                theme={
+                  Object {
+                    "tooltipInner": "tooltipInner",
+                  }
+                }
+              >
+                <a
+                  className=""
+                  data-react-toolbox="link"
+                  onClick={[Function]}
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
+                >
+                  <img
+                    alt="help icon"
+                    src="https://firebasestorage.googleapis.com/v0/b/learning-map-app.appspot.com/o/MrmFrontImages%2Fhelp_outline_24px.svg?alt=media&token=839e3137-c29e-463d-9a68-361e28794911"
+                  />
+                </a>
+              </Link>
+            </ThemedLink>
+          </TooltippedComponent>
+        </ThemedTooltippedComponent>
+      </div>
+      <div
+        className="booked-room-list"
+      >
+        <div
+          className="table"
+        >
+          <TableHead
+            titles={
+              Array [
+                "Room",
+                "Meetings",
+                "% Share of All Meetings",
+              ]
+            }
+          >
+            <div
+              className="table__headers"
+            >
+              <span
+                key="Room"
+              >
+                Room
+              </span>
+              <span
+                key="Meetings"
+              >
+                Meetings
+              </span>
+              <span
+                key="% Share of All Meetings"
+              >
+                % Share of All Meetings
+              </span>
+            </div>
+          </TableHead>
+          <div
+            className="table__body"
+          >
+            <div
+              className="table__row--analytics"
+              key="0"
+            >
+              <span>
+                Kampala
+              </span>
+              <span>
+                0
+              </span>
+              <span>
+                0
+                %
+              </span>
+            </div>
+            <div
+              className="table__row--analytics"
+              key="1"
+            >
+              <span>
+                Kampala2
+              </span>
+              <span>
+                0
+              </span>
+              <span>
+                0
+                %
+              </span>
+            </div>
+            <div
+              className="table__row--analytics"
+              key="2"
+            >
+              <span>
+                New York
+              </span>
+              <span>
+                0
+              </span>
+              <span>
+                0
+                %
+              </span>
+            </div>
+            <div
+              className="table__row--analytics"
+              key="3"
+            >
+              <span>
+                Cafeteria
+              </span>
+              <span>
+                0
+              </span>
+              <span>
+                0
+                %
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </BookedRooms>
+</QueryMostBookedRooms>
+`;

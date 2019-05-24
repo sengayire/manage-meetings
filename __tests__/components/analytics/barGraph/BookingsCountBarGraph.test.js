@@ -1,19 +1,15 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import { MockedProvider } from 'react-apollo/test-utils';
 import BookingsCountBarGraph from '../../../../src/components/analytics/barGraph/BookingsCountBarGraph';
+import AnalyticsContext from '../../../../src/components/helpers/AnalyticsContext';
+import allAnalyticsMockData from '../../../../__mocks__/analytics/allAnalyticsMockData';
 
-const props = {
-  dateValue: { startDate: 'Nov 01 2018', endDate: 'Nov 03 2018' },
-};
-
-const analyticsMocks = [];
 
 describe('Bookings Count Bar Graph Component', () => {
   const wrapper = mount(
-    <MockedProvider mocks={analyticsMocks}>
-      <BookingsCountBarGraph {...props} updateParent={jest.fn()} />
-    </MockedProvider>,
+    <AnalyticsContext.Provider value={allAnalyticsMockData} >
+      <BookingsCountBarGraph />
+    </AnalyticsContext.Provider>,
   );
 
   it('renders correctly', () => {

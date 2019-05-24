@@ -4,27 +4,8 @@ exports[`Average Pie Chart Component renders correctly from memory 1`] = `
 <div
   className="pie-chart-container"
 >
-  <AverageMeetingDurationPieChart
-    dateValue={
-      Object {
-        "validatedEndDate": "",
-        "validatedStartDate": "",
-      }
-    }
-    queryCompleted={[MockFunction]}
-    updateParent={null}
-  />
-  <GetAverageRoomCapacityComponent
-    updateParent={null}
-  />
-  <BookingsCountBarGraph
-    dateValue={
-      Object {
-        "validatedEndDate": "",
-        "validatedStartDate": "",
-      }
-    }
-    updateParent={null}
-  />
+  <AverageMeetingDurationPieChart />
+  <GetAverageRoomCapacityComponent />
+  <BookingsCountBarGraph />
 </div>
 `;

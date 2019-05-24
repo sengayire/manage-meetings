@@ -6,8 +6,8 @@ describe('AnalyticsOverview Component', () => {
   const props = {
     queryCompleted: jest.fn(),
     dateValue: {
-      validatedStartDate: '',
-      validatedEndDate: '',
+      startDate: '',
+      endDate: '',
     },
   };
   const wrapper = shallow(<AnalyticsOverview {...props} />);

@@ -167,4 +167,10 @@ describe('LevelForm component', () => {
     expect(wrapper.state().wrongLevelName).toBe(false);
     expect(wrapper.state().levelName).toBe(LevelName);
   });
+
+  it('should set correct state on call of closeDeleteStructureModal', () => {
+    wrapper.instance().closeDeleteStructureModal();
+    expect(wrapper.state().wrongLevelName).toBe(false);
+    expect(wrapper.state().showDeleteModal).toBe(false);
+  });
 });

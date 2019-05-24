@@ -10,7 +10,7 @@ import timeConvert from '../../helpers/timeConverter';
  * @returns {JSX}
  */
 const QueryAnalyticsPerMeetingRoom = ({ data }) =>
-  data.MeetingsDurationaAnalytics.map(({ roomName, count, totalDuration }, index) => (
+  data.meetingDurationAnalytics.map(({ roomName, count, totalDuration }, index) => (
     <div className="table__row--analytics" key={(index + 1).toString()}>
       <span>{roomName}</span>
       <span>{count}</span>
