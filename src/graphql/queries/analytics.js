@@ -31,20 +31,20 @@ const ALL_ANALYTICS = gql`
 `;
 
 export const ANALYTICS_FOR_DAILY_ROOM_EVENTS = gql`
-  query analyticsForDailyRoomEvents($startDate: String!, $endDate: String!) {
-    analyticsForDailyRoomEvents(startDate: $startDate, endDate: $endDate) {
-      DailyRoomEvents {
-        day
-        events {
-          eventSummary
-          startTime
-          endTime
-          eventId
-          noOfParticipants
-          roomName
-          cancelled
-        }
+  query allEvents($startDate: String!, $endDate: String!) {
+    allEvents(startDate: $startDate, endDate: $endDate) {
+      id
+      room{
+        name
       }
+      eventTitle
+      endTime
+      checkedIn
+      startTime
+      checkInTime
+      endTime
+      cancelled
+      numberOfParticipants
     }
   }
 `;

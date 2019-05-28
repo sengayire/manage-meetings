@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import uuid from 'uuid';
 import '../assets/styles/analyticsActivity.scss';
 import { groupIcon } from '../utils/images/images';
-import dateChecker from '../utils/checkDate';
 import Overlay from '../components/commons/Overlay';
 import { getAnalyticForDailyRoomsEvents, getUserDetails } from '../components/helpers/QueriesHelpers';
 import ErrorIcon from '../components/commons/ErrorIcon';
@@ -43,13 +42,13 @@ export class AnalyticsActivity extends Component {
 
   getAnalyticsForDailyRoomEvents = async () => {
     const { dateValue } = this.props;
-    const { analyticsForDailyRoomEvents } = await getAnalyticForDailyRoomsEvents(dateValue);
+    const analyticsForDailyRoomEvents
+    = await getAnalyticForDailyRoomsEvents(dateValue);
     this.setState({
-      analyticsForDailyRoomEvents,
+      analyticsForDailyRoomEvents: analyticsForDailyRoomEvents.allEvents,
       loading: false,
     });
   };
-
 
   getLocation = async () => {
     const user = await getUserDetails();
@@ -58,41 +57,41 @@ export class AnalyticsActivity extends Component {
     });
   }
 
+  formatTime = (dateTime) => {
+    const formattedTime = dateTime.substr(11, 8);
+    return formattedTime;
+  }
+
   meetingsData = dailyActivityData => (
     <div>
-      {dailyActivityData.map(meeting => (
-        <div className="activity" key={uuid()}>
-          <div className="activity-day">{dateChecker(meeting.day) ? 'Today' : meeting.day}</div>
-          <div>
-            {meeting.events.map(event => (
-              <div className="activity-info-row" key={uuid()}>
-                <div className="title">
-                  <div>{event.eventSummary}</div>
+      <div>
+        {dailyActivityData.map(event => (
+          <div className="activity-info-row" key={uuid()}>
+            <div className="title">
+              <div>{event.eventTitle}</div>
+            </div>
+            <div className="room">{event.room.name}</div>
+            {event.cancelled ? (
+              <div className="status">
+                <div className="cancelled">Cancelled</div>
+              </div>
+            ) : (
+              <div className="status">
+                <div className="started">
+                  Started <bdi>{this.formatTime(event.startTime)} { this.state.location === 'Lagos' ? 'WAT' : 'EAT'}</bdi>
                 </div>
-                <div className="room">{event.roomName}</div>
-                {event.cancelled ? (
-                  <div className="status">
-                    <div className="cancelled">Cancelled</div>
-                  </div>
-                ) : (
-                  <div className="status">
-                    <div className="started">
-                      Started <bdi>{event.startTime} { this.state.location === 'Lagos' ? 'WAT' : 'EAT'}</bdi>
-                    </div>
-                    <div className="ended">
-                      Ended <bdi>{event.endTime} { this.state.location === 'Lagos' ? 'WAT' : 'EAT'}</bdi>
-                    </div>
-                  </div>
-                )}
-                <div className="participants">
-                  <img src={groupIcon} alt="" />
-                  <span>{event.noOfParticipants}</span>
+                <div className="ended">
+                  Ended <bdi>{this.formatTime(event.endTime)} { this.state.location === 'Lagos' ? 'WAT' : 'EAT'}</bdi>
                 </div>
               </div>
-            ))}
+            )}
+            <div className="participants">
+              <img src={groupIcon} alt="" />
+              <span>{event.numberOfParticipants}</span>
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 
@@ -106,26 +105,28 @@ export class AnalyticsActivity extends Component {
   );
 
   render() {
-    const { loading, analyticsForDailyRoomEvents } = this.state;
-    if (loading && analyticsForDailyRoomEvents.DummyDailyRoomEvents) {
+    const {
+      loading, analyticsForDailyRoomEvents,
+    } = this.state;
+    if (loading && analyticsForDailyRoomEvents.allEvents) {
       return (
         <center className="room__events">
           {this.renderDailyRoomEvents()}
           <Overlay id="average-meeting" />
-          {this.meetingsData(analyticsForDailyRoomEvents.DummyDailyRoomEvents)}
+          {this.meetingsData(analyticsForDailyRoomEvents.allEvents)}
         </center>
       );
-    } else if (analyticsForDailyRoomEvents.DailyRoomEvents.length === 0) {
+    } else if (analyticsForDailyRoomEvents.length === 0) {
       return (
         <div className="activity_error">
-          <ErrorIcon message="No resource found" />
+          <ErrorIcon message="No activity during this period" />
         </div>
       );
     }
     return (
       <center className="room__events">
         {this.renderDailyRoomEvents()}
-        {this.meetingsData(analyticsForDailyRoomEvents.DailyRoomEvents)}
+        {this.meetingsData(analyticsForDailyRoomEvents)}
       </center>
     );
   }

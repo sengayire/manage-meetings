@@ -16,7 +16,7 @@ const getAnalyticsForMeetingDuration = (analytics, currentPage, perPage = 5) => 
   return {
     meetingDurationAnalytics: getMeetingDurationAnalytics(pageContent),
     pages,
-    hasNext: pages >= currentPage,
+    hasNext: pages > currentPage,
     hasPrevious: currentPage !== 1,
   };
 };

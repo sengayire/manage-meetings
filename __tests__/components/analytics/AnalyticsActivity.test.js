@@ -57,7 +57,7 @@ describe('AnalyticsActivity component', () => {
     jest.spyOn(QueryHelper, 'getAnalyticForDailyRoomsEvents').mockImplementationOnce(() => data);
     await wrapper.instance().getAnalyticsForDailyRoomEvents();
     wrapper.update();
-    expect(wrapper.find('.error-msg').text()).toBe('No resource found');
+    expect(wrapper.find('.error-msg').text()).toBe('No activity during this period');
   });
 
   it('should display daily events data from the backend', async () => {
