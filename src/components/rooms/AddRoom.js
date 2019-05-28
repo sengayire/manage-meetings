@@ -156,6 +156,8 @@ export class AddNewRoom extends Component {
     );
   }
 
+  stripSpaces = str => str.split(' ').join('');
+
   createRoom = async () => {
     if (this.isValidEntry(this.state)) {
       this.toggleLoading();
@@ -163,7 +165,9 @@ export class AddNewRoom extends Component {
         rooms, remoteRoomName, roomName, roomType, structureName,
         locationId, files, roomCapacity, structureId,
       } = this.state;
-      const roomId = rooms.filter(room => room.name === remoteRoomName);
+      const roomId = rooms.filter(room =>
+        this.stripSpaces(room.name) === this.stripSpaces(remoteRoomName),
+      );
       const calendarId = roomId.length ? roomId[0].calendarId : null;
       const variables = {
         name: roomName,
