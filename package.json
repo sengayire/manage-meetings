@@ -9,7 +9,7 @@
     "build": "webpack --config config/webpack.prod.js --mode production",
     "test:coveralls": "yarn test-ci && cat ./coverage/lcov.info | coveralls",
     "test": "jest --watch --config jest.config.js",
-    "test-ci": "jest --config jest.config.js --coverage -u",
+    "test-ci": "jest --maxWorkers=2 --config jest.config.js --coverage -u",
     "lint": "eslint .",
     "docs:build": "documentation build src/** -f html -o docs"
   },
