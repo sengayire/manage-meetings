@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 /* eslint-disable react/prop-types */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
@@ -37,18 +38,23 @@ class MrmModal extends Component {
   };
 
   componentDidMount() {
+    this._isMounted = true;
     this.props.withButton && this.setUserRole();
   }
 
+  componentWillUnmount() {
+    this._isMounted = false;
+  }
   /**
    * Sets the role of the current user
    * @returns {void}
    */
   setUserRole = async () => {
     const user = await getUserDetails();
-    this.setState({ role: user.roles[0].id });
+    this._isMounted && this.setState({ role: user.roles[0].id });
   };
 
+  _isMounted = false;
   /**
    * Toggle the visibility of the modal
    *
@@ -62,7 +68,7 @@ class MrmModal extends Component {
   };
 
   toggleModalByRef = () => {
-    this.setState({ isOpen: !this.state.isOpen }, () => {});
+    this._isMounted && this.setState({ isOpen: !this.state.isOpen }, () => {});
   };
 
   render() {

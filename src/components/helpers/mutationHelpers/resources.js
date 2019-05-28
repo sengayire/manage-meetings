@@ -4,6 +4,7 @@
 import apolloClient from '../../../utils/ApolloClient';
 import { DELETE_RESOURCE_MUTATION } from '../../../graphql/mutations/resources';
 import { GET_RESOURCES_QUERY } from '../../../graphql/queries/Resources';
+import { ADD_RESOURCE_MUTATION } from '../../../graphql/mutations/AddResourceToRoom';
 
 const updateStore = (data, deleteResource) =>
   data.allResources.resources.filter((resource) => {
@@ -52,4 +53,34 @@ const deleteResources = async (currentPage, perPage, { resourceId }, client = ap
       },
     });
 };
-export { deleteResources, updateStore };
+
+const addResourceMutation = async (name, client = apolloClient) => {
+  await client
+    .mutate({
+      mutation: ADD_RESOURCE_MUTATION,
+      name: addResourceMutation,
+      variables: { name },
+      // write and read from cache
+      update: async (proxy, { data: { createResource } }) => {
+        const cachedResources = proxy.readQuery({
+          query: GET_RESOURCES_QUERY,
+          variables: {
+            page: 1,
+            perPage: 5,
+          },
+        });
+        const resourceList = cachedResources.allResources.resources;
+        cachedResources.allResources.resources = [...resourceList, createResource.resource];
+
+        proxy.writeQuery({
+          query: GET_RESOURCES_QUERY,
+          variables: {
+            page: 1,
+            perPage: 5,
+          },
+          data: cachedResources,
+        });
+      },
+    });
+};
+export { deleteResources, updateStore, addResourceMutation };

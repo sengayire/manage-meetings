@@ -6,7 +6,6 @@ export const GET_RESOURCES_QUERY = gql`
       resources {
         id
         name
-        quantity
       }
       pages
       hasNext

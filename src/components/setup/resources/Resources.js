@@ -169,7 +169,10 @@ class Resources extends React.Component {
           </div>
           <div className="room-select-input resource-picker">{this.createSelectInputs()}</div>
           <div className="add-new-resource">
-            <AddResource />
+            <AddResource
+              handleOnAddResource={this.handleOnDeleteResource}
+              availableResources={resourcesData}
+            />
           </div>
           <div>
             {resourcesData.resources

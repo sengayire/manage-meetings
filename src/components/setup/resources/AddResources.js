@@ -1,8 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import toastr from 'toastr';
 import ActionButtons from '../../commons/ActionButtons';
 import MrmModal from '../../commons/Modal';
 import { Input } from '../../commons';
+import { addResourceMutation } from '../../helpers/mutationHelpers/resources';
 import '../../../assets/styles/addresource.scss';
+import notification from '../../../utils/notification';
 
 /**
  * Add Resource Component
@@ -13,9 +17,8 @@ import '../../../assets/styles/addresource.scss';
  */
 export class AddResource extends React.Component {
   state = {
-    amenity: '',
+    resource: '',
     closeModal: false,
-    resourceQuantity: 0,
   };
 
   resourceQuantity = React.createRef();
@@ -41,9 +44,34 @@ export class AddResource extends React.Component {
    *
    * @returns {void}
    */
-  handleInputChange = (event, capacity = 0) => {
+  handleInputChange = (event) => {
     const { name, value } = event.target;
-    this.setState({ [name]: value, resourceQuantity: capacity });
+    this.setState({ [name]: value });
+  };
+
+  validateResource = (resource) => {
+    const alreadyExists = [];
+    const { availableResources } = this.props;
+    const existingResources = availableResources.resources;
+    // eslint-disable-next-line no-restricted-syntax
+    for (const item of existingResources) {
+      if (resource === item.name) {
+        alreadyExists.push(resource);
+      }
+    }
+    return alreadyExists;
+  }
+
+  submitResource = (resource) => {
+    const { handleOnAddResource } = this.props;
+    const invalid = this.validateResource(resource);
+    if (resource === '' || invalid.length > 0) {
+      notification(toastr, 'error', 'Provide a new, unique resource to add')();
+    } else {
+      addResourceMutation(resource);
+      notification(toastr, 'success', 'Resource Successfully added')();
+      setTimeout(() => handleOnAddResource(), 1000);
+    }
   };
 
   /**
@@ -58,9 +86,8 @@ export class AddResource extends React.Component {
 
   render() {
     const {
-      amenity,
+      resource,
       closeModal,
-      resourceQuantity,
     } = this.state;
     return (
       <MrmModal
@@ -74,24 +101,12 @@ export class AddResource extends React.Component {
           <div>
             <Input
               ref={this.amenity}
-              id="amenity"
-              name="amenity"
+              id="resource"
+              name="resource"
               placeholder="Type resource name"
               labelName="Resource Name"
               labelClass="add-resource-controls"
-              value={amenity}
-              onChange={this.handleInputChange}
-            />
-            <Input
-              ref={this.resourceQuantity}
-              id="resourceQuantity"
-              name="resourceQuantity"
-              type="number"
-              placeholder="Quantity"
-              labelName="Quantity"
-              controlsClass="resource-filter-controls"
-              labelClass="add-resource-controls"
-              defaultValue={resourceQuantity}
+              value={resource}
               onChange={this.handleInputChange}
             />
             <div className="loading-btn-div">
@@ -99,7 +114,7 @@ export class AddResource extends React.Component {
                 withCancel
                 onClickCancel={this.handleCloseModal}
                 actionButtonText="ADD RESOURCE"
-                onClickSubmit={this.handleCloseModal}
+                onClickSubmit={() => this.submitResource(resource)}
               />
             </div>
           </div>
@@ -108,5 +123,14 @@ export class AddResource extends React.Component {
     );
   }
 }
+
+AddResource.defaultProps = {
+  availableResources: {},
+};
+
+AddResource.propTypes = {
+  handleOnAddResource: PropTypes.func.isRequired,
+  availableResources: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
+};
 
 export default AddResource;
