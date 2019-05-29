@@ -24,7 +24,7 @@ class AnalyticsNav extends Component {
   state = {
     isActivity: false,
     location: 'Fetching location...',
-    startDate: moment().subtract(1, 'weeks').format('MMM DD Y'),
+    startDate: moment().format('MMM DD Y'),
     endDate: moment().format('MMM DD Y'),
     fetching: true,
   };
@@ -125,6 +125,8 @@ class AnalyticsNav extends Component {
       isActivity,
       fetching,
       location,
+      startDate,
+      endDate,
     } = this.state;
     return (
       <Fragment>
@@ -151,7 +153,11 @@ class AnalyticsNav extends Component {
               !fetching && (
                 <Fragment>
                   <div>
-                    <Calendar sendData={this.sendDateData} />
+                    <Calendar
+                      sendData={this.sendDateData}
+                      startDate={startDate}
+                      endDate={endDate}
+                    />
                   </div>
                   <ExportButton data={{ analytics, dateValue: this.dateValue() }} />
                 </Fragment>
