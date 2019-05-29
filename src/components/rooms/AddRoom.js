@@ -193,10 +193,12 @@ export class AddNewRoom extends Component {
                 this.toggleLoading();
                 this.handleCloseModal();
                 notification(toastr, 'error', err.graphQLErrors[0].message)();
+                this.clearForm();
               });
           });
         });
     } else notification(toastr, 'error', 'All fields are required')();
+    this.clearForm();
   }
 
   clearForm = () => {
@@ -207,6 +209,7 @@ export class AddNewRoom extends Component {
       roomCapacity: 0,
       roomName: '',
       remoteRoomName: '',
+      levels: [],
       roomType: '',
       files: [],
       levelInput: [],
