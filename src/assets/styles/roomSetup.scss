@@ -1,5 +1,5 @@
-@import './variables';
-@import '../../utils/images/images.scss';
+@import "./variables";
+@import "../../utils/images/images.scss";
 .setup-main-container {
   display: flex;
   flex-wrap: wrap;
@@ -21,10 +21,10 @@
 
   .room-select {
     &-input {
-      display: flex;
-      margin: 0 auto 20px auto;
-      width: 40%;
-      justify-content: space-around;
+    display: flex;
+    margin: 0 auto 20px auto;
+    width: 40%;
+    justify-content: space-around;
     }
     &-sub {
       border: 1px solid $color-input-border;
@@ -125,7 +125,6 @@
       border-radius: 10px;
       background-color: map-get($color-white, 000);
       box-shadow: $box-shadow-setup;
-      cursor: pointer;
       .room-image {
         width: 100%;
         height: 90px;
@@ -262,7 +261,7 @@
       .room-setup-card {
         height: auto !important;
         margin: 25px 5px;
-        .room-image {
+        .room-image{
           height: 150px;
         }
         .image_loader_wrapper {
@@ -274,21 +273,21 @@
             }
           }
         }
-        .room-details-container {
-          .room-name {
+        .room-details-container{
+          .room-name{
             height: auto;
             padding: 10px 0;
             font-size: 25px;
             line-height: 16px;
           }
-          .number-of-Seats {
+          .number-of-Seats{
             font-size: 18px;
           }
-          .number-of-resources {
+          .number-of-resources{
             font-size: 18px;
           }
           .room-details {
-            .details {
+            .details{
               height: 30px;
               padding: 5px;
               font-size: 16px;
@@ -307,10 +306,10 @@
 @media only screen and (max-width: 600px) {
   .setup-main-container {
     width: 80% !important;
-    select {
+    select{
       padding-top: 9px !important;
     }
-    label:after {
+    label:after{
       padding: 15px 10px !important;
     }
     .setup-navbar {
@@ -319,7 +318,7 @@
         padding: 5px 10px !important;
       }
     }
-    .room-setup-header {
+    .room-setup-header{
       font-size: 35px;
     }
     .room-select-input {
@@ -334,7 +333,7 @@
       .room-setup-card {
         height: auto !important;
         margin: 25px 10px;
-        .room-image {
+        .room-image{
           height: 250px;
         }
         .image_loader_wrapper {
@@ -346,20 +345,20 @@
             }
           }
         }
-
-        .room-details-container {
-          .room-name {
+  
+        .room-details-container{
+          .room-name{
             font-size: 30px;
             padding-top: 10px;
           }
-          .number-of-Seats {
+          .number-of-Seats{
             font-size: $font-size-small-screen;
           }
-          .number-of-resources {
+          .number-of-resources{
             font-size: $font-size-small-screen;
           }
-          .room-details {
-            .details {
+          .room-details{
+            .details{
               width: 48% !important;
               font-size: $font-size-small-screen !important;
               height: 50px !important;
