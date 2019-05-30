@@ -2,11 +2,33 @@ import JsPDF from 'jspdf';
 import download from 'downloadjs';
 import html2canvas from 'html2canvas';
 import toastr from 'toastr';
-import { bookedRooms, averageRoomCapacityData, averageMeetingDurationData, cancellationsData, averageMeetingTime, totalBookingsCountData, checkinsData, appBookingsData } from './JsxStringGenerators';
+import { bookedRooms, averageMeetingTime, totalBookingsCountData } from './JsxStringGenerators';
 import { leastAndMostBookedRoomsCSV, totalBookingsCountCSV, percentageCheckinsAndCancellationsCSV, averageRoomCapacityCSV, averageMeetingTimeCSV, averageMeetingDurationsCSV } from './CsvGenerators';
 import { getLeastBookedRooms, getMostBookedRooms } from '../MostAndLeastBooked';
 import downloadFileString from '../../../../fixtures/downloadString';
 import notification from '../../../../utils/notification';
+import addCharts from './AddCharts';
+
+const downloadPdf = async (page1, canvas) => {
+  const page2 = document.querySelector('.page2-download');
+  const page3 = document.querySelector('.page3-download');
+
+  const imgData = canvas.toDataURL('image/jpeg');
+  const pdf = new JsPDF('l', 'px', 'a4');
+  pdf.addImage(imgData, 'PNG', 35, 0, page1.clientWidth / 3, page1.clientHeight / 3);
+
+  const canvas2 = await html2canvas(page2);
+  const img2Data = canvas2.toDataURL('image/jpeg');
+  pdf.addPage('a4', 'l');
+  pdf.addImage(img2Data, 'PNG', 35, 0, page2.clientWidth / 3, page2.clientHeight / 3);
+
+  const canvas3 = await html2canvas(page3);
+  const img3Data = canvas3.toDataURL('image/jpeg');
+  pdf.addPage('a4', 'l');
+  pdf.addImage(img3Data, 'PNG', 35, 0, page3.clientWidth / 3, page3.clientHeight / 3);
+
+  pdf.save('analytics.pdf');
+};
 
 const createDownloadString = (analytics, dateValue) => {
   const { startDate, endDate } = dateValue;
@@ -17,21 +39,7 @@ const createDownloadString = (analytics, dateValue) => {
   downloadString = downloadString.replace(/endDate/g, endDate);
   downloadString = downloadString.replace(/innerMostBookedRooms/g, mostBookedRoomsTBody);
   downloadString = downloadString.replace(/innerLeastBookedRooms/g, leastBookedRoomsTbody);
-  downloadString = downloadString.replace(
-    /averageRoomCapacityData/g,
-    averageRoomCapacityData(analytics.rooms),
-  );
-  downloadString = downloadString.replace(
-    /averageMeetingsDuration/g,
-    averageMeetingDurationData(analytics.analytics),
-  );
   downloadString = downloadString.replace(/totalBookingsCount/g, totalBookingsCountData(analytics.bookingsCount));
-  downloadString = downloadString.replace(/percentageCheckins/g, checkinsData(analytics));
-  downloadString = downloadString.replace(/percentageAppBookings/g, appBookingsData(analytics));
-  downloadString = downloadString.replace(
-    /percentageAutoCancellations/g,
-    cancellationsData(analytics),
-  );
   downloadString = downloadString.replace(
     /averageTimeSpentDuringMeetings/g,
     averageMeetingTime(analytics.analytics),
@@ -39,23 +47,22 @@ const createDownloadString = (analytics, dateValue) => {
   return downloadString;
 };
 
-export const fetchDownload = (type, analytics, dateValue) => {
+export const fetchDownload = async (type, analytics, dateValue) => {
   notification(toastr, 'success', 'Your download will start shortly')();
   const div = document.createElement('div');
+  div.classList.add('download-div');
   div.innerHTML = createDownloadString(analytics, dateValue);
   document.body.appendChild(div);
-  html2canvas(div).then((canvas) => {
-    if (type === 'pdf') {
-      const imgData = canvas.toDataURL('image/png');
-      div.remove();
-      const pdf = new JsPDF('p', 'pt', 'a4');
-      pdf.addImage(imgData, 'PNG', 20, 20, 550, 720);
-      pdf.save('analytics.pdf');
-    } else {
-      div.remove();
-      download(canvas.toDataURL(), 'report.jpeg');
-    }
-  });
+  addCharts(analytics, dateValue);
+  const page1 = type === 'pdf' ? document.querySelector('.analytics-download')
+    : document.querySelector('.download-div');
+  const canvas = await html2canvas(page1);
+  if (type === 'pdf') {
+    await downloadPdf(page1, canvas);
+  } else {
+    await download(canvas.toDataURL(), 'report.jpeg');
+  }
+  div.remove();
 };
 
 export const downloadCSV = (analytics) => {

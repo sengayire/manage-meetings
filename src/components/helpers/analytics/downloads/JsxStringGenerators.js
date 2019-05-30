@@ -1,8 +1,6 @@
+/* eslint-disable react/no-unknown-property */
 import React from 'react';
 import jsxToString from 'jsx-to-string';
-import averageRoomCapacity from '../AverageRoomCapacity';
-import getSectorWidths from '../AverageMeetingDuration';
-import getCheckinsStatistics from '../Checkins';
 import timeConvert from '../../timeConverter';
 import { getMeetingDurationAnalytics } from '../AverageMeetingList';
 
@@ -16,80 +14,22 @@ import { getMeetingDurationAnalytics } from '../AverageMeetingList';
    */
 export const bookedRooms = bookedRoomsList =>
   jsxToString(
-    <tbody>
+    <div class="table-download booked-rooms-download">
+      <div class="table-flex-download table-header-download">
+        <div>Room</div>
+        <div>Meetings</div>
+        <div>% Share of All Meetings</div>
+      </div>
       {bookedRoomsList.map(({ roomName, numberOfBookings, bookingsPercentageShare }) => (
-        <tr key={roomName}>
-          <td>{roomName}</td>
-          <td>{numberOfBookings.toString()}</td>
-          <td>{`${bookingsPercentageShare.toString()}%`}</td>
-        </tr>
+        <div key={roomName} class="table-flex-download table-body-download">
+          <div>{roomName}</div>
+          <div>{numberOfBookings.toString()}</div>
+          <div>{`${Math.round(bookingsPercentageShare).toString()}%`}</div>
+        </div>
       ))}
-    </tbody>,
+    </div>,
   );
 
-/**
-* Fills the average room capacity table with data
-*
-* @returns {JSX}
-*/
-export const averageRoomCapacityData = (rooms) => {
-  const roomCapacity = averageRoomCapacity(rooms);
-  const {
-    lessThanTenData,
-    betweenTenandTwentyData,
-    greaterThanTwentyData,
-  } = roomCapacity;
-  return jsxToString(
-    <tbody>
-      <tr>
-        <td>{`${lessThanTenData.toString()}`}</td>
-        <td>{`${betweenTenandTwentyData.toString()}`}</td>
-        <td>{`${greaterThanTwentyData.toString()}`}</td>
-      </tr>
-    </tbody>,
-  );
-};
-
-
-  /**
-   * Fills the average meeting duration table with data
-   *
-   * @returns {JSX}
-   */
-export const averageMeetingDurationData = (analytics) => {
-  const averageMeetingDuration = getSectorWidths(analytics);
-  return jsxToString(
-    <tbody>
-      <tr>
-        <td>{`${averageMeetingDuration[0].toString()}%`}</td>
-        <td>{`${averageMeetingDuration[1].toString()}%`}</td>
-        <td>{`${averageMeetingDuration[2].toString()}%`}</td>
-        <td>{`${averageMeetingDuration[3].toString()}%`}</td>
-      </tr>
-    </tbody>,
-  );
-};
-
-  /**
-   * Fills the auto-cancellations table with data
-   *
-   * @returns {JSX}
-   */
-export const cancellationsData = (analytics) => {
-  const { autoCancellations: cancellations, bookings } = getCheckinsStatistics(analytics);
-  const {
-    autoCancellationsPercentage,
-  } = analytics;
-  return jsxToString(
-    <tbody>
-      <tr>
-        <td>{`${bookings.toString()}`}</td>
-        <td>{`${cancellations.toString()}`}</td>
-        <td>{`${Math.round(autoCancellationsPercentage, 2).toString()}%`}</td>
-      </tr>
-    </tbody>,
-  );
-};
 
 /**
  * Fills the average meeting times table with data
@@ -100,15 +40,20 @@ export const averageMeetingTime = (analytics) => {
   const meetingsDurationAnalytics = getMeetingDurationAnalytics(analytics);
 
   return jsxToString(
-    <tbody>
+    <div class="table-download booked-rooms-download">
+      <div class="table-flex-download table-header-download">
+        <div>Room</div>
+        <div>No. Of Meetings</div>
+        <div>Average Meeting Duration</div>
+      </div>
       {meetingsDurationAnalytics.map(({ roomName, totalDuration, count }) => (
-        <tr key={roomName}>
-          <td>{roomName.toString()}</td>
-          <td>{count.toString()}</td>
-          <td>{timeConvert(totalDuration)}</td>
-        </tr>
+        <div key={roomName} class="table-flex-download table-body-download">
+          <div>{roomName.toString()}</div>
+          <div>{count.toString()}</div>
+          <div>{timeConvert(totalDuration)}</div>
+        </div>
       ))}
-    </tbody>,
+    </div>,
   );
 };
 
@@ -119,53 +64,17 @@ export const averageMeetingTime = (analytics) => {
  */
 export const totalBookingsCountData = bookingsCount =>
   jsxToString(
-    <tbody>
+    <div class="table-download booked-rooms-download">
+      <div class="table-flex-download table-header-download total-bookings-count-table-download">
+        <div>Period</div>
+        <div>Bookings</div>
+      </div>
       {bookingsCount.map(({ totalBookings, period }) => (
-        <tr key={period}>
-          <td>{period}</td>
-          <td>{totalBookings}</td>
-        </tr>
+        <div key={period} class="table-flex-download table-body-download total-bookings-count-table-download">
+          <div>{period}</div>
+          <div>{totalBookings.toString()}</div>
+        </div>
       ))}
-    </tbody>,
+    </div>,
   );
 
-/**
- * Fills the checkins table with data
- *
- * @returns {JSX}
- */
-export const checkinsData = (analytics) => {
-  const { checkins, bookings } = getCheckinsStatistics(analytics);
-  const { checkinsPercentage } = analytics;
-  return jsxToString(
-    <tbody>
-      <tr>
-        <td>{`${bookings.toString()}`}</td>
-        <td>{`${checkins.toString()}`}</td>
-        <td>{`${Math.round(checkinsPercentage, 2).toString()}%`}</td>
-      </tr>
-    </tbody>,
-  );
-};
-
-
-/**
- * Fills the app bookings table with data,
- * currently it renders dummy data until backend
- * endpoint is modified to return this data
- *
- * @returns {JSX}
- */
-export const appBookingsData = (analytics) => {
-  const { checkins, bookings } = getCheckinsStatistics(analytics);
-  const { appBookingsPercentage } = analytics;
-  return jsxToString(
-    <tbody>
-      <tr>
-        <td>{`${bookings.toString()}`}</td>
-        <td>{`${checkins.toString()}`}</td>
-        <td>{`${Math.round(appBookingsPercentage, 2).toString()}%`}</td>
-      </tr>
-    </tbody>,
-  );
-};
