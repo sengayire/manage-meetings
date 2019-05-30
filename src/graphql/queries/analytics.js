@@ -2,16 +2,16 @@ import gql from 'graphql-tag';
 
 const ALL_ANALYTICS = gql`
   query allAnalytics($startDate: String!, $endDate: String!) {
-    allAnalytics(startDate: $startDate, endDate: $endDate){
-      bookingsCount{
-        totalBookings 
+    allAnalytics(startDate: $startDate, endDate: $endDate) {
+      bookingsCount {
+        totalBookings
         period
-        }
+      }
       checkinsPercentage
       appBookingsPercentage
       cancellationsPercentage
       autoCancellationsPercentage
-      analytics{
+      analytics {
         roomName
         cancellations
         cancellationsPercentage
@@ -22,9 +22,9 @@ const ALL_ANALYTICS = gql`
         bookingsPercentageShare
         appBookings
         appBookingsPercentage
-        events{
+        events {
           durationInMinutes
-          }
+        }
       }
     }
   }
@@ -33,21 +33,22 @@ const ALL_ANALYTICS = gql`
 export const ANALYTICS_FOR_DAILY_ROOM_EVENTS = gql`
   query allEvents($startDate: String!, $endDate: String!) {
     allEvents(startDate: $startDate, endDate: $endDate) {
-      id
-      room{
-        name
+      day
+      events {
+        room{
+          name
+        }
+        eventTitle
+        endTime
+        checkedIn
+        startTime
+        checkInTime
+        endTime
+        cancelled
+        numberOfParticipants
       }
-      eventTitle
-      endTime
-      checkedIn
-      startTime
-      checkInTime
-      endTime
-      cancelled
-      numberOfParticipants
     }
   }
 `;
-
 
 export default ALL_ANALYTICS;

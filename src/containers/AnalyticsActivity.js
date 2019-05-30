@@ -6,6 +6,7 @@ import { groupIcon } from '../utils/images/images';
 import Overlay from '../components/commons/Overlay';
 import { getAnalyticForDailyRoomsEvents, getUserDetails } from '../components/helpers/QueriesHelpers';
 import ErrorIcon from '../components/commons/ErrorIcon';
+import dateChecker from '../utils/checkDate';
 import meetings from '../utils/activityData';
 
 export class AnalyticsActivity extends Component {
@@ -64,34 +65,39 @@ export class AnalyticsActivity extends Component {
 
   meetingsData = dailyActivityData => (
     <div>
-      <div>
-        {dailyActivityData.map(event => (
-          <div className="activity-info-row" key={uuid()}>
-            <div className="title">
-              <div>{event.eventTitle}</div>
-            </div>
-            <div className="room">{event.room.name}</div>
-            {event.cancelled ? (
-              <div className="status">
-                <div className="cancelled">Cancelled</div>
-              </div>
-            ) : (
-              <div className="status">
-                <div className="started">
-                  Started <bdi>{this.formatTime(event.startTime)} { this.state.location === 'Lagos' ? 'WAT' : 'EAT'}</bdi>
+      {dailyActivityData.map(meeting => (
+        <div className="activity" key={uuid()}>
+          <div className="activity-day">{dateChecker(meeting.day) ? 'Today' : meeting.day}</div>
+          <div>
+            {meeting.events.map(event => (
+              <div className="activity-info-row" key={uuid()}>
+                <div className="title">
+                  <div>{event.eventTitle}</div>
                 </div>
-                <div className="ended">
-                  Ended <bdi>{this.formatTime(event.endTime)} { this.state.location === 'Lagos' ? 'WAT' : 'EAT'}</bdi>
+                <div className="room">{event.room.name}</div>
+                {event.cancelled ? (
+                  <div className="status">
+                    <div className="cancelled">Cancelled</div>
+                  </div>
+                ) : (
+                  <div className="status">
+                    <div className="started">
+                      Started <bdi>{this.formatTime(event.startTime)} { this.state.location === 'Lagos' ? 'WAT' : 'EAT'}</bdi>
+                    </div>
+                    <div className="ended">
+                      Ended <bdi>{this.formatTime(event.endTime)} { this.state.location === 'Lagos' ? 'WAT' : 'EAT'}</bdi>
+                    </div>
+                  </div>
+                )}
+                <div className="participants">
+                  <img src={groupIcon} alt="" />
+                  <span>{event.numberOfParticipants}</span>
                 </div>
               </div>
-            )}
-            <div className="participants">
-              <img src={groupIcon} alt="" />
-              <span>{event.numberOfParticipants}</span>
-            </div>
+            ))}
           </div>
-        ))}
-      </div>
+        </div>
+      ))}
     </div>
   );
 
@@ -105,21 +111,19 @@ export class AnalyticsActivity extends Component {
   );
 
   render() {
-    const {
-      loading, analyticsForDailyRoomEvents,
-    } = this.state;
-    if (loading && analyticsForDailyRoomEvents.allEvents) {
+    const { loading, analyticsForDailyRoomEvents } = this.state;
+    if (loading) {
       return (
         <center className="room__events">
           {this.renderDailyRoomEvents()}
           <Overlay id="average-meeting" />
-          {this.meetingsData(analyticsForDailyRoomEvents.allEvents)}
+          {this.meetingsData(meetings.allEvents)}
         </center>
       );
     } else if (analyticsForDailyRoomEvents.length === 0) {
       return (
         <div className="activity_error">
-          <ErrorIcon message="No activity during this period" />
+          <ErrorIcon message="No resource found" />
         </div>
       );
     }
