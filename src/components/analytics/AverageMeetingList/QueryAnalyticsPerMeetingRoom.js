@@ -2,6 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import timeConvert from '../../helpers/timeConverter';
 
+const getAverageTime = (time, count) => (
+  count === 0 ? 0 : Math.round(time / count)
+);
+
+
 /**
  * Component for QueryAnalyticsPerMeetingRoom
  *
@@ -14,7 +19,7 @@ const QueryAnalyticsPerMeetingRoom = ({ data }) =>
     <div className="table__row--analytics" key={(index + 1).toString()}>
       <span>{roomName}</span>
       <span>{count}</span>
-      <span>{timeConvert(totalDuration)}</span>
+      <span>{timeConvert(getAverageTime(totalDuration, count))}</span>
     </div>
   ));
 
