@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import timeConvert from '../../helpers/timeConverter';
 
-const getAverageTime = (time, count) => (
+export const getAverageTime = (time, count) => (
   count === 0 ? 0 : Math.round(time / count)
 );
 

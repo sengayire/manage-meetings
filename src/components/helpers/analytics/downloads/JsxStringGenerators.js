@@ -3,6 +3,7 @@ import React from 'react';
 import jsxToString from 'jsx-to-string';
 import timeConvert from '../../timeConverter';
 import { getMeetingDurationAnalytics } from '../AverageMeetingList';
+import { getAverageTime } from '../../../analytics/AverageMeetingList/QueryAnalyticsPerMeetingRoom';
 
 /**
    * generates jsx from bookedRoomsList and converts it to a string
@@ -50,7 +51,7 @@ export const averageMeetingTime = (analytics) => {
         <div key={roomName} class="table-flex-download table-body-download">
           <div>{roomName.toString()}</div>
           <div>{count.toString()}</div>
-          <div>{timeConvert(totalDuration)}</div>
+          <div>{timeConvert(getAverageTime(totalDuration, count))}</div>
         </div>
       ))}
     </div>,
