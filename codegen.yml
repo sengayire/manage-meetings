@@ -1,0 +1,7 @@
+# codegen.yml
+schema: https://converge-staging-api.andela.com/mrm
+overwrite: true
+generates:
+  ./fragmentTypes.json:
+    plugins:
+      - fragment-matcher

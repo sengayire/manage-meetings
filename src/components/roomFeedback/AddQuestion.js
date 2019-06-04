@@ -300,9 +300,9 @@ export class AddQuestion extends Component {
   renderQuestionTitleInputBox = () => (
     <div>
       {this.state.error.questionTitle &&
-      <span className="span-error">
-        <br />{this.state.error.questionTitle}
-      </span>}
+        <span className="span-error">
+          <br />{this.state.error.questionTitle}
+        </span>}
       <div className={this.state.error.questionTitle ? 'input-error' : 'inputs'}>
         <input
           placeholder="Enter Question Title Here..."
@@ -367,9 +367,9 @@ export class AddQuestion extends Component {
   rendersQuestionType = () => (
     <div>
       {this.state.error.type &&
-      <span className="span-error">
-        <br />{this.state.error.type}
-      </span>}
+        <span className="span-error">
+          <br />{this.state.error.type}
+        </span>}
       <Select
         labelText=""
         name="questionType"

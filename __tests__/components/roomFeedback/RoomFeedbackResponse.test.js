@@ -1,38 +1,73 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import RoomFeedbackResponse from '../../../src/components/roomFeedback/RoomFeedbackResponse';
-import { RoomFeedbackResponseList, roomCleanlinessRating, totalCleanlinessRating, totalMissingItemsCount } from '../../../src/components/roomFeedback/RoomFeedbackResponseList';
+import { RoomFeedbackResponseList, roomCleanlinessRating, totalCleanlinessRating, totalMissingItemsCount, totalRoomResources } from '../../../src/components/roomFeedback/RoomFeedbackResponseList';
 
-const rating = { totalRating: 3, grade: 2 };
+// const rating = { totalRating: 3, grade: 2 };
 
 const props = {
   activeRoomId: null,
   totalMissingItemsCount,
   roomCleanlinessRating,
   totalCleanlinessRating,
+  totalRoomResources,
   viewSingleFeed: jest.fn(),
   roomFeedbackResponse: {
-    roomId: 1,
-    roomName: 'Olkaria',
-    totalResponses: 25,
-    totalRoomResources: 5,
+    roomId: 1180,
+    roomName: 'pandora',
+    totalResponses: 3,
     response: [
       {
-        responseId: 1,
-        suggestion: 'This is a suggestion',
-        missingItems: [],
+        responseId: 289,
+        createdDate: '2019-06-25T14:45:26.577611',
+        resolved: false,
+        response: {
+          __typename: 'Rate',
+          rate: 5,
+        },
       },
       {
-        responseId: 2,
-        rating: 2,
-        missingItems: [],
+        responseId: 290,
+        createdDate: '2019-06-25T14:45:27.942964',
+        resolved: false,
+        response: {
+          __typename: 'Rate',
+          rate: 5,
+        },
       },
       {
-        responseId: 3,
-        missingItems: ['Tissue box', 'Ethernet Cable'],
+        responseId: 291,
+        createdDate: '2019-06-25T14:46:06.718295',
+        resolved: false,
+        response: {
+          __typename: 'SelectedOptions',
+          options: [
+            'handywork',
+          ],
+        },
       },
     ],
   },
+};
+
+const singleRoomResource = {
+  roomResources: [
+    {
+      room: [
+        {
+          quantity: 1,
+          resource: {
+            name: 'White wipe',
+            room: [
+              {
+                name: 'White wipe',
+              },
+            ],
+          },
+        },
+      ],
+    },
+  ],
 };
 
 const responseListProps = {
@@ -49,20 +84,33 @@ const responseListProps = {
           totalRoomResources: 5,
           response: [
             {
-              responseId: 1,
-              suggestion: 'This is a suggestion',
-              missingItems: [],
+              responseId: 289,
+              createdDate: '2019-06-25T14:45:26.577611',
+              resolved: false,
+              response: {
+                __typename: 'Rate',
+                rate: 5,
+              },
             },
             {
-              responseId: 2,
-              rating: 2,
-              suggestion: null,
-              missingItems: [],
+              responseId: 290,
+              createdDate: '2019-06-25T14:45:27.942964',
+              resolved: false,
+              response: {
+                __typename: 'Rate',
+                rate: 5,
+              },
             },
             {
-              responseId: 3,
-              suggestion: null,
-              missingItems: ['Tissue box', 'Ethernet Cable'],
+              responseId: 291,
+              createdDate: '2019-06-25T14:46:06.718295',
+              resolved: false,
+              response: {
+                __typename: 'SelectedOptions',
+                options: [
+                  'handywork',
+                ],
+              },
             },
           ],
         },
@@ -71,20 +119,26 @@ const responseListProps = {
   },
 };
 
+
 describe('Room Feedback', () => {
-  it('should find Olkaria', () => {
+  it('should find pandora', () => {
     const wrapper = shallow(
       <RoomFeedbackResponse {...props} checkData={jest.fn()} />);
+    wrapper.instance().getRoomResources = jest.fn(() => singleRoomResource);
     const text = wrapper
       .find('span')
       .first()
       .text();
-    expect(text).toEqual('Olkaria');
+    expect(text).toEqual('pandora');
   });
 
   it('componentWillReceiveProps', () => {
     const ResponseListComponent = shallow(
-      <RoomFeedbackResponseList {...responseListProps} checkData={jest.fn()} />);
+      <RoomFeedbackResponseList
+        {...responseListProps}
+        checkData={jest.fn()}
+        totalRoomResources={jest.fn()}
+      />);
     const allRoomResponses = {
       responses: [
         {
@@ -117,12 +171,18 @@ describe('Room Feedback', () => {
 
   it('should be able to toggle modal state', () => {
     const ResponseListComponent = shallow(
-      <RoomFeedbackResponseList {...responseListProps} checkData={jest.fn()} />);
+      <RoomFeedbackResponseList
+        {...responseListProps}
+        checkData={jest.fn()}
+        totalRoomResources={jest.fn()}
+      />,
+    );
+
     const ResponseComponent = shallow(
       <RoomFeedbackResponse {...props} />);
     const ResponseListInstance = ResponseListComponent.instance();
     const ResponseInstance = ResponseComponent.instance();
-    const fakeEvent = { preventDefault: () => {} };
+    const fakeEvent = { preventDefault: () => { } };
     ResponseListInstance.showModal(fakeEvent);
     ResponseInstance.showModal(fakeEvent);
     expect(ResponseListComponent.state().roomId).toEqual(null);
@@ -133,7 +193,7 @@ describe('Room Feedback', () => {
     const ResponseListComponent = shallow(
       <RoomFeedbackResponseList {...responseListProps} checkData={jest.fn()} />);
     const ResponseListInstance = ResponseListComponent.instance();
-    const fakeEvent = { preventDefault: () => {} };
+    const fakeEvent = { preventDefault: () => { } };
     ResponseListInstance.showModal(fakeEvent, 1);
     expect(ResponseListComponent.state().roomId).toEqual(1);
     expect(ResponseListComponent.state().visible).toEqual(true);
@@ -143,7 +203,7 @@ describe('Room Feedback', () => {
     const ResponseListComponent = shallow(
       <RoomFeedbackResponseList {...responseListProps} checkData={jest.fn()} />);
     const ResponseListInstance = ResponseListComponent.instance();
-    const fakeEvent = { preventDefault: () => {} };
+    const fakeEvent = { preventDefault: () => { } };
     ResponseListInstance.setState({ roomId: 1 });
     ResponseListInstance.showModal(fakeEvent, 1);
     expect(ResponseListComponent.state().roomId).toEqual(null);
@@ -158,24 +218,53 @@ describe('Room Feedback', () => {
 
   it('should have an active class when activeRoomId state is set', () => {
     const activeProps = {
-      activeRoomId: 1,
-      totalMissingItemsCount: jest.fn(() => 2),
-      roomCleanlinessRating: jest.fn(() => <div>Stars</div>),
-      totalCleanlinessRating: jest.fn(() => rating),
+      activeRoomId: 1180,
+      totalMissingItemsCount,
+      roomCleanlinessRating,
+      totalCleanlinessRating,
+      totalRoomResources,
       viewSingleFeed: jest.fn(),
       roomFeedbackResponse: {
-        roomId: 1,
-        roomName: 'Olkaria',
-        totalResponses: 25,
-        totalRoomResources: 5,
-        response: [{
-          suggestion: null,
-        }],
+        roomId: 1180,
+        roomName: 'pandora',
+        totalResponses: 3,
+        response: [
+          {
+            responseId: 289,
+            createdDate: '2019-06-25T14:45:26.577611',
+            resolved: false,
+            response: {
+              __typename: 'Rate',
+              rate: 5,
+            },
+          },
+          {
+            responseId: 290,
+            createdDate: '2019-06-25T14:45:27.942964',
+            resolved: false,
+            response: {
+              __typename: 'Rate',
+              rate: 5,
+            },
+          },
+          {
+            responseId: 291,
+            createdDate: '2019-06-25T14:46:06.718295',
+            resolved: false,
+            response: {
+              __typename: 'SelectedOptions',
+              options: [
+                'handywork',
+              ],
+            },
+          },
+        ],
       },
     };
 
     const activeRoomFeedbackResponse = shallow(
       <RoomFeedbackResponse {...activeProps} checkData={jest.fn()} />);
-    expect(activeRoomFeedbackResponse.find('.active')).toHaveLength(1);
+    activeRoomFeedbackResponse.instance().getRoomResources = jest.fn(() => singleRoomResource);
+    expect(activeRoomFeedbackResponse.hasClass('active')).toBeTruthy();
   });
 });

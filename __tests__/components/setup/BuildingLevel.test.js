@@ -149,7 +149,7 @@ describe('building setup component', () => {
     component.instance().addNewLevel({ preventDefault: jest.fn(), target: { className: 'add' } });
     expect(spy).toHaveBeenCalled();
     component.instance().levels.current.state.levelsDetails
-    = previeDataWithChildrenLessThanQuantity;
+      = previeDataWithChildrenLessThanQuantity;
     component.instance().addNewLevel({ preventDefault: jest.fn(), target: { className: 'add' } });
     expect(spy).toHaveBeenCalled();
     component.instance().levels.current.state.levelsDetails = previeDataWithChildWithEmptyName;

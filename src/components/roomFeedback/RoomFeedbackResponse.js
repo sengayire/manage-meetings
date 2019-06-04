@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import ErrorIcon from '../commons/ErrorIcon';
+import { getRoomResources } from '../helpers/QueriesHelpers';
 import '../../../src/assets/styles/roomFeedbackResponse.scss';
 
 /**
@@ -11,10 +13,56 @@ import '../../../src/assets/styles/roomFeedbackResponse.scss';
  *
  */
 class RoomFeedbackResponse extends Component {
+  state = {
+    roomResources: [
+      {
+        room: [
+          {
+            quantity: 0,
+            resource: {
+              name: '',
+              room: [
+                {
+                  name: '',
+                },
+              ],
+            },
+          },
+        ],
+      },
+    ],
+    error: false,
+  };
+
+  componentDidMount = async () => {
+    await this.getResourceData();
+  }
+
+  getResourceData = async () => {
+    try {
+      const resource = await getRoomResources(this.props.roomFeedbackResponse.roomId);
+      this.setState({
+        roomResources: resource,
+        error: false,
+      });
+    } catch (error) {
+      if (error && error.message === 'GraphQL error: Room has no resource yet') {
+        this.setState({
+          error: false,
+        });
+        return;
+      }
+      this.setState({
+        error: true,
+      });
+    }
+  };
+
+
   getResponseSuggestion = (roomResponses = []) => {
-    const suggestionResponseList = roomResponses.filter(response => (response.suggestion !== null));
+    const suggestionResponseList = roomResponses.filter(response => (response.response.__typename === 'TextArea'));
     if (suggestionResponseList.length > 0) {
-      const { suggestion } = suggestionResponseList[0];
+      const { suggestion } = suggestionResponseList[0].response;
       return suggestion;
     }
     return '';
@@ -38,10 +86,22 @@ class RoomFeedbackResponse extends Component {
         roomId,
         roomName,
         totalResponses,
-        totalRoomResources = 0,
         response,
       },
     } = this.props;
+
+    if (this.state.error) {
+      return (
+        <ErrorIcon />
+      );
+    }
+
+    let totalRoomResources;
+
+    if (this.state.roomResources) {
+      totalRoomResources = this.props.totalRoomResources(this.state.roomResources);
+    }
+
     const totalMissingItems = totalMissingItemsCount(response);
     const { totalRating, grade } = totalCleanlinessRating(response);
     const suggestion = this.getResponseSuggestion(response);
@@ -69,13 +129,13 @@ RoomFeedbackResponse.propTypes = {
     roomName: PropTypes.string.isRequired,
     response: PropTypes.array.isRequired,
     totalResponses: PropTypes.number.isRequired,
-    totalRoomResources: PropTypes.number.isRequired,
   }).isRequired,
   activeRoomId: PropTypes.number,
   viewSingleFeed: PropTypes.func.isRequired,
   roomCleanlinessRating: PropTypes.func.isRequired,
   totalCleanlinessRating: PropTypes.func.isRequired,
   totalMissingItemsCount: PropTypes.func.isRequired,
+  totalRoomResources: PropTypes.func.isRequired,
 };
 
 RoomFeedbackResponse.defaultProps = {

@@ -171,10 +171,10 @@ class AnalyticsNav extends Component {
           </AnalyticsContext.Provider>
         )}
         {isActivity &&
-        <AnalyticsActivityComponent
-          queryCompleted={() => {}}
-          dateValue={this.dateValue()}
-        />
+          <AnalyticsActivityComponent
+            queryCompleted={() => { }}
+            dateValue={this.dateValue()}
+          />
         }
       </Fragment>
     );

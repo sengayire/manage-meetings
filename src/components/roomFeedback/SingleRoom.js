@@ -1,14 +1,91 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { compose, graphql } from 'react-apollo';
 import '../../assets/styles/SingelRoomSideModel.scss';
 import Spinner from '../commons/Spinner';
-import ErrorIcon from '../commons/ErrorIcon';
-import SINGLE_ROOM_FEEDBACK from '../../graphql/queries/RoomFeedback';
-import { GET_ROOM_RESOURCES } from '../../graphql/queries/Resources';
+import { getRoomResources, getSingleRoomFeedback } from '../helpers/QueriesHelpers';
 
 export class SingleRoomFeedBack extends Component {
-  state = {};
+  state = {
+    roomResources: [
+      {
+        room: [
+          {
+            quantity: 0,
+            resource: {
+              name: '',
+              room: [
+                {
+                  name: '',
+                },
+              ],
+            },
+          },
+        ],
+      },
+    ],
+    roomResponse: {
+      roomName: 'DemoRoom',
+      totalResponses: 1,
+      response: [
+        {
+          responseId: 282,
+          createdDate: '2019-06-25T10:40:23.818174',
+          resolved: false,
+          response: {
+            __typename: 'Rate',
+            rate: 5,
+          },
+        },
+      ],
+    },
+    isFetching: false,
+  };
+
+  componentDidUpdate = async (prevProps) => {
+    if (this.props.roomId !== prevProps.roomId) {
+      await this.getResourceData();
+      await this.getFeedbackData();
+    }
+  }
+
+  getFeedbackData = async () => {
+    this.setState({ isFetching: true });
+    try {
+      const feedback = await getSingleRoomFeedback(this.props.roomId);
+
+      this.setState({
+        roomResponse: feedback,
+        isFetching: false,
+      });
+    } catch (error) {
+      this.setState({
+        isFetching: false,
+      });
+    }
+  };
+
+  getResourceData = async () => {
+    this.setState({ isFetching: true });
+    try {
+      const resource = await getRoomResources(this.props.roomId);
+
+      this.setState({
+        isFetching: false,
+        roomResources: resource,
+      });
+    } catch (error) {
+      if (error && error.message === 'GraphQL error: Room has no resource yet') {
+        this.setState({
+          isFetching: false,
+        });
+        return;
+      }
+      this.setState({
+        isFetching: false,
+      });
+    }
+  };
+
 
   /**
    * Format UTC date time to
@@ -36,13 +113,13 @@ export class SingleRoomFeedBack extends Component {
    *
    * @return {JSX}
    */
-  roomFeedbackList = (responses) => {
+  roomFeedbackList = (responses, roomResources) => {
     let data;
     if (responses.length > 0) {
       data = [...responses].reverse().map(response => (
         <div key={response.responseId} className="response">
           <div className="date">{this.formatDate(response.createdDate)}</div>
-          { this.renderRoomFeeback(response) }
+          {this.renderRoomFeeback(response, roomResources)}
         </div>
       ));
     } else {
@@ -55,6 +132,10 @@ export class SingleRoomFeedBack extends Component {
     return data;
   };
 
+  renderSpinner = () => (
+    <div className="modal-spinner"><Spinner /></div>
+  )
+
   /**
    * Conditionally renders responses that are
    * either ratings, suggestions or checks
@@ -63,27 +144,27 @@ export class SingleRoomFeedBack extends Component {
    *
    * @return {JSX}
    */
-  renderRoomFeeback = (response) => {
-    const { roomResources: { error }, roomCleanlinessRating } = this.props;
+  renderRoomFeeback = (response, roomResources) => {
+    const { roomCleanlinessRating } = this.props;
     let resourcesList;
-    if (error) {
+    if (!roomResources) {
       resourcesList = [];
     } else {
-      const {
-        roomResources: { getResourcesByRoomId: resources },
-      } = this.props;
-      resourcesList = resources.map(resource => resource.name);
+      roomResources && (resourcesList = roomResources.map(
+        resource => resource.room[0].resource.name,
+      ));
     }
-    if (response.suggestion) {
+
+    if (response.response.__typename === 'TextArea') {
       return (
         <div className="response-item">
           <div className="text-comment-heading">Suggestion</div>
           <div className="text-comment">
-            {response.suggestion}
+            {response.response.suggestion}
           </div>
         </div>
       );
-    } else if ((response.missingItems).length > 0) {
+    } else if (response.response.__typename === 'MissingItems') {
       return (
         <div className="item-list response-item">
           <div className="item-list-heading">Missing Items</div>
@@ -94,7 +175,7 @@ export class SingleRoomFeedBack extends Component {
                 <input
                   id={response.responseId}
                   type="checkbox"
-                  defaultChecked={(response.missingItems).includes(item)}
+                  defaultChecked={(response.response.missingItems).includes(item)}
                 />
                 {item}
               </label>
@@ -107,7 +188,7 @@ export class SingleRoomFeedBack extends Component {
       <div className="item-list response-item">
         <div className="item-list-heading">Cleanliness</div>
         <div />
-        <div className="cleanliness">{roomCleanlinessRating(response.rating)}</div>
+        <div className="cleanliness">{roomCleanlinessRating(response.response.rate)}</div>
       </div>
     );
   }
@@ -120,34 +201,24 @@ export class SingleRoomFeedBack extends Component {
    *
    * @return {JSX}
    */
-  renderModalContent = ({ loading, error }) => {
-    if (error) {
-      return (
-        <Fragment>
-          <div className="modal-header">
-            <a href="/" className="cancel" onClick={this.props.showModal}>
-              Cancel
-            </a>
-          </div>
-          <ErrorIcon />
-        </Fragment>
-      );
-    } else if (loading) {
-      return <div className="modal-spinner"><Spinner /></div>;
-    }
+  renderModalContent = () => {
+    const { roomResources, roomResponse } = this.state;
+    const { roomName, totalResponses, response } = roomResponse;
     const {
-      data: {
-        roomResponse: {
-          roomName,
-          totalResponses,
-          totalRoomResources,
-          response,
-        },
-      },
       totalCleanlinessRating,
       roomCleanlinessRating,
       totalMissingItemsCount,
+      totalRoomResources,
     } = this.props;
+
+    let totalRoomResourcesCount;
+
+    if (roomResources) {
+      totalRoomResourcesCount = totalRoomResources(roomResources);
+    } else {
+      totalRoomResourcesCount = 0;
+    }
+
     const totalMissingItems = totalMissingItemsCount(response);
     const { totalRating, grade } = totalCleanlinessRating(response);
     return (
@@ -160,11 +231,11 @@ export class SingleRoomFeedBack extends Component {
         </div>
         <div className="row-1">
           <div className="row-1-headings">
-            <div>Missing Tools</div>
+            <div>Missing Items</div>
             <div>Cleanliness</div>
           </div>
           <div className="row-1-data">
-            <div>{`${totalMissingItems} out of ${totalRoomResources}`}</div>
+            <div>{`${totalMissingItems} out of ${totalRoomResourcesCount}`}</div>
             <div>
               {roomCleanlinessRating(totalRating)}
               <br />
@@ -177,56 +248,34 @@ export class SingleRoomFeedBack extends Component {
         <div className="row-2-heading">
           {totalResponses} Responses
         </div>
-        <div className="row-2">{this.roomFeedbackList(response)}</div>
+        <div className="row-2">{this.roomFeedbackList(response, roomResources)}</div>
       </Fragment>
     );
   };
 
   render() {
     const { roomId } = this.props;
-    const { loading, error } = this.props.data;
-    return !this.props.visible || !roomId ? null : (
+    return (!this.props.visible || !roomId ? null : (
       <div className="side-modal">
-        {this.renderModalContent({ loading, error })}
+        {this.state.isFetching ? this.renderSpinner() : this.renderModalContent()}
       </div>
-    );
+    ));
   }
 }
 
 SingleRoomFeedBack.propTypes = {
-  data: PropTypes.shape({
-    roomResponse: PropTypes.object,
-    loading: PropTypes.bool,
-    error: PropTypes.object,
-  }).isRequired,
   roomCleanlinessRating: PropTypes.func.isRequired,
   totalCleanlinessRating: PropTypes.func.isRequired,
   totalMissingItemsCount: PropTypes.func.isRequired,
-  roomResources: PropTypes.instanceOf(Object),
+  totalRoomResources: PropTypes.func.isRequired,
   visible: PropTypes.bool.isRequired,
   showModal: PropTypes.func,
   roomId: PropTypes.number,
 };
 
 SingleRoomFeedBack.defaultProps = {
-  roomId: null,
-  roomResources: {},
   showModal: PropTypes.func,
+  roomId: null,
 };
 
-const queryVariables = props => ({
-  variables: {
-    roomId: props.roomId,
-  },
-  fetchPolicy: 'cache-and-network',
-});
-
-export default compose(
-  graphql(GET_ROOM_RESOURCES, {
-    name: 'roomResources',
-    options: queryVariables,
-  }),
-  graphql(SINGLE_ROOM_FEEDBACK, {
-    options: queryVariables,
-  }),
-)(SingleRoomFeedBack);
+export default SingleRoomFeedBack;

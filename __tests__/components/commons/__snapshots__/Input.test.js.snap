@@ -12,7 +12,9 @@ exports[`Input Component renders properly 1`] = `
       defaultValue=""
       id=""
       name=""
+      onBlur={[Function]}
       onChange={[MockFunction]}
+      onFocus={[Function]}
       placeholder=""
       type="text"
     />

@@ -1,8 +1,15 @@
 import { ApolloClient } from 'apollo-client';
 import { createHttpLink } from 'apollo-link-http';
 import { setContext } from 'apollo-link-context';
-import { InMemoryCache } from 'apollo-cache-inmemory';
+import { InMemoryCache, IntrospectionFragmentMatcher } from 'apollo-cache-inmemory';
 import { getToken } from '../utils/Cookie';
+import introspectionQueryResultData from '../../fragmentTypes.json';
+
+// Configure fragment matcher
+const fragmentMatcher = new IntrospectionFragmentMatcher({
+  introspectionQueryResultData,
+});
+
 
 // get mrm api link from environment variables
 const { MRM_API_URL } = process.env || {};
@@ -30,7 +37,7 @@ const httpLinkWithAuthentication = authHttpLink.concat(httpLink);
 // create the apollo client
 const apolloClient = new ApolloClient({
   link: httpLinkWithAuthentication,
-  cache: new InMemoryCache(),
+  cache: new InMemoryCache({ fragmentMatcher }),
 });
 
 export default apolloClient;

@@ -73,6 +73,18 @@ class RoomFeedbackPage extends Component {
     });
   }
 
+  dateValue = () => {
+    const {
+      startDate,
+      endDate,
+    } = this.state;
+
+    return {
+      startDate,
+      endDate,
+    };
+  };
+
 
   render() {
     const {
@@ -106,7 +118,12 @@ class RoomFeedbackPage extends Component {
               isResponsePageVisible &&
               <Fragment>
                 <Calendar />
-                {responseData && <ExportButton />}
+                {
+                  responseData &&
+                  <ExportButton
+                    data={{ responseData, dateValue: this.dateValue() }}
+                  />
+                }
               </Fragment>
             }
           </div>
