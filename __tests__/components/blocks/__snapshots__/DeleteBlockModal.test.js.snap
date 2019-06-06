@@ -7,6 +7,7 @@ exports[`DeleteBlockModal Component renders properly 1`] = `
   closeModal={false}
   handleCloseRequest={[MockFunction]}
   modalButtonClassName="button"
+  openModal={false}
   title="DELETE Block"
 >
   <div

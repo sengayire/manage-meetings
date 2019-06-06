@@ -2998,6 +2998,7 @@ exports[`AddWing Component renders lists correctly 1`] = `
                 handleCloseRequest={[Function]}
                 modalButton="add-button"
                 modalButtonClassName="button"
+                openModal={false}
                 title="ADD WING"
               >
                 <IconButtons
@@ -3139,6 +3140,7 @@ exports[`AddWing Component renders the snapshot 1`] = `
   handleCloseRequest={[Function]}
   modalButton="add-button"
   modalButtonClassName="button"
+  openModal={false}
   title="ADD WING"
 >
   <form
@@ -3168,6 +3170,7 @@ exports[`AddWing Component renders the snapshot 1`] = `
       placeholderValue=""
       required={false}
       selectInputClassName="default-select"
+      selected={-1}
       value=""
       wrapperClassName="input-wrapper"
     />

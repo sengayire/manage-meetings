@@ -104,6 +104,7 @@ exports[`RoomForm should render properly 1`] = `
       placeholderValue=""
       required={false}
       selectInputClassName="default-select"
+      selected={-1}
       value=""
       wrapperClassName="input-wrapper"
     >
@@ -120,8 +121,9 @@ exports[`RoomForm should render properly 1`] = `
             disabled={true}
             id="roomLocation"
             name="roomLocation"
-            onChange={[MockFunction]}
+            onChange={[Function]}
             required={false}
+            selected={-1}
           >
             <option
               value=""
@@ -130,19 +132,19 @@ exports[`RoomForm should render properly 1`] = `
                
             </option>
             <option
-              key="1"
+              key="Kampala"
               value="1"
             >
               Kampala
             </option>
             <option
-              key="2"
+              key="Lagos"
               value="2"
             >
               Lagos
             </option>
             <option
-              key="3"
+              key="Nairobi"
               value="3"
             >
               Nairobi

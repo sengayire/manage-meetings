@@ -19,6 +19,7 @@ import getImageUrl from '../helpers/ImageUpload';
 import updateRoom from '../../components/helpers/mutationHelpers/update';
 import tranformInputLevel from '../../components/helpers/editRoomHelper';
 import '../../assets/styles/addNewRoom.scss';
+import LocationFilters from '../navbars/LocationFilters';
 
 export class AddNewRoom extends Component {
   constructor(props) {
@@ -101,6 +102,42 @@ export class AddNewRoom extends Component {
   };
 
   handleInputChange = ({
+    target,
+  }) => {
+    const { id, value } = target;
+    const structureId = target.selectedOptions[0].getAttribute('structure');
+    const { levelInput } = this.state;
+    const findTagExists = levelInput.find(level => (level.id === id));
+    let arr;
+    if (findTagExists) {
+      if (findTagExists.value === value) {
+        arr = levelInput;
+      }
+      if (findTagExists.value !== value) {
+        levelInput[levelInput.findIndex(el => el.id === id)] = { id, value };
+        arr = [...levelInput];
+      }
+    }
+    if (!findTagExists) {
+      arr = [...levelInput, { id, value }];
+    }
+    this.setState({
+      ...({ structureId, structureName: value }),
+      levelInput: arr,
+    });
+  };
+
+  /**
+   * Capitalizes first letter of string
+   * and returns the new string
+   *
+   * @param {string}
+   *
+   * @returns {string}
+   */
+  capitalizeFirstLetter = string => string.charAt(0).toUpperCase() + string.slice(1);
+
+  handleOtherInputChange = ({
     target: {
       id, value, name, options, selectedIndex,
     },
@@ -118,15 +155,6 @@ export class AddNewRoom extends Component {
       [inputField]: name === 'levelInput' ? arr : value || num,
     });
   };
-  /**
-   * Capitalizes first letter of string
-   * and returns the new string
-   *
-   * @param {string}
-   *
-   * @returns {string}
-   */
-  capitalizeFirstLetter = string => string.charAt(0).toUpperCase() + string.slice(1);
 
   /**
    *It updates the state value of the
@@ -393,7 +421,7 @@ export class AddNewRoom extends Component {
         onClick={this.handleClick}
         value={remoteRoomName}
         options={isAllRemoteRooms ? roomsAllLocations : rooms}
-        onChange={this.handleInputChange}
+        onChange={this.handleOtherInputChange}
         wrapperClassName="floor-wrapper"
         placeholder="Select Google Calendar Room"
         selectInputClassName="remote-room-select default-select"
@@ -418,7 +446,7 @@ export class AddNewRoom extends Component {
         id="roomType"
         value={roomTypeValue}
         options={[{ name: 'Meeting room' }, { name: 'Call room' }]}
-        onChange={this.handleInputChange}
+        onChange={this.handleOtherInputChange}
         wrapperClassName="floor-wrapper"
         placeholder="Select room type"
         selectInputClassName="dynamic-input-field default-select"
@@ -484,26 +512,26 @@ export class AddNewRoom extends Component {
         <Input
           id="roomName"
           name="roomName"
-          labelClass="static-input-field"
+          labelClass="floor-wrapper"
           inputClass="mrm-input"
           placeholder="Enter room name"
           value={roomNameValue}
           labelName="Room Name"
-          onChange={this.handleInputChange}
+          onChange={this.handleOtherInputChange}
           required
         />
         <Input
           id="roomCapacity"
           name="roomCapacity"
           type="number"
-          labelClass="static-input-field"
+          labelClass="floor-wrapper"
           inputClass="mrm-input"
           controlsClass="capacity-controls"
           placeholder="0"
           title="Please add numbers only"
           value={roomCapacityValue}
           labelName="Room Capacity"
-          onChange={this.handleInputChange}
+          onChange={this.handleOtherInputChange}
           required
         />
       </div>
@@ -531,7 +559,7 @@ export class AddNewRoom extends Component {
         {this.renderStaticInputFields()}
         <div className="dynamic-input">
           {this.renderRoomType()}
-          {this.renderLevelInputFields()}
+          <LocationFilters handleInputChange={this.handleInputChange} />
         </div>
       </div>
     );
@@ -557,8 +585,8 @@ export class AddNewRoom extends Component {
 
 AddNewRoom.propTypes = {
   updateRoomData: PropTypes.func.isRequired,
-  currentPage: PropTypes.string.isRequired,
-  type: PropTypes.string,
+  currentPage: PropTypes.number.isRequired,
+  type: PropTypes.number,
   formType: PropTypes.string,
   // eslint-disable-next-line react/forbid-prop-types
   editData: PropTypes.object,

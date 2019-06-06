@@ -20,6 +20,7 @@ exports[`EpicTowerInputs component should render correctly 1`] = `
     placeholderValue=""
     required={false}
     selectInputClassName="room-select-wrapper default-select"
+    selected={-1}
     value=""
     wrapperClassName="input1"
   />
@@ -62,6 +63,7 @@ exports[`EpicTowerInputs component should render correctly 1`] = `
     placeholderValue=""
     required={true}
     selectInputClassName="floor-wrapper default-select"
+    selected={-1}
     value={0}
     wrapperClassName="floor-label"
   />
@@ -77,6 +79,7 @@ exports[`EpicTowerInputs component should render correctly 1`] = `
     placeholderValue=""
     required={true}
     selectInputClassName="wing-wrapper default-select"
+    selected={-1}
     value={0}
     wrapperClassName="wing-label"
   />

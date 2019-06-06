@@ -8,6 +8,7 @@ exports[`AddFloor Component renders the snapshot 1`] = `
   handleCloseRequest={[Function]}
   modalButton="add-button"
   modalButtonClassName="button"
+  openModal={false}
   title="ADD FLOOR"
 >
   <form
@@ -44,6 +45,7 @@ exports[`AddFloor Component renders the snapshot 1`] = `
       placeholderValue=""
       required={false}
       selectInputClassName="default-select"
+      selected={-1}
       value=""
       wrapperClassName="input-wrapper"
     />

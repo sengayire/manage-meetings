@@ -8,6 +8,7 @@ exports[`AddOffice Component renders properly 1`] = `
   handleCloseRequest={[Function]}
   modalButton="add-button"
   modalButtonClassName="button"
+  openModal={false}
   title="ADD OFFICE"
 >
   <form
@@ -37,6 +38,7 @@ exports[`AddOffice Component renders properly 1`] = `
       placeholderValue=""
       required={false}
       selectInputClassName="default-select"
+      selected={-1}
       value=""
       wrapperClassName="input-wrapper"
     />

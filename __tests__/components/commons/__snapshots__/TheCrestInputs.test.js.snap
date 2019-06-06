@@ -20,6 +20,7 @@ exports[`TheCrestInputs component should render correctly 1`] = `
     placeholderValue=""
     required={false}
     selectInputClassName="room-wrapper default-select"
+    selected={-1}
     value=""
     wrapperClassName="floor-wrapper"
   />
@@ -51,6 +52,7 @@ exports[`TheCrestInputs component should render correctly 1`] = `
       placeholderValue=""
       required={false}
       selectInputClassName="floor-wrapper default-select"
+      selected={-1}
       value={0}
       wrapperClassName="floor-wrapper"
     />

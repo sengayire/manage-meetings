@@ -55,7 +55,7 @@ class RoomSetupOverView extends Component {
     });
   }
 
-  handleInputChange = () => {};
+  handleInputChange = () => { };
 
   /**
    * It handles creating of select input

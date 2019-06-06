@@ -34,7 +34,7 @@ const SelectInput = ({
         id={id}
         className={selectInputClassName}
         defaultValue={value}
-        onChange={onChange}
+        onChange={event => onChange(event)}
         {...otherProps}
         required={required}
       >
@@ -45,23 +45,24 @@ const SelectInput = ({
          If you provide both options and children, details in the options will be rendered
         */}
         {
-          options
+            options
             && options.length
             &&
-              options.map((option) => {
-                const props = {
-                  value: isValue ? option.name : (option.id || option.structureId),
-                  key: option.id || option.calendarId || option.structureId || option.name,
-                };
-                return (
-                  <option
-                    {...props}
-                  >
-                    {option.name}
-                  </option>
-                );
-              })
-        }
+            options.map((option) => {
+              const props = {
+                value: isValue ? (option.name || option) : (option.id || option.structureId),
+                structure: (option.structureId),
+                key: option.name || option.structureId || option.id || option.calendarId || option,
+              };
+              return (
+                <option
+                  {...props}
+                >
+                  {option.name || option}
+                </option>
+              );
+            })
+          }
         {/*
         render children if they are provided,
         the children of the select element should be <option tags>
@@ -74,8 +75,8 @@ const SelectInput = ({
 
         {/* warn user that he needs to atleast provide options or children */}
         {!options &&
-          !children &&
-          'You need to provide atleast children or options to the select element'}
+            !children &&
+            'You need to provide atleast children or options to the select element'}
       </select>
     </label>
   </div>

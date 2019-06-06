@@ -7,6 +7,7 @@ exports[`MrmModal Component renders properly 1`] = `
   closeModal={true}
   handleCloseRequest={[MockFunction]}
   modalButtonClassName="button"
+  openModal={false}
   title="hello"
 >
   <IconButtons
