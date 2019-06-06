@@ -9,7 +9,7 @@ import Overlay from '../commons/Overlay';
 import ErrorIcon from '../commons/ErrorIcon';
 import Pagination from '../commons/Pagination';
 import paginate from '../helpers/FrontendPagination';
-import AddDevice from './AddDevice';
+import DeviceModal from './DeviceModal';
 
 /**
  * Device List Component
@@ -23,6 +23,8 @@ class DeviceList extends Component {
     rooms: [],
     perPage: 5,
     currentPage: 1,
+    openModal: false,
+    device: {},
   }
 
   async componentDidMount() {
@@ -50,8 +52,16 @@ class DeviceList extends Component {
     this.updatePageDetails();
   }
 
+  handleAction = (action, device) => {
+    this.setState({
+      openModal: action,
+      device,
+    });
+  }
+
   deviceComponents = deviceArray =>
-    deviceArray.map(device => <Device device={device} key={device.name + device.id} />);
+    deviceArray.map(device =>
+      <Device handleAction={this.handleAction} device={device} key={device.name + device.id} />);
 
 
   handlePageChange = (perPageData = 5, currentPageData) => {
@@ -60,6 +70,12 @@ class DeviceList extends Component {
       currentPage: Number(currentPageData),
     });
   }
+
+  closeModal = () => this.setState({
+    openModal: false,
+    modalIsClosed: true,
+    device: {},
+  });
 
   updatePageDetails = () => {
     const {
@@ -81,15 +97,18 @@ class DeviceList extends Component {
   }
   render() {
     const {
+      device,
       fetching,
       rooms,
       devices,
       currentPage,
+      modalIsClosed,
       paginatedDeviceList,
       pages,
       hasNext,
       hasPrevious,
       perPage,
+      openModal,
     } = this.state;
     const { location } = this.props;
 
@@ -101,10 +120,14 @@ class DeviceList extends Component {
         {fetching && <Overlay />}
         <div className="settings-devices-control" />
         <div className="add-new-resource">
-          <AddDevice
+          <DeviceModal
+            openModal={openModal}
+            closeModal={this.closeModal}
             location={location}
             rooms={rooms}
             refetch={this.getData}
+            device={device}
+            modalIsClosed={modalIsClosed}
           />
         </div>
         {
@@ -113,7 +136,7 @@ class DeviceList extends Component {
             <ErrorIcon message="No resource found" />
           ) : (
             <Fragment>
-              <div className="table">
+              <div className="table device-table">
                 <TableHead titles={['Name', 'Type', 'Date Added', 'Last Seen', 'Location']} />
                 <div className="table__body">{this.deviceComponents((
                     fetching ? dummyDevices : paginatedDeviceList

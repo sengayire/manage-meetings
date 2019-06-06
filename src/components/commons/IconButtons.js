@@ -4,7 +4,7 @@ import { deleteIcon, editIcon } from '../../utils/images/images';
 
 class IconButtons extends Component {
   static propTypes = {
-    buttonText: PropTypes.oneOfType([PropTypes.string, PropTypes.object]).isRequired,
+    buttonText: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
     modalButtonClassName: PropTypes.string,
     openModal: PropTypes.func.isRequired,
     disabled: PropTypes.bool,
@@ -12,6 +12,7 @@ class IconButtons extends Component {
   };
 
   static defaultProps = {
+    buttonText: '',
     modalButtonClassName: 'button',
     disabled: false,
     btnImage: '',

@@ -100,15 +100,18 @@ class RoomSetupOverView extends Component {
    *
    * @returns {jsx}
    */
-  renderDeviceList = () => (
-    <div className="setup-container">
-      <div className="room-setup-header">
-        <p>{this.state.location}&apos;s Devices</p>
+  renderDeviceList = () => {
+    const { location: name, locationId: id } = this.state;
+    return (
+      <div className="setup-container">
+        <div className="room-setup-header">
+          <p>{this.state.location}&apos;s Devices</p>
+        </div>
+        <div className="room-select-input">{this.createSelectInputs()}</div>
+        <DevicesList location={{ name, id }} />
       </div>
-      <div className="room-select-input">{this.createSelectInputs()}</div>
-      <DevicesList location={this.state.userLocation} />
-    </div>
-  );
+    );
+  };
 
   renderNavItems = () => {
     const {

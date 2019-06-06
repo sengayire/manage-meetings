@@ -25,6 +25,7 @@ const customStyles = {
 
 class MrmModal extends Component {
   static propTypes = {
+    openModal: PropTypes.bool,
     children: PropTypes.node.isRequired,
     title: PropTypes.string.isRequired,
     handleCloseRequest: PropTypes.func,
@@ -35,6 +36,7 @@ class MrmModal extends Component {
   };
 
   static defaultProps = {
+    openModal: false,
     className: 'modalClass',
     modalButtonClassName: 'button',
     buttonText: '',
@@ -45,11 +47,16 @@ class MrmModal extends Component {
     modalIsOpen: false,
   };
 
-  componentDidUpdate = (prevProps, prevState, snapshot) => {
+  componentDidMount() {
+    this.useModalProp();
+  }
+
+  componentDidUpdate = (prevProps, { modalIsOpen }, snapshot) => {
     if (snapshot) {
       this.closeModal();
       this.props.handleCloseRequest && this.props.handleCloseRequest();
     }
+    if (!modalIsOpen) this.useModalProp();
   };
 
   /**
@@ -65,6 +72,15 @@ class MrmModal extends Component {
       return true;
     }
     return null;
+  }
+
+  /**
+   * Allows opening of modal by default
+   *
+   * @returns {void}
+   */
+  useModalProp = () => {
+    if (this.props.openModal) this.setState({ modalIsOpen: true });
   }
 
   /**

@@ -30,6 +30,6 @@ describe('MrmModal Component', () => {
   });
 
   it('handles componentDidUpdate()', () => {
-    expect(wrapper.instance().componentDidUpdate());
+    expect(wrapper.instance().componentDidUpdate('foo', {}, jest.fn()));
   });
 });

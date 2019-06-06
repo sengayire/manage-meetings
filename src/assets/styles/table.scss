@@ -10,6 +10,7 @@
    &__row {
      display: grid;
      padding: 0.875em 1.875em;
+     position: relative;
      font-weight: 50;
      border-radius: 4px;
      background-color: map-get($color-white, 000);
@@ -18,6 +19,16 @@
 
      span {
        font-family: $font-light;
+     }
+
+     .device-table-action-buttons {
+       align-items: center;
+       display: flex;
+       height: 100%;
+       justify-content: space-around;
+       position: absolute;
+       width: 8%;
+       right: 0;
      }
 
      &:hover {

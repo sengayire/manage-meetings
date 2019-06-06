@@ -78,4 +78,14 @@ describe('DeviceList Component', () => {
     await wrapper.instance().getData();
     expect(wrapper.exists('Pagination')).toBeTruthy();
   });
+
+  it('calls handle action', async () => {
+    wrapper.instance().handleAction('edit', {});
+    expect(wrapper.state('openModal')).toBe('edit');
+  });
+
+  it('calls closeModal', async () => {
+    wrapper.instance().closeModal();
+    expect(wrapper.state('openModal')).toBe(false);
+  });
 });

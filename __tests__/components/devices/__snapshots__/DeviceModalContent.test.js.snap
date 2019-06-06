@@ -1,0 +1,164 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Device modal content tests Should render for "add" correctly 1`] = `
+<form
+  className="amenity-form device-type"
+>
+  <div>
+    <Input
+      controlsClass=""
+      id="device-name"
+      inputClass="mrm-input default-input"
+      labelClass="device-input"
+      labelName="Device Name"
+      name="device-name"
+      onChange={[MockFunction]}
+      placeholder="Enter Device Name"
+      type="text"
+      value=""
+    />
+    <SelectInput
+      id="add-devices-type"
+      isValue={true}
+      labelText="Device Type"
+      name="device-type"
+      onChange={[MockFunction]}
+      onClick={[Function]}
+      options={Array []}
+      placeholder="Select Device"
+      placeholderValue=""
+      required={false}
+      selectInputClassName="dynamic-input-field default-select"
+      selected={-1}
+      value="Select Device"
+      wrapperClassName="device-input"
+    />
+    <SelectInput
+      id="add-devices-rooms"
+      isValue={false}
+      labelText="Room"
+      name="room"
+      onChange={[MockFunction]}
+      onClick={[Function]}
+      options={Array []}
+      placeholder="Select Room"
+      placeholderValue=""
+      required={false}
+      selectInputClassName="dynamic-input-field default-select"
+      selected={-1}
+      value="Select Room"
+      wrapperClassName="device-input"
+    />
+    <div
+      className="loading-btn-div"
+    >
+      <ActionButtons
+        actionButtonText="ADD DEVICE"
+        cancelButtonText="CANCEL"
+        isLoading={false}
+        onClickCancel={[MockFunction]}
+        onClickSubmit={[MockFunction]}
+        showActionButton={true}
+        withCancel={true}
+      />
+    </div>
+  </div>
+</form>
+`;
+
+exports[`Device modal content tests Should render for "delete" correctly 1`] = `
+<form
+  className="amenity-form device-type"
+>
+  <div>
+    <p
+      id="confirm-msg"
+    >
+      Are you sure you want to delete "
+      : 
+      "? 
+      <br />
+      This cannot be undone
+    </p>
+    <div
+      className="loading-btn-div"
+    >
+      <ActionButtons
+        actionButtonText="DELETE DEVICE"
+        cancelButtonText="CANCEL"
+        isLoading={false}
+        onClickCancel={[MockFunction]}
+        onClickSubmit={[MockFunction]}
+        showActionButton={true}
+        withCancel={true}
+      />
+    </div>
+  </div>
+</form>
+`;
+
+exports[`Device modal content tests Should render for "edit" correctly 1`] = `
+<form
+  className="amenity-form device-type"
+>
+  <div>
+    <Input
+      controlsClass=""
+      id="device-name"
+      inputClass="mrm-input default-input"
+      labelClass="device-input"
+      labelName="Device Name"
+      name="device-name"
+      onChange={[MockFunction]}
+      placeholder="Enter Device Name"
+      type="text"
+      value="foo"
+    />
+    <SelectInput
+      id="add-devices-type"
+      isValue={true}
+      labelText="Device Type"
+      name="device-type"
+      onChange={[MockFunction]}
+      onClick={[Function]}
+      options={Array []}
+      placeholder="Select Device"
+      placeholderValue=""
+      required={false}
+      selectInputClassName="dynamic-input-field default-select"
+      selected={-1}
+      value="bar"
+      wrapperClassName="device-input"
+    />
+    <SelectInput
+      id="add-devices-rooms"
+      isValue={false}
+      labelText="Room"
+      name="room"
+      onChange={[MockFunction]}
+      onClick={[Function]}
+      options={Array []}
+      placeholder="Select Room"
+      placeholderValue=""
+      required={false}
+      selectInputClassName="dynamic-input-field default-select"
+      selected={-1}
+      value="32"
+      wrapperClassName="device-input"
+    />
+    <div
+      className="loading-btn-div"
+    >
+      <ActionButtons
+        actionButtonText="EDIT DEVICE"
+        cancelButtonText="CANCEL"
+        isLoading={false}
+        onClickCancel={[MockFunction]}
+        onClickSubmit={[MockFunction]}
+        showActionButton={true}
+        withCancel={true}
+      />
+    </div>
+  </div>
+</form>
+`;
