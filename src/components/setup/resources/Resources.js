@@ -5,7 +5,6 @@ import React, { createRef } from 'react';
 import propTypes from 'prop-types';
 import '../../../assets/styles/resources.scss';
 import AddResource from './AddResources'; //eslint-disable-line
-import { editIcon } from '../../../utils/images/images';
 import SelectInput from '../../../components/commons/SelectInput';
 import { selectMockData } from '../../../utils/roomSetupMock';
 import AllocatedResources from '../../resources/AllocatedResources';
@@ -17,6 +16,7 @@ import {
   getUserDetails,
 } from '../../../../src/components/helpers/QueriesHelpers';
 import DeleteResource from '../../setup/resources/DeleteResource';
+import { EditResource } from '../../setup/resources/EditResource';
 import ErrorIcon from '../../commons/ErrorIcon';
 
 
@@ -106,7 +106,10 @@ class Resources extends React.Component {
       </span>
       <span className="resource-list-item-buttons">
         <button>
-          <img src={editIcon} alt="edit" />
+          <EditResource
+            handleOnEditResource={this.handleOnDeleteResource}
+            resourceToEdit={resource}
+          />
         </button>
         {this.state.user.roles[0].id === '2' && !resource.roomId && (
           <DeleteResource

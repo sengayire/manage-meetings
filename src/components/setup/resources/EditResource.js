@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import toastr from 'toastr';
+import { editIcon } from '../../../utils/images/images';
 import ActionButtons from '../../commons/ActionButtons';
 import MrmModal from '../../commons/Modal';
 import { Input } from '../../commons';
-import { addResourceMutation } from '../../helpers/mutationHelpers/resources';
+import { editResourceMutation } from '../../helpers/mutationHelpers/resources';
 import '../../../assets/styles/addresource.scss';
 import notification from '../../../utils/notification';
 
@@ -15,11 +16,16 @@ import notification from '../../../utils/notification';
  *
  * @returns {JSX}
  */
-export class AddResource extends React.Component {
+export class EditResource extends React.Component {
   state = {
-    resource: '',
+    resourceId: 0,
+    updatedResource: '',
     closeModal: false,
   };
+
+  componentDidMount() {
+    this.changeResource();
+  }
 
   resourceQuantity = React.createRef();
   amenity = React.createRef();
@@ -49,25 +55,25 @@ export class AddResource extends React.Component {
     this.setState({ [name]: value });
   };
 
-  validateResource = (resource) => {
-    const { availableResources } = this.props;
-    const existingResources = availableResources.resources;
-    return existingResources.filter(item => item.name === resource).length;
-  }
+  changeResource = () => {
+    const { resourceToEdit } = this.props;
+    this.setState({
+      updatedResource: resourceToEdit.name,
+      resourceId: resourceToEdit.id,
+    });
+  };
 
-  submitResource = () => {
-    const { resource } = this.state;
-    const { handleOnAddResource } = this.props;
-    if (this.validateResource(resource)) {
-      notification(toastr, 'error', 'Provide a new, unique resource to add')();
+  updateResource = (resourceId, updatedResource) => {
+    const { handleOnEditResource } = this.props;
+    if (updatedResource === '') {
+      notification(toastr, 'error', 'You cannot edit to empty resource')();
     } else {
-      addResourceMutation(resource)
+      editResourceMutation(resourceId, updatedResource)
         .then(() => {
-          notification(toastr, 'success', 'Resource Successfully added')();
-          handleOnAddResource();
-        })
-        .catch(() => {
-          notification(toastr, 'error', 'Sorry, there was a problem adding a resource')();
+          notification(toastr, 'success', 'Resource Successfully updated')();
+          handleOnEditResource();
+        }).catch(() => {
+          notification(toastr, 'error', 'Sorry, there was a problem updating a resource')();
         });
     }
   };
@@ -84,13 +90,14 @@ export class AddResource extends React.Component {
 
   render() {
     const {
-      resource,
       closeModal,
+      resourceId,
+      updatedResource,
     } = this.state;
     return (
       <MrmModal
-        title="ADD A NEW RESOURCE"
-        buttonText="Add a New Resource"
+        title="EDIT RESOURCE"
+        buttonText={<img src={editIcon} alt="edit" />}
         closeModal={closeModal}
         handleCloseRequest={this.handleModalStateChange}
         className="add-resource-modal"
@@ -99,20 +106,20 @@ export class AddResource extends React.Component {
           <div>
             <Input
               ref={this.amenity}
-              id="resource"
-              name="resource"
+              id="updatedResource"
+              name="updatedResource"
               placeholder="Type resource name"
-              labelName="Resource Name"
+              labelName="RENAME RESOURCE"
               labelClass="add-resource-controls"
-              value={resource}
+              value={updatedResource}
               onChange={this.handleInputChange}
             />
             <div className="loading-btn-div">
               <ActionButtons
                 withCancel
                 onClickCancel={this.handleCloseModal}
-                actionButtonText="ADD RESOURCE"
-                onClickSubmit={this.submitResource}
+                actionButtonText="SAVE CHANGES"
+                onClickSubmit={() => this.updateResource(resourceId, updatedResource)}
               />
             </div>
           </div>
@@ -122,13 +129,9 @@ export class AddResource extends React.Component {
   }
 }
 
-AddResource.defaultProps = {
-  availableResources: {},
+EditResource.propTypes = {
+  handleOnEditResource: PropTypes.func.isRequired,
+  resourceToEdit: PropTypes.func.isRequired,
 };
 
-AddResource.propTypes = {
-  handleOnAddResource: PropTypes.func.isRequired,
-  availableResources: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
-};
-
-export default AddResource;
+export default EditResource;

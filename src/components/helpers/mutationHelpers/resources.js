@@ -1,8 +1,9 @@
+/* eslint-disable no-param-reassign */
 /* eslint-disable import/prefer-default-export */
 /* eslint-disable consistent-return */
 /* eslint-disable array-callback-return */
 import apolloClient from '../../../utils/ApolloClient';
-import { DELETE_RESOURCE_MUTATION } from '../../../graphql/mutations/resources';
+import { DELETE_RESOURCE_MUTATION, EDIT_RESOURCE_MUTATION } from '../../../graphql/mutations/resources';
 import { GET_RESOURCES_QUERY } from '../../../graphql/queries/Resources';
 import { ADD_RESOURCE_MUTATION } from '../../../graphql/mutations/AddResourceToRoom';
 
@@ -83,4 +84,32 @@ const addResourceMutation = async (name, client = apolloClient) => {
       },
     });
 };
-export { deleteResources, updateStore, addResourceMutation };
+
+const editResourceMutation = async (resourceId, name, client = apolloClient) => {
+  await client
+    .mutate({
+      mutation: EDIT_RESOURCE_MUTATION,
+      name: editResourceMutation,
+      variables: { resourceId, name },
+
+      update: async (proxy, { data: { updateRoomResource } }) => {
+        proxy.readQuery({
+          query: GET_RESOURCES_QUERY,
+          variables: {
+            page: 1,
+            perPage: 5,
+          },
+        });
+
+        proxy.writeQuery({
+          query: GET_RESOURCES_QUERY,
+          variables: {
+            page: 1,
+            perPage: 5,
+          },
+          data: updateRoomResource,
+        });
+      },
+    });
+};
+export { deleteResources, updateStore, addResourceMutation, editResourceMutation };
