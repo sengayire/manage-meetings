@@ -240,17 +240,6 @@ exports[`DeleteResource Test Suite renders as expected 1`] = `
                                     },
                                     "selectionSet": undefined,
                                   },
-                                  Object {
-                                    "alias": undefined,
-                                    "arguments": Array [],
-                                    "directives": Array [],
-                                    "kind": "Field",
-                                    "name": Object {
-                                      "kind": "Name",
-                                      "value": "quantity",
-                                    },
-                                    "selectionSet": undefined,
-                                  },
                                 ],
                               },
                             },
@@ -351,7 +340,7 @@ exports[`DeleteResource Test Suite renders as expected 1`] = `
               ],
               "kind": "Document",
               "loc": Object {
-                "end": 239,
+                "end": 222,
                 "start": 0,
               },
             },
@@ -467,17 +456,6 @@ exports[`DeleteResource Test Suite renders as expected 1`] = `
                                       },
                                       "selectionSet": undefined,
                                     },
-                                    Object {
-                                      "alias": undefined,
-                                      "arguments": Array [],
-                                      "directives": Array [],
-                                      "kind": "Field",
-                                      "name": Object {
-                                        "kind": "Name",
-                                        "value": "quantity",
-                                      },
-                                      "selectionSet": undefined,
-                                    },
                                   ],
                                 },
                               },
@@ -578,7 +556,7 @@ exports[`DeleteResource Test Suite renders as expected 1`] = `
                 ],
                 "kind": "Document",
                 "loc": Object {
-                  "end": 239,
+                  "end": 222,
                   "start": 0,
                 },
               },
@@ -705,17 +683,6 @@ exports[`DeleteResource Test Suite renders as expected 1`] = `
                                           },
                                           "selectionSet": undefined,
                                         },
-                                        Object {
-                                          "alias": undefined,
-                                          "arguments": Array [],
-                                          "directives": Array [],
-                                          "kind": "Field",
-                                          "name": Object {
-                                            "kind": "Name",
-                                            "value": "quantity",
-                                          },
-                                          "selectionSet": undefined,
-                                        },
                                       ],
                                     },
                                   },
@@ -816,7 +783,7 @@ exports[`DeleteResource Test Suite renders as expected 1`] = `
                     ],
                     "kind": "Document",
                     "loc": Object {
-                      "end": 239,
+                      "end": 222,
                       "start": 0,
                     },
                   },
@@ -931,17 +898,6 @@ exports[`DeleteResource Test Suite renders as expected 1`] = `
                                       },
                                       "selectionSet": undefined,
                                     },
-                                    Object {
-                                      "alias": undefined,
-                                      "arguments": Array [],
-                                      "directives": Array [],
-                                      "kind": "Field",
-                                      "name": Object {
-                                        "kind": "Name",
-                                        "value": "quantity",
-                                      },
-                                      "selectionSet": undefined,
-                                    },
                                   ],
                                 },
                               },
@@ -1042,7 +998,7 @@ exports[`DeleteResource Test Suite renders as expected 1`] = `
                 ],
                 "kind": "Document",
                 "loc": Object {
-                  "end": 239,
+                  "end": 222,
                   "start": 0,
                 },
               },
@@ -1062,7 +1018,6 @@ exports[`DeleteResource Test Suite renders as expected 1`] = `
     resources {
       id
       name
-      quantity
     }
     pages
     hasNext
@@ -1181,17 +1136,6 @@ exports[`DeleteResource Test Suite renders as expected 1`] = `
                                           },
                                           "selectionSet": undefined,
                                         },
-                                        Object {
-                                          "alias": undefined,
-                                          "arguments": Array [],
-                                          "directives": Array [],
-                                          "kind": "Field",
-                                          "name": Object {
-                                            "kind": "Name",
-                                            "value": "quantity",
-                                          },
-                                          "selectionSet": undefined,
-                                        },
                                       ],
                                     },
                                   },
@@ -1292,7 +1236,7 @@ exports[`DeleteResource Test Suite renders as expected 1`] = `
                     ],
                     "kind": "Document",
                     "loc": Object {
-                      "end": 239,
+                      "end": 222,
                       "start": 0,
                     },
                   },
@@ -1418,17 +1362,6 @@ exports[`DeleteResource Test Suite renders as expected 1`] = `
                                         },
                                         "selectionSet": undefined,
                                       },
-                                      Object {
-                                        "alias": undefined,
-                                        "arguments": Array [],
-                                        "directives": Array [],
-                                        "kind": "Field",
-                                        "name": Object {
-                                          "kind": "Name",
-                                          "value": "quantity",
-                                        },
-                                        "selectionSet": undefined,
-                                      },
                                     ],
                                   },
                                 },
@@ -1529,7 +1462,7 @@ exports[`DeleteResource Test Suite renders as expected 1`] = `
                   ],
                   "kind": "Document",
                   "loc": Object {
-                    "end": 239,
+                    "end": 222,
                     "start": 0,
                   },
                 },
@@ -1544,7 +1477,6 @@ exports[`DeleteResource Test Suite renders as expected 1`] = `
     resources {
       id
       name
-      quantity
     }
     pages
     hasNext
@@ -1682,17 +1614,6 @@ exports[`DeleteResource Test Suite renders as expected 1`] = `
                                         },
                                         "selectionSet": undefined,
                                       },
-                                      Object {
-                                        "alias": undefined,
-                                        "arguments": Array [],
-                                        "directives": Array [],
-                                        "kind": "Field",
-                                        "name": Object {
-                                          "kind": "Name",
-                                          "value": "quantity",
-                                        },
-                                        "selectionSet": undefined,
-                                      },
                                     ],
                                   },
                                 },
@@ -1793,7 +1714,7 @@ exports[`DeleteResource Test Suite renders as expected 1`] = `
                   ],
                   "kind": "Document",
                   "loc": Object {
-                    "end": 239,
+                    "end": 222,
                     "start": 0,
                   },
                 },
@@ -1917,17 +1838,6 @@ exports[`DeleteResource Test Suite renders as expected 1`] = `
                                         },
                                         "selectionSet": undefined,
                                       },
-                                      Object {
-                                        "alias": undefined,
-                                        "arguments": Array [],
-                                        "directives": Array [],
-                                        "kind": "Field",
-                                        "name": Object {
-                                          "kind": "Name",
-                                          "value": "quantity",
-                                        },
-                                        "selectionSet": undefined,
-                                      },
                                     ],
                                   },
                                 },
@@ -2028,7 +1938,7 @@ exports[`DeleteResource Test Suite renders as expected 1`] = `
                   ],
                   "kind": "Document",
                   "loc": Object {
-                    "end": 239,
+                    "end": 222,
                     "start": 0,
                   },
                 },
@@ -2122,17 +2032,6 @@ exports[`DeleteResource Test Suite renders as expected 1`] = `
                                   "name": Object {
                                     "kind": "Name",
                                     "value": "name",
-                                  },
-                                  "selectionSet": undefined,
-                                },
-                                Object {
-                                  "alias": undefined,
-                                  "arguments": Array [],
-                                  "directives": Array [],
-                                  "kind": "Field",
-                                  "name": Object {
-                                    "kind": "Name",
-                                    "value": "quantity",
                                   },
                                   "selectionSet": undefined,
                                 },
@@ -2236,7 +2135,7 @@ exports[`DeleteResource Test Suite renders as expected 1`] = `
             ],
             "kind": "Document",
             "loc": Object {
-              "end": 239,
+              "end": 222,
               "start": 0,
             },
           }
@@ -2814,17 +2713,6 @@ exports[`DeleteResource Test Suite should pop up a modal when delete button is c
                                     },
                                     "selectionSet": undefined,
                                   },
-                                  Object {
-                                    "alias": undefined,
-                                    "arguments": Array [],
-                                    "directives": Array [],
-                                    "kind": "Field",
-                                    "name": Object {
-                                      "kind": "Name",
-                                      "value": "quantity",
-                                    },
-                                    "selectionSet": undefined,
-                                  },
                                 ],
                               },
                             },
@@ -2925,7 +2813,7 @@ exports[`DeleteResource Test Suite should pop up a modal when delete button is c
               ],
               "kind": "Document",
               "loc": Object {
-                "end": 239,
+                "end": 222,
                 "start": 0,
               },
             },
@@ -3041,17 +2929,6 @@ exports[`DeleteResource Test Suite should pop up a modal when delete button is c
                                       },
                                       "selectionSet": undefined,
                                     },
-                                    Object {
-                                      "alias": undefined,
-                                      "arguments": Array [],
-                                      "directives": Array [],
-                                      "kind": "Field",
-                                      "name": Object {
-                                        "kind": "Name",
-                                        "value": "quantity",
-                                      },
-                                      "selectionSet": undefined,
-                                    },
                                   ],
                                 },
                               },
@@ -3152,7 +3029,7 @@ exports[`DeleteResource Test Suite should pop up a modal when delete button is c
                 ],
                 "kind": "Document",
                 "loc": Object {
-                  "end": 239,
+                  "end": 222,
                   "start": 0,
                 },
               },
@@ -3279,17 +3156,6 @@ exports[`DeleteResource Test Suite should pop up a modal when delete button is c
                                           },
                                           "selectionSet": undefined,
                                         },
-                                        Object {
-                                          "alias": undefined,
-                                          "arguments": Array [],
-                                          "directives": Array [],
-                                          "kind": "Field",
-                                          "name": Object {
-                                            "kind": "Name",
-                                            "value": "quantity",
-                                          },
-                                          "selectionSet": undefined,
-                                        },
                                       ],
                                     },
                                   },
@@ -3390,7 +3256,7 @@ exports[`DeleteResource Test Suite should pop up a modal when delete button is c
                     ],
                     "kind": "Document",
                     "loc": Object {
-                      "end": 239,
+                      "end": 222,
                       "start": 0,
                     },
                   },
@@ -3505,17 +3371,6 @@ exports[`DeleteResource Test Suite should pop up a modal when delete button is c
                                       },
                                       "selectionSet": undefined,
                                     },
-                                    Object {
-                                      "alias": undefined,
-                                      "arguments": Array [],
-                                      "directives": Array [],
-                                      "kind": "Field",
-                                      "name": Object {
-                                        "kind": "Name",
-                                        "value": "quantity",
-                                      },
-                                      "selectionSet": undefined,
-                                    },
                                   ],
                                 },
                               },
@@ -3616,7 +3471,7 @@ exports[`DeleteResource Test Suite should pop up a modal when delete button is c
                 ],
                 "kind": "Document",
                 "loc": Object {
-                  "end": 239,
+                  "end": 222,
                   "start": 0,
                 },
               },
@@ -3636,7 +3491,6 @@ exports[`DeleteResource Test Suite should pop up a modal when delete button is c
     resources {
       id
       name
-      quantity
     }
     pages
     hasNext
@@ -3755,17 +3609,6 @@ exports[`DeleteResource Test Suite should pop up a modal when delete button is c
                                           },
                                           "selectionSet": undefined,
                                         },
-                                        Object {
-                                          "alias": undefined,
-                                          "arguments": Array [],
-                                          "directives": Array [],
-                                          "kind": "Field",
-                                          "name": Object {
-                                            "kind": "Name",
-                                            "value": "quantity",
-                                          },
-                                          "selectionSet": undefined,
-                                        },
                                       ],
                                     },
                                   },
@@ -3866,7 +3709,7 @@ exports[`DeleteResource Test Suite should pop up a modal when delete button is c
                     ],
                     "kind": "Document",
                     "loc": Object {
-                      "end": 239,
+                      "end": 222,
                       "start": 0,
                     },
                   },
@@ -3992,17 +3835,6 @@ exports[`DeleteResource Test Suite should pop up a modal when delete button is c
                                         },
                                         "selectionSet": undefined,
                                       },
-                                      Object {
-                                        "alias": undefined,
-                                        "arguments": Array [],
-                                        "directives": Array [],
-                                        "kind": "Field",
-                                        "name": Object {
-                                          "kind": "Name",
-                                          "value": "quantity",
-                                        },
-                                        "selectionSet": undefined,
-                                      },
                                     ],
                                   },
                                 },
@@ -4103,7 +3935,7 @@ exports[`DeleteResource Test Suite should pop up a modal when delete button is c
                   ],
                   "kind": "Document",
                   "loc": Object {
-                    "end": 239,
+                    "end": 222,
                     "start": 0,
                   },
                 },
@@ -4118,7 +3950,6 @@ exports[`DeleteResource Test Suite should pop up a modal when delete button is c
     resources {
       id
       name
-      quantity
     }
     pages
     hasNext
@@ -4256,17 +4087,6 @@ exports[`DeleteResource Test Suite should pop up a modal when delete button is c
                                         },
                                         "selectionSet": undefined,
                                       },
-                                      Object {
-                                        "alias": undefined,
-                                        "arguments": Array [],
-                                        "directives": Array [],
-                                        "kind": "Field",
-                                        "name": Object {
-                                          "kind": "Name",
-                                          "value": "quantity",
-                                        },
-                                        "selectionSet": undefined,
-                                      },
                                     ],
                                   },
                                 },
@@ -4367,7 +4187,7 @@ exports[`DeleteResource Test Suite should pop up a modal when delete button is c
                   ],
                   "kind": "Document",
                   "loc": Object {
-                    "end": 239,
+                    "end": 222,
                     "start": 0,
                   },
                 },
@@ -4491,17 +4311,6 @@ exports[`DeleteResource Test Suite should pop up a modal when delete button is c
                                         },
                                         "selectionSet": undefined,
                                       },
-                                      Object {
-                                        "alias": undefined,
-                                        "arguments": Array [],
-                                        "directives": Array [],
-                                        "kind": "Field",
-                                        "name": Object {
-                                          "kind": "Name",
-                                          "value": "quantity",
-                                        },
-                                        "selectionSet": undefined,
-                                      },
                                     ],
                                   },
                                 },
@@ -4602,7 +4411,7 @@ exports[`DeleteResource Test Suite should pop up a modal when delete button is c
                   ],
                   "kind": "Document",
                   "loc": Object {
-                    "end": 239,
+                    "end": 222,
                     "start": 0,
                   },
                 },
@@ -4696,17 +4505,6 @@ exports[`DeleteResource Test Suite should pop up a modal when delete button is c
                                   "name": Object {
                                     "kind": "Name",
                                     "value": "name",
-                                  },
-                                  "selectionSet": undefined,
-                                },
-                                Object {
-                                  "alias": undefined,
-                                  "arguments": Array [],
-                                  "directives": Array [],
-                                  "kind": "Field",
-                                  "name": Object {
-                                    "kind": "Name",
-                                    "value": "quantity",
                                   },
                                   "selectionSet": undefined,
                                 },
@@ -4810,7 +4608,7 @@ exports[`DeleteResource Test Suite should pop up a modal when delete button is c
             ],
             "kind": "Document",
             "loc": Object {
-              "end": 239,
+              "end": 222,
               "start": 0,
             },
           }
@@ -4832,7 +4630,6 @@ exports[`DeleteResource Test Suite should pop up a modal when delete button is c
     resources {
       id
       name
-      quantity
     }
     pages
     hasNext
@@ -5001,7 +4798,6 @@ exports[`DeleteResource Test Suite should pop up a modal when delete button is c
     resources {
       id
       name
-      quantity
     }
     pages
     hasNext

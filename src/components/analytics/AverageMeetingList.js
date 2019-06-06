@@ -8,7 +8,8 @@ import Overlay from '../commons/Overlay';
 import ErrorIcon from '../commons/ErrorIcon';
 import meetingDurationAnalyticsMock from '../../fixtures/meetingDurationAnalytics';
 import AnalyticsContext from '../helpers/AnalyticsContext';
-import getAnalyticsForMeetingDuration from '../helpers/analytics/AverageMeetingList';
+import getMeetingDurationAnalytics from '../helpers/analytics/AverageMeetingList';
+import paginate from '../helpers/FrontendPagination';
 
 export const AverageMeetingList = () => {
   const { fetching, analytics } = useContext(AnalyticsContext);
@@ -26,7 +27,13 @@ export const AverageMeetingList = () => {
   let analyticsForMeetingsDurations;
 
   if (!fetching) {
-    analyticsForMeetingsDurations = getAnalyticsForMeetingDuration(analytics, currentPage);
+    analyticsForMeetingsDurations = paginate(
+      analytics.analytics,
+      { currentPage }, {
+        formatter: getMeetingDurationAnalytics,
+        dataName: 'meetingDurationAnalytics',
+      },
+    );
   }
 
   const analyticsData = fetching
@@ -39,7 +46,7 @@ export const AverageMeetingList = () => {
     currentPage: currentPageData,
   });
 
-  const paginate = !fetching
+  const displayPaginator = !fetching
   && !(analyticsData.meetingDurationAnalytics.length < 5 && currentPage === 1);
 
   return (
@@ -68,7 +75,7 @@ export const AverageMeetingList = () => {
           </div>
         </div>
       </div>
-      {paginate &&
+      {displayPaginator &&
         <div className="average-meeting-pagination">
           <div>
             <Pagination

@@ -27,7 +27,7 @@ export const GET_ROOMS_QUERY = gql`
 `;
 
 export const GET_ALL_ROOMS_QUERY = gql`
-  query rooms($capacity: Int!, $location: String!, $office: String!, $page: Int!, $perPage: Int!) {
+  query rooms($capacity: Int!, $location: String!, $office: String!, $page: Int, $perPage: Int) {
     allRooms(
       page: $page
       perPage: $perPage
@@ -51,6 +51,7 @@ export const GET_ALL_ROOMS = gql`
         id
         name
         capacity
+        locationId
       }
     }
   }

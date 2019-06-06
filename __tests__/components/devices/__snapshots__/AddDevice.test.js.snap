@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests for DeviceFormModal Should render correctly from memory 1`] = `
+<MrmModal
+  buttonText="Add a New Device"
+  className="add-resource-modal"
+  closeModal={false}
+  handleCloseRequest={[Function]}
+  modalButtonClassName="button"
+  title="ADD A NEW DEVICE"
+>
+  <form
+    className="amenity-form device-type"
+  >
+    <div>
+      <Input
+        controlsClass=""
+        id="device-name"
+        inputClass="mrm-input default-input"
+        labelClass="device-input"
+        labelName="Device Name"
+        name="device-name"
+        onChange={[Function]}
+        placeholder="Enter Device Name"
+        type="text"
+        value=""
+      />
+      <SelectInput
+        id="add-devices-type"
+        isValue={true}
+        labelText="Device Type"
+        name="device-type"
+        onChange={[Function]}
+        onClick={[Function]}
+        options={
+          Array [
+            Object {
+              "name": "7\\"",
+            },
+            Object {
+              "name": "8\\"",
+            },
+            Object {
+              "name": "9.7\\"",
+            },
+            Object {
+              "name": "10.1\\"",
+            },
+          ]
+        }
+        placeholder="Device Type"
+        placeholderValue=""
+        required={false}
+        selectInputClassName="dynamic-input-field default-select"
+        value="Select Device"
+        wrapperClassName="device-input"
+      />
+      <SelectInput
+        id="add-devices-rooms"
+        isValue={false}
+        labelText="Room"
+        name="room"
+        onChange={[Function]}
+        onClick={[Function]}
+        options={Array []}
+        placeholder="Select Room"
+        placeholderValue=""
+        required={false}
+        selectInputClassName="dynamic-input-field default-select"
+        value="Select Room"
+        wrapperClassName="device-input"
+      />
+      <div
+        className="loading-btn-div"
+      >
+        <ActionButtons
+          actionButtonText="ADD DEVICE"
+          cancelButtonText="CANCEL"
+          isLoading={false}
+          onClickCancel={[Function]}
+          onClickSubmit={[Function]}
+          showActionButton={true}
+          withCancel={true}
+        />
+      </div>
+    </div>
+  </form>
+</MrmModal>
+`;

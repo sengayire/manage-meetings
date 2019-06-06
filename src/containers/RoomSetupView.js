@@ -106,7 +106,7 @@ class RoomSetupOverView extends Component {
         <p>{this.state.location}&apos;s Devices</p>
       </div>
       <div className="room-select-input">{this.createSelectInputs()}</div>
-      <DevicesList />
+      <DevicesList location={this.state.userLocation} />
     </div>
   );
 

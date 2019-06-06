@@ -12,6 +12,7 @@ import { decodeTokenAndGetUserData } from '../../utils/Cookie';
 import apolloClient from '../../utils/ApolloClient';
 import GET_ALL_LEVELS from '../../graphql/queries/Levels';
 import GET_ROOM_FEEDBACK_QUESTIONS_QUERY from '../../graphql/queries/questions';
+import { GET_DEVICES_QUERY } from '../../graphql/queries/Devices';
 
 const getUserDetails = async (client = apolloClient) => {
   const { UserInfo: userData } = decodeTokenAndGetUserData() || {};
@@ -144,12 +145,22 @@ const getRoomFeedbackQuestions = async (client = apolloClient) => {
   }
 };
 
-const getAllRooms = async (client = apolloClient) => {
+const getAllRooms = async (location, client = apolloClient) => {
   try {
-    const data = client.readQuery({ query: GET_ALL_ROOMS }, true);
+    const data = client.readQuery({
+      query: GET_ALL_ROOMS,
+      variables: {
+        location,
+      },
+    }, true);
     return data;
   } catch (error) {
-    const { data } = await client.query({ query: GET_ALL_ROOMS }, true);
+    const { data } = await client.query({
+      query: GET_ALL_ROOMS,
+      variables: {
+        location,
+      },
+    }, true);
     return data;
   }
 };
@@ -200,6 +211,23 @@ const getAnalyticForDailyRoomsEvents
    }
  };
 
+const getAllDevices = async (client = apolloClient) => {
+  try {
+    const data = client.readQuery(
+      {
+        query: GET_DEVICES_QUERY,
+      },
+      true,
+    );
+    return data.allDevices;
+  } catch (error) {
+    const { data } = await client.query({
+      query: GET_DEVICES_QUERY,
+    });
+    return data.allDevices;
+  }
+};
+
 export {
   getAnalyticForDailyRoomsEvents,
   getAllAnalytics,
@@ -212,4 +240,5 @@ export {
   getRoomsStructure,
   getRoomFeedbackQuestions,
   getRemoteRoomsAllLocations,
+  getAllDevices,
 };

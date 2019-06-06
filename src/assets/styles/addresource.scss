@@ -36,6 +36,14 @@
   input[type='text'] {
     margin-top: 10px;
   }
+
+  form.device-type {
+    .device-input {
+      margin-bottom: 2rem;
+      margin-top: 2rem;
+    }
+  }
+
   input[type='number'] {
     margin-top: 10px;
     border-radius: 4px 0 0 4px;
