@@ -50,22 +50,15 @@ export class AddResource extends React.Component {
   };
 
   validateResource = (resource) => {
-    const alreadyExists = [];
     const { availableResources } = this.props;
     const existingResources = availableResources.resources;
-    // eslint-disable-next-line no-restricted-syntax
-    for (const item of existingResources) {
-      if (resource === item.name) {
-        alreadyExists.push(resource);
-      }
-    }
-    return alreadyExists;
+    return existingResources.filter(item => item.name === resource).length;
   }
 
-  submitResource = (resource) => {
+  submitResource = () => {
+    const { resource } = this.state;
     const { handleOnAddResource } = this.props;
-    const invalid = this.validateResource(resource);
-    if (resource === '' || invalid.length > 0) {
+    if (this.validateResource(resource)) {
       notification(toastr, 'error', 'Provide a new, unique resource to add')();
     } else {
       addResourceMutation(resource);
@@ -114,7 +107,7 @@ export class AddResource extends React.Component {
                 withCancel
                 onClickCancel={this.handleCloseModal}
                 actionButtonText="ADD RESOURCE"
-                onClickSubmit={() => this.submitResource(resource)}
+                onClickSubmit={this.submitResource}
               />
             </div>
           </div>
