@@ -172,23 +172,22 @@ export class AddNewRoom extends Component {
     roomType,
     files,
     roomCapacity,
-    levels,
-    levelInput,
-  }) => {
-    const expectedLevelInputLength = levels.filter(({ children: { length } }) => length > 1).length;
-    const allLevelsCompleted = expectedLevelInputLength === levelInput.length;
-    return (
-      roomName
+  }) => (
+    roomName
       && roomCapacity
       && roomType
       && remoteRoomName
       && files.length
       && rooms.length
-      && allLevelsCompleted
-    );
-  }
+  )
 
   stripSpaces = str => str.split(' ').join('');
+
+  getLabels = (arr) => {
+    const labels = [];
+    arr.forEach(elem => labels.push(elem.value));
+    return labels;
+  }
 
   createRoom = async () => {
     if (this.isValidEntry(this.state)) {
@@ -198,11 +197,11 @@ export class AddNewRoom extends Component {
         remoteRoomName,
         roomName,
         roomType,
-        structureName,
         locationId,
         files,
         roomCapacity,
         structureId,
+        levelInput,
       } = this.state;
       const roomId = rooms.filter(room =>
         this.stripSpaces(room.name) === this.stripSpaces(remoteRoomName),
@@ -213,10 +212,11 @@ export class AddNewRoom extends Component {
         capacity: roomCapacity,
         roomType,
         calendarId,
-        roomLabels: [structureName],
+        roomLabels: this.getLabels(levelInput),
         locationId: Number(locationId),
         structureId,
       };
+
       getImageUrl('upload/', files[0]).then((url) => {
         variables.imageUrl = url;
         this.setState({ imageUrl: url, uploading: false }, () => {
