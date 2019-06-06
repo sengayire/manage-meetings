@@ -55,6 +55,11 @@ class RoomSetupOverView extends Component {
 
   handleInputChange = () => { };
 
+  updateStructure = (data) => {
+    this.setState({
+      previewDataFromBackend: data,
+    });
+  }
 
   /**
    * It handles  item selected fucntion
@@ -104,7 +109,11 @@ class RoomSetupOverView extends Component {
       case 'devices':
         return this.renderDeviceList();
       case 'structure':
-        return <StructurePreviewTree data={previewDataFromBackend} handleClick={handleClick} />;
+        return (<StructurePreviewTree
+          data={previewDataFromBackend}
+          handleClick={handleClick}
+          updateStructure={this.updateStructure}
+        />);
       default:
         return <RoomSetup />;
     }

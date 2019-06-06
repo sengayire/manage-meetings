@@ -34,17 +34,31 @@ class Setup extends Component {
     });
   };
 
+
+  getOfficeStructure = async () => {
+    const data = await getRoomsStructure();
+    return data;
+  };
   /**
    * Gets the structures setup
    *
    * @returns {void}
    */
   getStructures = async () => {
-    const data = await getRoomsStructure();
+    const data = await this.getOfficeStructure();
     const { allStructures } = data;
     allStructures.length && this.setState({ isStructureSetup: true });
     this.setState({ loaded: true });
   }
+
+  getAllStructureIds = async () => {
+    const officeStructure = await this.getOfficeStructure();
+    const structureIds = [];
+    officeStructure.allStructures.map(allStructure =>
+      structureIds.push(allStructure.structureId),
+    );
+    return structureIds;
+  };
 
   /**
    * Checks whether the parameter matches the state and switches it if not.
@@ -94,7 +108,10 @@ class Setup extends Component {
         case 'SetupInfoPage':
           return <SetupInfoPage handleClick={this.handleClick} />;
         case 'BuildingLevel':
-          return <BuildingLevel handleClick={this.handleClick} />;
+          return (<BuildingLevel
+            handleClick={this.handleClick}
+            getAllStructureIds={this.getAllStructureIds}
+          />);
         case 'RoomSetupView':
           return (<RoomSetupView handleClick={this.handleClick} userLocation={location} />);
         default:

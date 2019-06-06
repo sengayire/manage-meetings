@@ -17,4 +17,21 @@ mutation createOfficeStructure($flattenedData: [StructureInputs]!){
 }
 `;
 
+export const DELETE_OFFICE_STRUCTURE = gql`
+  mutation deleteOfficeStructure($structureIds: [String]!){
+    deleteOfficeStructure(structureIds: $structureIds){
+      structure{
+        structureId
+        name
+        level
+        parentId
+        parentTitle
+        tag
+        position
+        locationId
+      }
+    }
+  }
+`;
+
 export { ADD_LEVEL_SETUP_MUTATION as default };

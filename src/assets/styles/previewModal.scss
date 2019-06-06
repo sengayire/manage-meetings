@@ -46,6 +46,37 @@ a {
     line-height: 31px;
     text-align: center;
   }
+
+  .tree {
+    .modal-component {
+      #modal-button {
+        border: none;
+        img {
+          position: absolute;
+          top: 0.8rem;
+          right: 2.5rem;
+        }
+      }
+      .form-action-buttons {
+        margin-top: 35px;
+      }
+      .delete-confirmation-text {
+        color: $text-color;
+        font-size: 18px;
+        line-height: 1.7em;
+      }
+      .confirm-delete {
+        font-size: 20px;
+        width: 60%;
+        font-family: 'DINPro-Regular', serif;
+        margin: 1em auto 2em;
+        padding: 5px;
+      }
+      .confirm-error {
+        color: $color-danger;
+      }
+    }
+  }
 }
 
 .tree {
@@ -69,7 +100,7 @@ a {
       padding: 0;
       padding: 10px;
       img {
-        height: 18px;
+        height: 20px;
       }
     }
   }
@@ -162,4 +193,40 @@ a {
 .tree li a:hover + ul::before,
 .tree li a:hover + ul ul::before{
   border-color: map_get($color-amber, 300);
+}
+
+.setup-main-container {
+  .no-structure {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 2rem auto;
+    width: 75%;
+    padding: 20px 10;
+    justify-content: center;
+    overflow-wrap: break-word;
+    color: $text-color;
+    font-size: 18px;
+    span {
+      padding: 20px;
+    }
+    button {
+      font-family: "DINPro";
+      font-size: 16px;
+      background: map-get($color-white, 000);
+      color: map-get($color-blue, 400);
+      border: 1px solid map-get($color-blue, 400);
+      margin-top: 1rem;
+      padding-top: 20px;
+    }
+  }
+}
+
+#delete-structure-icon{
+  width: 18px;
+}
+
+.tree__edit-button{
+  #edit-structure-icon{
+    padding-top: 3px;
+  }
 }
