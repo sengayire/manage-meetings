@@ -513,7 +513,7 @@ export class AddNewRoom extends Component {
           id="roomName"
           name="roomName"
           labelClass="floor-wrapper"
-          inputClass="mrm-input"
+          inputClass="mrm-input mrm-input-rm"
           placeholder="Enter room name"
           value={roomNameValue}
           labelName="Room Name"
@@ -525,7 +525,7 @@ export class AddNewRoom extends Component {
           name="roomCapacity"
           type="number"
           labelClass="floor-wrapper"
-          inputClass="mrm-input"
+          inputClass="mrm-input mrm-input-rc"
           controlsClass="capacity-controls"
           placeholder="0"
           title="Please add numbers only"
@@ -559,7 +559,7 @@ export class AddNewRoom extends Component {
         {this.renderStaticInputFields()}
         <div className="dynamic-input">
           {this.renderRoomType()}
-          <LocationFilters handleInputChange={this.handleInputChange} />
+          <LocationFilters handleInputChange={this.handleInputChange} wrapperClassName="floor-wrapper" selectInputClassName="dynamic-input-field default-select" displayTitle />
         </div>
       </div>
     );

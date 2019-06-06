@@ -61,6 +61,7 @@ export class DeleteRoom extends Component {
             capacity: 0,
             location: '',
             office: '',
+            roomLabels: '',
           },
         }],
       })

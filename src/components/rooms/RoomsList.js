@@ -205,7 +205,7 @@ export class RoomsList extends React.Component {
         <div
           className={`settings-rooms-control ${
             isFetching ? 'disabled-buttons' : null
-          }`}
+            }`}
         >
           <MenuTitle title="Rooms" />
           <FilterRoomMenu
@@ -233,12 +233,12 @@ export class RoomsList extends React.Component {
                   refetch={refetch}
                 />
               </div>
-            : <ErrorIcon />
+              : <ErrorIcon />
             }
           </div>
         ) : (
           <h2 style={{ marginLeft: '0' }}>No Rooms Found</h2>
-        )}
+          )}
         {noResource && !isSearching && !(locationsError || error) ? (
           <Pagination
             currentPage={currentPage}

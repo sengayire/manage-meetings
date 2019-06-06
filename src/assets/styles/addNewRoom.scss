@@ -22,10 +22,6 @@
   }
 }
 
-.mrm-input {
-  width: 94%;
-}
-
 .remote-room-select {
   margin: 10px auto;
 }
@@ -43,7 +39,7 @@
 .capacity-controls {
   float: none;
   top: -24px !important;
-  left: 87% !important;
+  left: 85% !important;
   button:first-child {
     border: 1px solid $color-input-border;
     &:hover {
@@ -140,5 +136,13 @@
 
   .thumbnail {
     min-width: 200px !important;
+  }
+
+  .capacity-controls {
+    left: 87% !important;
+  }
+
+  .floor-wrapper {
+    margin-top: 5%;
   }
 }
