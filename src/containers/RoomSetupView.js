@@ -28,6 +28,7 @@ class RoomSetupOverView extends Component {
       currentNavItem: 'meeting-rooms',
       locationId: '',
       previewDataFromBackend: [],
+      location: '',
     };
   }
 
@@ -50,6 +51,7 @@ class RoomSetupOverView extends Component {
     this.setState({
       previewDataFromBackend: formattedData,
       locationId: userLocation.id,
+      location: user.location,
     });
   }
 
@@ -101,7 +103,7 @@ class RoomSetupOverView extends Component {
   renderDeviceList = () => (
     <div className="setup-container">
       <div className="room-setup-header">
-        <p>EPIC Tower&apos;s Devices</p>
+        <p>{this.state.location}&apos;s Devices</p>
       </div>
       <div className="room-select-input">{this.createSelectInputs()}</div>
       <DevicesList />
@@ -115,14 +117,15 @@ class RoomSetupOverView extends Component {
         currentNavItem,
         previewDataFromBackend,
         locationId,
+        location,
       },
     } = this;
     switch (currentNavItem) {
       case 'resources':
-        return <Resources />;
+        return <Resources location={location} />;
       /* istanbul ignore next */
       case 'people':
-        return <PeopleList locationId={locationId} />;
+        return <PeopleList locationId={locationId} location={location} />;
       case 'devices':
         return this.renderDeviceList();
       case 'structure':

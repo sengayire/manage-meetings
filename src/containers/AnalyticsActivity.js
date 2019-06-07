@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import uuid from 'uuid';
+import moment from 'moment';
 import '../assets/styles/analyticsActivity.scss';
 import { groupIcon } from '../utils/images/images';
 import Overlay from '../components/commons/Overlay';
@@ -59,8 +60,8 @@ export class AnalyticsActivity extends Component {
   }
 
   formatTime = (dateTime) => {
-    const formattedTime = dateTime.substr(11, 8);
-    return formattedTime;
+    const date = moment(dateTime).format('hh:mm:ss');
+    return date;
   }
 
   meetingsData = dailyActivityData => (

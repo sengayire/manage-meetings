@@ -2,6 +2,7 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable  no-unused-expressions */
 import React, { createRef } from 'react';
+import propTypes from 'prop-types';
 import '../../../assets/styles/resources.scss';
 import AddResource from './AddResources'; //eslint-disable-line
 import { editIcon } from '../../../utils/images/images';
@@ -17,6 +18,7 @@ import {
 } from '../../../../src/components/helpers/QueriesHelpers';
 import DeleteResource from '../../setup/resources/DeleteResource';
 import ErrorIcon from '../../commons/ErrorIcon';
+
 
 class Resources extends React.Component {
   state = {
@@ -165,7 +167,7 @@ class Resources extends React.Component {
       <div className="setup-container">
         <div className="resource-box">
           <div className="room-setup-header">
-            <p>EPIC Tower&apos;s Resources </p>
+            <p>{this.props.location}&apos;s Resources </p>
           </div>
           <div className="room-select-input resource-picker">{this.createSelectInputs()}</div>
           <div className="add-new-resource">
@@ -202,5 +204,9 @@ class Resources extends React.Component {
     );
   }
 }
+
+Resources.propTypes = {
+  location: propTypes.string.isRequired,
+};
 
 export default Resources;

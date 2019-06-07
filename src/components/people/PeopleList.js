@@ -126,7 +126,7 @@ export class PeopleList extends Component {
           className={`action-menu ${isFetching ? 'disabled-buttons' : null}`}
         >
           <div className="room-setup-header">
-            <p>EPIC Tower&apos;s Resources </p>
+            <p>{this.props.location}&apos;s People </p>
           </div>
           <Sort
             sortOptions={{ location: allLocations, access: roles }}
@@ -175,6 +175,7 @@ export class PeopleList extends Component {
 }
 
 PeopleList.propTypes = {
+  location: PropTypes.string.isRequired,
   people: PropTypes.shape({
     users: PropTypes.shape({
       users: PropTypes.array,
@@ -184,6 +185,7 @@ PeopleList.propTypes = {
     error: PropTypes.object,
     refetch: PropTypes.func,
     fetchMore: PropTypes.func,
+    location: PropTypes.string,
   }).isRequired,
   locations: PropTypes.oneOfType([
     PropTypes.arrayOf(
