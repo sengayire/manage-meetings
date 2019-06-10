@@ -11,6 +11,8 @@ exports[`DeviceList Component renders correctly from memory 1`] = `
     className="add-new-resource"
   >
     <DeviceFormModal
+      closeModal={[Function]}
+      device={Object {}}
       location={
         Object {
           "name": "Lagos",

@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import toastr from 'toastr';
-import DeviceFormModal from '../../../src/components/devices/AddDevice';
+import DeviceModal from '../../../src/components/devices/DeviceModal';
 import { addDeviceMutation } from '../../../src/components/helpers/mutationHelpers/devices';
 
 
@@ -11,11 +11,13 @@ jest.mock('toastr');
 describe('Tests for DeviceFormModal', () => {
   let wrapper;
   beforeAll(() => {
-    wrapper = shallow(<DeviceFormModal
+    wrapper = shallow(<DeviceModal
       location={{
       name: 'Lagos',
     }}
       refetch={jest.fn()}
+      closeModal={jest.fn()}
+      device={{ room: {} }}
     />);
   });
 
@@ -31,8 +33,11 @@ describe('Tests for DeviceFormModal', () => {
       deviceType: 'Tablet',
     });
     await wrapper.instance().submit({ preventDefault: jest.fn() });
+    wrapper.setProps({ openModal: 'edit' });
+    await wrapper.instance().submit({ preventDefault: jest.fn() });
     expect(addDeviceMutation).toHaveBeenCalled();
     expect(toastr.success).toHaveBeenCalled();
+    wrapper.setProps({ openModal: undefined });
   });
 
   it('Should handle server errors', async () => {
@@ -43,7 +48,7 @@ describe('Tests for DeviceFormModal', () => {
     });
     addDeviceMutation.mockRejectedValue({});
     await wrapper.instance().submit({ preventDefault: jest.fn() });
-    expect(toastr.error).toHaveBeenCalledWith('An error occured while adding device.');
+    expect(toastr.error).toHaveBeenCalledWith('Could not complete request.');
   });
 
 
@@ -74,22 +79,39 @@ describe('Tests for DeviceFormModal', () => {
 
   it('Should use device if provided', () => {
     wrapper.setProps({
+      openModal: 'edit',
       device: {
         name: 'Galaxy S10',
-        roomId: '31',
+        room: {
+          id: '31',
+        },
         deviceType: 'Phone',
       },
     });
-    wrapper.instance().componentDidMount();
+    wrapper.instance().componentDidUpdate({ openModal: false });
     expect(wrapper.state('roomId')).toBe('31');
   });
 
-  it('Should close modal', () => {
-    wrapper.instance().closeModal();
-    wrapper.instance().closeModal({ preventDefault: jest.fn() });
-    expect(wrapper.state('isModalClosed')).toBe(true);
+  describe('Should close modal', () => {
+    it('Should close modal and not save if in edit or delete mode', () => {
+      wrapper.instance().closeModal();
+      expect(wrapper.state('closeModal')).toBe(true);
+    });
 
-    wrapper.instance().handleModalCloseRequest();
-    expect(wrapper.state('isModalClosed')).toBe(false);
+    it('Should close modal and save if in add mode', () => {
+      wrapper.setProps({ openModal: undefined });
+      wrapper.setState({ closeModal: false });
+      wrapper.instance().closeModal({ preventDefault: jest.fn() });
+      expect(wrapper.state('previousFormState')).toEqual({
+        name: '',
+        roomId: '',
+        deviceType: '',
+      });
+    });
+  });
+
+  it('handleFormData should do nothing if no criteria is met', () => {
+    wrapper.instance().handleFormData(false, true);
+    expect(wrapper.state('closeModal')).toEqual(false);
   });
 });

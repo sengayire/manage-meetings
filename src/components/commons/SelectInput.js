@@ -44,16 +44,24 @@ const SelectInput = ({
         {/* Render the array options if provided.
          If you provide both options and children, details in the options will be rendered
         */}
-        {options &&
-          options.length &&
-          options.map(option => (
-            <option
-              value={isValue ? option.name : (option.id || option.structureId)}
-              key={option.id || option.calendarId || option.structureId}
-            >
-              {option.name}
-            </option>
-          ))}
+        {
+          options
+            && options.length
+            &&
+              options.map((option) => {
+                const props = {
+                  value: isValue ? option.name : (option.id || option.structureId),
+                  key: option.id || option.calendarId || option.structureId || option.name,
+                };
+                return (
+                  <option
+                    {...props}
+                  >
+                    {option.name}
+                  </option>
+                );
+              })
+        }
         {/*
         render children if they are provided,
         the children of the select element should be <option tags>
@@ -74,6 +82,7 @@ const SelectInput = ({
 );
 
 SelectInput.propTypes = {
+  selected: PropTypes.number,
   name: PropTypes.string.isRequired,
   isValue: PropTypes.bool,
   id: PropTypes.string.isRequired,
@@ -96,6 +105,7 @@ SelectInput.propTypes = {
 };
 
 SelectInput.defaultProps = {
+  selected: -1,
   onChange: PropTypes.func,
   onClick: PropTypes.func,
   isValue: false,

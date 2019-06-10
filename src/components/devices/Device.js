@@ -1,6 +1,8 @@
 import React from 'react';
 import moment from 'moment';
 import PropTypes from 'prop-types';
+import { IconButtons } from '../commons';
+import { editIcon, deleteIcon } from '../../utils/images/images';
 
 const formatDate = date => moment(date).format('DD MMM YYYY');
 
@@ -13,6 +15,8 @@ const formatDate = date => moment(date).format('DD MMM YYYY');
  * @returns {JSX}
  */
 const Device = ({
+  handleAction,
+  device,
   device: {
     name, deviceType, dateAdded, lastSeen, location, /* room: { name: roomName }, */
   },
@@ -24,10 +28,23 @@ const Device = ({
     <span>{formatDate(lastSeen)}</span>
     <span>{location}</span>
     {/* <span>{roomName}</span> */}
+    <span className="device-table-action-buttons">
+      <IconButtons
+        btnImage={<img src={editIcon} alt="edit-icon" />}
+        className="edit-device-button"
+        openModal={() => handleAction('edit', device)}
+      />
+      <IconButtons
+        btnImage={<img src={deleteIcon} alt="delete-icon" />}
+        className="delete-device-button"
+        openModal={() => handleAction('delete', device)}
+      />
+    </span>
   </div>
 );
 
 Device.propTypes = {
+  handleAction: PropTypes.func.isRequired,
   device: PropTypes.shape({
     name: PropTypes.string.isRequired,
     deviceType: PropTypes.string.isRequired,

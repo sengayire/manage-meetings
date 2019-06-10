@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests for DeviceFormModal Should render correctly from memory 1`] = `
+<MrmModal
+  buttonText="Add a New Device"
+  className="add-resource-modal"
+  closeModal={false}
+  handleCloseRequest={[Function]}
+  modalButtonClassName="button"
+  openModal={false}
+  title="ADD A NEW DEVICE"
+>
+  <DeviceModalContent
+    deviceTypes={
+      Array [
+        Object {
+          "name": "7\\"",
+        },
+        Object {
+          "name": "8\\"",
+        },
+        Object {
+          "name": "9.7\\"",
+        },
+        Object {
+          "name": "10.1\\"",
+        },
+      ]
+    }
+    fetching={false}
+    formData={
+      Object {
+        "deviceType": "",
+        "name": "",
+        "roomId": "",
+      }
+    }
+    methods={
+      Object {
+        "closeModal": [Function],
+        "handleNameChange": [Function],
+        "handleRoomChange": [Function],
+        "handleTypeChange": [Function],
+        "submit": [Function],
+      }
+    }
+    rooms={Array []}
+  />
+</MrmModal>
+`;
