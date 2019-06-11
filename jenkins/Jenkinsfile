@@ -1,0 +1,166 @@
+#!groovy​
+
+pipeline {
+agent {
+  kubernetes {
+    label 'converge-frontend'
+    defaultContainer 'jnlp'
+    yaml """
+      apiVersion: v1
+      kind: Pod
+      metadata:
+      labels:
+        component: ci
+      spec:
+        containers:
+        - name: converge-frontend-agent
+          image: ${CONVERGE_GCR_PATH}/${CONVERGE_FRONTEND_IMAGE_PATH}:${CONVERGE_FRONTEND_IMAGE_VERSION}
+          resources:
+            requests:
+              cpu: "2000m"
+              memory: "2Gi"
+            limits:
+              cpu: "2000m"
+              memory: "2Gi"
+          command:
+          - cat
+          tty: true
+          env:
+            - name: DOCKER_HOST
+              value: tcp://localhost:2375
+        - name: dind
+          image: ${CONVERGE_DIND_IMAGE_PATH}
+          securityContext:
+            privileged: true
+          volumeMounts:
+            - name: dind-storage
+              mountPath: /var/lib/docker
+        volumes:
+        - name: dind-storage
+          emptyDir: {}
+    """
+    }
+  }
+
+  environment {
+     NODE_ENV =  'test'
+     EXIT_CODE = 0
+  }
+
+  stages {
+   stage('Load converge frontend environment variable file') {
+      steps {
+        container('converge-frontend-agent') {
+          withCredentials([
+            file(credentialsId: 'converge-frontend-env-vars', variable: 'CONVERGE_FRONTEND_ENV_VARS')
+          ]) {
+            load "$CONVERGE_FRONTEND_ENV_VARS"
+          }
+        }
+      }
+    }
+    stage('test') {
+      steps {
+        container('converge-frontend-agent') {
+          // Install application dependencies
+          sh script: "yarn install", label: "Install dependencies"
+          // CodeClimate test report Setup
+          sh script: """
+            curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+            chmod +x ./cc-test-reporter
+          """, label: "CodeClimate test report Setup"
+          // Run lint test for code quality checks
+          sh script: "yarn lint", label: "Run lint test"
+          // Code Climate Pretest
+          sh script: "./cc-test-reporter before-build", label: "Code Climate Pretest"
+          // Run test and get coverage
+          sh script: "yarn test:coveralls", label: "Run test and coverage"
+          // Send Coverage Report to CodeClimate
+          sh script: "./cc-test-reporter after-build --exit-code $EXIT_CODE", label: "Reporting Coverage to CodeClimate"
+        }
+      }
+      post {
+        success {
+          container('converge-frontend-agent') {
+            // Make bash scripts in jenkins/bin executable
+            sh script: "chmod +x jenkins/bin/*.sh", label: "Make scripts executable"
+            // Send success notification to slack if test stage is successful
+            sh script: "$WORKSPACE/jenkins/bin/notify_slack.sh success", label: "Notifying slack channel (succeeded)"
+          }
+        }
+        failure {
+          container('converge-frontend-agent') {
+            // Send failure notification to slack if test stage fails
+            sh script: "$WORKSPACE/jenkins/bin/notify_slack.sh fail", label: "Notifying slack channel (failed)"
+          }
+        }
+      }
+    }
+    stage('build-application-and-docker-image') {
+      // Run this stage only when GIT_BRANCH is master, develop, or v2
+      when {
+        anyOf {
+          branch 'master'
+          branch 'develop'
+          branch 'v2'
+        }
+      }
+      steps {
+        container('converge-frontend-agent') {
+          // Setup gcloud in the container
+          sh script: "$WORKSPACE/jenkins/bin/setup_gcloud.sh", label: "Setup gcloud"
+          // Build application
+          sh script: "yarn run build", label: "Build application"
+          // Build docker image
+          sh script: "$WORKSPACE/jenkins/bin/build_docker_image.sh", label: "Build docker image"
+        }
+      }
+      post {
+        success {
+          container('converge-frontend-agent') {
+            // Send success notification to slack if test stage is successful
+            sh script: "$WORKSPACE/jenkins/bin/notify_slack.sh success", label: "Notifying slack channel (succeeded)"
+          }
+        }
+        failure {
+          container('converge-frontend-agent') {
+            // Send failure notification to slack if test stage fails
+            sh script: "$WORKSPACE/jenkins/bin/notify_slack.sh fail", label: "Notifying slack channel (failed)"
+          }
+        }
+      }
+    }
+    stage('deploy-job') {
+      // Run this stage only when GIT_BRANCH is master, develop, or v2
+      when {
+        anyOf {
+          branch 'master'
+          branch 'develop'
+          branch 'v2'
+        }
+      }
+      steps {
+        container('dind') {
+          // Setup and authenticate gcloud
+          sh script: "$WORKSPACE/jenkins/bin/setup_gcloud.sh", label: "Setup and authenticate gcloud"
+          // Deploy to kubernetes
+          sh script: "$WORKSPACE/jenkins/bin/deploy_to_k8s.sh", label: "Deploy to kubernetes"
+        }
+      }
+      post {
+        success {
+          container('dind') {
+            // Send success notification to slack if test stage is successful
+            sh script: "$WORKSPACE/jenkins/bin/notify_slack.sh success", label: "Notifying slack channel (succeeded)"
+          }
+        }
+        failure {
+          container('dind') {
+            // Send failure notification to slack if test stage fails
+            sh script: "$WORKSPACE/jenkins/bin/notify_slack.sh fail", label: "Notifying slack channel (failed)"
+          }
+        }
+      }
+    }
+  }
+}
