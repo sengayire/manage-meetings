@@ -105,7 +105,7 @@ class Room extends Component {
     return (
       <div className="room-details">
         {roomLabels.map(label => (
-          <div className="details">
+          <div key={label}className="details">
             <p>{label}</p>
           </div>
         ))}
@@ -148,7 +148,7 @@ Room.propTypes = {
   roomLabels: PropTypes.array.isRequired,
   numberOfSeats: PropTypes.number.isRequired,
   numberOfResources: PropTypes.number.isRequired,
-  roomId: PropTypes.string.isRequired,
+  roomId: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
   updatedRoom: PropTypes.func.isRequired,
   handleClick: PropTypes.func.isRequired,
 };

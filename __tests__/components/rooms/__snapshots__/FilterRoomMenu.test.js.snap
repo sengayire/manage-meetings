@@ -6852,6 +6852,7 @@ exports[`FilterButton renders correctly from memory 1`] = `
                                     placeholderValue=""
                                     required={true}
                                     selectInputClassName="location-input default-select"
+                                    selected={-1}
                                     value=""
                                     wrapperClassName="location-wrapper"
                                   >
@@ -6869,6 +6870,7 @@ exports[`FilterButton renders correctly from memory 1`] = `
                                           name="location"
                                           onChange={[Function]}
                                           required={true}
+                                          selected={-1}
                                         >
                                           <option
                                             value=""
@@ -6893,6 +6895,7 @@ exports[`FilterButton renders correctly from memory 1`] = `
                                     placeholderValue=""
                                     required={true}
                                     selectInputClassName="office-input default-select"
+                                    selected={-1}
                                     value=""
                                     wrapperClassName="office-wrapper"
                                   >
@@ -6910,6 +6913,7 @@ exports[`FilterButton renders correctly from memory 1`] = `
                                           name="office"
                                           onChange={[Function]}
                                           required={true}
+                                          selected={-1}
                                         >
                                           <option
                                             value=""

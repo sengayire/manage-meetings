@@ -3643,6 +3643,7 @@ exports[`AddRoomEpicTower should render properly 1`] = `
                     closeModal={false}
                     handleCloseRequest={[Function]}
                     modalButtonClassName="button"
+                    openModal={false}
                     title="ADD ROOM"
                   >
                     <IconButtons

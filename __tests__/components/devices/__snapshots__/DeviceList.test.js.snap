@@ -18,12 +18,13 @@ exports[`DeviceList Component renders correctly from memory 1`] = `
           "name": "Lagos",
         }
       }
+      openModal={false}
       refetch={[Function]}
       rooms={Array []}
     />
   </div>
   <div
-    className="table"
+    className="table device-table"
   >
     <TableHead
       titles={
@@ -49,6 +50,7 @@ exports[`DeviceList Component renders correctly from memory 1`] = `
             "name": "Samsung Note",
           }
         }
+        handleAction={[Function]}
         key="Samsung Noteundefined"
       />
       <Device
@@ -61,6 +63,7 @@ exports[`DeviceList Component renders correctly from memory 1`] = `
             "name": "Samsung duos",
           }
         }
+        handleAction={[Function]}
         key="Samsung duosundefined"
       />
       <Device
@@ -73,6 +76,7 @@ exports[`DeviceList Component renders correctly from memory 1`] = `
             "name": "Samsung Galaxy",
           }
         }
+        handleAction={[Function]}
         key="Samsung Galaxyundefined"
       />
       <Device
@@ -85,6 +89,7 @@ exports[`DeviceList Component renders correctly from memory 1`] = `
             "name": "Samsung tablet",
           }
         }
+        handleAction={[Function]}
         key="Samsung tabletundefined"
       />
     </div>

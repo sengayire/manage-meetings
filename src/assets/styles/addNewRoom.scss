@@ -1,24 +1,29 @@
 @import './variables';
 
-.static-input {
-  display: flex;
-  justify-content: space-between;
-  margin: 10px auto;
-  .static-input-field {
-    flex: 1;
-  }
-}
+// .static-input {
+//   display: flex;
+//   justify-content: space-between;
+//   margin: 10px auto;
+//   grid-column-gap: 2%;
+//   .static-input-field {
+//     flex: 1;
+//   }
+// }
 
-.dynamic-input, .remote-room-input {
+.dynamic-input, .remote-room-input, .static-input {
   display: grid;
   grid-template-columns: auto auto;
   grid-column-gap: 2%;
   margin: 15px auto;
 
-  .dynamic-input-field {
+  .dynamic-input-field, .static-input-field {
     margin: 10px auto;
     font-weight: lighter;
   }
+}
+
+.mrm-input {
+  width: 94%;
 }
 
 .remote-room-select {
@@ -38,7 +43,7 @@
 .capacity-controls {
   float: none;
   top: -24px !important;
-  left: 157px !important;
+  left: 87% !important;
   button:first-child {
     border: 1px solid $color-input-border;
     &:hover {

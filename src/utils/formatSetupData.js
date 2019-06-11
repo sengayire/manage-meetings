@@ -65,6 +65,7 @@ const orderByLevel = (dataArray) => {
           parentTitle: element.parentTitle,
           tag: element.tag,
           quantity: 1,
+          structureId: element.structureId,
         };
   });
   return newArray;

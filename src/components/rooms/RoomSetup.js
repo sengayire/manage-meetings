@@ -176,7 +176,10 @@ class RoomSetup extends Component {
             </div>
             <div className="room-select-input">{this.createSelectInputs()}</div>
             <div className="add-new-resource">
-              <AddNewRoomComponent updateRoomData={this.updateRoomData} />
+              <AddNewRoomComponent
+                updateRoomData={this.updateRoomData}
+                currentPage={this.state.currentPage}
+              />
             </div>
           </div>
         }

@@ -8,6 +8,7 @@ exports[`AddCenter Component renders AddCenter Component 1`] = `
   handleCloseRequest={[Function]}
   modalButton="add-button"
   modalButtonClassName="button"
+  openModal={false}
   title="ADD CENTER"
 >
   <form

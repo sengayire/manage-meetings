@@ -219,6 +219,7 @@ exports[`DeleteOffice Test Suite renders as expected 1`] = `
             closeModal={false}
             handleCloseRequest={[Function]}
             modalButtonClassName="button"
+            openModal={false}
             title="DELETE ROOM"
           >
             <IconButtons
@@ -572,6 +573,7 @@ exports[`DeleteOffice Test Suite should pop up a modal when delete button is cli
             closeModal={false}
             handleCloseRequest={[Function]}
             modalButtonClassName="button"
+            openModal={false}
             title="DELETE ROOM"
           >
             <IconButtons
