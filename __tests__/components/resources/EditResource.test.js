@@ -7,12 +7,12 @@ import allResourcesReturnData from '../../../__mocks__/resources/Resources';
 import { GET_RESOURCES_QUERY } from '../../../src/graphql/queries/Resources';
 import { EDIT_RESOURCE_MUTATION } from '../../../src/graphql/mutations/resources';
 
-describe('EditRoom', () => {
+describe('Edit a resource', () => {
   const mutationResult = {
     data: {
       updateRoomResource: {
         resource: {
-          name: 'Markers 2',
+          name: 'Point',
         },
       },
     },
@@ -37,9 +37,7 @@ describe('EditRoom', () => {
       request: {
         query: EDIT_RESOURCE_MUTATION,
         variables: {
-          resourceId: '3',
-          name: 'Markers 2',
-          roomId: 1,
+          name: 'Point',
         },
       },
       result: mutationResult,
@@ -51,8 +49,7 @@ describe('EditRoom', () => {
     refetch: jest.fn(),
     resource: {
       id: '3',
-      name: 'Gulu',
-      roomId: 1,
+      name: 'pointers',
     },
   };
 
@@ -69,11 +66,10 @@ describe('EditRoom', () => {
         </MockedProvider>);
     const wrapperForFunctionality = mount(setup);
 
-    const event = {
+    const upDatedResource = {
       preventDefault: jest.fn(),
       target: {
         name: '',
-        value: '',
       },
     };
 
@@ -84,13 +80,12 @@ describe('EditRoom', () => {
         refetch: jest.fn(),
         resource: {
           id: '3',
-          name: 'Gulu',
-          roomId: 1,
+          name: 'pointers',
         },
         editResource: jest.fn(() => Promise.reject(new ApolloError({ graphQLErrors: [new Error('An error occurred')] }))),
       };
       const newWrapper = shallow(<EditResource {...errorProps} />);
-      newWrapper.instance().handleEditResource(event);
+      newWrapper.instance().handleEditResource(upDatedResource);
       expect(errorProps.editResource).toHaveBeenCalled();
     });
 
@@ -114,14 +109,14 @@ describe('EditRoom', () => {
         resourceId: '1',
       };
       newWrapper.setState({ ...newState });
-      newWrapper.instance().handleEditResource(event);
+      newWrapper.instance().handleEditResource(upDatedResource);
       expect(newProps.editResource).toBeCalled();
     });
 
     it('should call handleNameChange', () => {
       const action = wrapperValue.instance();
       const handleInputChange = jest.spyOn(wrapperValue.instance(), 'handleNameChange');
-      action.handleNameChange(event);
+      action.handleNameChange(upDatedResource);
       expect(handleInputChange).toBeCalled();
     });
 

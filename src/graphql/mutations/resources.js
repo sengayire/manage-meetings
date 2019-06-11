@@ -4,10 +4,10 @@ export const EDIT_RESOURCE_MUTATION = gql`
   mutation updateRoomResource(
     $resourceId: Int!
     $name: String!
-    $roomId: Int!
   ) {
-    updateRoomResource(resourceId: $resourceId, name: $name, roomId: $roomId) {
+    updateRoomResource(resourceId: $resourceId, name: $name) {
       resource {
+        id
         name
       }
     }
@@ -18,7 +18,6 @@ export const DELETE_RESOURCE_MUTATION = gql`
   mutation deleteResource($resourceId: Int!) {
     deleteResource(resourceId: $resourceId) {
       resource {
-        roomId
         id
         name
       }
