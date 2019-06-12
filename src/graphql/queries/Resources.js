@@ -19,6 +19,7 @@ export const GET_ROOM_RESOURCES = gql`
   query singleRoomResources($roomId: Int!) {
     getResourcesByRoomId(roomId: $roomId) {
       name
+      id
     }
   }
 `;

@@ -85,7 +85,7 @@ DeviceModalContent.propTypes = {
     submit: PropTypes.func,
   }).isRequired,
   fetching: PropTypes.bool,
-  modalContent: PropTypes.oneOf([PropTypes.string, PropTypes.bool]),
+  modalContent: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
   rooms: PropTypes.instanceOf(Array).isRequired,
   deviceTypes: PropTypes.instanceOf(Array).isRequired,
 };

@@ -9,10 +9,10 @@ exports[`Device Component renders without crashing 1`] = `
   </span>
   <span />
   <span>
-    12 Jun 2019
+    13 Jun 2019
   </span>
   <span>
-    12 Jun 2019
+    13 Jun 2019
   </span>
   <span>
     Nairobi
@@ -29,19 +29,6 @@ exports[`Device Component renders without crashing 1`] = `
       }
       buttonText=""
       className="edit-device-button"
-      disabled={false}
-      modalButtonClassName="button"
-      openModal={[Function]}
-    />
-    <IconButtons
-      btnImage={
-        <img
-          alt="delete-icon"
-          src="https://firebasestorage.googleapis.com/v0/b/learning-map-app.appspot.com/o/MrmFrontImages%2Fdelete.svg?alt=media&token=ac2828f2-841e-48bf-8c51-82ffabe54c58"
-        />
-      }
-      buttonText=""
-      className="delete-device-button"
       disabled={false}
       modalButtonClassName="button"
       openModal={[Function]}

@@ -6,6 +6,7 @@ import {
   thisWeek,
   getFirstDayOfTheMonth,
   getTodaysDate,
+  compressArray,
 } from '../../src/utils/Utilities';
 
 describe('parseQueryString Method', () => {
@@ -88,5 +89,9 @@ describe('removeItemInLocalStorage(', () => {
       expect(firstDay.length).toBe(11);
       expect(today.length).toBe(11);
     });
+  });
+  it('should compress array', () => {
+    const compressed = compressArray(['a', 'a', 'b']);
+    expect(compressed[0].count).toBe(2);
   });
 });
