@@ -21,6 +21,7 @@ const updateRoom = async (currentPage, roomData, client = apolloClient) => {
           office: '',
           page: currentPage,
           perPage: 8,
+          roomLabels: '',
         },
       },
       true,

@@ -144,7 +144,9 @@ class LocationFilters extends Component {
 * @returns {jsx}
 */
   createSelectInputs = () => {
-    const { handleInputChange } = this.props;
+    const {
+      handleInputChange, wrapperClassName, selectInputClassName, displayTitle, className,
+    } = this.props;
     const { dropDownOptions, secondLevelMenu, thirdLevelMenu } = this.state;
     const menu = this.initialArray(dropDownOptions);
     const {
@@ -153,17 +155,17 @@ class LocationFilters extends Component {
     const propsName = this.props.name;
     return (
       <Fragment>
-        <div key={id}>
+        <div key={id} className={className}>
           <SelectInput
-            labelText={this.capitalizeFirstLetter(tag)}
-            wrapperClassName="floor-wrapper"
+            labelText={displayTitle ? this.capitalizeFirstLetter(tag) : null}
+            wrapperClassName={wrapperClassName}
             name={propsName || name}
             id={id}
             value={value}
             onChange={(event) => {
-              this.generateMoreMenu([event.target.name, event.target.value], 'level1', 'secondLevelMenu'); handleInputChange(event);
+              this.generateMoreMenu([event.target.name, event.target.value], 'level1', 'secondLevelMenu'); handleInputChange(event, 1);
             }}
-            selectInputClassName="dynamic-input-field default-select"
+            selectInputClassName={selectInputClassName}
             placeholder={placeholder}
             options={options}
             isValue={isValue}
@@ -172,15 +174,15 @@ class LocationFilters extends Component {
 
         {this.state.level1 !== '' &&
           (
-            <div key={secondLevelMenu.id}>
+            <div key={secondLevelMenu.id} className={className}>
               <SelectInput
-                labelText={this.capitalizeFirstLetter(secondLevelMenu.tag)}
-                wrapperClassName="floor-wrapper"
+                labelText={displayTitle ? this.capitalizeFirstLetter(secondLevelMenu.tag) : null}
+                wrapperClassName={wrapperClassName}
                 name={propsName || secondLevelMenu.name}
                 id={secondLevelMenu.id}
                 value={secondLevelMenu.value}
-                onChange={(event) => { this.generateMoreMenu([event.target.name, event.target.value], 'level2', 'thirdLevelMenu'); handleInputChange(event); }}
-                selectInputClassName="dynamic-input-field default-select"
+                onChange={(event) => { this.generateMoreMenu([event.target.name, event.target.value], 'level2', 'thirdLevelMenu'); handleInputChange(event, 2); }}
+                selectInputClassName={selectInputClassName}
                 placeholder={secondLevelMenu.placeholder}
                 options={secondLevelMenu.options}
                 isValue={secondLevelMenu.isValue}
@@ -193,15 +195,15 @@ class LocationFilters extends Component {
           this.state.level2 !== '' &&
           (this.state.thirdLevelMenu.options && this.state.thirdLevelMenu.options.length > 0) &&
           (
-            <div key={thirdLevelMenu.id} >
+            <div key={thirdLevelMenu.id} className={className}>
               <SelectInput
-                labelText={this.capitalizeFirstLetter(thirdLevelMenu.tag)}
-                wrapperClassName="floor-wrapper"
+                labelText={displayTitle ? this.capitalizeFirstLetter(thirdLevelMenu.tag) : null}
+                wrapperClassName={wrapperClassName}
                 name={propsName || thirdLevelMenu.name}
                 id={thirdLevelMenu.id}
                 value={thirdLevelMenu.value}
-                onChange={event => handleInputChange(event)}
-                selectInputClassName="dynamic-input-field default-select"
+                onChange={event => handleInputChange(event, 2)}
+                selectInputClassName={selectInputClassName}
                 placeholder={thirdLevelMenu.placeholder}
                 options={thirdLevelMenu.options}
                 isValue={thirdLevelMenu.isValue}
@@ -223,9 +225,14 @@ class LocationFilters extends Component {
 LocationFilters.propTypes = {
   handleInputChange: PropTypes.func.isRequired,
   name: PropTypes.string,
+  wrapperClassName: PropTypes.string.isRequired,
+  selectInputClassName: PropTypes.string.isRequired,
+  displayTitle: PropTypes.bool.isRequired,
+  className: PropTypes.string,
 };
 LocationFilters.defaultProps = {
   name: '',
+  className: '',
 };
 
 export default LocationFilters;

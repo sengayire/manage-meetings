@@ -1,21 +1,24 @@
 import gql from 'graphql-tag';
 
 export const GET_ROOMS_QUERY = gql`
-  query rooms($capacity: Int, $location: String!, $office: String!, $page: Int!, $perPage: Int!) {
+  query rooms($capacity: Int, $location: String!, $office: String!, $page: Int!, $perPage: Int!, $roomLabels: String) {
     allRooms(
       page: $page
       perPage: $perPage
       capacity: $capacity
       location: $location
       office: $office
+      roomLabels: $roomLabels
     ) {
       rooms {
         id
         name
+        roomType
         capacity
         roomLabels
-        roomType
         imageUrl
+        calendarId
+        locationId
         structureId
       }
       pages

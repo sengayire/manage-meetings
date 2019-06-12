@@ -22,6 +22,7 @@ const addRoom = async (variables, location, client = apolloClient) => {
           office: '',
           page: 1,
           perPage: 8,
+          roomLabels: '',
         },
       },
     ],
@@ -33,6 +34,7 @@ const addRoom = async (variables, location, client = apolloClient) => {
           office: '',
           page: 1,
           perPage: 8,
+          roomLabels: '',
         },
       });
       data.allRooms.rooms.unshift(createRoom.room);
@@ -50,6 +52,7 @@ const getRoomsQueryObj = (location, theData = undefined) => (
       office: '',
       page: 1,
       perPage: 8,
+      roomLabels: '',
     },
     data: theData,
   }

@@ -89,7 +89,7 @@ SelectInput.propTypes = {
   id: PropTypes.string.isRequired,
   selectInputClassName: PropTypes.string,
   wrapperClassName: PropTypes.string,
-  labelText: PropTypes.string.isRequired,
+  labelText: PropTypes.string,
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   onChange: PropTypes.func,
   onClick: PropTypes.func,
@@ -118,6 +118,7 @@ SelectInput.defaultProps = {
   children: null,
   value: '',
   required: false,
+  labelText: '',
 };
 
 export default SelectInput;

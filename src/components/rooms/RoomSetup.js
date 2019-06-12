@@ -1,12 +1,12 @@
 import React, { Component, createRef } from 'react';
 import Room from '../rooms/Rooms';
-import SelectInput from '../../components/commons/SelectInput';
-import { selectMockData, meetingRoomTabMockData } from '../../utils/roomSetupMock';
+import { meetingRoomTabMockData } from '../../utils/roomSetupMock';
 import Pagination from '../../components/commons/Pagination';
 import ErrorIcon from '../commons/ErrorIcon';
 import Overlay from '../commons/Overlay';
 import { getUserDetails, getRoomList } from '../../components/helpers/QueriesHelpers';
 import AddNewRoomComponent, { AddNewRoom as EditRoom } from './AddRoom';
+import LocationFilters from '../navbars/LocationFilters';
 
 /**
  * Builds component for displaying roooms in setup
@@ -25,6 +25,7 @@ class RoomSetup extends Component {
     dataFetched: false,
     error: false,
     room: {},
+    filterText: {},
   };
 
   componentDidMount = async () => {
@@ -49,9 +50,50 @@ class RoomSetup extends Component {
       return array;
     }
     array.push(rooms.length);
-    return array;
+    return array.sort((a, b) => a - b);
   };
   editRoom = createRef();
+
+  handleInputChange = async (event, level) => {
+    const { target: { name, value } } = event;
+    await this.setState((prevState) => {
+      if (level === 1) {
+        return {
+          filterText: {
+            [name]: value,
+          },
+        };
+      }
+
+      if (level === 2) {
+        if (Object.keys(this.state.filterText)[2]) { (this.state.filterText[Object.keys(this.state.filterText)[2]] = ''); }
+        return {
+          filterText: {
+            ...prevState.filterText,
+            [name]: value,
+          },
+        };
+      }
+
+      if (level === 3) {
+        return {
+          filterText: {
+            ...prevState.filterText,
+            [name]: value,
+          },
+        };
+      }
+      return {
+        filterText: {
+          ...prevState.filterText,
+          [name]: value,
+        },
+      };
+    });
+    this.fetchRooms(8, 1);
+  };
+
+
   /**
    * Fetches rooms based on user location
    * and updates state with the location, allRooms,
@@ -68,13 +110,18 @@ class RoomSetup extends Component {
 
     try {
       const user = await getUserDetails();
-      const { allRooms } = await getRoomList(user.location, perPage < 8 ? 8 : perPage, page);
+      const textVariable = Object.values(this.state.filterText);
+      const { allRooms } = await getRoomList(
+        user.location, perPage < 8 ? 8 : perPage, page, textVariable.join(),
+      );
+
       this.setState({
         location: user.location,
         allRooms: { ...this.state.allRooms, allRooms },
         isFetching: false,
         dataFetched: true,
         currentPage: page,
+        error: false,
       });
     } catch (error) {
       this.setState({
@@ -89,7 +136,7 @@ class RoomSetup extends Component {
    *
    * @param {object} rooms - An object containing details the rooms fetched from the backend
    */
-  updateRoomData = rooms => this.setState({ allRooms: rooms });
+  updateRoomData = rooms => rooms && this.setState({ allRooms: rooms });
 
   /**
    * It handles creating of rooms
@@ -120,33 +167,6 @@ class RoomSetup extends Component {
     return roomsRender;
   };
 
-  /**
-   * It handles creating of select input
-   *
-   * @returns {jsx}
-   */
-  createSelectInputs = () => {
-    const selectInputs =
-      selectMockData &&
-      selectMockData.map(({
-        name, id, value, placeholder,
-      }) => (
-        <div key={id} className="room-select-sub">
-          <SelectInput
-            labelText=""
-            wrapperClassName="setup-select-input-wrapper"
-            name={name}
-            id={id}
-            value={value}
-            onChange={this.handleInputChange}
-            selectInputClassName="setup-select-input"
-            placeholder={placeholder}
-            options={null}
-          />
-        </div>
-      ));
-    return selectInputs;
-  };
   /** Adds room to be edited to the state and toggles modal.
    * @params {object} room
    */
@@ -174,7 +194,7 @@ class RoomSetup extends Component {
             <div className="room-setup-header">
               <p> {location} Meeting Rooms</p>
             </div>
-            <div className="room-select-input">{this.createSelectInputs()}</div>
+            <div className="room-select-input"><LocationFilters handleInputChange={this.handleInputChange} wrapperClassName="setup-select-input-wrapper" selectInputClassName="setup-select-input" displayTitle={false} className="room-select-sub" /></div>
             <div className="add-new-resource">
               <AddNewRoomComponent
                 updateRoomData={this.updateRoomData}

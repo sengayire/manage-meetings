@@ -5,8 +5,6 @@ import React, { createRef } from 'react';
 import propTypes from 'prop-types';
 import '../../../assets/styles/resources.scss';
 import AddResource from './AddResources'; //eslint-disable-line
-import SelectInput from '../../../components/commons/SelectInput';
-import { selectMockData } from '../../../utils/roomSetupMock';
 import AllocatedResources from '../../resources/AllocatedResources';
 import Pagination from '../../commons/Pagination';
 import Spinner from '../../commons/Spinner';
@@ -122,33 +120,6 @@ class Resources extends React.Component {
       </span>
     </div>
   );
-  /**
-   * It handles creating of select input
-   *
-   * @returns {jsx}
-   */
-  createSelectInputs = () => {
-    const selectInputs =
-      selectMockData &&
-      selectMockData.map(({
-        name, id, value, placeholder,
-      }) => (
-        <div key={id} className="room-select-sub">
-          <SelectInput
-            labelText=""
-            wrapperClassName="setup-select-input-wrapper"
-            name={name}
-            id={id}
-            value={value}
-            onChange={this.handleInputChange}
-            selectInputClassName="setup-select-input"
-            placeholder={placeholder}
-            options={null}
-          />
-        </div>
-      ));
-    return selectInputs;
-  };
 
   render() {
     const {
@@ -172,7 +143,8 @@ class Resources extends React.Component {
           <div className="room-setup-header">
             <p>{this.props.location}&apos;s Resources </p>
           </div>
-          <div className="room-select-input resource-picker">{this.createSelectInputs()}</div>
+          {/* Add filters in line below. */}
+          <div className="room-select-input resource-picker" />
           <div className="add-new-resource">
             <AddResource
               handleOnAddResource={this.handleOnDeleteResource}
@@ -183,7 +155,7 @@ class Resources extends React.Component {
             {resourcesData.resources
               ? resourcesData.resources.map(resource => this.resourceList(resource))
               : error ? <ErrorIcon message="No resource found" />
-              : ''}
+                : ''}
           </div>
           {resourcesData.resources ? (
             <Pagination

@@ -58,7 +58,7 @@ const getAllLocations = async (client = apolloClient) => {
   }
 };
 
-const getRoomList = async (userLocation, perPage, page, client = apolloClient) => {
+const getRoomList = async (userLocation, perPage, page, textVariable, client = apolloClient) => {
   const { data } = await client.query({
     query: GET_ROOMS_QUERY,
     variables: {
@@ -66,6 +66,7 @@ const getRoomList = async (userLocation, perPage, page, client = apolloClient) =
       office: '',
       page,
       perPage,
+      roomLabels: textVariable,
     },
   });
   return data;
@@ -196,20 +197,20 @@ const query = (dateValue) => {
 };
 
 const getAnalyticForDailyRoomsEvents
- = async (dateValue, client = apolloClient) => {
-   try {
-     const data = client.readQuery(
-       query(dateValue),
-       true,
-     );
-     return data;
-   } catch (err) {
-     const { data } = await client.query(
-       query(dateValue),
-     );
-     return data;
-   }
- };
+  = async (dateValue, client = apolloClient) => {
+    try {
+      const data = client.readQuery(
+        query(dateValue),
+        true,
+      );
+      return data;
+    } catch (err) {
+      const { data } = await client.query(
+        query(dateValue),
+      );
+      return data;
+    }
+  };
 
 const getAllDevices = async (client = apolloClient) => {
   try {
