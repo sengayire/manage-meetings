@@ -76,7 +76,15 @@ const sampleData = [
   },
 ];
 
+const event = {
+  preventDefault: () => {},
+  target: {
+    value: 'DELETE',
+  },
+};
+
 export {
   mockData as default,
   sampleData,
+  event,
 };

@@ -356,6 +356,7 @@ class BuildingLevel extends Component {
             user={user}
             allLocations={allLocations}
             handleClick={this.props.handleClick}
+            getAllStructureIds={this.props.getAllStructureIds}
           />
         </div>
       </div>
@@ -365,6 +366,7 @@ class BuildingLevel extends Component {
 
 BuildingLevel.propTypes = {
   handleClick: PropTypes.func.isRequired,
+  getAllStructureIds: PropTypes.func.isRequired,
 };
 
 export default BuildingLevel;

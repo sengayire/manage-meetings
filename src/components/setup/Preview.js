@@ -11,7 +11,8 @@ import Tip from '../commons/Tooltip';
 import StructurePreviewTree from './StructurePreviewTree';
 import { checkboxSlideHTML } from '../commons/CheckboxSlide';
 import notification from '../../utils/notification';
-import addLevelSetup from '../helpers/mutationHelpers/Preview';
+import addLevelSetup, { deleteOfficeStructure } from '../helpers/mutationHelpers/Preview';
+
 
 class Preview extends Component {
   constructor(props) {
@@ -218,13 +219,22 @@ class Preview extends Component {
   };
 
 
-  checkIfParent = id => () => {
-    const { locationStructure, removeLevel } = this.props;
+  checkIfParent = id => async () => {
+    const { locationStructure, removeLevel, getAllStructureIds } = this.props;
     const parentIds = this.listParentIds(locationStructure);
+    const structureId = [];
+    const backendStructureIds = await getAllStructureIds();
+    structureId.push(id);
     if (parentIds.includes(id)) {
       removeLevel(id)();
+      if (backendStructureIds.includes(id)) {
+        await deleteOfficeStructure(structureId);
+      }
     } else {
       removeLevel(id)(1);
+      if (backendStructureIds.includes(id)) {
+        await deleteOfficeStructure(structureId);
+      }
     }
   };
 

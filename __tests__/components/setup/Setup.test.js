@@ -4,6 +4,7 @@ import SetupPage from '../../../src/components/setup/Setup';
 import Spinner from '../../../src/components/commons/Spinner';
 import * as queryHelper from '../../../src/components/helpers/QueriesHelpers';
 import ErrorIcon from '../../../src/components/commons/ErrorIcon';
+import data from '../../../__mocks__/setup/Setup';
 
 
 describe('setup component', () => {
@@ -87,5 +88,11 @@ describe('setup component', () => {
     const stateValue = wrapper.state().user;
     expect(stateValue).toEqual(defaultUser);
     expect(wrapper.contains(<ErrorIcon message="You are not authorized to perform this action" />)).toBe(true);
+  });
+
+  it('should return structure ids when getStructureIds is called', async () => {
+    jest.spyOn(wrapper.instance(), 'getOfficeStructure').mockResolvedValue(data);
+    const response = await wrapper.instance().getAllStructureIds();
+    expect(response).toEqual(['488d2157-4caf-4b56-ab7b-2e1c1da0e8e0']);
   });
 });
