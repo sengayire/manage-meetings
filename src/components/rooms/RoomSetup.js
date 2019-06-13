@@ -204,7 +204,7 @@ class RoomSetup extends Component {
           </div>
         }
         {error ? (
-          <ErrorIcon message="Resource not found" />
+          <ErrorIcon message="No rooms to display" />
         ) : (
             allRooms && (
               <div className="resource-box overlay-container">
@@ -213,7 +213,7 @@ class RoomSetup extends Component {
               </div>
             )
           )}
-        {location && allRooms ? (
+        {location && !error && allRooms ? (
           <Pagination
             perPage={allRooms.rooms.length}
             itemsPerPage={this.getItemsPerPage()}

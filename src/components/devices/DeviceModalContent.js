@@ -63,7 +63,7 @@ const DeviceModalContent = ({
           withCancel
           isLoading={fetching}
           onClickCancel={closeModal}
-          actionButtonText={`${modalContent ? modalContent.toUpperCase() : 'ADD'} DEVICE`}
+          actionButtonText={modalContent && ((modalContent === 'edit' ? 'SAVE CHANGES' : `${modalContent.toUpperCase()} DEVICE`) || 'ADD DEVICE')}
           onClickSubmit={submit}
         />
       </div>
@@ -85,7 +85,7 @@ DeviceModalContent.propTypes = {
     submit: PropTypes.func,
   }).isRequired,
   fetching: PropTypes.bool,
-  modalContent: PropTypes.oneOf([PropTypes.string, PropTypes.bool]),
+  modalContent: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
   rooms: PropTypes.instanceOf(Array).isRequired,
   deviceTypes: PropTypes.instanceOf(Array).isRequired,
 };
