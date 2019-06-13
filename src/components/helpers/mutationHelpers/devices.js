@@ -4,14 +4,14 @@ import { ADD_DEVICE_MUTATION, EDIT_DEVICE_MUTATION } from '../../../graphql/muta
 import { GET_DEVICES_QUERY } from '../../../graphql/queries/Devices';
 
 export const addDeviceMutation = async ({
-  name, roomId, deviceType, location,
+  name, roomId, deviceType,
 }, client = apolloClient) => {
   await client
     .mutate({
       mutation: ADD_DEVICE_MUTATION,
       name: 'addDeviceMutation',
       variables: {
-        name, deviceType, roomId, location,
+        name, deviceType, roomId,
       },
       // write and read from cache
       update: async (proxy, { data: { createDevice } }) => {

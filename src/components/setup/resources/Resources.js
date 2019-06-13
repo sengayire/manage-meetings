@@ -2,7 +2,7 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable  no-unused-expressions */
 import React, { createRef } from 'react';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import '../../../assets/styles/resources.scss';
 import AddResource from './AddResources'; //eslint-disable-line
 import AllocatedResources from '../../resources/AllocatedResources';
@@ -12,9 +12,11 @@ import {
   getAllRemoteRooms,
   getAllResources,
   getUserDetails,
+  getAllRooms,
 } from '../../../../src/components/helpers/QueriesHelpers';
 import DeleteResource from '../../setup/resources/DeleteResource';
 import { EditResource } from '../../setup/resources/EditResource';
+import AssignResourceComponent from '../../setup/resources/AssignResource';
 import ErrorIcon from '../../commons/ErrorIcon';
 
 
@@ -43,8 +45,10 @@ class Resources extends React.Component {
    * @returns {array}
    */
   getAllResources = async (perPage, page) => {
+    const { location } = this.props;
     this.setState({ isFetching: true });
     const allRemoteRooms = await getAllRemoteRooms();
+    const { allRooms: { rooms: locationRooms } } = await getAllRooms(location);
     const user = await getUserDetails();
     try {
       const resourcesData = await getAllResources(perPage, page);
@@ -57,6 +61,7 @@ class Resources extends React.Component {
           isFetching: false,
           dataFetched: true,
           perPage,
+          locationRooms,
         }));
       }
     } catch (e) {
@@ -84,7 +89,7 @@ class Resources extends React.Component {
    *
    * @returns {}
    */
-  handleOnDeleteResource = () => {
+  handleResourceActions = () => {
     const { currentPage, perPage } = this.state;
     this.getAllResources(perPage, currentPage);
   };
@@ -94,7 +99,7 @@ class Resources extends React.Component {
    *
    * @returns {jsx}
    */
-  resourceList = resource => (
+  resourceList = (resource, location) => (
     <div className="resource-list-item" key={resource.id} id={resource.id}>
       <span
         onClick={() => this.handleClickOnResource(resource)}
@@ -103,18 +108,23 @@ class Resources extends React.Component {
         {resource.name}
       </span>
       <span className="resource-list-item-buttons">
-        <button>
-          <EditResource
-            handleOnEditResource={this.handleOnDeleteResource}
-            resourceToEdit={resource}
-          />
-        </button>
+        <AssignResourceComponent
+          getRooms={this.props.getRooms}
+          handleOnAssignResource={this.handleResourceActions}
+          resourceToAssign={resource}
+          location={location}
+          locationRooms={this.state.locationRooms}
+        />
+        <EditResource
+          handleOnEditResource={this.handleResourceActions}
+          resourceToEdit={resource}
+        />
         {this.state.user.roles[0].id === '2' && !resource.roomId && (
           <DeleteResource
             resource={resource}
             currentPage={this.state.currentPage}
             perPage={this.state.perPage}
-            handleOnDeleteResource={this.handleOnDeleteResource}
+            handleOnDeleteResource={this.handleResourceActions}
           />
         )}
       </span>
@@ -133,6 +143,8 @@ class Resources extends React.Component {
       error,
     } = this.state;
 
+    const { location } = this.props;
+
     if (isFetching) {
       return <Spinner />;
     }
@@ -141,19 +153,20 @@ class Resources extends React.Component {
       <div className="setup-container">
         <div className="resource-box">
           <div className="room-setup-header">
-            <p>{this.props.location}&apos;s Resources </p>
+            <p>{location}&apos;s Resources </p>
           </div>
           {/* Add filters in line below. */}
           <div className="room-select-input resource-picker" />
           <div className="add-new-resource">
             <AddResource
-              handleOnAddResource={this.handleOnDeleteResource}
+              handleOnAddResource={this.handleResourceActions}
               availableResources={resourcesData}
             />
           </div>
           <div>
             {resourcesData.resources
-              ? resourcesData.resources.map(resource => this.resourceList(resource))
+              ? resourcesData.resources.map(resource =>
+                this.resourceList(resource, location))
               : error ? <ErrorIcon message="No resource found" />
                 : ''}
           </div>
@@ -181,7 +194,8 @@ class Resources extends React.Component {
 }
 
 Resources.propTypes = {
-  location: propTypes.string.isRequired,
+  getRooms: PropTypes.func.isRequired,
+  location: PropTypes.string.isRequired,
 };
 
 export default Resources;
