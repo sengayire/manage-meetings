@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import toastr from 'toastr';
+import { editIcon } from '../../../utils/images/images';
 import ActionButtons from '../../commons/ActionButtons';
 import MrmModal from '../../commons/Modal';
 import { Input } from '../../commons';
@@ -96,7 +97,7 @@ export class EditResource extends React.Component {
     return (
       <MrmModal
         title="EDIT RESOURCE"
-        buttonText="Edit"
+        buttonText={<img src={editIcon} alt="edit" />}
         closeModal={closeModal}
         handleCloseRequest={this.handleModalStateChange}
         className="add-resource-modal"
@@ -130,9 +131,7 @@ export class EditResource extends React.Component {
 
 EditResource.propTypes = {
   handleOnEditResource: PropTypes.func.isRequired,
-  resourceToEdit: PropTypes.shape({
-    id: PropTypes.string,
-  }).isRequired,
+  resourceToEdit: PropTypes.func.isRequired,
 };
 
 export default EditResource;

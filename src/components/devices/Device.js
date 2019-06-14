@@ -2,7 +2,7 @@ import React from 'react';
 import moment from 'moment';
 import PropTypes from 'prop-types';
 import { IconButtons } from '../commons';
-import { editIcon /* deleteIcon */ } from '../../utils/images/images';
+import { editIcon, deleteIcon } from '../../utils/images/images';
 
 const formatDate = date => moment(date).format('DD MMM YYYY');
 
@@ -34,11 +34,11 @@ const Device = ({
         className="edit-device-button"
         openModal={() => handleAction('edit', device)}
       />
-      {/* <IconButtons
+      <IconButtons
         btnImage={<img src={deleteIcon} alt="delete-icon" />}
         className="delete-device-button"
         openModal={() => handleAction('delete', device)}
-      /> */}
+      />
     </span>
   </div>
 );

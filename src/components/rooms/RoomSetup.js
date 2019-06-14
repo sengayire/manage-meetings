@@ -1,10 +1,10 @@
 import React, { Component, createRef } from 'react';
-import PropTypes from 'prop-types';
 import Room from '../rooms/Rooms';
+import { meetingRoomTabMockData } from '../../utils/roomSetupMock';
 import Pagination from '../../components/commons/Pagination';
 import ErrorIcon from '../commons/ErrorIcon';
 import Overlay from '../commons/Overlay';
-import { getUserDetails } from '../../components/helpers/QueriesHelpers';
+import { getUserDetails, getRoomList } from '../../components/helpers/QueriesHelpers';
 import AddNewRoomComponent, { AddNewRoom as EditRoom } from './AddRoom';
 import LocationFilters from '../navbars/LocationFilters';
 
@@ -18,6 +18,7 @@ import LocationFilters from '../navbars/LocationFilters';
 class RoomSetup extends Component {
   state = {
     location: '',
+    allRooms: {},
     isFetching: false,
     currentPage: 1,
     perPage: 8,
@@ -29,6 +30,7 @@ class RoomSetup extends Component {
 
   componentDidMount = async () => {
     const { perPage, currentPage } = this.state;
+    this.setState({ allRooms: { allRooms: { rooms: meetingRoomTabMockData } } });
     await this.fetchRooms(perPage, currentPage);
   };
   /**
@@ -42,7 +44,7 @@ class RoomSetup extends Component {
     const array = [8, 16, 32];
     const {
       allRooms: { rooms },
-    } = this.props;
+    } = this.state.allRooms;
     /* istanbul ignore next */
     if (array.includes(rooms.length)) {
       return array;
@@ -109,12 +111,13 @@ class RoomSetup extends Component {
     try {
       const user = await getUserDetails();
       const textVariable = Object.values(this.state.filterText);
-      await this.props.getRooms([
+      const { allRooms } = await getRoomList(
         user.location, perPage < 8 ? 8 : perPage, page, textVariable.join(),
-      ]);
+      );
 
       this.setState({
         location: user.location,
+        allRooms: { ...this.state.allRooms, allRooms },
         isFetching: false,
         dataFetched: true,
         currentPage: page,
@@ -133,7 +136,7 @@ class RoomSetup extends Component {
    *
    * @param {object} rooms - An object containing details the rooms fetched from the backend
    */
-  updateRoomData = () => this.props.getRooms();
+  updateRoomData = rooms => rooms && this.setState({ allRooms: rooms });
 
   /**
    * It handles creating of rooms
@@ -143,7 +146,7 @@ class RoomSetup extends Component {
   createRooms = () => {
     const {
       allRooms: { rooms },
-    } = this.props;
+    } = this.state.allRooms;
     const roomsRender =
       rooms &&
       rooms.map(room => (
@@ -156,7 +159,7 @@ class RoomSetup extends Component {
           roomName={room.name}
           roomLabels={room.roomLabels}
           numberOfSeats={room.capacity}
-          resources={room.resources}
+          numberOfResources={7}
           handleClick={this.handleEditRoom}
           updatedRoom={this.updateRoomData}
         />
@@ -175,9 +178,9 @@ class RoomSetup extends Component {
    * @params {object} updateRoom
    */
   render() {
-    const { allRooms } = this.props;
     const {
       isFetching,
+      allRooms: { allRooms },
       currentPage,
       dataFetched,
       location,
@@ -236,12 +239,5 @@ class RoomSetup extends Component {
     );
   }
 }
-
-RoomSetup.propTypes = {
-  getRooms: PropTypes.func.isRequired,
-  allRooms: PropTypes.shape({
-    rooms: PropTypes.instanceOf(Array),
-  }).isRequired,
-};
 
 export default RoomSetup;

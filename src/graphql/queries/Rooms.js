@@ -20,16 +20,6 @@ export const GET_ROOMS_QUERY = gql`
         calendarId
         locationId
         structureId
-        resources {
-          roomId
-          resourceId
-          quantity
-          name
-          resource {
-            id
-            name
-          }
-        }
       }
       pages
       queryTotal
@@ -52,24 +42,14 @@ export const GET_ALL_ROOMS_QUERY = gql`
         id
         name
         capacity
-        resources {
-          roomId
-          resourceId
-          quantity
-          name
-          resource {
-            id
-            name
-          }
-        }
       }
     }
   }
 `;
 
 export const GET_ALL_ROOMS = gql`
-  query rooms($location: String){
-    allRooms(location: $location) {
+  {
+    allRooms {
       rooms {
         id
         name

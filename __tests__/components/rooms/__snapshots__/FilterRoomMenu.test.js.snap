@@ -228,102 +228,6 @@ exports[`FilterButton renders correctly from memory 1`] = `
                                   },
                                   "selectionSet": undefined,
                                 },
-                                Object {
-                                  "alias": undefined,
-                                  "arguments": Array [],
-                                  "directives": Array [],
-                                  "kind": "Field",
-                                  "name": Object {
-                                    "kind": "Name",
-                                    "value": "resources",
-                                  },
-                                  "selectionSet": Object {
-                                    "kind": "SelectionSet",
-                                    "selections": Array [
-                                      Object {
-                                        "alias": undefined,
-                                        "arguments": Array [],
-                                        "directives": Array [],
-                                        "kind": "Field",
-                                        "name": Object {
-                                          "kind": "Name",
-                                          "value": "roomId",
-                                        },
-                                        "selectionSet": undefined,
-                                      },
-                                      Object {
-                                        "alias": undefined,
-                                        "arguments": Array [],
-                                        "directives": Array [],
-                                        "kind": "Field",
-                                        "name": Object {
-                                          "kind": "Name",
-                                          "value": "resourceId",
-                                        },
-                                        "selectionSet": undefined,
-                                      },
-                                      Object {
-                                        "alias": undefined,
-                                        "arguments": Array [],
-                                        "directives": Array [],
-                                        "kind": "Field",
-                                        "name": Object {
-                                          "kind": "Name",
-                                          "value": "quantity",
-                                        },
-                                        "selectionSet": undefined,
-                                      },
-                                      Object {
-                                        "alias": undefined,
-                                        "arguments": Array [],
-                                        "directives": Array [],
-                                        "kind": "Field",
-                                        "name": Object {
-                                          "kind": "Name",
-                                          "value": "name",
-                                        },
-                                        "selectionSet": undefined,
-                                      },
-                                      Object {
-                                        "alias": undefined,
-                                        "arguments": Array [],
-                                        "directives": Array [],
-                                        "kind": "Field",
-                                        "name": Object {
-                                          "kind": "Name",
-                                          "value": "resource",
-                                        },
-                                        "selectionSet": Object {
-                                          "kind": "SelectionSet",
-                                          "selections": Array [
-                                            Object {
-                                              "alias": undefined,
-                                              "arguments": Array [],
-                                              "directives": Array [],
-                                              "kind": "Field",
-                                              "name": Object {
-                                                "kind": "Name",
-                                                "value": "id",
-                                              },
-                                              "selectionSet": undefined,
-                                            },
-                                            Object {
-                                              "alias": undefined,
-                                              "arguments": Array [],
-                                              "directives": Array [],
-                                              "kind": "Field",
-                                              "name": Object {
-                                                "kind": "Name",
-                                                "value": "name",
-                                              },
-                                              "selectionSet": undefined,
-                                            },
-                                          ],
-                                        },
-                                      },
-                                    ],
-                                  },
-                                },
                               ],
                             },
                           },
@@ -502,7 +406,7 @@ exports[`FilterButton renders correctly from memory 1`] = `
             ],
             "kind": "Document",
             "loc": Object {
-              "end": 701,
+              "end": 534,
               "start": 0,
             },
           },
@@ -1207,102 +1111,6 @@ exports[`FilterButton renders correctly from memory 1`] = `
                                     },
                                     "selectionSet": undefined,
                                   },
-                                  Object {
-                                    "alias": undefined,
-                                    "arguments": Array [],
-                                    "directives": Array [],
-                                    "kind": "Field",
-                                    "name": Object {
-                                      "kind": "Name",
-                                      "value": "resources",
-                                    },
-                                    "selectionSet": Object {
-                                      "kind": "SelectionSet",
-                                      "selections": Array [
-                                        Object {
-                                          "alias": undefined,
-                                          "arguments": Array [],
-                                          "directives": Array [],
-                                          "kind": "Field",
-                                          "name": Object {
-                                            "kind": "Name",
-                                            "value": "roomId",
-                                          },
-                                          "selectionSet": undefined,
-                                        },
-                                        Object {
-                                          "alias": undefined,
-                                          "arguments": Array [],
-                                          "directives": Array [],
-                                          "kind": "Field",
-                                          "name": Object {
-                                            "kind": "Name",
-                                            "value": "resourceId",
-                                          },
-                                          "selectionSet": undefined,
-                                        },
-                                        Object {
-                                          "alias": undefined,
-                                          "arguments": Array [],
-                                          "directives": Array [],
-                                          "kind": "Field",
-                                          "name": Object {
-                                            "kind": "Name",
-                                            "value": "quantity",
-                                          },
-                                          "selectionSet": undefined,
-                                        },
-                                        Object {
-                                          "alias": undefined,
-                                          "arguments": Array [],
-                                          "directives": Array [],
-                                          "kind": "Field",
-                                          "name": Object {
-                                            "kind": "Name",
-                                            "value": "name",
-                                          },
-                                          "selectionSet": undefined,
-                                        },
-                                        Object {
-                                          "alias": undefined,
-                                          "arguments": Array [],
-                                          "directives": Array [],
-                                          "kind": "Field",
-                                          "name": Object {
-                                            "kind": "Name",
-                                            "value": "resource",
-                                          },
-                                          "selectionSet": Object {
-                                            "kind": "SelectionSet",
-                                            "selections": Array [
-                                              Object {
-                                                "alias": undefined,
-                                                "arguments": Array [],
-                                                "directives": Array [],
-                                                "kind": "Field",
-                                                "name": Object {
-                                                  "kind": "Name",
-                                                  "value": "id",
-                                                },
-                                                "selectionSet": undefined,
-                                              },
-                                              Object {
-                                                "alias": undefined,
-                                                "arguments": Array [],
-                                                "directives": Array [],
-                                                "kind": "Field",
-                                                "name": Object {
-                                                  "kind": "Name",
-                                                  "value": "name",
-                                                },
-                                                "selectionSet": undefined,
-                                              },
-                                            ],
-                                          },
-                                        },
-                                      ],
-                                    },
-                                  },
                                 ],
                               },
                             },
@@ -1481,7 +1289,7 @@ exports[`FilterButton renders correctly from memory 1`] = `
               ],
               "kind": "Document",
               "loc": Object {
-                "end": 701,
+                "end": 534,
                 "start": 0,
               },
             },
@@ -2337,102 +2145,6 @@ exports[`FilterButton renders correctly from memory 1`] = `
                                       },
                                       "selectionSet": undefined,
                                     },
-                                    Object {
-                                      "alias": undefined,
-                                      "arguments": Array [],
-                                      "directives": Array [],
-                                      "kind": "Field",
-                                      "name": Object {
-                                        "kind": "Name",
-                                        "value": "resources",
-                                      },
-                                      "selectionSet": Object {
-                                        "kind": "SelectionSet",
-                                        "selections": Array [
-                                          Object {
-                                            "alias": undefined,
-                                            "arguments": Array [],
-                                            "directives": Array [],
-                                            "kind": "Field",
-                                            "name": Object {
-                                              "kind": "Name",
-                                              "value": "roomId",
-                                            },
-                                            "selectionSet": undefined,
-                                          },
-                                          Object {
-                                            "alias": undefined,
-                                            "arguments": Array [],
-                                            "directives": Array [],
-                                            "kind": "Field",
-                                            "name": Object {
-                                              "kind": "Name",
-                                              "value": "resourceId",
-                                            },
-                                            "selectionSet": undefined,
-                                          },
-                                          Object {
-                                            "alias": undefined,
-                                            "arguments": Array [],
-                                            "directives": Array [],
-                                            "kind": "Field",
-                                            "name": Object {
-                                              "kind": "Name",
-                                              "value": "quantity",
-                                            },
-                                            "selectionSet": undefined,
-                                          },
-                                          Object {
-                                            "alias": undefined,
-                                            "arguments": Array [],
-                                            "directives": Array [],
-                                            "kind": "Field",
-                                            "name": Object {
-                                              "kind": "Name",
-                                              "value": "name",
-                                            },
-                                            "selectionSet": undefined,
-                                          },
-                                          Object {
-                                            "alias": undefined,
-                                            "arguments": Array [],
-                                            "directives": Array [],
-                                            "kind": "Field",
-                                            "name": Object {
-                                              "kind": "Name",
-                                              "value": "resource",
-                                            },
-                                            "selectionSet": Object {
-                                              "kind": "SelectionSet",
-                                              "selections": Array [
-                                                Object {
-                                                  "alias": undefined,
-                                                  "arguments": Array [],
-                                                  "directives": Array [],
-                                                  "kind": "Field",
-                                                  "name": Object {
-                                                    "kind": "Name",
-                                                    "value": "id",
-                                                  },
-                                                  "selectionSet": undefined,
-                                                },
-                                                Object {
-                                                  "alias": undefined,
-                                                  "arguments": Array [],
-                                                  "directives": Array [],
-                                                  "kind": "Field",
-                                                  "name": Object {
-                                                    "kind": "Name",
-                                                    "value": "name",
-                                                  },
-                                                  "selectionSet": undefined,
-                                                },
-                                              ],
-                                            },
-                                          },
-                                        ],
-                                      },
-                                    },
                                   ],
                                 },
                               },
@@ -2611,7 +2323,7 @@ exports[`FilterButton renders correctly from memory 1`] = `
                 ],
                 "kind": "Document",
                 "loc": Object {
-                  "end": 701,
+                  "end": 534,
                   "start": 0,
                 },
               },
@@ -3179,102 +2891,6 @@ exports[`FilterButton renders correctly from memory 1`] = `
                                           },
                                           "selectionSet": undefined,
                                         },
-                                        Object {
-                                          "alias": undefined,
-                                          "arguments": Array [],
-                                          "directives": Array [],
-                                          "kind": "Field",
-                                          "name": Object {
-                                            "kind": "Name",
-                                            "value": "resources",
-                                          },
-                                          "selectionSet": Object {
-                                            "kind": "SelectionSet",
-                                            "selections": Array [
-                                              Object {
-                                                "alias": undefined,
-                                                "arguments": Array [],
-                                                "directives": Array [],
-                                                "kind": "Field",
-                                                "name": Object {
-                                                  "kind": "Name",
-                                                  "value": "roomId",
-                                                },
-                                                "selectionSet": undefined,
-                                              },
-                                              Object {
-                                                "alias": undefined,
-                                                "arguments": Array [],
-                                                "directives": Array [],
-                                                "kind": "Field",
-                                                "name": Object {
-                                                  "kind": "Name",
-                                                  "value": "resourceId",
-                                                },
-                                                "selectionSet": undefined,
-                                              },
-                                              Object {
-                                                "alias": undefined,
-                                                "arguments": Array [],
-                                                "directives": Array [],
-                                                "kind": "Field",
-                                                "name": Object {
-                                                  "kind": "Name",
-                                                  "value": "quantity",
-                                                },
-                                                "selectionSet": undefined,
-                                              },
-                                              Object {
-                                                "alias": undefined,
-                                                "arguments": Array [],
-                                                "directives": Array [],
-                                                "kind": "Field",
-                                                "name": Object {
-                                                  "kind": "Name",
-                                                  "value": "name",
-                                                },
-                                                "selectionSet": undefined,
-                                              },
-                                              Object {
-                                                "alias": undefined,
-                                                "arguments": Array [],
-                                                "directives": Array [],
-                                                "kind": "Field",
-                                                "name": Object {
-                                                  "kind": "Name",
-                                                  "value": "resource",
-                                                },
-                                                "selectionSet": Object {
-                                                  "kind": "SelectionSet",
-                                                  "selections": Array [
-                                                    Object {
-                                                      "alias": undefined,
-                                                      "arguments": Array [],
-                                                      "directives": Array [],
-                                                      "kind": "Field",
-                                                      "name": Object {
-                                                        "kind": "Name",
-                                                        "value": "id",
-                                                      },
-                                                      "selectionSet": undefined,
-                                                    },
-                                                    Object {
-                                                      "alias": undefined,
-                                                      "arguments": Array [],
-                                                      "directives": Array [],
-                                                      "kind": "Field",
-                                                      "name": Object {
-                                                        "kind": "Name",
-                                                        "value": "name",
-                                                      },
-                                                      "selectionSet": undefined,
-                                                    },
-                                                  ],
-                                                },
-                                              },
-                                            ],
-                                          },
-                                        },
                                       ],
                                     },
                                   },
@@ -3453,7 +3069,7 @@ exports[`FilterButton renders correctly from memory 1`] = `
                     ],
                     "kind": "Document",
                     "loc": Object {
-                      "end": 701,
+                      "end": 534,
                       "start": 0,
                     },
                   },
@@ -4417,102 +4033,6 @@ exports[`FilterButton renders correctly from memory 1`] = `
                                       },
                                       "selectionSet": undefined,
                                     },
-                                    Object {
-                                      "alias": undefined,
-                                      "arguments": Array [],
-                                      "directives": Array [],
-                                      "kind": "Field",
-                                      "name": Object {
-                                        "kind": "Name",
-                                        "value": "resources",
-                                      },
-                                      "selectionSet": Object {
-                                        "kind": "SelectionSet",
-                                        "selections": Array [
-                                          Object {
-                                            "alias": undefined,
-                                            "arguments": Array [],
-                                            "directives": Array [],
-                                            "kind": "Field",
-                                            "name": Object {
-                                              "kind": "Name",
-                                              "value": "roomId",
-                                            },
-                                            "selectionSet": undefined,
-                                          },
-                                          Object {
-                                            "alias": undefined,
-                                            "arguments": Array [],
-                                            "directives": Array [],
-                                            "kind": "Field",
-                                            "name": Object {
-                                              "kind": "Name",
-                                              "value": "resourceId",
-                                            },
-                                            "selectionSet": undefined,
-                                          },
-                                          Object {
-                                            "alias": undefined,
-                                            "arguments": Array [],
-                                            "directives": Array [],
-                                            "kind": "Field",
-                                            "name": Object {
-                                              "kind": "Name",
-                                              "value": "quantity",
-                                            },
-                                            "selectionSet": undefined,
-                                          },
-                                          Object {
-                                            "alias": undefined,
-                                            "arguments": Array [],
-                                            "directives": Array [],
-                                            "kind": "Field",
-                                            "name": Object {
-                                              "kind": "Name",
-                                              "value": "name",
-                                            },
-                                            "selectionSet": undefined,
-                                          },
-                                          Object {
-                                            "alias": undefined,
-                                            "arguments": Array [],
-                                            "directives": Array [],
-                                            "kind": "Field",
-                                            "name": Object {
-                                              "kind": "Name",
-                                              "value": "resource",
-                                            },
-                                            "selectionSet": Object {
-                                              "kind": "SelectionSet",
-                                              "selections": Array [
-                                                Object {
-                                                  "alias": undefined,
-                                                  "arguments": Array [],
-                                                  "directives": Array [],
-                                                  "kind": "Field",
-                                                  "name": Object {
-                                                    "kind": "Name",
-                                                    "value": "id",
-                                                  },
-                                                  "selectionSet": undefined,
-                                                },
-                                                Object {
-                                                  "alias": undefined,
-                                                  "arguments": Array [],
-                                                  "directives": Array [],
-                                                  "kind": "Field",
-                                                  "name": Object {
-                                                    "kind": "Name",
-                                                    "value": "name",
-                                                  },
-                                                  "selectionSet": undefined,
-                                                },
-                                              ],
-                                            },
-                                          },
-                                        ],
-                                      },
-                                    },
                                   ],
                                 },
                               },
@@ -4691,7 +4211,7 @@ exports[`FilterButton renders correctly from memory 1`] = `
                 ],
                 "kind": "Document",
                 "loc": Object {
-                  "end": 701,
+                  "end": 534,
                   "start": 0,
                 },
               },
@@ -4948,102 +4468,6 @@ exports[`FilterButton renders correctly from memory 1`] = `
                                           },
                                           "selectionSet": undefined,
                                         },
-                                        Object {
-                                          "alias": undefined,
-                                          "arguments": Array [],
-                                          "directives": Array [],
-                                          "kind": "Field",
-                                          "name": Object {
-                                            "kind": "Name",
-                                            "value": "resources",
-                                          },
-                                          "selectionSet": Object {
-                                            "kind": "SelectionSet",
-                                            "selections": Array [
-                                              Object {
-                                                "alias": undefined,
-                                                "arguments": Array [],
-                                                "directives": Array [],
-                                                "kind": "Field",
-                                                "name": Object {
-                                                  "kind": "Name",
-                                                  "value": "roomId",
-                                                },
-                                                "selectionSet": undefined,
-                                              },
-                                              Object {
-                                                "alias": undefined,
-                                                "arguments": Array [],
-                                                "directives": Array [],
-                                                "kind": "Field",
-                                                "name": Object {
-                                                  "kind": "Name",
-                                                  "value": "resourceId",
-                                                },
-                                                "selectionSet": undefined,
-                                              },
-                                              Object {
-                                                "alias": undefined,
-                                                "arguments": Array [],
-                                                "directives": Array [],
-                                                "kind": "Field",
-                                                "name": Object {
-                                                  "kind": "Name",
-                                                  "value": "quantity",
-                                                },
-                                                "selectionSet": undefined,
-                                              },
-                                              Object {
-                                                "alias": undefined,
-                                                "arguments": Array [],
-                                                "directives": Array [],
-                                                "kind": "Field",
-                                                "name": Object {
-                                                  "kind": "Name",
-                                                  "value": "name",
-                                                },
-                                                "selectionSet": undefined,
-                                              },
-                                              Object {
-                                                "alias": undefined,
-                                                "arguments": Array [],
-                                                "directives": Array [],
-                                                "kind": "Field",
-                                                "name": Object {
-                                                  "kind": "Name",
-                                                  "value": "resource",
-                                                },
-                                                "selectionSet": Object {
-                                                  "kind": "SelectionSet",
-                                                  "selections": Array [
-                                                    Object {
-                                                      "alias": undefined,
-                                                      "arguments": Array [],
-                                                      "directives": Array [],
-                                                      "kind": "Field",
-                                                      "name": Object {
-                                                        "kind": "Name",
-                                                        "value": "id",
-                                                      },
-                                                      "selectionSet": undefined,
-                                                    },
-                                                    Object {
-                                                      "alias": undefined,
-                                                      "arguments": Array [],
-                                                      "directives": Array [],
-                                                      "kind": "Field",
-                                                      "name": Object {
-                                                        "kind": "Name",
-                                                        "value": "name",
-                                                      },
-                                                      "selectionSet": undefined,
-                                                    },
-                                                  ],
-                                                },
-                                              },
-                                            ],
-                                          },
-                                        },
                                       ],
                                     },
                                   },
@@ -5222,7 +4646,7 @@ exports[`FilterButton renders correctly from memory 1`] = `
                     ],
                     "kind": "Document",
                     "loc": Object {
-                      "end": 701,
+                      "end": 534,
                       "start": 0,
                     },
                   },
@@ -5493,102 +4917,6 @@ exports[`FilterButton renders correctly from memory 1`] = `
                                         },
                                         "selectionSet": undefined,
                                       },
-                                      Object {
-                                        "alias": undefined,
-                                        "arguments": Array [],
-                                        "directives": Array [],
-                                        "kind": "Field",
-                                        "name": Object {
-                                          "kind": "Name",
-                                          "value": "resources",
-                                        },
-                                        "selectionSet": Object {
-                                          "kind": "SelectionSet",
-                                          "selections": Array [
-                                            Object {
-                                              "alias": undefined,
-                                              "arguments": Array [],
-                                              "directives": Array [],
-                                              "kind": "Field",
-                                              "name": Object {
-                                                "kind": "Name",
-                                                "value": "roomId",
-                                              },
-                                              "selectionSet": undefined,
-                                            },
-                                            Object {
-                                              "alias": undefined,
-                                              "arguments": Array [],
-                                              "directives": Array [],
-                                              "kind": "Field",
-                                              "name": Object {
-                                                "kind": "Name",
-                                                "value": "resourceId",
-                                              },
-                                              "selectionSet": undefined,
-                                            },
-                                            Object {
-                                              "alias": undefined,
-                                              "arguments": Array [],
-                                              "directives": Array [],
-                                              "kind": "Field",
-                                              "name": Object {
-                                                "kind": "Name",
-                                                "value": "quantity",
-                                              },
-                                              "selectionSet": undefined,
-                                            },
-                                            Object {
-                                              "alias": undefined,
-                                              "arguments": Array [],
-                                              "directives": Array [],
-                                              "kind": "Field",
-                                              "name": Object {
-                                                "kind": "Name",
-                                                "value": "name",
-                                              },
-                                              "selectionSet": undefined,
-                                            },
-                                            Object {
-                                              "alias": undefined,
-                                              "arguments": Array [],
-                                              "directives": Array [],
-                                              "kind": "Field",
-                                              "name": Object {
-                                                "kind": "Name",
-                                                "value": "resource",
-                                              },
-                                              "selectionSet": Object {
-                                                "kind": "SelectionSet",
-                                                "selections": Array [
-                                                  Object {
-                                                    "alias": undefined,
-                                                    "arguments": Array [],
-                                                    "directives": Array [],
-                                                    "kind": "Field",
-                                                    "name": Object {
-                                                      "kind": "Name",
-                                                      "value": "id",
-                                                    },
-                                                    "selectionSet": undefined,
-                                                  },
-                                                  Object {
-                                                    "alias": undefined,
-                                                    "arguments": Array [],
-                                                    "directives": Array [],
-                                                    "kind": "Field",
-                                                    "name": Object {
-                                                      "kind": "Name",
-                                                      "value": "name",
-                                                    },
-                                                    "selectionSet": undefined,
-                                                  },
-                                                ],
-                                              },
-                                            },
-                                          ],
-                                        },
-                                      },
                                     ],
                                   },
                                 },
@@ -5767,7 +5095,7 @@ exports[`FilterButton renders correctly from memory 1`] = `
                   ],
                   "kind": "Document",
                   "loc": Object {
-                    "end": 701,
+                    "end": 534,
                     "start": 0,
                   },
                 },
@@ -6665,102 +5993,6 @@ exports[`FilterButton renders correctly from memory 1`] = `
                                         },
                                         "selectionSet": undefined,
                                       },
-                                      Object {
-                                        "alias": undefined,
-                                        "arguments": Array [],
-                                        "directives": Array [],
-                                        "kind": "Field",
-                                        "name": Object {
-                                          "kind": "Name",
-                                          "value": "resources",
-                                        },
-                                        "selectionSet": Object {
-                                          "kind": "SelectionSet",
-                                          "selections": Array [
-                                            Object {
-                                              "alias": undefined,
-                                              "arguments": Array [],
-                                              "directives": Array [],
-                                              "kind": "Field",
-                                              "name": Object {
-                                                "kind": "Name",
-                                                "value": "roomId",
-                                              },
-                                              "selectionSet": undefined,
-                                            },
-                                            Object {
-                                              "alias": undefined,
-                                              "arguments": Array [],
-                                              "directives": Array [],
-                                              "kind": "Field",
-                                              "name": Object {
-                                                "kind": "Name",
-                                                "value": "resourceId",
-                                              },
-                                              "selectionSet": undefined,
-                                            },
-                                            Object {
-                                              "alias": undefined,
-                                              "arguments": Array [],
-                                              "directives": Array [],
-                                              "kind": "Field",
-                                              "name": Object {
-                                                "kind": "Name",
-                                                "value": "quantity",
-                                              },
-                                              "selectionSet": undefined,
-                                            },
-                                            Object {
-                                              "alias": undefined,
-                                              "arguments": Array [],
-                                              "directives": Array [],
-                                              "kind": "Field",
-                                              "name": Object {
-                                                "kind": "Name",
-                                                "value": "name",
-                                              },
-                                              "selectionSet": undefined,
-                                            },
-                                            Object {
-                                              "alias": undefined,
-                                              "arguments": Array [],
-                                              "directives": Array [],
-                                              "kind": "Field",
-                                              "name": Object {
-                                                "kind": "Name",
-                                                "value": "resource",
-                                              },
-                                              "selectionSet": Object {
-                                                "kind": "SelectionSet",
-                                                "selections": Array [
-                                                  Object {
-                                                    "alias": undefined,
-                                                    "arguments": Array [],
-                                                    "directives": Array [],
-                                                    "kind": "Field",
-                                                    "name": Object {
-                                                      "kind": "Name",
-                                                      "value": "id",
-                                                    },
-                                                    "selectionSet": undefined,
-                                                  },
-                                                  Object {
-                                                    "alias": undefined,
-                                                    "arguments": Array [],
-                                                    "directives": Array [],
-                                                    "kind": "Field",
-                                                    "name": Object {
-                                                      "kind": "Name",
-                                                      "value": "name",
-                                                    },
-                                                    "selectionSet": undefined,
-                                                  },
-                                                ],
-                                              },
-                                            },
-                                          ],
-                                        },
-                                      },
                                     ],
                                   },
                                 },
@@ -6939,7 +6171,7 @@ exports[`FilterButton renders correctly from memory 1`] = `
                   ],
                   "kind": "Document",
                   "loc": Object {
-                    "end": 701,
+                    "end": 534,
                     "start": 0,
                   },
                 },
@@ -7213,102 +6445,6 @@ exports[`FilterButton renders correctly from memory 1`] = `
                                   },
                                   "selectionSet": undefined,
                                 },
-                                Object {
-                                  "alias": undefined,
-                                  "arguments": Array [],
-                                  "directives": Array [],
-                                  "kind": "Field",
-                                  "name": Object {
-                                    "kind": "Name",
-                                    "value": "resources",
-                                  },
-                                  "selectionSet": Object {
-                                    "kind": "SelectionSet",
-                                    "selections": Array [
-                                      Object {
-                                        "alias": undefined,
-                                        "arguments": Array [],
-                                        "directives": Array [],
-                                        "kind": "Field",
-                                        "name": Object {
-                                          "kind": "Name",
-                                          "value": "roomId",
-                                        },
-                                        "selectionSet": undefined,
-                                      },
-                                      Object {
-                                        "alias": undefined,
-                                        "arguments": Array [],
-                                        "directives": Array [],
-                                        "kind": "Field",
-                                        "name": Object {
-                                          "kind": "Name",
-                                          "value": "resourceId",
-                                        },
-                                        "selectionSet": undefined,
-                                      },
-                                      Object {
-                                        "alias": undefined,
-                                        "arguments": Array [],
-                                        "directives": Array [],
-                                        "kind": "Field",
-                                        "name": Object {
-                                          "kind": "Name",
-                                          "value": "quantity",
-                                        },
-                                        "selectionSet": undefined,
-                                      },
-                                      Object {
-                                        "alias": undefined,
-                                        "arguments": Array [],
-                                        "directives": Array [],
-                                        "kind": "Field",
-                                        "name": Object {
-                                          "kind": "Name",
-                                          "value": "name",
-                                        },
-                                        "selectionSet": undefined,
-                                      },
-                                      Object {
-                                        "alias": undefined,
-                                        "arguments": Array [],
-                                        "directives": Array [],
-                                        "kind": "Field",
-                                        "name": Object {
-                                          "kind": "Name",
-                                          "value": "resource",
-                                        },
-                                        "selectionSet": Object {
-                                          "kind": "SelectionSet",
-                                          "selections": Array [
-                                            Object {
-                                              "alias": undefined,
-                                              "arguments": Array [],
-                                              "directives": Array [],
-                                              "kind": "Field",
-                                              "name": Object {
-                                                "kind": "Name",
-                                                "value": "id",
-                                              },
-                                              "selectionSet": undefined,
-                                            },
-                                            Object {
-                                              "alias": undefined,
-                                              "arguments": Array [],
-                                              "directives": Array [],
-                                              "kind": "Field",
-                                              "name": Object {
-                                                "kind": "Name",
-                                                "value": "name",
-                                              },
-                                              "selectionSet": undefined,
-                                            },
-                                          ],
-                                        },
-                                      },
-                                    ],
-                                  },
-                                },
                               ],
                             },
                           },
@@ -7487,7 +6623,7 @@ exports[`FilterButton renders correctly from memory 1`] = `
             ],
             "kind": "Document",
             "loc": Object {
-              "end": 701,
+              "end": 534,
               "start": 0,
             },
           }

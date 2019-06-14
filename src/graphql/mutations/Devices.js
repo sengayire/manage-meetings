@@ -1,8 +1,8 @@
 import gql from 'graphql-tag';
 
 export const ADD_DEVICE_MUTATION = gql`
-mutation CreateDevice($name: String! $roomId: Int! $deviceType: String!) {
-    createDevice(name: $name roomId: $roomId deviceType: $deviceType) {
+mutation CreateDevice($name: String! $roomId: Int! $deviceType: String! $location: String) {
+    createDevice(name: $name roomId: $roomId deviceType: $deviceType location: $location) {
     device {
       id
       name
