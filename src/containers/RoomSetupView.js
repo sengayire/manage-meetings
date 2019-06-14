@@ -11,7 +11,6 @@ import {
   getUserDetails,
   getAllLocations,
   getRoomsStructure,
-  getRoomList,
 } from '../components/helpers/QueriesHelpers';
 
 /* Styles */
@@ -19,13 +18,11 @@ import '../assets/styles/roomSetup.scss';
 import StructurePreviewTree from '../components/setup/StructurePreviewTree';
 import { orderByLevel } from '../utils/formatSetupData';
 import stripTypenames from '../components/helpers/StripTypeNames';
-import { meetingRoomTabMockData } from '../utils/roomSetupMock';
 
 class RoomSetupOverView extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      allRooms: { rooms: meetingRoomTabMockData },
       currentNavItem: 'meeting-rooms',
       locationId: '',
       previewDataFromBackend: [],
@@ -56,17 +53,13 @@ class RoomSetupOverView extends Component {
     });
   }
 
-  getRooms = async (args = [this.state.location, 8, 1, '']) => {
-    const { allRooms } = await getRoomList(...args);
-    this.setState({ allRooms });
-  }
+  handleInputChange = () => { };
 
   updateStructure = (data) => {
     this.setState({
       previewDataFromBackend: data,
     });
   }
-  handleInputChange = () => { };
 
   /**
    * It handles  item selected fucntion
@@ -101,7 +94,6 @@ class RoomSetupOverView extends Component {
     const {
       props: { handleClick },
       state: {
-        allRooms,
         currentNavItem,
         previewDataFromBackend,
         locationId,
@@ -110,7 +102,7 @@ class RoomSetupOverView extends Component {
     } = this;
     switch (currentNavItem) {
       case 'resources':
-        return <Resources location={location} getRooms={this.getRooms} />;
+        return <Resources location={location} />;
       /* istanbul ignore next */
       case 'people':
         return <PeopleList locationId={locationId} location={location} />;
@@ -123,7 +115,7 @@ class RoomSetupOverView extends Component {
           updateStructure={this.updateStructure}
         />);
       default:
-        return <RoomSetup getRooms={this.getRooms} allRooms={allRooms} />;
+        return <RoomSetup />;
     }
   };
 

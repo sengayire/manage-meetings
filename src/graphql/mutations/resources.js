@@ -25,25 +25,4 @@ export const DELETE_RESOURCE_MUTATION = gql`
   }
 `;
 
-export const ASSIGN_RESOURCE_MUTATION = gql`
-  mutation assignResource(
-    $resourceId: Int!
-    $quantity: Int!
-    $roomId: Int!
-  ) {
-    assignResource(resourceId: $resourceId, quantity: $quantity, roomId: $roomId) {
-      roomResource {
-        roomId
-        resourceId
-        quantity
-        name
-        resource {
-          id
-          name
-        }
-      }
-    }
-  }
-`;
-
 export { EDIT_RESOURCE_MUTATION as default };

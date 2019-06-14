@@ -6,7 +6,7 @@ import {
   GET_ALL_REMOTE_ROOMS,
   GET_REMOTE_ROOMS_ALL_LOCATIONS,
 } from '../../graphql/queries/Rooms';
-import { GET_RESOURCES_QUERY, GET_ROOM_RESOURCES } from '../../graphql/queries/Resources';
+import { GET_RESOURCES_QUERY } from '../../graphql/queries/Resources';
 import ALL_ANALYTICS, { ANALYTICS_FOR_DAILY_ROOM_EVENTS } from '../../graphql/queries/analytics';
 import { decodeTokenAndGetUserData } from '../../utils/Cookie';
 import apolloClient from '../../utils/ApolloClient';
@@ -59,31 +59,17 @@ const getAllLocations = async (client = apolloClient) => {
 };
 
 const getRoomList = async (userLocation, perPage, page, textVariable, client = apolloClient) => {
-  try {
-    const data = await client.readQuery({
-      query: GET_ROOMS_QUERY,
-      variables: {
-        location: userLocation,
-        office: '',
-        page,
-        perPage,
-        roomLabels: textVariable,
-      },
-    });
-    return data;
-  } catch (error) {
-    const { data } = await client.query({
-      query: GET_ROOMS_QUERY,
-      variables: {
-        location: userLocation,
-        office: '',
-        page,
-        perPage,
-        roomLabels: textVariable,
-      },
-    });
-    return data;
-  }
+  const { data } = await client.query({
+    query: GET_ROOMS_QUERY,
+    variables: {
+      location: userLocation,
+      office: '',
+      page,
+      perPage,
+      roomLabels: textVariable,
+    },
+  });
+  return data;
 };
 
 const getAllResources = async (perPage, page, client = apolloClient) => {
@@ -108,29 +94,6 @@ const getAllResources = async (perPage, page, client = apolloClient) => {
       },
     });
     return data.allResources;
-  }
-};
-
-const getRoomResources = async (roomId, client = apolloClient) => {
-  try {
-    const data = client.readQuery(
-      {
-        query: GET_ROOM_RESOURCES,
-        variables: {
-          roomId,
-        },
-      },
-      true,
-    );
-    return data.roomResources;
-  } catch (error) {
-    const { data } = await client.query({
-      query: GET_ROOM_RESOURCES,
-      variables: {
-        roomId,
-      },
-    });
-    return data.roomResources;
   }
 };
 
@@ -267,7 +230,6 @@ const getAllDevices = async (client = apolloClient) => {
 };
 
 export {
-  getRoomResources,
   getAnalyticForDailyRoomsEvents,
   getAllAnalytics,
   getAllRooms,

@@ -55,7 +55,6 @@ const meetingRoomTabMockData = [
     name: 'Room 1',
     roomLabels: ['Label 1', 'Label 2', 'Label 3'],
     roomType: 'Room type',
-    resources: [],
     'Symbol(id)': 'Room:6',
   },
   {
@@ -65,7 +64,6 @@ const meetingRoomTabMockData = [
     name: 'Room 2',
     roomLabels: ['Label 1', 'Label 2', 'Label 3'],
     roomType: 'Room type',
-    resources: [],
     'Symbol(id)': 'Room:6',
   },
   {
@@ -75,7 +73,6 @@ const meetingRoomTabMockData = [
     name: 'Room 3',
     roomLabels: ['Label 1', 'Label 2', 'Label 3'],
     roomType: 'Room type',
-    resources: [],
     'Symbol(id)': 'Room:6',
   },
   {
@@ -85,7 +82,6 @@ const meetingRoomTabMockData = [
     name: 'Room 4',
     roomLabels: ['Label 1', 'Label 2', 'Label 3'],
     roomType: 'Room type',
-    resources: [],
     'Symbol(id)': 'Room:6',
   },
   {
@@ -95,7 +91,6 @@ const meetingRoomTabMockData = [
     name: 'Room 5',
     roomLabels: ['Label 1', 'Label 2', 'Label 3'],
     roomType: 'Room type',
-    resources: [],
     'Symbol(id)': 'Room:6',
   },
   {
@@ -105,7 +100,6 @@ const meetingRoomTabMockData = [
     name: 'Room 6',
     roomLabels: ['Label 1', 'Label 2', 'Label 3'],
     roomType: 'Room type',
-    resources: [],
     'Symbol(id)': 'Room:6',
   },
   {
@@ -115,7 +109,6 @@ const meetingRoomTabMockData = [
     name: 'Room 7',
     roomLabels: ['Label 1', 'Label 2', 'Label 3'],
     roomType: 'Room type',
-    resources: [],
     'Symbol(id)': 'Room:6',
   },
   {
@@ -125,7 +118,6 @@ const meetingRoomTabMockData = [
     name: 'Room 8',
     roomLabels: ['Label 1', 'Label 2', 'Label 3'],
     roomType: 'Room type',
-    resources: [],
     'Symbol(id)': 'Room:6',
   },
 ];

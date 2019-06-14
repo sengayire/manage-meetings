@@ -23,9 +23,9 @@ describe('Device Component', () => {
     expect(handleAction).toHaveBeenLastCalledWith('edit', deviceData);
   });
 
-  // it('calls functions for delete', () => {
-  //   wrapper.find('IconButtons').at(1).dive().find('button')
-  //     .simulate('click');
-  //   expect(handleAction).toHaveBeenLastCalledWith('delete', deviceData);
-  // });
+  it('calls functions for delete', () => {
+    wrapper.find('IconButtons').at(1).dive().find('button')
+      .simulate('click');
+    expect(handleAction).toHaveBeenLastCalledWith('delete', deviceData);
+  });
 });

@@ -3,10 +3,9 @@
 /* eslint-disable consistent-return */
 /* eslint-disable array-callback-return */
 import apolloClient from '../../../utils/ApolloClient';
-import { DELETE_RESOURCE_MUTATION, EDIT_RESOURCE_MUTATION, ASSIGN_RESOURCE_MUTATION } from '../../../graphql/mutations/resources';
+import { DELETE_RESOURCE_MUTATION, EDIT_RESOURCE_MUTATION } from '../../../graphql/mutations/resources';
 import { GET_RESOURCES_QUERY } from '../../../graphql/queries/Resources';
 import { ADD_RESOURCE_MUTATION } from '../../../graphql/mutations/AddResourceToRoom';
-import { GET_ROOMS_QUERY } from '../../../graphql/queries/Rooms';
 
 const updateStore = (data, deleteResource) =>
   data.allResources.resources.filter((resource) => {
@@ -60,7 +59,7 @@ const addResourceMutation = async (name, client = apolloClient) => {
   await client
     .mutate({
       mutation: ADD_RESOURCE_MUTATION,
-      name: 'addResourceMutation',
+      name: addResourceMutation,
       variables: { name },
       // write and read from cache
       update: async (proxy, { data: { createResource } }) => {
@@ -90,7 +89,7 @@ const editResourceMutation = async (resourceId, name, client = apolloClient) => 
   await client
     .mutate({
       mutation: EDIT_RESOURCE_MUTATION,
-      name: 'editResourceMutation',
+      name: editResourceMutation,
       variables: { resourceId, name },
 
       update: async (proxy, { data: { updateRoomResource } }) => {
@@ -113,49 +112,4 @@ const editResourceMutation = async (resourceId, name, client = apolloClient) => 
       },
     });
 };
-
-export const assignResourceMutation = async ({
-  resourceId, roomId, quantity, location,
-}, client = apolloClient,
-) => {
-  await client
-    .mutate({
-      mutation: ASSIGN_RESOURCE_MUTATION,
-      name: 'assignResourceMutation',
-      variables: { resourceId, roomId, quantity },
-
-      update: async (proxy, { data: { assignResource: { roomResource } } }) => {
-        const cachedRooms = proxy.readQuery({
-          query: GET_ROOMS_QUERY,
-          variables: {
-            location,
-            office: '',
-            page: 1,
-            perPage: 8,
-            roomLabels: '',
-          },
-        });
-
-        const target = cachedRooms.allRooms.rooms.findIndex(({ id }) => id === roomId);
-
-        const resourceList = cachedRooms.allRooms.rooms[target].resources;
-
-        cachedRooms.allRooms.rooms[target].resources = [...resourceList, roomResource];
-
-
-        proxy.writeQuery({
-          query: GET_ROOMS_QUERY,
-          variables: {
-            location,
-            office: '',
-            page: 1,
-            perPage: 8,
-            roomLabels: '',
-          },
-          data: cachedRooms,
-        });
-      },
-    });
-};
-
 export { deleteResources, updateStore, addResourceMutation, editResourceMutation };

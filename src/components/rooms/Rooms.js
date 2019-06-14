@@ -2,7 +2,7 @@
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable react/forbid-prop-types */
-import React, { Component, createRef, Fragment } from 'react';
+import React, { Component, createRef } from 'react';
 import PropTypes from 'prop-types';
 import toastr from 'toastr';
 import ImageLoader from '../commons/ImageLoader';
@@ -11,7 +11,6 @@ import MrmModal from '../commons/MrmModal';
 import '../../assets/styles/rooms.scss';
 import { deleteRoom } from '../helpers/mutationHelpers/rooms';
 import notification from '../../utils/notification';
-import ResourceCard from './ResourceCard';
 
 class Room extends Component {
   state = {
@@ -65,18 +64,6 @@ class Room extends Component {
     });
   };
 
-
-  detailsView = () => {
-    const { state: { showDetails }, props: { resources } } = this;
-    if (showDetails === 'resources') {
-      return <ResourceCard resources={resources} toggleView={this.toggleView} />;
-    }
-    // more if statements could be added to display details of more entities
-    return undefined;
-  }
-
-  toggleView = view => this.setState({ showDetails: view })
-
   renderDeleteIcon = () => {
     const { roomName } = this.props;
     const { isLoading } = this.state;
@@ -126,45 +113,28 @@ class Room extends Component {
     );
   }
 
-
   render() {
     const {
-      roomImage, roomName, numberOfSeats, resources,
+      roomImage, roomName, numberOfSeats, numberOfResources,
     } = this.props;
-
-    const { showDetails } = this.state;
-
-    const resourceCount = resources.length;
 
     return (
       <div className="room-setup-card">
-        { showDetails
-            ? this.detailsView()
-            : (
-              <Fragment>
-                <ImageLoader source={roomImage} className="room-image" altText={roomName} />
-                <div className="room-details-container">
-                  <div className="room-name">{roomName}</div>
-                  <div className="delete-room">
-                    {this.renderEditIcon()}
-                    {this.renderDeleteIcon()}
-                  </div>
-                  <div className="number-of-Seats">
-                    <p>Seats upto {numberOfSeats} people</p>
-                  </div>
-                  <div className="number-of-resources">
-                    <button
-                      className="btn-plain"
-                      onClick={() => this.toggleView('resources')}
-                    >
-                      {`${resourceCount || 'No'} Resource${resourceCount !== 1 ? 's' : ''}`}
-                    </button>
-                  </div>
-                  {this.renderRoomLabels()}
-                </div>
-              </Fragment>
-            )
-        }
+        <ImageLoader source={roomImage} className="room-image" altText={roomName} />
+        <div className="room-details-container">
+          <div className="room-name">{roomName}</div>
+          <div className="delete-room">
+            {this.renderEditIcon()}
+            {this.renderDeleteIcon()}
+          </div>
+          <div className="number-of-Seats">
+            <p>Seats upto {numberOfSeats} people</p>
+          </div>
+          <div className="number-of-resources">
+            <p>{numberOfResources} Resources</p>
+          </div>
+          {this.renderRoomLabels()}
+        </div>
       </div>
     );
   }
@@ -177,7 +147,7 @@ Room.propTypes = {
   roomName: PropTypes.string.isRequired,
   roomLabels: PropTypes.array.isRequired,
   numberOfSeats: PropTypes.number.isRequired,
-  resources: PropTypes.instanceOf(Array).isRequired,
+  numberOfResources: PropTypes.number.isRequired,
   roomId: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
   updatedRoom: PropTypes.func.isRequired,
   handleClick: PropTypes.func.isRequired,
