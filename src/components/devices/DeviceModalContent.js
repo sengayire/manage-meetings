@@ -63,7 +63,7 @@ const DeviceModalContent = ({
           withCancel
           isLoading={fetching}
           onClickCancel={closeModal}
-          actionButtonText={modalContent && ((modalContent === 'edit' ? 'SAVE CHANGES' : `${modalContent.toUpperCase()} DEVICE`) || 'ADD DEVICE')}
+          actionButtonText={`${modalContent ? 'SAVE CHANGES' : 'ADD DEVICE'} `}
           onClickSubmit={submit}
         />
       </div>
