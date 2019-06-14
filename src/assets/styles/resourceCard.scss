@@ -1,0 +1,61 @@
+@import './variables.scss';
+
+.resource-card {
+  position: relative;
+  display: grid;
+  grid-template-rows: auto 1rem;
+  min-height: 220px;
+  svg {
+    height: 30px;
+    width: 30px;
+  }
+
+  &__header {
+    button {
+      padding: 0;
+      position: relative;
+      top: 5px;
+    }
+
+    h2 {
+      color: #888 !important;
+      margin: 0;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid #ddd;
+    }
+  }
+
+  
+  .list-container {
+    height: 150px;
+    width: 100%;
+    margin: 0;
+    overflow: scroll;
+    padding: 0;
+    position: absolute;
+    left: 5px;
+    top: 1.5rem;
+    .list {
+      position: absolute;
+      left: 22.5%;
+      top: 1.2rem;
+      right: auto;
+      width: 50%;
+      .list-item {
+        height: 16px;
+        box-sizing: border-box;
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: bolder;
+        border-radius: 3px;
+        background-color: $color-room-details;
+        p {
+          font-size: 12px;
+          margin: 0.5rem;
+          position: relative;
+          top: 12px;
+        }
+      }
+    }
+  }
+}

@@ -102,6 +102,36 @@ const getTodaysDate = () => {
   return today;
 };
 
+export const compressArray = (original) => {
+  let compressed = [];
+  // make a copy of the input array
+  const copy = [...original];
+
+  // first loop goes over every element
+  original.forEach((originalItem) => {
+    let myCount = 0;
+    // loop over every element in the copy and see if it's the same
+    copy.forEach((copyItem, i) => {
+      if (originalItem === copyItem) {
+        // increase amount of times duplicate is found
+        myCount += 1;
+        // sets item to undefined
+        delete copy[i];
+      }
+
+      if (myCount > 0) {
+        const a = {};
+        a.value = original[i];
+        a.count = myCount;
+        compressed = compressed.filter(({ value }) => value !== copyItem);
+        compressed.push(a);
+      }
+    });
+  });
+  return compressed;
+};
+
+
 export {
   parseQueryString,
   getItemFromLocalStorage,

@@ -51,7 +51,7 @@ export class AddResource extends React.Component {
 
   validateResource = (resource) => {
     const { availableResources } = this.props;
-    const existingResources = availableResources.resources;
+    const existingResources = availableResources.resources || [];
     return existingResources.filter(item => item.name === resource).length;
   }
 
