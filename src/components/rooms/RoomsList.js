@@ -15,7 +15,7 @@ import Pagination from '../commons/Pagination';
 import MenuTitle from '../commons/MenuTitle';
 import FilterRoomMenu from './FilterRoomMenu';
 
-import AddRoomMenu from './AddRoomMenu';
+// import AddRoomMenu from './AddRoomMenu';
 import Spinner from '../commons/Spinner';
 import notification from '../../utils/notification';
 import Overlay from '../commons/Overlay';
@@ -218,7 +218,7 @@ export class RoomsList extends React.Component {
             page={this.props.data.variables.page}
             perPage={this.props.data.variables.perPage}
           />
-          <AddRoomMenu />
+          {/* <AddRoomMenu /> */}
         </div>
         {noResource ? (
           <div className="settings-rooms-list">
