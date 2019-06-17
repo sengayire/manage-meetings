@@ -56,7 +56,6 @@ class AnalyticsNav extends Component {
 
   getAnalytics = async () => {
     const dateValue = this.dateValue();
-
     const { allAnalytics: analytics } = await getAllAnalytics(dateValue);
     const { allRooms: { rooms } } = await getAllRooms();
     this.setState({
