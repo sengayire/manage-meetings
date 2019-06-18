@@ -17,6 +17,7 @@ describe('Tests for DeviceFormModal', () => {
     }}
       refetch={jest.fn()}
       closeModal={jest.fn()}
+      getRooms={jest.fn()}
       device={{ room: {} }}
     />);
   });

@@ -7,11 +7,11 @@
 
   .table {
     &__row {
-      grid-template-columns: repeat(5, 1fr);
+      grid-template-columns: repeat(6, 1fr);
     }
 
     &__headers {
-      grid-template-columns: repeat(5, 1fr) !important;
+      grid-template-columns: repeat(6, 1fr) !important;
     }
 
     @media screen and (max-width: 425px) {

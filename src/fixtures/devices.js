@@ -3,6 +3,7 @@ const devices = [{
   deviceType: 'Internal Display',
   dateAdded: '14 Aug 2018',
   lastSeen: '16 Feb 2018',
+  room: { name: 'Gold coast' },
   location: 'Nairobi',
 },
 {
@@ -10,6 +11,7 @@ const devices = [{
   deviceType: 'Internal Display',
   dateAdded: '14 Aug 2018',
   lastSeen: '16 Feb 2018',
+  room: { name: 'Big Apple' },
   location: 'Nairobi',
 
 },
@@ -18,6 +20,7 @@ const devices = [{
   deviceType: 'Internal Display',
   dateAdded: '14 Aug 2018',
   lastSeen: '16 Feb 2018',
+  room: { name: 'Ubuntu' },
   location: 'Nairobi',
 
 },
@@ -26,6 +29,7 @@ const devices = [{
   deviceType: 'Internal Display',
   dateAdded: '14 Aug 2018',
   lastSeen: '16 Feb 2018',
+  room: { name: 'Akwaba' },
   location: 'Nairobi',
 }];
 
