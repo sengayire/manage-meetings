@@ -121,7 +121,7 @@ export class AnalyticsActivity extends Component {
           {this.meetingsData(meetings.allEvents)}
         </center>
       );
-    } else if (analyticsForDailyRoomEvents.length === 0) {
+    } else if (analyticsForDailyRoomEvents.DailyRoomEvents.length === 0) {
       return (
         <div className="activity_error">
           <ErrorIcon message="No resource found" />
@@ -131,7 +131,7 @@ export class AnalyticsActivity extends Component {
     return (
       <center className="room__events">
         {this.renderDailyRoomEvents()}
-        {this.meetingsData(analyticsForDailyRoomEvents)}
+        {this.meetingsData(analyticsForDailyRoomEvents.DailyRoomEvents)}
       </center>
     );
   }
