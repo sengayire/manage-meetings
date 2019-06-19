@@ -1,12 +1,10 @@
-import React, { Component } from 'react';
+import React, { Component, createRef } from 'react';
 import PropTypes from 'prop-types';
-import { graphql, compose } from 'react-apollo';
 import toastr from 'toastr';
 import Modal from '../commons/MrmModal';
 import '../../assets/styles/deleteModal.scss';
 import notification from '../../utils/notification';
-import { DELETE_ROOM_FEEDBACK_QUESTION } from '../../graphql/mutations/Question';
-import GET_ROOM_FEEDBACK_QUESTIONS_QUERY from '../../graphql/queries/questions';
+import { deleteQuestionMutation } from '../helpers/mutationHelpers/questions';
 
 /**
  * Delete Feedback Component
@@ -28,6 +26,7 @@ export class DeleteFeedback extends Component {
    */
   handleCloseModal = () => {
     this.setState({ closeModal: true });
+    this.modal.current.toggleModal();
   };
 
   /**
@@ -51,30 +50,27 @@ export class DeleteFeedback extends Component {
     });
   }
 
+  modal = createRef();
+
   /**
    * Handles deleting feedback
    *
    * @returns {void}
    */
-  handleDeleteFeedback = () => {
-    const { id, question, deleteFeedback } = this.props;
+  handleDeleteFeedback = async () => {
+    const { id, refetch } = this.props;
     this.toggleLoading();
-    deleteFeedback({
-      variables: {
-        questionId: id,
-      },
-      refetchQueries: [{ query: GET_ROOM_FEEDBACK_QUESTIONS_QUERY }],
-    })
-      .then(() => {
-        this.toggleLoading();
-        this.handleCloseModal();
-        notification(toastr, 'success', `${question} has been deleted successfully`)();
-      })
-      .catch((err) => {
-        this.toggleLoading();
-        this.handleCloseModal();
-        notification(toastr, 'error', err.graphQLErrors[0].message)();
-      });
+    try {
+      await deleteQuestionMutation(id);
+      notification(toastr, 'success', 'Question deleted successfully')();
+      this.handleCloseModal();
+      this.toggleLoading();
+      await refetch();
+    } catch (err) {
+      notification(toastr, 'error', err.graphQLErrors[0].message)();
+      this.handleCloseModal();
+      this.toggleLoading();
+    }
   };
 
   /**
@@ -98,6 +94,7 @@ export class DeleteFeedback extends Component {
 
      return (
        <Modal
+         ref={this.modal}
          title="DELETE QUESTION"
          buttonText="Delete"
          actionButtonText="DELETE QUESTION"
@@ -114,11 +111,8 @@ export class DeleteFeedback extends Component {
 
 DeleteFeedback.propTypes = {
   question: PropTypes.string.isRequired,
-  deleteFeedback: PropTypes.func.isRequired,
+  refetch: PropTypes.func.isRequired,
   id: PropTypes.string.isRequired,
 };
 
-export default compose(
-  graphql(DELETE_ROOM_FEEDBACK_QUESTION, { name: 'deleteFeedback' }),
-  graphql(GET_ROOM_FEEDBACK_QUESTIONS_QUERY, { name: 'allQuestions' }),
-)(DeleteFeedback);
+export default DeleteFeedback;

@@ -12,6 +12,7 @@ const GET_ROOM_FEEDBACK_QUESTIONS_QUERY = gql`
         endDate
         questionResponseCount
         isActive
+        checkOptions
       }
     }
   }

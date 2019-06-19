@@ -4,8 +4,15 @@ const UPDATE_QUESTION_STATUS_MUTATION = gql`
 mutation updateQuestion($isActive: Boolean, $questionId: Int!){
   updateQuestion(isActive: $isActive, questionId: $questionId){
     question {
+      id
       question
+      questionType
+      questionTitle
+      startDate
+      endDate
+      questionResponseCount
       isActive
+      checkOptions
     }
   }
 }`;
@@ -14,25 +21,33 @@ const UPDATE_QUESTION_MUTATION = gql`
   mutation UpdateQuestion($questionId: Int!, $question: String!, $questionTitle: String!, $questionType: String!, $startDate: DateTime!, $endDate: DateTime!){
     updateQuestion(questionId:$questionId, question:$question, questionType:$questionType, questionTitle:$questionTitle, startDate:$startDate, endDate:$endDate){
       question{
+        id
         question
-        questionTitle
         questionType
+        questionTitle
         startDate
         endDate
+        questionResponseCount
+        isActive
+        checkOptions
       }
     }
   }
 `;
 
 const ADD_ROOM_FEEDBACK_QUESTIONS = gql`
-  mutation createQuestion($question: String!, $questionTitle: String!, $questionType: String!, $startDate: DateTime!, $endDate: DateTime!){
-    createQuestion(question: $question, questionTitle: $questionTitle, questionType: $questionType, startDate: $startDate, endDate: $endDate){
+  mutation createQuestion($checkOptions: [String]!, $question: String!, $questionTitle: String!, $questionType: String!, $startDate: DateTime!, $endDate: DateTime!){
+    createQuestion(checkOptions: $checkOptions, question: $question, questionTitle: $questionTitle, questionType: $questionType, startDate: $startDate, endDate: $endDate){
       question{
+        id
         question
-        questionTitle
         questionType
+        questionTitle
         startDate
         endDate
+        questionResponseCount
+        isActive
+        checkOptions
       }
     }
   }
@@ -44,6 +59,13 @@ const DELETE_ROOM_FEEDBACK_QUESTION = gql`
       question{
         id
         question
+        questionType
+        questionTitle
+        startDate
+        endDate
+        questionResponseCount
+        isActive
+        checkOptions
       }
     }
   }

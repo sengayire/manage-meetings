@@ -23,6 +23,7 @@ class Calendar extends Component {
     classProp: PropTypes.string,
     startDate: PropTypes.string,
     endDate: PropTypes.string,
+    disabledDateRange: PropTypes.string,
   };
 
   static defaultProps = {
@@ -30,6 +31,7 @@ class Calendar extends Component {
     classProp: '',
     startDate: '',
     endDate: '',
+    disabledDateRange: '',
   };
 
   state = {
@@ -73,6 +75,7 @@ class Calendar extends Component {
 
   render() {
     const { isCalendarOpen, startDate, endDate } = this.state;
+    const { disabledDateRange } = this.props;
     return (
       <Fragment>
         <Button
@@ -83,7 +86,7 @@ class Calendar extends Component {
         />
         {isCalendarOpen && (
           <div className="calendar">
-            <PickRange handleChange={this.handleChange} />
+            <PickRange handleChange={this.handleChange} disabledDateRange={disabledDateRange} />
             <div className="calendar__button">
               <button
                 onClick={this.toggleCalendar}

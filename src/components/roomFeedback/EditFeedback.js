@@ -1,16 +1,15 @@
 /* eslint-disable import/no-named-as-default */
-import React, { Component, createRef } from 'react';
+import React, { Component, createRef, Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { graphql } from 'react-apollo';
 import toastr from 'toastr';
 import moment from 'moment';
 import notification from '../../utils/notification';
 import Select from '../commons/SelectInput';
 import Calendar from '../commons/Calendar';
 import MrmModal from '../commons/MrmModal';
-import { UPDATE_QUESTION_MUTATION } from '../../graphql/mutations/Question';
-import GET_ROOM_FEEDBACK_QUESTIONS_QUERY from '../../../src/graphql/queries/questions';
 import '../../assets/styles/editfeedback.scss';
+import { updateQuestionMutation } from '../helpers/mutationHelpers/questions';
+import MultipleInput from '../commons/MultipleInput';
 
 /**
  * Edit Feedback Component
@@ -65,7 +64,7 @@ export class EditFeedback extends Component {
       },
       {
         id: '3',
-        name: 'suggest',
+        name: 'input',
       },
     ],
   });
@@ -76,6 +75,7 @@ export class EditFeedback extends Component {
     questionTitle: this.props.questionTitle,
     startDate: this.props.startDate,
     endDate: this.props.endDate,
+    checkOptions: this.props.checkOptions,
     endTime: EditFeedback.getTime(this.props.endDate),
     startTime: EditFeedback.getTime(this.props.startDate),
   });
@@ -92,6 +92,15 @@ export class EditFeedback extends Component {
   handleCloseModal = () => {
     this.modal.current.toggleModal();
     this.setState({ ...this.initialState(), error: {} });
+  }
+
+  /**
+   * It sets check option state
+   *
+   * @returns {JSX}
+   */
+  handleCheckOptions = (checkOptions) => {
+    this.setState({ checkOptions }, () => this.handleShowEditQuestionButton());
   }
 
   /**
@@ -141,6 +150,7 @@ export class EditFeedback extends Component {
     questionTitle: this.state.questionTitle,
     startDate: `${this.getDate(this.state.startDate)} ${this.state.startTime}:00`,
     endDate: `${this.getDate(this.state.endDate)} ${this.state.endTime}:00`,
+    checkOptions: this.state.checkOptions,
     endTime: this.state.endTime,
     startTime: this.state.startTime,
   });
@@ -188,22 +198,26 @@ export class EditFeedback extends Component {
    *
    * @returns {void}
    */
-  editQuestion = () => {
+  editQuestion = async () => {
     const {
       question, questionTitle, questionType, startDate, startTime,
-      endDate, endTime, questionId,
+      endDate, endTime, questionId, checkOptions,
     } = this.state;
+
+    const { refetch } = this.props;
+
     this.toggleLoading();
-    this.props.editFeedbackQuestion({
-      variables: {
+    try {
+      await updateQuestionMutation({
+        checkOptions,
         questionId,
         question,
         questionTitle,
         questionType,
         startDate: this.formatDateTime(startDate, startTime),
         endDate: this.formatDateTime(endDate, endTime),
-      },
-    }).then(() => {
+      });
+      await refetch();
       notification(
         toastr,
         'success',
@@ -211,12 +225,11 @@ export class EditFeedback extends Component {
       )();
       this.toggleLoading();
       this.handleCloseModal();
-    })
-      .catch((err) => {
-        this.toggleLoading();
-        this.handleCloseModal();
-        notification(toastr, 'error', err.graphQLErrors[0].message)();
-      });
+    } catch (err) {
+      this.toggleLoading();
+      this.handleCloseModal();
+      notification(toastr, 'error', err.graphQLErrors[0].message)();
+    }
   };
 
   /**
@@ -397,8 +410,7 @@ export class EditFeedback extends Component {
           isValue
           name="questionType"
           id={error.questionType ? 'selectType-error' : 'selectType'}
-          placeholder={questionType}
-          placeholderValue={questionType}
+          value={questionType || 'Select Question Type'}
           onChange={this.handleInputChange}
           wrapperClassName="input-wrapper"
           options={options}
@@ -419,6 +431,18 @@ export class EditFeedback extends Component {
       {this.renderQuestionInputBox()}
       <span className="question-form__sections">Question Type</span>
       {this.rendersQuestionType()}
+      {
+        this.state.questionType === 'check' && (
+          <Fragment>
+            <span className="question-form__sections">Check Options</span>
+            <MultipleInput
+              submit={this.handleCheckOptions}
+              initialValue={this.state.checkOptions || []}
+              placeholder="Enter option and press 'Enter' or ','"
+            />
+          </Fragment>
+        )
+      }
     </div>
   );
 
@@ -441,18 +465,18 @@ export class EditFeedback extends Component {
 }
 
 EditFeedback.propTypes = {
+  checkOptions: PropTypes.instanceOf(Array),
   question: PropTypes.string.isRequired,
   questionId: PropTypes.string.isRequired,
   questionType: PropTypes.string.isRequired,
   questionTitle: PropTypes.string.isRequired,
   startDate: PropTypes.string.isRequired,
   endDate: PropTypes.string.isRequired,
-  editFeedbackQuestion: PropTypes.func.isRequired,
+  refetch: PropTypes.func.isRequired,
 };
 
-export default graphql(UPDATE_QUESTION_MUTATION, {
-  name: 'editFeedbackQuestion',
-  options: {
-    refetchQueries: [{ query: GET_ROOM_FEEDBACK_QUESTIONS_QUERY }],
-  },
-})(EditFeedback);
+EditFeedback.defaultProps = {
+  checkOptions: undefined,
+};
+
+export default EditFeedback;
