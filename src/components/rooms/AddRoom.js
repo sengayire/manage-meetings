@@ -255,6 +255,7 @@ export class AddNewRoom extends Component {
               this.handleCloseModal();
               notification(toastr, 'success', `${roomName} Successfully added`)();
               this.clearForm();
+              this.props.clearFilter();
             })
             .catch((err) => {
               this.toggleLoading();
@@ -348,7 +349,7 @@ export class AddNewRoom extends Component {
    * @returns {func} handleCloseModal
    */
   editRoom = async () => {
-    const { updateRoomData, editData } = this.props;
+    const { updateRoomData, editData, clearFilter } = this.props;
     const { roomId, roomLabels, structureId } = editData;
     const { data: DataToUpdate, getKeys } = this.getUpdatedDetails(this.state);
     const getImageKey = getKeys.indexOf('files');
@@ -375,6 +376,7 @@ export class AddNewRoom extends Component {
       await updateRoomData(response);
       notification(toastr, 'success', 'Room Successfully edited')();
       this.toggleLoading();
+      clearFilter();
       return this.handleCloseModal();
     }
     notification(toastr, 'error', 'An error occured, please try again later')();
@@ -554,7 +556,9 @@ export class AddNewRoom extends Component {
             className="remote-room-all"
             onClick={this.handleClick}
             tooltip={isAllRemoteRooms ? 'Load your rooms...' : 'Load all rooms...'}
-          />
+          >
+            ...
+          </button>
         </div>
         {this.renderStaticInputFields()}
         <div className="dynamic-input">
@@ -585,6 +589,7 @@ export class AddNewRoom extends Component {
 
 AddNewRoom.propTypes = {
   updateRoomData: PropTypes.func.isRequired,
+  clearFilter: PropTypes.func.isRequired,
   currentPage: PropTypes.number.isRequired,
   type: PropTypes.number,
   formType: PropTypes.string,

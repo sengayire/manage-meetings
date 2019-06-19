@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
+import clearImg from '../../assets/images/clearImg.png';
 import { SelectInput } from '../commons';
 import stripTypenames from '../helpers/StripTypeNames';
 import { orderByLevel } from '../../utils/formatSetupData';
@@ -155,65 +156,98 @@ class LocationFilters extends Component {
     const propsName = this.props.name;
     return (
       <Fragment>
-        <div key={id} className={className}>
-          <SelectInput
-            labelText={displayTitle ? this.capitalizeFirstLetter(tag) : null}
-            wrapperClassName={wrapperClassName}
-            name={propsName || name}
-            id={id}
-            value={value}
-            onChange={(event) => {
-              this.generateMoreMenu([event.target.name, event.target.value], 'level1', 'secondLevelMenu'); handleInputChange(event, 1);
-            }}
-            selectInputClassName={selectInputClassName}
-            placeholder={placeholder}
-            options={options}
-            isValue={isValue}
-          />
-        </div>
+        <Fragment>
+          <div key={id} className={className}>
+            <SelectInput
+              labelText={displayTitle ? this.capitalizeFirstLetter(tag) : null}
+              wrapperClassName={wrapperClassName}
+              name={propsName || name}
+              id={id}
+              value={value}
+              onChange={(event) => {
+                this.generateMoreMenu([event.target.name, event.target.value], 'level1', 'secondLevelMenu'); handleInputChange(event, 1);
+              }}
+              selectInputClassName={selectInputClassName}
+              placeholder={placeholder}
+              options={options}
+              isValue={isValue}
+            />
+          </div>
 
-        {this.state.level1 !== '' &&
-          (
-            <div key={secondLevelMenu.id} className={className}>
-              <SelectInput
-                labelText={displayTitle ? this.capitalizeFirstLetter(secondLevelMenu.tag) : null}
-                wrapperClassName={wrapperClassName}
-                name={propsName || secondLevelMenu.name}
-                id={secondLevelMenu.id}
-                value={secondLevelMenu.value}
-                onChange={(event) => { this.generateMoreMenu([event.target.name, event.target.value], 'level2', 'thirdLevelMenu'); handleInputChange(event, 2); }}
-                selectInputClassName={selectInputClassName}
-                placeholder={secondLevelMenu.placeholder}
-                options={secondLevelMenu.options}
-                isValue={secondLevelMenu.isValue}
-              />
-            </div>
-          )
-        }
+          {this.state.level1 !== '' &&
+            (
+              <div key={secondLevelMenu.id} className={className}>
+                <SelectInput
+                  labelText={displayTitle ? this.capitalizeFirstLetter(secondLevelMenu.tag) : null}
+                  wrapperClassName={wrapperClassName}
+                  name={propsName || secondLevelMenu.name}
+                  id={secondLevelMenu.id}
+                  value={secondLevelMenu.value}
+                  onChange={(event) => { this.generateMoreMenu([event.target.name, event.target.value], 'level2', 'thirdLevelMenu'); handleInputChange(event, 2); }}
+                  selectInputClassName={selectInputClassName}
+                  placeholder={secondLevelMenu.placeholder}
+                  options={secondLevelMenu.options}
+                  isValue={secondLevelMenu.isValue}
+                />
+              </div>
+            )
+          }
 
-        {this.state.level1 !== '' &&
-          this.state.level2 !== '' &&
-          (this.state.thirdLevelMenu.options && this.state.thirdLevelMenu.options.length > 0) &&
-          (
-            <div key={thirdLevelMenu.id} className={className}>
-              <SelectInput
-                labelText={displayTitle ? this.capitalizeFirstLetter(thirdLevelMenu.tag) : null}
-                wrapperClassName={wrapperClassName}
-                name={propsName || thirdLevelMenu.name}
-                id={thirdLevelMenu.id}
-                value={thirdLevelMenu.value}
-                onChange={event => handleInputChange(event, 2)}
-                selectInputClassName={selectInputClassName}
-                placeholder={thirdLevelMenu.placeholder}
-                options={thirdLevelMenu.options}
-                isValue={thirdLevelMenu.isValue}
-              />
-            </div>
-          )
-        }
+          {this.state.level1 !== '' &&
+            this.state.level2 !== '' &&
+            (this.state.thirdLevelMenu.options && this.state.thirdLevelMenu.options.length > 0) &&
+            (
+              <div key={thirdLevelMenu.id} className={className}>
+                <SelectInput
+                  labelText={displayTitle ? this.capitalizeFirstLetter(thirdLevelMenu.tag) : null}
+                  wrapperClassName={wrapperClassName}
+                  name={propsName || thirdLevelMenu.name}
+                  id={thirdLevelMenu.id}
+                  value={thirdLevelMenu.value}
+                  onChange={event => handleInputChange(event, 2)}
+                  selectInputClassName={selectInputClassName}
+                  placeholder={thirdLevelMenu.placeholder}
+                  options={thirdLevelMenu.options}
+                  isValue={thirdLevelMenu.isValue}
+                />
+              </div>
+            )
+          }
+        </Fragment>
+        {this.props.showClearFilter && this.clearFilters()}
       </Fragment>
     );
   };
+
+  /**
+  * It handles reset click
+  *
+  * @returns {void}
+  */
+
+  handleClearClick = () => {
+    document.getElementById('LocationFilters').reset();
+    this.setState({ level1: '', level2: '' });
+    this.props.handleInputChange({ target: { name: '', value: '' } }, 'reset');
+  }
+
+
+  /**
+* It handles resetting of filters
+*
+* @returns {img}
+*/
+  // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
+  clearFilters = () => (
+    // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
+    <img
+      className="reset-image"
+      src={clearImg}
+      alt="Clear filters"
+      onKeyPress={this.handleClearClick}
+      onClick={this.handleClearClick}
+    />
+  )
 
   render() {
     return (
@@ -229,10 +263,12 @@ LocationFilters.propTypes = {
   selectInputClassName: PropTypes.string.isRequired,
   displayTitle: PropTypes.bool.isRequired,
   className: PropTypes.string,
+  showClearFilter: PropTypes.bool,
 };
 LocationFilters.defaultProps = {
   name: '',
   className: '',
+  showClearFilter: false,
 };
 
 export default LocationFilters;

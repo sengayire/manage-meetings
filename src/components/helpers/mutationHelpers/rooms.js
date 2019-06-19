@@ -39,6 +39,17 @@ const addRoom = async (variables, location, client = apolloClient) => {
       });
       data.allRooms.rooms.unshift(createRoom.room);
       updatedData = data;
+      client.writeQuery({
+        query: GET_ROOMS_QUERY,
+        variables: {
+          location,
+          office: '',
+          page: 1,
+          perPage: 8,
+          roomLabels: '',
+        },
+        data: updatedData,
+      });
     },
   });
   return updatedData;

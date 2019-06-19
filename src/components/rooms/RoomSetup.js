@@ -51,42 +51,44 @@ class RoomSetup extends Component {
     return array.sort((a, b) => a - b);
   };
   editRoom = createRef();
+  resetFilterRef = React.createRef();
+
+  /**
+   * It creates the ref function to clear filter
+   *
+   */
+
+  clearFilter = () => {
+    this.resetFilterRef.current.handleClearClick();
+  }
 
   handleInputChange = async (event, level) => {
     const { target: { name, value } } = event;
     await this.setState((prevState) => {
-      if (level === 1) {
-        return {
-          filterText: {
-            [name]: value,
-          },
-        };
-      }
+      let newState;
+      switch (level) {
+        case 1:
+          newState = { filterText: { [name]: value } };
+          break;
 
-      if (level === 2) {
-        if (Object.keys(this.state.filterText)[2]) { (this.state.filterText[Object.keys(this.state.filterText)[2]] = ''); }
-        return {
-          filterText: {
-            ...prevState.filterText,
-            [name]: value,
-          },
-        };
-      }
+        case 2:
+          if (Object.keys(this.state.filterText)[2]) { (this.state.filterText[Object.keys(this.state.filterText)[2]] = ''); }
+          newState = { filterText: { ...prevState.filterText, [name]: value } };
+          break;
 
-      if (level === 3) {
-        return {
-          filterText: {
-            ...prevState.filterText,
-            [name]: value,
-          },
-        };
+        case 3:
+          newState = { filterText: { ...prevState.filterText, [name]: value } };
+          break;
+
+        case 'reset':
+          newState = { filterText: {} };
+          break;
+
+        default:
+          newState = { filterText: { ...prevState.filterText, [name]: value } };
+          break;
       }
-      return {
-        filterText: {
-          ...prevState.filterText,
-          [name]: value,
-        },
-      };
+      return newState;
     });
     this.fetchRooms(8, 1);
   };
@@ -160,6 +162,7 @@ class RoomSetup extends Component {
           resources={room.resources}
           handleClick={this.handleEditRoom}
           updatedRoom={this.updateRoomData}
+          clearFilter={this.clearFilter}
         />
       ));
     return roomsRender;
@@ -192,11 +195,22 @@ class RoomSetup extends Component {
             <div className="room-setup-header">
               <p> {location} Meeting Rooms</p>
             </div>
-            <div className="room-select-input"><LocationFilters handleInputChange={this.handleInputChange} wrapperClassName="setup-select-input-wrapper" selectInputClassName="setup-select-input" displayTitle={false} className="room-select-sub" /></div>
+            <div className="room-select-input">
+              <LocationFilters
+                ref={this.resetFilterRef}
+                handleInputChange={this.handleInputChange}
+                wrapperClassName="setup-select-input-wrapper"
+                selectInputClassName="setup-select-input"
+                displayTitle={false}
+                className="room-select-sub"
+                showClearFilter
+              />
+            </div>
             <div className="add-new-resource">
               <AddNewRoomComponent
                 updateRoomData={this.updateRoomData}
                 currentPage={this.state.currentPage}
+                clearFilter={this.clearFilter}
               />
             </div>
           </div>
@@ -232,6 +246,7 @@ class RoomSetup extends Component {
           location={location}
           updateRoomData={this.updateRoomData}
           currentPage={this.state.currentPage}
+          clearFilter={this.clearFilter}
         />
       </div>
     );

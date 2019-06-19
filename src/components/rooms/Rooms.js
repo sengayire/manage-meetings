@@ -43,6 +43,7 @@ class Room extends Component {
       this.toggleLoading();
       this.toggleModal();
       notification(toastr, 'success', `${roomName} successfully deleted`)();
+      this.props.clearFilter();
       updatedRoom(updatedRoomResponse);
     } catch (err) {
       this.toggleLoading();
@@ -206,6 +207,7 @@ Room.propTypes = {
   updatedRoom: PropTypes.func.isRequired,
   handleClick: PropTypes.func.isRequired,
   devices: PropTypes.instanceOf(Array),
+  clearFilter: PropTypes.func.isRequired,
 };
 
 Room.defaultProps = {

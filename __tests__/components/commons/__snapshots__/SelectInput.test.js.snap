@@ -8,17 +8,21 @@ exports[`SelectInput component should call console.warn when given neither optio
     htmlFor="testSelect"
   >
     Select Something
-    <select
-      className="default-select"
-      defaultValue="1"
-      id="testSelect"
-      name="testSelect"
-      onChange={[Function]}
-      required={false}
-      selected={-1}
+    <form
+      id="LocationFilters"
     >
-      You need to provide atleast children or options to the select element
-    </select>
+      <select
+        className="default-select"
+        defaultValue="1"
+        id="testSelect"
+        name="testSelect"
+        onChange={[Function]}
+        required={false}
+        selected={-1}
+      >
+        You need to provide atleast children or options to the select element
+      </select>
+    </form>
   </label>
 </div>
 `;
@@ -31,28 +35,32 @@ exports[`SelectInput component should display value if displayText isn't given i
     htmlFor="testSelect"
   >
     Select Something
-    <select
-      className="default-select"
-      defaultValue="1"
-      id="testSelect"
-      name="testSelect"
-      onChange={[Function]}
-      required={false}
-      selected={-1}
+    <form
+      id="LocationFilters"
     >
-      <option
-        key="4"
-        value={4}
+      <select
+        className="default-select"
+        defaultValue="1"
+        id="testSelect"
+        name="testSelect"
+        onChange={[Function]}
+        required={false}
+        selected={-1}
       >
-        <Component />
-      </option>
-      <option
-        key="5"
-        value={5}
-      >
-        <Component />
-      </option>
-    </select>
+        <option
+          key="4"
+          value={4}
+        >
+          <Component />
+        </option>
+        <option
+          key="5"
+          value={5}
+        >
+          <Component />
+        </option>
+      </select>
+    </form>
   </label>
 </div>
 `;
@@ -65,23 +73,27 @@ exports[`SelectInput component should render placeholder when provided 1`] = `
     htmlFor="testSelect"
   >
     Select Something
-    <select
-      className="default-select"
-      defaultValue="1"
-      id="testSelect"
-      name="testSelect"
-      onChange={[Function]}
-      required={false}
-      selected={-1}
+    <form
+      id="LocationFilters"
     >
-      <option
-        value=""
+      <select
+        className="default-select"
+        defaultValue="1"
+        id="testSelect"
+        name="testSelect"
+        onChange={[Function]}
+        required={false}
+        selected={-1}
       >
-        Hello
-         
-      </option>
-      You need to provide atleast children or options to the select element
-    </select>
+        <option
+          value=""
+        >
+          Hello
+           
+        </option>
+        You need to provide atleast children or options to the select element
+      </select>
+    </form>
   </label>
 </div>
 `;
@@ -94,28 +106,32 @@ exports[`SelectInput component should render properly when given children 1`] = 
     htmlFor="testSelect"
   >
     Select Something
-    <select
-      className="default-select"
-      defaultValue="1"
-      id="testSelect"
-      name="testSelect"
-      onChange={[Function]}
-      required={false}
-      selected={-1}
+    <form
+      id="LocationFilters"
     >
-      <option
-        key="1"
-        value={1}
+      <select
+        className="default-select"
+        defaultValue="1"
+        id="testSelect"
+        name="testSelect"
+        onChange={[Function]}
+        required={false}
+        selected={-1}
       >
-        1
-      </option>
-      <option
-        key="2"
-        value={2}
-      >
-        2
-      </option>
-    </select>
+        <option
+          key="1"
+          value={1}
+        >
+          1
+        </option>
+        <option
+          key="2"
+          value={2}
+        >
+          2
+        </option>
+      </select>
+    </form>
   </label>
 </div>
 `;
@@ -128,22 +144,26 @@ exports[`SelectInput component should render properly when given options prop 1`
     htmlFor="testSelect"
   >
     Select Something
-    <select
-      className="default-select"
-      defaultValue="1"
-      id="testSelect"
-      name="testSelect"
-      onChange={[Function]}
-      required={false}
-      selected={-1}
+    <form
+      id="LocationFilters"
     >
-      <option>
-        hello
-      </option>
-      <option>
-        how are you
-      </option>
-    </select>
+      <select
+        className="default-select"
+        defaultValue="1"
+        id="testSelect"
+        name="testSelect"
+        onChange={[Function]}
+        required={false}
+        selected={-1}
+      >
+        <option>
+          hello
+        </option>
+        <option>
+          how are you
+        </option>
+      </select>
+    </form>
   </label>
 </div>
 `;
@@ -156,26 +176,30 @@ exports[`SelectInput component should use 'calendarId' incase 'id' is not given 
     htmlFor="testSelect"
   >
     Select Something
-    <select
-      className="default-select"
-      defaultValue="Nairobi"
-      id="testSelect"
-      name="testSelect"
-      onChange={[Function]}
-      required={false}
-      selected={-1}
+    <form
+      id="LocationFilters"
     >
-      <option
-        key="Nairobi"
+      <select
+        className="default-select"
+        defaultValue="Nairobi"
+        id="testSelect"
+        name="testSelect"
+        onChange={[Function]}
+        required={false}
+        selected={-1}
       >
-        Nairobi
-      </option>
-      <option
-        key="Kampala"
-      >
-        Kampala
-      </option>
-    </select>
+        <option
+          key="Nairobi"
+        >
+          Nairobi
+        </option>
+        <option
+          key="Kampala"
+        >
+          Kampala
+        </option>
+      </select>
+    </form>
   </label>
 </div>
 `;

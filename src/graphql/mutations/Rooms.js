@@ -36,6 +36,16 @@ const ADD_ROOM = gql`
           calendarId
           locationId
           structureId
+          resources {
+            roomId
+            resourceId
+            quantity
+            name
+            resource {
+              id
+              name
+            }
+          }
         }
     }
   }

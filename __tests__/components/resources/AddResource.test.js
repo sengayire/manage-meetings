@@ -110,7 +110,7 @@ describe('AddResource Component', () => {
 
     myWrapper.find('#modal-button').simulate('click');
     const resourceForm = myWrapper.find('form');
-    resourceForm.simulate('submit', { preventDefault: () => {} });
+    resourceForm.at(0).simulate('submit', { preventDefault: () => {} });
     expect(spy).toHaveBeenCalled();
   });
 
@@ -134,7 +134,7 @@ describe('AddResource Component', () => {
 
     myWrapper.find('#modal-button').simulate('click');
     const resourceForm = myWrapper.find('form');
-    resourceForm.simulate('submit', { preventDefault: () => {} });
+    resourceForm.at(0).simulate('submit', { preventDefault: () => {} });
     expect(spy).toHaveBeenCalled();
   });
 });

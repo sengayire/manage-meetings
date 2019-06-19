@@ -29,22 +29,23 @@ const SelectInput = ({
   <div className={wrapperClassName}>
     <label htmlFor={id}>
       {labelText}
-      <select
-        name={name}
-        id={id}
-        className={selectInputClassName}
-        defaultValue={value}
-        onChange={event => onChange(event)}
-        {...otherProps}
-        required={required}
-      >
-        {/* render place holder in case its provided */}
-        {placeholder && <option value={placeholderValue}>{placeholder} </option>}
+      <form id="LocationFilters">
+        <select
+          name={name}
+          id={id}
+          className={selectInputClassName}
+          defaultValue={value}
+          onChange={event => onChange(event)}
+          {...otherProps}
+          required={required}
+        >
+          {/* render place holder in case its provided */}
+          {placeholder && <option value={placeholderValue}>{placeholder} </option>}
 
-        {/* Render the array options if provided.
+          {/* Render the array options if provided.
          If you provide both options and children, details in the options will be rendered
         */}
-        {
+          {
             options
             && options.length
             &&
@@ -63,7 +64,7 @@ const SelectInput = ({
               );
             })
           }
-        {/*
+          {/*
         render children if they are provided,
         the children of the select element should be <option tags>
         for example
@@ -71,13 +72,14 @@ const SelectInput = ({
                 <option value="Hello">Hello From the Other Side</option>
             <Select/>
         */}
-        {children && !options && children}
+          {children && !options && children}
 
-        {/* warn user that he needs to atleast provide options or children */}
-        {!options &&
+          {/* warn user that he needs to atleast provide options or children */}
+          {!options &&
             !children &&
             'You need to provide atleast children or options to the select element'}
-      </select>
+        </select>
+      </form>
     </label>
   </div>
 );
