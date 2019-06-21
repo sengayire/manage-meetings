@@ -25,7 +25,7 @@ export const addQuestionMutation = ({
       questionTitle,
       questionType,
       startDate,
-      checkOptions,
+      checkOptions: !checkOptions[0] ? ['foo'] : checkOptions
     },
     // write and read from cache
     update: async (proxy, { data: { createQuestion } }) => {

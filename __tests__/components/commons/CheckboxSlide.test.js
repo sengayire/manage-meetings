@@ -2,11 +2,14 @@ import React from 'react';
 import { mount } from 'enzyme';
 import { MockedProvider } from 'react-apollo/test-utils';
 import CheckBoxSlide, { updateCache, updateStatus } from '../../../src/components/commons/CheckboxSlide';
-import * as notify from '../../../src/utils/notification';
+import notification from '../../../src/utils/notification';
 import { UPDATE_QUESTION_STATUS_MUTATION } from '../../../src/graphql/mutations/Question';
 import GET_ROOM_FEEDBACK_QUESTIONS_QUERY from '../../../src/graphql/queries/questions';
 
+jest.mock('../../../src/utils/notification');
+
 describe('Unit test for the CheckboxSlide component', () => {
+  notification.mockImplementation(() => () => {});
   const classList = ['checked'];
   const event = {
     target: {
@@ -30,18 +33,10 @@ describe('Unit test for the CheckboxSlide component', () => {
       })),
       writeQuery: jest.fn(),
     };
-    jest.spyOn(notify, 'default').mockImplementation(() => jest.fn());
-    it('should show a notification that a question has been successfully activated', () => {
-      const dataReturned = { data: { updateQuestion: { question: { isActive: true } } } };
-      updateCache(store, dataReturned, 2);
-      expect(notify.default.mock.calls[0][1]).toBe('success');
-      expect(notify.default.mock.calls[0][2]).toBe('Successfully activated');
-    });
-    it('should show a notification that a question has been successfully deactivated', () => {
+    it('should update store', () => {
       const dataReturned = { data: { updateQuestion: { question: { isActive: false } } } };
       updateCache(store, dataReturned, 2);
-      expect(notify.default.mock.calls[1][1]).toBe('success');
-      expect(notify.default.mock.calls[1][2]).toBe('Successfully deactivated');
+      expect(store.writeQuery).toHaveBeenCalled();
     });
   });
   describe('Unit tests for the updateStatus method', () => {
@@ -51,6 +46,7 @@ describe('Unit test for the CheckboxSlide component', () => {
       updateStatus(event, mutation);
       expect(mutation.mock.calls.length).toBe(1);
       expect(classList[0]).not.toBe('checked');
+      expect(notification).toHaveBeenCalled();
       classList[0] = 'checked';
     });
     it('should add the false class attribute and call the mutation method when we deactivate a checkbox', () => {
@@ -67,6 +63,7 @@ describe('Unit test for the CheckboxSlide component', () => {
       updateStatus(event, mutation);
       expect(mutation.mock.calls.length).toBe(1);
       expect(classList[0]).toBe('checked');
+      expect(notification).toHaveBeenCalled();
       classList[0] = 'false';
     });
     it('should remove the false class attribute, and call the mutation method when we activate a checkbox/question', () => {

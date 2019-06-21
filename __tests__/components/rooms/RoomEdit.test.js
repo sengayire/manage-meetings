@@ -5,6 +5,6 @@ import RoomSetup from '../../../src/components/rooms/RoomSetup';
 describe('Test for edit room component', () => {
   it("should render roomsetup with edit room in it's dom", () => {
     const wrapper = shallow(<RoomSetup />);
-    expect(wrapper.find('AddNewRoom').length).toBe(2);
+    expect(wrapper).toMatchSnapshot();
   });
 });

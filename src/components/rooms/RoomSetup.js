@@ -1,4 +1,5 @@
 import React, { Component, createRef } from 'react';
+import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import Room from '../rooms/Rooms';
 import Pagination from '../../components/commons/Pagination';
@@ -27,10 +28,20 @@ class RoomSetup extends Component {
     filterText: {},
   };
 
-  componentDidMount = async () => {
+  componentDidMount = () => {
     const { perPage, currentPage } = this.state;
-    await this.fetchRooms(perPage, currentPage);
+    const { query } = this.props;
+    this.fetchRooms(perPage, currentPage, query);
   };
+
+  componentDidUpdate({ query: oldQuery }) {
+    const { query } = this.props;
+    const { perPage, currentPage } = this.state;
+    if (query && (query !== oldQuery)) {
+      this.fetchRooms(perPage, currentPage, query);
+    }
+  }
+
   /**
    * It handles itemsPerPage array for pagination
    * and returns a constant value else returns
@@ -105,14 +116,18 @@ class RoomSetup extends Component {
    *
    * @returns {void}
    */
-  fetchRooms = async (perPage, page) => {
+  fetchRooms = async (perPage, page, query) => {
+    const { history } = this.props;
+    if (query) {
+      history.replace({ state: { compquery: '' } });
+    }
     this.setState({ isFetching: true });
-
     try {
       const user = await getUserDetails();
       const textVariable = Object.values(this.state.filterText);
+      const searchText = query || textVariable.join();
       await this.props.getRooms([
-        user.location, perPage < 8 ? 8 : perPage, page, textVariable.join(),
+        user.location, perPage < 8 ? 8 : perPage, page, searchText,
       ]);
 
       this.setState({
@@ -254,10 +269,18 @@ class RoomSetup extends Component {
 }
 
 RoomSetup.propTypes = {
+  history: PropTypes.shape({
+    replace: PropTypes.func,
+  }).isRequired,
+  query: PropTypes.string,
   getRooms: PropTypes.func.isRequired,
   allRooms: PropTypes.shape({
     rooms: PropTypes.instanceOf(Array),
   }).isRequired,
 };
 
-export default RoomSetup;
+RoomSetup.defaultProps = {
+  query: undefined,
+};
+
+export default withRouter(RoomSetup);
