@@ -31,7 +31,6 @@ export const updateCache = (store, dataReturned, Id, updateQuery) => {
   const dataToUpdate = data.questions.questions.find(question => parseInt(question.id, 10) === Id);
   dataToUpdate.isActive = questionUpdated.isActive;
   store.writeQuery({ query: updateQuery, data });
-  notifyUser(questionUpdated.isActive);
 };
 
 /**
@@ -46,9 +45,11 @@ export const updateStatus = (event, mutation = null) => {
   if (checkbox.classList.contains('checked')) {
     checkbox.classList.remove('checked');
     checkbox.classList.add('false');
+    notifyUser(false);
   } else {
     checkbox.classList.remove('false');
     checkbox.classList.add('checked');
+    notifyUser(true);
   }
   mutation && mutation();
 };

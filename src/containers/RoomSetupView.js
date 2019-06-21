@@ -35,6 +35,19 @@ class RoomSetupOverView extends Component {
 
   componentDidMount() {
     this.setUserLocation();
+    if (this.props.searchState) this.setLocationState();
+  }
+
+  componentDidUpdate({ searchState: { component: oldComponent } = {} }) {
+    const { component } = this.props.searchState || {};
+    if (component && (component !== oldComponent)) {
+      this.setLocationState();
+    }
+  }
+
+  setLocationState() {
+    const { component: currentNavItem } = this.props.searchState;
+    this.setState({ currentNavItem });
   }
 
   /**
@@ -99,7 +112,7 @@ class RoomSetupOverView extends Component {
 
   renderNavItems = () => {
     const {
-      props: { handleClick },
+      props: { handleClick, searchState: { component, query } = {} },
       state: {
         allRooms,
         currentNavItem,
@@ -108,12 +121,12 @@ class RoomSetupOverView extends Component {
         location,
       },
     } = this;
-    switch (currentNavItem) {
+    switch (component || currentNavItem) {
       case 'resources':
-        return <Resources location={location} getRooms={this.getRooms} />;
+        return <Resources location={location} getRooms={this.getRooms} query={query} />;
       /* istanbul ignore next */
       case 'people':
-        return <PeopleList locationId={locationId} location={location} />;
+        return <PeopleList locationId={locationId} location={location} query={query} />;
       case 'devices':
         return this.renderDeviceList();
       case 'structure':
@@ -123,15 +136,19 @@ class RoomSetupOverView extends Component {
           updateStructure={this.updateStructure}
         />);
       default:
-        return <RoomSetup getRooms={this.getRooms} allRooms={allRooms} />;
+        return <RoomSetup getRooms={this.getRooms} allRooms={allRooms} query={query} />;
     }
   };
 
   render() {
     const { currentNavItem } = this.state;
+    const { component } = this.props.searchState || {};
     return (
       <div className="setup-main-container">
-        <SetupNavbar currentNavItem={currentNavItem} handleSelectedItem={this.handleSelectedItem} />
+        <SetupNavbar
+          currentNavItem={component || currentNavItem || 'meeting-rooms'}
+          handleSelectedItem={this.handleSelectedItem}
+        />
         {this.renderNavItems()}
       </div>
     );
@@ -140,6 +157,14 @@ class RoomSetupOverView extends Component {
 
 RoomSetupOverView.propTypes = {
   handleClick: PropTypes.func.isRequired,
+  searchState: PropTypes.shape({
+    component: PropTypes.string,
+    query: PropTypes.string,
+  }),
+};
+
+RoomSetupOverView.defaultProps = {
+  searchState: undefined,
 };
 
 export default RoomSetupOverView;
