@@ -13,10 +13,13 @@ const common = require('./webpack.common.js');
 module.exports = merge(common, {
   output: {
     path: path.resolve(__dirname, '../dist'),
-    filename: '[name].js',
+    filename: '[name].[contenthash].js',
     publicPath: '/',
   },
   optimization: {
+    splitChunks: {
+      chunks: 'all',
+    },
     minimizer: [
       new UglifyJsPlugin({
         cache: true,
@@ -44,16 +47,6 @@ module.exports = merge(common, {
       }),
       new OptimizeCSSAssetsPlugin({}),
     ],
-    splitChunks: {
-      cacheGroups: {
-        styles: {
-          name: 'styles',
-          test: /\.css$/,
-          chunks: 'all',
-          enforce: true,
-        },
-      },
-    },
     // Keep the runtime chunk seperated to enable long term caching
     // https://twitter.com/wSokra/status/969679223278505985
     runtimeChunk: true,
