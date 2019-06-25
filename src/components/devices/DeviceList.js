@@ -110,7 +110,7 @@ class DeviceList extends Component {
       perPage,
       openModal,
     } = this.state;
-    const { location } = this.props;
+    const { location, getRooms } = this.props;
 
     const displayPaginator = !fetching
     && !(devices.length < 5 && currentPage === 1);
@@ -127,6 +127,7 @@ class DeviceList extends Component {
             rooms={rooms}
             refetch={this.getData}
             device={device}
+            getRooms={getRooms}
             modalIsClosed={modalIsClosed}
           />
         </div>
@@ -137,7 +138,7 @@ class DeviceList extends Component {
           ) : (
             <Fragment>
               <div className="table device-table">
-                <TableHead titles={['Name', 'Type', 'Date Added', 'Last Seen', 'Location']} />
+                <TableHead titles={['Name', 'Type', 'Date Added', 'Last Seen', 'Room', 'Location']} />
                 <div className="table__body">{this.deviceComponents((
                     fetching ? dummyDevices : paginatedDeviceList
                   ))}
@@ -170,6 +171,7 @@ DeviceList.propTypes = {
   location: PropTypes.shape({
     name: PropTypes.string,
   }),
+  getRooms: PropTypes.func.isRequired,
 };
 
 DeviceList.defaultProps = {

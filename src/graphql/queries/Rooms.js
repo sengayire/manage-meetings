@@ -20,6 +20,10 @@ export const GET_ROOMS_QUERY = gql`
         calendarId
         locationId
         structureId
+        devices{
+          id
+          name
+        }
         resources {
           roomId
           resourceId

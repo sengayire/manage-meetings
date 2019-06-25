@@ -92,7 +92,7 @@ class RoomSetupOverView extends Component {
         </div>
         {/* Add filters in line below. */}
         <div className="room-select-input" />
-        <DevicesList location={{ name, id }} />
+        <DevicesList getRooms={this.getRooms} location={{ name, id }} />
       </div>
     );
   };

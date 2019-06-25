@@ -9,9 +9,10 @@ import ImageLoader from '../commons/ImageLoader';
 import { deleteIcon, editIcon } from '../../utils/images/images';
 import MrmModal from '../commons/MrmModal';
 import '../../assets/styles/rooms.scss';
+import '../../assets/styles/utility.scss';
 import { deleteRoom } from '../helpers/mutationHelpers/rooms';
 import notification from '../../utils/notification';
-import ResourceCard from './ResourceCard';
+import EntityCard from './EntityCard';
 
 class Room extends Component {
   state = {
@@ -65,17 +66,27 @@ class Room extends Component {
     });
   };
 
-
   detailsView = () => {
-    const { state: { showDetails }, props: { resources } } = this;
-    if (showDetails === 'resources') {
-      return <ResourceCard resources={resources} toggleView={this.toggleView} />;
+    const {
+      state: { showDetails, details },
+    } = this;
+    if (showDetails) {
+      return (
+        <EntityCard
+          entityName={showDetails}
+          entity={details}
+          toggleEntity={this.toggleEntity}
+        />
+      );
     }
     // more if statements could be added to display details of more entities
     return undefined;
-  }
+  };
 
-  toggleView = view => this.setState({ showDetails: view })
+  toggleEntity = (entityName, entity) => this.setState({
+    showDetails: entityName,
+    details: entity,
+  });
 
   renderDeleteIcon = () => {
     const { roomName } = this.props;
@@ -85,11 +96,14 @@ class Room extends Component {
         ref={this.deleteRoomModal}
         type={1}
         title="delete room"
-        buttonText={<img src={deleteIcon} alt="Delete Icon" className="deletes-modal" />}
+        buttonText={
+          <img src={deleteIcon} alt="Delete Icon" className="deletes-modal" />
+        }
         modalContent={
           <div>
             <span className="delete-confirmation-text">
-              Are you sure you want to delete &quot;{roomName}&quot;? This cannot be undone.
+              Are you sure you want to delete &quot;{roomName}&quot;? This
+              cannot be undone.
             </span>
           </div>
         }
@@ -113,58 +127,68 @@ class Room extends Component {
     </span>
   );
 
+  renderRoomEntities = (entityName, entityCount, entity) => (
+    <div className="number-of-resources">
+      <button
+        className="btn-plain negative-margin-Top-sm"
+        onClick={() => this.toggleEntity(`${entityName}s`, entity)}
+      >
+        {`${entityCount || 'No'} ${entityName}${entityCount !== 1 ? 's' : ''}`}
+      </button>
+    </div>
+  );
+
   renderRoomLabels = () => {
     const { roomLabels } = this.props;
     return (
       <div className="room-details">
         {roomLabels.map(label => (
-          <div key={label}className="details">
+          <div key={label} className="details">
             <p>{label}</p>
           </div>
         ))}
       </div>
     );
-  }
-
+  };
 
   render() {
     const {
-      roomImage, roomName, numberOfSeats, resources,
-    } = this.props;
+      props: {
+        roomImage, roomName, numberOfSeats, resources, devices,
+      },
 
-    const { showDetails } = this.state;
+      state: { showDetails },
+    } = this;
 
     const resourceCount = resources.length;
+    const deviceCount = devices ? devices.length : null;
 
     return (
       <div className="room-setup-card">
-        { showDetails
-            ? this.detailsView()
-            : (
-              <Fragment>
-                <ImageLoader source={roomImage} className="room-image" altText={roomName} />
-                <div className="room-details-container">
-                  <div className="room-name">{roomName}</div>
-                  <div className="delete-room">
-                    {this.renderEditIcon()}
-                    {this.renderDeleteIcon()}
-                  </div>
-                  <div className="number-of-Seats">
-                    <p>Seats upto {numberOfSeats} people</p>
-                  </div>
-                  <div className="number-of-resources">
-                    <button
-                      className="btn-plain"
-                      onClick={() => this.toggleView('resources')}
-                    >
-                      {`${resourceCount || 'No'} Resource${resourceCount !== 1 ? 's' : ''}`}
-                    </button>
-                  </div>
-                  {this.renderRoomLabels()}
-                </div>
-              </Fragment>
-            )
-        }
+        {showDetails ? (
+          this.detailsView()
+        ) : (
+          <Fragment>
+            <ImageLoader
+              source={roomImage}
+              className="room-image"
+              altText={roomName}
+            />
+            <div className="room-details-container">
+              <div className="room-name">{roomName}</div>
+              <div className="delete-room">
+                {this.renderEditIcon()}
+                {this.renderDeleteIcon()}
+              </div>
+              <div className="number-of-Seats">
+                <p>Seats upto {numberOfSeats} people</p>
+              </div>
+              {this.renderRoomEntities('Resource', resourceCount, resources)}
+              {this.renderRoomEntities('Device', deviceCount, devices)}
+              {this.renderRoomLabels()}
+            </div>
+          </Fragment>
+        )}
       </div>
     );
   }
@@ -181,4 +205,9 @@ Room.propTypes = {
   roomId: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
   updatedRoom: PropTypes.func.isRequired,
   handleClick: PropTypes.func.isRequired,
+  devices: PropTypes.instanceOf(Array),
+};
+
+Room.defaultProps = {
+  devices: [],
 };

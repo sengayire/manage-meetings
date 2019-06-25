@@ -126,7 +126,7 @@ class DeviceFormModal extends Component {
   submit = async (e) => {
     e.preventDefault();
     const { name, roomId, deviceType } = this.state;
-    const { openModal, closeModal } = this.props;
+    const { openModal, closeModal, getRooms } = this.props;
     if (
       (!name || !roomId || !deviceType) && !openModal
     ) {
@@ -138,6 +138,7 @@ class DeviceFormModal extends Component {
       await this.handleMutation();
       this.clearForm(true);
       this.setState({ closeModal: true });
+      getRooms();
       closeModal();
       return notification(toastr, 'success', `Device successfully ${openModal ? `${openModal}ed` : 'added'}.`)();
     } catch (error) {

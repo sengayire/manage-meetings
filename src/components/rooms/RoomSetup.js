@@ -156,6 +156,7 @@ class RoomSetup extends Component {
           roomName={room.name}
           roomLabels={room.roomLabels}
           numberOfSeats={room.capacity}
+          devices={room.devices}
           resources={room.resources}
           handleClick={this.handleEditRoom}
           updatedRoom={this.updateRoomData}

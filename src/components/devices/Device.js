@@ -18,7 +18,7 @@ const Device = ({
   handleAction,
   device,
   device: {
-    name, deviceType, dateAdded, lastSeen, location, /* room: { name: roomName }, */
+    name, deviceType, dateAdded, lastSeen, location, room,
   },
 }) => (
   <div className="table__row">
@@ -26,8 +26,8 @@ const Device = ({
     <span>{deviceType}</span>
     <span>{formatDate(dateAdded)}</span>
     <span>{formatDate(lastSeen)}</span>
+    <span>{room.name}</span>
     <span>{location}</span>
-    {/* <span>{roomName}</span> */}
     <span className="device-table-action-buttons">
       <IconButtons
         btnImage={<img src={editIcon} alt="edit-icon" />}
@@ -50,6 +50,7 @@ Device.propTypes = {
     deviceType: PropTypes.string.isRequired,
     dateAdded: PropTypes.string.isRequired,
     lastSeen: PropTypes.string.isRequired,
+    room: PropTypes.shape({}).isRequired,
     location: PropTypes.string.isRequired,
   }).isRequired,
 };
