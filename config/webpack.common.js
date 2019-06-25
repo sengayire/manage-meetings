@@ -1,6 +1,8 @@
+
 const path = require('path');
 const webpack = require('webpack');
 const dotenv = require('dotenv');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 /**
  * Parses environment variables into a format acceptable by the webpack DefinePlugin
@@ -21,10 +23,13 @@ const { parsed: dotenvConfigs } = dotenv.config();
 // process the environment variables inorder to be able to pass them to react
 const processedDotenvConfigs = parseConfigs(dotenvConfigs);
 
+
 module.exports = {
   entry: {
     bundle: path.join(__dirname, '..', 'src', 'index.js'),
     styleGlobals: './src/assets/styles/index.scss',
+    analytics: path.join(__dirname, '..', 'src', 'containers', 'Analytics.js'),
+    setup: path.join(__dirname, '..', 'src', 'containers', 'Setup.js'),
   },
   output: {
     path: path.resolve(__dirname, '../dist'),
@@ -38,11 +43,15 @@ module.exports = {
         exclude: /node_modules/,
         loader: 'graphql-tag/loader',
       },
-      { test: /\.js$/, exclude: /node_modules/, use: ['babel-loader'] },
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: ['babel-loader'],
+      },
       {
         test: /\.css$/,
         use: [
-          'style-loader',
+          MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
             options: {
@@ -58,7 +67,7 @@ module.exports = {
       {
         test: /\.scss$/,
         use: [
-          'style-loader',
+          MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
             options: {
@@ -87,5 +96,6 @@ module.exports = {
     new webpack.DefinePlugin({
       'process.env': { ...processedDotenvConfigs, ...systemEnvVariables },
     }),
+    new MiniCssExtractPlugin(),
   ],
 };
