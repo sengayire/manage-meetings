@@ -73,6 +73,7 @@ export class DeleteRoom extends Component {
           'success',
           `'${this.props.roomName}' has been deleted successfully`,
         )();
+        this.props.clearFilter();
         refetch({ page: currentPage });
       })
       .catch((err) => {
@@ -129,6 +130,7 @@ DeleteRoom.propTypes = {
   deleteRoom: PropTypes.func.isRequired,
   refetch: PropTypes.func,
   currentPage: PropTypes.number,
+  clearFilter: PropTypes.func.isRequired,
 };
 
 DeleteRoom.defaultProps = {

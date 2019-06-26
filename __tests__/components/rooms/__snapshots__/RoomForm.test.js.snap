@@ -115,41 +115,45 @@ exports[`RoomForm should render properly 1`] = `
           htmlFor="roomLocation"
         >
           Select Room Location
-          <select
-            className="default-select"
-            defaultValue=""
-            disabled={true}
-            id="roomLocation"
-            name="roomLocation"
-            onChange={[Function]}
-            required={false}
-            selected={-1}
+          <form
+            id="LocationFilters"
           >
-            <option
-              value=""
+            <select
+              className="default-select"
+              defaultValue=""
+              disabled={true}
+              id="roomLocation"
+              name="roomLocation"
+              onChange={[Function]}
+              required={false}
+              selected={-1}
             >
-              Select room location
-               
-            </option>
-            <option
-              key="Kampala"
-              value="1"
-            >
-              Kampala
-            </option>
-            <option
-              key="Lagos"
-              value="2"
-            >
-              Lagos
-            </option>
-            <option
-              key="Nairobi"
-              value="3"
-            >
-              Nairobi
-            </option>
-          </select>
+              <option
+                value=""
+              >
+                Select room location
+                 
+              </option>
+              <option
+                key="Kampala"
+                value="1"
+              >
+                Kampala
+              </option>
+              <option
+                key="Lagos"
+                value="2"
+              >
+                Lagos
+              </option>
+              <option
+                key="Nairobi"
+                value="3"
+              >
+                Nairobi
+              </option>
+            </select>
+          </form>
         </label>
       </div>
     </SelectInput>
