@@ -4,7 +4,6 @@ import { graphql, compose } from 'react-apollo';
 import toastr from 'toastr';
 import Resource from './Resource';
 import AddResourceComponent from './AddResource';
-import '../../assets/styles/resourcelist.scss';
 import { GET_RESOURCES_QUERY } from '../../graphql/queries/Resources';
 import { formatResourceData } from '../../graphql/mappers/Resources';
 import TableHead from '../helpers/TableHead';
