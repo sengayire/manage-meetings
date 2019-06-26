@@ -1,11 +1,13 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import { NavLink, withRouter } from 'react-router-dom';
 import Dropdown from '../commons/Dropdown';
 import '../../assets/styles/topmenu.scss';
 import { settingsGearsIcon } from '../../utils/images/images';
 import { removeItemFromLocalStorage } from '../../utils/Utilities';
 import Constants from '../../utils/Constants';
 import { clearCookies } from '../../utils/Cookie';
+import ROUTES from '../../utils/routes';
 
 // destructor constants to be used
 const { MRM_TOKEN } = Constants;
@@ -25,10 +27,12 @@ class ProfileMenu extends React.Component {
    *
    * @returns {Function}
    */
+
   onLogOut = () => {
+    const { history: { push } } = this.props;
     removeItemFromLocalStorage(MRM_TOKEN);
     clearCookies();
-    window.location.reload();
+    push(ROUTES.home);
   };
 
   /**
@@ -67,4 +71,8 @@ class ProfileMenu extends React.Component {
   }
 }
 
-export default ProfileMenu;
+ProfileMenu.propTypes = {
+  history: PropTypes.shape({}).isRequired,
+};
+
+export default withRouter(ProfileMenu);

@@ -1,23 +1,18 @@
 import React from 'react';
-import { mount } from 'enzyme';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { mount, shallow } from 'enzyme';
+import { MemoryRouter } from 'react-router-dom';
 import ProfileMenu from '../../../src/components/navbars/ProfileMenu';
 
 describe('ProfileMenu', () => {
-  const wrapper = mount(<Router><ProfileMenu /></Router>);
+  const wrapper = mount(<MemoryRouter><ProfileMenu /></MemoryRouter>);
 
   it('should have a dropdown', () => {
     const list = wrapper.find('Dropdown');
     expect(list).toHaveLength(1);
   });
 
-  it('should respond to click events properly and render the child components correctly', () => {
-    window.location.reload = jest.fn();
-    wrapper.find('.dropdown-caret button').simulate('mousedown', {
-      type: 'focus',
-    });
-    const span = wrapper.find('button').last();
-    span.simulate('click');
-    expect(window.location.reload).toHaveBeenCalled();
+  it('Profile menu renders correctly', () => {
+    const wrapper2 = shallow(<MemoryRouter><ProfileMenu /></MemoryRouter>);
+    expect(wrapper2).toMatchSnapshot();
   });
 });
