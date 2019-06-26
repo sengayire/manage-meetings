@@ -18,9 +18,9 @@ class Select extends Component {
 
   componentDidUpdate(prevProps, { values: oldValues }) {
     const { values: newValues } = this.state;
-    const { updateRooms } = this.props;
+    const { handleSubmit } = this.props;
     if (newValues !== oldValues) {
-      updateRooms(newValues.map(value => value.split('__')[0]));
+      handleSubmit(newValues);
     }
   }
 
@@ -243,7 +243,7 @@ class Select extends Component {
   }
 
   renderValues = () => {
-    const { placeholder, multiple } = this.props;
+    const { placeholder, multiple, underScoreFormat } = this.props;
     const { values } = this.state;
 
     if (values.length === 0) {
@@ -261,7 +261,11 @@ class Select extends Component {
           onClick={this.stopPropagation}
           className="multiple value"
         >
-          { value.split('__').pop() }
+          {
+            underScoreFormat
+              ? value.split('__').pop()
+              : value
+          }
           <span
             data-value={value}
             onClick={this.onDeleteOption}
@@ -296,7 +300,7 @@ class Select extends Component {
   }
 
   renderOption = (option, index) => {
-    const { multiple } = this.props;
+    const { multiple, underScoreFormat } = this.props;
     const { values, focusedValue } = this.state;
 
     const { value } = option;
@@ -321,7 +325,11 @@ class Select extends Component {
           </span> :
           null
         }
-        { value.split('__').pop() }
+        {
+          underScoreFormat
+            ? value.split('__').pop()
+            : value
+        }
       </div>
     );
   }
@@ -356,11 +364,16 @@ class Select extends Component {
 }
 
 Select.propTypes = {
-  updateRooms: PropTypes.func.isRequired,
+  underScoreFormat: PropTypes.bool,
+  handleSubmit: PropTypes.func.isRequired,
   options: PropTypes.instanceOf(Array).isRequired,
   placeholder: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
   multiple: PropTypes.bool.isRequired,
+};
+
+Select.defaultProps = {
+  underScoreFormat: false,
 };
 
 export default Select;

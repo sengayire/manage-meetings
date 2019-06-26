@@ -9,7 +9,7 @@ import RoomFeedbackResponseList from '../components/roomFeedback/RoomFeedbackRes
 import { NavBar } from '../components';
 import '../assets/styles/roomFeedbackContainer.scss';
 import { getTodaysDate } from '../utils/Utilities';
-import { getUserDetails } from '../components/helpers/QueriesHelpers';
+import { getUserDetails, getRoomFeedbackQuestions } from '../components/helpers/QueriesHelpers';
 
 class RoomFeedbackPage extends Component {
   state = {
@@ -17,23 +17,30 @@ class RoomFeedbackPage extends Component {
     responseData: [],
     upperLimitCount: 100,
     lowerLimitCount: 0,
+    loading: true,
     startDate: getTodaysDate(),
     endDate: getTodaysDate(),
-    user: '',
   }
 
   componentDidMount = () => {
-    this.getUsersInformation();
+    this.getData(true);
   };
 
   /**
    * It queries the Apollo store to fetch user details
    * @returns {Object}
    */
-  getUsersInformation = async () => {
-    const user = await getUserDetails();
+  getData = async (fetchUser) => {
+    this.setState({ loading: true });
+    let user;
+    if (fetchUser) {
+      user = await getUserDetails();
+    }
+    const feedbackQuestions = await getRoomFeedbackQuestions();
     this.setState({
-      user,
+      loading: false,
+      ...(fetchUser && { user }),
+      ...(feedbackQuestions && { questions: feedbackQuestions.questions }),
     });
   };
 
@@ -70,7 +77,7 @@ class RoomFeedbackPage extends Component {
   render() {
     const {
       isResponsePageVisible, responseData, lowerLimitCount,
-      upperLimitCount, startDate, endDate, user,
+      upperLimitCount, startDate, endDate, user, loading, questions,
     } = this.state;
     const showResponseButton = (user && user.roles[0].role === 'Admin');
     return (
@@ -94,7 +101,7 @@ class RoomFeedbackPage extends Component {
                 isDisabled={isResponsePageVisible}
               />}
             </div>
-            {!isResponsePageVisible && <AddQuestionComponent />}
+            {!isResponsePageVisible && <AddQuestionComponent refetch={this.getData} />}
             {
               isResponsePageVisible &&
               <Fragment>
@@ -115,7 +122,15 @@ class RoomFeedbackPage extends Component {
                     lowerLimitCount={lowerLimitCount}
                   />
                 </div>)
-              : <div id="questions"><RoomQuestions /></div>
+              :
+                <div id="questions">
+                  <RoomQuestions
+                    refetch={this.getData}
+                    loading={loading}
+                    questions={questions}
+                    user={user}
+                  />
+                </div>
           }
         </div>
       </Fragment>

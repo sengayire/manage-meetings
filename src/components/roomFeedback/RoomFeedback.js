@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import TableHead from '../helpers/TableHead';
 import Feedback from './Feedback';
 import '../../../src/assets/styles/roomFeedback.scss';
 import ErrorIcon from '../../components/commons/ErrorIcon';
-import { getRoomFeedbackQuestions, getUserDetails } from '../helpers/QueriesHelpers';
 import dummyQuestions from '../../fixtures/roomFeedbackQuestions';
 import Overlay from '../commons/Overlay';
 
@@ -13,34 +13,6 @@ import Overlay from '../commons/Overlay';
  * @returns {JSX}
  */
 export class RoomFeedback extends Component {
-  state = {
-    role: '',
-    loading: true,
-  };
-
-  componentDidMount() {
-    this.setUserRole();
-    this.getFeedbackQuestions();
-  }
-
-  getFeedbackQuestions = async () => {
-    this.setState({ loading: true });
-    const feedbackQuestions = await getRoomFeedbackQuestions();
-    if (feedbackQuestions) {
-      this.setState({ questions: feedbackQuestions.questions });
-      this.setState({ loading: false });
-    }
-  };
-  /**
-   * Sets the current user's location and role
-   *
-   * @returns {void}
-   */
-  setUserRole = async () => {
-    const user = await getUserDetails();
-    this.setState({ role: user.roles[0].id });
-  }
-
   /**
    * This function computes the duration in weeks
    * basing on the start and end dates
@@ -92,11 +64,15 @@ export class RoomFeedback extends Component {
   };
 
   render() {
-    const { loading } = this.state;
+    const {
+      questions,
+      loading,
+      refetch,
+      user: { roles: [{ id: role }] },
+    } = this.props;
     let tableTitles = ['Question', 'Type', 'Responses', 'Start Date', 'Duration'];
-    this.state.role === '2' && (tableTitles = [...tableTitles, 'Action', 'Status']);
+    role === '2' && (tableTitles = [...tableTitles, 'Action', 'Status']);
 
-    const { questions = dummyQuestions } = this.state;
 
     return (
       <div className="room-feedback">
@@ -113,10 +89,11 @@ export class RoomFeedback extends Component {
             <div className="table__body overlay-container">
               {loading && <Overlay id="feedback_overlay" /> }
               <Feedback
+                refetch={refetch}
                 feedback={questions}
                 durationFormatter={this.durationInWeeks}
                 startDateFormatter={this.formatStartDate}
-                role={this.state.role}
+                role={role || '1'}
               />
             </div>
           </div>
@@ -126,24 +103,18 @@ export class RoomFeedback extends Component {
   }
 }
 
+RoomFeedback.propTypes = {
+  refetch: PropTypes.func.isRequired,
+  user: PropTypes.shape({
+    roles: PropTypes.instanceOf(Array),
+  }),
+  questions: PropTypes.instanceOf(Array),
+  loading: PropTypes.bool.isRequired,
+};
+
 RoomFeedback.defaultProps = {
-  data: {
-    questions: {
-      questions: [
-        {
-          id: '1',
-          question: 'There is default question',
-          questionType: 'Input',
-          startDate: '2019-02-21 23:42:43',
-          endDate: '2019-02-21 23:42:43',
-          questionResponseCount: 0,
-          isActive: false,
-        },
-      ],
-      loading: false,
-      error: {},
-    },
-  },
+  user: { roles: [{ id: '1' }] },
+  questions: dummyQuestions,
 };
 
 export default RoomFeedback;

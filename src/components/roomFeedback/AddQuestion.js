@@ -1,8 +1,7 @@
 /* eslint-disable import/no-named-as-default */
 /* eslint react/no-array-index-key: 0 */
-import React, { Component, createRef } from 'react';
+import React, { Component, createRef, Fragment } from 'react';
 import moment from 'moment';
-import { graphql } from 'react-apollo';
 import toastr from 'toastr';
 import PropTypes from 'prop-types';
 import notification from '../../utils/notification';
@@ -10,8 +9,8 @@ import Calendar from '../commons/Calendar';
 import MrmModal from '../commons/MrmModal';
 import { SelectInput as Select } from '../commons';
 import '../../assets/styles/addQuestion.scss';
-import { ADD_ROOM_FEEDBACK_QUESTIONS } from '../../graphql/mutations/Question';
-import GET_ROOM_FEEDBACK_QUESTIONS_QUERY from '../../../src/graphql/queries/questions';
+import { addQuestionMutation } from '../helpers/mutationHelpers/questions';
+import MultipleInput from '../commons/MultipleInput';
 
 
 /**
@@ -23,6 +22,7 @@ import GET_ROOM_FEEDBACK_QUESTIONS_QUERY from '../../../src/graphql/queries/ques
  */
 export class AddQuestion extends Component {
   state = {
+    checkOptions: [],
     question: '',
     questionTitle: '',
     questionType: 0,
@@ -47,7 +47,7 @@ export class AddQuestion extends Component {
       },
       {
         id: '3',
-        name: 'Suggest',
+        name: 'Input',
       },
     ],
   };
@@ -119,6 +119,14 @@ export class AddQuestion extends Component {
   };
 
   /**
+   * It sets check option state
+   *
+   * @returns {JSX}
+   */
+  handleCheckOptions = checkOptions => this.setState({ checkOptions });
+
+
+  /**
    * This function formats the returned date
    * and time to form a datetime object for
    * both start date and end date
@@ -141,45 +149,54 @@ export class AddQuestion extends Component {
    *
    * @returns {void}
    */
-  createQuestion = () => {
+  createQuestion = async () => {
     const {
-      question, questionTitle, questionType, startDate, endDate, startTime, endTime, options,
+      question,
+      questionTitle,
+      questionType,
+      startDate,
+      endDate,
+      startTime,
+      endTime,
+      options,
+      checkOptions,
     } = this.state;
     const valueOfQuestionType = parseInt(questionType, 10) - 1;
-    const questionTypeName = options[valueOfQuestionType].name;
+    const questionTypeName = options[valueOfQuestionType].name.toLowerCase();
     this.toggleLoading();
-    this.props.addQuestion({
-      variables: {
-        question,
-        questionTitle,
-        questionType: questionTypeName,
-        startDate: this.formatDateTime(startDate, startTime),
-        endDate: this.formatDateTime(endDate, endTime),
-      },
-    })
-      .then(() => {
-        notification(
-          toastr,
-          'success',
-          'Question has been added successfully',
-        )();
-        this.setState({
-          question: '',
-          questionTitle: '',
-          questionType: 0,
-          startDate: moment().format('MMM DD Y'),
-          endDate: moment().format('MMM DD Y'),
-          startTime: moment().format('HH:MM'),
-          endTime: moment().format('HH:MM'),
-        });
-        this.handleCloseModal();
-        this.toggleLoading();
-      })
-      .catch((err) => {
-        this.toggleLoading();
-        this.handleCloseModal();
-        notification(toastr, 'error', err.graphQLErrors[0].message)();
+    try {
+      await addQuestionMutation({
+        variables: {
+          checkOptions,
+          question,
+          questionTitle,
+          questionType: questionTypeName,
+          startDate: this.formatDateTime(startDate, startTime),
+          endDate: this.formatDateTime(endDate, endTime),
+        },
       });
+      notification(
+        toastr,
+        'success',
+        'Question has been added successfully',
+      )();
+      this.setState({
+        question: '',
+        questionTitle: '',
+        questionType: 0,
+        startDate: moment().format('MMM DD Y'),
+        endDate: moment().format('MMM DD Y'),
+        startTime: moment().format('HH:MM'),
+        endTime: moment().format('HH:MM'),
+      });
+      this.handleCloseModal();
+      this.toggleLoading();
+      this.props.refetch();
+    } catch (err) {
+      this.toggleLoading();
+      this.handleCloseModal();
+      notification(toastr, 'error', err.graphQLErrors[0].message)();
+    }
   }
 
   /**
@@ -333,6 +350,7 @@ export class AddQuestion extends Component {
           <br />{this.state.error.date}
         </span>}
       <Calendar
+        disabledDateRange="past"
         sendData={this.sendDateData}
         classProp={this.state.error.date ? 'calendarIconBtn-error' : 'calendarIconBtn'}
       />
@@ -365,6 +383,7 @@ export class AddQuestion extends Component {
     </div>
   );
 
+
   /**
    * It shows all the input fields required for creating a question
    *
@@ -382,6 +401,15 @@ export class AddQuestion extends Component {
       {this.renderQuestionInputBox()}
       <span className="question-form__sections">Question Type</span>
       {this.rendersQuestionType()}
+      {
+        this.state.questionType === '2'
+        && (
+          <Fragment>
+            <span className="question-form__sections">Check Options</span>
+            <MultipleInput submit={this.handleCheckOptions} placeholder="Enter option and press 'Enter' or ','" />
+          </Fragment>
+        )
+      }
     </div>
   );
 
@@ -401,15 +429,9 @@ export class AddQuestion extends Component {
     );
   }
 }
-AddQuestion.defaultProps = {
-  addQuestion: null,
-};
+
 AddQuestion.propTypes = {
-  addQuestion: PropTypes.func,
+  refetch: PropTypes.func.isRequired,
 };
-export default graphql(ADD_ROOM_FEEDBACK_QUESTIONS,
-  {
-    name: 'addQuestion',
-    options:
-  { refetchQueries: [{ query: GET_ROOM_FEEDBACK_QUESTIONS_QUERY }] },
-  })(AddQuestion);
+
+export default AddQuestion;

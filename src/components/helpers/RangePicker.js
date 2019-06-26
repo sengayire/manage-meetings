@@ -13,6 +13,7 @@ import 'react-day-picker/lib/style.css';
  */
 export default class PickRange extends React.Component {
   static propTypes = {
+    disabledDateRange: PropTypes.string.isRequired,
     handleChange: PropTypes.func.isRequired,
   };
   state = {
@@ -54,6 +55,19 @@ export default class PickRange extends React.Component {
     this.setState(range);
     this.props.handleChange(range);
   };
+
+
+  disableDays = (day) => {
+    const { disabledDateRange } = this.props;
+    const today = moment();
+    if (disabledDateRange === 'future') {
+      return day > moment(today).add(1, 'days');
+    }
+    if (disabledDateRange === 'past') {
+      return day < today;
+    }
+    return false;
+  }
 
   /**
    * Calculates the number of days between
@@ -104,7 +118,7 @@ export default class PickRange extends React.Component {
           selectedDays={[from, { from, to }]}
           modifiers={modifiers}
           onDayClick={this.handleDayClick}
-          disabledDays={day => day > (new Date())}
+          disabledDays={this.disableDays}
         />
       </div>
     );

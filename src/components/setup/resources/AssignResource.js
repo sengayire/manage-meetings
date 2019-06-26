@@ -60,7 +60,7 @@ export class AssignResource extends React.Component {
     }
   };
 
-  updateSelectedRooms = rooms => this.setState({ rooms });
+  updateSelectedRooms = rooms => this.setState({ rooms: rooms.map(value => value.split('__')[0]) });
 
   /**
    * It updates the state value of closeModal
@@ -90,11 +90,12 @@ export class AssignResource extends React.Component {
         <form className="amenity-form" onSubmit={this.handleCloseModal}>
           <div>
             <MultipleSelect
-              updateRooms={this.updateSelectedRooms}
+              handleSubmit={this.updateSelectedRooms}
               label="Select rooms"
               placeholder="Pick rooms"
               options={locationRooms.map(({ id, name }) => ({ value: `${id}__${name}` }))}
               multiple
+              underScoreFormat
             />
             <div className="loading-btn-div">
               <ActionButtons

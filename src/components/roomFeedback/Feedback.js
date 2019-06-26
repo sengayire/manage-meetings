@@ -15,10 +15,10 @@ import DeleteFeedback from './DeleteFeedback'; // eslint-disable-line
  * @returns {JSX}
  */
 const Feedback = (props) => {
-  const { role } = props;
+  const { role, refetch } = props;
   return (
-    props.feedback.map(({
-      id, question, startDate, endDate, questionTitle,
+    [...props.feedback].sort((a, b) => (b.startDate < a.startDate ? -1 : 1)).map(({
+      id, question, startDate, endDate, questionTitle, checkOptions,
       questionResponseCount, questionType, isActive,
     }) => (
       <div className="table__row" key={id}>
@@ -42,8 +42,10 @@ const Feedback = (props) => {
                   questionTitle={questionTitle}
                   startDate={startDate}
                   endDate={endDate}
+                  refetch={refetch}
+                  checkOptions={checkOptions}
                 />}
-              <DeleteFeedback id={id} question={question} />
+              <DeleteFeedback id={id} question={question} refetch={refetch} />
             </span>
             <span className="checkbox">
               <CheckBoxSlide
@@ -77,6 +79,7 @@ Feedback.defaultProps = {
 Feedback.propTypes = {
   feedback: PropTypes.arrayOf(PropTypes.object).isRequired,
   role: PropTypes.string.isRequired,
+  refetch: PropTypes.func.isRequired,
 };
 
 export default Feedback;

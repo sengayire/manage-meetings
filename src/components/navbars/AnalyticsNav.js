@@ -156,6 +156,7 @@ class AnalyticsNav extends Component {
                       sendData={this.sendDateData}
                       startDate={startDate}
                       endDate={endDate}
+                      disabledDateRange="future"
                     />
                   </div>
                   <ExportButton data={{ analytics, dateValue: this.dateValue() }} />

@@ -3,19 +3,32 @@ import { shallow } from 'enzyme';
 import AddQuestionComponent from '../../src/components/roomFeedback/AddQuestion';
 import RoomFeedbackPage from '../../src/containers/RoomFeedbackPage';
 import Button from '../../src/components/commons/Button';
-import * as queryHelper from '../../src/components/helpers/QueriesHelpers';
+import { getUserDetails, getRoomFeedbackQuestions } from '../../src/components/helpers/QueriesHelpers';
+
+jest.mock('../../src/components/helpers/QueriesHelpers');
+
 
 describe('RoomFeedback component', () => {
-  const defaultUser = {
-    id: '215',
-    roles: [{ id: 3, role: 'Admin' }],
-  };
-  const wrapper = shallow(<RoomFeedbackPage />);
-  wrapper.setState({
-    user: {
+  const questions = [{
+    id: '1',
+    questionId: '3',
+    question: 'test question',
+    questionTitle: 'my title',
+    startDate: '2019-05-21 13:32:15.753',
+    endDate: '2019-05-22 13:32:15.753',
+    questionResponseCount: 2,
+    questionType: 'test',
+    isActive: true,
+  }];
+  let wrapper;
+  beforeAll(() => {
+    getRoomFeedbackQuestions.mockResolvedValue(questions);
+    getUserDetails.mockResolvedValue({
       id: '214',
       roles: [{ id: 2, role: 'Admin' }],
-    },
+    });
+    wrapper = shallow(<RoomFeedbackPage />);
+    wrapper.instance().getData(false);
   });
 
   it('should render RoomQuestions component with length of 1 ', () => {
@@ -52,12 +65,5 @@ describe('RoomFeedback component', () => {
     expect(wrapper.state().responseData).toEqual([]);
     wrapper.instance().checkData(data);
     expect(wrapper.state().responseData).toEqual(data.responses);
-  });
-
-  it('should call update the state when getUserInformation is called', async () => {
-    jest.spyOn(queryHelper, 'getUserDetails').mockImplementationOnce(() => defaultUser);
-    await wrapper.instance().getUsersInformation();
-    wrapper.update();
-    expect(wrapper.state('user')).toBe(defaultUser);
   });
 });
