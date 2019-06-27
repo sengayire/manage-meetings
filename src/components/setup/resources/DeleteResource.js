@@ -19,9 +19,10 @@ class DeleteResource extends Component {
       handleOnDeleteResource,
       currentPage,
       perPage,
+      location,
     } = this.props;
     const variables = { resourceId: id };
-    deleteResources(currentPage, perPage, variables)
+    deleteResources(currentPage, perPage, variables, location)
       .then(() => {
         this.handleCloseModal();
         notification(toastr, 'success', `'${name}' has been deleted successfully`)();
@@ -67,6 +68,7 @@ DeleteResource.propTypes = {
   resource: PropTypes.shape({
     name: PropTypes.string,
   }).isRequired,
+  location: PropTypes.string.isRequired,
 };
 DeleteResource.defaultProps = {
   currentPage: 1,
