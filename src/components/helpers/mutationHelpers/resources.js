@@ -15,45 +15,89 @@ const updateStore = (data, deleteResource) =>
     }
   });
 
-const deleteResources = async (currentPage, perPage, { resourceId }, client = apolloClient) => {
-  await client
-    .mutate({
-      mutation: DELETE_RESOURCE_MUTATION,
-      name: 'deleteResource',
-      variables: {
-        resourceId,
-      },
-      refetchQueries: [
-        {
-          query: GET_RESOURCES_QUERY,
-          variables: {
-            page: currentPage,
-            perPage,
-          },
+const updateRooms = (rooms, resourceId) => {
+  const updatedRooms = rooms.map((room) => {
+    room.resources = room.resources.filter(resource => resource.resource.id !== resourceId);
+    return room;
+  });
+  return updatedRooms;
+};
+
+
+const deleteResources = async (
+  currentPage,
+  perPage,
+  { resourceId },
+  location,
+  client = apolloClient,
+) => {
+  await client.mutate({
+    mutation: DELETE_RESOURCE_MUTATION,
+    name: 'deleteResource',
+    variables: {
+      resourceId,
+    },
+    refetchQueries: [
+      {
+        query: GET_RESOURCES_QUERY,
+        variables: {
+          page: currentPage,
+          perPage,
         },
-      ],
-      update: async (proxy, { data: { deleteResource } }) => {
-        // Read the data from our cache for this query.
-        const resourceData = proxy.readQuery({
-          query: GET_RESOURCES_QUERY,
-          variables: {
-            page: currentPage,
-            perPage,
-          },
-        });
-        // Remove a resource from the store.
-        resourceData.allResources.resources = updateStore(resourceData, deleteResource);
-        // Write our data back to the cache.
-        proxy.writeQuery({
-          query: GET_RESOURCES_QUERY,
-          variables: {
-            page: currentPage,
-            perPage,
-          },
-          data: resourceData,
-        });
       },
-    });
+    ],
+    update: async (proxy, { data: { deleteResource } }) => {
+      // Read the data from our cache for this query.
+      const resourceData = proxy.readQuery({
+        query: GET_RESOURCES_QUERY,
+        variables: {
+          page: currentPage,
+          perPage,
+        },
+      });
+      // Remove a resource from the store.
+      resourceData.allResources.resources = updateStore(
+        resourceData,
+        deleteResource,
+      );
+      // Write our data back to the cache.
+      proxy.writeQuery({
+        query: GET_RESOURCES_QUERY,
+        variables: {
+          page: currentPage,
+          perPage,
+        },
+        data: resourceData,
+      });
+
+      const cachedRooms = proxy.readQuery({
+        query: GET_ROOMS_QUERY,
+        variables: {
+          location,
+          office: '',
+          page: 1,
+          perPage: 8,
+          roomLabels: '',
+        },
+      });
+
+      const updatedRooms = updateRooms(cachedRooms.allRooms.rooms, resourceId);
+      const updatedCachedRooms = { ...cachedRooms };
+      updatedCachedRooms.allRooms.rooms = updatedRooms;
+
+      proxy.writeQuery({
+        query: GET_ROOMS_QUERY,
+        variables: {
+          location,
+          office: '',
+          page: 1,
+          perPage: 8,
+          roomLabels: '',
+        },
+        data: updatedCachedRooms,
+      });
+    },
+  });
 };
 
 const addResourceMutation = async (name, client = apolloClient) => {
