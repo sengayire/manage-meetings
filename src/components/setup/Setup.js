@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import WelcomePage from './WelcomePage';
 import SetupInfoPage from './SetupInfoPage';
 import BuildingLevel from './BuildingLevel';
@@ -103,6 +104,8 @@ class Setup extends Component {
       location, isStructureSetup, loaded, user,
     } = this.state;
 
+    const { searchState } = this.props;
+
     if (loaded) {
       switch (level) {
         case 'SetupInfoPage':
@@ -113,11 +116,22 @@ class Setup extends Component {
             getAllStructureIds={this.getAllStructureIds}
           />);
         case 'RoomSetupView':
-          return (<RoomSetupView handleClick={this.handleClick} userLocation={location} />);
+          return (
+            <RoomSetupView
+              handleClick={this.handleClick}
+              userLocation={location}
+              searchState={searchState}
+            />
+          );
         default:
           return (!isStructureSetup
             ? <WelcomePage user={user} handleClick={this.handleClick} />
-            : <RoomSetupView handleClick={this.handleClick} userLocation={location} />);
+            :
+            <RoomSetupView
+              handleClick={this.handleClick}
+              userLocation={location}
+              searchState={searchState}
+            />);
       }
     }
     return (
@@ -143,5 +157,16 @@ class Setup extends Component {
     );
   }
 }
+
+Setup.propTypes = {
+  searchState: PropTypes.shape({
+    component: PropTypes.string,
+    query: PropTypes.string,
+  }),
+};
+
+Setup.defaultProps = {
+  searchState: undefined,
+};
 
 export default Setup;

@@ -5,13 +5,30 @@ const SINGLE_ROOM_FEEDBACK = gql`
     roomResponse(roomId: $roomId) {
       roomName,
       totalResponses,
-      totalRoomResources,
       response {
         responseId,
-        suggestion,
-        missingItems,
         createdDate,
-        rating,
+        questionType,
+        resolved,
+        response {
+          __typename
+          ... on Rate {
+            rate
+          }
+          ... on SelectedOptions {
+            options
+          }
+          ... on TextArea {
+            suggestion
+          }
+          ... on MissingItems {
+            missingItems {
+              id
+              name
+              state
+            }
+          }
+        }
       }
     }
   }
@@ -29,11 +46,28 @@ const ALL_ROOM_FEEDBACK = gql`
         roomName
         totalResponses
         response {
-          suggestion
           responseId
-          missingItems
           createdDate
-          rating
+          resolved
+          response {
+            __typename
+            ... on Rate {
+              rate
+            }
+            ... on SelectedOptions {
+              options
+            }
+            ... on TextArea {
+              suggestion
+            }
+            ... on MissingItems {
+              missingItems {
+                id
+                name
+                state
+              }
+            }
+          }
         }
       }
     }

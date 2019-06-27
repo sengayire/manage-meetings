@@ -5,12 +5,13 @@ exports[`Room feedback list should render correctly 1`] = `
   <div
     className="feedback-container overlay-container"
   >
-    <Apollo(Apollo(SingleRoomFeedBack))
+    <SingleRoomFeedBack
       roomCleanlinessRating={[Function]}
       roomId={null}
       showModal={[Function]}
       totalCleanlinessRating={[Function]}
       totalMissingItemsCount={[Function]}
+      totalRoomResources={[Function]}
       visible={false}
     />
     <div
@@ -24,12 +25,12 @@ exports[`Room feedback list should render correctly 1`] = `
       <RoomFeedbackCard
         key="1"
         title="Rooms With Missing Items"
-        value={1}
+        value={0}
       />
       <RoomFeedbackCard
         key="2"
         title="Average Ratings"
-        value={2}
+        value={5}
       />
     </div>
     <div
@@ -62,21 +63,36 @@ exports[`Room feedback list should render correctly 1`] = `
           Object {
             "response": Array [
               Object {
-                "missingItems": Array [],
-                "responseId": 1,
-                "suggestion": "This is a suggestion",
+                "createdDate": "2019-06-25T14:45:26.577611",
+                "resolved": false,
+                "response": Object {
+                  "__typename": "Rate",
+                  "rate": 5,
+                },
+                "responseId": 289,
               },
               Object {
-                "missingItems": Array [],
-                "rating": 2,
-                "responseId": 2,
+                "createdDate": "2019-06-25T14:45:27.942964",
+                "resolved": false,
+                "response": Object {
+                  "__typename": "MissingItems",
+                  "missingItems": Object {
+                    "id": "test",
+                    "name": "test name",
+                  },
+                },
+                "responseId": 290,
               },
               Object {
-                "missingItems": Array [
-                  "Tissue box",
-                  "Ethernet Cable",
-                ],
-                "responseId": 3,
+                "createdDate": "2019-06-25T14:46:06.718295",
+                "resolved": false,
+                "response": Object {
+                  "__typename": "SelectedOptions",
+                  "options": Array [
+                    "handywork",
+                  ],
+                },
+                "responseId": 291,
               },
             ],
             "roomId": 1,
@@ -87,6 +103,7 @@ exports[`Room feedback list should render correctly 1`] = `
         }
         totalCleanlinessRating={[Function]}
         totalMissingItemsCount={[Function]}
+        totalRoomResources={[Function]}
         viewSingleFeed={[Function]}
       />
     </div>

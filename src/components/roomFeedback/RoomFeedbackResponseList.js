@@ -48,11 +48,11 @@ export const roomCleanlinessRating = (rating) => {
 export const totalCleanlinessRating = (roomResponses = []) => {
   let totalRating = 0;
   const gradeList = ['Not Rated', 'Poor', 'Fair', 'Good', 'Very Good', 'Excellent'];
-  const ratingResponses = roomResponses.filter(response => response.rating !== null);
-  ratingResponses.forEach((singleResponse) => { totalRating += singleResponse.rating; });
-  totalRating = Math.round(totalRating / (ratingResponses.length));
-  const grade = gradeList[(totalRating)];
-  return { totalRating, grade };
+  const responsesWithRating = roomResponses.filter(response => response.response.__typename === 'Rate');
+  responsesWithRating.forEach((singleResponse) => { totalRating += singleResponse.response.rate; });
+  const averageRating = Math.round(totalRating / (responsesWithRating.length));
+  const grade = gradeList[(averageRating)];
+  return { averageRating, grade };
 };
 
 /**
@@ -66,11 +66,26 @@ export const totalCleanlinessRating = (roomResponses = []) => {
  */
 export const totalMissingItemsCount = (roomResponses = []) => {
   let missingItemsList = [];
-  roomResponses.filter(response => ((response.missingItems).length !== 0))
-    .forEach((response) => {
-      missingItemsList = [...new Set(response.missingItems)];
-    });
+  const responsesWithMissingItems = roomResponses.filter(response => response.response.__typename === 'MissingItems');
+  responsesWithMissingItems.forEach((response) => {
+    missingItemsList = [...new Set(response.response.missingItems)];
+  });
   return missingItemsList.length;
+};
+
+/**
+ * Calculates the total number of room resources
+ *
+ * @param {array} roomResources
+ *
+ * @return {integer}
+ */
+export const totalRoomResources = (roomResources = []) => {
+  const totalRoomResourcesNumber = roomResources.reduce(
+    (accumulator, currentValue) => accumulator + currentValue.room[0].quantity,
+    0,
+  );
+  return totalRoomResourcesNumber;
 };
 
 /**
@@ -125,13 +140,16 @@ export class RoomFeedbackResponseList extends React.Component {
    */
   getRoomsWithMissingItems = (rooms) => {
     let roomsWithMissingItemsCount = 0;
-    rooms.map(room => room.response)
-      .forEach((responses) => {
-        const missingItemsRooms = responses.filter(response => (response.missingItems).length > 0);
-        if (missingItemsRooms.length > 0) {
-          roomsWithMissingItemsCount += 1;
+    const individualRoomResponsesArray = rooms.map(room => room.response);
+    individualRoomResponsesArray.forEach((responses) => {
+      let roomHasMissingItem = false;
+      responses.forEach((response) => {
+        if (response.response.__typename === 'MissingItem' && response.response.missingItems) {
+          roomHasMissingItem = true;
         }
       });
+      if (roomHasMissingItem === true) { roomsWithMissingItemsCount += 1; }
+    });
     return roomsWithMissingItemsCount;
   };
 
@@ -148,8 +166,8 @@ export class RoomFeedbackResponseList extends React.Component {
     let totalRating = 0;
     rooms.forEach((room) => {
       (room.response).forEach((response) => {
-        if (response.rating) {
-          totalRating += (response.rating);
+        if (response.response.__typename === 'Rate') {
+          totalRating += (response.response.rate);
           ratingsCount += 1;
         }
       });
@@ -274,14 +292,22 @@ export class RoomFeedbackResponseList extends React.Component {
         </div>);
     }
     const feedbackData = loading
-      ? { roomsResponses: [{}] }
+      ? {
+        roomsResponses: [{
+          roomId: 1,
+          roomName: 'Sample',
+          response: [],
+          totalResponses: 1,
+          totalRoomResources: 1,
+        }],
+      }
       : this.formatAllRoomFeedbackData(allRoomResponses.responses);
 
     if (loading || (feedbackData.roomsResponses).length > 0) {
       return (
         <Fragment>
           <div className="feedback-container overlay-container">
-            { loading && <Overlay />}
+            {loading && <Overlay />}
             <SingleRoom
               roomId={roomId}
               visible={this.state.visible}
@@ -289,6 +315,7 @@ export class RoomFeedbackResponseList extends React.Component {
               totalCleanlinessRating={totalCleanlinessRating}
               roomCleanlinessRating={roomCleanlinessRating}
               totalMissingItemsCount={totalMissingItemsCount}
+              totalRoomResources={totalRoomResources}
             />
             <div className="feedback-card ">{this.renderCard(feedbackData)}</div>
             <div className="feedback-reponses-list">
@@ -309,10 +336,11 @@ export class RoomFeedbackResponseList extends React.Component {
                   totalCleanlinessRating={totalCleanlinessRating}
                   roomCleanlinessRating={roomCleanlinessRating}
                   totalMissingItemsCount={totalMissingItemsCount}
+                  totalRoomResources={totalRoomResources}
                 />
-            ))}
+              ))}
             </div>
-            { !error && <Pagination
+            {!error && <Pagination
               totalPages={allRoomResponses.pages}
               hasNext={allRoomResponses.hasNext}
               hasPrevious={allRoomResponses.hasPrevious}

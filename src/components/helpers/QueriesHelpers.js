@@ -7,6 +7,7 @@ import {
   GET_REMOTE_ROOMS_ALL_LOCATIONS,
 } from '../../graphql/queries/Rooms';
 import { GET_RESOURCES_QUERY, GET_ROOM_RESOURCES } from '../../graphql/queries/Resources';
+import SINGLE_ROOM_FEEDBACK from '../../graphql/queries/RoomFeedback';
 import ALL_ANALYTICS, { ANALYTICS_FOR_DAILY_ROOM_EVENTS } from '../../graphql/queries/analytics';
 import { decodeTokenAndGetUserData } from '../../utils/Cookie';
 import apolloClient from '../../utils/ApolloClient';
@@ -122,7 +123,7 @@ const getRoomResources = async (roomId, client = apolloClient) => {
       },
       true,
     );
-    return data.roomResources;
+    return data.getResourcesByRoomId.roomResources;
   } catch (error) {
     const { data } = await client.query({
       query: GET_ROOM_RESOURCES,
@@ -130,7 +131,30 @@ const getRoomResources = async (roomId, client = apolloClient) => {
         roomId,
       },
     });
-    return data.roomResources;
+    return data.getResourcesByRoomId.roomResources;
+  }
+};
+
+const getSingleRoomFeedback = async (roomId, client = apolloClient) => {
+  try {
+    const data = client.readQuery(
+      {
+        query: SINGLE_ROOM_FEEDBACK,
+        variables: {
+          roomId,
+        },
+      },
+      true,
+    );
+    return data.roomResponse;
+  } catch (error) {
+    const { data } = await client.query({
+      query: SINGLE_ROOM_FEEDBACK,
+      variables: {
+        roomId,
+      },
+    });
+    return data.roomResponse;
   }
 };
 
@@ -280,4 +304,5 @@ export {
   getRoomFeedbackQuestions,
   getRemoteRoomsAllLocations,
   getAllDevices,
+  getSingleRoomFeedback,
 };

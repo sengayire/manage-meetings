@@ -52,10 +52,12 @@ export class Input extends Component {
       inputClass,
       type,
       labelName,
+      onBlur,
       labelClass,
       id,
       placeholder,
       onChange,
+      onFocus,
       controlsClass,
       ...otherProps
     } = this.props;
@@ -71,6 +73,8 @@ export class Input extends Component {
             name={name}
             defaultValue={value}
             onChange={onChange}
+            onBlur={onBlur}
+            onFocus={onFocus}
             placeholder={placeholder}
             id={id}
             {...otherProps}
@@ -89,6 +93,8 @@ export class Input extends Component {
 }
 
 Input.propTypes = {
+  onBlur: PropTypes.func,
+  onFocus: PropTypes.func,
   name: PropTypes.string.isRequired,
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   inputClass: PropTypes.string,
@@ -107,6 +113,8 @@ Input.propTypes = {
 Input.defaultProps = {
   value: 'text',
   type: 'text',
+  onFocus: (() => {}),
+  onBlur: (() => {}),
   inputClass: 'mrm-input default-input',
   labelClass: 'input1',
   controlsClass: '',

@@ -36,19 +36,33 @@ exports[`TopMenu Component renders correctly in memory 1`] = `
       <div
         className="search-box"
       >
-        <form
-          className="container"
+        <div
+          className="container input-container"
         >
-          <input
-            className="search-bar"
-            type="text"
-          />
-          <img
-            alt="Search icon"
-            className="search-icon"
-            src="https://firebasestorage.googleapis.com/v0/b/learning-map-app.appspot.com/o/MrmFrontImages%2Fsearch_icon.svg?alt=media&token=ef28a273-f3ea-4370-9720-845bae1cd05e"
-          />
-        </form>
+          <div
+            className="search-box__input-field adjust-for-options"
+          >
+            <Input
+              controlsClass=""
+              id="amenity"
+              inputClass="mrm-input default-input"
+              labelClass="add-resource-controls"
+              labelName=" "
+              name="amenity"
+              onBlur={[Function]}
+              onChange={[Function]}
+              onFocus={[Function]}
+              placeholder=""
+              type="text"
+              value=""
+            />
+            <img
+              alt="Search icon"
+              className="search-icon"
+              src="https://firebasestorage.googleapis.com/v0/b/learning-map-app.appspot.com/o/MrmFrontImages%2Fsearch_icon.svg?alt=media&token=ef28a273-f3ea-4370-9720-845bae1cd05e"
+            />
+          </div>
+        </div>
       </div>
       <div
         className="container side-nav"

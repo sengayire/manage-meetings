@@ -17,6 +17,33 @@
   margin-left: 50px;
   margin-right: 50px;
   height: 68px !important;
+
+  input {
+    display: inline-block;
+    border-radius: 17px;
+    height: 1rem;
+    position: relative;
+    bottom: 0.25rem;
+    width: 224px;
+    &:focus {
+      border-color: rgba(0, 0, 0, 0.2);
+      outline: none;
+    }
+  }
+
+  .input-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 6rem;
+    position: absolute;
+    right: 0;
+    z-index: 1;
+  }
+
+  a {
+    text-decoration: none;
+  }
 }
 
 .preference-dropdown-list {
@@ -159,7 +186,45 @@
 }
 
 .search-box {
+  position: relative;
   height: 100%;
+  .search-link-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    height: 1.5rem;
+    width: 13rem;
+    position: relative;
+    bottom: 10px;
+    right: 0.6rem;
+    z-index: 1000;
+    &__option {
+      color: #3359db;
+      font-size: 0.9rem;
+      text-align: center;
+      &:first-child {
+        padding-left: none;
+      }
+    }
+    &__shape {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      height: 1.5rem;
+      background: white;
+      border: 1px solid rgba(0, 0, 0, 0.2);;
+      border-top: none;
+      border-radius: 0 0 15px 15px;
+      position: relative;
+      width: 14rem;
+      bottom: 4px;
+      right: 9px;
+      a {
+        border-right: 1px solid rgba(0, 0, 0, 0.2);
+        &:last-child {
+          border-right: none;
+        }
+      }
+    }
+  }
 }
 
 .search-box form {
@@ -261,6 +326,14 @@
   position: absolute !important;
   width: 37% !important;
   right: 0;
+}
+
+.search-box__input-field {
+  display: flex;
+  &.adjust-for-options {
+    position: relative;
+    bottom: 1rem;
+  }
 }
 
 @media only screen and (max-width: 798px) {

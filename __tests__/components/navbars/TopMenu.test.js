@@ -39,11 +39,10 @@ describe('TopMenu Component', () => {
   });
   it('should show a search input', () => {
     // Our top menu should have a search form
-    const search = wrapper.find('.search-bar');
+    const search = wrapper.find('Input');
 
     expect(search).toHaveLength(1);
-    expect(search.type()).toEqual('input');
-    expect(search.parent().type()).toEqual('form');
+    expect(search.parent().type()).toEqual('div');
   });
 
   it('should render the correct name and logo', () => {

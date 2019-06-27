@@ -9,6 +9,7 @@ module.exports = {
   },
   rules: {
     'function-paren-newline': 'off',
+    'no-underscore-dangle': 'off',
     'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
     'react/no-children-prop': 0,
     'no-nested-ternary': 0,
