@@ -3,12 +3,6 @@ import { roomIcon, resourcesIcom, peopleIcon, structureIcon, deviceIcon } from '
 /* List of navbar items */
 const navBarItems = [
   {
-    id: 'structure',
-    src: structureIcon,
-    alt: 'structure icon',
-    text: 'Structure',
-  },
-  {
     id: 'meeting-rooms',
     src: roomIcon,
     alt: 'room icon',
@@ -21,16 +15,22 @@ const navBarItems = [
     text: 'Resources',
   },
   {
+    id: 'people',
+    src: peopleIcon,
+    alt: 'room icon',
+    text: 'People',
+  },
+  {
     id: 'devices',
     src: deviceIcon,
     alt: 'device icon',
     text: 'Devices',
   },
   {
-    id: 'people',
-    src: peopleIcon,
-    alt: 'room icon',
-    text: 'People',
+    id: 'structure',
+    src: structureIcon,
+    alt: 'structure icon',
+    text: 'Structure',
   },
 ];
 

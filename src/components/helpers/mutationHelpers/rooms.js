@@ -4,6 +4,7 @@ import { GET_ROOMS_QUERY } from '../../../graphql/queries/Rooms';
 import { getUserDetails } from '../../helpers/QueriesHelpers';
 
 const addRoom = async (variables, location, client = apolloClient) => {
+  let updatedData;
   const {
     imageUrl, name, capacity, roomType, calendarId, roomLabels, locationId, structureId,
   } = variables;
@@ -25,9 +26,8 @@ const addRoom = async (variables, location, client = apolloClient) => {
         },
       },
     ],
-
-    update: async (proxy, { data: { createRoom: { room } } }) => {
-      const cachedRooms = proxy.readQuery({
+    update: async (store, { data: { createRoom } }) => {
+      const data = await store.readQuery({
         query: GET_ROOMS_QUERY,
         variables: {
           location,
@@ -37,12 +37,10 @@ const addRoom = async (variables, location, client = apolloClient) => {
           roomLabels: '',
         },
       });
-      const roomList = cachedRooms.allRooms.rooms;
-      cachedRooms.allRooms.rooms = [...roomList, room];
-
-      proxy.writeQuery({
+      data.allRooms.rooms.unshift(createRoom.room);
+      updatedData = data;
+      client.writeQuery({
         query: GET_ROOMS_QUERY,
-        data: cachedRooms,
         variables: {
           location,
           office: '',
@@ -50,9 +48,11 @@ const addRoom = async (variables, location, client = apolloClient) => {
           perPage: 8,
           roomLabels: '',
         },
+        data: updatedData,
       });
     },
   });
+  return updatedData;
 };
 
 const getRoomsQueryObj = (location, theData = undefined) => (

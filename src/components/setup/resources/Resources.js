@@ -121,7 +121,6 @@ class Resources extends React.Component {
         />
         {this.state.user.roles[0].id === '2' && !resource.roomId && (
           <DeleteResource
-            location={location}
             resource={resource}
             currentPage={this.state.currentPage}
             perPage={this.state.perPage}

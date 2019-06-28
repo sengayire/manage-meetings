@@ -89,12 +89,6 @@ class Room extends Component {
     details: entity,
   });
 
-
-  formatResources = (resources) => {
-    const resource = resources.map(resourcesObject => resourcesObject.resource);
-    return resource;
-  };
-
   renderDeleteIcon = () => {
     const { roomName } = this.props;
     const { isLoading } = this.state;
@@ -166,6 +160,7 @@ class Room extends Component {
 
       state: { showDetails },
     } = this;
+
     const resourceCount = resources.length;
     const deviceCount = devices ? devices.length : null;
 
@@ -189,7 +184,7 @@ class Room extends Component {
               <div className="number-of-Seats">
                 <p>Seats upto {numberOfSeats} people</p>
               </div>
-              {this.renderRoomEntities('Resource', resourceCount, this.formatResources(resources))}
+              {this.renderRoomEntities('Resource', resourceCount, resources)}
               {this.renderRoomEntities('Device', deviceCount, devices)}
               {this.renderRoomLabels()}
             </div>
