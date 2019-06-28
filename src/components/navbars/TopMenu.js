@@ -1,10 +1,13 @@
 import React, { Fragment } from 'react';
-import { Link } from 'react-router-dom';
+import toastr from 'toastr';
+import { withRouter } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import ProfileMenu from './ProfileMenu';
 import { convergeLogoIcon, notificationsIcon, searchIcon } from '../../utils/images/images';
 import { decodeTokenAndGetUserData } from '../../utils/Cookie';
 import '../../assets/styles/topmenu.scss';
 import { Input } from '../commons';
+import notification from '../../utils/notification';
 
 /**
  * Component for Top Menu
@@ -18,6 +21,7 @@ class TopMenu extends React.Component {
   state = {
     query: '',
     showOptions: false,
+    component: '',
   }
 
   componentDidMount() {
@@ -26,7 +30,9 @@ class TopMenu extends React.Component {
     this.updateUserInfo(userInfo);
   }
 
-  componentDidUpdate(prevProps, { query, showOptions, ...prevUserInfo }) {
+  componentDidUpdate(prevProps, {
+    query, showOptions, component, focusInput, ...prevUserInfo
+  }) {
     const currentUserInfo = this.getUserInfoFromToken();
 
     const stringify = data => JSON.stringify(data);
@@ -44,23 +50,42 @@ class TopMenu extends React.Component {
   }
 
   getLinks = component => (
-    <Link
-      to={{
+    <button
+      onClick={() => this.setComponent(component)}
+    >
+      &nbsp;
+    </button>
+  );
+
+  setComponent = component => this.setState({ component, showOptions: false }, () =>
+    document.querySelector('.nav-menu input').focus(),
+  );
+
+  handleSearch = (e) => {
+    const { history } = this.props;
+    const { component } = this.state;
+    const key = e.keyCode || e.charCode;
+    if (key === 13) {
+      if (!component) {
+        return notification(toastr, 'error', 'Please select search criteria')();
+      }
+      return history.push({
         pathname: '/setup',
         state: {
           component,
           query: this.state.query,
         },
-      }}
-      href="/setup"
-    >
-      &nbsp;
-    </Link>
-  );
+      });
+    }
+    return false;
+  }
 
 
   addListener = () => {
-    this.setState({ showOptions: true });
+    const { showOptions, component } = this.state;
+    if (!showOptions && !component) {
+      this.setState({ showOptions: true });
+    }
     document.addEventListener('click', this.handleOutsideClick);
   }
 
@@ -72,21 +97,25 @@ class TopMenu extends React.Component {
     });
   }
 
-  toggleOptions = value => this.setState({ showOptions: value });
+  inputRef = React.createRef();
+
+  toggleOptions = value => this.setState({ showOptions: value }, () =>
+    document.querySelector('.nav-menu input').focus(),
+  );
 
   updateUserInfo = userInfo => this.setState(userInfo);
 
   handleQueryChange = (e) => {
     const query = e.target.value;
-    this.setState(({ showOptions }) => ({
+    this.setState(({ showOptions, component }) => ({
       query,
-      ...(!showOptions && { showOptions: true }),
+      ...(!showOptions && !component && { showOptions: true }),
     }));
   };
 
   render() {
     const {
-      query, firstName, lastName, picture, showOptions,
+      query, firstName, lastName, picture, showOptions, component,
     } = this.state;
 
 
@@ -106,7 +135,13 @@ class TopMenu extends React.Component {
           <div className="container content-end nav-right">
             <div className="search-box">
               <div className="container input-container" ref={(node) => { this.globalSearch = node; }}>
-                <div className={`search-box__input-field${!showOptions ? ' adjust-for-options' : ''}`}>
+                <div className="search-box__input-field">
+                  {
+                    component &&
+                      <button className="component" onClick={() => this.toggleOptions(true)}>
+                        {`${component}:`}
+                      </button>
+                  }
                   <Input
                     id="amenity"
                     name="amenity"
@@ -116,6 +151,7 @@ class TopMenu extends React.Component {
                     value={query}
                     onChange={this.handleQueryChange}
                     onFocus={this.addListener}
+                    onKeyDown={this.handleSearch}
                   />
                   <img
                     className="search-icon"
@@ -130,6 +166,7 @@ class TopMenu extends React.Component {
                       {this.getLinks('resources')}
                       {this.getLinks('people')}
                     </div>
+                    <div className="search-link-options__background" />
                     <div className="search-link-options">
                       <div
                         className="search-link-options__option"
@@ -170,4 +207,10 @@ class TopMenu extends React.Component {
   }
 }
 
-export default TopMenu;
+TopMenu.propTypes = {
+  history: PropTypes.shape({
+    push: PropTypes.func,
+  }).isRequired,
+};
+
+export default withRouter(TopMenu);
