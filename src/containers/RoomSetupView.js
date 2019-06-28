@@ -26,7 +26,7 @@ class RoomSetupOverView extends Component {
     super(props);
     this.state = {
       allRooms: { rooms: meetingRoomTabMockData },
-      currentNavItem: 'structure',
+      currentNavItem: 'meeting-rooms',
       locationId: '',
       previewDataFromBackend: [],
       location: '',
