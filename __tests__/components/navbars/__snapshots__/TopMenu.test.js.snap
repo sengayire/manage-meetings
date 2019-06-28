@@ -92,7 +92,7 @@ exports[`TopMenu Component renders correctly in memory 1`] = `
           >
             MockFirstName MockLastName
           </span>
-          <ProfileMenu />
+          <withRouter(ProfileMenu) />
         </div>
       </div>
     </div>
