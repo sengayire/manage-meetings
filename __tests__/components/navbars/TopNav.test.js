@@ -10,9 +10,9 @@ describe('TopNav Component', () => {
   });
 
   it('renders active link in the nav', () => {
-    const wrapper = mount(<MemoryRouter initialEntries={['/analytics']} ><TopNav /></MemoryRouter>);
+    const wrapper = mount(<MemoryRouter initialEntries={['/analytics']} ><TopNav userRole="Default user" /></MemoryRouter>);
     const navWrapper = wrapper.find('.active').children();
-    wrapper.find('.converge-link').at(2).simulate('click');
+    wrapper.find('.converge-link').at(1).simulate('click');
     expect(navWrapper).toHaveLength(1);
   });
 
