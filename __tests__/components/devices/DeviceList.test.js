@@ -28,11 +28,26 @@ describe('DeviceList Component', () => {
     getAllDevices.mockResolvedValue(devices);
     getAllRooms.mockResolvedValue({
       allRooms: {
-        rooms: [],
+        rooms: [
+          {
+            id: '1230',
+            name: 'Another here',
+            capacity: 9,
+            roomLabels: [
+              '4th',
+              'Kampala',
+            ],
+            roomType: 'Meeting room',
+            imageUrl: 'https://firebasestorage.googleapis.com/v0/b/andelamrm.appspot.com/o/upload%2F60410220_840773989622302_6083125467391459328_n.jpg?alt=media&token=a9c3cade-8c6a-4ee5-81ea-436e530364f2',
+            structureId: '8261c030-7ae9-4091-afb9-a2f4a457843f',
+            locationId: 2,
+          },
+        ],
       },
     });
     wrapper = shallow(<DeviceList location={{
       name: 'Lagos',
+      id: 2,
     }}
     />);
   });
@@ -63,6 +78,7 @@ describe('DeviceList Component', () => {
     getAllDevices.mockResolvedValue([]);
     wrapper = shallow(<DeviceList location={{
       name: 'Lagos',
+      id: 2,
     }}
     />);
     await wrapper.instance().getData();
@@ -73,6 +89,7 @@ describe('DeviceList Component', () => {
     getAllDevices.mockResolvedValue(devices.concat(moreDevices));
     wrapper = shallow(<DeviceList location={{
       name: 'Lagos',
+      id: 2,
     }}
     />);
     await wrapper.instance().getData();

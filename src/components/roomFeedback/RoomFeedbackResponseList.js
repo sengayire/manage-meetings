@@ -142,7 +142,7 @@ export class RoomFeedbackResponseList extends React.Component {
     individualRoomResponsesArray.forEach((responses) => {
       let roomHasMissingItem = false;
       responses.forEach((response) => {
-        if (response.response.__typename === 'MissingItem' && response.response.missingItems) {
+        if (response.response.__typename === 'MissingItems' && response.response.missingItems) {
           roomHasMissingItem = true;
         }
       });

@@ -15,12 +15,29 @@ exports[`DeviceList Component renders correctly from memory 1`] = `
       device={Object {}}
       location={
         Object {
+          "id": 2,
           "name": "Lagos",
         }
       }
       openModal={false}
       refetch={[Function]}
-      rooms={Array []}
+      rooms={
+        Array [
+          Object {
+            "capacity": 9,
+            "id": "1230",
+            "imageUrl": "https://firebasestorage.googleapis.com/v0/b/andelamrm.appspot.com/o/upload%2F60410220_840773989622302_6083125467391459328_n.jpg?alt=media&token=a9c3cade-8c6a-4ee5-81ea-436e530364f2",
+            "locationId": 2,
+            "name": "Another here",
+            "roomLabels": Array [
+              "4th",
+              "Kampala",
+            ],
+            "roomType": "Meeting room",
+            "structureId": "8261c030-7ae9-4091-afb9-a2f4a457843f",
+          },
+        ]
+      }
     />
   </div>
   <div
