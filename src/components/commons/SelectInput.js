@@ -24,6 +24,7 @@ const SelectInput = ({
   children,
   placeholderValue,
   required,
+  dynamicValue,
   ...otherProps
 }) => (
   <div className={wrapperClassName}>
@@ -38,6 +39,7 @@ const SelectInput = ({
           onChange={event => onChange(event)}
           {...otherProps}
           required={required}
+          value={dynamicValue}
         >
           {/* render place holder in case its provided */}
           {placeholder && <option value={placeholderValue}>{placeholder} </option>}
@@ -85,6 +87,7 @@ const SelectInput = ({
 );
 
 SelectInput.propTypes = {
+  dynamicValue: PropTypes.string,
   selected: PropTypes.number,
   name: PropTypes.string.isRequired,
   isValue: PropTypes.bool,
@@ -99,15 +102,16 @@ SelectInput.propTypes = {
   placeholderValue: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   required: PropTypes.bool,
   options: PropTypes.arrayOf(
-    PropTypes.shape({
+    PropTypes.oneOfType([PropTypes.shape({
       id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
       name: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-    }),
+    }), PropTypes.string]),
   ),
   children: PropTypes.node,
 };
 
 SelectInput.defaultProps = {
+  dynamicValue: undefined,
   selected: -1,
   onChange: PropTypes.func,
   onClick: PropTypes.func,
@@ -118,7 +122,7 @@ SelectInput.defaultProps = {
   placeholderValue: '',
   options: null,
   children: null,
-  value: '',
+  value: undefined,
   required: false,
   labelText: '',
 };

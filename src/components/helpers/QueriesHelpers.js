@@ -7,7 +7,7 @@ import {
   GET_REMOTE_ROOMS_ALL_LOCATIONS,
 } from '../../graphql/queries/Rooms';
 import { GET_RESOURCES_QUERY, GET_ROOM_RESOURCES } from '../../graphql/queries/Resources';
-import SINGLE_ROOM_FEEDBACK from '../../graphql/queries/RoomFeedback';
+import SINGLE_ROOM_FEEDBACK, { ALL_ROOM_FEEDBACK } from '../../graphql/queries/RoomFeedback';
 import ALL_ANALYTICS, { ANALYTICS_FOR_DAILY_ROOM_EVENTS } from '../../graphql/queries/analytics';
 import { decodeTokenAndGetUserData } from '../../utils/Cookie';
 import apolloClient from '../../utils/ApolloClient';
@@ -287,6 +287,31 @@ const getAllDevices = async (client = apolloClient) => {
       query: GET_DEVICES_QUERY,
     });
     return data.allDevices;
+  }
+};
+
+export const getAllResponses = async ({ startDate, endDate } = {}, client = apolloClient) => {
+  try {
+    const data = client.readQuery(
+      {
+        query: ALL_ROOM_FEEDBACK,
+        variables: {
+          startDate: startDate || '',
+          endDate: endDate || '',
+        },
+      },
+      true,
+    );
+    return data.allRoomResponses;
+  } catch (error) {
+    const { data } = await client.query({
+      query: ALL_ROOM_FEEDBACK,
+      variables: {
+        startDate: startDate || '',
+        endDate: endDate || '',
+      },
+    });
+    return data.allRoomResponses;
   }
 };
 

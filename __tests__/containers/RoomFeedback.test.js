@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 import AddQuestionComponent from '../../src/components/roomFeedback/AddQuestion';
 import RoomFeedbackPage from '../../src/containers/RoomFeedbackPage';
 import Button from '../../src/components/commons/Button';
-import { getUserDetails, getRoomFeedbackQuestions } from '../../src/components/helpers/QueriesHelpers';
+import { getUserDetails, getRoomFeedbackQuestions, getAllResponses } from '../../src/components/helpers/QueriesHelpers';
 
 jest.mock('../../src/components/helpers/QueriesHelpers');
 
@@ -20,6 +20,90 @@ describe('RoomFeedback component', () => {
     questionType: 'test',
     isActive: true,
   }];
+
+  const tick = () => new Promise((resolve) => {
+    setTimeout(resolve, 0);
+  });
+
+  const allResponses = {
+    pages: null,
+    hasPrevious: null,
+    hasNext: null,
+    queryTotal: null,
+    responses: [{
+      roomId: 1184,
+      roomName: 'Tortuga',
+      totalResponses: 2,
+      response: [
+        {
+          responseId: 296,
+          createdDate: '2019-06-25T14:47:34.434065',
+          resolved: false,
+          response: {
+            __typename: 'Rate',
+            rate: 3,
+          },
+        },
+        {
+          responseId: 297,
+          createdDate: '2019-06-25T14:47:35.583645',
+          resolved: false,
+          response: {
+            __typename: 'Rate',
+            rate: 3,
+          },
+        },
+      ],
+    }, {
+      roomId: 1180,
+      roomName: 'pandora edited',
+      totalResponses: 4,
+      response: [
+        {
+          responseId: 289,
+          createdDate: '2019-06-25T14:45:26.577611',
+          resolved: false,
+          response: {
+            __typename: 'Rate',
+            rate: 5,
+          },
+        },
+        {
+          responseId: 311,
+          createdDate: '2019-07-01T09:59:38.846630',
+          resolved: false,
+          response: {
+            __typename: 'SelectedOptions',
+            options: [
+              'red',
+            ],
+          },
+        },
+        {
+          responseId: 290,
+          createdDate: '2019-06-25T14:45:27.942964',
+          resolved: false,
+          response: {
+            __typename: 'Rate',
+            rate: 5,
+          },
+        },
+        {
+          responseId: 291,
+          createdDate: '2019-06-25T14:46:06.718295',
+          resolved: false,
+          response: {
+            __typename: 'SelectedOptions',
+            options: [
+              'handywork',
+            ],
+          },
+        },
+      ],
+    }],
+  };
+
+  getAllResponses.mockResolvedValue(allResponses);
   let wrapper;
   beforeAll(() => {
     getRoomFeedbackQuestions.mockResolvedValue(questions);
@@ -49,6 +133,59 @@ describe('RoomFeedback component', () => {
   it('should have a div with classname responsePage with length of 1 ', () => {
     wrapper.update();
     expect(wrapper.find('#responses').length).toEqual(1);
+  });
+
+  it('should use and clear filters', async () => {
+    expect(wrapper.state('useFilter')).toBe(false);
+    wrapper.find('FilterRoomResponses').dive().find('.btn-primary').simulate('click');
+    await tick();
+
+    wrapper.setState({
+      roomFilter: 'Tortuga',
+      responseCutoff: { min: 2, max: 4 },
+    });
+    wrapper.instance().filterData();
+
+    wrapper.setState({
+      roomFilter: 'Tortuga',
+      responseCutoff: { min: 2, max: 3 },
+    });
+    wrapper.instance().filterData();
+
+    wrapper.setState({
+      roomFilter: 'pandora edited',
+      responseCutoff: { min: 3, max: 4 },
+    });
+    wrapper.instance().filterData();
+
+    await tick();
+
+    expect(wrapper.state('useFilter')).toBe(true);
+    wrapper.find('FilterRoomResponses').dive().find('.btn-secondary').simulate('click');
+    expect(wrapper.state('useFilter')).toBe(false);
+  });
+
+  it('should use date range', () => {
+    wrapper.instance().sendDateData('Jun 4 2014', 'July 4 2019');
+    expect(wrapper.state('startDate')).toBe('Jun 4 2014');
+  });
+
+  it('should toggle filter modal', () => {
+    expect(wrapper.state('filterModal')).toBe(false);
+    wrapper.instance().toggleFilterModal();
+    expect(wrapper.state('filterModal')).toBe(true);
+    wrapper.instance().toggleFilterModal();
+    expect(wrapper.state('filterModal')).toBe(false);
+  });
+
+  it('should set room', () => {
+    wrapper.instance().setRoom('Foo');
+    expect(wrapper.state('roomFilter')).toBe('Foo');
+  });
+
+  it('should set room', () => {
+    wrapper.instance().setResponseCutoff({ min: 2, max: 7 });
+    expect(wrapper.state('responseCutoff')).toEqual({ min: 2, max: 7 });
   });
 
   it('should populate the state with the data for room feedback responses', () => {

@@ -1,6 +1,5 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { graphql } from 'react-apollo';
 import RoomFeedbackResponse from './RoomFeedbackResponse';
 import { greenStarIcon, greyStarIcon } from '../../utils/images/images';
 import '../../../src/assets/styles/roomFeedbackResponseList.scss';
@@ -8,7 +7,6 @@ import '../../../src/assets/styles/feedbackContainer.scss';
 import ErrorIcon from '../commons/ErrorIcon';
 import RoomFeedbackCard from './RoomFeedbackResponseCard';
 import SingleRoom from './SingleRoom';
-import { ALL_ROOM_FEEDBACK } from '../../graphql/queries/RoomFeedback';
 import Pagination from '../../../src/components/commons/Pagination';
 import Overlay from '../commons/Overlay';
 
@@ -370,16 +368,4 @@ RoomFeedbackResponseList.propTypes = {
   checkData: PropTypes.func.isRequired,
 };
 
-export default graphql(ALL_ROOM_FEEDBACK, {
-  options: /* istanbul ignore next */ props => ({
-    variables: {
-      page: 1,
-      perPage: 10,
-      startDate: props.startDate,
-      endDate: props.endDate,
-      upperLimitCount: props.upperLimitCount,
-      lowerLimitCount: props.lowerLimitCount,
-    },
-  }),
-},
-)(RoomFeedbackResponseList);
+export default RoomFeedbackResponseList;

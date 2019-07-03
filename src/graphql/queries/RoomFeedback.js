@@ -35,8 +35,8 @@ const SINGLE_ROOM_FEEDBACK = gql`
 `;
 
 const ALL_ROOM_FEEDBACK = gql`
-  query allRoomResponses($page: Int, $perPage: Int, $startDate: String!, $endDate: String!, $upperLimitCount: Int, $lowerLimitCount: Int) {
-    allRoomResponses(page: $page, perPage: $perPage, startDate: $startDate, endDate: $endDate, lowerLimitCount: $lowerLimitCount, upperLimitCount: $upperLimitCount){
+  query allRoomResponses($startDate: String!, $endDate: String!) {
+    allRoomResponses(startDate: $startDate, endDate: $endDate){
       pages
       hasPrevious
       hasNext

@@ -17,7 +17,7 @@ import notification from '../../utils/notification';
  * @returns {JSX}
  *
  */
-class TopMenu extends React.Component {
+export class TopMenuComponent extends React.Component {
   state = {
     query: '',
     showOptions: false,
@@ -57,9 +57,10 @@ class TopMenu extends React.Component {
     </button>
   );
 
-  setComponent = component => this.setState({ component, showOptions: false }, () =>
-    document.querySelector('.nav-menu input').focus(),
-  );
+  setComponent = component => this.setState({ component, showOptions: false }, this.setFocus);
+
+
+  setFocus = () => document.querySelector('.nav-menu input').focus();
 
   handleSearch = (e) => {
     const { history } = this.props;
@@ -99,9 +100,8 @@ class TopMenu extends React.Component {
 
   inputRef = React.createRef();
 
-  toggleOptions = value => this.setState({ showOptions: value }, () =>
-    document.querySelector('.nav-menu input').focus(),
-  );
+
+  toggleOptions = value => this.setState({ showOptions: value }, this.setFocus);
 
   updateUserInfo = userInfo => this.setState(userInfo);
 
@@ -207,10 +207,10 @@ class TopMenu extends React.Component {
   }
 }
 
-TopMenu.propTypes = {
+TopMenuComponent.propTypes = {
   history: PropTypes.shape({
     push: PropTypes.func,
   }).isRequired,
 };
 
-export default withRouter(TopMenu);
+export default withRouter(TopMenuComponent);
