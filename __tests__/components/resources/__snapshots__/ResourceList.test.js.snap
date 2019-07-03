@@ -95,6 +95,58 @@ exports[`Tests for ResourceList Component renders correctly from memory 1`] = `
                                   },
                                   "selectionSet": undefined,
                                 },
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "room",
+                                  },
+                                  "selectionSet": Object {
+                                    "kind": "SelectionSet",
+                                    "selections": Array [
+                                      Object {
+                                        "alias": undefined,
+                                        "arguments": Array [],
+                                        "directives": Array [],
+                                        "kind": "Field",
+                                        "name": Object {
+                                          "kind": "Name",
+                                          "value": "roomId",
+                                        },
+                                        "selectionSet": undefined,
+                                      },
+                                      Object {
+                                        "alias": undefined,
+                                        "arguments": Array [],
+                                        "directives": Array [],
+                                        "kind": "Field",
+                                        "name": Object {
+                                          "kind": "Name",
+                                          "value": "room",
+                                        },
+                                        "selectionSet": Object {
+                                          "kind": "SelectionSet",
+                                          "selections": Array [
+                                            Object {
+                                              "alias": undefined,
+                                              "arguments": Array [],
+                                              "directives": Array [],
+                                              "kind": "Field",
+                                              "name": Object {
+                                                "kind": "Name",
+                                                "value": "name",
+                                              },
+                                              "selectionSet": undefined,
+                                            },
+                                          ],
+                                        },
+                                      },
+                                    ],
+                                  },
+                                },
                               ],
                             },
                           },
@@ -195,7 +247,7 @@ exports[`Tests for ResourceList Component renders correctly from memory 1`] = `
             ],
             "kind": "Document",
             "loc": Object {
-              "end": 222,
+              "end": 310,
               "start": 0,
             },
           },
@@ -335,6 +387,58 @@ exports[`Tests for ResourceList Component renders correctly from memory 1`] = `
                                     },
                                     "selectionSet": undefined,
                                   },
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "room",
+                                    },
+                                    "selectionSet": Object {
+                                      "kind": "SelectionSet",
+                                      "selections": Array [
+                                        Object {
+                                          "alias": undefined,
+                                          "arguments": Array [],
+                                          "directives": Array [],
+                                          "kind": "Field",
+                                          "name": Object {
+                                            "kind": "Name",
+                                            "value": "roomId",
+                                          },
+                                          "selectionSet": undefined,
+                                        },
+                                        Object {
+                                          "alias": undefined,
+                                          "arguments": Array [],
+                                          "directives": Array [],
+                                          "kind": "Field",
+                                          "name": Object {
+                                            "kind": "Name",
+                                            "value": "room",
+                                          },
+                                          "selectionSet": Object {
+                                            "kind": "SelectionSet",
+                                            "selections": Array [
+                                              Object {
+                                                "alias": undefined,
+                                                "arguments": Array [],
+                                                "directives": Array [],
+                                                "kind": "Field",
+                                                "name": Object {
+                                                  "kind": "Name",
+                                                  "value": "name",
+                                                },
+                                                "selectionSet": undefined,
+                                              },
+                                            ],
+                                          },
+                                        },
+                                      ],
+                                    },
+                                  },
                                 ],
                               },
                             },
@@ -435,7 +539,7 @@ exports[`Tests for ResourceList Component renders correctly from memory 1`] = `
               ],
               "kind": "Document",
               "loc": Object {
-                "end": 222,
+                "end": 310,
                 "start": 0,
               },
             },
@@ -552,6 +656,72 @@ exports[`Tests for ResourceList Component renders correctly from memory 1`] = `
                                       "selectionSet": undefined,
                                     },
                                     Object {
+                                      "alias": undefined,
+                                      "arguments": Array [],
+                                      "directives": Array [],
+                                      "kind": "Field",
+                                      "name": Object {
+                                        "kind": "Name",
+                                        "value": "room",
+                                      },
+                                      "selectionSet": Object {
+                                        "kind": "SelectionSet",
+                                        "selections": Array [
+                                          Object {
+                                            "alias": undefined,
+                                            "arguments": Array [],
+                                            "directives": Array [],
+                                            "kind": "Field",
+                                            "name": Object {
+                                              "kind": "Name",
+                                              "value": "roomId",
+                                            },
+                                            "selectionSet": undefined,
+                                          },
+                                          Object {
+                                            "alias": undefined,
+                                            "arguments": Array [],
+                                            "directives": Array [],
+                                            "kind": "Field",
+                                            "name": Object {
+                                              "kind": "Name",
+                                              "value": "room",
+                                            },
+                                            "selectionSet": Object {
+                                              "kind": "SelectionSet",
+                                              "selections": Array [
+                                                Object {
+                                                  "alias": undefined,
+                                                  "arguments": Array [],
+                                                  "directives": Array [],
+                                                  "kind": "Field",
+                                                  "name": Object {
+                                                    "kind": "Name",
+                                                    "value": "name",
+                                                  },
+                                                  "selectionSet": undefined,
+                                                },
+                                                Object {
+                                                  "kind": "Field",
+                                                  "name": Object {
+                                                    "kind": "Name",
+                                                    "value": "__typename",
+                                                  },
+                                                },
+                                              ],
+                                            },
+                                          },
+                                          Object {
+                                            "kind": "Field",
+                                            "name": Object {
+                                              "kind": "Name",
+                                              "value": "__typename",
+                                            },
+                                          },
+                                        ],
+                                      },
+                                    },
+                                    Object {
                                       "kind": "Field",
                                       "name": Object {
                                         "kind": "Name",
@@ -665,7 +835,7 @@ exports[`Tests for ResourceList Component renders correctly from memory 1`] = `
                 ],
                 "kind": "Document",
                 "loc": Object {
-                  "end": 222,
+                  "end": 310,
                   "source": Object {
                     "body": "
   query resources($page: Int!, $perPage: Int!) {
@@ -673,6 +843,12 @@ exports[`Tests for ResourceList Component renders correctly from memory 1`] = `
       resources {
         id
         name
+        room {
+          roomId
+          room {
+            name
+          }
+        }
       }
       pages
       hasNext
@@ -814,6 +990,72 @@ exports[`Tests for ResourceList Component renders correctly from memory 1`] = `
                                           "selectionSet": undefined,
                                         },
                                         Object {
+                                          "alias": undefined,
+                                          "arguments": Array [],
+                                          "directives": Array [],
+                                          "kind": "Field",
+                                          "name": Object {
+                                            "kind": "Name",
+                                            "value": "room",
+                                          },
+                                          "selectionSet": Object {
+                                            "kind": "SelectionSet",
+                                            "selections": Array [
+                                              Object {
+                                                "alias": undefined,
+                                                "arguments": Array [],
+                                                "directives": Array [],
+                                                "kind": "Field",
+                                                "name": Object {
+                                                  "kind": "Name",
+                                                  "value": "roomId",
+                                                },
+                                                "selectionSet": undefined,
+                                              },
+                                              Object {
+                                                "alias": undefined,
+                                                "arguments": Array [],
+                                                "directives": Array [],
+                                                "kind": "Field",
+                                                "name": Object {
+                                                  "kind": "Name",
+                                                  "value": "room",
+                                                },
+                                                "selectionSet": Object {
+                                                  "kind": "SelectionSet",
+                                                  "selections": Array [
+                                                    Object {
+                                                      "alias": undefined,
+                                                      "arguments": Array [],
+                                                      "directives": Array [],
+                                                      "kind": "Field",
+                                                      "name": Object {
+                                                        "kind": "Name",
+                                                        "value": "name",
+                                                      },
+                                                      "selectionSet": undefined,
+                                                    },
+                                                    Object {
+                                                      "kind": "Field",
+                                                      "name": Object {
+                                                        "kind": "Name",
+                                                        "value": "__typename",
+                                                      },
+                                                    },
+                                                  ],
+                                                },
+                                              },
+                                              Object {
+                                                "kind": "Field",
+                                                "name": Object {
+                                                  "kind": "Name",
+                                                  "value": "__typename",
+                                                },
+                                              },
+                                            ],
+                                          },
+                                        },
+                                        Object {
                                           "kind": "Field",
                                           "name": Object {
                                             "kind": "Name",
@@ -927,7 +1169,7 @@ exports[`Tests for ResourceList Component renders correctly from memory 1`] = `
                     ],
                     "kind": "Document",
                     "loc": Object {
-                      "end": 222,
+                      "end": 310,
                       "source": Object {
                         "body": "
   query resources($page: Int!, $perPage: Int!) {
@@ -935,6 +1177,12 @@ exports[`Tests for ResourceList Component renders correctly from memory 1`] = `
       resources {
         id
         name
+        room {
+          roomId
+          room {
+            name
+          }
+        }
       }
       pages
       hasNext
@@ -1069,6 +1317,72 @@ exports[`Tests for ResourceList Component renders correctly from memory 1`] = `
                                       "selectionSet": undefined,
                                     },
                                     Object {
+                                      "alias": undefined,
+                                      "arguments": Array [],
+                                      "directives": Array [],
+                                      "kind": "Field",
+                                      "name": Object {
+                                        "kind": "Name",
+                                        "value": "room",
+                                      },
+                                      "selectionSet": Object {
+                                        "kind": "SelectionSet",
+                                        "selections": Array [
+                                          Object {
+                                            "alias": undefined,
+                                            "arguments": Array [],
+                                            "directives": Array [],
+                                            "kind": "Field",
+                                            "name": Object {
+                                              "kind": "Name",
+                                              "value": "roomId",
+                                            },
+                                            "selectionSet": undefined,
+                                          },
+                                          Object {
+                                            "alias": undefined,
+                                            "arguments": Array [],
+                                            "directives": Array [],
+                                            "kind": "Field",
+                                            "name": Object {
+                                              "kind": "Name",
+                                              "value": "room",
+                                            },
+                                            "selectionSet": Object {
+                                              "kind": "SelectionSet",
+                                              "selections": Array [
+                                                Object {
+                                                  "alias": undefined,
+                                                  "arguments": Array [],
+                                                  "directives": Array [],
+                                                  "kind": "Field",
+                                                  "name": Object {
+                                                    "kind": "Name",
+                                                    "value": "name",
+                                                  },
+                                                  "selectionSet": undefined,
+                                                },
+                                                Object {
+                                                  "kind": "Field",
+                                                  "name": Object {
+                                                    "kind": "Name",
+                                                    "value": "__typename",
+                                                  },
+                                                },
+                                              ],
+                                            },
+                                          },
+                                          Object {
+                                            "kind": "Field",
+                                            "name": Object {
+                                              "kind": "Name",
+                                              "value": "__typename",
+                                            },
+                                          },
+                                        ],
+                                      },
+                                    },
+                                    Object {
                                       "kind": "Field",
                                       "name": Object {
                                         "kind": "Name",
@@ -1182,7 +1496,7 @@ exports[`Tests for ResourceList Component renders correctly from memory 1`] = `
                 ],
                 "kind": "Document",
                 "loc": Object {
-                  "end": 222,
+                  "end": 310,
                   "source": Object {
                     "body": "
   query resources($page: Int!, $perPage: Int!) {
@@ -1190,6 +1504,12 @@ exports[`Tests for ResourceList Component renders correctly from memory 1`] = `
       resources {
         id
         name
+        room {
+          roomId
+          room {
+            name
+          }
+        }
       }
       pages
       hasNext
@@ -1327,6 +1647,58 @@ exports[`Tests for ResourceList Component renders correctly from memory 1`] = `
                                           },
                                           "selectionSet": undefined,
                                         },
+                                        Object {
+                                          "alias": undefined,
+                                          "arguments": Array [],
+                                          "directives": Array [],
+                                          "kind": "Field",
+                                          "name": Object {
+                                            "kind": "Name",
+                                            "value": "room",
+                                          },
+                                          "selectionSet": Object {
+                                            "kind": "SelectionSet",
+                                            "selections": Array [
+                                              Object {
+                                                "alias": undefined,
+                                                "arguments": Array [],
+                                                "directives": Array [],
+                                                "kind": "Field",
+                                                "name": Object {
+                                                  "kind": "Name",
+                                                  "value": "roomId",
+                                                },
+                                                "selectionSet": undefined,
+                                              },
+                                              Object {
+                                                "alias": undefined,
+                                                "arguments": Array [],
+                                                "directives": Array [],
+                                                "kind": "Field",
+                                                "name": Object {
+                                                  "kind": "Name",
+                                                  "value": "room",
+                                                },
+                                                "selectionSet": Object {
+                                                  "kind": "SelectionSet",
+                                                  "selections": Array [
+                                                    Object {
+                                                      "alias": undefined,
+                                                      "arguments": Array [],
+                                                      "directives": Array [],
+                                                      "kind": "Field",
+                                                      "name": Object {
+                                                        "kind": "Name",
+                                                        "value": "name",
+                                                      },
+                                                      "selectionSet": undefined,
+                                                    },
+                                                  ],
+                                                },
+                                              },
+                                            ],
+                                          },
+                                        },
                                       ],
                                     },
                                   },
@@ -1427,7 +1799,7 @@ exports[`Tests for ResourceList Component renders correctly from memory 1`] = `
                     ],
                     "kind": "Document",
                     "loc": Object {
-                      "end": 222,
+                      "end": 310,
                       "start": 0,
                     },
                   },
@@ -1565,6 +1937,72 @@ exports[`Tests for ResourceList Component renders correctly from memory 1`] = `
                                         "selectionSet": undefined,
                                       },
                                       Object {
+                                        "alias": undefined,
+                                        "arguments": Array [],
+                                        "directives": Array [],
+                                        "kind": "Field",
+                                        "name": Object {
+                                          "kind": "Name",
+                                          "value": "room",
+                                        },
+                                        "selectionSet": Object {
+                                          "kind": "SelectionSet",
+                                          "selections": Array [
+                                            Object {
+                                              "alias": undefined,
+                                              "arguments": Array [],
+                                              "directives": Array [],
+                                              "kind": "Field",
+                                              "name": Object {
+                                                "kind": "Name",
+                                                "value": "roomId",
+                                              },
+                                              "selectionSet": undefined,
+                                            },
+                                            Object {
+                                              "alias": undefined,
+                                              "arguments": Array [],
+                                              "directives": Array [],
+                                              "kind": "Field",
+                                              "name": Object {
+                                                "kind": "Name",
+                                                "value": "room",
+                                              },
+                                              "selectionSet": Object {
+                                                "kind": "SelectionSet",
+                                                "selections": Array [
+                                                  Object {
+                                                    "alias": undefined,
+                                                    "arguments": Array [],
+                                                    "directives": Array [],
+                                                    "kind": "Field",
+                                                    "name": Object {
+                                                      "kind": "Name",
+                                                      "value": "name",
+                                                    },
+                                                    "selectionSet": undefined,
+                                                  },
+                                                  Object {
+                                                    "kind": "Field",
+                                                    "name": Object {
+                                                      "kind": "Name",
+                                                      "value": "__typename",
+                                                    },
+                                                  },
+                                                ],
+                                              },
+                                            },
+                                            Object {
+                                              "kind": "Field",
+                                              "name": Object {
+                                                "kind": "Name",
+                                                "value": "__typename",
+                                              },
+                                            },
+                                          ],
+                                        },
+                                      },
+                                      Object {
                                         "kind": "Field",
                                         "name": Object {
                                           "kind": "Name",
@@ -1678,7 +2116,7 @@ exports[`Tests for ResourceList Component renders correctly from memory 1`] = `
                   ],
                   "kind": "Document",
                   "loc": Object {
-                    "end": 222,
+                    "end": 310,
                     "source": Object {
                       "body": "
   query resources($page: Int!, $perPage: Int!) {
@@ -1686,6 +2124,12 @@ exports[`Tests for ResourceList Component renders correctly from memory 1`] = `
       resources {
         id
         name
+        room {
+          roomId
+          room {
+            name
+          }
+        }
       }
       pages
       hasNext
@@ -1840,6 +2284,72 @@ exports[`Tests for ResourceList Component renders correctly from memory 1`] = `
                                         "selectionSet": undefined,
                                       },
                                       Object {
+                                        "alias": undefined,
+                                        "arguments": Array [],
+                                        "directives": Array [],
+                                        "kind": "Field",
+                                        "name": Object {
+                                          "kind": "Name",
+                                          "value": "room",
+                                        },
+                                        "selectionSet": Object {
+                                          "kind": "SelectionSet",
+                                          "selections": Array [
+                                            Object {
+                                              "alias": undefined,
+                                              "arguments": Array [],
+                                              "directives": Array [],
+                                              "kind": "Field",
+                                              "name": Object {
+                                                "kind": "Name",
+                                                "value": "roomId",
+                                              },
+                                              "selectionSet": undefined,
+                                            },
+                                            Object {
+                                              "alias": undefined,
+                                              "arguments": Array [],
+                                              "directives": Array [],
+                                              "kind": "Field",
+                                              "name": Object {
+                                                "kind": "Name",
+                                                "value": "room",
+                                              },
+                                              "selectionSet": Object {
+                                                "kind": "SelectionSet",
+                                                "selections": Array [
+                                                  Object {
+                                                    "alias": undefined,
+                                                    "arguments": Array [],
+                                                    "directives": Array [],
+                                                    "kind": "Field",
+                                                    "name": Object {
+                                                      "kind": "Name",
+                                                      "value": "name",
+                                                    },
+                                                    "selectionSet": undefined,
+                                                  },
+                                                  Object {
+                                                    "kind": "Field",
+                                                    "name": Object {
+                                                      "kind": "Name",
+                                                      "value": "__typename",
+                                                    },
+                                                  },
+                                                ],
+                                              },
+                                            },
+                                            Object {
+                                              "kind": "Field",
+                                              "name": Object {
+                                                "kind": "Name",
+                                                "value": "__typename",
+                                              },
+                                            },
+                                          ],
+                                        },
+                                      },
+                                      Object {
                                         "kind": "Field",
                                         "name": Object {
                                           "kind": "Name",
@@ -1953,7 +2463,7 @@ exports[`Tests for ResourceList Component renders correctly from memory 1`] = `
                   ],
                   "kind": "Document",
                   "loc": Object {
-                    "end": 222,
+                    "end": 310,
                     "source": Object {
                       "body": "
   query resources($page: Int!, $perPage: Int!) {
@@ -1961,6 +2471,12 @@ exports[`Tests for ResourceList Component renders correctly from memory 1`] = `
       resources {
         id
         name
+        room {
+          roomId
+          room {
+            name
+          }
+        }
       }
       pages
       hasNext
@@ -2120,6 +2636,58 @@ exports[`Tests for ResourceList Component renders correctly from memory 1`] = `
                                   },
                                   "selectionSet": undefined,
                                 },
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "room",
+                                  },
+                                  "selectionSet": Object {
+                                    "kind": "SelectionSet",
+                                    "selections": Array [
+                                      Object {
+                                        "alias": undefined,
+                                        "arguments": Array [],
+                                        "directives": Array [],
+                                        "kind": "Field",
+                                        "name": Object {
+                                          "kind": "Name",
+                                          "value": "roomId",
+                                        },
+                                        "selectionSet": undefined,
+                                      },
+                                      Object {
+                                        "alias": undefined,
+                                        "arguments": Array [],
+                                        "directives": Array [],
+                                        "kind": "Field",
+                                        "name": Object {
+                                          "kind": "Name",
+                                          "value": "room",
+                                        },
+                                        "selectionSet": Object {
+                                          "kind": "SelectionSet",
+                                          "selections": Array [
+                                            Object {
+                                              "alias": undefined,
+                                              "arguments": Array [],
+                                              "directives": Array [],
+                                              "kind": "Field",
+                                              "name": Object {
+                                                "kind": "Name",
+                                                "value": "name",
+                                              },
+                                              "selectionSet": undefined,
+                                            },
+                                          ],
+                                        },
+                                      },
+                                    ],
+                                  },
+                                },
                               ],
                             },
                           },
@@ -2220,7 +2788,7 @@ exports[`Tests for ResourceList Component renders correctly from memory 1`] = `
             ],
             "kind": "Document",
             "loc": Object {
-              "end": 222,
+              "end": 310,
               "start": 0,
             },
           }

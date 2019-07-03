@@ -2,9 +2,13 @@ $grey-background: #f5f5f5;
 $grey-border: #ddd;
 $grey-text: #898989;
 $grey-dark: #444;
+$grey-dark-1: lighten($grey-dark, 50%);
+$grey-dark-2: lighten($grey-dark, 20%);
+$grey-text-light: lighten($grey-text, 15%);
 $main: #3359db;
 $main-light: lighten($main, 40%);
 $main-dark: darken($main, 30%);
+$main-dark-2: darken($main, 5%);
 $success: #7fd81e;
 $error: #ff5100;
 $warning: #f6c223;
@@ -30,10 +34,10 @@ $body: #081f2c;
     position: relative;
     display: inline-block;
     width: 100%;
-    
+
     &:focus {
       outline: 0;
-      
+
       & .selection {
         box-shadow: 0 0 1px 1px $main;
       }
@@ -123,9 +127,16 @@ $body: #081f2c;
       margin: -1px -1px 0;
       background: $main-light;
     }
-    
+
     &.focused {
       background: $grey-background;
+    }
+
+    &.alreadyAssigned {
+      border: 1px solid $main-light;
+      color: $grey-text-light;
+      margin: -1px -1px 0;
+
     }
   }
 
@@ -143,9 +154,15 @@ $body: #081f2c;
   margin: 2px 12px 0 0;
   color: #fff;
   font-size: 10px;
-  
+
   .selected & {
     border-color: $main-dark;
     background: $main;
   }
+
+  .alreadyAssigned & {
+    border-color: $grey-dark-2;
+    background: $grey-dark-1;
+  }
 }
+

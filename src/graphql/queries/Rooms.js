@@ -77,8 +77,27 @@ export const GET_ALL_ROOMS = gql`
       rooms {
         id
         name
+        roomType
         capacity
+        roomLabels
+        imageUrl
+        calendarId
         locationId
+        structureId
+        devices{
+          id
+          name
+        }
+        resources {
+          roomId
+          resourceId
+          quantity
+          name
+          resource {
+            id
+            name
+          }
+        }
       }
     }
   }
