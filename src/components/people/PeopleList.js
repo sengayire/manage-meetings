@@ -5,6 +5,7 @@ import toastr from 'toastr';
 import '../../assets/styles/peopleList.scss';
 import TableHead from '../helpers/TableHead';
 import People from './People';
+import AddPeople from './AddPeople';
 import Pagination from '../commons/Pagination';
 import { GET_LOCATIONS_QUERY } from '../../graphql/queries/Rooms';
 import UPDATE_ROLES_MUTATION from '../../graphql/mutations/People';
@@ -125,8 +126,11 @@ export class PeopleList extends Component {
         <div
           className={`action-menu ${isFetching ? 'disabled-buttons' : null}`}
         >
-          <div className="room-setup-header">
+          <div className="people-header">
             <p>{this.props.location}&apos;s People </p>
+          </div>
+          <div className="add-new-person">
+            <AddPeople />
           </div>
           <Sort
             sortOptions={{ location: allLocations, access: roles }}

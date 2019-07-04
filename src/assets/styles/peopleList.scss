@@ -30,7 +30,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
 
-    .room-setup-header {
+    .people-header {
       grid-column: 2/3;
       align-self: baseline;
       justify-self: center;
@@ -38,6 +38,30 @@
       font-size: 24px;
       line-height: 31px;
       margin-bottom: 10px;
+    }
+    .add-new-person {
+      border-radius: 4px;
+      margin: 10px auto;
+      background-color: $color-resource;
+      height: 51px;
+      border: 2px dashed $color-border;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      #modal-button {
+        background-color: map-get($color-white, 000);
+        color: $color-primary;
+        border: 1px solid $color-border;
+        padding: 6px 10px;
+        height: 34px;
+        font-size: 13px;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px 0 $color-shadow;
+        cursor: pointer;
+      }
+      .modal-component .modal_content {
+        overflow: scroll;
+      }
     }
   }
 
