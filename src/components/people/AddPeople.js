@@ -1,7 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import toastr from 'toastr';
 import ActionButtons from '../commons/ActionButtons';
 import MrmModal from '../commons/Modal';
 import { Input } from '../commons';
+import { invitePersonMutation } from '../helpers/mutationHelpers/people';
+import notification from '../../utils/notification';
 
 /**
  * Add Resource Component
@@ -12,12 +16,9 @@ import { Input } from '../commons';
  */
 class AddPeople extends React.Component {
   state = {
-    resource: '',
+    people: '',
     closeModal: false,
   };
-
-  resourceQuantity = React.createRef();
-  amenity = React.createRef();
 
   /**
    * Ensures that the modal for inviting a person closes
@@ -44,7 +45,26 @@ class AddPeople extends React.Component {
     this.setState({ [name]: value });
   };
 
-  submitResource = () => {};
+  validateUser = (people) => {
+    const { users } = this.props.availableUsers;
+    const existingUsers = users || [];
+    return existingUsers.some(item => item.email === people);
+  }
+
+  submitInvite = () => {
+    const { email } = this.state;
+    if (this.validateUser(email)) {
+      notification(toastr, 'error', 'Provide a new, unique user to invite')();
+    } else {
+      invitePersonMutation(email)
+        .then(() => {
+          notification(toastr, 'success', 'User Successfully invited')();
+        })
+        .catch((error) => {
+          notification(toastr, 'error', error.graphQLErrors[0].message)();
+        });
+    }
+  };
 
   /**
    * It updates the state value of closeModal
@@ -58,7 +78,7 @@ class AddPeople extends React.Component {
 
   render() {
     const {
-      resource,
+      people,
       closeModal,
     } = this.state;
     return (
@@ -72,13 +92,12 @@ class AddPeople extends React.Component {
         <form className="amenity-form" onSubmit={this.handleCloseModal}>
           <div>
             <Input
-              ref={this.amenity}
-              id="resource"
-              name="resource"
+              id="user"
+              name="email"
               placeholder="Enter Users Email"
               labelName="Users Email Address"
               labelClass="add-resource-controls"
-              value={resource}
+              value={people}
               onChange={this.handleInputChange}
             />
             <div className="loading-btn-div">
@@ -86,7 +105,7 @@ class AddPeople extends React.Component {
                 withCancel
                 onClickCancel={this.handleCloseModal}
                 actionButtonText="INVITE USER"
-                onClickSubmit={this.submitResource}
+                onClickSubmit={this.submitInvite}
               />
             </div>
           </div>
@@ -95,5 +114,9 @@ class AddPeople extends React.Component {
     );
   }
 }
+
+AddPeople.propTypes = {
+  availableUsers: PropTypes.oneOfType([PropTypes.object, PropTypes.array]).isRequired,
+};
 
 export default AddPeople;

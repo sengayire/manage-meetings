@@ -130,7 +130,9 @@ export class PeopleList extends Component {
             <p>{this.props.location}&apos;s People </p>
           </div>
           <div className="add-new-person">
-            <AddPeople />
+            <AddPeople
+              availableUsers={users}
+            />
           </div>
           <Sort
             sortOptions={{ location: allLocations, access: roles }}
