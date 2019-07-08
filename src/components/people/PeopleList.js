@@ -123,9 +123,7 @@ export class PeopleList extends Component {
     if (error && error.message === 'GraphQL error: No users found') return <DataNotFound />;
     return (
       <div className="settings-people">
-        <div
-          className={`action-menu ${isFetching ? 'disabled-buttons' : null}`}
-        >
+        <div className={`action-menu ${isFetching ? 'disabled-buttons' : null}`}>
           <div className="people-header">
             <p>{this.props.location}&apos;s People </p>
           </div>
@@ -134,12 +132,14 @@ export class PeopleList extends Component {
               availableUsers={users}
             />
           </div>
-          <Sort
-            sortOptions={{ location: allLocations, access: roles }}
-            fetchSortedData={this.sortPeople}
-            hideDropdownMenu={this.state.hideDropdownMenu}
-            withChildren
-          />
+          <div className="sort-people">
+            <Sort
+              sortOptions={{ location: allLocations, access: roles }}
+              fetchSortedData={this.sortPeople}
+              hideDropdownMenu={this.state.hideDropdownMenu}
+              withChildren
+            />
+          </div>
         </div>
         <div className="settings-people-list">
           {isFetching ? <Overlay /> : null}
