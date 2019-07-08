@@ -42,7 +42,7 @@ class AddPeople extends React.Component {
    */
   handleInputChange = (event) => {
     const { name, value } = event.target;
-    this.setState({ [name]: value });
+    this.setState({ people: value, [name]: value });
   };
 
   validateUser = (people) => {

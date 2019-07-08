@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddPeople Component renders properly 1`] = `
+<MrmModal
+  buttonText="Invite a New User"
+  className="add-resource-modal"
+  closeModal={false}
+  handleCloseRequest={[Function]}
+  modalButtonClassName="button"
+  openModal={false}
+  title="INVITE A NEW USER"
+>
+  <form
+    className="amenity-form"
+    onSubmit={[Function]}
+  >
+    <div>
+      <Input
+        controlsClass=""
+        id="user"
+        inputClass="mrm-input default-input"
+        labelClass="add-resource-controls"
+        labelName="Users Email Address"
+        name="email"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        placeholder="Enter Users Email"
+        type="text"
+        value=""
+      />
+      <div
+        className="loading-btn-div"
+      >
+        <ActionButtons
+          actionButtonText="INVITE USER"
+          cancelButtonText="CANCEL"
+          isLoading={false}
+          onClickCancel={[Function]}
+          onClickSubmit={[Function]}
+          showActionButton={true}
+          withCancel={true}
+        />
+      </div>
+    </div>
+  </form>
+</MrmModal>
+`;
