@@ -1,41 +1,40 @@
 #!/usr/bin/env bash
 
-source $WORKSPCE/jenkins/bin/utils.sh
+source $WORKSPACE/jenkins/bin/utils.sh
 
 checkout_deployment_scripts() {
+  info "Cloning deployment script"
   if [ "$GIT_BRANCH" == "master" ]; then
-    # clone master branch of deployment-scripts repo into deployment directory
-    git clone -b master https://github.com/andela/mrm-deployment-scripts.git ${HOME}/deployments
+      git clone -b master https://github.com/andela/mrm-deployment-scripts.git ${WORKSPACE}/deployments
   elif [ "$GIT_BRANCH" == "develop" ]; then
-    # clone develop branch of deployment-scripts repo into deployment directory
-    git clone -b develop https://github.com/andela/mrm-deployment-scripts.git  ${HOME}/deployments
+      git clone -b develop https://github.com/andela/mrm-deployment-scripts.git ${WORKSPACE}/deployments
   else
-    # clone master k8s-sandbox of deployment-scripts repo into deployment directory
-    git clone -b k8s-sandbox https://github.com/andela/mrm-deployment-scripts.git  ${HOME}/deployments
+      git clone -b k8s-sandbox https://github.com/andela/mrm-deployment-scripts.git ${WORKSPACE}/deployments
   fi
+  success "Successfully cloned deployment script"
 }
 
-# Get terraform values
 terraform_values() {
-  cd ${HOME}/deployments/
-  mkdir -p ${HOME}/deployments/secrets
-  echo $CERTIFICATE | base64 -d > ${HOME}/deployments/secrets/ssl_andela_certificate.crt
-  echo $KEY | base64 -d > ${HOME}/deployments/secrets/ssl_andela_key.key
-  sed -i -- 's/base64 --decode/base64 -d/g' ${HOME}/deployments/.circleci/deploy_to_kubernetes.sh
-  sed -i -- 's/CIRCLE_BRANCH/GIT_BRANCH/g' ${HOME}/deployments/.circleci/deploy_to_kubernetes.sh
-  sed -i -- 's/CIRCLE_BRANCH/GIT_BRANCH/g' ${HOME}/deployments/supply_values.sh
+  info "Generate Environment variables for deployment"
+  cd ${WORKSPACE}/deployments/
+  mkdir -p secrets
+  echo $CERTIFICATE | base64 --decode > secrets/ssl_andela_certificate.crt
+  echo $KEY | base64 --decode > secrets/ssl_andela_key.key
+  cat secrets/ssl_andela_certificate.crt
+  cat secrets/ssl_andela_key.key
   source supply_values.sh
+  success "Environment variables successfully generated for deployment"
 }
 
-# Run terraform
 run_terraform() {
-  cd ${HOME}/deployments/
-  sed -i -- 's/base64 --decode/base64 -d/g' ${HOME}/deployments/.circleci/deploy_to_kubernetes.sh
-  sed -i -- 's/CIRCLE_BRANCH/GIT_BRANCH/g' ${HOME}/deployments/.circleci/deploy_to_kubernetes.sh
+  info "Deploying to Kubernetes cluster"
+  cd ${WORKSPACE}/deployments/
   source .circleci/deploy_to_kubernetes.sh
   deploy $(echo $GIT_BRANCH)
+  success "Successfully deployed application to cluster"
 }
 
+#run main
 main() {
   checkout_deployment_scripts
   terraform_values

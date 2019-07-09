@@ -17,19 +17,19 @@ get_build_report() {
 
   elif [ "$STAGE_NAME" == 'test' -a  "$STATUS" == 'fail' ]; then
 
-    MESSAGE_TEXT="Test Phase Failed :scream: :jenkins:"
+    MESSAGE_TEXT="Test Phase Failed :jenkins: :scream:"
     COLOR="danger"
     REBUILD_URL="https://jenkins.andela.com/blue/organizations/jenkins/converge-frontend-pipeline/detail/${GIT_BRANCH}/${BUILD_NUMBER}/pipeline"
     ACTION_BUTTON="$(echo \
           "{\"type\": \"button\", \"text\": \"Rebuild\", \"url\": \"${REBUILD_URL}\"}", \
       )"
 
-  elif [ "$STAGE_NAME" == 'build-application-and-docker-image' -a "$STATUS" == 'success' ]; then
+  elif [ "$STAGE_NAME" == 'build-docker-image' -a "$STATUS" == 'success' ]; then
 
-    MESSAGE_TEXT="Build Phase Succeeded  :jenkins: :white_check_mark:"
+    MESSAGE_TEXT="Build Phase Succeeded  :jenkins: :rocket:"
     COLOR="good"
 
-  elif [ "$STAGE_NAME" == 'build-application-and-docker-image' -a  "$STATUS" == 'fail' ]; then
+  elif [ "$STAGE_NAME" == 'build-docker-image' -a  "$STATUS" == 'fail' ]; then
 
     MESSAGE_TEXT="Deployment Phase Failed  :jenkins: :scream:"
     REBUILD_URL="https://jenkins.andela.com/blue/organizations/jenkins/converge-frontend-pipeline/detail/${GIT_BRANCH}/${BUILD_NUMBER}/pipeline"

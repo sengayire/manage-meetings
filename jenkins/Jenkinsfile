@@ -14,7 +14,7 @@ agent {
       spec:
         containers:
         - name: converge-frontend-agent
-          image: ${CONVERGE_GCR_PATH}/${CONVERGE_FRONTEND_IMAGE_PATH}:${CONVERGE_FRONTEND_IMAGE_VERSION}
+          image: ${IMAGE_REGISTRY}/${MRM_IMAGE_DIR}/${MRM_FRONT_IMAGE}
           resources:
             requests:
               cpu: "2000m"
@@ -29,7 +29,7 @@ agent {
             - name: DOCKER_HOST
               value: tcp://localhost:2375
         - name: dind
-          image: ${CONVERGE_DIND_IMAGE_PATH}
+          image: docker:18.05-dind
           securityContext:
             privileged: true
           volumeMounts:
@@ -52,9 +52,9 @@ agent {
       steps {
         container('converge-frontend-agent') {
           withCredentials([
-            file(credentialsId: 'converge-frontend-env-vars', variable: 'CONVERGE_FRONTEND_ENV_VARS')
+            file(credentialsId: 'converge-frontend-env', variable: 'CONVERGE_FRONTEND_ENV')
           ]) {
-            load "$CONVERGE_FRONTEND_ENV_VARS"
+            load "${CONVERGE_FRONTEND_ENV}"
           }
         }
       }
@@ -96,7 +96,7 @@ agent {
         }
       }
     }
-    stage('build-application-and-docker-image') {
+    stage('build-docker-image') {
       // Run this stage only when GIT_BRANCH is master, develop, or v2
       when {
         anyOf {
@@ -109,6 +109,8 @@ agent {
         container('converge-frontend-agent') {
           // Setup gcloud in the container
           sh script: "$WORKSPACE/jenkins/bin/setup_gcloud.sh", label: "Setup gcloud"
+          // Load environment variables
+          sh script: "$WORKSPACE/jenkins/bin/load_env_variables.sh", label: "Load env variables"
           // Build application
           sh script: "yarn run build", label: "Build application"
           // Build docker image
@@ -140,7 +142,7 @@ agent {
         }
       }
       steps {
-        container('dind') {
+        container('converge-frontend-agent') {
           // Setup and authenticate gcloud
           sh script: "$WORKSPACE/jenkins/bin/setup_gcloud.sh", label: "Setup and authenticate gcloud"
           // Deploy to kubernetes
@@ -149,13 +151,13 @@ agent {
       }
       post {
         success {
-          container('dind') {
+          container('converge-frontend-agent') {
             // Send success notification to slack if test stage is successful
             sh script: "$WORKSPACE/jenkins/bin/notify_slack.sh success", label: "Notifying slack channel (succeeded)"
           }
         }
         failure {
-          container('dind') {
+          container('converge-frontend-agent') {
             // Send failure notification to slack if test stage fails
             sh script: "$WORKSPACE/jenkins/bin/notify_slack.sh fail", label: "Notifying slack channel (failed)"
           }
