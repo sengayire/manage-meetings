@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`TopMenu Component renders correctly in memory 1`] = `
+exports[`TopMenu Component Should render component 1`] = `
 <div
   className="top-menu"
 >
@@ -40,7 +40,7 @@ exports[`TopMenu Component renders correctly in memory 1`] = `
           className="container input-container"
         >
           <div
-            className="search-box__input-field adjust-for-options"
+            className="search-box__input-field"
           >
             <Input
               controlsClass=""
@@ -52,6 +52,7 @@ exports[`TopMenu Component renders correctly in memory 1`] = `
               onBlur={[Function]}
               onChange={[Function]}
               onFocus={[Function]}
+              onKeyDown={[Function]}
               placeholder=""
               type="text"
               value=""
@@ -81,7 +82,6 @@ exports[`TopMenu Component renders correctly in memory 1`] = `
           <img
             alt="Profile icon"
             className="menu-icon"
-            src="https://firebasestorage.googleapis.com/v0/b/learning-map-app.appspot.com/o/MrmFrontImages%2Fprofile.svg?alt=media&token=7be801d0-a155-49ae-97ea-5ae6f606b09f"
           />
         </div>
         <div
@@ -90,7 +90,7 @@ exports[`TopMenu Component renders correctly in memory 1`] = `
           <span
             className="username"
           >
-            MockFirstName MockLastName
+            undefined undefined
           </span>
           <withRouter(ProfileMenu) />
         </div>

@@ -17,7 +17,7 @@ const AverageMeetingDurationPieChart = () => {
       return <ErrorIcon message="No resource found" />;
     }
 
-    const dummySectorWidths = ['100', '0', '0', '0', '0'];
+    const dummySectorWidths = ['70', '10', '10', '10'];
 
     const options = {
       legend: {
@@ -31,8 +31,7 @@ const AverageMeetingDurationPieChart = () => {
         'Above 60 Minutes in %',
         '45-60 Minutes in %',
         '30-45 Minutes in %',
-        '1 - 29 Minutes in %',
-        '0 in %',
+        'Below 30 Minutes in %',
       ],
       datasets: [
         {
@@ -67,11 +66,7 @@ const AverageMeetingDurationPieChart = () => {
           </p>
           <p className="duration-forth-circle">
             <span>{}</span>
-            1 - 29 Minutes
-          </p>
-          <p className="duration-fifth-circle">
-            <span>{}</span>
-            Zero
+            Below 30 Minutues
           </p>
         </section>
       </section>
