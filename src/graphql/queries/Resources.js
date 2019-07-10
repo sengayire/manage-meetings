@@ -6,6 +6,12 @@ export const GET_RESOURCES_QUERY = gql`
       resources {
         id
         name
+        room {
+          roomId
+          room {
+            name
+          }
+        }
       }
       pages
       hasNext

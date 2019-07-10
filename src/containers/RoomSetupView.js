@@ -50,6 +50,8 @@ class RoomSetupOverView extends Component {
     this.setState({ currentNavItem });
   }
 
+  getStoredNav = () => sessionStorage.getItem('setupCurrentNav')
+
   /**
    * get the logged in user's location id and update the state with the id
    *
@@ -88,6 +90,7 @@ class RoomSetupOverView extends Component {
    */
   handleSelectedItem = (event) => {
     const { id } = event.currentTarget;
+    sessionStorage.setItem('setupCurrentNav', id);
     this.setState({ currentNavItem: id });
   };
 
@@ -121,7 +124,8 @@ class RoomSetupOverView extends Component {
         location,
       },
     } = this;
-    switch (component || currentNavItem) {
+    const navItem = this.getStoredNav() || currentNavItem;
+    switch (component || navItem) {
       case 'resources':
         return <Resources location={location} getRooms={this.getRooms} query={query} />;
       /* istanbul ignore next */
@@ -146,7 +150,7 @@ class RoomSetupOverView extends Component {
     return (
       <div className="setup-main-container">
         <SetupNavbar
-          currentNavItem={component || currentNavItem || 'meeting-rooms'}
+          currentNavItem={component || this.getStoredNav() || currentNavItem || 'structure'}
           handleSelectedItem={this.handleSelectedItem}
         />
         {this.renderNavItems()}

@@ -40,9 +40,9 @@ export class AssignResource extends React.Component {
     if (!rooms || rooms.length < 1) {
       notification(toastr, 'error', 'Please add a room')();
     } else {
-      const promises = rooms.map(roomId =>
+      const promises = rooms.map(room =>
         assignResourceMutation({
-          resourceId, roomId, location, quantity: 1,
+          resourceId, room, location, quantity: 1,
         }));
       this.setState({ fetching: true });
       Promise.all(promises).then(() => {
@@ -60,7 +60,12 @@ export class AssignResource extends React.Component {
     }
   };
 
-  updateSelectedRooms = rooms => this.setState({ rooms: rooms.map(value => value.split('__')[0]) });
+  updateSelectedRooms = rooms => this.setState({
+    rooms: rooms.map((value) => {
+      const room = value.split('__');
+      return ({ roomId: room[0], name: room[1] });
+    }),
+  });
 
   /**
    * It updates the state value of closeModal
@@ -78,7 +83,10 @@ export class AssignResource extends React.Component {
       fetching,
       rooms,
     } = this.state;
-    const { locationRooms, resourceToAssign: { name: resourceName, id: resourceId } } = this.props;
+    const {
+      locationRooms,
+      resourceToAssign: { name: resourceName, id: resourceId, room: alreadyAssignedRooms },
+    } = this.props;
     return (
       <MrmModal
         title={`ASSIGN ${resourceName.toUpperCase()} TO ROOMS`}
@@ -94,6 +102,7 @@ export class AssignResource extends React.Component {
               label="Select rooms"
               placeholder="Pick rooms"
               options={locationRooms.map(({ id, name }) => ({ value: `${id}__${name}` }))}
+              alreadyAssignedOptions={alreadyAssignedRooms.map(({ roomId, room: { name: roomName } }) => `${roomId}__${roomName}`)}
               multiple
               underScoreFormat
             />

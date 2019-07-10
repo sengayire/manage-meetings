@@ -16,6 +16,7 @@ class Select extends Component {
     typed: '',
   }
 
+
   componentDidUpdate(prevProps, { values: oldValues }) {
     const { values: newValues } = this.state;
     const { handleSubmit } = this.props;
@@ -287,7 +288,6 @@ class Select extends Component {
   renderOptions = () => {
     const { options } = this.props;
     const { isOpen } = this.state;
-
     if (!isOpen) {
       return null;
     }
@@ -300,15 +300,17 @@ class Select extends Component {
   }
 
   renderOption = (option, index) => {
-    const { multiple, underScoreFormat } = this.props;
+    const { multiple, underScoreFormat, alreadyAssignedOptions } = this.props;
     const { values, focusedValue } = this.state;
 
     const { value } = option;
-
+    const alreadyAssigned = alreadyAssignedOptions.includes(value);
     const selected = values.includes(value);
+
 
     let className = 'option';
     if (selected) className += ' selected';
+    if (alreadyAssigned) className += ' alreadyAssigned';
     if (index === focusedValue) className += ' focused';
 
     return (
@@ -317,11 +319,12 @@ class Select extends Component {
         data-value={value}
         className={className}
         onMouseOver={this.onHoverOption}
-        onClick={this.onClickOption}
+        onClick={(alreadyAssigned) ? null : this.onClickOption}
       >
         { multiple ?
           <span className="multiple-select__checkbox">
             { selected ? <Check /> : null }
+            { alreadyAssigned ? <Check /> : null }
           </span> :
           null
         }
@@ -370,6 +373,7 @@ Select.propTypes = {
   placeholder: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
   multiple: PropTypes.bool.isRequired,
+  alreadyAssignedOptions: PropTypes.instanceOf(Array).isRequired,
 };
 
 Select.defaultProps = {

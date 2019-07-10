@@ -40,6 +40,12 @@ export const ASSIGN_RESOURCE_MUTATION = gql`
         resource {
           id
           name
+          room {
+            roomId
+            room {
+              name
+            }
+          }
         }
       }
     }

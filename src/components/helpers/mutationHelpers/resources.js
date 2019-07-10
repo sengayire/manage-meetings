@@ -159,9 +159,10 @@ const editResourceMutation = async (resourceId, name, client = apolloClient) => 
 };
 
 export const assignResourceMutation = async ({
-  resourceId, roomId, quantity, location,
+  resourceId, room, quantity, location,
 }, client = apolloClient,
 ) => {
+  const { roomId } = room;
   await client
     .mutate({
       mutation: ASSIGN_RESOURCE_MUTATION,
@@ -169,35 +170,35 @@ export const assignResourceMutation = async ({
       variables: { resourceId, roomId, quantity },
 
       update: async (proxy, { data: { assignResource: { roomResource } } }) => {
-        const cachedRooms = proxy.readQuery({
-          query: GET_ROOMS_QUERY,
-          variables: {
-            location,
-            office: '',
-            page: 1,
-            perPage: 8,
-            roomLabels: '',
-          },
-        });
+        try {
+          const cachedRooms = proxy.readQuery({
+            query: GET_ROOMS_QUERY,
+            variables: {
+              location,
+              office: '',
+              page: 1,
+              perPage: 8,
+              roomLabels: '',
+            },
+          });
+          const target = cachedRooms.allRooms.rooms.findIndex(({ id }) => id === roomId);
+          const resourceList = cachedRooms.allRooms.rooms[target].resources;
+          cachedRooms.allRooms.rooms[target].resources = [...resourceList, roomResource];
 
-        const target = cachedRooms.allRooms.rooms.findIndex(({ id }) => id === roomId);
-
-        const resourceList = cachedRooms.allRooms.rooms[target].resources;
-
-        cachedRooms.allRooms.rooms[target].resources = [...resourceList, roomResource];
-
-
-        proxy.writeQuery({
-          query: GET_ROOMS_QUERY,
-          variables: {
-            location,
-            office: '',
-            page: 1,
-            perPage: 8,
-            roomLabels: '',
-          },
-          data: cachedRooms,
-        });
+          proxy.writeQuery({
+            query: GET_ROOMS_QUERY,
+            variables: {
+              location,
+              office: '',
+              page: 1,
+              perPage: 8,
+              roomLabels: '',
+            },
+            data: cachedRooms,
+          });
+        } catch (error) {
+          return null;
+        }
       },
     });
 };
