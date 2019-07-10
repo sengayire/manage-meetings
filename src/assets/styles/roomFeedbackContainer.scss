@@ -185,4 +185,68 @@
     width: 7rem;
     margin-top: 3rem !important;
   }
+
+  .response-feedback-container {
+    &__items {
+      display: flex;
+      .response-filter-button {
+        margin-left: 0;
+      }
+    }
+
+    &__modal {
+      position: relative;
+      &__content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        box-shadow: 0 16px 32px 0 rgba(0, 0, 0, 0.12);
+        border-radius: 5px;
+        top: 0;
+        left: 0;
+        background: white;
+        height: 0;
+        overflow: hidden;
+        width: 100%;
+        transition: height 0.2s;
+        z-index: 10;
+        > div {
+          margin: 0 auto;
+          width: 80%;
+          > *, p {
+            margin-bottom: 2rem;
+
+            &.filter-by-room {
+              margin-bottom: 3rem;
+            }
+
+            .input-range {
+              width: 95%;
+              margin: 0 auto;
+            }
+          }
+          .action-buttons {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 3rem;
+          }
+          .input1 {
+            width: 100%;
+          }
+        }
+        &.active {
+          height: 20rem;
+        }
+      }
+    }
+
+    .response-filter-button {
+      img {
+        position: relative;
+        right: 5px;
+        top: 2px;
+      }
+    }
+  }
 }

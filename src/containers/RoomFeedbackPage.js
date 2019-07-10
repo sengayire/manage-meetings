@@ -9,10 +9,14 @@ import RoomFeedbackResponseList from '../components/roomFeedback/RoomFeedbackRes
 import { NavBar } from '../components';
 import '../assets/styles/roomFeedbackContainer.scss';
 import { getTodaysDate } from '../utils/Utilities';
-import { getUserDetails, getRoomFeedbackQuestions } from '../components/helpers/QueriesHelpers';
+import { getUserDetails, getRoomFeedbackQuestions, getAllResponses } from '../components/helpers/QueriesHelpers';
+import FilterResponseButton from '../components/roomFeedback/FilterResponseButton';
+import FilterRoomResponses from '../components/roomFeedback/FilterRoomResponses';
 
 class RoomFeedbackPage extends Component {
   state = {
+    allRoomResponses: [],
+    filterModal: false,
     isResponsePageVisible: false,
     responseData: [],
     upperLimitCount: 100,
@@ -20,6 +24,11 @@ class RoomFeedbackPage extends Component {
     loading: true,
     startDate: getTodaysDate(),
     endDate: getTodaysDate(),
+    roomFilter: '',
+    filteredData: [],
+    useFilter: false,
+    sliderSpan: { minValue: 0, maxValue: 20 },
+    responseCutoff: { min: -1, max: Infinity },
   }
 
   componentDidMount = () => {
@@ -37,12 +46,52 @@ class RoomFeedbackPage extends Component {
       user = await getUserDetails();
     }
     const feedbackQuestions = await getRoomFeedbackQuestions();
+    const allRoomResponses = await this.getResponses();
+    const sliderSpan = this.getResponseCutoff(allRoomResponses);
+
     this.setState({
       loading: false,
       ...(fetchUser && { user }),
       ...(feedbackQuestions && { questions: feedbackQuestions.questions }),
+      allRoomResponses,
+      sliderSpan,
     });
   };
+
+  getResponses = async (setState) => {
+    const { startDate, endDate } = this.state;
+    if (setState) {
+      this.setState({ loading: true });
+    }
+    const allRoomResponses = await getAllResponses({ startDate, endDate });
+    if (setState) {
+      const sliderSpan = this.getResponseCutoff(allRoomResponses);
+      return this.setState({
+        allRoomResponses,
+        loading: false,
+        sliderSpan,
+      });
+    }
+    return allRoomResponses;
+  }
+
+  getResponseCutoff = (allRoomResponses) => {
+    const responseArray = allRoomResponses.responses.map(({ totalResponses }) => totalResponses);
+    return {
+      minValue: Math.min(...responseArray),
+      maxValue: Math.max(...responseArray),
+    };
+  }
+
+  setResponseCutoff = (responseCutoff) => {
+    this.setState({ responseCutoff });
+  }
+
+  setRoom = (roomFilter) => {
+    this.setState({ roomFilter });
+  }
+
+  toggleFilterModal = () => this.setState(({ filterModal }) => ({ filterModal: !filterModal }))
 
   /**
    * It toggles the state properties vaule between true and false
@@ -73,6 +122,13 @@ class RoomFeedbackPage extends Component {
     });
   }
 
+  sendDateData = (start, end) => {
+    this.setState({
+      startDate: start,
+      endDate: end,
+    }, () => this.getResponses(true));
+  };
+
   dateValue = () => {
     const {
       startDate,
@@ -85,11 +141,48 @@ class RoomFeedbackPage extends Component {
     };
   };
 
+  filterData = () => {
+    const {
+      allRoomResponses,
+      roomFilter,
+      responseCutoff: { min, max },
+      sliderSpan: { minValue, maxValue },
+    } = this.state;
+    const filteredData = { ...allRoomResponses };
+    if (roomFilter) {
+      filteredData.responses = filteredData.responses
+        .filter(({ roomName }) => roomName === roomFilter);
+    }
+    if ((min !== minValue) || (max !== maxValue)) {
+      filteredData.responses = filteredData.responses
+        .filter(({ response: { length } }) =>
+          (length >= min) && (length <= max));
+    }
+    return filteredData;
+  }
+
+  handleFilter = () => {
+    const filteredData = this.filterData();
+    this.setState({ filteredData, useFilter: true });
+  }
+
+
+  clearFilters = () => {
+    const { minValue: min, maxValue: max } = this.state.sliderSpan;
+    this.setState({
+      useFilter: false,
+      roomFilter: '',
+      responseCutoff: { min, max },
+    });
+  }
+
 
   render() {
     const {
       isResponsePageVisible, responseData, lowerLimitCount,
-      upperLimitCount, startDate, endDate, user, loading, questions,
+      filterModal, allRoomResponses, filteredData,
+      upperLimitCount, startDate, endDate, user, useFilter,
+      loading, questions, sliderSpan,
     } = this.state;
     const showResponseButton = (user && user.roles[0].role === 'Admin');
     return (
@@ -115,16 +208,42 @@ class RoomFeedbackPage extends Component {
             </div>
             {!isResponsePageVisible && <AddQuestionComponent refetch={this.getData} />}
             {
-              isResponsePageVisible &&
-              <Fragment>
-                <Calendar />
-                {
-                  responseData &&
-                  <ExportButton
-                    data={{ responseData, dateValue: this.dateValue() }}
-                  />
-                }
-              </Fragment>
+              isResponsePageVisible && (
+                <div className="response-feedback-container">
+                  <div className="response-feedback-container__items">
+                    <FilterResponseButton
+                      toggleFilterModal={this.toggleFilterModal}
+                    />
+                    <Calendar
+                      sendData={this.sendDateData}
+                      startDate={startDate}
+                      endDate={endDate}
+                      disabledDateRange="future"
+                    />
+                    <div>
+                      {
+                        responseData &&
+                        <ExportButton
+                          data={{ responseData, dateValue: this.dateValue() }}
+                        />
+                      }
+                    </div>
+                  </div>
+                  <div className="response-feedback-container__modal">
+                    <div className={`response-feedback-container__modal__content${filterModal ? ' active' : ''}`}>
+                      <FilterRoomResponses
+                        setResponseCutoff={this.setResponseCutoff}
+                        setRoom={this.setRoom}
+                        useFilter={useFilter}
+                        filterData={this.handleFilter}
+                        sliderSpan={sliderSpan}
+                        clearFilters={this.clearFilters}
+                        rooms={allRoomResponses.responses.map(({ roomName }) => roomName)}
+                      />
+                    </div>
+                  </div>
+                </div>
+              )
             }
           </div>
           {
@@ -133,10 +252,14 @@ class RoomFeedbackPage extends Component {
                 <div id="responses">
                   <RoomFeedbackResponseList
                     checkData={this.checkData}
-                    startDate={startDate}
-                    endDate={endDate}
                     upperLimitCount={upperLimitCount}
                     lowerLimitCount={lowerLimitCount}
+                    data={{
+                      loading,
+                      allRoomResponses: useFilter
+                        ? filteredData
+                        : allRoomResponses,
+                    }}
                   />
                 </div>)
               :
