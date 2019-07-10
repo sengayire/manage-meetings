@@ -91,55 +91,84 @@ class RoomFeedbackPage extends Component {
     this.setState({ roomFilter });
   }
 
-  toggleFilterModal = () => this.setState(({ filterModal }) => ({ filterModal: !filterModal }))
 
   /**
-   * It toggles the state properties vaule between true and false
+   * Loops through the room responses
+   * and calculates the total number of responses
    *
-   * @returns {void}
+   * @param {array} roomResponses
+   *
+   * @return {integer}
    */
-  toggleVisibility = () => {
-    this.setState({
-      isResponsePageVisible: !this.state.isResponsePageVisible,
+  getTotalResponses = (rooms) => {
+    let totalResponses = 0;
+    rooms.forEach((room) => {
+      totalResponses += ((room.response).length);
     });
+    return totalResponses;
   };
 
   /**
-   * calls data from the responses
-   * sets the data to state
-   * the data in the state determines
-   * whether or not to render downloads button
+   * Loops through the room responses
+   * and calculates the total number of rooms
+   * with missing items
    *
-   * @param {Object} data
+   * @param {array} roomResponses
    *
-   * @returns {void}
+   * @return {integer}
    */
-  checkData = (data) => {
-    const { responses } = data;
-    this.setState((prevState) => {
-      const stateParam = prevState;
-      stateParam.responseData = responses;
+  getRoomsWithMissingItems = (rooms) => {
+    let roomsWithMissingItemsCount = 0;
+    const individualRoomResponsesArray = rooms.map(room => room.response);
+    individualRoomResponsesArray.forEach((responses) => {
+      let roomHasMissingItem = false;
+      responses.forEach((response) => {
+        if (response.response.__typename === 'MissingItems' && response.response.missingItems) {
+          roomHasMissingItem = true;
+        }
+      });
+      if (roomHasMissingItem === true) { roomsWithMissingItemsCount += 1; }
     });
+    return roomsWithMissingItemsCount;
+  };
+
+  /**
+   * Loops through the room responses
+   * and calculates the average room rating
+   *
+   * @param {array} roomResponses
+   *
+   * @return {integer}
+   */
+  getTotalAverageRating = (rooms) => {
+    let ratingsCount = 0;
+    let totalRating = 0;
+    rooms.forEach((room) => {
+      (room.response).forEach((response) => {
+        if (response.response.__typename === 'Rate') {
+          totalRating += (response.response.rate);
+          ratingsCount += 1;
+        }
+      });
+    });
+    return (Math.round(totalRating / ratingsCount));
+  };
+
+
+  handleFilter = () => {
+    const filteredData = this.filterData();
+    this.setState({ filteredData, useFilter: true });
   }
 
-  sendDateData = (start, end) => {
+
+  clearFilters = () => {
+    const { minValue: min, maxValue: max } = this.state.sliderSpan;
     this.setState({
-      startDate: start,
-      endDate: end,
-    }, () => this.getResponses(true));
-  };
-
-  dateValue = () => {
-    const {
-      startDate,
-      endDate,
-    } = this.state;
-
-    return {
-      startDate,
-      endDate,
-    };
-  };
+      useFilter: false,
+      roomFilter: '',
+      responseCutoff: { min, max },
+    });
+  }
 
   filterData = () => {
     const {
@@ -161,21 +190,62 @@ class RoomFeedbackPage extends Component {
     return filteredData;
   }
 
-  handleFilter = () => {
-    const filteredData = this.filterData();
-    this.setState({ filteredData, useFilter: true });
-  }
+  dateValue = () => {
+    const {
+      startDate,
+      endDate,
+    } = this.state;
 
+    return {
+      startDate,
+      endDate,
+    };
+  };
 
-  clearFilters = () => {
-    const { minValue: min, maxValue: max } = this.state.sliderSpan;
+  sendDateData = (start, end) => {
     this.setState({
-      useFilter: false,
-      roomFilter: '',
-      responseCutoff: { min, max },
-    });
-  }
+      startDate: start,
+      endDate: end,
+    }, () => this.getResponses(true));
+  };
 
+  /**
+   * It toggles the state properties vaule between true and false
+   *
+   * @returns {void}
+   */
+  toggleVisibility = () => {
+    this.setState({
+      isResponsePageVisible: !this.state.isResponsePageVisible,
+    });
+  };
+
+
+  toggleFilterModal = () => this.setState(({ filterModal }) => ({ filterModal: !filterModal }))
+
+  /**
+   * Loops through the room responses
+   * and transforms the data to an acceptable format
+   *
+   * @param {array} roomResponses
+   *
+   * @return {integer}
+   */
+  formatAllRoomFeedbackData = () => {
+    const { allRoomResponses, filteredData, useFilter } = this.state;
+    const rooms = useFilter ? filteredData.responses : allRoomResponses.responses;
+    const roomsResponses = rooms.filter(room => (room.response).length > 0);
+    const totalResponses = this.getTotalResponses(roomsResponses);
+    const roomsWithMissingItems = this.getRoomsWithMissingItems(roomsResponses);
+    const totalAverageRating = this.getTotalAverageRating(roomsResponses);
+    const feedback = {
+      totalResponses,
+      roomsWithMissingItems,
+      totalAverageRating,
+      roomsResponses,
+    };
+    return feedback;
+  };
 
   render() {
     const {
@@ -224,7 +294,7 @@ class RoomFeedbackPage extends Component {
                       {
                         responseData &&
                         <ExportButton
-                          data={{ responseData, dateValue: this.dateValue() }}
+                          data={{ downloadData: this.formatAllRoomFeedbackData(), dateValue: this.dateValue(), downloadDataName: 'feedbackResponses' }}
                         />
                       }
                     </div>
@@ -251,9 +321,9 @@ class RoomFeedbackPage extends Component {
               ? (
                 <div id="responses">
                   <RoomFeedbackResponseList
-                    checkData={this.checkData}
                     upperLimitCount={upperLimitCount}
                     lowerLimitCount={lowerLimitCount}
+                    feedback={this.formatAllRoomFeedbackData()}
                     data={{
                       loading,
                       allRoomResponses: useFilter

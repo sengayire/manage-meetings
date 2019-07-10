@@ -159,7 +159,7 @@ class AnalyticsNav extends Component {
                       disabledDateRange="future"
                     />
                   </div>
-                  <ExportButton data={{ analytics, dateValue: this.dateValue() }} />
+                  <ExportButton data={{ downloadData: analytics, dateValue: this.dateValue(), downloadDataName: 'analytics' }} />
                 </Fragment>
               )
             }

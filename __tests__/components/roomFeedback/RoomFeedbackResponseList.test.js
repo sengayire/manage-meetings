@@ -1,6 +1,5 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import * as QueryHelper from '../../../src/components/helpers/QueriesHelpers';
 import { RoomFeedbackResponseList, roomCleanlinessRating } from '../../../src/components/roomFeedback/RoomFeedbackResponseList';
 import ErrorIcon from '../../../src/components/commons/ErrorIcon';
 
@@ -53,74 +52,6 @@ const responseListProps = {
   },
 };
 
-const singleRoomResource = {
-  roomResources: [
-    {
-      room: [
-        {
-          quantity: 1,
-          resource: {
-            name: 'White wipe',
-            room: [
-              {
-                name: 'White wipe',
-              },
-            ],
-          },
-        },
-      ],
-    },
-  ],
-};
-
-const propsWithoutMissingItems = {
-  data: {
-    loading: false,
-    error: null,
-    fetchMore: jest.fn(() => Promise.resolve()),
-    allRoomResponses: {
-      responses: [
-        {
-          roomId: 1,
-          roomName: 'Olkaria',
-          totalResponses: 25,
-          totalRoomResources: 5,
-          response: [
-            {
-              responseId: 289,
-              createdDate: '2019-06-25T14:45:26.577611',
-              resolved: false,
-              response: {
-                __typename: 'Rate',
-                rate: 5,
-              },
-            },
-            {
-              responseId: 290,
-              createdDate: '2019-06-25T14:45:27.942964',
-              resolved: false,
-              response: {
-                __typename: 'Rate',
-                rate: 5,
-              },
-            },
-            {
-              responseId: 291,
-              createdDate: '2019-06-25T14:46:06.718295',
-              resolved: false,
-              response: {
-                __typename: 'SelectedOptions',
-                options: [
-                  'handywork',
-                ],
-              },
-            },
-          ],
-        },
-      ],
-    },
-  },
-};
 
 const propsWithoutResponses = {
   data: {
@@ -183,33 +114,6 @@ describe('Room feedback list', () => {
     const emptyComponent = shallow(
       <RoomFeedbackResponseList {...propsWithoutResponses} checkData={jest.fn()} />);
     expect(emptyComponent.find('.item-list-empty')).toHaveLength(1);
-  });
-
-  it('should return the correct number of rooms with missing items', () => {
-    const { data: { allRoomResponses: { responses } } } = responseListProps;
-    const {
-      data: {
-        allRoomResponses: {
-          responses: noMissingItems,
-        },
-      },
-    } = propsWithoutMissingItems;
-
-    jest.spyOn(QueryHelper, 'getRoomResources').mockImplementationOnce(() => singleRoomResource);
-    jest.spyOn(QueryHelper, 'getSingleRoomFeedback').mockImplementationOnce(() => '');
-
-    const componentWithMissingItems = shallow(
-      <RoomFeedbackResponseList {...responseListProps} checkData={jest.fn()} />);
-    const componentWithoutMissingItems = shallow(
-      <RoomFeedbackResponseList {...propsWithoutMissingItems} checkData={jest.fn()} />,
-    );
-    const instanceWithMissingItems = componentWithMissingItems.instance();
-    const instanceWithoutMissingItems = componentWithoutMissingItems.instance();
-    const count1 = instanceWithMissingItems.getRoomsWithMissingItems(responses);
-    const count2 = instanceWithoutMissingItems.getRoomsWithMissingItems(noMissingItems);
-
-    expect(count1).toEqual(1);
-    expect(count2).toEqual(0);
   });
 
   it('returns the correct star rating markup', () => {

@@ -4,6 +4,16 @@ import ErrorIcon from '../commons/ErrorIcon';
 import { getRoomResources } from '../helpers/QueriesHelpers';
 import '../../../src/assets/styles/roomFeedbackResponse.scss';
 
+
+export const getResponseSuggestion = (roomResponses = []) => {
+  const suggestionResponseList = roomResponses.filter(response => (response.response.__typename === 'TextArea'));
+  if (suggestionResponseList.length > 0) {
+    const { suggestion } = suggestionResponseList[0].response;
+    return suggestion;
+  }
+  return '';
+};
+
 /**
  * Represents a single feedback
  *
@@ -58,16 +68,6 @@ class RoomFeedbackResponse extends Component {
     }
   };
 
-
-  getResponseSuggestion = (roomResponses = []) => {
-    const suggestionResponseList = roomResponses.filter(response => (response.response.__typename === 'TextArea'));
-    if (suggestionResponseList.length > 0) {
-      const { suggestion } = suggestionResponseList[0].response;
-      return suggestion;
-    }
-    return '';
-  };
-
   showModal = (e) => {
     const {
       roomFeedbackResponse: { roomId },
@@ -104,7 +104,7 @@ class RoomFeedbackResponse extends Component {
 
     const totalMissingItems = totalMissingItemsCount(response);
     const { totalRating, grade } = totalCleanlinessRating(response);
-    const suggestion = this.getResponseSuggestion(response);
+    const suggestion = getResponseSuggestion(response);
     return (
       <div className={`room-feedback-container ${(activeRoomId === roomId) ? 'active' : ''}`}>
         <span>

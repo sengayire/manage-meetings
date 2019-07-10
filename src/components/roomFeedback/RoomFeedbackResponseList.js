@@ -102,97 +102,18 @@ export class RoomFeedbackResponseList extends React.Component {
       roomId: null,
       currentPage: 1,
       isFetching: false,
+      feedback: { roomsResponses: [] },
     };
   }
 
   componentWillReceiveProps(props) {
+    const { feedback } = props;
     const { allRoomResponses } = props.data;
     this.setState({
       allRoomResponses,
+      feedback,
     });
   }
-  /**
-   * Loops through the room responses
-   * and calculates the total number of responses
-   *
-   * @param {array} roomResponses
-   *
-   * @return {integer}
-   */
-  getTotalResponses = (rooms) => {
-    let totalResponses = 0;
-    rooms.forEach((room) => {
-      totalResponses += ((room.response).length);
-    });
-    return totalResponses;
-  };
-
-  /**
-   * Loops through the room responses
-   * and calculates the total number of rooms
-   * with missing items
-   *
-   * @param {array} roomResponses
-   *
-   * @return {integer}
-   */
-  getRoomsWithMissingItems = (rooms) => {
-    let roomsWithMissingItemsCount = 0;
-    const individualRoomResponsesArray = rooms.map(room => room.response);
-    individualRoomResponsesArray.forEach((responses) => {
-      let roomHasMissingItem = false;
-      responses.forEach((response) => {
-        if (response.response.__typename === 'MissingItems' && response.response.missingItems) {
-          roomHasMissingItem = true;
-        }
-      });
-      if (roomHasMissingItem === true) { roomsWithMissingItemsCount += 1; }
-    });
-    return roomsWithMissingItemsCount;
-  };
-
-  /**
-   * Loops through the room responses
-   * and calculates the average room rating
-   *
-   * @param {array} roomResponses
-   *
-   * @return {integer}
-   */
-  getTotalAverageRating = (rooms) => {
-    let ratingsCount = 0;
-    let totalRating = 0;
-    rooms.forEach((room) => {
-      (room.response).forEach((response) => {
-        if (response.response.__typename === 'Rate') {
-          totalRating += (response.response.rate);
-          ratingsCount += 1;
-        }
-      });
-    });
-    return (Math.round(totalRating / ratingsCount));
-  };
-
-  /**
-   * Loops through the room responses
-   * and transforms the data to an acceptable format
-   *
-   * @param {array} roomResponses
-   *
-   * @return {integer}
-   */
-  formatAllRoomFeedbackData = (rooms) => {
-    const roomsResponses = rooms.filter(room => (room.response).length > 0);
-    const totalResponses = this.getTotalResponses(roomsResponses);
-    const roomsWithMissingItems = this.getRoomsWithMissingItems(roomsResponses);
-    const totalAverageRating = this.getTotalAverageRating(roomsResponses);
-    return {
-      totalResponses,
-      roomsWithMissingItems,
-      totalAverageRating,
-      roomsResponses,
-    };
-  };
 
   /**
    * Sets component state after comparing roomId state with id argument
@@ -275,10 +196,8 @@ export class RoomFeedbackResponseList extends React.Component {
 
   render() {
     const {
-      roomId, isFetching, currentPage, allRoomResponses,
+      roomId, isFetching, currentPage, allRoomResponses, feedback,
     } = this.state;
-    const { checkData } = this.props;
-    allRoomResponses && checkData(allRoomResponses);
     const { loading, error } = this.props.data;
 
     if (error) {
@@ -299,7 +218,7 @@ export class RoomFeedbackResponseList extends React.Component {
           totalRoomResources: 1,
         }],
       }
-      : this.formatAllRoomFeedbackData(allRoomResponses.responses);
+      : feedback;
 
     if (loading || (feedbackData.roomsResponses).length > 0) {
       return (
@@ -325,11 +244,11 @@ export class RoomFeedbackResponseList extends React.Component {
                 <span>Missing Items</span>
                 <span>Suggestion on how to improve</span>
               </header>
-              {(feedbackData.roomsResponses).map(feedback => (
+              {(feedbackData.roomsResponses).map(singleFeedback => (
                 <RoomFeedbackResponse
                   activeRoomId={roomId}
-                  roomFeedbackResponse={feedback}
-                  key={feedback.roomId}
+                  roomFeedbackResponse={singleFeedback}
+                  key={singleFeedback.roomId}
                   viewSingleFeed={this.showModal}
                   totalCleanlinessRating={totalCleanlinessRating}
                   roomCleanlinessRating={roomCleanlinessRating}
@@ -365,7 +284,7 @@ RoomFeedbackResponseList.propTypes = {
     error: PropTypes.object,
     fetchMore: PropTypes.func,
   }).isRequired,
-  checkData: PropTypes.func.isRequired,
+  feedback: PropTypes.shape({}).isRequired,
 };
 
 export default RoomFeedbackResponseList;

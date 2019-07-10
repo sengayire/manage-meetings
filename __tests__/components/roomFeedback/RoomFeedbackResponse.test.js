@@ -132,36 +132,6 @@ describe('Room Feedback', () => {
     expect(text).toEqual('pandora');
   });
 
-  it('componentWillReceiveProps', () => {
-    const ResponseListComponent = shallow(
-      <RoomFeedbackResponseList
-        {...responseListProps}
-        checkData={jest.fn()}
-        totalRoomResources={jest.fn()}
-      />);
-    const allRoomResponses = {
-      responses: [
-        {
-          roomId: 1,
-          roomName: 'Olkaria',
-          totalResponses: 25,
-          totalRoomResources: 5,
-          response: [
-            {
-              responseId: 1,
-              suggestion: 'This is a suggestion',
-              missingItems: [],
-            },
-          ],
-        },
-      ],
-    };
-
-    ResponseListComponent.setProps({ allRoomResponses });
-    ResponseListComponent.update();
-    expect(ResponseListComponent.state().allRoomResponses.responses).toHaveLength(1);
-  });
-
   it('should handle pagination', () => {
     const ResponseListComponent = shallow(
       <RoomFeedbackResponseList {...responseListProps} checkData={jest.fn()} />);

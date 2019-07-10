@@ -187,20 +187,4 @@ describe('RoomFeedback component', () => {
     wrapper.instance().setResponseCutoff({ min: 2, max: 7 });
     expect(wrapper.state('responseCutoff')).toEqual({ min: 2, max: 7 });
   });
-
-  it('should populate the state with the data for room feedback responses', () => {
-    const data = {
-      responses: [
-        {
-          roomId: 191,
-          roomName: 'Kigali',
-          totalResponses: 40,
-          totalRoomResources: 30,
-        },
-      ],
-    };
-    expect(wrapper.state().responseData).toEqual([]);
-    wrapper.instance().checkData(data);
-    expect(wrapper.state().responseData).toEqual(data.responses);
-  });
 });
