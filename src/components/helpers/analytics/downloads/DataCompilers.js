@@ -8,6 +8,9 @@ import { getLeastBookedRooms, getMostBookedRooms } from '../MostAndLeastBooked';
 import downloadFileString from '../../../../fixtures/downloadString';
 import notification from '../../../../utils/notification';
 import addCharts from './AddCharts';
+import { totalCleanlinessRating, totalMissingItemsCount } from '../../../roomFeedback/RoomFeedbackResponseList';
+import { getResponseSuggestion } from '../../../roomFeedback/RoomFeedbackResponse';
+import { covertArrayOfObjectToCsv, csvDownload } from '../../CsvDownload';
 
 const downloadPdf = async (page1, canvas) => {
   const page2 = document.querySelector('.page2-download');
@@ -65,20 +68,45 @@ export const fetchDownload = async (type, analytics, dateValue) => {
   div.remove();
 };
 
-export const downloadCSV = (analytics) => {
+const formatFeedbackResponses = (feedbackResponse) => {
+  const formatedResponse = feedbackResponse.roomsResponses.map(
+    ({ roomName, totalResponses, response }) => {
+      const { grade } = totalCleanlinessRating(response);
+      const totalMissingItems = totalMissingItemsCount(response);
+      const suggestions = getResponseSuggestion(response);
+      return {
+        'Room name': roomName,
+        'Total Responses': totalResponses,
+        Grade: grade,
+        'Total Missing Items ': totalMissingItems,
+        Suggestions: suggestions,
+      };
+    },
+  );
+  return formatedResponse;
+};
+
+export const downloadCSV = (downloadData, downloadDataName) => {
   notification(toastr, 'success', 'Your download will start shortly')();
-  const csvRows = [];
-  leastAndMostBookedRoomsCSV(csvRows, analytics.analytics);
-  totalBookingsCountCSV(csvRows, analytics.bookingsCount);
-  percentageCheckinsAndCancellationsCSV(csvRows, analytics);
-  averageRoomCapacityCSV(csvRows, analytics.rooms);
-  averageMeetingTimeCSV(csvRows, analytics.analytics);
-  averageMeetingDurationsCSV(csvRows, analytics.analytics);
-  const csvString = csvRows.join('%0A');
-  const anchorElement = document.createElement('a');
-  anchorElement.href = `data:attachment/csv,${csvString}`;
-  anchorElement.download = 'analytics.csv';
-  anchorElement.target = '_blank';
-  document.body.append(anchorElement);
-  anchorElement.click();
+  let csvRows = [];
+  let csvString;
+  if (downloadDataName === 'analytics') {
+    leastAndMostBookedRoomsCSV(csvRows, downloadData.analytics);
+    totalBookingsCountCSV(csvRows, downloadData.bookingsCount);
+    percentageCheckinsAndCancellationsCSV(csvRows, downloadData);
+    averageRoomCapacityCSV(csvRows, downloadData.rooms);
+    averageMeetingTimeCSV(csvRows, downloadData.analytics);
+    averageMeetingDurationsCSV(csvRows, downloadData.analytics);
+    csvString = csvRows.join('%0A');
+    return csvDownload(csvString, 'analytics');
+  }
+  if (downloadDataName === 'feedbackResponses') {
+    const feedbackSummary = [{ 'Rooms with missing items': 0, 'Total avergage rating': 4, 'Total responses': 20 }];
+    csvRows = formatFeedbackResponses(downloadData);
+    csvString = (covertArrayOfObjectToCsv(csvRows));
+    const feedbackSummaryCsvString = (covertArrayOfObjectToCsv(feedbackSummary));
+    const final = `${csvString}%0A${feedbackSummaryCsvString}`;
+    return csvDownload(final, 'feedback response');
+  }
+  return null;
 };

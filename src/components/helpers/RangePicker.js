@@ -59,12 +59,12 @@ export default class PickRange extends React.Component {
 
   disableDays = (day) => {
     const { disabledDateRange } = this.props;
-    const today = moment();
+    const today = moment().valueOf();
     if (disabledDateRange === 'future') {
-      return day > moment(today).add(1, 'days');
+      return moment(day).valueOf() > moment(today);
     }
     if (disabledDateRange === 'past') {
-      return day < today;
+      return moment(day).valueOf() < today;
     }
     return false;
   }

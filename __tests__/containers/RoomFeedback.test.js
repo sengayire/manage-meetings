@@ -49,8 +49,8 @@ describe('RoomFeedback component', () => {
           createdDate: '2019-06-25T14:47:35.583645',
           resolved: false,
           response: {
-            __typename: 'Rate',
-            rate: 3,
+            __typename: 'MissingItems',
+            missingItems: [],
           },
         },
       ],
@@ -176,6 +176,8 @@ describe('RoomFeedback component', () => {
     expect(wrapper.state('filterModal')).toBe(true);
     wrapper.instance().toggleFilterModal();
     expect(wrapper.state('filterModal')).toBe(false);
+    wrapper.instance().toggleFilterModal(false);
+    expect(wrapper.state('filterModal')).toBe(false);
   });
 
   it('should set room', () => {
@@ -186,21 +188,5 @@ describe('RoomFeedback component', () => {
   it('should set room', () => {
     wrapper.instance().setResponseCutoff({ min: 2, max: 7 });
     expect(wrapper.state('responseCutoff')).toEqual({ min: 2, max: 7 });
-  });
-
-  it('should populate the state with the data for room feedback responses', () => {
-    const data = {
-      responses: [
-        {
-          roomId: 191,
-          roomName: 'Kigali',
-          totalResponses: 40,
-          totalRoomResources: 30,
-        },
-      ],
-    };
-    expect(wrapper.state().responseData).toEqual([]);
-    wrapper.instance().checkData(data);
-    expect(wrapper.state().responseData).toEqual(data.responses);
   });
 });

@@ -71,51 +71,47 @@ const singleRoomResource = {
 };
 
 const responseListProps = {
-  data: {
-    loading: false,
-    error: null,
-    fetchMore: jest.fn(() => Promise.resolve()),
-    allRoomResponses: {
-      responses: [
-        {
-          roomId: 1,
-          roomName: 'Olkaria',
-          totalResponses: 25,
-          totalRoomResources: 5,
-          response: [
-            {
-              responseId: 289,
-              createdDate: '2019-06-25T14:45:26.577611',
-              resolved: false,
-              response: {
-                __typename: 'Rate',
-                rate: 5,
-              },
+  loading: false,
+  feedback: {
+    roomsResponses: [
+      {
+        roomId: 1,
+        roomName: 'Olkaria',
+        totalResponses: 25,
+        totalRoomResources: 5,
+        response: [
+          {
+            responseId: 289,
+            createdDate: '2019-06-25T14:45:26.577611',
+            resolved: false,
+            response: {
+              __typename: 'Rate',
+              rate: 5,
             },
-            {
-              responseId: 290,
-              createdDate: '2019-06-25T14:45:27.942964',
-              resolved: false,
-              response: {
-                __typename: 'Rate',
-                rate: 5,
-              },
+          },
+          {
+            responseId: 290,
+            createdDate: '2019-06-25T14:45:27.942964',
+            resolved: false,
+            response: {
+              __typename: 'Rate',
+              rate: 5,
             },
-            {
-              responseId: 291,
-              createdDate: '2019-06-25T14:46:06.718295',
-              resolved: false,
-              response: {
-                __typename: 'SelectedOptions',
-                options: [
-                  'handywork',
-                ],
-              },
+          },
+          {
+            responseId: 291,
+            createdDate: '2019-06-25T14:46:06.718295',
+            resolved: false,
+            response: {
+              __typename: 'SelectedOptions',
+              options: [
+                'handywork',
+              ],
             },
-          ],
-        },
-      ],
-    },
+          },
+        ],
+      },
+    ],
   },
 };
 
@@ -132,41 +128,12 @@ describe('Room Feedback', () => {
     expect(text).toEqual('pandora');
   });
 
-  it('componentWillReceiveProps', () => {
-    const ResponseListComponent = shallow(
-      <RoomFeedbackResponseList
-        {...responseListProps}
-        checkData={jest.fn()}
-        totalRoomResources={jest.fn()}
-      />);
-    const allRoomResponses = {
-      responses: [
-        {
-          roomId: 1,
-          roomName: 'Olkaria',
-          totalResponses: 25,
-          totalRoomResources: 5,
-          response: [
-            {
-              responseId: 1,
-              suggestion: 'This is a suggestion',
-              missingItems: [],
-            },
-          ],
-        },
-      ],
-    };
-
-    ResponseListComponent.setProps({ allRoomResponses });
-    ResponseListComponent.update();
-    expect(ResponseListComponent.state().allRoomResponses.responses).toHaveLength(1);
-  });
-
   it('should handle pagination', () => {
     const ResponseListComponent = shallow(
       <RoomFeedbackResponseList {...responseListProps} checkData={jest.fn()} />);
-    ResponseListComponent.instance().handleData();
-    expect(ResponseListComponent.state('isFetching')).toBe(true);
+    ResponseListComponent.instance().handleData(5, 1);
+    expect(ResponseListComponent.state('perPage')).toBe(5);
+    expect(ResponseListComponent.state('currentPage')).toBe(1);
   });
 
   it('should be able to toggle modal state', () => {

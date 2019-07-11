@@ -14,9 +14,14 @@ class FilterRoomResponses extends Component {
   }
 
   componentDidUpdate({ useFilter: useFilterPrev }) {
-    const { useFilter } = this.props;
+    const { useFilter, isActive } = this.props;
     if (useFilterPrev && !useFilter) {
       this.resetFields();
+    }
+    if (!isActive) {
+      document.removeEventListener('click', this.handleOutsideClick);
+    } else {
+      document.addEventListener('click', this.handleOutsideClick);
     }
   }
 
@@ -24,6 +29,8 @@ class FilterRoomResponses extends Component {
     min: this.props.sliderSpan.minValue,
     max: this.props.sliderSpan.maxValue,
   })
+
+  modal = React.createRef()
 
   resetFields = () => {
     this.setState({
@@ -53,6 +60,11 @@ class FilterRoomResponses extends Component {
     clearFilters();
   }
 
+  handleOutsideClick = ({ target }) => {
+    if (this.modal && this.modal.contains(target)) return;
+    this.props.toggleFilterModal(false);
+  }
+
   render() {
     const {
       setResponseCutoff,
@@ -63,7 +75,7 @@ class FilterRoomResponses extends Component {
 
     const { sliderValue, roomFilter } = this.state;
     return (
-      <div>
+      <div ref={(node) => { this.modal = node; }}>
         <SelectInput
           wrapperClassName="filter-by-room"
           labelText=""
@@ -114,6 +126,8 @@ FilterRoomResponses.propTypes = {
   }).isRequired,
   setResponseCutoff: PropTypes.func.isRequired,
   rooms: PropTypes.arrayOf(PropTypes.string).isRequired,
+  toggleFilterModal: PropTypes.func.isRequired,
+  isActive: PropTypes.bool.isRequired,
 };
 
 export default FilterRoomResponses;

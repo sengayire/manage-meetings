@@ -4,6 +4,16 @@ import ErrorIcon from '../commons/ErrorIcon';
 import { getRoomResources } from '../helpers/QueriesHelpers';
 import '../../../src/assets/styles/roomFeedbackResponse.scss';
 
+
+export const getResponseSuggestion = (roomResponses = []) => {
+  const suggestionResponseList = roomResponses.filter(response => (response.response.__typename === 'TextArea'));
+  if (suggestionResponseList.length > 0) {
+    const { suggestion } = suggestionResponseList[0].response;
+    return suggestion;
+  }
+  return '';
+};
+
 /**
  * Represents a single feedback
  *
@@ -39,13 +49,18 @@ class RoomFeedbackResponse extends Component {
   }
 
   getResourceData = async () => {
+    const { roomId, roomName } = this.props.roomFeedbackResponse;
     try {
-      const resource = await getRoomResources(this.props.roomFeedbackResponse.roomId);
+      const resource = await getRoomResources(roomId);
       this.setState({
         roomResources: resource,
         error: false,
       });
     } catch (error) {
+      if (roomName === 'Sample') {
+        return;
+      }
+
       if (error && error.message === 'GraphQL error: Room has no resource yet') {
         this.setState({
           error: false,
@@ -56,16 +71,6 @@ class RoomFeedbackResponse extends Component {
         error: true,
       });
     }
-  };
-
-
-  getResponseSuggestion = (roomResponses = []) => {
-    const suggestionResponseList = roomResponses.filter(response => (response.response.__typename === 'TextArea'));
-    if (suggestionResponseList.length > 0) {
-      const { suggestion } = suggestionResponseList[0].response;
-      return suggestion;
-    }
-    return '';
   };
 
   showModal = (e) => {
@@ -85,7 +90,6 @@ class RoomFeedbackResponse extends Component {
       roomFeedbackResponse: {
         roomId,
         roomName,
-        totalResponses,
         response,
       },
     } = this.props;
@@ -104,7 +108,7 @@ class RoomFeedbackResponse extends Component {
 
     const totalMissingItems = totalMissingItemsCount(response);
     const { totalRating, grade } = totalCleanlinessRating(response);
-    const suggestion = this.getResponseSuggestion(response);
+    const suggestion = getResponseSuggestion(response);
     return (
       <div className={`room-feedback-container ${(activeRoomId === roomId) ? 'active' : ''}`}>
         <span>
@@ -112,7 +116,7 @@ class RoomFeedbackResponse extends Component {
             {roomName}
           </a>
         </span>
-        <span>{totalResponses}</span>
+        <span>{response.length}</span>
         <span>
           {roomCleanlinessRating(totalRating)} <span className="star-text">{grade}</span>
         </span>

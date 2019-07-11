@@ -20,17 +20,17 @@ exports[`Room feedback list should render correctly 1`] = `
       <RoomFeedbackCard
         key="0"
         title="Total Responses"
-        value={3}
+        value={0}
       />
       <RoomFeedbackCard
         key="1"
         title="Rooms With Missing Items"
-        value={1}
+        value={0}
       />
       <RoomFeedbackCard
         key="2"
         title="Average Ratings"
-        value={5}
+        value={0}
       />
     </div>
     <div
@@ -107,25 +107,6 @@ exports[`Room feedback list should render correctly 1`] = `
         viewSingleFeed={[Function]}
       />
     </div>
-    <Pagination
-      currentPage={1}
-      dataFetched={true}
-      handleData={[Function]}
-      hasNext={true}
-      hasPrevious={false}
-      isFetching={false}
-      itemsPerPage={
-        Array [
-          5,
-          10,
-          20,
-          50,
-        ]
-      }
-      perPage={5}
-      reverse={false}
-      totalPages={4}
-    />
   </div>
 </Fragment>
 `;
