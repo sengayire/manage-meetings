@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FilterRoomResponses test Should render correctly 1`] = `
+<div>
+  <SelectInput
+    dynamicValue=""
+    id="add-room-filter"
+    isValue={true}
+    labelText=""
+    name="room-name"
+    onChange={[Function]}
+    onClick={[Function]}
+    options={
+      Array [
+        "Tortuga",
+      ]
+    }
+    placeholder="Select Room Name"
+    placeholderValue=""
+    required={false}
+    selectInputClassName="default-select"
+    selected={-1}
+    wrapperClassName="filter-by-room"
+  />
+  <div>
+    <p>
+      Responses:
+    </p>
+    <InputRange
+      allowSameValues={false}
+      classNames={
+        Object {
+          "activeTrack": "input-range__track input-range__track--active",
+          "disabledInputRange": "input-range input-range--disabled",
+          "inputRange": "input-range",
+          "labelContainer": "input-range__label-container",
+          "maxLabel": "input-range__label input-range__label--max",
+          "minLabel": "input-range__label input-range__label--min",
+          "slider": "input-range__slider",
+          "sliderContainer": "input-range__slider-container",
+          "track": "input-range__track input-range__track--background",
+          "valueLabel": "input-range__label input-range__label--value",
+        }
+      }
+      disabled={false}
+      draggableTrack={true}
+      maxValue={3}
+      minValue={0}
+      onChange={[Function]}
+      onChangeComplete={[Function]}
+      step={1}
+      value={
+        Object {
+          "max": 3,
+          "min": 0,
+        }
+      }
+    />
+  </div>
+  <div
+    className="action-buttons"
+  >
+    <button
+      className="main-button btn-primary"
+      onClick={[Function]}
+    >
+      APPLY
+    </button>
+  </div>
+</div>
+`;

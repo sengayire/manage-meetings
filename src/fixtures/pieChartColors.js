@@ -1,4 +1,4 @@
-const roomCapacityBackground = ['#3a63e0', '#859eee', '#cdd7f8'];
-export const meetingDurationBackground = ['#ffb736', '#fbcc7a', '#ffebcd', '#eff3c6'];
+const roomCapacityBackground = ['#0926a8', '#02adb1', '#8dc100'];
+export const meetingDurationBackground = ['#f30098', '#ffac00', '#8dc100', '#02adb1'];
 export const borderColor = ['#ffffff'];
 export default roomCapacityBackground;

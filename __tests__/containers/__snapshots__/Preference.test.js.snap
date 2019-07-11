@@ -2,7 +2,7 @@
 
 exports[`Preference Component should render properly 1`] = `
 <Fragment>
-  <TopMenu />
+  <withRouter(TopMenuComponent) />
   <div
     className="preference-container"
   >

@@ -18,7 +18,7 @@ export const GetAverageRoomCapacityComponent = () => {
       );
     }
 
-    const { lessThanTenData = '100', betweenTenandTwentyData = '0', greaterThanTwentyData = '0' } = !fetching ? getRoomData(analytics.rooms) : {};
+    const { lessThanTenData = '50', betweenTenandTwentyData = '25', greaterThanTwentyData = '25' } = !fetching ? getRoomData(analytics.rooms) : {};
     const options = {
       legend: {
         display: false,
@@ -27,11 +27,11 @@ export const GetAverageRoomCapacityComponent = () => {
       responsive: false,
     };
     const graphData = {
-      labels: ['Less than 10 in %', '10-20 in %', 'More than 20 in %'],
+      labels: ['More than 20 in %', '10-20 in %', 'Less than 10 in %'],
       datasets: [
         {
           label: 'Average Meetings Duration',
-          data: [lessThanTenData, betweenTenandTwentyData, greaterThanTwentyData],
+          data: [greaterThanTwentyData, betweenTenandTwentyData, lessThanTenData],
           backgroundColor: roomCapacityBackground,
           borderWidth: 3,
         },
@@ -46,7 +46,7 @@ export const GetAverageRoomCapacityComponent = () => {
           <section className="chart-details">
             <p className="room-capacity-first-circle">
               <span>{}</span>
-              Less than 10
+              More than 20
             </p>
             <p className="room-capacity-second-circle">
               <span>{}</span>
@@ -54,7 +54,7 @@ export const GetAverageRoomCapacityComponent = () => {
             </p>
             <p className="room-capacity-third-circle">
               <span>{}</span>
-              More than 20
+              Less than 10
             </p>
           </section>
         </section>
