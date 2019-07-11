@@ -214,7 +214,7 @@ class LocationFilters extends Component {
             )
           }
         </Fragment>
-        {this.props.showClearFilter && this.clearFilters()}
+        {(this.props.showClearFilter && this.state.level1) && this.clearFilters()}
       </Fragment>
     );
   };
