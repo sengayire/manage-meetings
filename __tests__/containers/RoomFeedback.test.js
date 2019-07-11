@@ -49,8 +49,8 @@ describe('RoomFeedback component', () => {
           createdDate: '2019-06-25T14:47:35.583645',
           resolved: false,
           response: {
-            __typename: 'Rate',
-            rate: 3,
+            __typename: 'MissingItems',
+            missingItems: [],
           },
         },
       ],
@@ -175,6 +175,8 @@ describe('RoomFeedback component', () => {
     wrapper.instance().toggleFilterModal();
     expect(wrapper.state('filterModal')).toBe(true);
     wrapper.instance().toggleFilterModal();
+    expect(wrapper.state('filterModal')).toBe(false);
+    wrapper.instance().toggleFilterModal(false);
     expect(wrapper.state('filterModal')).toBe(false);
   });
 

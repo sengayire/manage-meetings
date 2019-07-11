@@ -4,11 +4,11 @@ import RoomFeedbackResponse from './RoomFeedbackResponse';
 import { greenStarIcon, greyStarIcon } from '../../utils/images/images';
 import '../../../src/assets/styles/roomFeedbackResponseList.scss';
 import '../../../src/assets/styles/feedbackContainer.scss';
-import ErrorIcon from '../commons/ErrorIcon';
 import RoomFeedbackCard from './RoomFeedbackResponseCard';
 import SingleRoom from './SingleRoom';
 import Pagination from '../../../src/components/commons/Pagination';
 import Overlay from '../commons/Overlay';
+import paginate from '../helpers/FrontendPagination';
 
 /**
  * Loops through the room responses
@@ -97,22 +97,11 @@ export class RoomFeedbackResponseList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      allRoomResponses: { ...props.data.allRoomResponses },
       visible: false,
       roomId: null,
       currentPage: 1,
       isFetching: false,
-      feedback: { roomsResponses: [] },
     };
-  }
-
-  componentWillReceiveProps(props) {
-    const { feedback } = props;
-    const { allRoomResponses } = props.data;
-    this.setState({
-      allRoomResponses,
-      feedback,
-    });
   }
 
   /**
@@ -144,28 +133,10 @@ export class RoomFeedbackResponseList extends React.Component {
    *
    * @returns {void}
    */
-  handleData = (perPage, page) => {
-    this.setState({ isFetching: true });
-    /* istanbul ignore next */
-    /* Reasoning: find explicit way of testing configuration options */
-    this.props.data
-      .fetchMore({
-        variables: {
-          page,
-          perPage,
-          lowerLimitCount: 0,
-          upperLimitCount: 100,
-        },
-        updateQuery: (prev, { fetchMoreResult }) => {
-          this.setState({
-            allRoomResponses: fetchMoreResult.allRoomResponses,
-            currentPage: page,
-          });
-        },
-      })
-      .then(() => this.setState({ isFetching: false }))
-      .catch(() => this.setState({ isFetching: false }));
-  };
+  handleData = (perPageData, currentPageData) => this.setState({
+    perPage: perPageData,
+    currentPage: currentPageData,
+  });
 
   /**
    * Renders a card
@@ -196,18 +167,10 @@ export class RoomFeedbackResponseList extends React.Component {
 
   render() {
     const {
-      roomId, isFetching, currentPage, allRoomResponses, feedback,
+      roomId, isFetching, currentPage, perPage,
     } = this.state;
-    const { loading, error } = this.props.data;
+    const { feedback, loading } = this.props;
 
-    if (error) {
-      const errorString = 'You are not authorized to perform this action';
-      const errorMessage = (error.message === `GraphQL error: ${errorString}` ? errorString : '');
-      return (
-        <div className="item-list-empty">
-          <ErrorIcon message={errorMessage} />
-        </div>);
-    }
     const feedbackData = loading
       ? {
         roomsResponses: [{
@@ -217,8 +180,13 @@ export class RoomFeedbackResponseList extends React.Component {
           totalResponses: 1,
           totalRoomResources: 1,
         }],
-      }
-      : feedback;
+      } : {
+        ...feedback,
+        ...paginate(feedback.roomsResponses, { currentPage, perPage }, { dataName: 'roomsResponses' }),
+      };
+
+    const displayPaginator = !isFetching
+      && !(feedbackData.roomsResponses.length < 5 && currentPage === 1);
 
     if (loading || (feedbackData.roomsResponses).length > 0) {
       return (
@@ -257,13 +225,14 @@ export class RoomFeedbackResponseList extends React.Component {
                 />
               ))}
             </div>
-            {!error && <Pagination
-              totalPages={allRoomResponses.pages}
-              hasNext={allRoomResponses.hasNext}
-              hasPrevious={allRoomResponses.hasPrevious}
+            {displayPaginator && <Pagination
+              totalPages={feedbackData.pages}
+              hasNext={feedbackData.hasNext}
+              hasPrevious={feedbackData.hasPrevious}
               handleData={this.handleData}
               currentPage={currentPage}
               isFetching={isFetching}
+              perPage={perPage ? Number(perPage) : 5}
             />}
           </div>
         </Fragment>
@@ -278,12 +247,7 @@ export class RoomFeedbackResponseList extends React.Component {
 }
 
 RoomFeedbackResponseList.propTypes = {
-  data: PropTypes.shape({
-    allRoomResponses: PropTypes.object,
-    loading: PropTypes.bool,
-    error: PropTypes.object,
-    fetchMore: PropTypes.func,
-  }).isRequired,
+  loading: PropTypes.bool.isRequired,
   feedback: PropTypes.shape({}).isRequired,
 };
 

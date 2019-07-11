@@ -49,13 +49,18 @@ class RoomFeedbackResponse extends Component {
   }
 
   getResourceData = async () => {
+    const { roomId, roomName } = this.props.roomFeedbackResponse;
     try {
-      const resource = await getRoomResources(this.props.roomFeedbackResponse.roomId);
+      const resource = await getRoomResources(roomId);
       this.setState({
         roomResources: resource,
         error: false,
       });
     } catch (error) {
+      if (roomName === 'Sample') {
+        return;
+      }
+
       if (error && error.message === 'GraphQL error: Room has no resource yet') {
         this.setState({
           error: false,
@@ -85,7 +90,6 @@ class RoomFeedbackResponse extends Component {
       roomFeedbackResponse: {
         roomId,
         roomName,
-        totalResponses,
         response,
       },
     } = this.props;
@@ -112,7 +116,7 @@ class RoomFeedbackResponse extends Component {
             {roomName}
           </a>
         </span>
-        <span>{totalResponses}</span>
+        <span>{response.length}</span>
         <span>
           {roomCleanlinessRating(totalRating)} <span className="star-text">{grade}</span>
         </span>

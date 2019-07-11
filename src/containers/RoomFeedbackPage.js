@@ -19,8 +19,6 @@ class RoomFeedbackPage extends Component {
     filterModal: false,
     isResponsePageVisible: false,
     responseData: [],
-    upperLimitCount: 100,
-    lowerLimitCount: 0,
     loading: true,
     startDate: getTodaysDate(),
     endDate: getTodaysDate(),
@@ -221,7 +219,12 @@ class RoomFeedbackPage extends Component {
   };
 
 
-  toggleFilterModal = () => this.setState(({ filterModal }) => ({ filterModal: !filterModal }))
+  toggleFilterModal = (isOpen) => {
+    if (typeof isOpen !== 'boolean') {
+      return this.setState(({ filterModal }) => ({ filterModal: !filterModal }));
+    }
+    return this.setState({ filterModal: isOpen });
+  }
 
   /**
    * Loops through the room responses
@@ -249,9 +252,9 @@ class RoomFeedbackPage extends Component {
 
   render() {
     const {
-      isResponsePageVisible, responseData, lowerLimitCount,
-      filterModal, allRoomResponses, filteredData,
-      upperLimitCount, startDate, endDate, user, useFilter,
+      isResponsePageVisible, responseData,
+      filterModal, allRoomResponses,
+      startDate, endDate, user, useFilter,
       loading, questions, sliderSpan,
     } = this.state;
     const showResponseButton = (user && user.roles[0].role === 'Admin');
@@ -302,12 +305,14 @@ class RoomFeedbackPage extends Component {
                   <div className="response-feedback-container__modal">
                     <div className={`response-feedback-container__modal__content${filterModal ? ' active' : ''}`}>
                       <FilterRoomResponses
+                        isActive={filterModal}
                         setResponseCutoff={this.setResponseCutoff}
                         setRoom={this.setRoom}
                         useFilter={useFilter}
                         filterData={this.handleFilter}
                         sliderSpan={sliderSpan}
                         clearFilters={this.clearFilters}
+                        toggleFilterModal={this.toggleFilterModal}
                         rooms={allRoomResponses.responses.map(({ roomName }) => roomName)}
                       />
                     </div>
@@ -321,15 +326,8 @@ class RoomFeedbackPage extends Component {
               ? (
                 <div id="responses">
                   <RoomFeedbackResponseList
-                    upperLimitCount={upperLimitCount}
-                    lowerLimitCount={lowerLimitCount}
                     feedback={this.formatAllRoomFeedbackData()}
-                    data={{
-                      loading,
-                      allRoomResponses: useFilter
-                        ? filteredData
-                        : allRoomResponses,
-                    }}
+                    loading={loading}
                   />
                 </div>)
               :
