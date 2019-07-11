@@ -25,7 +25,7 @@ exports[`Room feedback list should render correctly 1`] = `
       <RoomFeedbackCard
         key="1"
         title="Rooms With Missing Items"
-        value={0}
+        value={1}
       />
       <RoomFeedbackCard
         key="2"

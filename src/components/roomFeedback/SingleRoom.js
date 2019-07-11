@@ -24,7 +24,7 @@ export class SingleRoomFeedBack extends Component {
       },
     ],
     roomResponse: {
-      roomName: 'DemoRoom',
+      roomName: 'DemoRoomState',
       totalResponses: 1,
       response: [
         {

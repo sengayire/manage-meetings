@@ -23,6 +23,69 @@ describe('AnalyticsActivity component', () => {
     firstName: 'James',
   };
 
+  const data = {
+    allEvents: {
+      hasNext: null,
+      hasPrevious: null,
+      pages: null,
+      DailyRoomEvents: [
+        {
+          day: 'Mon Jun 17 2019',
+          events: [],
+        },
+        {
+          day: 'Fri Jun 14 2019',
+          events: [],
+        },
+        {
+          day: 'Thu Jun 13 2019',
+          events: [],
+        },
+        {
+          day: 'Wed Jun 12 2019',
+          events: [],
+        },
+        {
+          day: 'Tue Jun 11 2019',
+          events: [],
+        },
+        {
+          day: 'Mon Jun 10 2019',
+          events: [],
+        },
+        {
+          day: 'Fri Jun 07 2019',
+          events: [],
+        },
+        {
+          day: 'Thu Jun 06 2019',
+          events: [],
+        },
+        {
+          day: 'Wed Jun 05 2019',
+          events: [],
+        },
+        {
+          day: 'Tue Jun 04 2019',
+          events: [],
+        },
+        {
+          day: 'Mon Jun 03 2019',
+          events: [],
+        },
+      ],
+    },
+  };
+
+  const noResourceData = {
+    allEvents: {
+      hasNext: null,
+      hasPrevious: null,
+      pages: null,
+      DailyRoomEvents: [],
+    },
+  };
+
   beforeEach(() => {
     wrapper = mount(<AnalyticsActivityComponent {...props} />);
   });
@@ -53,5 +116,27 @@ describe('AnalyticsActivity component', () => {
     expect(wrapper.state('location').length).toBe(0);
     await wrapper.instance().getLocation();
     expect(wrapper.state('location').length).toBe(7);
+  });
+
+  it('should render daily room events', async () => {
+    wrapper.instance().setState({
+      analyticsForDailyRoomEvents: '',
+    });
+    jest.spyOn(QueryHelper, 'getUserDetails').mockImplementationOnce(() => userData);
+    jest.spyOn(QueryHelper, 'getAnalyticForDailyRoomsEvents').mockImplementationOnce(() => data);
+    const component = mount(<AnalyticsActivityComponent {...props} />);
+    component.update();
+    expect(component).toMatchSnapshot();
+  });
+
+  it('should render resource not founr', async () => {
+    wrapper.instance().setState({
+      analyticsForDailyRoomEvents: '',
+    });
+    jest.spyOn(QueryHelper, 'getUserDetails').mockImplementationOnce(() => userData);
+    jest.spyOn(QueryHelper, 'getAnalyticForDailyRoomsEvents').mockImplementationOnce(() => noResourceData);
+    const component = mount(<AnalyticsActivityComponent {...props} />);
+    component.update();
+    expect(component).toMatchSnapshot();
   });
 });
