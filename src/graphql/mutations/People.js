@@ -16,4 +16,12 @@ const UPDATE_ROLES_MUTATION = gql`
   }
 `;
 
-export { UPDATE_ROLES_MUTATION as default };
+const INVITE_PERSON_MUTATION = gql`
+mutation inviteToConverge($email: String!) {
+  inviteToConverge(email: $email) {
+    email
+  }
+}
+`;
+
+export { UPDATE_ROLES_MUTATION as default, INVITE_PERSON_MUTATION };

@@ -5,6 +5,7 @@ import toastr from 'toastr';
 import '../../assets/styles/peopleList.scss';
 import TableHead from '../helpers/TableHead';
 import People from './People';
+import AddPeople from './AddPeople';
 import Pagination from '../commons/Pagination';
 import { GET_LOCATIONS_QUERY } from '../../graphql/queries/Rooms';
 import UPDATE_ROLES_MUTATION from '../../graphql/mutations/People';
@@ -122,18 +123,23 @@ export class PeopleList extends Component {
     if (error && error.message === 'GraphQL error: No users found') return <DataNotFound />;
     return (
       <div className="settings-people">
-        <div
-          className={`action-menu ${isFetching ? 'disabled-buttons' : null}`}
-        >
-          <div className="room-setup-header">
+        <div className={`action-menu ${isFetching ? 'disabled-buttons' : null}`}>
+          <div className="people-header">
             <p>{this.props.location}&apos;s People </p>
           </div>
-          <Sort
-            sortOptions={{ location: allLocations, access: roles }}
-            fetchSortedData={this.sortPeople}
-            hideDropdownMenu={this.state.hideDropdownMenu}
-            withChildren
-          />
+          <div className="add-new-person">
+            <AddPeople
+              availableUsers={users}
+            />
+          </div>
+          <div className="sort-people">
+            <Sort
+              sortOptions={{ location: allLocations, access: roles }}
+              fetchSortedData={this.sortPeople}
+              hideDropdownMenu={this.state.hideDropdownMenu}
+              withChildren
+            />
+          </div>
         </div>
         <div className="settings-people-list">
           {isFetching ? <Overlay /> : null}
