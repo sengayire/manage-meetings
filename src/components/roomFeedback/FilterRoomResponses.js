@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import InputRange from 'react-input-range';
 import 'react-input-range/src/scss/index.scss';
-import PropTypes from 'prop-types';
 import { SelectInput } from '../commons';
 
 class FilterRoomResponses extends Component {
