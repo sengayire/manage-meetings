@@ -59,7 +59,7 @@ build_docker_image() {
 
 run_build() {
   export PATH=$PATH:/usr/local/gcloud/google-cloud-sdk/bin
-  cd ~/repo
+  cd $WORKSPACE
   auth_to_docker_registry
   build_docker_image
   touch current_version

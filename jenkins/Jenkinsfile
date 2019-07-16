@@ -144,7 +144,7 @@ agent {
       steps {
         container('converge-frontend-agent') {
           // Setup and authenticate gcloud
-          sh script: "$WORKSPACE/jenkins/bin/setup_gcloud.sh", label: "Setup and authenticate gcloud"
+          sh script: "$WORKSPACE/jenkins/bin/gcloud_auth_deploy.sh", label: "Setup and authenticate gcloud"
           // Deploy to kubernetes
           sh script: "$WORKSPACE/jenkins/bin/deploy_to_k8s.sh", label: "Deploy to kubernetes"
         }

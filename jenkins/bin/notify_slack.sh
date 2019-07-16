@@ -1,11 +1,14 @@
 #!/usr/bin/env bash
 
-source $WORKSPCE/jenkins/bin/utils.sh
+source $WORKSPACE/jenkins/bin/utils.sh
 
 # get build status and branch
 # send notification
 
 STATUS=$1 #job status
+
+# replace all `/` in GIT_BRANCH with %2F
+CURRENT_BRANCH=$(echo $GIT_BRANCH | sed 's/\//%2F/g')
 
 get_build_report() {
   GIT_USERNAME="$(git show -s --pretty=%an)"
@@ -19,7 +22,7 @@ get_build_report() {
 
     MESSAGE_TEXT="Test Phase Failed :jenkins: :scream:"
     COLOR="danger"
-    REBUILD_URL="https://jenkins.andela.com/blue/organizations/jenkins/converge-frontend-pipeline/detail/${GIT_BRANCH}/${BUILD_NUMBER}/pipeline"
+    REBUILD_URL="https://jenkins.andela.com/blue/organizations/jenkins/Converge-Frontend/detail/${CURRENT_BRANCH}/${BUILD_NUMBER}/pipeline"
     ACTION_BUTTON="$(echo \
           "{\"type\": \"button\", \"text\": \"Rebuild\", \"url\": \"${REBUILD_URL}\"}", \
       )"
@@ -32,7 +35,7 @@ get_build_report() {
   elif [ "$STAGE_NAME" == 'build-docker-image' -a  "$STATUS" == 'fail' ]; then
 
     MESSAGE_TEXT="Deployment Phase Failed  :jenkins: :scream:"
-    REBUILD_URL="https://jenkins.andela.com/blue/organizations/jenkins/converge-frontend-pipeline/detail/${GIT_BRANCH}/${BUILD_NUMBER}/pipeline"
+    REBUILD_URL="https://jenkins.andela.com/blue/organizations/jenkins/Converge-Frontend/detail/${CURRENT_BRANCH}/${BUILD_NUMBER}/pipeline"
     ACTION_BUTTON="$(echo \
           "{\"type\": \"button\", \"text\": \"Rebuild\", \"url\": \"${REBUILD_URL}\"}", \
       )"
@@ -46,7 +49,7 @@ get_build_report() {
   elif [ "$STAGE_NAME" == 'deploy-job' -a  "$STATUS" == 'fail' ]; then
 
     MESSAGE_TEXT="Deployment Phase Failed  :jenkins: :scream:"
-    REBUILD_URL="https://jenkins.andela.com/blue/organizations/jenkins/converge-frontend-pipeline/detail/${GIT_BRANCH}/${BUILD_NUMBER}/pipeline"
+    REBUILD_URL="https://jenkins.andela.com/blue/organizations/jenkins/Converge-Frontend/detail/${CURRENT_BRANCH}/${BUILD_NUMBER}/pipeline"
     ACTION_BUTTON="$(echo \
           "{\"type\": \"button\", \"text\": \"Rebuild\", \"url\": \"${REBUILD_URL}\"}", \
       )"
@@ -57,7 +60,7 @@ get_build_report() {
   # prepare template for slack messaging
   COMMIT_LINK="https://github.com/andela/mrm_front/commit/${GIT_COMMIT}"
   IMAGE_TAG="$(git rev-parse --short HEAD)"
-  JENKINS_WORKFLOW_URL="https://jenkins.andela.com/blue/organizations/jenkins/converge-frontend-pipeline/detail/${GIT_BRANCH}/${BUILD_NUMBER}/pipeline"
+  JENKINS_WORKFLOW_URL="https://jenkins.andela.com/blue/organizations/jenkins/Converge-Frontend/detail/${CURRENT_BRANCH}/${BUILD_NUMBER}/pipeline"
   SLACK_TEXT_TITLE="JENKINS Build #${BUILD_NUMBER}"
   SLACK_DEPLOYMENT_TEXT="Executed Git Commit <$COMMIT_LINK|${IMAGE_TAG}>: ${MESSAGE_TEXT}"
 
