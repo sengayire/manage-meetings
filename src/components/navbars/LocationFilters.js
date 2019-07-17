@@ -1,11 +1,11 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
-import clearImg from '../../assets/images/clearImg.png';
 import { SelectInput } from '../commons';
 import stripTypenames from '../helpers/StripTypeNames';
 import { orderByLevel } from '../../utils/formatSetupData';
 import { getRoomsStructure } from '../helpers/QueriesHelpers';
 import { dataTree, getNestedChildren } from '../helpers/ParseOfficeStructure';
+import removeFilter from '../commons/RemoveFilter';
 
 class LocationFilters extends Component {
   constructor(props) {
@@ -214,7 +214,7 @@ class LocationFilters extends Component {
             )
           }
         </Fragment>
-        {(this.props.showClearFilter && this.state.level1) && this.clearFilters()}
+        {(this.props.showClearFilter && this.state.level1) && removeFilter(this.handleClearClick, 'Clear filters')}
       </Fragment>
     );
   };
@@ -230,24 +230,6 @@ class LocationFilters extends Component {
     this.setState({ level1: '', level2: '' });
     this.props.handleInputChange({ target: { name: '', value: '' } }, 'reset');
   }
-
-
-  /**
-* It handles resetting of filters
-*
-* @returns {img}
-*/
-  // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
-  clearFilters = () => (
-    // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
-    <img
-      className="reset-image"
-      src={clearImg}
-      alt="Clear filters"
-      onKeyPress={this.handleClearClick}
-      onClick={this.handleClearClick}
-    />
-  )
 
   render() {
     return (
