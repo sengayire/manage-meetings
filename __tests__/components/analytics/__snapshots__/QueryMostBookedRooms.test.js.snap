@@ -107,6 +107,7 @@ exports[`Query Most Booked Rooms Component should load progressBar 1`] = `
             className=""
             theme={
               Object {
+                "tooltip": "tooltip",
                 "tooltipInner": "tooltipInner",
               }
             }
@@ -126,6 +127,7 @@ exports[`Query Most Booked Rooms Component should load progressBar 1`] = `
               onMouseLeave={[Function]}
               theme={
                 Object {
+                  "tooltip": "tooltip",
                   "tooltipInner": "tooltipInner",
                 }
               }
@@ -138,6 +140,7 @@ exports[`Query Most Booked Rooms Component should load progressBar 1`] = `
                 onMouseLeave={[Function]}
                 theme={
                   Object {
+                    "tooltip": "tooltip",
                     "tooltipInner": "tooltipInner",
                   }
                 }

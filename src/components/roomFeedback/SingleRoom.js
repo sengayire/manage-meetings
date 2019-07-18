@@ -1,42 +1,37 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
-import '../../assets/styles/SingelRoomSideModel.scss';
+import '../../assets/styles/SingleRoomSideModel.scss';
 import Spinner from '../commons/Spinner';
 import { getRoomResources, getSingleRoomFeedback } from '../helpers/QueriesHelpers';
+import resolveResponses from '../helpers/mutationHelpers/responses';
+import removeFilter from '../commons/RemoveFilter';
+import resolve from '../../assets/images/resolve.png';
+import unresolve from '../../assets/images/unresolve.png';
+import formatDate from '../../utils/reformatDate';
+
 
 export class SingleRoomFeedBack extends Component {
   state = {
     roomResources: [
       {
-        room: [
-          {
-            quantity: 0,
-            resource: {
-              name: '',
-              room: [
-                {
-                  name: '',
-                },
-              ],
-            },
+        room: [{
+          quantity: 0,
+          resource: {
+            name: '',
+            room: [{ name: '' }],
           },
-        ],
+        }],
       },
     ],
     roomResponse: {
       roomName: 'DemoRoomState',
       totalResponses: 1,
-      response: [
-        {
-          responseId: 282,
-          createdDate: '2019-06-25T10:40:23.818174',
-          resolved: false,
-          response: {
-            __typename: 'Rate',
-            rate: 5,
-          },
-        },
-      ],
+      response: [{
+        responseId: 282,
+        createdDate: '2019-06-25T10:40:23.818174',
+        resolved: false,
+        response: { __typename: 'Rate', rate: 5 },
+      }],
     },
     isFetching: false,
   };
@@ -75,35 +70,12 @@ export class SingleRoomFeedBack extends Component {
       });
     } catch (error) {
       if (error && error.message === 'GraphQL error: Room has no resource yet') {
-        this.setState({
-          isFetching: false,
-        });
+        this.setState({ isFetching: false });
         return;
       }
-      this.setState({
-        isFetching: false,
-      });
+      this.setState({ isFetching: false });
     }
   };
-
-
-  /**
-   * Format UTC date time to
-   * MM-DD-YY format
-   *
-   * @param {string} dateString
-   *
-   * @return {string}
-   */
-  formatDate = (dateString) => {
-    const allMonths = [
-      'January', 'February', 'March', 'April', 'May',
-      'June', 'July', 'August', 'September', 'October',
-      'November', 'December',
-    ];
-    const date = new Date(dateString);
-    return `${allMonths[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
-  }
 
   /**
    * Loops through the room responses
@@ -118,7 +90,17 @@ export class SingleRoomFeedBack extends Component {
     if (responses.length > 0) {
       data = [...responses].reverse().map(response => (
         <div key={response.responseId} className="response">
-          <div className="date">{this.formatDate(response.createdDate)}</div>
+          <div className="date">{formatDate(response.createdDate)}</div>
+
+          {response.response.__typename === 'Rate' ? null : (
+            <div className="btn-resolve" >
+              {response.resolved ?
+                removeFilter(() => this.resolveResponse(response.responseId, this.props.roomId), 'Mark as unresolved', unresolve, 'resolve')
+                :
+                removeFilter(() => this.resolveResponse(response.responseId, this.props.roomId), 'Mark as resolved', resolve, 'resolve')
+              }
+            </div>
+          )}
           {this.renderRoomFeeback(response, roomResources)}
         </div>
       ));
@@ -131,6 +113,25 @@ export class SingleRoomFeedBack extends Component {
     }
     return data;
   };
+
+  /**
+   * Marks a response as resolved or unresolved
+   *
+   * @param {integer} responseId - ID of response to be resolved or unresolved
+   * @param {integer} roomId - ID of room containing response
+   *
+   */
+  resolveResponse = async (responseId, roomId) => {
+    this.setState({ isFetching: true });
+    try {
+      await resolveResponses(responseId, roomId);
+      await this.getFeedbackData();
+
+      this.setState({ isFetching: false });
+    } catch (error) {
+      this.setState({ isFetching: false });
+    }
+  }
 
   renderSpinner = () => (
     <div className="modal-spinner"><Spinner /></div>
@@ -161,31 +162,55 @@ export class SingleRoomFeedBack extends Component {
           <div className="text-comment-heading">Suggestion</div>
           <div className="text-comment">
             {response.response.suggestion}
+            <div className="resolved-status">
+              {`Status: ${(response.resolved ? 'Resolved' : 'Unresolved')}`}
+            </div>
           </div>
         </div>
       );
-    } else if (response.response.__typename === 'MissingItems') {
+    }
+
+    if (response.response.__typename === 'MissingItems') {
       return (
-        <div className="item-list response-item">
-          <div className="item-list-heading">Missing Items</div>
-          <div />
-          <div className="items">
-            {resourcesList.map(item => (
-              <label htmlFor={item} key={item}>
-                <input
-                  id={response.responseId}
-                  type="checkbox"
-                  defaultChecked={(response.response.missingItems).includes(item)}
-                />
-                {item}
-              </label>
-            ))}
+        <div className="text-comment response-item">
+          <div className="item-list">
+            <div className="item-list-heading">Missing Items</div>
+            <div />
+            <div className="items">
+              {resourcesList.map(item => (
+                <label htmlFor={item} key={item}>
+                  <input
+                    id={response.responseId}
+                    type="checkbox"
+                    defaultChecked={
+                      Array.from(response.response.missingItems, x => x.name).includes(item)
+                    }
+                  />{item}
+                </label>
+              ))}
+            </div>
+          </div>
+          <div className="resolved-status">
+            {`Status: ${(response.resolved ? 'Resolved' : 'Unresolved')}`}
+          </div>
+        </div>
+      );
+    }
+    if (response.response.__typename === 'SelectedOptions') {
+      return (
+        <div className="response-item">
+          <div className="text-comment-heading">Selected options</div>
+          <div className="text-comment">
+            {response.response.options}
+            <div className="resolved-status">
+              {`Status: ${(response.resolved ? 'Resolved' : 'Unresolved')}`}
+            </div>
           </div>
         </div>
       );
     }
     return (
-      <div className="item-list response-item">
+      <div className="text-comment item-list response-item">
         <div className="item-list-heading">Cleanliness</div>
         <div />
         <div className="cleanliness">{roomCleanlinessRating(response.response.rate)}</div>
@@ -198,7 +223,6 @@ export class SingleRoomFeedBack extends Component {
    * or content
    *
    * @param {object} props
-   *
    * @return {JSX}
    */
   renderModalContent = () => {
@@ -220,7 +244,7 @@ export class SingleRoomFeedBack extends Component {
     }
 
     const totalMissingItems = totalMissingItemsCount(response);
-    const { totalRating, grade } = totalCleanlinessRating(response);
+    const { averageRating, grade } = totalCleanlinessRating(response);
     return (
       <Fragment>
         <div className="modal-header">
@@ -237,17 +261,13 @@ export class SingleRoomFeedBack extends Component {
           <div className="row-1-data">
             <div>{`${totalMissingItems} out of ${totalRoomResourcesCount}`}</div>
             <div>
-              {roomCleanlinessRating(totalRating)}
+              {roomCleanlinessRating(averageRating)}
               <br />
-              <div className="row-1-grade">
-                {grade}
-              </div>
+              <div className="row-1-grade">{grade}</div>
             </div>
           </div>
         </div>
-        <div className="row-2-heading">
-          {totalResponses} Responses
-        </div>
+        <div className="row-2-heading">{totalResponses} Responses </div>
         <div className="row-2">{this.roomFeedbackList(response, roomResources)}</div>
       </Fragment>
     );

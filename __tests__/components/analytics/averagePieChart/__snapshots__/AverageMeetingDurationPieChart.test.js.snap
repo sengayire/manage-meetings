@@ -29,6 +29,7 @@ Array [
             className=""
             theme={
               Object {
+                "tooltip": "tooltip",
                 "tooltipInner": "tooltipInner",
               }
             }
@@ -48,6 +49,7 @@ Array [
               onMouseLeave={[Function]}
               theme={
                 Object {
+                  "tooltip": "tooltip",
                   "tooltipInner": "tooltipInner",
                 }
               }
@@ -60,6 +62,7 @@ Array [
                 onMouseLeave={[Function]}
                 theme={
                   Object {
+                    "tooltip": "tooltip",
                     "tooltipInner": "tooltipInner",
                   }
                 }

@@ -103,6 +103,57 @@ describe('RoomFeedback component', () => {
     }],
   };
 
+  const noRatingResponses = {
+    pages: null,
+    hasPrevious: null,
+    hasNext: null,
+    queryTotal: null,
+    responses: [{
+      roomId: 1184,
+      roomName: 'Tortuga',
+      totalResponses: 2,
+      response: [
+        {
+          responseId: 297,
+          createdDate: '2019-06-25T14:47:35.583645',
+          resolved: false,
+          response: {
+            __typename: 'MissingItems',
+            missingItems: [],
+          },
+        },
+      ],
+    }, {
+      roomId: 1180,
+      roomName: 'pandora edited',
+      totalResponses: 4,
+      response: [
+        {
+          responseId: 311,
+          createdDate: '2019-07-01T09:59:38.846630',
+          resolved: false,
+          response: {
+            __typename: 'SelectedOptions',
+            options: [
+              'red',
+            ],
+          },
+        },
+        {
+          responseId: 291,
+          createdDate: '2019-06-25T14:46:06.718295',
+          resolved: false,
+          response: {
+            __typename: 'SelectedOptions',
+            options: [
+              'handywork',
+            ],
+          },
+        },
+      ],
+    }],
+  };
+
   getAllResponses.mockResolvedValue(allResponses);
   let wrapper;
   beforeAll(() => {
@@ -188,5 +239,10 @@ describe('RoomFeedback component', () => {
   it('should set room', () => {
     wrapper.instance().setResponseCutoff({ min: 2, max: 7 });
     expect(wrapper.state('responseCutoff')).toEqual({ min: 2, max: 7 });
+  });
+
+  it('should return no ratings yet for average rating', () => {
+    const rating = wrapper.instance().getTotalAverageRating(noRatingResponses.responses);
+    expect(rating).toEqual('No ratings yet');
   });
 });

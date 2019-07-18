@@ -1,19 +1,20 @@
 import React, { Fragment } from 'react';
 import Tip from './Tooltip';
-import clearImg from '../../assets/images/clearImg.png';
 
 
 /**
-* It handles resetting of filters
+* It displays an image that has a onClick function and tooltip text
 * @param {func} - Function to clear filter
 * @param {string} - Tooltip text
+* @param {img} - Image to display
+* @param {string} - Styling for the image
 * @returns {img}
 */
-const removeFilter = (clearFunction, tooltipText) => {
+const removeFilter = (clearFunction, tooltipText, displayImage, classStyle) => {
   // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions
   const image = (<img
-    className="reset-image"
-    src={clearImg}
+    className={`${classStyle}`}
+    src={displayImage}
     alt={tooltipText}
     onKeyPress={clearFunction}
     onClick={clearFunction}

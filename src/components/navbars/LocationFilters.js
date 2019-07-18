@@ -6,6 +6,7 @@ import { orderByLevel } from '../../utils/formatSetupData';
 import { getRoomsStructure } from '../helpers/QueriesHelpers';
 import { dataTree, getNestedChildren } from '../helpers/ParseOfficeStructure';
 import removeFilter from '../commons/RemoveFilter';
+import clearImg from '../../assets/images/clearImg.png';
 
 class LocationFilters extends Component {
   constructor(props) {
@@ -214,7 +215,7 @@ class LocationFilters extends Component {
             )
           }
         </Fragment>
-        {(this.props.showClearFilter && this.state.level1) && removeFilter(this.handleClearClick, 'Clear filters')}
+        {(this.props.showClearFilter && this.state.level1) && removeFilter(this.handleClearClick, 'Clear filters', clearImg, 'reset-image')}
       </Fragment>
     );
   };

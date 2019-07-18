@@ -10,6 +10,7 @@ import levelTheme from '../../assets/styles/levelTipStyle.scss';
 
 theme.tooltipInner = 'tooltipInner';
 levelTheme.tooltipInner = 'tooltipInner';
+levelTheme.tooltip = 'tooltip';
 
 const TooltipLink = Tooltip(Link);
 
