@@ -29,12 +29,14 @@ describe('AnalyticsNav Component', () => {
   });
 
   it('should render the AnalyticsActivity with length of 1', () => {
+    wrapper.setState({ activeTab: 'activity' });
     wrapper.find('Button').at(1).dive().find('.activityIconBtn')
       .simulate('click');
     expect(wrapper.find(AnalyticsActivity).length).toEqual(1);
   });
 
   it('should display the location of the user', () => {
+    wrapper.setState({ activeTab: 'activity', location: 'Nigeria' });
     expect(wrapper.find('Button').at(2).dive().find('.location-btn')
       .text()).toEqual('Nigeria');
   });

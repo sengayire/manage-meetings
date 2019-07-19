@@ -171,6 +171,7 @@ describe('RoomFeedback component', () => {
   });
 
   it('should display the addQuestion button', () => {
+    wrapper.setState({ activeTab: 'questions' });
     expect(wrapper.find(AddQuestionComponent).length).toEqual(1);
   });
 
@@ -183,6 +184,7 @@ describe('RoomFeedback component', () => {
 
   it('should have a div with classname responsePage with length of 1 ', () => {
     wrapper.update();
+    wrapper.setState({ activeTab: 'responses' });
     expect(wrapper.find('#responses').length).toEqual(1);
   });
 
@@ -211,6 +213,7 @@ describe('RoomFeedback component', () => {
 
     await tick();
 
+    expect(sessionStorage.setItem).toHaveBeenLastCalledWith('feedbackActiveTab', 'responses');
     expect(wrapper.state('useFilter')).toBe(true);
     wrapper.find('FilterRoomResponses').dive().find('.btn-secondary').simulate('click');
     expect(wrapper.state('useFilter')).toBe(false);

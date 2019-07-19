@@ -18,6 +18,7 @@ class RoomFeedbackPage extends Component {
     allRoomResponses: [],
     filterModal: false,
     isResponsePageVisible: false,
+    activeTab: '',
     responseData: [],
     loading: true,
     startDate: getTodaysDate(),
@@ -30,6 +31,7 @@ class RoomFeedbackPage extends Component {
   }
 
   componentDidMount = () => {
+    this.getPreviousTab();
     this.getData(true);
   };
 
@@ -158,6 +160,20 @@ class RoomFeedbackPage extends Component {
     return averageRating;
   };
 
+  getPreviousTab = async () => {
+    const tab = await sessionStorage.getItem('feedbackActiveTab');
+    if (tab) {
+      await this.setState(prevState => ({
+        ...prevState,
+        activeTab: tab,
+      }));
+    } else {
+      await this.setState(prevState => ({
+        ...prevState,
+        activeTab: 'questions',
+      }));
+    }
+  }
 
   handleFilter = () => {
     const filteredData = this.filterData();
@@ -218,12 +234,23 @@ class RoomFeedbackPage extends Component {
    *
    * @returns {void}
    */
-  toggleVisibility = () => {
-    this.setState({
-      isResponsePageVisible: !this.state.isResponsePageVisible,
-    });
-  };
 
+  toggleVisibility = () => {
+    const setTab = async (tab) => {
+      await this.setState(prevState => ({
+        ...prevState,
+        isResponsePageVisible: !prevState.isResponsePageVisible,
+        activeTab: tab,
+      }));
+      await sessionStorage.setItem('feedbackActiveTab', tab);
+    };
+
+    if (!this.state.isResponsePageVisible) {
+      setTab('responses');
+    } else {
+      setTab('questions');
+    }
+  };
 
   toggleFilterModal = (isOpen) => {
     if (typeof isOpen !== 'boolean') {
@@ -243,7 +270,7 @@ class RoomFeedbackPage extends Component {
   formatAllRoomFeedbackData = () => {
     const { allRoomResponses, filteredData, useFilter } = this.state;
     const rooms = useFilter ? filteredData.responses : allRoomResponses.responses;
-    const roomsResponses = rooms.filter(room => (room.response).length > 0);
+    const roomsResponses = (rooms) ? rooms.filter(room => (room.response).length > 0) : [];
     const totalResponses = this.getTotalResponses(roomsResponses);
     const roomsWithMissingItems = this.getRoomsWithMissingItems(roomsResponses);
     const totalAverageRating = this.getTotalAverageRating(roomsResponses);
@@ -256,38 +283,36 @@ class RoomFeedbackPage extends Component {
     return feedback;
   };
 
+
   render() {
     const {
-      isResponsePageVisible, responseData,
-      filterModal, allRoomResponses,
+      responseData,
+      filterModal, allRoomResponses, activeTab,
       startDate, endDate, user, useFilter,
       loading, questions, sliderSpan,
     } = this.state;
-    const showResponseButton = (user && user.roles[0].role === 'Admin');
+
+    const renderTabButton = tab => (<Button
+      title={tab.toUpperCase()}
+      handleClick={this.toggleVisibility}
+      classProp={`${tab.toLowerCase()}-tab-nav`}
+      type={(activeTab !== `${tab.toLowerCase()}`) ? 2 : null}
+      isDisabled={activeTab === `${tab.toLowerCase()}`}
+    />);
+
     return (
       <Fragment>
         <NavBar />
         <div className="roomfeedback-container">
           <div className="roomfeedback-container__control">
             <div className="tab-navigator">
-              <Button
-                title="QUESTIONS"
-                handleClick={this.toggleVisibility}
-                classProp="questions-tab-nav"
-                type={isResponsePageVisible ? 2 : null}
-                isDisabled={!isResponsePageVisible}
-              />
-              {showResponseButton && <Button
-                title="RESPONSES"
-                handleClick={this.toggleVisibility}
-                classProp="responses-tab-nav"
-                type={!isResponsePageVisible ? 2 : null}
-                isDisabled={isResponsePageVisible}
-              />}
+              {renderTabButton('questions')}
+              {renderTabButton('responses')}
             </div>
-            {!isResponsePageVisible && <AddQuestionComponent refetch={this.getData} />}
             {
-              isResponsePageVisible && (
+              activeTab === 'questions' && <AddQuestionComponent refetch={this.getData} />}
+            {
+              activeTab === 'responses' && (
                 <div className="response-feedback-container">
                   <div className="response-feedback-container__items">
                     <FilterResponseButton
@@ -319,7 +344,8 @@ class RoomFeedbackPage extends Component {
                         sliderSpan={sliderSpan}
                         clearFilters={this.clearFilters}
                         toggleFilterModal={this.toggleFilterModal}
-                        rooms={allRoomResponses.responses.map(({ roomName }) => roomName)}
+                        rooms={allRoomResponses.responses
+                          && allRoomResponses.responses.map(({ roomName }) => roomName)}
                       />
                     </div>
                   </div>
@@ -328,7 +354,7 @@ class RoomFeedbackPage extends Component {
             }
           </div>
           {
-            isResponsePageVisible
+            activeTab === 'responses'
               ? (
                 <div id="responses">
                   <RoomFeedbackResponseList
