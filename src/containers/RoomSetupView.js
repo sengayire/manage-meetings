@@ -20,6 +20,7 @@ import StructurePreviewTree from '../components/setup/StructurePreviewTree';
 import { orderByLevel } from '../utils/formatSetupData';
 import stripTypenames from '../components/helpers/StripTypeNames';
 import { meetingRoomTabMockData } from '../utils/roomSetupMock';
+import filterRooms from '../utils/filterRoomsData';
 
 class RoomSetupOverView extends Component {
   constructor(props) {
@@ -41,6 +42,7 @@ class RoomSetupOverView extends Component {
   componentDidUpdate({ searchState: { component: oldComponent } = {} }) {
     const { component } = this.props.searchState || {};
     if (component && (component !== oldComponent)) {
+      sessionStorage.setItem('setupCurrentNav', component);
       this.setLocationState();
     }
   }
@@ -72,7 +74,8 @@ class RoomSetupOverView extends Component {
   }
 
   getRooms = async (args = [this.state.location, 8, 1, '']) => {
-    const { allRooms } = await getRoomList(...args);
+    let { allRooms } = await getRoomList(...args);
+    allRooms = filterRooms(allRooms, args[3]);
     this.setState({ allRooms });
   }
 

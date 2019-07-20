@@ -170,6 +170,7 @@
 }
 
 .search-icon {
+  cursor: pointer;
   position: static;
   padding-right: 0.75rem;
 }
@@ -183,6 +184,10 @@
 
 .logo img {
   vertical-align: middle;
+}
+
+.search-box__input-field a img {
+  margin-top: 25%;
 }
 
 .logo-text {
