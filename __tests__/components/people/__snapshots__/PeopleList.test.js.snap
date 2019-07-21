@@ -896,7 +896,7 @@ exports[`PeopleList Component renders correctly from memory 1`] = `
               },
             },
             "variables": Object {
-              "locationId": 0,
+              "locationId": 1,
               "page": 1,
               "perPage": 5,
               "roleId": 0,
@@ -1510,7 +1510,7 @@ exports[`PeopleList Component renders correctly from memory 1`] = `
                 },
               },
               "variables": Object {
-                "locationId": 0,
+                "locationId": 1,
                 "page": 1,
                 "perPage": 5,
                 "roleId": 0,
@@ -2007,7 +2007,7 @@ exports[`PeopleList Component renders correctly from memory 1`] = `
                     },
                   },
                   "variables": Object {
-                    "locationId": 0,
+                    "locationId": 1,
                     "page": 1,
                     "perPage": 5,
                     "roleId": 0,
@@ -2025,10 +2025,6 @@ exports[`PeopleList Component renders correctly from memory 1`] = `
               "resolve": [Function],
             },
             "5" => Object {
-              "reject": [Function],
-              "resolve": [Function],
-            },
-            "6" => Object {
               "reject": [Function],
               "resolve": [Function],
             },
@@ -2117,6 +2113,17 @@ exports[`PeopleList Component renders correctly from memory 1`] = `
                 "isCurrentlyPolling": false,
                 "isTornDown": false,
                 "observers": Array [
+                  SubscriptionObserver {
+                    "_subscription": Subscription {
+                      "_cleanup": [Function],
+                      "_observer": Object {
+                        "error": [Function],
+                        "next": [Function],
+                      },
+                      "_queue": undefined,
+                      "_state": "ready",
+                    },
+                  },
                   SubscriptionObserver {
                     "_subscription": Subscription {
                       "_cleanup": [Function],
@@ -2301,6 +2308,17 @@ exports[`PeopleList Component renders correctly from memory 1`] = `
                 "isCurrentlyPolling": false,
                 "isTornDown": false,
                 "observers": Array [
+                  SubscriptionObserver {
+                    "_subscription": Subscription {
+                      "_cleanup": [Function],
+                      "_observer": Object {
+                        "error": [Function],
+                        "next": [Function],
+                      },
+                      "_queue": undefined,
+                      "_state": "ready",
+                    },
+                  },
                   SubscriptionObserver {
                     "_subscription": Subscription {
                       "_cleanup": [Function],
@@ -2749,6 +2767,27 @@ exports[`PeopleList Component renders correctly from memory 1`] = `
                 "_subscriber": [Function],
                 "isCurrentlyPolling": false,
                 "isTornDown": false,
+                "lastError": [Error: Network error: No more mocked responses for the query: query allUsers($page: Int!, $perPage: Int!, $locationId: Int, $roleId: Int) {
+  users(page: $page, perPage: $perPage, locationId: $locationId, roleId: $roleId) {
+    users {
+      email
+      name
+      picture
+      location
+      id
+      roles {
+        role
+        id
+      }
+    }
+    pages
+    hasNext
+    hasPrevious
+    queryTotal
+  }
+}
+, variables: {"page":1,"perPage":5,"locationId":1,"roleId":0}],
+                "lastResult": undefined,
                 "observers": Array [
                   SubscriptionObserver {
                     "_subscription": Subscription {
@@ -3097,7 +3136,7 @@ exports[`PeopleList Component renders correctly from memory 1`] = `
                     },
                   },
                   "variables": Object {
-                    "locationId": 0,
+                    "locationId": 1,
                     "page": 1,
                     "perPage": 5,
                     "roleId": 0,
@@ -3116,24 +3155,13 @@ exports[`PeopleList Component renders correctly from memory 1`] = `
                 "shouldSubscribe": true,
                 "subscriptionHandles": Array [],
                 "variables": Object {
-                  "locationId": 0,
+                  "locationId": 1,
                   "page": 1,
                   "perPage": 5,
                   "roleId": 0,
                 },
               },
-              "subscriptions": Array [
-                Subscription {
-                  "_cleanup": [Function],
-                  "_observer": Object {
-                    "complete": [Function],
-                    "error": [Function],
-                    "next": [Function],
-                  },
-                  "_queue": undefined,
-                  "_state": "ready",
-                },
-              ],
+              "subscriptions": Array [],
             },
           },
           "queryDeduplication": true,
@@ -3483,11 +3511,30 @@ exports[`PeopleList Component renders correctly from memory 1`] = `
                     "displayName": "Apollo(Apollo(Apollo(Apollo(PeopleList))))",
                   },
                 },
-                "networkError": null,
-                "networkStatus": 1,
+                "networkError": [Error: No more mocked responses for the query: query allUsers($page: Int!, $perPage: Int!, $locationId: Int, $roleId: Int) {
+  users(page: $page, perPage: $perPage, locationId: $locationId, roleId: $roleId) {
+    users {
+      email
+      name
+      picture
+      location
+      id
+      roles {
+        role
+        id
+      }
+    }
+    pages
+    hasNext
+    hasPrevious
+    queryTotal
+  }
+}
+, variables: {"page":1,"perPage":5,"locationId":1,"roleId":0}],
+                "networkStatus": 8,
                 "previousVariables": null,
                 "variables": Object {
-                  "locationId": 0,
+                  "locationId": 1,
                   "page": 1,
                   "perPage": 5,
                   "roleId": 0,
@@ -4134,7 +4181,7 @@ exports[`PeopleList Component renders correctly from memory 1`] = `
                   },
                 },
                 "variables": Object {
-                  "locationId": 0,
+                  "locationId": 1,
                   "page": 1,
                   "perPage": 5,
                   "roleId": 0,
@@ -4555,7 +4602,7 @@ exports[`PeopleList Component renders correctly from memory 1`] = `
         skip={false}
         variables={
           Object {
-            "locationId": 0,
+            "locationId": 1,
             "page": 1,
             "perPage": 5,
             "roleId": 0,
@@ -4583,7 +4630,7 @@ exports[`PeopleList Component renders correctly from memory 1`] = `
               "subscribeToMore": [Function],
               "updateQuery": [Function],
               "variables": Object {
-                "locationId": 0,
+                "locationId": 1,
                 "page": 1,
                 "perPage": 5,
                 "roleId": 0,
@@ -4684,7 +4731,7 @@ exports[`PeopleList Component renders correctly from memory 1`] = `
                   "subscribeToMore": [Function],
                   "updateQuery": [Function],
                   "variables": Object {
-                    "locationId": 0,
+                    "locationId": 1,
                     "page": 1,
                     "perPage": 5,
                     "roleId": 0,
@@ -4803,7 +4850,7 @@ exports[`PeopleList Component renders correctly from memory 1`] = `
                       "subscribeToMore": [Function],
                       "updateQuery": [Function],
                       "variables": Object {
-                        "locationId": 0,
+                        "locationId": 1,
                         "page": 1,
                         "perPage": 5,
                         "roleId": 0,
@@ -5055,7 +5102,7 @@ exports[`PeopleList Component renders correctly from memory 1`] = `
                           "subscribeToMore": [Function],
                           "updateQuery": [Function],
                           "variables": Object {
-                            "locationId": 0,
+                            "locationId": 1,
                             "page": 1,
                             "perPage": 5,
                             "roleId": 0,

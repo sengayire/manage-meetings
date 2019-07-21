@@ -58,7 +58,7 @@ exports[`TopMenu Component Should render component 1`] = `
               value=""
             />
             <a
-              href="#"
+              href=""
               onClick={[Function]}
             >
               <img

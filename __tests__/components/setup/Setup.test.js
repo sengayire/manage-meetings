@@ -6,6 +6,10 @@ import * as queryHelper from '../../../src/components/helpers/QueriesHelpers';
 import ErrorIcon from '../../../src/components/commons/ErrorIcon';
 import data from '../../../__mocks__/setup/Setup';
 
+jest.mock('../../../src/components/helpers/QueriesHelpers');
+
+queryHelper.getUserRole.mockReturnValue('Admin');
+
 
 describe('setup component', () => {
   const handleClick = () => jest.fn();
@@ -77,16 +81,8 @@ describe('setup component', () => {
   });
 
   it('should show error message component for non-admin users', async () => {
-    const defaultUser = {
-      id: '214',
-      roles: [{ id: 2, role: 'Default User' }],
-    };
-    wrapper.setState({
-      user: defaultUser,
-    });
+    queryHelper.getUserRole.mockReturnValue('Default User');
     await wrapper.instance().componentDidMount();
-    const stateValue = wrapper.state().user;
-    expect(stateValue).toEqual(defaultUser);
     expect(wrapper.contains(<ErrorIcon message="You are not authorized to perform this action" />)).toBe(true);
   });
 

@@ -5,16 +5,20 @@ import AnalyticsNav from '../../../src/components/navbars/AnalyticsNav';
 import AnalyticsActivity from '../../../src/containers/AnalyticsActivity';
 import Calendar from '../../../src/components/commons/Calendar';
 import ExportButton from '../../../src/components/commons/ExportButton';
-import { getUserDetails, getAllAnalytics, getAllRooms } from '../../../src/components/helpers/QueriesHelpers';
+import { getAllAnalytics, getAllRooms, getUserRole, getUserLocation } from '../../../src/components/helpers/QueriesHelpers';
 import allAnalyticsMockData from '../../../__mocks__/analytics/allAnalyticsMockData';
 
 
 jest.mock('../../../src/components/helpers/QueriesHelpers');
 
+getUserRole.mockReturnValue('Admin');
+getUserLocation.mockReturnValue({
+  name: 'Lagos', id: 1,
+});
+
 describe('AnalyticsNav Component', () => {
   let wrapper;
   beforeAll(() => {
-    getUserDetails.mockResolvedValue({ location: 'Nigeria' });
     const { rooms, ...analytics } = allAnalyticsMockData.analytics;
     getAllAnalytics.mockResolvedValue({ allAnalytics: analytics });
     getAllRooms.mockResolvedValue({ allRooms: rooms });
@@ -36,9 +40,9 @@ describe('AnalyticsNav Component', () => {
   });
 
   it('should display the location of the user', () => {
-    wrapper.setState({ activeTab: 'activity', location: 'Nigeria' });
-    expect(wrapper.find('Button').at(2).dive().find('.location-btn')
-      .text()).toEqual('Nigeria');
+    wrapper.setState({ activeTab: 'activity' });
+    expect(wrapper.find('Button').at(2).dive().find('.btn-right__location__btn')
+      .text()).toEqual('Lagos');
   });
 
   it('should call sendDateData once and update the state value of start and end date', () => {

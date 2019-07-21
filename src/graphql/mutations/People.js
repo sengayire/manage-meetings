@@ -24,4 +24,19 @@ mutation inviteToConverge($email: String!) {
 }
 `;
 
-export { UPDATE_ROLES_MUTATION as default, INVITE_PERSON_MUTATION };
+const CHANGE_USER_LOCATION_MUTATION = gql`
+  mutation changeUserLocation($email: String!, $locationId: Int!) {
+    changeUserLocation(email: $email, locationId: $locationId) {
+      user {
+        name
+        location
+      }
+    }
+  }
+`;
+
+export {
+  UPDATE_ROLES_MUTATION as default,
+  INVITE_PERSON_MUTATION,
+  CHANGE_USER_LOCATION_MUTATION,
+};

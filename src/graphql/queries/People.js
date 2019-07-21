@@ -35,6 +35,15 @@ query user ($email: String!) {
  }
 `;
 
+const GET_LOCATION_QUERY = gql`
+  query {
+    userLocation @client {
+      id
+      name
+    }
+  }
+`;
+
 const GET_ROLES_QUERY = gql`
 query roles {
   roles {
@@ -43,4 +52,15 @@ query roles {
   }
 }`;
 
-export { GET_PEOPLE_QUERY as default, GET_ROLES_QUERY, GET_USER_QUERY };
+const GET_ROLE_QUERY = gql`
+query {
+  userRole @client
+}`;
+
+export {
+  GET_PEOPLE_QUERY as default,
+  GET_ROLE_QUERY,
+  GET_ROLES_QUERY,
+  GET_USER_QUERY,
+  GET_LOCATION_QUERY,
+};
