@@ -149,7 +149,13 @@ class RoomFeedbackPage extends Component {
         }
       });
     });
-    return (Math.round(totalRating / ratingsCount));
+    let averageRating = Math.round(totalRating / ratingsCount);
+
+    if (Number.isNaN(averageRating)) {
+      averageRating = 'No ratings yet';
+    }
+
+    return averageRating;
   };
 
 

@@ -28,6 +28,7 @@ exports[`Get Average Room Capacity Component renders correctly from memory 1`] =
           className=""
           theme={
             Object {
+              "tooltip": "tooltip",
               "tooltipInner": "tooltipInner",
             }
           }
@@ -47,6 +48,7 @@ exports[`Get Average Room Capacity Component renders correctly from memory 1`] =
             onMouseLeave={[Function]}
             theme={
               Object {
+                "tooltip": "tooltip",
                 "tooltipInner": "tooltipInner",
               }
             }
@@ -59,6 +61,7 @@ exports[`Get Average Room Capacity Component renders correctly from memory 1`] =
               onMouseLeave={[Function]}
               theme={
                 Object {
+                  "tooltip": "tooltip",
                   "tooltipInner": "tooltipInner",
                 }
               }

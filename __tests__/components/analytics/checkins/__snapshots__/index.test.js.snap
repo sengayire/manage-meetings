@@ -49,6 +49,7 @@ exports[`Checkins component should render properly 1`] = `
                 className=""
                 theme={
                   Object {
+                    "tooltip": "tooltip",
                     "tooltipInner": "tooltipInner",
                   }
                 }
@@ -68,6 +69,7 @@ exports[`Checkins component should render properly 1`] = `
                   onMouseLeave={[Function]}
                   theme={
                     Object {
+                      "tooltip": "tooltip",
                       "tooltipInner": "tooltipInner",
                     }
                   }
@@ -80,6 +82,7 @@ exports[`Checkins component should render properly 1`] = `
                     onMouseLeave={[Function]}
                     theme={
                       Object {
+                        "tooltip": "tooltip",
                         "tooltipInner": "tooltipInner",
                       }
                     }
@@ -5921,6 +5924,7 @@ exports[`Checkins component should render properly 1`] = `
                 className=""
                 theme={
                   Object {
+                    "tooltip": "tooltip",
                     "tooltipInner": "tooltipInner",
                   }
                 }
@@ -5940,6 +5944,7 @@ exports[`Checkins component should render properly 1`] = `
                   onMouseLeave={[Function]}
                   theme={
                     Object {
+                      "tooltip": "tooltip",
                       "tooltipInner": "tooltipInner",
                     }
                   }
@@ -5952,6 +5957,7 @@ exports[`Checkins component should render properly 1`] = `
                     onMouseLeave={[Function]}
                     theme={
                       Object {
+                        "tooltip": "tooltip",
                         "tooltipInner": "tooltipInner",
                       }
                     }
@@ -11793,6 +11799,7 @@ exports[`Checkins component should render properly 1`] = `
                 className=""
                 theme={
                   Object {
+                    "tooltip": "tooltip",
                     "tooltipInner": "tooltipInner",
                   }
                 }
@@ -11812,6 +11819,7 @@ exports[`Checkins component should render properly 1`] = `
                   onMouseLeave={[Function]}
                   theme={
                     Object {
+                      "tooltip": "tooltip",
                       "tooltipInner": "tooltipInner",
                     }
                   }
@@ -11824,6 +11832,7 @@ exports[`Checkins component should render properly 1`] = `
                     onMouseLeave={[Function]}
                     theme={
                       Object {
+                        "tooltip": "tooltip",
                         "tooltipInner": "tooltipInner",
                       }
                     }

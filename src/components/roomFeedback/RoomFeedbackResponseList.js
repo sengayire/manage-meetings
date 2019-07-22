@@ -48,7 +48,10 @@ export const totalCleanlinessRating = (roomResponses = []) => {
   const gradeList = ['Not Rated', 'Poor', 'Fair', 'Good', 'Very Good', 'Excellent'];
   const responsesWithRating = roomResponses.filter(response => response.response.__typename === 'Rate');
   responsesWithRating.forEach((singleResponse) => { totalRating += singleResponse.response.rate; });
-  const averageRating = Math.round(totalRating / (responsesWithRating.length));
+  let averageRating = Math.round(totalRating / (responsesWithRating.length));
+  if (Number.isNaN(averageRating)) {
+    averageRating = 0;
+  }
   const grade = gradeList[(averageRating)];
   return { averageRating, grade };
 };
