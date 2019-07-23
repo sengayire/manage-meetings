@@ -33,6 +33,7 @@
   text-align: left;
 }
 
+
 .heading:hover {
   background-color: $color-hover
 }
@@ -43,4 +44,8 @@
   margin-top: 0;
   margin-bottom: 0;
   opacity: 0.2;
+}
+
+.heading-sub {
+  padding: 25px 2.5px 15px 5px;
 }

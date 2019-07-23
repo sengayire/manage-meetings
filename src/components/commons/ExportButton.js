@@ -8,7 +8,7 @@ import { downloadCSV, fetchDownload } from '../helpers/analytics/downloads/DataC
 
 const renderDropdownOptions = handleDownload => (
   <div className="dropdown-list">
-    <div className="heading">Export Options</div>
+    <div className="heading heading-sub">Export Options</div>
     <hr size="1" className="horizontal-line" />
     <input type="button" onClick={handleDownload} key="pdf" value="PDF" />
     <input type="button" onClick={handleDownload} key="jpg" value="JPEG" />

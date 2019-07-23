@@ -33,11 +33,9 @@ export default `<!DOCTYPE html>
     .page3-download {
       padding: 50px 500px;
     }
-    
     .analytics__chart-download {
       padding: 35px;
     }
-    
     .analytics__chart-download > div:first-child {
       height: 30px;
     }
