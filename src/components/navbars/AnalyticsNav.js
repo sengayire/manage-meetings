@@ -22,6 +22,7 @@ import AnalyticsContext from '../helpers/AnalyticsContext';
  */
 class AnalyticsNav extends Component {
   state = {
+    activeTab: '',
     isActivity: false,
     location: 'Fetching location...',
     startDate: moment().format('MMM DD Y'),
@@ -30,6 +31,7 @@ class AnalyticsNav extends Component {
   };
 
   async componentDidMount() {
+    await this.getPreviousTab();
     await this.setUserLocation();
     await this.getAnalytics();
   }
@@ -39,6 +41,21 @@ class AnalyticsNav extends Component {
     const { startDate: prevStartDate, endDate: prevEndDate } = prevState;
     if (prevStartDate !== startDate || prevEndDate !== endDate) {
       this.getAnalytics();
+    }
+  }
+
+  getPreviousTab = async () => {
+    const tab = await sessionStorage.getItem('activityActiveTab');
+    if (tab) {
+      await this.setState(prevState => ({
+        ...prevState,
+        activeTab: tab,
+      }));
+    } else {
+      await this.setState(prevState => ({
+        ...prevState,
+        activeTab: 'overview',
+      }));
     }
   }
 
@@ -93,9 +110,22 @@ class AnalyticsNav extends Component {
    *
    * @returns {void}
    */
-  toggleView = () => {
-    this.setState({
-      isActivity: !this.state.isActivity,
+  toggleView = async () => {
+    await this.setState((prevState) => {
+      if (!prevState.isActivity) {
+        sessionStorage.setItem('activityActiveTab', 'activity');
+        return {
+          ...prevState,
+          isActivity: !prevState.isActivity,
+          activeTab: 'activity',
+        };
+      }
+      sessionStorage.setItem('activityActiveTab', 'overview');
+      return {
+        ...prevState,
+        isActivity: !prevState.isActivity,
+        activeTab: 'overview',
+      };
     });
   };
 
@@ -121,30 +151,27 @@ class AnalyticsNav extends Component {
   render() {
     const {
       analytics,
-      isActivity,
+      activeTab,
       fetching,
       location,
       startDate,
       endDate,
     } = this.state;
+
+    const renderButtons = buttonTitle => (<Button
+      title={buttonTitle.toUpperCase()}
+      handleClick={this.toggleView}
+      classProp={`${buttonTitle.toLowerCase()}IconBtn`}
+      type={(activeTab === `${buttonTitle.toLowerCase()}`) ? null : 2}
+      isDisabled={activeTab === `${buttonTitle.toLowerCase()}`}
+    />);
+
     return (
       <Fragment>
         <div className="analytics-cover ">
           <div className="btn-left">
-            <Button
-              classProp="overviewIconBtn"
-              handleClick={this.toggleView}
-              title="OVERVIEW"
-              type={!isActivity ? null : 2}
-              isDisabled={!isActivity}
-            />
-            <Button
-              classProp="activityIconBtn"
-              handleClick={this.toggleView}
-              title="ACTIVITY"
-              type={isActivity ? null : 2}
-              isDisabled={isActivity}
-            />
+            {renderButtons('overview')}
+            {renderButtons('activity')}
           </div>
           <div className="btn-right">
             <Button classProp="location-btn" title={location} type={2} />
@@ -165,12 +192,12 @@ class AnalyticsNav extends Component {
             }
           </div>
         </div>
-        {!isActivity && (
+        {(activeTab === 'overview') && (
           <AnalyticsContext.Provider value={{ fetching, analytics }}>
             <AnalyticsOverview />
           </AnalyticsContext.Provider>
         )}
-        {isActivity &&
+        {activeTab === 'activity' &&
           <AnalyticsActivityComponent
             queryCompleted={() => { }}
             dateValue={this.dateValue()}

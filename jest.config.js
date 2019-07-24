@@ -61,5 +61,5 @@ module.exports = {
   ],
   setupTestFrameworkScriptFile: '<rootDir>/setupTests.js',
   snapshotSerializers: ['enzyme-to-json/serializer'],
-  setupFiles: ['jest-canvas-mock'],
+  setupFiles: ['jest-canvas-mock', 'jest-localstorage-mock'],
 };
