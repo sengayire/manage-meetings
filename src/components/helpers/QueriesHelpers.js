@@ -1,4 +1,4 @@
-import { GET_USER_QUERY } from '../../graphql/queries/People';
+import { GET_USER_QUERY, GET_LOCATION_QUERY, GET_ROLE_QUERY } from '../../graphql/queries/People';
 import {
   GET_ALL_ROOMS,
   GET_LOCATIONS_QUERY,
@@ -14,6 +14,10 @@ import apolloClient from '../../utils/ApolloClient';
 import GET_ALL_LEVELS from '../../graphql/queries/Levels';
 import GET_ROOM_FEEDBACK_QUESTIONS_QUERY from '../../graphql/queries/questions';
 import { GET_DEVICES_QUERY } from '../../graphql/queries/Devices';
+
+const getUserLocation = (client = apolloClient) => client.readQuery({
+  query: GET_LOCATION_QUERY,
+}).userLocation;
 
 const getUserDetails = async (client = apolloClient) => {
   const { UserInfo: userData } = decodeTokenAndGetUserData() || {};
@@ -59,8 +63,19 @@ const getAllLocations = async (client = apolloClient) => {
   }
 };
 
+
+const getAllLocationsFromCache = (client = apolloClient) => {
+  const data = client.readQuery(
+    {
+      query: GET_LOCATIONS_QUERY,
+    },
+    true,
+  );
+  return data.allLocations;
+};
+
 const getRoomListVariables = (userLocation, perPage, page, textVariable) => ({
-  location: userLocation,
+  location: getUserLocation().name,
   office: '',
   page,
   perPage,
@@ -68,22 +83,20 @@ const getRoomListVariables = (userLocation, perPage, page, textVariable) => ({
 });
 
 const getRoomList = async (userLocation, perPage, page, textVariable, client = apolloClient) => {
-  // making 'textVariable' NULL disables filtering by tags
-  const nullTextVariable = null;
   try {
-    if (nullTextVariable) {
+    if (textVariable) {
       throw new Error('There is a filter search, so we will use the query in the catch block');
     }
     const data = await client.readQuery({
       query: GET_ROOMS_QUERY,
-      variables: getRoomListVariables(userLocation, perPage, page, nullTextVariable),
+      variables: getRoomListVariables(userLocation, perPage, page, textVariable),
     });
     return data;
   } catch (error) {
     const { data } = await client.query({
       query: GET_ROOMS_QUERY,
       fetchPolicy: 'network-only',
-      variables: getRoomListVariables(userLocation, perPage, page, nullTextVariable),
+      variables: getRoomListVariables(userLocation, perPage, page, textVariable),
     });
     return data;
   }
@@ -230,11 +243,15 @@ const getAllRooms = async (location, client = apolloClient) => {
 };
 
 const getAllAnalytics = async (dateValue, client = apolloClient) => {
+  const variables = {
+    ...dateValue,
+    locationId: Number(getUserLocation().id),
+  };
   try {
     const data = client.readQuery(
       {
         query: ALL_ANALYTICS,
-        variables: dateValue,
+        variables,
       },
       true,
     );
@@ -242,7 +259,7 @@ const getAllAnalytics = async (dateValue, client = apolloClient) => {
   } catch (err) {
     const { data } = await client.query({
       query: ALL_ANALYTICS,
-      variables: dateValue,
+      variables,
     });
     return data;
   }
@@ -317,6 +334,10 @@ export const getAllResponses = async ({ startDate, endDate } = {}, client = apol
   }
 };
 
+const getUserRole = (client = apolloClient) => client.readQuery({
+  query: GET_ROLE_QUERY,
+}).userRole;
+
 export {
   getRoomResources,
   getAnalyticForDailyRoomsEvents,
@@ -332,4 +353,7 @@ export {
   getRemoteRoomsAllLocations,
   getAllDevices,
   getSingleRoomFeedback,
+  getUserLocation,
+  getUserRole,
+  getAllLocationsFromCache,
 };

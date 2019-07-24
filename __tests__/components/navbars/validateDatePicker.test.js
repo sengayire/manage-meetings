@@ -2,6 +2,13 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import AnalyticsNav from '../../../src/components/navbars/AnalyticsNav';
+import { getUserLocation } from '../../../src/components/helpers/QueriesHelpers';
+
+jest.mock('../../../src/components/helpers/QueriesHelpers');
+
+getUserLocation.mockReturnValue({
+  name: 'Lagos', id: 1,
+});
 
 
 jest.mock('../../../src/components/helpers/QueriesHelpers');

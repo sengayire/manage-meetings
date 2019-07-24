@@ -1,8 +1,8 @@
 import gql from 'graphql-tag';
 
 const ALL_ANALYTICS = gql`
-  query allAnalytics($startDate: String!, $endDate: String!) {
-    allAnalytics(startDate: $startDate, endDate: $endDate) {
+  query allAnalytics($startDate: String!, $endDate: String!, $locationId: Int!) {
+    allAnalytics(startDate: $startDate, endDate: $endDate, locationId: $locationId) {
       bookingsCount {
         totalBookings
         period

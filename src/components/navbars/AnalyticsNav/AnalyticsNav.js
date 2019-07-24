@@ -1,16 +1,18 @@
 import React, { Component, Fragment } from 'react';
 import moment from 'moment';
-import Button from '../commons/Button';
-import '../../assets/styles/custom.scss';
-import '../../assets/styles/topmenu.scss';
-import '../../../src/assets/styles/analyticsPage.scss';
-import '../../assets/styles/table.scss';
-import Calendar from '../../components/commons/Calendar';
-import AnalyticsActivityComponent from '../../containers/AnalyticsActivity';
-import AnalyticsOverview from '../../containers/AnalyticsOverview';
-import ExportButton from '../commons/ExportButton';
-import { getUserDetails, getAllAnalytics, getAllRooms } from '../helpers/QueriesHelpers';
-import AnalyticsContext from '../helpers/AnalyticsContext';
+import Button from '../../commons/Button';
+import '../../../assets/styles/custom.scss';
+import '../../../assets/styles/topmenu.scss';
+import '../../../../src/assets/styles/analyticsPage.scss';
+import '../../../assets/styles/table.scss';
+import Calendar from '../../commons/Calendar';
+import AnalyticsActivityComponent from '../../../containers/AnalyticsActivity';
+import AnalyticsOverview from '../../../containers/AnalyticsOverview';
+import ExportButton from '../../commons/ExportButton';
+import { getAllAnalytics, getAllRooms, getUserLocation, getUserRole } from '../../helpers/QueriesHelpers';
+import AnalyticsContext from '../../helpers/AnalyticsContext';
+import SelectLocation from './SelectLocation';
+import { changeUserLocation } from '../../helpers/mutationHelpers/people';
 
 /**
  * Component for Analytics
@@ -23,8 +25,8 @@ import AnalyticsContext from '../helpers/AnalyticsContext';
 class AnalyticsNav extends Component {
   state = {
     activeTab: '',
+    showLocations: false,
     isActivity: false,
-    location: 'Fetching location...',
     startDate: moment().format('MMM DD Y'),
     endDate: moment().format('MMM DD Y'),
     fetching: true,
@@ -32,8 +34,7 @@ class AnalyticsNav extends Component {
 
   async componentDidMount() {
     await this.getPreviousTab();
-    await this.setUserLocation();
-    await this.getAnalytics();
+    this.getAnalytics();
   }
 
   componentDidUpdate(prevProps, prevState) {
@@ -59,20 +60,9 @@ class AnalyticsNav extends Component {
     }
   }
 
-  /**
-   * Sets the current user's location and role
-   *
-   * @returns {void}
-   */
-  setUserLocation = async () => {
-    const user = await getUserDetails();
-    if (user) {
-      this.setState({ location: user.location });
-    }
-  };
-
   getAnalytics = async () => {
     const dateValue = this.dateValue();
+
     const { allAnalytics: analytics } = await getAllAnalytics(dateValue);
     const { allRooms: { rooms } } = await getAllRooms();
     this.setState({
@@ -147,15 +137,29 @@ class AnalyticsNav extends Component {
     });
   };
 
+  toggleLocationDropdown = () => this.setState(({ showLocations }) => ({
+    showLocations: !showLocations,
+  }))
+
+
+  handleLocationChange = async (locationId) => {
+    this.setState({
+      showLocations: false,
+      fetching: true,
+    });
+    await changeUserLocation(locationId);
+    this.getAnalytics();
+  }
+
 
   render() {
     const {
       analytics,
       activeTab,
       fetching,
-      location,
       startDate,
       endDate,
+      showLocations,
     } = this.state;
 
     const renderButtons = buttonTitle => (<Button
@@ -166,6 +170,9 @@ class AnalyticsNav extends Component {
       isDisabled={activeTab === `${buttonTitle.toLowerCase()}`}
     />);
 
+    const location = getUserLocation().name;
+
+    const isSuperAdmin = getUserRole() === 'Super_Admin';
     return (
       <Fragment>
         <div className="analytics-cover ">
@@ -174,7 +181,22 @@ class AnalyticsNav extends Component {
             {renderButtons('activity')}
           </div>
           <div className="btn-right">
-            <Button classProp="location-btn" title={location} type={2} />
+            <div className="btn-right__location">
+              <Button
+                classProp={`btn-right__location__btn${isSuperAdmin ? ' btn-right__location__btn--with-caret' : ''}`}
+                title={location}
+                type={2}
+                {...(isSuperAdmin && { handleClick: this.toggleLocationDropdown })}
+              />
+              {
+                isSuperAdmin && (
+                  <SelectLocation
+                    handleLocationChange={this.handleLocationChange}
+                    active={showLocations}
+                  />
+                )
+              }
+            </div>
             {
               !fetching && (
                 <Fragment>

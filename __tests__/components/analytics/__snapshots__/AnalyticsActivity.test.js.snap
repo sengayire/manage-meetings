@@ -65,7 +65,7 @@ exports[`AnalyticsActivity component should render daily room events 1`] = `
     <div>
       <div
         className="activity"
-        key="b54d2529-a5e3-4049-ba12-dcb90e611d95"
+        key="71ca537b-1b44-42e4-a62a-88230129a7e3"
       >
         <div
           className="activity-day"
@@ -75,7 +75,7 @@ exports[`AnalyticsActivity component should render daily room events 1`] = `
         <div>
           <div
             className="activity-info-row"
-            key="7ba8e15c-a769-48f3-ac34-3e7d67c56b29"
+            key="a319b2cf-0961-4b2f-a678-54db9b0703d6"
           >
             <div
               className="title"
@@ -127,7 +127,7 @@ exports[`AnalyticsActivity component should render daily room events 1`] = `
           </div>
           <div
             className="activity-info-row"
-            key="ebac08ed-75ce-4f6c-b988-e59af80d6d6b"
+            key="51e55e9c-9e35-41b7-9ef6-436c3169964c"
           >
             <div
               className="title"
@@ -179,7 +179,7 @@ exports[`AnalyticsActivity component should render daily room events 1`] = `
           </div>
           <div
             className="activity-info-row"
-            key="e898fa71-448e-4af0-82fc-76522d63d72a"
+            key="d580e792-aebf-4261-9f7e-46c4638d1d9a"
           >
             <div
               className="title"
@@ -231,7 +231,7 @@ exports[`AnalyticsActivity component should render daily room events 1`] = `
           </div>
           <div
             className="activity-info-row"
-            key="c84a531f-b05c-4d05-8feb-bf7a5edccf6d"
+            key="afcd2980-3e11-4e2c-a5dc-454bb902fe4c"
           >
             <div
               className="title"
@@ -283,7 +283,7 @@ exports[`AnalyticsActivity component should render daily room events 1`] = `
           </div>
           <div
             className="activity-info-row"
-            key="39c855be-91e6-49f8-8230-9be1eeddaa85"
+            key="d013c85b-96a3-48f2-a6f9-29d9c874329b"
           >
             <div
               className="title"
@@ -335,7 +335,7 @@ exports[`AnalyticsActivity component should render daily room events 1`] = `
           </div>
           <div
             className="activity-info-row"
-            key="14599006-7404-49eb-98ac-79227b20e61b"
+            key="172e380e-a8f0-467d-9557-970f63c2a802"
           >
             <div
               className="title"
@@ -387,7 +387,7 @@ exports[`AnalyticsActivity component should render daily room events 1`] = `
           </div>
           <div
             className="activity-info-row"
-            key="8c65cc39-4023-4d0d-9a4d-7c859a687288"
+            key="ea4fce77-98b7-4614-b325-6fca3b95606c"
           >
             <div
               className="title"
@@ -439,7 +439,7 @@ exports[`AnalyticsActivity component should render daily room events 1`] = `
           </div>
           <div
             className="activity-info-row"
-            key="03beab39-75bd-4343-92a1-e2a2202a3491"
+            key="435c5534-c5fe-4ea4-8de1-98fff878035b"
           >
             <div
               className="title"
@@ -491,7 +491,7 @@ exports[`AnalyticsActivity component should render daily room events 1`] = `
           </div>
           <div
             className="activity-info-row"
-            key="ff542693-9fde-41a6-8afe-21020d425046"
+            key="b1bff815-9ca0-4056-beb2-7072b9727c24"
           >
             <div
               className="title"
@@ -543,7 +543,7 @@ exports[`AnalyticsActivity component should render daily room events 1`] = `
           </div>
           <div
             className="activity-info-row"
-            key="3cefc53b-8ef1-4a3a-b3be-e407e79b7632"
+            key="975cfea6-dbbd-41bc-ad66-34f0d4f46d08"
           >
             <div
               className="title"
@@ -595,7 +595,7 @@ exports[`AnalyticsActivity component should render daily room events 1`] = `
           </div>
           <div
             className="activity-info-row"
-            key="fb172ec6-97c2-4af4-a4f8-a3defd7bbbae"
+            key="bb376a8b-a05c-49a8-bce0-04761f137a29"
           >
             <div
               className="title"
@@ -647,7 +647,7 @@ exports[`AnalyticsActivity component should render daily room events 1`] = `
           </div>
           <div
             className="activity-info-row"
-            key="0641d8e3-5d2a-4cd4-9901-8e48ce79cb8e"
+            key="cb2eefdc-3bc4-4a7b-b6eb-a67b7604d2e9"
           >
             <div
               className="title"
@@ -699,7 +699,7 @@ exports[`AnalyticsActivity component should render daily room events 1`] = `
           </div>
           <div
             className="activity-info-row"
-            key="3b2c24b6-59f6-4a71-933d-3ceafdd2430b"
+            key="a12ca428-c33f-459f-b173-992877d6ad73"
           >
             <div
               className="title"
@@ -751,7 +751,7 @@ exports[`AnalyticsActivity component should render daily room events 1`] = `
           </div>
           <div
             className="activity-info-row"
-            key="056c006c-d37e-4a49-98ed-c436e4204b1a"
+            key="cc17feb3-9155-4f6d-8674-19ddc57ba4e0"
           >
             <div
               className="title"
@@ -803,7 +803,7 @@ exports[`AnalyticsActivity component should render daily room events 1`] = `
           </div>
           <div
             className="activity-info-row"
-            key="48da3391-eccb-49d8-8aa0-eca2139b502e"
+            key="c3ada233-6bd3-46ad-b215-943b599cd714"
           >
             <div
               className="title"
@@ -855,7 +855,7 @@ exports[`AnalyticsActivity component should render daily room events 1`] = `
           </div>
           <div
             className="activity-info-row"
-            key="57d41eee-4596-42e5-9410-b9df9f1aaa3b"
+            key="d8c41e6f-a4bf-408d-837c-238f662a5216"
           >
             <div
               className="title"
@@ -907,7 +907,7 @@ exports[`AnalyticsActivity component should render daily room events 1`] = `
           </div>
           <div
             className="activity-info-row"
-            key="886c8354-e4e0-4883-a2d0-6170997a0e14"
+            key="970bf093-9dc9-4bd4-8527-8ae708c52098"
           >
             <div
               className="title"
@@ -959,7 +959,7 @@ exports[`AnalyticsActivity component should render daily room events 1`] = `
           </div>
           <div
             className="activity-info-row"
-            key="bf13ab37-e16a-4a8f-8bc8-87c8fdc86e6d"
+            key="8bb285a0-c933-4f28-ba63-0195b41be276"
           >
             <div
               className="title"
@@ -1011,7 +1011,7 @@ exports[`AnalyticsActivity component should render daily room events 1`] = `
           </div>
           <div
             className="activity-info-row"
-            key="46c3fd99-9e19-4dec-a4db-c77f4d88b757"
+            key="c1794778-abd4-4650-8d71-9b2cedab84e5"
           >
             <div
               className="title"
@@ -1063,7 +1063,7 @@ exports[`AnalyticsActivity component should render daily room events 1`] = `
           </div>
           <div
             className="activity-info-row"
-            key="1d068c48-296d-474a-98ec-0f0227fe3400"
+            key="0ab47f61-a5ec-40bb-b3e5-99c0be0e9cba"
           >
             <div
               className="title"
@@ -1115,7 +1115,7 @@ exports[`AnalyticsActivity component should render daily room events 1`] = `
           </div>
           <div
             className="activity-info-row"
-            key="5ea68c31-85e4-4442-a67b-eb909a5f471f"
+            key="420ef014-79a8-4a39-b3ad-3aa98510bd93"
           >
             <div
               className="title"
@@ -1167,7 +1167,7 @@ exports[`AnalyticsActivity component should render daily room events 1`] = `
           </div>
           <div
             className="activity-info-row"
-            key="03a78c3e-5f03-4c9f-943a-3ee23c3c7849"
+            key="57f21885-8d8d-4fa7-975a-65c7e8c42ac1"
           >
             <div
               className="title"
@@ -1219,7 +1219,7 @@ exports[`AnalyticsActivity component should render daily room events 1`] = `
           </div>
           <div
             className="activity-info-row"
-            key="07e7cfb8-3f99-4384-b17d-87617a043125"
+            key="543f56cf-13f6-4fcb-9549-0c1f42b05bf4"
           >
             <div
               className="title"
@@ -1271,7 +1271,7 @@ exports[`AnalyticsActivity component should render daily room events 1`] = `
           </div>
           <div
             className="activity-info-row"
-            key="5f36d0ba-e903-425c-98d7-15cc0e9989f1"
+            key="6011fc9d-0097-47b1-bb5b-73b8fd2bd863"
           >
             <div
               className="title"
@@ -1401,7 +1401,7 @@ exports[`AnalyticsActivity component should render resource not founr 1`] = `
     <div>
       <div
         className="activity"
-        key="f1a57387-7d67-4938-a45b-dd44f92d66b7"
+        key="fb2a62a5-514a-4105-98fd-7ef53c672e69"
       >
         <div
           className="activity-day"
@@ -1411,7 +1411,7 @@ exports[`AnalyticsActivity component should render resource not founr 1`] = `
         <div>
           <div
             className="activity-info-row"
-            key="d40bc14b-83d2-4392-a24e-11c99c15ff6b"
+            key="b19ce46e-95e2-406f-9951-c8d6dbff7254"
           >
             <div
               className="title"
@@ -1463,7 +1463,7 @@ exports[`AnalyticsActivity component should render resource not founr 1`] = `
           </div>
           <div
             className="activity-info-row"
-            key="02617518-8ba1-44fa-9cd6-c86149575b8f"
+            key="e17dfc5a-7b9c-4a65-9233-f89592e035ba"
           >
             <div
               className="title"
@@ -1515,7 +1515,7 @@ exports[`AnalyticsActivity component should render resource not founr 1`] = `
           </div>
           <div
             className="activity-info-row"
-            key="b3dcfeb4-77dd-4868-8fb0-3a198214d125"
+            key="a3adfe21-ef87-4cda-80b0-d463c910140c"
           >
             <div
               className="title"
@@ -1567,7 +1567,7 @@ exports[`AnalyticsActivity component should render resource not founr 1`] = `
           </div>
           <div
             className="activity-info-row"
-            key="b280f595-d8a8-44dd-9049-8b343b8dbd55"
+            key="b70a4cba-bb33-40d9-b5e1-d6844b8cdfbf"
           >
             <div
               className="title"
@@ -1619,7 +1619,7 @@ exports[`AnalyticsActivity component should render resource not founr 1`] = `
           </div>
           <div
             className="activity-info-row"
-            key="28362a60-5118-44fe-8245-55b466b2124d"
+            key="dfc98b07-a7c9-4cba-8eb2-dad71ed3fbd1"
           >
             <div
               className="title"
@@ -1671,7 +1671,7 @@ exports[`AnalyticsActivity component should render resource not founr 1`] = `
           </div>
           <div
             className="activity-info-row"
-            key="bb4d16a6-113c-44b7-bb6e-2d85311fa0d0"
+            key="db1e0a65-4175-4007-9254-96f93c323fb9"
           >
             <div
               className="title"
@@ -1723,7 +1723,7 @@ exports[`AnalyticsActivity component should render resource not founr 1`] = `
           </div>
           <div
             className="activity-info-row"
-            key="044cc5c7-bcfb-46e4-bce9-adc131345aff"
+            key="7ddaf4a9-95e6-4343-b303-2bea247d78e4"
           >
             <div
               className="title"
@@ -1775,7 +1775,7 @@ exports[`AnalyticsActivity component should render resource not founr 1`] = `
           </div>
           <div
             className="activity-info-row"
-            key="d7f24e8b-3a5e-4b61-b29e-63ddc3e21c42"
+            key="6f8864a8-4d1a-479d-abf0-a9cac78ca34a"
           >
             <div
               className="title"
@@ -1827,7 +1827,7 @@ exports[`AnalyticsActivity component should render resource not founr 1`] = `
           </div>
           <div
             className="activity-info-row"
-            key="83f1d4dd-7586-47bd-b50e-2e5a991c92a1"
+            key="d936449b-39e8-4212-9a52-42c5e0e3eba5"
           >
             <div
               className="title"
@@ -1879,7 +1879,7 @@ exports[`AnalyticsActivity component should render resource not founr 1`] = `
           </div>
           <div
             className="activity-info-row"
-            key="0f07ccfb-2fbe-4b07-97cd-6af9dc22a81e"
+            key="4ce43f81-3b34-4eb8-9e28-8ccf76924c2f"
           >
             <div
               className="title"
@@ -1931,7 +1931,7 @@ exports[`AnalyticsActivity component should render resource not founr 1`] = `
           </div>
           <div
             className="activity-info-row"
-            key="234af689-62ed-4959-a08b-49f05a2155b1"
+            key="30d76c06-1198-4c6e-b2e4-3cd34c8bd7b2"
           >
             <div
               className="title"
@@ -1983,7 +1983,7 @@ exports[`AnalyticsActivity component should render resource not founr 1`] = `
           </div>
           <div
             className="activity-info-row"
-            key="383f7dd6-3821-4166-8754-a4cd734ec9d3"
+            key="3c782bd5-8d5c-4590-ad9c-31c1616141fd"
           >
             <div
               className="title"
@@ -2035,7 +2035,7 @@ exports[`AnalyticsActivity component should render resource not founr 1`] = `
           </div>
           <div
             className="activity-info-row"
-            key="1512d6eb-eec7-412b-813a-95dc74e71c7f"
+            key="9dee4b5d-7092-4e27-abdf-d286d52f4add"
           >
             <div
               className="title"
@@ -2087,7 +2087,7 @@ exports[`AnalyticsActivity component should render resource not founr 1`] = `
           </div>
           <div
             className="activity-info-row"
-            key="8d49662a-df73-463a-a1df-4b841a6fa9af"
+            key="986cc961-9329-48b6-aff3-283eab062e8f"
           >
             <div
               className="title"
@@ -2139,7 +2139,7 @@ exports[`AnalyticsActivity component should render resource not founr 1`] = `
           </div>
           <div
             className="activity-info-row"
-            key="ef060bb7-20c5-4fd3-913a-a2647593c171"
+            key="8ff6768a-d8bd-4bd5-8e95-cb0d0b970ec2"
           >
             <div
               className="title"
@@ -2191,7 +2191,7 @@ exports[`AnalyticsActivity component should render resource not founr 1`] = `
           </div>
           <div
             className="activity-info-row"
-            key="9fc6f2f3-0011-415d-8813-4e726443ba9f"
+            key="1d038737-8244-4520-9b3e-8aceeabadefb"
           >
             <div
               className="title"
@@ -2243,7 +2243,7 @@ exports[`AnalyticsActivity component should render resource not founr 1`] = `
           </div>
           <div
             className="activity-info-row"
-            key="f41c543e-7d87-4058-ae53-273b525a836e"
+            key="02e4c5c7-f2f2-4ea4-a08a-d913e70b82f1"
           >
             <div
               className="title"
@@ -2295,7 +2295,7 @@ exports[`AnalyticsActivity component should render resource not founr 1`] = `
           </div>
           <div
             className="activity-info-row"
-            key="03c5f1ff-6a00-487a-87bd-83c64a3337d8"
+            key="2561ca6e-17ec-4742-b313-94ddea6a2c54"
           >
             <div
               className="title"
@@ -2347,7 +2347,7 @@ exports[`AnalyticsActivity component should render resource not founr 1`] = `
           </div>
           <div
             className="activity-info-row"
-            key="72fcdc38-adec-45f8-ad5c-c1a11085a2ae"
+            key="b47483ec-4f89-47bf-9b08-331fbec48dae"
           >
             <div
               className="title"
@@ -2399,7 +2399,7 @@ exports[`AnalyticsActivity component should render resource not founr 1`] = `
           </div>
           <div
             className="activity-info-row"
-            key="0006331e-fbfe-4ee8-b5d2-b7a986a6dfd3"
+            key="78787dbd-a3ff-46e5-befe-7a738d5a8bc6"
           >
             <div
               className="title"
@@ -2451,7 +2451,7 @@ exports[`AnalyticsActivity component should render resource not founr 1`] = `
           </div>
           <div
             className="activity-info-row"
-            key="d77ee41e-e404-4a58-bc1a-0736b3f60053"
+            key="472c5e9c-b2f6-4340-ad55-54cf2a58d365"
           >
             <div
               className="title"
@@ -2503,7 +2503,7 @@ exports[`AnalyticsActivity component should render resource not founr 1`] = `
           </div>
           <div
             className="activity-info-row"
-            key="eb2f4f1d-1a26-4a79-8cd5-11cd7e293bf8"
+            key="170d0e6b-78ca-4cbd-af8d-268696f07f24"
           >
             <div
               className="title"
@@ -2555,7 +2555,7 @@ exports[`AnalyticsActivity component should render resource not founr 1`] = `
           </div>
           <div
             className="activity-info-row"
-            key="731b68d0-4bc4-4636-96cc-10532ece3543"
+            key="e409c257-8a43-4ca5-bd59-390f18da4ff5"
           >
             <div
               className="title"
@@ -2607,7 +2607,7 @@ exports[`AnalyticsActivity component should render resource not founr 1`] = `
           </div>
           <div
             className="activity-info-row"
-            key="dad4f9b0-dd44-43c7-a808-283562b2706d"
+            key="dfbd9ec0-1cfa-4af4-8eb2-0f55f9a84c28"
           >
             <div
               className="title"

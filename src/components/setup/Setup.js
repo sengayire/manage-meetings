@@ -4,7 +4,7 @@ import WelcomePage from './WelcomePage';
 import SetupInfoPage from './SetupInfoPage';
 import BuildingLevel from './BuildingLevel';
 import RoomSetupView from '../../containers/RoomSetupView';
-import { getRoomsStructure, getUserDetails } from '../helpers/QueriesHelpers';
+import { getRoomsStructure, getUserDetails, getUserRole } from '../helpers/QueriesHelpers';
 import Spinner from '../commons/Spinner';
 import '../../assets/styles/setupWelcomePage.scss';
 import '../../assets/styles/setupInfoPage.scss';
@@ -143,10 +143,10 @@ class Setup extends Component {
   };
 
   render() {
-    const { visibleLevel, user } = this.state;
+    const { visibleLevel } = this.state;
     return (
       <div>
-        {user && user.roles[0].role === 'Admin' ? (
+        {getUserRole().includes('Admin') ? (
           this.renderSetupContent(visibleLevel)
         ) : (
           <div className="item-list-empty">

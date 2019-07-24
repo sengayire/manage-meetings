@@ -8,10 +8,9 @@ import SetupNavbar from '../components/setup/SetupNavbar';
 // eslint-disable-next-line import/no-named-as-default
 import PeopleList from '../components/people/PeopleList';
 import {
-  getUserDetails,
-  getAllLocations,
   getRoomsStructure,
   getRoomList,
+  getUserLocation,
 } from '../components/helpers/QueriesHelpers';
 
 /* Styles */
@@ -20,7 +19,6 @@ import StructurePreviewTree from '../components/setup/StructurePreviewTree';
 import { orderByLevel } from '../utils/formatSetupData';
 import stripTypenames from '../components/helpers/StripTypeNames';
 import { meetingRoomTabMockData } from '../utils/roomSetupMock';
-import filterRooms from '../utils/filterRoomsData';
 
 class RoomSetupOverView extends Component {
   constructor(props) {
@@ -28,21 +26,20 @@ class RoomSetupOverView extends Component {
     this.state = {
       allRooms: { rooms: meetingRoomTabMockData },
       currentNavItem: 'structure',
-      locationId: '',
+      locationId: getUserLocation().id,
       previewDataFromBackend: [],
-      location: '',
+      location: getUserLocation().name,
     };
   }
 
   componentDidMount() {
-    this.setUserLocation();
+    this.setPreviewData();
     if (this.props.searchState) this.setLocationState();
   }
 
   componentDidUpdate({ searchState: { component: oldComponent } = {} }) {
     const { component } = this.props.searchState || {};
     if (component && (component !== oldComponent)) {
-      sessionStorage.setItem('setupCurrentNav', component);
       this.setLocationState();
     }
   }
@@ -59,23 +56,17 @@ class RoomSetupOverView extends Component {
    *
    *  @returns {void}
    */
-  setUserLocation = async () => {
-    const user = await getUserDetails();
-    const allLocations = await getAllLocations();
+  setPreviewData = async () => {
     const allTheStructures = await getRoomsStructure();
     const { allStructures } = allTheStructures;
-    const userLocation = allLocations.find(location => location.name === user.location);
     const formattedData = orderByLevel(stripTypenames(allStructures));
     this.setState({
       previewDataFromBackend: formattedData,
-      locationId: userLocation.id,
-      location: user.location,
     });
   }
 
   getRooms = async (args = [this.state.location, 8, 1, '']) => {
-    let { allRooms } = await getRoomList(...args);
-    allRooms = filterRooms(allRooms, args[3]);
+    const { allRooms } = await getRoomList(...args);
     this.setState({ allRooms });
   }
 

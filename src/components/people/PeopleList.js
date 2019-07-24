@@ -20,6 +20,7 @@ import notification from '../../utils/notification';
 import Overlay from '../commons/Overlay';
 import DataNotFound from '../commons/DataNotFound';
 import ErrorIcon from '../../components/commons/ErrorIcon';
+import { getUserLocation } from '../helpers/QueriesHelpers';
 
 export class PeopleList extends Component {
   constructor(props) {
@@ -218,13 +219,13 @@ PeopleList.propTypes = {
 export default compose(
   graphql(GET_PEOPLE_QUERY, {
     name: 'people',
-    options: props => ({
+    options: () => ({
       /* istanbul ignore next */
       /* Reasoning: no explicit way of testing configuration options */
       variables: {
         page: 1,
         perPage: 5,
-        locationId: props.locationId,
+        locationId: getUserLocation().id,
         roleId: 0,
       },
     }),
