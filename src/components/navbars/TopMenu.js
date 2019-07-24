@@ -66,7 +66,8 @@ export class TopMenuComponent extends React.Component {
     const { history } = this.props;
     const { component } = this.state;
     const key = e.keyCode || e.charCode;
-    if (key === 13) {
+    if (key === 13 || key === undefined) {
+      e.preventDefault();
       if (!component) {
         return notification(toastr, 'error', 'Please select search criteria')();
       }
@@ -138,9 +139,9 @@ export class TopMenuComponent extends React.Component {
                 <div className="search-box__input-field">
                   {
                     component &&
-                      <button className="component" onClick={() => this.toggleOptions(true)}>
-                        {`${component}:`}
-                      </button>
+                    <button className="component" onClick={() => this.toggleOptions(true)}>
+                      {`${component}:`}
+                    </button>
                   }
                   <Input
                     id="amenity"
@@ -153,11 +154,15 @@ export class TopMenuComponent extends React.Component {
                     onFocus={this.addListener}
                     onKeyDown={this.handleSearch}
                   />
-                  <img
-                    className="search-icon"
-                    src={searchIcon}
-                    alt="Search icon"
-                  />
+                  <a
+                    href=""
+                    onClick={this.handleSearch}
+                  >
+                    <img
+                      className="search-icon"
+                      src={searchIcon}
+                      alt="Search icon"
+                    /></a>
                 </div>
                 {showOptions && (
                   <Fragment>
@@ -171,7 +176,7 @@ export class TopMenuComponent extends React.Component {
                       <div
                         className="search-link-options__option"
                       >
-                      Rooms
+                        Rooms
                       </div>
                       <div
                         className="search-link-options__option"
@@ -181,7 +186,7 @@ export class TopMenuComponent extends React.Component {
                       <div
                         className="search-link-options__option"
                       >
-                      People
+                        People
                       </div>
                     </div>
                   </Fragment>

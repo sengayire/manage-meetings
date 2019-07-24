@@ -57,11 +57,16 @@ exports[`TopMenu Component Should render component 1`] = `
               type="text"
               value=""
             />
-            <img
-              alt="Search icon"
-              className="search-icon"
-              src="https://firebasestorage.googleapis.com/v0/b/learning-map-app.appspot.com/o/MrmFrontImages%2Fsearch_icon.svg?alt=media&token=ef28a273-f3ea-4370-9720-845bae1cd05e"
-            />
+            <a
+              href="#"
+              onClick={[Function]}
+            >
+              <img
+                alt="Search icon"
+                className="search-icon"
+                src="https://firebasestorage.googleapis.com/v0/b/learning-map-app.appspot.com/o/MrmFrontImages%2Fsearch_icon.svg?alt=media&token=ef28a273-f3ea-4370-9720-845bae1cd05e"
+              />
+            </a>
           </div>
         </div>
       </div>
