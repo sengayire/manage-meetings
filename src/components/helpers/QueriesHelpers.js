@@ -83,20 +83,22 @@ const getRoomListVariables = (userLocation, perPage, page, textVariable) => ({
 });
 
 const getRoomList = async (userLocation, perPage, page, textVariable, client = apolloClient) => {
+  // making 'textVariable' NULL disables filtering by tags
+  const nullTextVariable = null;
   try {
-    if (textVariable) {
+    if (nullTextVariable) {
       throw new Error('There is a filter search, so we will use the query in the catch block');
     }
     const data = await client.readQuery({
       query: GET_ROOMS_QUERY,
-      variables: getRoomListVariables(userLocation, perPage, page, textVariable),
+      variables: getRoomListVariables(userLocation, perPage, page, nullTextVariable),
     });
     return data;
   } catch (error) {
     const { data } = await client.query({
       query: GET_ROOMS_QUERY,
       fetchPolicy: 'network-only',
-      variables: getRoomListVariables(userLocation, perPage, page, textVariable),
+      variables: getRoomListVariables(userLocation, perPage, page, nullTextVariable),
     });
     return data;
   }

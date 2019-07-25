@@ -86,7 +86,7 @@ exports[`Device modal content tests Should render for "delete" correctly 1`] = `
       className="loading-btn-div"
     >
       <ActionButtons
-        actionButtonText="SAVE CHANGES "
+        actionButtonText="DELETE DEVICE "
         cancelButtonText="CANCEL"
         isLoading={false}
         onClickCancel={[MockFunction]}

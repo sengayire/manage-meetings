@@ -2,74 +2,69 @@ import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { Input, SelectInput, ActionButtons } from '../commons';
 
-const DeviceModalContent = ({
-  formData: {
-    name, deviceType, roomId,
-  },
-  methods: {
-    handleNameChange, handleTypeChange, handleRoomChange, closeModal, submit,
-  },
-  modalContent, rooms, deviceTypes, fetching,
-}) => (
-  <form className="amenity-form device-type">
+const deleteMessage = formData =>
+  (<p id="confirm-msg">
+    Are you sure you want to delete &quot;{`${formData.name}: ${formData.deviceType}`}
+    &quot;? <br />
+    This cannot be undone
+  </p>);
+
+const innerForm = (formData, methods, data) =>
+  (<Fragment>
+    <Input
+      id="device-name"
+      name="device-name"
+      placeholder="Enter Device Name"
+      labelName="Device Name"
+      labelClass="device-input"
+      value={formData.name}
+      onChange={methods.handleNameChange}
+    />
+    <SelectInput
+      labelText="Device Type"
+      name="device-type"
+      id="add-devices-type"
+      isValue
+      value={formData.deviceType || 'Select Device'}
+      options={data.deviceTypes}
+      onChange={methods.handleTypeChange}
+      wrapperClassName="device-input"
+      placeholder="Select Device"
+      selectInputClassName="dynamic-input-field default-select"
+    />
+    <SelectInput
+      labelText="Room"
+      name="room"
+      id="add-devices-rooms"
+      value={formData.roomId || 'Select Room'}
+      options={data.rooms}
+      onChange={methods.handleRoomChange}
+      wrapperClassName="device-input"
+      placeholder="Select Room"
+      selectInputClassName="dynamic-input-field default-select"
+    />
+  </Fragment>);
+
+const DeviceModalContent = (props) => {
+  const { formData, methods } = props;
+  const { modalContent, rooms, deviceTypes, fetching } = props;
+  return (<form className="amenity-form device-type">
     <div>
-      {
-        modalContent !== 'delete'
-          ? (
-            <Fragment>
-              <Input
-                id="device-name"
-                name="device-name"
-                placeholder="Enter Device Name"
-                labelName="Device Name"
-                labelClass="device-input"
-                value={name}
-                onChange={handleNameChange}
-              />
-              <SelectInput
-                labelText="Device Type"
-                name="device-type"
-                id="add-devices-type"
-                isValue
-                value={deviceType || 'Select Device'}
-                options={deviceTypes}
-                onChange={handleTypeChange}
-                wrapperClassName="device-input"
-                placeholder="Select Device"
-                selectInputClassName="dynamic-input-field default-select"
-              />
-              <SelectInput
-                labelText="Room"
-                name="room"
-                id="add-devices-rooms"
-                value={roomId || 'Select Room'}
-                options={rooms}
-                onChange={handleRoomChange}
-                wrapperClassName="device-input"
-                placeholder="Select Room"
-                selectInputClassName="dynamic-input-field default-select"
-              />
-            </Fragment>
-          ) : (
-            <p id="confirm-msg">
-              Are you sure you want to delete &quot;{`${name}: ${deviceType}`}
-              &quot;? <br />
-              This cannot be undone
-            </p>
-          )
-      }
+      {modalContent !== 'delete' ? innerForm(formData, methods, { deviceTypes, rooms })
+        : deleteMessage(formData)}
       <div className="loading-btn-div">
         <ActionButtons
           withCancel
           isLoading={fetching}
-          onClickCancel={closeModal}
-          actionButtonText={`${modalContent ? 'SAVE CHANGES' : 'ADD DEVICE'} `}
-          onClickSubmit={submit}
+          onClickCancel={methods.closeModal}
+          actionButtonText={`${modalContent ? ((modalContent !== 'delete') ?
+            'SAVE CHANGES' : 'DELETE DEVICE') : 'ADD DEVICE'} `}
+          onClickSubmit={methods.submit}
         />
       </div>
     </div>
-  </form>
-);
+  </form>);
+};
 
 DeviceModalContent.propTypes = {
   formData: PropTypes.shape({

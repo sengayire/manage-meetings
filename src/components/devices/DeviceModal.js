@@ -110,7 +110,7 @@ class DeviceFormModal extends Component {
         deviceType: deviceType || device.deviceType,
         location,
       },
-      delete: { deviceId: device.id },
+      delete: { deviceId: device.id, location },
       add: {
         name, roomId, deviceType, location,
       },
