@@ -5,7 +5,7 @@ import Room from '../rooms/Rooms';
 import Pagination from '../../components/commons/Pagination';
 import ErrorIcon from '../commons/ErrorIcon';
 import Overlay from '../commons/Overlay';
-import { getUserDetails } from '../../components/helpers/QueriesHelpers';
+import { getUserLocation } from '../../components/helpers/QueriesHelpers';
 import AddNewRoomComponent, { AddNewRoom as EditRoom } from './AddRoom';
 import LocationFilters from '../navbars/LocationFilters';
 
@@ -18,7 +18,7 @@ import LocationFilters from '../navbars/LocationFilters';
  */
 class RoomSetup extends Component {
   state = {
-    location: '',
+    location: getUserLocation().name,
     isFetching: false,
     currentPage: 1,
     perPage: 8,
@@ -123,15 +123,13 @@ class RoomSetup extends Component {
     }
     this.setState({ isFetching: true });
     try {
-      const user = await getUserDetails();
       const textVariable = Object.values(this.state.filterText);
       const searchText = query || textVariable.join();
       await this.props.getRooms([
-        user.location, perPage < 8 ? 8 : perPage, page, searchText,
+        this.state.location, perPage < 8 ? 8 : perPage, page, searchText,
       ]);
 
       this.setState({
-        location: user.location,
         isFetching: false,
         dataFetched: true,
         currentPage: page,
@@ -208,7 +206,7 @@ class RoomSetup extends Component {
         {
           <div>
             <div className="room-setup-header">
-              <p> {location} Meeting Rooms</p>
+              <p>{location}&apos;s Meeting Rooms</p>
             </div>
             <div className="room-select-input">
               <LocationFilters
