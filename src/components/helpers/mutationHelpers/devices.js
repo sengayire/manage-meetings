@@ -29,7 +29,7 @@ export const addDeviceMutation = async ({
 
         const cachedRooms = proxy.readQuery({
           query: GET_ROOMS_QUERY,
-          variables: { page: 1, perPage: 8, location, office: '', roomLabels: '' },
+          variables: { page: 1, perPage: 8, location, office: '', roomLabels: null },
         });
 
         const target = cachedRooms.allRooms.rooms.findIndex(({ id }) => id === roomId);
@@ -102,7 +102,7 @@ const cachedRoomslist = (location, proxy) => proxy.readQuery({
     perPage: 8,
     location,
     office: '',
-    roomLabels: '',
+    roomLabels: null,
   },
 });
 
