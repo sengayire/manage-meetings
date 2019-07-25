@@ -264,32 +264,37 @@ const getAllAnalytics = async (dateValue, client = apolloClient) => {
   }
 };
 
-const query = (dateValue) => {
+const query = (perPage, page, dateValue) => {
   const { startDate, endDate } = dateValue;
   return ({
     query: ANALYTICS_FOR_DAILY_ROOM_EVENTS,
     variables: {
       startDate,
       endDate,
+      page: page || 1,
+      perPage: perPage || 5,
     },
   });
 };
 
-const getAnalyticForDailyRoomsEvents
-  = async (dateValue, client = apolloClient) => {
+const getAnalyticForDailyRoomsEvents = async (dateValue, perPage, page, client = apolloClient) => {
+  try {
+    const data = client.readQuery(
+      query(perPage, page, dateValue),
+      true,
+    );
+    return data;
+  } catch (err) {
     try {
-      const data = client.readQuery(
-        query(dateValue),
-        true,
+      const res = await client.query(
+        query(perPage, page, dateValue),
       );
-      return data;
-    } catch (err) {
-      const { data } = await client.query(
-        query(dateValue),
-      );
-      return data;
+      return res.data;
+    } catch (error) {
+      return error.message;
     }
-  };
+  }
+};
 
 const getAllDevices = async (client = apolloClient) => {
   try {

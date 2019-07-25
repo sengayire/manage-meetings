@@ -9,12 +9,19 @@ import { getAnalyticForDailyRoomsEvents, getUserDetails } from '../components/he
 import ErrorIcon from '../components/commons/ErrorIcon';
 import dateChecker from '../utils/checkDate';
 import meetings from '../utils/activityData';
+import Pagination from '../components/commons/Pagination';
 
 export class AnalyticsActivity extends Component {
   state = {
     analyticsForDailyRoomEvents: meetings,
+    allEvents: {},
     loading: true,
     location: '',
+    error: false,
+    currentPage: 1,
+    perPage: 5,
+    dataFetched: false,
+    isFetching: false,
   };
 
   componentDidMount() {
@@ -25,9 +32,10 @@ export class AnalyticsActivity extends Component {
   componentDidUpdate(prevProps, prevState) {
     const { analyticsForDailyRoomEvents } = this.state;
     if (
-      analyticsForDailyRoomEvents.DailyRoomEvents &&
-      analyticsForDailyRoomEvents.DailyRoomEvents.length !== 0 &&
-      prevState.analyticsForDailyRoomEvents !== analyticsForDailyRoomEvents
+      analyticsForDailyRoomEvents.allEvents &&
+      analyticsForDailyRoomEvents.allEvents.length !== 0 &&
+      prevState.analyticsForDailyRoomEvents.allEvents !==
+      analyticsForDailyRoomEvents.allEvents
     ) {
       this.props.queryCompleted('analyticsForDailyRoomEvents');
     }
@@ -42,14 +50,31 @@ export class AnalyticsActivity extends Component {
     }
   }
 
-  getAnalyticsForDailyRoomEvents = async () => {
+  getAnalyticsForDailyRoomEvents = async (perPage, page) => {
     const { dateValue } = this.props;
-    const analyticsForDailyRoomEvents
-    = await getAnalyticForDailyRoomsEvents(dateValue);
-    this.setState({
-      analyticsForDailyRoomEvents: analyticsForDailyRoomEvents.allEvents,
-      loading: false,
-    });
+    this.setState({ isFetching: true });
+    const analyticsForDailyRoomEvents =
+      await getAnalyticForDailyRoomsEvents(dateValue, perPage, page);
+    if (analyticsForDailyRoomEvents && analyticsForDailyRoomEvents.allEvents) {
+      this.setState({
+        allEvents: analyticsForDailyRoomEvents,
+        currentPage: page,
+        perPage,
+        analyticsForDailyRoomEvents,
+        loading: false,
+        error: false,
+        dataFetched: true,
+        isFetching: false,
+      });
+    } else if (analyticsForDailyRoomEvents
+        && analyticsForDailyRoomEvents
+        === 'GraphQL error: Events do not exist for the date range'
+    ) {
+      this.setState({
+        loading: false,
+        error: true,
+      });
+    }
   };
 
   getLocation = async () => {
@@ -66,20 +91,18 @@ export class AnalyticsActivity extends Component {
 
   meetingsData = dailyActivityData => (
     <div>
-      {dailyActivityData.map(meeting => (
+      {dailyActivityData.events.map(event => (
         <div className="activity" key={uuid()}>
-          <div className="activity-day">{dateChecker(meeting.day) ? 'Today' : meeting.day}</div>
-          <div>
-            {meeting.events.map(event => (
-              <div className="activity-info-row" key={uuid()}>
-                <div className="title">
-                  <div>{event.eventTitle}</div>
-                </div>
-                <div className="room">{event.room.name}</div>
-                {event.cancelled ? (
-                  <div className="status">
-                    <div className="cancelled">Cancelled</div>
-                  </div>
+          <div className="activity-day">{dateChecker(event.startTime) ? 'Today' : moment(event.startTime).format('ddd ll')}</div>
+          <div className="activity-info-row" key={uuid()}>
+            <div className="title">
+              <div>{event.eventTitle}</div>
+            </div>
+            <div className="room">{event.room.name}</div>
+            {event.cancelled ? (
+              <div className="status">
+                <div className="cancelled">Cancelled</div>
+              </div>
                 ) : (
                   <div className="status">
                     <div className="started">
@@ -90,12 +113,10 @@ export class AnalyticsActivity extends Component {
                     </div>
                   </div>
                 )}
-                <div className="participants">
-                  <img src={groupIcon} alt="" />
-                  <span>{event.numberOfParticipants}</span>
-                </div>
-              </div>
-            ))}
+            <div className="participants">
+              <img src={groupIcon} alt="" />
+              <span>{event.numberOfParticipants}</span>
+            </div>
           </div>
         </div>
       ))}
@@ -112,7 +133,16 @@ export class AnalyticsActivity extends Component {
   );
 
   render() {
-    const { loading, analyticsForDailyRoomEvents } = this.state;
+    const {
+      loading,
+      error,
+      analyticsForDailyRoomEvents,
+      currentPage,
+      perPage,
+      dataFetched,
+      allEvents,
+      isFetching,
+    } = this.state;
     if (loading) {
       return (
         <center className="room__events">
@@ -121,17 +151,28 @@ export class AnalyticsActivity extends Component {
           {this.meetingsData(meetings.allEvents)}
         </center>
       );
-    } else if (analyticsForDailyRoomEvents.DailyRoomEvents.length === 0) {
+    } else if (error) {
       return (
         <div className="activity_error">
-          <ErrorIcon message="No resource found" />
+          <ErrorIcon message="No event found" />
         </div>
       );
     }
     return (
       <center className="room__events">
         {this.renderDailyRoomEvents()}
-        {this.meetingsData(analyticsForDailyRoomEvents.DailyRoomEvents)}
+        {isFetching ? <Overlay id="average-meeting" /> : null}
+        {this.meetingsData(analyticsForDailyRoomEvents.allEvents)}
+        {!error && Object.keys(allEvents).length > 0 && <Pagination
+          hasNext={allEvents.allEvents.hasNext}
+          hasPrevious={allEvents.allEvents.hasPrevious}
+          totalPages={allEvents.allEvents.pages}
+          handleData={this.getAnalyticsForDailyRoomEvents}
+          dataFetched={dataFetched}
+          currentPage={currentPage}
+          perPage={perPage}
+          isFetching={isFetching}
+        />}
       </center>
     );
   }
