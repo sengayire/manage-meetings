@@ -43,3 +43,15 @@ export const EDIT_DEVICE_MUTATION = gql`
     }
   }
 `;
+
+export const DELETE_DEVICE_MUTATION = gql`
+  mutation deleteDevice($deviceId: Int!) {
+    deleteDevice(deviceId: $deviceId) {
+      device {
+        id
+        name
+        roomId
+      }
+    }
+  }
+`;

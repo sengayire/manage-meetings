@@ -2,7 +2,7 @@ import React from 'react';
 import moment from 'moment';
 import PropTypes from 'prop-types';
 import { IconButtons } from '../commons';
-import { editIcon /* deleteIcon */ } from '../../utils/images/images';
+import { editIcon, deleteIcon } from '../../utils/images/images';
 
 const formatDate = date => moment(date).format('DD MMM YYYY');
 
@@ -20,28 +20,28 @@ const Device = ({
   device: {
     name, deviceType, dateAdded, lastSeen, location, room,
   },
-}) => (
-  <div className="table__row">
-    <span>{name}</span>
-    <span>{deviceType}</span>
-    <span>{formatDate(dateAdded)}</span>
-    <span>{formatDate(lastSeen)}</span>
-    <span>{room.name}</span>
-    <span>{location}</span>
-    <span className="device-table-action-buttons">
-      <IconButtons
-        btnImage={<img src={editIcon} alt="edit-icon" />}
-        className="edit-device-button"
-        openModal={() => handleAction('edit', device)}
-      />
-      {/* <IconButtons
-        btnImage={<img src={deleteIcon} alt="delete-icon" />}
-        className="delete-device-button"
-        openModal={() => handleAction('delete', device)}
-      /> */}
-    </span>
-  </div>
-);
+}) => (<div className="table__row">
+  <span>{name}</span>
+  <span>{deviceType}</span>
+  <span>{formatDate(dateAdded)}</span>
+  <span>{formatDate(lastSeen)}</span>
+  <span>{room.name}</span>
+  <span>{location}</span>
+  <span className="device-table-action-buttons">
+    <IconButtons
+      btnImage={<img src={editIcon} alt="edit-icon" />}
+      className="edit-device-button"
+      openModal={() => handleAction('edit', device)}
+    />
+    <IconButtons
+      // delete button
+      className="delete-device-button"
+      btnImage={<img src={deleteIcon} alt="delete-icon" />}
+      openModal={() => handleAction('delete', device)}
+    />
+  </span>
+</div>
+  );
 
 Device.propTypes = {
   handleAction: PropTypes.func.isRequired,

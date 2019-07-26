@@ -11,10 +11,11 @@ import navBarItems from '../../fixtures/setupNavBarData';
  * @returns {JSX}
  */
 const SetupNavbar = (props) => {
-  const { handleSelectedItem, currentNavItem } = props;
+  const currentNavItem = props.currentNavItem === 'rooms' ? 'meeting-rooms' : props.currentNavItem;
+  const { handleSelectedItem } = props;
 
   const navBarItemToDisplay = navBarItems.map(navItem => (
-  // eslint-disable-next-line jsx-a11y/click-events-have-key-events
+    // eslint-disable-next-line jsx-a11y/click-events-have-key-events
     <div
       key={navItem.id}
       onClick={handleSelectedItem}
