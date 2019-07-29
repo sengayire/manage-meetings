@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { Fragment } from 'react';
 import toastr from 'toastr';
 import { withRouter } from 'react-router-dom';
@@ -154,15 +155,13 @@ export class TopMenuComponent extends React.Component {
                     onFocus={this.addListener}
                     onKeyDown={this.handleSearch}
                   />
-                  <a
-                    href=""
-                    onClick={this.handleSearch}
-                  >
+                  <a href="" onClick={this.handleSearch}>
                     <img
                       className="search-icon"
                       src={searchIcon}
                       alt="Search icon"
-                    /></a>
+                    />
+                  </a>
                 </div>
                 {showOptions && (
                   <Fragment>

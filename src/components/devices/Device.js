@@ -20,28 +20,29 @@ const Device = ({
   device: {
     name, deviceType, dateAdded, lastSeen, location, room,
   },
-}) => (<div className="table__row">
-  <span>{name}</span>
-  <span>{deviceType}</span>
-  <span>{formatDate(dateAdded)}</span>
-  <span>{formatDate(lastSeen)}</span>
-  <span>{room.name}</span>
-  <span>{location}</span>
-  <span className="device-table-action-buttons">
-    <IconButtons
-      btnImage={<img src={editIcon} alt="edit-icon" />}
-      className="edit-device-button"
-      openModal={() => handleAction('edit', device)}
-    />
-    <IconButtons
+}) => (
+  <div className="table__row">
+    <span>{name}</span>
+    <span>{deviceType}</span>
+    <span>{formatDate(dateAdded)}</span>
+    <span>{formatDate(lastSeen)}</span>
+    <span>{room.name}</span>
+    <span>{location}</span>
+    <span className="device-table-action-buttons">
+      <IconButtons
+        btnImage={<img src={editIcon} alt="edit-icon" />}
+        className="edit-device-button"
+        openModal={() => handleAction('edit', device)}
+      />
+      <IconButtons
       // delete button
-      className="delete-device-button"
-      btnImage={<img src={deleteIcon} alt="delete-icon" />}
-      openModal={() => handleAction('delete', device)}
-    />
-  </span>
-</div>
-  );
+        className="delete-device-button"
+        btnImage={<img src={deleteIcon} alt="delete-icon" />}
+        openModal={() => handleAction('delete', device)}
+      />
+    </span>
+  </div>
+);
 
 Device.propTypes = {
   handleAction: PropTypes.func.isRequired,

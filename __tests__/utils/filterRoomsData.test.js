@@ -11,14 +11,14 @@ describe('filterRoomsData Method', () => {
     const list = {
       rooms: [
         { name: 'joel', roomLabels: [] },
-        { name: 'patrick', roomLabels: [] }
-      ]
+        { name: 'patrick', roomLabels: [] },
+      ],
     };
     const filterString = 'joel';
     expect(filterRooms(list, filterString)).toEqual({
       rooms: [
-        { name: 'joel', roomLabels: [] }
-      ]
+        { name: 'joel', roomLabels: [] },
+      ],
     });
   });
 
@@ -26,14 +26,14 @@ describe('filterRoomsData Method', () => {
     const list = {
       rooms: [
         { name: 'joel', roomLabels: [] },
-        { name: 'patrick', roomLabels: ['goodroom'] }
-      ]
+        { name: 'patrick', roomLabels: ['goodroom'] },
+      ],
     };
     const filterString = 'goodroom';
     expect(filterRooms(list, filterString)).toEqual({
       rooms: [
-        { name: 'patrick', roomLabels: ['goodroom'] }
-      ]
+        { name: 'patrick', roomLabels: ['goodroom'] },
+      ],
     });
   });
 });

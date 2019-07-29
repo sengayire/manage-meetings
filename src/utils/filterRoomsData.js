@@ -4,7 +4,7 @@ const filterRooms = (list, filterString) => {
     return list;
   }
 
-  let rooms = list.rooms;
+  let { rooms } = list;
   rooms = rooms.filter((room) => {
     const roomLabels = room.roomLabels.map(value => value.toLowerCase());
     if (!(room.name.toLowerCase() === filterString.toLowerCase())

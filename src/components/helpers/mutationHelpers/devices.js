@@ -29,7 +29,9 @@ export const addDeviceMutation = async ({
 
         const cachedRooms = proxy.readQuery({
           query: GET_ROOMS_QUERY,
-          variables: { page: 1, perPage: 8, location, office: '', roomLabels: null },
+          variables: {
+            page: 1, perPage: 8, location, office: '', roomLabels: null,
+          },
         });
 
         const target = cachedRooms.allRooms.rooms.findIndex(({ id }) => id === roomId);
@@ -132,7 +134,9 @@ export const deleteDeviceMutation = async (variables, client = apolloClient) => 
 
           proxy.writeQuery({
             query: GET_ROOMS_QUERY,
-            variables: { location, office: '', page: 1, perPage: 8, roomLabels: '' },
+            variables: {
+              location, office: '', page: 1, perPage: 8, roomLabels: '',
+            },
             data: cachedRooms,
           });
         } catch (error) { return null; }
