@@ -5,9 +5,9 @@ import { Input, SelectInput, ActionButtons } from '../commons';
 const deleteMessage = formData =>
   (
     <p id="confirm-msg">
-    Are you sure you want to delete &quot;{`${formData.name}: ${formData.deviceType}`}
-    &quot;? <br />
-    This cannot be undone
+      Are you sure you want to delete &quot;{`${formData.name}: ${formData.deviceType}`}
+      &quot;? <br />
+      This cannot be undone
     </p>
   );
 
@@ -58,14 +58,14 @@ const DeviceModalContent = (props) => {
     <form className="amenity-form device-type">
       <div>
         {modalContent !== 'delete' ? innerForm(formData, methods, { deviceTypes, rooms })
-        : deleteMessage(formData)}
+          : deleteMessage(formData)}
         <div className="loading-btn-div">
           <ActionButtons
             withCancel
             isLoading={fetching}
             onClickCancel={methods.closeModal}
             actionButtonText={`${modalContent ? ((modalContent !== 'delete') ?
-            'SAVE CHANGES' : 'DELETE DEVICE') : 'ADD DEVICE'} `}
+              'SAVE CHANGES' : 'DELETE DEVICE') : 'ADD DEVICE'} `}
             onClickSubmit={methods.submit}
           />
         </div>

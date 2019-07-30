@@ -1,8 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import toastr from 'toastr';
+import { ApolloConsumer } from 'react-apollo';
 import { IconMenu, MenuItem } from 'react-toolbox/lib/menu';
 import notification from '../../utils/notification';
+import { getAllLocationsFromCache } from '../helpers/QueriesHelpers';
+import { changeUserLocation } from '../helpers/mutationHelpers/people';
 
 /**
  * Shows the menuCart besides the Access Level on the people's table
@@ -30,6 +33,16 @@ const People = ({
   currentPage,
   editRole,
 }) => {
+  const editLocationFunction = async (locId, emailOfUser) => {
+    const response = await changeUserLocation(locId, emailOfUser);
+    notification(
+      toastr,
+      'success',
+      `${response.changeUserLocation.user.name}'s location has been changed to ${response.changeUserLocation.user.location}`,
+    )();
+    refetch({ page: currentPage, perPage });
+  };
+
   const editRoleFunction = (roleId) => {
     const variables = { variables: { email, roleId } };
     editRole(variables)
@@ -46,35 +59,60 @@ const People = ({
       });
   };
   return (
-    <div className="table__row">
-      <span>
-        <img className="profilePic" src={picture} alt="profilePicture" />
-        {name}
-      </span>
-      <span>{location}</span>
-      <span>
-        <span>
-          {accessLevel}
-          <IconMenu
-            position="topRight"
-            className="people-access-dropdown"
-            icon={accessMenuCaret()}
-          >
-            {allRoles.map(role => (
-              <MenuItem
-                className={`access-menu ${
-                  role.role === accessLevel ? 'selected' : ''
-                }`}
-                key={role.id}
-                caption={role.role}
-                onClick={() => editRoleFunction(role.id)}
-              />
-            ))}
-          </IconMenu>
-        </span>
-      </span>
-    </div>
-  );
+    <ApolloConsumer>
+      {
+        client => (
+          <div className="table__row">
+            <span>
+              <img className="profilePic" src={picture} alt="profilePicture" />
+              {name}
+            </span>
+            <span>{location}
+              <IconMenu
+                position="topRight"
+                className="people-access-dropdown"
+                icon={accessMenuCaret()}
+              >
+                {getAllLocationsFromCache().map(loc => (
+                  <MenuItem
+                    className={`access-menu ${
+                      loc.name === location ? 'selected' : ''
+                      }`}
+                    key={loc.name}
+                    caption={loc.name}
+                    onClick={() => {
+                      client.writeData({ data: { userLocation: loc } });
+                      editLocationFunction(loc.id);
+                    }
+                    }
+                  />
+                ))}
+              </IconMenu>
+            </span>
+            <span>
+              <span>
+                {accessLevel}
+                <IconMenu
+                  position="topRight"
+                  className="people-access-dropdown"
+                  icon={accessMenuCaret()}
+                >
+                  {allRoles.map(role => (
+                    <MenuItem
+                      className={`access-menu ${
+                        role.role === accessLevel ? 'selected' : ''
+                        }`}
+                      key={role.id}
+                      caption={role.role}
+                      onClick={() => editRoleFunction(role.id)}
+                    />
+                  ))}
+                </IconMenu>
+              </span>
+            </span>
+          </div>
+        )}
+    </ApolloConsumer>);
 };
 
 People.propTypes = {

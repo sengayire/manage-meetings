@@ -155,13 +155,14 @@ export class TopMenuComponent extends React.Component {
                     onFocus={this.addListener}
                     onKeyDown={this.handleSearch}
                   />
-                  <a href="" onClick={this.handleSearch}>
-                    <img
-                      className="search-icon"
-                      src={searchIcon}
-                      alt="Search icon"
-                    />
-                  </a>
+                  {/* eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions */}
+                  <img
+                    className="search-icon"
+                    src={searchIcon}
+                    alt="Search icon"
+                    onKeyPress={this.handleSearch}
+                    onClick={this.handleSearch}
+                  />
                 </div>
                 {showOptions && (
                   <Fragment>
@@ -206,7 +207,7 @@ export class TopMenuComponent extends React.Component {
             </div>
           </div>
         </div>
-      </div>
+      </div >
     );
   }
 }

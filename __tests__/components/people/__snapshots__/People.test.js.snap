@@ -1,67 +1,792 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`People Component renders properly 1`] = `
-<div
-  className="table__row"
+<MockedProvider
+  addTypename={false}
 >
-  <span>
-    <img
-      alt="profilePicture"
-      className="profilePic"
-      src="http://no-url"
-    />
-    Edward Barton
-  </span>
-  <span>
-    Nairobi
-  </span>
-  <span>
-    <span>
-      Admin
-      <ThemedIconMenu
-        className="people-access-dropdown"
-        composeTheme="deeply"
-        icon={
-          <span
-            className="access-by-caret"
-          />
+  <ApolloProvider
+    client={
+      ApolloClient {
+        "__operations_cache__": Map {},
+        "cache": InMemoryCache {
+          "addTypename": false,
+          "config": Object {
+            "addTypename": false,
+            "dataIdFromObject": [Function],
+            "fragmentMatcher": HeuristicFragmentMatcher {},
+            "storeFactory": [Function],
+          },
+          "data": ObjectCache {
+            "data": Object {},
+          },
+          "optimistic": Array [],
+          "silenceBroadcast": false,
+          "watches": Array [],
+        },
+        "defaultOptions": Object {},
+        "disableNetworkFetches": false,
+        "link": ApolloLink {
+          "request": [Function],
+        },
+        "mutate": [Function],
+        "query": [Function],
+        "queryDeduplication": true,
+        "reFetchObservableQueries": [Function],
+        "resetStore": [Function],
+        "resetStoreCallbacks": Array [],
+        "ssrMode": false,
+        "store": DataStore {
+          "cache": InMemoryCache {
+            "addTypename": false,
+            "config": Object {
+              "addTypename": false,
+              "dataIdFromObject": [Function],
+              "fragmentMatcher": HeuristicFragmentMatcher {},
+              "storeFactory": [Function],
+            },
+            "data": ObjectCache {
+              "data": Object {},
+            },
+            "optimistic": Array [],
+            "silenceBroadcast": false,
+            "watches": Array [],
+          },
+        },
+        "version": "2.3.1",
+        "watchQuery": [Function],
+      }
+    }
+  >
+    <People
+      allLocations={
+        Object {
+          "data": Object {
+            "allLocations": Array [
+              Object {
+                "id": "2",
+                "name": "Kampala",
+              },
+              Object {
+                "id": "3",
+                "name": "Nairobi",
+              },
+              Object {
+                "id": "1",
+                "name": "Lagos",
+              },
+            ],
+          },
         }
-        iconRipple={true}
-        mapThemrProps={[Function]}
-        menuRipple={true}
-        position="topRight"
-        selectable={false}
-      >
-        <ThemedThemed
-          caption="Admin"
-          className="access-menu selected"
-          composeTheme="deeply"
-          disabled={false}
-          key="1"
-          mapThemrProps={[Function]}
-          onClick={[Function]}
-          ripple={true}
-          rippleCentered={false}
-          rippleClassName=""
-          rippleMultiple={true}
-          rippleSpread={2}
-        />
-        <ThemedThemed
-          caption="Default User"
-          className="access-menu "
-          composeTheme="deeply"
-          disabled={false}
-          key="2"
-          mapThemrProps={[Function]}
-          onClick={[Function]}
-          ripple={true}
-          rippleCentered={false}
-          rippleClassName=""
-          rippleMultiple={true}
-          rippleSpread={2}
-        />
-      </ThemedIconMenu>
-    </span>
-  </span>
-</div>
+      }
+      allRoles={
+        Array [
+          Object {
+            "id": 1,
+            "role": "Admin",
+          },
+          Object {
+            "id": 2,
+            "role": "Default User",
+          },
+        ]
+      }
+      currentPage={1}
+      editRole={[MockFunction]}
+      people={
+        Object {
+          "accessLevel": "Admin",
+          "email": "edward.barton@andela.com",
+          "location": "Nairobi",
+          "name": "Edward Barton",
+          "picture": "http://no-url",
+        }
+      }
+      perPage={3}
+      refetch={[MockFunction]}
+    >
+      <ApolloConsumer>
+        <div
+          className="table__row"
+        >
+          <span>
+            <img
+              alt="profilePicture"
+              className="profilePic"
+              src="http://no-url"
+            />
+            Edward Barton
+          </span>
+          <span>
+            Nairobi
+            <ThemedIconMenu
+              className="people-access-dropdown"
+              composeTheme="deeply"
+              icon={
+                <span
+                  className="access-by-caret"
+                />
+              }
+              iconRipple={true}
+              mapThemrProps={[Function]}
+              menuRipple={true}
+              position="topRight"
+              selectable={false}
+            >
+              <IconMenu
+                className="people-access-dropdown"
+                icon={
+                  <span
+                    className="access-by-caret"
+                  />
+                }
+                iconRipple={true}
+                menuRipple={true}
+                position="topRight"
+                selectable={false}
+                theme={Object {}}
+              >
+                <div
+                  className="people-access-dropdown"
+                >
+                  <ThemedThemed
+                    composeTheme="deeply"
+                    disabled={false}
+                    icon={
+                      <span
+                        className="access-by-caret"
+                      />
+                    }
+                    mapThemrProps={[Function]}
+                    onClick={[Function]}
+                    ripple={true}
+                    rippleCentered={true}
+                    rippleClassName=""
+                    rippleMultiple={true}
+                    rippleSpread={2}
+                  >
+                    <ThemedRippledComponent
+                      composeTheme="deeply"
+                      disabled={false}
+                      icon={
+                        <span
+                          className="access-by-caret"
+                        />
+                      }
+                      mapThemrProps={[Function]}
+                      onClick={[Function]}
+                      ripple={true}
+                      rippleCentered={true}
+                      rippleClassName=""
+                      rippleMultiple={true}
+                      rippleSpread={2}
+                      theme={Object {}}
+                    >
+                      <RippledComponent
+                        disabled={false}
+                        icon={
+                          <span
+                            className="access-by-caret"
+                          />
+                        }
+                        onClick={[Function]}
+                        ripple={true}
+                        rippleCentered={true}
+                        rippleClassName=""
+                        rippleMultiple={true}
+                        rippleSpread={2}
+                        theme={Object {}}
+                      >
+                        <IconButton
+                          accent={false}
+                          className=""
+                          disabled={false}
+                          icon={
+                            <span
+                              className="access-by-caret"
+                            />
+                          }
+                          neutral={true}
+                          onClick={[Function]}
+                          onMouseDown={[Function]}
+                          onTouchStart={[Function]}
+                          primary={false}
+                          theme={Object {}}
+                          type="button"
+                        >
+                          <button
+                            className=""
+                            data-react-toolbox="button"
+                            disabled={false}
+                            onClick={[Function]}
+                            onMouseDown={[Function]}
+                            onMouseLeave={[Function]}
+                            onMouseUp={[Function]}
+                            onTouchStart={[Function]}
+                            type="button"
+                          >
+                            <span
+                              className="access-by-caret"
+                            />
+                          </button>
+                        </IconButton>
+                      </RippledComponent>
+                    </ThemedRippledComponent>
+                  </ThemedThemed>
+                  <ThemedMenu
+                    active={false}
+                    composeTheme="deeply"
+                    mapThemrProps={[Function]}
+                    onHide={[Function]}
+                    outline={true}
+                    position="topRight"
+                    ripple={true}
+                    selectable={false}
+                    theme={Object {}}
+                  >
+                    <Menu
+                      active={false}
+                      onHide={[Function]}
+                      outline={true}
+                      position="topRight"
+                      ripple={true}
+                      selectable={false}
+                      theme={Object {}}
+                    >
+                      <div
+                        className=""
+                        data-react-toolbox="menu"
+                        style={
+                          Object {
+                            "height": undefined,
+                            "width": undefined,
+                          }
+                        }
+                      >
+                        <div
+                          style={
+                            Object {
+                              "height": undefined,
+                              "width": undefined,
+                            }
+                          }
+                        />
+                        <ul>
+                          <ThemedThemed
+                            caption="Kampala"
+                            className="access-menu "
+                            composeTheme="deeply"
+                            disabled={false}
+                            key=".$Kampala"
+                            mapThemrProps={[Function]}
+                            onClick={[Function]}
+                            ripple={true}
+                            rippleCentered={false}
+                            rippleClassName=""
+                            rippleMultiple={true}
+                            rippleSpread={2}
+                            selected={false}
+                          >
+                            <ThemedRippledComponent
+                              caption="Kampala"
+                              className="access-menu "
+                              composeTheme="deeply"
+                              disabled={false}
+                              mapThemrProps={[Function]}
+                              onClick={[Function]}
+                              ripple={true}
+                              rippleCentered={false}
+                              rippleClassName=""
+                              rippleMultiple={true}
+                              rippleSpread={2}
+                              selected={false}
+                              theme={Object {}}
+                            >
+                              <RippledComponent
+                                caption="Kampala"
+                                className="access-menu "
+                                disabled={false}
+                                onClick={[Function]}
+                                ripple={true}
+                                rippleCentered={false}
+                                rippleClassName=""
+                                rippleMultiple={true}
+                                rippleSpread={2}
+                                selected={false}
+                                theme={Object {}}
+                              >
+                                <MenuItem
+                                  caption="Kampala"
+                                  className="access-menu "
+                                  disabled={false}
+                                  onClick={[Function]}
+                                  onMouseDown={[Function]}
+                                  onTouchStart={[Function]}
+                                  selected={false}
+                                  theme={Object {}}
+                                >
+                                  <li
+                                    className="access-menu "
+                                    data-react-toolbox="menu-item"
+                                    onClick={[Function]}
+                                    onMouseDown={[Function]}
+                                    onTouchStart={[Function]}
+                                  >
+                                    <span>
+                                      Kampala
+                                    </span>
+                                  </li>
+                                </MenuItem>
+                              </RippledComponent>
+                            </ThemedRippledComponent>
+                          </ThemedThemed>
+                          <ThemedThemed
+                            caption="Nairobi"
+                            className="access-menu selected"
+                            composeTheme="deeply"
+                            disabled={false}
+                            key=".$Nairobi"
+                            mapThemrProps={[Function]}
+                            onClick={[Function]}
+                            ripple={true}
+                            rippleCentered={false}
+                            rippleClassName=""
+                            rippleMultiple={true}
+                            rippleSpread={2}
+                            selected={false}
+                          >
+                            <ThemedRippledComponent
+                              caption="Nairobi"
+                              className="access-menu selected"
+                              composeTheme="deeply"
+                              disabled={false}
+                              mapThemrProps={[Function]}
+                              onClick={[Function]}
+                              ripple={true}
+                              rippleCentered={false}
+                              rippleClassName=""
+                              rippleMultiple={true}
+                              rippleSpread={2}
+                              selected={false}
+                              theme={Object {}}
+                            >
+                              <RippledComponent
+                                caption="Nairobi"
+                                className="access-menu selected"
+                                disabled={false}
+                                onClick={[Function]}
+                                ripple={true}
+                                rippleCentered={false}
+                                rippleClassName=""
+                                rippleMultiple={true}
+                                rippleSpread={2}
+                                selected={false}
+                                theme={Object {}}
+                              >
+                                <MenuItem
+                                  caption="Nairobi"
+                                  className="access-menu selected"
+                                  disabled={false}
+                                  onClick={[Function]}
+                                  onMouseDown={[Function]}
+                                  onTouchStart={[Function]}
+                                  selected={false}
+                                  theme={Object {}}
+                                >
+                                  <li
+                                    className="access-menu selected"
+                                    data-react-toolbox="menu-item"
+                                    onClick={[Function]}
+                                    onMouseDown={[Function]}
+                                    onTouchStart={[Function]}
+                                  >
+                                    <span>
+                                      Nairobi
+                                    </span>
+                                  </li>
+                                </MenuItem>
+                              </RippledComponent>
+                            </ThemedRippledComponent>
+                          </ThemedThemed>
+                          <ThemedThemed
+                            caption="Lagos"
+                            className="access-menu "
+                            composeTheme="deeply"
+                            disabled={false}
+                            key=".$Lagos"
+                            mapThemrProps={[Function]}
+                            onClick={[Function]}
+                            ripple={true}
+                            rippleCentered={false}
+                            rippleClassName=""
+                            rippleMultiple={true}
+                            rippleSpread={2}
+                            selected={false}
+                          >
+                            <ThemedRippledComponent
+                              caption="Lagos"
+                              className="access-menu "
+                              composeTheme="deeply"
+                              disabled={false}
+                              mapThemrProps={[Function]}
+                              onClick={[Function]}
+                              ripple={true}
+                              rippleCentered={false}
+                              rippleClassName=""
+                              rippleMultiple={true}
+                              rippleSpread={2}
+                              selected={false}
+                              theme={Object {}}
+                            >
+                              <RippledComponent
+                                caption="Lagos"
+                                className="access-menu "
+                                disabled={false}
+                                onClick={[Function]}
+                                ripple={true}
+                                rippleCentered={false}
+                                rippleClassName=""
+                                rippleMultiple={true}
+                                rippleSpread={2}
+                                selected={false}
+                                theme={Object {}}
+                              >
+                                <MenuItem
+                                  caption="Lagos"
+                                  className="access-menu "
+                                  disabled={false}
+                                  onClick={[Function]}
+                                  onMouseDown={[Function]}
+                                  onTouchStart={[Function]}
+                                  selected={false}
+                                  theme={Object {}}
+                                >
+                                  <li
+                                    className="access-menu "
+                                    data-react-toolbox="menu-item"
+                                    onClick={[Function]}
+                                    onMouseDown={[Function]}
+                                    onTouchStart={[Function]}
+                                  >
+                                    <span>
+                                      Lagos
+                                    </span>
+                                  </li>
+                                </MenuItem>
+                              </RippledComponent>
+                            </ThemedRippledComponent>
+                          </ThemedThemed>
+                        </ul>
+                      </div>
+                    </Menu>
+                  </ThemedMenu>
+                </div>
+              </IconMenu>
+            </ThemedIconMenu>
+          </span>
+          <span>
+            <span>
+              Admin
+              <ThemedIconMenu
+                className="people-access-dropdown"
+                composeTheme="deeply"
+                icon={
+                  <span
+                    className="access-by-caret"
+                  />
+                }
+                iconRipple={true}
+                mapThemrProps={[Function]}
+                menuRipple={true}
+                position="topRight"
+                selectable={false}
+              >
+                <IconMenu
+                  className="people-access-dropdown"
+                  icon={
+                    <span
+                      className="access-by-caret"
+                    />
+                  }
+                  iconRipple={true}
+                  menuRipple={true}
+                  position="topRight"
+                  selectable={false}
+                  theme={Object {}}
+                >
+                  <div
+                    className="people-access-dropdown"
+                  >
+                    <ThemedThemed
+                      composeTheme="deeply"
+                      disabled={false}
+                      icon={
+                        <span
+                          className="access-by-caret"
+                        />
+                      }
+                      mapThemrProps={[Function]}
+                      onClick={[Function]}
+                      ripple={true}
+                      rippleCentered={true}
+                      rippleClassName=""
+                      rippleMultiple={true}
+                      rippleSpread={2}
+                    >
+                      <ThemedRippledComponent
+                        composeTheme="deeply"
+                        disabled={false}
+                        icon={
+                          <span
+                            className="access-by-caret"
+                          />
+                        }
+                        mapThemrProps={[Function]}
+                        onClick={[Function]}
+                        ripple={true}
+                        rippleCentered={true}
+                        rippleClassName=""
+                        rippleMultiple={true}
+                        rippleSpread={2}
+                        theme={Object {}}
+                      >
+                        <RippledComponent
+                          disabled={false}
+                          icon={
+                            <span
+                              className="access-by-caret"
+                            />
+                          }
+                          onClick={[Function]}
+                          ripple={true}
+                          rippleCentered={true}
+                          rippleClassName=""
+                          rippleMultiple={true}
+                          rippleSpread={2}
+                          theme={Object {}}
+                        >
+                          <IconButton
+                            accent={false}
+                            className=""
+                            disabled={false}
+                            icon={
+                              <span
+                                className="access-by-caret"
+                              />
+                            }
+                            neutral={true}
+                            onClick={[Function]}
+                            onMouseDown={[Function]}
+                            onTouchStart={[Function]}
+                            primary={false}
+                            theme={Object {}}
+                            type="button"
+                          >
+                            <button
+                              className=""
+                              data-react-toolbox="button"
+                              disabled={false}
+                              onClick={[Function]}
+                              onMouseDown={[Function]}
+                              onMouseLeave={[Function]}
+                              onMouseUp={[Function]}
+                              onTouchStart={[Function]}
+                              type="button"
+                            >
+                              <span
+                                className="access-by-caret"
+                              />
+                            </button>
+                          </IconButton>
+                        </RippledComponent>
+                      </ThemedRippledComponent>
+                    </ThemedThemed>
+                    <ThemedMenu
+                      active={false}
+                      composeTheme="deeply"
+                      mapThemrProps={[Function]}
+                      onHide={[Function]}
+                      outline={true}
+                      position="topRight"
+                      ripple={true}
+                      selectable={false}
+                      theme={Object {}}
+                    >
+                      <Menu
+                        active={false}
+                        onHide={[Function]}
+                        outline={true}
+                        position="topRight"
+                        ripple={true}
+                        selectable={false}
+                        theme={Object {}}
+                      >
+                        <div
+                          className=""
+                          data-react-toolbox="menu"
+                          style={
+                            Object {
+                              "height": undefined,
+                              "width": undefined,
+                            }
+                          }
+                        >
+                          <div
+                            style={
+                              Object {
+                                "height": undefined,
+                                "width": undefined,
+                              }
+                            }
+                          />
+                          <ul>
+                            <ThemedThemed
+                              caption="Admin"
+                              className="access-menu selected"
+                              composeTheme="deeply"
+                              disabled={false}
+                              key=".$1"
+                              mapThemrProps={[Function]}
+                              onClick={[Function]}
+                              ripple={true}
+                              rippleCentered={false}
+                              rippleClassName=""
+                              rippleMultiple={true}
+                              rippleSpread={2}
+                              selected={false}
+                            >
+                              <ThemedRippledComponent
+                                caption="Admin"
+                                className="access-menu selected"
+                                composeTheme="deeply"
+                                disabled={false}
+                                mapThemrProps={[Function]}
+                                onClick={[Function]}
+                                ripple={true}
+                                rippleCentered={false}
+                                rippleClassName=""
+                                rippleMultiple={true}
+                                rippleSpread={2}
+                                selected={false}
+                                theme={Object {}}
+                              >
+                                <RippledComponent
+                                  caption="Admin"
+                                  className="access-menu selected"
+                                  disabled={false}
+                                  onClick={[Function]}
+                                  ripple={true}
+                                  rippleCentered={false}
+                                  rippleClassName=""
+                                  rippleMultiple={true}
+                                  rippleSpread={2}
+                                  selected={false}
+                                  theme={Object {}}
+                                >
+                                  <MenuItem
+                                    caption="Admin"
+                                    className="access-menu selected"
+                                    disabled={false}
+                                    onClick={[Function]}
+                                    onMouseDown={[Function]}
+                                    onTouchStart={[Function]}
+                                    selected={false}
+                                    theme={Object {}}
+                                  >
+                                    <li
+                                      className="access-menu selected"
+                                      data-react-toolbox="menu-item"
+                                      onClick={[Function]}
+                                      onMouseDown={[Function]}
+                                      onTouchStart={[Function]}
+                                    >
+                                      <span>
+                                        Admin
+                                      </span>
+                                    </li>
+                                  </MenuItem>
+                                </RippledComponent>
+                              </ThemedRippledComponent>
+                            </ThemedThemed>
+                            <ThemedThemed
+                              caption="Default User"
+                              className="access-menu "
+                              composeTheme="deeply"
+                              disabled={false}
+                              key=".$2"
+                              mapThemrProps={[Function]}
+                              onClick={[Function]}
+                              ripple={true}
+                              rippleCentered={false}
+                              rippleClassName=""
+                              rippleMultiple={true}
+                              rippleSpread={2}
+                              selected={false}
+                            >
+                              <ThemedRippledComponent
+                                caption="Default User"
+                                className="access-menu "
+                                composeTheme="deeply"
+                                disabled={false}
+                                mapThemrProps={[Function]}
+                                onClick={[Function]}
+                                ripple={true}
+                                rippleCentered={false}
+                                rippleClassName=""
+                                rippleMultiple={true}
+                                rippleSpread={2}
+                                selected={false}
+                                theme={Object {}}
+                              >
+                                <RippledComponent
+                                  caption="Default User"
+                                  className="access-menu "
+                                  disabled={false}
+                                  onClick={[Function]}
+                                  ripple={true}
+                                  rippleCentered={false}
+                                  rippleClassName=""
+                                  rippleMultiple={true}
+                                  rippleSpread={2}
+                                  selected={false}
+                                  theme={Object {}}
+                                >
+                                  <MenuItem
+                                    caption="Default User"
+                                    className="access-menu "
+                                    disabled={false}
+                                    onClick={[Function]}
+                                    onMouseDown={[Function]}
+                                    onTouchStart={[Function]}
+                                    selected={false}
+                                    theme={Object {}}
+                                  >
+                                    <li
+                                      className="access-menu "
+                                      data-react-toolbox="menu-item"
+                                      onClick={[Function]}
+                                      onMouseDown={[Function]}
+                                      onTouchStart={[Function]}
+                                    >
+                                      <span>
+                                        Default User
+                                      </span>
+                                    </li>
+                                  </MenuItem>
+                                </RippledComponent>
+                              </ThemedRippledComponent>
+                            </ThemedThemed>
+                          </ul>
+                        </div>
+                      </Menu>
+                    </ThemedMenu>
+                  </div>
+                </IconMenu>
+              </ThemedIconMenu>
+            </span>
+          </span>
+        </div>
+      </ApolloConsumer>
+    </People>
+  </ApolloProvider>
+</MockedProvider>
 `;

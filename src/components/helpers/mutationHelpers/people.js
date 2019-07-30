@@ -12,15 +12,18 @@ const invitePersonMutation = async (email, client = apolloClient) => {
     });
 };
 
-const changeUserLocation = async (locationId, client = apolloClient) => {
-  const { UserInfo: { email } } = decodeTokenAndGetUserData();
+const changeUserLocation = async (locationId, queryEmail, client = apolloClient) => {
+  const { UserInfo: { email: tokenEmail } } = decodeTokenAndGetUserData();
+  const email = queryEmail || tokenEmail;
 
-  await client
+  const { data } = await client
     .mutate({
       mutation: CHANGE_USER_LOCATION_MUTATION,
       name: 'changeUserLocation',
       variables: { email, locationId },
     });
+
+  return data;
 };
 
 export { invitePersonMutation, changeUserLocation };
