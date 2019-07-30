@@ -6,6 +6,7 @@ import { IconMenu, MenuItem } from 'react-toolbox/lib/menu';
 import notification from '../../utils/notification';
 import { getAllLocationsFromCache } from '../helpers/QueriesHelpers';
 import { changeUserLocation } from '../helpers/mutationHelpers/people';
+import { peopleIcon } from '../../utils/images/images';
 
 /**
  * Shows the menuCart besides the Access Level on the people's table
@@ -27,11 +28,7 @@ const People = ({
   people: {
     email, name, accessLevel, location, picture,
   },
-  allRoles,
-  perPage,
-  refetch,
-  currentPage,
-  editRole,
+  allRoles, perPage, refetch, currentPage, editRole,
 }) => {
   const editLocationFunction = async (locId, emailOfUser) => {
     const response = await changeUserLocation(locId, emailOfUser);
@@ -64,7 +61,17 @@ const People = ({
         client => (
           <div className="table__row">
             <span>
-              <img className="profilePic" src={picture} alt="profilePicture" />
+              <img
+                className="profilePic"
+                id={email}
+                alt="alt"
+                onError={() => {
+                  const element = document.getElementById(email);
+                  if (element.alt === 'alt') element.src = peopleIcon;
+                  element.alt = 'profile';
+                }}
+                src={picture}
+              />
               {name}
             </span>
             <span>{location}
