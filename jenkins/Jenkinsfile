@@ -43,8 +43,7 @@ agent {
   }
 
   environment {
-     NODE_ENV =  'test'
-     EXIT_CODE = 0
+    EXIT_CODE = 0
   }
 
   stages {
@@ -62,6 +61,8 @@ agent {
     stage('test') {
       steps {
         container('converge-frontend-agent') {
+          // Make bash scripts in jenkins/bin executable
+          sh script: "chmod +x jenkins/bin/*.sh", label: "Make scripts executable"
           // Install application dependencies
           sh script: "yarn install", label: "Install dependencies"
           // CodeClimate test report Setup
@@ -82,8 +83,6 @@ agent {
       post {
         success {
           container('converge-frontend-agent') {
-            // Make bash scripts in jenkins/bin executable
-            sh script: "chmod +x jenkins/bin/*.sh", label: "Make scripts executable"
             // Send success notification to slack if test stage is successful
             sh script: "$WORKSPACE/jenkins/bin/notify_slack.sh success", label: "Notifying slack channel (succeeded)"
           }

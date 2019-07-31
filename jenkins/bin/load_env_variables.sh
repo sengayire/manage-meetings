@@ -21,7 +21,6 @@ require FIREBASE_PROJECT_ID $FIREBASE_PROJECT_ID
 require BASE_URL $BASE_URL
 
 
-
 #check current branch to get environment specific variables
 if [ $GIT_BRANCH == 'master' ]; then
   require MRM_API_URL_PRODUCTION $MRM_API_URL_PRODUCTION

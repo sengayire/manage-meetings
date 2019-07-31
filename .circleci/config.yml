@@ -136,8 +136,11 @@ workflows:
   version: 2
   build-then-deploy:
     jobs:
-      - test:
+      - approve_job:
           type: approval
+      - test:
+          requires:
+            - approve_job
       - build:
           requires:
             - test

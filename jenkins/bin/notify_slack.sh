@@ -14,12 +14,10 @@ get_build_report() {
   GIT_USERNAME="$(git show -s --pretty=%an)"
 
   if [ "$STAGE_NAME" == 'test' -a  "$STATUS" == 'success' ]; then
-
     MESSAGE_TEXT="Test Phase Passed! :jenkins: :smiley:"
     COLOR="good"
 
   elif [ "$STAGE_NAME" == 'test' -a  "$STATUS" == 'fail' ]; then
-
     MESSAGE_TEXT="Test Phase Failed :jenkins: :scream:"
     COLOR="danger"
     REBUILD_URL="https://jenkins.andela.com/blue/organizations/jenkins/Converge-Frontend/detail/${CURRENT_BRANCH}/${BUILD_NUMBER}/pipeline"
@@ -28,12 +26,10 @@ get_build_report() {
       )"
 
   elif [ "$STAGE_NAME" == 'build-docker-image' -a "$STATUS" == 'success' ]; then
-
     MESSAGE_TEXT="Build Phase Succeeded  :jenkins: :rocket:"
     COLOR="good"
 
   elif [ "$STAGE_NAME" == 'build-docker-image' -a  "$STATUS" == 'fail' ]; then
-
     MESSAGE_TEXT="Deployment Phase Failed  :jenkins: :scream:"
     REBUILD_URL="https://jenkins.andela.com/blue/organizations/jenkins/Converge-Frontend/detail/${CURRENT_BRANCH}/${BUILD_NUMBER}/pipeline"
     ACTION_BUTTON="$(echo \
@@ -42,12 +38,10 @@ get_build_report() {
     COLOR="danger"
 
   elif [ "$STAGE_NAME" == 'deploy-job' -a "$STATUS" == 'success' ]; then
-
     MESSAGE_TEXT="Deployment Phase Succeeded :jenkins: :rocket:"
     COLOR="good"
 
   elif [ "$STAGE_NAME" == 'deploy-job' -a  "$STATUS" == 'fail' ]; then
-
     MESSAGE_TEXT="Deployment Phase Failed  :jenkins: :scream:"
     REBUILD_URL="https://jenkins.andela.com/blue/organizations/jenkins/Converge-Frontend/detail/${CURRENT_BRANCH}/${BUILD_NUMBER}/pipeline"
     ACTION_BUTTON="$(echo \
