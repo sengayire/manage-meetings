@@ -172,7 +172,7 @@ class AnalyticsNav extends Component {
 
     const location = getUserLocation().name;
 
-    const isSuperAdmin = getUserRole() === 'Super_Admin';
+    const isSuperAdmin = getUserRole() === 'Super Admin';
     return (
       <Fragment>
         <div className="analytics-cover ">

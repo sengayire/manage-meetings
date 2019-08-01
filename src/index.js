@@ -6,6 +6,8 @@ import { ApolloProvider } from 'react-apollo';
 import App from './App';
 import apolloClient from './utils/ApolloClient';
 import './assets/styles/index.scss';
+import ErrorBoundary from './components/commons/ErrorBoundary';
+
 
 const RTButton = require('react-toolbox/lib/button/theme.css');
 const RTDialog = require('react-toolbox/lib/dialog/theme.css');
@@ -25,7 +27,9 @@ ReactDOM.render(
   <ThemeProvider theme={contextTheme}>
     <ApolloProvider client={apolloClient}>
       <Router>
-        <App />
+        <ErrorBoundary isAuthError>
+          <App />
+        </ErrorBoundary>
       </Router>
     </ApolloProvider>
   </ThemeProvider>,
