@@ -89,7 +89,7 @@ const People = ({
                     caption={loc.name}
                     onClick={() => {
                       client.writeData({ data: { userLocation: loc } });
-                      editLocationFunction(loc.id);
+                      editLocationFunction(loc.id, email);
                     }
                     }
                   />
