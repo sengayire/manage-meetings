@@ -20,7 +20,7 @@ const resolveResponses = (responseId, roomId, client = apolloClient) => client
 
       const { roomResponse } = cachedResponse;
       cachedResponse.roomResponse.response = roomResponse.response.map((response) => {
-        if (response.responseId === responseId) {
+        if (response.id === responseId) {
           return {
             ...response,
             resolved: resolveResponse.data.resolveRoomResponse.roomResponse.resolved,

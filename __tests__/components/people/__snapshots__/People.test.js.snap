@@ -110,8 +110,10 @@ exports[`People Component renders properly 1`] = `
         >
           <span>
             <img
-              alt="profilePicture"
+              alt="alt"
               className="profilePic"
+              id="edward.barton@andela.com"
+              onError={[Function]}
               src="http://no-url"
             />
             Edward Barton

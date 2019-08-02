@@ -18,7 +18,7 @@ const props = {
     totalResponses: 3,
     response: [
       {
-        responseId: 289,
+        id: 289,
         createdDate: '2019-06-25T14:45:26.577611',
         resolved: false,
         response: {
@@ -27,7 +27,7 @@ const props = {
         },
       },
       {
-        responseId: 290,
+        id: 290,
         createdDate: '2019-06-25T14:45:27.942964',
         resolved: false,
         response: {
@@ -36,7 +36,7 @@ const props = {
         },
       },
       {
-        responseId: 291,
+        id: 291,
         createdDate: '2019-06-25T14:46:06.718295',
         resolved: false,
         response: {
@@ -81,7 +81,7 @@ const responseListProps = {
         totalRoomResources: 5,
         response: [
           {
-            responseId: 289,
+            id: 289,
             createdDate: '2019-06-25T14:45:26.577611',
             resolved: false,
             response: {
@@ -90,7 +90,7 @@ const responseListProps = {
             },
           },
           {
-            responseId: 290,
+            id: 290,
             createdDate: '2019-06-25T14:45:27.942964',
             resolved: false,
             response: {
@@ -99,7 +99,7 @@ const responseListProps = {
             },
           },
           {
-            responseId: 291,
+            id: 291,
             createdDate: '2019-06-25T14:46:06.718295',
             resolved: false,
             response: {
@@ -197,7 +197,7 @@ describe('Room Feedback', () => {
         totalResponses: 3,
         response: [
           {
-            responseId: 289,
+            id: 289,
             createdDate: '2019-06-25T14:45:26.577611',
             resolved: false,
             response: {
@@ -206,7 +206,7 @@ describe('Room Feedback', () => {
             },
           },
           {
-            responseId: 290,
+            id: 290,
             createdDate: '2019-06-25T14:45:27.942964',
             resolved: false,
             response: {
@@ -215,7 +215,7 @@ describe('Room Feedback', () => {
             },
           },
           {
-            responseId: 291,
+            id: 291,
             createdDate: '2019-06-25T14:46:06.718295',
             resolved: false,
             response: {

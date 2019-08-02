@@ -27,7 +27,7 @@ export class SingleRoomFeedBack extends Component {
       roomName: 'DemoRoomState',
       totalResponses: 1,
       response: [{
-        responseId: 282,
+        id: 282,
         createdDate: '2019-06-25T10:40:23.818174',
         resolved: false,
         response: { __typename: 'Rate', rate: 5 },
@@ -89,15 +89,15 @@ export class SingleRoomFeedBack extends Component {
     let data;
     if (responses.length > 0) {
       data = [...responses].reverse().map(response => (
-        <div key={response.responseId} className="response">
+        <div key={response.id} className="response">
           <div className="date">{formatDate(response.createdDate)}</div>
 
           {response.response.__typename === 'Rate' ? null : (
             <div className="btn-resolve" >
               {response.resolved ?
-                removeFilter(() => this.resolveResponse(response.responseId, this.props.roomId), 'Mark as unresolved', unresolve, 'resolve')
+                removeFilter(() => this.resolveResponse(response.id, this.props.roomId), 'Mark as unresolved', unresolve, 'resolve')
                 :
-                removeFilter(() => this.resolveResponse(response.responseId, this.props.roomId), 'Mark as resolved', resolve, 'resolve')
+                removeFilter(() => this.resolveResponse(response.id, this.props.roomId), 'Mark as resolved', resolve, 'resolve')
               }
             </div>
           )}
@@ -180,7 +180,7 @@ export class SingleRoomFeedBack extends Component {
               {resourcesList.map(item => (
                 <label htmlFor={item} key={item}>
                   <input
-                    id={response.responseId}
+                    id={response.id}
                     type="checkbox"
                     defaultChecked={
                       Array.from(response.response.missingItems, x => x.name).includes(item)

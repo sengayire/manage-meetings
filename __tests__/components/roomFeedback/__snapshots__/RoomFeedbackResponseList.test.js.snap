@@ -64,15 +64,16 @@ exports[`Room feedback list should render correctly 1`] = `
             "response": Array [
               Object {
                 "createdDate": "2019-06-25T14:45:26.577611",
+                "id": 289,
                 "resolved": false,
                 "response": Object {
                   "__typename": "Rate",
                   "rate": 5,
                 },
-                "responseId": 289,
               },
               Object {
                 "createdDate": "2019-06-25T14:45:27.942964",
+                "id": 290,
                 "resolved": false,
                 "response": Object {
                   "__typename": "MissingItems",
@@ -81,10 +82,10 @@ exports[`Room feedback list should render correctly 1`] = `
                     "name": "test name",
                   },
                 },
-                "responseId": 290,
               },
               Object {
                 "createdDate": "2019-06-25T14:46:06.718295",
+                "id": 291,
                 "resolved": false,
                 "response": Object {
                   "__typename": "SelectedOptions",
@@ -92,7 +93,6 @@ exports[`Room feedback list should render correctly 1`] = `
                     "handywork",
                   ],
                 },
-                "responseId": 291,
               },
             ],
             "roomId": 1,

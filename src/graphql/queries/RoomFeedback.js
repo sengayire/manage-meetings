@@ -6,7 +6,7 @@ const SINGLE_ROOM_FEEDBACK = gql`
       roomName,
       totalResponses,
       response {
-        responseId,
+        id,
         createdDate,
         questionType,
         resolved,
@@ -46,7 +46,7 @@ const ALL_ROOM_FEEDBACK = gql`
         roomName
         totalResponses
         response {
-          responseId
+          id
           createdDate
           resolved
           response {
