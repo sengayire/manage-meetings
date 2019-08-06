@@ -114,7 +114,7 @@ class Room extends Component {
             </span>
           </div>
         }
-        actionButtonText="Delete"
+        actionButtonText="DELETE"
         handleSubmit={this.roomDelete()}
         isLoading={isLoading}
       />
@@ -194,7 +194,7 @@ class Room extends Component {
               {this.renderRoomLabels()}
             </div>
           </Fragment>
-        )}
+          )}
       </div>
     );
   }

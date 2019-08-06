@@ -87,7 +87,6 @@ class LocationFilters extends Component {
       name: '',
       id: '',
       value: '',
-      placeholder: '',
       options: [],
       isValue: true,
       tag: '',
@@ -96,7 +95,6 @@ class LocationFilters extends Component {
       menu.name = data.tag;
       menu.id = data.tag;
       menu.value = data.tag;
-      menu.placeholder = `Select ${data.tag}`;
       menu.options.push({ name: data.name, structureId: data.structureId });
       menu.tag = data.tag;
     });
@@ -152,7 +150,7 @@ class LocationFilters extends Component {
     const { dropDownOptions, secondLevelMenu, thirdLevelMenu } = this.state;
     const menu = this.initialArray(dropDownOptions);
     const {
-      name, id, value, placeholder, options, isValue, tag,
+      name, id, value, options, isValue, tag,
     } = menu;
     const propsName = this.props.name;
     return (
@@ -169,7 +167,7 @@ class LocationFilters extends Component {
                 this.generateMoreMenu([event.target.name, event.target.value], 'level1', 'secondLevelMenu'); handleInputChange(event, 1);
               }}
               selectInputClassName={selectInputClassName}
-              placeholder={placeholder}
+              placeholder="Select a Building"
               options={options}
               isValue={isValue}
             />
@@ -186,7 +184,7 @@ class LocationFilters extends Component {
                   value={secondLevelMenu.value}
                   onChange={(event) => { this.generateMoreMenu([event.target.name, event.target.value], 'level2', 'thirdLevelMenu'); handleInputChange(event, 2); }}
                   selectInputClassName={selectInputClassName}
-                  placeholder={secondLevelMenu.placeholder}
+                  placeholder="Select a Floor"
                   options={secondLevelMenu.options}
                   isValue={secondLevelMenu.isValue}
                 />
@@ -207,7 +205,7 @@ class LocationFilters extends Component {
                   value={thirdLevelMenu.value}
                   onChange={event => handleInputChange(event, 2)}
                   selectInputClassName={selectInputClassName}
-                  placeholder={thirdLevelMenu.placeholder}
+                  placeholder="Select a Wing"
                   options={thirdLevelMenu.options}
                   isValue={thirdLevelMenu.isValue}
                 />

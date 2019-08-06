@@ -113,7 +113,7 @@ class DeviceList extends Component {
     const { location, getRooms } = this.props;
 
     const displayPaginator = !fetching
-    && !(devices.length < 5 && currentPage === 1);
+      && !(devices.length < 5 && currentPage === 1);
 
     return (
       <div className="settings-devices-list overlay-container">
@@ -132,20 +132,20 @@ class DeviceList extends Component {
           />
         </div>
         {
-        !fetching && !devices[0]
-          ? (
-            <ErrorIcon message="No resource found" />
-          ) : (
-            <Fragment>
-              <div className="table device-table">
-                <TableHead titles={['Name', 'Type', 'Date Added', 'Last Seen', 'Room', 'Location']} />
-                <div className="table__body">{this.deviceComponents((
+          !fetching && !devices[0]
+            ? (
+              <ErrorIcon message="No Device found" />
+            ) : (
+              <Fragment>
+                <div className="table device-table">
+                  <TableHead titles={['Name', 'Type', 'Date Added', 'Last Seen', 'Room', 'Location']} />
+                  <div className="table__body">{this.deviceComponents((
                     fetching ? dummyDevices : paginatedDeviceList
                   ))}
+                  </div>
                 </div>
-              </div>
-              {
-                displayPaginator &&
+                {
+                  displayPaginator &&
                   <div>
                     <Pagination
                       totalPages={pages}
@@ -157,10 +157,10 @@ class DeviceList extends Component {
                       currentPage={currentPage}
                     />
                   </div>
-              }
-            </Fragment>
-        )
-      }
+                }
+              </Fragment>
+            )
+        }
       </div>
     );
   }

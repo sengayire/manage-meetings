@@ -582,6 +582,7 @@ export class AddNewRoom extends Component {
         handleSubmit={typeOfForm === 'edit' ? this.editRoom : this.createRoom}
         isLoading={this.state.isLoading}
         handleCloseModal={this.clearForm}
+        actionButtonText={typeOfForm === 'edit' ? 'SAVE CHANGES' : 'SUBMIT'}
       />
     );
   }

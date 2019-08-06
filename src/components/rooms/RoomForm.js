@@ -82,7 +82,6 @@ export class RoomForm extends Component {
         <ActionButtons
           withCancel
           onClickCancel={onCloseModalRequest}
-          actionButtonText="Save Changes"
           isLoading={isLoading}
           onClickSubmit={this.handleSubmit}
         />
