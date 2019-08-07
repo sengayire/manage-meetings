@@ -43,7 +43,7 @@ const singleRoomResponse = {
     totalResponses: 4,
     response: [
       {
-        responseId: 282,
+        id: 282,
         createdDate: '2019-06-25T10:40:23.818174',
         resolved: false,
         response: {
@@ -52,7 +52,7 @@ const singleRoomResponse = {
         },
       },
       {
-        responseId: 283,
+        id: 283,
         createdDate: '2019-06-25T10:40:23.818174',
         resolved: false,
         response: {
@@ -61,7 +61,7 @@ const singleRoomResponse = {
         },
       },
       {
-        responseId: 284,
+        id: 284,
         createdDate: '2019-06-25T10:40:23.818174',
         resolved: false,
         response: {
@@ -70,7 +70,7 @@ const singleRoomResponse = {
         },
       },
       {
-        responseId: 287,
+        id: 287,
         createdDate: '2019-06-25T10:40:23.818174',
         resolved: false,
         response: {

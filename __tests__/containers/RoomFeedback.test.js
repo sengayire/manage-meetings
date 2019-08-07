@@ -36,7 +36,7 @@ describe('RoomFeedback component', () => {
       totalResponses: 2,
       response: [
         {
-          responseId: 296,
+          id: 296,
           createdDate: '2019-06-25T14:47:34.434065',
           resolved: false,
           response: {
@@ -45,7 +45,7 @@ describe('RoomFeedback component', () => {
           },
         },
         {
-          responseId: 297,
+          id: 297,
           createdDate: '2019-06-25T14:47:35.583645',
           resolved: false,
           response: {
@@ -60,7 +60,7 @@ describe('RoomFeedback component', () => {
       totalResponses: 4,
       response: [
         {
-          responseId: 289,
+          id: 289,
           createdDate: '2019-06-25T14:45:26.577611',
           resolved: false,
           response: {
@@ -69,7 +69,7 @@ describe('RoomFeedback component', () => {
           },
         },
         {
-          responseId: 311,
+          id: 311,
           createdDate: '2019-07-01T09:59:38.846630',
           resolved: false,
           response: {
@@ -80,7 +80,7 @@ describe('RoomFeedback component', () => {
           },
         },
         {
-          responseId: 290,
+          id: 290,
           createdDate: '2019-06-25T14:45:27.942964',
           resolved: false,
           response: {
@@ -89,7 +89,7 @@ describe('RoomFeedback component', () => {
           },
         },
         {
-          responseId: 291,
+          id: 291,
           createdDate: '2019-06-25T14:46:06.718295',
           resolved: false,
           response: {
@@ -114,7 +114,7 @@ describe('RoomFeedback component', () => {
       totalResponses: 2,
       response: [
         {
-          responseId: 297,
+          id: 297,
           createdDate: '2019-06-25T14:47:35.583645',
           resolved: false,
           response: {
@@ -129,7 +129,7 @@ describe('RoomFeedback component', () => {
       totalResponses: 4,
       response: [
         {
-          responseId: 311,
+          id: 311,
           createdDate: '2019-07-01T09:59:38.846630',
           resolved: false,
           response: {
@@ -140,7 +140,7 @@ describe('RoomFeedback component', () => {
           },
         },
         {
-          responseId: 291,
+          id: 291,
           createdDate: '2019-06-25T14:46:06.718295',
           resolved: false,
           response: {
