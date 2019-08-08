@@ -78,12 +78,6 @@ class Resources extends React.Component {
 
   AllocatedResourcesComponent = createRef();
 
-  handleClickOnResource = (resource) => {
-    this.AllocatedResourcesComponent.current.toggleModal();
-    this.setState({
-      resourceDetails: resource,
-    });
-  };
   /**
    * It updates UI after deleting a resource
    *
@@ -101,10 +95,7 @@ class Resources extends React.Component {
    */
   resourceList = (resource, location) => (
     <div className="resource-list-item" key={resource.id} id={resource.id}>
-      <span
-        onClick={() => this.handleClickOnResource(resource)}
-        className="resource-list-item-text"
-      >
+      <span className="resource-list-item-text" >
         {resource.name}
       </span>
       <span className="resource-list-item-buttons">

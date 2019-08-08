@@ -65,7 +65,7 @@ const DeviceModalContent = (props) => {
             isLoading={fetching}
             onClickCancel={methods.closeModal}
             actionButtonText={`${modalContent ? ((modalContent !== 'delete') ?
-              'SAVE CHANGES' : 'DELETE DEVICE') : 'ADD DEVICE'} `}
+              'SAVE CHANGES' : 'DELETE') : 'SUBMIT'} `}
             onClickSubmit={methods.submit}
           />
         </div>

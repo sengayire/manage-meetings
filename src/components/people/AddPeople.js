@@ -104,7 +104,7 @@ class AddPeople extends React.Component {
               <ActionButtons
                 withCancel
                 onClickCancel={this.handleCloseModal}
-                actionButtonText="INVITE USER"
+                actionButtonText="SEND INVITE"
                 onClickSubmit={this.submitInvite}
               />
             </div>

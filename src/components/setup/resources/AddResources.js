@@ -111,7 +111,7 @@ export class AddResource extends React.Component {
               <ActionButtons
                 withCancel
                 onClickCancel={this.handleCloseModal}
-                actionButtonText="ADD RESOURCE"
+                actionButtonText="SUBMIT"
                 onClickSubmit={this.submitResource}
               />
             </div>
