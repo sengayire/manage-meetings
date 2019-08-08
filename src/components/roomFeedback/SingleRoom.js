@@ -5,8 +5,8 @@ import Spinner from '../commons/Spinner';
 import { getRoomResources, getSingleRoomFeedback } from '../helpers/QueriesHelpers';
 import resolveResponses from '../helpers/mutationHelpers/responses';
 import removeFilter from '../commons/RemoveFilter';
-import resolve from '../../assets/images/resolve.png';
-import unresolve from '../../assets/images/unresolve.png';
+import resolve from '../../assets/images/resolved.svg';
+import unresolve from '../../assets/images/unresolved.svg';
 import formatDate from '../../utils/reformatDate';
 
 
@@ -93,11 +93,11 @@ export class SingleRoomFeedBack extends Component {
           <div className="date">{formatDate(response.createdDate)}</div>
 
           {response.response.__typename === 'Rate' ? null : (
-            <div className="btn-resolve" >
+            <div className="btn-resolve">
               {response.resolved ?
-                removeFilter(() => this.resolveResponse(response.id, this.props.roomId), 'Mark as unresolved', unresolve, 'resolve')
+                removeFilter(() => this.resolveResponse(response.id, this.props.roomId), 'Mark as unresolved', resolve, 'resolve')
                 :
-                removeFilter(() => this.resolveResponse(response.id, this.props.roomId), 'Mark as resolved', resolve, 'resolve')
+                removeFilter(() => this.resolveResponse(response.id, this.props.roomId), 'Mark as resolved', unresolve, 'resolve')
               }
             </div>
           )}
