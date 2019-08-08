@@ -1,10 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
 import '../../assets/styles/errorBoundary.scss';
-import { clearCookies } from '../../utils/Cookie';
-import Constants from '../../utils/Constants';
-import { removeItemFromLocalStorage } from '../../utils/Utilities';
+
 
 /**
  * Error catching component
@@ -14,28 +11,23 @@ import { removeItemFromLocalStorage } from '../../utils/Utilities';
  * @returns {JSX}
  */
 
-const {
-  MRM_TOKEN,
-} = Constants;
 
 class ErrorBoundary extends React.Component {
-  state = { errorInfo: '' };
+  state = { errorInfo: '', error: '' };
 
   componentDidCatch(error, errorInfo) {
     this.setState({
       errorInfo,
+      error,
     });
   }
 
+
   render() {
-    if (this.state.errorInfo) {
-      if (this.props.isAuthError) {
-        removeItemFromLocalStorage(MRM_TOKEN);
-        clearCookies();
-      }
+    if (this.state.errorInfo || this.state.error) {
       return (
         <div>
-          {!this.props.isAuthError && this.props.error}
+          {(!this.props.isAuthError || this.state.error) && (this.props.error || this.state.error) }
         </div>
       );
     }

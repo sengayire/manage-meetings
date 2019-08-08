@@ -2,25 +2,31 @@ import React, { Component } from 'react';
 import { withRouter, Route, Switch, Redirect } from 'react-router-dom';
 import { ApolloConsumer } from 'react-apollo';
 import PropTypes from 'prop-types';
+import jwtDecode from 'jwt-decode';
 import ROUTES from './utils/routes';
 import { Analytics, Preference, RoomFeedbackPage } from './containers';
 import { LoginPage } from './components';
 import Constants from './utils/Constants';
 import '../src/assets/styles/toastr.scss';
 import ErrorBoundary from './components/commons/ErrorBoundary';
-import { getToken } from './utils/Cookie';
+import { getToken, clearCookies } from './utils/Cookie';
 import Setup from './containers/Setup';
 import PageNotFound from './containers/PageNotFound';
 import { getUserDetails, getAllLocations, getUserLocation } from './components/helpers/QueriesHelpers';
+import { removeItemFromLocalStorage } from './utils/Utilities';
 
 // destruscture constants to be used
 const {
   MESSAGES: { authenticationError },
+  MRM_TOKEN,
 } = Constants;
 class App extends Component {
   static propTypes = {
     location: PropTypes.shape({
       pathname: PropTypes.string,
+    }).isRequired,
+    history: PropTypes.shape({
+      push: PropTypes.func.isRequired,
     }).isRequired,
   };
 
@@ -32,17 +38,35 @@ class App extends Component {
     this.setLoggedInState();
   }
 
+  /**
+ * this function passes a condition that checks for token
+ * and either rerender the state or call in the next function
+ */
+  /* eslint consistent-return: 0 */
 
   setLoggedInState = () => {
     const token = getToken();
-    if (!token) {
-      return this.setState({ loggedIn: false });
+    const { push } = this.props.history;
+    let expiredToken;
+    try {
+      expiredToken = jwtDecode(token).exp;
+      if (!token || (Date.now() >= expiredToken * 1000)) {
+        removeItemFromLocalStorage(MRM_TOKEN);
+        clearCookies();
+        this.props.history.push('/');
+        this.setState({ loggedIn: false });
+        return;
+      }
+      this.setState({ loggedIn: true });
+      return this.setUserState();
+    } catch (error) {
+      push(ROUTES.home);
     }
-
-    this.setState({ loggedIn: true });
-    return this.setUserState();
   };
 
+  /**
+ * this function is used to set the users state(the location and the role)
+ */
   async setUserState() {
     const [user, locations] = await Promise.all([getUserDetails(), getAllLocations()]);
     const userLocation = locations.find(({ name }) => name === user.location);
