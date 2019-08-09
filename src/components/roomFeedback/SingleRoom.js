@@ -91,16 +91,6 @@ export class SingleRoomFeedBack extends Component {
       data = [...responses].reverse().map(response => (
         <div key={response.id} className="response">
           <div className="date">{formatDate(response.createdDate)}</div>
-
-          {response.response.__typename === 'Rate' ? null : (
-            <div className="btn-resolve">
-              {response.resolved ?
-                removeFilter(() => this.resolveResponse(response.id, this.props.roomId), 'Mark as unresolved', resolve, 'resolve')
-                :
-                removeFilter(() => this.resolveResponse(response.id, this.props.roomId), 'Mark as resolved', unresolve, 'resolve')
-              }
-            </div>
-          )}
           {this.renderRoomFeeback(response, roomResources)}
         </div>
       ));
@@ -164,6 +154,15 @@ export class SingleRoomFeedBack extends Component {
             {response.response.suggestion}
             <div className="resolved-status">
               {`Status: ${(response.resolved ? 'Resolved' : 'Unresolved')}`}
+              {response.response.__typename === 'Rate' ? null : (
+                <div className="btn-resolve">
+                  {response.resolved ?
+                removeFilter(() => this.resolveResponse(response.id, this.props.roomId), 'Mark as unresolved', resolve, 'resolve')
+                :
+                removeFilter(() => this.resolveResponse(response.id, this.props.roomId), 'Mark as resolved', unresolve, 'resolve')
+              }
+                </div>
+          )}
             </div>
           </div>
         </div>

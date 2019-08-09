@@ -168,11 +168,13 @@
 }
 
 .resolved-status {
-  margin-top: 6%;
+  display: flex;
+  align-items: center;
+  margin-top: 5%;
 }
 
 .btn-resolve {
-  display: inline-block;
+  padding-top: 1px;
 }
 
 .resolve {
