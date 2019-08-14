@@ -20,8 +20,8 @@ terraform_values() {
   mkdir -p secrets
   echo $CERTIFICATE | base64 --decode > secrets/ssl_andela_certificate.crt
   echo $KEY | base64 --decode > secrets/ssl_andela_key.key
-  cat secrets/ssl_andela_certificate.crt
-  cat secrets/ssl_andela_key.key
+
+  sed -i -- 's/CIRCLE_BRANCH/GIT_BRANCH/g' supply_values.sh
   source supply_values.sh
   success "Environment variables successfully generated for deployment"
 }
@@ -29,6 +29,8 @@ terraform_values() {
 run_terraform() {
   info "Deploying to Kubernetes cluster"
   cd ${WORKSPACE}/deployments/
+
+  sed -i -- 's/CIRCLE_BRANCH/GIT_BRANCH/g' .circleci/deploy_to_kubernetes.sh
   source .circleci/deploy_to_kubernetes.sh
   deploy $(echo $GIT_BRANCH)
   success "Successfully deployed application to cluster"
