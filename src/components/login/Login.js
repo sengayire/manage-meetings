@@ -55,12 +55,13 @@ export class Login extends Component {
   static getDerivedStateFromProps = (props) => {
     const { push } = props.history;
     const token = getItemFromLocalStorage(MRM_TOKEN);
+    const activeTab = sessionStorage.getItem('activeTopNav') || ROUTES.analytics;
     // this logic has been placed in this lifecycle method to avoid rendering of
     // the login page UI if a user is already loggedin
     // if user is logged in
     if (token) {
       // redirect user to settings page
-      push(ROUTES.analytics);
+      push(activeTab);
     }
     // returning null since no state updates
     return null;

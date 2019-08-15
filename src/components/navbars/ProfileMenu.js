@@ -31,6 +31,7 @@ class ProfileMenu extends React.Component {
   onLogOut = () => {
     const { history: { push } } = this.props;
     removeItemFromLocalStorage(MRM_TOKEN);
+    sessionStorage.removeItem('activeTopNav');
     clearCookies();
     push(ROUTES.home);
   };

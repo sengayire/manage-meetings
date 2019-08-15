@@ -33,7 +33,7 @@ exports[`AddPeople Component renders properly 1`] = `
         className="loading-btn-div"
       >
         <ActionButtons
-          actionButtonText="INVITE USER"
+          actionButtonText="SEND INVITE"
           cancelButtonText="CANCEL"
           isLoading={false}
           onClickCancel={[Function]}
