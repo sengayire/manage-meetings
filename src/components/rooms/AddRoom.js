@@ -194,7 +194,7 @@ export class AddNewRoom extends Component {
   };
 
   isValidEntry = ({
-    rooms,
+    roomsAllLocations,
     remoteRoomName,
     roomName,
     roomType,
@@ -206,7 +206,7 @@ export class AddNewRoom extends Component {
       && roomType
       && remoteRoomName
       && files.length
-      && rooms.length
+      && roomsAllLocations.length
   )
 
   stripSpaces = str => str.split(' ').join('');
@@ -221,7 +221,7 @@ export class AddNewRoom extends Component {
     if (this.isValidEntry(this.state)) {
       this.toggleLoading();
       const {
-        rooms,
+        roomsAllLocations,
         remoteRoomName,
         roomName,
         roomType,
@@ -231,7 +231,7 @@ export class AddNewRoom extends Component {
         structureId,
         levelInput,
       } = this.state;
-      const roomId = rooms.filter(room =>
+      const roomId = roomsAllLocations.filter(room =>
         this.stripSpaces(room.name) === this.stripSpaces(remoteRoomName),
       );
       const calendarId = roomId.length ? roomId[0].calendarId : null;
