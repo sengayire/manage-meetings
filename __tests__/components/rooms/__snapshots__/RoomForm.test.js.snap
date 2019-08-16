@@ -162,7 +162,7 @@ exports[`RoomForm should render properly 1`] = `
       </div>
     </SelectInput>
     <ActionButtons
-      actionButtonText="Save Changes"
+      actionButtonText="SAVE CHANGES"
       cancelButtonText="CANCEL"
       isLoading={false}
       onClickCancel={[MockFunction]}
@@ -194,7 +194,7 @@ exports[`RoomForm should render properly 1`] = `
           classProp="main-button"
           handleClick={[Function]}
           isDisabled={false}
-          title="Save Changes"
+          title="SAVE CHANGES"
           type={2}
         >
           <button
@@ -203,7 +203,7 @@ exports[`RoomForm should render properly 1`] = `
             onClick={[Function]}
           >
             <span>
-              Save Changes
+              SAVE CHANGES
             </span>
           </button>
         </Button>

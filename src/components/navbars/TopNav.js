@@ -32,13 +32,8 @@ class TopNav extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      activeMenu: '',
+      activeMenu: 'Analytics',
     };
-    let { pathname } = props.location;
-
-    if (pathname === '/' || pathname === '/analytics') {
-      pathname = ROUTES.analytics;
-    }
   }
 
   async componentDidMount() {
@@ -46,8 +41,9 @@ class TopNav extends React.Component {
   }
 
   setActiveMenu = async () => {
+    const pathname = await sessionStorage.getItem('activeTopNav') || this.props.location.pathname;
     await menuItems.forEach((router) => {
-      if (this.props.location.pathname.includes(router.route)) {
+      if (pathname.includes(router.route)) {
         this.setState({
           activeMenu: router.menu,
         });
@@ -63,8 +59,16 @@ class TopNav extends React.Component {
    *
    * @returns {void}
    */
-  handleClick = menuItem => () => {
-    this.setState({ activeMenu: menuItem });
+  handleClick = menuItem => async () => {
+    await menuItems.forEach((router) => {
+      if (menuItem.includes(router.menu)) {
+        sessionStorage.setItem('activeTopNav', router.route);
+      }
+    });
+    this.setState(prevState => ({
+      ...prevState,
+      activeMenu: menuItem,
+    }));
   };
 
   renderNavigation = (activeMenu, userRole, navItems) =>
