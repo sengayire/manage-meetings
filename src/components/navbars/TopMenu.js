@@ -42,7 +42,6 @@ export class TopMenuComponent extends React.Component {
       component, ...prevUserInfo
     } = prevState;
     const currentUserInfo = this.getUserInfoFromToken();
-
     const stringify = data => JSON.stringify(data);
     if (stringify(prevUserInfo) !== stringify(currentUserInfo)) {
       this.updateUserInfo(currentUserInfo);
@@ -106,7 +105,6 @@ export class TopMenuComponent extends React.Component {
     return false;
   }
 
-
   addListener = () => {
     const { showOptions, component } = this.state;
     if (!showOptions && !component) {
@@ -125,9 +123,7 @@ export class TopMenuComponent extends React.Component {
 
   inputRef = React.createRef();
 
-
   toggleOptions = value => this.setState({ showOptions: value }, this.setFocus);
-
   updateUserInfo = userInfo => this.setState(userInfo);
 
   handleQueryChange = (e) => {
@@ -143,7 +139,6 @@ export class TopMenuComponent extends React.Component {
       showLocations: !showLocations,
     }));
   }
-
 
   handleLocationChange = async (locationId) => {
     this.setState({
@@ -287,7 +282,7 @@ TopMenuComponent.propTypes = {
 };
 
 TopMenuComponent.defaultProps = {
-  resetLocation: PropTypes.func,
+  resetLocation: () => {},
 };
 
 export default withRouter(TopMenuComponent);

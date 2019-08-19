@@ -22,7 +22,11 @@ describe('AnalyticsNav Component', () => {
     const { rooms, ...analytics } = allAnalyticsMockData.analytics;
     getAllAnalytics.mockResolvedValue({ allAnalytics: analytics });
     getAllRooms.mockResolvedValue({ allRooms: rooms });
-    wrapper = shallow(<AnalyticsNav />);
+    wrapper = shallow(
+      <AnalyticsNav
+        resetLocation={() => {}}
+        locationChanged={false}
+      />);
   });
 
 
@@ -37,12 +41,6 @@ describe('AnalyticsNav Component', () => {
     wrapper.find('Button').at(1).dive().find('.activityIconBtn')
       .simulate('click');
     expect(wrapper.find(AnalyticsActivity).length).toEqual(1);
-  });
-
-  it('should display the location of the user', () => {
-    wrapper.setState({ activeTab: 'activity' });
-    expect(wrapper.find('Button').at(2).dive().find('.btn-right__location__btn')
-      .text()).toEqual('Lagos');
   });
 
   it('should call sendDateData once and update the state value of start and end date', () => {

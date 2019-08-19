@@ -15,7 +15,10 @@ jest.mock('../../../src/components/helpers/QueriesHelpers');
 
 describe('AnalyticsNav Component', () => {
   it('should update startDate and endDate', () => {
-    const componentWrapper = shallow(<AnalyticsNav />);
+    const componentWrapper = shallow(<AnalyticsNav
+      resetLocation={() => {}}
+      locationChanged={false}
+    />);
     const analyticNavWrapper = componentWrapper.instance();
     analyticNavWrapper.sendDateData('05 Nov 2018', '06 Nov 2018');
     expect(analyticNavWrapper.state.startDate).toEqual('05 Nov 2018');
