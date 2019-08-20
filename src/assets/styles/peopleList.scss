@@ -80,6 +80,9 @@
   }
 
   .settings-people-list {
+    #people-list-overlay {
+      z-index: 1000;
+    }
     .action-menu {
       height: 70px;
       padding-top: 4%;
