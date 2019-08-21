@@ -3928,6 +3928,7 @@ exports[`DeleteResource Test Suite renders as expected 1`] = `
                 handleCloseRequest={[Function]}
                 modalButtonClassName="button"
                 openModal={false}
+                showBtn={true}
                 title="DELETE RESOURCE"
               >
                 <IconButtons
@@ -8028,6 +8029,7 @@ exports[`DeleteResource Test Suite should pop up a modal when delete button is c
                 handleCloseRequest={[Function]}
                 modalButtonClassName="button"
                 openModal={false}
+                showBtn={true}
                 title="DELETE RESOURCE"
               >
                 <IconButtons

@@ -97,7 +97,7 @@ exports[`TopMenu Component Should render component 1`] = `
           },
           Object {
             "id": "1",
-            "name": "Lagos",
+            "name": "Kigali",
           },
         ],
       },
@@ -241,7 +241,7 @@ exports[`TopMenu Component Should render component 1`] = `
                   },
                   Object {
                     "id": "1",
-                    "name": "Lagos",
+                    "name": "Kigali",
                   },
                 ],
               },
@@ -427,7 +427,7 @@ exports[`TopMenu Component Should render component 1`] = `
                     },
                     Object {
                       "id": "1",
-                      "name": "Lagos",
+                      "name": "Kigali",
                     },
                   ],
                 },

@@ -35,8 +35,20 @@ const CHANGE_USER_LOCATION_MUTATION = gql`
   }
 `;
 
+const SET_USER_LOCATION = gql`
+mutation setUserLocation($locationId: Int!) {
+  setUserLocation(locationId: $locationId) {
+    user {
+      email
+      location
+    }
+  }
+}
+`;
+
 export {
   UPDATE_ROLES_MUTATION as default,
   INVITE_PERSON_MUTATION,
   CHANGE_USER_LOCATION_MUTATION,
+  SET_USER_LOCATION,
 };

@@ -13,6 +13,7 @@ import { getToken, clearCookies } from './utils/Cookie';
 import Setup from './containers/Setup';
 import PageNotFound from './containers/PageNotFound';
 import { getUserDetails, getAllLocations, getUserLocation } from './components/helpers/QueriesHelpers';
+import GetNewUsersLocation from './containers/GetNewUsersLocation';
 import { removeItemFromLocalStorage } from './utils/Utilities';
 
 // destruscture constants to be used
@@ -39,8 +40,7 @@ class App extends Component {
   }
 
   /**
- * this function passes a condition that checks for token
- * and either rerender the state or call in the next function
+ * Handles token validity or expiration
  */
   /* eslint consistent-return: 0 */
 
@@ -70,15 +70,30 @@ class App extends Component {
   async setUserState() {
     const [user, locations] = await Promise.all([getUserDetails(), getAllLocations()]);
     const userLocation = locations.find(({ name }) => name === user.location);
-    this.setState({
-      userLocation,
-      userRole: user.roles[0].role,
-    });
+    if (userLocation === undefined) {
+      this.setState({
+        userLocation: 'Lagos',
+        defaultState: true,
+        userRole: user.roles[0].role,
+      });
+    } else {
+      this.setState({
+        userLocation,
+        defaultState: false,
+        userRole: user.roles[0].role,
+      });
+    }
   }
 
   render() {
-    const { loggedIn, userLocation, userRole } = this.state;
+    const {
+      loggedIn, userLocation, userRole, defaultState,
+    } = this.state;
     const { location } = this.props;
+
+    if (defaultState && userLocation) {
+      return <GetNewUsersLocation userLocation={this.state.userLocation} />;
+    }
 
     if (!loggedIn && location.pathname !== ROUTES.home) {
       // redirect to landing page if user isn't logged in
@@ -96,8 +111,9 @@ class App extends Component {
       <ApolloConsumer>
         {
           (client) => {
-            if (loggedIn && !userLocation) return <div />;
-
+            if (loggedIn && !userLocation) {
+            return <GetNewUsersLocation userLocation={userLocation} />;
+          }
 
             try {
               getUserLocation();

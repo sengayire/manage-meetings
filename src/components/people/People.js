@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import toastr from 'toastr';
 import { ApolloConsumer } from 'react-apollo';
@@ -30,6 +30,14 @@ const People = ({
   },
   allRoles, perPage, refetch, currentPage, editRole,
 }) => {
+  const [locationsFromCache, setLocationsFromCache] = useState([]);
+  useEffect(() => {
+    async function getLocationsFromCache() {
+      const allLocations = await getAllLocationsFromCache();
+      setLocationsFromCache(allLocations);
+    }
+    getLocationsFromCache();
+  }, []);
   const editLocationFunction = async (locId, emailOfUser) => {
     const response = await changeUserLocation(locId, emailOfUser);
     notification(
@@ -80,7 +88,7 @@ const People = ({
                 className="people-access-dropdown"
                 icon={accessMenuCaret()}
               >
-                {getAllLocationsFromCache().map(loc => (
+                {locationsFromCache.map(loc => (
                   <MenuItem
                     className={`access-menu ${
                       loc.name === location ? 'selected' : ''

@@ -1,0 +1,597 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Get New Users Component renders properly 1`] = `
+<MockedProvider
+  addTypename={false}
+>
+  <ApolloProvider
+    client={
+      ApolloClient {
+        "__operations_cache__": Map {},
+        "cache": InMemoryCache {
+          "addTypename": false,
+          "cacheKeyRoot": KeyTrie {
+            "weakness": true,
+          },
+          "config": Object {
+            "addTypename": false,
+            "dataIdFromObject": [Function],
+            "fragmentMatcher": HeuristicFragmentMatcher {},
+            "freezeResults": false,
+            "resultCaching": true,
+          },
+          "data": DepTrackingCache {
+            "data": Object {},
+            "depend": [Function],
+          },
+          "maybeBroadcastWatch": [Function],
+          "optimisticData": DepTrackingCache {
+            "data": Object {},
+            "depend": [Function],
+          },
+          "silenceBroadcast": false,
+          "storeReader": StoreReader {
+            "executeSelectionSet": [Function],
+            "executeStoreQuery": [Function],
+            "executeSubSelectedArray": [Function],
+            "freezeResults": false,
+          },
+          "storeWriter": StoreWriter {},
+          "typenameDocumentCache": Map {},
+          "watches": Set {},
+        },
+        "clearStoreCallbacks": Array [],
+        "defaultOptions": Object {},
+        "disableNetworkFetches": false,
+        "link": MockLink {
+          "addTypename": false,
+          "mockedResponsesByKey": Object {},
+        },
+        "localState": LocalState {
+          "cache": InMemoryCache {
+            "addTypename": false,
+            "cacheKeyRoot": KeyTrie {
+              "weakness": true,
+            },
+            "config": Object {
+              "addTypename": false,
+              "dataIdFromObject": [Function],
+              "fragmentMatcher": HeuristicFragmentMatcher {},
+              "freezeResults": false,
+              "resultCaching": true,
+            },
+            "data": DepTrackingCache {
+              "data": Object {},
+              "depend": [Function],
+            },
+            "maybeBroadcastWatch": [Function],
+            "optimisticData": DepTrackingCache {
+              "data": Object {},
+              "depend": [Function],
+            },
+            "silenceBroadcast": false,
+            "storeReader": StoreReader {
+              "executeSelectionSet": [Function],
+              "executeStoreQuery": [Function],
+              "executeSubSelectedArray": [Function],
+              "freezeResults": false,
+            },
+            "storeWriter": StoreWriter {},
+            "typenameDocumentCache": Map {},
+            "watches": Set {},
+          },
+          "client": [Circular],
+        },
+        "mutate": [Function],
+        "query": [Function],
+        "queryDeduplication": true,
+        "queryManager": QueryManager {
+          "assumeImmutableResults": false,
+          "clientAwareness": Object {
+            "name": undefined,
+            "version": undefined,
+          },
+          "dataStore": DataStore {
+            "cache": InMemoryCache {
+              "addTypename": false,
+              "cacheKeyRoot": KeyTrie {
+                "weakness": true,
+              },
+              "config": Object {
+                "addTypename": false,
+                "dataIdFromObject": [Function],
+                "fragmentMatcher": HeuristicFragmentMatcher {},
+                "freezeResults": false,
+                "resultCaching": true,
+              },
+              "data": DepTrackingCache {
+                "data": Object {},
+                "depend": [Function],
+              },
+              "maybeBroadcastWatch": [Function],
+              "optimisticData": DepTrackingCache {
+                "data": Object {},
+                "depend": [Function],
+              },
+              "silenceBroadcast": false,
+              "storeReader": StoreReader {
+                "executeSelectionSet": [Function],
+                "executeStoreQuery": [Function],
+                "executeSubSelectedArray": [Function],
+                "freezeResults": false,
+              },
+              "storeWriter": StoreWriter {},
+              "typenameDocumentCache": Map {},
+              "watches": Set {},
+            },
+          },
+          "fetchQueryRejectFns": Map {},
+          "idCounter": 1,
+          "inFlightLinkObservables": Map {},
+          "link": MockLink {
+            "addTypename": false,
+            "mockedResponsesByKey": Object {},
+          },
+          "localState": LocalState {
+            "cache": InMemoryCache {
+              "addTypename": false,
+              "cacheKeyRoot": KeyTrie {
+                "weakness": true,
+              },
+              "config": Object {
+                "addTypename": false,
+                "dataIdFromObject": [Function],
+                "fragmentMatcher": HeuristicFragmentMatcher {},
+                "freezeResults": false,
+                "resultCaching": true,
+              },
+              "data": DepTrackingCache {
+                "data": Object {},
+                "depend": [Function],
+              },
+              "maybeBroadcastWatch": [Function],
+              "optimisticData": DepTrackingCache {
+                "data": Object {},
+                "depend": [Function],
+              },
+              "silenceBroadcast": false,
+              "storeReader": StoreReader {
+                "executeSelectionSet": [Function],
+                "executeStoreQuery": [Function],
+                "executeSubSelectedArray": [Function],
+                "freezeResults": false,
+              },
+              "storeWriter": StoreWriter {},
+              "typenameDocumentCache": Map {},
+              "watches": Set {},
+            },
+            "client": [Circular],
+          },
+          "mutationStore": MutationStore {
+            "store": Object {},
+          },
+          "onBroadcast": [Function],
+          "pollingInfoByQueryId": Map {},
+          "queries": Map {},
+          "queryDeduplication": true,
+          "queryStore": QueryStore {
+            "store": Object {},
+          },
+          "ssrMode": false,
+          "transformCache": WeakMap {},
+        },
+        "reFetchObservableQueries": [Function],
+        "resetStore": [Function],
+        "resetStoreCallbacks": Array [],
+        "store": DataStore {
+          "cache": InMemoryCache {
+            "addTypename": false,
+            "cacheKeyRoot": KeyTrie {
+              "weakness": true,
+            },
+            "config": Object {
+              "addTypename": false,
+              "dataIdFromObject": [Function],
+              "fragmentMatcher": HeuristicFragmentMatcher {},
+              "freezeResults": false,
+              "resultCaching": true,
+            },
+            "data": DepTrackingCache {
+              "data": Object {},
+              "depend": [Function],
+            },
+            "maybeBroadcastWatch": [Function],
+            "optimisticData": DepTrackingCache {
+              "data": Object {},
+              "depend": [Function],
+            },
+            "silenceBroadcast": false,
+            "storeReader": StoreReader {
+              "executeSelectionSet": [Function],
+              "executeStoreQuery": [Function],
+              "executeSubSelectedArray": [Function],
+              "freezeResults": false,
+            },
+            "storeWriter": StoreWriter {},
+            "typenameDocumentCache": Map {},
+            "watches": Set {},
+          },
+        },
+        "typeDefs": undefined,
+        "version": "2.6.4",
+        "watchQuery": [Function],
+      }
+    }
+  >
+    <GetNewUsersLocation
+      userLocation="Lagos"
+    >
+      <MrmModal
+        buttonText=""
+        className="modalClass"
+        handleCloseRequest={null}
+        modalButtonClassName="button"
+        openModal={true}
+        showBtn={false}
+      >
+        <Modal
+          ariaHideApp={false}
+          bodyOpenClassName="ReactModal__Body--open"
+          className="modalClass"
+          closeTimeoutMS={0}
+          contentLabel="Parent Modal"
+          isOpen={true}
+          onAfterOpen={[Function]}
+          onRequestClose={[Function]}
+          parentSelector={[Function]}
+          portalClassName="ReactModalPortal"
+          shouldCloseOnEsc={true}
+          shouldCloseOnOverlayClick={false}
+          shouldFocusAfterRender={true}
+          shouldReturnFocusAfterClose={true}
+          style={
+            Object {
+              "content": Object {
+                "backgroundColor": "#ffffff",
+                "border": "1px solid #CCCCCC",
+                "borderRadius": "4px",
+                "bottom": "auto",
+                "boxShadow": "0 2px 40px 10px rgba(185, 180, 180, 0.2)",
+                "fontFamily": "DINPro-Regular",
+                "left": "50%",
+                "outline": "none",
+                "overflow": "auto",
+                "position": "absolute",
+                "right": "auto",
+                "top": "50%",
+                "transform": "translate(-50%, -50%)",
+              },
+            }
+          }
+        >
+          <Portal
+            containerInfo={
+              <div
+                class="ReactModalPortal"
+              >
+                <div
+                  aria-modal="true"
+                  class="ReactModal__Overlay ReactModal__Overlay--after-open"
+                  style="position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; background-color: rgba(255, 255, 255, 0.75);"
+                >
+                  <div
+                    aria-label="Parent Modal"
+                    class="ReactModal__Content ReactModal__Content--after-open modalClass"
+                    style="font-family: DINPro-Regular; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); border: 1px solid #cccccc; border-radius: 4px; outline: none; box-shadow: 0 2px 40px 10px rgba(185, 180, 180, 0.2); background-color: rgb(255, 255, 255); overflow: auto;"
+                    tabindex="-1"
+                  >
+                    <h2
+                      style="color: rgb(255, 0, 0);"
+                    />
+                    <div
+                      class="modal-container"
+                    >
+                      <h2>
+                        Hey there, welcome to Converge!
+                      </h2>
+                      <div
+                        class="align"
+                      >
+                        <h3>
+                          Kindly select your location below
+                        </h3>
+                      </div>
+                      <div
+                        class="align__row"
+                      >
+                        <div
+                          class="analytics-cover"
+                        >
+                          <div
+                            class="btn-right"
+                          >
+                            <div
+                              class="btn-right__location"
+                            >
+                              <div>
+                                <button
+                                  class="btn-right__location__btn btn-right__location__btn--with-caret btn-secondary"
+                                >
+                                  <span>
+                                    Lagos
+                                  </span>
+                                </button>
+                                <div
+                                  class="btn-right__location__dropdown"
+                                >
+                                  <div
+                                    class="btn-right__location__dropdown__background"
+                                  >
+                                    <button />
+                                    <button />
+                                    <button />
+                                  </div>
+                                  <div
+                                    class="btn-right__location__dropdown__background btn-right__location__dropdown__background--foreground"
+                                  >
+                                    <button
+                                      class="location__btn"
+                                    />
+                                    <button
+                                      class="location__btn"
+                                    />
+                                    <button
+                                      class="location__btn"
+                                    />
+                                  </div>
+                                  <div
+                                    class="btn-right__location__dropdown__text"
+                                  >
+                                    <div
+                                      class="btn-right__location__dropdown__text__item"
+                                    >
+                                      Kampala
+                                    </div>
+                                    <div
+                                      class="btn-right__location__dropdown__text__item"
+                                    >
+                                      Nairobi
+                                    </div>
+                                    <div
+                                      class="btn-right__location__dropdown__text__item"
+                                    >
+                                      Kigali
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <form>
+                          <div
+                            class="align"
+                          >
+                            <button
+                              class="null btn-primary"
+                            >
+                              <span>
+                                CONTINUE
+                              </span>
+                            </button>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            }
+          >
+            <ModalPortal
+              ariaHideApp={false}
+              bodyOpenClassName="ReactModal__Body--open"
+              className="modalClass"
+              closeTimeoutMS={0}
+              contentLabel="Parent Modal"
+              defaultStyles={
+                Object {
+                  "content": Object {
+                    "WebkitOverflowScrolling": "touch",
+                    "background": "#fff",
+                    "border": "1px solid #ccc",
+                    "borderRadius": "4px",
+                    "bottom": "40px",
+                    "left": "40px",
+                    "outline": "none",
+                    "overflow": "auto",
+                    "padding": "20px",
+                    "position": "absolute",
+                    "right": "40px",
+                    "top": "40px",
+                  },
+                  "overlay": Object {
+                    "backgroundColor": "rgba(255, 255, 255, 0.75)",
+                    "bottom": 0,
+                    "left": 0,
+                    "position": "fixed",
+                    "right": 0,
+                    "top": 0,
+                  },
+                }
+              }
+              isOpen={true}
+              onAfterOpen={[Function]}
+              onRequestClose={[Function]}
+              parentSelector={[Function]}
+              portalClassName="ReactModalPortal"
+              shouldCloseOnEsc={true}
+              shouldCloseOnOverlayClick={false}
+              shouldFocusAfterRender={true}
+              shouldReturnFocusAfterClose={true}
+              style={
+                Object {
+                  "content": Object {
+                    "backgroundColor": "#ffffff",
+                    "border": "1px solid #CCCCCC",
+                    "borderRadius": "4px",
+                    "bottom": "auto",
+                    "boxShadow": "0 2px 40px 10px rgba(185, 180, 180, 0.2)",
+                    "fontFamily": "DINPro-Regular",
+                    "left": "50%",
+                    "outline": "none",
+                    "overflow": "auto",
+                    "position": "absolute",
+                    "right": "auto",
+                    "top": "50%",
+                    "transform": "translate(-50%, -50%)",
+                  },
+                }
+              }
+            >
+              <div
+                aria-modal="true"
+                className="ReactModal__Overlay ReactModal__Overlay--after-open"
+                onClick={[Function]}
+                onMouseDown={[Function]}
+                style={
+                  Object {
+                    "backgroundColor": "rgba(255, 255, 255, 0.75)",
+                    "bottom": 0,
+                    "left": 0,
+                    "position": "fixed",
+                    "right": 0,
+                    "top": 0,
+                  }
+                }
+              >
+                <div
+                  aria-label="Parent Modal"
+                  className="ReactModal__Content ReactModal__Content--after-open modalClass"
+                  onClick={[Function]}
+                  onKeyDown={[Function]}
+                  onMouseDown={[Function]}
+                  onMouseUp={[Function]}
+                  style={
+                    Object {
+                      "backgroundColor": "#ffffff",
+                      "border": "1px solid #CCCCCC",
+                      "borderRadius": "4px",
+                      "bottom": "auto",
+                      "boxShadow": "0 2px 40px 10px rgba(185, 180, 180, 0.2)",
+                      "fontFamily": "DINPro-Regular",
+                      "left": "50%",
+                      "outline": "none",
+                      "overflow": "auto",
+                      "position": "absolute",
+                      "right": "auto",
+                      "top": "50%",
+                      "transform": "translate(-50%, -50%)",
+                    }
+                  }
+                  tabIndex="-1"
+                >
+                  <h2 />
+                  <div
+                    className="modal-container"
+                  >
+                    <h2>
+                      Hey there, welcome to Converge!
+                    </h2>
+                    <div
+                      className="align"
+                    >
+                      <h3>
+                        Kindly select your location below
+                      </h3>
+                    </div>
+                    <div
+                      className="align__row"
+                    >
+                      <div
+                        className="analytics-cover"
+                      >
+                        <div
+                          className="btn-right"
+                        >
+                          <div
+                            className="btn-right__location"
+                          >
+                            <div>
+                              <Button
+                                classProp="btn-right__location__btn btn-right__location__btn--with-caret"
+                                handleClick={[Function]}
+                                isDisabled={false}
+                                title="Lagos"
+                                type={2}
+                              >
+                                <button
+                                  className="btn-right__location__btn btn-right__location__btn--with-caret btn-secondary"
+                                  disabled={false}
+                                  onClick={[Function]}
+                                >
+                                  <span>
+                                    Lagos
+                                  </span>
+                                </button>
+                              </Button>
+                              <SelectLocation
+                                active={false}
+                                defaultLocation="Lagos"
+                                handleLocationChange={[Function]}
+                              >
+                                <ApolloConsumer>
+                                  <div
+                                    className="btn-right__location__dropdown"
+                                  >
+                                    <div
+                                      className="btn-right__location__dropdown__background"
+                                    />
+                                    <div
+                                      className="btn-right__location__dropdown__background btn-right__location__dropdown__background--foreground"
+                                    />
+                                    <div
+                                      className="btn-right__location__dropdown__text"
+                                    />
+                                  </div>
+                                </ApolloConsumer>
+                              </SelectLocation>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <form>
+                        <div
+                          className="align"
+                        >
+                          <Button
+                            classProp={null}
+                            handleClick={null}
+                            isDisabled={false}
+                            title="CONTINUE"
+                            type={1}
+                          >
+                            <button
+                              className="null btn-primary"
+                              disabled={false}
+                              onClick={null}
+                            >
+                              <span>
+                                CONTINUE
+                              </span>
+                            </button>
+                          </Button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </ModalPortal>
+          </Portal>
+        </Modal>
+      </MrmModal>
+    </GetNewUsersLocation>
+  </ApolloProvider>
+</MockedProvider>
+`;

@@ -8,6 +8,7 @@ exports[`Tests for DeviceFormModal Should render correctly from memory 1`] = `
   handleCloseRequest={[Function]}
   modalButtonClassName="button"
   openModal={false}
+  showBtn={true}
   title="ADD A NEW DEVICE"
 >
   <DeviceModalContent

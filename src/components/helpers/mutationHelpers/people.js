@@ -1,6 +1,6 @@
 /* eslint-disable import/prefer-default-export */
 import apolloClient from '../../../utils/ApolloClient';
-import { INVITE_PERSON_MUTATION, CHANGE_USER_LOCATION_MUTATION } from '../../../graphql/mutations/People';
+import { INVITE_PERSON_MUTATION, CHANGE_USER_LOCATION_MUTATION, SET_USER_LOCATION } from '../../../graphql/mutations/People';
 import { decodeTokenAndGetUserData } from '../../../utils/Cookie';
 import { GET_USER_QUERY } from '../../../graphql/queries/People';
 import GET_ALL_LEVELS from '../../../graphql/queries/Levels';
@@ -35,4 +35,13 @@ const changeUserLocation = async (locationId, queryEmail, client = apolloClient)
   return data;
 };
 
-export { invitePersonMutation, changeUserLocation };
+const setNewUsersLocation = async (locationId, client = apolloClient) => {
+  await client
+    .mutate({
+      mutation: SET_USER_LOCATION,
+      name: 'setNewUserLocation',
+      variables: { locationId },
+    });
+};
+
+export { invitePersonMutation, changeUserLocation, setNewUsersLocation };

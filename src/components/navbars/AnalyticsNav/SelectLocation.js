@@ -1,10 +1,26 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { ApolloConsumer } from 'react-apollo';
 import PropTypes from 'prop-types';
 import { getAllLocationsFromCache, getUserLocation } from '../../helpers/QueriesHelpers';
 
-const SelectLocation = ({ active, handleLocationChange }) => {
-  const location = getUserLocation().name;
+const SelectLocation = ({ active, handleLocationChange, defaultLocation }) => {
+  const [locationsFromCache, setLocationsFromCache] = useState([]);
+  let location;
+
+  if (defaultLocation) {
+    location = defaultLocation;
+  } else {
+    location = getUserLocation().name;
+  }
+
+  useEffect(() => {
+    async function getLocationsFromCache() {
+      const allLocations = await getAllLocationsFromCache();
+      setLocationsFromCache(allLocations);
+    }
+    getLocationsFromCache();
+  }, []);
+
   return (
     <ApolloConsumer>
       {
@@ -14,24 +30,25 @@ const SelectLocation = ({ active, handleLocationChange }) => {
               className="btn-right__location__dropdown__background"
             >
               {
-                getAllLocationsFromCache().map(({ name }) => (
+              locationsFromCache && locationsFromCache.map(({ name }) => (
                   name === location ? null : <button key={name} />
-                ))
-              }
+                  ))
+                }
             </div>
             <div
               className="btn-right__location__dropdown__background btn-right__location__dropdown__background--foreground"
             >
               {
-                getAllLocationsFromCache().map(loc => (
+                locationsFromCache && locationsFromCache.map(loc => (
                   loc.name === location
                     ? null
                     : (
                       <button
+                        className="location__btn"
                         key={loc.name}
-                        onClick={() => {
-                            client.writeData({ data: { userLocation: loc } });
-                            handleLocationChange(loc.id);
+                        onClick={async () => {
+                            await client.writeData({ data: { userLocation: loc } });
+                            handleLocationChange(loc.id, loc.name);
                           }
                         }
                       />
@@ -41,7 +58,7 @@ const SelectLocation = ({ active, handleLocationChange }) => {
             </div>
             <div className="btn-right__location__dropdown__text">
               {
-                getAllLocationsFromCache().map(({ name }) => (
+                locationsFromCache && locationsFromCache.map(({ name }) => (
                   name === location ? null : (
                     <div
                       key={name}
@@ -63,6 +80,7 @@ const SelectLocation = ({ active, handleLocationChange }) => {
 SelectLocation.propTypes = {
   active: PropTypes.bool.isRequired,
   handleLocationChange: PropTypes.func.isRequired,
+  defaultLocation: PropTypes.string.isRequired,
 };
 
 export default SelectLocation;
