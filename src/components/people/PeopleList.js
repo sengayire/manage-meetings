@@ -143,7 +143,7 @@ export class PeopleList extends Component {
           </div>
         </div>
         <div className="settings-people-list">
-          {isFetching ? <Overlay /> : null}
+          {isFetching ? <Overlay id="people-list-overlay" /> : null}
           {!(error || locationsError || rolesError) ?
             <div className="table">
               <TableHead titles={['Name', 'Location', 'Access Level']} />
