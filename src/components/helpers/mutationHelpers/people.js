@@ -25,8 +25,7 @@ const changeUserLocation = async (locationId, queryEmail, client = apolloClient)
       variables: { email, locationId },
       refetchQueries: [{
         query: GET_ALL_LEVELS,
-      },
-      ],
+      }],
     });
 
   return data;
