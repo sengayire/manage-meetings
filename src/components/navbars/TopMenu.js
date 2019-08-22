@@ -3,12 +3,16 @@ import React, { Fragment } from 'react';
 import toastr from 'toastr';
 import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import Button from '../commons/Button';
 import ProfileMenu from './ProfileMenu';
 import { convergeLogoIcon, notificationsIcon, searchIcon } from '../../utils/images/images';
 import { decodeTokenAndGetUserData } from '../../utils/Cookie';
 import '../../assets/styles/topmenu.scss';
 import { Input } from '../commons';
 import notification from '../../utils/notification';
+import SelectLocation from '../navbars/AnalyticsNav/SelectLocation';
+import { changeUserLocation } from '../helpers/mutationHelpers/people';
+import { getUserLocation, getUserRole } from '../helpers/QueriesHelpers';
 
 /**
  * Component for Top Menu
@@ -23,6 +27,7 @@ export class TopMenuComponent extends React.Component {
     query: '',
     showOptions: false,
     component: '',
+    showLocations: false,
   }
 
   componentDidMount() {
@@ -31,13 +36,13 @@ export class TopMenuComponent extends React.Component {
     this.updateUserInfo(userInfo);
   }
 
-  componentDidUpdate(prevProps, {
-    query, showOptions, component, focusInput, ...prevUserInfo
-  }) {
+  componentDidUpdate(prevProps, prevState) {
+    const {
+      query, showOptions, showLocations,
+      component, ...prevUserInfo
+    } = prevState;
     const currentUserInfo = this.getUserInfoFromToken();
-
     const stringify = data => JSON.stringify(data);
-
     if (stringify(prevUserInfo) !== stringify(currentUserInfo)) {
       this.updateUserInfo(currentUserInfo);
     }
@@ -58,10 +63,27 @@ export class TopMenuComponent extends React.Component {
     </button>
   );
 
-  setComponent = component => this.setState({ component, showOptions: false }, this.setFocus);
-
+  setComponent = component => this.setState({
+    component,
+    showOptions: false,
+    showLocations: false,
+  }, this.setFocus);
 
   setFocus = () => document.querySelector('.nav-menu input').focus();
+
+  dateValue = () => {
+    const {
+      startDate,
+      endDate,
+      isFutureDateSelected,
+    } = this.state;
+
+    return {
+      startDate,
+      endDate,
+      isFutureDateSelected,
+    };
+  };
 
   handleSearch = (e) => {
     const { history } = this.props;
@@ -83,7 +105,6 @@ export class TopMenuComponent extends React.Component {
     return false;
   }
 
-
   addListener = () => {
     const { showOptions, component } = this.state;
     if (!showOptions && !component) {
@@ -102,9 +123,7 @@ export class TopMenuComponent extends React.Component {
 
   inputRef = React.createRef();
 
-
   toggleOptions = value => this.setState({ showOptions: value }, this.setFocus);
-
   updateUserInfo = userInfo => this.setState(userInfo);
 
   handleQueryChange = (e) => {
@@ -115,11 +134,34 @@ export class TopMenuComponent extends React.Component {
     }));
   };
 
+  toggleLocationDropdown = () => {
+    this.setState(({ showLocations }) => ({
+      showLocations: !showLocations,
+    }));
+  }
+
+  handleLocationChange = async (locationId) => {
+    this.setState({
+      showLocations: false,
+    });
+    await changeUserLocation(locationId);
+    this.props.resetLocation();
+  }
+
   render() {
     const {
-      query, firstName, lastName, picture, showOptions, component,
+      query,
+      firstName,
+      lastName,
+      picture,
+      showOptions,
+      component,
+      showLocations,
     } = this.state;
 
+    const location = getUserLocation().name;
+
+    const isSuperAdmin = getUserRole() === 'Super Admin';
 
     return (
       <div className="top-menu">
@@ -197,6 +239,26 @@ export class TopMenuComponent extends React.Component {
               <div className="notifications">
                 <img src={notificationsIcon} alt="Notification icon" />
               </div>
+              <div className="location-dropdown analytics-cover">
+                <div className="btn-right">
+                  <div className="btn-right__location">
+                    <Button
+                      classProp={`btn-right__location__btn${isSuperAdmin ? ' btn-right__location__btn--with-caret' : ''}`}
+                      title={location}
+                      type={2}
+                      {...(isSuperAdmin && { handleClick: this.toggleLocationDropdown })}
+                    />
+                    {
+                      isSuperAdmin && (
+                        <SelectLocation
+                          handleLocationChange={this.handleLocationChange}
+                          active={showLocations}
+                        />
+                      )
+                    }
+                  </div>
+                </div>
+              </div>
               <div className="profile">
                 <img src={picture} className="menu-icon" alt="Profile icon" />
               </div>
@@ -216,6 +278,11 @@ TopMenuComponent.propTypes = {
   history: PropTypes.shape({
     push: PropTypes.func,
   }).isRequired,
+  resetLocation: PropTypes.func,
+};
+
+TopMenuComponent.defaultProps = {
+  resetLocation: () => {},
 };
 
 export default withRouter(TopMenuComponent);

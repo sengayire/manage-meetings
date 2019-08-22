@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react';
+import PropTypes from 'prop-types';
 import moment from 'moment';
 import Button from '../../commons/Button';
 import '../../../assets/styles/custom.scss';
@@ -9,9 +10,8 @@ import Calendar from '../../commons/Calendar';
 import AnalyticsActivityComponent from '../../../containers/AnalyticsActivity';
 import AnalyticsOverview from '../../../containers/AnalyticsOverview';
 import ExportButton from '../../commons/ExportButton';
-import { getAllAnalytics, getAllRooms, getUserLocation, getUserRole } from '../../helpers/QueriesHelpers';
+import { getAllAnalytics, getAllRooms } from '../../helpers/QueriesHelpers';
 import AnalyticsContext from '../../helpers/AnalyticsContext';
-import SelectLocation from './SelectLocation';
 import { changeUserLocation } from '../../helpers/mutationHelpers/people';
 
 /**
@@ -30,6 +30,7 @@ class AnalyticsNav extends Component {
     startDate: moment().format('MMM DD Y'),
     endDate: moment().format('MMM DD Y'),
     fetching: true,
+    locationChanged: false,
   };
 
   async componentDidMount() {
@@ -38,6 +39,10 @@ class AnalyticsNav extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
+    if (prevState.locationChanged !== this.props.locationChanged) {
+      this.props.resetLocation();
+      this.getAnalytics();
+    }
     const { startDate, endDate } = this.state;
     const { startDate: prevStartDate, endDate: prevEndDate } = prevState;
     if (prevStartDate !== startDate || prevEndDate !== endDate) {
@@ -61,6 +66,7 @@ class AnalyticsNav extends Component {
   }
 
   getAnalytics = async () => {
+    this.setState({ fetching: true });
     const dateValue = this.dateValue();
 
     const { allAnalytics: analytics } = await getAllAnalytics(dateValue);
@@ -159,7 +165,6 @@ class AnalyticsNav extends Component {
       fetching,
       startDate,
       endDate,
-      showLocations,
     } = this.state;
 
     const renderButtons = buttonTitle => (<Button
@@ -170,9 +175,6 @@ class AnalyticsNav extends Component {
       isDisabled={activeTab === `${buttonTitle.toLowerCase()}`}
     />);
 
-    const location = getUserLocation().name;
-
-    const isSuperAdmin = getUserRole() === 'Super Admin';
     return (
       <Fragment>
         <div className="analytics-cover ">
@@ -181,22 +183,6 @@ class AnalyticsNav extends Component {
             {renderButtons('activity')}
           </div>
           <div className="btn-right">
-            <div className="btn-right__location">
-              <Button
-                classProp={`btn-right__location__btn${isSuperAdmin ? ' btn-right__location__btn--with-caret' : ''}`}
-                title={location}
-                type={2}
-                {...(isSuperAdmin && { handleClick: this.toggleLocationDropdown })}
-              />
-              {
-                isSuperAdmin && (
-                  <SelectLocation
-                    handleLocationChange={this.handleLocationChange}
-                    active={showLocations}
-                  />
-                )
-              }
-            </div>
             {
               !fetching && (
                 <Fragment>
@@ -229,5 +215,15 @@ class AnalyticsNav extends Component {
     );
   }
 }
+
+AnalyticsNav.propTypes = {
+  resetLocation: PropTypes.func,
+  locationChanged: PropTypes.bool,
+};
+
+AnalyticsNav.defaultProps = {
+  resetLocation: PropTypes.func,
+  locationChanged: PropTypes.bool,
+};
 
 export default AnalyticsNav;
