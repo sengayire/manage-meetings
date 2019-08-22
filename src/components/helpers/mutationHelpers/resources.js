@@ -178,7 +178,7 @@ export const assignResourceMutation = async ({
               office: '',
               page: 1,
               perPage: 8,
-              roomLabels: null,
+              roomLabels: '',
             },
           });
           const target = cachedRooms.allRooms.rooms.findIndex(({ id }) => id === roomId);
