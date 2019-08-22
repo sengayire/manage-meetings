@@ -6,7 +6,7 @@ import { IconMenu, MenuItem } from 'react-toolbox/lib/menu';
 import notification from '../../utils/notification';
 import { getAllLocationsFromCache } from '../helpers/QueriesHelpers';
 import { changeUserLocation } from '../helpers/mutationHelpers/people';
-import { peopleIcon } from '../../utils/images/images';
+import { defaultUserIcon } from '../../utils/images/images';
 
 /**
  * Shows the menuCart besides the Access Level on the people's table
@@ -67,7 +67,7 @@ const People = ({
                 alt="alt"
                 onError={() => {
                   const element = document.getElementById(email);
-                  if (element.alt === 'alt') element.src = peopleIcon;
+                  if (element.alt === 'alt') element.src = defaultUserIcon;
                   element.alt = 'profile';
                 }}
                 src={picture}
