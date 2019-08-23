@@ -8,7 +8,7 @@ import '../../assets/styles/spinner.scss';
  */
 const Spinner = prop => (
   <div className="centered">
-    <div className={prop.size === 'small' ? 'spinner small' : 'spinner'} />
+    <div className={prop.size ? `spinner ${prop.size}` : 'spinner'} />
   </div>
 );
 
