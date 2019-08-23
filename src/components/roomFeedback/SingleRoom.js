@@ -1,39 +1,45 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
+import Switch from 'react-switch';
 import '../../assets/styles/SingleRoomSideModel.scss';
 import Spinner from '../commons/Spinner';
-import { getRoomResources, getSingleRoomFeedback } from '../helpers/QueriesHelpers';
+import {
+  getRoomResources,
+  getSingleRoomFeedback,
+} from '../helpers/QueriesHelpers';
 import resolveResponses from '../helpers/mutationHelpers/responses';
-import removeFilter from '../commons/RemoveFilter';
-import resolve from '../../assets/images/resolved.svg';
-import unresolve from '../../assets/images/unresolved.svg';
+import '../../assets/styles/spinner.scss';
 import formatDate from '../../utils/reformatDate';
-
 
 export class SingleRoomFeedBack extends Component {
   state = {
     roomResources: [
       {
-        room: [{
-          quantity: 0,
-          resource: {
-            name: '',
-            room: [{ name: '' }],
+        room: [
+          {
+            quantity: 0,
+            resource: {
+              name: '',
+              room: [{ name: '' }],
+            },
           },
-        }],
+        ],
       },
     ],
     roomResponse: {
       roomName: 'DemoRoomState',
       totalResponses: 1,
-      response: [{
-        id: 282,
-        createdDate: '2019-06-25T10:40:23.818174',
-        resolved: false,
-        response: { __typename: 'Rate', rate: 5 },
-      }],
+      response: [
+        {
+          id: 282,
+          createdDate: '2019-06-25T10:40:23.818174',
+          resolved: false,
+          response: { __typename: 'Rate', rate: 5 },
+        },
+      ],
     },
     isFetching: false,
+    isResolving: false,
   };
 
   componentDidUpdate = async (prevProps) => {
@@ -41,7 +47,7 @@ export class SingleRoomFeedBack extends Component {
       await this.getResourceData();
       await this.getFeedbackData();
     }
-  }
+  };
 
   getFeedbackData = async () => {
     this.setState({ isFetching: true });
@@ -69,7 +75,10 @@ export class SingleRoomFeedBack extends Component {
         roomResources: resource,
       });
     } catch (error) {
-      if (error && error.message === 'GraphQL error: Room has no resource yet') {
+      if (
+        error &&
+        error.message === 'GraphQL error: Room has no resource yet'
+      ) {
         this.setState({ isFetching: false });
         return;
       }
@@ -91,7 +100,7 @@ export class SingleRoomFeedBack extends Component {
       data = [...responses].reverse().map(response => (
         <div key={response.id} className="response">
           <div className="date">{formatDate(response.createdDate)}</div>
-          {this.renderRoomFeeback(response, roomResources)}
+          {this.renderRoomFeedback(response, roomResources)}
         </div>
       ));
     } else {
@@ -112,21 +121,51 @@ export class SingleRoomFeedBack extends Component {
    *
    */
   resolveResponse = async (responseId, roomId) => {
-    this.setState({ isFetching: true });
+    this.setState({ isResolving: true });
     try {
       await resolveResponses(responseId, roomId);
       await this.getFeedbackData();
 
-      this.setState({ isFetching: false });
+      this.setState({ isResolving: false });
     } catch (error) {
-      this.setState({ isFetching: false });
+      this.setState({ isResolving: false });
     }
-  }
+  };
 
   renderSpinner = () => (
-    <div className="modal-spinner"><Spinner /></div>
-  )
+    <div className="modal-spinner">
+      <Spinner />
+    </div>
+  );
 
+  renderToggle = (isStatus, onChange, isFetching) => (
+    <Switch
+      checked={isStatus}
+      onChange={onChange}
+      handleDiameter={30}
+      offColor="#FF0000"
+      onColor="#449C44"
+      offHandleColor="#fff"
+      onHandleColor="#fff"
+      height={30}
+      width={115}
+      className="react-switch"
+      id="small-radius-switch"
+      boxShadow="0px 1px 5px rgba(0, 0, 0, 0.6)"
+      activeBoxShadow="0px 0px 1px 10px rgba(0, 0, 0, 0.2)"
+      uncheckedIcon={this.renderStatus('Unresolved', isFetching)}
+      checkedIcon={this.renderStatus('Resolved', isFetching)}
+    />
+  );
+  renderStatus = (status, isFetchingStatus) => {
+    const className =
+      status === 'Resolved' ? 'feedback-status-resolved' : 'feedback-status';
+    return (
+      <div className={className}>
+        {isFetchingStatus ? <Spinner size="toggle" /> : status}
+      </div>
+    );
+  };
   /**
    * Conditionally renders responses that are
    * either ratings, suggestions or checks
@@ -135,15 +174,20 @@ export class SingleRoomFeedBack extends Component {
    *
    * @return {JSX}
    */
-  renderRoomFeeback = (response, roomResources) => {
+  renderRoomFeedback = (response, roomResources) => {
+    const onFeedbackToggle = () => {
+      this.resolveResponse(response.id, this.props.roomId);
+    };
+
     const { roomCleanlinessRating } = this.props;
     let resourcesList;
     if (!roomResources) {
       resourcesList = [];
     } else {
-      roomResources && (resourcesList = roomResources.map(
-        resource => resource.room[0].resource.name,
-      ));
+      roomResources &&
+        (resourcesList = roomResources.map(
+          resource => resource.room[0].resource.name,
+        ));
     }
 
     if (response.response.__typename === 'TextArea') {
@@ -153,16 +197,15 @@ export class SingleRoomFeedBack extends Component {
           <div className="text-comment">
             {response.response.suggestion}
             <div className="resolved-status">
-              {`Status: ${(response.resolved ? 'Resolved' : 'Unresolved')}`}
               {response.response.__typename === 'Rate' ? null : (
                 <div className="btn-resolve">
-                  {response.resolved ?
-                removeFilter(() => this.resolveResponse(response.id, this.props.roomId), 'Mark as unresolved', resolve, 'resolve')
-                :
-                removeFilter(() => this.resolveResponse(response.id, this.props.roomId), 'Mark as resolved', unresolve, 'resolve')
-              }
+                  {this.renderToggle(
+                    response.resolved,
+                    onFeedbackToggle,
+                    this.state.isResolving,
+                  )}
                 </div>
-          )}
+              )}
             </div>
           </div>
         </div>
@@ -181,16 +224,18 @@ export class SingleRoomFeedBack extends Component {
                   <input
                     id={response.id}
                     type="checkbox"
-                    defaultChecked={
-                      Array.from(response.response.missingItems, x => x.name).includes(item)
-                    }
-                  />{item}
+                    defaultChecked={Array.from(
+                      response.response.missingItems,
+                      x => x.name,
+                    ).includes(item)}
+                  />
+                  {item}
                 </label>
               ))}
             </div>
           </div>
           <div className="resolved-status">
-            {`Status: ${(response.resolved ? 'Resolved' : 'Unresolved')}`}
+            {`Status: ${response.resolved ? 'Resolved' : 'Unresolved'}`}
           </div>
         </div>
       );
@@ -202,7 +247,7 @@ export class SingleRoomFeedBack extends Component {
           <div className="text-comment">
             {response.response.options}
             <div className="resolved-status">
-              {`Status: ${(response.resolved ? 'Resolved' : 'Unresolved')}`}
+              {`Status: ${response.resolved ? 'Resolved' : 'Unresolved'}`}
             </div>
           </div>
         </div>
@@ -212,10 +257,12 @@ export class SingleRoomFeedBack extends Component {
       <div className="text-comment item-list response-item">
         <div className="item-list-heading">Cleanliness</div>
         <div />
-        <div className="cleanliness">{roomCleanlinessRating(response.response.rate)}</div>
+        <div className="cleanliness">
+          {roomCleanlinessRating(response.response.rate)}
+        </div>
       </div>
     );
-  }
+  };
 
   /**
    * Conditionally renders a spinner, error message
@@ -267,18 +314,22 @@ export class SingleRoomFeedBack extends Component {
           </div>
         </div>
         <div className="row-2-heading">{totalResponses} Responses </div>
-        <div className="row-2">{this.roomFeedbackList(response, roomResources)}</div>
+        <div className="row-2">
+          {this.roomFeedbackList(response, roomResources)}
+        </div>
       </Fragment>
     );
   };
 
   render() {
     const { roomId } = this.props;
-    return (!this.props.visible || !roomId ? null : (
+    return !this.props.visible || !roomId ? null : (
       <div className="side-modal">
-        {this.state.isFetching ? this.renderSpinner() : this.renderModalContent()}
+        {this.state.isFetching
+          ? this.renderSpinner()
+          : this.renderModalContent()}
       </div>
-    ));
+    );
   }
 }
 

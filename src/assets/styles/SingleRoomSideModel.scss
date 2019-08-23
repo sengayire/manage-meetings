@@ -175,6 +175,10 @@
 
 .btn-resolve {
   padding-top: 1px;
+
+  .react-switch-bg {
+    box-shadow: inset .2px 1px 6px rgba(0, 0, 0, .3);
+  }
 }
 
 .resolve {
@@ -199,5 +203,27 @@
 
   100% {
     transform: translate(0);
+  }
+}
+
+.feedback-status {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  font-size: 15;
+  color: #fff;
+  padding-right: 2;
+  margin-right: 4rem;
+
+  &-resolved {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    font-size: 15;
+    color: #fff;
+    padding-right: 2;
+    margin-left: 3rem;
   }
 }
