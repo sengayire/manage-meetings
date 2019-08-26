@@ -181,12 +181,12 @@ exports[`TopMenu Component Should render component 1`] = `
         }
       >
         <TopMenuComponent
+          changeUserLocation={[Function]}
           history={
             Object {
               "push": [MockFunction],
             }
           }
-          resetLocation={[Function]}
         >
           <div
             className="top-menu"

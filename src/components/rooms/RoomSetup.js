@@ -34,11 +34,14 @@ class RoomSetup extends Component {
     this.fetchRooms(perPage, currentPage, query);
   };
 
-  componentDidUpdate({ query: oldQuery }) {
+  componentDidUpdate({ query: oldQuery, userLocationChanged }) {
     const { query } = this.props;
     const { perPage, currentPage } = this.state;
     if (query && (query !== oldQuery)) {
       this.fetchRooms(perPage, currentPage, query);
+    }
+    if (userLocationChanged !== this.props.userLocationChanged) {
+      this.updateLocation();
     }
   }
 
@@ -63,6 +66,10 @@ class RoomSetup extends Component {
   };
   editRoom = createRef();
   resetFilterRef = React.createRef();
+
+  updateLocation = () => {
+    this.setState({ location: getUserLocation().name });
+  };
 
   /**
    * It creates the ref function to clear filter
@@ -267,6 +274,7 @@ class RoomSetup extends Component {
 }
 
 RoomSetup.propTypes = {
+  userLocationChanged: PropTypes.bool,
   history: PropTypes.shape({
     replace: PropTypes.func,
   }).isRequired,
@@ -278,6 +286,7 @@ RoomSetup.propTypes = {
 };
 
 RoomSetup.defaultProps = {
+  userLocationChanged: PropTypes.bool,
   query: undefined,
 };
 

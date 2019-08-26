@@ -38,6 +38,11 @@ class DeviceList extends Component {
     ) {
       this.updatePageDetails();
     }
+    if (prevProps.userLocationChanged !== this.props.userLocationChanged) {
+      this.toggleFetching();
+      setTimeout(() => { this.getData(); }, 1000);
+      this.toggleFetching();
+    }
   }
 
   getData = async () => {
@@ -51,6 +56,8 @@ class DeviceList extends Component {
     });
     this.updatePageDetails();
   }
+
+  toggleFetching() { this.setState({ fetching: !this.state.fetching }); }
 
   handleAction = (action, device) => {
     this.setState({
@@ -168,6 +175,7 @@ class DeviceList extends Component {
 
 
 DeviceList.propTypes = {
+  userLocationChanged: PropTypes.bool,
   location: PropTypes.shape({
     name: PropTypes.string,
   }),
@@ -175,6 +183,7 @@ DeviceList.propTypes = {
 };
 
 DeviceList.defaultProps = {
+  userLocationChanged: PropTypes.bool,
   location: undefined,
 };
 

@@ -30,9 +30,7 @@ class Setup extends Component {
    */
   getUsersInformation = async () => {
     const user = await getUserDetails();
-    this.setState({
-      user,
-    });
+    this.setState({ user });
   };
 
 
@@ -109,18 +107,23 @@ class Setup extends Component {
     if (loaded) {
       switch (level) {
         case 'SetupInfoPage':
-          return <SetupInfoPage handleClick={this.handleClick} />;
+          return (<SetupInfoPage
+            handleClick={this.handleClick}
+            userLocationChanged={this.props.userLocationChanged}
+          />);
         case 'BuildingLevel':
           return (<BuildingLevel
             handleClick={this.handleClick}
             getAllStructureIds={this.getAllStructureIds}
+            userLocationChanged={this.props.userLocationChanged}
           />);
         case 'RoomSetupView':
           return (
             <RoomSetupView
+              searchState={searchState}
               handleClick={this.handleClick}
               userLocation={location}
-              searchState={searchState}
+              userLocationChanged={this.props.userLocationChanged}
             />
           );
         default:
@@ -131,6 +134,7 @@ class Setup extends Component {
               handleClick={this.handleClick}
               userLocation={location}
               searchState={searchState}
+              userLocationChanged={this.props.userLocationChanged}
             />);
       }
     }
@@ -149,16 +153,14 @@ class Setup extends Component {
         {getUserRole().includes('Admin') ? (
           this.renderSetupContent(visibleLevel)
         ) : (
-          <div className="item-list-empty">
-            <ErrorIcon message="You are not authorized to perform this action" />
-          </div>
-          )}
+          <div className="item-list-empty"> <ErrorIcon message="You are not authorized to perform this action" /> </div>)}
       </div>
     );
   }
 }
 
 Setup.propTypes = {
+  userLocationChanged: PropTypes.bool,
   searchState: PropTypes.shape({
     component: PropTypes.string,
     query: PropTypes.string,
@@ -166,6 +168,7 @@ Setup.propTypes = {
 };
 
 Setup.defaultProps = {
+  userLocationChanged: PropTypes.bool,
   searchState: undefined,
 };
 

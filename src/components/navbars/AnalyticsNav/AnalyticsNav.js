@@ -30,7 +30,7 @@ class AnalyticsNav extends Component {
     startDate: moment().format('MMM DD Y'),
     endDate: moment().format('MMM DD Y'),
     fetching: true,
-    locationChanged: false,
+    userLocationChanged: false,
   };
 
   async componentDidMount() {
@@ -39,8 +39,7 @@ class AnalyticsNav extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    if (prevState.locationChanged !== this.props.locationChanged) {
-      this.props.resetLocation();
+    if (prevProps.userLocationChanged !== this.props.userLocationChanged) {
       this.getAnalytics();
     }
     const { startDate, endDate } = this.state;
@@ -217,13 +216,11 @@ class AnalyticsNav extends Component {
 }
 
 AnalyticsNav.propTypes = {
-  resetLocation: PropTypes.func,
-  locationChanged: PropTypes.bool,
+  userLocationChanged: PropTypes.bool,
 };
 
 AnalyticsNav.defaultProps = {
-  resetLocation: PropTypes.func,
-  locationChanged: PropTypes.bool,
+  userLocationChanged: PropTypes.bool,
 };
 
 export default AnalyticsNav;

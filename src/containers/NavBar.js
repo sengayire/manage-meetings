@@ -22,14 +22,10 @@ class NavBar extends Component {
     this.setState({ ...this.state, userRole: role });
   };
 
-  resetLocation = () => {
-    this.props.resetLocation();
-  }
-
   render() {
     return (
       <Fragment>
-        <TopMenu resetLocation={this.resetLocation} />
+        <TopMenu changeUserLocation={this.props.changeUserLocation} />
         <TopNav userRole={this.state.userRole} />
       </Fragment>
     );
@@ -37,11 +33,11 @@ class NavBar extends Component {
 }
 
 NavBar.propTypes = {
-  resetLocation: PropTypes.func,
+  changeUserLocation: PropTypes.func,
 };
 
 NavBar.defaultProps = {
-  resetLocation: PropTypes.func,
+  changeUserLocation: PropTypes.func,
 };
 
 export default NavBar;
