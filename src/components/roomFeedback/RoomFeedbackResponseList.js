@@ -102,6 +102,7 @@ export class RoomFeedbackResponseList extends React.Component {
     this.state = {
       visible: false,
       roomId: null,
+      responseIds: [],
       currentPage: 1,
       isFetching: false,
     };
@@ -113,18 +114,13 @@ export class RoomFeedbackResponseList extends React.Component {
    * @param {Object} event
    * @param {string} id
    */
-  showModal = (e, id = null) => {
+  showModal = (e, data = null) => {
     e.preventDefault();
-    const { roomId } = this.state;
-    if (id === null) {
-      this.setState({
-        visible: !this.state.visible,
-        roomId: id,
-      });
-    } else if (id !== roomId) {
-      this.setState({ visible: true, roomId: id });
+    if (data) {
+      const { roomId, responseIds } = data;
+      this.setState({ visible: true, roomId, responseIds });
     } else {
-      this.setState({ visible: false, roomId: null });
+      this.setState({ visible: false, roomId: null, responseIds: [] });
     }
   };
 
@@ -170,7 +166,7 @@ export class RoomFeedbackResponseList extends React.Component {
 
   render() {
     const {
-      roomId, isFetching, currentPage, perPage,
+      roomId, isFetching, currentPage, perPage, responseIds,
     } = this.state;
     const { feedback, loading } = this.props;
 
@@ -200,6 +196,7 @@ export class RoomFeedbackResponseList extends React.Component {
               roomId={roomId}
               visible={this.state.visible}
               showModal={this.showModal}
+              responseIds={responseIds}
               totalCleanlinessRating={totalCleanlinessRating}
               roomCleanlinessRating={roomCleanlinessRating}
               totalMissingItemsCount={totalMissingItemsCount}

@@ -75,10 +75,14 @@ class RoomFeedbackResponse extends Component {
 
   showModal = (e) => {
     const {
-      roomFeedbackResponse: { roomId },
+      roomFeedbackResponse: { roomId, response },
       viewSingleFeed,
     } = this.props;
-    viewSingleFeed(e, roomId);
+    const responseIds = [];
+    response.forEach((item) => {
+      responseIds.push(item.id);
+    });
+    viewSingleFeed(e, { roomId, responseIds });
   };
 
   render() {

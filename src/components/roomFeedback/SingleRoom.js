@@ -3,10 +3,7 @@ import PropTypes from 'prop-types';
 import Switch from 'react-switch';
 import '../../assets/styles/SingleRoomSideModel.scss';
 import Spinner from '../commons/Spinner';
-import {
-  getRoomResources,
-  getSingleRoomFeedback,
-} from '../helpers/QueriesHelpers';
+import { getRoomResources, getSingleRoomFeedback } from '../helpers/QueriesHelpers';
 import resolveResponses from '../helpers/mutationHelpers/responses';
 import '../../assets/styles/spinner.scss';
 import formatDate from '../../utils/reformatDate';
@@ -43,9 +40,15 @@ export class SingleRoomFeedBack extends Component {
   };
 
   componentDidUpdate = async (prevProps) => {
-    if (this.props.roomId !== prevProps.roomId) {
-      await this.getResourceData();
-      await this.getFeedbackData();
+    if (this.props.roomId) {
+      if (this.props.roomId !== prevProps.roomId) {
+        await this.getResourceData();
+        await this.getFeedbackData();
+      }
+      if (prevProps.responseIds !== this.props.responseIds) {
+        await this.getResourceData();
+        await this.getFeedbackData();
+      }
     }
   };
 
@@ -53,6 +56,10 @@ export class SingleRoomFeedBack extends Component {
     this.setState({ isFetching: true });
     try {
       const feedback = await getSingleRoomFeedback(this.props.roomId);
+      feedback.response = feedback.response.filter(
+        resp => this.props.responseIds.includes(resp.id),
+      );
+      feedback.totalResponses = this.props.responseIds.length;
 
       this.setState({
         roomResponse: feedback,
@@ -334,6 +341,7 @@ export class SingleRoomFeedBack extends Component {
 }
 
 SingleRoomFeedBack.propTypes = {
+  responseIds: PropTypes.arrayOf(PropTypes.number),
   roomCleanlinessRating: PropTypes.func.isRequired,
   totalCleanlinessRating: PropTypes.func.isRequired,
   totalMissingItemsCount: PropTypes.func.isRequired,
@@ -344,6 +352,7 @@ SingleRoomFeedBack.propTypes = {
 };
 
 SingleRoomFeedBack.defaultProps = {
+  responseIds: [],
   showModal: PropTypes.func,
   roomId: null,
 };
