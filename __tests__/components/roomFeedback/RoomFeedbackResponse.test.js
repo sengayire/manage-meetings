@@ -136,32 +136,13 @@ describe('Room Feedback', () => {
     expect(ResponseListComponent.state('currentPage')).toBe(1);
   });
 
-  it('should be able to toggle modal state', () => {
-    const ResponseListComponent = shallow(
-      <RoomFeedbackResponseList
-        {...responseListProps}
-        checkData={jest.fn()}
-        totalRoomResources={jest.fn()}
-      />,
-    );
-
-    const ResponseComponent = shallow(
-      <RoomFeedbackResponse {...props} />);
-    const ResponseListInstance = ResponseListComponent.instance();
-    const ResponseInstance = ResponseComponent.instance();
-    const fakeEvent = { preventDefault: () => { } };
-    ResponseListInstance.showModal(fakeEvent);
-    ResponseInstance.showModal(fakeEvent);
-    expect(ResponseListComponent.state().roomId).toEqual(null);
-    expect(ResponseListComponent.state().visible).toEqual(true);
-  });
-
   it('should change modal visibility to true', () => {
     const ResponseListComponent = shallow(
       <RoomFeedbackResponseList {...responseListProps} checkData={jest.fn()} />);
     const ResponseListInstance = ResponseListComponent.instance();
     const fakeEvent = { preventDefault: () => { } };
-    ResponseListInstance.showModal(fakeEvent, 1);
+    const data = { roomId: 1, responseIds: [] };
+    ResponseListInstance.showModal(fakeEvent, data);
     expect(ResponseListComponent.state().roomId).toEqual(1);
     expect(ResponseListComponent.state().visible).toEqual(true);
   });
@@ -171,8 +152,7 @@ describe('Room Feedback', () => {
       <RoomFeedbackResponseList {...responseListProps} checkData={jest.fn()} />);
     const ResponseListInstance = ResponseListComponent.instance();
     const fakeEvent = { preventDefault: () => { } };
-    ResponseListInstance.setState({ roomId: 1 });
-    ResponseListInstance.showModal(fakeEvent, 1);
+    ResponseListInstance.showModal(fakeEvent);
     expect(ResponseListComponent.state().roomId).toEqual(null);
     expect(ResponseListComponent.state().visible).toEqual(false);
   });

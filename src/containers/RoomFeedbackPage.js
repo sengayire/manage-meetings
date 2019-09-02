@@ -354,15 +354,16 @@ class RoomFeedbackPage extends Component {
             }
           </div>
           {
-            activeTab === 'responses'
-              ? (
+            activeTab === 'responses' ?
+              (
                 <div id="responses">
                   <RoomFeedbackResponseList
                     feedback={this.formatAllRoomFeedbackData()}
                     loading={loading}
                   />
-                </div>)
-              :
+                </div>
+              ) :
+              (
                 <div id="questions">
                   <RoomQuestions
                     refetch={this.getData}
@@ -371,6 +372,7 @@ class RoomFeedbackPage extends Component {
                     user={user}
                   />
                 </div>
+              )
           }
         </div>
       </Fragment>
