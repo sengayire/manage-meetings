@@ -7,22 +7,19 @@ import '../assets/styles/analyticsContainer.scss';
 import AnalyticsNav from '../components/navbars/AnalyticsNav';
 
 const Analytics = () => {
-  const [locationChanged, setLocationChanged] = useState(false);
+  const [userLocationChanged, setUserLocationChanged] = useState(false);
 
-  const resetLocation = () => {
-    setLocationChanged(true);
+  const changeUserLocation = () => {
+    setUserLocationChanged(!userLocationChanged);
   };
 
   return (
-    <Fragment>
-      <NavBar resetLocation={resetLocation} />
+    <Fragment >
+      <NavBar changeUserLocation={changeUserLocation} />
       <div className="analytics-container">
-        <AnalyticsNav
-          resetLocation={() => setLocationChanged(false)}
-          locationChanged={locationChanged}
-        />
+        <AnalyticsNav userLocationChanged={userLocationChanged} />
       </div>
-    </Fragment>
+    </Fragment >
   );
 };
 

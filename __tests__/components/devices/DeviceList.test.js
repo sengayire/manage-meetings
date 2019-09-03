@@ -45,10 +45,12 @@ describe('DeviceList Component', () => {
         ],
       },
     });
-    wrapper = shallow(<DeviceList location={{
-      name: 'Lagos',
-      id: 2,
-    }}
+    wrapper = shallow(<DeviceList
+      location={{
+        name: 'Lagos',
+        id: 2,
+      }}
+      userLocationChanged={false}
     />);
   });
   it('renders correctly from memory', () => {
@@ -87,10 +89,11 @@ describe('DeviceList Component', () => {
 
   it('renders pagination component', async () => {
     getAllDevices.mockResolvedValue(devices.concat(moreDevices));
-    wrapper = shallow(<DeviceList location={{
-      name: 'Lagos',
-      id: 2,
-    }}
+    wrapper = shallow(<DeviceList
+      location={{
+        name: 'Lagos',
+        id: 2,
+      }}
     />);
     await wrapper.instance().getData();
     expect(wrapper.exists('Pagination')).toBeTruthy();
@@ -104,5 +107,10 @@ describe('DeviceList Component', () => {
   it('calls closeModal', async () => {
     wrapper.instance().closeModal();
     expect(wrapper.state('openModal')).toBe(false);
+  });
+
+  it('calls componentDidUpdate', async () => {
+    wrapper.instance().componentDidUpdate({ userLocationChanged: true }, { a: 1, b: 5 });
+    expect(getAllDevices).toHaveBeenCalled();
   });
 });

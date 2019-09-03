@@ -5,7 +5,7 @@ import SetupNavbar from '../../../src/components/setup/SetupNavbar';
 describe('Unit test for setup nav bar', () => {
   let props = {
     handleSelectedItem: jest.fn(),
-    currentNavItem: '',
+    currentNavItem: 'rooms',
   };
   const wrapper = shallow(<SetupNavbar {...props} />);
 

@@ -196,14 +196,19 @@ const getRemoteRoomsAllLocations = async (client = apolloClient) => {
 };
 
 const getRoomsStructure = async (client = apolloClient) => {
-  const { data } = await client.query(
-    {
+  try {
+    const data = client.readQuery({
       query: GET_ALL_LEVELS,
-    },
-    true,
-  );
-  return data;
+    }, true);
+    return data;
+  } catch (error) {
+    const { data } = await client.query({
+      query: GET_ALL_LEVELS,
+    }, true);
+    return data;
+  }
 };
+
 const getRoomFeedbackQuestions = async (client = apolloClient) => {
   try {
     const data = client.readQuery(

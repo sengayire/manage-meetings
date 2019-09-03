@@ -38,17 +38,31 @@ class RoomSetupOverView extends Component {
     if (this.props.searchState) this.setLocationState();
   }
 
-  componentDidUpdate({ searchState: { component: oldComponent } = {} }) {
+  componentDidUpdate(prevProps) {
+    const { searchState: { component: oldComponent } = {} } = prevProps;
     const { component } = this.props.searchState || {};
     if (component && (component !== oldComponent)) {
       sessionStorage.setItem('setupCurrentNav', component);
       this.setLocationState();
+    }
+
+    if (prevProps.userLocationChanged !== this.props.userLocationChanged) {
+      this.setLocation();
+      this.getRooms();
+      setTimeout(() => { this.setPreviewData(); }, 1000);
     }
   }
 
   setLocationState() {
     const { component: currentNavItem } = this.props.searchState;
     this.setState({ currentNavItem });
+  }
+
+  setLocation() {
+    this.setState({
+      location: getUserLocation().name,
+      locationId: getUserLocation().id,
+    });
   }
 
   getStoredNav = () => sessionStorage.getItem('setupCurrentNav')
@@ -105,7 +119,11 @@ class RoomSetupOverView extends Component {
         </div>
         {/* Add filters in line below. */}
         <div className="room-select-input" />
-        <DevicesList getRooms={this.getRooms} location={{ name, id }} />
+        <DevicesList
+          getRooms={this.getRooms}
+          location={{ name, id }}
+          userLocationChanged={this.props.userLocationChanged}
+        />
       </div>
     );
   };
@@ -137,7 +155,12 @@ class RoomSetupOverView extends Component {
           updateStructure={this.updateStructure}
         />);
       default:
-        return <RoomSetup getRooms={this.getRooms} allRooms={allRooms} query={query} />;
+        return (<RoomSetup
+          getRooms={this.getRooms}
+          userLocationChanged={this.props.userLocationChanged}
+          allRooms={allRooms}
+          query={query}
+        />);
     }
   };
 
@@ -157,6 +180,7 @@ class RoomSetupOverView extends Component {
 }
 
 RoomSetupOverView.propTypes = {
+  userLocationChanged: PropTypes.bool,
   handleClick: PropTypes.func.isRequired,
   searchState: PropTypes.shape({
     component: PropTypes.string,
@@ -165,6 +189,7 @@ RoomSetupOverView.propTypes = {
 };
 
 RoomSetupOverView.defaultProps = {
+  userLocationChanged: PropTypes.bool,
   searchState: undefined,
 };
 

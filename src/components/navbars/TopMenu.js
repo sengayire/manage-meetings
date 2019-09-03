@@ -145,7 +145,7 @@ export class TopMenuComponent extends React.Component {
       showLocations: false,
     });
     await changeUserLocation(locationId);
-    this.props.resetLocation();
+    this.props.changeUserLocation();
   }
 
   render() {
@@ -278,11 +278,11 @@ TopMenuComponent.propTypes = {
   history: PropTypes.shape({
     push: PropTypes.func,
   }).isRequired,
-  resetLocation: PropTypes.func,
+  changeUserLocation: PropTypes.func,
 };
 
 TopMenuComponent.defaultProps = {
-  resetLocation: () => {},
+  changeUserLocation: () => { },
 };
 
 export default withRouter(TopMenuComponent);

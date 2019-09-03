@@ -182,15 +182,16 @@ exports[`Analytics component renders correctly in memory 1`] = `
       >
         <Analytics>
           <NavBar
-            resetLocation={[Function]}
+            changeUserLocation={[Function]}
           >
             <withRouter(TopMenuComponent)
-              resetLocation={[Function]}
+              changeUserLocation={[Function]}
             >
               <Route
                 render={[Function]}
               >
                 <TopMenuComponent
+                  changeUserLocation={[Function]}
                   history={
                     Object {
                       "action": "POP",
@@ -227,7 +228,6 @@ exports[`Analytics component renders correctly in memory 1`] = `
                       "url": "/",
                     }
                   }
-                  resetLocation={[Function]}
                 >
                   <div
                     className="top-menu"
@@ -537,8 +537,7 @@ exports[`Analytics component renders correctly in memory 1`] = `
             className="analytics-container"
           >
             <AnalyticsNav
-              locationChanged={false}
-              resetLocation={[Function]}
+              userLocationChanged={false}
             >
               <div
                 className="analytics-cover "

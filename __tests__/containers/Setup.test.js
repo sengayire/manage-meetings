@@ -12,4 +12,9 @@ describe('Setup component', () => {
   it('should find an instance of a NavBar component', () => {
     expect(wrapper.find('NavBar').exists()).toBeTruthy();
   });
+
+  it('changeUserLocation should update state', () => {
+    wrapper.instance().changeUserLocation();
+    expect(wrapper.state('userLocationChanged')).toBeTruthy();
+  });
 });
