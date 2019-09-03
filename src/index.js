@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
+import { ApolloProvider as ApolloHooksProvider } from '@apollo/react-hooks';
 import { ThemeProvider } from 'react-css-themr';
 import { ApolloProvider } from 'react-apollo';
 import App from './App';
@@ -26,11 +27,13 @@ const contextTheme = {
 ReactDOM.render(
   <ThemeProvider theme={contextTheme}>
     <ApolloProvider client={apolloClient}>
-      <Router>
-        <ErrorBoundary isAuthError>
-          <App />
-        </ErrorBoundary>
-      </Router>
+      <ApolloHooksProvider client={apolloClient}>
+        <Router>
+          <ErrorBoundary isAuthError>
+            <App />
+          </ErrorBoundary>
+        </Router>
+      </ApolloHooksProvider>
     </ApolloProvider>
   </ThemeProvider>,
   document.getElementById('root'),

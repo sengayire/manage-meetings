@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Device Component renders without crashing 1`] = `
+<div
+  className="table__row"
+>
+  <span>
+    Samsung Galaxy
+  </span>
+  <span />
+  <span>
+    03 Sep 2019
+  </span>
+  <span>
+    03 Sep 2019
+  </span>
+  <span>
+    Gold Coast
+  </span>
+  <span>
+    Nairobi
+  </span>
+  <span
+    className="device-table-action-buttons"
+  >
+    <IconButtons
+      btnImage={
+        <img
+          alt="edit-icon"
+          src="https://firebasestorage.googleapis.com/v0/b/learning-map-app.appspot.com/o/MrmFrontImages%2Fedit.svg?alt=media&token=9258a9f7-cdde-4e32-974b-3f82525045cd"
+        />
+      }
+      buttonText=""
+      className="edit-device-button"
+      disabled={false}
+      modalButtonClassName="button"
+      openModal={[Function]}
+    />
+    <IconButtons
+      btnImage={
+        <img
+          alt="delete-icon"
+          src="https://firebasestorage.googleapis.com/v0/b/learning-map-app.appspot.com/o/MrmFrontImages%2Fdelete.svg?alt=media&token=ac2828f2-841e-48bf-8c51-82ffabe54c58"
+        />
+      }
+      buttonText=""
+      className="delete-device-button"
+      disabled={false}
+      modalButtonClassName="button"
+      openModal={[Function]}
+    />
+  </span>
+</div>
+`;
