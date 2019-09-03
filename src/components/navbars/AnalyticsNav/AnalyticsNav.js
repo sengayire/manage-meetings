@@ -1,6 +1,6 @@
-import React, { Component, Fragment } from 'react';
-import PropTypes from 'prop-types';
+import React, { Fragment, useState, useEffect } from 'react';
 import moment from 'moment';
+import { useQuery } from '@apollo/react-hooks';
 import Button from '../../commons/Button';
 import '../../../assets/styles/custom.scss';
 import '../../../assets/styles/topmenu.scss';
@@ -10,9 +10,11 @@ import Calendar from '../../commons/Calendar';
 import AnalyticsActivityComponent from '../../../containers/AnalyticsActivity';
 import AnalyticsOverview from '../../../containers/AnalyticsOverview';
 import ExportButton from '../../commons/ExportButton';
-import { getAllAnalytics, getAllRooms } from '../../helpers/QueriesHelpers';
+import { getUserLocation } from '../../helpers/QueriesHelpers';
 import AnalyticsContext from '../../helpers/AnalyticsContext';
-import { changeUserLocation } from '../../helpers/mutationHelpers/people';
+import ALL_ANALYTICS from '../../../graphql/queries/analytics';
+import { GET_ALL_ROOMS } from '../../../graphql/queries/Rooms';
+
 
 /**
  * Component for Analytics
@@ -22,205 +24,136 @@ import { changeUserLocation } from '../../helpers/mutationHelpers/people';
  * @returns {JSX}
  *
  */
-class AnalyticsNav extends Component {
-  state = {
+
+const AnalyticsNav = () => {
+  const [analyticState, setAnalyticState] = useState({
     activeTab: '',
     showLocations: false,
-    isActivity: false,
     startDate: moment().format('MMM DD Y'),
     endDate: moment().format('MMM DD Y'),
-    fetching: true,
-    userLocationChanged: false,
-  };
+    locationChanged: false,
+  });
 
-  async componentDidMount() {
-    await this.getPreviousTab();
-    this.getAnalytics();
-  }
-
-  componentDidUpdate(prevProps, prevState) {
-    if (prevProps.userLocationChanged !== this.props.userLocationChanged) {
-      this.getAnalytics();
-    }
-    const { startDate, endDate } = this.state;
-    const { startDate: prevStartDate, endDate: prevEndDate } = prevState;
-    if (prevStartDate !== startDate || prevEndDate !== endDate) {
-      this.getAnalytics();
-    }
-  }
-
-  getPreviousTab = async () => {
-    const tab = await sessionStorage.getItem('activityActiveTab');
-    if (tab) {
-      await this.setState(prevState => ({
-        ...prevState,
-        activeTab: tab,
-      }));
-    } else {
-      await this.setState(prevState => ({
-        ...prevState,
-        activeTab: 'overview',
-      }));
-    }
-  }
-
-  getAnalytics = async () => {
-    this.setState({ fetching: true });
-    const dateValue = this.dateValue();
-
-    const { allAnalytics: analytics } = await getAllAnalytics(dateValue);
-    const { allRooms: { rooms } } = await getAllRooms();
-    this.setState({
-      fetching: false,
-      analytics: { ...analytics, rooms },
+  const getPreviousTab = async () => {
+    const tab = await sessionStorage.getItem('analyticActiveTab');
+    await setAnalyticState({
+      ...analyticState,
+      activeTab: tab || 'overview',
     });
   };
 
-  dateValue = () => {
-    const {
-      startDate,
-      endDate,
-      isFutureDateSelected,
-    } = this.state;
+  useEffect(() => {
+    getPreviousTab();
+  }, []);
 
-    return {
-      startDate,
-      endDate,
-      isFutureDateSelected,
-    };
+  const { startDate, endDate } = analyticState;
+  const variables = {
+    startDate,
+    endDate,
+    locationId: Number(getUserLocation().id),
   };
 
-  /**
-   * It toggles the calendar view
-   *
-   * @returns {void}
-   */
-  calenderToggle = () => {
-    const { calenderOpen } = this.state;
-    this.setState({ calenderOpen: !calenderOpen });
-  };
+  const dateValue = () => ({ startDate, endDate });
 
-  /**
-   * sets state of view to overview
-   *
-   * @returns {void}
-   */
-  toggleView = async () => {
-    await this.setState((prevState) => {
-      if (!prevState.isActivity) {
-        sessionStorage.setItem('activityActiveTab', 'activity');
-        return {
-          ...prevState,
-          isActivity: !prevState.isActivity,
-          activeTab: 'activity',
-        };
-      }
-      sessionStorage.setItem('activityActiveTab', 'overview');
-      return {
-        ...prevState,
-        isActivity: !prevState.isActivity,
-        activeTab: 'overview',
-      };
+  const {
+    loading: loadingAnalytics,
+    data: analyticsData,
+  } = useQuery(ALL_ANALYTICS, {
+    variables,
+  });
+  const {
+    loading: loadingRooms,
+    data: allRoomsData,
+  } = useQuery(GET_ALL_ROOMS);
+
+
+  let analytics;
+  if (analyticsData.allAnalytics && allRoomsData.allRooms) {
+    const { allAnalytics } = analyticsData;
+    const { allRooms: { rooms } } = allRoomsData;
+    analytics = { ...allAnalytics, rooms };
+  }
+
+
+  const calenderToggle = () => {
+    const { calenderOpen } = analyticState;
+    setAnalyticState({
+      ...analyticState,
+      calenderOpen: !calenderOpen,
     });
   };
-
-  /**
-   * 1. Updates the start and end date in the calendar
-   * 2. Toggles the calendar
-   *
-   * @param {date} start
-   * @param {date} end
-   *
-   * @returns {Function}
-   */
-  sendDateData = (start, end) => {
-    this.calenderToggle();
-    this.setState({
+  const sendDateData = (start, end) => {
+    calenderToggle();
+    setAnalyticState({
+      ...analyticState,
       startDate: start,
       endDate: end,
-      fetching: true,
     });
   };
 
-  toggleLocationDropdown = () => this.setState(({ showLocations }) => ({
-    showLocations: !showLocations,
-  }))
-
-
-  handleLocationChange = async (locationId) => {
-    this.setState({
-      showLocations: false,
-      fetching: true,
+  const toggleView = async () => {
+    setAnalyticState((prevAnalyticState) => {
+      if (prevAnalyticState.activeTab === 'activity') {
+        sessionStorage.setItem('analyticActiveTab', 'overview');
+        return ({
+          ...prevAnalyticState,
+          activeTab: 'overview',
+        });
+      }
+      sessionStorage.setItem('analyticActiveTab', 'activity');
+      return ({
+        ...prevAnalyticState,
+        activeTab: 'activity',
+      });
     });
-    await changeUserLocation(locationId);
-    this.getAnalytics();
-  }
+  };
 
+  const renderButtons = buttonTitle => (<Button
+    title={buttonTitle.toUpperCase()}
+    handleClick={toggleView}
+    classProp={`${buttonTitle.toLowerCase()}IconBtn`}
+    type={(analyticState.activeTab === `${buttonTitle.toLowerCase()}`) ? null : 2}
+    isDisabled={analyticState.activeTab === `${buttonTitle.toLowerCase()}`}
+  />);
 
-  render() {
-    const {
-      analytics,
-      activeTab,
-      fetching,
-      startDate,
-      endDate,
-    } = this.state;
-
-    const renderButtons = buttonTitle => (<Button
-      title={buttonTitle.toUpperCase()}
-      handleClick={this.toggleView}
-      classProp={`${buttonTitle.toLowerCase()}IconBtn`}
-      type={(activeTab === `${buttonTitle.toLowerCase()}`) ? null : 2}
-      isDisabled={activeTab === `${buttonTitle.toLowerCase()}`}
-    />);
-
-    return (
-      <Fragment>
-        <div className="analytics-cover ">
-          <div className="btn-left">
-            {renderButtons('overview')}
-            {renderButtons('activity')}
-          </div>
-          <div className="btn-right">
-            {
-              !fetching && (
+  return (
+    <Fragment>
+      <div className="analytics-cover ">
+        <div className="btn-left">
+          {renderButtons('overview')}
+          {renderButtons('activity')}
+        </div>
+        <div className="btn-right">
+          {
+              !loadingAnalytics && !loadingRooms && (
                 <Fragment>
                   <div>
                     <Calendar
-                      sendData={this.sendDateData}
+                      sendData={sendDateData}
                       startDate={startDate}
                       endDate={endDate}
                       disabledDateRange="future"
                     />
                   </div>
-                  <ExportButton data={{ downloadData: analytics, dateValue: this.dateValue(), downloadDataName: 'analytics' }} />
+                  <ExportButton data={{ downloadData: analytics, dateValue: dateValue(), downloadDataName: 'analytics' }} />
                 </Fragment>
               )
             }
-          </div>
         </div>
-        {(activeTab === 'overview') && (
-          <AnalyticsContext.Provider value={{ fetching, analytics }}>
-            <AnalyticsOverview />
-          </AnalyticsContext.Provider>
+      </div>
+      {(analyticState.activeTab === 'overview') && (
+      <AnalyticsContext.Provider value={{ fetching: loadingAnalytics || loadingRooms, analytics }}>
+        <AnalyticsOverview />
+      </AnalyticsContext.Provider>
         )}
-        {activeTab === 'activity' &&
-          <AnalyticsActivityComponent
-            queryCompleted={() => { }}
-            dateValue={this.dateValue()}
-          />
+      {analyticState.activeTab === 'activity' &&
+      <AnalyticsActivityComponent
+        queryCompleted={() => { }}
+        dateValue={dateValue()}
+      />
         }
-      </Fragment>
-    );
-  }
-}
-
-AnalyticsNav.propTypes = {
-  userLocationChanged: PropTypes.bool,
-};
-
-AnalyticsNav.defaultProps = {
-  userLocationChanged: PropTypes.bool,
+    </Fragment>
+  );
 };
 
 export default AnalyticsNav;

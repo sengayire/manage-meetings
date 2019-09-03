@@ -1,11 +1,10 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import { MockedProvider } from 'react-apollo/test-utils';
+import { MockedProvider } from '@apollo/react-testing';
 import { BrowserRouter } from 'react-router-dom';
 import Analytics from '../../src/containers/Analytics';
-import { GET_LOCATION_QUERY, GET_LOCATIONS_QUERY } from '../../src/graphql/queries/People';
+import { GET_LOCATION_QUERY } from '../../src/graphql/queries/People';
 import { getUserLocation } from '../../src/components/helpers/QueriesHelpers';
-import allLocations from '../../__mocks__/offices/Locations';
 
 
 let wrapper;
@@ -20,7 +19,7 @@ getUserLocation.mockReturnValue(userLocation);
 
 const mocks = [
   { request: { query: GET_LOCATION_QUERY }, result: { userLocation } },
-  { request: { query: GET_LOCATIONS_QUERY }, result: allLocations.data.allLocations },
+  // { request: { query: GET_LOCATIONS_QUERY }, result: allLocations.data.allLocations },
 ];
 
 beforeAll(() => {

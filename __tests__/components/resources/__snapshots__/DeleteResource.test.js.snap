@@ -393,18 +393,36 @@ exports[`DeleteResource Test Suite renders as expected 1`] = `
         },
         "cache": InMemoryCache {
           "addTypename": false,
+          "cacheKeyRoot": KeyTrie {
+            "weak": WeakMap {},
+            "weakness": true,
+          },
           "config": Object {
             "addTypename": false,
             "dataIdFromObject": [Function],
             "fragmentMatcher": HeuristicFragmentMatcher {},
-            "storeFactory": [Function],
+            "freezeResults": false,
+            "resultCaching": true,
           },
-          "data": ObjectCache {
+          "data": DepTrackingCache {
             "data": Object {},
+            "depend": [Function],
           },
-          "optimistic": Array [],
+          "maybeBroadcastWatch": [Function],
+          "optimisticData": DepTrackingCache {
+            "data": Object {},
+            "depend": [Function],
+          },
           "silenceBroadcast": false,
-          "watches": Array [
+          "storeReader": StoreReader {
+            "executeSelectionSet": [Function],
+            "executeStoreQuery": [Function],
+            "executeSubSelectedArray": [Function],
+            "freezeResults": false,
+          },
+          "storeWriter": StoreWriter {},
+          "typenameDocumentCache": Map {},
+          "watches": Set {
             Object {
               "callback": [Function],
               "optimistic": true,
@@ -658,32 +676,478 @@ exports[`DeleteResource Test Suite renders as expected 1`] = `
                 "perPage": 5,
               },
             },
-          ],
+          },
         },
+        "clearStoreCallbacks": Array [],
         "defaultOptions": Object {},
         "disableNetworkFetches": false,
-        "link": ApolloLink {
-          "request": [Function],
+        "link": MockLink {
+          "addTypename": false,
+          "mockedResponsesByKey": Object {
+            "{\\"variables\\":{\\"resourceId\\":1},\\"query\\":\\"mutation deleteResource($resourceId: Int!) {\\\\n  deleteResource(resourceId: $resourceId) {\\\\n    resource {\\\\n      id\\\\n      name\\\\n    }\\\\n  }\\\\n}\\\\n\\"}": Array [
+              Object {
+                "request": Object {
+                  "query": Object {
+                    "definitions": Array [
+                      Object {
+                        "directives": Array [],
+                        "kind": "OperationDefinition",
+                        "name": Object {
+                          "kind": "Name",
+                          "value": "deleteResource",
+                        },
+                        "operation": "mutation",
+                        "selectionSet": Object {
+                          "kind": "SelectionSet",
+                          "selections": Array [
+                            Object {
+                              "alias": undefined,
+                              "arguments": Array [
+                                Object {
+                                  "kind": "Argument",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "resourceId",
+                                  },
+                                  "value": Object {
+                                    "kind": "Variable",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "resourceId",
+                                    },
+                                  },
+                                },
+                              ],
+                              "directives": Array [],
+                              "kind": "Field",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "deleteResource",
+                              },
+                              "selectionSet": Object {
+                                "kind": "SelectionSet",
+                                "selections": Array [
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "resource",
+                                    },
+                                    "selectionSet": Object {
+                                      "kind": "SelectionSet",
+                                      "selections": Array [
+                                        Object {
+                                          "alias": undefined,
+                                          "arguments": Array [],
+                                          "directives": Array [],
+                                          "kind": "Field",
+                                          "name": Object {
+                                            "kind": "Name",
+                                            "value": "id",
+                                          },
+                                          "selectionSet": undefined,
+                                        },
+                                        Object {
+                                          "alias": undefined,
+                                          "arguments": Array [],
+                                          "directives": Array [],
+                                          "kind": "Field",
+                                          "name": Object {
+                                            "kind": "Name",
+                                            "value": "name",
+                                          },
+                                          "selectionSet": undefined,
+                                        },
+                                      ],
+                                    },
+                                  },
+                                ],
+                              },
+                            },
+                          ],
+                        },
+                        "variableDefinitions": Array [
+                          Object {
+                            "defaultValue": undefined,
+                            "kind": "VariableDefinition",
+                            "type": Object {
+                              "kind": "NonNullType",
+                              "type": Object {
+                                "kind": "NamedType",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "Int",
+                                },
+                              },
+                            },
+                            "variable": Object {
+                              "kind": "Variable",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "resourceId",
+                              },
+                            },
+                          },
+                        ],
+                      },
+                    ],
+                    "kind": "Document",
+                    "loc": Object {
+                      "end": 153,
+                      "start": 0,
+                    },
+                  },
+                  "variables": Object {
+                    "resourceId": 1,
+                  },
+                },
+                "result": Object {
+                  "data": Object {
+                    "deleteResource": Object {
+                      "id": "1",
+                      "name": "Duster",
+                    },
+                  },
+                },
+              },
+            ],
+          },
+        },
+        "localState": LocalState {
+          "cache": InMemoryCache {
+            "addTypename": false,
+            "cacheKeyRoot": KeyTrie {
+              "weak": WeakMap {},
+              "weakness": true,
+            },
+            "config": Object {
+              "addTypename": false,
+              "dataIdFromObject": [Function],
+              "fragmentMatcher": HeuristicFragmentMatcher {},
+              "freezeResults": false,
+              "resultCaching": true,
+            },
+            "data": DepTrackingCache {
+              "data": Object {},
+              "depend": [Function],
+            },
+            "maybeBroadcastWatch": [Function],
+            "optimisticData": DepTrackingCache {
+              "data": Object {},
+              "depend": [Function],
+            },
+            "silenceBroadcast": false,
+            "storeReader": StoreReader {
+              "executeSelectionSet": [Function],
+              "executeStoreQuery": [Function],
+              "executeSubSelectedArray": [Function],
+              "freezeResults": false,
+            },
+            "storeWriter": StoreWriter {},
+            "typenameDocumentCache": Map {},
+            "watches": Set {
+              Object {
+                "callback": [Function],
+                "optimistic": true,
+                "previousResult": [Function],
+                "query": Object {
+                  "definitions": Array [
+                    Object {
+                      "directives": Array [],
+                      "kind": "OperationDefinition",
+                      "name": Object {
+                        "kind": "Name",
+                        "value": "resources",
+                      },
+                      "operation": "query",
+                      "selectionSet": Object {
+                        "kind": "SelectionSet",
+                        "selections": Array [
+                          Object {
+                            "alias": undefined,
+                            "arguments": Array [
+                              Object {
+                                "kind": "Argument",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "page",
+                                },
+                                "value": Object {
+                                  "kind": "Variable",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "page",
+                                  },
+                                },
+                              },
+                              Object {
+                                "kind": "Argument",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "perPage",
+                                },
+                                "value": Object {
+                                  "kind": "Variable",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "perPage",
+                                  },
+                                },
+                              },
+                            ],
+                            "directives": Array [],
+                            "kind": "Field",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "allResources",
+                            },
+                            "selectionSet": Object {
+                              "kind": "SelectionSet",
+                              "selections": Array [
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "resources",
+                                  },
+                                  "selectionSet": Object {
+                                    "kind": "SelectionSet",
+                                    "selections": Array [
+                                      Object {
+                                        "alias": undefined,
+                                        "arguments": Array [],
+                                        "directives": Array [],
+                                        "kind": "Field",
+                                        "name": Object {
+                                          "kind": "Name",
+                                          "value": "id",
+                                        },
+                                        "selectionSet": undefined,
+                                      },
+                                      Object {
+                                        "alias": undefined,
+                                        "arguments": Array [],
+                                        "directives": Array [],
+                                        "kind": "Field",
+                                        "name": Object {
+                                          "kind": "Name",
+                                          "value": "name",
+                                        },
+                                        "selectionSet": undefined,
+                                      },
+                                      Object {
+                                        "alias": undefined,
+                                        "arguments": Array [],
+                                        "directives": Array [],
+                                        "kind": "Field",
+                                        "name": Object {
+                                          "kind": "Name",
+                                          "value": "room",
+                                        },
+                                        "selectionSet": Object {
+                                          "kind": "SelectionSet",
+                                          "selections": Array [
+                                            Object {
+                                              "alias": undefined,
+                                              "arguments": Array [],
+                                              "directives": Array [],
+                                              "kind": "Field",
+                                              "name": Object {
+                                                "kind": "Name",
+                                                "value": "roomId",
+                                              },
+                                              "selectionSet": undefined,
+                                            },
+                                            Object {
+                                              "alias": undefined,
+                                              "arguments": Array [],
+                                              "directives": Array [],
+                                              "kind": "Field",
+                                              "name": Object {
+                                                "kind": "Name",
+                                                "value": "room",
+                                              },
+                                              "selectionSet": Object {
+                                                "kind": "SelectionSet",
+                                                "selections": Array [
+                                                  Object {
+                                                    "alias": undefined,
+                                                    "arguments": Array [],
+                                                    "directives": Array [],
+                                                    "kind": "Field",
+                                                    "name": Object {
+                                                      "kind": "Name",
+                                                      "value": "name",
+                                                    },
+                                                    "selectionSet": undefined,
+                                                  },
+                                                ],
+                                              },
+                                            },
+                                          ],
+                                        },
+                                      },
+                                    ],
+                                  },
+                                },
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "pages",
+                                  },
+                                  "selectionSet": undefined,
+                                },
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "hasNext",
+                                  },
+                                  "selectionSet": undefined,
+                                },
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "hasPrevious",
+                                  },
+                                  "selectionSet": undefined,
+                                },
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "queryTotal",
+                                  },
+                                  "selectionSet": undefined,
+                                },
+                              ],
+                            },
+                          },
+                        ],
+                      },
+                      "variableDefinitions": Array [
+                        Object {
+                          "defaultValue": undefined,
+                          "kind": "VariableDefinition",
+                          "type": Object {
+                            "kind": "NonNullType",
+                            "type": Object {
+                              "kind": "NamedType",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "Int",
+                              },
+                            },
+                          },
+                          "variable": Object {
+                            "kind": "Variable",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "page",
+                            },
+                          },
+                        },
+                        Object {
+                          "defaultValue": undefined,
+                          "kind": "VariableDefinition",
+                          "type": Object {
+                            "kind": "NonNullType",
+                            "type": Object {
+                              "kind": "NamedType",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "Int",
+                              },
+                            },
+                          },
+                          "variable": Object {
+                            "kind": "Variable",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "perPage",
+                            },
+                          },
+                        },
+                      ],
+                    },
+                  ],
+                  "kind": "Document",
+                  "loc": Object {
+                    "end": 310,
+                    "start": 0,
+                  },
+                },
+                "variables": Object {
+                  "page": 1,
+                  "perPage": 5,
+                },
+              },
+            },
+          },
+          "client": [Circular],
         },
         "mutate": [Function],
         "query": [Function],
         "queryDeduplication": true,
         "queryManager": QueryManager {
+          "assumeImmutableResults": false,
+          "clientAwareness": Object {
+            "name": undefined,
+            "version": undefined,
+          },
           "dataStore": DataStore {
             "cache": InMemoryCache {
               "addTypename": false,
+              "cacheKeyRoot": KeyTrie {
+                "weak": WeakMap {},
+                "weakness": true,
+              },
               "config": Object {
                 "addTypename": false,
                 "dataIdFromObject": [Function],
                 "fragmentMatcher": HeuristicFragmentMatcher {},
-                "storeFactory": [Function],
+                "freezeResults": false,
+                "resultCaching": true,
               },
-              "data": ObjectCache {
+              "data": DepTrackingCache {
                 "data": Object {},
+                "depend": [Function],
               },
-              "optimistic": Array [],
+              "maybeBroadcastWatch": [Function],
+              "optimisticData": DepTrackingCache {
+                "data": Object {},
+                "depend": [Function],
+              },
               "silenceBroadcast": false,
-              "watches": Array [
+              "storeReader": StoreReader {
+                "executeSelectionSet": [Function],
+                "executeStoreQuery": [Function],
+                "executeSubSelectedArray": [Function],
+                "freezeResults": false,
+              },
+              "storeWriter": StoreWriter {},
+              "typenameDocumentCache": Map {},
+              "watches": Set {
                 Object {
                   "callback": [Function],
                   "optimistic": true,
@@ -937,21 +1401,687 @@ exports[`DeleteResource Test Suite renders as expected 1`] = `
                     "perPage": 5,
                   },
                 },
+              },
+            },
+          },
+          "fetchQueryRejectFns": Map {},
+          "idCounter": 3,
+          "inFlightLinkObservables": Map {
+            Object {
+              "definitions": Array [
+                Object {
+                  "directives": Array [],
+                  "kind": "OperationDefinition",
+                  "name": Object {
+                    "kind": "Name",
+                    "value": "resources",
+                  },
+                  "operation": "query",
+                  "selectionSet": Object {
+                    "kind": "SelectionSet",
+                    "selections": Array [
+                      Object {
+                        "alias": undefined,
+                        "arguments": Array [
+                          Object {
+                            "kind": "Argument",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "page",
+                            },
+                            "value": Object {
+                              "kind": "Variable",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "page",
+                              },
+                            },
+                          },
+                          Object {
+                            "kind": "Argument",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "perPage",
+                            },
+                            "value": Object {
+                              "kind": "Variable",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "perPage",
+                              },
+                            },
+                          },
+                        ],
+                        "directives": Array [],
+                        "kind": "Field",
+                        "name": Object {
+                          "kind": "Name",
+                          "value": "allResources",
+                        },
+                        "selectionSet": Object {
+                          "kind": "SelectionSet",
+                          "selections": Array [
+                            Object {
+                              "alias": undefined,
+                              "arguments": Array [],
+                              "directives": Array [],
+                              "kind": "Field",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "resources",
+                              },
+                              "selectionSet": Object {
+                                "kind": "SelectionSet",
+                                "selections": Array [
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "id",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "name",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "room",
+                                    },
+                                    "selectionSet": Object {
+                                      "kind": "SelectionSet",
+                                      "selections": Array [
+                                        Object {
+                                          "alias": undefined,
+                                          "arguments": Array [],
+                                          "directives": Array [],
+                                          "kind": "Field",
+                                          "name": Object {
+                                            "kind": "Name",
+                                            "value": "roomId",
+                                          },
+                                          "selectionSet": undefined,
+                                        },
+                                        Object {
+                                          "alias": undefined,
+                                          "arguments": Array [],
+                                          "directives": Array [],
+                                          "kind": "Field",
+                                          "name": Object {
+                                            "kind": "Name",
+                                            "value": "room",
+                                          },
+                                          "selectionSet": Object {
+                                            "kind": "SelectionSet",
+                                            "selections": Array [
+                                              Object {
+                                                "alias": undefined,
+                                                "arguments": Array [],
+                                                "directives": Array [],
+                                                "kind": "Field",
+                                                "name": Object {
+                                                  "kind": "Name",
+                                                  "value": "name",
+                                                },
+                                                "selectionSet": undefined,
+                                              },
+                                            ],
+                                          },
+                                        },
+                                      ],
+                                    },
+                                  },
+                                ],
+                              },
+                            },
+                            Object {
+                              "alias": undefined,
+                              "arguments": Array [],
+                              "directives": Array [],
+                              "kind": "Field",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "pages",
+                              },
+                              "selectionSet": undefined,
+                            },
+                            Object {
+                              "alias": undefined,
+                              "arguments": Array [],
+                              "directives": Array [],
+                              "kind": "Field",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "hasNext",
+                              },
+                              "selectionSet": undefined,
+                            },
+                            Object {
+                              "alias": undefined,
+                              "arguments": Array [],
+                              "directives": Array [],
+                              "kind": "Field",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "hasPrevious",
+                              },
+                              "selectionSet": undefined,
+                            },
+                            Object {
+                              "alias": undefined,
+                              "arguments": Array [],
+                              "directives": Array [],
+                              "kind": "Field",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "queryTotal",
+                              },
+                              "selectionSet": undefined,
+                            },
+                          ],
+                        },
+                      },
+                    ],
+                  },
+                  "variableDefinitions": Array [
+                    Object {
+                      "defaultValue": undefined,
+                      "kind": "VariableDefinition",
+                      "type": Object {
+                        "kind": "NonNullType",
+                        "type": Object {
+                          "kind": "NamedType",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "Int",
+                          },
+                        },
+                      },
+                      "variable": Object {
+                        "kind": "Variable",
+                        "name": Object {
+                          "kind": "Name",
+                          "value": "page",
+                        },
+                      },
+                    },
+                    Object {
+                      "defaultValue": undefined,
+                      "kind": "VariableDefinition",
+                      "type": Object {
+                        "kind": "NonNullType",
+                        "type": Object {
+                          "kind": "NamedType",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "Int",
+                          },
+                        },
+                      },
+                      "variable": Object {
+                        "kind": "Variable",
+                        "name": Object {
+                          "kind": "Name",
+                          "value": "perPage",
+                        },
+                      },
+                    },
+                  ],
+                },
+              ],
+              "kind": "Document",
+              "loc": Object {
+                "end": 310,
+                "start": 0,
+              },
+            } => Map {},
+          },
+          "link": MockLink {
+            "addTypename": false,
+            "mockedResponsesByKey": Object {
+              "{\\"variables\\":{\\"resourceId\\":1},\\"query\\":\\"mutation deleteResource($resourceId: Int!) {\\\\n  deleteResource(resourceId: $resourceId) {\\\\n    resource {\\\\n      id\\\\n      name\\\\n    }\\\\n  }\\\\n}\\\\n\\"}": Array [
+                Object {
+                  "request": Object {
+                    "query": Object {
+                      "definitions": Array [
+                        Object {
+                          "directives": Array [],
+                          "kind": "OperationDefinition",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "deleteResource",
+                          },
+                          "operation": "mutation",
+                          "selectionSet": Object {
+                            "kind": "SelectionSet",
+                            "selections": Array [
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [
+                                  Object {
+                                    "kind": "Argument",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "resourceId",
+                                    },
+                                    "value": Object {
+                                      "kind": "Variable",
+                                      "name": Object {
+                                        "kind": "Name",
+                                        "value": "resourceId",
+                                      },
+                                    },
+                                  },
+                                ],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "deleteResource",
+                                },
+                                "selectionSet": Object {
+                                  "kind": "SelectionSet",
+                                  "selections": Array [
+                                    Object {
+                                      "alias": undefined,
+                                      "arguments": Array [],
+                                      "directives": Array [],
+                                      "kind": "Field",
+                                      "name": Object {
+                                        "kind": "Name",
+                                        "value": "resource",
+                                      },
+                                      "selectionSet": Object {
+                                        "kind": "SelectionSet",
+                                        "selections": Array [
+                                          Object {
+                                            "alias": undefined,
+                                            "arguments": Array [],
+                                            "directives": Array [],
+                                            "kind": "Field",
+                                            "name": Object {
+                                              "kind": "Name",
+                                              "value": "id",
+                                            },
+                                            "selectionSet": undefined,
+                                          },
+                                          Object {
+                                            "alias": undefined,
+                                            "arguments": Array [],
+                                            "directives": Array [],
+                                            "kind": "Field",
+                                            "name": Object {
+                                              "kind": "Name",
+                                              "value": "name",
+                                            },
+                                            "selectionSet": undefined,
+                                          },
+                                        ],
+                                      },
+                                    },
+                                  ],
+                                },
+                              },
+                            ],
+                          },
+                          "variableDefinitions": Array [
+                            Object {
+                              "defaultValue": undefined,
+                              "kind": "VariableDefinition",
+                              "type": Object {
+                                "kind": "NonNullType",
+                                "type": Object {
+                                  "kind": "NamedType",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "Int",
+                                  },
+                                },
+                              },
+                              "variable": Object {
+                                "kind": "Variable",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "resourceId",
+                                },
+                              },
+                            },
+                          ],
+                        },
+                      ],
+                      "kind": "Document",
+                      "loc": Object {
+                        "end": 153,
+                        "start": 0,
+                      },
+                    },
+                    "variables": Object {
+                      "resourceId": 1,
+                    },
+                  },
+                  "result": Object {
+                    "data": Object {
+                      "deleteResource": Object {
+                        "id": "1",
+                        "name": "Duster",
+                      },
+                    },
+                  },
+                },
               ],
             },
           },
-          "deduplicator": ApolloLink {
-            "request": [Function],
-          },
-          "fetchQueryPromises": Map {},
-          "idCounter": 3,
-          "link": ApolloLink {
-            "request": [Function],
+          "localState": LocalState {
+            "cache": InMemoryCache {
+              "addTypename": false,
+              "cacheKeyRoot": KeyTrie {
+                "weak": WeakMap {},
+                "weakness": true,
+              },
+              "config": Object {
+                "addTypename": false,
+                "dataIdFromObject": [Function],
+                "fragmentMatcher": HeuristicFragmentMatcher {},
+                "freezeResults": false,
+                "resultCaching": true,
+              },
+              "data": DepTrackingCache {
+                "data": Object {},
+                "depend": [Function],
+              },
+              "maybeBroadcastWatch": [Function],
+              "optimisticData": DepTrackingCache {
+                "data": Object {},
+                "depend": [Function],
+              },
+              "silenceBroadcast": false,
+              "storeReader": StoreReader {
+                "executeSelectionSet": [Function],
+                "executeStoreQuery": [Function],
+                "executeSubSelectedArray": [Function],
+                "freezeResults": false,
+              },
+              "storeWriter": StoreWriter {},
+              "typenameDocumentCache": Map {},
+              "watches": Set {
+                Object {
+                  "callback": [Function],
+                  "optimistic": true,
+                  "previousResult": [Function],
+                  "query": Object {
+                    "definitions": Array [
+                      Object {
+                        "directives": Array [],
+                        "kind": "OperationDefinition",
+                        "name": Object {
+                          "kind": "Name",
+                          "value": "resources",
+                        },
+                        "operation": "query",
+                        "selectionSet": Object {
+                          "kind": "SelectionSet",
+                          "selections": Array [
+                            Object {
+                              "alias": undefined,
+                              "arguments": Array [
+                                Object {
+                                  "kind": "Argument",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "page",
+                                  },
+                                  "value": Object {
+                                    "kind": "Variable",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "page",
+                                    },
+                                  },
+                                },
+                                Object {
+                                  "kind": "Argument",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "perPage",
+                                  },
+                                  "value": Object {
+                                    "kind": "Variable",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "perPage",
+                                    },
+                                  },
+                                },
+                              ],
+                              "directives": Array [],
+                              "kind": "Field",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "allResources",
+                              },
+                              "selectionSet": Object {
+                                "kind": "SelectionSet",
+                                "selections": Array [
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "resources",
+                                    },
+                                    "selectionSet": Object {
+                                      "kind": "SelectionSet",
+                                      "selections": Array [
+                                        Object {
+                                          "alias": undefined,
+                                          "arguments": Array [],
+                                          "directives": Array [],
+                                          "kind": "Field",
+                                          "name": Object {
+                                            "kind": "Name",
+                                            "value": "id",
+                                          },
+                                          "selectionSet": undefined,
+                                        },
+                                        Object {
+                                          "alias": undefined,
+                                          "arguments": Array [],
+                                          "directives": Array [],
+                                          "kind": "Field",
+                                          "name": Object {
+                                            "kind": "Name",
+                                            "value": "name",
+                                          },
+                                          "selectionSet": undefined,
+                                        },
+                                        Object {
+                                          "alias": undefined,
+                                          "arguments": Array [],
+                                          "directives": Array [],
+                                          "kind": "Field",
+                                          "name": Object {
+                                            "kind": "Name",
+                                            "value": "room",
+                                          },
+                                          "selectionSet": Object {
+                                            "kind": "SelectionSet",
+                                            "selections": Array [
+                                              Object {
+                                                "alias": undefined,
+                                                "arguments": Array [],
+                                                "directives": Array [],
+                                                "kind": "Field",
+                                                "name": Object {
+                                                  "kind": "Name",
+                                                  "value": "roomId",
+                                                },
+                                                "selectionSet": undefined,
+                                              },
+                                              Object {
+                                                "alias": undefined,
+                                                "arguments": Array [],
+                                                "directives": Array [],
+                                                "kind": "Field",
+                                                "name": Object {
+                                                  "kind": "Name",
+                                                  "value": "room",
+                                                },
+                                                "selectionSet": Object {
+                                                  "kind": "SelectionSet",
+                                                  "selections": Array [
+                                                    Object {
+                                                      "alias": undefined,
+                                                      "arguments": Array [],
+                                                      "directives": Array [],
+                                                      "kind": "Field",
+                                                      "name": Object {
+                                                        "kind": "Name",
+                                                        "value": "name",
+                                                      },
+                                                      "selectionSet": undefined,
+                                                    },
+                                                  ],
+                                                },
+                                              },
+                                            ],
+                                          },
+                                        },
+                                      ],
+                                    },
+                                  },
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "pages",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "hasNext",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "hasPrevious",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "queryTotal",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
+                                ],
+                              },
+                            },
+                          ],
+                        },
+                        "variableDefinitions": Array [
+                          Object {
+                            "defaultValue": undefined,
+                            "kind": "VariableDefinition",
+                            "type": Object {
+                              "kind": "NonNullType",
+                              "type": Object {
+                                "kind": "NamedType",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "Int",
+                                },
+                              },
+                            },
+                            "variable": Object {
+                              "kind": "Variable",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "page",
+                              },
+                            },
+                          },
+                          Object {
+                            "defaultValue": undefined,
+                            "kind": "VariableDefinition",
+                            "type": Object {
+                              "kind": "NonNullType",
+                              "type": Object {
+                                "kind": "NamedType",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "Int",
+                                },
+                              },
+                            },
+                            "variable": Object {
+                              "kind": "Variable",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "perPage",
+                              },
+                            },
+                          },
+                        ],
+                      },
+                    ],
+                    "kind": "Document",
+                    "loc": Object {
+                      "end": 310,
+                      "start": 0,
+                    },
+                  },
+                  "variables": Object {
+                    "page": 1,
+                    "perPage": 5,
+                  },
+                },
+              },
+            },
+            "client": [Circular],
           },
           "mutationStore": MutationStore {
             "store": Object {},
           },
           "onBroadcast": [Function],
+          "pollingInfoByQueryId": Map {},
           "queries": Map {
             "1" => Object {
               "cancel": [Function],
@@ -1199,16 +2329,14 @@ exports[`DeleteResource Test Suite renders as expected 1`] = `
                   "start": 0,
                 },
               },
-              "invalidate": false,
               "invalidated": false,
               "lastRequestId": 2,
-              "listeners": Array [
+              "listeners": Set {
                 [Function],
-              ],
+              },
               "newData": null,
               "observableQuery": ObservableQuery {
                 "_subscriber": [Function],
-                "isCurrentlyPolling": false,
                 "isTornDown": false,
                 "lastError": [Error: Network error: No more mocked responses for the query: query resources($page: Int!, $perPage: Int!) {
   allResources(page: $page, perPage: $perPage) {
@@ -1229,8 +2357,12 @@ exports[`DeleteResource Test Suite renders as expected 1`] = `
   }
 }
 , variables: {"page":1,"perPage":5}],
-                "lastResult": undefined,
-                "observers": Array [
+                "lastResult": Object {
+                  "errors": Array [],
+                  "loading": false,
+                  "networkStatus": 8,
+                },
+                "observers": Set {
                   SubscriptionObserver {
                     "_subscription": Subscription {
                       "_cleanup": [Function],
@@ -1242,7 +2374,7 @@ exports[`DeleteResource Test Suite renders as expected 1`] = `
                       "_state": "ready",
                     },
                   },
-                ],
+                },
                 "options": Object {
                   "context": Object {},
                   "metadata": Object {
@@ -1502,30 +2634,18 @@ exports[`DeleteResource Test Suite renders as expected 1`] = `
                 },
                 "queryId": "1",
                 "queryManager": [Circular],
-                "scheduler": QueryScheduler {
-                  "inFlightQueries": Object {},
-                  "intervalQueries": Object {},
-                  "pollingTimers": Object {},
-                  "queryManager": [Circular],
-                  "registeredQueries": Object {},
-                  "ssrMode": false,
-                },
+                "queryName": "resources",
                 "shouldSubscribe": true,
-                "subscriptionHandles": Array [],
+                "subscriptions": Set {},
                 "variables": Object {
                   "page": 1,
                   "perPage": 5,
                 },
               },
-              "subscriptions": Array [],
+              "subscriptions": Set {},
             },
           },
           "queryDeduplication": true,
-          "queryIdsByName": Object {
-            "resources": Array [
-              "1",
-            ],
-          },
           "queryStore": QueryStore {
             "store": Object {
               "1": Object {
@@ -1807,34 +2927,45 @@ exports[`DeleteResource Test Suite renders as expected 1`] = `
               },
             },
           },
-          "scheduler": QueryScheduler {
-            "inFlightQueries": Object {},
-            "intervalQueries": Object {},
-            "pollingTimers": Object {},
-            "queryManager": [Circular],
-            "registeredQueries": Object {},
-            "ssrMode": false,
-          },
+          "ssrMode": false,
+          "transformCache": WeakMap {},
         },
         "reFetchObservableQueries": [Function],
         "resetStore": [Function],
         "resetStoreCallbacks": Array [],
-        "ssrMode": false,
         "store": DataStore {
           "cache": InMemoryCache {
             "addTypename": false,
+            "cacheKeyRoot": KeyTrie {
+              "weak": WeakMap {},
+              "weakness": true,
+            },
             "config": Object {
               "addTypename": false,
               "dataIdFromObject": [Function],
               "fragmentMatcher": HeuristicFragmentMatcher {},
-              "storeFactory": [Function],
+              "freezeResults": false,
+              "resultCaching": true,
             },
-            "data": ObjectCache {
+            "data": DepTrackingCache {
               "data": Object {},
+              "depend": [Function],
             },
-            "optimistic": Array [],
+            "maybeBroadcastWatch": [Function],
+            "optimisticData": DepTrackingCache {
+              "data": Object {},
+              "depend": [Function],
+            },
             "silenceBroadcast": false,
-            "watches": Array [
+            "storeReader": StoreReader {
+              "executeSelectionSet": [Function],
+              "executeStoreQuery": [Function],
+              "executeSubSelectedArray": [Function],
+              "freezeResults": false,
+            },
+            "storeWriter": StoreWriter {},
+            "typenameDocumentCache": Map {},
+            "watches": Set {
               Object {
                 "callback": [Function],
                 "optimistic": true,
@@ -2088,10 +3219,11 @@ exports[`DeleteResource Test Suite renders as expected 1`] = `
                   "perPage": 5,
                 },
               },
-            ],
+            },
           },
         },
-        "version": "2.3.1",
+        "typeDefs": undefined,
+        "version": "2.6.4",
         "watchQuery": [Function],
       }
     }
@@ -3325,18 +4457,36 @@ exports[`DeleteResource Test Suite should pop up a modal when delete button is c
         },
         "cache": InMemoryCache {
           "addTypename": false,
+          "cacheKeyRoot": KeyTrie {
+            "weak": WeakMap {},
+            "weakness": true,
+          },
           "config": Object {
             "addTypename": false,
             "dataIdFromObject": [Function],
             "fragmentMatcher": HeuristicFragmentMatcher {},
-            "storeFactory": [Function],
+            "freezeResults": false,
+            "resultCaching": true,
           },
-          "data": ObjectCache {
+          "data": DepTrackingCache {
             "data": Object {},
+            "depend": [Function],
           },
-          "optimistic": Array [],
+          "maybeBroadcastWatch": [Function],
+          "optimisticData": DepTrackingCache {
+            "data": Object {},
+            "depend": [Function],
+          },
           "silenceBroadcast": false,
-          "watches": Array [
+          "storeReader": StoreReader {
+            "executeSelectionSet": [Function],
+            "executeStoreQuery": [Function],
+            "executeSubSelectedArray": [Function],
+            "freezeResults": false,
+          },
+          "storeWriter": StoreWriter {},
+          "typenameDocumentCache": Map {},
+          "watches": Set {
             Object {
               "callback": [Function],
               "optimistic": true,
@@ -3590,32 +4740,478 @@ exports[`DeleteResource Test Suite should pop up a modal when delete button is c
                 "perPage": 5,
               },
             },
-          ],
+          },
         },
+        "clearStoreCallbacks": Array [],
         "defaultOptions": Object {},
         "disableNetworkFetches": false,
-        "link": ApolloLink {
-          "request": [Function],
+        "link": MockLink {
+          "addTypename": false,
+          "mockedResponsesByKey": Object {
+            "{\\"variables\\":{\\"resourceId\\":1},\\"query\\":\\"mutation deleteResource($resourceId: Int!) {\\\\n  deleteResource(resourceId: $resourceId) {\\\\n    resource {\\\\n      id\\\\n      name\\\\n    }\\\\n  }\\\\n}\\\\n\\"}": Array [
+              Object {
+                "request": Object {
+                  "query": Object {
+                    "definitions": Array [
+                      Object {
+                        "directives": Array [],
+                        "kind": "OperationDefinition",
+                        "name": Object {
+                          "kind": "Name",
+                          "value": "deleteResource",
+                        },
+                        "operation": "mutation",
+                        "selectionSet": Object {
+                          "kind": "SelectionSet",
+                          "selections": Array [
+                            Object {
+                              "alias": undefined,
+                              "arguments": Array [
+                                Object {
+                                  "kind": "Argument",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "resourceId",
+                                  },
+                                  "value": Object {
+                                    "kind": "Variable",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "resourceId",
+                                    },
+                                  },
+                                },
+                              ],
+                              "directives": Array [],
+                              "kind": "Field",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "deleteResource",
+                              },
+                              "selectionSet": Object {
+                                "kind": "SelectionSet",
+                                "selections": Array [
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "resource",
+                                    },
+                                    "selectionSet": Object {
+                                      "kind": "SelectionSet",
+                                      "selections": Array [
+                                        Object {
+                                          "alias": undefined,
+                                          "arguments": Array [],
+                                          "directives": Array [],
+                                          "kind": "Field",
+                                          "name": Object {
+                                            "kind": "Name",
+                                            "value": "id",
+                                          },
+                                          "selectionSet": undefined,
+                                        },
+                                        Object {
+                                          "alias": undefined,
+                                          "arguments": Array [],
+                                          "directives": Array [],
+                                          "kind": "Field",
+                                          "name": Object {
+                                            "kind": "Name",
+                                            "value": "name",
+                                          },
+                                          "selectionSet": undefined,
+                                        },
+                                      ],
+                                    },
+                                  },
+                                ],
+                              },
+                            },
+                          ],
+                        },
+                        "variableDefinitions": Array [
+                          Object {
+                            "defaultValue": undefined,
+                            "kind": "VariableDefinition",
+                            "type": Object {
+                              "kind": "NonNullType",
+                              "type": Object {
+                                "kind": "NamedType",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "Int",
+                                },
+                              },
+                            },
+                            "variable": Object {
+                              "kind": "Variable",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "resourceId",
+                              },
+                            },
+                          },
+                        ],
+                      },
+                    ],
+                    "kind": "Document",
+                    "loc": Object {
+                      "end": 153,
+                      "start": 0,
+                    },
+                  },
+                  "variables": Object {
+                    "resourceId": 1,
+                  },
+                },
+                "result": Object {
+                  "data": Object {
+                    "deleteResource": Object {
+                      "id": "1",
+                      "name": "Duster",
+                    },
+                  },
+                },
+              },
+            ],
+          },
+        },
+        "localState": LocalState {
+          "cache": InMemoryCache {
+            "addTypename": false,
+            "cacheKeyRoot": KeyTrie {
+              "weak": WeakMap {},
+              "weakness": true,
+            },
+            "config": Object {
+              "addTypename": false,
+              "dataIdFromObject": [Function],
+              "fragmentMatcher": HeuristicFragmentMatcher {},
+              "freezeResults": false,
+              "resultCaching": true,
+            },
+            "data": DepTrackingCache {
+              "data": Object {},
+              "depend": [Function],
+            },
+            "maybeBroadcastWatch": [Function],
+            "optimisticData": DepTrackingCache {
+              "data": Object {},
+              "depend": [Function],
+            },
+            "silenceBroadcast": false,
+            "storeReader": StoreReader {
+              "executeSelectionSet": [Function],
+              "executeStoreQuery": [Function],
+              "executeSubSelectedArray": [Function],
+              "freezeResults": false,
+            },
+            "storeWriter": StoreWriter {},
+            "typenameDocumentCache": Map {},
+            "watches": Set {
+              Object {
+                "callback": [Function],
+                "optimistic": true,
+                "previousResult": [Function],
+                "query": Object {
+                  "definitions": Array [
+                    Object {
+                      "directives": Array [],
+                      "kind": "OperationDefinition",
+                      "name": Object {
+                        "kind": "Name",
+                        "value": "resources",
+                      },
+                      "operation": "query",
+                      "selectionSet": Object {
+                        "kind": "SelectionSet",
+                        "selections": Array [
+                          Object {
+                            "alias": undefined,
+                            "arguments": Array [
+                              Object {
+                                "kind": "Argument",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "page",
+                                },
+                                "value": Object {
+                                  "kind": "Variable",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "page",
+                                  },
+                                },
+                              },
+                              Object {
+                                "kind": "Argument",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "perPage",
+                                },
+                                "value": Object {
+                                  "kind": "Variable",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "perPage",
+                                  },
+                                },
+                              },
+                            ],
+                            "directives": Array [],
+                            "kind": "Field",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "allResources",
+                            },
+                            "selectionSet": Object {
+                              "kind": "SelectionSet",
+                              "selections": Array [
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "resources",
+                                  },
+                                  "selectionSet": Object {
+                                    "kind": "SelectionSet",
+                                    "selections": Array [
+                                      Object {
+                                        "alias": undefined,
+                                        "arguments": Array [],
+                                        "directives": Array [],
+                                        "kind": "Field",
+                                        "name": Object {
+                                          "kind": "Name",
+                                          "value": "id",
+                                        },
+                                        "selectionSet": undefined,
+                                      },
+                                      Object {
+                                        "alias": undefined,
+                                        "arguments": Array [],
+                                        "directives": Array [],
+                                        "kind": "Field",
+                                        "name": Object {
+                                          "kind": "Name",
+                                          "value": "name",
+                                        },
+                                        "selectionSet": undefined,
+                                      },
+                                      Object {
+                                        "alias": undefined,
+                                        "arguments": Array [],
+                                        "directives": Array [],
+                                        "kind": "Field",
+                                        "name": Object {
+                                          "kind": "Name",
+                                          "value": "room",
+                                        },
+                                        "selectionSet": Object {
+                                          "kind": "SelectionSet",
+                                          "selections": Array [
+                                            Object {
+                                              "alias": undefined,
+                                              "arguments": Array [],
+                                              "directives": Array [],
+                                              "kind": "Field",
+                                              "name": Object {
+                                                "kind": "Name",
+                                                "value": "roomId",
+                                              },
+                                              "selectionSet": undefined,
+                                            },
+                                            Object {
+                                              "alias": undefined,
+                                              "arguments": Array [],
+                                              "directives": Array [],
+                                              "kind": "Field",
+                                              "name": Object {
+                                                "kind": "Name",
+                                                "value": "room",
+                                              },
+                                              "selectionSet": Object {
+                                                "kind": "SelectionSet",
+                                                "selections": Array [
+                                                  Object {
+                                                    "alias": undefined,
+                                                    "arguments": Array [],
+                                                    "directives": Array [],
+                                                    "kind": "Field",
+                                                    "name": Object {
+                                                      "kind": "Name",
+                                                      "value": "name",
+                                                    },
+                                                    "selectionSet": undefined,
+                                                  },
+                                                ],
+                                              },
+                                            },
+                                          ],
+                                        },
+                                      },
+                                    ],
+                                  },
+                                },
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "pages",
+                                  },
+                                  "selectionSet": undefined,
+                                },
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "hasNext",
+                                  },
+                                  "selectionSet": undefined,
+                                },
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "hasPrevious",
+                                  },
+                                  "selectionSet": undefined,
+                                },
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "queryTotal",
+                                  },
+                                  "selectionSet": undefined,
+                                },
+                              ],
+                            },
+                          },
+                        ],
+                      },
+                      "variableDefinitions": Array [
+                        Object {
+                          "defaultValue": undefined,
+                          "kind": "VariableDefinition",
+                          "type": Object {
+                            "kind": "NonNullType",
+                            "type": Object {
+                              "kind": "NamedType",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "Int",
+                              },
+                            },
+                          },
+                          "variable": Object {
+                            "kind": "Variable",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "page",
+                            },
+                          },
+                        },
+                        Object {
+                          "defaultValue": undefined,
+                          "kind": "VariableDefinition",
+                          "type": Object {
+                            "kind": "NonNullType",
+                            "type": Object {
+                              "kind": "NamedType",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "Int",
+                              },
+                            },
+                          },
+                          "variable": Object {
+                            "kind": "Variable",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "perPage",
+                            },
+                          },
+                        },
+                      ],
+                    },
+                  ],
+                  "kind": "Document",
+                  "loc": Object {
+                    "end": 310,
+                    "start": 0,
+                  },
+                },
+                "variables": Object {
+                  "page": 1,
+                  "perPage": 5,
+                },
+              },
+            },
+          },
+          "client": [Circular],
         },
         "mutate": [Function],
         "query": [Function],
         "queryDeduplication": true,
         "queryManager": QueryManager {
+          "assumeImmutableResults": false,
+          "clientAwareness": Object {
+            "name": undefined,
+            "version": undefined,
+          },
           "dataStore": DataStore {
             "cache": InMemoryCache {
               "addTypename": false,
+              "cacheKeyRoot": KeyTrie {
+                "weak": WeakMap {},
+                "weakness": true,
+              },
               "config": Object {
                 "addTypename": false,
                 "dataIdFromObject": [Function],
                 "fragmentMatcher": HeuristicFragmentMatcher {},
-                "storeFactory": [Function],
+                "freezeResults": false,
+                "resultCaching": true,
               },
-              "data": ObjectCache {
+              "data": DepTrackingCache {
                 "data": Object {},
+                "depend": [Function],
               },
-              "optimistic": Array [],
+              "maybeBroadcastWatch": [Function],
+              "optimisticData": DepTrackingCache {
+                "data": Object {},
+                "depend": [Function],
+              },
               "silenceBroadcast": false,
-              "watches": Array [
+              "storeReader": StoreReader {
+                "executeSelectionSet": [Function],
+                "executeStoreQuery": [Function],
+                "executeSubSelectedArray": [Function],
+                "freezeResults": false,
+              },
+              "storeWriter": StoreWriter {},
+              "typenameDocumentCache": Map {},
+              "watches": Set {
                 Object {
                   "callback": [Function],
                   "optimistic": true,
@@ -3869,21 +5465,687 @@ exports[`DeleteResource Test Suite should pop up a modal when delete button is c
                     "perPage": 5,
                   },
                 },
+              },
+            },
+          },
+          "fetchQueryRejectFns": Map {},
+          "idCounter": 3,
+          "inFlightLinkObservables": Map {
+            Object {
+              "definitions": Array [
+                Object {
+                  "directives": Array [],
+                  "kind": "OperationDefinition",
+                  "name": Object {
+                    "kind": "Name",
+                    "value": "resources",
+                  },
+                  "operation": "query",
+                  "selectionSet": Object {
+                    "kind": "SelectionSet",
+                    "selections": Array [
+                      Object {
+                        "alias": undefined,
+                        "arguments": Array [
+                          Object {
+                            "kind": "Argument",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "page",
+                            },
+                            "value": Object {
+                              "kind": "Variable",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "page",
+                              },
+                            },
+                          },
+                          Object {
+                            "kind": "Argument",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "perPage",
+                            },
+                            "value": Object {
+                              "kind": "Variable",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "perPage",
+                              },
+                            },
+                          },
+                        ],
+                        "directives": Array [],
+                        "kind": "Field",
+                        "name": Object {
+                          "kind": "Name",
+                          "value": "allResources",
+                        },
+                        "selectionSet": Object {
+                          "kind": "SelectionSet",
+                          "selections": Array [
+                            Object {
+                              "alias": undefined,
+                              "arguments": Array [],
+                              "directives": Array [],
+                              "kind": "Field",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "resources",
+                              },
+                              "selectionSet": Object {
+                                "kind": "SelectionSet",
+                                "selections": Array [
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "id",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "name",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "room",
+                                    },
+                                    "selectionSet": Object {
+                                      "kind": "SelectionSet",
+                                      "selections": Array [
+                                        Object {
+                                          "alias": undefined,
+                                          "arguments": Array [],
+                                          "directives": Array [],
+                                          "kind": "Field",
+                                          "name": Object {
+                                            "kind": "Name",
+                                            "value": "roomId",
+                                          },
+                                          "selectionSet": undefined,
+                                        },
+                                        Object {
+                                          "alias": undefined,
+                                          "arguments": Array [],
+                                          "directives": Array [],
+                                          "kind": "Field",
+                                          "name": Object {
+                                            "kind": "Name",
+                                            "value": "room",
+                                          },
+                                          "selectionSet": Object {
+                                            "kind": "SelectionSet",
+                                            "selections": Array [
+                                              Object {
+                                                "alias": undefined,
+                                                "arguments": Array [],
+                                                "directives": Array [],
+                                                "kind": "Field",
+                                                "name": Object {
+                                                  "kind": "Name",
+                                                  "value": "name",
+                                                },
+                                                "selectionSet": undefined,
+                                              },
+                                            ],
+                                          },
+                                        },
+                                      ],
+                                    },
+                                  },
+                                ],
+                              },
+                            },
+                            Object {
+                              "alias": undefined,
+                              "arguments": Array [],
+                              "directives": Array [],
+                              "kind": "Field",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "pages",
+                              },
+                              "selectionSet": undefined,
+                            },
+                            Object {
+                              "alias": undefined,
+                              "arguments": Array [],
+                              "directives": Array [],
+                              "kind": "Field",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "hasNext",
+                              },
+                              "selectionSet": undefined,
+                            },
+                            Object {
+                              "alias": undefined,
+                              "arguments": Array [],
+                              "directives": Array [],
+                              "kind": "Field",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "hasPrevious",
+                              },
+                              "selectionSet": undefined,
+                            },
+                            Object {
+                              "alias": undefined,
+                              "arguments": Array [],
+                              "directives": Array [],
+                              "kind": "Field",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "queryTotal",
+                              },
+                              "selectionSet": undefined,
+                            },
+                          ],
+                        },
+                      },
+                    ],
+                  },
+                  "variableDefinitions": Array [
+                    Object {
+                      "defaultValue": undefined,
+                      "kind": "VariableDefinition",
+                      "type": Object {
+                        "kind": "NonNullType",
+                        "type": Object {
+                          "kind": "NamedType",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "Int",
+                          },
+                        },
+                      },
+                      "variable": Object {
+                        "kind": "Variable",
+                        "name": Object {
+                          "kind": "Name",
+                          "value": "page",
+                        },
+                      },
+                    },
+                    Object {
+                      "defaultValue": undefined,
+                      "kind": "VariableDefinition",
+                      "type": Object {
+                        "kind": "NonNullType",
+                        "type": Object {
+                          "kind": "NamedType",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "Int",
+                          },
+                        },
+                      },
+                      "variable": Object {
+                        "kind": "Variable",
+                        "name": Object {
+                          "kind": "Name",
+                          "value": "perPage",
+                        },
+                      },
+                    },
+                  ],
+                },
+              ],
+              "kind": "Document",
+              "loc": Object {
+                "end": 310,
+                "start": 0,
+              },
+            } => Map {},
+          },
+          "link": MockLink {
+            "addTypename": false,
+            "mockedResponsesByKey": Object {
+              "{\\"variables\\":{\\"resourceId\\":1},\\"query\\":\\"mutation deleteResource($resourceId: Int!) {\\\\n  deleteResource(resourceId: $resourceId) {\\\\n    resource {\\\\n      id\\\\n      name\\\\n    }\\\\n  }\\\\n}\\\\n\\"}": Array [
+                Object {
+                  "request": Object {
+                    "query": Object {
+                      "definitions": Array [
+                        Object {
+                          "directives": Array [],
+                          "kind": "OperationDefinition",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "deleteResource",
+                          },
+                          "operation": "mutation",
+                          "selectionSet": Object {
+                            "kind": "SelectionSet",
+                            "selections": Array [
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [
+                                  Object {
+                                    "kind": "Argument",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "resourceId",
+                                    },
+                                    "value": Object {
+                                      "kind": "Variable",
+                                      "name": Object {
+                                        "kind": "Name",
+                                        "value": "resourceId",
+                                      },
+                                    },
+                                  },
+                                ],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "deleteResource",
+                                },
+                                "selectionSet": Object {
+                                  "kind": "SelectionSet",
+                                  "selections": Array [
+                                    Object {
+                                      "alias": undefined,
+                                      "arguments": Array [],
+                                      "directives": Array [],
+                                      "kind": "Field",
+                                      "name": Object {
+                                        "kind": "Name",
+                                        "value": "resource",
+                                      },
+                                      "selectionSet": Object {
+                                        "kind": "SelectionSet",
+                                        "selections": Array [
+                                          Object {
+                                            "alias": undefined,
+                                            "arguments": Array [],
+                                            "directives": Array [],
+                                            "kind": "Field",
+                                            "name": Object {
+                                              "kind": "Name",
+                                              "value": "id",
+                                            },
+                                            "selectionSet": undefined,
+                                          },
+                                          Object {
+                                            "alias": undefined,
+                                            "arguments": Array [],
+                                            "directives": Array [],
+                                            "kind": "Field",
+                                            "name": Object {
+                                              "kind": "Name",
+                                              "value": "name",
+                                            },
+                                            "selectionSet": undefined,
+                                          },
+                                        ],
+                                      },
+                                    },
+                                  ],
+                                },
+                              },
+                            ],
+                          },
+                          "variableDefinitions": Array [
+                            Object {
+                              "defaultValue": undefined,
+                              "kind": "VariableDefinition",
+                              "type": Object {
+                                "kind": "NonNullType",
+                                "type": Object {
+                                  "kind": "NamedType",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "Int",
+                                  },
+                                },
+                              },
+                              "variable": Object {
+                                "kind": "Variable",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "resourceId",
+                                },
+                              },
+                            },
+                          ],
+                        },
+                      ],
+                      "kind": "Document",
+                      "loc": Object {
+                        "end": 153,
+                        "start": 0,
+                      },
+                    },
+                    "variables": Object {
+                      "resourceId": 1,
+                    },
+                  },
+                  "result": Object {
+                    "data": Object {
+                      "deleteResource": Object {
+                        "id": "1",
+                        "name": "Duster",
+                      },
+                    },
+                  },
+                },
               ],
             },
           },
-          "deduplicator": ApolloLink {
-            "request": [Function],
-          },
-          "fetchQueryPromises": Map {},
-          "idCounter": 3,
-          "link": ApolloLink {
-            "request": [Function],
+          "localState": LocalState {
+            "cache": InMemoryCache {
+              "addTypename": false,
+              "cacheKeyRoot": KeyTrie {
+                "weak": WeakMap {},
+                "weakness": true,
+              },
+              "config": Object {
+                "addTypename": false,
+                "dataIdFromObject": [Function],
+                "fragmentMatcher": HeuristicFragmentMatcher {},
+                "freezeResults": false,
+                "resultCaching": true,
+              },
+              "data": DepTrackingCache {
+                "data": Object {},
+                "depend": [Function],
+              },
+              "maybeBroadcastWatch": [Function],
+              "optimisticData": DepTrackingCache {
+                "data": Object {},
+                "depend": [Function],
+              },
+              "silenceBroadcast": false,
+              "storeReader": StoreReader {
+                "executeSelectionSet": [Function],
+                "executeStoreQuery": [Function],
+                "executeSubSelectedArray": [Function],
+                "freezeResults": false,
+              },
+              "storeWriter": StoreWriter {},
+              "typenameDocumentCache": Map {},
+              "watches": Set {
+                Object {
+                  "callback": [Function],
+                  "optimistic": true,
+                  "previousResult": [Function],
+                  "query": Object {
+                    "definitions": Array [
+                      Object {
+                        "directives": Array [],
+                        "kind": "OperationDefinition",
+                        "name": Object {
+                          "kind": "Name",
+                          "value": "resources",
+                        },
+                        "operation": "query",
+                        "selectionSet": Object {
+                          "kind": "SelectionSet",
+                          "selections": Array [
+                            Object {
+                              "alias": undefined,
+                              "arguments": Array [
+                                Object {
+                                  "kind": "Argument",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "page",
+                                  },
+                                  "value": Object {
+                                    "kind": "Variable",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "page",
+                                    },
+                                  },
+                                },
+                                Object {
+                                  "kind": "Argument",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "perPage",
+                                  },
+                                  "value": Object {
+                                    "kind": "Variable",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "perPage",
+                                    },
+                                  },
+                                },
+                              ],
+                              "directives": Array [],
+                              "kind": "Field",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "allResources",
+                              },
+                              "selectionSet": Object {
+                                "kind": "SelectionSet",
+                                "selections": Array [
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "resources",
+                                    },
+                                    "selectionSet": Object {
+                                      "kind": "SelectionSet",
+                                      "selections": Array [
+                                        Object {
+                                          "alias": undefined,
+                                          "arguments": Array [],
+                                          "directives": Array [],
+                                          "kind": "Field",
+                                          "name": Object {
+                                            "kind": "Name",
+                                            "value": "id",
+                                          },
+                                          "selectionSet": undefined,
+                                        },
+                                        Object {
+                                          "alias": undefined,
+                                          "arguments": Array [],
+                                          "directives": Array [],
+                                          "kind": "Field",
+                                          "name": Object {
+                                            "kind": "Name",
+                                            "value": "name",
+                                          },
+                                          "selectionSet": undefined,
+                                        },
+                                        Object {
+                                          "alias": undefined,
+                                          "arguments": Array [],
+                                          "directives": Array [],
+                                          "kind": "Field",
+                                          "name": Object {
+                                            "kind": "Name",
+                                            "value": "room",
+                                          },
+                                          "selectionSet": Object {
+                                            "kind": "SelectionSet",
+                                            "selections": Array [
+                                              Object {
+                                                "alias": undefined,
+                                                "arguments": Array [],
+                                                "directives": Array [],
+                                                "kind": "Field",
+                                                "name": Object {
+                                                  "kind": "Name",
+                                                  "value": "roomId",
+                                                },
+                                                "selectionSet": undefined,
+                                              },
+                                              Object {
+                                                "alias": undefined,
+                                                "arguments": Array [],
+                                                "directives": Array [],
+                                                "kind": "Field",
+                                                "name": Object {
+                                                  "kind": "Name",
+                                                  "value": "room",
+                                                },
+                                                "selectionSet": Object {
+                                                  "kind": "SelectionSet",
+                                                  "selections": Array [
+                                                    Object {
+                                                      "alias": undefined,
+                                                      "arguments": Array [],
+                                                      "directives": Array [],
+                                                      "kind": "Field",
+                                                      "name": Object {
+                                                        "kind": "Name",
+                                                        "value": "name",
+                                                      },
+                                                      "selectionSet": undefined,
+                                                    },
+                                                  ],
+                                                },
+                                              },
+                                            ],
+                                          },
+                                        },
+                                      ],
+                                    },
+                                  },
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "pages",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "hasNext",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "hasPrevious",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "queryTotal",
+                                    },
+                                    "selectionSet": undefined,
+                                  },
+                                ],
+                              },
+                            },
+                          ],
+                        },
+                        "variableDefinitions": Array [
+                          Object {
+                            "defaultValue": undefined,
+                            "kind": "VariableDefinition",
+                            "type": Object {
+                              "kind": "NonNullType",
+                              "type": Object {
+                                "kind": "NamedType",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "Int",
+                                },
+                              },
+                            },
+                            "variable": Object {
+                              "kind": "Variable",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "page",
+                              },
+                            },
+                          },
+                          Object {
+                            "defaultValue": undefined,
+                            "kind": "VariableDefinition",
+                            "type": Object {
+                              "kind": "NonNullType",
+                              "type": Object {
+                                "kind": "NamedType",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "Int",
+                                },
+                              },
+                            },
+                            "variable": Object {
+                              "kind": "Variable",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "perPage",
+                              },
+                            },
+                          },
+                        ],
+                      },
+                    ],
+                    "kind": "Document",
+                    "loc": Object {
+                      "end": 310,
+                      "start": 0,
+                    },
+                  },
+                  "variables": Object {
+                    "page": 1,
+                    "perPage": 5,
+                  },
+                },
+              },
+            },
+            "client": [Circular],
           },
           "mutationStore": MutationStore {
             "store": Object {},
           },
           "onBroadcast": [Function],
+          "pollingInfoByQueryId": Map {},
           "queries": Map {
             "1" => Object {
               "cancel": [Function],
@@ -4131,16 +6393,14 @@ exports[`DeleteResource Test Suite should pop up a modal when delete button is c
                   "start": 0,
                 },
               },
-              "invalidate": false,
               "invalidated": false,
               "lastRequestId": 2,
-              "listeners": Array [
+              "listeners": Set {
                 [Function],
-              ],
+              },
               "newData": null,
               "observableQuery": ObservableQuery {
                 "_subscriber": [Function],
-                "isCurrentlyPolling": false,
                 "isTornDown": false,
                 "lastError": [Error: Network error: No more mocked responses for the query: query resources($page: Int!, $perPage: Int!) {
   allResources(page: $page, perPage: $perPage) {
@@ -4161,8 +6421,12 @@ exports[`DeleteResource Test Suite should pop up a modal when delete button is c
   }
 }
 , variables: {"page":1,"perPage":5}],
-                "lastResult": undefined,
-                "observers": Array [
+                "lastResult": Object {
+                  "errors": Array [],
+                  "loading": false,
+                  "networkStatus": 8,
+                },
+                "observers": Set {
                   SubscriptionObserver {
                     "_subscription": Subscription {
                       "_cleanup": [Function],
@@ -4174,7 +6438,7 @@ exports[`DeleteResource Test Suite should pop up a modal when delete button is c
                       "_state": "ready",
                     },
                   },
-                ],
+                },
                 "options": Object {
                   "context": Object {},
                   "metadata": Object {
@@ -4434,30 +6698,18 @@ exports[`DeleteResource Test Suite should pop up a modal when delete button is c
                 },
                 "queryId": "1",
                 "queryManager": [Circular],
-                "scheduler": QueryScheduler {
-                  "inFlightQueries": Object {},
-                  "intervalQueries": Object {},
-                  "pollingTimers": Object {},
-                  "queryManager": [Circular],
-                  "registeredQueries": Object {},
-                  "ssrMode": false,
-                },
+                "queryName": "resources",
                 "shouldSubscribe": true,
-                "subscriptionHandles": Array [],
+                "subscriptions": Set {},
                 "variables": Object {
                   "page": 1,
                   "perPage": 5,
                 },
               },
-              "subscriptions": Array [],
+              "subscriptions": Set {},
             },
           },
           "queryDeduplication": true,
-          "queryIdsByName": Object {
-            "resources": Array [
-              "1",
-            ],
-          },
           "queryStore": QueryStore {
             "store": Object {
               "1": Object {
@@ -4739,34 +6991,45 @@ exports[`DeleteResource Test Suite should pop up a modal when delete button is c
               },
             },
           },
-          "scheduler": QueryScheduler {
-            "inFlightQueries": Object {},
-            "intervalQueries": Object {},
-            "pollingTimers": Object {},
-            "queryManager": [Circular],
-            "registeredQueries": Object {},
-            "ssrMode": false,
-          },
+          "ssrMode": false,
+          "transformCache": WeakMap {},
         },
         "reFetchObservableQueries": [Function],
         "resetStore": [Function],
         "resetStoreCallbacks": Array [],
-        "ssrMode": false,
         "store": DataStore {
           "cache": InMemoryCache {
             "addTypename": false,
+            "cacheKeyRoot": KeyTrie {
+              "weak": WeakMap {},
+              "weakness": true,
+            },
             "config": Object {
               "addTypename": false,
               "dataIdFromObject": [Function],
               "fragmentMatcher": HeuristicFragmentMatcher {},
-              "storeFactory": [Function],
+              "freezeResults": false,
+              "resultCaching": true,
             },
-            "data": ObjectCache {
+            "data": DepTrackingCache {
               "data": Object {},
+              "depend": [Function],
             },
-            "optimistic": Array [],
+            "maybeBroadcastWatch": [Function],
+            "optimisticData": DepTrackingCache {
+              "data": Object {},
+              "depend": [Function],
+            },
             "silenceBroadcast": false,
-            "watches": Array [
+            "storeReader": StoreReader {
+              "executeSelectionSet": [Function],
+              "executeStoreQuery": [Function],
+              "executeSubSelectedArray": [Function],
+              "freezeResults": false,
+            },
+            "storeWriter": StoreWriter {},
+            "typenameDocumentCache": Map {},
+            "watches": Set {
               Object {
                 "callback": [Function],
                 "optimistic": true,
@@ -5020,10 +7283,11 @@ exports[`DeleteResource Test Suite should pop up a modal when delete button is c
                   "perPage": 5,
                 },
               },
-            ],
+            },
           },
         },
-        "version": "2.3.1",
+        "typeDefs": undefined,
+        "version": "2.6.4",
         "watchQuery": [Function],
       }
     }

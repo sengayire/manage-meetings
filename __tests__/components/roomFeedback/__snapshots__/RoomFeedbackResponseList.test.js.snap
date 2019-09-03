@@ -6,6 +6,7 @@ exports[`Room feedback list should render correctly 1`] = `
     className="feedback-container overlay-container"
   >
     <SingleRoomFeedBack
+      responseIds={Array []}
       roomCleanlinessRating={[Function]}
       roomId={null}
       showModal={[Function]}
