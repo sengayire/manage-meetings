@@ -1,5 +1,13 @@
 version: "2"
 checks:
+  identical-code:
+    enabled: false
+  config:
+    threshold: 4
+  similar-code:
+    enabled: false
+  config:
+    threshold: 4
   argument-count:
     enabled: true
     config:
@@ -23,7 +31,7 @@ checks:
   method-lines:
     enabled: true
     config:
-      threshold: 25
+      threshold: 50
   nested-control-flow:
     enabled: true
     config:
@@ -45,3 +53,4 @@ exclude_patterns:
   - "__tests__/" #Confirm if this is appropraite
   - "__mocks__/"
   - "src/utils/nonPersistentData.js"
+  

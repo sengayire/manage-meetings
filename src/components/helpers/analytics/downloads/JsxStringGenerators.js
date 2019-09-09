@@ -2,7 +2,7 @@
 import React from 'react';
 import jsxToString from 'jsx-to-string';
 import timeConvert from '../../timeConverter';
-import { getMeetingDurationAnalytics } from '../AverageMeetingList';
+import getMeetingDurationAnalytics from '../AverageMeetingList';
 import { getAverageTime } from '../../../analytics/AverageMeetingList/QueryAnalyticsPerMeetingRoom';
 
 /**

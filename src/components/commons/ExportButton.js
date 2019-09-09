@@ -20,10 +20,13 @@ const renderDropdownOptions = handleDownload => (
 const ExportButton = ({ data: { downloadData, dateValue, downloadDataName } }) => {
   const handleDownload = ({ target: { value } }) => {
     const type = value.toLowerCase();
+    let result;
     if (type === 'csv') {
-      return downloadCSV(downloadData, downloadDataName);
+      result = downloadCSV(downloadData, downloadDataName);
+    } else {
+      result = fetchDownload(type, downloadData, dateValue, downloadDataName);
     }
-    return fetchDownload(type, downloadData, dateValue, downloadDataName);
+    return result;
   };
 
   return (
