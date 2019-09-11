@@ -25,8 +25,10 @@
   top: 50%;
   left: 50%;
   min-width: 50%;
+  max-height: 95%;
   transform: translate(-50%, -50%);
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: scroll;
   background: map-get($color-white, 000);
   box-sizing: border-box;
   padding: 50px;
