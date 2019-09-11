@@ -1,4 +1,22 @@
 import gql from 'graphql-tag';
+import { paginationFR, someRoomFR, roomFR, idNameFR } from './Fragments';
+
+const remoteRoomFR = gql`
+fragment remoteRoomFields on AllRemoteRooms {
+  rooms {
+    calendarId
+    name
+  }
+}
+`;
+
+const roomDevicesFR = gql`
+fragment roomDevices on Room {
+  devices{
+    ...idNameDevices
+  }
+}
+${idNameFR('Devices')}`;
 
 export const GET_ROOMS_QUERY = gql`
   query rooms($capacity: Int, $location: String!, $office: String!, $page: Int!, $perPage: Int!, $roomLabels: String) {
@@ -11,36 +29,15 @@ export const GET_ROOMS_QUERY = gql`
       roomLabels: $roomLabels
     ) {
       rooms {
-        id
-        name
-        roomType
-        capacity
-        roomLabels
-        imageUrl
-        calendarId
-        locationId
-        structureId
-        devices{
-          id
-          name
-        }
-        resources {
-          roomId
-          resourceId
-          quantity
-          name
-          resource {
-            id
-            name
-          }
-        }
+        ...roomFields
+        ...roomDevices
       }
-      pages
-      queryTotal
-      hasNext
-      hasPrevious
+      ...pagination
     }
   }
+${roomFR}
+${roomDevicesFR}
+${paginationFR('PaginatedRooms')}
 `;
 
 export const GET_ALL_ROOMS_QUERY = gql`
@@ -53,120 +50,78 @@ export const GET_ALL_ROOMS_QUERY = gql`
       office: $office
     ) {
       rooms {
-        id
-        name
-        capacity
-        resources {
-          roomId
-          resourceId
-          quantity
-          name
-          resource {
-            id
-            name
-          }
-        }
+        ...roomFields
       }
     }
   }
+${roomFR}
 `;
 
 export const GET_ALL_ROOMS = gql`
   query rooms($location: String){
     allRooms(location: $location) {
       rooms {
-        id
-        name
-        roomType
-        capacity
-        roomLabels
-        imageUrl
-        calendarId
-        locationId
-        structureId
-        devices{
-          id
-          name
-        }
-        resources {
-          roomId
-          resourceId
-          quantity
-          name
-          resource {
-            id
-            name
-          }
-        }
+        ...roomFields
+        ...roomDevices
       }
     }
   }
-`;
+${roomFR}
+${roomDevicesFR}`;
 
 const GET_LOCATIONS_QUERY = gql`
   query locations {
     allLocations {
-      id
-      name
+      ...idNameLocation
     }
   }
-`;
+${idNameFR('Location')}`;
 
 const GET_ROOM_BY_NAME = gql`
   query roomByName($name: String!) {
     getRoomByName(name: $name) {
-      roomType
-      id
-      name
-      capacity
+      ...someRoomFields
       floor {
         block {
           offices {
             name
             location {
-              name
-              id
+              ...idNameLocation
             }
           }
         }
       }
     }
   }
-`;
+${someRoomFR}
+${idNameFR('Location')}`;
 
 const GET_ROOM = gql`
   query roomById($Id: Int) {
     getRoomById(roomId: $Id) {
-      name
-      capacity
+      ...someRoomFields
       locationId
       roomLabels
-      roomType
       imageUrl
     }
   }
-`;
+${someRoomFR}`;
+
 const GET_ALL_REMOTE_ROOMS = gql`
   query {
     allRemoteRooms {
-      rooms {
-        calendarId
-        name
-      }
+      ...remoteRoomFields
     }
   }
-`;
+${remoteRoomFR}`;
 
 const GET_REMOTE_ROOMS_ALL_LOCATIONS = gql`
   query allRooms($returnAll: Boolean) {
     allRemoteRooms(returnAll: $returnAll) {
-      rooms {
-        calendarId
-        name
-      }
+      ...remoteRoomFields
     }
   }
-`;
+${remoteRoomFR}`;
 
 export {
   GET_ROOMS_QUERY as default,

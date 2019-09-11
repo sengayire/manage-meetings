@@ -89,7 +89,9 @@ class TopNav extends React.Component {
             <span>
               <img src={item.icon} alt={item.menu} className="svg-nav" />
             </span>
-            {item.menu}
+            <span className="item-name" >
+              {item.menu}
+            </span>
           </Link>
         </li>
       );

@@ -1,23 +1,29 @@
 import gql from 'graphql-tag';
+import { idNameFR } from '../queries/Fragments';
+
+const deviceFR = gql`
+fragment device on Devices {
+  ...idNameDevices
+  deviceType
+  dateAdded
+  lastSeen
+  location
+  room {
+    ...idNameRoom
+  }
+}
+${idNameFR('Room')}
+${idNameFR('Devices')}`;
 
 export const ADD_DEVICE_MUTATION = gql`
 mutation CreateDevice($name: String! $roomId: Int! $deviceType: String!) {
     createDevice(name: $name roomId: $roomId deviceType: $deviceType) {
     device {
-      id
-      name
-      deviceType
-      dateAdded
-      lastSeen
-      location
-      room {
-        id
-        name
-      }
+      ...device
     }
   }
 }
-`;
+${deviceFR}`;
 
 export const EDIT_DEVICE_MUTATION = gql`
   mutation updateDevice($deviceId: Int! $name: String $roomId: Int! $deviceType: String $location: String) {
@@ -29,29 +35,19 @@ export const EDIT_DEVICE_MUTATION = gql`
       location: $location
     ) {
       device {
-        id
-        name
-        deviceType
-        dateAdded
-        lastSeen
-        location
-        room {
-          id
-          name
-        }
+        ...device
       }
     }
   }
-`;
+${deviceFR}`;
 
 export const DELETE_DEVICE_MUTATION = gql`
   mutation deleteDevice($deviceId: Int!) {
     deleteDevice(deviceId: $deviceId) {
       device {
-        id
-        name
+        ...idNameDevices
         roomId
       }
     }
   }
-`;
+${idNameFR('Devices')}`;
