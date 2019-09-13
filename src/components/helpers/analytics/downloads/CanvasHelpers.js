@@ -84,7 +84,7 @@ export class BarChart {
     const canvasActualHeight = height - (padding * 2);
     const canvasActualWidth = width - (padding * 2);
 
-    let gridValue = 0;
+    let gridValue = 0.1;
     while (gridValue <= maxValue) {
       const gridX = (canvasActualWidth * (gridValue / maxValue)) + padding;
       drawLine(

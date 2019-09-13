@@ -113,10 +113,10 @@ export const fetchDownload = async (type, downloadData, dateValue, downloadDataN
     document.body.appendChild(div);
     addCharts(downloadData, dateValue);
     if (type === 'pdf') {
-      const { page1, canvas } = await fetchPageCanvas('.analytics-download');
-      await downloadPdf(page1, canvas);
+      const { page, canvas } = await fetchPageCanvas('.analytics-download');
+      await downloadPdf(page, canvas);
     } else {
-      const { canvas } = await fetchPageCanvas('download-div');
+      const { canvas } = await fetchPageCanvas('.download-div');
       await download(canvas.toDataURL(), 'report.jpeg');
     }
   }

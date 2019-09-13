@@ -1,7 +1,7 @@
 import { getLeastBookedRooms, getMostBookedRooms } from '../MostAndLeastBooked';
 import getCheckinsStatistics from '../Checkins';
 import averageRoomCapacity from '../AverageRoomCapacity';
-import { getMeetingDurationAnalytics } from '../AverageMeetingList';
+import getMeetingDurationAnalytics from '../AverageMeetingList';
 import timeConvert from '../../timeConverter';
 import getSectorWidths from '../AverageMeetingDuration';
 
