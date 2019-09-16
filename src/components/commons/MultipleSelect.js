@@ -27,10 +27,8 @@ class Select extends Component {
 
   onBlur = () => {
     const { options, multiple } = this.props;
-
     this.setState((prevState) => {
       const { values } = prevState;
-
       if (multiple) {
         return {
           focusedValue: -1,
@@ -39,13 +37,10 @@ class Select extends Component {
         };
       }
       const value = values[0];
-
       let focusedValue = -1;
-
       if (value) {
         focusedValue = options.findIndex(option => option.value === value);
       }
-
       return {
         focusedValue,
         isFocused: false,
@@ -57,7 +52,6 @@ class Select extends Component {
   onKeyDown = (e) => {
     const { options, multiple } = this.props;
     const { isOpen } = this.state;
-
     switch (e.key) {
       case ' ':
         e.preventDefault();
@@ -65,7 +59,6 @@ class Select extends Component {
           if (multiple) {
             this.setState((prevState) => {
               const { focusedValue } = prevState;
-
               if (focusedValue !== -1) {
                 const [...values] = prevState.values;
                 const { value } = options[focusedValue];
@@ -76,7 +69,6 @@ class Select extends Component {
                 } else {
                   values.splice(index, 1);
                 }
-
                 return { values };
               }
               return false;
@@ -215,9 +207,7 @@ class Select extends Component {
 
   onClickOption = (e) => {
     const { multiple } = this.props;
-
     const { value } = e.currentTarget.dataset;
-
     this.setState((prevState) => {
       if (!multiple) {
         return {
@@ -225,28 +215,22 @@ class Select extends Component {
           isOpen: false,
         };
       }
-
       const [...values] = prevState.values;
       const index = values.indexOf(value);
-
       if (index === -1) {
         values.push(value);
       } else {
         values.splice(index, 1);
       }
-
       return { values };
     });
   }
 
-  stopPropagation = (e) => {
-    e.stopPropagation();
-  }
+  stopPropagation = e => e.stopPropagation();
 
   renderValues = () => {
     const { placeholder, multiple, underScoreFormat } = this.props;
     const { values } = this.state;
-
     if (values.length === 0) {
       return (
         <div className="placeholder">
@@ -302,12 +286,9 @@ class Select extends Component {
   renderOption = (option, index) => {
     const { multiple, underScoreFormat, alreadyAssignedOptions } = this.props;
     const { values, focusedValue } = this.state;
-
     const { value } = option;
     const alreadyAssigned = alreadyAssignedOptions.includes(value);
     const selected = values.includes(value);
-
-
     let className = 'option';
     if (selected) className += ' selected';
     if (alreadyAssigned) className += ' alreadyAssigned';
