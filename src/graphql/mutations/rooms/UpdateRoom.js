@@ -1,4 +1,5 @@
 import gql from 'graphql-tag';
+import { idNameFR } from '../../queries/Fragments';
 
 const UPDATE_ROOM = gql`
   mutation UpdateRoom(
@@ -20,8 +21,7 @@ const UPDATE_ROOM = gql`
       structureId: $structureId
     ) {
       room {
-        id
-        name
+        ...idNameRoom
         capacity
         roomType
         roomLabels
@@ -29,6 +29,6 @@ const UPDATE_ROOM = gql`
       }
     }
   }
-`;
+${idNameFR('Room')}`;
 
 export default UPDATE_ROOM;

@@ -1,11 +1,11 @@
 import gql from 'graphql-tag';
+import { paginationFR, idNameFR } from './Fragments';
 
 export const GET_RESOURCES_QUERY = gql`
   query resources($page: Int!, $perPage: Int!) {
     allResources(page: $page, perPage: $perPage) {
       resources {
-        id
-        name
+        ...idNameResource
         room {
           roomId
           room {
@@ -13,13 +13,11 @@ export const GET_RESOURCES_QUERY = gql`
           }
         }
       }
-      pages
-      hasNext
-      hasPrevious
-      queryTotal
+    ...pagination
     }
   }
-`;
+${idNameFR('Resource')}
+${paginationFR('PaginatedResource')}`;
 
 export const GET_ROOM_RESOURCES = gql`
   query singleRoomResources($roomId: Int!) {
