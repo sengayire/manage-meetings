@@ -1,5 +1,4 @@
 import gql from 'graphql-tag';
-import { resourceFR, resourcesFR } from '../queries/Fragments';
 
 export const EDIT_RESOURCE_MUTATION = gql`
   mutation updateRoomResource(
@@ -8,21 +7,23 @@ export const EDIT_RESOURCE_MUTATION = gql`
   ) {
     updateRoomResource(resourceId: $resourceId, name: $name) {
       resource {
-        ...resource
+        id
+        name
       }
     }
   }
-${resourceFR}`;
+`;
 
 export const DELETE_RESOURCE_MUTATION = gql`
   mutation deleteResource($resourceId: Int!) {
     deleteResource(resourceId: $resourceId) {
       resource {
-        ...resource
+        id
+        name
       }
     }
   }
-${resourceFR}`;
+`;
 
 export const ASSIGN_RESOURCE_MUTATION = gql`
   mutation assignResource(
@@ -32,9 +33,13 @@ export const ASSIGN_RESOURCE_MUTATION = gql`
   ) {
     assignResource(resourceId: $resourceId, quantity: $quantity, roomId: $roomId) {
       roomResource {
-          ...resources
+        roomId
+        resourceId
+        quantity
+        name
         resource {
-          ...resource
+          id
+          name
           room {
             roomId
             room {
@@ -45,7 +50,6 @@ export const ASSIGN_RESOURCE_MUTATION = gql`
       }
     }
   }
-${resourceFR}
-${resourcesFR}`;
+`;
 
 export { EDIT_RESOURCE_MUTATION as default };
