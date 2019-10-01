@@ -1,12 +1,12 @@
 import gql from 'graphql-tag';
-import { idNameFR } from '../queries/Fragments';
 
 const UPDATE_ROLES_MUTATION = gql`
   mutation changeUserRole($email: String!, $roleId: Int!) {
     changeUserRole(email: $email, roleId: $roleId){
       user{
-        ...idNameUser
+        id
         email
+        name
         roles{
           id
           role
@@ -14,7 +14,7 @@ const UPDATE_ROLES_MUTATION = gql`
       }
     }
   }
-${idNameFR('User')}`;
+`;
 
 const INVITE_PERSON_MUTATION = gql`
 mutation inviteToConverge($email: String!) {
