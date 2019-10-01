@@ -26,6 +26,7 @@ const customStyles = {
 class MrmModal extends Component {
   static propTypes = {
     openModal: PropTypes.bool,
+    showBtn: PropTypes.bool,
     children: PropTypes.node.isRequired,
     title: PropTypes.string.isRequired,
     handleCloseRequest: PropTypes.func,
@@ -37,6 +38,7 @@ class MrmModal extends Component {
 
   static defaultProps = {
     openModal: false,
+    showBtn: true,
     className: 'modalClass',
     modalButtonClassName: 'button',
     buttonText: '',
@@ -119,12 +121,16 @@ class MrmModal extends Component {
 
     return (
       <Fragment>
-        <IconButton
-          buttonText={buttonText}
-          modalButtonClassName={modalButtonClassName}
-          openModal={this.openModal}
-          disabled={parseInt(access, 10) === 1}
-        />
+        {
+          this.props.showBtn &&
+          <IconButton
+            buttonText={buttonText}
+            modalButtonClassName={modalButtonClassName}
+            openModal={this.openModal}
+            disabled={parseInt(access, 10) === 1}
+          />
+        }
+
         <Modal
           shouldCloseOnOverlayClick={false}
           isOpen={this.state.modalIsOpen}

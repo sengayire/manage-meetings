@@ -11,7 +11,7 @@ const allLocationsReturnData = {
       },
       {
         id: '1',
-        name: 'Lagos',
+        name: 'Kigali',
       },
     ],
   },

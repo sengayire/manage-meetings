@@ -1,0 +1,32 @@
+@import './variables';
+
+.modal-container {
+    display: flex;
+    flex-direction: column;
+    font-family: $font;
+    justify-content: space-between !important;
+    text-align: center;
+    align-items: center;
+    margin: 3.5rem;
+
+    .main-modal {
+        width: 80%;
+        margin: auto;
+    }
+ .color {
+     color: white;
+ }
+    .align {
+        margin-top: 3rem;
+        &__row {
+            display: flex;
+            flex-direction: row;
+        }
+    }
+}
+.modal-spinner {
+    display: flex;
+    height: 100vh;
+    margin: auto;
+    width: 30%;
+}

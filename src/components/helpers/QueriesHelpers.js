@@ -63,15 +63,24 @@ const getAllLocations = async (client = apolloClient) => {
   }
 };
 
-
-const getAllLocationsFromCache = (client = apolloClient) => {
-  const data = client.readQuery(
-    {
-      query: GET_LOCATIONS_QUERY,
-    },
-    true,
-  );
-  return data.allLocations;
+const getAllLocationsFromCache = async (client = apolloClient) => {
+  try {
+    const data = await client.readQuery(
+      {
+        query: GET_LOCATIONS_QUERY,
+      },
+      true,
+    );
+    return data.data.allLocations;
+  } catch (err) {
+    const data = await client.query(
+      {
+        query: GET_LOCATIONS_QUERY,
+      },
+      true,
+    );
+    return data.data.allLocations;
+  }
 };
 
 const getRoomListVariables = (userLocation, perPage, page, textVariable) => ({

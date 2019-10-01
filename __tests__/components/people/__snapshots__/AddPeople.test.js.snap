@@ -8,6 +8,7 @@ exports[`AddPeople Component renders properly 1`] = `
   handleCloseRequest={[Function]}
   modalButtonClassName="button"
   openModal={false}
+  showBtn={true}
   title="INVITE A NEW USER"
 >
   <form
