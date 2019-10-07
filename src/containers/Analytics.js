@@ -14,12 +14,12 @@ const Analytics = () => {
   };
 
   return (
-    <Fragment >
+    <Fragment>
       <NavBar changeUserLocation={changeUserLocation} />
       <div className="analytics-container">
         <AnalyticsNav userLocationChanged={userLocationChanged} />
       </div>
-    </Fragment >
+    </Fragment>
   );
 };
 

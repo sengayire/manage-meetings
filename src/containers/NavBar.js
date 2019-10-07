@@ -1,9 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
-import TopNav from '../components/navbars/TopNav';
 import TopMenu from '../components/navbars/TopMenu';
 import { getUserDetails } from '../components/helpers/QueriesHelpers';
-
 
 class NavBar extends Component {
   state = {
@@ -26,7 +24,6 @@ class NavBar extends Component {
     return (
       <Fragment>
         <TopMenu changeUserLocation={this.props.changeUserLocation} />
-        <TopNav userRole={this.state.userRole} />
       </Fragment>
     );
   }
@@ -41,4 +38,3 @@ NavBar.defaultProps = {
 };
 
 export default NavBar;
-

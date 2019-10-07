@@ -578,72 +578,12 @@ exports[`TopMenu Component Should render component 1`] = `
                   </li>
                   <li
                     className="logo-text"
-                  >
-                    <h1>
-                      CONVERGE
-                    </h1>
-                  </li>
+                  />
                 </ul>
               </div>
               <div
                 className="container content-end nav-right"
               >
-                <div
-                  className="search-box"
-                >
-                  <div
-                    className="container input-container"
-                  >
-                    <div
-                      className="search-box__input-field"
-                    >
-                      <Input
-                        controlsClass=""
-                        id="amenity"
-                        inputClass="mrm-input default-input"
-                        labelClass="add-resource-controls"
-                        labelName=" "
-                        name="amenity"
-                        onBlur={[Function]}
-                        onChange={[Function]}
-                        onFocus={[Function]}
-                        onKeyDown={[Function]}
-                        placeholder=""
-                        type="text"
-                        value=""
-                      >
-                        <div
-                          className="add-resource-controls"
-                        >
-                          <label
-                            htmlFor="amenity"
-                          >
-                             
-                            <input
-                              className="mrm-input default-input"
-                              defaultValue=""
-                              id="amenity"
-                              name="amenity"
-                              onBlur={[Function]}
-                              onChange={[Function]}
-                              onFocus={[Function]}
-                              onKeyDown={[Function]}
-                              placeholder=""
-                              type="text"
-                            />
-                          </label>
-                        </div>
-                      </Input>
-                      <img
-                        alt="Search icon"
-                        className="search-icon"
-                        onClick={[Function]}
-                        onKeyPress={[Function]}
-                        src="https://firebasestorage.googleapis.com/v0/b/learning-map-app.appspot.com/o/MrmFrontImages%2Fsearch_icon.svg?alt=media&token=ef28a273-f3ea-4370-9720-845bae1cd05e"
-                      />
-                    </div>
-                  </div>
-                </div>
                 <div
                   className="container side-nav"
                 >
@@ -654,35 +594,6 @@ exports[`TopMenu Component Should render component 1`] = `
                       alt="Notification icon"
                       src="https://firebasestorage.googleapis.com/v0/b/learning-map-app.appspot.com/o/MrmFrontImages%2Fnotifications_icon.svg?alt=media&token=23b8d4c8-1c47-4591-bb55-2a97807675fd"
                     />
-                  </div>
-                  <div
-                    className="location-dropdown analytics-cover"
-                  >
-                    <div
-                      className="btn-right"
-                    >
-                      <div
-                        className="btn-right__location"
-                      >
-                        <Button
-                          classProp="btn-right__location__btn"
-                          handleClick={null}
-                          isDisabled={false}
-                          title="Lagos"
-                          type={2}
-                        >
-                          <button
-                            className="btn-right__location__btn btn-secondary"
-                            disabled={false}
-                            onClick={null}
-                          >
-                            <span>
-                              Lagos
-                            </span>
-                          </button>
-                        </Button>
-                      </div>
-                    </div>
                   </div>
                   <div
                     className="profile"

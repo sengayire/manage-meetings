@@ -1,0 +1,409 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Carousel component renders correctly 1`] = `
+<CustomCarousel
+  legendPosition="left"
+>
+  <Carousel
+    autoPlay={true}
+    axis="horizontal"
+    centerMode={false}
+    centerSlidePercentage={80}
+    dynamicHeight={false}
+    emulateTouch={false}
+    infiniteLoop={true}
+    interval={3000}
+    onChange={[Function]}
+    onClickItem={[Function]}
+    onClickThumb={[Function]}
+    selectedItem={0}
+    showArrows={false}
+    showIndicators={true}
+    showStatus={false}
+    showThumbs={false}
+    statusFormatter={[Function]}
+    stopOnHover={false}
+    swipeScrollTolerance={5}
+    swipeable={true}
+    transitionTime={350}
+    useKeyboardArrows={false}
+    verticalSwipe="standard"
+    width="100%"
+  >
+    <div>
+      <div
+        className="carousel carousel-slider"
+        style={
+          Object {
+            "width": "100%",
+          }
+        }
+      >
+        <button
+          className="control-arrow control-prev control-disabled"
+          onClick={[Function]}
+          type="button"
+        />
+        <div
+          className="slider-wrapper axis-horizontal"
+          style={Object {}}
+        >
+          <ReactSwipe
+            allowMouseEvents={false}
+            className="slider animated"
+            onSwipeDown={[Function]}
+            onSwipeEnd={[Function]}
+            onSwipeLeft={[Function]}
+            onSwipeMove={[Function]}
+            onSwipeRight={[Function]}
+            onSwipeStart={[Function]}
+            onSwipeUp={[Function]}
+            selectedItem={0}
+            style={
+              Object {
+                "MozTransform": "translate3d(-100%,0,0)",
+                "MozTransitionDuration": "350ms",
+                "MsTransform": "translate3d(-100%,0,0)",
+                "MsTransitionDuration": "350ms",
+                "OTransform": "translate3d(-100%,0,0)",
+                "OTransitionDuration": "350ms",
+                "WebkitTransform": "translate3d(-100%,0,0)",
+                "WebkitTransitionDuration": "350ms",
+                "msTransform": "translate3d(-100%,0,0)",
+                "msTransitionDuration": "350ms",
+                "transform": "translate3d(-100%,0,0)",
+                "transitionDuration": "350ms",
+              }
+            }
+            tagName="ul"
+            tolerance={5}
+          >
+            <ul
+              className="slider animated"
+              onMouseDown={[Function]}
+              onTouchEnd={[Function]}
+              onTouchStart={[Function]}
+              style={
+                Object {
+                  "MozTransform": "translate3d(-100%,0,0)",
+                  "MozTransitionDuration": "350ms",
+                  "MsTransform": "translate3d(-100%,0,0)",
+                  "MsTransitionDuration": "350ms",
+                  "OTransform": "translate3d(-100%,0,0)",
+                  "OTransitionDuration": "350ms",
+                  "WebkitTransform": "translate3d(-100%,0,0)",
+                  "WebkitTransitionDuration": "350ms",
+                  "msTransform": "translate3d(-100%,0,0)",
+                  "msTransitionDuration": "350ms",
+                  "transform": "translate3d(-100%,0,0)",
+                  "transitionDuration": "350ms",
+                }
+              }
+            >
+              <li
+                className="slide"
+                key="itemKey8clone/.$Charley"
+                onClick={[Function]}
+              >
+                <div
+                  key="Charley"
+                >
+                  <p
+                    className="legend left"
+                  >
+                    Charley
+                  </p>
+                  <img
+                    alt="Charley"
+                    src="test-file-stub"
+                  />
+                </div>
+              </li>
+              <li
+                className="slide selected"
+                key="itemKey0/.$Empire State - LOS"
+                onClick={[Function]}
+              >
+                <div
+                  key="Empire State - LOS"
+                >
+                  <p
+                    className="legend left"
+                  >
+                    Empire State - LOS
+                  </p>
+                  <img
+                    alt="Empire State - LOS"
+                    src="test-file-stub"
+                  />
+                </div>
+              </li>
+              <li
+                className="slide"
+                key="itemKey1/.$Wall Street"
+                onClick={[Function]}
+              >
+                <div
+                  key="Wall Street"
+                >
+                  <p
+                    className="legend left"
+                  >
+                    Wall Street
+                  </p>
+                  <img
+                    alt="Wall Street"
+                    src="test-file-stub"
+                  />
+                </div>
+              </li>
+              <li
+                className="slide"
+                key="itemKey2/.$Cognitio"
+                onClick={[Function]}
+              >
+                <div
+                  key="Cognitio"
+                >
+                  <p
+                    className="legend left"
+                  >
+                    Cognitio
+                  </p>
+                  <img
+                    alt="Cognitio"
+                    src="test-file-stub"
+                  />
+                </div>
+              </li>
+              <li
+                className="slide"
+                key="itemKey3/.$Aso"
+                onClick={[Function]}
+              >
+                <div
+                  key="Aso"
+                >
+                  <p
+                    className="legend left"
+                  >
+                    Aso
+                  </p>
+                  <img
+                    alt="Aso"
+                    src="test-file-stub"
+                  />
+                </div>
+              </li>
+              <li
+                className="slide"
+                key="itemKey4/.$Banku"
+                onClick={[Function]}
+              >
+                <div
+                  key="Banku"
+                >
+                  <p
+                    className="legend left"
+                  >
+                    Banku
+                  </p>
+                  <img
+                    alt="Banku"
+                    src="test-file-stub"
+                  />
+                </div>
+              </li>
+              <li
+                className="slide"
+                key="itemKey5/.$Obutu"
+                onClick={[Function]}
+              >
+                <div
+                  key="Obutu"
+                >
+                  <p
+                    className="legend left"
+                  >
+                    Obutu
+                  </p>
+                  <img
+                    alt="Obutu"
+                    src="test-file-stub"
+                  />
+                </div>
+              </li>
+              <li
+                className="slide"
+                key="itemKey6/.$Ubuntu"
+                onClick={[Function]}
+              >
+                <div
+                  key="Ubuntu"
+                >
+                  <p
+                    className="legend left"
+                  >
+                    Ubuntu
+                  </p>
+                  <img
+                    alt="Ubuntu"
+                    src="test-file-stub"
+                  />
+                </div>
+              </li>
+              <li
+                className="slide"
+                key="itemKey7/.$Idanre"
+                onClick={[Function]}
+              >
+                <div
+                  key="Idanre"
+                >
+                  <p
+                    className="legend left"
+                  >
+                    Idanre
+                  </p>
+                  <img
+                    alt="Idanre"
+                    src="test-file-stub"
+                  />
+                </div>
+              </li>
+              <li
+                className="slide"
+                key="itemKey8/.$Charley"
+                onClick={[Function]}
+              >
+                <div
+                  key="Charley"
+                >
+                  <p
+                    className="legend left"
+                  >
+                    Charley
+                  </p>
+                  <img
+                    alt="Charley"
+                    src="test-file-stub"
+                  />
+                </div>
+              </li>
+              <li
+                className="slide selected"
+                key="itemKey0clone/.$Empire State - LOS"
+                onClick={[Function]}
+              >
+                <div
+                  key="Empire State - LOS"
+                >
+                  <p
+                    className="legend left"
+                  >
+                    Empire State - LOS
+                  </p>
+                  <img
+                    alt="Empire State - LOS"
+                    src="test-file-stub"
+                  />
+                </div>
+              </li>
+            </ul>
+          </ReactSwipe>
+        </div>
+        <button
+          className="control-arrow control-next control-disabled"
+          onClick={[Function]}
+          type="button"
+        />
+        <ul
+          className="control-dots"
+        >
+          <li
+            className="dot selected"
+            key="0/.$Empire State - LOS"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            role="button"
+            tabIndex={0}
+            value={0}
+          />
+          <li
+            className="dot"
+            key="1/.$Wall Street"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            role="button"
+            tabIndex={0}
+            value={1}
+          />
+          <li
+            className="dot"
+            key="2/.$Cognitio"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            role="button"
+            tabIndex={0}
+            value={2}
+          />
+          <li
+            className="dot"
+            key="3/.$Aso"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            role="button"
+            tabIndex={0}
+            value={3}
+          />
+          <li
+            className="dot"
+            key="4/.$Banku"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            role="button"
+            tabIndex={0}
+            value={4}
+          />
+          <li
+            className="dot"
+            key="5/.$Obutu"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            role="button"
+            tabIndex={0}
+            value={5}
+          />
+          <li
+            className="dot"
+            key="6/.$Ubuntu"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            role="button"
+            tabIndex={0}
+            value={6}
+          />
+          <li
+            className="dot"
+            key="7/.$Idanre"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            role="button"
+            tabIndex={0}
+            value={7}
+          />
+          <li
+            className="dot"
+            key="8/.$Charley"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            role="button"
+            tabIndex={0}
+            value={8}
+          />
+        </ul>
+      </div>
+    </div>
+  </Carousel>
+</CustomCarousel>
+`;

@@ -5,6 +5,7 @@ const ROUTES = {
   analytics: '/analytics',
   preference: '/preference',
   roomResponses: '/response',
+  container: '/container',
 };
 
 export default ROUTES;

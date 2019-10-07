@@ -233,6 +233,7 @@ exports[`Get New Users Component renders properly 1`] = `
         modalButtonClassName="button"
         openModal={true}
         showBtn={false}
+        title={null}
       >
         <Modal
           ariaHideApp={false}
@@ -254,7 +255,7 @@ exports[`Get New Users Component renders properly 1`] = `
               "content": Object {
                 "backgroundColor": "#ffffff",
                 "border": "1px solid #CCCCCC",
-                "borderRadius": "4px",
+                "borderRadius": "15px",
                 "bottom": "auto",
                 "boxShadow": "0 2px 40px 10px rgba(185, 180, 180, 0.2)",
                 "fontFamily": "DINPro-Regular",
@@ -282,7 +283,7 @@ exports[`Get New Users Component renders properly 1`] = `
                   <div
                     aria-label="Parent Modal"
                     class="ReactModal__Content ReactModal__Content--after-open modalClass"
-                    style="font-family: DINPro-Regular; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); border: 1px solid #cccccc; border-radius: 4px; outline: none; box-shadow: 0 2px 40px 10px rgba(185, 180, 180, 0.2); background-color: rgb(255, 255, 255); overflow: auto;"
+                    style="font-family: DINPro-Regular; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); border: 1px solid #cccccc; border-radius: 15px; outline: none; box-shadow: 0 2px 40px 10px rgba(185, 180, 180, 0.2); background-color: rgb(255, 255, 255); overflow: auto;"
                     tabindex="-1"
                   >
                     <h2
@@ -434,7 +435,7 @@ exports[`Get New Users Component renders properly 1`] = `
                   "content": Object {
                     "backgroundColor": "#ffffff",
                     "border": "1px solid #CCCCCC",
-                    "borderRadius": "4px",
+                    "borderRadius": "15px",
                     "bottom": "auto",
                     "boxShadow": "0 2px 40px 10px rgba(185, 180, 180, 0.2)",
                     "fontFamily": "DINPro-Regular",
@@ -476,7 +477,7 @@ exports[`Get New Users Component renders properly 1`] = `
                     Object {
                       "backgroundColor": "#ffffff",
                       "border": "1px solid #CCCCCC",
-                      "borderRadius": "4px",
+                      "borderRadius": "15px",
                       "bottom": "auto",
                       "boxShadow": "0 2px 40px 10px rgba(185, 180, 180, 0.2)",
                       "fontFamily": "DINPro-Regular",
