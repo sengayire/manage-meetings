@@ -14,9 +14,19 @@ exports[`Carousel component renders correctly 1`] = `
     emulateTouch={false}
     infiniteLoop={true}
     interval={3000}
+    labels={
+      Object {
+        "item": "slide item",
+        "leftArrow": "previous slide / item",
+        "rightArrow": "next slide / item",
+      }
+    }
     onChange={[Function]}
     onClickItem={[Function]}
     onClickThumb={[Function]}
+    onSwipeEnd={[Function]}
+    onSwipeMove={[Function]}
+    onSwipeStart={[Function]}
     selectedItem={1}
     showArrows={false}
     showIndicators={true}
@@ -41,6 +51,7 @@ exports[`Carousel component renders correctly 1`] = `
         }
       >
         <button
+          aria-label="previous slide / item"
           className="control-arrow control-prev control-disabled"
           onClick={[Function]}
           type="button"
@@ -219,6 +230,7 @@ exports[`Carousel component renders correctly 1`] = `
           </ReactSwipe>
         </div>
         <button
+          aria-label="next slide / item"
           className="control-arrow control-next control-disabled"
           onClick={[Function]}
           type="button"
@@ -227,6 +239,7 @@ exports[`Carousel component renders correctly 1`] = `
           className="control-dots"
         >
           <li
+            aria-label="slide item 1"
             className="dot"
             key="0/.$Safari Meeting Room, Andela New York"
             onClick={[Function]}
@@ -236,6 +249,7 @@ exports[`Carousel component renders correctly 1`] = `
             value={0}
           />
           <li
+            aria-label="slide item 2"
             className="dot selected"
             key="1/.$Cognitio Meeting Room, Andela Lagos"
             onClick={[Function]}
@@ -245,6 +259,7 @@ exports[`Carousel component renders correctly 1`] = `
             value={1}
           />
           <li
+            aria-label="slide item 3"
             className="dot"
             key="2/.$Entebbe Meeting Room, Andela Kampala"
             onClick={[Function]}
@@ -254,6 +269,7 @@ exports[`Carousel component renders correctly 1`] = `
             value={2}
           />
           <li
+            aria-label="slide item 4"
             className="dot"
             key="3/.$Banku Meeting Room, Andela Lagos"
             onClick={[Function]}
@@ -266,6 +282,13 @@ exports[`Carousel component renders correctly 1`] = `
       </div>
       <Thumbs
         axis="horizontal"
+        labels={
+          Object {
+            "item": "slide item",
+            "leftArrow": "previous slide / item",
+            "rightArrow": "next slide / item",
+          }
+        }
         onSelectItem={[Function]}
         selectedItem={1}
         transitionTime={2000}
@@ -277,6 +300,7 @@ exports[`Carousel component renders correctly 1`] = `
             className="thumbs-wrapper axis-vertical"
           >
             <button
+              aria-label="previous slide / item"
               className="control-arrow control-prev control-disabled"
               onClick={[Function]}
               type="button"
@@ -334,6 +358,7 @@ exports[`Carousel component renders correctly 1`] = `
                 }
               >
                 <li
+                  aria-label="slide item 1"
                   className="thumb"
                   key="0"
                   onClick={[Function]}
@@ -349,6 +374,7 @@ exports[`Carousel component renders correctly 1`] = `
                   />
                 </li>
                 <li
+                  aria-label="slide item 2"
                   className="thumb"
                   key="1"
                   onClick={[Function]}
@@ -363,6 +389,7 @@ exports[`Carousel component renders correctly 1`] = `
                   />
                 </li>
                 <li
+                  aria-label="slide item 3"
                   className="thumb"
                   key="2"
                   onClick={[Function]}
@@ -377,6 +404,7 @@ exports[`Carousel component renders correctly 1`] = `
                   />
                 </li>
                 <li
+                  aria-label="slide item 4"
                   className="thumb"
                   key="3"
                   onClick={[Function]}
@@ -393,6 +421,7 @@ exports[`Carousel component renders correctly 1`] = `
               </ul>
             </ReactSwipe>
             <button
+              aria-label="next slide / item"
               className="control-arrow control-next control-disabled"
               onClick={[Function]}
               type="button"
@@ -419,9 +448,19 @@ exports[`Carousel component renders correctly 2`] = `
     emulateTouch={false}
     infiniteLoop={true}
     interval={3000}
+    labels={
+      Object {
+        "item": "slide item",
+        "leftArrow": "previous slide / item",
+        "rightArrow": "next slide / item",
+      }
+    }
     onChange={[Function]}
     onClickItem={[Function]}
     onClickThumb={[Function]}
+    onSwipeEnd={[Function]}
+    onSwipeMove={[Function]}
+    onSwipeStart={[Function]}
     selectedItem={0}
     showArrows={false}
     showIndicators={true}
@@ -446,6 +485,7 @@ exports[`Carousel component renders correctly 2`] = `
         }
       >
         <button
+          aria-label="previous slide / item"
           className="control-arrow control-prev control-disabled"
           onClick={[Function]}
           type="button"
@@ -624,6 +664,7 @@ exports[`Carousel component renders correctly 2`] = `
           </ReactSwipe>
         </div>
         <button
+          aria-label="next slide / item"
           className="control-arrow control-next control-disabled"
           onClick={[Function]}
           type="button"
@@ -632,6 +673,7 @@ exports[`Carousel component renders correctly 2`] = `
           className="control-dots"
         >
           <li
+            aria-label="slide item 1"
             className="dot selected"
             key="0/.$Safari Meeting Room, Andela New York"
             onClick={[Function]}
@@ -641,6 +683,7 @@ exports[`Carousel component renders correctly 2`] = `
             value={0}
           />
           <li
+            aria-label="slide item 2"
             className="dot"
             key="1/.$Cognitio Meeting Room, Andela Lagos"
             onClick={[Function]}
@@ -650,6 +693,7 @@ exports[`Carousel component renders correctly 2`] = `
             value={1}
           />
           <li
+            aria-label="slide item 3"
             className="dot"
             key="2/.$Entebbe Meeting Room, Andela Kampala"
             onClick={[Function]}
@@ -659,6 +703,7 @@ exports[`Carousel component renders correctly 2`] = `
             value={2}
           />
           <li
+            aria-label="slide item 4"
             className="dot"
             key="3/.$Banku Meeting Room, Andela Lagos"
             onClick={[Function]}
@@ -671,6 +716,13 @@ exports[`Carousel component renders correctly 2`] = `
       </div>
       <Thumbs
         axis="horizontal"
+        labels={
+          Object {
+            "item": "slide item",
+            "leftArrow": "previous slide / item",
+            "rightArrow": "next slide / item",
+          }
+        }
         onSelectItem={[Function]}
         selectedItem={0}
         transitionTime={2000}
@@ -682,6 +734,7 @@ exports[`Carousel component renders correctly 2`] = `
             className="thumbs-wrapper axis-vertical"
           >
             <button
+              aria-label="previous slide / item"
               className="control-arrow control-prev control-disabled"
               onClick={[Function]}
               type="button"
@@ -739,6 +792,7 @@ exports[`Carousel component renders correctly 2`] = `
                 }
               >
                 <li
+                  aria-label="slide item 1"
                   className="thumb"
                   key="0"
                   onClick={[Function]}
@@ -754,6 +808,7 @@ exports[`Carousel component renders correctly 2`] = `
                   />
                 </li>
                 <li
+                  aria-label="slide item 2"
                   className="thumb"
                   key="1"
                   onClick={[Function]}
@@ -768,6 +823,7 @@ exports[`Carousel component renders correctly 2`] = `
                   />
                 </li>
                 <li
+                  aria-label="slide item 3"
                   className="thumb"
                   key="2"
                   onClick={[Function]}
@@ -782,6 +838,7 @@ exports[`Carousel component renders correctly 2`] = `
                   />
                 </li>
                 <li
+                  aria-label="slide item 4"
                   className="thumb"
                   key="3"
                   onClick={[Function]}
@@ -798,6 +855,7 @@ exports[`Carousel component renders correctly 2`] = `
               </ul>
             </ReactSwipe>
             <button
+              aria-label="next slide / item"
               className="control-arrow control-next control-disabled"
               onClick={[Function]}
               type="button"

@@ -4,6 +4,7 @@ export const ADD_LEVEL_SETUP_MUTATION = gql`
 mutation createOfficeStructure($flattenedData: [StructureInputs]!){
   createOfficeStructure(data: $flattenedData){
     structure{
+      id
       structureId
       name
       level

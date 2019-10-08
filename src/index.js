@@ -1,6 +1,6 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import webFont from 'webfontloader';
+import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { ApolloProvider as ApolloHooksProvider } from '@apollo/react-hooks';
 import { ThemeProvider } from 'react-css-themr';

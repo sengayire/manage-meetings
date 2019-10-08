@@ -1,8 +1,9 @@
 const ROUTES = {
   home: '/',
   setup: '/setup',
+  buildingsSetup: '/onboarding/setup/buildings',
   roomfeedback: '/roomfeedback',
-  analytics: '/analytics',
+  analytics: '/main_page',
   preference: '/preference',
   roomResponses: '/response',
   container: '/container',

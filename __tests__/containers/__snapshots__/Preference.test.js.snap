@@ -7,7 +7,7 @@ exports[`Preference Component should render properly 1`] = `
     className="preference-container"
   >
     <BackArrow
-      redirectUri="/analytics"
+      redirectUri="/main_page"
     />
     <NotificationSettingsList />
   </div>

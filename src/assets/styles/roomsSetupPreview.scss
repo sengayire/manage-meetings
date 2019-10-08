@@ -1,0 +1,18 @@
+@import './commonTextStyles';
+@import './variables.scss';
+
+.rooms-preview {
+    .initial-preview-title .initial-preview-bottom-text {
+        @include normalTextStyle;
+        color: map-get($color-gray, 0);
+        margin-left: 20px;
+    }
+
+    .initial-preview-image {
+        margin: 60px 0;
+    }
+
+    .initial-preview-bottom-text {
+        color: map-get($color-gray, 50);
+    }
+}

@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Meeting Rooms Setup component should render properly 1`] = `
+<div>
+  <OnboardingLayout
+    layoutLeft={<SetupBuildingsStructure />}
+    layoutRight={<BuildingsStructurePreview />}
+  />
+</div>
+`;

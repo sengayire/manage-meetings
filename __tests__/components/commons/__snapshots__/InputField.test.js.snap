@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InputField Component should render properly 1`] = `
+<div
+  className="input-field-container"
+>
+  <Input
+    className="input-field-style"
+    error={false}
+    name="center_name"
+    onBlur={[Function]}
+    onChange={[Function]}
+    placeholder="eg Epic Campus"
+    type="text"
+    value=""
+  />
+  <br />
+  <Popup
+    className="input-field-popup-icon"
+    content="Enter your andela center"
+    disabled={false}
+    eventsEnabled={true}
+    offset={0}
+    on={
+      Array [
+        "click",
+        "hover",
+      ]
+    }
+    pinned={false}
+    position="right center"
+    trigger={
+      <Icon
+        as="i"
+        color="blue"
+        fitted={true}
+        name="info circle"
+        size="medium"
+      />
+    }
+  />
+</div>
+`;
