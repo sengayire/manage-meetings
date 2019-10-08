@@ -38,6 +38,7 @@ export const place = 'https://firebasestorage.googleapis.com/v0/b/learning-map-a
 export const placeholder = 'https://firebasestorage.googleapis.com/v0/b/learning-map-app.appspot.com/o/MrmFrontImages%2Fplaceholder.svg?alt=media&token=4cc06a44-c922-42a6-9d32-51d9179cabe6';
 export const poll = 'https://firebasestorage.googleapis.com/v0/b/learning-map-app.appspot.com/o/MrmFrontImages%2Fpoll.svg?alt=media&token=b0c632bd-3f9d-4cd2-b9dd-60aea1550e46';
 export const pollRed = 'https://firebasestorage.googleapis.com/v0/b/learning-map-app.appspot.com/o/MrmFrontImages%2Fpoll_red.svg?alt=media&token=f162d826-43a7-4bcb-aac8-0077ea6a4885';
+export const pollRedIcon = 'https://firebasestorage.googleapis.com/v0/b/learning-map-app.appspot.com/o/MrmFrontImages%2Fpoll_red.svg?alt=media&token=f162d826-43a7-4bcb-aac8-0077ea6a4885';
 export const profileIcon = 'https://firebasestorage.googleapis.com/v0/b/learning-map-app.appspot.com/o/MrmFrontImages%2Fprofile.svg?alt=media&token=7be801d0-a155-49ae-97ea-5ae6f606b09f';
 export const questionIcon = 'https://firebasestorage.googleapis.com/v0/b/learning-map-app.appspot.com/o/MrmFrontImages%2Fprofile.svg?alt=media&token=7be801d0-a155-49ae-97ea-5ae6f606b09f';
 export const responseIcon = 'https://firebasestorage.googleapis.com/v0/b/learning-map-app.appspot.com/o/MrmFrontImages%2Fresponse-icon.svg?alt=media&token=51554781-b9e0-4bf8-96b9-434de0bf2a71';

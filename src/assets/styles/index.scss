@@ -1,21 +1,21 @@
-@import './variables';
+@import "./variables";
+@import "../../../node_modules/react-responsive-carousel/lib/styles/carousel.min.css";
 
-body{
+body {
   font-family: $font;
   padding: 0;
   margin: 0;
   width: -webkit-fill-available;
 
-   @media screen and (max-width: 460px) {
-     width: fit-content !important;
-   }
+  @media screen and (max-width: 460px) {
+    width: fit-content !important;
+  }
 }
 
-#root{
-  @media screen and (min-height: 1024px){
-      width: 100vw;
+#root {
+  @media screen and (min-height: 1024px) {
+    width: 100vw;
   }
-
 }
 button {
   font-family: $font;
@@ -45,24 +45,24 @@ input {
 h1 {
   color: $color-purple;
 }
-form{
+form {
   height: 100%;
 }
 .size-6-4 {
-  & div:first-child{
+  & div:first-child {
     width: 40%;
   }
-  & div:nth-child(2){
+  & div:nth-child(2) {
     width: 60%;
   }
 }
-.size-half{
+.size-half {
   width: 50%;
 }
-.size-quarter{
+.size-quarter {
   width: 25%;
 }
-.container{
+.container {
   padding: 0;
   margin: 0;
   display: flex;
@@ -74,18 +74,18 @@ form{
   padding: 10px;
   flex: 1 100%;
 }
-.content-start{
+.content-start {
   justify-content: flex-start;
 }
-.content-end{
+.content-end {
   justify-content: flex-end;
 }
-.inline li{
+.inline li {
   display: inline-block;
 }
 
 button:disabled,
-button[disabled]{
+button[disabled] {
   border: 1px solid $color-input-border;
   color: $color-text;
   pointer-events: none;

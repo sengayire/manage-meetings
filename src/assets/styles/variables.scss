@@ -1,21 +1,21 @@
 @font-face {
-  font-family: 'DINPro';
+  font-family: "DINPro";
   src: url(../fonts/DINPro.ttf);
 }
 
 @font-face {
-  font-family: 'DINPro-Regular';
+  font-family: "DINPro-Regular";
   src: url(../fonts/DINPro-Regular.woff);
 }
 
 @font-face {
-  font-family: 'DINPro-Light';
+  font-family: "DINPro-Light";
   src: url(../fonts/DINPro-Light.otf);
 }
 
-$font: 'DINPro';
-$font-regular: 'DINPro-Regular';
-$font-light: 'DINPro-Light';
+$font: "DINPro";
+$font-regular: "DINPro-Regular";
+$font-light: "DINPro-Light";
 $text-color: #6d6d6d;
 $time-color: #808080;
 $toast-success: #030303;
@@ -73,6 +73,7 @@ $color-black: (
   400: #4f4f4f,
   500: #434343,
   600: #333e44,
+  700: #333a3f,
   900: #000000
 );
 

@@ -31,13 +31,7 @@ button {
 .btn-primary {
   background-color: $color-green-light;
   color: map-get($color-white, 000);
-  border: 1px solid $color-primary;
-
-  &:hover {
-    background-color: map-get($color-white, 000);
-    border: 1px solid $color-primary;
-    color: $color-primary;
-  }
+  border: none;
 }
 
 .btn-plain {

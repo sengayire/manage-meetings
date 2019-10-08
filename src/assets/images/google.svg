@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="29px" height="27px" viewBox="0 0 29 27" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 58 (101010) - https://sketch.com -->
+    <title>0C2E6260-F0CF-4C53-8463-F85F19A333AE</title>
+    <desc>Created with sketchtool.</desc>
+    <defs>
+        <path d="M17,7.2 L8.8,7.2 L8.8,10.6 L13.52,10.6 C13.08,12.76 11.24,14 8.8,14 C5.92,14 3.6,11.68 3.6,8.8 C3.6,5.92 5.92,3.6 8.8,3.6 C10.04,3.6 11.16,4.04 12.04,4.76 L14.6,2.2 C13.04,0.84 11.04,0 8.8,0 C3.92,0 0,3.92 0,8.8 C0,13.68 3.92,17.6 8.8,17.6 C13.2,17.6 17.2,14.4 17.2,8.8 C17.2,8.28 17.12,7.72 17,7.2 Z" id="path-1"></path>
+        <path d="M17,7.2 L8.8,7.2 L8.8,10.6 L13.52,10.6 C13.08,12.76 11.24,14 8.8,14 C5.92,14 3.6,11.68 3.6,8.8 C3.6,5.92 5.92,3.6 8.8,3.6 C10.04,3.6 11.16,4.04 12.04,4.76 L14.6,2.2 C13.04,0.84 11.04,0 8.8,0 C3.92,0 0,3.92 0,8.8 C0,13.68 3.92,17.6 8.8,17.6 C13.2,17.6 17.2,14.4 17.2,8.8 C17.2,8.28 17.12,7.72 17,7.2 Z" id="path-3"></path>
+        <path d="M17,7.2 L8.8,7.2 L8.8,10.6 L13.52,10.6 C13.08,12.76 11.24,14 8.8,14 C5.92,14 3.6,11.68 3.6,8.8 C3.6,5.92 5.92,3.6 8.8,3.6 C10.04,3.6 11.16,4.04 12.04,4.76 L14.6,2.2 C13.04,0.84 11.04,0 8.8,0 C3.92,0 0,3.92 0,8.8 C0,13.68 3.92,17.6 8.8,17.6 C13.2,17.6 17.2,14.4 17.2,8.8 C17.2,8.28 17.12,7.72 17,7.2 Z" id="path-5"></path>
+        <path d="M17,7.2 L8.8,7.2 L8.8,10.6 L13.52,10.6 C13.08,12.76 11.24,14 8.8,14 C5.92,14 3.6,11.68 3.6,8.8 C3.6,5.92 5.92,3.6 8.8,3.6 C10.04,3.6 11.16,4.04 12.04,4.76 L14.6,2.2 C13.04,0.84 11.04,0 8.8,0 C3.92,0 0,3.92 0,8.8 C0,13.68 3.92,17.6 8.8,17.6 C13.2,17.6 17.2,14.4 17.2,8.8 C17.2,8.28 17.12,7.72 17,7.2 Z" id="path-7"></path>
+    </defs>
+    <g id="Hi-Fi" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Landing-Page" transform="translate(-626.000000, -487.000000)">
+            <g id="Button" transform="translate(616.000000, 477.000000)">
+                <g id="GOOGLE" transform="translate(10.000000, 10.000000)">
+                    <rect id="Rectangle" fill="#FFFFFF" x="0" y="0" width="29" height="27" rx="2"></rect>
+                    <g id="Google__G__Logo" transform="translate(6.000000, 4.000000)">
+                        <g id="Clipped">
+                            <mask id="mask-2" fill="white">
+                                <use xlink:href="#path-1"></use>
+                            </mask>
+                            <g id="a"></g>
+                            <polygon id="Path" fill="#FBBC05" fill-rule="nonzero" mask="url(#mask-2)" points="-0.8 14 -0.8 3.6 6 8.8"></polygon>
+                        </g>
+                        <g id="Clipped">
+                            <mask id="mask-4" fill="white">
+                                <use xlink:href="#path-3"></use>
+                            </mask>
+                            <g id="a"></g>
+                            <polygon id="Path" fill="#EA4335" fill-rule="nonzero" mask="url(#mask-4)" points="-0.8 3.6 6 8.8 8.8 6.36 18.4 4.8 18.4 -0.8 -0.8 -0.8"></polygon>
+                        </g>
+                        <g id="Clipped">
+                            <mask id="mask-6" fill="white">
+                                <use xlink:href="#path-5"></use>
+                            </mask>
+                            <g id="a"></g>
+                            <polygon id="Path" fill="#34A853" fill-rule="nonzero" mask="url(#mask-6)" points="-0.8 14 11.2 4.8 14.36 5.2 18.4 -0.8 18.4 18.4 -0.8 18.4"></polygon>
+                        </g>
+                        <g id="Clipped">
+                            <mask id="mask-8" fill="white">
+                                <use xlink:href="#path-7"></use>
+                            </mask>
+                            <g id="a"></g>
+                            <polygon id="Path" fill="#4285F4" fill-rule="nonzero" mask="url(#mask-8)" points="18.4 18.4 6 8.8 4.4 7.6 18.4 3.6"></polygon>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

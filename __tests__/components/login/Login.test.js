@@ -1,8 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { mount } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 import { MemoryRouter } from 'react-router-dom';
-import sinon from 'sinon';
 import LoginComponent, { Login } from '../../../src/components/login/Login';
 
 describe('Login component', () => {
@@ -27,49 +26,41 @@ describe('Login component', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('renders the correct heading text', () => {
-    expect(wrapper.find('header>h1')).toHaveLength(1);
-    expect(wrapper.find('header>h1').text()).toBe('CONVERGE');
-  });
-
-  it('renders the correct mrm introduction text', () => {
-    const mrmIntro =
-      'Meet the Meeting Room Appthat your meeting room app aspires to be.';
-    expect(wrapper.find('#converge-intro')).toHaveLength(1);
-    expect(wrapper.find('#converge-intro').text()).toBe(mrmIntro);
-  });
-
-  it('renders the tablet image', () => {
-    expect(wrapper.find('#dark-tablet img')).toHaveLength(1);
+  it('renders the correct the logo image', () => {
+    expect(wrapper.find('header>div>img')).toHaveLength(1);
   });
 
   it('renders login button', () => {
-    //   check whether login button exists
-    expect(wrapper.find('.btn-signin')).toHaveLength(1);
+    expect(wrapper.find('.login-btn')).toHaveLength(1);
   });
 
   it('should call componentWillUnmount when unmounted', () => {
-    sinon.spy(Login.prototype, 'componentWillUnmount');
-    const loginWrapper = mount(<Login
+    const loginWrapper = shallow(<Login
       location={{
-          state: { errorMesage: 'Something Went Wrong' },
-          pathname: '/',
-        }}
+        state: { errorMessage: 'Something Went Wrong' },
+        pathname: '/',
+      }}
       history={{ push: jest.fn() }}
     />);
     expect(loginWrapper).toMatchSnapshot();
-    loginWrapper.unmount();
-    expect(Login.prototype.componentWillUnmount).toHaveProperty('callCount', 1);
-    Login.prototype.componentWillUnmount.restore();
+    expect(loginWrapper.state().loginError).toBe('Something Went Wrong');
   });
 
   it('should display an error when login error occurs and close snackbar on time out', () => {
+    const element = {
+      classList: {
+        add: jest.fn(),
+        remove: jest.fn(),
+      },
+    };
+    jest.spyOn(document, 'querySelector').mockReturnValue(element);
+
     const push = jest.fn();
     const loginWrapper = mount(<Login
       location={{
-          search: '?error=Something%20Went%20Wrong',
-          pathname: '/',
-        }}
+        search: '?error=Something%20Went%20Wrong',
+        pathname: '/',
+      }}
       history={{ push }}
     />);
     expect(loginWrapper).toMatchSnapshot();
@@ -83,5 +74,49 @@ describe('Login component', () => {
     loginWrapper.update();
     expect(loginWrapper.find('Snackbar')).toHaveLength(0);
     expect(loginWrapper).toMatchSnapshot();
+  });
+
+  it('should call handleOpenModal', () => {
+    const element = {
+      classList: {
+        add: jest.fn(),
+        remove: jest.fn(),
+      },
+    };
+    jest.spyOn(document, 'querySelector').mockReturnValue(element);
+
+    const push = jest.fn();
+    const loginWrapper = mount(<Login
+      location={{
+        search: '?error=Something%20Went%20Wrong',
+        pathname: '/',
+      }}
+      history={{ push }}
+    />);
+    loginWrapper.instance().handleOpenModal();
+    expect(loginWrapper.state().openModal).toBeTruthy();
+    expect(loginWrapper.state().closeModal).toBeFalsy();
+  });
+
+  it('should call handleCloseModal', () => {
+    const element = {
+      classList: {
+        add: jest.fn(),
+        remove: jest.fn(),
+      },
+    };
+    jest.spyOn(document, 'querySelector').mockReturnValue(element);
+
+    const push = jest.fn();
+    const loginWrapper = mount(<Login
+      location={{
+        search: '?error=Something%20Went%20Wrong',
+        pathname: '/',
+      }}
+      history={{ push }}
+    />);
+    loginWrapper.instance().handleCloseModal();
+    expect(loginWrapper.state().openModal).toBeFalsy();
+    expect(loginWrapper.state().closeModal).toBeTruthy();
   });
 });

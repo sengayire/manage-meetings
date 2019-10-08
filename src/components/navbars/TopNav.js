@@ -9,6 +9,8 @@ import ROUTES from '../../utils/routes';
 import '../../assets/styles/topnav.scss';
 import { analyticsIcon, feedbackIcon, settingsIcon } from '../../utils/images/images';
 
+require('@babel/polyfill');
+
 const menuItems = [
   {
     route: ROUTES.analytics, menu: 'Analytics', icon: analyticsIcon, admin: false,

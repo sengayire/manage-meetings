@@ -1,0 +1,37 @@
+.carousel .slide .legend {
+  bottom: 30px;
+  background: transparent;
+  opacity: 1;
+  font-weight: 900;
+  font-size: 16px;
+  font-family: Lato;
+  line-height: 19px;
+}
+
+.legend-left {
+  text-align: left !important;
+}
+
+.legend-center {
+  text-align: center !important;
+}
+
+.carousel .control-dots {
+  bottom: 65px;
+  padding: 0 0 10px 0;
+}
+
+.control-dots-left {
+  text-align: left !important;
+  margin-left: 5% !important;
+}
+
+.carousel .control-dots .dot {
+  width: 13px;
+  height: 13px;
+}
+
+.carousel .slide img {
+  object-fit: cover;
+  height: 100vh;
+}
