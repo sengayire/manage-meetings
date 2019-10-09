@@ -16,13 +16,14 @@ import {
   getUserDetails,
   getAllLocations,
   getUserLocation,
-  getRoomsStructure,
 } from './components/helpers/QueriesHelpers';
 import GetNewUsersLocation from './containers/GetNewUsersLocation';
 import { removeItemFromLocalStorage } from './utils/Utilities';
 import WelcomePage from './components/onboarding/WelcomePage';
 import BuildingsSetup from './components/onboarding/BuildingsSetup/index';
 import Container from './containers/mainContainer';
+import OnboardingPages from './containers/OnboardingPages';
+import centerSetupLevel from './components/helpers/centerStructureHelper';
 
 // destruscture constants to be used
 const {
@@ -76,10 +77,10 @@ class App extends Component {
    * this function is used to set the users state(the location and the role)
    */
   async setUserState() {
-    const [user, locations] = await Promise.all([
+    const [user, locations, isCenterSetup] = await Promise.all([
       getUserDetails(),
       getAllLocations(),
-      getRoomsStructure(),
+      centerSetupLevel(),
     ]);
     const userLocation = locations.find(({ name }) => name === user.location);
     if (userLocation === undefined) {
@@ -87,12 +88,14 @@ class App extends Component {
         userLocation: 'Lagos',
         defaultState: true,
         userRole: user.roles[0].role,
+        isCenterSetup,
       });
     } else {
       this.setState({
         userLocation,
         defaultState: false,
         userRole: user.roles[0].role,
+        isCenterSetup,
       });
     }
   }
@@ -103,10 +106,15 @@ class App extends Component {
       userLocation,
       userRole,
       defaultState,
+      isCenterSetup,
     } = this.state;
     const { location } = this.props;
     if (defaultState && userLocation) {
       return <GetNewUsersLocation userLocation={this.state.userLocation} />;
+    }
+
+    if ((userRole === 'Admin' || userRole === 'Super Admin') && isCenterSetup) {
+      return <OnboardingPages centerSetupLevel={isCenterSetup} />;
     }
 
     if (!loggedIn && location.pathname !== ROUTES.home) {

@@ -1,12 +1,20 @@
-import { GET_USER_QUERY, GET_LOCATION_QUERY, GET_ROLE_QUERY } from '../../graphql/queries/People';
+import {
+  GET_USER_QUERY,
+  GET_LOCATION_QUERY,
+  GET_ROLE_QUERY,
+} from '../../graphql/queries/People';
 import {
   GET_ALL_ROOMS,
   GET_LOCATIONS_QUERY,
   GET_ROOMS_QUERY,
   GET_ALL_REMOTE_ROOMS,
   GET_REMOTE_ROOMS_ALL_LOCATIONS,
+  GET_ROOM_ID,
 } from '../../graphql/queries/Rooms';
-import { GET_RESOURCES_QUERY, GET_ROOM_RESOURCES } from '../../graphql/queries/Resources';
+import {
+  GET_RESOURCES_QUERY,
+  GET_ROOM_RESOURCES,
+} from '../../graphql/queries/Resources';
 import SINGLE_ROOM_FEEDBACK, { ALL_ROOM_FEEDBACK } from '../../graphql/queries/RoomFeedback';
 import ALL_ANALYTICS, { ANALYTICS_FOR_DAILY_ROOM_EVENTS } from '../../graphql/queries/analytics';
 import { decodeTokenAndGetUserData } from '../../utils/Cookie';
@@ -15,13 +23,15 @@ import GET_ALL_LEVELS from '../../graphql/queries/Levels';
 import GET_ROOM_FEEDBACK_QUESTIONS_QUERY from '../../graphql/queries/questions';
 import { GET_DEVICES_QUERY } from '../../graphql/queries/Devices';
 
-const getUserLocation = (client = apolloClient) => client.readQuery({
-  query: GET_LOCATION_QUERY,
-}).userLocation;
+const getUserLocation = (client = apolloClient) =>
+  client.readQuery({
+    query: GET_LOCATION_QUERY,
+  }).userLocation;
 
 const getUserDetails = async (client = apolloClient) => {
   const { UserInfo: userData } = decodeTokenAndGetUserData() || {};
-  const email = process.env.NODE_ENV === 'test' ? 'converge@andela.com' : userData.email;
+  const email =
+    process.env.NODE_ENV === 'test' ? 'converge@andela.com' : userData.email;
   try {
     const data = client.readQuery(
       {
@@ -91,20 +101,36 @@ const getRoomListVariables = (userLocation, perPage, page, textVariable) => ({
   roomLabels: textVariable,
 });
 
-const getRoomList = async (userLocation, perPage, page, textVariable, client = apolloClient) => {
+const getRoomList = async (
+  userLocation,
+  perPage,
+  page,
+  textVariable,
+  client = apolloClient,
+) => {
   // making 'textVariable' NULL disables filtering by tags
   const nullTextVariable = '';
   try {
     const data = await client.readQuery({
       query: GET_ROOMS_QUERY,
-      variables: getRoomListVariables(userLocation, perPage, page, nullTextVariable),
+      variables: getRoomListVariables(
+        userLocation,
+        perPage,
+        page,
+        nullTextVariable,
+      ),
     });
     return data;
   } catch (error) {
     const { data } = await client.query({
       query: GET_ROOMS_QUERY,
       fetchPolicy: 'network-only',
-      variables: getRoomListVariables(userLocation, perPage, page, nullTextVariable),
+      variables: getRoomListVariables(
+        userLocation,
+        perPage,
+        page,
+        nullTextVariable,
+      ),
     });
     return data;
   }
@@ -206,14 +232,20 @@ const getRemoteRoomsAllLocations = async (client = apolloClient) => {
 
 const getRoomsStructure = async (client = apolloClient) => {
   try {
-    const data = client.readQuery({
-      query: GET_ALL_LEVELS,
-    }, true);
+    const data = client.readQuery(
+      {
+        query: GET_ALL_LEVELS,
+      },
+      true,
+    );
     return data;
   } catch (error) {
-    const { data } = await client.query({
-      query: GET_ALL_LEVELS,
-    }, true);
+    const { data } = await client.query(
+      {
+        query: GET_ALL_LEVELS,
+      },
+      true,
+    );
     return data;
   }
 };
@@ -237,20 +269,26 @@ const getRoomFeedbackQuestions = async (client = apolloClient) => {
 
 const getAllRooms = async (location, client = apolloClient) => {
   try {
-    const data = client.readQuery({
-      query: GET_ALL_ROOMS,
-      variables: {
-        location,
+    const data = client.readQuery(
+      {
+        query: GET_ALL_ROOMS,
+        variables: {
+          location,
+        },
       },
-    }, true);
+      true,
+    );
     return data;
   } catch (error) {
-    const { data } = await client.query({
-      query: GET_ALL_ROOMS,
-      variables: {
-        location,
+    const { data } = await client.query(
+      {
+        query: GET_ALL_ROOMS,
+        variables: {
+          location,
+        },
       },
-    }, true);
+      true,
+    );
     return data;
   }
 };
@@ -280,7 +318,7 @@ const getAllAnalytics = async (dateValue, client = apolloClient) => {
 
 const query = (perPage, page, dateValue) => {
   const { startDate, endDate } = dateValue;
-  return ({
+  return {
     query: ANALYTICS_FOR_DAILY_ROOM_EVENTS,
     variables: {
       startDate,
@@ -288,21 +326,21 @@ const query = (perPage, page, dateValue) => {
       page: page || 1,
       perPage: perPage || 5,
     },
-  });
+  };
 };
 
-const getAnalyticForDailyRoomsEvents = async (dateValue, perPage, page, client = apolloClient) => {
+const getAnalyticForDailyRoomsEvents = async (
+  dateValue,
+  perPage,
+  page,
+  client = apolloClient,
+) => {
   try {
-    const data = client.readQuery(
-      query(perPage, page, dateValue),
-      true,
-    );
+    const data = client.readQuery(query(perPage, page, dateValue), true);
     return data;
   } catch (err) {
     try {
-      const res = await client.query(
-        query(perPage, page, dateValue),
-      );
+      const res = await client.query(query(perPage, page, dateValue));
       return res.data;
     } catch (error) {
       return error.message;
@@ -327,7 +365,10 @@ const getAllDevices = async (client = apolloClient) => {
   }
 };
 
-export const getAllResponses = async ({ startDate, endDate } = {}, client = apolloClient) => {
+export const getAllResponses = async (
+  { startDate, endDate } = {},
+  client = apolloClient,
+) => {
   try {
     const data = client.readQuery(
       {
@@ -352,9 +393,32 @@ export const getAllResponses = async ({ startDate, endDate } = {}, client = apol
   }
 };
 
-const getUserRole = (client = apolloClient) => client.readQuery({
-  query: GET_ROLE_QUERY,
-}).userRole;
+const getUserRole = (client = apolloClient) =>
+  client.readQuery({
+    query: GET_ROLE_QUERY,
+  }).userRole;
+
+const getRoomId = async (name, client = apolloClient) => {
+  try {
+    const data = client.readQuery(
+      {
+        query: GET_ROOM_ID,
+        variables: { name },
+      },
+      true,
+    );
+    return data;
+  } catch (error) {
+    const data = await client.query(
+      {
+        query: GET_ROOM_ID,
+        variables: { name },
+      },
+      true,
+    );
+    return data;
+  }
+};
 
 export {
   getRoomResources,
@@ -374,4 +438,5 @@ export {
   getUserLocation,
   getUserRole,
   getAllLocationsFromCache,
+  getRoomId,
 };

@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`officeStructure component should render with no errors 1`] = `
+<OnboardingLayout
+  layoutLeft={
+    <UNDEFINED>
+      <SetOfficeStructure
+        activeBlock="X-Space"
+        blocks={
+          Array [
+            Object {
+              "name": "X-Space",
+              "structureId": "7ddaeca4-d0b8-4675-9fa2-15ad68449cad",
+            },
+          ]
+        }
+        handleLeveltype={[Function]}
+        inputValue="1"
+        levelType=""
+        onChangeValue={[Function]}
+        onInputChange={[Function]}
+        toggleBlock={[Function]}
+      />
+      <NextButton
+        flattenedData={
+          Array [
+            Object {
+              "level": 2,
+              "locationId": 10,
+              "name": "",
+              "parentId": "",
+              "parentTitle": "",
+              "position": 1,
+              "structureId": "8d3c6f0d-9368-410d-a9fb-781c59e19430",
+              "tag": "",
+            },
+          ]
+        }
+      />
+    </UNDEFINED>
+  }
+  layoutRight={
+    <UNDEFINED>
+      <OfficeStructurePreview />
+    </UNDEFINED>
+  }
+/>
+`;

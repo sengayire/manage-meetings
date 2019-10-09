@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`setOfficeStructure component should render with no errors 1`] = `
+<Fragment>
+  <div
+    className="structure-title-container"
+  >
+    <div
+      className="back_icon"
+    >
+      <img
+        alt="back icon"
+        src="test-file-stub"
+      />
+    </div>
+    <span
+      className="structure-title"
+    >
+      Office Structure
+    </span>
+  </div>
+  <span
+    className="set-structure-title"
+  >
+    Set the structure of your Center
+  </span>
+  <BuildingCard
+    activeBlock="Block A"
+    blocks={
+      Array [
+        "Block A",
+        "Block B",
+      ]
+    }
+  />
+  <span
+    className="set-structure-labels"
+  >
+    Select Level Type for Block A
+  </span>
+  <SelectionDropdown />
+  <span
+    className="set-structure-labels"
+  >
+    How many floors are in Block A
+  </span>
+  <InputWithNumbers />
+  <span
+    className="set-structure-labels"
+  >
+    Name your floors
+  </span>
+  <InputsWithAddIcons />
+</Fragment>
+`;
