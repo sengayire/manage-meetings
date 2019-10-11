@@ -6,14 +6,14 @@ import Analytics from '../../src/containers/Analytics';
 import { GET_LOCATION_QUERY } from '../../src/graphql/queries/People';
 import { getUserLocation } from '../../src/components/helpers/QueriesHelpers';
 
-
 let wrapper;
 jest.mock('../../src/components/helpers/QueriesHelpers');
 jest.mock('../../src/utils/Cookie');
 jest.mock('../../src/utils/notification');
 
 const userLocation = {
-  id: 1, name: 'Lagos',
+  id: 1,
+  name: 'Lagos',
 };
 getUserLocation.mockReturnValue(userLocation);
 
@@ -24,13 +24,12 @@ const mocks = [
 
 beforeAll(() => {
   wrapper = mount(
-    <MockedProvider
-      mocks={mocks}
-    >
+    <MockedProvider mocks={mocks}>
       <BrowserRouter>
         <Analytics />
       </BrowserRouter>
-    </MockedProvider>);
+    </MockedProvider>,
+  );
 });
 
 describe('Analytics component', () => {

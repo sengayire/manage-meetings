@@ -1,0 +1,1202 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SHOULD TEST THE COMPONENT 1`] = `
+<MockedProvider
+  addTypename={true}
+  mocks={
+    Array [
+      Object {
+        "request": Object {
+          "query": Object {
+            "definitions": Array [
+              Object {
+                "directives": Array [],
+                "kind": "OperationDefinition",
+                "name": Object {
+                  "kind": "Name",
+                  "value": "createResource",
+                },
+                "operation": "mutation",
+                "selectionSet": Object {
+                  "kind": "SelectionSet",
+                  "selections": Array [
+                    Object {
+                      "alias": undefined,
+                      "arguments": Array [
+                        Object {
+                          "kind": "Argument",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "name",
+                          },
+                          "value": Object {
+                            "kind": "Variable",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "name",
+                            },
+                          },
+                        },
+                      ],
+                      "directives": Array [],
+                      "kind": "Field",
+                      "name": Object {
+                        "kind": "Name",
+                        "value": "createResource",
+                      },
+                      "selectionSet": Object {
+                        "kind": "SelectionSet",
+                        "selections": Array [
+                          Object {
+                            "alias": undefined,
+                            "arguments": Array [],
+                            "directives": Array [],
+                            "kind": "Field",
+                            "name": Object {
+                              "kind": "Name",
+                              "value": "resource",
+                            },
+                            "selectionSet": Object {
+                              "kind": "SelectionSet",
+                              "selections": Array [
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "id",
+                                  },
+                                  "selectionSet": undefined,
+                                },
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "name",
+                                  },
+                                  "selectionSet": undefined,
+                                },
+                              ],
+                            },
+                          },
+                        ],
+                      },
+                    },
+                  ],
+                },
+                "variableDefinitions": Array [
+                  Object {
+                    "defaultValue": undefined,
+                    "kind": "VariableDefinition",
+                    "type": Object {
+                      "kind": "NonNullType",
+                      "type": Object {
+                        "kind": "NamedType",
+                        "name": Object {
+                          "kind": "Name",
+                          "value": "String",
+                        },
+                      },
+                    },
+                    "variable": Object {
+                      "kind": "Variable",
+                      "name": Object {
+                        "kind": "Name",
+                        "value": "name",
+                      },
+                    },
+                  },
+                ],
+              },
+            ],
+            "kind": "Document",
+            "loc": Object {
+              "end": 124,
+              "start": 0,
+            },
+          },
+          "variables": Object {
+            "name": Array [
+              "pencil",
+              "dog",
+            ],
+          },
+        },
+        "result": Object {
+          "data": Object {
+            "createResource": Object {
+              "resource": Object {
+                "id": "2",
+                "name": "pencil",
+              },
+            },
+          },
+        },
+      },
+    ]
+  }
+>
+  <ApolloProvider
+    client={
+      ApolloClient {
+        "cache": InMemoryCache {
+          "addTypename": true,
+          "cacheKeyRoot": KeyTrie {
+            "weakness": true,
+          },
+          "config": Object {
+            "addTypename": true,
+            "dataIdFromObject": [Function],
+            "fragmentMatcher": HeuristicFragmentMatcher {},
+            "freezeResults": false,
+            "resultCaching": true,
+          },
+          "data": DepTrackingCache {
+            "data": Object {},
+            "depend": [Function],
+          },
+          "maybeBroadcastWatch": [Function],
+          "optimisticData": DepTrackingCache {
+            "data": Object {},
+            "depend": [Function],
+          },
+          "silenceBroadcast": false,
+          "storeReader": StoreReader {
+            "executeSelectionSet": [Function],
+            "executeStoreQuery": [Function],
+            "executeSubSelectedArray": [Function],
+            "freezeResults": false,
+          },
+          "storeWriter": StoreWriter {},
+          "typenameDocumentCache": Map {},
+          "watches": Set {},
+        },
+        "clearStoreCallbacks": Array [],
+        "defaultOptions": Object {},
+        "disableNetworkFetches": false,
+        "link": MockLink {
+          "addTypename": true,
+          "mockedResponsesByKey": Object {
+            "{\\"query\\":\\"mutation createResource($name: String!) {\\\\n  createResource(name: $name) {\\\\n    resource {\\\\n      id\\\\n      name\\\\n      __typename\\\\n    }\\\\n    __typename\\\\n  }\\\\n}\\\\n\\"}": Array [
+              Object {
+                "request": Object {
+                  "query": Object {
+                    "definitions": Array [
+                      Object {
+                        "directives": Array [],
+                        "kind": "OperationDefinition",
+                        "name": Object {
+                          "kind": "Name",
+                          "value": "createResource",
+                        },
+                        "operation": "mutation",
+                        "selectionSet": Object {
+                          "kind": "SelectionSet",
+                          "selections": Array [
+                            Object {
+                              "alias": undefined,
+                              "arguments": Array [
+                                Object {
+                                  "kind": "Argument",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "name",
+                                  },
+                                  "value": Object {
+                                    "kind": "Variable",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "name",
+                                    },
+                                  },
+                                },
+                              ],
+                              "directives": Array [],
+                              "kind": "Field",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "createResource",
+                              },
+                              "selectionSet": Object {
+                                "kind": "SelectionSet",
+                                "selections": Array [
+                                  Object {
+                                    "alias": undefined,
+                                    "arguments": Array [],
+                                    "directives": Array [],
+                                    "kind": "Field",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "resource",
+                                    },
+                                    "selectionSet": Object {
+                                      "kind": "SelectionSet",
+                                      "selections": Array [
+                                        Object {
+                                          "alias": undefined,
+                                          "arguments": Array [],
+                                          "directives": Array [],
+                                          "kind": "Field",
+                                          "name": Object {
+                                            "kind": "Name",
+                                            "value": "id",
+                                          },
+                                          "selectionSet": undefined,
+                                        },
+                                        Object {
+                                          "alias": undefined,
+                                          "arguments": Array [],
+                                          "directives": Array [],
+                                          "kind": "Field",
+                                          "name": Object {
+                                            "kind": "Name",
+                                            "value": "name",
+                                          },
+                                          "selectionSet": undefined,
+                                        },
+                                      ],
+                                    },
+                                  },
+                                ],
+                              },
+                            },
+                          ],
+                        },
+                        "variableDefinitions": Array [
+                          Object {
+                            "defaultValue": undefined,
+                            "kind": "VariableDefinition",
+                            "type": Object {
+                              "kind": "NonNullType",
+                              "type": Object {
+                                "kind": "NamedType",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "String",
+                                },
+                              },
+                            },
+                            "variable": Object {
+                              "kind": "Variable",
+                              "name": Object {
+                                "kind": "Name",
+                                "value": "name",
+                              },
+                            },
+                          },
+                        ],
+                      },
+                    ],
+                    "kind": "Document",
+                    "loc": Object {
+                      "end": 124,
+                      "start": 0,
+                    },
+                  },
+                  "variables": Object {
+                    "name": Array [
+                      "pencil",
+                      "dog",
+                    ],
+                  },
+                },
+                "result": Object {
+                  "data": Object {
+                    "createResource": Object {
+                      "resource": Object {
+                        "id": "2",
+                        "name": "pencil",
+                      },
+                    },
+                  },
+                },
+              },
+            ],
+          },
+        },
+        "localState": LocalState {
+          "cache": InMemoryCache {
+            "addTypename": true,
+            "cacheKeyRoot": KeyTrie {
+              "weakness": true,
+            },
+            "config": Object {
+              "addTypename": true,
+              "dataIdFromObject": [Function],
+              "fragmentMatcher": HeuristicFragmentMatcher {},
+              "freezeResults": false,
+              "resultCaching": true,
+            },
+            "data": DepTrackingCache {
+              "data": Object {},
+              "depend": [Function],
+            },
+            "maybeBroadcastWatch": [Function],
+            "optimisticData": DepTrackingCache {
+              "data": Object {},
+              "depend": [Function],
+            },
+            "silenceBroadcast": false,
+            "storeReader": StoreReader {
+              "executeSelectionSet": [Function],
+              "executeStoreQuery": [Function],
+              "executeSubSelectedArray": [Function],
+              "freezeResults": false,
+            },
+            "storeWriter": StoreWriter {},
+            "typenameDocumentCache": Map {},
+            "watches": Set {},
+          },
+          "client": [Circular],
+        },
+        "mutate": [Function],
+        "query": [Function],
+        "queryDeduplication": true,
+        "queryManager": QueryManager {
+          "assumeImmutableResults": false,
+          "clientAwareness": Object {
+            "name": undefined,
+            "version": undefined,
+          },
+          "dataStore": DataStore {
+            "cache": InMemoryCache {
+              "addTypename": true,
+              "cacheKeyRoot": KeyTrie {
+                "weakness": true,
+              },
+              "config": Object {
+                "addTypename": true,
+                "dataIdFromObject": [Function],
+                "fragmentMatcher": HeuristicFragmentMatcher {},
+                "freezeResults": false,
+                "resultCaching": true,
+              },
+              "data": DepTrackingCache {
+                "data": Object {},
+                "depend": [Function],
+              },
+              "maybeBroadcastWatch": [Function],
+              "optimisticData": DepTrackingCache {
+                "data": Object {},
+                "depend": [Function],
+              },
+              "silenceBroadcast": false,
+              "storeReader": StoreReader {
+                "executeSelectionSet": [Function],
+                "executeStoreQuery": [Function],
+                "executeSubSelectedArray": [Function],
+                "freezeResults": false,
+              },
+              "storeWriter": StoreWriter {},
+              "typenameDocumentCache": Map {},
+              "watches": Set {},
+            },
+          },
+          "fetchQueryRejectFns": Map {},
+          "idCounter": 1,
+          "inFlightLinkObservables": Map {},
+          "link": MockLink {
+            "addTypename": true,
+            "mockedResponsesByKey": Object {
+              "{\\"query\\":\\"mutation createResource($name: String!) {\\\\n  createResource(name: $name) {\\\\n    resource {\\\\n      id\\\\n      name\\\\n      __typename\\\\n    }\\\\n    __typename\\\\n  }\\\\n}\\\\n\\"}": Array [
+                Object {
+                  "request": Object {
+                    "query": Object {
+                      "definitions": Array [
+                        Object {
+                          "directives": Array [],
+                          "kind": "OperationDefinition",
+                          "name": Object {
+                            "kind": "Name",
+                            "value": "createResource",
+                          },
+                          "operation": "mutation",
+                          "selectionSet": Object {
+                            "kind": "SelectionSet",
+                            "selections": Array [
+                              Object {
+                                "alias": undefined,
+                                "arguments": Array [
+                                  Object {
+                                    "kind": "Argument",
+                                    "name": Object {
+                                      "kind": "Name",
+                                      "value": "name",
+                                    },
+                                    "value": Object {
+                                      "kind": "Variable",
+                                      "name": Object {
+                                        "kind": "Name",
+                                        "value": "name",
+                                      },
+                                    },
+                                  },
+                                ],
+                                "directives": Array [],
+                                "kind": "Field",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "createResource",
+                                },
+                                "selectionSet": Object {
+                                  "kind": "SelectionSet",
+                                  "selections": Array [
+                                    Object {
+                                      "alias": undefined,
+                                      "arguments": Array [],
+                                      "directives": Array [],
+                                      "kind": "Field",
+                                      "name": Object {
+                                        "kind": "Name",
+                                        "value": "resource",
+                                      },
+                                      "selectionSet": Object {
+                                        "kind": "SelectionSet",
+                                        "selections": Array [
+                                          Object {
+                                            "alias": undefined,
+                                            "arguments": Array [],
+                                            "directives": Array [],
+                                            "kind": "Field",
+                                            "name": Object {
+                                              "kind": "Name",
+                                              "value": "id",
+                                            },
+                                            "selectionSet": undefined,
+                                          },
+                                          Object {
+                                            "alias": undefined,
+                                            "arguments": Array [],
+                                            "directives": Array [],
+                                            "kind": "Field",
+                                            "name": Object {
+                                              "kind": "Name",
+                                              "value": "name",
+                                            },
+                                            "selectionSet": undefined,
+                                          },
+                                        ],
+                                      },
+                                    },
+                                  ],
+                                },
+                              },
+                            ],
+                          },
+                          "variableDefinitions": Array [
+                            Object {
+                              "defaultValue": undefined,
+                              "kind": "VariableDefinition",
+                              "type": Object {
+                                "kind": "NonNullType",
+                                "type": Object {
+                                  "kind": "NamedType",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "String",
+                                  },
+                                },
+                              },
+                              "variable": Object {
+                                "kind": "Variable",
+                                "name": Object {
+                                  "kind": "Name",
+                                  "value": "name",
+                                },
+                              },
+                            },
+                          ],
+                        },
+                      ],
+                      "kind": "Document",
+                      "loc": Object {
+                        "end": 124,
+                        "start": 0,
+                      },
+                    },
+                    "variables": Object {
+                      "name": Array [
+                        "pencil",
+                        "dog",
+                      ],
+                    },
+                  },
+                  "result": Object {
+                    "data": Object {
+                      "createResource": Object {
+                        "resource": Object {
+                          "id": "2",
+                          "name": "pencil",
+                        },
+                      },
+                    },
+                  },
+                },
+              ],
+            },
+          },
+          "localState": LocalState {
+            "cache": InMemoryCache {
+              "addTypename": true,
+              "cacheKeyRoot": KeyTrie {
+                "weakness": true,
+              },
+              "config": Object {
+                "addTypename": true,
+                "dataIdFromObject": [Function],
+                "fragmentMatcher": HeuristicFragmentMatcher {},
+                "freezeResults": false,
+                "resultCaching": true,
+              },
+              "data": DepTrackingCache {
+                "data": Object {},
+                "depend": [Function],
+              },
+              "maybeBroadcastWatch": [Function],
+              "optimisticData": DepTrackingCache {
+                "data": Object {},
+                "depend": [Function],
+              },
+              "silenceBroadcast": false,
+              "storeReader": StoreReader {
+                "executeSelectionSet": [Function],
+                "executeStoreQuery": [Function],
+                "executeSubSelectedArray": [Function],
+                "freezeResults": false,
+              },
+              "storeWriter": StoreWriter {},
+              "typenameDocumentCache": Map {},
+              "watches": Set {},
+            },
+            "client": [Circular],
+          },
+          "mutationStore": MutationStore {
+            "store": Object {},
+          },
+          "onBroadcast": [Function],
+          "pollingInfoByQueryId": Map {},
+          "queries": Map {},
+          "queryDeduplication": true,
+          "queryStore": QueryStore {
+            "store": Object {},
+          },
+          "ssrMode": false,
+          "transformCache": WeakMap {},
+        },
+        "reFetchObservableQueries": [Function],
+        "resetStore": [Function],
+        "resetStoreCallbacks": Array [],
+        "store": DataStore {
+          "cache": InMemoryCache {
+            "addTypename": true,
+            "cacheKeyRoot": KeyTrie {
+              "weakness": true,
+            },
+            "config": Object {
+              "addTypename": true,
+              "dataIdFromObject": [Function],
+              "fragmentMatcher": HeuristicFragmentMatcher {},
+              "freezeResults": false,
+              "resultCaching": true,
+            },
+            "data": DepTrackingCache {
+              "data": Object {},
+              "depend": [Function],
+            },
+            "maybeBroadcastWatch": [Function],
+            "optimisticData": DepTrackingCache {
+              "data": Object {},
+              "depend": [Function],
+            },
+            "silenceBroadcast": false,
+            "storeReader": StoreReader {
+              "executeSelectionSet": [Function],
+              "executeStoreQuery": [Function],
+              "executeSubSelectedArray": [Function],
+              "freezeResults": false,
+            },
+            "storeWriter": StoreWriter {},
+            "typenameDocumentCache": Map {},
+            "watches": Set {},
+          },
+        },
+        "typeDefs": undefined,
+        "version": "2.6.4",
+        "watchQuery": [Function],
+      }
+    }
+  >
+    <InputResources>
+      <div>
+        <ToastContainer
+          autoClose={5000}
+          bodyClassName={null}
+          className={null}
+          closeButton={
+            <CloseButton
+              ariaLabel="close"
+            />
+          }
+          closeOnClick={true}
+          draggable={true}
+          draggablePercent={80}
+          hideProgressBar={false}
+          newestOnTop={false}
+          pauseOnFocusLoss={true}
+          pauseOnHover={true}
+          position="top-left"
+          progressClassName={null}
+          progressStyle={null}
+          role="alert"
+          rtl={false}
+          style={null}
+          toastClassName={null}
+          transition={[Function]}
+        >
+          <div
+            className="Toastify"
+          />
+        </ToastContainer>
+        <styled.div>
+          <StyledComponent
+            forwardedComponent={
+              Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "attrs": Array [],
+                "componentStyle": ComponentStyle {
+                  "componentId": "sc-gZMcBi",
+                  "isStatic": false,
+                  "lastClassName": "dfjWTt",
+                  "rules": Array [
+                    "
+  padding-top: 30px;
+  color: rgba(51, 58, 63, 0.7);
+  font-size: 14px;
+",
+                  ],
+                },
+                "displayName": "styled.div",
+                "foldedComponentIds": Array [],
+                "render": [Function],
+                "styledComponentId": "sc-gZMcBi",
+                "target": "div",
+                "toString": [Function],
+                "usesTheme": false,
+                "warnTooManyClasses": [Function],
+                "withComponent": [Function],
+              }
+            }
+            forwardedRef={null}
+          >
+            <div
+              className="sc-gZMcBi dfjWTt"
+            >
+               Resources Allocated to this Room.
+            </div>
+          </StyledComponent>
+        </styled.div>
+        <div>
+          <Styled(Input)
+            fluid={true}
+            icon={
+              <Icon
+                as="i"
+                data-testid="custom-element"
+                id="remove-resource"
+                link={true}
+                name="close"
+                onClick={[Function]}
+              />
+            }
+            id="inputResources"
+            name="inputResources"
+            onChange={[Function]}
+            placeholder="Jabra speakers"
+            type="text"
+            value=""
+          >
+            <StyledComponent
+              fluid={true}
+              forwardedComponent={
+                Object {
+                  "$$typeof": Symbol(react.forward_ref),
+                  "attrs": Array [],
+                  "componentStyle": ComponentStyle {
+                    "componentId": "sc-jzJRlG",
+                    "isStatic": false,
+                    "lastClassName": "iaToOF",
+                    "rules": Array [
+                      "
+  &&& {
+    margin-bottom: 10px;
+  }
+",
+                    ],
+                  },
+                  "create": [Function],
+                  "displayName": "Styled(Input)",
+                  "foldedComponentIds": Array [],
+                  "handledProps": Array [
+                    "action",
+                    "actionPosition",
+                    "as",
+                    "children",
+                    "className",
+                    "disabled",
+                    "error",
+                    "fluid",
+                    "focus",
+                    "icon",
+                    "iconPosition",
+                    "input",
+                    "inverted",
+                    "label",
+                    "labelPosition",
+                    "loading",
+                    "onChange",
+                    "size",
+                    "tabIndex",
+                    "transparent",
+                    "type",
+                  ],
+                  "render": [Function],
+                  "styledComponentId": "sc-jzJRlG",
+                  "target": [Function],
+                  "toString": [Function],
+                  "usesTheme": false,
+                  "warnTooManyClasses": [Function],
+                  "withComponent": [Function],
+                  Symbol(Symbol.hasInstance): [Function],
+                }
+              }
+              forwardedRef={null}
+              icon={
+                <Icon
+                  as="i"
+                  data-testid="custom-element"
+                  id="remove-resource"
+                  link={true}
+                  name="close"
+                  onClick={[Function]}
+                />
+              }
+              id="inputResources"
+              name="inputResources"
+              onChange={[Function]}
+              placeholder="Jabra speakers"
+              type="text"
+              value=""
+            >
+              <Input
+                className="sc-jzJRlG iaToOF"
+                fluid={true}
+                icon={
+                  <Icon
+                    as="i"
+                    data-testid="custom-element"
+                    id="remove-resource"
+                    link={true}
+                    name="close"
+                    onClick={[Function]}
+                  />
+                }
+                id="inputResources"
+                name="inputResources"
+                onChange={[Function]}
+                placeholder="Jabra speakers"
+                type="text"
+                value=""
+              >
+                <div
+                  className="ui fluid icon input sc-jzJRlG iaToOF"
+                >
+                  <input
+                    id="inputResources"
+                    name="inputResources"
+                    onChange={[Function]}
+                    placeholder="Jabra speakers"
+                    type="text"
+                    value=""
+                  />
+                  <Icon
+                    as="i"
+                    data-testid="custom-element"
+                    id="remove-resource"
+                    link={true}
+                    name="close"
+                    onClick={[Function]}
+                  >
+                    <i
+                      aria-hidden="true"
+                      className="close link icon"
+                      data-testid="custom-element"
+                      id="remove-resource"
+                      onClick={[Function]}
+                    />
+                  </Icon>
+                </div>
+              </Input>
+            </StyledComponent>
+          </Styled(Input)>
+        </div>
+        <Styled(Button)
+          basic={true}
+          fluid={true}
+          id="submit-resource"
+          onClick={[Function]}
+          testID="submit-resource"
+        >
+          <StyledComponent
+            basic={true}
+            fluid={true}
+            forwardedComponent={
+              Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "Content": [Function],
+                "Group": [Function],
+                "Or": [Function],
+                "attrs": Array [],
+                "componentStyle": ComponentStyle {
+                  "componentId": "sc-gqjmRU",
+                  "isStatic": false,
+                  "lastClassName": "dXVOgv",
+                  "rules": Array [
+                    "
+  &&& {
+    border: 1px dashed #dfe3e8 !important;
+    background: #fff !important;
+    margin-top: 20px;
+  }
+",
+                  ],
+                },
+                "create": [Function],
+                "displayName": "Styled(Button)",
+                "foldedComponentIds": Array [],
+                "handledProps": Array [
+                  "active",
+                  "animated",
+                  "as",
+                  "attached",
+                  "basic",
+                  "children",
+                  "circular",
+                  "className",
+                  "color",
+                  "compact",
+                  "content",
+                  "disabled",
+                  "floated",
+                  "fluid",
+                  "icon",
+                  "inverted",
+                  "label",
+                  "labelPosition",
+                  "loading",
+                  "negative",
+                  "onClick",
+                  "positive",
+                  "primary",
+                  "role",
+                  "secondary",
+                  "size",
+                  "tabIndex",
+                  "toggle",
+                ],
+                "render": [Function],
+                "styledComponentId": "sc-gqjmRU",
+                "target": [Function],
+                "toString": [Function],
+                "usesTheme": false,
+                "warnTooManyClasses": [Function],
+                "withComponent": [Function],
+                Symbol(Symbol.hasInstance): [Function],
+              }
+            }
+            forwardedRef={null}
+            id="submit-resource"
+            onClick={[Function]}
+            testID="submit-resource"
+          >
+            <Button
+              basic={true}
+              className="sc-gqjmRU dXVOgv"
+              classProp={null}
+              fluid={true}
+              handleClick={null}
+              id="submit-resource"
+              isDisabled={false}
+              onClick={[Function]}
+              testID="submit-resource"
+              type={1}
+            >
+              <Ref
+                innerRef={
+                  Object {
+                    "current": <div
+                      class="ui basic fluid button sc-gqjmRU dXVOgv"
+                      id="submit-resource"
+                      role="button"
+                      tabindex="0"
+                      testid="submit-resource"
+                      type="1"
+                    >
+                      Add a Resource 
+                      <i
+                        aria-hidden="true"
+                        class="plus icon sc-VigVT ciBMyC"
+                        id="remove-resource"
+                      />
+                    </div>,
+                  }
+                }
+              >
+                <RefFindNode
+                  innerRef={
+                    Object {
+                      "current": <div
+                        class="ui basic fluid button sc-gqjmRU dXVOgv"
+                        id="submit-resource"
+                        role="button"
+                        tabindex="0"
+                        testid="submit-resource"
+                        type="1"
+                      >
+                        Add a Resource 
+                        <i
+                          aria-hidden="true"
+                          class="plus icon sc-VigVT ciBMyC"
+                          id="remove-resource"
+                        />
+                      </div>,
+                    }
+                  }
+                >
+                  <div
+                    className="ui basic fluid button sc-gqjmRU dXVOgv"
+                    classProp={null}
+                    handleClick={null}
+                    id="submit-resource"
+                    isDisabled={false}
+                    onClick={[Function]}
+                    role="button"
+                    tabIndex={0}
+                    testID="submit-resource"
+                    type={1}
+                  >
+                    Add a Resource 
+                    <Styled(Icon)
+                      id="remove-resource"
+                      name="plus"
+                    >
+                      <StyledComponent
+                        forwardedComponent={
+                          Object {
+                            "$$typeof": Symbol(react.forward_ref),
+                            "Group": [Function],
+                            "attrs": Array [],
+                            "componentStyle": ComponentStyle {
+                              "componentId": "sc-VigVT",
+                              "isStatic": false,
+                              "lastClassName": "ciBMyC",
+                              "rules": Array [
+                                "
+  &&& {
+    padding-left: 20px;
+    color: #bdbdbd;
+    font-size: 20px !important;
+    position: relative;
+    top: 3px;
+  }
+",
+                              ],
+                            },
+                            "create": [Function],
+                            "displayName": "Styled(Icon)",
+                            "foldedComponentIds": Array [],
+                            "handledProps": Array [
+                              "aria-hidden",
+                              "aria-label",
+                              "as",
+                              "bordered",
+                              "circular",
+                              "className",
+                              "color",
+                              "corner",
+                              "disabled",
+                              "fitted",
+                              "flipped",
+                              "inverted",
+                              "link",
+                              "loading",
+                              "name",
+                              "rotated",
+                              "size",
+                            ],
+                            "render": [Function],
+                            "styledComponentId": "sc-VigVT",
+                            "target": [Function],
+                            "toString": [Function],
+                            "usesTheme": false,
+                            "warnTooManyClasses": [Function],
+                            "withComponent": [Function],
+                            Symbol(Symbol.hasInstance): [Function],
+                          }
+                        }
+                        forwardedRef={null}
+                        id="remove-resource"
+                        name="plus"
+                      >
+                        <Icon
+                          as="i"
+                          className="sc-VigVT ciBMyC"
+                          id="remove-resource"
+                          name="plus"
+                        >
+                          <i
+                            aria-hidden="true"
+                            className="plus icon sc-VigVT ciBMyC"
+                            id="remove-resource"
+                            onClick={[Function]}
+                          />
+                        </Icon>
+                      </StyledComponent>
+                    </Styled(Icon)>
+                  </div>
+                </RefFindNode>
+              </Ref>
+            </Button>
+          </StyledComponent>
+        </Styled(Button)>
+        <Styled(button)
+          id="handle-submit"
+          onClick={[Function]}
+          title="Finish"
+        >
+          <StyledComponent
+            forwardedComponent={
+              Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "attrs": Array [],
+                "componentStyle": ComponentStyle {
+                  "componentId": "sc-jTzLTM",
+                  "isStatic": false,
+                  "lastClassName": "ogMaI",
+                  "rules": Array [
+                    "
+  &&& {
+    background-color: #10a36d;
+    color: #fff;
+    height: 44px;
+    width: 107px;
+    border-radius: 6px;
+    margin-left: 90% !important;
+    line-height: 20px;
+    margin-top: 90px;
+  }
+",
+                  ],
+                },
+                "displayName": "Styled(button)",
+                "foldedComponentIds": Array [],
+                "render": [Function],
+                "styledComponentId": "sc-jTzLTM",
+                "target": [Function],
+                "toString": [Function],
+                "usesTheme": false,
+                "warnTooManyClasses": [Function],
+                "withComponent": [Function],
+                Symbol(Symbol.hasInstance): [Function],
+              }
+            }
+            forwardedRef={null}
+            id="handle-submit"
+            onClick={[Function]}
+            title="Finish"
+          >
+            <button
+              buttonId="buttonId"
+              className="sc-jTzLTM ogMaI"
+              color="#000"
+              id="handle-submit"
+              isDisabled={false}
+              onClick={[Function]}
+              title="Finish"
+              type="button"
+            >
+              <Button
+                className="sc-jTzLTM ogMaI"
+                classProp={null}
+                color="#000"
+                disabled={false}
+                handleClick={null}
+                id="handle-submit"
+                isDisabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                <Ref
+                  innerRef={
+                    Object {
+                      "current": <div
+                        class="ui #000 button sc-jTzLTM ogMaI"
+                        id="handle-submit"
+                        role="button"
+                        tabindex="0"
+                        type="button"
+                      >
+                        <span>
+                          Finish
+                        </span>
+                      </div>,
+                    }
+                  }
+                >
+                  <RefFindNode
+                    innerRef={
+                      Object {
+                        "current": <div
+                          class="ui #000 button sc-jTzLTM ogMaI"
+                          id="handle-submit"
+                          role="button"
+                          tabindex="0"
+                          type="button"
+                        >
+                          <span>
+                            Finish
+                          </span>
+                        </div>,
+                      }
+                    }
+                  >
+                    <div
+                      className="ui #000 button sc-jTzLTM ogMaI"
+                      classProp={null}
+                      handleClick={null}
+                      id="handle-submit"
+                      isDisabled={false}
+                      onClick={[Function]}
+                      role="button"
+                      tabIndex={0}
+                      type="button"
+                    >
+                      <span>
+                        Finish
+                      </span>
+                    </div>
+                  </RefFindNode>
+                </Ref>
+              </Button>
+            </button>
+          </StyledComponent>
+        </Styled(button)>
+      </div>
+    </InputResources>
+  </ApolloProvider>
+</MockedProvider>
+`;

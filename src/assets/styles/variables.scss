@@ -52,42 +52,33 @@ $color-resource: rgba(214, 222, 228, 0.13);
 $carousel-shadow: rgba(0, 0, 0, 0.15);
 $carousel-button-border: rgba(128, 143, 163, 0.23);
 
-$color-amber: (
-  0: #cccccc,
+$color-amber: (0: #cccccc,
   50: #eff3c6,
   100: #ffe9c6,
   200: #fac56f,
-  300: #ffaf30
-);
+  300: #ffaf30);
 
-$color-gray: (
-  0: #333A3F,
-  50: rgba(51,58,63,0.7),
-  300: rgba(240,241,241,0.76),
+$color-gray: (0: #333A3F,
+  50: rgba(51, 58, 63, 0.7),
+  300: rgba(240, 241, 241, 0.76),
   400: #DFE3E8,
-  500: #919EAB
-);
+  500: #919EAB);
 
-$color-blue: (
-  100: #c7d1f7,
+$color-blue: (100: #c7d1f7,
   200: #808fa3,
   300: #7a94eb,
-  400: #0000ff
-);
+  400: #0000ff);
 
-$color-black: (
-  100: #999999,
+$color-black: (100: #999999,
   200: #aba6a6,
   300: #65696d,
   400: #4f4f4f,
   500: #434343,
   600: #333e44,
   700: #333a3f,
-  900: #000000
-);
+  900: #000000);
 
-$color-white: (
-  000: #ffffff,
+$color-white: (000: #ffffff,
   100: #f1f0f0,
   200: #f8f8f8,
   300: #f9f9f9,
@@ -96,15 +87,12 @@ $color-white: (
   600: #dddddd,
   700: #c7c6c6,
   800: #f4f8f9,
-  900: rgba(255, 255, 255, 0)
-);
+  900: rgba(255, 255, 255, 0));
 
-$color-calendar: (
-  calendar-text: #2a598f,
+$color-calendar: (calendar-text: #2a598f,
   calendar-selected-text: #f0f8ff,
   calendar-highlight: #c2cedd,
-  calendar-nav-button: #8b9898
-);
+  calendar-nav-button: #8b9898);
 
 $icon_size: 1em;
 $icon-filter-color: invert(0.53) sepia(1) saturate(142) hue-rotate(218deg);
@@ -114,21 +102,17 @@ $color-grey-dark: #666666;
 $color-hover: rgba(51, 89, 219, 0.06);
 $color-border: #ebebeb;
 $color-gradient: linear-gradient(180deg, #ffffff 0%, #f3f5f7 100%);
-$highlight-gradient: linear-gradient(
-  180deg,
+$highlight-gradient: linear-gradient(180deg,
   rgba(255, 176, 48, 0.349) 0%,
-  #ffaf30 100%
-);
+  #ffaf30 100%);
 $color-desc-background: #fbfcfd;
 $color-desc-text: #808fa3;
 $color-modal-backgorund: rgba(0, 0, 0, 0.5);
 $font-size-small-screen: 25px;
 
-$highlight-gradient: linear-gradient(
-  180deg,
+$highlight-gradient: linear-gradient(180deg,
   rgba(255, 176, 48, 0.349) 0%,
-  #ffaf30 100%
-);
+  #ffaf30 100%);
 $border-width: 1px;
 
 $color-next-button: #2c7cf1;

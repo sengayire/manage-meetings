@@ -11,6 +11,7 @@ class InputWithNumbers extends Component {
       inputValue: '1',
     };
   }
+
   onChangeValue = (newValue) => {
     this.setState({
       inputValue: newValue,
@@ -23,6 +24,7 @@ class InputWithNumbers extends Component {
       <div className="number-input-container">
         <NumberInput
           value={inputValue}
+          allowEmptyValue="true"
           onChange={this.onChangeValue}
           buttonPlacement="right"
           className="number-input"
@@ -38,5 +40,5 @@ InputWithNumbers.protoTypes = {
 };
 
 InputWithNumbers.defaultProps = {
-  updateOuterInputs: () => {},
+  updateOuterInputs: () => { },
 };

@@ -14,7 +14,17 @@ module.exports = {
     'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
     'react/no-children-prop': 0,
     'no-nested-ternary': 0,
-    'no-unused-expressions': ["error", {"allowShortCircuit": true}],
-    'class-methods-use-this': ["error", {"exceptMethods": ['getSnapshotBeforeUpdate', 'render', 'componentWillUnmount', 'componentDidMount',]}],
+    'no-unused-expressions': ['error', { allowShortCircuit: true }],
+    'class-methods-use-this': [
+      'error',
+      {
+        exceptMethods: [
+          'getSnapshotBeforeUpdate',
+          'render',
+          'componentWillUnmount',
+          'componentDidMount'
+        ]
+      }
+    ]
   }
 };
