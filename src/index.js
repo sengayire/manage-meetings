@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import webFont from 'webfontloader';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { ApolloProvider as ApolloHooksProvider } from '@apollo/react-hooks';
 import { ThemeProvider } from 'react-css-themr';
@@ -15,6 +16,12 @@ const RTDialog = require('react-toolbox/lib/dialog/theme.css');
 const RTLink = require('react-toolbox/lib/link/theme.css');
 const RTSnackbar = require('react-toolbox/lib/snackbar/theme.css');
 const RTDropdown = require('react-toolbox/lib/dropdown/theme.css');
+
+webFont.load({
+  google: {
+    families: ['Lato'],
+  },
+});
 
 const contextTheme = {
   RTButton,

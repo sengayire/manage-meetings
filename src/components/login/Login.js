@@ -2,12 +2,11 @@ import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { Snackbar } from 'react-toolbox';
 import { withRouter } from 'react-router-dom';
+import '../../../node_modules/react-responsive-carousel/lib/styles/carousel.min.css';
+import Carousel from './Carousel';
 
 import ROUTES from '../../utils/routes';
 import '../../assets/styles/login.scss';
-import { darkTabletIcon } from '../../utils/images/images';
-import LoginButton from '../login/LoginButton';
-import MRMIntro from '../login/MRMIntro';
 import { decodeTokenAndGetUserData, getToken } from '../../utils/Cookie';
 import Constants from '../../utils/Constants';
 import {
@@ -15,6 +14,9 @@ import {
   getItemFromLocalStorage,
   saveItemInLocalStorage,
 } from '../../utils/Utilities';
+import logo from '../../assets/images/converge-logo.svg';
+import Button from '../commons/Button';
+import LoginModal from './LoginModal';
 
 // destructor constants to be used
 const {
@@ -43,6 +45,8 @@ export class Login extends Component {
 
   state = {
     loginError: null,
+    openModal: false,
+    closeModal: true,
   };
 
   /**
@@ -55,7 +59,8 @@ export class Login extends Component {
   static getDerivedStateFromProps = (props) => {
     const { push } = props.history;
     const token = getItemFromLocalStorage(MRM_TOKEN);
-    const activeTab = sessionStorage.getItem('activeTopNav') || ROUTES.analytics;
+    const activeTab =
+      sessionStorage.getItem('activeTopNav') || ROUTES.analytics;
     // this logic has been placed in this lifecycle method to avoid rendering of
     // the login page UI if a user is already loggedin
     // if user is logged in
@@ -69,9 +74,6 @@ export class Login extends Component {
 
   componentDidMount = () => {
     const { push } = this.props.history;
-
-    // apply body styles
-    this.applyBodyStyles();
 
     // parse cookie to see if a user has been succesfully logged in by the Andela login api
     const tokenFromCookies = getToken();
@@ -97,21 +99,6 @@ export class Login extends Component {
     }
   };
 
-  componentWillUnmount() {
-    // remove home-bg class when unmounting this component to another component
-    document.body.classList.remove('home-bg');
-  }
-
-  /**
-   * Apply body styles on homepage only
-   *
-   * @returns {void}
-   */
-  applyBodyStyles = () => {
-    const { location } = this.props;
-    location.pathname === ROUTES.home && document.body.classList.add('home-bg');
-  };
-
   /**
    * shows login error
    *
@@ -131,17 +118,37 @@ export class Login extends Component {
     this.props.history.push(ROUTES.home);
   };
 
+  handleOpenModal = () => {
+    this.setState({ openModal: true, closeModal: false });
+  }
+
+  handleCloseModal = () => {
+    this.setState({ openModal: false, closeModal: true });
+  }
+
   render() {
     const { loginError } = this.state;
+    const { openModal, closeModal } = this.state;
     return (
       <Fragment>
-        <header className="home-header">
-          <h1>CONVERGE</h1>
+        <LoginModal
+          openModal={openModal}
+          closeModal={closeModal}
+          handleCloseModal={this.handleCloseModal}
+        />
+        <header className="landing-page-header">
+          <div className="header-logo">
+            <img src={logo} alt="logo" />
+          </div>
+          <div className="login-btn">
+            {openModal || <Button
+              classProp="trigger-login-modal"
+              title="Login"
+              handleClick={this.handleOpenModal}
+            />}
+          </div>
         </header>
-        <MRMIntro />
-        <LoginButton />
-
-        <img src={darkTabletIcon} alt="Dark Tablet" id="dark-tablet" />
+        <Carousel legendPosition={openModal ? 'legend-left' : 'legend-center'} />
 
         {/* display login errors */}
         {loginError && (

@@ -1,0 +1,50 @@
+@import "./variables";
+
+.login-modal {
+  border-radius: 29px !important;
+  width: 50vw;
+  min-width: 300px;
+  max-width: 450px;
+  height: 344px;
+  padding: 5px;
+
+  .hide-model-btn {
+    background: none;
+    border: none;
+    float: right;
+    height: 16px;
+    width: 19px;
+    margin: 0 28px;
+  }
+
+  .title {
+    padding-top: 15px;
+    text-align: center;
+    color: map-get($color-black, 700);
+    font-family: Lato;
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 52px;
+    margin-bottom: 20px;
+  }
+
+  .description {
+    text-align: center;
+    font-family: Lato;
+    color: map-get($color-black, 700);
+  }
+  .login-btn-link {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    margin: 35px 0 55px 0;
+  }
+
+  .login-btn {
+    text-align: center;
+    &::before {
+      content: url(../../assets/images/google.svg);
+      margin-right: 15px;
+    }
+  }
+}

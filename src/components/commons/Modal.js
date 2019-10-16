@@ -28,7 +28,7 @@ class MrmModal extends Component {
     openModal: PropTypes.bool,
     showBtn: PropTypes.bool,
     children: PropTypes.node.isRequired,
-    title: PropTypes.string.isRequired,
+    title: PropTypes.string,
     handleCloseRequest: PropTypes.func,
     closeModal: PropTypes.bool.isRequired,
     className: PropTypes.string,
@@ -39,6 +39,7 @@ class MrmModal extends Component {
   static defaultProps = {
     openModal: false,
     showBtn: true,
+    title: null,
     className: 'modalClass',
     modalButtonClassName: 'button',
     buttonText: '',
