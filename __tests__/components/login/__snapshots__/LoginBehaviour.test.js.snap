@@ -181,6 +181,7 @@ exports[`Login component should redirect to another page when a token is present
     </div>
   </header>
   <CustomCarousel
+    autoplay={true}
     legendPosition="legend-center"
   >
     <Carousel
@@ -199,12 +200,12 @@ exports[`Login component should redirect to another page when a token is present
       showArrows={false}
       showIndicators={true}
       showStatus={false}
-      showThumbs={false}
+      showThumbs={true}
       statusFormatter={[Function]}
       stopOnHover={false}
       swipeScrollTolerance={5}
       swipeable={true}
-      transitionTime={350}
+      transitionTime={2000}
       useKeyboardArrows={false}
       verticalSwipe="standard"
       width="100%"
@@ -241,17 +242,17 @@ exports[`Login component should redirect to another page when a token is present
               style={
                 Object {
                   "MozTransform": "translate3d(-100%,0,0)",
-                  "MozTransitionDuration": "350ms",
+                  "MozTransitionDuration": "2000ms",
                   "MsTransform": "translate3d(-100%,0,0)",
-                  "MsTransitionDuration": "350ms",
+                  "MsTransitionDuration": "2000ms",
                   "OTransform": "translate3d(-100%,0,0)",
-                  "OTransitionDuration": "350ms",
+                  "OTransitionDuration": "2000ms",
                   "WebkitTransform": "translate3d(-100%,0,0)",
-                  "WebkitTransitionDuration": "350ms",
+                  "WebkitTransitionDuration": "2000ms",
                   "msTransform": "translate3d(-100%,0,0)",
-                  "msTransitionDuration": "350ms",
+                  "msTransitionDuration": "2000ms",
                   "transform": "translate3d(-100%,0,0)",
-                  "transitionDuration": "350ms",
+                  "transitionDuration": "2000ms",
                 }
               }
               tagName="ul"
@@ -265,225 +266,130 @@ exports[`Login component should redirect to another page when a token is present
                 style={
                   Object {
                     "MozTransform": "translate3d(-100%,0,0)",
-                    "MozTransitionDuration": "350ms",
+                    "MozTransitionDuration": "2000ms",
                     "MsTransform": "translate3d(-100%,0,0)",
-                    "MsTransitionDuration": "350ms",
+                    "MsTransitionDuration": "2000ms",
                     "OTransform": "translate3d(-100%,0,0)",
-                    "OTransitionDuration": "350ms",
+                    "OTransitionDuration": "2000ms",
                     "WebkitTransform": "translate3d(-100%,0,0)",
-                    "WebkitTransitionDuration": "350ms",
+                    "WebkitTransitionDuration": "2000ms",
                     "msTransform": "translate3d(-100%,0,0)",
-                    "msTransitionDuration": "350ms",
+                    "msTransitionDuration": "2000ms",
                     "transform": "translate3d(-100%,0,0)",
-                    "transitionDuration": "350ms",
+                    "transitionDuration": "2000ms",
                   }
                 }
               >
                 <li
                   className="slide"
-                  key="itemKey8clone/.$Charley"
+                  key="itemKey3clone/.$Banku Meeting Room, Andela Lagos"
                   onClick={[Function]}
                 >
                   <div
-                    key="Charley"
+                    key="Banku Meeting Room, Andela Lagos"
                   >
                     <p
                       className="legend legend-center"
                     >
-                      Charley
+                      Banku Meeting Room, Andela Lagos
                     </p>
                     <img
-                      alt="Charley"
+                      alt="Banku Meeting Room, Andela Lagos"
                       src="test-file-stub"
                     />
                   </div>
                 </li>
                 <li
                   className="slide selected"
-                  key="itemKey0/.$Empire State - LOS"
+                  key="itemKey0/.$Safari Meeting Room, Andela New York"
                   onClick={[Function]}
                 >
                   <div
-                    key="Empire State - LOS"
+                    key="Safari Meeting Room, Andela New York"
                   >
                     <p
                       className="legend legend-center"
                     >
-                      Empire State - LOS
+                      Safari Meeting Room, Andela New York
                     </p>
                     <img
-                      alt="Empire State - LOS"
+                      alt="Safari Meeting Room, Andela New York"
                       src="test-file-stub"
                     />
                   </div>
                 </li>
                 <li
                   className="slide"
-                  key="itemKey1/.$Wall Street"
+                  key="itemKey1/.$Cognitio Meeting Room, Andela Lagos"
                   onClick={[Function]}
                 >
                   <div
-                    key="Wall Street"
+                    key="Cognitio Meeting Room, Andela Lagos"
                   >
                     <p
                       className="legend legend-center"
                     >
-                      Wall Street
+                      Cognitio Meeting Room, Andela Lagos
                     </p>
                     <img
-                      alt="Wall Street"
+                      alt="Cognitio Meeting Room, Andela Lagos"
                       src="test-file-stub"
                     />
                   </div>
                 </li>
                 <li
                   className="slide"
-                  key="itemKey2/.$Cognitio"
+                  key="itemKey2/.$Entebbe Meeting Room, Andela Kampala"
                   onClick={[Function]}
                 >
                   <div
-                    key="Cognitio"
+                    key="Entebbe Meeting Room, Andela Kampala"
                   >
                     <p
                       className="legend legend-center"
                     >
-                      Cognitio
+                      Entebbe Meeting Room, Andela Kampala
                     </p>
                     <img
-                      alt="Cognitio"
+                      alt="Entebbe Meeting Room, Andela Kampala"
                       src="test-file-stub"
                     />
                   </div>
                 </li>
                 <li
                   className="slide"
-                  key="itemKey3/.$Aso"
+                  key="itemKey3/.$Banku Meeting Room, Andela Lagos"
                   onClick={[Function]}
                 >
                   <div
-                    key="Aso"
+                    key="Banku Meeting Room, Andela Lagos"
                   >
                     <p
                       className="legend legend-center"
                     >
-                      Aso
+                      Banku Meeting Room, Andela Lagos
                     </p>
                     <img
-                      alt="Aso"
-                      src="test-file-stub"
-                    />
-                  </div>
-                </li>
-                <li
-                  className="slide"
-                  key="itemKey4/.$Banku"
-                  onClick={[Function]}
-                >
-                  <div
-                    key="Banku"
-                  >
-                    <p
-                      className="legend legend-center"
-                    >
-                      Banku
-                    </p>
-                    <img
-                      alt="Banku"
-                      src="test-file-stub"
-                    />
-                  </div>
-                </li>
-                <li
-                  className="slide"
-                  key="itemKey5/.$Obutu"
-                  onClick={[Function]}
-                >
-                  <div
-                    key="Obutu"
-                  >
-                    <p
-                      className="legend legend-center"
-                    >
-                      Obutu
-                    </p>
-                    <img
-                      alt="Obutu"
-                      src="test-file-stub"
-                    />
-                  </div>
-                </li>
-                <li
-                  className="slide"
-                  key="itemKey6/.$Ubuntu"
-                  onClick={[Function]}
-                >
-                  <div
-                    key="Ubuntu"
-                  >
-                    <p
-                      className="legend legend-center"
-                    >
-                      Ubuntu
-                    </p>
-                    <img
-                      alt="Ubuntu"
-                      src="test-file-stub"
-                    />
-                  </div>
-                </li>
-                <li
-                  className="slide"
-                  key="itemKey7/.$Idanre"
-                  onClick={[Function]}
-                >
-                  <div
-                    key="Idanre"
-                  >
-                    <p
-                      className="legend legend-center"
-                    >
-                      Idanre
-                    </p>
-                    <img
-                      alt="Idanre"
-                      src="test-file-stub"
-                    />
-                  </div>
-                </li>
-                <li
-                  className="slide"
-                  key="itemKey8/.$Charley"
-                  onClick={[Function]}
-                >
-                  <div
-                    key="Charley"
-                  >
-                    <p
-                      className="legend legend-center"
-                    >
-                      Charley
-                    </p>
-                    <img
-                      alt="Charley"
+                      alt="Banku Meeting Room, Andela Lagos"
                       src="test-file-stub"
                     />
                   </div>
                 </li>
                 <li
                   className="slide selected"
-                  key="itemKey0clone/.$Empire State - LOS"
+                  key="itemKey0clone/.$Safari Meeting Room, Andela New York"
                   onClick={[Function]}
                 >
                   <div
-                    key="Empire State - LOS"
+                    key="Safari Meeting Room, Andela New York"
                   >
                     <p
                       className="legend legend-center"
                     >
-                      Empire State - LOS
+                      Safari Meeting Room, Andela New York
                     </p>
                     <img
-                      alt="Empire State - LOS"
+                      alt="Safari Meeting Room, Andela New York"
                       src="test-file-stub"
                     />
                   </div>
@@ -501,7 +407,7 @@ exports[`Login component should redirect to another page when a token is present
           >
             <li
               className="dot selected"
-              key="0/.$Empire State - LOS"
+              key="0/.$Safari Meeting Room, Andela New York"
               onClick={[Function]}
               onKeyDown={[Function]}
               role="button"
@@ -510,7 +416,7 @@ exports[`Login component should redirect to another page when a token is present
             />
             <li
               className="dot"
-              key="1/.$Wall Street"
+              key="1/.$Cognitio Meeting Room, Andela Lagos"
               onClick={[Function]}
               onKeyDown={[Function]}
               role="button"
@@ -519,7 +425,7 @@ exports[`Login component should redirect to another page when a token is present
             />
             <li
               className="dot"
-              key="2/.$Cognitio"
+              key="2/.$Entebbe Meeting Room, Andela Kampala"
               onClick={[Function]}
               onKeyDown={[Function]}
               role="button"
@@ -528,60 +434,151 @@ exports[`Login component should redirect to another page when a token is present
             />
             <li
               className="dot"
-              key="3/.$Aso"
+              key="3/.$Banku Meeting Room, Andela Lagos"
               onClick={[Function]}
               onKeyDown={[Function]}
               role="button"
               tabIndex={0}
               value={3}
             />
-            <li
-              className="dot"
-              key="4/.$Banku"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              role="button"
-              tabIndex={0}
-              value={4}
-            />
-            <li
-              className="dot"
-              key="5/.$Obutu"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              role="button"
-              tabIndex={0}
-              value={5}
-            />
-            <li
-              className="dot"
-              key="6/.$Ubuntu"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              role="button"
-              tabIndex={0}
-              value={6}
-            />
-            <li
-              className="dot"
-              key="7/.$Idanre"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              role="button"
-              tabIndex={0}
-              value={7}
-            />
-            <li
-              className="dot"
-              key="8/.$Charley"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              role="button"
-              tabIndex={0}
-              value={8}
-            />
           </ul>
         </div>
+        <Thumbs
+          axis="horizontal"
+          onSelectItem={[Function]}
+          selectedItem={0}
+          transitionTime={2000}
+        >
+          <div
+            className="carousel"
+          >
+            <div
+              className="thumbs-wrapper axis-vertical"
+            >
+              <button
+                className="control-arrow control-prev control-disabled"
+                onClick={[Function]}
+                type="button"
+              />
+              <ReactSwipe
+                allowMouseEvents={false}
+                className="thumbs animated"
+                onSwipeDown={[Function]}
+                onSwipeEnd={[Function]}
+                onSwipeLeft={[Function]}
+                onSwipeMove={[Function]}
+                onSwipeRight={[Function]}
+                onSwipeStart={[Function]}
+                onSwipeUp={[Function]}
+                selectedItem={0}
+                style={
+                  Object {
+                    "MozTransform": "translate3d(NaNpx,0,0)",
+                    "MozTransitionDuration": "2000ms",
+                    "MsTransform": "translate3d(NaNpx,0,0)",
+                    "MsTransitionDuration": "2000ms",
+                    "OTransform": "translate3d(NaNpx,0,0)",
+                    "OTransitionDuration": "2000ms",
+                    "WebkitTransform": "translate3d(NaNpx,0,0)",
+                    "WebkitTransitionDuration": "2000ms",
+                    "msTransform": "translate3d(NaNpx,0,0)",
+                    "msTransitionDuration": "2000ms",
+                    "transform": "translate3d(NaNpx,0,0)",
+                    "transitionDuration": "2000ms",
+                  }
+                }
+                tagName="ul"
+                tolerance={0}
+              >
+                <ul
+                  className="thumbs animated"
+                  onMouseDown={[Function]}
+                  onTouchEnd={[Function]}
+                  onTouchStart={[Function]}
+                  style={
+                    Object {
+                      "MozTransform": "translate3d(NaNpx,0,0)",
+                      "MozTransitionDuration": "2000ms",
+                      "MsTransform": "translate3d(NaNpx,0,0)",
+                      "MsTransitionDuration": "2000ms",
+                      "OTransform": "translate3d(NaNpx,0,0)",
+                      "OTransitionDuration": "2000ms",
+                      "WebkitTransform": "translate3d(NaNpx,0,0)",
+                      "WebkitTransitionDuration": "2000ms",
+                      "msTransform": "translate3d(NaNpx,0,0)",
+                      "msTransitionDuration": "2000ms",
+                      "transform": "translate3d(NaNpx,0,0)",
+                      "transitionDuration": "2000ms",
+                    }
+                  }
+                >
+                  <li
+                    className="thumb"
+                    key="0"
+                    onClick={[Function]}
+                    onKeyDown={[Function]}
+                    role="button"
+                    tabIndex={0}
+                  >
+                    <img
+                      alt="Safari Meeting Room, Andela New York"
+                      key=".1/.$Safari Meeting Room, Andela New York"
+                      onLoad={[Function]}
+                      src="test-file-stub"
+                    />
+                  </li>
+                  <li
+                    className="thumb"
+                    key="1"
+                    onClick={[Function]}
+                    onKeyDown={[Function]}
+                    role="button"
+                    tabIndex={0}
+                  >
+                    <img
+                      alt="Cognitio Meeting Room, Andela Lagos"
+                      key=".1/.$Cognitio Meeting Room, Andela Lagos"
+                      src="test-file-stub"
+                    />
+                  </li>
+                  <li
+                    className="thumb"
+                    key="2"
+                    onClick={[Function]}
+                    onKeyDown={[Function]}
+                    role="button"
+                    tabIndex={0}
+                  >
+                    <img
+                      alt="Entebbe Meeting Room, Andela Kampala"
+                      key=".1/.$Entebbe Meeting Room, Andela Kampala"
+                      src="test-file-stub"
+                    />
+                  </li>
+                  <li
+                    className="thumb"
+                    key="3"
+                    onClick={[Function]}
+                    onKeyDown={[Function]}
+                    role="button"
+                    tabIndex={0}
+                  >
+                    <img
+                      alt="Banku Meeting Room, Andela Lagos"
+                      key=".1/.$Banku Meeting Room, Andela Lagos"
+                      src="test-file-stub"
+                    />
+                  </li>
+                </ul>
+              </ReactSwipe>
+              <button
+                className="control-arrow control-next control-disabled"
+                onClick={[Function]}
+                type="button"
+              />
+            </div>
+          </div>
+        </Thumbs>
       </div>
     </Carousel>
   </CustomCarousel>
@@ -763,6 +760,7 @@ exports[`Login component should redirect to another page when a user successfull
     </div>
   </header>
   <CustomCarousel
+    autoplay={true}
     legendPosition="legend-center"
   >
     <Carousel
@@ -781,12 +779,12 @@ exports[`Login component should redirect to another page when a user successfull
       showArrows={false}
       showIndicators={true}
       showStatus={false}
-      showThumbs={false}
+      showThumbs={true}
       statusFormatter={[Function]}
       stopOnHover={false}
       swipeScrollTolerance={5}
       swipeable={true}
-      transitionTime={350}
+      transitionTime={2000}
       useKeyboardArrows={false}
       verticalSwipe="standard"
       width="100%"
@@ -823,17 +821,17 @@ exports[`Login component should redirect to another page when a user successfull
               style={
                 Object {
                   "MozTransform": "translate3d(-100%,0,0)",
-                  "MozTransitionDuration": "350ms",
+                  "MozTransitionDuration": "2000ms",
                   "MsTransform": "translate3d(-100%,0,0)",
-                  "MsTransitionDuration": "350ms",
+                  "MsTransitionDuration": "2000ms",
                   "OTransform": "translate3d(-100%,0,0)",
-                  "OTransitionDuration": "350ms",
+                  "OTransitionDuration": "2000ms",
                   "WebkitTransform": "translate3d(-100%,0,0)",
-                  "WebkitTransitionDuration": "350ms",
+                  "WebkitTransitionDuration": "2000ms",
                   "msTransform": "translate3d(-100%,0,0)",
-                  "msTransitionDuration": "350ms",
+                  "msTransitionDuration": "2000ms",
                   "transform": "translate3d(-100%,0,0)",
-                  "transitionDuration": "350ms",
+                  "transitionDuration": "2000ms",
                 }
               }
               tagName="ul"
@@ -847,225 +845,130 @@ exports[`Login component should redirect to another page when a user successfull
                 style={
                   Object {
                     "MozTransform": "translate3d(-100%,0,0)",
-                    "MozTransitionDuration": "350ms",
+                    "MozTransitionDuration": "2000ms",
                     "MsTransform": "translate3d(-100%,0,0)",
-                    "MsTransitionDuration": "350ms",
+                    "MsTransitionDuration": "2000ms",
                     "OTransform": "translate3d(-100%,0,0)",
-                    "OTransitionDuration": "350ms",
+                    "OTransitionDuration": "2000ms",
                     "WebkitTransform": "translate3d(-100%,0,0)",
-                    "WebkitTransitionDuration": "350ms",
+                    "WebkitTransitionDuration": "2000ms",
                     "msTransform": "translate3d(-100%,0,0)",
-                    "msTransitionDuration": "350ms",
+                    "msTransitionDuration": "2000ms",
                     "transform": "translate3d(-100%,0,0)",
-                    "transitionDuration": "350ms",
+                    "transitionDuration": "2000ms",
                   }
                 }
               >
                 <li
                   className="slide"
-                  key="itemKey8clone/.$Charley"
+                  key="itemKey3clone/.$Banku Meeting Room, Andela Lagos"
                   onClick={[Function]}
                 >
                   <div
-                    key="Charley"
+                    key="Banku Meeting Room, Andela Lagos"
                   >
                     <p
                       className="legend legend-center"
                     >
-                      Charley
+                      Banku Meeting Room, Andela Lagos
                     </p>
                     <img
-                      alt="Charley"
+                      alt="Banku Meeting Room, Andela Lagos"
                       src="test-file-stub"
                     />
                   </div>
                 </li>
                 <li
                   className="slide selected"
-                  key="itemKey0/.$Empire State - LOS"
+                  key="itemKey0/.$Safari Meeting Room, Andela New York"
                   onClick={[Function]}
                 >
                   <div
-                    key="Empire State - LOS"
+                    key="Safari Meeting Room, Andela New York"
                   >
                     <p
                       className="legend legend-center"
                     >
-                      Empire State - LOS
+                      Safari Meeting Room, Andela New York
                     </p>
                     <img
-                      alt="Empire State - LOS"
+                      alt="Safari Meeting Room, Andela New York"
                       src="test-file-stub"
                     />
                   </div>
                 </li>
                 <li
                   className="slide"
-                  key="itemKey1/.$Wall Street"
+                  key="itemKey1/.$Cognitio Meeting Room, Andela Lagos"
                   onClick={[Function]}
                 >
                   <div
-                    key="Wall Street"
+                    key="Cognitio Meeting Room, Andela Lagos"
                   >
                     <p
                       className="legend legend-center"
                     >
-                      Wall Street
+                      Cognitio Meeting Room, Andela Lagos
                     </p>
                     <img
-                      alt="Wall Street"
+                      alt="Cognitio Meeting Room, Andela Lagos"
                       src="test-file-stub"
                     />
                   </div>
                 </li>
                 <li
                   className="slide"
-                  key="itemKey2/.$Cognitio"
+                  key="itemKey2/.$Entebbe Meeting Room, Andela Kampala"
                   onClick={[Function]}
                 >
                   <div
-                    key="Cognitio"
+                    key="Entebbe Meeting Room, Andela Kampala"
                   >
                     <p
                       className="legend legend-center"
                     >
-                      Cognitio
+                      Entebbe Meeting Room, Andela Kampala
                     </p>
                     <img
-                      alt="Cognitio"
+                      alt="Entebbe Meeting Room, Andela Kampala"
                       src="test-file-stub"
                     />
                   </div>
                 </li>
                 <li
                   className="slide"
-                  key="itemKey3/.$Aso"
+                  key="itemKey3/.$Banku Meeting Room, Andela Lagos"
                   onClick={[Function]}
                 >
                   <div
-                    key="Aso"
+                    key="Banku Meeting Room, Andela Lagos"
                   >
                     <p
                       className="legend legend-center"
                     >
-                      Aso
+                      Banku Meeting Room, Andela Lagos
                     </p>
                     <img
-                      alt="Aso"
-                      src="test-file-stub"
-                    />
-                  </div>
-                </li>
-                <li
-                  className="slide"
-                  key="itemKey4/.$Banku"
-                  onClick={[Function]}
-                >
-                  <div
-                    key="Banku"
-                  >
-                    <p
-                      className="legend legend-center"
-                    >
-                      Banku
-                    </p>
-                    <img
-                      alt="Banku"
-                      src="test-file-stub"
-                    />
-                  </div>
-                </li>
-                <li
-                  className="slide"
-                  key="itemKey5/.$Obutu"
-                  onClick={[Function]}
-                >
-                  <div
-                    key="Obutu"
-                  >
-                    <p
-                      className="legend legend-center"
-                    >
-                      Obutu
-                    </p>
-                    <img
-                      alt="Obutu"
-                      src="test-file-stub"
-                    />
-                  </div>
-                </li>
-                <li
-                  className="slide"
-                  key="itemKey6/.$Ubuntu"
-                  onClick={[Function]}
-                >
-                  <div
-                    key="Ubuntu"
-                  >
-                    <p
-                      className="legend legend-center"
-                    >
-                      Ubuntu
-                    </p>
-                    <img
-                      alt="Ubuntu"
-                      src="test-file-stub"
-                    />
-                  </div>
-                </li>
-                <li
-                  className="slide"
-                  key="itemKey7/.$Idanre"
-                  onClick={[Function]}
-                >
-                  <div
-                    key="Idanre"
-                  >
-                    <p
-                      className="legend legend-center"
-                    >
-                      Idanre
-                    </p>
-                    <img
-                      alt="Idanre"
-                      src="test-file-stub"
-                    />
-                  </div>
-                </li>
-                <li
-                  className="slide"
-                  key="itemKey8/.$Charley"
-                  onClick={[Function]}
-                >
-                  <div
-                    key="Charley"
-                  >
-                    <p
-                      className="legend legend-center"
-                    >
-                      Charley
-                    </p>
-                    <img
-                      alt="Charley"
+                      alt="Banku Meeting Room, Andela Lagos"
                       src="test-file-stub"
                     />
                   </div>
                 </li>
                 <li
                   className="slide selected"
-                  key="itemKey0clone/.$Empire State - LOS"
+                  key="itemKey0clone/.$Safari Meeting Room, Andela New York"
                   onClick={[Function]}
                 >
                   <div
-                    key="Empire State - LOS"
+                    key="Safari Meeting Room, Andela New York"
                   >
                     <p
                       className="legend legend-center"
                     >
-                      Empire State - LOS
+                      Safari Meeting Room, Andela New York
                     </p>
                     <img
-                      alt="Empire State - LOS"
+                      alt="Safari Meeting Room, Andela New York"
                       src="test-file-stub"
                     />
                   </div>
@@ -1083,7 +986,7 @@ exports[`Login component should redirect to another page when a user successfull
           >
             <li
               className="dot selected"
-              key="0/.$Empire State - LOS"
+              key="0/.$Safari Meeting Room, Andela New York"
               onClick={[Function]}
               onKeyDown={[Function]}
               role="button"
@@ -1092,7 +995,7 @@ exports[`Login component should redirect to another page when a user successfull
             />
             <li
               className="dot"
-              key="1/.$Wall Street"
+              key="1/.$Cognitio Meeting Room, Andela Lagos"
               onClick={[Function]}
               onKeyDown={[Function]}
               role="button"
@@ -1101,7 +1004,7 @@ exports[`Login component should redirect to another page when a user successfull
             />
             <li
               className="dot"
-              key="2/.$Cognitio"
+              key="2/.$Entebbe Meeting Room, Andela Kampala"
               onClick={[Function]}
               onKeyDown={[Function]}
               role="button"
@@ -1110,60 +1013,151 @@ exports[`Login component should redirect to another page when a user successfull
             />
             <li
               className="dot"
-              key="3/.$Aso"
+              key="3/.$Banku Meeting Room, Andela Lagos"
               onClick={[Function]}
               onKeyDown={[Function]}
               role="button"
               tabIndex={0}
               value={3}
             />
-            <li
-              className="dot"
-              key="4/.$Banku"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              role="button"
-              tabIndex={0}
-              value={4}
-            />
-            <li
-              className="dot"
-              key="5/.$Obutu"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              role="button"
-              tabIndex={0}
-              value={5}
-            />
-            <li
-              className="dot"
-              key="6/.$Ubuntu"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              role="button"
-              tabIndex={0}
-              value={6}
-            />
-            <li
-              className="dot"
-              key="7/.$Idanre"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              role="button"
-              tabIndex={0}
-              value={7}
-            />
-            <li
-              className="dot"
-              key="8/.$Charley"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              role="button"
-              tabIndex={0}
-              value={8}
-            />
           </ul>
         </div>
+        <Thumbs
+          axis="horizontal"
+          onSelectItem={[Function]}
+          selectedItem={0}
+          transitionTime={2000}
+        >
+          <div
+            className="carousel"
+          >
+            <div
+              className="thumbs-wrapper axis-vertical"
+            >
+              <button
+                className="control-arrow control-prev control-disabled"
+                onClick={[Function]}
+                type="button"
+              />
+              <ReactSwipe
+                allowMouseEvents={false}
+                className="thumbs animated"
+                onSwipeDown={[Function]}
+                onSwipeEnd={[Function]}
+                onSwipeLeft={[Function]}
+                onSwipeMove={[Function]}
+                onSwipeRight={[Function]}
+                onSwipeStart={[Function]}
+                onSwipeUp={[Function]}
+                selectedItem={0}
+                style={
+                  Object {
+                    "MozTransform": "translate3d(NaNpx,0,0)",
+                    "MozTransitionDuration": "2000ms",
+                    "MsTransform": "translate3d(NaNpx,0,0)",
+                    "MsTransitionDuration": "2000ms",
+                    "OTransform": "translate3d(NaNpx,0,0)",
+                    "OTransitionDuration": "2000ms",
+                    "WebkitTransform": "translate3d(NaNpx,0,0)",
+                    "WebkitTransitionDuration": "2000ms",
+                    "msTransform": "translate3d(NaNpx,0,0)",
+                    "msTransitionDuration": "2000ms",
+                    "transform": "translate3d(NaNpx,0,0)",
+                    "transitionDuration": "2000ms",
+                  }
+                }
+                tagName="ul"
+                tolerance={0}
+              >
+                <ul
+                  className="thumbs animated"
+                  onMouseDown={[Function]}
+                  onTouchEnd={[Function]}
+                  onTouchStart={[Function]}
+                  style={
+                    Object {
+                      "MozTransform": "translate3d(NaNpx,0,0)",
+                      "MozTransitionDuration": "2000ms",
+                      "MsTransform": "translate3d(NaNpx,0,0)",
+                      "MsTransitionDuration": "2000ms",
+                      "OTransform": "translate3d(NaNpx,0,0)",
+                      "OTransitionDuration": "2000ms",
+                      "WebkitTransform": "translate3d(NaNpx,0,0)",
+                      "WebkitTransitionDuration": "2000ms",
+                      "msTransform": "translate3d(NaNpx,0,0)",
+                      "msTransitionDuration": "2000ms",
+                      "transform": "translate3d(NaNpx,0,0)",
+                      "transitionDuration": "2000ms",
+                    }
+                  }
+                >
+                  <li
+                    className="thumb"
+                    key="0"
+                    onClick={[Function]}
+                    onKeyDown={[Function]}
+                    role="button"
+                    tabIndex={0}
+                  >
+                    <img
+                      alt="Safari Meeting Room, Andela New York"
+                      key=".1/.$Safari Meeting Room, Andela New York"
+                      onLoad={[Function]}
+                      src="test-file-stub"
+                    />
+                  </li>
+                  <li
+                    className="thumb"
+                    key="1"
+                    onClick={[Function]}
+                    onKeyDown={[Function]}
+                    role="button"
+                    tabIndex={0}
+                  >
+                    <img
+                      alt="Cognitio Meeting Room, Andela Lagos"
+                      key=".1/.$Cognitio Meeting Room, Andela Lagos"
+                      src="test-file-stub"
+                    />
+                  </li>
+                  <li
+                    className="thumb"
+                    key="2"
+                    onClick={[Function]}
+                    onKeyDown={[Function]}
+                    role="button"
+                    tabIndex={0}
+                  >
+                    <img
+                      alt="Entebbe Meeting Room, Andela Kampala"
+                      key=".1/.$Entebbe Meeting Room, Andela Kampala"
+                      src="test-file-stub"
+                    />
+                  </li>
+                  <li
+                    className="thumb"
+                    key="3"
+                    onClick={[Function]}
+                    onKeyDown={[Function]}
+                    role="button"
+                    tabIndex={0}
+                  >
+                    <img
+                      alt="Banku Meeting Room, Andela Lagos"
+                      key=".1/.$Banku Meeting Room, Andela Lagos"
+                      src="test-file-stub"
+                    />
+                  </li>
+                </ul>
+              </ReactSwipe>
+              <button
+                className="control-arrow control-next control-disabled"
+                onClick={[Function]}
+                type="button"
+              />
+            </div>
+          </div>
+        </Thumbs>
       </div>
     </Carousel>
   </CustomCarousel>

@@ -2,54 +2,31 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Carousel } from 'react-responsive-carousel';
 import '../../assets/styles/carousel.scss';
-import empireStateLOS from '../../assets/images/empire-state-los.jpg';
-import wallStreet from '../../assets/images/wall-street.jpg';
+import safariMeetingRoom from '../../assets/images/SafariMeetingRoom.png';
 import cognitio from '../../assets/images/cognitio.jpg';
-import aso from '../../assets/images/aso.jpg';
+import entebbe from '../../assets/images/entebbe.png';
 import banku from '../../assets/images/banku.jpg';
-import obudu from '../../assets/images/obudu.jpg';
-import ubuntu from '../../assets/images/ubuntu.jpg';
-import idanre from '../../assets/images/idanre.jpg';
-import charley from '../../assets/images/charley.jpg';
 
 class CustomCarousel extends Component {
   state = {
+    interval: 3000,
+    position: 0,
     rooms: [
       {
-        legend: 'Empire State - LOS',
-        img: empireStateLOS,
+        legend: 'Safari Meeting Room, Andela New York',
+        img: safariMeetingRoom,
       },
       {
-        legend: 'Wall Street',
-        img: wallStreet,
-      },
-      {
-        legend: 'Cognitio',
+        legend: 'Cognitio Meeting Room, Andela Lagos',
         img: cognitio,
       },
       {
-        legend: 'Aso',
-        img: aso,
+        legend: 'Entebbe Meeting Room, Andela Kampala',
+        img: entebbe,
       },
       {
-        legend: 'Banku',
+        legend: 'Banku Meeting Room, Andela Lagos',
         img: banku,
-      },
-      {
-        legend: 'Obutu',
-        img: obudu,
-      },
-      {
-        legend: 'Ubuntu',
-        img: ubuntu,
-      },
-      {
-        legend: 'Idanre',
-        img: idanre,
-      },
-      {
-        legend: 'Charley',
-        img: charley,
       },
     ],
   }
@@ -60,17 +37,35 @@ class CustomCarousel extends Component {
     else controlDots.classList.remove('control-dots-left');
   }
 
+  onImageChange = (imgPosition) => {
+    const { position, rooms } = this.state;
+    if (position === 0) {
+      this.setState({ interval: 4000 });
+    } else if (position === 1) {
+      this.setState({ interval: 3000 });
+    }
+
+    if (position < rooms.length) {
+      this.setState({ position: imgPosition });
+    } else {
+      this.setState({ position: 0 });
+    }
+  }
+
   render() {
-    const { legendPosition } = this.props;
-    const { rooms } = this.state;
+    const { legendPosition, autoplay } = this.props;
+    const { rooms, position, interval } = this.state;
     return (
       <Carousel
-        autoPlay
+        autoPlay={autoplay}
         infiniteLoop
         stopOnHover={false}
         showArrows={false}
         showStatus={false}
-        showThumbs={false}
+        interval={interval}
+        transitionTime={2000}
+        selectedItem={position}
+        onChange={imgPosition => this.onImageChange(imgPosition)}
       >
         {rooms.map(({ legend, img }) => (
           <div key={legend}>
@@ -85,10 +80,12 @@ class CustomCarousel extends Component {
 
 CustomCarousel.propTypes = {
   legendPosition: PropTypes.string,
+  autoplay: PropTypes.bool,
 };
 
 CustomCarousel.defaultProps = {
   legendPosition: 'center',
+  autoplay: true,
 };
 
 export default CustomCarousel;
