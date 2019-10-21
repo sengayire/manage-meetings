@@ -20,6 +20,7 @@ import {
 } from './components/helpers/QueriesHelpers';
 import GetNewUsersLocation from './containers/GetNewUsersLocation';
 import { removeItemFromLocalStorage } from './utils/Utilities';
+import WelcomePage from './components/onboarding/WelcomePage';
 
 // destruscture constants to be used
 const {
@@ -95,7 +96,6 @@ class App extends Component {
       loggedIn, userLocation, userRole, defaultState,
     } = this.state;
     const { location } = this.props;
-
     if (defaultState && userLocation) {
       return <GetNewUsersLocation userLocation={this.state.userLocation} />;
     }
@@ -133,6 +133,7 @@ class App extends Component {
             <ErrorBoundary isAuthError>
               <Switch>
                 <Route path={ROUTES.home} exact component={LoginPage} />
+                <Route exact path={ROUTES.welcome} component={WelcomePage} />
                 <Route exact path={ROUTES.analytics} component={Container} />
                 <Route exact path={ROUTES.roomfeedback} component={RoomFeedbackPage} />
                 <Route exact path={ROUTES.preference} component={Preference} />
