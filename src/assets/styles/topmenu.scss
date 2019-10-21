@@ -1,4 +1,4 @@
-@import './variables';
+@import "./variables";
 
 .top-menu::after {
   content: "";
@@ -22,9 +22,8 @@
   margin-right: 0px;
   height: 68px !important;
 
-
   .search-box__input-field {
-    border: 1px solid rgba(0,0,0,0.12);
+    border: 1px solid rgba(0, 0, 0, 0.12);
     display: flex;
     border-radius: 17px;
     height: 2rem;
@@ -107,7 +106,7 @@
 }
 
 .preference-dropdown-list li:hover {
-  color:$color-primary !important;
+  color: $color-primary !important;
   cursor: pointer;
 }
 
@@ -137,7 +136,7 @@
 }
 
 .preference-div:hover {
-  color:$color-primary !important;
+  color: $color-primary !important;
   cursor: pointer;
 }
 
@@ -232,11 +231,12 @@
         padding-left: none;
       }
     }
-    &__shape, &__background {
+    &__shape,
+    &__background {
       display: grid;
       grid-template-rows: 1fr 1fr 1fr;
       height: 6.5rem;
-      box-shadow: 0 16px 32px 0 rgba(0,0,0,0.12);
+      box-shadow: 0 16px 32px 0 rgba(0, 0, 0, 0.12);
       border-radius: 5px;
       position: absolute;
       width: 7rem;
@@ -284,11 +284,15 @@
 }
 
 .notifications {
-  width: 84px !important;
+  width: 70px !important;
+  padding-top: 20px;
+  height: 65%;
   text-align: center;
+  border: 1px solid rgba(206, 206, 206, 0.2);
 }
 
 .profile {
+  margin-left: 10px;
   margin-top: 3px;
   width: 34px !important;
 }
@@ -310,8 +314,8 @@
   margin-top: 1px;
   padding-left: 0px;
 
-  a{
-    text-decoration:none
+  a {
+    text-decoration: none;
   }
 
   .material-icons {
@@ -375,14 +379,14 @@
   }
 }
 
-.profile-menu{
+.profile-menu {
   list-style: none;
 }
 
 .menu-icon {
   height: 34px;
   width: 34px;
-  border-radius: 17px;
+  border-radius: 7px;
 }
 
 .dropdown-menu {
@@ -399,7 +403,7 @@
     background-color: none !important ;
     height: 0 !important;
     font-size: 1.5rem !important;
-    border: 0 solid  !important;
+    border: 0 solid !important;
     cursor: pointer;
     margin-left: 0.3rem;
   }

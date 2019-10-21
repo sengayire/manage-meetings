@@ -345,12 +345,26 @@ exports[`DeleteOffice Test Suite renders as expected 1`] = `
                               "kind": "SelectionSet",
                               "selections": Array [
                                 Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
                                   "directives": Array [],
-                                  "kind": "FragmentSpread",
+                                  "kind": "Field",
                                   "name": Object {
                                     "kind": "Name",
-                                    "value": "idNameRoom",
+                                    "value": "id",
                                   },
+                                  "selectionSet": undefined,
+                                },
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "name",
+                                  },
+                                  "selectionSet": undefined,
                                 },
                               ],
                             },
@@ -384,52 +398,10 @@ exports[`DeleteOffice Test Suite renders as expected 1`] = `
                   },
                 ],
               },
-              Object {
-                "directives": Array [],
-                "kind": "FragmentDefinition",
-                "name": Object {
-                  "kind": "Name",
-                  "value": "idNameRoom",
-                },
-                "selectionSet": Object {
-                  "kind": "SelectionSet",
-                  "selections": Array [
-                    Object {
-                      "alias": undefined,
-                      "arguments": Array [],
-                      "directives": Array [],
-                      "kind": "Field",
-                      "name": Object {
-                        "kind": "Name",
-                        "value": "id",
-                      },
-                      "selectionSet": undefined,
-                    },
-                    Object {
-                      "alias": undefined,
-                      "arguments": Array [],
-                      "directives": Array [],
-                      "kind": "Field",
-                      "name": Object {
-                        "kind": "Name",
-                        "value": "name",
-                      },
-                      "selectionSet": undefined,
-                    },
-                  ],
-                },
-                "typeCondition": Object {
-                  "kind": "NamedType",
-                  "name": Object {
-                    "kind": "Name",
-                    "value": "Room",
-                  },
-                },
-              },
             ],
             "kind": "Document",
             "loc": Object {
-              "end": 171,
+              "end": 129,
               "start": 0,
             },
           }
@@ -496,7 +468,7 @@ exports[`DeleteOffice Test Suite renders as expected 1`] = `
                   "content": Object {
                     "backgroundColor": "#ffffff",
                     "border": "1px solid #CCCCCC",
-                    "borderRadius": "4px",
+                    "borderRadius": "15px",
                     "bottom": "auto",
                     "boxShadow": "0 2px 40px 10px rgba(185, 180, 180, 0.2)",
                     "fontFamily": "DINPro-Regular",
@@ -564,7 +536,7 @@ exports[`DeleteOffice Test Suite renders as expected 1`] = `
                       "content": Object {
                         "backgroundColor": "#ffffff",
                         "border": "1px solid #CCCCCC",
-                        "borderRadius": "4px",
+                        "borderRadius": "15px",
                         "bottom": "auto",
                         "boxShadow": "0 2px 40px 10px rgba(185, 180, 180, 0.2)",
                         "fontFamily": "DINPro-Regular",
@@ -934,12 +906,26 @@ exports[`DeleteOffice Test Suite should pop up a modal when delete button is cli
                               "kind": "SelectionSet",
                               "selections": Array [
                                 Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
                                   "directives": Array [],
-                                  "kind": "FragmentSpread",
+                                  "kind": "Field",
                                   "name": Object {
                                     "kind": "Name",
-                                    "value": "idNameRoom",
+                                    "value": "id",
                                   },
+                                  "selectionSet": undefined,
+                                },
+                                Object {
+                                  "alias": undefined,
+                                  "arguments": Array [],
+                                  "directives": Array [],
+                                  "kind": "Field",
+                                  "name": Object {
+                                    "kind": "Name",
+                                    "value": "name",
+                                  },
+                                  "selectionSet": undefined,
                                 },
                               ],
                             },
@@ -973,52 +959,10 @@ exports[`DeleteOffice Test Suite should pop up a modal when delete button is cli
                   },
                 ],
               },
-              Object {
-                "directives": Array [],
-                "kind": "FragmentDefinition",
-                "name": Object {
-                  "kind": "Name",
-                  "value": "idNameRoom",
-                },
-                "selectionSet": Object {
-                  "kind": "SelectionSet",
-                  "selections": Array [
-                    Object {
-                      "alias": undefined,
-                      "arguments": Array [],
-                      "directives": Array [],
-                      "kind": "Field",
-                      "name": Object {
-                        "kind": "Name",
-                        "value": "id",
-                      },
-                      "selectionSet": undefined,
-                    },
-                    Object {
-                      "alias": undefined,
-                      "arguments": Array [],
-                      "directives": Array [],
-                      "kind": "Field",
-                      "name": Object {
-                        "kind": "Name",
-                        "value": "name",
-                      },
-                      "selectionSet": undefined,
-                    },
-                  ],
-                },
-                "typeCondition": Object {
-                  "kind": "NamedType",
-                  "name": Object {
-                    "kind": "Name",
-                    "value": "Room",
-                  },
-                },
-              },
             ],
             "kind": "Document",
             "loc": Object {
-              "end": 171,
+              "end": 129,
               "start": 0,
             },
           }
@@ -1085,7 +1029,7 @@ exports[`DeleteOffice Test Suite should pop up a modal when delete button is cli
                   "content": Object {
                     "backgroundColor": "#ffffff",
                     "border": "1px solid #CCCCCC",
-                    "borderRadius": "4px",
+                    "borderRadius": "15px",
                     "bottom": "auto",
                     "boxShadow": "0 2px 40px 10px rgba(185, 180, 180, 0.2)",
                     "fontFamily": "DINPro-Regular",
@@ -1113,7 +1057,7 @@ exports[`DeleteOffice Test Suite should pop up a modal when delete button is cli
                       <div
                         aria-label="Parent Modal"
                         class="ReactModal__Content ReactModal__Content--after-open delete-modal"
-                        style="font-family: DINPro-Regular; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); border: 1px solid #cccccc; border-radius: 4px; outline: none; box-shadow: 0 2px 40px 10px rgba(185, 180, 180, 0.2); background-color: rgb(255, 255, 255); overflow: auto;"
+                        style="font-family: DINPro-Regular; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); border: 1px solid #cccccc; border-radius: 15px; outline: none; box-shadow: 0 2px 40px 10px rgba(185, 180, 180, 0.2); background-color: rgb(255, 255, 255); overflow: auto;"
                         tabindex="-1"
                       >
                         <h2
@@ -1203,7 +1147,7 @@ exports[`DeleteOffice Test Suite should pop up a modal when delete button is cli
                       "content": Object {
                         "backgroundColor": "#ffffff",
                         "border": "1px solid #CCCCCC",
-                        "borderRadius": "4px",
+                        "borderRadius": "15px",
                         "bottom": "auto",
                         "boxShadow": "0 2px 40px 10px rgba(185, 180, 180, 0.2)",
                         "fontFamily": "DINPro-Regular",
@@ -1245,7 +1189,7 @@ exports[`DeleteOffice Test Suite should pop up a modal when delete button is cli
                         Object {
                           "backgroundColor": "#ffffff",
                           "border": "1px solid #CCCCCC",
-                          "borderRadius": "4px",
+                          "borderRadius": "15px",
                           "bottom": "auto",
                           "boxShadow": "0 2px 40px 10px rgba(185, 180, 180, 0.2)",
                           "fontFamily": "DINPro-Regular",

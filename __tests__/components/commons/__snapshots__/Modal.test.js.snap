@@ -47,7 +47,7 @@ exports[`MrmModal Component renders properly 1`] = `
         "content": Object {
           "backgroundColor": "#ffffff",
           "border": "1px solid #CCCCCC",
-          "borderRadius": "4px",
+          "borderRadius": "15px",
           "bottom": "auto",
           "boxShadow": "0 2px 40px 10px rgba(185, 180, 180, 0.2)",
           "fontFamily": "DINPro-Regular",
@@ -115,7 +115,7 @@ exports[`MrmModal Component renders properly 1`] = `
             "content": Object {
               "backgroundColor": "#ffffff",
               "border": "1px solid #CCCCCC",
-              "borderRadius": "4px",
+              "borderRadius": "15px",
               "bottom": "auto",
               "boxShadow": "0 2px 40px 10px rgba(185, 180, 180, 0.2)",
               "fontFamily": "DINPro-Regular",

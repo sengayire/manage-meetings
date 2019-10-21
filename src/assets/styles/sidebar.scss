@@ -1,12 +1,53 @@
-@import './variables';
+@import "./variables";
 
-.side-bar{
-  background-color: $color-danger;
-  width: 40%;
+.sidebar {
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background: white;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+  border-right: 1px solid #eeeeee;
 }
-.menu-title{
-  color: $color-text;
-  font-family: $font-regular, sans-serif;
-  font-size: 24px;
-  line-height: 45px;
+
+.sidebar a {
+  display: block;
+  color: #333a3f;
+  padding: 20px;
+  text-align: left;
+  padding-left: 60px;
+  text-decoration: none;
+}
+
+.overview-text {
+  padding-top: 30px;
+  text-align: left;
+  margin-left: 50px;
+  color: #838d93;
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+.sidebar a.active {
+  color: #2c7cf1;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.sidebar a:hover:not(.active) {
+  background-color: #fafafa;
+  color: #292828;
+  font-size: 18px;
+}
+.sidebar img {
+  margin-right: 10px;
+}
+.sidebar a.active img {
+  border-color: #2c7cf1;
+}
+.divTitle {
+  padding-left: 250px;
+  padding-top: 50px;
+  font-size: 40px;
 }

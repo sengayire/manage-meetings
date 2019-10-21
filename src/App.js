@@ -4,15 +4,20 @@ import { ApolloConsumer } from 'react-apollo';
 import PropTypes from 'prop-types';
 import jwtDecode from 'jwt-decode';
 import ROUTES from './utils/routes';
-import { Analytics, Preference, RoomFeedbackPage } from './containers';
+import { Preference, RoomFeedbackPage } from './containers';
 import { LoginPage } from './components';
 import Constants from './utils/Constants';
 import '../src/assets/styles/toastr.scss';
 import ErrorBoundary from './components/commons/ErrorBoundary';
 import { getToken, clearCookies } from './utils/Cookie';
 import Setup from './containers/Setup';
+import Container from './containers/mainContainer';
 import PageNotFound from './containers/PageNotFound';
-import { getUserDetails, getAllLocations, getUserLocation } from './components/helpers/QueriesHelpers';
+import {
+  getUserDetails,
+  getAllLocations,
+  getUserLocation,
+} from './components/helpers/QueriesHelpers';
 import GetNewUsersLocation from './containers/GetNewUsersLocation';
 import { removeItemFromLocalStorage } from './utils/Utilities';
 
@@ -40,8 +45,8 @@ class App extends Component {
   }
 
   /**
- * Handles token validity or expiration
- */
+   * Handles token validity or expiration
+   */
   /* eslint consistent-return: 0 */
 
   setLoggedInState = () => {
@@ -50,7 +55,7 @@ class App extends Component {
     let expiredToken;
     try {
       expiredToken = jwtDecode(token).exp;
-      if (!token || (Date.now() >= expiredToken * 1000)) {
+      if (!token || Date.now() >= expiredToken * 1000) {
         removeItemFromLocalStorage(MRM_TOKEN);
         clearCookies();
         this.props.history.push('/');
@@ -65,8 +70,8 @@ class App extends Component {
   };
 
   /**
- * this function is used to set the users state(the location and the role)
- */
+   * this function is used to set the users state(the location and the role)
+   */
   async setUserState() {
     const [user, locations] = await Promise.all([getUserDetails(), getAllLocations()]);
     const userLocation = locations.find(({ name }) => name === user.location);
@@ -109,37 +114,34 @@ class App extends Component {
 
     return (
       <ApolloConsumer>
-        {
-          (client) => {
-            if (loggedIn && !userLocation) {
+        {(client) => {
+          if (loggedIn && !userLocation) {
             return <GetNewUsersLocation userLocation={userLocation} />;
           }
 
-            try {
-              getUserLocation();
-            } catch (error) {
-              if (userLocation) {
-                client.writeData({
-                  data: { userLocation, userRole },
-                });
-              }
+          try {
+            getUserLocation();
+          } catch (error) {
+            if (userLocation) {
+              client.writeData({
+                data: { userLocation, userRole },
+              });
             }
-
-
-            return (
-              <ErrorBoundary isAuthError>
-                <Switch>
-                  <Route path={ROUTES.home} exact component={LoginPage} />
-                  <Route exact path={ROUTES.analytics} component={Analytics} />
-                  <Route exact path={ROUTES.roomfeedback} component={RoomFeedbackPage} />
-                  <Route exact path={ROUTES.preference} component={Preference} />
-                  <Route exact path={ROUTES.setup} component={Setup} />
-                  <Route component={PageNotFound} />
-                </Switch>
-              </ErrorBoundary>
-            );
           }
-        }
+
+          return (
+            <ErrorBoundary isAuthError>
+              <Switch>
+                <Route path={ROUTES.home} exact component={LoginPage} />
+                <Route exact path={ROUTES.analytics} component={Container} />
+                <Route exact path={ROUTES.roomfeedback} component={RoomFeedbackPage} />
+                <Route exact path={ROUTES.preference} component={Preference} />
+                <Route exact path={ROUTES.setup} component={Setup} />
+                <Route component={PageNotFound} />
+              </Switch>
+            </ErrorBoundary>
+          );
+        }}
       </ApolloConsumer>
     );
   }

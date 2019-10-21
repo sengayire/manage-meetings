@@ -13,13 +13,22 @@ require('@babel/polyfill');
 
 const menuItems = [
   {
-    route: ROUTES.analytics, menu: 'Analytics', icon: analyticsIcon, admin: false,
+    route: ROUTES.analytics,
+    menu: 'Analytics',
+    icon: analyticsIcon,
+    admin: false,
   },
   {
-    route: ROUTES.setup, icon: settingsIcon, menu: 'Setup', admin: true,
+    route: ROUTES.setup,
+    icon: settingsIcon,
+    menu: 'Setup',
+    admin: true,
   },
   {
-    icon: feedbackIcon, route: ROUTES.roomfeedback, menu: 'Room Feedback', admin: true,
+    icon: feedbackIcon,
+    route: ROUTES.roomfeedback,
+    menu: 'Room Feedback',
+    admin: true,
   },
 ];
 
@@ -43,7 +52,7 @@ class TopNav extends React.Component {
   }
 
   setActiveMenu = async () => {
-    const pathname = await sessionStorage.getItem('activeTopNav') || this.props.location.pathname;
+    const pathname = (await sessionStorage.getItem('activeTopNav')) || this.props.location.pathname;
     await menuItems.forEach((router) => {
       if (pathname.includes(router.route)) {
         this.setState({
@@ -52,7 +61,6 @@ class TopNav extends React.Component {
       }
     });
   };
-
 
   /**
    * 1. Set chosen item as the active menu
@@ -79,10 +87,7 @@ class TopNav extends React.Component {
         return null;
       }
       return (
-        <li
-          key={item.menu}
-          className={activeMenu === item.menu ? 'active' : ''}
-        >
+        <li key={item.menu} className={activeMenu === item.menu ? 'active' : ''}>
           <Link
             to={item.menu === 'Setup' ? ROUTES.setup : item.route}
             onClick={this.handleClick(item.menu)}

@@ -6,6 +6,7 @@ import { GET_USER_QUERY } from '../../../graphql/queries/People';
 import GET_ALL_LEVELS from '../../../graphql/queries/Levels';
 import { GET_DEVICES_QUERY } from '../../../graphql/queries/Devices';
 
+require('@babel/polyfill');
 
 const invitePersonMutation = async (email, client = apolloClient) => {
   await client

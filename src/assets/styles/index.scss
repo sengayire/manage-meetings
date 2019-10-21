@@ -5,6 +5,7 @@ body {
   font-family: $font;
   padding: 0;
   margin: 0;
+  background-color: #fff !important;
   width: -webkit-fill-available;
 
   @media screen and (max-width: 460px) {

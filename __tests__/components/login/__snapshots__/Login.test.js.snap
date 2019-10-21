@@ -88,39 +88,566 @@ exports[`Login component renders correctly 1`] = `
             }
           }
         >
-          <header
-            className="home-header"
+          <LoginModal
+            closeModal={true}
+            handleCloseModal={[Function]}
+            openModal={false}
           >
-            <h1>
-              CONVERGE
-            </h1>
-          </header>
-          <Component>
+            <MrmModal
+              buttonText=""
+              className="login-modal"
+              closeModal={true}
+              handleCloseRequest={[Function]}
+              modalButtonClassName="button"
+              openModal={false}
+              showBtn={false}
+              title={null}
+            >
+              <Modal
+                ariaHideApp={false}
+                bodyOpenClassName="ReactModal__Body--open"
+                className="login-modal"
+                closeTimeoutMS={0}
+                contentLabel="Parent Modal"
+                isOpen={false}
+                onAfterOpen={[Function]}
+                onRequestClose={[Function]}
+                parentSelector={[Function]}
+                portalClassName="ReactModalPortal"
+                shouldCloseOnEsc={true}
+                shouldCloseOnOverlayClick={false}
+                shouldFocusAfterRender={true}
+                shouldReturnFocusAfterClose={true}
+                style={
+                  Object {
+                    "content": Object {
+                      "backgroundColor": "#ffffff",
+                      "border": "1px solid #CCCCCC",
+                      "borderRadius": "15px",
+                      "bottom": "auto",
+                      "boxShadow": "0 2px 40px 10px rgba(185, 180, 180, 0.2)",
+                      "fontFamily": "DINPro-Regular",
+                      "left": "50%",
+                      "outline": "none",
+                      "overflow": "auto",
+                      "position": "absolute",
+                      "right": "auto",
+                      "top": "50%",
+                      "transform": "translate(-50%, -50%)",
+                    },
+                  }
+                }
+              >
+                <Portal
+                  containerInfo={
+                    <div
+                      class="ReactModalPortal"
+                    />
+                  }
+                >
+                  <ModalPortal
+                    ariaHideApp={false}
+                    bodyOpenClassName="ReactModal__Body--open"
+                    className="login-modal"
+                    closeTimeoutMS={0}
+                    contentLabel="Parent Modal"
+                    defaultStyles={
+                      Object {
+                        "content": Object {
+                          "WebkitOverflowScrolling": "touch",
+                          "background": "#fff",
+                          "border": "1px solid #ccc",
+                          "borderRadius": "4px",
+                          "bottom": "40px",
+                          "left": "40px",
+                          "outline": "none",
+                          "overflow": "auto",
+                          "padding": "20px",
+                          "position": "absolute",
+                          "right": "40px",
+                          "top": "40px",
+                        },
+                        "overlay": Object {
+                          "backgroundColor": "rgba(255, 255, 255, 0.75)",
+                          "bottom": 0,
+                          "left": 0,
+                          "position": "fixed",
+                          "right": 0,
+                          "top": 0,
+                        },
+                      }
+                    }
+                    isOpen={false}
+                    onAfterOpen={[Function]}
+                    onRequestClose={[Function]}
+                    parentSelector={[Function]}
+                    portalClassName="ReactModalPortal"
+                    shouldCloseOnEsc={true}
+                    shouldCloseOnOverlayClick={false}
+                    shouldFocusAfterRender={true}
+                    shouldReturnFocusAfterClose={true}
+                    style={
+                      Object {
+                        "content": Object {
+                          "backgroundColor": "#ffffff",
+                          "border": "1px solid #CCCCCC",
+                          "borderRadius": "15px",
+                          "bottom": "auto",
+                          "boxShadow": "0 2px 40px 10px rgba(185, 180, 180, 0.2)",
+                          "fontFamily": "DINPro-Regular",
+                          "left": "50%",
+                          "outline": "none",
+                          "overflow": "auto",
+                          "position": "absolute",
+                          "right": "auto",
+                          "top": "50%",
+                          "transform": "translate(-50%, -50%)",
+                        },
+                      }
+                    }
+                  />
+                </Portal>
+              </Modal>
+            </MrmModal>
+          </LoginModal>
+          <header
+            className="landing-page-header"
+          >
             <div
-              id="converge-intro"
+              className="header-logo"
             >
-              Meet the Meeting Room App
-              <br />
-              that your meeting room app aspires to be.
-            </div>
-          </Component>
-          <LoginButton>
-            <a
-              href="undefined=undefined"
-            >
-              <input
-                alt="Login With Your Email"
-                className="btn-signin"
-                src="https://firebasestorage.googleapis.com/v0/b/learning-map-app.appspot.com/o/MrmFrontImages%2FButton.png?alt=media&token=fb7692b6-1465-47c5-94f6-c94aff31c275"
-                type="image"
+              <img
+                alt="logo"
+                src="test-file-stub"
               />
-            </a>
-          </LoginButton>
-          <img
-            alt="Dark Tablet"
-            id="dark-tablet"
-            src="https://firebasestorage.googleapis.com/v0/b/learning-map-app.appspot.com/o/MrmFrontImages%2FDark%20Tablet.png?alt=media&token=75ad56c4-f7f1-4322-91ce-b4850fa0eeb3"
-          />
+            </div>
+            <div
+              className="login-btn"
+            >
+              <Button
+                classProp="trigger-login-modal"
+                handleClick={[Function]}
+                isDisabled={false}
+                title="Login"
+                type={1}
+              >
+                <button
+                  className="trigger-login-modal btn-primary"
+                  disabled={false}
+                  onClick={[Function]}
+                >
+                  <span>
+                    Login
+                  </span>
+                </button>
+              </Button>
+            </div>
+          </header>
+          <CustomCarousel
+            legendPosition="legend-center"
+          >
+            <Carousel
+              autoPlay={true}
+              axis="horizontal"
+              centerMode={false}
+              centerSlidePercentage={80}
+              dynamicHeight={false}
+              emulateTouch={false}
+              infiniteLoop={true}
+              interval={3000}
+              onChange={[Function]}
+              onClickItem={[Function]}
+              onClickThumb={[Function]}
+              selectedItem={0}
+              showArrows={false}
+              showIndicators={true}
+              showStatus={false}
+              showThumbs={false}
+              statusFormatter={[Function]}
+              stopOnHover={false}
+              swipeScrollTolerance={5}
+              swipeable={true}
+              transitionTime={350}
+              useKeyboardArrows={false}
+              verticalSwipe="standard"
+              width="100%"
+            >
+              <div>
+                <div
+                  className="carousel carousel-slider"
+                  style={
+                    Object {
+                      "width": "100%",
+                    }
+                  }
+                >
+                  <button
+                    className="control-arrow control-prev control-disabled"
+                    onClick={[Function]}
+                    type="button"
+                  />
+                  <div
+                    className="slider-wrapper axis-horizontal"
+                    style={Object {}}
+                  >
+                    <ReactSwipe
+                      allowMouseEvents={false}
+                      className="slider animated"
+                      onSwipeDown={[Function]}
+                      onSwipeEnd={[Function]}
+                      onSwipeLeft={[Function]}
+                      onSwipeMove={[Function]}
+                      onSwipeRight={[Function]}
+                      onSwipeStart={[Function]}
+                      onSwipeUp={[Function]}
+                      selectedItem={0}
+                      style={
+                        Object {
+                          "MozTransform": "translate3d(-100%,0,0)",
+                          "MozTransitionDuration": "350ms",
+                          "MsTransform": "translate3d(-100%,0,0)",
+                          "MsTransitionDuration": "350ms",
+                          "OTransform": "translate3d(-100%,0,0)",
+                          "OTransitionDuration": "350ms",
+                          "WebkitTransform": "translate3d(-100%,0,0)",
+                          "WebkitTransitionDuration": "350ms",
+                          "msTransform": "translate3d(-100%,0,0)",
+                          "msTransitionDuration": "350ms",
+                          "transform": "translate3d(-100%,0,0)",
+                          "transitionDuration": "350ms",
+                        }
+                      }
+                      tagName="ul"
+                      tolerance={5}
+                    >
+                      <ul
+                        className="slider animated"
+                        onMouseDown={[Function]}
+                        onTouchEnd={[Function]}
+                        onTouchStart={[Function]}
+                        style={
+                          Object {
+                            "MozTransform": "translate3d(-100%,0,0)",
+                            "MozTransitionDuration": "350ms",
+                            "MsTransform": "translate3d(-100%,0,0)",
+                            "MsTransitionDuration": "350ms",
+                            "OTransform": "translate3d(-100%,0,0)",
+                            "OTransitionDuration": "350ms",
+                            "WebkitTransform": "translate3d(-100%,0,0)",
+                            "WebkitTransitionDuration": "350ms",
+                            "msTransform": "translate3d(-100%,0,0)",
+                            "msTransitionDuration": "350ms",
+                            "transform": "translate3d(-100%,0,0)",
+                            "transitionDuration": "350ms",
+                          }
+                        }
+                      >
+                        <li
+                          className="slide"
+                          key="itemKey8clone/.$Charley"
+                          onClick={[Function]}
+                        >
+                          <div
+                            key="Charley"
+                          >
+                            <p
+                              className="legend legend-center"
+                            >
+                              Charley
+                            </p>
+                            <img
+                              alt="Charley"
+                              src="test-file-stub"
+                            />
+                          </div>
+                        </li>
+                        <li
+                          className="slide selected"
+                          key="itemKey0/.$Empire State - LOS"
+                          onClick={[Function]}
+                        >
+                          <div
+                            key="Empire State - LOS"
+                          >
+                            <p
+                              className="legend legend-center"
+                            >
+                              Empire State - LOS
+                            </p>
+                            <img
+                              alt="Empire State - LOS"
+                              src="test-file-stub"
+                            />
+                          </div>
+                        </li>
+                        <li
+                          className="slide"
+                          key="itemKey1/.$Wall Street"
+                          onClick={[Function]}
+                        >
+                          <div
+                            key="Wall Street"
+                          >
+                            <p
+                              className="legend legend-center"
+                            >
+                              Wall Street
+                            </p>
+                            <img
+                              alt="Wall Street"
+                              src="test-file-stub"
+                            />
+                          </div>
+                        </li>
+                        <li
+                          className="slide"
+                          key="itemKey2/.$Cognitio"
+                          onClick={[Function]}
+                        >
+                          <div
+                            key="Cognitio"
+                          >
+                            <p
+                              className="legend legend-center"
+                            >
+                              Cognitio
+                            </p>
+                            <img
+                              alt="Cognitio"
+                              src="test-file-stub"
+                            />
+                          </div>
+                        </li>
+                        <li
+                          className="slide"
+                          key="itemKey3/.$Aso"
+                          onClick={[Function]}
+                        >
+                          <div
+                            key="Aso"
+                          >
+                            <p
+                              className="legend legend-center"
+                            >
+                              Aso
+                            </p>
+                            <img
+                              alt="Aso"
+                              src="test-file-stub"
+                            />
+                          </div>
+                        </li>
+                        <li
+                          className="slide"
+                          key="itemKey4/.$Banku"
+                          onClick={[Function]}
+                        >
+                          <div
+                            key="Banku"
+                          >
+                            <p
+                              className="legend legend-center"
+                            >
+                              Banku
+                            </p>
+                            <img
+                              alt="Banku"
+                              src="test-file-stub"
+                            />
+                          </div>
+                        </li>
+                        <li
+                          className="slide"
+                          key="itemKey5/.$Obutu"
+                          onClick={[Function]}
+                        >
+                          <div
+                            key="Obutu"
+                          >
+                            <p
+                              className="legend legend-center"
+                            >
+                              Obutu
+                            </p>
+                            <img
+                              alt="Obutu"
+                              src="test-file-stub"
+                            />
+                          </div>
+                        </li>
+                        <li
+                          className="slide"
+                          key="itemKey6/.$Ubuntu"
+                          onClick={[Function]}
+                        >
+                          <div
+                            key="Ubuntu"
+                          >
+                            <p
+                              className="legend legend-center"
+                            >
+                              Ubuntu
+                            </p>
+                            <img
+                              alt="Ubuntu"
+                              src="test-file-stub"
+                            />
+                          </div>
+                        </li>
+                        <li
+                          className="slide"
+                          key="itemKey7/.$Idanre"
+                          onClick={[Function]}
+                        >
+                          <div
+                            key="Idanre"
+                          >
+                            <p
+                              className="legend legend-center"
+                            >
+                              Idanre
+                            </p>
+                            <img
+                              alt="Idanre"
+                              src="test-file-stub"
+                            />
+                          </div>
+                        </li>
+                        <li
+                          className="slide"
+                          key="itemKey8/.$Charley"
+                          onClick={[Function]}
+                        >
+                          <div
+                            key="Charley"
+                          >
+                            <p
+                              className="legend legend-center"
+                            >
+                              Charley
+                            </p>
+                            <img
+                              alt="Charley"
+                              src="test-file-stub"
+                            />
+                          </div>
+                        </li>
+                        <li
+                          className="slide selected"
+                          key="itemKey0clone/.$Empire State - LOS"
+                          onClick={[Function]}
+                        >
+                          <div
+                            key="Empire State - LOS"
+                          >
+                            <p
+                              className="legend legend-center"
+                            >
+                              Empire State - LOS
+                            </p>
+                            <img
+                              alt="Empire State - LOS"
+                              src="test-file-stub"
+                            />
+                          </div>
+                        </li>
+                      </ul>
+                    </ReactSwipe>
+                  </div>
+                  <button
+                    className="control-arrow control-next control-disabled"
+                    onClick={[Function]}
+                    type="button"
+                  />
+                  <ul
+                    className="control-dots"
+                  >
+                    <li
+                      className="dot selected"
+                      key="0/.$Empire State - LOS"
+                      onClick={[Function]}
+                      onKeyDown={[Function]}
+                      role="button"
+                      tabIndex={0}
+                      value={0}
+                    />
+                    <li
+                      className="dot"
+                      key="1/.$Wall Street"
+                      onClick={[Function]}
+                      onKeyDown={[Function]}
+                      role="button"
+                      tabIndex={0}
+                      value={1}
+                    />
+                    <li
+                      className="dot"
+                      key="2/.$Cognitio"
+                      onClick={[Function]}
+                      onKeyDown={[Function]}
+                      role="button"
+                      tabIndex={0}
+                      value={2}
+                    />
+                    <li
+                      className="dot"
+                      key="3/.$Aso"
+                      onClick={[Function]}
+                      onKeyDown={[Function]}
+                      role="button"
+                      tabIndex={0}
+                      value={3}
+                    />
+                    <li
+                      className="dot"
+                      key="4/.$Banku"
+                      onClick={[Function]}
+                      onKeyDown={[Function]}
+                      role="button"
+                      tabIndex={0}
+                      value={4}
+                    />
+                    <li
+                      className="dot"
+                      key="5/.$Obutu"
+                      onClick={[Function]}
+                      onKeyDown={[Function]}
+                      role="button"
+                      tabIndex={0}
+                      value={5}
+                    />
+                    <li
+                      className="dot"
+                      key="6/.$Ubuntu"
+                      onClick={[Function]}
+                      onKeyDown={[Function]}
+                      role="button"
+                      tabIndex={0}
+                      value={6}
+                    />
+                    <li
+                      className="dot"
+                      key="7/.$Idanre"
+                      onClick={[Function]}
+                      onKeyDown={[Function]}
+                      role="button"
+                      tabIndex={0}
+                      value={7}
+                    />
+                    <li
+                      className="dot"
+                      key="8/.$Charley"
+                      onClick={[Function]}
+                      onKeyDown={[Function]}
+                      role="button"
+                      tabIndex={0}
+                      value={8}
+                    />
+                  </ul>
+                </div>
+              </div>
+            </Carousel>
+          </CustomCarousel>
         </Login>
       </Route>
     </withRouter(Login)>
@@ -129,55 +656,57 @@ exports[`Login component renders correctly 1`] = `
 `;
 
 exports[`Login component should call componentWillUnmount when unmounted 1`] = `
-<Login
-  history={
-    Object {
-      "push": [MockFunction],
-    }
-  }
-  location={
-    Object {
-      "pathname": "/",
-      "state": Object {
-        "errorMesage": "Something Went Wrong",
-      },
-    }
-  }
->
-  <header
-    className="home-header"
-  >
-    <h1>
-      CONVERGE
-    </h1>
-  </header>
-  <Component>
-    <div
-      id="converge-intro"
-    >
-      Meet the Meeting Room App
-      <br />
-      that your meeting room app aspires to be.
-    </div>
-  </Component>
-  <LoginButton>
-    <a
-      href="undefined=undefined"
-    >
-      <input
-        alt="Login With Your Email"
-        className="btn-signin"
-        src="https://firebasestorage.googleapis.com/v0/b/learning-map-app.appspot.com/o/MrmFrontImages%2FButton.png?alt=media&token=fb7692b6-1465-47c5-94f6-c94aff31c275"
-        type="image"
-      />
-    </a>
-  </LoginButton>
-  <img
-    alt="Dark Tablet"
-    id="dark-tablet"
-    src="https://firebasestorage.googleapis.com/v0/b/learning-map-app.appspot.com/o/MrmFrontImages%2FDark%20Tablet.png?alt=media&token=75ad56c4-f7f1-4322-91ce-b4850fa0eeb3"
+<Fragment>
+  <LoginModal
+    closeModal={true}
+    handleCloseModal={[Function]}
+    openModal={false}
   />
-</Login>
+  <header
+    className="landing-page-header"
+  >
+    <div
+      className="header-logo"
+    >
+      <img
+        alt="logo"
+        src="test-file-stub"
+      />
+    </div>
+    <div
+      className="login-btn"
+    >
+      <Button
+        classProp="trigger-login-modal"
+        handleClick={[Function]}
+        isDisabled={false}
+        title="Login"
+        type={1}
+      />
+    </div>
+  </header>
+  <CustomCarousel
+    legendPosition="legend-center"
+  />
+  <ThemedActivableRenderer
+    action="Dismiss"
+    active={true}
+    composeTheme="deeply"
+    delay={500}
+    label="Something Went Wrong"
+    mapThemrProps={[Function]}
+    onClick={[Function]}
+    onTimeout={[Function]}
+    theme={
+      Object {
+        "button": "button-error",
+        "snackbar": "error-theme",
+      }
+    }
+    timeout={6000}
+    type="cancel"
+  />
+</Fragment>
 `;
 
 exports[`Login component should display an error when login error occurs and close snackbar on time out 1`] = `
@@ -194,39 +723,566 @@ exports[`Login component should display an error when login error occurs and clo
     }
   }
 >
-  <header
-    className="home-header"
+  <LoginModal
+    closeModal={true}
+    handleCloseModal={[Function]}
+    openModal={false}
   >
-    <h1>
-      CONVERGE
-    </h1>
-  </header>
-  <Component>
+    <MrmModal
+      buttonText=""
+      className="login-modal"
+      closeModal={true}
+      handleCloseRequest={[Function]}
+      modalButtonClassName="button"
+      openModal={false}
+      showBtn={false}
+      title={null}
+    >
+      <Modal
+        ariaHideApp={false}
+        bodyOpenClassName="ReactModal__Body--open"
+        className="login-modal"
+        closeTimeoutMS={0}
+        contentLabel="Parent Modal"
+        isOpen={false}
+        onAfterOpen={[Function]}
+        onRequestClose={[Function]}
+        parentSelector={[Function]}
+        portalClassName="ReactModalPortal"
+        shouldCloseOnEsc={true}
+        shouldCloseOnOverlayClick={false}
+        shouldFocusAfterRender={true}
+        shouldReturnFocusAfterClose={true}
+        style={
+          Object {
+            "content": Object {
+              "backgroundColor": "#ffffff",
+              "border": "1px solid #CCCCCC",
+              "borderRadius": "15px",
+              "bottom": "auto",
+              "boxShadow": "0 2px 40px 10px rgba(185, 180, 180, 0.2)",
+              "fontFamily": "DINPro-Regular",
+              "left": "50%",
+              "outline": "none",
+              "overflow": "auto",
+              "position": "absolute",
+              "right": "auto",
+              "top": "50%",
+              "transform": "translate(-50%, -50%)",
+            },
+          }
+        }
+      >
+        <Portal
+          containerInfo={
+            <div
+              class="ReactModalPortal"
+            />
+          }
+        >
+          <ModalPortal
+            ariaHideApp={false}
+            bodyOpenClassName="ReactModal__Body--open"
+            className="login-modal"
+            closeTimeoutMS={0}
+            contentLabel="Parent Modal"
+            defaultStyles={
+              Object {
+                "content": Object {
+                  "WebkitOverflowScrolling": "touch",
+                  "background": "#fff",
+                  "border": "1px solid #ccc",
+                  "borderRadius": "4px",
+                  "bottom": "40px",
+                  "left": "40px",
+                  "outline": "none",
+                  "overflow": "auto",
+                  "padding": "20px",
+                  "position": "absolute",
+                  "right": "40px",
+                  "top": "40px",
+                },
+                "overlay": Object {
+                  "backgroundColor": "rgba(255, 255, 255, 0.75)",
+                  "bottom": 0,
+                  "left": 0,
+                  "position": "fixed",
+                  "right": 0,
+                  "top": 0,
+                },
+              }
+            }
+            isOpen={false}
+            onAfterOpen={[Function]}
+            onRequestClose={[Function]}
+            parentSelector={[Function]}
+            portalClassName="ReactModalPortal"
+            shouldCloseOnEsc={true}
+            shouldCloseOnOverlayClick={false}
+            shouldFocusAfterRender={true}
+            shouldReturnFocusAfterClose={true}
+            style={
+              Object {
+                "content": Object {
+                  "backgroundColor": "#ffffff",
+                  "border": "1px solid #CCCCCC",
+                  "borderRadius": "15px",
+                  "bottom": "auto",
+                  "boxShadow": "0 2px 40px 10px rgba(185, 180, 180, 0.2)",
+                  "fontFamily": "DINPro-Regular",
+                  "left": "50%",
+                  "outline": "none",
+                  "overflow": "auto",
+                  "position": "absolute",
+                  "right": "auto",
+                  "top": "50%",
+                  "transform": "translate(-50%, -50%)",
+                },
+              }
+            }
+          />
+        </Portal>
+      </Modal>
+    </MrmModal>
+  </LoginModal>
+  <header
+    className="landing-page-header"
+  >
     <div
-      id="converge-intro"
+      className="header-logo"
     >
-      Meet the Meeting Room App
-      <br />
-      that your meeting room app aspires to be.
-    </div>
-  </Component>
-  <LoginButton>
-    <a
-      href="undefined=undefined"
-    >
-      <input
-        alt="Login With Your Email"
-        className="btn-signin"
-        src="https://firebasestorage.googleapis.com/v0/b/learning-map-app.appspot.com/o/MrmFrontImages%2FButton.png?alt=media&token=fb7692b6-1465-47c5-94f6-c94aff31c275"
-        type="image"
+      <img
+        alt="logo"
+        src="test-file-stub"
       />
-    </a>
-  </LoginButton>
-  <img
-    alt="Dark Tablet"
-    id="dark-tablet"
-    src="https://firebasestorage.googleapis.com/v0/b/learning-map-app.appspot.com/o/MrmFrontImages%2FDark%20Tablet.png?alt=media&token=75ad56c4-f7f1-4322-91ce-b4850fa0eeb3"
-  />
+    </div>
+    <div
+      className="login-btn"
+    >
+      <Button
+        classProp="trigger-login-modal"
+        handleClick={[Function]}
+        isDisabled={false}
+        title="Login"
+        type={1}
+      >
+        <button
+          className="trigger-login-modal btn-primary"
+          disabled={false}
+          onClick={[Function]}
+        >
+          <span>
+            Login
+          </span>
+        </button>
+      </Button>
+    </div>
+  </header>
+  <CustomCarousel
+    legendPosition="legend-center"
+  >
+    <Carousel
+      autoPlay={true}
+      axis="horizontal"
+      centerMode={false}
+      centerSlidePercentage={80}
+      dynamicHeight={false}
+      emulateTouch={false}
+      infiniteLoop={true}
+      interval={3000}
+      onChange={[Function]}
+      onClickItem={[Function]}
+      onClickThumb={[Function]}
+      selectedItem={0}
+      showArrows={false}
+      showIndicators={true}
+      showStatus={false}
+      showThumbs={false}
+      statusFormatter={[Function]}
+      stopOnHover={false}
+      swipeScrollTolerance={5}
+      swipeable={true}
+      transitionTime={350}
+      useKeyboardArrows={false}
+      verticalSwipe="standard"
+      width="100%"
+    >
+      <div>
+        <div
+          className="carousel carousel-slider"
+          style={
+            Object {
+              "width": "100%",
+            }
+          }
+        >
+          <button
+            className="control-arrow control-prev control-disabled"
+            onClick={[Function]}
+            type="button"
+          />
+          <div
+            className="slider-wrapper axis-horizontal"
+            style={Object {}}
+          >
+            <ReactSwipe
+              allowMouseEvents={false}
+              className="slider animated"
+              onSwipeDown={[Function]}
+              onSwipeEnd={[Function]}
+              onSwipeLeft={[Function]}
+              onSwipeMove={[Function]}
+              onSwipeRight={[Function]}
+              onSwipeStart={[Function]}
+              onSwipeUp={[Function]}
+              selectedItem={0}
+              style={
+                Object {
+                  "MozTransform": "translate3d(-100%,0,0)",
+                  "MozTransitionDuration": "350ms",
+                  "MsTransform": "translate3d(-100%,0,0)",
+                  "MsTransitionDuration": "350ms",
+                  "OTransform": "translate3d(-100%,0,0)",
+                  "OTransitionDuration": "350ms",
+                  "WebkitTransform": "translate3d(-100%,0,0)",
+                  "WebkitTransitionDuration": "350ms",
+                  "msTransform": "translate3d(-100%,0,0)",
+                  "msTransitionDuration": "350ms",
+                  "transform": "translate3d(-100%,0,0)",
+                  "transitionDuration": "350ms",
+                }
+              }
+              tagName="ul"
+              tolerance={5}
+            >
+              <ul
+                className="slider animated"
+                onMouseDown={[Function]}
+                onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+                style={
+                  Object {
+                    "MozTransform": "translate3d(-100%,0,0)",
+                    "MozTransitionDuration": "350ms",
+                    "MsTransform": "translate3d(-100%,0,0)",
+                    "MsTransitionDuration": "350ms",
+                    "OTransform": "translate3d(-100%,0,0)",
+                    "OTransitionDuration": "350ms",
+                    "WebkitTransform": "translate3d(-100%,0,0)",
+                    "WebkitTransitionDuration": "350ms",
+                    "msTransform": "translate3d(-100%,0,0)",
+                    "msTransitionDuration": "350ms",
+                    "transform": "translate3d(-100%,0,0)",
+                    "transitionDuration": "350ms",
+                  }
+                }
+              >
+                <li
+                  className="slide"
+                  key="itemKey8clone/.$Charley"
+                  onClick={[Function]}
+                >
+                  <div
+                    key="Charley"
+                  >
+                    <p
+                      className="legend legend-center"
+                    >
+                      Charley
+                    </p>
+                    <img
+                      alt="Charley"
+                      src="test-file-stub"
+                    />
+                  </div>
+                </li>
+                <li
+                  className="slide selected"
+                  key="itemKey0/.$Empire State - LOS"
+                  onClick={[Function]}
+                >
+                  <div
+                    key="Empire State - LOS"
+                  >
+                    <p
+                      className="legend legend-center"
+                    >
+                      Empire State - LOS
+                    </p>
+                    <img
+                      alt="Empire State - LOS"
+                      src="test-file-stub"
+                    />
+                  </div>
+                </li>
+                <li
+                  className="slide"
+                  key="itemKey1/.$Wall Street"
+                  onClick={[Function]}
+                >
+                  <div
+                    key="Wall Street"
+                  >
+                    <p
+                      className="legend legend-center"
+                    >
+                      Wall Street
+                    </p>
+                    <img
+                      alt="Wall Street"
+                      src="test-file-stub"
+                    />
+                  </div>
+                </li>
+                <li
+                  className="slide"
+                  key="itemKey2/.$Cognitio"
+                  onClick={[Function]}
+                >
+                  <div
+                    key="Cognitio"
+                  >
+                    <p
+                      className="legend legend-center"
+                    >
+                      Cognitio
+                    </p>
+                    <img
+                      alt="Cognitio"
+                      src="test-file-stub"
+                    />
+                  </div>
+                </li>
+                <li
+                  className="slide"
+                  key="itemKey3/.$Aso"
+                  onClick={[Function]}
+                >
+                  <div
+                    key="Aso"
+                  >
+                    <p
+                      className="legend legend-center"
+                    >
+                      Aso
+                    </p>
+                    <img
+                      alt="Aso"
+                      src="test-file-stub"
+                    />
+                  </div>
+                </li>
+                <li
+                  className="slide"
+                  key="itemKey4/.$Banku"
+                  onClick={[Function]}
+                >
+                  <div
+                    key="Banku"
+                  >
+                    <p
+                      className="legend legend-center"
+                    >
+                      Banku
+                    </p>
+                    <img
+                      alt="Banku"
+                      src="test-file-stub"
+                    />
+                  </div>
+                </li>
+                <li
+                  className="slide"
+                  key="itemKey5/.$Obutu"
+                  onClick={[Function]}
+                >
+                  <div
+                    key="Obutu"
+                  >
+                    <p
+                      className="legend legend-center"
+                    >
+                      Obutu
+                    </p>
+                    <img
+                      alt="Obutu"
+                      src="test-file-stub"
+                    />
+                  </div>
+                </li>
+                <li
+                  className="slide"
+                  key="itemKey6/.$Ubuntu"
+                  onClick={[Function]}
+                >
+                  <div
+                    key="Ubuntu"
+                  >
+                    <p
+                      className="legend legend-center"
+                    >
+                      Ubuntu
+                    </p>
+                    <img
+                      alt="Ubuntu"
+                      src="test-file-stub"
+                    />
+                  </div>
+                </li>
+                <li
+                  className="slide"
+                  key="itemKey7/.$Idanre"
+                  onClick={[Function]}
+                >
+                  <div
+                    key="Idanre"
+                  >
+                    <p
+                      className="legend legend-center"
+                    >
+                      Idanre
+                    </p>
+                    <img
+                      alt="Idanre"
+                      src="test-file-stub"
+                    />
+                  </div>
+                </li>
+                <li
+                  className="slide"
+                  key="itemKey8/.$Charley"
+                  onClick={[Function]}
+                >
+                  <div
+                    key="Charley"
+                  >
+                    <p
+                      className="legend legend-center"
+                    >
+                      Charley
+                    </p>
+                    <img
+                      alt="Charley"
+                      src="test-file-stub"
+                    />
+                  </div>
+                </li>
+                <li
+                  className="slide selected"
+                  key="itemKey0clone/.$Empire State - LOS"
+                  onClick={[Function]}
+                >
+                  <div
+                    key="Empire State - LOS"
+                  >
+                    <p
+                      className="legend legend-center"
+                    >
+                      Empire State - LOS
+                    </p>
+                    <img
+                      alt="Empire State - LOS"
+                      src="test-file-stub"
+                    />
+                  </div>
+                </li>
+              </ul>
+            </ReactSwipe>
+          </div>
+          <button
+            className="control-arrow control-next control-disabled"
+            onClick={[Function]}
+            type="button"
+          />
+          <ul
+            className="control-dots"
+          >
+            <li
+              className="dot selected"
+              key="0/.$Empire State - LOS"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="button"
+              tabIndex={0}
+              value={0}
+            />
+            <li
+              className="dot"
+              key="1/.$Wall Street"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="button"
+              tabIndex={0}
+              value={1}
+            />
+            <li
+              className="dot"
+              key="2/.$Cognitio"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="button"
+              tabIndex={0}
+              value={2}
+            />
+            <li
+              className="dot"
+              key="3/.$Aso"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="button"
+              tabIndex={0}
+              value={3}
+            />
+            <li
+              className="dot"
+              key="4/.$Banku"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="button"
+              tabIndex={0}
+              value={4}
+            />
+            <li
+              className="dot"
+              key="5/.$Obutu"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="button"
+              tabIndex={0}
+              value={5}
+            />
+            <li
+              className="dot"
+              key="6/.$Ubuntu"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="button"
+              tabIndex={0}
+              value={6}
+            />
+            <li
+              className="dot"
+              key="7/.$Idanre"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="button"
+              tabIndex={0}
+              value={7}
+            />
+            <li
+              className="dot"
+              key="8/.$Charley"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="button"
+              tabIndex={0}
+              value={8}
+            />
+          </ul>
+        </div>
+      </div>
+    </Carousel>
+  </CustomCarousel>
   <ThemedActivableRenderer
     action="Dismiss"
     active={true}
@@ -239,7 +1295,7 @@ exports[`Login component should display an error when login error occurs and clo
     theme={
       Object {
         "button": "button-error",
-        "snackbar": "error",
+        "snackbar": "error-theme",
       }
     }
     timeout={6000}
@@ -255,7 +1311,7 @@ exports[`Login component should display an error when login error occurs and clo
       theme={
         Object {
           "button": "button-error",
-          "snackbar": "error",
+          "snackbar": "error-theme",
         }
       }
       timeout={6000}
@@ -270,7 +1326,7 @@ exports[`Login component should display an error when login error occurs and clo
         theme={
           Object {
             "button": "button-error",
-            "snackbar": "error",
+            "snackbar": "error-theme",
           }
         }
         timeout={6000}
@@ -305,38 +1361,565 @@ exports[`Login component should display an error when login error occurs and clo
     }
   }
 >
-  <header
-    className="home-header"
+  <LoginModal
+    closeModal={true}
+    handleCloseModal={[Function]}
+    openModal={false}
   >
-    <h1>
-      CONVERGE
-    </h1>
-  </header>
-  <Component>
+    <MrmModal
+      buttonText=""
+      className="login-modal"
+      closeModal={true}
+      handleCloseRequest={[Function]}
+      modalButtonClassName="button"
+      openModal={false}
+      showBtn={false}
+      title={null}
+    >
+      <Modal
+        ariaHideApp={false}
+        bodyOpenClassName="ReactModal__Body--open"
+        className="login-modal"
+        closeTimeoutMS={0}
+        contentLabel="Parent Modal"
+        isOpen={false}
+        onAfterOpen={[Function]}
+        onRequestClose={[Function]}
+        parentSelector={[Function]}
+        portalClassName="ReactModalPortal"
+        shouldCloseOnEsc={true}
+        shouldCloseOnOverlayClick={false}
+        shouldFocusAfterRender={true}
+        shouldReturnFocusAfterClose={true}
+        style={
+          Object {
+            "content": Object {
+              "backgroundColor": "#ffffff",
+              "border": "1px solid #CCCCCC",
+              "borderRadius": "15px",
+              "bottom": "auto",
+              "boxShadow": "0 2px 40px 10px rgba(185, 180, 180, 0.2)",
+              "fontFamily": "DINPro-Regular",
+              "left": "50%",
+              "outline": "none",
+              "overflow": "auto",
+              "position": "absolute",
+              "right": "auto",
+              "top": "50%",
+              "transform": "translate(-50%, -50%)",
+            },
+          }
+        }
+      >
+        <Portal
+          containerInfo={
+            <div
+              class="ReactModalPortal"
+            />
+          }
+        >
+          <ModalPortal
+            ariaHideApp={false}
+            bodyOpenClassName="ReactModal__Body--open"
+            className="login-modal"
+            closeTimeoutMS={0}
+            contentLabel="Parent Modal"
+            defaultStyles={
+              Object {
+                "content": Object {
+                  "WebkitOverflowScrolling": "touch",
+                  "background": "#fff",
+                  "border": "1px solid #ccc",
+                  "borderRadius": "4px",
+                  "bottom": "40px",
+                  "left": "40px",
+                  "outline": "none",
+                  "overflow": "auto",
+                  "padding": "20px",
+                  "position": "absolute",
+                  "right": "40px",
+                  "top": "40px",
+                },
+                "overlay": Object {
+                  "backgroundColor": "rgba(255, 255, 255, 0.75)",
+                  "bottom": 0,
+                  "left": 0,
+                  "position": "fixed",
+                  "right": 0,
+                  "top": 0,
+                },
+              }
+            }
+            isOpen={false}
+            onAfterOpen={[Function]}
+            onRequestClose={[Function]}
+            parentSelector={[Function]}
+            portalClassName="ReactModalPortal"
+            shouldCloseOnEsc={true}
+            shouldCloseOnOverlayClick={false}
+            shouldFocusAfterRender={true}
+            shouldReturnFocusAfterClose={true}
+            style={
+              Object {
+                "content": Object {
+                  "backgroundColor": "#ffffff",
+                  "border": "1px solid #CCCCCC",
+                  "borderRadius": "15px",
+                  "bottom": "auto",
+                  "boxShadow": "0 2px 40px 10px rgba(185, 180, 180, 0.2)",
+                  "fontFamily": "DINPro-Regular",
+                  "left": "50%",
+                  "outline": "none",
+                  "overflow": "auto",
+                  "position": "absolute",
+                  "right": "auto",
+                  "top": "50%",
+                  "transform": "translate(-50%, -50%)",
+                },
+              }
+            }
+          />
+        </Portal>
+      </Modal>
+    </MrmModal>
+  </LoginModal>
+  <header
+    className="landing-page-header"
+  >
     <div
-      id="converge-intro"
+      className="header-logo"
     >
-      Meet the Meeting Room App
-      <br />
-      that your meeting room app aspires to be.
-    </div>
-  </Component>
-  <LoginButton>
-    <a
-      href="undefined=undefined"
-    >
-      <input
-        alt="Login With Your Email"
-        className="btn-signin"
-        src="https://firebasestorage.googleapis.com/v0/b/learning-map-app.appspot.com/o/MrmFrontImages%2FButton.png?alt=media&token=fb7692b6-1465-47c5-94f6-c94aff31c275"
-        type="image"
+      <img
+        alt="logo"
+        src="test-file-stub"
       />
-    </a>
-  </LoginButton>
-  <img
-    alt="Dark Tablet"
-    id="dark-tablet"
-    src="https://firebasestorage.googleapis.com/v0/b/learning-map-app.appspot.com/o/MrmFrontImages%2FDark%20Tablet.png?alt=media&token=75ad56c4-f7f1-4322-91ce-b4850fa0eeb3"
-  />
+    </div>
+    <div
+      className="login-btn"
+    >
+      <Button
+        classProp="trigger-login-modal"
+        handleClick={[Function]}
+        isDisabled={false}
+        title="Login"
+        type={1}
+      >
+        <button
+          className="trigger-login-modal btn-primary"
+          disabled={false}
+          onClick={[Function]}
+        >
+          <span>
+            Login
+          </span>
+        </button>
+      </Button>
+    </div>
+  </header>
+  <CustomCarousel
+    legendPosition="legend-center"
+  >
+    <Carousel
+      autoPlay={true}
+      axis="horizontal"
+      centerMode={false}
+      centerSlidePercentage={80}
+      dynamicHeight={false}
+      emulateTouch={false}
+      infiniteLoop={true}
+      interval={3000}
+      onChange={[Function]}
+      onClickItem={[Function]}
+      onClickThumb={[Function]}
+      selectedItem={0}
+      showArrows={false}
+      showIndicators={true}
+      showStatus={false}
+      showThumbs={false}
+      statusFormatter={[Function]}
+      stopOnHover={false}
+      swipeScrollTolerance={5}
+      swipeable={true}
+      transitionTime={350}
+      useKeyboardArrows={false}
+      verticalSwipe="standard"
+      width="100%"
+    >
+      <div>
+        <div
+          className="carousel carousel-slider"
+          style={
+            Object {
+              "width": "100%",
+            }
+          }
+        >
+          <button
+            className="control-arrow control-prev control-disabled"
+            onClick={[Function]}
+            type="button"
+          />
+          <div
+            className="slider-wrapper axis-horizontal"
+            style={Object {}}
+          >
+            <ReactSwipe
+              allowMouseEvents={false}
+              className="slider animated"
+              onSwipeDown={[Function]}
+              onSwipeEnd={[Function]}
+              onSwipeLeft={[Function]}
+              onSwipeMove={[Function]}
+              onSwipeRight={[Function]}
+              onSwipeStart={[Function]}
+              onSwipeUp={[Function]}
+              selectedItem={0}
+              style={
+                Object {
+                  "MozTransform": "translate3d(-100%,0,0)",
+                  "MozTransitionDuration": "350ms",
+                  "MsTransform": "translate3d(-100%,0,0)",
+                  "MsTransitionDuration": "350ms",
+                  "OTransform": "translate3d(-100%,0,0)",
+                  "OTransitionDuration": "350ms",
+                  "WebkitTransform": "translate3d(-100%,0,0)",
+                  "WebkitTransitionDuration": "350ms",
+                  "msTransform": "translate3d(-100%,0,0)",
+                  "msTransitionDuration": "350ms",
+                  "transform": "translate3d(-100%,0,0)",
+                  "transitionDuration": "350ms",
+                }
+              }
+              tagName="ul"
+              tolerance={5}
+            >
+              <ul
+                className="slider animated"
+                onMouseDown={[Function]}
+                onTouchEnd={[Function]}
+                onTouchStart={[Function]}
+                style={
+                  Object {
+                    "MozTransform": "translate3d(-100%,0,0)",
+                    "MozTransitionDuration": "350ms",
+                    "MsTransform": "translate3d(-100%,0,0)",
+                    "MsTransitionDuration": "350ms",
+                    "OTransform": "translate3d(-100%,0,0)",
+                    "OTransitionDuration": "350ms",
+                    "WebkitTransform": "translate3d(-100%,0,0)",
+                    "WebkitTransitionDuration": "350ms",
+                    "msTransform": "translate3d(-100%,0,0)",
+                    "msTransitionDuration": "350ms",
+                    "transform": "translate3d(-100%,0,0)",
+                    "transitionDuration": "350ms",
+                  }
+                }
+              >
+                <li
+                  className="slide"
+                  key="itemKey8clone/.$Charley"
+                  onClick={[Function]}
+                >
+                  <div
+                    key="Charley"
+                  >
+                    <p
+                      className="legend legend-center"
+                    >
+                      Charley
+                    </p>
+                    <img
+                      alt="Charley"
+                      src="test-file-stub"
+                    />
+                  </div>
+                </li>
+                <li
+                  className="slide selected"
+                  key="itemKey0/.$Empire State - LOS"
+                  onClick={[Function]}
+                >
+                  <div
+                    key="Empire State - LOS"
+                  >
+                    <p
+                      className="legend legend-center"
+                    >
+                      Empire State - LOS
+                    </p>
+                    <img
+                      alt="Empire State - LOS"
+                      src="test-file-stub"
+                    />
+                  </div>
+                </li>
+                <li
+                  className="slide"
+                  key="itemKey1/.$Wall Street"
+                  onClick={[Function]}
+                >
+                  <div
+                    key="Wall Street"
+                  >
+                    <p
+                      className="legend legend-center"
+                    >
+                      Wall Street
+                    </p>
+                    <img
+                      alt="Wall Street"
+                      src="test-file-stub"
+                    />
+                  </div>
+                </li>
+                <li
+                  className="slide"
+                  key="itemKey2/.$Cognitio"
+                  onClick={[Function]}
+                >
+                  <div
+                    key="Cognitio"
+                  >
+                    <p
+                      className="legend legend-center"
+                    >
+                      Cognitio
+                    </p>
+                    <img
+                      alt="Cognitio"
+                      src="test-file-stub"
+                    />
+                  </div>
+                </li>
+                <li
+                  className="slide"
+                  key="itemKey3/.$Aso"
+                  onClick={[Function]}
+                >
+                  <div
+                    key="Aso"
+                  >
+                    <p
+                      className="legend legend-center"
+                    >
+                      Aso
+                    </p>
+                    <img
+                      alt="Aso"
+                      src="test-file-stub"
+                    />
+                  </div>
+                </li>
+                <li
+                  className="slide"
+                  key="itemKey4/.$Banku"
+                  onClick={[Function]}
+                >
+                  <div
+                    key="Banku"
+                  >
+                    <p
+                      className="legend legend-center"
+                    >
+                      Banku
+                    </p>
+                    <img
+                      alt="Banku"
+                      src="test-file-stub"
+                    />
+                  </div>
+                </li>
+                <li
+                  className="slide"
+                  key="itemKey5/.$Obutu"
+                  onClick={[Function]}
+                >
+                  <div
+                    key="Obutu"
+                  >
+                    <p
+                      className="legend legend-center"
+                    >
+                      Obutu
+                    </p>
+                    <img
+                      alt="Obutu"
+                      src="test-file-stub"
+                    />
+                  </div>
+                </li>
+                <li
+                  className="slide"
+                  key="itemKey6/.$Ubuntu"
+                  onClick={[Function]}
+                >
+                  <div
+                    key="Ubuntu"
+                  >
+                    <p
+                      className="legend legend-center"
+                    >
+                      Ubuntu
+                    </p>
+                    <img
+                      alt="Ubuntu"
+                      src="test-file-stub"
+                    />
+                  </div>
+                </li>
+                <li
+                  className="slide"
+                  key="itemKey7/.$Idanre"
+                  onClick={[Function]}
+                >
+                  <div
+                    key="Idanre"
+                  >
+                    <p
+                      className="legend legend-center"
+                    >
+                      Idanre
+                    </p>
+                    <img
+                      alt="Idanre"
+                      src="test-file-stub"
+                    />
+                  </div>
+                </li>
+                <li
+                  className="slide"
+                  key="itemKey8/.$Charley"
+                  onClick={[Function]}
+                >
+                  <div
+                    key="Charley"
+                  >
+                    <p
+                      className="legend legend-center"
+                    >
+                      Charley
+                    </p>
+                    <img
+                      alt="Charley"
+                      src="test-file-stub"
+                    />
+                  </div>
+                </li>
+                <li
+                  className="slide selected"
+                  key="itemKey0clone/.$Empire State - LOS"
+                  onClick={[Function]}
+                >
+                  <div
+                    key="Empire State - LOS"
+                  >
+                    <p
+                      className="legend legend-center"
+                    >
+                      Empire State - LOS
+                    </p>
+                    <img
+                      alt="Empire State - LOS"
+                      src="test-file-stub"
+                    />
+                  </div>
+                </li>
+              </ul>
+            </ReactSwipe>
+          </div>
+          <button
+            className="control-arrow control-next control-disabled"
+            onClick={[Function]}
+            type="button"
+          />
+          <ul
+            className="control-dots"
+          >
+            <li
+              className="dot selected"
+              key="0/.$Empire State - LOS"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="button"
+              tabIndex={0}
+              value={0}
+            />
+            <li
+              className="dot"
+              key="1/.$Wall Street"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="button"
+              tabIndex={0}
+              value={1}
+            />
+            <li
+              className="dot"
+              key="2/.$Cognitio"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="button"
+              tabIndex={0}
+              value={2}
+            />
+            <li
+              className="dot"
+              key="3/.$Aso"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="button"
+              tabIndex={0}
+              value={3}
+            />
+            <li
+              className="dot"
+              key="4/.$Banku"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="button"
+              tabIndex={0}
+              value={4}
+            />
+            <li
+              className="dot"
+              key="5/.$Obutu"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="button"
+              tabIndex={0}
+              value={5}
+            />
+            <li
+              className="dot"
+              key="6/.$Ubuntu"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="button"
+              tabIndex={0}
+              value={6}
+            />
+            <li
+              className="dot"
+              key="7/.$Idanre"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="button"
+              tabIndex={0}
+              value={7}
+            />
+            <li
+              className="dot"
+              key="8/.$Charley"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="button"
+              tabIndex={0}
+              value={8}
+            />
+          </ul>
+        </div>
+      </div>
+    </Carousel>
+  </CustomCarousel>
 </Login>
 `;
