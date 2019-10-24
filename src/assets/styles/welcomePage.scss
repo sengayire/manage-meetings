@@ -1,0 +1,100 @@
+// Onboarding Welcome Page css
+
+.main-page{
+    background: #f9f9f9;
+    padding-bottom: 99px;
+    padding-top: 63px;
+}
+
+.welcome-card{
+    width: 42.5%;
+    border-radius: 6px;
+    background-color: #FFFFFF;
+    box-shadow: 0 2px 9px 0 rgba(0,0,0,0.03);
+    margin-right: auto;
+    margin-left: auto;
+    text-align:  center;
+    padding-top: 68px;
+    padding-bottom: 61px;
+    margin-top: 62px;
+    
+}
+
+.onboarding-image-block{
+    text-align:  center;
+    margin-bottom: 44px;
+}
+.onboarding-image {
+	height: 229px;
+	width: 49.5098%;
+}
+
+.welcome-message{
+    width: 78.59477%;
+    color: rgba(51,58,63,0.7);
+    font-family: Lato;
+    font-size: 14px;
+    line-height: 22px;
+    text-align: center;
+    margin-top: 44px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.welcome-botton {
+    margin-top: 38px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 42px;
+    width: 49.34640%;
+    border-radius: 6px;
+    background-color: #0F9F4F;
+    box-shadow: 0 3px 6px 0 rgba(0,0,0,0.13);
+
+}
+
+.welcome-botton .link{
+    display: inline-block;
+    padding-top: 12.5px;
+    padding-bottom: 12.5px;
+    text-decoration: none;
+    height: 17px;
+    width: 100%;
+    color: #FFFFFF;
+    font-family: Lato;
+    font-size: 14px;
+    font-weight: 900;
+    line-height: 17px;
+    text-align: center;
+}
+
+.title-message{
+    text-decoration: none;
+    height: 29px;
+    width: 119px;
+    color: #333A3F;
+    font-family: Lato;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 29px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+#welcome-botton-link{
+    height: 100%;
+    width: 100%;
+}
+
+.title-message-blocks{
+    text-align: center;
+}
+
+@media only screen and (max-width: 842px){
+    .welcome-card{
+        width: 70%;
+    }
+}

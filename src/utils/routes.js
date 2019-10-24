@@ -6,6 +6,7 @@ const ROUTES = {
   preference: '/preference',
   roomResponses: '/response',
   container: '/container',
+  welcome: '/onboarding/welcome',
 };
 
 export default ROUTES;
