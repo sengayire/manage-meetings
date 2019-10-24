@@ -47,6 +47,7 @@ export class Login extends Component {
     loginError: null,
     openModal: false,
     closeModal: true,
+    slideAutoplay: true,
   };
 
   /**
@@ -119,16 +120,16 @@ export class Login extends Component {
   };
 
   handleOpenModal = () => {
-    this.setState({ openModal: true, closeModal: false });
+    this.setState({ openModal: true, closeModal: false, slideAutoplay: false });
   }
 
   handleCloseModal = () => {
-    this.setState({ openModal: false, closeModal: true });
+    this.setState({ openModal: false, closeModal: true, slideAutoplay: true });
   }
 
   render() {
     const { loginError } = this.state;
-    const { openModal, closeModal } = this.state;
+    const { openModal, closeModal, slideAutoplay } = this.state;
     return (
       <Fragment>
         <LoginModal
@@ -148,7 +149,10 @@ export class Login extends Component {
             />}
           </div>
         </header>
-        <Carousel legendPosition={openModal ? 'legend-left' : 'legend-center'} />
+        <Carousel
+          legendPosition={openModal ? 'legend-left' : 'legend-center'}
+          autoplay={slideAutoplay}
+        />
 
         {/* display login errors */}
         {loginError && (
