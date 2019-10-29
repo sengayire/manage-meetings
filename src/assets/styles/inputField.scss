@@ -1,0 +1,21 @@
+@import './variables.scss';
+.input-field-container{
+    margin: 10px 0px;
+    .ui.input {
+        border-radius: 5px;
+        margin-bottom: 13px;
+    }
+    .input-field-style input {
+        width: 334px;
+        height: 44px;
+    }
+    .error-area-style {
+        color: $color-danger;
+        font-size: 13px;
+        margin-left: 5px;
+    }
+    i.icon {
+        margin: 5px 0px 0px 5px;
+    }
+
+}

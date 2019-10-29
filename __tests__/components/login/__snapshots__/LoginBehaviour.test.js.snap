@@ -7,10 +7,10 @@ exports[`Login component should redirect to another page when a token is present
       "push": [MockFunction] {
         "calls": Array [
           Array [
-            "/analytics",
+            "/main_page",
           ],
           Array [
-            "/analytics",
+            "/main_page",
           ],
           Array [
             undefined,
@@ -193,9 +193,19 @@ exports[`Login component should redirect to another page when a token is present
       emulateTouch={false}
       infiniteLoop={true}
       interval={3000}
+      labels={
+        Object {
+          "item": "slide item",
+          "leftArrow": "previous slide / item",
+          "rightArrow": "next slide / item",
+        }
+      }
       onChange={[Function]}
       onClickItem={[Function]}
       onClickThumb={[Function]}
+      onSwipeEnd={[Function]}
+      onSwipeMove={[Function]}
+      onSwipeStart={[Function]}
       selectedItem={0}
       showArrows={false}
       showIndicators={true}
@@ -220,6 +230,7 @@ exports[`Login component should redirect to another page when a token is present
           }
         >
           <button
+            aria-label="previous slide / item"
             className="control-arrow control-prev control-disabled"
             onClick={[Function]}
             type="button"
@@ -398,6 +409,7 @@ exports[`Login component should redirect to another page when a token is present
             </ReactSwipe>
           </div>
           <button
+            aria-label="next slide / item"
             className="control-arrow control-next control-disabled"
             onClick={[Function]}
             type="button"
@@ -406,6 +418,7 @@ exports[`Login component should redirect to another page when a token is present
             className="control-dots"
           >
             <li
+              aria-label="slide item 1"
               className="dot selected"
               key="0/.$Safari Meeting Room, Andela New York"
               onClick={[Function]}
@@ -415,6 +428,7 @@ exports[`Login component should redirect to another page when a token is present
               value={0}
             />
             <li
+              aria-label="slide item 2"
               className="dot"
               key="1/.$Cognitio Meeting Room, Andela Lagos"
               onClick={[Function]}
@@ -424,6 +438,7 @@ exports[`Login component should redirect to another page when a token is present
               value={1}
             />
             <li
+              aria-label="slide item 3"
               className="dot"
               key="2/.$Entebbe Meeting Room, Andela Kampala"
               onClick={[Function]}
@@ -433,6 +448,7 @@ exports[`Login component should redirect to another page when a token is present
               value={2}
             />
             <li
+              aria-label="slide item 4"
               className="dot"
               key="3/.$Banku Meeting Room, Andela Lagos"
               onClick={[Function]}
@@ -445,6 +461,13 @@ exports[`Login component should redirect to another page when a token is present
         </div>
         <Thumbs
           axis="horizontal"
+          labels={
+            Object {
+              "item": "slide item",
+              "leftArrow": "previous slide / item",
+              "rightArrow": "next slide / item",
+            }
+          }
           onSelectItem={[Function]}
           selectedItem={0}
           transitionTime={2000}
@@ -456,6 +479,7 @@ exports[`Login component should redirect to another page when a token is present
               className="thumbs-wrapper axis-vertical"
             >
               <button
+                aria-label="previous slide / item"
                 className="control-arrow control-prev control-disabled"
                 onClick={[Function]}
                 type="button"
@@ -513,6 +537,7 @@ exports[`Login component should redirect to another page when a token is present
                   }
                 >
                   <li
+                    aria-label="slide item 1"
                     className="thumb"
                     key="0"
                     onClick={[Function]}
@@ -528,6 +553,7 @@ exports[`Login component should redirect to another page when a token is present
                     />
                   </li>
                   <li
+                    aria-label="slide item 2"
                     className="thumb"
                     key="1"
                     onClick={[Function]}
@@ -542,6 +568,7 @@ exports[`Login component should redirect to another page when a token is present
                     />
                   </li>
                   <li
+                    aria-label="slide item 3"
                     className="thumb"
                     key="2"
                     onClick={[Function]}
@@ -556,6 +583,7 @@ exports[`Login component should redirect to another page when a token is present
                     />
                   </li>
                   <li
+                    aria-label="slide item 4"
                     className="thumb"
                     key="3"
                     onClick={[Function]}
@@ -572,6 +600,7 @@ exports[`Login component should redirect to another page when a token is present
                 </ul>
               </ReactSwipe>
               <button
+                aria-label="next slide / item"
                 className="control-arrow control-next control-disabled"
                 onClick={[Function]}
                 type="button"
@@ -592,7 +621,7 @@ exports[`Login component should redirect to another page when a user successfull
       "push": [MockFunction] {
         "calls": Array [
           Array [
-            "/analytics",
+            "/main_page",
           ],
         ],
       },
@@ -772,9 +801,19 @@ exports[`Login component should redirect to another page when a user successfull
       emulateTouch={false}
       infiniteLoop={true}
       interval={3000}
+      labels={
+        Object {
+          "item": "slide item",
+          "leftArrow": "previous slide / item",
+          "rightArrow": "next slide / item",
+        }
+      }
       onChange={[Function]}
       onClickItem={[Function]}
       onClickThumb={[Function]}
+      onSwipeEnd={[Function]}
+      onSwipeMove={[Function]}
+      onSwipeStart={[Function]}
       selectedItem={0}
       showArrows={false}
       showIndicators={true}
@@ -799,6 +838,7 @@ exports[`Login component should redirect to another page when a user successfull
           }
         >
           <button
+            aria-label="previous slide / item"
             className="control-arrow control-prev control-disabled"
             onClick={[Function]}
             type="button"
@@ -977,6 +1017,7 @@ exports[`Login component should redirect to another page when a user successfull
             </ReactSwipe>
           </div>
           <button
+            aria-label="next slide / item"
             className="control-arrow control-next control-disabled"
             onClick={[Function]}
             type="button"
@@ -985,6 +1026,7 @@ exports[`Login component should redirect to another page when a user successfull
             className="control-dots"
           >
             <li
+              aria-label="slide item 1"
               className="dot selected"
               key="0/.$Safari Meeting Room, Andela New York"
               onClick={[Function]}
@@ -994,6 +1036,7 @@ exports[`Login component should redirect to another page when a user successfull
               value={0}
             />
             <li
+              aria-label="slide item 2"
               className="dot"
               key="1/.$Cognitio Meeting Room, Andela Lagos"
               onClick={[Function]}
@@ -1003,6 +1046,7 @@ exports[`Login component should redirect to another page when a user successfull
               value={1}
             />
             <li
+              aria-label="slide item 3"
               className="dot"
               key="2/.$Entebbe Meeting Room, Andela Kampala"
               onClick={[Function]}
@@ -1012,6 +1056,7 @@ exports[`Login component should redirect to another page when a user successfull
               value={2}
             />
             <li
+              aria-label="slide item 4"
               className="dot"
               key="3/.$Banku Meeting Room, Andela Lagos"
               onClick={[Function]}
@@ -1024,6 +1069,13 @@ exports[`Login component should redirect to another page when a user successfull
         </div>
         <Thumbs
           axis="horizontal"
+          labels={
+            Object {
+              "item": "slide item",
+              "leftArrow": "previous slide / item",
+              "rightArrow": "next slide / item",
+            }
+          }
           onSelectItem={[Function]}
           selectedItem={0}
           transitionTime={2000}
@@ -1035,6 +1087,7 @@ exports[`Login component should redirect to another page when a user successfull
               className="thumbs-wrapper axis-vertical"
             >
               <button
+                aria-label="previous slide / item"
                 className="control-arrow control-prev control-disabled"
                 onClick={[Function]}
                 type="button"
@@ -1092,6 +1145,7 @@ exports[`Login component should redirect to another page when a user successfull
                   }
                 >
                   <li
+                    aria-label="slide item 1"
                     className="thumb"
                     key="0"
                     onClick={[Function]}
@@ -1107,6 +1161,7 @@ exports[`Login component should redirect to another page when a user successfull
                     />
                   </li>
                   <li
+                    aria-label="slide item 2"
                     className="thumb"
                     key="1"
                     onClick={[Function]}
@@ -1121,6 +1176,7 @@ exports[`Login component should redirect to another page when a user successfull
                     />
                   </li>
                   <li
+                    aria-label="slide item 3"
                     className="thumb"
                     key="2"
                     onClick={[Function]}
@@ -1135,6 +1191,7 @@ exports[`Login component should redirect to another page when a user successfull
                     />
                   </li>
                   <li
+                    aria-label="slide item 4"
                     className="thumb"
                     key="3"
                     onClick={[Function]}
@@ -1151,6 +1208,7 @@ exports[`Login component should redirect to another page when a user successfull
                 </ul>
               </ReactSwipe>
               <button
+                aria-label="next slide / item"
                 className="control-arrow control-next control-disabled"
                 onClick={[Function]}
                 type="button"

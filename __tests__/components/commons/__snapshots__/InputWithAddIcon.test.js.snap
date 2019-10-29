@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input with plus icon component should render properly 1`] = `
+<div
+  className="InputWithAddIcon-container"
+>
+  <Input
+    className="InputWithAddIcon-style"
+    error={false}
+    icon={
+      <Icon
+        as="i"
+        className="plus-icon"
+        color="green"
+        disabled={false}
+        link={true}
+        name="plus circle"
+        onClick={[Function]}
+        size="large"
+      />
+    }
+    name="building_1"
+    onBlur={[MockFunction]}
+    onChange={[MockFunction]}
+    placeholder="Building"
+    size="large"
+    type="text"
+    value=""
+  />
+</div>
+`;

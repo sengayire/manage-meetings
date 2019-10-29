@@ -11,16 +11,18 @@ import '../src/assets/styles/toastr.scss';
 import ErrorBoundary from './components/commons/ErrorBoundary';
 import { getToken, clearCookies } from './utils/Cookie';
 import Setup from './containers/Setup';
-import Container from './containers/mainContainer';
 import PageNotFound from './containers/PageNotFound';
 import {
   getUserDetails,
   getAllLocations,
   getUserLocation,
+  getRoomsStructure,
 } from './components/helpers/QueriesHelpers';
 import GetNewUsersLocation from './containers/GetNewUsersLocation';
 import { removeItemFromLocalStorage } from './utils/Utilities';
 import WelcomePage from './components/onboarding/WelcomePage';
+import BuildingsSetup from './components/onboarding/BuildingsSetup/index';
+import Container from './containers/mainContainer';
 
 // destruscture constants to be used
 const {
@@ -74,7 +76,11 @@ class App extends Component {
    * this function is used to set the users state(the location and the role)
    */
   async setUserState() {
-    const [user, locations] = await Promise.all([getUserDetails(), getAllLocations()]);
+    const [user, locations] = await Promise.all([
+      getUserDetails(),
+      getAllLocations(),
+      getRoomsStructure(),
+    ]);
     const userLocation = locations.find(({ name }) => name === user.location);
     if (userLocation === undefined) {
       this.setState({
@@ -93,7 +99,10 @@ class App extends Component {
 
   render() {
     const {
-      loggedIn, userLocation, userRole, defaultState,
+      loggedIn,
+      userLocation,
+      userRole,
+      defaultState,
     } = this.state;
     const { location } = this.props;
     if (defaultState && userLocation) {
@@ -111,7 +120,6 @@ class App extends Component {
         />
       );
     }
-
     return (
       <ApolloConsumer>
         {(client) => {
@@ -136,6 +144,12 @@ class App extends Component {
                 <Route exact path={ROUTES.welcome} component={WelcomePage} />
                 <Route exact path={ROUTES.analytics} component={Container} />
                 <Route exact path={ROUTES.roomfeedback} component={RoomFeedbackPage} />
+                <Route exact path={ROUTES.buildingsSetup} component={BuildingsSetup} />
+                <Route
+                  exact
+                  path={ROUTES.roomfeedback}
+                  component={RoomFeedbackPage}
+                />
                 <Route exact path={ROUTES.preference} component={Preference} />
                 <Route exact path={ROUTES.setup} component={Setup} />
                 <Route component={PageNotFound} />
