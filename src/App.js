@@ -151,8 +151,8 @@ class App extends Component {
             <ErrorBoundary isAuthError>
               <Switch>
                 <Route path={ROUTES.home} exact component={LoginPage} />
-                <Route exact path={ROUTES.welcome} component={WelcomePage} />
                 <Route exact path={ROUTES.analytics} component={Container} />
+                <Route exact path={ROUTES.welcome} component={WelcomePage} />
                 <Route exact path={ROUTES.roomfeedback} component={RoomFeedbackPage} />
                 <Route exact path={ROUTES.buildingsSetup} component={BuildingsSetup} />
                 <Route exact path={ROUTES.analytics} component={AddResources} />

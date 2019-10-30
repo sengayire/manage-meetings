@@ -3521,9 +3521,9 @@ exports[`Analytics component renders correctly in memory 1`] = `
                 },
               },
               "variables": Object {
-                "endDate": "Oct 30 2019",
+                "endDate": "Oct 31 2019",
                 "locationId": 1,
-                "startDate": "Oct 30 2019",
+                "startDate": "Oct 31 2019",
               },
             },
             Object {
@@ -7410,9 +7410,9 @@ exports[`Analytics component renders correctly in memory 1`] = `
                   },
                 },
                 "variables": Object {
-                  "endDate": "Oct 30 2019",
+                  "endDate": "Oct 31 2019",
                   "locationId": 1,
-                  "startDate": "Oct 30 2019",
+                  "startDate": "Oct 31 2019",
                 },
               },
               Object {
@@ -11223,9 +11223,9 @@ exports[`Analytics component renders correctly in memory 1`] = `
                     },
                   },
                   "variables": Object {
-                    "endDate": "Oct 30 2019",
+                    "endDate": "Oct 31 2019",
                     "locationId": 1,
-                    "startDate": "Oct 30 2019",
+                    "startDate": "Oct 31 2019",
                   },
                 },
                 Object {
@@ -15881,9 +15881,9 @@ exports[`Analytics component renders correctly in memory 1`] = `
                     },
                   },
                   "variables": Object {
-                    "endDate": "Oct 30 2019",
+                    "endDate": "Oct 31 2019",
                     "locationId": 1,
-                    "startDate": "Oct 30 2019",
+                    "startDate": "Oct 31 2019",
                   },
                 },
                 Object {
@@ -19714,9 +19714,9 @@ exports[`Analytics component renders correctly in memory 1`] = `
                   },
                 },
                 "variables": Object {
-                  "endDate": "Oct 30 2019",
+                  "endDate": "Oct 31 2019",
                   "locationId": 1,
-                  "startDate": "Oct 30 2019",
+                  "startDate": "Oct 31 2019",
                 },
               },
               Object {
@@ -20336,6 +20336,7 @@ exports[`Analytics component renders correctly in memory 1`] = `
                   <Button
                     classProp="overviewIconBtn"
                     handleClick={[Function]}
+                    id="Next"
                     isDisabled={false}
                     title="OVERVIEW"
                     type={2}
@@ -20343,6 +20344,7 @@ exports[`Analytics component renders correctly in memory 1`] = `
                     <button
                       className="overviewIconBtn btn-secondary"
                       disabled={false}
+                      id="Next"
                       onClick={[Function]}
                     >
                       <span>
@@ -20353,6 +20355,7 @@ exports[`Analytics component renders correctly in memory 1`] = `
                   <Button
                     classProp="activityIconBtn"
                     handleClick={[Function]}
+                    id="Next"
                     isDisabled={false}
                     title="ACTIVITY"
                     type={2}
@@ -20360,6 +20363,7 @@ exports[`Analytics component renders correctly in memory 1`] = `
                     <button
                       className="activityIconBtn btn-secondary"
                       disabled={false}
+                      id="Next"
                       onClick={[Function]}
                     >
                       <span>

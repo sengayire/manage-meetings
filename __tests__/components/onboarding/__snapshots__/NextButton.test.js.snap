@@ -921,6 +921,7 @@ exports[`NextButton component should render without error 1`] = `
         <Button
           classProp={null}
           handleClick={[Function]}
+          id="Next"
           isDisabled={false}
           title="Next"
           type={3}
@@ -928,6 +929,7 @@ exports[`NextButton component should render without error 1`] = `
           <button
             className="null onboarding-next-button"
             disabled={false}
+            id="Next"
             onClick={[Function]}
           >
             <span>

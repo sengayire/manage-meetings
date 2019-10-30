@@ -227,6 +227,7 @@ exports[`Login component renders correctly 1`] = `
               <Button
                 classProp="trigger-login-modal"
                 handleClick={[Function]}
+                id="Next"
                 isDisabled={false}
                 title="Login"
                 type={1}
@@ -234,6 +235,7 @@ exports[`Login component renders correctly 1`] = `
                 <button
                   className="trigger-login-modal btn-primary"
                   disabled={false}
+                  id="Next"
                   onClick={[Function]}
                 >
                   <span>
@@ -705,6 +707,7 @@ exports[`Login component should call componentWillUnmount when unmounted 1`] = `
       <Button
         classProp="trigger-login-modal"
         handleClick={[Function]}
+        id="Next"
         isDisabled={false}
         title="Login"
         type={1}
@@ -889,6 +892,7 @@ exports[`Login component should display an error when login error occurs and clo
       <Button
         classProp="trigger-login-modal"
         handleClick={[Function]}
+        id="Next"
         isDisabled={false}
         title="Login"
         type={1}
@@ -896,6 +900,7 @@ exports[`Login component should display an error when login error occurs and clo
         <button
           className="trigger-login-modal btn-primary"
           disabled={false}
+          id="Next"
           onClick={[Function]}
         >
           <span>
@@ -1553,6 +1558,7 @@ exports[`Login component should display an error when login error occurs and clo
       <Button
         classProp="trigger-login-modal"
         handleClick={[Function]}
+        id="Next"
         isDisabled={false}
         title="Login"
         type={1}
@@ -1560,6 +1566,7 @@ exports[`Login component should display an error when login error occurs and clo
         <button
           className="trigger-login-modal btn-primary"
           disabled={false}
+          id="Next"
           onClick={[Function]}
         >
           <span>

@@ -19,6 +19,7 @@ class InputField extends Component {
   }
 
   handleTextChange = ({ currentTarget }) => {
+    const { handleChange } = this.props;
     const { name, value } = currentTarget;
     const obj = { [name]: value };
     const { error } = Joi.validate(obj, this.schema);
@@ -34,7 +35,7 @@ class InputField extends Component {
         },
       });
     }
-
+    handleChange(value);
     return this.setState({
       inputValue: value,
     });
@@ -76,10 +77,12 @@ class InputField extends Component {
 
 InputField.propTypes = {
   placeholder: PropTypes.string,
+  handleChange: PropTypes.func,
 };
 
 InputField.defaultProps = {
   placeholder: 'eg Epic Campus',
+  handleChange: () => {},
 };
 
 export default InputField;

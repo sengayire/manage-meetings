@@ -1,24 +1,31 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { useState } from 'react';
 import Button from '../commons/Button';
 import SetupLevel from './SetupLevel';
+import BuildingLevel from './BuildingLevel';
 
-const SetupInfoPage = ({ handleClick }) => (
-  <div className="setup_container">
-    <div className="message">
-      <h1 className="welcome__message "> Welcome to Room Setup </h1>
+const SetupInfoPage = () => {
+  const [clicked, setCliked] = useState();
+  const handleClick = () => {
+    setCliked({ clicked: true });
+  };
+
+  return clicked ? <BuildingLevel /> : (
+    <div className="setup_container">
+      <div className="message">
+        <h1 className="setup"> Setup</h1>
+        <p className="configure-andela-cen">Configure Andela centres</p>
+      </div>
+      <div className="setup_container_center">
+        <SetupLevel />
+        <Button
+          title="Get Started"
+          classProp="setup_continue_button"
+          handleClick={handleClick}
+        />
+      </div>
     </div>
-    <SetupLevel />
-    <Button
-      title="Continue"
-      classProp="setup_continue_button"
-      handleClick={handleClick('BuildingLevel')}
-    />
-  </div>
-);
-
-SetupInfoPage.propTypes = {
-  handleClick: PropTypes.func.isRequired,
+  );
 };
+
 
 export default SetupInfoPage;

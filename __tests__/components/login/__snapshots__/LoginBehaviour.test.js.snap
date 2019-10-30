@@ -164,6 +164,7 @@ exports[`Login component should redirect to another page when a token is present
       <Button
         classProp="trigger-login-modal"
         handleClick={[Function]}
+        id="Next"
         isDisabled={false}
         title="Login"
         type={1}
@@ -171,6 +172,7 @@ exports[`Login component should redirect to another page when a token is present
         <button
           className="trigger-login-modal btn-primary"
           disabled={false}
+          id="Next"
           onClick={[Function]}
         >
           <span>
@@ -772,6 +774,7 @@ exports[`Login component should redirect to another page when a user successfull
       <Button
         classProp="trigger-login-modal"
         handleClick={[Function]}
+        id="Next"
         isDisabled={false}
         title="Login"
         type={1}
@@ -779,6 +782,7 @@ exports[`Login component should redirect to another page when a user successfull
         <button
           className="trigger-login-modal btn-primary"
           disabled={false}
+          id="Next"
           onClick={[Function]}
         >
           <span>
