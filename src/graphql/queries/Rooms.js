@@ -1,7 +1,14 @@
 import gql from 'graphql-tag';
 
 export const GET_ROOMS_QUERY = gql`
-  query rooms($capacity: Int, $location: String!, $office: String!, $page: Int!, $perPage: Int!, $roomLabels: String) {
+  query rooms(
+    $capacity: Int
+    $location: String!
+    $office: String!
+    $page: Int!
+    $perPage: Int!
+    $roomLabels: String
+  ) {
     allRooms(
       page: $page
       perPage: $perPage
@@ -20,7 +27,7 @@ export const GET_ROOMS_QUERY = gql`
         calendarId
         locationId
         structureId
-        devices{
+        devices {
           id
           name
         }
@@ -44,7 +51,13 @@ export const GET_ROOMS_QUERY = gql`
 `;
 
 export const GET_ALL_ROOMS_QUERY = gql`
-  query rooms($capacity: Int!, $location: String!, $office: String!, $page: Int, $perPage: Int) {
+  query rooms(
+    $capacity: Int!
+    $location: String!
+    $office: String!
+    $page: Int
+    $perPage: Int
+  ) {
     allRooms(
       page: $page
       perPage: $perPage
@@ -72,7 +85,7 @@ export const GET_ALL_ROOMS_QUERY = gql`
 `;
 
 export const GET_ALL_ROOMS = gql`
-  query rooms($location: String){
+  query rooms($location: String) {
     allRooms(location: $location) {
       rooms {
         id
@@ -84,7 +97,7 @@ export const GET_ALL_ROOMS = gql`
         calendarId
         locationId
         structureId
-        devices{
+        devices {
           id
           name
         }
@@ -168,11 +181,20 @@ const GET_REMOTE_ROOMS_ALL_LOCATIONS = gql`
   }
 `;
 
+const GET_ROOM_ID = gql`
+  query roomId($name: String!) {
+    getRoomByName(name: $name) {
+      id
+    }
+  }
+`;
+
 export {
   GET_ROOMS_QUERY as default,
   GET_LOCATIONS_QUERY,
   GET_ROOM_BY_NAME,
   GET_ALL_REMOTE_ROOMS,
   GET_REMOTE_ROOMS_ALL_LOCATIONS,
+  GET_ROOM_ID,
   GET_ROOM,
 };

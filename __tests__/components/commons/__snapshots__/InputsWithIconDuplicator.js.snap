@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input With Plus Icon component should render properly 1`] = `
+<Fragment>
+  <SingleInputWithAddIcon
+    errors={
+      Object {
+        "building_name_1": "",
+      }
+    }
+    inputPlaceholder="Building"
+    key="0"
+    name="building_name_1"
+    onTextChange={[Function]}
+    pressed={[Function]}
+    values={
+      Object {
+        "building_name_1": "",
+      }
+    }
+  />
+</Fragment>
+`;

@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`OnboardingPages component should render the addResources page 1`] = `
+<Fragment>
+  <h1>
+    addResources
+  </h1>
+</Fragment>
+`;
+
+exports[`OnboardingPages component should render the addRooms page 1`] = `
+<Fragment>
+  <h1>
+    addRooms
+  </h1>
+</Fragment>
+`;
+
+exports[`OnboardingPages component should render the default page 1`] = `
+<Fragment>
+  <h1>
+    centerIsSetup
+  </h1>
+</Fragment>
+`;
+
+exports[`OnboardingPages component should render the officeStructure page 1`] = `
+<Fragment>
+  <OfficeStructure />
+</Fragment>
+`;
+
+exports[`OnboardingPages component should render the setupLocation page 1`] = `
+<Fragment>
+  <h1>
+    setupLocation
+  </h1>
+</Fragment>
+`;

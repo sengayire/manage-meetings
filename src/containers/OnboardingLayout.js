@@ -19,4 +19,3 @@ OnboardingLayout.propTypes = {
 };
 
 export default OnboardingLayout;
-
