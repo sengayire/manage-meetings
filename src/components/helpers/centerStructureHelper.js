@@ -14,18 +14,22 @@ const isResourcesSetup = async (structureRooms) => {
     roomIds.push(roomId.data.getRoomByName[0]);
   }
 
-  const allRoomsResources = [];
+  let allRoomsResources = [];
 
   for (const oneRoom of roomIds) {
-    const oneRoomResource = await getRoomResources(oneRoom.id);
-    allRoomsResources.push(oneRoomResource);
+    try {
+      const oneRoomResource = await getRoomResources(oneRoom.id);
+      allRoomsResources.push(oneRoomResource);
+    } catch (error) {
+      allRoomsResources = [[]];
+    }
   }
 
   const levelResources = allRoomsResources
     .map(roomResources => roomResources.length > 0)
-    .includes(false);
+    .includes(true);
 
-  return !levelResources;
+  return levelResources;
 };
 
 const Levels = (structure, level) =>
@@ -53,7 +57,7 @@ const centerSetupLevel = async () => {
   }
 
   if (!levelOne) {
-    return 'setupLocation';
+    return 'welcomePage';
   }
   if (!levelFloors && !levelWings && !levelRooms && !levelResources) {
     return 'officeStructure';

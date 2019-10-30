@@ -1,11 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { OnboardingLayout } from '../../../containers';
 import * as styled from './customStyles';
 import { InputResources, AddResourcesTitle, AddRooms } from './';
 import InputWithNumbers from '../../../components/commons/InputWithNumber';
 
 
-const AddResources = () => {
+const AddResources = ({ handleOnClick }) => {
   const layoutLeft = (
     <div>
       <AddResourcesTitle />
@@ -15,7 +16,7 @@ const AddResources = () => {
           What is the seating capacity for Cognitio?
         </styled.TextParagraphTwo>
         <InputWithNumbers />
-        <InputResources />
+        <InputResources handleOnClick={handleOnClick} />
       </div>
     </div>
   );
@@ -31,6 +32,10 @@ const AddResources = () => {
       <OnboardingLayout layoutLeft={layoutLeft} layoutRight={layoutRight} />
     </div>
   );
+};
+
+AddResources.propTypes = {
+  handleOnClick: PropTypes.func.isRequired,
 };
 
 

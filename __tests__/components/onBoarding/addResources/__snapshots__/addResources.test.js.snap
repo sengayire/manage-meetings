@@ -14,7 +14,9 @@ exports[`ADD RESOURCES should render properly 1`] = `
           <InputWithNumbers
             updateOuterInputs={[Function]}
           />
-          <InputResources />
+          <InputResources
+            handleOnClick={undefined}
+          />
         </div>
       </div>
     }

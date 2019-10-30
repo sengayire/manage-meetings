@@ -12,6 +12,10 @@ describe('Onboarding welcome page component', () => {
   });
 
   it('It should test the link path', () => {
-    expect(wrapper.find('Link').prop('to')).toEqual('/onboarding/setup/buildings');
+    wrapper.setProps({
+      handleOnClick: jest.fn(),
+    });
+    wrapper.find('#welcome-botton').simulate('click', {});
+    expect(wrapper).toBeDefined();
   });
 });

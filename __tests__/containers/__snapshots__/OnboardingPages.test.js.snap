@@ -2,38 +2,47 @@
 
 exports[`OnboardingPages component should render the addResources page 1`] = `
 <Fragment>
-  <h1>
-    addResources
-  </h1>
+  <withRouter(TopMenuComponent) />
+  <div>
+    <AddResources
+      handleOnClick={[Function]}
+    />
+  </div>
 </Fragment>
 `;
 
 exports[`OnboardingPages component should render the addRooms page 1`] = `
 <Fragment>
-  <h1>
-    addRooms
-  </h1>
+  <withRouter(TopMenuComponent) />
+  <div>
+    <AddroomsDesign
+      handleOnClick={[Function]}
+    />
+  </div>
 </Fragment>
 `;
 
 exports[`OnboardingPages component should render the default page 1`] = `
 <Fragment>
-  <h1>
-    centerIsSetup
-  </h1>
+  <withRouter(TopMenuComponent) />
+  <div />
 </Fragment>
 `;
 
 exports[`OnboardingPages component should render the officeStructure page 1`] = `
 <Fragment>
-  <OfficeStructure />
+  <withRouter(TopMenuComponent) />
+  <div>
+    <OfficeStructure
+      handleOnClick={[Function]}
+    />
+  </div>
 </Fragment>
 `;
 
 exports[`OnboardingPages component should render the setupLocation page 1`] = `
 <Fragment>
-  <h1>
-    setupLocation
-  </h1>
+  <withRouter(TopMenuComponent) />
+  <div />
 </Fragment>
 `;

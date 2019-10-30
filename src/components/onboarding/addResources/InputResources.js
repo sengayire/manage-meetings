@@ -1,15 +1,32 @@
 import React, { useState } from 'react';
 import { Icon } from 'semantic-ui-react';
+import PropTypes from 'prop-types';
 import { ToastContainer, toast } from 'react-toastify';
-import { useMutation } from '@apollo/react-hooks';
+import { useMutation, useQuery } from '@apollo/react-hooks';
 import * as styled from './customStyles';
 import { ADD_RESOURCE_MUTATION } from '../../../graphql/mutations/AddResourceToRoom';
+import GET_ALL_LEVELS from '../../../graphql/queries/Levels';
+import { GET_SPECIFIC_ROOMS } from '../../../graphql/queries/Rooms';
+import { ASSIGN_RESOURCE_MUTATION } from '../../../graphql/mutations/resources';
 
 
-const InputResources = () => {
+const InputResources = ({ handleOnClick }) => {
   const [fields, setFields] = useState([{ value: '' }]);
-  const [createResource] = useMutation(ADD_RESOURCE_MUTATION);
+  const [runAssign, setRunAssing] = useState(false);
+  const [createResource, { data }] = useMutation(ADD_RESOURCE_MUTATION);
+  const [assignResource, { data: assignData }] = useMutation(ASSIGN_RESOURCE_MUTATION);
 
+  const {
+    data: { allStructures },
+  } = useQuery(GET_ALL_LEVELS);
+
+  const {
+    data: { allRooms },
+  } = useQuery(GET_SPECIFIC_ROOMS);
+
+  const structureRooms = allStructures && allStructures.filter(item => item.level === 4);
+
+  const room = allRooms && allRooms.rooms.find(item => item.name === structureRooms[0].name);
   const handleChange = (index, e) => {
     const values = [...fields];
     values[index].value = e.target.value;
@@ -27,6 +44,16 @@ const InputResources = () => {
     values.splice(index, 1);
     setFields(values);
   };
+  const assignResourceToRoom = () => {
+    data && assignResource({
+      variables: {
+        resourceId: data.createResource.resource.id,
+        quantity: 1,
+        roomId: room.id,
+      },
+    });
+    setRunAssing(true);
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -34,6 +61,9 @@ const InputResources = () => {
     toast.success('Resources added...');
   };
 
+  (data && !runAssign) && assignResourceToRoom();
+
+  assignData && handleOnClick('InputResources');
   return (
     <div>
       <ToastContainer position={toast.POSITION.TOP_LEFT} />
@@ -60,5 +90,8 @@ const InputResources = () => {
   );
 };
 
+InputResources.propTypes = {
+  handleOnClick: PropTypes.func.isRequired,
+};
 
 export default InputResources;

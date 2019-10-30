@@ -2,11 +2,12 @@
 
 exports[`Meeting Rooms Setup component should render properly 1`] = `
 <div>
-  <NavBar
-    changeUserLocation={[Function]}
-  />
   <OnboardingLayout
-    layoutLeft={<SetupBuildingsStructure />}
+    layoutLeft={
+      <SetupBuildingsStructure
+        handleOnClick={undefined}
+      />
+    }
     layoutRight={<BuildingsStructurePreview />}
   />
 </div>

@@ -14,7 +14,6 @@ describe('InputField Component', () => {
       value: 'Epic Tower',
     },
   };
-  // console.log('yui', wrapper.props().children[3].props);
   it('Should update input on textChange', () => {
     wrapper.props().children[0].props.onChange(textInputValue);
     const currentStateValue = wrapper.instance().state.inputValue;
