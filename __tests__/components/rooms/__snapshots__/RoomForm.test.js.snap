@@ -176,6 +176,7 @@ exports[`RoomForm should render properly 1`] = `
         <Button
           classProp={null}
           handleClick={[MockFunction]}
+          id="Next"
           isDisabled={false}
           title="CANCEL"
           type={1}
@@ -183,6 +184,7 @@ exports[`RoomForm should render properly 1`] = `
           <button
             className="null btn-primary"
             disabled={false}
+            id="Next"
             onClick={[MockFunction]}
           >
             <span>
@@ -193,6 +195,7 @@ exports[`RoomForm should render properly 1`] = `
         <Button
           classProp="main-button"
           handleClick={[Function]}
+          id="Next"
           isDisabled={false}
           title="SAVE CHANGES"
           type={2}
@@ -200,6 +203,7 @@ exports[`RoomForm should render properly 1`] = `
           <button
             className="main-button btn-secondary"
             disabled={false}
+            id="Next"
             onClick={[Function]}
           >
             <span>

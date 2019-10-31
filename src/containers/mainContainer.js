@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react';
 import TopMenu from '../components/navbars/TopMenu';
 import SideBar from '../components/commons/SideBar';
 import '../assets/styles/sidebar.scss';
+import SetupInfoPage from '../components/setup/SetupInfoPage';
 
 // eslint-disable-next-line react/prefer-stateless-function
 class Container extends Component {
@@ -26,7 +27,7 @@ class Container extends Component {
           {this.state.sideBaroption === 'home' && <div>Home</div>}
           {this.state.sideBaroption === 'meeting' && <div>Meetings</div>}
           {this.state.sideBaroption === 'insights' && <div>Insights</div>}
-          {this.state.sideBaroption === 'setup' && <div>Setup</div>}
+          {this.state.sideBaroption === 'setup' && <div><SetupInfoPage /></div>}
           {this.state.sideBaroption === 'devices' && <div>Devices</div>}
           {this.state.sideBaroption === 'resources' && <div>Resources</div>}
           {this.state.sideBaroption === 'people' && <div>People</div>}
