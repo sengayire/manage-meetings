@@ -12,10 +12,12 @@ import ErrorBoundary from './components/commons/ErrorBoundary';
 import { getToken, clearCookies } from './utils/Cookie';
 import Setup from './containers/Setup';
 import PageNotFound from './containers/PageNotFound';
+import { AddResources } from './components/onboarding/addResources';
 import {
   getUserDetails,
   getAllLocations,
   getUserLocation,
+  getRoomsStructure,
 } from './components/helpers/QueriesHelpers';
 import GetNewUsersLocation from './containers/GetNewUsersLocation';
 import { removeItemFromLocalStorage } from './utils/Utilities';
@@ -81,6 +83,8 @@ class App extends Component {
       getUserDetails(),
       getAllLocations(),
       centerSetupLevel(),
+      getRoomsStructure(),
+      getAllLocations(),
     ]);
     const userLocation = locations.find(({ name }) => name === user.location);
     if (userLocation === undefined) {
@@ -134,7 +138,6 @@ class App extends Component {
           if (loggedIn && !userLocation) {
             return <GetNewUsersLocation userLocation={userLocation} />;
           }
-
           try {
             getUserLocation();
           } catch (error) {
@@ -144,7 +147,6 @@ class App extends Component {
               });
             }
           }
-
           return (
             <ErrorBoundary isAuthError>
               <Switch>
@@ -153,11 +155,7 @@ class App extends Component {
                 <Route exact path={ROUTES.analytics} component={Container} />
                 <Route exact path={ROUTES.roomfeedback} component={RoomFeedbackPage} />
                 <Route exact path={ROUTES.buildingsSetup} component={BuildingsSetup} />
-                <Route
-                  exact
-                  path={ROUTES.roomfeedback}
-                  component={RoomFeedbackPage}
-                />
+                <Route exact path={ROUTES.analytics} component={AddResources} />
                 <Route exact path={ROUTES.preference} component={Preference} />
                 <Route exact path={ROUTES.setup} component={Setup} />
                 <Route component={PageNotFound} />

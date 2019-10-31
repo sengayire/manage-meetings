@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ADD RESOURCES should render properly 1`] = `
+<div>
+  <OnboardingLayout
+    layoutLeft={
+      <div>
+        <AddResourcesTitle />
+        <AddRooms />
+        <div>
+          <UNDEFINED>
+            What is the seating capacity for Cognitio?
+          </UNDEFINED>
+          <InputWithNumbers
+            updateOuterInputs={[Function]}
+          />
+          <InputResources />
+        </div>
+      </div>
+    }
+    layoutRight={
+      <div>
+        <span>
+          This part will be use to fetch data from the backend
+        </span>
+      </div>
+    }
+  />
+</div>
+`;

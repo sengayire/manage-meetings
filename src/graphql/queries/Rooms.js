@@ -84,6 +84,18 @@ export const GET_ALL_ROOMS_QUERY = gql`
   }
 `;
 
+export const GET_SPECIFIC_ROOMS = gql`
+  query rooms($location: String) {
+    allRooms(location: $location) {
+      rooms {
+        id
+        name
+        imageUrl
+      }
+    }
+  }
+`;
+
 export const GET_ALL_ROOMS = gql`
   query rooms($location: String) {
     allRooms(location: $location) {

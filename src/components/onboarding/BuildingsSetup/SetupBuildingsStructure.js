@@ -102,7 +102,7 @@ const SetupBuildingsStructure = () => {
         className="button"
       />
       {mutationError && <p className="error">Error :) try Again</p>}
-      {data && <Redirect to="/setup" /> } {/* go to the next page */}
+      {data && <Redirect to="/setup" />} {/* go to the next page */}
     </div>
   );
 };

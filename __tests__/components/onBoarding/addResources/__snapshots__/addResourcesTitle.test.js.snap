@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ADD RESOURCES TITLE should render properly 1`] = `
+<div>
+  <Styled(Button)>
+    <Styled(Icon)
+      fitted={true}
+      name="angle left"
+    />
+  </Styled(Button)>
+  <styled.span
+    className="text-resources"
+  >
+    Add Resources
+  </styled.span>
+  <styled.p>
+    Set the structure of your Center
+  </styled.p>
+</div>
+`;
