@@ -4,19 +4,22 @@
     display: grid;
     grid-template-columns: repeat(2, 50%);
     background: map-get($color-white, 000) !important;
+    width:fixed;
+    height: fixed;
 
     .layout-item-first {
-        background: map-get($color-white, 300);
+        background: #F9F9F9;
         height: 100vh;
         border: 1px solid map-get($color-gray, 300);
-        display: grid;
         place-content: center;
+        overflow: auto;
+        padding: 100px 10px 100px 90px;
     }
 
     .layout-item-second {
         height: 100vh;
-        border-top: 1px solid map-get($color-gray, 300);
-        border-bottom: 1px solid map-get($color-gray, 300);
+        border-top: 1px solid rgba(240,241,241,0.76);
+        border-bottom: 1px solid rgba(240,241,241,0.76);
         display: grid;
         place-content: center;
     }
