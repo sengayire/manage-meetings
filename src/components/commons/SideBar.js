@@ -15,29 +15,50 @@ class SideBar extends Component {
   // eslint-disable-next-line no-useless-constructor
   constructor(props) {
     super(props);
+    this.state = { name: 'home' };
+  }
+  handleClick = ({ target: { name } }) => {
+    this.setState({ name });
+    this.props.setContent(name);
   }
   render() {
+    const { name } = this.state;
     return (
       <div className="sidebar">
         <p className="overview-text">OVERVIEW</p>
-
         <a
-          className="active"
+          name="home"
+          className={name === 'home' ? 'active' : 'home'}
           href="#home"
-          onClick={() => this.props.setContent('home')}
+          onClick={e => this.handleClick(e)}
         >
           <img src={home} alt="" />
           Home
         </a>
-        <a href="#meetings" onClick={() => this.props.setContent('meeting')}>
+        <a
+          name="meetings"
+          className={name === 'meetings' ? 'active' : 'meetings'}
+          href="#meetings"
+          onClick={e => this.handleClick(e)}
+        >
           <img src={meetings} alt="" />
           Meetings
         </a>
-        <a href="#insights" onClick={() => this.props.setContent('insights')}>
+        <a
+          name="insights"
+          className={name === 'insights' ? 'active' : 'insights'}
+          href="#insights"
+          onClick={e => this.handleClick(e)}
+        >
           <img src={insights} alt="" />
           Insights
         </a>
-        <a href="#setup" onClick={() => this.props.setContent('setup')}>
+        <a
+          name="setup"
+          className={name === 'setup' ? 'active' : 'setup'}
+          href="#setup"
+          onClick={e => this.handleClick(e)}
+        >
           <img src={setup} alt="" />
           Setup
         </a>

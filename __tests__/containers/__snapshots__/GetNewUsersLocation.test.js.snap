@@ -317,6 +317,7 @@ exports[`Get New Users Component renders properly 1`] = `
                               <div>
                                 <button
                                   class="btn-right__location__btn btn-right__location__btn--with-caret btn-secondary"
+                                  id="Next"
                                 >
                                   <span>
                                     Lagos
@@ -375,6 +376,7 @@ exports[`Get New Users Component renders properly 1`] = `
                           >
                             <button
                               class="null btn-primary"
+                              id="Next"
                             >
                               <span>
                                 CONTINUE
@@ -522,6 +524,7 @@ exports[`Get New Users Component renders properly 1`] = `
                               <Button
                                 classProp="btn-right__location__btn btn-right__location__btn--with-caret"
                                 handleClick={[Function]}
+                                id="Next"
                                 isDisabled={false}
                                 title="Lagos"
                                 type={2}
@@ -529,6 +532,7 @@ exports[`Get New Users Component renders properly 1`] = `
                                 <button
                                   className="btn-right__location__btn btn-right__location__btn--with-caret btn-secondary"
                                   disabled={false}
+                                  id="Next"
                                   onClick={[Function]}
                                 >
                                   <span>
@@ -568,6 +572,7 @@ exports[`Get New Users Component renders properly 1`] = `
                           <Button
                             classProp={null}
                             handleClick={null}
+                            id="Next"
                             isDisabled={false}
                             title="CONTINUE"
                             type={1}
@@ -575,6 +580,7 @@ exports[`Get New Users Component renders properly 1`] = `
                             <button
                               className="null btn-primary"
                               disabled={false}
+                              id="Next"
                               onClick={null}
                             >
                               <span>

@@ -18,6 +18,7 @@ const Button = ({
   handleClick,
   isDisabled,
   type,
+  id,
 }) => {
   const classname = `${classProp} ${type === 2 ? 'btn-secondary' : type === 3 ? 'onboarding-next-button' : 'btn-primary'}`;
   return (
@@ -25,6 +26,7 @@ const Button = ({
       className={classname}
       onClick={handleClick}
       disabled={isDisabled}
+      id={id}
     >
       <span>{title}</span>
     </button>
@@ -36,6 +38,7 @@ Button.defaultProps = {
   handleClick: null,
   isDisabled: false,
   type: 1,
+  id: 'Next',
 };
 
 Button.propTypes = {
@@ -44,6 +47,7 @@ Button.propTypes = {
   handleClick: PropTypes.func,
   isDisabled: PropTypes.bool,
   type: PropTypes.number,
+  id: PropTypes.string,
 };
 
 

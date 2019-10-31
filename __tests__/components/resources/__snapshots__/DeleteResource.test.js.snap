@@ -8124,6 +8124,7 @@ exports[`DeleteResource Test Suite should pop up a modal when delete button is c
                               >
                                 <button
                                   class="null btn-primary"
+                                  id="Next"
                                 >
                                   <span>
                                     CANCEL
@@ -8131,6 +8132,7 @@ exports[`DeleteResource Test Suite should pop up a modal when delete button is c
                                 </button>
                                 <button
                                   class="main-button btn-secondary"
+                                  id="Next"
                                 >
                                   <span>
                                     DELETE RESOURCE
@@ -8276,6 +8278,7 @@ exports[`DeleteResource Test Suite should pop up a modal when delete button is c
                                 <Button
                                   classProp={null}
                                   handleClick={[Function]}
+                                  id="Next"
                                   isDisabled={false}
                                   title="CANCEL"
                                   type={1}
@@ -8283,6 +8286,7 @@ exports[`DeleteResource Test Suite should pop up a modal when delete button is c
                                   <button
                                     className="null btn-primary"
                                     disabled={false}
+                                    id="Next"
                                     onClick={[Function]}
                                   >
                                     <span>
@@ -8293,6 +8297,7 @@ exports[`DeleteResource Test Suite should pop up a modal when delete button is c
                                 <Button
                                   classProp="main-button"
                                   handleClick={[Function]}
+                                  id="Next"
                                   isDisabled={false}
                                   title="DELETE RESOURCE"
                                   type={2}
@@ -8300,6 +8305,7 @@ exports[`DeleteResource Test Suite should pop up a modal when delete button is c
                                   <button
                                     className="main-button btn-secondary"
                                     disabled={false}
+                                    id="Next"
                                     onClick={[Function]}
                                   >
                                     <span>

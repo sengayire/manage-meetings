@@ -1082,6 +1082,7 @@ exports[`DeleteOffice Test Suite should pop up a modal when delete button is cli
                           >
                             <button
                               class="null btn-primary"
+                              id="Next"
                             >
                               <span>
                                 CANCEL
@@ -1089,6 +1090,7 @@ exports[`DeleteOffice Test Suite should pop up a modal when delete button is cli
                             </button>
                             <button
                               class="main-button btn-secondary"
+                              id="Next"
                             >
                               <span>
                                 DELETE ROOM
@@ -1234,6 +1236,7 @@ exports[`DeleteOffice Test Suite should pop up a modal when delete button is cli
                             <Button
                               classProp={null}
                               handleClick={[Function]}
+                              id="Next"
                               isDisabled={false}
                               title="CANCEL"
                               type={1}
@@ -1241,6 +1244,7 @@ exports[`DeleteOffice Test Suite should pop up a modal when delete button is cli
                               <button
                                 className="null btn-primary"
                                 disabled={false}
+                                id="Next"
                                 onClick={[Function]}
                               >
                                 <span>
@@ -1251,6 +1255,7 @@ exports[`DeleteOffice Test Suite should pop up a modal when delete button is cli
                             <Button
                               classProp="main-button"
                               handleClick={[Function]}
+                              id="Next"
                               isDisabled={false}
                               title="DELETE ROOM"
                               type={2}
@@ -1258,6 +1263,7 @@ exports[`DeleteOffice Test Suite should pop up a modal when delete button is cli
                               <button
                                 className="main-button btn-secondary"
                                 disabled={false}
+                                id="Next"
                                 onClick={[Function]}
                               >
                                 <span>
