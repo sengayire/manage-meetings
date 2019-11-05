@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { Component } from 'react';
 import { withRouter, Route, Switch, Redirect } from 'react-router-dom';
 import { ApolloConsumer } from 'react-apollo';
@@ -26,7 +27,7 @@ import BuildingsSetup from './components/onboarding/BuildingsSetup/index';
 import Container from './containers/mainContainer';
 import OnboardingPages from './containers/OnboardingPages';
 import centerSetupLevel from './components/helpers/centerStructureHelper';
-
+import Rooms from './components/onboarding/addRooms';
 // destruscture constants to be used
 const {
   MESSAGES: { authenticationError },
@@ -117,9 +118,9 @@ class App extends Component {
       return <GetNewUsersLocation userLocation={this.state.userLocation} />;
     }
 
-    if ((userRole === 'Admin' || userRole === 'Super Admin') && isCenterSetup) {
-      return <OnboardingPages centerSetupLevel={isCenterSetup} />;
-    }
+    // if ((userRole === 'Admin' || userRole === 'Super Admin') && isCenterSetup) {
+    //   return <OnboardingPages centerSetupLevel={isCenterSetup} />;
+    // }
 
     if (!loggedIn && location.pathname !== ROUTES.home) {
       // redirect to landing page if user isn't logged in
@@ -150,6 +151,7 @@ class App extends Component {
           return (
             <ErrorBoundary isAuthError>
               <Switch>
+                <Route path={ROUTES.home} exact component={Rooms} />
                 <Route path={ROUTES.home} exact component={LoginPage} />
                 <Route exact path={ROUTES.analytics} component={Container} />
                 <Route exact path={ROUTES.welcome} component={WelcomePage} />

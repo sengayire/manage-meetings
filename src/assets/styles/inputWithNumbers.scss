@@ -1,4 +1,4 @@
-@import './variables.scss';
+@import "./variables";
 
 .number-input-container {
 
@@ -9,7 +9,6 @@
         border: 1px solid map-get($color-gray, 400);
         border-left: 0px;
     }
-
     .ui.button i {
         display: none;
     }
@@ -28,6 +27,10 @@
         border: 0px solid map-get($color-gray, 400);
         border-right: none;
         border-radius: 6px;
+    }
+    p {
+        margin-top: 30px;
+
     }
 
 }
