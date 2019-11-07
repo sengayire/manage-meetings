@@ -4,36 +4,52 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import OfficeStructure from '../components/onboarding/officeStructure/officeStructure';
+import WelcomePage from '../components/onboarding/WelcomePage';
+import NavBar from '../components/navbars/TopMenu';
+import BuildingsSetup from '../components/onboarding/BuildingsSetup/index';
+import AddRooms from '../components/onboarding/addRooms/index';
+import { AddResources } from '../components/onboarding/addResources';
+import Container from '../containers/mainContainer';
 
 class OnboardingPages extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      visiblePage: props.centerSetupLevel,
-    };
+  state = {
+    visiblePage: this.props.centerSetupLevel,
+    page: 0,
+  };
+
+  handleOnClick = (page) => {
+    this.setState({ visiblePage: page });
   }
 
   renderOnboardingPages = (centerSetupLevel) => {
     switch (centerSetupLevel) {
-      case 'setupLocation':
-        return <h1>setupLocation</h1>;
+      case 'welcomePage':
+        return <WelcomePage handleOnClick={this.handleOnClick} />;
+      case 'buildingsSetup':
+        return <BuildingsSetup handleOnClick={this.handleOnClick} />;
       case 'officeStructure':
-        return <OfficeStructure />;
+        return <OfficeStructure handleOnClick={this.handleOnClick} />;
       case 'addRooms':
-        return <h1>addRooms</h1>;
+        return <AddRooms handleOnClick={this.handleOnClick} />;
       case 'addResources':
-        return <h1>addResources</h1>;
+        return <AddResources handleOnClick={this.handleOnClick} />;
       default:
         return (
-          <h1>
-            centerIsSetup
-          </h1>
+          this.setState({ page: 1 })
         );
     }
   };
   render() {
-    const { visiblePage } = this.state;
-    return <Fragment>{this.renderOnboardingPages(visiblePage)}</Fragment>;
+    const { visiblePage, page } = this.state;
+    return !page ? (
+      <Fragment>
+        <NavBar />
+        <div>
+          {this.renderOnboardingPages(visiblePage)}
+        </div>
+
+      </Fragment>
+    ) : (<Container />);
   }
 }
 

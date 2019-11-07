@@ -2,7 +2,6 @@
 
 exports[`Onboarding welcome page component renders correctly in memory 1`] = `
 <Fragment>
-  <withRouter(TopMenuComponent) />
   <div
     className="main-page"
     id="main-page"
@@ -39,15 +38,15 @@ exports[`Onboarding welcome page component renders correctly in memory 1`] = `
       </div>
       <div
         className="welcome-botton"
+        id="welcome-botton"
+        onClick={[Function]}
       >
-        <Link
+        <div
           className="link"
           id="welcome-botton-link"
-          replace={false}
-          to="/onboarding/setup/buildings"
         >
           Let’s Go!
-        </Link>
+        </div>
       </div>
     </div>
   </div>

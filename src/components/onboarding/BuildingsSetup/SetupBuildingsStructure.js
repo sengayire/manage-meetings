@@ -1,7 +1,7 @@
 import React from 'react';
 import _ from 'lodash';
 import uuid from 'uuid';
-import { Redirect } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import { useMutation } from '@apollo/react-hooks';
 import InputsWithAddIcon from '../../commons/InputAddIcon';
 import InputWithNumbers from '../../commons/InputWithNumber';
@@ -10,14 +10,25 @@ import InputField from '../../commons/InputField';
 import Button from '../../commons/Button';
 import { ADD_LEVEL_SETUP_MUTATION } from '../../../graphql/mutations/Preview';
 import { getUserLocation } from '../../helpers/QueriesHelpers';
+import GET_ALL_LEVELS from '../../../graphql/queries/Levels';
 
-const SetupBuildingsStructure = () => {
+const SetupBuildingsStructure = ({ handleOnClick }) => {
   const [addBuildings,
     {
       data,
       loading: mutationLoading,
       error: mutationError,
-    }] = useMutation(ADD_LEVEL_SETUP_MUTATION);
+    }] = useMutation(
+    ADD_LEVEL_SETUP_MUTATION, {
+      update(cache, { data: { addBuilding } }) {
+        const { allStructures } = cache.readQuery({ query: GET_ALL_LEVELS });
+        cache.writeQuery({
+          query: GET_ALL_LEVELS,
+          data: { allStructures: allStructures.push(addBuilding) },
+        });
+      },
+    },
+  );
   const input = React.createRef();
   const buildings = React.createRef();
   const inputWithNumbers = React.createRef();
@@ -102,9 +113,13 @@ const SetupBuildingsStructure = () => {
         className="button"
       />
       {mutationError && <p className="error">Error :) try Again</p>}
-      {data && <Redirect to="/setup" />} {/* go to the next page */}
+      {data && handleOnClick('officeStructure') } {/* go to the next page */}
     </div>
   );
+};
+
+SetupBuildingsStructure.propTypes = {
+  handleOnClick: PropTypes.func.isRequired,
 };
 
 export default SetupBuildingsStructure;

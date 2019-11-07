@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react';
+import PropTypes from 'prop-types';
 import uuid from 'uuid';
 import OnboardingLayout from '../../../containers/OnboardingLayout';
 import SetOfficeStructure from './setOfficeStructure';
@@ -154,7 +155,10 @@ class OfficeStructure extends Component {
           toggleBlock={this.toggleBlock}
           levelType={levelType}
         />
-        <NextButton flattenedData={flattenedData} />
+        <NextButton
+          flattenedData={flattenedData}
+          handleOnClick={this.props.handleOnClick}
+        />
       </Fragment>
     );
     const layoutRight = (
@@ -167,5 +171,9 @@ class OfficeStructure extends Component {
     );
   }
 }
+
+OfficeStructure.propTypes = {
+  handleOnClick: PropTypes.func.isRequired,
+};
 
 export default OfficeStructure;

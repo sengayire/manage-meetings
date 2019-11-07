@@ -3,6 +3,8 @@ import { mount } from 'enzyme';
 import { MockedProvider } from '@apollo/react-testing';
 import InputResources from '../../../../src/components/onboarding/addResources/InputResources';
 import { ADD_RESOURCE_MUTATION } from '../../../../src/graphql/mutations/AddResourceToRoom';
+import { GET_SPECIFIC_ROOMS } from '../../../../src/graphql/queries/Rooms';
+import GET_ALL_LEVELS from '../../../../src/graphql/queries/Levels';
 
 const mocks = [
   {
@@ -23,58 +25,77 @@ const mocks = [
       },
     },
   },
+  {
+    request: {
+      query: GET_ALL_LEVELS,
+    },
+    result: {
+      data: {
+        allStructures: [{
+          name: 'muhabura',
+          tag: 'Rooms',
+          locationId: '1234',
+          parentId: '87523471234',
+          parentTitle: 'hwqekrhfe314',
+          level: '4',
+          position: 'kigali',
+          structureId: '327461084',
+        }],
+      },
+    },
+  },
+  {
+    request: {
+      query: GET_SPECIFIC_ROOMS,
+    },
+    result: {
+      data: {
+        allRooms: {
+          rooms: [{
+            name: 'muhabura',
+          }],
+        },
+      },
+    },
+  },
 ];
-
-let inputResources = '';
-const resources = ['first', 'second', 'third'];
 
 const event = { target: { name: 'pollName', value: 'spam' } };
 
-const state = {
-  resources,
-  resource: '',
-};
-
 const wrapper = mount(
-  <MockedProvider mocks={mocks}>
+  <MockedProvider mocks={mocks} addTypename={false}>
     <InputResources />
   </MockedProvider>,
 );
+it('update', async () => {
+  await new Promise(resolve => setTimeout(resolve));
+  wrapper.update();
+});
 
-it('SHOULD TEST THE COMPONENT', () => {
+it('update', async () => {
+  await new Promise(resolve => setTimeout(resolve));
+  wrapper.update();
+});
+
+it('Should test the component', () => {
   expect(wrapper).toMatchSnapshot();
 });
 
-it(' SHOULD ADD INPUT FIELD', () => {
-  wrapper.setState(state);
-  inputResources = wrapper.find('Input[name="inputResources"]');
+it('Should test submit resource', () => {
+  const submitResources = wrapper.find('#submit-resource');
+  submitResources.forEach(submitResource => submitResource.props().onClick());
+});
+
+it('Should add new form input', () => {
+  const inputResources = wrapper.find('#inputResources');
   inputResources.forEach((inputResource) => {
-    inputResource.simulate('change', event);
-    const {
-      icon: { props },
-    } = inputResource.props();
-    props.onClick();
+    inputResource.props().onChange(event);
+    inputResource.props().icon && inputResource.props().icon.props.onClick();
   });
 });
 
-it('SHOULD ADD NEW FORM INPUT', () => {
-  wrapper
-    .find('#submit-resource')
-    .at(0)
-    .simulate('click');
-});
-
-it('SHOULD SUBMIT RESOURCES', () => {
-  wrapper
-    .find('#handle-submit')
-    .at(2)
-    .simulate('click');
-});
-
-it('SHOULD CALL ONCHANGE', () => {
-  wrapper
-    .find('#inputResources')
-    .at(1)
-    .props()
-    .onChange({ target: { value: 'pencil' } });
+it('Should test handle submit resources', () => {
+  const submitResources = wrapper.find('#handle-submit');
+  submitResources.forEach(submitResource => submitResource
+    .props().onClick({ preventDefault: jest.fn() }));
 });

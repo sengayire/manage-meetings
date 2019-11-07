@@ -6,8 +6,10 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React, { Fragment, useState } from 'react';
 import ReactFileReader from 'react-file-reader';
+import PropTypes from 'prop-types';
 import { useMutation, useQuery } from '@apollo/react-hooks';
 import { Query } from 'react-apollo';
+import uuid from 'uuid';
 import NumberInput from 'semantic-ui-react-numberinput';
 import '../../../assets/styles/inputWithNumbers.scss';
 import '../../../assets/styles/addroom.scss';
@@ -17,6 +19,7 @@ import roomImage2 from '../../../assets/images/roomImage2.png';
 import { ADD_ROOM } from '../../../graphql/mutations/Rooms';
 import SelectInput from '../../commons/SelectInput';
 import { GET_ALL_REMOTE_ROOMS } from '../../../graphql/queries/Rooms';
+import { ADD_LEVEL_SETUP_MUTATION } from '../../../graphql/mutations/Preview';
 import Button from '../../../components/commons/Button';
 
 
@@ -127,7 +130,7 @@ const handleInput = (
     </Fragment>
 );
   /* istanbul ignore next */
-function AddRooms() {
+function AddRooms({ handleOnClick }) {
   const [formData, setFormData] = useState({
     Floors: '',
     activeFloor: '',
@@ -180,8 +183,20 @@ function AddRooms() {
   const [
     createRoom,
     // eslint-disable-next-line no-unused-vars
-    { loading: mutationLoading, error: mutationError },
+    { data: roomsData, loading: mutationLoading, error: mutationError },
   ] = useMutation(ADD_ROOM);
+
+  const [createRoomStructure] = useMutation(
+    ADD_LEVEL_SETUP_MUTATION, {
+      update(cache, { data: { createRoomStructures } }) {
+        const { allStructures } = cache.readQuery({ query: GET_ALL_LEVELS });
+        cache.writeQuery({
+          query: GET_ALL_LEVELS,
+          data: { allStructures: allStructures.push(createRoomStructures) },
+        });
+      },
+    },
+  );
 
   return (
     <Fragment>
@@ -212,7 +227,6 @@ function AddRooms() {
                            setStructureId(Floor.structureId);
                            setLocationId(Floor.locationId);
                            setrooomLabels(Floor.name);
-                           console.log('allData', data);
                          }}
                          className={setClassName(Floor.name, activeFloor, block)}
                        >
@@ -258,17 +272,35 @@ function AddRooms() {
                 calendarId,
                 roomType,
               },
-            }).catch((res) => {
-              res.graphQLErrors.map(ERROR => ERROR.message);
+            });
+
+            createRoomStructure({
+              variables: {
+                flattenedData: [{
+                  structureId: uuid(),
+                  name: selectNameRooms,
+                  level: 4,
+                  parentId: structureId,
+                  parentTitle: roomLabels,
+                  tag: 'Rooms',
+                  position: 1,
+                  locationId,
+                }],
+              },
             });
           }}
           title="Next"
           type={3}
         />
       </div>
+      {roomsData && handleOnClick('addResources')}
     </Fragment>
   );
 }
+
+AddRooms.propTypes = {
+  handleOnClick: PropTypes.func.isRequired,
+};
 
 AddRooms.defaultProps = {
   setFloors: [],

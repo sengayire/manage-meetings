@@ -1,17 +1,20 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import OnboardingLayout from '../../../containers/OnboardingLayout';
 import BuildingsStructurePreview from './BuildingsStructurePreview';
 import SetupBuildingsStructure from './SetupBuildingsStructure';
-import NavBar from '../../../containers/NavBar';
 
-const BuildingsSetup = () => (
+const BuildingsSetup = ({ handleOnClick }) => (
   <div>
-    <NavBar />
     <OnboardingLayout
       layoutRight={<BuildingsStructurePreview />}
-      layoutLeft={<SetupBuildingsStructure />}
+      layoutLeft={<SetupBuildingsStructure handleOnClick={handleOnClick} />}
     />
   </div>
 );
+
+BuildingsSetup.propTypes = {
+  handleOnClick: PropTypes.func.isRequired,
+};
 
 export default BuildingsSetup;

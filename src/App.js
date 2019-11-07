@@ -80,13 +80,16 @@ class App extends Component {
    * this function is used to set the users state(the location and the role)
    */
   async setUserState() {
-    const [user, locations, isCenterSetup] = await Promise.all([
+    const [user, locations] = await Promise.all([
       getUserDetails(),
       getAllLocations(),
-      centerSetupLevel(),
-      getRoomsStructure(),
-      getAllLocations(),
     ]);
+    let isCenterSetup;
+    if (user.location) {
+      isCenterSetup = await centerSetupLevel();
+    } else {
+      isCenterSetup = null;
+    }
     const userLocation = locations.find(({ name }) => name === user.location);
     if (userLocation === undefined) {
       this.setState({
@@ -114,13 +117,10 @@ class App extends Component {
       isCenterSetup,
     } = this.state;
     const { location } = this.props;
+
     if (defaultState && userLocation) {
       return <GetNewUsersLocation userLocation={this.state.userLocation} />;
     }
-
-    // if ((userRole === 'Admin' || userRole === 'Super Admin') && isCenterSetup) {
-    //   return <OnboardingPages centerSetupLevel={isCenterSetup} />;
-    // }
 
     if (!loggedIn && location.pathname !== ROUTES.home) {
       // redirect to landing page if user isn't logged in
@@ -139,6 +139,7 @@ class App extends Component {
           if (loggedIn && !userLocation) {
             return <GetNewUsersLocation userLocation={userLocation} />;
           }
+
           try {
             getUserLocation();
           } catch (error) {
@@ -148,13 +149,17 @@ class App extends Component {
               });
             }
           }
+
+
+          if ((userRole === 'Admin' || userRole === 'Super Admin') && isCenterSetup) {
+            return <OnboardingPages centerSetupLevel={isCenterSetup} />;
+          }
+
           return (
             <ErrorBoundary isAuthError>
               <Switch>
-                <Route path={ROUTES.home} exact component={Rooms} />
                 <Route path={ROUTES.home} exact component={LoginPage} />
                 <Route exact path={ROUTES.analytics} component={Container} />
-                <Route exact path={ROUTES.welcome} component={WelcomePage} />
                 <Route exact path={ROUTES.roomfeedback} component={RoomFeedbackPage} />
                 <Route exact path={ROUTES.buildingsSetup} component={BuildingsSetup} />
                 <Route exact path={ROUTES.analytics} component={AddResources} />

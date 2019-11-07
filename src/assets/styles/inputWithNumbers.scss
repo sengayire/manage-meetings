@@ -1,8 +1,7 @@
 @import "./variables";
 
 .number-input-container {
-
-
+    width: 334px;
     .number-input .ui.button {
         background: map-get($color-white, 000);
         color: map-get($color-gray, 500);

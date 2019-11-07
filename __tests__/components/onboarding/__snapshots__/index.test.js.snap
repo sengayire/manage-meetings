@@ -4,6 +4,7 @@ exports[`Add room design should render with succesfully 1`] = `
 <OnboardingLayout
   layoutLeft={
     <AddRooms
+      handleOnClick={undefined}
       setFloors={Array []}
       setactiveFloor=""
     />
