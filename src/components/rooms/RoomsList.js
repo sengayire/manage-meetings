@@ -15,7 +15,6 @@ import Pagination from '../commons/Pagination';
 import MenuTitle from '../commons/MenuTitle';
 import FilterRoomMenu from './FilterRoomMenu';
 
-// import AddRoomMenu from './AddRoomMenu';
 import Spinner from '../commons/Spinner';
 import notification from '../../utils/notification';
 import Overlay from '../commons/Overlay';
@@ -136,11 +135,7 @@ export class RoomsList extends React.Component {
       .then(() => this.setState({ dataFetched: true, isFetching: false }))
       .catch(() => {
         this.setState({ dataFetched: false, isFetching: false });
-        notification(
-          toastr,
-          'error',
-          'You seem to be offline, check your internet connection.',
-        )();
+        notification(toastr, 'error', 'You seem to be offline, check your internet connection.')();
       });
   };
 
@@ -186,11 +181,7 @@ export class RoomsList extends React.Component {
 
   render() {
     const {
-      allRooms,
-      noResource,
-      isSearching,
-      currentPage,
-      isFetching,
+      allRooms, noResource, isSearching, currentPage, isFetching,
     } = this.state;
     const { loading, error, refetch } = this.props.data;
     const {
@@ -202,11 +193,7 @@ export class RoomsList extends React.Component {
     if (error && error.message === 'GraphQL error: No more resources') return <DataNotFound />;
     return (
       <div className="settings-rooms">
-        <div
-          className={`settings-rooms-control ${
-            isFetching ? 'disabled-buttons' : null
-            }`}
-        >
+        <div className={`settings-rooms-control ${isFetching ? 'disabled-buttons' : null}`}>
           <MenuTitle title="Rooms" />
           <FilterRoomMenu
             isNoResource={this.handleNoResource}
@@ -218,12 +205,11 @@ export class RoomsList extends React.Component {
             page={this.props.data.variables.page}
             perPage={this.props.data.variables.perPage}
           />
-          {/* <AddRoomMenu /> */}
         </div>
         {noResource ? (
           <div className="settings-rooms-list">
             {isFetching ? <Overlay /> : null}
-            {!(locationsError || error) ?
+            {!(locationsError || error) ? (
               <div className="table">
                 <TableHead titles={['Room', 'Location', 'Office', 'Action']} />
                 <TableBody
@@ -233,12 +219,13 @@ export class RoomsList extends React.Component {
                   refetch={refetch}
                 />
               </div>
-              : <ErrorIcon />
-            }
+            ) : (
+              <ErrorIcon />
+            )}
           </div>
         ) : (
           <h2 style={{ marginLeft: '0' }}>No Rooms Found</h2>
-          )}
+        )}
         {noResource && !isSearching && !(locationsError || error) ? (
           <Pagination
             currentPage={currentPage}

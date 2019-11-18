@@ -151,9 +151,9 @@ class App extends Component {
           }
 
 
-          if ((userRole === 'Admin' || userRole === 'Super Admin') && isCenterSetup) {
+          {/* if ((userRole === 'Admin' || userRole === 'Super Admin') && isCenterSetup) {
             return <OnboardingPages centerSetupLevel={isCenterSetup} />;
-          }
+          } */}
 
           return (
             <ErrorBoundary isAuthError>

@@ -1,0 +1,173 @@
+@import "./variables";
+
+.insights_container {
+  background-color: rgb(249, 249, 249);
+  border: solid 1px rgb(249, 249, 249);
+  height: 750px;
+  .insights-main {
+    display: flex;
+    height: 90%;
+    padding: 0;
+    .insights_left {
+      width: 50%;
+      margin: 0 2% 2% 2%;
+      border-radius: 7px;
+      .used-rooms-container,
+      .most_booked_rooms-container,
+      .least_booked_rooms-container {
+        background-color: white;
+        margin: 4% 2% 0 4%;
+        border-radius: 7px;
+        padding: 3% 0 3% 3%;
+        height: 30%;
+      }
+      .used-rooms-container {
+        .insights-used-rooms {
+          display: flex;
+          .rooms {
+            background-color: rgb(244, 244, 245);
+            width: 30%;
+            border-radius: 5px;
+            margin: 0 2% 0 0;
+            padding: 2% 0 2% 0;
+            text-align: center;
+          }
+          p {
+            font-family: Lato;
+            font-size: 24px;
+            line-height: 32px;
+          }
+        }
+      }
+      .most_booked_rooms-container,
+      .least_booked_rooms-container {
+        .insights-rooms {
+          .room {
+            vertical-align: top;
+            padding: 1%;
+            width: 18%;
+            display: inline-block;
+            .roomPicture {
+              background-color: rgb(244, 244, 245);
+              height: 55px;
+              width: 55px;
+              border-radius: 50%;
+              margin: 5px auto;
+              img {
+                height: 55px;
+                width: 55px;
+                border-radius: 50%;
+              }
+            }
+            p {
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+    .insights_right {
+      background-color: white;
+      width: 50%;
+      margin: 2% 4% 2% 0;
+      border-radius: 7px;
+      padding: 2%;
+      height: 55%;
+    }
+    .insights-message {
+      width: 100%;
+      display: flex;
+      p {
+        width: 50%;
+      }
+      .insights-rooms-dropdown {
+        size: 40px;
+        width: 45%;
+        text-align: right;
+      }
+    }
+  }
+  @media screen and(max-width: 1024px) {
+    width: 85%;
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    width: 85%;
+  }
+
+  @media screen and (min-width: 623px) and (max-width: 767px) {
+    width: 98%;
+    min-height: 60vh;
+  }
+
+  @media screen and (max-width: 622px) {
+    width: 100%;
+    min-height: 60vh;
+  }
+}
+
+.message {
+  display: block;
+  text-align: left;
+  margin-top: 30px;
+  margin-left: 50px;
+  .insights {
+    height: 29px;
+    color: #333a3f;
+    font-family: Lato;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 29px;
+  }
+  .insights-configure-andela-cen {
+    height: 15px;
+    width: 160px;
+    color: #333a3f;
+    font-family: Lato;
+    font-size: 12px;
+    line-height: 15px;
+  }
+  span {
+    font-size: 18px;
+    color: $text-color !important;
+    font-weight: 200 !important;
+    margin-bottom: 10px;
+  }
+}
+
+.image {
+  width: 50%;
+  margin: 0 auto;
+
+  @media screen and (max-width: 1024px) {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1024px) {
+    width: 70%;
+    margin-bottom: 30px;
+  }
+
+  @media screen and (min-width: 623px) and (max-width: 767px) {
+    width: 80%;
+    margin-bottom: 30px;
+  }
+
+  @media screen and (max-width: 622px) {
+    width: 90%;
+    margin-bottom: 30px;
+  }
+
+  img {
+    width: 100%;
+  }
+}
+
+.export-insights-button {
+  border: $color-primary;
+  background-color: white;
+  margin: 0 auto;
+  width: 147px;
+  justify-content: center;
+}

@@ -185,31 +185,10 @@ const getRoomByNameData = {
   },
 };
 
-// const formDetails = [
-//   {
-//     id: '1',
-//     roomName: 'HighLan',
-//     __typename: 'Room',
-//   },
-//   {
-//     id: '2',
-//     roomName: 'Lagos',
-//     __typename: 'Room',
-//   },
-//   {
-//     id: '3',
-//     roomName: 'Nairobi',
-//     __typename: 'Room',
-//   },
-// ];
-
-
-export
-{
+export {
   allRoomsReturnData as default,
   roomLocations,
   formDetails,
   locationData,
   getRoomByNameData,
 };
-

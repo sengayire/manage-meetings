@@ -3,6 +3,7 @@ import TopMenu from '../components/navbars/TopMenu';
 import SideBar from '../components/commons/SideBar';
 import '../assets/styles/sidebar.scss';
 import SetupInfoPage from '../components/setup/SetupInfoPage';
+import InsightsPage from '../components/insights/InsightsPage';
 
 // eslint-disable-next-line react/prefer-stateless-function
 class Container extends Component {
@@ -26,7 +27,7 @@ class Container extends Component {
         <div className="divTitle">
           {this.state.sideBaroption === 'home' && <div>Home</div>}
           {this.state.sideBaroption === 'meeting' && <div>Meetings</div>}
-          {this.state.sideBaroption === 'insights' && <div>Insights</div>}
+          {this.state.sideBaroption === 'insights' && <div><InsightsPage /></div>}
           {this.state.sideBaroption === 'setup' && <div><SetupInfoPage /></div>}
           {this.state.sideBaroption === 'devices' && <div>Devices</div>}
           {this.state.sideBaroption === 'resources' && <div>Resources</div>}
